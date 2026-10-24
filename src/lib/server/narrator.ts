@@ -1,8 +1,10 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { fixedClock } from '../core/facts';
 import { Narrator } from '../core/narrator';
 import { compileWorld, type AdventureWorld } from '../core/adventure/world';
 import type { LatLon } from '../core/geo';
+import { CachedRenderer, type NarrationStore } from '../core/render/cached';
+import type { Stop } from '../core/stops';
 
 /** Configuration comes from the environment only. */
 export interface Config {
@@ -10,6 +12,8 @@ export interface Config {
 	snapshotDate: string;
 	spacing: number;
 	start?: LatLon;
+	/** Where prose written ahead of time is kept. Without it, stops use the template. */
+	narrationPath?: string;
 }
 
 export function readConfig(
@@ -24,7 +28,8 @@ export function readConfig(
 		snapshotPath,
 		snapshotDate: date,
 		spacing: Number(source.STOP_SPACING_M ?? 50),
-		start: start?.length === 2 && start.every(Number.isFinite) ? [start[0], start[1]] : undefined
+		start: start?.length === 2 && start.every(Number.isFinite) ? [start[0], start[1]] : undefined,
+		narrationPath: source.NARRATION_PATH
 	};
 }
 
@@ -35,15 +40,31 @@ export function adventureWorld(): { world: AdventureWorld; config: Config } | un
 	if (cached) return cached;
 	const config = readConfig();
 	if (!config) return undefined;
+	const narrator = loadNarrator(config);
+	cached = { config, world: compileWorld(narrator, startStop(narrator, config).id) };
+	return cached;
+}
+
+/** Prose written ahead of time, or none when there is no file yet. */
+export function loadNarration(path?: string): NarrationStore {
+	return path && existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : {};
+}
+
+/** The narrator for the configured snapshot, using any prose written ahead of time. */
+export function loadNarrator(config: Config): Narrator {
 	const data = JSON.parse(readFileSync(config.snapshotPath, 'utf8'));
-	const narrator = Narrator.fromOsm(data, {
+	return Narrator.fromOsm(data, {
 		clock: fixedClock(config.snapshotDate),
-		spacing: config.spacing
+		spacing: config.spacing,
+		renderer: new CachedRenderer(loadNarration(config.narrationPath))
 	});
+}
+
+/** Where the reader starts: the stop nearest START_AT, or the first junction. */
+export function startStop(narrator: Narrator, config: Config): Stop {
 	const start = config.start
 		? narrator.nearestStop(config.start)
 		: narrator.graph.all().find((s) => s.kind === 'junction');
 	if (!start) throw new Error('The snapshot has no streets in it.');
-	cached = { config, world: compileWorld(narrator, start.id) };
-	return cached;
+	return start;
 }

@@ -11,7 +11,8 @@ describe('readConfig', () => {
 			snapshotPath: 'data/snapshots/addiscombe-2026-10-24.json',
 			snapshotDate: '2026-10-24',
 			spacing: 50,
-			start: undefined
+			start: undefined,
+			narrationPath: undefined
 		});
 	});
 
@@ -23,6 +24,11 @@ describe('readConfig', () => {
 			START_AT: '51.38,-0.07'
 		});
 		expect(config).toMatchObject({ spacing: 40, start: [51.38, -0.07] });
+	});
+
+	it('reads where prose written ahead of time is kept', () => {
+		const config = readConfig({ SNAPSHOT_PATH: 'x-2026-01-01.json', NARRATION_PATH: 'n.json' });
+		expect(config?.narrationPath).toBe('n.json');
 	});
 
 	it('refuses a snapshot with no date', () => {

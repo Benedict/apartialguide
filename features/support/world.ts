@@ -2,6 +2,7 @@ import { setWorldConstructor, World } from '@cucumber/cucumber';
 import { fixedClock } from '../../src/lib/core/facts';
 import { Narrator, type Visit } from '../../src/lib/core/narrator';
 import type { OsmData } from '../../src/lib/core/osm';
+import type { Renderer } from '../../src/lib/core/render/renderer';
 import type { StopId } from '../../src/lib/core/stops';
 import { SyntheticMap } from '../../src/lib/core/testing/synthetic';
 
@@ -15,11 +16,14 @@ export class NarratorWorld extends World {
 	visit?: Visit;
 	/** OSM refs of the features a scenario is about. */
 	subjects: string[] = [];
+	/** The renderer the narrator uses, when a scenario sets one. */
+	renderer?: Renderer;
 	private built?: Narrator;
 
 	get narrator(): Narrator {
 		this.built ??= Narrator.fromOsm(this.data ?? this.map.toData(), {
-			clock: fixedClock(this.snapshotDate)
+			clock: fixedClock(this.snapshotDate),
+			renderer: this.renderer
 		});
 		return this.built;
 	}
