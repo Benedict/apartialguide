@@ -10,3 +10,6 @@ bun.lockb
 
 # Snapshots are data, kept exactly as captured
 /data/snapshots/*.json
+
+# Narration is written by a script and kept as it is
+/data/narration/*.json

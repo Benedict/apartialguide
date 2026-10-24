@@ -14,10 +14,10 @@ export interface TensionOptions {
 	denseFrom?: number;
 }
 
-const NAME_KEY = /(^|[:_])name($|:)|^brand$|^operator$/;
+export const NAME_KEY = /(^|[:_])name($|:)|^brand$|^operator$/;
 
 /** A name that starts in lower case, or is a single character, looks broken off. */
-const looksBroken = (value: string) => /^\p{Ll}/u.test(value) || value.trim().length === 1;
+export const looksBroken = (value: string) => /^\p{Ll}/u.test(value) || value.trim().length === 1;
 
 /** A way tagged highway is a street. A node tagged highway (a bus stop, a crossing) is a feature. */
 export const isStreet = (subjectFacts: readonly Fact[]) =>

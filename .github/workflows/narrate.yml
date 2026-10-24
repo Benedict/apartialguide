@@ -1,0 +1,50 @@
+name: Narrate
+
+# Writes each stop's prose ahead of time with a Claude model and commits it. Started by hand.
+# Needs the ANTHROPIC_API_KEY repository secret.
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Most stops to write in this run (each is one model call)
+        required: true
+        default: '25'
+
+permissions:
+  contents: write
+
+jobs:
+  narrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Check the API key is set
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          test -n "$ANTHROPIC_API_KEY" || {
+            echo "::error::Add ANTHROPIC_API_KEY under Settings → Secrets and variables → Actions"
+            exit 1
+          }
+      - name: Write prose
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NARRATION_PATH: data/narration/addiscombe.json
+          NARRATE_LIMIT: ${{ inputs.limit }}
+          START_AT: 51.379897,-0.074294
+        run: |
+          export SNAPSHOT_PATH="$(ls data/snapshots/addiscombe-*.json | sort | tail -1)"
+          npm run narrate
+      - name: Commit prose
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/narration
+          git diff --cached --quiet && { echo "No new prose"; exit 0; }
+          git commit -m "Add narration written by the Narrate workflow"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

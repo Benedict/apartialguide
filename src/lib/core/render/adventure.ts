@@ -24,7 +24,7 @@ import {
  */
 export class AdventureRenderer implements Renderer {
 	render(scene: Scene): Room {
-		const street = tagsOf([...groupBySubject(scene.street).values()][0] ?? []);
+		const street = streetTags(scene);
 		const paragraphs = [
 			[whereYouStand(scene, street), ...streetCharacter(street), setting(scene)]
 				.filter(Boolean)
@@ -53,6 +53,10 @@ const LOST_COUNT = [
 	'And more, and more — I lose count.'
 ];
 
+/** Tags of the main street underfoot. */
+export const streetTags = (scene: Scene): Tags =>
+	tagsOf([...groupBySubject(scene.street).values()][0] ?? []);
+
 const streetName = (scene: Scene, street: Tags) =>
 	scene.here[0] ?? `an unnamed ${humanise(street.highway)}`;
 
@@ -64,7 +68,7 @@ function title(scene: Scene, street: Tags): string {
 	return isDeadEnd(scene) ? `End of ${name}` : name;
 }
 
-function whereYouStand(scene: Scene, street: Tags): string {
+export function whereYouStand(scene: Scene, street: Tags): string {
 	const name = streetName(scene, street);
 	if (isDeadEnd(scene)) return `You are at the end of ${name}.`;
 	if (scene.here.length >= 2) return `You are standing where ${list(scene.here)} meet.`;
@@ -82,7 +86,7 @@ const SIDEWALKS: Record<string, string> = {
 	no: 'no pavement at all'
 };
 
-function streetCharacter(street: Tags): string[] {
+export function streetCharacter(street: Tags): string[] {
 	const sentences: string[] = [];
 	if (street.surface) sentences.push(`${capitalise(humanise(street.surface))} underfoot.`);
 	const lit = street.lit === 'yes' ? 'Lit at night' : street.lit === 'no' ? 'Unlit' : undefined;
@@ -160,7 +164,7 @@ function isInside(at: LatLon, geometry: readonly LatLon[]): boolean {
  * The land underfoot in one sentence: the place by name, the areas you are in, and those beside you.
  * "Here you are in Addiscombe, in a residential area, and beside a retail area to the north-west."
  */
-function setting(scene: Scene): string {
+export function setting(scene: Scene): string {
 	const phrases: string[] = [];
 	const said = new Set<string>();
 	const say = (key: string, phrase: string) => {
@@ -190,7 +194,7 @@ function setting(scene: Scene): string {
 }
 
 /** "To the north, a few steps away" */
-function placement(from: LatLon, beat: Beat): string {
+export function placement(from: LatLon, beat: Beat): string {
 	const geometry = beat.facts[0].geometry;
 	if (isInside(from, geometry)) return 'All around';
 	const { point, metres } = nearestOnPolyline(from, geometry);
@@ -263,7 +267,7 @@ function kind(tags: Tags): string | undefined {
 /** Whether the thing's name belongs in the noun phrase, rather than read off it as a sign. */
 const namedInline = (tags: Tags) => !!tags.name && !!(currentUse(tags) ?? kind(tags));
 
-function nounPhrase(tags: Tags): string {
+export function nounPhrase(tags: Tags): string {
 	const where = address(tags);
 	const at = where ? ` at ${where}` : '';
 	const name = namedInline(tags) ? `, “${tags.name}”` : '';
@@ -297,7 +301,7 @@ function describeBeat(beat: Beat, place: string): string {
 	return sentences.join(' ');
 }
 
-function exitsLine(exits: readonly SceneExit[]): string {
+export function exitsLine(exits: readonly SceneExit[]): string {
 	if (!exits.length) return 'There is no way on from here.';
 	const each = exits.map((e) => {
 		const street = e.street ?? 'a path';

@@ -2,6 +2,9 @@ import { Given, Then, When } from '@cucumber/cucumber';
 import assert from 'node:assert/strict';
 import { Adventure, type Reply } from '../../src/lib/core/adventure/engine';
 import { compileWorld } from '../../src/lib/core/adventure/world';
+import { narrateWorld } from '../../src/lib/core/narration';
+import { CachedRenderer, type NarrationStore } from '../../src/lib/core/render/cached';
+import { RecordedModel } from '../../src/lib/core/testing/recorded';
 import { bearing, destination } from '../../src/lib/core/geo';
 import { junctionId } from '../../src/lib/core/stops';
 import { SyntheticMap } from '../../src/lib/core/testing/synthetic';
@@ -44,6 +47,18 @@ Given('six benches right beside the reader', function (this: NarratorWorld) {
 	this.rebuild();
 	s.game = new Adventure(compileWorld(this.narrator, s.started!));
 });
+
+Given(
+	'prose has been written ahead of time for every stop, reading {string}',
+	async function (this: NarratorWorld, prose: string) {
+		const s = state(this);
+		const store: NarrationStore = {};
+		await narrateWorld(this.narrator, new RecordedModel(() => prose), store);
+		this.renderer = new CachedRenderer(store);
+		this.rebuild();
+		s.game = new Adventure(compileWorld(this.narrator, s.started!));
+	}
+);
 
 Given('the reader starts part way along Long Street', function (this: NarratorWorld) {
 	const s = state(this);
