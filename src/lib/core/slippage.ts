@@ -26,6 +26,9 @@ export interface NarrationPlan {
 export const isBackground = (beat: Beat) =>
 	beat.facts.some((f) => f.claim.key === 'landuse' || f.claim.key === 'place');
 
+/** Effects Guide always notices: a broken name, and what the map has lost or renamed. */
+const ALWAYS_NOTICED = new Set<Effect>(['spoken-as-found', 'remembered', 'self-correction']);
+
 /** Features noticed at a stop when nothing crowds the view, and when the view is crowded. */
 const ATTENTION = { plain: 4, rambling: 2, hesitant: 4 };
 
@@ -59,12 +62,13 @@ export function chooseSlippage(
 		beats.push({ subject, facts: group, effects: [...effects] });
 	}
 
-	// The land underfoot is always told and costs no attention. A broken name is always noticed.
+	// The land underfoot is always told and costs no attention. A broken name, and what the map
+	// has lost or renamed, are always noticed.
 	// Otherwise only the nearest few.
 	let attention = ATTENTION[mood];
 	const noticed = beats.filter((b) => {
 		if (isBackground(b)) return true;
-		const seen = attention > 0 || b.effects.includes('spoken-as-found');
+		const seen = attention > 0 || b.effects.some((e) => ALWAYS_NOTICED.has(e));
 		attention--;
 		return seen;
 	});

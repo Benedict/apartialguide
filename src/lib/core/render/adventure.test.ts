@@ -277,7 +277,7 @@ describe('AdventureRenderer', () => {
 		it('remembers what has gone, in the past tense, dated', () => {
 			const t = text(scene({ beats: [gone] }));
 			expect(t).toContain(
-				'To the north, a few steps away, there was a bakery, “Crumb”, in January 2017. The map has nothing there now.'
+				'To the north, a few steps away, there was a bakery, “Crumb”, in January 2017. The map no longer has it.'
 			);
 		});
 

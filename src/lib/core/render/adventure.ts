@@ -302,7 +302,7 @@ function describeBeat(beat: Beat, place: string): string {
 
 	if (beat.effects.includes('remembered')) {
 		const asOf = beat.facts.find((f) => f.observed)?.observed;
-		return `${lead(place)} there was ${nounPhrase(tags)}, in ${monthYear(asOf)}. The map has nothing there now.`;
+		return `${lead(place)} there was ${nounPhrase(tags)}, in ${monthYear(asOf)}. The map no longer has it.`;
 	}
 	if (use && beat.effects.includes('tense-slip')) {
 		const where = address(tags);

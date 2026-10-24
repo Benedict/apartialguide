@@ -67,7 +67,12 @@ if (process.env.AS_OF) {
 			console.error(`Overpass answered ${res.status} for ${asOf}: ${await res.text()}`);
 			process.exit(1);
 		}
-		const { elements } = await res.json();
+		const { elements, remark } = await res.json();
+		// Overpass reports a timeout or memory limit as a remark beside a partial result.
+		if (remark) {
+			console.error(`Overpass gave a partial answer for ${asOf}: ${remark}`);
+			process.exit(1);
+		}
 		const path = `${dir}/${name}-${asOf}.json`;
 		writeFileSync(path, JSON.stringify({ bbox, asOf, taken: new Date().toISOString(), elements }));
 		console.log(`${elements.length} elements as of ${asOf} written to ${path}`);

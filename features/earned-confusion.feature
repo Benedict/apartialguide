@@ -16,6 +16,14 @@ Feature: Earned confusion on Lower Addiscombe Road
     When the reader stands outside "209-213 Lower Addiscombe Road"
     Then the narration contains a self-correction between "est Bank" and "NatWest"
 
+  @history
+  Scenario: The bank's other name surfaces from the map's history
+    Given the past maps of Addiscombe
+    And node 1880285965 was called "NatWest" in the map of 2021-01-01 and carries no tags now
+    When the reader stands outside "209-213 Lower Addiscombe Road"
+    Then the narration mentions "est Bank"
+    And the narration mentions "NatWest"
+
   Scenario: An old survey slips the tense
     Given "223-227 Lower Addiscombe Road" carry survey:date "2018-10-04"
     When the reader stands outside "225 Lower Addiscombe Road"

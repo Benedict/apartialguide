@@ -104,4 +104,12 @@ describe('HistoryAdapter', () => {
 		});
 		expect(new HistoryAdapter(map(pub), [{ asOf: '2017-01-01', osm: past }]).facts()).toEqual([]);
 	});
+
+	it('remembers a thing stripped of all its tags as gone, with its old tags', () => {
+		const stripped = node(2);
+		const facts = new HistoryAdapter(map(pub, stripped), [
+			{ asOf: '2021-01-01', osm: map(pub, bakery) }
+		]).facts();
+		expect(facts.map((f) => f.claim.key)).toEqual(['was:shop', 'was:name']);
+	});
 });

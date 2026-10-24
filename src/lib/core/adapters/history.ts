@@ -55,7 +55,8 @@ export class HistoryAdapter implements SourceAdapter {
 				if (!e.tags || e.type === 'relation' || isInfrastructure(e)) continue;
 				const ref = elementRef(e);
 				const present = now.get(ref);
-				if (!present) {
+				// A thing stripped of all its tags is gone too, though its id lives on.
+				if (!present || !present.tags) {
 					if (REMARKABLE.some((k) => e.tags![k])) gone.set(ref, { element: e, asOf, osm });
 				} else if (e.tags.name && e.tags.name !== present.tags?.name) {
 					const names = oldNames.get(ref) ?? new Map<string, string>();

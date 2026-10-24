@@ -123,3 +123,18 @@ describe('chooseSlippage with history', () => {
 		expect(plan.beats[0].effects).toContain('self-correction');
 	});
 });
+
+describe('chooseSlippage attention with history', () => {
+	it('always notices what has gone or been renamed, however far down', () => {
+		const some = Array.from({ length: 6 }, (_, i) =>
+			facts(`node/${i}`, { amenity: 'bench' })
+		).flat();
+		const gone = facts('node/7', { 'was:amenity': 'bank' }, { source: 'osm-history' });
+		const plan = chooseSlippage(
+			's1',
+			[...street, ...some, ...gone],
+			[{ kind: 'gone', subject: 'node/7', asOf: '2021-01-01' }]
+		);
+		expect(plan.beats.map((b) => b.subject)).toContain('node/7');
+	});
+});
