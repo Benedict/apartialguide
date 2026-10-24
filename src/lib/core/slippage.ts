@@ -1,7 +1,7 @@
 import { groupBySubject, type Fact } from './facts';
 import { isStreet, type Tension } from './tensions';
 
-export type Effect = 'spoken-as-found' | 'tense-slip';
+export type Effect = 'spoken-as-found' | 'tense-slip' | 'remembered' | 'self-correction';
 
 /** One thing the narrator notices, and how its telling should slip. */
 export interface Beat {
@@ -53,6 +53,8 @@ export function chooseSlippage(
 			if (!('subject' in t) || t.subject !== subject) continue;
 			if (t.kind === 'fragment') effects.add('spoken-as-found');
 			if (t.kind === 'dated') effects.add('tense-slip');
+			if (t.kind === 'gone') effects.add('remembered');
+			if (t.kind === 'renamed') effects.add('self-correction');
 		}
 		beats.push({ subject, facts: group, effects: [...effects] });
 	}

@@ -35,6 +35,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NARRATION_PATH: data/narration/addiscombe.json
+          HISTORY_DIR: data/history
           NARRATE_LIMIT: ${{ inputs.limit }}
           START_AT: 51.379897,-0.074294
         run: |

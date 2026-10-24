@@ -4,6 +4,8 @@ import { groupBySubject, type Clock, type Fact } from './facts';
 export type Tension =
 	| { kind: 'fragment'; subject: string; fact: Fact }
 	| { kind: 'dated'; subject: string; observed: string }
+	| { kind: 'gone'; subject: string; asOf: string }
+	| { kind: 'renamed'; subject: string; names: { name: string; asOf: string }[] }
 	| { kind: 'sparse' }
 	| { kind: 'dense' };
 
@@ -41,7 +43,19 @@ export function detectTensions(
 		}
 		if (isStreet(group)) continue;
 		features++;
-		const observed = group.find((f) => f.observed)?.observed;
+		const [past, present] = partition(group, isHistory);
+		if (present.length === 0 && past.length > 0) {
+			tensions.push({ kind: 'gone', subject, asOf: latest(past) });
+			continue;
+		}
+		const names = past.filter((f) => f.claim.key === 'was:name');
+		if (names.length)
+			tensions.push({
+				kind: 'renamed',
+				subject,
+				names: names.map((f) => ({ name: f.claim.value, asOf: f.observed ?? '' }))
+			});
+		const observed = present.find((f) => f.observed)?.observed;
 		if (observed && observed < cutoff) tensions.push({ kind: 'dated', subject, observed });
 	}
 
@@ -49,6 +63,16 @@ export function detectTensions(
 	if (features >= denseFrom) tensions.push({ kind: 'dense' });
 	return tensions;
 }
+
+/** Facts from a past map, not the current one. */
+export const isHistory = (f: Fact) => f.source === 'osm-history';
+
+function partition<T>(items: readonly T[], test: (item: T) => boolean): [T[], T[]] {
+	return [items.filter(test), items.filter((i) => !test(i))];
+}
+
+const latest = (facts: readonly Fact[]) =>
+	facts.reduce((a, f) => (f.observed && f.observed > a ? f.observed : a), '');
 
 function yearsBefore(date: string, years: number): string {
 	return `${Number(date.slice(0, 4)) - years}${date.slice(4)}`;

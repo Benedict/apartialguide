@@ -18,12 +18,15 @@ export class NarratorWorld extends World {
 	subjects: string[] = [];
 	/** The renderer the narrator uses, when a scenario sets one. */
 	renderer?: Renderer;
+	/** Earlier maps of the same place, when a scenario sets them. */
+	history: { asOf: string; data: OsmData }[] = [];
 	private built?: Narrator;
 
 	get narrator(): Narrator {
 		this.built ??= Narrator.fromOsm(this.data ?? this.map.toData(), {
 			clock: fixedClock(this.snapshotDate),
-			renderer: this.renderer
+			renderer: this.renderer,
+			history: this.history
 		});
 		return this.built;
 	}

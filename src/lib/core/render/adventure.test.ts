@@ -258,6 +258,48 @@ describe('AdventureRenderer', () => {
 		});
 	});
 
+	describe('history', () => {
+		const history = { ...north(15), source: 'osm-history', observed: '2017-01-01' };
+		const gone = {
+			subject: 'node/7',
+			facts: facts('node/7', { 'was:shop': 'bakery', 'was:name': 'Crumb' }, history),
+			effects: ['remembered' as const]
+		};
+		const renamed = {
+			subject: 'node/8',
+			facts: [
+				...facts('node/8', { amenity: 'pub', name: 'The Sextant' }, north(15)),
+				...facts('node/8', { 'was:name': 'The Anchor' }, history)
+			],
+			effects: ['self-correction' as const]
+		};
+
+		it('remembers what has gone, in the past tense, dated', () => {
+			const t = text(scene({ beats: [gone] }));
+			expect(t).toContain(
+				'To the north, a few steps away, there was a bakery, “Crumb”, in January 2017. The map has nothing there now.'
+			);
+		});
+
+		it('corrects itself between a name and an older one', () => {
+			expect(text(scene({ beats: [renamed] }))).toContain(
+				'“The Sextant”, or “The Anchor”, as it was in January 2017.'
+			);
+		});
+
+		it('lets what has gone be examined by its old name', () => {
+			const [thing] = renderer.render(scene({ beats: [gone] })).things;
+			expect(thing.aliases).toEqual(expect.arrayContaining(['crumb', 'bakery']));
+			expect(thing.description).toContain('was:shop=bakery');
+			expect(thing.description).toContain('Last recorded in January 2017.');
+		});
+
+		it('names what has gone by its old name when it is found on a closer look', () => {
+			const room = renderer.render(scene({ beats: [], hidden: [gone] }));
+			expect(room.hidden?.lines[0]).toContain('Crumb');
+		});
+	});
+
 	describe('ways on', () => {
 		it('lists exits with where they lead', () => {
 			const t = text(

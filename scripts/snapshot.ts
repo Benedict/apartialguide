@@ -4,6 +4,9 @@
  *   BBOX=minLon,minLat,maxLon,maxLat npm run snapshot
  *   AROUND_WAY=26605222 RADIUS_M=400 npm run snapshot
  * Writes data/snapshots/<SNAPSHOT_NAME>-<date>.json. The API refuses areas with more than 50,000 nodes.
+ *
+ * With AS_OF=2013-01-01,2017-01-01 it instead fetches the map as it stood on each date, from
+ * Overpass, into data/history/<SNAPSHOT_NAME>-<date>.json.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { bboxAround, type LatLon } from '../src/lib/core/geo';
@@ -46,6 +49,31 @@ if (!bbox || bbox.split(',').length !== 4) {
 }
 
 const name = process.env.SNAPSHOT_NAME ?? 'addiscombe';
+
+if (process.env.AS_OF) {
+	const [w, south, e, north] = bbox.split(',');
+	const overpass = process.env.OVERPASS_API ?? 'https://overpass-api.de/api/interpreter';
+	const dir = process.env.HISTORY_DIR ?? 'data/history';
+	mkdirSync(dir, { recursive: true });
+	for (const asOf of process.env.AS_OF.split(',').map((d) => d.trim())) {
+		const query = `[out:json][timeout:180][date:"${asOf}T00:00:00Z"];(nwr(${south},${w},${north},${e}););(._;>;);out meta;`;
+		const res = await fetch(overpass, {
+			method: 'POST',
+			headers: { ...headers, 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: new URLSearchParams({ data: query })
+		});
+		if (!res.ok) {
+			console.error(`Overpass answered ${res.status} for ${asOf}: ${await res.text()}`);
+			process.exit(1);
+		}
+		const { elements } = await res.json();
+		const path = `${dir}/${name}-${asOf}.json`;
+		writeFileSync(path, JSON.stringify({ bbox, asOf, taken: new Date().toISOString(), elements }));
+		console.log(`${elements.length} elements as of ${asOf} written to ${path}`);
+	}
+	process.exit(0);
+}
+
 const date = process.env.SNAPSHOT_DATE ?? new Date().toISOString().slice(0, 10);
 const data = await get(`/map.json?bbox=${bbox}`);
 const dir = process.env.SNAPSHOT_DIR ?? 'data/snapshots';

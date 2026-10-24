@@ -76,6 +76,39 @@ describe('buildPrompt', () => {
 		expect(system).not.toContain('there may be more');
 	});
 
+	it('tells the model what has gone, in the past tense only', () => {
+		const gone = {
+			subject: 'node/7',
+			facts: facts(
+				'node/7',
+				{ 'was:shop': 'bakery', 'was:name': 'Crumb' },
+				{ ...near, source: 'osm-history', observed: '2017-01-01' }
+			),
+			effects: ['remembered' as const]
+		};
+		const user = buildPrompt(scene({ beats: [gone] })).user;
+		expect(user).toContain('a bakery, “Crumb”');
+		expect(user).toContain('Gone: recorded in January 2017, no longer on the map.');
+	});
+
+	it('asks the model to correct itself between names', () => {
+		const pub = {
+			subject: 'node/8',
+			facts: [
+				...facts('node/8', { amenity: 'pub', name: 'The Sextant' }, near),
+				...facts(
+					'node/8',
+					{ 'was:name': 'The Anchor' },
+					{ source: 'osm-history', observed: '2017-01-01' }
+				)
+			],
+			effects: ['self-correction' as const]
+		};
+		expect(buildPrompt(scene({ beats: [pub] })).user).toContain(
+			'Was called “The Anchor” in January 2017. Correct yourself between the names.'
+		);
+	});
+
 	it('tells the model the game prints the exits', () => {
 		expect(buildPrompt(scene()).user).toMatch(/do not list the exits/i);
 	});

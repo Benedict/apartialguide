@@ -1,3 +1,4 @@
+import { HistoryAdapter } from './adapters/history';
 import { OsmAdapter } from './adapters/osm';
 import type { Clock, Fact } from './facts';
 import { distance, distanceToPolyline, type LatLon } from './geo';
@@ -15,6 +16,8 @@ export interface NarratorOptions extends TensionOptions {
 	renderer?: Renderer;
 	/** Largest gap between stops along a street, in metres. */
 	spacing?: number;
+	/** Earlier maps of the same place, for what has gone or been renamed. */
+	history?: { asOf: string; data: OsmData }[];
 }
 
 export interface Visit {
@@ -42,7 +45,8 @@ export class Narrator {
 
 	static fromOsm(data: OsmData, options: NarratorOptions): Narrator {
 		const osm = new OsmIndex(data);
-		const facts = new OsmAdapter(osm).facts();
+		const past = (options.history ?? []).map((h) => ({ asOf: h.asOf, osm: new OsmIndex(h.data) }));
+		const facts = [...new OsmAdapter(osm).facts(), ...new HistoryAdapter(osm, past).facts()];
 		return new Narrator(buildStopGraph(osm, options), Perception.fromOsm(osm, facts), options);
 	}
 

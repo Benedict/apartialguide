@@ -20,17 +20,17 @@ A text "street view" of Addiscombe, Croydon. One narrator, Guide, describes the 
 - `npm run dev`: needs `SNAPSHOT_PATH` (see `.env.example`).
 - `npm run narrate`: writes prose ahead of time into `NARRATION_PATH` (needs `ANTHROPIC_API_KEY`, capped by `NARRATE_LIMIT`). The Narrate workflow runs it on GitHub by hand, with the key as a repository secret.
 - `npm run export`: writes the whole game as one self-contained HTML page (`EXPORT_PATH`, default `build/export/addiscombe.html`) from `SNAPSHOT_PATH`, `START_AT` and any `NARRATION_PATH`.
-- `BBOX=minLon,minLat,maxLon,maxLat npm run snapshot` (or `AROUND_WAY=<id> RADIUS_M=<m>`): writes `data/snapshots/addiscombe-<date>.json`. Editing `data/snapshots/request.env` and pushing runs the Snapshot workflow, which takes one on GitHub and commits it.
+- `BBOX=minLon,minLat,maxLon,maxLat npm run snapshot` (or `AROUND_WAY=<id> RADIUS_M=<m>`): writes `data/snapshots/addiscombe-<date>.json`. Editing `data/snapshots/request.env` and pushing runs the Snapshot workflow, which takes one on GitHub and commits it. With `AS_OF=<dates>` it fetches past maps from Overpass into `data/history/`; editing `data/history/request.env` runs the History workflow.
 
 ## Layout
 
 The core in `src/lib/core/` is plain TypeScript with no framework imports, so Cucumber can load it directly.
 
 - `osm.ts`: snapshot format and index.
-- `adapters/`: one `SourceAdapter` per source, each returning `Fact`s (`facts.ts`).
+- `adapters/`: one `SourceAdapter` per source, each returning `Fact`s (`facts.ts`). `history.ts` compares past maps (`HISTORY_DIR`) with the current one: what has gone becomes `was:` facts, an older name a `was:name` fact.
 - `stops.ts`: street graph to stops. Junctions plus corridor stops at most `spacing` metres apart; exits named by compass point.
 - `perception.ts`: facts within reach, occluded by mapped buildings.
-- `tensions.ts`: conditions in the data (fragment, dated, sparse, dense).
+- `tensions.ts`: conditions in the data (fragment, dated, gone, renamed, sparse, dense).
 - `slippage.ts`: tensions to a `NarrationPlan` of beats and effects.
 - `scene.ts`: places a plan in the network: streets here, what lies either side, where each exit leads.
 - `render/`: `Renderer` port, scene to `Room` (title, paragraphs, things to examine). `AdventureRenderer` is the template; `CachedRenderer` uses prose written ahead of time, keyed by `promptKey(buildPrompt(scene))`, and falls back to the template. `prompt.ts` holds Guide's voice (Wainwright and Auster) and the reference page; bump `PROMPT_VERSION` when it changes.

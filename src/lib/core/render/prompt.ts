@@ -3,16 +3,18 @@ import { isBackground, type Beat } from '../slippage';
 import { looksBroken, NAME_KEY } from '../tensions';
 import {
 	nounPhrase,
+	oldNames,
 	placement,
 	setting,
 	streetCharacter,
 	streetTags,
+	tagsFor,
 	whereYouStand
 } from './adventure';
-import { monthYear, tagsOf } from './words';
+import { monthYear } from './words';
 
 /** Bump when the prompt changes, so cached narration written under the old one is redone. */
-export const PROMPT_VERSION = 4;
+export const PROMPT_VERSION = 5;
 
 export interface Prompt {
 	/** Fixed for every stop, so it can be cached. */
@@ -32,6 +34,8 @@ The hard line: you may doubt what things mean, and who you are, but never what t
 
 Rules.
 - A name marked "speak exactly as found" is broken. Quote it exactly, in curly quotes. Never repair it, complete it or suggest what it once was.
+- Something marked gone was on an older map and is not on this one. Say there was, never that there is.
+- Something that was called something else: correct yourself between the names, unsure which is right.
 - A survey date is when something was last recorded. Never say anyone came to look. Slip between present and past for it: there is a shop; there was a shop when it was last recorded.
 - When told the place is crowded, lose count partway through. When told there is little here, hesitate.
 - Point the reader to nothing, and never say that anything goes unnoticed. Noticing is the reader’s.
@@ -57,13 +61,21 @@ export function brokenNames(beat: Beat): string[] {
 }
 
 function beatLine(scene: Scene, beat: Beat, n: number): string {
-	const tags = tagsOf(beat.facts);
+	const tags = tagsFor(beat);
 	const record = beat.facts.map((f) => `${f.claim.key}=${f.claim.value}`).join('; ');
 	const lines = [
 		`${n}. ${placement(scene.position, beat)}: ${nounPhrase(tags)}.`,
 		`   The map: ${record}.`
 	];
 	for (const name of brokenNames(beat)) lines.push(`   Speak the name “${name}” exactly as found.`);
+	if (beat.effects.includes('remembered')) {
+		const asOf = beat.facts.find((f) => f.observed)?.observed;
+		lines.push(`   Gone: recorded in ${monthYear(asOf)}, no longer on the map.`);
+	}
+	if (beat.effects.includes('self-correction')) {
+		const was = oldNames(beat).map((o) => `Was called “${o.name}” in ${monthYear(o.asOf)}.`);
+		lines.push(`   ${was.join(' ')} Correct yourself between the names.`);
+	}
 	if (beat.effects.includes('tense-slip')) {
 		const observed = beat.facts.find((f) => f.observed)?.observed;
 		lines.push(

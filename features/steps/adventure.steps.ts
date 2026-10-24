@@ -6,6 +6,7 @@ import { narrateWorld } from '../../src/lib/core/narration';
 import { CachedRenderer, type NarrationStore } from '../../src/lib/core/render/cached';
 import { RecordedModel } from '../../src/lib/core/testing/recorded';
 import { bearing, destination } from '../../src/lib/core/geo';
+import type { OsmElement } from '../../src/lib/core/osm';
 import { junctionId } from '../../src/lib/core/stops';
 import { SyntheticMap } from '../../src/lib/core/testing/synthetic';
 import type { NarratorWorld } from '../support/world';
@@ -57,6 +58,40 @@ Given(
 		this.renderer = new CachedRenderer(store);
 		this.rebuild();
 		s.game = new Adventure(compileWorld(this.narrator, s.started!));
+	}
+);
+
+/** Adds a past map to the scenario and restarts the game from the same stop. */
+function withPast(world: NarratorWorld, asOf: string, elements: OsmElement[]) {
+	const s = state(world);
+	world.history.push({ asOf, data: { elements } });
+	world.rebuild();
+	s.game = new Adventure(compileWorld(world.narrator, s.started!));
+}
+
+Given(
+	'the map of {word} had a bakery called {string} right beside the reader',
+	function (this: NarratorWorld, asOf: string, name: string) {
+		const here = this.narrator.graph.get(state(this).started!)!.position;
+		const now = this.map.toData().elements;
+		const bakery: OsmElement = {
+			type: 'node',
+			id: 9_999,
+			lat: here[0],
+			lon: here[1] + 0.00005,
+			tags: { shop: 'bakery', name }
+		};
+		withPast(this, asOf, [...now, bakery]);
+	}
+);
+
+Given(
+	'the map of {word} called the pub {string}',
+	function (this: NarratorWorld, asOf: string, name: string) {
+		const past = this.map
+			.toData()
+			.elements.map((e) => (e.tags?.amenity === 'pub' ? { ...e, tags: { ...e.tags, name } } : e));
+		withPast(this, asOf, past);
 	}
 );
 
