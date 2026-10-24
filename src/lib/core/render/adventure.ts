@@ -3,6 +3,7 @@ import { bearing, compassLabel, insideRing, nearestOnPolyline, type LatLon } fro
 import type { Tags } from '../osm';
 import type { Scene, SceneExit } from '../scene';
 import { isBackground, type Beat } from '../slippage';
+import { isHistory } from '../tensions';
 import type { Renderer, Room, Thing } from './renderer';
 import {
 	address,
@@ -135,7 +136,7 @@ const CROWD_OPENERS = ['There is a great deal here.', 'Too much to take in at on
 
 /** A crowd member in a breath: named things by name, the unnamed by what they are. */
 function brief(beat: Beat): { phrase: string; noun?: string } {
-	const tags = tagsOf(beat.facts);
+	const tags = tagsFor(beat);
 	const what = noun(tags);
 	if (tags.name) {
 		const saysItAll = tags.name.toLowerCase().includes(what.split(' ').at(-1)!);
@@ -278,11 +279,31 @@ export function nounPhrase(tags: Tags): string {
 /** "To the north, a few steps away," takes a comma before what follows; "Right here" does not. */
 const lead = (place: string) => (place.startsWith('To the') ? `${place},` : place);
 
+/** A thing's tags as it is now, or, if it has gone, as it was last recorded. */
+export function tagsFor(beat: Beat): Tags {
+	const now = beat.facts.filter((f) => !isHistory(f));
+	if (now.length) return tagsOf(now);
+	return Object.fromEntries(
+		beat.facts.map((f) => [f.claim.key.replace(/^was:/, ''), f.claim.value])
+	);
+}
+
+/** Older names of something still there, oldest first, with when each last held. */
+export const oldNames = (beat: Beat) =>
+	beat.facts
+		.filter((f) => isHistory(f) && f.claim.key === 'was:name')
+		.sort((a, b) => (a.observed ?? '').localeCompare(b.observed ?? ''))
+		.map((f) => ({ name: f.claim.value, asOf: f.observed }));
+
 function describeBeat(beat: Beat, place: string): string {
-	const tags = tagsOf(beat.facts);
+	const tags = tagsFor(beat);
 	const sentences: string[] = [];
 	const use = currentUse(tags);
 
+	if (beat.effects.includes('remembered')) {
+		const asOf = beat.facts.find((f) => f.observed)?.observed;
+		return `${lead(place)} there was ${nounPhrase(tags)}, in ${monthYear(asOf)}. The map no longer has it.`;
+	}
 	if (use && beat.effects.includes('tense-slip')) {
 		const where = address(tags);
 		const at = where ? ` at ${where}` : '';
@@ -299,6 +320,15 @@ function describeBeat(beat: Beat, place: string): string {
 	if (tags.old_name) sentences.push(`Once “${tags.old_name}”.`);
 	if (beat.effects.includes('spoken-as-found'))
 		sentences.push('That is the whole of it, as written.');
+	const older = oldNames(beat);
+	if (tags.name && older.length === 1)
+		sentences.push(
+			`“${tags.name}”, or “${older[0].name}”, as it was in ${monthYear(older[0].asOf)}.`
+		);
+	else if (tags.name && older.length > 1)
+		sentences.push(
+			`“${tags.name}”, ${older.map((o) => `or “${o.name}” (${monthYear(o.asOf)})`).join(', ')}.`
+		);
 	return sentences.join(' ');
 }
 
@@ -315,10 +345,18 @@ export function exitsLine(exits: readonly SceneExit[]): string {
 }
 
 function thing(beat: Beat): Thing {
-	const tags = tagsOf(beat.facts);
+	const tags = tagsFor(beat);
 	const past = pastUse(tags);
 	const name = tags.name ?? (currentUse(tags) || !past ? noun(tags) : `former ${past}`);
-	const words = [name, noun(tags), past, tags['addr:housenumber'], tags.old_name, 'building']
+	const words = [
+		name,
+		noun(tags),
+		past,
+		tags['addr:housenumber'],
+		tags.old_name,
+		...oldNames(beat).map((o) => o.name),
+		'building'
+	]
 		.filter(Boolean)
 		.join(' ')
 		.toLowerCase()
@@ -330,7 +368,7 @@ function thing(beat: Beat): Thing {
 		`${capitalise(nounPhrase(tags))}.`,
 		`The map has it as: ${record}.`,
 		observed
-			? `Last ${observed.observedBy === 'survey' ? 'surveyed' : 'edited'} in ${monthYear(observed.observed)}.`
+			? `Last ${isHistory(observed) ? 'recorded' : observed.observedBy === 'survey' ? 'surveyed' : 'edited'} in ${monthYear(observed.observed)}.`
 			: ''
 	];
 	return {

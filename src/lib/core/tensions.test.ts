@@ -58,3 +58,38 @@ describe('detectTensions', () => {
 		expect(detectTensions([...street, ...many], clock)).toContainEqual({ kind: 'dense' });
 	});
 });
+
+describe('detectTensions with history', () => {
+	const history = { source: 'osm-history', observed: '2017-01-01' };
+
+	it('finds something gone from the map', () => {
+		const gone = facts('node/7', { 'was:shop': 'bakery', 'was:name': 'Crumb' }, history);
+		expect(detectTensions([...street, ...gone], clock)).toContainEqual({
+			kind: 'gone',
+			subject: 'node/7',
+			asOf: '2017-01-01'
+		});
+	});
+
+	it('finds a place that was called something else', () => {
+		const pub = [
+			...facts('node/8', { amenity: 'pub', name: 'The Sextant' }, { observed: '2025-01-01' }),
+			...facts('node/8', { 'was:name': 'The Anchor' }, history)
+		];
+		expect(detectTensions([...street, ...pub], clock)).toContainEqual({
+			kind: 'renamed',
+			subject: 'node/8',
+			names: [{ name: 'The Anchor', asOf: '2017-01-01' }]
+		});
+	});
+
+	it('does not count a history date as an out-of-date record', () => {
+		const pub = [
+			...facts('node/8', { amenity: 'pub', name: 'The Sextant' }, { observed: '2025-01-01' }),
+			...facts('node/8', { 'was:name': 'The Anchor' }, history)
+		];
+		const gone = facts('node/7', { 'was:shop': 'bakery' }, history);
+		const found = detectTensions([...street, ...gone, ...pub], clock);
+		expect(found.filter((t) => t.kind === 'dated')).toEqual([]);
+	});
+});

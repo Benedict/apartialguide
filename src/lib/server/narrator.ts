@@ -1,6 +1,8 @@
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { fixedClock } from '../core/facts';
 import { Narrator } from '../core/narrator';
+import type { OsmData } from '../core/osm';
 import { compileWorld, type AdventureWorld } from '../core/adventure/world';
 import type { LatLon } from '../core/geo';
 import { CachedRenderer, type NarrationStore } from '../core/render/cached';
@@ -14,6 +16,8 @@ export interface Config {
 	start?: LatLon;
 	/** Where prose written ahead of time is kept. Without it, stops use the template. */
 	narrationPath?: string;
+	/** Where earlier maps of the same place are kept, for what has gone or been renamed. */
+	historyDir?: string;
 }
 
 export function readConfig(
@@ -29,7 +33,8 @@ export function readConfig(
 		snapshotDate: date,
 		spacing: Number(source.STOP_SPACING_M ?? 50),
 		start: start?.length === 2 && start.every(Number.isFinite) ? [start[0], start[1]] : undefined,
-		narrationPath: source.NARRATION_PATH
+		narrationPath: source.NARRATION_PATH,
+		historyDir: source.HISTORY_DIR
 	};
 }
 
@@ -50,13 +55,24 @@ export function loadNarration(path?: string): NarrationStore {
 	return path && existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : {};
 }
 
+/** Every past map in a directory, oldest first. */
+export function loadHistory(dir?: string): { asOf: string; data: OsmData }[] {
+	if (!dir || !existsSync(dir)) return [];
+	return readdirSync(dir)
+		.filter((f) => f.endsWith('.json'))
+		.map((f) => JSON.parse(readFileSync(join(dir, f), 'utf8')) as OsmData & { asOf: string })
+		.map((data) => ({ asOf: data.asOf, data }))
+		.sort((a, b) => a.asOf.localeCompare(b.asOf));
+}
+
 /** The narrator for the configured snapshot, using any prose written ahead of time. */
 export function loadNarrator(config: Config): Narrator {
 	const data = JSON.parse(readFileSync(config.snapshotPath, 'utf8'));
 	return Narrator.fromOsm(data, {
 		clock: fixedClock(config.snapshotDate),
 		spacing: config.spacing,
-		renderer: new CachedRenderer(loadNarration(config.narrationPath))
+		renderer: new CachedRenderer(loadNarration(config.narrationPath)),
+		history: loadHistory(config.historyDir)
 	});
 }
 

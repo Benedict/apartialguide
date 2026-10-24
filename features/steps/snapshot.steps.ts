@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { distance, distanceToPolyline, type LatLon } from '../../src/lib/core/geo';
 import { elementRef, OsmIndex, type OsmElement } from '../../src/lib/core/osm';
+import { loadHistory } from '../../src/lib/server/narrator';
 import type { NarratorWorld } from '../support/world';
 
 const snapshotDir = () => process.env.SNAPSHOT_DIR ?? 'data/snapshots';
@@ -155,5 +156,24 @@ Then(
 	'the narration does not place the button factory on Everton Road',
 	function (this: NarratorWorld) {
 		assert.doesNotMatch(this.visit!.text, /button/i);
+	}
+);
+
+Given('the past maps of Addiscombe', function (this: NarratorWorld) {
+	this.history = loadHistory(process.env.HISTORY_DIR ?? 'data/history');
+	assert.ok(this.history.length, 'no past maps in data/history');
+	this.rebuild();
+});
+
+Given(
+	'node {int} was called {string} in the map of {word} and carries no tags now',
+	function (this: NarratorWorld, id: number, name: string, asOf: string) {
+		const past = this.history.find((h) => h.asOf === asOf);
+		assert.ok(past, `no past map as of ${asOf}`);
+		const then = past.data.elements.find((e) => e.type === 'node' && e.id === id);
+		assert.equal(then?.tags?.name, name);
+		const now = this.data!.elements.find((e) => e.type === 'node' && e.id === id);
+		assert.ok(now, `node/${id} is not in the snapshot`);
+		assert.equal(now.tags, undefined);
 	}
 );

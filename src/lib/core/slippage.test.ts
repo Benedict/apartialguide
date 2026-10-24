@@ -101,3 +101,40 @@ describe('chooseSlippage', () => {
 		]);
 	});
 });
+
+describe('chooseSlippage with history', () => {
+	it('remembers what has gone', () => {
+		const gone = facts('node/7', { 'was:shop': 'bakery' }, { source: 'osm-history' });
+		const plan = chooseSlippage(
+			's1',
+			[...street, ...gone],
+			[{ kind: 'gone', subject: 'node/7', asOf: '2017-01-01' }]
+		);
+		expect(plan.beats[0].effects).toContain('remembered');
+	});
+
+	it('corrects itself between names', () => {
+		const pub = facts('node/8', { amenity: 'pub', name: 'The Sextant', 'was:name': 'The Anchor' });
+		const plan = chooseSlippage(
+			's1',
+			[...street, ...pub],
+			[{ kind: 'renamed', subject: 'node/8', names: [{ name: 'The Anchor', asOf: '2017-01-01' }] }]
+		);
+		expect(plan.beats[0].effects).toContain('self-correction');
+	});
+});
+
+describe('chooseSlippage attention with history', () => {
+	it('always notices what has gone or been renamed, however far down', () => {
+		const some = Array.from({ length: 6 }, (_, i) =>
+			facts(`node/${i}`, { amenity: 'bench' })
+		).flat();
+		const gone = facts('node/7', { 'was:amenity': 'bank' }, { source: 'osm-history' });
+		const plan = chooseSlippage(
+			's1',
+			[...street, ...some, ...gone],
+			[{ kind: 'gone', subject: 'node/7', asOf: '2021-01-01' }]
+		);
+		expect(plan.beats.map((b) => b.subject)).toContain('node/7');
+	});
+});
