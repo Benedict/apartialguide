@@ -73,7 +73,9 @@ describe('buildPrompt', () => {
 		expect(system).toMatch(/noticing is the reader’s/i);
 		expect(system).not.toMatch(/hint/i);
 		expect(system).not.toContain('Streets Ahead');
-		expect(system).not.toContain('there may be more');
+		expect(system).toContain(
+			'Beyond it there may be more. I could not say what, or how much. I lose count before I have begun.'
+		);
 	});
 
 	it('tells the model what has gone, in the past tense only', () => {
