@@ -34,21 +34,70 @@ describe('chooseSlippage', () => {
 		expect(chooseSlippage('s1', street, [{ kind: 'sparse' }]).mood).toBe('hesitant');
 	});
 
-	it('rambles when dense, keeping every feature', () => {
+	it('rambles when dense, noticing only the nearest two and hiding the rest', () => {
 		const many = Array.from({ length: 9 }, (_, i) =>
 			facts(`node/${i}`, { amenity: 'bench' })
 		).flat();
 		const plan = chooseSlippage('s1', [...street, ...many], [{ kind: 'dense' }]);
 		expect(plan.mood).toBe('rambling');
-		expect(plan.beats).toHaveLength(9);
+		expect(plan.beats.map((b) => b.subject)).toEqual(['node/0', 'node/1']);
+		expect(plan.hidden).toHaveLength(7);
 	});
 
-	it('otherwise notices only the nearest few', () => {
+	it('otherwise notices the nearest few and hides the rest', () => {
 		const some = Array.from({ length: 6 }, (_, i) =>
 			facts(`node/${i}`, { amenity: 'bench' })
 		).flat();
 		const plan = chooseSlippage('s1', [...street, ...some], []);
 		expect(plan.mood).toBe('plain');
 		expect(plan.beats.map((b) => b.subject)).toEqual(['node/0', 'node/1', 'node/2', 'node/3']);
+		expect(plan.hidden.map((b) => b.subject)).toEqual(['node/4', 'node/5']);
+	});
+
+	it('always notices a broken name, however far down', () => {
+		const some = Array.from({ length: 6 }, (_, i) =>
+			facts(`node/${i}`, { amenity: 'bench' })
+		).flat();
+		const plan = chooseSlippage(
+			's1',
+			[...street, ...some, ...bank],
+			[{ kind: 'fragment', subject: 'way/2', fact: bank[0] }]
+		);
+		expect(plan.beats.map((b) => b.subject)).toContain('way/2');
+		expect(plan.hidden.map((b) => b.subject)).not.toContain('way/2');
+	});
+
+	it('leaves an old survey hidden when it is beyond attention', () => {
+		const some = Array.from({ length: 6 }, (_, i) =>
+			facts(`node/${i}`, { amenity: 'bench' })
+		).flat();
+		const shop = facts('node/9', { shop: 'bakery' });
+		const plan = chooseSlippage(
+			's1',
+			[...street, ...some, ...shop],
+			[{ kind: 'dated', subject: 'node/9', observed: '2018-10-04' }]
+		);
+		expect(plan.hidden.map((b) => b.subject)).toContain('node/9');
+	});
+
+	it('tells the land you stand in without letting it use up attention', () => {
+		const areas = [
+			...facts('way/20', { landuse: 'retail' }),
+			...facts('way/21', { landuse: 'residential' }),
+			...facts('node/22', { place: 'suburb', name: 'Addiscombe' })
+		];
+		const some = Array.from({ length: 5 }, (_, i) =>
+			facts(`node/${i}`, { amenity: 'bench' })
+		).flat();
+		const plan = chooseSlippage('s1', [...street, ...areas, ...some], []);
+		expect(plan.beats.map((b) => b.subject)).toEqual([
+			'way/20',
+			'way/21',
+			'node/22',
+			'node/0',
+			'node/1',
+			'node/2',
+			'node/3'
+		]);
 	});
 });

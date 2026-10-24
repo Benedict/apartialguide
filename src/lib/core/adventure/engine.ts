@@ -1,4 +1,5 @@
 import { direction, parse } from './parser';
+import type { Thing } from '../render/renderer';
 import type { AdventureWorld, CompiledExit } from './world';
 
 export interface Reply {
@@ -9,11 +10,14 @@ export interface Reply {
 
 export const HELP =
 	'Type a direction to walk: north, ne, go east, or the name of a street. ' +
-	'Type look to look around again, examine and a thing to look closer, exits for the ways on, and back to retrace your step.';
+	'Type look to hear the place again, explore to find what I have not mentioned, examine and a thing to look closer, ' +
+	'exits for the ways on, and back to retrace your step.';
 
 /** A reader's walk through a compiled world. */
 export class Adventure {
 	private previous?: string;
+	/** Stops where the reader has found what was hidden. */
+	private readonly explored = new Set<string>();
 
 	constructor(
 		private readonly world: AdventureWorld,
@@ -32,6 +36,8 @@ export class Adventure {
 				return { lines: [] };
 			case 'look':
 				return this.look();
+			case 'explore':
+				return this.explore();
 			case 'help':
 				return { lines: [HELP] };
 			case 'exits':
@@ -80,11 +86,22 @@ export class Adventure {
 		return this.look();
 	}
 
+	private explore(): Reply {
+		const hidden = this.world.stops[this.here].hidden;
+		if (!hidden || this.explored.has(this.here))
+			return { lines: ['You look around, and find nothing more than I have told you.'] };
+		this.explored.add(this.here);
+		return { lines: hidden.lines };
+	}
+
 	private examine(target: string): Reply {
 		const words = target.split(/\s+/);
-		const things = this.world.stops[this.here].things.filter((t) =>
-			words.every((w) => t.aliases.includes(w))
-		);
+		const stop = this.world.stops[this.here];
+		const named = (among: Thing[]) =>
+			among.filter((t) => words.every((w) => t.aliases.includes(w)));
+		let things = named(stop.things);
+		// Something unnoticed can still be found by naming it.
+		if (things.length === 0 && stop.hidden) things = named(stop.hidden.things);
 		if (things.length === 0) return { lines: [`You see no ${target} here.`] };
 		if (things.length > 1 && !things.every((t) => t.name === things[0].name))
 			return { lines: [`Which do you mean: ${things.map((t) => t.name).join(' or ')}?`] };

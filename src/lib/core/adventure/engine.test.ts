@@ -65,4 +65,38 @@ describe('Adventure', () => {
 			'You haven’t come from anywhere yet.'
 		);
 	});
+
+	describe('hidden things', () => {
+		const bench = { id: 'node/1', name: 'bench', aliases: ['bench'], description: 'A bench.' };
+		const hiddenWorld: AdventureWorld = {
+			start: 'a',
+			stops: {
+				...world.stops,
+				a: {
+					...world.stops.a,
+					hidden: { lines: ['Looking closer, you find a bench.'], things: [bench] }
+				}
+			}
+		};
+
+		it('reveals them on exploring', () => {
+			expect(new Adventure(hiddenWorld).respond('explore').lines).toEqual([
+				'Looking closer, you find a bench.'
+			]);
+		});
+
+		it('finds nothing more the second time', () => {
+			const game = new Adventure(hiddenWorld);
+			game.respond('explore');
+			expect(game.respond('search').lines[0]).toMatch(/nothing more/);
+		});
+
+		it('finds one by name when examined', () => {
+			expect(new Adventure(hiddenWorld).respond('x bench').lines).toEqual(['A bench.']);
+		});
+
+		it('says so when there is nothing hidden', () => {
+			expect(new Adventure(world).respond('look around').lines[0]).toMatch(/nothing more/);
+		});
+	});
 });

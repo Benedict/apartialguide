@@ -37,6 +37,14 @@ Given('a pub called {string} beside Long Street', function (this: NarratorWorld,
 	this.map.node(destination(destination(O, 90, 85), 0, 10), { amenity: 'pub', name });
 });
 
+Given('six benches right beside the reader', function (this: NarratorWorld) {
+	const s = state(this);
+	const here = this.narrator.graph.get(s.started!)!.position;
+	for (let i = 0; i < 6; i++) this.map.node(destination(here, i * 60, 3), { amenity: 'bench' });
+	this.rebuild();
+	s.game = new Adventure(compileWorld(this.narrator, s.started!));
+});
+
 Given('the reader starts part way along Long Street', function (this: NarratorWorld) {
 	const s = state(this);
 	const start = this.narrator.graph.walk(junctionId(s.streetStart!), 'east')[2];
@@ -59,6 +67,11 @@ When('the reader types {string}', function (this: NarratorWorld, input: string) 
 Then('it says {string}', function (this: NarratorWorld, words: string) {
 	const text = replyText(state(this).reply);
 	assert.ok(text.includes(words), text);
+});
+
+Then('it does not say {string}', function (this: NarratorWorld, words: string) {
+	const text = replyText(state(this).reply);
+	assert.ok(!text.includes(words), text);
 });
 
 Then('the reader has moved east', function (this: NarratorWorld) {

@@ -15,13 +15,19 @@ export interface NarrationPlan {
 	stopId: string;
 	/** Facts about the street or streets underfoot. */
 	street: Fact[];
-	/** Features in the order they are noticed. */
+	/** Features noticed, nearest first. */
 	beats: Beat[];
+	/** Features in view but not noticed, found only by looking closer. */
+	hidden: Beat[];
 	mood: 'plain' | 'hesitant' | 'rambling';
 }
 
-/** Features noticed at a stop when nothing crowds the view. */
-const ATTENTION = 4;
+/** Land use and place labels: the setting, not things in it. */
+const isBackground = (beat: Beat) =>
+	beat.facts.some((f) => f.claim.key === 'landuse' || f.claim.key === 'place');
+
+/** Features noticed at a stop when nothing crowds the view, and when the view is crowded. */
+const ATTENTION = { plain: 4, rambling: 2, hesitant: 4 };
 
 /**
  * Turns the tensions found at a stop into narrative effects.
@@ -51,5 +57,15 @@ export function chooseSlippage(
 		beats.push({ subject, facts: group, effects: [...effects] });
 	}
 
-	return { stopId, street, beats: mood === 'rambling' ? beats : beats.slice(0, ATTENTION), mood };
+	// The land underfoot is always told and costs no attention. A broken name is always noticed.
+	// Otherwise only the nearest few.
+	let attention = ATTENTION[mood];
+	const noticed = beats.filter((b) => {
+		if (isBackground(b)) return true;
+		const seen = attention > 0 || b.effects.includes('spoken-as-found');
+		attention--;
+		return seen;
+	});
+	const hidden = beats.filter((b) => !noticed.includes(b));
+	return { stopId, street, beats: noticed, hidden, mood };
 }

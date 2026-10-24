@@ -27,7 +27,11 @@ describe('parse', () => {
 		['go back', { verb: 'back' }],
 		['help', { verb: 'help' }],
 		['?', { verb: 'help' }],
-		['', { verb: 'empty' }]
+		['', { verb: 'empty' }],
+		['explore', { verb: 'explore' }],
+		['search', { verb: 'explore' }],
+		['look around', { verb: 'explore' }],
+		['look closer', { verb: 'explore' }]
 	])('reads %j', (input, command) => {
 		expect(parse(input)).toEqual(command);
 	});

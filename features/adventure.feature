@@ -35,3 +35,21 @@ Feature: Playing it as a text adventure
   Scenario: Something not in view
     When the reader types "examine the cathedral"
     Then it says "You see no cathedral here."
+
+  Scenario: Things Guide hasn't noticed are found by exploring
+    Given six benches right beside the reader
+    When the game begins
+    Then it says "There is more here, if you look."
+    And it does not say "The Sextant"
+    When the reader types "explore"
+    Then it says "Looking closer, you find"
+    And it says "The Sextant, a pub"
+
+  Scenario: Examining something unnoticed finds it
+    Given six benches right beside the reader
+    When the reader types "x sextant"
+    Then it says "amenity=pub"
+
+  Scenario: Nothing more to find
+    When the reader types "search"
+    Then it says "nothing more"

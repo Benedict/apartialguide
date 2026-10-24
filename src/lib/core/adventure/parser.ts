@@ -1,7 +1,7 @@
 export type Command =
 	| { verb: 'go'; direction: string }
 	| { verb: 'examine'; target: string }
-	| { verb: 'look' | 'exits' | 'back' | 'help' | 'empty' }
+	| { verb: 'look' | 'explore' | 'exits' | 'back' | 'help' | 'empty' }
 	| { verb: 'unknown'; text: string };
 
 const POINTS = [
@@ -82,6 +82,8 @@ export function parse(input: string): Command {
 	if (EXAMINE.has(first) && rest.length)
 		return { verb: 'examine', target: dropFiller(rest).join(' ') };
 	if (text === 'l' || text === 'look') return { verb: 'look' };
+	if (['explore', 'search', 'look around', 'look closer', 'look about'].includes(text))
+		return { verb: 'explore' };
 	if (text === 'exits' || text === 'ways') return { verb: 'exits' };
 	if (text === 'help' || text === '?' || text === 'h') return { verb: 'help' };
 	return { verb: 'unknown', text };

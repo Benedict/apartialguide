@@ -24,6 +24,11 @@ export class NarratorWorld extends World {
 		return this.built;
 	}
 
+	/** Forget the built narrator, so features added to the map since are seen. */
+	rebuild() {
+		this.built = undefined;
+	}
+
 	arrive(id: StopId | undefined) {
 		if (!id) throw new Error('no stop to arrive at');
 		this.here = id;

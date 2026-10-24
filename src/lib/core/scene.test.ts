@@ -20,7 +20,13 @@ function town() {
 	return { graph: buildStopGraph(new OsmIndex(m.toData())), west, east };
 }
 
-const plan = (stopId: string) => ({ stopId, street: [], beats: [], mood: 'plain' as const });
+const plan = (stopId: string) => ({
+	stopId,
+	street: [],
+	beats: [],
+	hidden: [],
+	mood: 'plain' as const
+});
 
 describe('buildScene', () => {
 	it('names the streets that meet at a junction', () => {

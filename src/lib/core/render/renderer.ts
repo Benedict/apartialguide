@@ -13,6 +13,8 @@ export interface Room {
 	title: string;
 	paragraphs: string[];
 	things: Thing[];
+	/** What is in view but unnoticed: told, and examinable, only once the reader looks closer. */
+	hidden?: { lines: string[]; things: Thing[] };
 }
 
 /** Turns a scene into words. The adventure renderer and, later, a model sit behind this port. */

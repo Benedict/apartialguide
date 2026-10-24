@@ -20,6 +20,7 @@ const scene = (s: Partial<Scene> = {}): Scene => ({
 	stopId: 's1',
 	street: everton,
 	beats: [],
+	hidden: [],
 	mood: 'plain',
 	position: O,
 	kind: 'corridor',
@@ -196,7 +197,8 @@ describe('AdventureRenderer', () => {
 
 		it('loses the thread when crowded', () => {
 			const many = Array.from({ length: 9 }, (_, i) => beat(`node/${i}`, { amenity: 'bench' }));
-			expect(text(scene({ mood: 'rambling', beats: many }))).toMatch(/where was I/i);
+			const crowded = scene({ mood: 'rambling', beats: many.slice(0, 2), hidden: many.slice(2) });
+			expect(text(crowded)).toMatch(/I lose count/);
 		});
 
 		describe('in a crowd', () => {
@@ -206,31 +208,52 @@ describe('AdventureRenderer', () => {
 			]);
 			const pub = beat('node/9', { amenity: 'pub', name: 'The Sextant' });
 			const kebab = beat('node/10', { amenity: 'fast_food', name: 'Brothers Kebab' });
-			const crowd = text(scene({ mood: 'rambling', beats: [bank, pub, kebab, ...benches] }));
+			const chemist = beat('node/11', { amenity: 'pharmacy', name: 'Larchwood Pharmacy' });
+			const room = renderer.render(
+				scene({ mood: 'rambling', beats: [bank, pub], hidden: [kebab, chemist, ...benches] })
+			);
+			const crowd = room.paragraphs.join('\n\n');
 
-			it('tells the nearest few in full sentences', () => {
+			it('tells what is noticed in full sentences', () => {
 				expect(crowd).toContain('To the north, a few steps away, is a retail building.');
 				expect(crowd).toContain('Once “est Bank”.');
-				expect(crowd).toContain('is a pub, “The Sextant”.');
-			});
-
-			it('runs the rest together, named things by name and repeats counted', () => {
-				expect(crowd).toContain('And Brothers Kebab, a fast food place, and six benches');
 			});
 
 			it('does not repeat a direction just given', () => {
 				expect(crowd).toContain('Next to it is a pub, “The Sextant”.');
 			});
 
-			it('lets a name speak for itself when it already says what the thing is', () => {
-				const chemist = beat('node/11', { amenity: 'pharmacy', name: 'Larchwood Pharmacy' });
-				const t = text(scene({ mood: 'rambling', beats: [bank, pub, chemist] }));
-				expect(t).toContain('And Larchwood Pharmacy —');
+			it('loses count of the rest, keeping them hidden', () => {
+				expect(crowd).toContain('I lose count');
+				expect(crowd).not.toContain('Brothers Kebab');
 			});
 
-			it('reads as prose, not a list', () => {
-				expect(crowd).not.toContain('Around you:');
+			it('finds the rest on a closer look, named things by name and repeats counted', () => {
+				expect(room.hidden?.lines[0]).toBe(
+					'Looking closer, you find Brothers Kebab, a fast food place, and Larchwood Pharmacy, and six benches.'
+				);
 			});
+
+			it('lets hidden things be examined once found', () => {
+				expect(room.hidden?.things.map((t) => t.name)).toContain('Brothers Kebab');
+				expect(room.things.map((t) => t.name)).not.toContain('Brothers Kebab');
+			});
+		});
+
+		it('hints that there is more when things are hidden on a quiet stop', () => {
+			const t = text(
+				scene({
+					beats: [beat('node/2', { amenity: 'pub' })],
+					hidden: [beat('node/3', { amenity: 'bench' })]
+				})
+			);
+			expect(t).toContain('There is more here, if you look.');
+		});
+
+		it('hints at nothing when nothing is hidden', () => {
+			const room = renderer.render(scene({ beats: [beat('node/2', { amenity: 'pub' })] }));
+			expect(room.paragraphs.join(' ')).not.toContain('if you look');
+			expect(room.hidden).toBeUndefined();
 		});
 
 		it('says the same thing at the same stop every time', () => {

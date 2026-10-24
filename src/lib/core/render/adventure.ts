@@ -34,7 +34,8 @@ export class AdventureRenderer implements Renderer {
 		return {
 			title: title(scene, street),
 			paragraphs: paragraphs.filter(Boolean),
-			things: scene.beats.map(thing)
+			things: scene.beats.map(thing),
+			hidden: closerLook(scene)
 		};
 	}
 }
@@ -45,7 +46,10 @@ const HESITATIONS = [
 	'I had thought there was more along here — apparently not. Apparently not.'
 ];
 
-const LOST_THREADS = ['and — where was I.', 'and so on, and so on. Where was I.'];
+const LOST_COUNT = [
+	'And more besides — I lose count. Where was I.',
+	'And more, and more — I lose count.'
+];
 
 const streetName = (scene: Scene, street: Tags) =>
 	scene.here[0] ?? `an unnamed ${humanise(street.highway)}`;
@@ -99,17 +103,24 @@ function whatYouSee(scene: Scene): string[] {
 		previous = place;
 		return said;
 	});
-	if (scene.mood !== 'rambling') return told;
-	// A crowd: the nearest few in full, then the rest spill out in one breath until the thread goes.
-	const rest = tally(scene.beats.slice(CROWD_TOLD).map(brief));
-	const spill = rest.length
-		? [`And ${rest.join(', and ')} — ${pick(scene.stopId, LOST_THREADS)}`]
-		: [];
-	return [[pick(scene.stopId, CROWD_OPENERS), ...told.slice(0, CROWD_TOLD), ...spill].join(' ')];
+	const more = scene.hidden.length > 0;
+	if (scene.mood === 'rambling') {
+		// A crowd: what is noticed in full, then Guide loses count of the rest.
+		const lost = more ? [pick(scene.stopId, LOST_COUNT)] : [];
+		return [[pick(scene.stopId, CROWD_OPENERS), ...told, ...lost].join(' ')];
+	}
+	return more ? [...told, 'There is more here, if you look.'] : told;
 }
 
-/** How many of a crowd are told in full before the rest run together. */
-const CROWD_TOLD = 2;
+/** What a closer look finds: the hidden things in one breath, named things by name and repeats counted. */
+function closerLook(scene: Scene): Room['hidden'] {
+	if (!scene.hidden.length) return undefined;
+	const found = tally(scene.hidden.map(brief));
+	return {
+		lines: [`Looking closer, you find ${found.join(', and ')}.`],
+		things: scene.hidden.map(thing)
+	};
+}
 
 const CROWD_OPENERS = ['There is a great deal here.', 'Too much to take in at once.'];
 
