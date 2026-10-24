@@ -18,7 +18,7 @@ A text "street view" of Addiscombe, Croydon. One narrator, Guide, describes the 
 - `npm run test:acceptance`: Gherkin in `features/`. `@snapshot` scenarios run only once the snapshot file exists; `@icebox` and `@later` never run.
 - `npm run lint`, `npm run check`: Prettier, ESLint, svelte-check.
 - `npm run dev`: needs `SNAPSHOT_PATH` (see `.env.example`).
-- `BBOX=minLon,minLat,maxLon,maxLat npm run snapshot`: writes `data/snapshots/addiscombe-<date>.json`.
+- `BBOX=minLon,minLat,maxLon,maxLat npm run snapshot` (or `AROUND_WAY=<id> RADIUS_M=<m>`): writes `data/snapshots/addiscombe-<date>.json`. Editing `data/snapshots/request.env` and pushing runs the Snapshot workflow, which takes one on GitHub and commits it.
 
 ## Layout
 

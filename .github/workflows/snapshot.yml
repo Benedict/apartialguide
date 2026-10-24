@@ -1,0 +1,38 @@
+name: Snapshot
+
+# Takes a dated OSM snapshot and commits it to the branch. Runs when data/snapshots/request.env
+# (the area to fetch) or this file changes, or by hand.
+on:
+  push:
+    paths:
+      - data/snapshots/request.env
+      - .github/workflows/snapshot.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Take snapshot
+        run: |
+          set -a
+          . data/snapshots/request.env
+          set +a
+          npm run snapshot
+      - name: Commit snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/snapshots/*.json
+          git diff --cached --quiet && { echo "No new snapshot"; exit 0; }
+          git commit -m "Add OSM snapshot $(date -u +%F)"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

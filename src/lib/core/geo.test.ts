@@ -6,6 +6,7 @@ import {
 	distance,
 	distanceToPolyline,
 	insideRing,
+	bboxAround,
 	pointAlong,
 	polylineLength,
 	segmentsIntersect
@@ -111,5 +112,15 @@ describe('insideRing', () => {
 
 	it('rejects a point outside', () => {
 		expect(insideRing([1.5, 0.5], square)).toBe(false);
+	});
+});
+
+describe('bboxAround', () => {
+	it('spans the radius on every side, as minLon,minLat,maxLon,maxLat', () => {
+		const [minLon, minLat, maxLon, maxLat] = bboxAround([51.38, -0.07], 400);
+		expect(distance([minLat, -0.07], [51.38, -0.07])).toBeCloseTo(400, 0);
+		expect(distance([maxLat, -0.07], [51.38, -0.07])).toBeCloseTo(400, 0);
+		expect(distance([51.38, minLon], [51.38, -0.07])).toBeCloseTo(400, 0);
+		expect(distance([51.38, maxLon], [51.38, -0.07])).toBeCloseTo(400, 0);
 	});
 });

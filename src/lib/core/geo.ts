@@ -160,3 +160,12 @@ export function segmentsIntersect(a: XY, b: XY, c: XY, d: XY): boolean {
 	const d4 = cross(a, b, d);
 	return d1 * d2 < 0 && d3 * d4 < 0;
 }
+
+/** The box reaching `metres` out from `centre` on every side, as [minLon, minLat, maxLon, maxLat]. */
+export function bboxAround(centre: LatLon, metres: number): [number, number, number, number] {
+	const north = destination(centre, 0, metres)[0];
+	const south = destination(centre, 180, metres)[0];
+	const east = destination(centre, 90, metres)[1];
+	const west = destination(centre, 270, metres)[1];
+	return [west, south, east, north];
+}
