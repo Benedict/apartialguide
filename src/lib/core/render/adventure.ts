@@ -8,6 +8,7 @@ import {
 	address,
 	article,
 	capitalise,
+	counted,
 	currentUse,
 	humanise,
 	list,
@@ -44,7 +45,7 @@ const HESITATIONS = [
 	'I had thought there was more along here — apparently not. Apparently not.'
 ];
 
-const LOST_THREADS = ['And — where was I.', 'And so on, and so on. Where was I.'];
+const LOST_THREADS = ['and — where was I.', 'and so on, and so on. Where was I.'];
 
 const streetName = (scene: Scene, street: Tags) =>
 	scene.here[0] ?? `an unnamed ${humanise(street.highway)}`;
@@ -88,19 +89,50 @@ function streetCharacter(street: Tags): string[] {
 }
 
 function whatYouSee(scene: Scene): string[] {
-	if (scene.mood === 'rambling') {
-		const items = scene.beats.map(listItem);
-		return [`Around you: ${list(items)}. ${pick(scene.stopId, LOST_THREADS)}`];
-	}
-	return scene.beats.map((b) => describeBeat(scene.position, b));
+	let previous = '';
+	const told = scene.beats.map((b) => {
+		const place = placement(scene.position, b);
+		const said = describeBeat(
+			b,
+			place === previous && place.startsWith('To the') ? 'Next to it' : place
+		);
+		previous = place;
+		return said;
+	});
+	if (scene.mood !== 'rambling') return told;
+	// A crowd: the nearest few in full, then the rest spill out in one breath until the thread goes.
+	const rest = tally(scene.beats.slice(CROWD_TOLD).map(brief));
+	const spill = rest.length
+		? [`And ${rest.join(', and ')} — ${pick(scene.stopId, LOST_THREADS)}`]
+		: [];
+	return [[pick(scene.stopId, CROWD_OPENERS), ...told.slice(0, CROWD_TOLD), ...spill].join(' ')];
 }
 
-/** A crowd member in brief: what it is, its name, and any broken name spoken as found. */
-function listItem(beat: Beat): string {
+/** How many of a crowd are told in full before the rest run together. */
+const CROWD_TOLD = 2;
+
+const CROWD_OPENERS = ['There is a great deal here.', 'Too much to take in at once.'];
+
+/** A crowd member in a breath: named things by name, the unnamed by what they are. */
+function brief(beat: Beat): { phrase: string; noun?: string } {
 	const tags = tagsOf(beat.facts);
-	const name = tags.name ? ` “${tags.name}”` : '';
-	const once = tags.old_name ? `, once “${tags.old_name}”` : '';
-	return `${noun(tags)}${name}${once}`;
+	const what = noun(tags);
+	if (tags.name) {
+		const saysItAll = tags.name.toLowerCase().includes(what.split(' ').at(-1)!);
+		return { phrase: saysItAll ? tags.name : `${tags.name}, ${article(what)}` };
+	}
+	if (tags.old_name) return { phrase: `${article(what)} that was once “${tags.old_name}”` };
+	return { phrase: article(what), noun: what };
+}
+
+/** Collapses repeats of the same unnamed thing into a count, keeping first-seen order. */
+function tally(items: { phrase: string; noun?: string }[]): string[] {
+	const counts = new Map<string, number>();
+	for (const i of items) counts.set(i.noun ?? i.phrase, (counts.get(i.noun ?? i.phrase) ?? 0) + 1);
+	return [...counts].map(([key, n]) => {
+		const item = items.find((i) => (i.noun ?? i.phrase) === key)!;
+		return item.noun ? counted(n, item.noun) : item.phrase;
+	});
 }
 
 /** "To the north, a few steps away" */
@@ -188,9 +220,8 @@ function nounPhrase(tags: Tags): string {
 /** "To the north, a few steps away," takes a comma before what follows; "Right here" does not. */
 const lead = (place: string) => (place.startsWith('To the') ? `${place},` : place);
 
-function describeBeat(from: LatLon, beat: Beat): string {
+function describeBeat(beat: Beat, place: string): string {
 	const tags = tagsOf(beat.facts);
-	const place = placement(from, beat);
 	const sentences: string[] = [];
 	const use = currentUse(tags);
 

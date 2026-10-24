@@ -199,15 +199,38 @@ describe('AdventureRenderer', () => {
 			expect(text(scene({ mood: 'rambling', beats: many }))).toMatch(/where was I/i);
 		});
 
-		it('keeps names, broken ones included, when listing a crowd', () => {
-			const many = Array.from({ length: 8 }, (_, i) => beat(`node/${i}`, { amenity: 'bench' }));
+		describe('in a crowd', () => {
+			const benches = Array.from({ length: 6 }, (_, i) => beat(`node/${i}`, { amenity: 'bench' }));
 			const bank = beat('way/2', { building: 'retail', old_name: 'est Bank' }, {}, [
 				'spoken-as-found'
 			]);
 			const pub = beat('node/9', { amenity: 'pub', name: 'The Sextant' });
-			const t = text(scene({ mood: 'rambling', beats: [bank, pub, ...many] }));
-			expect(t).toContain('retail building, once “est Bank”');
-			expect(t).toContain('pub “The Sextant”');
+			const kebab = beat('node/10', { amenity: 'fast_food', name: 'Brothers Kebab' });
+			const crowd = text(scene({ mood: 'rambling', beats: [bank, pub, kebab, ...benches] }));
+
+			it('tells the nearest few in full sentences', () => {
+				expect(crowd).toContain('To the north, a few steps away, is a retail building.');
+				expect(crowd).toContain('Once “est Bank”.');
+				expect(crowd).toContain('is a pub, “The Sextant”.');
+			});
+
+			it('runs the rest together, named things by name and repeats counted', () => {
+				expect(crowd).toContain('And Brothers Kebab, a fast food place, and six benches');
+			});
+
+			it('does not repeat a direction just given', () => {
+				expect(crowd).toContain('Next to it is a pub, “The Sextant”.');
+			});
+
+			it('lets a name speak for itself when it already says what the thing is', () => {
+				const chemist = beat('node/11', { amenity: 'pharmacy', name: 'Larchwood Pharmacy' });
+				const t = text(scene({ mood: 'rambling', beats: [bank, pub, chemist] }));
+				expect(t).toContain('And Larchwood Pharmacy —');
+			});
+
+			it('reads as prose, not a list', () => {
+				expect(crowd).not.toContain('Around you:');
+			});
 		});
 
 		it('says the same thing at the same stop every time', () => {

@@ -48,11 +48,17 @@ export function pastUse(tags: Tags): string | undefined {
 	return undefined;
 }
 
+/** Amenity values that are adjectives on their own. */
+const AMENITY_NOUNS: Record<string, string> = {
+	fast_food: 'fast food place',
+	ice_cream: 'ice cream shop'
+};
+
 function useNoun(key: string, value: string): string {
 	if (value === 'yes') return key;
 	if (key === 'shop' && !SHOP_NOUNS.has(value)) return `${humanise(value)} shop`;
 	if (key === 'office') return `${humanise(value)} office`;
-	return humanise(value);
+	return AMENITY_NOUNS[value] ?? humanise(value);
 }
 
 export function address(tags: Tags): string | undefined {
@@ -100,4 +106,31 @@ export function pick<T>(seed: string, options: readonly T[]): T {
 	let h = 0;
 	for (const ch of seed) h = (h * 31 + ch.charCodeAt(0)) | 0;
 	return options[Math.abs(h) % options.length];
+}
+
+const NUMBERS = [
+	'no',
+	'one',
+	'two',
+	'three',
+	'four',
+	'five',
+	'six',
+	'seven',
+	'eight',
+	'nine',
+	'ten'
+];
+
+/** "two residential areas", "three bicycle parking" */
+export function counted(n: number, noun: string): string {
+	if (n === 1) return article(noun);
+	const number = NUMBERS[n] ?? String(n);
+	if (UNCOUNTABLE.has(noun)) return `${number} lots of ${noun}`;
+	const plural = /(s|sh|ch|x)$/.test(noun)
+		? `${noun}es`
+		: /[^aeiou]y$/.test(noun)
+			? `${noun.slice(0, -1)}ies`
+			: `${noun}s`;
+	return `${number} ${plural}`;
 }
