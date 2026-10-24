@@ -19,6 +19,7 @@ A text "street view" of Addiscombe, Croydon. One narrator, Guide, describes the 
 - `npm run lint`, `npm run check`: Prettier, ESLint, svelte-check.
 - `npm run dev`: needs `SNAPSHOT_PATH` (see `.env.example`).
 - `npm run narrate`: writes prose ahead of time into `NARRATION_PATH` (needs `ANTHROPIC_API_KEY`, capped by `NARRATE_LIMIT`). The Narrate workflow runs it on GitHub by hand, with the key as a repository secret.
+- `npm run export`: writes the whole game as one self-contained HTML page (`EXPORT_PATH`, default `build/export/addiscombe.html`) from `SNAPSHOT_PATH`, `START_AT` and any `NARRATION_PATH`.
 - `BBOX=minLon,minLat,maxLon,maxLat npm run snapshot` (or `AROUND_WAY=<id> RADIUS_M=<m>`): writes `data/snapshots/addiscombe-<date>.json`. Editing `data/snapshots/request.env` and pushing runs the Snapshot workflow, which takes one on GitHub and commits it.
 
 ## Layout
