@@ -62,10 +62,18 @@ describe('buildPrompt', () => {
 		expect(user).toContain('last recorded in October 2018');
 	});
 
-	it('hints at hidden things without naming them', () => {
+	it('says nothing of hidden things', () => {
 		const user = buildPrompt(scene({ beats: [bank], hidden: [shop] })).user;
-		expect(user).toMatch(/1 more thing/);
+		expect(user).not.toMatch(/unnoticed|hidden|\d+ more/i);
 		expect(user).not.toContain('Crumb');
+	});
+
+	it('leaves noticing to the reader, and names nothing hidden in its reference page', () => {
+		const { system } = buildPrompt(scene());
+		expect(system).toMatch(/noticing is the reader’s/i);
+		expect(system).not.toMatch(/hint/i);
+		expect(system).not.toContain('Streets Ahead');
+		expect(system).not.toContain('there may be more');
 	});
 
 	it('tells the model the game prints the exits', () => {
