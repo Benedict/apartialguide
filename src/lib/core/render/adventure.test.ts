@@ -100,6 +100,61 @@ describe('AdventureRenderer', () => {
 			);
 		});
 
+		it('calls land by its use, all around you when you stand in it', () => {
+			const area = {
+				subject: 'way/8',
+				facts: facts(
+					'way/8',
+					{ landuse: 'retail', name: 'Village shops' },
+					{
+						geometry: [
+							destination(O, 45, 50),
+							destination(O, 135, 50),
+							destination(O, 225, 50),
+							destination(O, 315, 50),
+							destination(O, 45, 50)
+						]
+					}
+				),
+				effects: []
+			};
+			expect(text(scene({ beats: [area] }))).toContain(
+				'All around is a retail area, “Village shops”.'
+			);
+		});
+
+		it('names other mapped things by what they are', () => {
+			expect(text(scene({ beats: [beat('node/9', { natural: 'tree' })] }))).toContain('is a tree.');
+			expect(text(scene({ beats: [beat('node/10', { traffic_calming: 'hump' })] }))).toContain(
+				'is a speed hump.'
+			);
+		});
+
+		it('names a place label by its kind', () => {
+			expect(
+				text(scene({ beats: [beat('node/13', { place: 'suburb', name: 'Addiscombe' })] }))
+			).toContain('is a suburb, “Addiscombe”.');
+		});
+
+		it('calls a point with only an address an address', () => {
+			expect(
+				text(
+					scene({
+						beats: [beat('node/11', { 'addr:housenumber': '223a', 'addr:street': 'Everton Road' })]
+					})
+				)
+			).toContain('is an address at 223a Everton Road.');
+		});
+
+		it('says right here without a comma', () => {
+			const here = {
+				subject: 'node/12',
+				facts: facts('node/12', { amenity: 'bench' }),
+				effects: []
+			};
+			expect(text(scene({ beats: [here] }))).toContain('Right here is a bench.');
+		});
+
 		it('tells a disused use in the past tense', () => {
 			const t = text(scene({ beats: [beat('way/2', { 'disused:amenity': 'bank' })] }));
 			expect(t).toMatch(/was a bank/);
@@ -142,6 +197,17 @@ describe('AdventureRenderer', () => {
 		it('loses the thread when crowded', () => {
 			const many = Array.from({ length: 9 }, (_, i) => beat(`node/${i}`, { amenity: 'bench' }));
 			expect(text(scene({ mood: 'rambling', beats: many }))).toMatch(/where was I/i);
+		});
+
+		it('keeps names, broken ones included, when listing a crowd', () => {
+			const many = Array.from({ length: 8 }, (_, i) => beat(`node/${i}`, { amenity: 'bench' }));
+			const bank = beat('way/2', { building: 'retail', old_name: 'est Bank' }, {}, [
+				'spoken-as-found'
+			]);
+			const pub = beat('node/9', { amenity: 'pub', name: 'The Sextant' });
+			const t = text(scene({ mood: 'rambling', beats: [bank, pub, ...many] }));
+			expect(t).toContain('retail building, once “est Bank”');
+			expect(t).toContain('pub “The Sextant”');
 		});
 
 		it('says the same thing at the same stop every time', () => {

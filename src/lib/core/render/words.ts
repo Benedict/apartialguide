@@ -70,7 +70,8 @@ const UNCOUNTABLE = new Set([
 	'drinking water',
 	'recycling',
 	'parking',
-	'motorcycle parking'
+	'motorcycle parking',
+	'something'
 ]);
 export const article = (noun: string) =>
 	UNCOUNTABLE.has(noun) ? noun : `${/^[aeiou]/i.test(noun) ? 'an' : 'a'} ${noun}`;

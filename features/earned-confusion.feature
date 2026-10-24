@@ -22,7 +22,7 @@ Feature: Earned confusion on Lower Addiscombe Road
     Then the narration of those shops contains a tense slip
 
   Scenario: A sparse street makes the narrator hesitate
-    Given Everton Road has only highway, lit, maxspeed, sidewalk, and surface tags
+    Given Everton Road has only highway, lanes, lit, maxspeed, sidewalk, and surface tags
     And no buildings are mapped along it
     When the reader is on Everton Road
     Then the narration speaks of surface, lighting, and speed

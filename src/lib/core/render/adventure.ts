@@ -1,5 +1,5 @@
 import { groupBySubject } from '../facts';
-import { bearing, compassLabel, nearestOnPolyline, type LatLon } from '../geo';
+import { bearing, compassLabel, insideRing, nearestOnPolyline, type LatLon } from '../geo';
 import type { Tags } from '../osm';
 import type { Scene, SceneExit } from '../scene';
 import type { Beat } from '../slippage';
@@ -89,15 +89,26 @@ function streetCharacter(street: Tags): string[] {
 
 function whatYouSee(scene: Scene): string[] {
 	if (scene.mood === 'rambling') {
-		const items = scene.beats.map((b) => noun(tagsOf(b.facts)));
+		const items = scene.beats.map(listItem);
 		return [`Around you: ${list(items)}. ${pick(scene.stopId, LOST_THREADS)}`];
 	}
 	return scene.beats.map((b) => describeBeat(scene.position, b));
 }
 
+/** A crowd member in brief: what it is, its name, and any broken name spoken as found. */
+function listItem(beat: Beat): string {
+	const tags = tagsOf(beat.facts);
+	const name = tags.name ? ` “${tags.name}”` : '';
+	const once = tags.old_name ? `, once “${tags.old_name}”` : '';
+	return `${noun(tags)}${name}${once}`;
+}
+
 /** "To the north, a few steps away" */
 function placement(from: LatLon, beat: Beat): string {
-	const { point, metres } = nearestOnPolyline(from, beat.facts[0].geometry);
+	const geometry = beat.facts[0].geometry;
+	const closed = geometry.length > 3 && geometry[0].join() === geometry.at(-1)!.join();
+	if (closed && insideRing(from, geometry)) return 'All around';
+	const { point, metres } = nearestOnPolyline(from, geometry);
 	if (metres < 3) return 'Right here';
 	const near =
 		metres < 10
@@ -129,19 +140,53 @@ const BUILDING_NOUNS = new Set([
 
 /** What a thing is now, or failing that what it is built as. */
 function noun(tags: Tags): string {
-	const use = currentUse(tags);
+	const use = currentUse(tags) ?? kind(tags);
 	if (use) return use;
 	const built = tags.building;
-	if (!built || built === 'yes') return 'building';
-	return BUILDING_NOUNS.has(built) ? humanise(built) : `${humanise(built)} building`;
+	if (built)
+		return BUILDING_NOUNS.has(built)
+			? humanise(built)
+			: built === 'yes'
+				? 'building'
+				: `${humanise(built)} building`;
+	return address(tags) ? 'address' : 'something';
 }
+
+/** Mapped things that are neither a use nor a building: land, trees, rails, fences. */
+const KIND_KEYS = [
+	'place',
+	'landuse',
+	'natural',
+	'traffic_calming',
+	'railway',
+	'barrier',
+	'public_transport',
+	'man_made',
+	'power',
+	'emergency'
+];
+
+function kind(tags: Tags): string | undefined {
+	const key = KIND_KEYS.find((k) => tags[k]);
+	if (!key) return undefined;
+	const value = tags[key] === 'yes' ? key : humanise(tags[key]);
+	if (key === 'landuse') return `${value} area`;
+	if (key === 'traffic_calming') return tags[key] === 'yes' ? 'speed bump' : `speed ${value}`;
+	return value;
+}
+
+/** Whether the thing's name belongs in the noun phrase, rather than read off it as a sign. */
+const namedInline = (tags: Tags) => !!tags.name && !!(currentUse(tags) ?? kind(tags));
 
 function nounPhrase(tags: Tags): string {
 	const where = address(tags);
 	const at = where ? ` at ${where}` : '';
-	const name = currentUse(tags) && tags.name ? `, “${tags.name}”` : '';
+	const name = namedInline(tags) ? `, “${tags.name}”` : '';
 	return `${article(noun(tags))}${at}${name}`;
 }
+
+/** "To the north, a few steps away," takes a comma before what follows; "Right here" does not. */
+const lead = (place: string) => (place.startsWith('To the') ? `${place},` : place);
 
 function describeBeat(from: LatLon, beat: Beat): string {
 	const tags = tagsOf(beat.facts);
@@ -154,12 +199,12 @@ function describeBeat(from: LatLon, beat: Beat): string {
 		const at = where ? ` at ${where}` : '';
 		const observed = beat.facts.find((f) => f.observed)?.observed;
 		sentences.push(
-			`${place}, there’s ${article(use)}${at}. There was ${article(use)}${at} in ${monthYear(observed)}, the last time anyone looked.`
+			`${lead(place)} there’s ${article(use)}${at}. There was ${article(use)}${at} in ${monthYear(observed)}, the last time anyone looked.`
 		);
 	} else {
-		sentences.push(`${place}, is ${nounPhrase(tags)}.`);
+		sentences.push(`${lead(place)} is ${nounPhrase(tags)}.`);
 	}
-	if (tags.name && !use) sentences.push(`“${tags.name}”, it says.`);
+	if (tags.name && !namedInline(tags)) sentences.push(`“${tags.name}”, it says.`);
 	const past = pastUse(tags);
 	if (past) sentences.push(`It was ${article(past)}.`);
 	if (tags.old_name) sentences.push(`Once “${tags.old_name}”.`);

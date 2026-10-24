@@ -1,7 +1,7 @@
 import { Given, Then, When } from '@cucumber/cucumber';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { distanceToPolyline, type LatLon } from '../../src/lib/core/geo';
+import { distance, distanceToPolyline, type LatLon } from '../../src/lib/core/geo';
 import { elementRef, OsmIndex, type OsmElement } from '../../src/lib/core/osm';
 import type { NarratorWorld } from '../support/world';
 
@@ -61,8 +61,16 @@ Given(
 When('the reader stands outside {string}', function (this: NarratorWorld, address: string) {
 	const found = atAddress(this, address);
 	assert.ok(found.length, `nothing at ${address} in the snapshot`);
-	const centre = geometry(this, found[0])[0];
-	this.arrive(this.narrator.nearestStop(centre)?.id);
+	// Outside means on the street the address names, at the stop nearest the building.
+	const { street } = parseAddress(address);
+	const shape = geometry(this, found[0]);
+	const onStreet = this.narrator.graph
+		.all()
+		.filter((s) => s.exits.some((e) => e.street === street));
+	const nearest = onStreet.sort(
+		(a, b) => distanceToPolyline(a.position, shape) - distanceToPolyline(b.position, shape)
+	)[0];
+	this.arrive(nearest?.id);
 });
 
 Then('the narration mentions {string}', function (this: NarratorWorld, words: string) {
@@ -111,11 +119,16 @@ Given('Everton Road has only {} tags', function (this: NarratorWorld, list: stri
 });
 
 Given('no buildings are mapped along it', function (this: NarratorWorld) {
+	// Corner buildings at either end (any part within 20 m) belong to the streets Everton Road meets, so the 20 m at each end don't count.
 	const osm = index(this);
 	const road = evertonRoad(this).flatMap((w) => osm.wayGeometry(w));
-	const near = osm.ways.filter(
-		(w) => w.tags?.building && osm.wayGeometry(w).some((p) => distanceToPolyline(p, road) < 15)
-	);
+	const ends = [road[0], road.at(-1)!];
+	const near = osm.ways.filter((w) => {
+		const shape = osm.wayGeometry(w);
+		const touches = shape.some((p) => distanceToPolyline(p, road) < 15);
+		const atCorner = shape.some((p) => ends.some((end) => distance(p, end) <= 20));
+		return w.tags?.building && touches && !atCorner;
+	});
 	assert.deepEqual(near.map(elementRef), []);
 });
 
