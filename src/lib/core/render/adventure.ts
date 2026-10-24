@@ -117,7 +117,8 @@ function whatYouSee(scene: Scene): string[] {
 		const lost = more ? [pick(scene.stopId, LOST_COUNT)] : [];
 		return [[pick(scene.stopId, CROWD_OPENERS), ...told, ...lost].join(' ')];
 	}
-	return more ? [...told, 'There may be more here. I could not say.'] : told;
+	// Guide points to nothing: what goes unnoticed is for the reader to find.
+	return told;
 }
 
 /** What a closer look finds: the hidden things in one breath, named things by name and repeats counted. */

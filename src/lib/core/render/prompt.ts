@@ -12,7 +12,7 @@ import {
 import { monthYear, tagsOf } from './words';
 
 /** Bump when the prompt changes, so cached narration written under the old one is redone. */
-export const PROMPT_VERSION = 2;
+export const PROMPT_VERSION = 3;
 
 export interface Prompt {
 	/** Fixed for every stop, so it can be cached. */
@@ -34,7 +34,7 @@ Rules.
 - A name marked "speak exactly as found" is broken. Quote it exactly, in curly quotes. Never repair it, complete it or suggest what it once was.
 - A survey date is when something was last recorded. Never say anyone came to look. Slip between present and past for it: there is a shop; there was a shop when it was last recorded.
 - When told the place is crowded, lose count partway through. When told there is little here, hesitate.
-- When told some things go unnoticed, hint at them and be unclear: you are not sure there is more, or what it might be. Never name or count them, and never promise the reader will find anything.
+- Point the reader to nothing, and never say that anything goes unnoticed. Noticing is the reader’s.
 - Do not list the exits; the game prints them after your text.
 - Write 60 to 180 words in two to four short paragraphs, separated by blank lines. Plain text only: no headings, lists or markup.
 
@@ -91,9 +91,6 @@ export function buildPrompt(scene: Scene): Prompt {
 		...noticed.map((b, i) => beatLine(scene, b, i + 1)),
 		'',
 		...(mood ? [mood] : []),
-		...(scene.hidden.length
-			? ['Some things here go unnoticed. Be unclear about them: name none, count none.']
-			: []),
 		'Do not list the exits; the game prints them.'
 	].join('\n');
 	return { system: SYSTEM, user };

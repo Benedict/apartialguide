@@ -242,20 +242,15 @@ describe('AdventureRenderer', () => {
 			});
 		});
 
-		it('hints that there is more when things are hidden on a quiet stop', () => {
-			const t = text(
+		it('points to nothing when things are hidden on a quiet stop', () => {
+			const room = renderer.render(
 				scene({
 					beats: [beat('node/2', { amenity: 'pub' })],
 					hidden: [beat('node/3', { amenity: 'bench' })]
 				})
 			);
-			expect(t).toContain('There may be more here. I could not say.');
-		});
-
-		it('hints at nothing when nothing is hidden', () => {
-			const room = renderer.render(scene({ beats: [beat('node/2', { amenity: 'pub' })] }));
-			expect(room.paragraphs.join(' ')).not.toContain('could not say');
-			expect(room.hidden).toBeUndefined();
+			expect(room.paragraphs.slice(0, -1).join(' ')).not.toMatch(/more here|could not say|look/i);
+			expect(room.hidden?.lines[0]).toContain('bench');
 		});
 
 		it('says the same thing at the same stop every time', () => {
