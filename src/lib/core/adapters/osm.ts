@@ -31,7 +31,7 @@ export class OsmAdapter implements SourceAdapter {
 			if (geometry.length === 0) continue;
 			const subject = elementRef(e);
 			const { observed, observedBy } = observation(e);
-			const reach = e.tags.highway ? streetReach : featureReach;
+			const reach = e.type === 'way' && e.tags.highway ? streetReach : featureReach;
 			for (const [key, value] of Object.entries(e.tags)) {
 				if (isProvenance(key)) continue;
 				facts.push({

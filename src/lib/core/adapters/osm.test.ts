@@ -33,7 +33,8 @@ const index = new OsmIndex({
 			lon: -0.07,
 			timestamp: '2022-05-05T00:00:00Z',
 			tags: { shop: 'bakery' }
-		}
+		},
+		{ type: 'node', id: 5, lat: 51.38, lon: -0.07, tags: { highway: 'bus_stop' } }
 	]
 });
 
@@ -74,6 +75,12 @@ describe('OsmAdapter', () => {
 
 	it('skips untagged nodes', () => {
 		expect(facts.some((f) => f.subject === 'node/1')).toBe(false);
+	});
+
+	it('gives streets the street reach and highway nodes the feature reach', () => {
+		const reach = (subject: string) => facts.find((f) => f.subject === subject)!.reach;
+		expect(reach('way/11')).toBe(15);
+		expect(reach('node/5')).toBe(30);
 	});
 
 	it('carries the element geometry', () => {
