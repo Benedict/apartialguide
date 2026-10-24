@@ -7,3 +7,6 @@ bun.lockb
 
 # Miscellaneous
 /static/
+
+# Snapshots are data, kept exactly as captured
+/data/snapshots/*.json
