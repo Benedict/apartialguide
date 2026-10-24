@@ -97,6 +97,7 @@
 
 	p {
 		margin: 0;
+		overflow-wrap: anywhere;
 	}
 
 	.command {
