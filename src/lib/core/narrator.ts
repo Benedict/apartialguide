@@ -3,8 +3,9 @@ import type { Clock, Fact } from './facts';
 import { distance, distanceToPolyline, type LatLon } from './geo';
 import { OsmIndex, type OsmData } from './osm';
 import { Perception } from './perception';
-import type { Renderer } from './render/renderer';
-import { TemplateRenderer } from './render/template';
+import { AdventureRenderer } from './render/adventure';
+import type { Renderer, Room } from './render/renderer';
+import { buildScene, type Scene } from './scene';
 import { chooseSlippage, type NarrationPlan } from './slippage';
 import { buildStopGraph, type Exit, type Stop, type StopGraph, type StopId } from './stops';
 import { detectTensions, type TensionOptions } from './tensions';
@@ -20,6 +21,9 @@ export interface Visit {
 	stop: Stop;
 	inView: Fact[];
 	plan: NarrationPlan;
+	scene: Scene;
+	room: Room;
+	/** The room's paragraphs as one text. */
 	text: string;
 	exits: Exit[];
 }
@@ -33,7 +37,7 @@ export class Narrator {
 		private readonly perception: Perception,
 		private readonly options: NarratorOptions
 	) {
-		this.renderer = options.renderer ?? new TemplateRenderer();
+		this.renderer = options.renderer ?? new AdventureRenderer();
 	}
 
 	static fromOsm(data: OsmData, options: NarratorOptions): Narrator {
@@ -52,7 +56,17 @@ export class Narrator {
 			inView,
 			detectTensions(inView, this.options.clock, this.options)
 		);
-		return { stop, inView, plan, text: this.renderer.render(plan), exits: stop.exits };
+		const scene = buildScene(this.graph, stop, plan);
+		const room = this.renderer.render(scene);
+		return {
+			stop,
+			inView,
+			plan,
+			scene,
+			room,
+			text: room.paragraphs.join('\n\n'),
+			exits: stop.exits
+		};
 	}
 
 	nearestStop(at: LatLon): Stop | undefined {

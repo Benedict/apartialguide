@@ -1,0 +1,195 @@
+import { describe, expect, it } from 'vitest';
+import { destination } from '../geo';
+import type { Scene } from '../scene';
+import { facts } from '../testing/facts';
+import { SyntheticMap } from '../testing/synthetic';
+import { AdventureRenderer } from './adventure';
+
+const O = SyntheticMap.ORIGIN;
+const renderer = new AdventureRenderer();
+const everton = facts('way/1', {
+	highway: 'residential',
+	name: 'Everton Road',
+	surface: 'asphalt',
+	lit: 'yes',
+	maxspeed: '20 mph',
+	sidewalk: 'both'
+});
+
+const scene = (s: Partial<Scene> = {}): Scene => ({
+	stopId: 's1',
+	street: everton,
+	beats: [],
+	mood: 'plain',
+	position: O,
+	kind: 'corridor',
+	here: ['Everton Road'],
+	exits: [],
+	...s
+});
+
+const north = (metres: number) => ({ geometry: [destination(O, 0, metres)] });
+const text = (s: Scene) => renderer.render(s).paragraphs.join('\n\n');
+const beat = (
+	subject: string,
+	tags: Record<string, string>,
+	extra = {},
+	effects: ('spoken-as-found' | 'tense-slip')[] = []
+) => ({
+	subject,
+	facts: facts(subject, tags, { ...north(15), ...extra }),
+	effects
+});
+
+describe('AdventureRenderer', () => {
+	describe('where you stand', () => {
+		it('puts you on the street, between the streets at either end', () => {
+			expect(text(scene({ between: ['Clyde Road', 'Havelock Road'] }))).toContain(
+				'You are standing on Everton Road, between Clyde Road and Havelock Road.'
+			);
+		});
+
+		it('puts you where streets meet', () => {
+			const s = scene({ kind: 'junction', here: ['Everton Road', 'Clyde Road'] });
+			expect(text(s)).toContain('You are standing where Everton Road and Clyde Road meet.');
+			expect(renderer.render(s).title).toBe('Everton Road and Clyde Road');
+		});
+
+		it('puts you at the end of a dead end', () => {
+			const s = scene({
+				kind: 'junction',
+				exits: [{ label: 'west', to: 'x', street: 'Everton Road' }]
+			});
+			expect(text(s)).toContain('You are at the end of Everton Road.');
+		});
+
+		it('describes the street underfoot', () => {
+			const t = text(scene());
+			expect(t).toContain('Asphalt underfoot.');
+			expect(t).toContain('Lit at night, with pavement on both sides.');
+			expect(t).toContain('20 mph');
+		});
+	});
+
+	describe('what you see', () => {
+		it('places a feature by direction and distance', () => {
+			const t = text(scene({ beats: [beat('node/2', { amenity: 'pub', name: 'The Sextant' })] }));
+			expect(t).toContain('To the north, a few steps away, is a pub, “The Sextant”.');
+		});
+
+		it('speaks a broken name exactly as found', () => {
+			const t = text(
+				scene({
+					beats: [
+						beat('way/2', { old_name: 'est Bank', 'disused:amenity': 'bank' }, {}, [
+							'spoken-as-found'
+						])
+					]
+				})
+			);
+			expect(t).toContain('“est Bank”');
+			expect(t).not.toMatch(/\p{L}est Bank/u);
+		});
+
+		it('calls a building by what it is built as', () => {
+			expect(text(scene({ beats: [beat('way/6', { building: 'retail' })] }))).toContain(
+				'is a retail building.'
+			);
+			expect(text(scene({ beats: [beat('way/7', { building: 'church' })] }))).toContain(
+				'is a church.'
+			);
+		});
+
+		it('tells a disused use in the past tense', () => {
+			const t = text(scene({ beats: [beat('way/2', { 'disused:amenity': 'bank' })] }));
+			expect(t).toMatch(/was a bank/);
+		});
+
+		it('slips between present and past for a dated feature', () => {
+			const t = text(
+				scene({
+					beats: [
+						beat(
+							'node/3',
+							{ shop: 'bakery', 'addr:housenumber': '225' },
+							{ observed: '2018-10-04' },
+							['tense-slip']
+						)
+					]
+				})
+			);
+			expect(t).toMatch(/there’s a bakery/i);
+			expect(t).toMatch(/there was a bakery/i);
+			expect(t).toContain('2018');
+		});
+
+		it('gives uncountable things no article', () => {
+			expect(text(scene({ beats: [beat('node/4', { amenity: 'bicycle_parking' })] }))).toContain(
+				'is bicycle parking.'
+			);
+		});
+
+		it('describes a bus stop by its name', () => {
+			expect(
+				text(scene({ beats: [beat('node/5', { highway: 'bus_stop', name: 'Weir Steps' })] }))
+			).toContain('a bus stop, “Weir Steps”.');
+		});
+
+		it('hesitates when there is little to go on', () => {
+			expect(text(scene({ mood: 'hesitant' }))).toMatch(/…|—/);
+		});
+
+		it('loses the thread when crowded', () => {
+			const many = Array.from({ length: 9 }, (_, i) => beat(`node/${i}`, { amenity: 'bench' }));
+			expect(text(scene({ mood: 'rambling', beats: many }))).toMatch(/where was I/i);
+		});
+
+		it('says the same thing at the same stop every time', () => {
+			expect(text(scene({ mood: 'hesitant' }))).toBe(text(scene({ mood: 'hesitant' })));
+		});
+	});
+
+	describe('ways on', () => {
+		it('lists exits with where they lead', () => {
+			const t = text(
+				scene({
+					exits: [
+						{ label: 'east', to: 'a', street: 'Everton Road', towards: 'Clyde Road' },
+						{ label: 'west', to: 'b', street: 'Everton Road', towards: 'a dead end' }
+					]
+				})
+			);
+			expect(t).toContain(
+				'Exits: east (Everton Road, towards Clyde Road); west (Everton Road, a dead end).'
+			);
+		});
+	});
+
+	describe('things to examine', () => {
+		it('offers each feature with words to call it by', () => {
+			const [thing] = renderer.render(
+				scene({
+					beats: [beat('node/2', { amenity: 'pub', name: 'The Sextant', 'addr:housenumber': '21' })]
+				})
+			).things;
+			expect(thing.name).toBe('The Sextant');
+			expect(thing.aliases).toEqual(expect.arrayContaining(['sextant', 'pub', '21']));
+		});
+
+		it('shows the map’s own record when examined', () => {
+			const [thing] = renderer.render(
+				scene({
+					beats: [
+						beat(
+							'node/2',
+							{ amenity: 'pub', name: 'The Sextant' },
+							{ observed: '2023-04-01', observedBy: 'edit' }
+						)
+					]
+				})
+			).things;
+			expect(thing.description).toContain('amenity=pub');
+			expect(thing.description).toContain('Last edited in April 2023.');
+		});
+	});
+});

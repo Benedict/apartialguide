@@ -23,6 +23,8 @@
 		--ink: #26231f;
 		--muted: #6f685e;
 		--accent: #8a3b1f;
+		--rule: #dcd6cb;
+		--mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 		color-scheme: light dark;
 	}
 
@@ -32,6 +34,7 @@
 			--ink: #e7e1d6;
 			--muted: #9c958a;
 			--accent: #e0a07e;
+			--rule: #3a3732;
 		}
 	}
 

@@ -1,6 +1,21 @@
-import type { NarrationPlan } from '../slippage';
+import type { Scene } from '../scene';
 
-/** Turns a plan into words. The template renderer and, later, a model sit behind this port. */
+/** Something in view the reader can examine. */
+export interface Thing {
+	id: string;
+	name: string;
+	/** Lower-case words the reader might type to mean this thing. */
+	aliases: string[];
+	description: string;
+}
+
+export interface Room {
+	title: string;
+	paragraphs: string[];
+	things: Thing[];
+}
+
+/** Turns a scene into words. The adventure renderer and, later, a model sit behind this port. */
 export interface Renderer {
-	render(plan: NarrationPlan): string;
+	render(scene: Scene): Room;
 }

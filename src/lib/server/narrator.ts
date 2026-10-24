@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { fixedClock } from '../core/facts';
 import { Narrator } from '../core/narrator';
+import { compileWorld, type AdventureWorld } from '../core/adventure/world';
 import type { LatLon } from '../core/geo';
 
 /** Configuration comes from the environment only. */
@@ -27,20 +28,22 @@ export function readConfig(
 	};
 }
 
-let cached: { narrator: Narrator; config: Config } | undefined;
+let cached: { world: AdventureWorld; config: Config } | undefined;
 
-/** The narrator for the configured snapshot, built once per process. */
-export function narrator(): { narrator: Narrator; config: Config } | undefined {
+/** Every stop of the configured snapshot, narrated once per process. */
+export function adventureWorld(): { world: AdventureWorld; config: Config } | undefined {
 	if (cached) return cached;
 	const config = readConfig();
 	if (!config) return undefined;
 	const data = JSON.parse(readFileSync(config.snapshotPath, 'utf8'));
-	cached = {
-		config,
-		narrator: Narrator.fromOsm(data, {
-			clock: fixedClock(config.snapshotDate),
-			spacing: config.spacing
-		})
-	};
+	const narrator = Narrator.fromOsm(data, {
+		clock: fixedClock(config.snapshotDate),
+		spacing: config.spacing
+	});
+	const start = config.start
+		? narrator.nearestStop(config.start)
+		: narrator.graph.all().find((s) => s.kind === 'junction');
+	if (!start) throw new Error('The snapshot has no streets in it.');
+	cached = { config, world: compileWorld(narrator, start.id) };
 	return cached;
 }

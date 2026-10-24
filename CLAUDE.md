@@ -30,7 +30,9 @@ The core in `src/lib/core/` is plain TypeScript with no framework imports, so Cu
 - `perception.ts`: facts within reach, occluded by mapped buildings.
 - `tensions.ts`: conditions in the data (fragment, dated, sparse, dense).
 - `slippage.ts`: tensions to a `NarrationPlan` of beats and effects.
-- `render/`: `Renderer` port. `TemplateRenderer` now; a model renderer later, given only the plan's facts.
+- `scene.ts`: places a plan in the network: streets here, what lies either side, where each exit leads.
+- `render/`: `Renderer` port, scene to `Room` (title, paragraphs, things to examine). `AdventureRenderer` now; a model renderer later, given only the scene's facts.
 - `narrator.ts`: wires the pipeline.
+- `adventure/`: `compileWorld` narrates every stop ahead of time; `parser.ts` and `engine.ts` play it from a prompt.
 
-The web reader is SvelteKit (`src/routes/`). Each stop is a URL and its exits are links. Configuration comes from environment variables only.
+The web reader is SvelteKit (`src/routes/`): a text adventure with a `>` prompt, playing the compiled world in the browser. Guide speaks to the reader as "you". Configuration comes from environment variables only.
