@@ -2,7 +2,7 @@ import { groupBySubject } from '../facts';
 import { bearing, compassLabel, insideRing, nearestOnPolyline, type LatLon } from '../geo';
 import type { Tags } from '../osm';
 import type { Scene, SceneExit } from '../scene';
-import type { Beat } from '../slippage';
+import { isBackground, type Beat } from '../slippage';
 import type { Renderer, Room, Thing } from './renderer';
 import {
 	address,
@@ -26,7 +26,9 @@ export class AdventureRenderer implements Renderer {
 	render(scene: Scene): Room {
 		const street = tagsOf([...groupBySubject(scene.street).values()][0] ?? []);
 		const paragraphs = [
-			[whereYouStand(scene, street), ...streetCharacter(street)].join(' '),
+			[whereYouStand(scene, street), ...streetCharacter(street), setting(scene)]
+				.filter(Boolean)
+				.join(' '),
 			...whatYouSee(scene),
 			exitsLine(scene.exits)
 		];
@@ -94,15 +96,17 @@ function streetCharacter(street: Tags): string[] {
 
 function whatYouSee(scene: Scene): string[] {
 	let previous = '';
-	const told = scene.beats.map((b) => {
-		const place = placement(scene.position, b);
-		const said = describeBeat(
-			b,
-			place === previous && place.startsWith('To the') ? 'Next to it' : place
-		);
-		previous = place;
-		return said;
-	});
+	const told = scene.beats
+		.filter((b) => !isBackground(b))
+		.map((b) => {
+			const place = placement(scene.position, b);
+			const said = describeBeat(
+				b,
+				place === previous && place.startsWith('To the') ? 'Next to it' : place
+			);
+			previous = place;
+			return said;
+		});
 	const more = scene.hidden.length > 0;
 	if (scene.mood === 'rambling') {
 		// A crowd: what is noticed in full, then Guide loses count of the rest.
@@ -146,11 +150,49 @@ function tally(items: { phrase: string; noun?: string }[]): string[] {
 	});
 }
 
+/** Whether `at` lies within a closed outline. */
+function isInside(at: LatLon, geometry: readonly LatLon[]): boolean {
+	const closed = geometry.length > 3 && geometry[0].join() === geometry.at(-1)!.join();
+	return closed && insideRing(at, geometry);
+}
+
+/**
+ * The land underfoot in one sentence: the place by name, the areas you are in, and those beside you.
+ * "Here you are in Addiscombe, in a residential area, and beside a retail area to the north-west."
+ */
+function setting(scene: Scene): string {
+	const phrases: string[] = [];
+	const said = new Set<string>();
+	const say = (key: string, phrase: string) => {
+		if (said.has(key)) return;
+		said.add(key);
+		phrases.push(phrase);
+	};
+	const land = scene.beats
+		.filter(isBackground)
+		.map((b) => ({ tags: tagsOf(b.facts), geometry: b.facts[0].geometry }));
+	for (const { tags } of land)
+		if (tags.place && tags.name) say(`place ${tags.name}`, `in ${tags.name}`);
+	const areas = land.filter(({ tags }) => !tags.place);
+	const phrase = (tags: Tags) => `${article(noun(tags))}${tags.name ? `, “${tags.name}”,` : ''}`;
+	const key = (tags: Tags) => `${noun(tags)} ${tags.name ?? ''}`;
+	for (const { tags, geometry } of areas)
+		if (isInside(scene.position, geometry)) say(key(tags), `in ${phrase(tags).replace(/,$/, '')}`);
+	for (const { tags, geometry } of areas) {
+		if (isInside(scene.position, geometry)) continue;
+		const { point } = nearestOnPolyline(scene.position, geometry);
+		say(key(tags), `beside ${phrase(tags)} to the ${compassLabel(bearing(scene.position, point))}`);
+	}
+	if (!phrases.length) return '';
+	const joined =
+		phrases.length < 2 ? phrases[0] : `${phrases.slice(0, -1).join(', ')}, and ${phrases.at(-1)}`;
+	return `Here you are ${joined}.`;
+}
+
 /** "To the north, a few steps away" */
 function placement(from: LatLon, beat: Beat): string {
 	const geometry = beat.facts[0].geometry;
-	const closed = geometry.length > 3 && geometry[0].join() === geometry.at(-1)!.join();
-	if (closed && insideRing(from, geometry)) return 'All around';
+	if (isInside(from, geometry)) return 'All around';
 	const { point, metres } = nearestOnPolyline(from, geometry);
 	if (metres < 3) return 'Right here';
 	const near =

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { destination } from '../geo';
+import { destination, type LatLon } from '../geo';
 import type { Scene } from '../scene';
 import { facts } from '../testing/facts';
 import { SyntheticMap } from '../testing/synthetic';
@@ -101,27 +101,34 @@ describe('AdventureRenderer', () => {
 			);
 		});
 
-		it('calls land by its use, all around you when you stand in it', () => {
-			const area = {
-				subject: 'way/8',
-				facts: facts(
-					'way/8',
-					{ landuse: 'retail', name: 'Village shops' },
-					{
-						geometry: [
-							destination(O, 45, 50),
-							destination(O, 135, 50),
-							destination(O, 225, 50),
-							destination(O, 315, 50),
-							destination(O, 45, 50)
-						]
-					}
-				),
+		describe('the land you stand in', () => {
+			const square = (centre: LatLon, half: number) =>
+				[45, 135, 225, 315, 45].map((b) => destination(centre, b, half * Math.SQRT2));
+			const area = (subject: string, tags: Record<string, string>, geometry: LatLon[]) => ({
+				subject,
+				facts: facts(subject, tags, { geometry }),
 				effects: []
-			};
-			expect(text(scene({ beats: [area] }))).toContain(
-				'All around is a retail area, “Village shops”.'
+			});
+			const around = area('way/8', { landuse: 'residential' }, square(O, 50));
+			const east = area('way/9', { landuse: 'residential' }, square(destination(O, 90, 30), 10));
+			const shops = area(
+				'way/10',
+				{ landuse: 'retail', name: 'Village shops', 'addr:housenumber': '1-9' },
+				square(destination(O, 315, 20), 8)
 			);
+			const suburb = beat('node/13', { place: 'suburb', name: 'Addiscombe' });
+			const t = text(scene({ beats: [around, east, shops, suburb] }));
+
+			it('folds into one sentence of setting', () => {
+				expect(t).toContain(
+					'Here you are in Addiscombe, in a residential area, and beside a retail area, “Village shops”, to the north-west.'
+				);
+			});
+
+			it('is not told piece by piece', () => {
+				expect(t).not.toContain('is a residential area');
+				expect(t).not.toContain('is a suburb');
+			});
 		});
 
 		it('names other mapped things by what they are', () => {
@@ -129,12 +136,6 @@ describe('AdventureRenderer', () => {
 			expect(text(scene({ beats: [beat('node/10', { traffic_calming: 'hump' })] }))).toContain(
 				'is a speed hump.'
 			);
-		});
-
-		it('names a place label by its kind', () => {
-			expect(
-				text(scene({ beats: [beat('node/13', { place: 'suburb', name: 'Addiscombe' })] }))
-			).toContain('is a suburb, “Addiscombe”.');
 		});
 
 		it('calls a point with only an address an address', () => {

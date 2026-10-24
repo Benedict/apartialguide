@@ -23,7 +23,7 @@ export interface NarrationPlan {
 }
 
 /** Land use and place labels: the setting, not things in it. */
-const isBackground = (beat: Beat) =>
+export const isBackground = (beat: Beat) =>
 	beat.facts.some((f) => f.claim.key === 'landuse' || f.claim.key === 'place');
 
 /** Features noticed at a stop when nothing crowds the view, and when the view is crowded. */
