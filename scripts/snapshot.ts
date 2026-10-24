@@ -5,7 +5,7 @@
  *   AROUND_WAY=26605222 RADIUS_M=400 npm run snapshot
  * Writes data/snapshots/<SNAPSHOT_NAME>-<date>.json. The API refuses areas with more than 50,000 nodes.
  */
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { bboxAround, type LatLon } from '../src/lib/core/geo';
 
 const api = process.env.OSM_API ?? 'https://api.openstreetmap.org/api/0.6';
@@ -51,5 +51,16 @@ const data = await get(`/map.json?bbox=${bbox}`);
 const dir = process.env.SNAPSHOT_DIR ?? 'data/snapshots';
 mkdirSync(dir, { recursive: true });
 const path = `${dir}/${name}-${date}.json`;
+// The same map again keeps the first capture, so its time of taking stays true.
+if (existsSync(path)) {
+	const previous = JSON.parse(readFileSync(path, 'utf8'));
+	if (
+		previous.bbox === bbox &&
+		JSON.stringify(previous.elements) === JSON.stringify(data.elements)
+	) {
+		console.log(`${path} already holds this map, taken ${previous.taken}; left as it is`);
+		process.exit(0);
+	}
+}
 writeFileSync(path, JSON.stringify({ bbox, taken: new Date().toISOString(), ...data }));
 console.log(`${data.elements.length} elements written to ${path}`);
