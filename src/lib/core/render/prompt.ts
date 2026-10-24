@@ -12,7 +12,7 @@ import {
 import { monthYear, tagsOf } from './words';
 
 /** Bump when the prompt changes, so cached narration written under the old one is redone. */
-export const PROMPT_VERSION = 1;
+export const PROMPT_VERSION = 2;
 
 export interface Prompt {
 	/** Fixed for every stop, so it can be cached. */
@@ -34,7 +34,7 @@ Rules.
 - A name marked "speak exactly as found" is broken. Quote it exactly, in curly quotes. Never repair it, complete it or suggest what it once was.
 - A survey date is when something was last recorded. Never say anyone came to look. Slip between present and past for it: there is a shop; there was a shop when it was last recorded.
 - When told the place is crowded, lose count partway through. When told there is little here, hesitate.
-- When told some things go unnoticed, hint that there is more if the reader looks, without naming any of it.
+- When told some things go unnoticed, hint at them and be unclear: you are not sure there is more, or what it might be. Never name or count them, and never promise the reader will find anything.
 - Do not list the exits; the game prints them after your text.
 - Write 60 to 180 words in two to four short paragraphs, separated by blank lines. Plain text only: no headings, lists or markup.
 
@@ -46,7 +46,7 @@ Nearest is 209–213, a retail building, formerly a bank. Its old name is record
 
 Next door, at 207, there is a kebab shop, Brothers Kebab. There was a kebab shop in October 2018. That is when it was last recorded. Nothing has been recorded since. It may have been me who recorded it. I cannot say for certain that I did not.
 
-Beyond it a pharmacy, a nail bar, an estate agent called Streets Ahead, a crossing, somewhere to leave a bicycle — I lose count. The parade does not.`;
+Beyond it there may be more. I could not say what, or how much. I lose count before I have begun. The parade does not.`;
 
 /** The broken names in a beat: values the narration must carry exactly as found. */
 export function brokenNames(beat: Beat): string[] {
@@ -92,9 +92,7 @@ export function buildPrompt(scene: Scene): Prompt {
 		'',
 		...(mood ? [mood] : []),
 		...(scene.hidden.length
-			? [
-					`${scene.hidden.length} more thing${scene.hidden.length === 1 ? '' : 's'} here go unnoticed. Hint at them; name none.`
-				]
+			? ['Some things here go unnoticed. Be unclear about them: name none, count none.']
 			: []),
 		'Do not list the exits; the game prints them.'
 	].join('\n');

@@ -49,8 +49,8 @@ const HESITATIONS = [
 ];
 
 const LOST_COUNT = [
-	'And more besides — I lose count. Where was I.',
-	'And more, and more — I lose count.'
+	'And more besides, or perhaps not — I lose count. Where was I.',
+	'And more, possibly — I lose count.'
 ];
 
 /** Tags of the main street underfoot. */
@@ -117,7 +117,7 @@ function whatYouSee(scene: Scene): string[] {
 		const lost = more ? [pick(scene.stopId, LOST_COUNT)] : [];
 		return [[pick(scene.stopId, CROWD_OPENERS), ...told, ...lost].join(' ')];
 	}
-	return more ? [...told, 'There is more here, if you look.'] : told;
+	return more ? [...told, 'There may be more here. I could not say.'] : told;
 }
 
 /** What a closer look finds: the hidden things in one breath, named things by name and repeats counted. */

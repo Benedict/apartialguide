@@ -39,7 +39,7 @@ Feature: Playing it as a text adventure
   Scenario: Things Guide hasn't noticed are found by exploring
     Given six benches right beside the reader
     When the game begins
-    Then it says "There is more here, if you look."
+    Then it says "There may be more here. I could not say."
     And it does not say "The Sextant"
     When the reader types "explore"
     Then it says "Looking closer, you find"

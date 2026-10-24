@@ -249,12 +249,12 @@ describe('AdventureRenderer', () => {
 					hidden: [beat('node/3', { amenity: 'bench' })]
 				})
 			);
-			expect(t).toContain('There is more here, if you look.');
+			expect(t).toContain('There may be more here. I could not say.');
 		});
 
 		it('hints at nothing when nothing is hidden', () => {
 			const room = renderer.render(scene({ beats: [beat('node/2', { amenity: 'pub' })] }));
-			expect(room.paragraphs.join(' ')).not.toContain('if you look');
+			expect(room.paragraphs.join(' ')).not.toContain('could not say');
 			expect(room.hidden).toBeUndefined();
 		});
 
