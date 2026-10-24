@@ -1,12 +1,11 @@
 name: Snapshot
 
 # Takes a dated OSM snapshot and commits it to the branch. Runs when data/snapshots/request.env
-# (the area to fetch) or this file changes, or by hand.
+# (the area to fetch) changes, or by hand.
 on:
   push:
     paths:
       - data/snapshots/request.env
-      - .github/workflows/snapshot.yml
   workflow_dispatch:
 
 permissions:
