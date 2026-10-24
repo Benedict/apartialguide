@@ -73,6 +73,7 @@ describe('buildPrompt', () => {
 		expect(system).toMatch(/noticing is the reader’s/i);
 		expect(system).not.toMatch(/hint/i);
 		expect(system).not.toContain('Streets Ahead');
+		expect(system).not.toContain('there may be more');
 	});
 
 	it('tells the model the game prints the exits', () => {

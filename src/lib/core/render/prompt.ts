@@ -12,7 +12,7 @@ import {
 import { monthYear, tagsOf } from './words';
 
 /** Bump when the prompt changes, so cached narration written under the old one is redone. */
-export const PROMPT_VERSION = 3;
+export const PROMPT_VERSION = 4;
 
 export interface Prompt {
 	/** Fixed for every stop, so it can be cached. */
@@ -46,7 +46,7 @@ Nearest is 209–213, a retail building, formerly a bank. Its old name is record
 
 Next door, at 207, there is a kebab shop, Brothers Kebab. There was a kebab shop in October 2018. That is when it was last recorded. Nothing has been recorded since. It may have been me who recorded it. I cannot say for certain that I did not.
 
-Beyond it there may be more. I could not say what, or how much. I lose count before I have begun. The parade does not.`;
+Beyond it — I lose count before I have begun. The parade does not.`;
 
 /** The broken names in a beat: values the narration must carry exactly as found. */
 export function brokenNames(beat: Beat): string[] {
