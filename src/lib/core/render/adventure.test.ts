@@ -177,6 +177,7 @@ describe('AdventureRenderer', () => {
 			);
 			expect(t).toMatch(/there’s a bakery/i);
 			expect(t).toMatch(/there was a bakery/i);
+			expect(t).toContain('in October 2018, when it was last recorded.');
 			expect(t).toContain('2018');
 		});
 
