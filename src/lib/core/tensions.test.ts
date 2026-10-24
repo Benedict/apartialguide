@@ -42,6 +42,11 @@ describe('detectTensions', () => {
 		expect(detectTensions(old, clock).filter((t) => t.kind === 'dated')).toEqual([]);
 	});
 
+	it('counts a bus stop beside the street as a feature, not as street', () => {
+		const stop = facts('node/5', { highway: 'bus_stop', name: 'Weir Steps' });
+		expect(detectTensions([...street, ...stop], clock)).not.toContainEqual({ kind: 'sparse' });
+	});
+
 	it('calls a stop with nothing but street sparse', () => {
 		expect(detectTensions(street, clock)).toContainEqual({ kind: 'sparse' });
 	});

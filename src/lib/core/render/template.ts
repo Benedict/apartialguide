@@ -85,7 +85,8 @@ const USE_KEYS = [
 	'leisure',
 	'tourism',
 	'healthcare',
-	'historic'
+	'historic',
+	'highway'
 ];
 const LIFECYCLE = ['disused', 'was', 'abandoned', 'demolished', 'razed'];
 
@@ -137,7 +138,16 @@ const tagsOf = (facts: readonly Fact[]): Tags =>
 	Object.fromEntries(facts.map((f) => [f.claim.key, f.claim.value]));
 const humanise = (value = 'way') => value.replace(/_/g, ' ');
 const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-const article = (noun: string) => `${/^[aeiou]/i.test(noun) ? 'an' : 'a'} ${noun}`;
+/** Things counted by amount, not one by one, which take no article. */
+const UNCOUNTABLE = new Set([
+	'bicycle parking',
+	'drinking water',
+	'recycling',
+	'parking',
+	'motorcycle parking'
+]);
+const article = (noun: string) =>
+	UNCOUNTABLE.has(noun) ? noun : `${/^[aeiou]/i.test(noun) ? 'an' : 'a'} ${noun}`;
 const list = (items: string[]) =>
 	items.length < 2 ? items.join('') : `${items.slice(0, -1).join(', ')} and ${items.at(-1)}`;
 

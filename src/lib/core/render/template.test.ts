@@ -58,6 +58,22 @@ describe('TemplateRenderer', () => {
 		expect(text).toContain('2018');
 	});
 
+	it('gives uncountable things no article', () => {
+		const parking = facts('node/4', { amenity: 'bicycle_parking' });
+		const text = renderer.render(
+			plan({ beats: [{ subject: 'node/4', facts: parking, effects: [] }] })
+		);
+		expect(text).toContain('Bicycle parking.');
+	});
+
+	it('describes a bus stop by its name', () => {
+		const stop = facts('node/5', { highway: 'bus_stop', name: 'Weir Steps' });
+		const text = renderer.render(
+			plan({ beats: [{ subject: 'node/5', facts: stop, effects: [] }] })
+		);
+		expect(text).toContain('A bus stop — “Weir Steps”.');
+	});
+
 	it('hesitates when there is little to go on', () => {
 		const text = renderer.render(plan({ mood: 'hesitant' }));
 		expect(text).toMatch(/…|—/);
