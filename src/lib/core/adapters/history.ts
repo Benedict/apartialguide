@@ -1,5 +1,5 @@
 import type { Fact, SourceAdapter } from '../facts';
-import type { LatLon } from '../geo';
+import { distanceToPolyline, type LatLon } from '../geo';
 import { elementRef, type OsmElement, type OsmIndex, type Tags } from '../osm';
 
 /** The map of the same place as it stood on an earlier date. */
@@ -22,6 +22,13 @@ const REMARKABLE = [
 	'historic',
 	'building'
 ];
+/** Linear things that get re-cut into new pieces rather than lost: streets, rails, power lines. */
+const isInfrastructure = (e: OsmElement) =>
+	e.type === 'way' && !!(e.tags?.highway || e.tags?.railway || e.tags?.power);
+
+/** How near a same-named thing must stand for a gone thing to count as merely redrawn, in metres. */
+const REDRAWN_WITHIN = 30;
+
 const isProvenance = (key: string) =>
 	key === 'created_by' || key === 'source' || key.startsWith('source:');
 
@@ -45,7 +52,7 @@ export class HistoryAdapter implements SourceAdapter {
 
 		for (const { asOf, osm } of [...this.past].sort((a, b) => a.asOf.localeCompare(b.asOf))) {
 			for (const e of osm.data.elements) {
-				if (!e.tags || e.type === 'relation' || (e.type === 'way' && e.tags.highway)) continue;
+				if (!e.tags || e.type === 'relation' || isInfrastructure(e)) continue;
 				const ref = elementRef(e);
 				const present = now.get(ref);
 				if (!present) {
@@ -59,10 +66,21 @@ export class HistoryAdapter implements SourceAdapter {
 			}
 		}
 
+		const named = new Map<string, LatLon[][]>();
+		for (const e of this.current.data.elements) {
+			const name = e.tags?.name;
+			if (name) named.set(name, [...(named.get(name) ?? []), this.geometry(e, this.current)]);
+		}
+		const redrawn = (name: string | undefined, geometry: LatLon[]) =>
+			!!name &&
+			(named.get(name) ?? []).some(
+				(g) => g.length && geometry.some((p) => distanceToPolyline(p, g) <= REDRAWN_WITHIN)
+			);
+
 		const facts: Fact[] = [];
 		for (const [ref, { element, asOf, osm }] of gone) {
 			const geometry = this.geometry(element, osm);
-			if (geometry.length === 0) continue;
+			if (geometry.length === 0 || redrawn(element.tags?.name, geometry)) continue;
 			for (const [key, value] of Object.entries(element.tags as Tags)) {
 				if (!isProvenance(key)) facts.push(this.fact(ref, `was:${key}`, value, asOf, geometry));
 			}

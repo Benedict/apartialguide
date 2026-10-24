@@ -73,4 +73,35 @@ describe('HistoryAdapter', () => {
 			new HistoryAdapter(map(pub), [{ asOf: '2017-01-01', osm: map(pub, tree) }]).facts()
 		).toEqual([]);
 	});
+
+	it('does not call a thing gone when it was only redrawn under the same name nearby', () => {
+		const redrawn = node(20, { shop: 'bakery', name: 'Crumb' });
+		const facts = new HistoryAdapter(map(pub, redrawn), [
+			{ asOf: '2017-01-01', osm: map(pub, bakery) }
+		]).facts();
+		expect(facts).toEqual([]);
+	});
+
+	it('still calls it gone when the same name stands far away', () => {
+		const elsewhere: OsmElement = {
+			...node(20, { shop: 'bakery', name: 'Crumb' }),
+			lat: 51.39
+		} as OsmElement;
+		const facts = new HistoryAdapter(map(pub, elsewhere), [
+			{ asOf: '2017-01-01', osm: map(pub, bakery) }
+		]).facts();
+		expect(facts.map((f) => f.subject)).toEqual(['node/2', 'node/2']);
+	});
+
+	it('leaves out railways and power lines, which are re-cut rather than lost', () => {
+		const past = new OsmIndex({
+			elements: [
+				node(30),
+				node(31),
+				{ type: 'way', id: 32, nodes: [30, 31], tags: { railway: 'tram', name: 'Tramlink' } },
+				{ type: 'way', id: 33, nodes: [30, 31], tags: { power: 'line', name: 'Feeder' } }
+			]
+		});
+		expect(new HistoryAdapter(map(pub), [{ asOf: '2017-01-01', osm: past }]).facts()).toEqual([]);
+	});
 });

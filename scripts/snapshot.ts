@@ -55,8 +55,9 @@ if (process.env.AS_OF) {
 	const overpass = process.env.OVERPASS_API ?? 'https://overpass-api.de/api/interpreter';
 	const dir = process.env.HISTORY_DIR ?? 'data/history';
 	mkdirSync(dir, { recursive: true });
+	// Nodes and ways only: relations would pull in every member of a bus route, miles away.
 	for (const asOf of process.env.AS_OF.split(',').map((d) => d.trim())) {
-		const query = `[out:json][timeout:180][date:"${asOf}T00:00:00Z"];(nwr(${south},${w},${north},${e}););(._;>;);out meta;`;
+		const query = `[out:json][timeout:180][date:"${asOf}T00:00:00Z"];(node(${south},${w},${north},${e});way(${south},${w},${north},${e}););(._;>;);out meta;`;
 		const res = await fetch(overpass, {
 			method: 'POST',
 			headers: { ...headers, 'Content-Type': 'application/x-www-form-urlencoded' },
