@@ -283,7 +283,7 @@ function describeBeat(beat: Beat, place: string): string {
 		const at = where ? ` at ${where}` : '';
 		const observed = beat.facts.find((f) => f.observed)?.observed;
 		sentences.push(
-			`${lead(place)} there’s ${article(use)}${at}. There was ${article(use)}${at} in ${monthYear(observed)}, the last time anyone looked.`
+			`${lead(place)} there’s ${article(use)}${at}. There was ${article(use)}${at} in ${monthYear(observed)}, when it was last recorded.`
 		);
 	} else {
 		sentences.push(`${lead(place)} is ${nounPhrase(tags)}.`);
