@@ -4,7 +4,7 @@ import type { Tags } from '../osm';
 import type { Scene, SceneExit } from '../scene';
 import { isBackground, type Beat } from '../slippage';
 import { isElsewhere, isHistory } from '../tensions';
-import type { Renderer, Room, Thing } from './renderer';
+import type { Part, Renderer, Room, Thing } from './renderer';
 import {
 	address,
 	article,
@@ -27,22 +27,46 @@ import {
 export class AdventureRenderer implements Renderer {
 	render(scene: Scene): Room {
 		const street = streetTags(scene);
-		const paragraphs = [
-			[whereYouStand(scene, street), ...streetCharacter(street), setting(scene)]
-				.filter(Boolean)
-				.join(' '),
+		const part = (kind: Part['kind'], text: string, more: Partial<Part> = {}): Part => ({
+			kind,
+			text,
+			key: text,
+			...more
+		});
+		const along = scene.here.length === 1 ? scene.here[0] : undefined;
+		const around = setting(scene);
+		const parts: Part[][] = [
+			[
+				part('where', whereYouStand(scene, street), along ? { street: along } : {}),
+				...streetCharacter(street).map((s) => part('street', s)),
+				...(around ? [part('setting', around, { key: settingKey(around) })] : [])
+			],
 			...whatYouSee(scene),
-			exitsLine(scene.exits)
+			...(scene.mood === 'hesitant'
+				? [[part('frame', pick(scene.stopId, HESITATIONS), { options: HESITATIONS })]]
+				: []),
+			[part('exits', exitsLine(scene.exits))]
 		];
-		if (scene.mood === 'hesitant') paragraphs.splice(-1, 0, pick(scene.stopId, HESITATIONS));
 		return {
 			title: title(scene, street),
-			paragraphs: paragraphs.filter(Boolean),
+			paragraphs: parts.map((p) => p.map((x) => x.text).join(' ')),
+			parts,
 			things: scene.beats.filter((b) => !isHalf(b)).map(thing),
 			hidden: closerLook(scene)
 		};
 	}
 }
+
+/** A setting as a listener hears it: what it names, whatever the order and wherever each lies. */
+const settingKey = (setting: string) =>
+	setting
+		.replace(/^Here you are /, '')
+		.replace(/\.$/, '')
+		.replace(/ to the [a-z-]+/g, '')
+		.split(/,? and |, (?=in |beside )/)
+		.map((s) => s.trim())
+		.sort()
+		.join(' | ');
 
 const HESITATIONS = [
 	'Beyond that… nothing I can put a name to.',
@@ -52,7 +76,9 @@ const HESITATIONS = [
 
 const LOST_COUNT = [
 	'And more besides, or perhaps not — I lose count. Where was I.',
-	'And more, possibly — I lose count.'
+	'And more, possibly — I lose count.',
+	'There is more. I have stopped counting.',
+	'Others besides. I lose the thread.'
 ];
 
 /** Tags of the main street underfoot. */
@@ -103,29 +129,36 @@ export function streetCharacter(street: Tags): string[] {
 	return sentences;
 }
 
-function whatYouSee(scene: Scene): string[] {
+function whatYouSee(scene: Scene): Part[][] {
 	let previous = '';
-	const streets: Said = new Set();
+	const said: Said = new Set();
+	const slipped = new Set<string>();
 	const told = scene.beats
 		.filter((b) => !isBackground(b) && !isHalf(b))
-		.map((b) => {
+		.map((b): Part => {
 			const place = placement(scene.position, b);
-			const said = describeBeat(
+			const text = describeBeat(
 				b,
 				place === previous && place.startsWith('To the') ? 'Next to it' : place,
-				streets
+				said,
+				slipped
 			);
 			previous = place;
-			return said;
+			return { kind: 'thing', text, key: b.subject };
 		});
 	const more = scene.hidden.length > 0;
 	if (scene.mood === 'rambling') {
 		// A crowd: what is noticed in full, then Guide loses count of the rest.
-		const lost = more ? [pick(scene.stopId, LOST_COUNT)] : [];
-		return [[pick(scene.stopId, CROWD_OPENERS), ...told, ...lost].join(' ')];
+		const opener = pick(scene.stopId, CROWD_OPENERS);
+		const lost: Part[] = more
+			? [{ kind: 'frame', text: pick(scene.stopId, LOST_COUNT), key: 'lost', options: LOST_COUNT }]
+			: [];
+		return [
+			[{ kind: 'frame', text: opener, key: 'crowd', options: CROWD_OPENERS }, ...told, ...lost]
+		];
 	}
 	// Guide points to nothing: what goes unnoticed is for the reader to find.
-	return told;
+	return told.map((t) => [t]);
 }
 
 /** What a closer look finds: the hidden things in one breath, named things by name and repeats counted. */
@@ -139,7 +172,12 @@ function closerLook(scene: Scene): Room['hidden'] {
 	};
 }
 
-const CROWD_OPENERS = ['There is a great deal here.', 'Too much to take in at once.'];
+const CROWD_OPENERS = [
+	'There is a great deal here.',
+	'Too much to take in at once.',
+	'A crowd of things.',
+	'Everything at once, here.'
+];
 
 /** A crowd member in a breath: named things by name, the unnamed by what they are. */
 function brief(beat: Beat): { phrase: string; noun?: string } {
@@ -315,7 +353,12 @@ export const oldNames = (beat: Beat) =>
 		.sort((a, b) => (a.observed ?? '').localeCompare(b.observed ?? ''))
 		.map((f) => ({ name: f.claim.value, asOf: f.observed }));
 
-function describeBeat(beat: Beat, place: string, streets: Said = new Set()): string {
+function describeBeat(
+	beat: Beat,
+	place: string,
+	streets: Said = new Set(),
+	slipped: Set<string> = new Set()
+): string {
 	const tags = tagsFor(beat);
 	const use = currentUse(tags);
 
@@ -332,10 +375,14 @@ function describeBeat(beat: Beat, place: string, streets: Said = new Set()): str
 	if (use && beat.effects.includes('tense-slip')) {
 		const where = addressIn(tags, streets);
 		const at = where ? ` at ${where}` : '';
-		const observed = mapObserved(beat)?.observed;
+		const month = monthYear(mapObserved(beat)?.observed);
+		// A second thing last recorded the same month: the formula once is enough.
 		sentences.push(
-			`${lead(place)} there is ${article(use)}${at}, or there was in ${monthYear(observed)}, when it was last recorded.`
+			slipped.has(month)
+				? `${lead(place)} there is ${article(use)}${at}, or there was, then too.`
+				: `${lead(place)} there is ${article(use)}${at}, or there was in ${month}, when it was last recorded.`
 		);
+		slipped.add(month);
 	} else {
 		sentences.push(`${lead(place)} is ${nounPhrase(tags, streets)}.`);
 	}
