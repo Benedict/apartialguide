@@ -3,9 +3,11 @@
 	import { Adventure, type Reply } from '#lib/core/adventure/engine.ts';
 	import { skyNow } from '#lib/browser/sky.ts';
 	import { fetchArrivals } from '#lib/browser/transit.ts';
+	import { loadSettings } from '#lib/browser/settings.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+	const settings = loadSettings();
 
 	type Entry = { kind: 'reply'; reply: Reply } | { kind: 'command'; text: string };
 
@@ -24,12 +26,14 @@
 
 	// Guide begins once the browser has asked after today's weather, or given up asking.
 	$effect(() => {
-		skyNow(data.world.weatherAt).then(async (now) => {
-			transcript.push(...game.begin(now).map((reply): Entry => ({ kind: 'reply', reply })));
-			ready = true;
-			await tick();
-			input.focus();
-		});
+		skyNow(data.world.weatherAt, new Date(), undefined, { weather: settings.weather }).then(
+			async (now) => {
+				transcript.push(...game.begin(now).map((reply): Entry => ({ kind: 'reply', reply })));
+				ready = true;
+				await tick();
+				input.focus();
+			}
+		);
 	});
 
 	async function submit(event: SubmitEvent) {
@@ -49,11 +53,12 @@
 			touring = true;
 			// What is due at the stops here, from TfL, as the reader arrives; nothing without an answer.
 			const here = game.here;
-			for (const stop of game.transitHere())
-				fetchArrivals(stop).then((facts) => {
-					const due = game.here === here && game.departures(stop, facts);
-					if (due) show(due);
-				});
+			if (settings.departures)
+				for (const stop of game.transitHere())
+					fetchArrivals(stop).then((facts) => {
+						const due = game.here === here && game.departures(stop, facts);
+						if (due) show(due);
+					});
 		}
 		await tick();
 		input.scrollIntoView({ block: 'end' });
@@ -80,6 +85,14 @@
 			<section>
 				{#if entry.reply.title}<h2>{entry.reply.title}</h2>{/if}
 				{#each entry.reply.lines as line, j (j)}<p>{line}</p>{/each}
+				{#if entry.reply.link}
+					<p>
+						<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- another site -->
+						<a href={entry.reply.link.href} target="_blank" rel="noopener"
+							>{entry.reply.link.text}</a
+						>
+					</p>
+				{/if}
 			</section>
 		{/if}
 	{/each}
@@ -131,6 +144,10 @@
 	}
 
 	form {
+		position: sticky;
+		bottom: 0;
+		background: var(--paper);
+		padding-block: 0.6rem max(0.8rem, env(safe-area-inset-bottom, 0px));
 		display: flex;
 		align-items: baseline;
 		gap: 0.6rem;

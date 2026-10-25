@@ -54,3 +54,8 @@ Feature: Playing it as a text adventure
   Scenario: Nothing more to find
     When the reader types "search"
     Then it says "nothing more"
+
+  Scenario: Asking where on a map this is
+    When the reader types "gps"
+    Then it says "By the map, you are at"
+    And it links to Google Maps at where the map puts the reader

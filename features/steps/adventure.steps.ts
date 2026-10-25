@@ -340,3 +340,12 @@ Then('the reader is where they started', function (this: NarratorWorld) {
 	const s = state(this);
 	assert.equal(s.game!.here, s.started);
 });
+
+Then('it links to Google Maps at where the map puts the reader', function (this: NarratorWorld) {
+	const s = state(this);
+	const [lat, lon] = this.narrator.graph.get(s.game!.here)!.position.map((n) => n.toFixed(5));
+	assert.equal(
+		s.reply?.link?.href,
+		`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${lat},${lon}`)}`
+	);
+});

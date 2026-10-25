@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { AdventureWorld } from '../core/adventure/world';
 import { gunzipSync } from 'node:zlib';
 import { exportPage } from './export';
+import { LIVE, SOURCES } from '../site/sources';
 
 /** The world as the page carries it: gzip, base64, in a script element of its own. */
 const worldIn = (html: string) =>
@@ -52,7 +53,7 @@ describe('exportPage', () => {
 	});
 
 	it('credits the weather and Wikidata', () => {
-		expect(page()).toContain('Open-Meteo.com');
+		expect(page()).toContain('Open-Meteo');
 		expect(page()).toContain('CC BY 4.0');
 		expect(page()).toContain('Wikidata');
 	});
@@ -83,7 +84,7 @@ describe('exportPage', () => {
 	});
 
 	it('asks after the sky and today’s weather before Guide begins, and begins without the weather if none comes', () => {
-		expect(page()).toContain('skyNow(WORLD.weatherAt)');
+		expect(page()).toContain('skyNow(WORLD.weatherAt');
 		expect(page()).toMatch(/\.then\(\(now\) => \{\s*game\.begin\(now\)/);
 	});
 
@@ -103,5 +104,28 @@ describe('exportPage', () => {
 
 	it('has a prompt to type at', () => {
 		expect(page()).toMatch(/<input[^>]+id="command"/);
+	});
+
+	it('keeps the prompt above an on-screen keyboard', () => {
+		expect(page()).toContain('interactive-widget=resizes-content');
+		expect(page()).toContain('visualViewport');
+	});
+
+	it('has an About page crediting every source, and who made it', () => {
+		expect(page()).toContain('id="about"');
+		for (const source of SOURCES) {
+			expect(page()).toContain(source.href);
+			expect(page()).toContain(source.name);
+		}
+		expect(page()).toContain('Benedict');
+	});
+
+	it('has a Settings page with a choice for each source asked from the browser', () => {
+		expect(page()).toContain('id="settings"');
+		for (const live of LIVE) expect(page()).toContain(`name="${live.key}"`);
+	});
+
+	it('shows the link a reply carries, such as a place on a map', () => {
+		expect(page()).toContain('reply.link');
 	});
 });
