@@ -9,6 +9,7 @@ A text "street view" of Addiscombe, Croydon. Its name is A Partial Guide. One na
 - Never repair data. Broken values ("est Bank") are spoken as found.
 - Never edit OpenStreetMap. Gaps stay as found.
 - Never call public Overpass, or any OSM API, from the app. Snapshots are taken by hand with `npm run snapshot`.
+- The one live source is today's weather: `src/lib/browser/sky.ts` asks Open-Meteo from the reader's browser, for the map's own place, never the reader's. No answer in time, no weather.
 - Write the failing scenario or test before the code.
 - Real places come only from dated snapshots in `data/snapshots/`. Test fixtures are synthetic and must not pose as real Addiscombe data.
 
@@ -21,14 +22,14 @@ A text "street view" of Addiscombe, Croydon. Its name is A Partial Guide. One na
 - `npm run narrate`: writes prose ahead of time into `NARRATION_PATH` (needs `ANTHROPIC_API_KEY`, capped by `NARRATE_LIMIT`). The Narrate workflow runs it on GitHub by hand, with the key as a repository secret.
 - `npm run export`: writes the whole game as one self-contained HTML page (`EXPORT_PATH`, default `build/export/addiscombe.html`) from `SNAPSHOT_PATH`, `START_AT` and any `NARRATION_PATH`.
 - `BBOX=minLon,minLat,maxLon,maxLat npm run snapshot` (or `AROUND_WAY=<id> RADIUS_M=<m>`): writes `data/snapshots/addiscombe-<date>.json`. Editing `data/snapshots/request.env` and pushing runs the Snapshot workflow, which takes one on GitHub and commits it. With `AS_OF=<dates>` it fetches past maps from Overpass into `data/history/`; editing `data/history/request.env` runs the History workflow.
-- `BBOX=… npm run wikidata`: writes `data/wikidata/addiscombe-<date>.json`, the items the snapshot links to and those Wikidata places in the box. `BBOX=… npm run weather`: writes `data/weather/addiscombe-<date>.json`, Open-Meteo's weather on the days the map records (snapshot, past maps, survey dates). Editing `data/wikidata/request.env` or `data/weather/request.env` runs the Wikidata or Weather workflow. Neither source is called from the app, and the weather is never today's.
+- `BBOX=… npm run wikidata`: writes `data/wikidata/addiscombe-<date>.json`, the items the snapshot links to and those Wikidata places in the box. `BBOX=… npm run weather`: writes `data/weather/addiscombe-<date>.json`, Open-Meteo's weather on the days the map records (snapshot, past maps, survey dates). Editing `data/wikidata/request.env` or `data/weather/request.env` runs the Wikidata or Weather workflow. Neither is called from the app.
 
 ## Layout
 
 The core in `src/lib/core/` is plain TypeScript with no framework imports, so Cucumber can load it directly.
 
 - `osm.ts`: snapshot format and index.
-- `adapters/`: one `SourceAdapter` per source, each returning `Fact`s (`facts.ts`). `history.ts` compares past maps (`HISTORY_DIR`) with the current one: what has gone becomes `was:` facts, an older name a `was:name` fact. `wikidata.ts` is another account (`WIKIDATA_DIR`): facts about what the map links to, who a street is named for, and things only Wikidata places here; Guide never gives them as the map's. `weather.ts` gives each recorded day's weather (`WEATHER_DIR`), outside perception, spoken with what was recorded that day.
+- `adapters/`: one `SourceAdapter` per source, each returning `Fact`s (`facts.ts`). `history.ts` compares past maps (`HISTORY_DIR`) with the current one: what has gone becomes `was:` facts, an older name a `was:name` fact. `wikidata.ts` is another account (`WIKIDATA_DIR`): facts about what the map links to, who a street is named for, and things only Wikidata places here; Guide never gives them as the map's. `weather.ts` gives each recorded day's weather (`WEATHER_DIR`), outside perception, spoken with what was recorded that day; `currentWeatherFacts` reads today's.
 - `stops.ts`: street graph to stops. Junctions plus corridor stops at most `spacing` metres apart; exits named by compass point.
 - `perception.ts`: facts within reach, occluded by mapped buildings.
 - `tensions.ts`: conditions in the data (fragment, dated, gone, renamed, sparse, dense).

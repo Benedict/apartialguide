@@ -54,3 +54,14 @@ export function weatherThatDay(
 				: `, ${low} to ${high} °C`;
 	return `${sky.charAt(0).toUpperCase()}${sky.slice(1)} that day${temperature}.`;
 }
+
+/** "Today: light rain, 11 °C.", from the weather facts about now, or nothing. */
+export function weatherNow(facts: readonly Fact[]): string | undefined {
+	const now = Object.fromEntries(
+		facts.filter((f) => f.subject === 'weather/now').map((f) => [f.claim.key, f.claim.value])
+	);
+	const sky = SKY[Number(now['weather:code'])];
+	if (now['weather:code'] === undefined || !sky) return undefined;
+	const t = now['weather:temperature'];
+	return `Today: ${sky}${t === undefined ? '' : `, ${Math.round(Number(t))} °C`}.`;
+}

@@ -46,7 +46,12 @@ describe('exportPage', () => {
 	});
 
 	it('begins with Guide introducing themselves', () => {
-		expect(page()).toContain('game.begin().forEach(show)');
+		expect(page()).toContain('game.begin(now).forEach(show)');
+	});
+
+	it('asks for today’s weather before Guide begins, and begins without it if none comes', () => {
+		expect(page()).toContain('fetchWeatherNow(WORLD.weatherAt)');
+		expect(page()).toMatch(/\.then\(\(now\) => \{\s*game\.begin\(now\)/);
 	});
 
 	it('has no header above the introduction', () => {

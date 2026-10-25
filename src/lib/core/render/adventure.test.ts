@@ -167,6 +167,35 @@ describe('AdventureRenderer', () => {
 			expect(begun('1868-05-01')).toContain('begun on 1 May 1868.');
 		});
 
+		it('speaks by another account only of Wikidata’s own items, never of half a thing', () => {
+			const half = {
+				subject: 'way/7',
+				facts: facts(
+					'way/7',
+					{ 'wikidata:description': 'street in an invented borough' },
+					north(20)
+				).map((f) => ({ ...f, source: 'wikidata' })),
+				effects: []
+			};
+			const t = text(scene({ beats: [half] }));
+			expect(t).not.toContain('by another account');
+			expect(t).not.toContain('undefined');
+		});
+
+		it('finds by looking closer what only another account places here, by its name', () => {
+			const works = {
+				subject: 'wikidata/Q900000003',
+				facts: facts(
+					'wikidata/Q900000003',
+					{ 'wikidata:label': 'The Old Invented Works' },
+					north(5)
+				).map((f) => ({ ...f, source: 'wikidata' })),
+				effects: []
+			};
+			const room = renderer.render(scene({ hidden: [works] }));
+			expect(room.hidden?.lines[0]).toContain('“The Old Invented Works”, by another account');
+		});
+
 		it('tells a disused use in the past tense', () => {
 			const t = text(scene({ beats: [beat('way/2', { 'disused:amenity': 'bank' })] }));
 			expect(t).toMatch(/was a bank/);

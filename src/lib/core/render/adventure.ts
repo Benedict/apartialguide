@@ -39,7 +39,7 @@ export class AdventureRenderer implements Renderer {
 		return {
 			title: title(scene, street),
 			paragraphs: paragraphs.filter(Boolean),
-			things: scene.beats.map(thing),
+			things: scene.beats.filter((b) => !isHalf(b)).map(thing),
 			hidden: closerLook(scene)
 		};
 	}
@@ -107,7 +107,7 @@ export function streetCharacter(street: Tags): string[] {
 function whatYouSee(scene: Scene): string[] {
 	let previous = '';
 	const told = scene.beats
-		.filter((b) => !isBackground(b))
+		.filter((b) => !isBackground(b) && !isHalf(b))
 		.map((b) => {
 			const place = placement(scene.position, b);
 			const said = describeBeat(
@@ -130,11 +130,12 @@ function whatYouSee(scene: Scene): string[] {
 
 /** What a closer look finds: the hidden things in one breath, named things by name and repeats counted. */
 function closerLook(scene: Scene): Room['hidden'] {
-	if (!scene.hidden.length) return undefined;
-	const found = tally(scene.hidden.map(brief));
+	const hidden = scene.hidden.filter((b) => !isHalf(b));
+	if (!hidden.length) return undefined;
+	const found = tally(hidden.map(brief));
 	return {
 		lines: [`Looking closer, you find ${found.join(', and ')}.`],
-		things: scene.hidden.map(thing)
+		things: hidden.map(thing)
 	};
 }
 
@@ -143,6 +144,7 @@ const CROWD_OPENERS = ['There is a great deal here.', 'Too much to take in at on
 /** A crowd member in a breath: named things by name, the unnamed by what they are. */
 function brief(beat: Beat): { phrase: string; noun?: string } {
 	const tags = tagsFor(beat);
+	if (isElsewhereOnly(beat)) return { phrase: `“${tags['wikidata:label']}”, by another account` };
 	const what = noun(tags);
 	if (tags.name) {
 		const saysItAll = tags.name.toLowerCase().includes(what.split(' ').at(-1)!);
@@ -365,7 +367,10 @@ function when(date: string): string {
 }
 
 /** A thing only another account places here: the map does not link to it. */
-const isElsewhereOnly = (beat: Beat) => beat.facts.every(isElsewhere);
+const isElsewhereOnly = (beat: Beat) => beat.subject.startsWith('wikidata/');
+
+/** Another account of something the map has, seen without the map's own facts: not a thing to speak of. */
+export const isHalf = (beat: Beat) => !isElsewhereOnly(beat) && beat.facts.every(isElsewhere);
 
 export function exitsLine(exits: readonly SceneExit[]): string {
 	if (!exits.length) return 'There is no way on from here.';

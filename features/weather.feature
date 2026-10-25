@@ -1,7 +1,7 @@
 Feature: The weather on the days that were recorded
 
   The weather of a day the map remembers: when something was last recorded, when it went,
-  when the map was made. Never today's. Weather here is invented.
+  when the map was made. And today's, as the reader reads. Weather here is invented.
 
   Background:
     Given an invented street called "Long Street" running east from "Short Row" to "Blind Alley"
@@ -24,3 +24,16 @@ Feature: The weather on the days that were recorded
     Given the map of 2017-01-01 had a bakery called "Crumb" right beside the reader
     When the game begins
     Then it does not say "that day"
+
+  Scenario: Guide knows today's weather, as the reader reads
+    Given the weather on 2026-10-24 was light rain, 9 to 13 °C
+    And the weather now is overcast, 12 °C
+    When the reader opens the game
+    Then it says "Light rain that day, 9 to 13 °C. Today: overcast, 12 °C."
+
+  Scenario: The reader asks after the weather
+    Given the weather now is overcast, 12 °C
+    And the reader opens the game
+    When the reader types "take the tour"
+    And the reader types "weather"
+    Then it says "Today: overcast, 12 °C."

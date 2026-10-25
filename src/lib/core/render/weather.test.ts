@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { WeatherAdapter } from '../adapters/weather';
-import { weatherThatDay } from './weather';
+import { weatherNow, weatherThatDay } from './weather';
+import { currentWeatherFacts } from '../adapters/weather';
 
 const facts = new WeatherAdapter({
 	source: 'Open-Meteo',
@@ -27,5 +28,18 @@ describe('weatherThatDay', () => {
 	it('says nothing of a day it has no record of, or a code it cannot read', () => {
 		expect(weatherThatDay(facts, '2021-01-01')).toBeUndefined();
 		expect(weatherThatDay(facts, '2020-01-01')).toBeUndefined();
+	});
+});
+
+describe('weatherNow', () => {
+	it('says today’s sky and temperature', () => {
+		const now = currentWeatherFacts({
+			current: { time: '2026-10-25T16:45', weather_code: 61, temperature_2m: 11.4 }
+		});
+		expect(weatherNow(now)).toBe('Today: light rain, 11 °C.');
+	});
+
+	it('says nothing without word of today', () => {
+		expect(weatherNow([])).toBeUndefined();
 	});
 });

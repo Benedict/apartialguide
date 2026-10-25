@@ -79,6 +79,13 @@ describe('WikidataAdapter', () => {
 		expect(twice.facts().some((f) => f.subject === 'wikidata/Q1')).toBe(false);
 	});
 
+	it('reaches only as far as the thing it describes', () => {
+		const street = facts().filter((f) => f.subject === 'way/2');
+		const pub = facts().filter((f) => f.subject === 'node/1');
+		expect(new Set(street.map((f) => f.reach))).toEqual(new Set([15]));
+		expect(new Set(pub.map((f) => f.reach))).toEqual(new Set([30]));
+	});
+
 	it('keeps values exactly as found', () => {
 		const odd = { ...store, items: { ...store.items, Q2: { label: 'ada inventa' } } };
 		const label = new WikidataAdapter(osm, odd).facts().find((f) => f.subject === 'way/2');

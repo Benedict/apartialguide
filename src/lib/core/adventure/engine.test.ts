@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { Adventure, INTRO } from './engine';
 import type { AdventureWorld } from './world';
+import { currentWeatherFacts } from '../adapters/weather';
 
 const room = (title: string, exits: AdventureWorld['stops'][string]['exits']) => ({
 	title,
@@ -41,6 +42,28 @@ describe('Adventure', () => {
 		it('dates the map Guide carries, when it has a date', () => {
 			const [intro] = new Adventure({ ...world, asOf: '2026-10-24' }).begin();
 			expect(intro.lines.join(' ')).toContain('24 October 2026');
+		});
+
+		it('says today’s weather beside the map’s date, when there is word of it', () => {
+			const now = currentWeatherFacts({
+				current: { time: '2026-10-25T16:45', weather_code: 61, temperature_2m: 11 }
+			});
+			const [intro] = new Adventure({ ...world, asOf: '2026-10-24' }).begin(now);
+			expect(intro.lines.join(' ')).toContain('dated 24 October 2026. Today: light rain, 11 °C.');
+		});
+
+		it('tells the weather when asked, and only what it has word of', () => {
+			const now = currentWeatherFacts({
+				current: { time: '2026-10-25T16:45', weather_code: 3, temperature_2m: 12 }
+			});
+			const told = new Adventure(world);
+			told.begin(now);
+			told.respond('take the tour');
+			expect(told.respond('weather').lines).toEqual(['Today: overcast, 12 °C.']);
+			const untold = new Adventure(world);
+			untold.begin();
+			untold.respond('take the tour');
+			expect(untold.respond('sky').lines).toEqual(['I have no word of the weather today.']);
 		});
 
 		it('begins the tour at the start', () => {

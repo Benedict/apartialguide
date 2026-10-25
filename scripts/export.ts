@@ -22,11 +22,13 @@ const world = compileWorld(narrator, startStop(narrator, config).id, {
 });
 
 const bundle = await build({
-	entryPoints: ['src/lib/core/adventure/engine.ts'],
+	entryPoints: ['src/lib/browser/play.ts'],
 	bundle: true,
 	format: 'iife',
 	globalName: 'AdventureEngine',
-	footer: { js: 'var Adventure = AdventureEngine.Adventure;' },
+	footer: {
+		js: 'var Adventure = AdventureEngine.Adventure; var fetchWeatherNow = AdventureEngine.fetchWeatherNow;'
+	},
 	minify: true,
 	target: 'es2020',
 	write: false

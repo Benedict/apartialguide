@@ -30,7 +30,8 @@ export class WikidataAdapter implements SourceAdapter {
 	constructor(
 		private readonly osm: OsmIndex,
 		private readonly store: WikidataStore,
-		private readonly reach = 30
+		/** As far as the map's own facts reach: streets less far than the things beside them. */
+		private readonly reach = { street: 15, feature: 30 }
 	) {}
 
 	facts(): Fact[] {
@@ -41,15 +42,16 @@ export class WikidataAdapter implements SourceAdapter {
 			const geometry = this.geometry(e);
 			if (!geometry.length) continue;
 			const subject = elementRef(e);
+			const reach = e.type === 'way' && e.tags.highway ? this.reach.street : this.reach.feature;
 			const itself = this.item(e.tags.wikidata, linked);
 			if (itself) {
-				this.push(facts, subject, 'wikidata:description', itself.description, geometry);
-				this.push(facts, subject, 'wikidata:inception', itself.inception, geometry);
+				this.push(facts, subject, 'wikidata:description', itself.description, geometry, reach);
+				this.push(facts, subject, 'wikidata:inception', itself.inception, geometry, reach);
 			}
 			const namesake = this.item(e.tags['name:etymology:wikidata'], linked);
 			if (namesake) {
-				this.push(facts, subject, 'etymology:label', namesake.label, geometry);
-				this.push(facts, subject, 'etymology:description', namesake.description, geometry);
+				this.push(facts, subject, 'etymology:label', namesake.label, geometry, reach);
+				this.push(facts, subject, 'etymology:description', namesake.description, geometry, reach);
 			}
 		}
 		for (const [qid, item] of Object.entries(this.store.items)) {
@@ -79,7 +81,8 @@ export class WikidataAdapter implements SourceAdapter {
 		subject: string,
 		key: string,
 		value: string | undefined,
-		geometry: LatLon[]
+		geometry: LatLon[],
+		reach = this.reach.feature
 	) {
 		if (value === undefined) return;
 		facts.push({
@@ -88,7 +91,7 @@ export class WikidataAdapter implements SourceAdapter {
 			claim: { key, value },
 			source: this.name,
 			observed: this.store.retrieved,
-			reach: this.reach,
+			reach,
 			geometry
 		});
 	}

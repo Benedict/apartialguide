@@ -101,8 +101,13 @@ const WORLD = ${scriptSafe(world)};
 		else return;
 		event.preventDefault();
 	});
-	game.begin().forEach(show);
-	input.focus({ preventScroll: true });
+	// Until Guide has begun, there is nothing to answer.
+	input.disabled = true;
+	fetchWeatherNow(WORLD.weatherAt).then((now) => {
+		game.begin(now).forEach(show);
+		input.disabled = false;
+		input.focus({ preventScroll: true });
+	});
 })();
 </script>
 </body>

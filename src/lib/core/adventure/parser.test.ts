@@ -43,6 +43,11 @@ describe('parse', () => {
 		}
 	);
 
+	it('reads asking after the weather', () => {
+		for (const text of ['weather', 'sky', 'look up', 'look at the sky'])
+			expect(parse(text)).toEqual({ verb: 'weather' });
+	});
+
 	it('keeps what it cannot read', () => {
 		expect(parse('Dance!')).toEqual({ verb: 'unknown', text: 'dance' });
 	});

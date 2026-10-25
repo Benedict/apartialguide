@@ -1,3 +1,5 @@
+import type { Fact } from '../facts';
+import { weatherNow } from '../render/weather';
 import { longDate } from '../render/words';
 import { direction, parse } from './parser';
 import type { Thing } from '../render/renderer';
@@ -12,7 +14,7 @@ export interface Reply {
 export const HELP =
 	'Type a direction to walk: north, ne, go east, or the name of a street. ' +
 	'Type look to hear the place again, explore to find what I have not mentioned, examine and a thing to look closer, ' +
-	'exits for the ways on, and back to retrace your step.';
+	'exits for the ways on, back to retrace your step, and weather to ask after the sky.';
 
 /** Guide's words about themselves, said once, before the first place. */
 export const INTRO = [
@@ -32,6 +34,8 @@ export class Adventure {
 	private readonly explored = new Set<string>();
 	/** True between the introduction and the tour. */
 	private choosing = false;
+	/** Today's weather, as the browser found it when the walk began. */
+	private now: Fact[] = [];
 
 	constructor(
 		private readonly world: AdventureWorld,
@@ -39,10 +43,14 @@ export class Adventure {
 	) {}
 
 	/** The start of the walk: Guide introduces themselves and offers the tour. */
-	begin(): Reply[] {
+	begin(now: Fact[] = []): Reply[] {
 		this.choosing = true;
+		this.now = now;
 		const { asOf, asOfWeather } = this.world;
-		const sky = asOfWeather ? ` ${asOfWeather}` : '';
+		const sky = [asOfWeather, weatherNow(now)]
+			.filter(Boolean)
+			.map((s) => ` ${s}`)
+			.join('');
 		const map = asOf
 			? `The map I carry is dated ${longDate(asOf)}.${sky} Beyond it there may be more. I could not say what.`
 			: 'Beyond my map there may be more. I could not say what.';
@@ -82,6 +90,8 @@ export class Adventure {
 				return this.explore();
 			case 'help':
 				return { lines: [HELP] };
+			case 'weather':
+				return { lines: [weatherNow(this.now) ?? 'I have no word of the weather today.'] };
 			case 'exits':
 				return { lines: [this.exits()] };
 			case 'back':

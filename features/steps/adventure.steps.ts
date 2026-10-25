@@ -8,6 +8,8 @@ import { RecordedModel } from '../../src/lib/core/testing/recorded';
 import { bearing, destination } from '../../src/lib/core/geo';
 import type { OsmElement } from '../../src/lib/core/osm';
 import type { WikidataItem } from '../../src/lib/core/adapters/wikidata';
+import { currentWeatherFacts } from '../../src/lib/core/adapters/weather';
+import type { Fact } from '../../src/lib/core/facts';
 import { junctionId } from '../../src/lib/core/stops';
 import { SyntheticMap } from '../../src/lib/core/testing/synthetic';
 import type { NarratorWorld } from '../support/world';
@@ -19,6 +21,8 @@ interface AdventureState {
 	started?: string;
 	reply?: Reply;
 	streetStart?: number;
+	/** Today's weather, as the browser would fetch it. */
+	now?: Fact[];
 }
 const state = (w: NarratorWorld) => w as NarratorWorld & AdventureState;
 
@@ -176,12 +180,25 @@ When('the game begins', function (this: NarratorWorld) {
 	s.reply = s.game!.look();
 });
 
+Given(
+	/^the weather now is ([a-z ]+), (-?\d+) °C$/,
+	function (this: NarratorWorld, words: string, temperature: string) {
+		state(this).now = currentWeatherFacts({
+			current: {
+				time: `${this.snapshotDate}T12:00`,
+				weather_code: CODES[words],
+				temperature_2m: Number(temperature)
+			}
+		});
+	}
+);
+
 Given('the reader opens the game', function (this: NarratorWorld) {
 	const s = state(this);
 	s.game = new Adventure(
 		compileWorld(this.narrator, junctionId(s.streetStart!), { asOf: this.snapshotDate })
 	);
-	const replies = s.game.begin();
+	const replies = s.game.begin(s.now);
 	s.reply = { lines: replies.flatMap((r) => [...(r.title ? [r.title] : []), ...r.lines]) };
 });
 

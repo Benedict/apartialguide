@@ -26,6 +26,8 @@ export interface AdventureWorld {
 	asOf?: string;
 	/** The weather that day, if it was recorded. */
 	asOfWeather?: string;
+	/** Where to ask about today's weather: where the tour begins. */
+	weatherAt?: { latitude: number; longitude: number };
 }
 
 export function compileWorld(
@@ -45,10 +47,14 @@ export function compileWorld(
 		};
 	}
 	const asOfWeather = weatherThatDay(narrator.weather, options.asOf);
+	const begins = narrator.graph.get(start)?.position;
 	return {
 		start,
 		stops,
 		...(options.asOf ? { asOf: options.asOf } : {}),
-		...(asOfWeather ? { asOfWeather } : {})
+		...(asOfWeather ? { asOfWeather } : {}),
+		...(begins
+			? { weatherAt: { latitude: +begins[0].toFixed(4), longitude: +begins[1].toFixed(4) } }
+			: {})
 	};
 }

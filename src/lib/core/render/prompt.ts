@@ -4,6 +4,7 @@ import type { Fact } from '../facts';
 import { isElsewhere, looksBroken, NAME_KEY } from '../tensions';
 import { weatherThatDay } from './weather';
 import {
+	isHalf,
 	nounPhrase,
 	oldNames,
 	placement,
@@ -100,7 +101,7 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 
 export function buildPrompt(scene: Scene): Prompt {
 	const street = streetTags(scene);
-	const noticed = scene.beats.filter((b) => !isBackground(b));
+	const noticed = scene.beats.filter((b) => !isBackground(b) && !isHalf(b));
 	const mood = {
 		plain: '',
 		hesitant: 'There is little here. Hesitate.',
