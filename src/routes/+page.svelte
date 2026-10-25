@@ -53,7 +53,7 @@
 </script>
 
 <svelte:head>
-	<title>Addiscombe Narrator</title>
+	<title>A Partial Guide</title>
 </svelte:head>
 
 <div class="transcript" aria-live="polite">

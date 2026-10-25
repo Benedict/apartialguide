@@ -19,7 +19,7 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Addiscombe Narrator</title>
+<title>A Partial Guide</title>
 <style>
 	:root {
 		--paper: #f6f4ef; --ink: #26231f; --muted: #6f685e; --rule: #dcd6cb; --accent: #8a3b1f;
