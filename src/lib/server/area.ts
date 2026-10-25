@@ -1,3 +1,5 @@
+import { distance } from '../core/geo';
+
 /** Overpass's answer to `out tags bb` for boundary relations. */
 export interface BoundaryAnswer {
 	elements: {
@@ -25,7 +27,7 @@ export function bboxAroundBoundaries(answer: BoundaryAnswer): { bbox: string; na
 
 /** Overpass's answer for place nodes of a name. */
 export interface PlaceAnswer {
-	elements: { lat?: number; lon?: number; tags?: Record<string, string> }[];
+	elements: { type?: string; lat?: number; lon?: number; tags?: Record<string, string> }[];
 }
 
 /** Places of the kind that name a district, most district-like first. */
@@ -41,4 +43,33 @@ export function placeCentre(answer: PlaceAnswer): [number, number] {
 	};
 	const [best] = [...places].sort((a, b) => rank(a) - rank(b));
 	return [best.lat!, best.lon!];
+}
+
+/** A box cut into tiles no wider or taller than `metres`, west to east within south to north. */
+export function tiles(bbox: string, metres: number): string[] {
+	const [w, s, e, n] = bbox.split(',').map(Number);
+	const cols = Math.ceil(distance([s, w], [s, e]) / metres);
+	const rows = Math.ceil(distance([s, w], [n, w]) / metres);
+	const out: string[] = [];
+	for (let r = 0; r < rows; r++)
+		for (let c = 0; c < cols; c++)
+			out.push(
+				[
+					w + ((e - w) * c) / cols,
+					s + ((n - s) * r) / rows,
+					w + ((e - w) * (c + 1)) / cols,
+					s + ((n - s) * (r + 1)) / rows
+				]
+					.map((v) => v.toFixed(6))
+					.join(',')
+			);
+	return out;
+}
+
+/** Elements from several tiles, each once: a way crossing a tile edge comes in both. */
+export function mergeElements<T extends { type: string; id: number }>(lists: T[][]): T[] {
+	const seen = new Map<string, T>();
+	for (const list of lists)
+		for (const e of list) if (!seen.has(`${e.type}/${e.id}`)) seen.set(`${e.type}/${e.id}`, e);
+	return [...seen.values()];
 }

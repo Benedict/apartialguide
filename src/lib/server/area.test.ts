@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { bboxAroundBoundaries, placeCentre } from './area';
+import { bboxAroundBoundaries, mergeElements, placeCentre, tiles } from './area';
 
 describe('bboxAroundBoundaries', () => {
 	it('takes the box around every boundary Overpass matched, as minLon,minLat,maxLon,maxLat', () => {
@@ -44,5 +44,28 @@ describe('placeCentre', () => {
 
 	it('refuses an answer with no place in it', () => {
 		expect(() => placeCentre({ elements: [] })).toThrow(/no place/);
+	});
+});
+
+describe('tiles', () => {
+	it('cuts a box into tiles no wider than asked, covering it exactly', () => {
+		const cut = tiles('-0.09,51.37,-0.06,51.39', 1000);
+		expect(cut.length).toBe(9);
+		expect(cut[0]).toBe('-0.090000,51.370000,-0.080000,51.376667');
+		expect(cut.at(-1)).toBe('-0.070000,51.383333,-0.060000,51.390000');
+	});
+});
+
+describe('mergeElements', () => {
+	it('keeps each element once, whichever tile it came in', () => {
+		const a = { type: 'node', id: 1 };
+		const b = { type: 'way', id: 1 };
+		const c = { type: 'node', id: 2 };
+		expect(
+			mergeElements([
+				[a, b],
+				[b, c, a]
+			])
+		).toEqual([a, b, c]);
 	});
 });

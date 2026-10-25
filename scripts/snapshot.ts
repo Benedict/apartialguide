@@ -15,7 +15,7 @@
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { bboxAround, type LatLon } from '../src/lib/core/geo';
-import { bboxAroundBoundaries, placeCentre } from '../src/lib/server/area';
+import { bboxAroundBoundaries, mergeElements, placeCentre, tiles } from '../src/lib/server/area';
 
 const api = process.env.OSM_API ?? 'https://api.openstreetmap.org/api/0.6';
 const headers = { 'User-Agent': 'a-partial-guide/0.1 (art project; snapshot script)' };
@@ -62,6 +62,8 @@ async function ask(query: string, what: string) {
 
 let bbox = process.env.BBOX;
 let area: string[] | undefined;
+/** Whether to take the box from the OSM API a tile at a time: a whole district is over its limit. */
+let tiled = false;
 if (!bbox && process.env.AREA) {
 	const pattern = process.env.AREA.replace(/"/g, '\\"');
 	// Any kind of boundary: wards are tagged administrative in some places and political in others.
@@ -86,17 +88,32 @@ if (!bbox && process.env.AREA) {
 	console.log(`${area.join(', ')} → bbox ${bbox}`);
 }
 if (!bbox && process.env.AROUND_PLACE) {
-	// The map's own point for a place, and a radius around it: OSM has no outline for every district.
+	// The map's own point for a place, read from the newest snapshot (OSM has no outline for every
+	// district), and a radius around it.
 	const radius = Number(process.env.RADIUS_M ?? 1200);
-	const place = process.env.AROUND_PLACE.replace(/"/g, '\\"');
-	const centre = placeCentre(
-		await ask(`[out:json][timeout:60];node["place"]["name"="${place}"];out;`, `the place ${place}`)
-	);
+	const snapshots = process.env.SNAPSHOT_DIR ?? 'data/snapshots';
+	const newest = readdirSync(snapshots)
+		.filter((f) => f.startsWith(name) && f.endsWith('.json'))
+		.sort()
+		.at(-1);
+	if (!newest) {
+		console.error(`AROUND_PLACE reads the place from a snapshot, and ${snapshots} has none`);
+		process.exit(1);
+	}
+	const { elements } = JSON.parse(readFileSync(`${snapshots}/${newest}`, 'utf8'));
+	const centre = placeCentre({
+		elements: elements.filter(
+			(e: { tags?: Record<string, string> }) => e.tags?.name === process.env.AROUND_PLACE
+		)
+	});
 	bbox = bboxAround(centre, radius)
 		.map((v) => v.toFixed(6))
 		.join(',');
-	area = [`${process.env.AROUND_PLACE}, ${radius} m around ${centre.join(',')}`];
-	console.log(`${area[0]} → bbox ${bbox}`);
+	tiled = true;
+	area = [`${process.env.AROUND_PLACE}, ${radius} m around ${centre.join(',')} (from ${newest})`];
+	console.log(
+		`${process.env.AROUND_PLACE} at ${centre.join(',')} in ${newest}, ${radius} m around → bbox ${bbox}`
+	);
 }
 if (!bbox && process.env.AS_OF) {
 	const snapshots = process.env.SNAPSHOT_DIR ?? 'data/snapshots';
@@ -138,14 +155,28 @@ if (process.env.AS_OF) {
 }
 
 const date = process.env.SNAPSHOT_DATE ?? new Date().toISOString().slice(0, 10);
+
+/** The box from the OSM API in tiles of about 800 m, each well under its 50,000-node limit. */
+async function inTiles(box: string) {
+	const parts = tiles(box, 800);
+	const lists = [];
+	for (const [i, tile] of parts.entries()) {
+		const { elements } = await get(`/map.json?bbox=${tile}`);
+		console.log(`tile ${i + 1} of ${parts.length}: ${elements.length} elements`);
+		lists.push(elements);
+	}
+	return mergeElements(lists);
+}
 const [w, south, e, north] = bbox.split(',');
 // Nodes and ways only, as for past maps: relations would pull in far-off members.
-const data = area
-	? await ask(
-			`[out:json][timeout:300];(node(${south},${w},${north},${e});way(${south},${w},${north},${e}););(._;>;);out meta;`,
-			'the map'
-		)
-	: await get(`/map.json?bbox=${bbox}`);
+const data = tiled
+	? { elements: await inTiles(bbox) }
+	: area
+		? await ask(
+				`[out:json][timeout:300];(node(${south},${w},${north},${e});way(${south},${w},${north},${e}););(._;>;);out meta;`,
+				'the map'
+			)
+		: await get(`/map.json?bbox=${bbox}`);
 const dir = process.env.SNAPSHOT_DIR ?? 'data/snapshots';
 mkdirSync(dir, { recursive: true });
 const path = `${dir}/${name}-${date}.json`;
