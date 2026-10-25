@@ -101,6 +101,9 @@ const MONTHS = [
 export const monthYear = (date?: string) =>
 	date ? `${MONTHS[Number(date.slice(5, 7)) - 1]} ${date.slice(0, 4)}` : 'some year';
 
+/** A date as "24 October 2026". */
+export const longDate = (date: string) => `${Number(date.slice(8, 10))} ${monthYear(date)}`;
+
 /** A stable choice for a stop, so the same stop reads the same way each time. */
 export function pick<T>(seed: string, options: readonly T[]): T {
 	let h = 0;

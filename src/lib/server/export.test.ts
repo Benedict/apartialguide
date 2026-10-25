@@ -39,6 +39,12 @@ describe('exportPage', () => {
 		expect(page()).toContain('game.begin().forEach(show)');
 	});
 
+	it('asks the browser where the reader is, only when the reader says here', () => {
+		expect(page()).toContain('reply.locate');
+		expect(page()).toContain('navigator.geolocation.getCurrentPosition');
+		expect(page()).toContain('game.notFound()');
+	});
+
 	it('has a prompt to type at', () => {
 		expect(page()).toMatch(/<input[^>]+id="command"/);
 	});

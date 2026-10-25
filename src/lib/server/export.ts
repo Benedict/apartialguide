@@ -1,5 +1,5 @@
 import type { AdventureWorld } from '../core/adventure/world';
-import { monthYear } from '../core/render/words';
+import { longDate } from '../core/render/words';
 
 export interface ExportInput {
 	/** The game engine bundled for the browser, defining a global `Adventure`. */
@@ -11,8 +11,6 @@ export interface ExportInput {
 
 /** JSON that is safe inside a script element: no "<" can close it early. */
 const scriptSafe = (value: unknown) => JSON.stringify(value).replace(/</g, '\\u003c');
-
-const longDate = (date: string) => `${Number(date.slice(8, 10))} ${monthYear(date)}`;
 
 /** The whole game as one self-contained page: engine, world, styles and prompt. */
 export function exportPage({ engine, world, snapshotDate }: ExportInput): string {
@@ -62,11 +60,11 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 </head>
 <body>
 <div class="page">
-	<p class="note">Addiscombe, Croydon. Type a direction (<code>n</code>, <code>go east</code>, or a street name), <code>look</code>, <code>explore</code>, <code>examine</code> something, <code>exits</code>, <code>back</code> or <code>help</code>.</p>
+	<p class="note">Addiscombe, Croydon. Begin with a postcode, a street, a place, or <code>here</code>. Then type a direction (<code>n</code>, <code>go east</code>, or a street name), <code>look</code>, <code>explore</code>, <code>examine</code> something, <code>exits</code>, <code>back</code> or <code>help</code>.</p>
 	<div id="transcript" aria-live="polite"></div>
 	<form id="prompt" autocomplete="off">
 		<label for="command">&gt;</label>
-		<input id="command" autocapitalize="off" spellcheck="false" aria-label="What do you do?" placeholder="north, look, examine…">
+		<input id="command" autocapitalize="off" spellcheck="false" aria-label="What do you do?" placeholder="a postcode, a street, here…">
 	</form>
 	<footer>Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL, as of ${longDate(snapshotDate)}.</footer>
 </div>
@@ -86,6 +84,17 @@ const WORLD = ${scriptSafe(world)};
 		if (reply.title) section.append(el('h2', reply.title));
 		for (const line of reply.lines) section.append(el('p', line));
 		transcript.append(section);
+		input.scrollIntoView({ block: 'end' });
+		if (reply.locate) locate();
+	}
+	// Only when the reader says here: the browser asks their leave first.
+	function locate() {
+		if (!navigator.geolocation) return show(game.notFound());
+		navigator.geolocation.getCurrentPosition(
+			(p) => show(game.startAt(p.coords.latitude, p.coords.longitude)),
+			() => show(game.notFound()),
+			{ timeout: 15000 }
+		);
 	}
 	document.getElementById('prompt').addEventListener('submit', (event) => {
 		event.preventDefault();
@@ -96,7 +105,6 @@ const WORLD = ${scriptSafe(world)};
 		recall = history.length;
 		transcript.append(el('p', '> ' + text, 'command'));
 		show(game.respond(text));
-		input.scrollIntoView({ block: 'end' });
 	});
 	input.addEventListener('keydown', (event) => {
 		if (event.key === 'ArrowUp' && recall > 0) input.value = history[--recall];
