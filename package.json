@@ -17,7 +17,9 @@
 		"test:acceptance": "NODE_OPTIONS=\"--import tsx\" cucumber-js",
 		"snapshot": "tsx scripts/snapshot.ts",
 		"narrate": "tsx scripts/narrate.ts",
-		"export": "tsx scripts/export.ts"
+		"export": "tsx scripts/export.ts",
+		"wikidata": "tsx scripts/wikidata.ts",
+		"weather": "tsx scripts/weather.ts"
 	},
 	"devDependencies": {
 		"@cucumber/cucumber": "^13.3.0",

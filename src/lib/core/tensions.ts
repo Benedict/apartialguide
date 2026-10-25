@@ -55,7 +55,8 @@ export function detectTensions(
 				subject,
 				names: names.map((f) => ({ name: f.claim.value, asOf: f.observed ?? '' }))
 			});
-		const observed = present.find((f) => f.observed)?.observed;
+		// Dated by the map alone: another account taken since says nothing of when the map last looked.
+		const observed = present.find((f) => f.observed && !isElsewhere(f))?.observed;
 		if (observed && observed < cutoff) tensions.push({ kind: 'dated', subject, observed });
 	}
 
@@ -63,6 +64,9 @@ export function detectTensions(
 	if (features >= denseFrom) tensions.push({ kind: 'dense' });
 	return tensions;
 }
+
+/** Facts from another account than the map's. */
+export const isElsewhere = (f: Fact) => f.source === 'wikidata';
 
 /** Facts from a past map, not the current one. */
 export const isHistory = (f: Fact) => f.source === 'osm-history';

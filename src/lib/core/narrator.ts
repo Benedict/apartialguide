@@ -1,5 +1,7 @@
 import { HistoryAdapter } from './adapters/history';
 import { OsmAdapter } from './adapters/osm';
+import { WeatherAdapter, type WeatherStore } from './adapters/weather';
+import { WikidataAdapter, type WikidataStore } from './adapters/wikidata';
 import type { Clock, Fact } from './facts';
 import { distance, distanceToPolyline, type LatLon } from './geo';
 import { OsmIndex, type OsmData } from './osm';
@@ -18,6 +20,10 @@ export interface NarratorOptions extends TensionOptions {
 	spacing?: number;
 	/** Earlier maps of the same place, for what has gone or been renamed. */
 	history?: { asOf: string; data: OsmData }[];
+	/** Another account of the place, from Wikidata. */
+	wikidata?: WikidataStore;
+	/** The weather on the days the map records. */
+	weather?: WeatherStore;
 }
 
 export interface Visit {
@@ -38,7 +44,9 @@ export class Narrator {
 	constructor(
 		readonly graph: StopGraph,
 		private readonly perception: Perception,
-		private readonly options: NarratorOptions
+		private readonly options: NarratorOptions,
+		/** The weather on recorded days: about no one place, so outside perception. */
+		readonly weather: Fact[] = []
 	) {
 		this.renderer = options.renderer ?? new AdventureRenderer();
 	}
@@ -46,8 +54,18 @@ export class Narrator {
 	static fromOsm(data: OsmData, options: NarratorOptions): Narrator {
 		const osm = new OsmIndex(data);
 		const past = (options.history ?? []).map((h) => ({ asOf: h.asOf, osm: new OsmIndex(h.data) }));
-		const facts = [...new OsmAdapter(osm).facts(), ...new HistoryAdapter(osm, past).facts()];
-		return new Narrator(buildStopGraph(osm, options), Perception.fromOsm(osm, facts), options);
+		const facts = [
+			...new OsmAdapter(osm).facts(),
+			...new HistoryAdapter(osm, past).facts(),
+			...(options.wikidata ? new WikidataAdapter(osm, options.wikidata).facts() : [])
+		];
+		const weather = options.weather ? new WeatherAdapter(options.weather).facts() : [];
+		return new Narrator(
+			buildStopGraph(osm, options),
+			Perception.fromOsm(osm, facts),
+			options,
+			weather
+		);
 	}
 
 	visit(id: StopId): Visit | undefined {
@@ -60,7 +78,7 @@ export class Narrator {
 			inView,
 			detectTensions(inView, this.options.clock, this.options)
 		);
-		const scene = buildScene(this.graph, stop, plan);
+		const scene = buildScene(this.graph, stop, plan, this.weather);
 		const room = this.renderer.render(scene);
 		return {
 			stop,

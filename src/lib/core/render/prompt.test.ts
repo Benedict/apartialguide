@@ -111,6 +111,43 @@ describe('buildPrompt', () => {
 		);
 	});
 
+	it('keeps another account apart from the map', () => {
+		const pub = {
+			subject: 'node/4',
+			facts: [
+				...facts('node/4', { amenity: 'pub', name: 'The Sextant' }, near),
+				...facts('node/4', { 'wikidata:description': 'invented public house' }, near).map((f) => ({
+					...f,
+					source: 'wikidata'
+				}))
+			],
+			effects: []
+		};
+		const user = buildPrompt(scene({ beats: [pub] })).user;
+		expect(user).toContain('The map: amenity=pub; name=The Sextant.');
+		expect(user).toContain('Elsewhere (Wikidata): wikidata:description=invented public house.');
+		expect(buildPrompt(scene()).system).toMatch(/elsewhere/i);
+	});
+
+	it('gives the weather of a day something was last recorded', () => {
+		const weather = facts('weather/2018-10-04', { 'weather:code': '61' }).map((f) => ({
+			...f,
+			geometry: [],
+			observed: '2018-10-04'
+		}));
+		const user = buildPrompt(scene({ beats: [shop], weather })).user;
+		expect(user).toContain('The weather that day: Light rain that day.');
+	});
+
+	it('names the street’s namesake where the reader stands', () => {
+		const street = facts('way/1', {
+			highway: 'residential',
+			name: 'Long Street',
+			'etymology:label': 'Ada Inventa'
+		});
+		expect(buildPrompt(scene({ street })).user).toContain('Named for Ada Inventa.');
+	});
+
 	it('tells the model the game prints the exits', () => {
 		expect(buildPrompt(scene()).user).toMatch(/do not list the exits/i);
 	});

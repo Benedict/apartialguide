@@ -1,6 +1,7 @@
 import type { Narrator } from '../narrator';
 import type { Thing } from '../render/renderer';
 import type { StopId } from '../stops';
+import { weatherThatDay } from '../render/weather';
 
 export interface CompiledExit {
 	label: string;
@@ -23,6 +24,8 @@ export interface AdventureWorld {
 	stops: Record<StopId, CompiledStop>;
 	/** The date of the map Guide carries, YYYY-MM-DD. */
 	asOf?: string;
+	/** The weather that day, if it was recorded. */
+	asOfWeather?: string;
 }
 
 export function compileWorld(
@@ -41,5 +44,11 @@ export function compileWorld(
 			...(room.hidden ? { hidden: room.hidden } : {})
 		};
 	}
-	return { start, stops, ...(options.asOf ? { asOf: options.asOf } : {}) };
+	const asOfWeather = weatherThatDay(narrator.weather, options.asOf);
+	return {
+		start,
+		stops,
+		...(options.asOf ? { asOf: options.asOf } : {}),
+		...(asOfWeather ? { asOfWeather } : {})
+	};
 }

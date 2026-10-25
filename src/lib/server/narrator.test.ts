@@ -2,7 +2,7 @@ import { mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { loadHistory, readConfig } from './narrator';
+import { loadHistory, loadLatest, readConfig } from './narrator';
 
 describe('readConfig', () => {
 	it('is undefined without a snapshot', () => {
@@ -16,7 +16,9 @@ describe('readConfig', () => {
 			spacing: 50,
 			start: undefined,
 			narrationPath: undefined,
-			historyDir: undefined
+			historyDir: undefined,
+			wikidataDir: undefined,
+			weatherDir: undefined
 		});
 	});
 
@@ -33,6 +35,15 @@ describe('readConfig', () => {
 	it('reads where prose written ahead of time is kept', () => {
 		const config = readConfig({ SNAPSHOT_PATH: 'x-2026-01-01.json', NARRATION_PATH: 'n.json' });
 		expect(config?.narrationPath).toBe('n.json');
+	});
+
+	it('reads where Wikidata and the weather are kept', () => {
+		const config = readConfig({
+			SNAPSHOT_PATH: 'x-2026-01-01.json',
+			WIKIDATA_DIR: 'data/wikidata',
+			WEATHER_DIR: 'data/weather'
+		});
+		expect(config).toMatchObject({ wikidataDir: 'data/wikidata', weatherDir: 'data/weather' });
 	});
 
 	it('refuses a snapshot with no date', () => {
@@ -58,5 +69,20 @@ describe('loadHistory', () => {
 	it('is empty without a directory', () => {
 		expect(loadHistory(undefined)).toEqual([]);
 		expect(loadHistory(join(tmpdir(), 'no-such-history'))).toEqual([]);
+	});
+});
+
+describe('loadLatest', () => {
+	it('reads the newest dated file in the directory', () => {
+		const dir = mkdtempSync(join(tmpdir(), 'latest-'));
+		writeFileSync(join(dir, 'addiscombe-2026-10-25.json'), JSON.stringify({ n: 2 }));
+		writeFileSync(join(dir, 'addiscombe-2026-01-01.json'), JSON.stringify({ n: 1 }));
+		writeFileSync(join(dir, 'request.env'), 'X=1');
+		expect(loadLatest(dir)).toEqual({ n: 2 });
+	});
+
+	it('is nothing without a directory or a file', () => {
+		expect(loadLatest(undefined)).toBeUndefined();
+		expect(loadLatest(mkdtempSync(join(tmpdir(), 'empty-')))).toBeUndefined();
 	});
 });

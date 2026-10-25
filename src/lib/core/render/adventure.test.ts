@@ -157,6 +157,16 @@ describe('AdventureRenderer', () => {
 			expect(text(scene({ beats: [here] }))).toContain('Right here is a bench.');
 		});
 
+		it('gives another account’s date of beginning as a reader would say it', () => {
+			const begun = (inception: string) =>
+				text(
+					scene({ beats: [beat('node/9', { amenity: 'pub', 'wikidata:inception': inception })] })
+				);
+			expect(begun('1868')).toContain('Elsewhere it is said to have begun in 1868.');
+			expect(begun('1868-05')).toContain('begun in May 1868.');
+			expect(begun('1868-05-01')).toContain('begun on 1 May 1868.');
+		});
+
 		it('tells a disused use in the past tense', () => {
 			const t = text(scene({ beats: [beat('way/2', { 'disused:amenity': 'bank' })] }));
 			expect(t).toMatch(/was a bank/);

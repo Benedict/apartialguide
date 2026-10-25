@@ -63,7 +63,7 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 		<label for="command">&gt;</label>
 		<input id="command" autocapitalize="off" spellcheck="false" aria-label="What do you do?" placeholder="take the tour">
 	</form>
-	<footer>Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL, as of ${longDate(snapshotDate)}.</footer>
+	<footer>Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL, as of ${longDate(snapshotDate)}. Weather from <a href="https://open-meteo.com/">Open-Meteo.com</a>, CC BY 4.0. Another account from <a href="https://www.wikidata.org/">Wikidata</a>, CC0.</footer>
 </div>
 <script>${engine}</script>
 <script>

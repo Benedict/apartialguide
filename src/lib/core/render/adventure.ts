@@ -1,10 +1,11 @@
-import { groupBySubject } from '../facts';
+import { groupBySubject, type Fact } from '../facts';
 import { bearing, compassLabel, insideRing, nearestOnPolyline, type LatLon } from '../geo';
 import type { Tags } from '../osm';
 import type { Scene, SceneExit } from '../scene';
 import { isBackground, type Beat } from '../slippage';
-import { isHistory } from '../tensions';
+import { isElsewhere, isHistory } from '../tensions';
 import type { Renderer, Room, Thing } from './renderer';
+import { weatherThatDay } from './weather';
 import {
 	address,
 	article,
@@ -13,6 +14,7 @@ import {
 	currentUse,
 	humanise,
 	list,
+	longDate,
 	monthYear,
 	pastUse,
 	pick,
@@ -96,6 +98,9 @@ export function streetCharacter(street: Tags): string[] {
 	if (lit && pavement) sentences.push(`${lit}, with ${pavement}.`);
 	else if (lit || pavement) sentences.push(`${capitalise((lit ?? pavement)!)}.`);
 	if (street.maxspeed) sentences.push(`The limit is ${street.maxspeed}, for what that is worth.`);
+	const namesake = street['etymology:label'];
+	const who = street['etymology:description'];
+	if (namesake) sentences.push(`Named for ${namesake}${who ? `, ${who}` : ''}.`);
 	return sentences;
 }
 
@@ -107,7 +112,8 @@ function whatYouSee(scene: Scene): string[] {
 			const place = placement(scene.position, b);
 			const said = describeBeat(
 				b,
-				place === previous && place.startsWith('To the') ? 'Next to it' : place
+				place === previous && place.startsWith('To the') ? 'Next to it' : place,
+				scene.weather
 			);
 			previous = place;
 			return said;
@@ -295,22 +301,35 @@ export const oldNames = (beat: Beat) =>
 		.sort((a, b) => (a.observed ?? '').localeCompare(b.observed ?? ''))
 		.map((f) => ({ name: f.claim.value, asOf: f.observed }));
 
-function describeBeat(beat: Beat, place: string): string {
+function describeBeat(beat: Beat, place: string, weather: readonly Fact[] = []): string {
 	const tags = tagsFor(beat);
 	const sentences: string[] = [];
 	const use = currentUse(tags);
 
+	if (isElsewhereOnly(beat)) {
+		const label = tags['wikidata:label'];
+		const what = tags['wikidata:description'];
+		return `${place}, by another account, is “${label}”${what ? `, “${what}”` : ''}.`;
+	}
 	if (beat.effects.includes('remembered')) {
 		const asOf = beat.facts.find((f) => f.observed)?.observed;
-		return `${lead(place)} there was ${nounPhrase(tags)}, in ${monthYear(asOf)}. The map no longer has it.`;
+		const sky = weatherThatDay(weather, asOf);
+		return [
+			`${lead(place)} there was ${nounPhrase(tags)}, in ${monthYear(asOf)}. The map no longer has it.`,
+			sky
+		]
+			.filter(Boolean)
+			.join(' ');
 	}
 	if (use && beat.effects.includes('tense-slip')) {
 		const where = address(tags);
 		const at = where ? ` at ${where}` : '';
-		const observed = beat.facts.find((f) => f.observed)?.observed;
+		const observed = beat.facts.find((f) => f.observed && !isElsewhere(f))?.observed;
 		sentences.push(
 			`${lead(place)} there’s ${article(use)}${at}. There was ${article(use)} in ${monthYear(observed)}, when it was last recorded.`
 		);
+		const sky = weatherThatDay(weather, observed);
+		if (sky) sentences.push(sky);
 	} else {
 		sentences.push(`${lead(place)} is ${nounPhrase(tags)}.`);
 	}
@@ -329,8 +348,24 @@ function describeBeat(beat: Beat, place: string): string {
 		sentences.push(
 			`“${tags.name}”, ${older.map((o) => `or “${o.name}” (${monthYear(o.asOf)})`).join(', ')}.`
 		);
+	const listed = tags['wikidata:description'];
+	const begun = tags['wikidata:inception'];
+	if (listed)
+		sentences.push(
+			`Elsewhere it is listed as “${listed}”${begun ? `, begun ${when(begun)}` : ''}.`
+		);
+	else if (begun) sentences.push(`Elsewhere it is said to have begun ${when(begun)}.`);
 	return sentences.join(' ');
 }
+
+/** "in 1868", "in May 1868", "on 1 May 1868": a date as precise as it was given. */
+function when(date: string): string {
+	if (date.length === 10) return `on ${longDate(date)}`;
+	return date.length === 7 ? `in ${monthYear(date)}` : `in ${date}`;
+}
+
+/** A thing only another account places here: the map does not link to it. */
+const isElsewhereOnly = (beat: Beat) => beat.facts.every(isElsewhere);
 
 export function exitsLine(exits: readonly SceneExit[]): string {
 	if (!exits.length) return 'There is no way on from here.';
@@ -347,13 +382,17 @@ export function exitsLine(exits: readonly SceneExit[]): string {
 function thing(beat: Beat): Thing {
 	const tags = tagsFor(beat);
 	const past = pastUse(tags);
-	const name = tags.name ?? (currentUse(tags) || !past ? noun(tags) : `former ${past}`);
+	const name =
+		tags.name ??
+		tags['wikidata:label'] ??
+		(currentUse(tags) || !past ? noun(tags) : `former ${past}`);
 	const words = [
 		name,
 		noun(tags),
 		past,
 		tags['addr:housenumber'],
 		tags.old_name,
+		tags['wikidata:label'],
 		...oldNames(beat).map((o) => o.name),
 		'building'
 	]
@@ -363,10 +402,13 @@ function thing(beat: Beat): Thing {
 		.split(/[^\p{L}\p{N}-]+/u)
 		.filter((w) => w.length > 1 && !['the', 'at', 'of', 'and'].includes(w));
 	const observed = beat.facts.find((f) => f.observed);
-	const record = beat.facts.map((f) => `${f.claim.key}=${f.claim.value}`).join(' · ');
+	const record = (facts: Fact[]) => facts.map((f) => `${f.claim.key}=${f.claim.value}`).join(' · ');
+	const map = beat.facts.filter((f) => !isElsewhere(f));
+	const elsewhere = beat.facts.filter(isElsewhere);
 	const description = [
-		`${capitalise(nounPhrase(tags))}.`,
-		`The map has it as: ${record}.`,
+		map.length ? `${capitalise(nounPhrase(tags))}.` : `“${name}”.`,
+		map.length ? `The map has it as: ${record(map)}.` : 'The map does not have it.',
+		elsewhere.length ? `Elsewhere: ${record(elsewhere)}.` : '',
 		observed
 			? `Last ${isHistory(observed) ? 'recorded' : observed.observedBy === 'survey' ? 'surveyed' : 'edited'} in ${monthYear(observed.observed)}.`
 			: ''

@@ -34,6 +34,12 @@ describe('exportPage', () => {
 		expect(page()).toContain('<title>A Partial Guide</title>');
 	});
 
+	it('credits the weather and Wikidata', () => {
+		expect(page()).toContain('Open-Meteo.com');
+		expect(page()).toContain('CC BY 4.0');
+		expect(page()).toContain('Wikidata');
+	});
+
 	it('credits OpenStreetMap and dates the map', () => {
 		expect(page()).toContain('OpenStreetMap contributors');
 		expect(page()).toContain('24 October 2026');

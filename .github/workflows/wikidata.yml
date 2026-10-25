@@ -1,0 +1,39 @@
+name: Wikidata
+
+# Fetches what Wikidata holds about the place, and commits it to the branch.
+# Runs when data/wikidata/request.env changes, or by hand.
+on:
+  push:
+    paths:
+      - data/wikidata/request.env
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  wikidata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Fetch wikidata
+        run: |
+          set -a
+          . data/wikidata/request.env
+          set +a
+          npm run wikidata
+      - name: Commit wikidata
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/wikidata/*.json
+          git diff --cached --quiet && { echo "Nothing new"; exit 0; }
+          git commit -m "Add wikidata for the snapshot"
+          # Another workflow may have pushed data to the branch meanwhile.
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

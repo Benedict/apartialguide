@@ -41,9 +41,10 @@ export class Adventure {
 	/** The start of the walk: Guide introduces themselves and offers the tour. */
 	begin(): Reply[] {
 		this.choosing = true;
-		const { asOf } = this.world;
+		const { asOf, asOfWeather } = this.world;
+		const sky = asOfWeather ? ` ${asOfWeather}` : '';
 		const map = asOf
-			? `The map I carry is dated ${longDate(asOf)}. Beyond it there may be more. I could not say what.`
+			? `The map I carry is dated ${longDate(asOf)}.${sky} Beyond it there may be more. I could not say what.`
 			: 'Beyond my map there may be more. I could not say what.';
 		return [{ lines: [...INTRO, map] }, { lines: [OFFER] }];
 	}

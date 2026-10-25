@@ -1,6 +1,8 @@
 import type { Scene } from '../scene';
 import { isBackground, type Beat } from '../slippage';
-import { looksBroken, NAME_KEY } from '../tensions';
+import type { Fact } from '../facts';
+import { isElsewhere, looksBroken, NAME_KEY } from '../tensions';
+import { weatherThatDay } from './weather';
 import {
 	nounPhrase,
 	oldNames,
@@ -14,7 +16,7 @@ import {
 import { monthYear } from './words';
 
 /** Bump when the prompt changes, so cached narration written under the old one is redone. */
-export const PROMPT_VERSION = 6;
+export const PROMPT_VERSION = 7;
 
 export interface Prompt {
 	/** Fixed for every stop, so it can be cached. */
@@ -38,6 +40,8 @@ Rules.
 - Something that was called something else: correct yourself between the names, unsure which is right.
 - A survey date is when something was last recorded. Never say anyone came to look. Slip between present and past for it: there is a shop; there was a shop when it was last recorded.
 - When told the place is crowded, lose count partway through. When told there is little here, hesitate.
+- Facts marked Elsewhere come from another account, not the map. Give them lightly as that (elsewhere, by another account), never as the map's. Where the two disagree, leave them disagreeing.
+- The weather of a day comes plainly, once, as part of what was recorded that day. It is never today's weather.
 - Point the reader to nothing, and never say that anything goes unnoticed. Noticing is the reader’s.
 - Do not list the exits; the game prints them after your text.
 - Write 60 to 180 words in two to four short paragraphs, separated by blank lines. Plain text only: no headings, lists or markup.
@@ -62,25 +66,34 @@ export function brokenNames(beat: Beat): string[] {
 
 function beatLine(scene: Scene, beat: Beat, n: number): string {
 	const tags = tagsFor(beat);
-	const record = beat.facts.map((f) => `${f.claim.key}=${f.claim.value}`).join('; ');
-	const lines = [
-		`${n}. ${placement(scene.position, beat)}: ${nounPhrase(tags)}.`,
-		`   The map: ${record}.`
-	];
+	const record = (facts: readonly Fact[]) =>
+		facts.map((f) => `${f.claim.key}=${f.claim.value}`).join('; ');
+	const map = beat.facts.filter((f) => !isElsewhere(f));
+	const elsewhere = beat.facts.filter(isElsewhere);
+	const what = map.length
+		? nounPhrase(tags)
+		: `“${tags['wikidata:label']}”, which the map does not have`;
+	const lines = [`${n}. ${placement(scene.position, beat)}: ${what}.`];
+	if (map.length) lines.push(`   The map: ${record(map)}.`);
+	if (elsewhere.length) lines.push(`   Elsewhere (Wikidata): ${record(elsewhere)}.`);
 	for (const name of brokenNames(beat)) lines.push(`   Speak the name “${name}” exactly as found.`);
 	if (beat.effects.includes('remembered')) {
 		const asOf = beat.facts.find((f) => f.observed)?.observed;
 		lines.push(`   Gone: recorded in ${monthYear(asOf)}, no longer on the map.`);
+		const sky = weatherThatDay(scene.weather ?? [], asOf);
+		if (sky) lines.push(`   The weather that day: ${sky}`);
 	}
 	if (beat.effects.includes('self-correction')) {
 		const was = oldNames(beat).map((o) => `Was called “${o.name}” in ${monthYear(o.asOf)}.`);
 		lines.push(`   ${was.join(' ')} Correct yourself between the names.`);
 	}
 	if (beat.effects.includes('tense-slip')) {
-		const observed = beat.facts.find((f) => f.observed)?.observed;
+		const observed = beat.facts.find((f) => f.observed && !isElsewhere(f))?.observed;
 		lines.push(
 			`   Out of date: last recorded in ${monthYear(observed)}. Slip between present and past.`
 		);
+		const sky = weatherThatDay(scene.weather ?? [], observed);
+		if (sky) lines.push(`   The weather that day: ${sky}`);
 	}
 	return lines.join('\n');
 }

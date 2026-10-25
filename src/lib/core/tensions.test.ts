@@ -30,6 +30,19 @@ describe('detectTensions', () => {
 		});
 	});
 
+	it('dates a thing by the map, not by another account taken since', () => {
+		const shop = [
+			...facts('wikidata-first', { 'wikidata:description': 'bakery' }, { observed: '2026-10-25' }),
+			...facts('node/3', { shop: 'bakery' }, { observed: '2018-10-04', observedBy: 'survey' })
+		].map((f) => ({ ...f, subject: 'node/3' }));
+		shop[0] = { ...shop[0], source: 'wikidata' };
+		expect(detectTensions([...street, ...shop], clock)).toContainEqual({
+			kind: 'dated',
+			subject: 'node/3',
+			observed: '2018-10-04'
+		});
+	});
+
 	it('does not date a recent observation', () => {
 		const shop = facts('node/3', { shop: 'bakery' }, { observed: '2024-10-04' });
 		expect(detectTensions([...street, ...shop], clock).filter((t) => t.kind === 'dated')).toEqual(
