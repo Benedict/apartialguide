@@ -79,6 +79,10 @@ Then('the narration mentions {string}', function (this: NarratorWorld, words: st
 	this.subjects = [...this.subjects, words];
 });
 
+Then('the narration does not mention {string}', function (this: NarratorWorld, words: string) {
+	assert.ok(!this.visit!.text.includes(words), this.visit!.text);
+});
+
 Then('the narration does not repair it to another name', function (this: NarratorWorld) {
 	const words = this.subjects.at(-1)!;
 	const glued = new RegExp(`[\\p{L}\\p{N}]${words.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'u');

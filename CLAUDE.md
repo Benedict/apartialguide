@@ -22,6 +22,7 @@ A text "street view" of Addiscombe, Croydon. Its name is A Partial Guide. One na
 - `npm run narrate`: writes prose ahead of time into `NARRATION_PATH` (needs `ANTHROPIC_API_KEY`, capped by `NARRATE_LIMIT`). The Narrate workflow runs it on GitHub by hand, with the key as a repository secret.
 - `npm run export`: writes the whole game as one self-contained HTML page (`EXPORT_PATH`, default `build/export/addiscombe.html`) from `SNAPSHOT_PATH`, `START_AT` and any `NARRATION_PATH`.
 - `BBOX=minLon,minLat,maxLon,maxLat npm run snapshot` (or `AROUND_WAY=<id> RADIUS_M=<m>`): writes `data/snapshots/addiscombe-<date>.json`. Editing `data/snapshots/request.env` and pushing runs the Snapshot workflow, which takes one on GitHub and commits it. With `AS_OF=<dates>` it fetches past maps from Overpass into `data/history/`; editing `data/history/request.env` runs the History workflow.
+- The Pages workflow, run by hand, publishes the export to GitHub Pages: the one place live weather can be seen, since the claude.ai preview blocks outside requests.
 - `BBOX=… npm run wikidata`: writes `data/wikidata/addiscombe-<date>.json`, the items the snapshot links to and those Wikidata places in the box. Editing `data/wikidata/request.env` runs the Wikidata workflow. It is never called from the app.
 
 ## Layout

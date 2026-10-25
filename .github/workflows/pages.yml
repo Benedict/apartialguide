@@ -1,0 +1,43 @@
+name: Pages
+
+# Publishes the exported page to GitHub Pages, where today's weather can be fetched as the reader
+# plays (the claude.ai preview's security policy blocks it). Run by hand, once Pages is switched on
+# with "GitHub Actions" as its source in the repository's settings.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Export the page
+        env:
+          SNAPSHOT_PATH: data/snapshots/addiscombe-2026-10-24.json
+          START_AT: 51.379897,-0.074294
+          HISTORY_DIR: data/history
+          WIKIDATA_DIR: data/wikidata
+          EXPORT_PATH: site/index.html
+        run: npm run export
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

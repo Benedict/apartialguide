@@ -16,7 +16,7 @@ import {
 import { monthYear } from './words';
 
 /** Bump when the prompt changes, so cached narration written under the old one is redone. */
-export const PROMPT_VERSION = 9;
+export const PROMPT_VERSION = 10;
 
 export interface Prompt {
 	/** Fixed for every stop, so it can be cached. */
@@ -67,13 +67,20 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 	const tags = tagsFor(beat);
 	const record = (facts: readonly Fact[]) =>
 		facts.map((f) => `${f.claim.key}=${f.claim.value}`).join('; ');
-	const map = beat.facts.filter((f) => !isElsewhere(f));
+	const folded = beat.facts.filter((f) => f.subject !== beat.subject && !isElsewhere(f));
+	const map = beat.facts.filter((f) => !isElsewhere(f) && !folded.includes(f));
 	const elsewhere = beat.facts.filter(isElsewhere);
 	const what = map.length
 		? nounPhrase(tags)
 		: `“${tags['wikidata:label']}”, which the map does not have`;
 	const lines = [`${n}. ${placement(scene.position, beat)}: ${what}.`];
 	if (map.length) lines.push(`   The map: ${record(map)}.`);
+	if (folded.length) {
+		const since = folded.reduce((a, f) => (f.observed && f.observed > a ? f.observed : a), '');
+		lines.push(
+			`   Once at this address, gone from the map since ${monthYear(since)}: ${record(folded)}. One place: tell it once.`
+		);
+	}
 	if (elsewhere.length) lines.push(`   Elsewhere (Wikidata): ${record(elsewhere)}.`);
 	for (const name of brokenNames(beat)) lines.push(`   Speak the name “${name}” exactly as found.`);
 	if (beat.effects.includes('remembered')) {

@@ -28,4 +28,5 @@ Feature: Another account, from Wikidata
   Scenario: Wikidata's facts keep their source when examined
     Given Wikidata describes The Sextant as "invented public house"
     When the reader types "x sextant"
-    Then it says "wikidata:description=invented public house"
+    Then it says "Elsewhere it is listed as “invented public house”."
+    And it does not say "="

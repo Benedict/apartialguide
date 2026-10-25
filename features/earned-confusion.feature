@@ -36,3 +36,11 @@ Feature: Earned confusion on Lower Addiscombe Road
     Then the narration speaks of surface, lighting, and speed
     And the narration hesitates or falls silent
     And the narration does not place the button factory on Everton Road
+
+  @history
+  Scenario: The old bank is told once, with what the map remembers of it
+    Given the past maps of Addiscombe
+    When the reader stands outside "209-213 Lower Addiscombe Road"
+    Then the narration mentions "NatWest"
+    And the narration mentions "est Bank"
+    And the narration does not mention "there was a bank"

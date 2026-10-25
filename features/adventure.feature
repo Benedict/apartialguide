@@ -30,7 +30,8 @@ Feature: Playing it as a text adventure
 
   Scenario: Examining something in view
     When the reader types "x sextant"
-    Then it says "amenity=pub"
+    Then it says "A pub, “The Sextant”."
+    And it does not say "="
 
   Scenario: Something not in view
     When the reader types "examine the cathedral"
@@ -47,7 +48,8 @@ Feature: Playing it as a text adventure
   Scenario: Examining something unnoticed finds it
     Given six benches right beside the reader
     When the reader types "x sextant"
-    Then it says "amenity=pub"
+    Then it says "A pub, “The Sextant”."
+    And it does not say "="
 
   Scenario: Nothing more to find
     When the reader types "search"

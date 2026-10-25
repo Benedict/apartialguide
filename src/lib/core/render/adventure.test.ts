@@ -208,6 +208,55 @@ describe('AdventureRenderer', () => {
 			expect(t).not.toMatch(/as written|whole of it/);
 		});
 
+		it('tells what has gone from an address once, with what stands there now', () => {
+			const now = facts(
+				'way/3',
+				{
+					building: 'retail',
+					'addr:housenumber': '9',
+					old_name: 'est Bank',
+					'disused:amenity': 'bank'
+				},
+				north(5)
+			);
+			const was = facts(
+				'node/9',
+				{ 'was:amenity': 'bank', 'was:name': 'Invented Bank', 'was:addr:housenumber': '9' },
+				{ ...north(5), source: 'osm-history', observed: '2021-01-01' }
+			);
+			const t = text(
+				scene({
+					beats: [
+						{ subject: 'way/3', facts: [...now, ...was], effects: ['spoken-as-found', 'was-here'] }
+					]
+				})
+			);
+			expect(t).toContain('It was a bank, “Invented Bank” in January 2021, and once “est Bank”.');
+			expect(t.match(/bank/gi)).toHaveLength(3);
+			expect(t).not.toContain('there was a bank');
+		});
+
+		it('gives a street once in a room, then only numbers', () => {
+			const t = text(
+				scene({
+					beats: [
+						beat('node/2', {
+							shop: 'bakery',
+							'addr:housenumber': '21',
+							'addr:street': 'Everton Road'
+						}),
+						beat('node/3', {
+							shop: 'florist',
+							'addr:housenumber': '23',
+							'addr:street': 'Everton Road'
+						})
+					]
+				})
+			);
+			expect(t).toContain('a bakery at 21 Everton Road');
+			expect(t).toContain('a florist at 23.');
+		});
+
 		it('tells a disused use in the past tense', () => {
 			const t = text(scene({ beats: [beat('way/2', { 'disused:amenity': 'bank' })] }));
 			expect(t).toMatch(/was a bank/);
@@ -226,10 +275,10 @@ describe('AdventureRenderer', () => {
 					]
 				})
 			);
-			expect(t).toMatch(/there’s a bakery/i);
-			expect(t).toMatch(/there was a bakery/i);
-			expect(t).toContain('There was a bakery in October 2018, when it was last recorded.');
-			expect(t.match(/at 225/g)).toHaveLength(1);
+			expect(t).toContain(
+				'there is a bakery at 225, or there was in October 2018, when it was last recorded.'
+			);
+			expect(t.match(/bakery/g)).toHaveLength(1);
 		});
 
 		it('gives uncountable things no article', () => {
@@ -341,8 +390,9 @@ describe('AdventureRenderer', () => {
 		it('lets what has gone be examined by its old name', () => {
 			const [thing] = renderer.render(scene({ beats: [gone] })).things;
 			expect(thing.aliases).toEqual(expect.arrayContaining(['crumb', 'bakery']));
-			expect(thing.description).toContain('was:shop=bakery');
+			expect(thing.description).toContain('There was a bakery, “Crumb”. The map no longer has it.');
 			expect(thing.description).toContain('Last recorded in January 2017.');
+			expect(thing.description).not.toContain('=');
 		});
 
 		it('names what has gone by its old name when it is found on a closer look', () => {
@@ -390,8 +440,28 @@ describe('AdventureRenderer', () => {
 					]
 				})
 			).things;
-			expect(thing.description).toContain('amenity=pub');
+			expect(thing.description).toContain('A pub, “The Sextant”.');
 			expect(thing.description).toContain('Last edited in April 2023.');
+			expect(thing.description).not.toContain('=');
+		});
+
+		it('says what the map knows of a thing in words, never its raw record', () => {
+			const [thing] = renderer.render(
+				scene({
+					beats: [
+						beat('node/2', {
+							amenity: 'fast_food',
+							name: 'Invented Kebab',
+							cuisine: 'kebab;pizza',
+							takeaway: 'yes',
+							'fhrs:id': '123456',
+							'addr:city': 'Inventon'
+						})
+					]
+				})
+			).things;
+			expect(thing.description).toContain('It serves kebab and pizza. Takeaway.');
+			expect(thing.description).not.toMatch(/=|fhrs|123456|Inventon/);
 		});
 	});
 });

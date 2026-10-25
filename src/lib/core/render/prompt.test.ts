@@ -146,6 +146,28 @@ describe('buildPrompt', () => {
 		expect(system).not.toMatch(/no weather/);
 	});
 
+	it('tells the model what stood at a thing’s address and went, as part of it', () => {
+		const building = {
+			subject: 'way/3',
+			facts: [
+				...facts('way/3', { building: 'retail', 'addr:housenumber': '9' }, near),
+				...facts('node/9', { 'was:amenity': 'bank', 'was:name': 'Invented Bank' }, near).map(
+					(f) => ({
+						...f,
+						source: 'osm-history',
+						observed: '2021-01-01'
+					})
+				)
+			],
+			effects: ['was-here' as const]
+		};
+		const user = buildPrompt(scene({ beats: [building] })).user;
+		expect(user).toContain('The map: building=retail; addr:housenumber=9.');
+		expect(user).toContain(
+			'Once at this address, gone from the map since January 2021: was:amenity=bank; was:name=Invented Bank. One place: tell it once.'
+		);
+	});
+
 	it('tells the model the game prints the exits', () => {
 		expect(buildPrompt(scene()).user).toMatch(/do not list the exits/i);
 	});

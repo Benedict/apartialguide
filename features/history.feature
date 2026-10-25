@@ -24,4 +24,5 @@ Feature: Time slips from the map's history
   Scenario: What has gone can be examined
     Given the map of 2017-01-01 had a bakery called "Crumb" right beside the reader
     When the reader types "x crumb"
-    Then it says "was:shop=bakery"
+    Then it says "There was a bakery, “Crumb”."
+    And it does not say "="
