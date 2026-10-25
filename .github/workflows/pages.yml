@@ -30,7 +30,7 @@ jobs:
       - run: npm ci
       - name: Export the page
         env:
-          SNAPSHOT_PATH: data/snapshots/addiscombe-2026-10-24.json
+          SNAPSHOT_PATH: data/snapshots/addiscombe-2026-10-25.json
           START_AT: 51.379897,-0.074294
           HISTORY_DIR: data/history
           WIKIDATA_DIR: data/wikidata
