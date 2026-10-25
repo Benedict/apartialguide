@@ -561,4 +561,56 @@ describe('Departures', () => {
 		expect(game.departures(stop, [])).toEqual({ lines: ['Invented Corner: nothing is due.'] });
 		expect(game.departures(stop, undefined)).toBeUndefined();
 	});
+
+	describe('wards, by another account', () => {
+		const ward = (name: string) => ({ name, kind: 'ward' });
+		const wardWorld: AdventureWorld = {
+			start: 'a',
+			stops: {
+				a: { ...room('Mill Parade', [{ label: 'east', to: 'b' }]), area: ward('Inventa West') },
+				b: {
+					...room('Cross Row', [
+						{ label: 'east', to: 'c' },
+						{ label: 'north', to: 'd' }
+					]),
+					area: ward('Inventa West')
+				},
+				c: { ...room('Weir Steps', [{ label: 'west', to: 'b' }]), area: ward('Inventa East') },
+				d: room('Blind Alley', [])
+			}
+		};
+		const touring = () => {
+			const game = new Adventure(wardWorld);
+			game.begin();
+			return { game, first: game.respond('take the tour') };
+		};
+
+		it('says which ward the tour begins in', () => {
+			expect(touring().first.lines[0]).toBe('By another account, you are in Inventa West, a ward.');
+		});
+
+		it('says nothing of wards on a step within one', () => {
+			const { game } = touring();
+			expect(game.respond('east').lines.join(' ')).not.toContain('By another account, you');
+		});
+
+		it('tells a step from one ward into another, first', () => {
+			const { game } = touring();
+			game.respond('east');
+			expect(game.respond('east').lines[0]).toBe(
+				'By another account, you have left Inventa West for Inventa East.'
+			);
+			expect(game.respond('west').lines[0]).toBe(
+				'By another account, you have left Inventa East for Inventa West.'
+			);
+		});
+
+		it('tells a step out of every ward it knows', () => {
+			const { game } = touring();
+			game.respond('east');
+			expect(game.respond('north').lines[0]).toBe(
+				'By another account, you have left Inventa West.'
+			);
+		});
+	});
 });

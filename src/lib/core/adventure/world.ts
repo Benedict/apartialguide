@@ -25,6 +25,8 @@ export interface CompiledStop {
 	terms?: Term[];
 	/** Broken names spoken here, for Guide to carry on. */
 	fragments?: string[];
+	/** The area another account puts this stop in, such as a ward. */
+	area?: { name: string; kind: string };
 	/** What a closer look finds, if anything is hidden here. */
 	hidden?: { lines: string[]; things: Thing[] };
 }
@@ -97,6 +99,7 @@ export function compileWorld(
 	for (const stop of narrator.graph.all()) {
 		const { room, plan, scene, inView } = narrator.visit(stop.id)!;
 		const transit = transitIn(inView);
+		const area = narrator.areaAt(stop.position);
 		const things = plan.beats.flatMap((b) =>
 			b.facts
 				.filter((f) => ['name', 'wikidata:label', 'etymology:label'].includes(f.claim.key))
@@ -121,7 +124,8 @@ export function compileWorld(
 			...(room.streets?.length ? { streets: room.streets } : {}),
 			...(room.hidden ? { hidden: room.hidden } : {}),
 			...(fragments.length ? { fragments } : {}),
-			...(transit.length ? { transit } : {})
+			...(transit.length ? { transit } : {}),
+			...(area ? { area: { name: area.name, kind: area.kind } } : {})
 		};
 	}
 	// How many distinct names in the whole map share each word: a word in few is distinctive.

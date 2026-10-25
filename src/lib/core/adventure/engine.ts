@@ -177,7 +177,9 @@ export class Adventure {
 
 	/** A place reached: told, its broken names carried on, and now and then one carried before comes back. */
 	private arrive(): Reply {
-		const reply = this.told();
+		const told = this.told();
+		const crossed = this.crossing();
+		const reply = crossed ? { ...told, lines: [crossed, ...told.lines] } : told;
 		const stop = this.world.stops[this.here];
 		const back = this.recall(stop.fragments ?? []) ?? this.connect(stop.terms ?? []);
 		for (const f of stop.fragments ?? [])
@@ -193,6 +195,17 @@ export class Adventure {
 			lines.length && lines.at(-1)!.startsWith('Exits:') ? lines.length - 1 : lines.length;
 		lines.splice(exits, 0, back);
 		return { ...reply, lines };
+	}
+
+	/** A step into, out of or between the areas another account draws, such as wards. */
+	private crossing(): string | undefined {
+		const from = this.previous === undefined ? undefined : this.world.stops[this.previous].area;
+		const to = this.world.stops[this.here].area;
+		if (from?.name === to?.name) return undefined;
+		if (!from) return `By another account, you are in ${to!.name}, a ${to!.kind}.`;
+		return to
+			? `By another account, you have left ${from.name} for ${to.name}.`
+			: `By another account, you have left ${from.name}.`;
 	}
 
 	/** The bus and tram stops here that TfL has live arrivals for. */
