@@ -2,6 +2,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fixedClock } from '../core/facts';
 import type { WikidataStore } from '../core/adapters/wikidata';
+import type { RecordStore } from '../core/adapters/records';
 import { Narrator } from '../core/narrator';
 import type { OsmData } from '../core/osm';
 import { compileWorld, type AdventureWorld } from '../core/adventure/world';
@@ -21,6 +22,8 @@ export interface Config {
 	historyDir?: string;
 	/** Where dated copies of Wikidata are kept. The newest is used. */
 	wikidataDir?: string;
+	/** Where other sources' records are kept, one file per source and date. The newest of each is used. */
+	recordsDir?: string;
 }
 
 export function readConfig(
@@ -38,7 +41,8 @@ export function readConfig(
 		start: start?.length === 2 && start.every(Number.isFinite) ? [start[0], start[1]] : undefined,
 		narrationPath: source.NARRATION_PATH,
 		historyDir: source.HISTORY_DIR,
-		wikidataDir: source.WIKIDATA_DIR
+		wikidataDir: source.WIKIDATA_DIR,
+		recordsDir: source.RECORDS_DIR
 	};
 }
 
@@ -84,6 +88,19 @@ export function loadLatest<T>(dir?: string): T | undefined {
 	return newest ? (JSON.parse(readFileSync(join(dir, newest), 'utf8')) as T) : undefined;
 }
 
+/** The newest records of each source in a directory: files named <prefix>-<date>.json. */
+export function loadRecords(dir?: string): RecordStore[] {
+	if (!dir || !existsSync(dir)) return [];
+	const newest = new Map<string, string>();
+	for (const f of readdirSync(dir)
+		.filter((f) => /-\d{4}-\d{2}-\d{2}\.json$/.test(f))
+		.sort())
+		newest.set(f.replace(/-\d{4}-\d{2}-\d{2}\.json$/, ''), f);
+	return [...newest.values()].map(
+		(f) => JSON.parse(readFileSync(join(dir, f), 'utf8')) as RecordStore
+	);
+}
+
 /** The narrator for the configured snapshot, using any prose written ahead of time. */
 export function loadNarrator(config: Config): Narrator {
 	const data = JSON.parse(readFileSync(config.snapshotPath, 'utf8'));
@@ -92,7 +109,8 @@ export function loadNarrator(config: Config): Narrator {
 		spacing: config.spacing,
 		renderer: new CachedRenderer(loadNarration(config.narrationPath)),
 		history: loadHistory(config.historyDir),
-		wikidata: loadLatest<WikidataStore>(config.wikidataDir)
+		wikidata: loadLatest<WikidataStore>(config.wikidataDir),
+		records: loadRecords(config.recordsDir)
 	});
 }
 

@@ -72,7 +72,7 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 	const elsewhere = beat.facts.filter(isElsewhere);
 	const what = map.length
 		? nounPhrase(tags)
-		: `“${tags['wikidata:label']}”, which the map does not have`;
+		: `“${tags['wikidata:label'] ?? Object.entries(tags).find(([k]) => k.endsWith(':name'))?.[1]}”, which the map does not have`;
 	const lines = [`${n}. ${placement(scene.position, beat)}: ${what}.`];
 	if (map.length) lines.push(`   The map: ${record(map)}.`);
 	if (folded.length) {
@@ -81,7 +81,10 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 			`   Once at this address, gone from the map since ${monthYear(since)}: ${record(folded)}. One place: tell it once.`
 		);
 	}
-	if (elsewhere.length) lines.push(`   Elsewhere (Wikidata): ${record(elsewhere)}.`);
+	for (const source of [...new Set(elsewhere.map((f) => f.source))])
+		lines.push(
+			`   Elsewhere (${source === 'wikidata' ? 'Wikidata' : source}): ${record(elsewhere.filter((f) => f.source === source))}.`
+		);
 	for (const name of brokenNames(beat)) lines.push(`   Speak the name “${name}” exactly as found.`);
 	if (beat.effects.includes('remembered')) {
 		const asOf = beat.facts.find((f) => f.observed)?.observed;

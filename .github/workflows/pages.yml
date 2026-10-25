@@ -34,6 +34,7 @@ jobs:
           START_AT: 51.379897,-0.074294
           HISTORY_DIR: data/history
           WIKIDATA_DIR: data/wikidata
+          RECORDS_DIR: data/records
           EXPORT_PATH: site/index.html
         run: npm run export
       - uses: actions/upload-pages-artifact@v3

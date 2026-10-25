@@ -92,7 +92,8 @@ export class WikidataAdapter implements SourceAdapter {
 			source: this.name,
 			observed: this.store.retrieved,
 			reach,
-			geometry
+			geometry,
+			elsewhere: true
 		});
 	}
 }

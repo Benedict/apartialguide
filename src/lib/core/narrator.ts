@@ -1,6 +1,7 @@
 import { HistoryAdapter } from './adapters/history';
 import { OsmAdapter } from './adapters/osm';
 import { WikidataAdapter, type WikidataStore } from './adapters/wikidata';
+import { RecordsAdapter, type RecordStore } from './adapters/records';
 import type { Clock, Fact } from './facts';
 import { distance, distanceToPolyline, type LatLon } from './geo';
 import { OsmIndex, type OsmData } from './osm';
@@ -21,6 +22,8 @@ export interface NarratorOptions extends TensionOptions {
 	history?: { asOf: string; data: OsmData }[];
 	/** Another account of the place, from Wikidata. */
 	wikidata?: WikidataStore;
+	/** Other sources' records about the place: food hygiene, listed buildings, planning… */
+	records?: RecordStore[];
 }
 
 export interface Visit {
@@ -55,7 +58,8 @@ export class Narrator {
 		const facts = [
 			...new OsmAdapter(osm).facts(),
 			...new HistoryAdapter(osm, past).facts(),
-			...(options.wikidata ? new WikidataAdapter(osm, options.wikidata).facts() : [])
+			...(options.wikidata ? new WikidataAdapter(osm, options.wikidata).facts() : []),
+			...(options.records ?? []).flatMap((store) => new RecordsAdapter(osm, store).facts())
 		];
 		return new Narrator(buildStopGraph(osm, options), Perception.fromOsm(osm, facts), options);
 	}
