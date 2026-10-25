@@ -52,6 +52,12 @@ export class Adventure {
 	private readonly carried = new Map<string, { at: string; move: number }>();
 	private readonly recalled = new Set<string>();
 	private moves = 0;
+	/** What the reader heard at the last two places, by key: not said again so soon. */
+	private heard: string[][] = [];
+	/** The one street the reader was part way along at the last place, if any. */
+	private lastStreet?: string;
+	/** The last way each framing line was put, so the next place puts it another way. */
+	private readonly framed = new Map<string, string>();
 	/** Distinctive words met on this walk, with where and in what name. */
 	private readonly met = new Map<
 		string,
@@ -163,7 +169,7 @@ export class Adventure {
 
 	/** A place reached: told, its broken names carried on, and now and then one carried before comes back. */
 	private arrive(): Reply {
-		const reply = this.look();
+		const reply = this.told();
 		const stop = this.world.stops[this.here];
 		const back = this.recall(stop.fragments ?? []) ?? this.connect(stop.terms ?? []);
 		for (const f of stop.fragments ?? [])
@@ -179,6 +185,53 @@ export class Adventure {
 			lines.length && lines.at(-1)!.startsWith('Exits:') ? lines.length - 1 : lines.length;
 		lines.splice(exits, 0, back);
 		return { ...reply, lines };
+	}
+
+	/** A place as the reader arrives: what they heard at the last two places is not said again. */
+	private told(): Reply {
+		const stop = this.world.stops[this.here];
+		if (!stop.parts) return this.look();
+		const recent = new Set(this.heard.flat());
+		const heard: string[] = [];
+		let street: string | undefined;
+		const lines = stop.parts
+			.map((parts) => {
+				const fresh = parts.filter(
+					(p) => !['street', 'setting', 'thing'].includes(p.kind) || !recent.has(p.key)
+				);
+				const framesNothing =
+					parts.some((p) => p.kind === 'thing') && !fresh.some((p) => p.kind === 'thing');
+				return fresh
+					.filter((p) => !(framesNothing && p.kind === 'frame'))
+					.map((p) => {
+						if (['street', 'setting', 'thing'].includes(p.kind)) heard.push(p.key);
+						if (p.kind === 'where') {
+							street = p.street;
+							if (p.street && p.street === this.lastStreet) return this.goOn(p.text);
+						}
+						return p.kind === 'frame' && p.options ? this.frame(p.options) : p.text;
+					})
+					.join(' ');
+			})
+			.filter(Boolean);
+		this.heard = [...this.heard, heard].slice(-2);
+		this.lastStreet = street;
+		return { title: stop.title, lines };
+	}
+
+	/** "You are standing on X…" again, when the reader has only gone on along X. */
+	private goOn(where: string): string {
+		const along = this.frame(['Further along ', 'Still on ']);
+		return where.replace(/^You are standing on /, along);
+	}
+
+	/** A framing line put another way than last time. */
+	private frame(options: readonly string[]): string {
+		const key = options.join('|');
+		const last = this.framed.get(key);
+		const next = options[(options.indexOf(last ?? '') + 1) % options.length];
+		this.framed.set(key, next);
+		return next;
 	}
 
 	/** Two names that share a word, met in different places, set side by side if chance allows. */

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+	headingAt,
 	bearing,
 	compassLabel,
 	destination,
@@ -9,6 +10,7 @@ import {
 	bboxAround,
 	pointAlong,
 	polylineLength,
+	type LatLon,
 	segmentsIntersect
 } from './geo';
 
@@ -122,5 +124,15 @@ describe('bboxAround', () => {
 		expect(distance([maxLat, -0.07], [51.38, -0.07])).toBeCloseTo(400, 0);
 		expect(distance([51.38, minLon], [51.38, -0.07])).toBeCloseTo(400, 0);
 		expect(distance([51.38, maxLon], [51.38, -0.07])).toBeCloseTo(400, 0);
+	});
+});
+
+describe('headingAt', () => {
+	it('gives the bearing of the stretch of line nearest p', () => {
+		const start: LatLon = [51.38, -0.07];
+		const corner = destination(start, 90, 100);
+		const line = [start, corner, destination(corner, 0, 100)];
+		expect(headingAt(destination(destination(start, 90, 30), 0, 5), line)).toBeCloseTo(90, 0);
+		expect(headingAt(destination(corner, 0, 60), line)).toBeCloseTo(0, 0);
 	});
 });

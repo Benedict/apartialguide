@@ -1,5 +1,5 @@
 import type { Narrator } from '../narrator';
-import type { Thing } from '../render/renderer';
+import type { Part, Thing } from '../render/renderer';
 import type { StopId } from '../stops';
 import { looksBroken, NAME_KEY } from '../tensions';
 
@@ -12,6 +12,8 @@ export interface CompiledExit {
 export interface CompiledStop {
 	title: string;
 	paragraphs: string[];
+	/** The paragraphs as labelled parts, so the game can leave out what was just said. */
+	parts?: Part[][];
 	exits: CompiledExit[];
 	things: Thing[];
 	/** Distinctive words in the names spoken here, each with the name as found, for chance. */
@@ -81,6 +83,7 @@ export function compileWorld(
 		stops[stop.id] = {
 			title: room.title,
 			paragraphs: room.paragraphs,
+			...(room.parts ? { parts: room.parts } : {}),
 			exits: stop.exits.map(({ label, to, street }) => ({ label, to, street })),
 			things: room.things,
 			...(room.hidden ? { hidden: room.hidden } : {}),
