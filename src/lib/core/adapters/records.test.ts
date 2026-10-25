@@ -110,6 +110,14 @@ describe('RecordsAdapter', () => {
 		]);
 	});
 
+	it('lets a record stand alone only when it has a name to be called by', () => {
+		expect(
+			facts(
+				store([{ id: 'r7', at: [51.381, -0.071], claims: { application: 'Invented extension' } }])
+			)
+		).toEqual([]);
+	});
+
 	it('leaves out what it cannot place, or what the source keeps to the map', () => {
 		expect(facts(store([{ id: 'r5', claims: { rating: '2' } }]))).toEqual([]);
 		expect(

@@ -51,3 +51,26 @@ describe('recordSentences, other sources', () => {
 		]);
 	});
 });
+
+describe('recordSentences, in a room', () => {
+	it('keeps to the short sayings in a room, and tells the rest on a closer look', () => {
+		const tags = {
+			'hygiene:rating': '5',
+			'planning:application': 'Invented extension',
+			'price:sold': '412000'
+		};
+		expect(recordSentences(tags, 'room')).toEqual(['Its food hygiene rating is 5.']);
+		expect(recordSentences(tags)).toHaveLength(3);
+	});
+});
+
+describe('recordSentences, quoting', () => {
+	it('does not add a full stop after a quotation that ends with its own', () => {
+		expect(recordSentences({ 'planning:application': 'Invented sign.' })).toEqual([
+			'An application: “Invented sign.”'
+		]);
+		expect(recordSentences({ 'plaque:inscription': 'Ada Inventa lived here!' })).toEqual([
+			'A plaque: “Ada Inventa lived here!”'
+		]);
+	});
+});

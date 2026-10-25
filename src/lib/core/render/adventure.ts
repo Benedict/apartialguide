@@ -446,7 +446,7 @@ function describeBeat(
 		const { label, what } = otherAccount(tags);
 		return [
 			`${place}, by another account, is “${label}”${what ? `, “${what}”` : ''}.`,
-			...recordSentences(tags)
+			...recordSentences(tags, 'room')
 		].join(' ');
 	}
 	if (beat.effects.includes('remembered')) {
@@ -469,7 +469,7 @@ function describeBeat(
 		sentences.push(`${lead(place)} is ${nounPhrase(tags, streets)}.`);
 	}
 	if (tags.name && !namedInline(tags)) sentences.push(`“${tags.name}”, it says.`);
-	return [...sentences, ...history(beat, tags), ...elsewhere(tags)].join(' ');
+	return [...sentences, ...history(beat, tags), ...elsewhere(tags, 'room')].join(' ');
 }
 
 /** When the map last had word of a thing: its own facts, never another account's or an older map's. */
@@ -527,8 +527,8 @@ function otherAccount(tags: Tags): { label?: string; what?: string } {
 }
 
 /** What another account says of a thing the map has. */
-function elsewhere(tags: Tags): string[] {
-	return [...wikidataSays(tags), ...recordSentences(tags)];
+function elsewhere(tags: Tags, where: 'room' | 'closer' = 'closer'): string[] {
+	return [...wikidataSays(tags), ...recordSentences(tags, where)];
 }
 
 function wikidataSays(tags: Tags): string[] {

@@ -90,7 +90,8 @@ export class RecordsAdapter implements SourceAdapter {
 				const reach =
 					thing.type === 'way' && thing.tags?.highway ? this.reach.street : this.reach.feature;
 				facts.push(...this.claims(r, elementRef(thing), geometry, reach));
-			} else if (r.at && this.store.standalone !== false) {
+			} else if (r.at && r.claims.name && this.store.standalone !== false) {
+				// Standing alone, a record needs a name to be called by.
 				facts.push(...this.claims(r, `${this.store.prefix}/${r.id}`, [r.at], this.reach.feature));
 			}
 		}
