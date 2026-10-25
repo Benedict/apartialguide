@@ -4,6 +4,8 @@ name: Records
 # Runs when data/records/request.env changes, or by hand.
 on:
   push:
+    # On a branch only: merging one that fetched would otherwise fetch again on main.
+    branches-ignore: [main]
     paths:
       - data/records/request.env
   workflow_dispatch:

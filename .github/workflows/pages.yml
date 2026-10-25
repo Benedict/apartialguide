@@ -39,6 +39,11 @@ jobs:
           RECORDS_DIR: data/records
           EXPORT_PATH: site/index.html
         run: npm run export
+      # Publish only a page that plays.
+      - run: npx playwright install --with-deps chromium
+      - run: npm run smoke
+        env:
+          EXPORT_PATH: site/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
