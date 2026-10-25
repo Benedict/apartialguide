@@ -53,12 +53,12 @@ describe('recordSentences, other sources', () => {
 });
 
 describe('recordSentences, trees', () => {
-	it('counts the trees along a street, by their names as found', () => {
+	it('counts the trees along a street, by their names as found, as another account', () => {
 		expect(
 			recordSentences({ 'trees:count': '3', 'trees:kinds': 'London plane (2), Lime (1)' })
-		).toEqual(['3 trees along it, by the borough’s count: London plane (2), Lime (1).']);
+		).toEqual(['3 trees along it, by another account: London plane (2), Lime (1).']);
 		expect(recordSentences({ 'trees:count': '1', 'trees:kinds': 'Cherry (1)' })).toEqual([
-			'1 tree along it, by the borough’s count: Cherry (1).'
+			'1 tree along it, by another account: Cherry (1).'
 		]);
 	});
 });

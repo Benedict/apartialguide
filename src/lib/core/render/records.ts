@@ -62,7 +62,7 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 		false,
 		(t) =>
 			t['trees:count']
-				? `${t['trees:count']} tree${t['trees:count'] === '1' ? '' : 's'} along it, by the borough’s count: ${t['trees:kinds']}.`
+				? `${t['trees:count']} tree${t['trees:count'] === '1' ? '' : 's'} along it, by another account: ${t['trees:kinds']}.`
 				: undefined
 	]
 ];

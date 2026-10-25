@@ -275,7 +275,9 @@ async function datastoreCsvs(slug: string): Promise<{ title: string; url: string
 			}));
 			console.log(`trees: ${api} lists ${JSON.stringify(all).slice(0, 1500)}`);
 			const csvs = all.filter((r) => r.format.includes('csv') || /\.csv(\?|$)/i.test(r.url));
-			if (csvs.length) return csvs;
+			// The newest list first, by the latest year its title names.
+			const year = (t: string) => Math.max(0, ...(t.match(/\d{4}/g) ?? []).map(Number));
+			if (csvs.length) return csvs.sort((a, b) => year(b.title) - year(a.title));
 		} catch (err) {
 			console.log(`trees: ${api} did not answer: ${(err as Error).message.slice(0, 200)}`);
 		}
