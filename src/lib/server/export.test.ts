@@ -71,6 +71,12 @@ describe('exportPage', () => {
 		expect(page()).toMatch(/\.then\(\(now\) => \{\s*game\.begin\(now\)/);
 	});
 
+	it('asks TfL what is due at the stops of each place shown', () => {
+		expect(page()).toContain('game.transitHere()');
+		expect(page()).toContain('fetchArrivals(');
+		expect(page()).toContain('Powered by TfL Open Data');
+	});
+
 	it('has no header above the introduction', () => {
 		expect(page()).not.toContain('class="note"');
 	});

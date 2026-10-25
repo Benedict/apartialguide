@@ -27,7 +27,7 @@ const bundle = await build({
 	format: 'iife',
 	globalName: 'AdventureEngine',
 	footer: {
-		js: 'var Adventure = AdventureEngine.Adventure; var fetchWeatherNow = AdventureEngine.fetchWeatherNow;'
+		js: 'var Adventure = AdventureEngine.Adventure; var fetchWeatherNow = AdventureEngine.fetchWeatherNow; var fetchArrivals = AdventureEngine.fetchArrivals;'
 	},
 	minify: true,
 	target: 'es2020',

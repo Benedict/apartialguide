@@ -15,7 +15,8 @@
 
 <footer>
 	Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL.
-	Weather from <a href="https://open-meteo.com/">Open-Meteo.com</a>, CC BY 4.0. Another account from
+	Weather from <a href="https://open-meteo.com/">Open-Meteo.com</a>, CC BY 4.0. Departures: Powered
+	by TfL Open Data. Another account from
 	<a href="https://www.wikidata.org/">Wikidata</a>, CC0.
 </footer>
 

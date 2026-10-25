@@ -1,9 +1,10 @@
 import type { Fact } from '../facts';
 import { weatherNow } from '../render/weather';
+import { departuresLine } from '../render/departures';
 import { longDate } from '../render/words';
 import { direction, parse } from './parser';
 import type { Thing } from '../render/renderer';
-import type { AdventureWorld, CompiledExit, Term } from './world';
+import type { AdventureWorld, CompiledExit, Term, TransitStop } from './world';
 
 export interface Reply {
 	/** Set when the reply describes a place. */
@@ -185,6 +186,18 @@ export class Adventure {
 			lines.length && lines.at(-1)!.startsWith('Exits:') ? lines.length - 1 : lines.length;
 		lines.splice(exits, 0, back);
 		return { ...reply, lines };
+	}
+
+	/** The bus and tram stops here that TfL has live arrivals for. */
+	transitHere(): TransitStop[] {
+		return this.world.stops[this.here].transit ?? [];
+	}
+
+	/** What is due at a stop, as TfL answered; nothing at all without an answer. */
+	departures(stop: TransitStop, facts: Fact[] | undefined): Reply | undefined {
+		if (!facts) return undefined;
+		const line = departuresLine(facts, stop.name);
+		return line ? { lines: [line] } : undefined;
 	}
 
 	/** A place as the reader arrives: what they heard at the last two places is not said again. */
