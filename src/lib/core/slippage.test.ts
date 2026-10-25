@@ -5,7 +5,47 @@ import { facts } from './testing/facts';
 const street = facts('way/1', { highway: 'residential', name: 'A Street' });
 const bank = facts('way/2', { old_name: 'est Bank', 'disused:amenity': 'bank' });
 
+const building = facts('way/3', {
+	building: 'retail',
+	'addr:housenumber': '9',
+	'addr:street': 'A Street',
+	old_name: 'est Bank'
+});
+const goneBank = facts(
+	'node/9',
+	{
+		'was:amenity': 'bank',
+		'was:name': 'Invented Bank',
+		'was:addr:housenumber': '9',
+		'was:addr:street': 'A Street'
+	},
+	{ source: 'osm-history', observed: '2021-01-01' }
+);
+
 describe('chooseSlippage', () => {
+	it('tells what has gone from an address as part of what stands there now', () => {
+		const plan = chooseSlippage(
+			's1',
+			[...street, ...building, ...goneBank],
+			[{ kind: 'gone', subject: 'node/9', asOf: '2021-01-01' }]
+		);
+		expect(plan.beats.map((b) => b.subject)).toEqual(['way/3']);
+		expect(plan.beats[0].effects).toContain('was-here');
+		expect(plan.beats[0].facts.filter((f) => f.subject === 'node/9')).toHaveLength(4);
+	});
+
+	it('keeps what has gone apart when nothing stands at its address now', () => {
+		const elsewhere = goneBank.map((f) =>
+			f.claim.key === 'was:addr:housenumber' ? { ...f, claim: { ...f.claim, value: '11' } } : f
+		);
+		const plan = chooseSlippage(
+			's1',
+			[...street, ...building, ...elsewhere],
+			[{ kind: 'gone', subject: 'node/9', asOf: '2021-01-01' }]
+		);
+		expect(plan.beats.map((b) => b.subject)).toEqual(['way/3', 'node/9']);
+	});
+
 	it('keeps street facts apart from the features beside it', () => {
 		const plan = chooseSlippage('s1', [...street, ...bank], []);
 		expect(plan.street.map((f) => f.claim.key)).toEqual(['highway', 'name']);

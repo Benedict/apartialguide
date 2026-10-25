@@ -3,7 +3,7 @@ import { bearing, compassLabel, insideRing, nearestOnPolyline, type LatLon } fro
 import type { Tags } from '../osm';
 import type { Scene, SceneExit } from '../scene';
 import { isBackground, type Beat } from '../slippage';
-import { isHistory } from '../tensions';
+import { isElsewhere, isHistory } from '../tensions';
 import type { Renderer, Room, Thing } from './renderer';
 import {
 	address,
@@ -13,6 +13,7 @@ import {
 	currentUse,
 	humanise,
 	list,
+	longDate,
 	monthYear,
 	pastUse,
 	pick,
@@ -37,7 +38,7 @@ export class AdventureRenderer implements Renderer {
 		return {
 			title: title(scene, street),
 			paragraphs: paragraphs.filter(Boolean),
-			things: scene.beats.map(thing),
+			things: scene.beats.filter((b) => !isHalf(b)).map(thing),
 			hidden: closerLook(scene)
 		};
 	}
@@ -96,18 +97,23 @@ export function streetCharacter(street: Tags): string[] {
 	if (lit && pavement) sentences.push(`${lit}, with ${pavement}.`);
 	else if (lit || pavement) sentences.push(`${capitalise((lit ?? pavement)!)}.`);
 	if (street.maxspeed) sentences.push(`The limit is ${street.maxspeed}, for what that is worth.`);
+	const namesake = street['etymology:label'];
+	const who = street['etymology:description'];
+	if (namesake) sentences.push(`Named for ${namesake}${who ? `, ${who}` : ''}.`);
 	return sentences;
 }
 
 function whatYouSee(scene: Scene): string[] {
 	let previous = '';
+	const streets: Said = new Set();
 	const told = scene.beats
-		.filter((b) => !isBackground(b))
+		.filter((b) => !isBackground(b) && !isHalf(b))
 		.map((b) => {
 			const place = placement(scene.position, b);
 			const said = describeBeat(
 				b,
-				place === previous && place.startsWith('To the') ? 'Next to it' : place
+				place === previous && place.startsWith('To the') ? 'Next to it' : place,
+				streets
 			);
 			previous = place;
 			return said;
@@ -124,11 +130,12 @@ function whatYouSee(scene: Scene): string[] {
 
 /** What a closer look finds: the hidden things in one breath, named things by name and repeats counted. */
 function closerLook(scene: Scene): Room['hidden'] {
-	if (!scene.hidden.length) return undefined;
-	const found = tally(scene.hidden.map(brief));
+	const hidden = scene.hidden.filter((b) => !isHalf(b));
+	if (!hidden.length) return undefined;
+	const found = tally(hidden.map(brief));
 	return {
 		lines: [`Looking closer, you find ${found.join(', and ')}.`],
-		things: scene.hidden.map(thing)
+		things: hidden.map(thing)
 	};
 }
 
@@ -137,6 +144,7 @@ const CROWD_OPENERS = ['There is a great deal here.', 'Too much to take in at on
 /** A crowd member in a breath: named things by name, the unnamed by what they are. */
 function brief(beat: Beat): { phrase: string; noun?: string } {
 	const tags = tagsFor(beat);
+	if (isElsewhereOnly(beat)) return { phrase: `“${tags['wikidata:label']}”, by another account` };
 	const what = noun(tags);
 	if (tags.name) {
 		const saysItAll = tags.name.toLowerCase().includes(what.split(' ').at(-1)!);
@@ -269,8 +277,20 @@ function kind(tags: Tags): string | undefined {
 /** Whether the thing's name belongs in the noun phrase, rather than read off it as a sign. */
 const namedInline = (tags: Tags) => !!tags.name && !!(currentUse(tags) ?? kind(tags));
 
-export function nounPhrase(tags: Tags): string {
-	const where = address(tags);
+/** Streets already given in a room's addresses: after the first, an address is its number alone. */
+export type Said = Set<string>;
+
+function addressIn(tags: Tags, said?: Said): string | undefined {
+	const street = tags['addr:street'];
+	if (!said || !street || !said.has(street)) {
+		if (said && street) said.add(street);
+		return address(tags);
+	}
+	return tags['addr:housenumber'] ?? tags['addr:housename'] ?? address(tags);
+}
+
+export function nounPhrase(tags: Tags, said?: Said): string {
+	const where = addressIn(tags, said);
 	const at = where ? ` at ${where}` : '';
 	const name = namedInline(tags) ? `, “${tags.name}”` : '';
 	return `${article(noun(tags))}${at}${name}`;
@@ -291,35 +311,71 @@ export function tagsFor(beat: Beat): Tags {
 /** Older names of something still there, oldest first, with when each last held. */
 export const oldNames = (beat: Beat) =>
 	beat.facts
-		.filter((f) => isHistory(f) && f.claim.key === 'was:name')
+		.filter((f) => isHistory(f) && f.subject === beat.subject && f.claim.key === 'was:name')
 		.sort((a, b) => (a.observed ?? '').localeCompare(b.observed ?? ''))
 		.map((f) => ({ name: f.claim.value, asOf: f.observed }));
 
-function describeBeat(beat: Beat, place: string): string {
+function describeBeat(beat: Beat, place: string, streets: Said = new Set()): string {
 	const tags = tagsFor(beat);
-	const sentences: string[] = [];
 	const use = currentUse(tags);
 
+	if (isElsewhereOnly(beat)) {
+		const label = tags['wikidata:label'];
+		const what = tags['wikidata:description'];
+		return `${place}, by another account, is “${label}”${what ? `, “${what}”` : ''}.`;
+	}
 	if (beat.effects.includes('remembered')) {
 		const asOf = beat.facts.find((f) => f.observed)?.observed;
-		return `${lead(place)} there was ${nounPhrase(tags)}, in ${monthYear(asOf)}. The map no longer has it.`;
+		return `${lead(place)} there was ${nounPhrase(tags, streets)}, in ${monthYear(asOf)}. The map no longer has it.`;
 	}
+	const sentences: string[] = [];
 	if (use && beat.effects.includes('tense-slip')) {
-		const where = address(tags);
+		const where = addressIn(tags, streets);
 		const at = where ? ` at ${where}` : '';
-		const observed = beat.facts.find((f) => f.observed)?.observed;
+		const observed = mapObserved(beat)?.observed;
 		sentences.push(
-			`${lead(place)} there’s ${article(use)}${at}. There was ${article(use)} in ${monthYear(observed)}, when it was last recorded.`
+			`${lead(place)} there is ${article(use)}${at}, or there was in ${monthYear(observed)}, when it was last recorded.`
 		);
 	} else {
-		sentences.push(`${lead(place)} is ${nounPhrase(tags)}.`);
+		sentences.push(`${lead(place)} is ${nounPhrase(tags, streets)}.`);
 	}
 	if (tags.name && !namedInline(tags)) sentences.push(`“${tags.name}”, it says.`);
+	return [...sentences, ...history(beat, tags), ...elsewhere(tags)].join(' ');
+}
+
+/** When the map last had word of a thing: its own facts, never another account's or an older map's. */
+const mapObserved = (beat: Beat) =>
+	beat.facts.find((f) => f.observed && f.subject === beat.subject && !isElsewhere(f));
+
+/** What stood at this thing's address and has gone from the map: as last recorded, and when. */
+function goneHere(beat: Beat): { tags: Tags; asOf?: string } | undefined {
+	const facts = beat.facts.filter((f) => isHistory(f) && f.subject !== beat.subject);
+	if (!facts.length) return undefined;
+	const asOf = facts.reduce((a, f) => (f.observed && f.observed > a ? f.observed : a), '');
+	return {
+		tags: Object.fromEntries(facts.map((f) => [f.claim.key.replace(/^was:/, ''), f.claim.value])),
+		asOf: asOf || undefined
+	};
+}
+
+/** A thing's past, each part said once: what it was, what stood here and went, its older names. */
+function history(beat: Beat, tags: Tags): string[] {
+	const sentences: string[] = [];
 	const past = pastUse(tags);
-	if (past) sentences.push(`It was ${article(past)}.`);
-	if (tags.old_name) sentences.push(`Once “${tags.old_name}”.`);
-	if (beat.effects.includes('spoken-as-found'))
-		sentences.push('That is the whole of it, as written.');
+	const gone = goneHere(beat);
+	const goneUse = gone && (currentUse(gone.tags) ?? noun(gone.tags));
+	const once = tags.old_name ? `once “${tags.old_name}”` : '';
+	if (gone && goneUse) {
+		const named = gone.tags.name
+			? `, “${gone.tags.name}” in ${monthYear(gone.asOf)}`
+			: `, in ${monthYear(gone.asOf)}`;
+		if (past && past !== goneUse) sentences.push(`It was ${article(past)}.`);
+		const was = `It was ${article(goneUse)}${named}`;
+		sentences.push(once ? `${was}, and ${once}.` : `${was}.`);
+	} else {
+		if (past) sentences.push(`It was ${article(past)}.`);
+		if (once) sentences.push(`${capitalise(once)}.`);
+	}
 	const older = oldNames(beat);
 	if (tags.name && older.length === 1)
 		sentences.push(
@@ -329,8 +385,44 @@ function describeBeat(beat: Beat, place: string): string {
 		sentences.push(
 			`“${tags.name}”, ${older.map((o) => `or “${o.name}” (${monthYear(o.asOf)})`).join(', ')}.`
 		);
-	return sentences.join(' ');
+	return sentences;
 }
+
+/** What another account says of a thing the map has. */
+function elsewhere(tags: Tags): string[] {
+	const listed = tags['wikidata:description'];
+	const begun = tags['wikidata:inception'];
+	if (listed)
+		return [`Elsewhere it is listed as “${listed}”${begun ? `, begun ${when(begun)}` : ''}.`];
+	return begun ? [`Elsewhere it is said to have begun ${when(begun)}.`] : [];
+}
+
+/** What the map says of a thing beyond what it is, in words: never its raw record. */
+function details(tags: Tags): string[] {
+	const sentences: string[] = [];
+	if (tags.cuisine)
+		sentences.push(`It serves ${list(tags.cuisine.split(';').map((c) => humanise(c.trim())))}.`);
+	if (tags.takeaway === 'yes') sentences.push('Takeaway.');
+	if (tags.takeaway === 'only') sentences.push('Takeaway only.');
+	const faith = tags.denomination ?? tags.religion;
+	if (faith) sentences.push(`${capitalise(humanise(faith))}.`);
+	if (tags.operator) sentences.push(`Run by ${tags.operator}.`);
+	const namesake = tags['etymology:label'];
+	if (namesake) sentences.push(`Named for ${namesake}.`);
+	return sentences;
+}
+
+/** "in 1868", "in May 1868", "on 1 May 1868": a date as precise as it was given. */
+function when(date: string): string {
+	if (date.length === 10) return `on ${longDate(date)}`;
+	return date.length === 7 ? `in ${monthYear(date)}` : `in ${date}`;
+}
+
+/** A thing only another account places here: the map does not link to it. */
+const isElsewhereOnly = (beat: Beat) => beat.subject.startsWith('wikidata/');
+
+/** Another account of something the map has, seen without the map's own facts: not a thing to speak of. */
+export const isHalf = (beat: Beat) => !isElsewhereOnly(beat) && beat.facts.every(isElsewhere);
 
 export function exitsLine(exits: readonly SceneExit[]): string {
 	if (!exits.length) return 'There is no way on from here.';
@@ -347,13 +439,17 @@ export function exitsLine(exits: readonly SceneExit[]): string {
 function thing(beat: Beat): Thing {
 	const tags = tagsFor(beat);
 	const past = pastUse(tags);
-	const name = tags.name ?? (currentUse(tags) || !past ? noun(tags) : `former ${past}`);
+	const name =
+		tags.name ??
+		tags['wikidata:label'] ??
+		(currentUse(tags) || !past ? noun(tags) : `former ${past}`);
 	const words = [
 		name,
 		noun(tags),
 		past,
 		tags['addr:housenumber'],
 		tags.old_name,
+		tags['wikidata:label'],
 		...oldNames(beat).map((o) => o.name),
 		'building'
 	]
@@ -362,15 +458,19 @@ function thing(beat: Beat): Thing {
 		.toLowerCase()
 		.split(/[^\p{L}\p{N}-]+/u)
 		.filter((w) => w.length > 1 && !['the', 'at', 'of', 'and'].includes(w));
-	const observed = beat.facts.find((f) => f.observed);
-	const record = beat.facts.map((f) => `${f.claim.key}=${f.claim.value}`).join(' · ');
-	const description = [
-		`${capitalise(nounPhrase(tags))}.`,
-		`The map has it as: ${record}.`,
-		observed
-			? `Last ${isHistory(observed) ? 'recorded' : observed.observedBy === 'survey' ? 'surveyed' : 'edited'} in ${monthYear(observed.observed)}.`
-			: ''
-	];
+	const what = `${article(noun(tags))}${address(tags) ? ` at ${address(tags)}` : ''}${tags.name ? `, “${tags.name}”` : ''}`;
+	const observed = beat.effects.includes('remembered')
+		? beat.facts.find((f) => f.observed)
+		: mapObserved(beat);
+	const description = isElsewhereOnly(beat)
+		? [`“${name}”.`, 'The map does not have it.', ...elsewhere(tags)]
+		: beat.effects.includes('remembered')
+			? [`There was ${what}.`, 'The map no longer has it.']
+			: [`${capitalise(what)}.`, ...details(tags), ...history(beat, tags), ...elsewhere(tags)];
+	if (observed && !isElsewhereOnly(beat))
+		description.push(
+			`Last ${isHistory(observed) ? 'recorded' : observed.observedBy === 'survey' ? 'surveyed' : 'edited'} in ${monthYear(observed.observed)}.`
+		);
 	return {
 		id: beat.subject,
 		name,

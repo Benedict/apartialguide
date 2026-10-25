@@ -14,3 +14,4 @@ bun.lockb
 # Narration is written by a script and kept as it is
 /data/narration/*.json
 /data/history/*.json
+/data/wikidata/*.json

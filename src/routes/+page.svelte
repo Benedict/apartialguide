@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { tick } from 'svelte';
 	import { Adventure, type Reply } from '#lib/core/adventure/engine.ts';
+	import { fetchWeatherNow } from '#lib/browser/sky.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -10,7 +11,7 @@
 	// The world is fixed for the life of the page, so the game reads it once.
 	// svelte-ignore state_referenced_locally
 	const game = new Adventure(data.world);
-	let transcript: Entry[] = $state(game.begin().map((reply): Entry => ({ kind: 'reply', reply })));
+	let transcript: Entry[] = $state([]);
 	let command = $state('');
 	// Until the tour begins, the only thing to type is to take it.
 	let touring = $state(false);
@@ -20,9 +21,14 @@
 	// Until the script runs, a submit would reload the page and lose the walk.
 	let ready = $state(false);
 
+	// Guide begins once the browser has asked after today's weather, or given up asking.
 	$effect(() => {
-		ready = true;
-		input.focus();
+		fetchWeatherNow(data.world.weatherAt).then(async (now) => {
+			transcript.push(...game.begin(now).map((reply): Entry => ({ kind: 'reply', reply })));
+			ready = true;
+			await tick();
+			input.focus();
+		});
 	});
 
 	async function submit(event: SubmitEvent) {

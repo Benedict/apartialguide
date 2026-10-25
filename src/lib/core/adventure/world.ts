@@ -23,6 +23,8 @@ export interface AdventureWorld {
 	stops: Record<StopId, CompiledStop>;
 	/** The date of the map Guide carries, YYYY-MM-DD. */
 	asOf?: string;
+	/** Where to ask about today's weather: where the tour begins. */
+	weatherAt?: { latitude: number; longitude: number };
 }
 
 export function compileWorld(
@@ -41,5 +43,13 @@ export function compileWorld(
 			...(room.hidden ? { hidden: room.hidden } : {})
 		};
 	}
-	return { start, stops, ...(options.asOf ? { asOf: options.asOf } : {}) };
+	const begins = narrator.graph.get(start)?.position;
+	return {
+		start,
+		stops,
+		...(options.asOf ? { asOf: options.asOf } : {}),
+		...(begins
+			? { weatherAt: { latitude: +begins[0].toFixed(4), longitude: +begins[1].toFixed(4) } }
+			: {})
+	};
 }

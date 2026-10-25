@@ -44,7 +44,7 @@ describe('buildPrompt', () => {
 		expect(a).toBe(b);
 		expect(a).toMatch(/Wainwright/);
 		expect(a).toMatch(/Auster/);
-		expect(a).toMatch(/never what the map says/);
+		expect(a).toMatch(/never about what the map says/);
 		expect(a).toContain('“est Bank”');
 	});
 
@@ -108,6 +108,63 @@ describe('buildPrompt', () => {
 		};
 		expect(buildPrompt(scene({ beats: [pub] })).user).toContain(
 			'Was called “The Anchor” in January 2017. Correct yourself between the names.'
+		);
+	});
+
+	it('keeps another account apart from the map', () => {
+		const pub = {
+			subject: 'node/4',
+			facts: [
+				...facts('node/4', { amenity: 'pub', name: 'The Sextant' }, near),
+				...facts('node/4', { 'wikidata:description': 'invented public house' }, near).map((f) => ({
+					...f,
+					source: 'wikidata'
+				}))
+			],
+			effects: []
+		};
+		const user = buildPrompt(scene({ beats: [pub] })).user;
+		expect(user).toContain('The map: amenity=pub; name=The Sextant.');
+		expect(user).toContain('Elsewhere (Wikidata): wikidata:description=invented public house.');
+		expect(buildPrompt(scene()).system).toMatch(/elsewhere/i);
+	});
+
+	it('names the street’s namesake where the reader stands', () => {
+		const street = facts('way/1', {
+			highway: 'residential',
+			name: 'Long Street',
+			'etymology:label': 'Ada Inventa'
+		});
+		expect(buildPrompt(scene({ street })).user).toContain('Named for Ada Inventa.');
+	});
+
+	it('keeps Auster in what is noticed and Wainwright in the voice, lost about facts, never meaning', () => {
+		const { system } = buildPrompt(scene());
+		expect(system).not.toMatch(/who you are|unsure of who it is/);
+		expect(system).toMatch(/never about what anything means/);
+		expect(system).toMatch(/never point out that a name is broken/i);
+		expect(system).not.toMatch(/no weather/);
+	});
+
+	it('tells the model what stood at a thing’s address and went, as part of it', () => {
+		const building = {
+			subject: 'way/3',
+			facts: [
+				...facts('way/3', { building: 'retail', 'addr:housenumber': '9' }, near),
+				...facts('node/9', { 'was:amenity': 'bank', 'was:name': 'Invented Bank' }, near).map(
+					(f) => ({
+						...f,
+						source: 'osm-history',
+						observed: '2021-01-01'
+					})
+				)
+			],
+			effects: ['was-here' as const]
+		};
+		const user = buildPrompt(scene({ beats: [building] })).user;
+		expect(user).toContain('The map: building=retail; addr:housenumber=9.');
+		expect(user).toContain(
+			'Once at this address, gone from the map since January 2021: was:amenity=bank; was:name=Invented Bank. One place: tell it once.'
 		);
 	});
 

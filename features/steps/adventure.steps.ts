@@ -7,6 +7,9 @@ import { CachedRenderer, type NarrationStore } from '../../src/lib/core/render/c
 import { RecordedModel } from '../../src/lib/core/testing/recorded';
 import { bearing, destination } from '../../src/lib/core/geo';
 import type { OsmElement } from '../../src/lib/core/osm';
+import type { WikidataItem } from '../../src/lib/core/adapters/wikidata';
+import { currentWeatherFacts } from '../../src/lib/core/adapters/weather';
+import type { Fact } from '../../src/lib/core/facts';
 import { junctionId } from '../../src/lib/core/stops';
 import { SyntheticMap } from '../../src/lib/core/testing/synthetic';
 import type { NarratorWorld } from '../support/world';
@@ -18,6 +21,8 @@ interface AdventureState {
 	started?: string;
 	reply?: Reply;
 	streetStart?: number;
+	/** Today's weather, as the browser would fetch it. */
+	now?: Fact[];
 }
 const state = (w: NarratorWorld) => w as NarratorWorld & AdventureState;
 
@@ -61,13 +66,60 @@ Given(
 	}
 );
 
+/** Rebuilds the narrator with what the scenario has added, and restarts from the same stop. */
+function restart(world: NarratorWorld) {
+	const s = state(world);
+	world.rebuild();
+	if (s.started) s.game = new Adventure(compileWorld(world.narrator, s.started));
+}
+
 /** Adds a past map to the scenario and restarts the game from the same stop. */
 function withPast(world: NarratorWorld, asOf: string, elements: OsmElement[]) {
-	const s = state(world);
 	world.history.push({ asOf, data: { elements } });
-	world.rebuild();
-	s.game = new Adventure(compileWorld(world.narrator, s.started!));
+	restart(world);
 }
+
+/** Puts an invented item in the scenario's Wikidata. */
+function withItem(world: NarratorWorld, qid: string, item: WikidataItem) {
+	world.wikidata ??= { retrieved: world.snapshotDate, items: {} };
+	world.wikidata.items[qid] = item;
+}
+
+Given(
+	'Long Street is named for {string}, described in Wikidata as {string}',
+	function (this: NarratorWorld, label: string, description: string) {
+		withItem(this, 'Q900000001', { label, description });
+		this.map.tag(this.map.find({ name: 'Long Street' }), {
+			'name:etymology:wikidata': 'Q900000001'
+		});
+		restart(this);
+	}
+);
+
+Given(
+	'Wikidata describes The Sextant as {string}',
+	function (this: NarratorWorld, description: string) {
+		withItem(this, 'Q900000002', { label: 'The Sextant', description });
+		this.map.tag(this.map.find({ name: 'The Sextant' }), { wikidata: 'Q900000002' });
+		restart(this);
+	}
+);
+
+Given(
+	'Wikidata places {string}, {string}, right beside the reader',
+	function (this: NarratorWorld, label: string, description: string) {
+		const here = this.narrator.graph.get(state(this).started!)!.position;
+		withItem(this, 'Q900000003', {
+			label,
+			description,
+			coordinates: destination(here, 0, 6)
+		});
+		restart(this);
+	}
+);
+
+/** Words for the weather codes these scenarios use. */
+const CODES: Record<string, number> = { overcast: 3, 'light rain': 61 };
 
 Given(
 	'the map of {word} had a bakery called {string} right beside the reader',
@@ -109,10 +161,25 @@ When('the game begins', function (this: NarratorWorld) {
 	s.reply = s.game!.look();
 });
 
+Given(
+	/^the weather now is ([a-z ]+), (-?\d+) °C$/,
+	function (this: NarratorWorld, words: string, temperature: string) {
+		state(this).now = currentWeatherFacts({
+			current: {
+				time: `${this.snapshotDate}T12:00`,
+				weather_code: CODES[words],
+				temperature_2m: Number(temperature)
+			}
+		});
+	}
+);
+
 Given('the reader opens the game', function (this: NarratorWorld) {
 	const s = state(this);
-	s.game = new Adventure(compileWorld(this.narrator, junctionId(s.streetStart!)));
-	const replies = s.game.begin();
+	s.game = new Adventure(
+		compileWorld(this.narrator, junctionId(s.streetStart!), { asOf: this.snapshotDate })
+	);
+	const replies = s.game.begin(s.now);
 	s.reply = { lines: replies.flatMap((r) => [...(r.title ? [r.title] : []), ...r.lines]) };
 });
 

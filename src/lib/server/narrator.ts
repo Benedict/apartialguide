@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fixedClock } from '../core/facts';
+import type { WikidataStore } from '../core/adapters/wikidata';
 import { Narrator } from '../core/narrator';
 import type { OsmData } from '../core/osm';
 import { compileWorld, type AdventureWorld } from '../core/adventure/world';
@@ -18,6 +19,8 @@ export interface Config {
 	narrationPath?: string;
 	/** Where earlier maps of the same place are kept, for what has gone or been renamed. */
 	historyDir?: string;
+	/** Where dated copies of Wikidata are kept. The newest is used. */
+	wikidataDir?: string;
 }
 
 export function readConfig(
@@ -34,7 +37,8 @@ export function readConfig(
 		spacing: Number(source.STOP_SPACING_M ?? 50),
 		start: start?.length === 2 && start.every(Number.isFinite) ? [start[0], start[1]] : undefined,
 		narrationPath: source.NARRATION_PATH,
-		historyDir: source.HISTORY_DIR
+		historyDir: source.HISTORY_DIR,
+		wikidataDir: source.WIKIDATA_DIR
 	};
 }
 
@@ -70,6 +74,16 @@ export function loadHistory(dir?: string): { asOf: string; data: OsmData }[] {
 		.sort((a, b) => a.asOf.localeCompare(b.asOf));
 }
 
+/** The newest dated JSON file in a directory, or nothing. */
+export function loadLatest<T>(dir?: string): T | undefined {
+	if (!dir || !existsSync(dir)) return undefined;
+	const newest = readdirSync(dir)
+		.filter((f) => f.endsWith('.json'))
+		.sort()
+		.at(-1);
+	return newest ? (JSON.parse(readFileSync(join(dir, newest), 'utf8')) as T) : undefined;
+}
+
 /** The narrator for the configured snapshot, using any prose written ahead of time. */
 export function loadNarrator(config: Config): Narrator {
 	const data = JSON.parse(readFileSync(config.snapshotPath, 'utf8'));
@@ -77,7 +91,8 @@ export function loadNarrator(config: Config): Narrator {
 		clock: fixedClock(config.snapshotDate),
 		spacing: config.spacing,
 		renderer: new CachedRenderer(loadNarration(config.narrationPath)),
-		history: loadHistory(config.historyDir)
+		history: loadHistory(config.historyDir),
+		wikidata: loadLatest<WikidataStore>(config.wikidataDir)
 	});
 }
 

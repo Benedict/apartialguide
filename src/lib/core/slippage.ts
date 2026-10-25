@@ -1,7 +1,13 @@
 import { groupBySubject, type Fact } from './facts';
 import { isStreet, type Tension } from './tensions';
 
-export type Effect = 'spoken-as-found' | 'tense-slip' | 'remembered' | 'self-correction';
+export type Effect =
+	| 'spoken-as-found'
+	| 'tense-slip'
+	| 'remembered'
+	| 'self-correction'
+	/** Something now gone stood at this thing's address: told as part of it. */
+	| 'was-here';
 
 /** One thing the narrator notices, and how its telling should slip. */
 export interface Beat {
@@ -27,7 +33,12 @@ export const isBackground = (beat: Beat) =>
 	beat.facts.some((f) => f.claim.key === 'landuse' || f.claim.key === 'place');
 
 /** Effects Guide always notices: a broken name, and what the map has lost or renamed. */
-const ALWAYS_NOTICED = new Set<Effect>(['spoken-as-found', 'remembered', 'self-correction']);
+const ALWAYS_NOTICED = new Set<Effect>([
+	'spoken-as-found',
+	'remembered',
+	'self-correction',
+	'was-here'
+]);
 
 /** Features noticed at a stop when nothing crowds the view, and when the view is crowded. */
 const ATTENTION = { plain: 4, rambling: 2, hesitant: 4 };
@@ -61,6 +72,7 @@ export function chooseSlippage(
 		}
 		beats.push({ subject, facts: group, effects: [...effects] });
 	}
+	foldIntoAddresses(beats);
 
 	// The land underfoot is always told and costs no attention. A broken name, and what the map
 	// has lost or renamed, are always noticed.
@@ -74,4 +86,31 @@ export function chooseSlippage(
 	});
 	const hidden = beats.filter((b) => !noticed.includes(b));
 	return { stopId, street, beats: noticed, hidden, mood };
+}
+
+/** "9 A Street", or "9" when the street is not given; nothing without a number. */
+function addressOf(facts: readonly Fact[], prefix = ''): string | undefined {
+	const tag = (key: string) => facts.find((f) => f.claim.key === prefix + key)?.claim.value;
+	const number = tag('addr:housenumber');
+	return number && `${number} ${tag('addr:street') ?? ''}`.trim();
+}
+
+/**
+ * Something gone from the map whose address is that of a thing still there is the same place,
+ * told once: its facts join that thing's beat.
+ */
+function foldIntoAddresses(beats: Beat[]) {
+	for (const gone of beats.filter((b) => b.effects.includes('remembered'))) {
+		const address = addressOf(gone.facts, 'was:');
+		if (!address) continue;
+		const here = beats.find((b) => {
+			if (b === gone || b.effects.includes('remembered')) return false;
+			const there = addressOf(b.facts);
+			return !!there && (there === address || there.split(' ')[0] === address);
+		});
+		if (!here) continue;
+		here.facts.push(...gone.facts);
+		if (!here.effects.includes('was-here')) here.effects.push('was-here');
+		beats.splice(beats.indexOf(gone), 1);
+	}
 }

@@ -34,13 +34,24 @@ describe('exportPage', () => {
 		expect(page()).toContain('<title>A Partial Guide</title>');
 	});
 
+	it('credits the weather and Wikidata', () => {
+		expect(page()).toContain('Open-Meteo.com');
+		expect(page()).toContain('CC BY 4.0');
+		expect(page()).toContain('Wikidata');
+	});
+
 	it('credits OpenStreetMap and dates the map', () => {
 		expect(page()).toContain('OpenStreetMap contributors');
 		expect(page()).toContain('24 October 2026');
 	});
 
 	it('begins with Guide introducing themselves', () => {
-		expect(page()).toContain('game.begin().forEach(show)');
+		expect(page()).toContain('game.begin(now).forEach(show)');
+	});
+
+	it('asks for today’s weather before Guide begins, and begins without it if none comes', () => {
+		expect(page()).toContain('fetchWeatherNow(WORLD.weatherAt)');
+		expect(page()).toMatch(/\.then\(\(now\) => \{\s*game\.begin\(now\)/);
 	});
 
 	it('has no header above the introduction', () => {

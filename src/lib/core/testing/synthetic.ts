@@ -35,6 +35,20 @@ export class SyntheticMap {
 		return this.way([...corners, corners[0]], tags);
 	}
 
+	/** Adds tags to an element already drawn. */
+	tag(id: number, tags: Tags): void {
+		const e = this.elements.find((e) => e.id === id);
+		if (!e) throw new Error(`no element ${id}`);
+		e.tags = { ...e.tags, ...tags };
+	}
+
+	/** The id of the first element with these tags. */
+	find(tags: Tags): number {
+		const e = this.elements.find((e) => Object.entries(tags).every(([k, v]) => e.tags?.[k] === v));
+		if (!e) throw new Error(`nothing tagged ${JSON.stringify(tags)}`);
+		return e.id;
+	}
+
 	position(id: number): LatLon {
 		const n = this.elements.find((e) => e.id === id);
 		if (n?.type !== 'node') throw new Error(`no node ${id}`);

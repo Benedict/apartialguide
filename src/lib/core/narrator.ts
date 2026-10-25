@@ -1,5 +1,6 @@
 import { HistoryAdapter } from './adapters/history';
 import { OsmAdapter } from './adapters/osm';
+import { WikidataAdapter, type WikidataStore } from './adapters/wikidata';
 import type { Clock, Fact } from './facts';
 import { distance, distanceToPolyline, type LatLon } from './geo';
 import { OsmIndex, type OsmData } from './osm';
@@ -18,6 +19,8 @@ export interface NarratorOptions extends TensionOptions {
 	spacing?: number;
 	/** Earlier maps of the same place, for what has gone or been renamed. */
 	history?: { asOf: string; data: OsmData }[];
+	/** Another account of the place, from Wikidata. */
+	wikidata?: WikidataStore;
 }
 
 export interface Visit {
@@ -46,7 +49,11 @@ export class Narrator {
 	static fromOsm(data: OsmData, options: NarratorOptions): Narrator {
 		const osm = new OsmIndex(data);
 		const past = (options.history ?? []).map((h) => ({ asOf: h.asOf, osm: new OsmIndex(h.data) }));
-		const facts = [...new OsmAdapter(osm).facts(), ...new HistoryAdapter(osm, past).facts()];
+		const facts = [
+			...new OsmAdapter(osm).facts(),
+			...new HistoryAdapter(osm, past).facts(),
+			...(options.wikidata ? new WikidataAdapter(osm, options.wikidata).facts() : [])
+		];
 		return new Narrator(buildStopGraph(osm, options), Perception.fromOsm(osm, facts), options);
 	}
 
