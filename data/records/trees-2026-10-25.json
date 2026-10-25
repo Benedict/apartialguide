@@ -1,0 +1,87 @@
+{
+	"source": "Greater London Authority, Borough_tree_list_2021July.csv",
+	"prefix": "trees",
+	"records": [
+		{
+			"id": "trees:Chepstow Road",
+			"street": "Chepstow Road",
+			"claims": {
+				"count": "89",
+				"kinds": "Large leaved lime (27), Alder (15), Beech (5), Rowan (5), A flowering plant (4), Common whitebeam (4), Undetermined (4), Ash (3), Hazel (3), Norway maple (3), Birch (2), Crab apple (2), Field maple (2), Flowering cherry (2), Horse chestnut (2), Sycamore (2), A conifer (1), Corsican pine (1), Evergreen oak (1), London plane (1)"
+			}
+		},
+		{
+			"id": "trees:Addiscombe Road",
+			"street": "Addiscombe Road",
+			"claims": {
+				"count": "65",
+				"kinds": "London plane (26), Large leaved lime (21), Ash (4), Norway maple (4), Acorn (2), Alder (2), A flowering plant (1), Apple (1), Field maple (1), Hazel (1), Rowan (1), Silver maple (1)"
+			}
+		},
+		{
+			"id": "trees:Fairfield Road",
+			"street": "Fairfield Road",
+			"claims": {
+				"count": "23",
+				"kinds": "Alder (11), London plane (5), Birch (3), Large leaved lime (1), Norway maple (1), Sycamore (1), Undetermined (1)"
+			}
+		},
+		{
+			"id": "trees:Shirley Road",
+			"street": "Shirley Road",
+			"claims": {
+				"count": "42",
+				"kinds": "Undetermined (13), Acorn (7), Corsican pine (5), Yew (5), Sycamore (4), A flowering plant (3), Evergreen oak (3), A conifer (1), Hazel (1)"
+			}
+		},
+		{
+			"id": "trees:Park Hill Road",
+			"street": "Park Hill Road",
+			"claims": {
+				"count": "8",
+				"kinds": "Sycamore (2), A conifer (1), Alder (1), Common whitebeam (1), London plane (1), Norway maple (1), Undetermined (1)"
+			}
+		},
+		{
+			"id": "trees:Maresfield",
+			"street": "Maresfield",
+			"claims": {
+				"count": "5",
+				"kinds": "Large leaved lime (3), Alder (1), Flowering cherry (1)"
+			}
+		},
+		{
+			"id": "trees:Park Hill Rise",
+			"street": "Park Hill Rise",
+			"claims": {
+				"count": "5",
+				"kinds": "Sycamore (2), Common whitebeam (1), Rowan (1), Undetermined (1)"
+			}
+		},
+		{
+			"id": "trees:Turnpike Link",
+			"street": "Turnpike Link",
+			"claims": {
+				"count": "1",
+				"kinds": "Rowan (1)"
+			}
+		},
+		{
+			"id": "trees:Siskin Court",
+			"street": "Siskin Court",
+			"claims": {
+				"count": "1",
+				"kinds": "Horse chestnut (1)"
+			}
+		},
+		{
+			"id": "trees:Leafy Way",
+			"street": "Leafy Way",
+			"claims": {
+				"count": "1",
+				"kinds": "Large leaved lime (1)"
+			}
+		}
+	],
+	"retrieved": "2026-10-25"
+}
