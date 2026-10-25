@@ -167,3 +167,72 @@ describe('Adventure', () => {
 		});
 	});
 });
+
+describe('Fragments Guide carries', () => {
+	const chain = (n: number): AdventureWorld => ({
+		start: 's0',
+		stops: Object.fromEntries(
+			Array.from({ length: n }, (_, i) => [
+				`s${i}`,
+				{
+					title: `Stop ${i}`,
+					paragraphs: [`You are at stop ${i}.`, 'Exits: east, west.'],
+					exits: [
+						...(i < n - 1 ? [{ label: 'east', to: `s${i + 1}` }] : []),
+						...(i > 0 ? [{ label: 'west', to: `s${i - 1}` }] : [])
+					],
+					things: [],
+					...(i === 0 ? { fragments: ['ld Invented Mill'] } : {})
+				}
+			])
+		)
+	});
+	const walk = (game: Adventure, ...ways: string[]) => ways.map((w) => game.respond(w));
+	const begun = (n = 8, chance = () => 0) => {
+		const game = new Adventure(chain(n));
+		game.chance = chance;
+		game.begin();
+		game.respond('take the tour');
+		return game;
+	};
+
+	it('brings a fragment back four moves on, before the exits, saying nothing of where it was', () => {
+		const replies = walk(begun(), 'east', 'east', 'east', 'east');
+		expect(
+			replies
+				.slice(0, 3)
+				.flatMap((r) => r.lines)
+				.join(' ')
+		).not.toContain('ld Invented Mill');
+		const lines = replies[3].lines;
+		expect(lines.at(-1)).toBe('Exits: east, west.');
+		const recalled = lines.find((l) => l.includes('“ld Invented Mill”'));
+		expect(recalled).toBeDefined();
+		expect(recalled).not.toMatch(/stop|\d/i);
+	});
+
+	it('brings each fragment back once at most', () => {
+		const game = begun();
+		walk(game, 'east', 'east', 'east', 'east');
+		const later = walk(game, 'east', 'east', 'west');
+		expect(later.flatMap((r) => r.lines).join(' ')).not.toContain('ld Invented Mill');
+	});
+
+	it('never brings a fragment back where it was found', () => {
+		const game = begun();
+		const back = walk(game, 'east', 'east', 'west', 'west');
+		expect(back[3].lines.filter((l) => l.includes('ld Invented Mill'))).toEqual([]);
+	});
+
+	it('leaves it to chance', () => {
+		const replies = walk(
+			begun(8, () => 0.99),
+			'east',
+			'east',
+			'east',
+			'east',
+			'east'
+		);
+		expect(replies.flatMap((r) => r.lines).join(' ')).not.toContain('ld Invented Mill');
+	});
+});

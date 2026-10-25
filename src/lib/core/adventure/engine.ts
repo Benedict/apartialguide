@@ -22,6 +22,18 @@ export const INTRO = ['I am Guide. I lived here a long time ago, yesterday, and 
 const OFFER = 'Shall I show you round? Type take the tour, and we will begin.';
 const TOUR = /^(take the tour|take tour|the tour|tour|yes|begin|start)$/;
 
+/** Moves after collecting a fragment before it can come back, and how many come back in a walk. */
+const RECALL_AFTER = 4;
+const RECALLS = 2;
+/** How likely a fragment is to come back, at a stop where one may. */
+const RECALL_CHANCE = 0.25;
+/** Guide's words around a fragment come back. They never say where it was found. */
+const RECALLED = [
+	(f: string) => `“${f}”.`,
+	(f: string) => `I find I am still carrying “${f}”.`,
+	(f: string) => `“${f}”, again. Or still.`
+];
+
 /** A reader's walk through a compiled world. */
 export class Adventure {
 	private previous?: string;
@@ -29,6 +41,12 @@ export class Adventure {
 	private readonly explored = new Set<string>();
 	/** True between the introduction and the tour. */
 	private choosing = false;
+	/** Chance, for what comes back: Math.random unless a test fixes it. */
+	chance: () => number = Math.random;
+	/** Broken names Guide has spoken on this walk, with the move they were collected on. */
+	private readonly carried = new Map<string, { at: string; move: number }>();
+	private readonly recalled = new Set<string>();
+	private moves = 0;
 	/** Today's weather, as the browser found it when the walk began. */
 	private now: Fact[] = [];
 
@@ -54,7 +72,7 @@ export class Adventure {
 		this.choosing = false;
 		this.here = id;
 		this.previous = undefined;
-		return this.look();
+		return this.arrive();
 	}
 
 	private choose(input: string): Reply {
@@ -128,7 +146,35 @@ export class Adventure {
 	private moveTo(to: string): Reply {
 		this.previous = this.here;
 		this.here = to;
-		return this.look();
+		this.moves++;
+		return this.arrive();
+	}
+
+	/** A place reached: told, its broken names carried on, and now and then one carried before comes back. */
+	private arrive(): Reply {
+		const reply = this.look();
+		const stop = this.world.stops[this.here];
+		const back = this.recall(stop.fragments ?? []);
+		for (const f of stop.fragments ?? [])
+			if (!this.carried.has(f)) this.carried.set(f, { at: this.here, move: this.moves });
+		if (!back) return reply;
+		const lines = [...reply.lines];
+		const exits =
+			lines.length && lines.at(-1)!.startsWith('Exits:') ? lines.length - 1 : lines.length;
+		lines.splice(exits, 0, back);
+		return { ...reply, lines };
+	}
+
+	/** A fragment carried long enough to come back here, out of place, if chance allows. */
+	private recall(here: readonly string[]): string | undefined {
+		if (this.recalled.size >= RECALLS || here.length) return undefined;
+		const ready = [...this.carried].filter(
+			([f, c]) => !this.recalled.has(f) && c.at !== this.here && this.moves - c.move >= RECALL_AFTER
+		);
+		if (!ready.length || this.chance() >= RECALL_CHANCE) return undefined;
+		const [fragment] = ready[Math.floor(this.chance() * ready.length)];
+		this.recalled.add(fragment);
+		return RECALLED[Math.floor(this.chance() * RECALLED.length)](fragment);
 	}
 
 	private explore(): Reply {
