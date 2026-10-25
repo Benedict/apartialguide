@@ -11,6 +11,8 @@ export interface SourceRecord {
 	address?: { number: string; street: string };
 	/** Where the source places it. */
 	at?: LatLon;
+	/** A street the record is about, by name: it goes with every stretch of that street. */
+	street?: string;
 	/** When the source last had word of it, YYYY-MM-DD. */
 	observed?: string;
 	/** What the source says, every value as found. `name` also finds a thing of that name nearby. */
@@ -52,6 +54,7 @@ export class RecordsAdapter implements SourceAdapter {
 		const byTag = new Map<string, OsmElement>();
 		const byAddress = new Map<string, OsmElement>();
 		const byName = new Map<string, OsmElement[]>();
+		const streets = new Map<string, OsmElement[]>();
 		for (const e of this.osm.data.elements) {
 			if (!e.tags || e.type === 'relation') continue;
 			for (const [k, v] of Object.entries(e.tags)) byTag.set(`${k}=${v}`, e);
@@ -60,9 +63,19 @@ export class RecordsAdapter implements SourceAdapter {
 			if (number && street) byAddress.set(addressKey(number, street), e);
 			const name = e.tags.name?.toLowerCase();
 			if (name) byName.set(name, [...(byName.get(name) ?? []), e]);
+			if (name && e.type === 'way' && e.tags.highway)
+				streets.set(name, [...(streets.get(name) ?? []), e]);
 		}
 		const facts: Fact[] = [];
 		for (const r of this.store.records) {
+			if (r.street) {
+				for (const way of streets.get(r.street.toLowerCase()) ?? []) {
+					const geometry = this.geometry(way);
+					if (geometry.length)
+						facts.push(...this.claims(r, elementRef(way), geometry, this.reach.street));
+				}
+				continue;
+			}
 			const nearby = (byName.get(r.claims.name?.toLowerCase() ?? '') ?? []).find((e) => {
 				const g = this.geometry(e);
 				return !!r.at && g.length > 0 && distance(r.at, g[0]) <= SAME_NAME_WITHIN;

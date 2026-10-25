@@ -464,6 +464,26 @@ describe('AdventureRenderer', () => {
 			expect(t.match(/at (\d+)/g)).toEqual(['at 27', 'at 29', 'at 31']);
 		});
 
+		it('tells what another source says of a thing only it has', () => {
+			const chapel = {
+				subject: 'listed/42',
+				facts: facts(
+					'listed/42',
+					{
+						'listed:name': 'Invented Chapel',
+						'listed:description': 'listed building',
+						'listed:grade': 'II'
+					},
+					north(5)
+				).map((f) => ({ ...f, source: 'Historic England', elsewhere: true as const })),
+				effects: []
+			};
+			const t = text(scene({ beats: [chapel] }));
+			expect(t).toContain(
+				'by another account, is “Invented Chapel”, “listed building”. Listed, grade II.'
+			);
+		});
+
 		it('tells a disused use in the past tense', () => {
 			const t = text(scene({ beats: [beat('way/2', { 'disused:amenity': 'bank' })] }));
 			expect(t).toMatch(/was a bank/);
@@ -636,6 +656,18 @@ describe('AdventureRenderer', () => {
 			const [street] = room.streets!;
 			expect(street.description).toContain('Everton Road. Asphalt underfoot.');
 			expect(street.description).not.toContain('=');
+		});
+
+		it('tells, on examining a street, what other sources say of it', () => {
+			const crime = facts('way/1', {
+				'crime:month': '2026-08',
+				'crime:reports': '2',
+				'crime:kinds': 'burglary (2)'
+			}).map((f) => ({ ...f, source: 'police.uk', elsewhere: true as const }));
+			const [street] = renderer.render(scene({ street: [...everton, ...crime] })).streets!;
+			expect(street.description).toContain(
+				'In August 2026, 2 reports on or near it: burglary (2).'
+			);
 		});
 
 		it('offers only the streets that meet here, not those merely in view', () => {

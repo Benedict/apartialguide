@@ -82,6 +82,34 @@ describe('RecordsAdapter', () => {
 		expect(found[0]).toMatchObject({ subject: 'hygiene/r4', geometry: [[51.381, -0.071]] });
 	});
 
+	it('attaches a record about a street to every stretch of that street', () => {
+		const stretches: OsmElement[] = [
+			{ type: 'node', id: 10, lat: 51.38, lon: -0.072 },
+			{ type: 'node', id: 11, lat: 51.38, lon: -0.071 },
+			{ type: 'node', id: 12, lat: 51.38, lon: -0.07 },
+			{
+				type: 'way',
+				id: 20,
+				nodes: [10, 11],
+				tags: { highway: 'residential', name: 'Long Street' }
+			},
+			{
+				type: 'way',
+				id: 21,
+				nodes: [11, 12],
+				tags: { highway: 'residential', name: 'Long Street' }
+			}
+		];
+		const found = new RecordsAdapter(new OsmIndex({ elements: stretches }), {
+			...store([{ id: 'c1', street: 'Long Street', claims: { reports: '3' } }]),
+			prefix: 'crime'
+		}).facts();
+		expect(found.map((f) => [f.subject, f.reach])).toEqual([
+			['way/20', 15],
+			['way/21', 15]
+		]);
+	});
+
 	it('leaves out what it cannot place, or what the source keeps to the map', () => {
 		expect(facts(store([{ id: 'r5', claims: { rating: '2' } }]))).toEqual([]);
 		expect(

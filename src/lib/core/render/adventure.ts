@@ -230,6 +230,7 @@ function streetsHere(scene: Scene): Thing[] {
 			description: [
 				`${name}.`,
 				...streetCharacter(tagsOf(facts)),
+				...recordSentences(tagsOf(facts)),
 				observed
 					? `Last ${observed.observedBy === 'survey' ? 'surveyed' : 'edited'} in ${monthYear(observed.observed)}.`
 					: ''
@@ -443,7 +444,10 @@ function describeBeat(
 
 	if (isElsewhereOnly(beat)) {
 		const { label, what } = otherAccount(tags);
-		return `${place}, by another account, is “${label}”${what ? `, “${what}”` : ''}.`;
+		return [
+			`${place}, by another account, is “${label}”${what ? `, “${what}”` : ''}.`,
+			...recordSentences(tags)
+		].join(' ');
 	}
 	if (beat.effects.includes('remembered')) {
 		const asOf = beat.facts.find((f) => f.observed)?.observed;
