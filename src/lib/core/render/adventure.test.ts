@@ -196,6 +196,18 @@ describe('AdventureRenderer', () => {
 			expect(room.hidden?.lines[0]).toContain('“The Old Invented Works”, by another account');
 		});
 
+		it('speaks a broken name as found without remarking on it', () => {
+			const t = text(
+				scene({
+					beats: [
+						beat('way/2', { building: 'retail', old_name: 'est Bank' }, {}, ['spoken-as-found'])
+					]
+				})
+			);
+			expect(t).toContain('“est Bank”');
+			expect(t).not.toMatch(/as written|whole of it/);
+		});
+
 		it('tells a disused use in the past tense', () => {
 			const t = text(scene({ beats: [beat('way/2', { 'disused:amenity': 'bank' })] }));
 			expect(t).toMatch(/was a bank/);

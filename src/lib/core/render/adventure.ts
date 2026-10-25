@@ -339,8 +339,6 @@ function describeBeat(beat: Beat, place: string, weather: readonly Fact[] = []):
 	const past = pastUse(tags);
 	if (past) sentences.push(`It was ${article(past)}.`);
 	if (tags.old_name) sentences.push(`Once “${tags.old_name}”.`);
-	if (beat.effects.includes('spoken-as-found'))
-		sentences.push('That is the whole of it, as written.');
 	const older = oldNames(beat);
 	if (tags.name && older.length === 1)
 		sentences.push(

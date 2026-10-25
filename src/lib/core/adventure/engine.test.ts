@@ -39,6 +39,12 @@ describe('Adventure', () => {
 			expect(offer.lines.join(' ')).toContain('take the tour');
 		});
 
+		it('introduces Guide without explaining the piece', () => {
+			const [intro] = new Adventure(world).begin();
+			expect(intro.lines).toHaveLength(2);
+			expect(intro.lines.join(' ')).not.toMatch(/written down|fill the gaps/);
+		});
+
 		it('dates the map Guide carries, when it has a date', () => {
 			const [intro] = new Adventure({ ...world, asOf: '2026-10-24' }).begin();
 			expect(intro.lines.join(' ')).toContain('24 October 2026');

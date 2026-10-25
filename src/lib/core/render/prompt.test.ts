@@ -44,7 +44,7 @@ describe('buildPrompt', () => {
 		expect(a).toBe(b);
 		expect(a).toMatch(/Wainwright/);
 		expect(a).toMatch(/Auster/);
-		expect(a).toMatch(/never what the map says/);
+		expect(a).toMatch(/never about what the map says/);
 		expect(a).toContain('“est Bank”');
 	});
 
@@ -146,6 +146,14 @@ describe('buildPrompt', () => {
 			'etymology:label': 'Ada Inventa'
 		});
 		expect(buildPrompt(scene({ street })).user).toContain('Named for Ada Inventa.');
+	});
+
+	it('keeps Auster in what is noticed and Wainwright in the voice, lost about facts, never meaning', () => {
+		const { system } = buildPrompt(scene());
+		expect(system).not.toMatch(/who you are|unsure of who it is/);
+		expect(system).toMatch(/never about what anything means/);
+		expect(system).toMatch(/never point out that a name is broken/i);
+		expect(system).not.toMatch(/no weather/);
 	});
 
 	it('tells the model the game prints the exits', () => {

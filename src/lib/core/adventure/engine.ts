@@ -17,12 +17,7 @@ export const HELP =
 	'exits for the ways on, back to retrace your step, and weather to ask after the sky.';
 
 /** Guide's words about themselves, said once, before the first place. */
-export const INTRO = [
-	'I am Guide. I lived here a long time ago, yesterday, and tomorrow.',
-	'I know these streets as they were written down, which is not the same as knowing them. ' +
-		'What I tell you was recorded by other people, on other days. Where they stopped, I stop. ' +
-		'I try not to fill the gaps. I do not always see them.'
-];
+export const INTRO = ['I am Guide. I lived here a long time ago, yesterday, and tomorrow.'];
 
 const OFFER = 'Shall I show you round? Type take the tour, and we will begin.';
 const TOUR = /^(take the tour|take tour|the tour|tour|yes|begin|start)$/;
