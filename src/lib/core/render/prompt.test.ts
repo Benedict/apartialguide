@@ -129,16 +129,6 @@ describe('buildPrompt', () => {
 		expect(buildPrompt(scene()).system).toMatch(/elsewhere/i);
 	});
 
-	it('gives the weather of a day something was last recorded', () => {
-		const weather = facts('weather/2018-10-04', { 'weather:code': '61' }).map((f) => ({
-			...f,
-			geometry: [],
-			observed: '2018-10-04'
-		}));
-		const user = buildPrompt(scene({ beats: [shop], weather })).user;
-		expect(user).toContain('The weather that day: Light rain that day.');
-	});
-
 	it('names the street’s namesake where the reader stands', () => {
 		const street = facts('way/1', {
 			highway: 'residential',

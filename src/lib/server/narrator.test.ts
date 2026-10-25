@@ -17,8 +17,7 @@ describe('readConfig', () => {
 			start: undefined,
 			narrationPath: undefined,
 			historyDir: undefined,
-			wikidataDir: undefined,
-			weatherDir: undefined
+			wikidataDir: undefined
 		});
 	});
 
@@ -37,13 +36,12 @@ describe('readConfig', () => {
 		expect(config?.narrationPath).toBe('n.json');
 	});
 
-	it('reads where Wikidata and the weather are kept', () => {
+	it('reads where Wikidata is kept', () => {
 		const config = readConfig({
 			SNAPSHOT_PATH: 'x-2026-01-01.json',
-			WIKIDATA_DIR: 'data/wikidata',
-			WEATHER_DIR: 'data/weather'
+			WIKIDATA_DIR: 'data/wikidata'
 		});
-		expect(config).toMatchObject({ wikidataDir: 'data/wikidata', weatherDir: 'data/weather' });
+		expect(config).toMatchObject({ wikidataDir: 'data/wikidata' });
 	});
 
 	it('refuses a snapshot with no date', () => {

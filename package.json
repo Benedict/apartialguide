@@ -18,8 +18,7 @@
 		"snapshot": "tsx scripts/snapshot.ts",
 		"narrate": "tsx scripts/narrate.ts",
 		"export": "tsx scripts/export.ts",
-		"wikidata": "tsx scripts/wikidata.ts",
-		"weather": "tsx scripts/weather.ts"
+		"wikidata": "tsx scripts/wikidata.ts"
 	},
 	"devDependencies": {
 		"@cucumber/cucumber": "^13.3.0",

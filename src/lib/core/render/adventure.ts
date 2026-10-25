@@ -5,7 +5,6 @@ import type { Scene, SceneExit } from '../scene';
 import { isBackground, type Beat } from '../slippage';
 import { isElsewhere, isHistory } from '../tensions';
 import type { Renderer, Room, Thing } from './renderer';
-import { weatherThatDay } from './weather';
 import {
 	address,
 	article,
@@ -112,8 +111,7 @@ function whatYouSee(scene: Scene): string[] {
 			const place = placement(scene.position, b);
 			const said = describeBeat(
 				b,
-				place === previous && place.startsWith('To the') ? 'Next to it' : place,
-				scene.weather
+				place === previous && place.startsWith('To the') ? 'Next to it' : place
 			);
 			previous = place;
 			return said;
@@ -303,7 +301,7 @@ export const oldNames = (beat: Beat) =>
 		.sort((a, b) => (a.observed ?? '').localeCompare(b.observed ?? ''))
 		.map((f) => ({ name: f.claim.value, asOf: f.observed }));
 
-function describeBeat(beat: Beat, place: string, weather: readonly Fact[] = []): string {
+function describeBeat(beat: Beat, place: string): string {
 	const tags = tagsFor(beat);
 	const sentences: string[] = [];
 	const use = currentUse(tags);
@@ -315,13 +313,7 @@ function describeBeat(beat: Beat, place: string, weather: readonly Fact[] = []):
 	}
 	if (beat.effects.includes('remembered')) {
 		const asOf = beat.facts.find((f) => f.observed)?.observed;
-		const sky = weatherThatDay(weather, asOf);
-		return [
-			`${lead(place)} there was ${nounPhrase(tags)}, in ${monthYear(asOf)}. The map no longer has it.`,
-			sky
-		]
-			.filter(Boolean)
-			.join(' ');
+		return `${lead(place)} there was ${nounPhrase(tags)}, in ${monthYear(asOf)}. The map no longer has it.`;
 	}
 	if (use && beat.effects.includes('tense-slip')) {
 		const where = address(tags);
@@ -330,8 +322,6 @@ function describeBeat(beat: Beat, place: string, weather: readonly Fact[] = []):
 		sentences.push(
 			`${lead(place)} there’s ${article(use)}${at}. There was ${article(use)} in ${monthYear(observed)}, when it was last recorded.`
 		);
-		const sky = weatherThatDay(weather, observed);
-		if (sky) sentences.push(sky);
 	} else {
 		sentences.push(`${lead(place)} is ${nounPhrase(tags)}.`);
 	}

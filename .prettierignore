@@ -15,4 +15,3 @@ bun.lockb
 /data/narration/*.json
 /data/history/*.json
 /data/wikidata/*.json
-/data/weather/*.json

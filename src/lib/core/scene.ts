@@ -1,4 +1,3 @@
-import type { Fact } from './facts';
 import type { LatLon } from './geo';
 import type { NarrationPlan } from './slippage';
 import type { Stop, StopGraph, StopId } from './stops';
@@ -20,16 +19,9 @@ export interface Scene extends NarrationPlan {
 	/** For a stop part way along a street, what lies at either end. */
 	between?: [string | undefined, string | undefined];
 	exits: SceneExit[];
-	/** The weather on recorded days, for what was recorded on them. */
-	weather?: Fact[];
 }
 
-export function buildScene(
-	graph: StopGraph,
-	stop: Stop,
-	plan: NarrationPlan,
-	weather: Fact[] = []
-): Scene {
+export function buildScene(graph: StopGraph, stop: Stop, plan: NarrationPlan): Scene {
 	const exits = stop.exits.map((e) => ({
 		label: e.label,
 		to: e.to,
@@ -43,8 +35,7 @@ export function buildScene(
 		kind: stop.kind,
 		here,
 		between: stop.kind === 'corridor' ? [exits[0]?.towards, exits[1]?.towards] : undefined,
-		exits,
-		weather
+		exits
 	};
 }
 

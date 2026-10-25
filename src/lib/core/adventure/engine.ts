@@ -41,11 +41,9 @@ export class Adventure {
 	begin(now: Fact[] = []): Reply[] {
 		this.choosing = true;
 		this.now = now;
-		const { asOf, asOfWeather } = this.world;
-		const sky = [asOfWeather, weatherNow(now)]
-			.filter(Boolean)
-			.map((s) => ` ${s}`)
-			.join('');
+		const { asOf } = this.world;
+		const today = weatherNow(now);
+		const sky = today ? ` ${today}` : '';
 		const map = asOf
 			? `The map I carry is dated ${longDate(asOf)}.${sky} Beyond it there may be more. I could not say what.`
 			: 'Beyond my map there may be more. I could not say what.';

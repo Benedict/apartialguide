@@ -1,7 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fixedClock } from '../core/facts';
-import type { WeatherStore } from '../core/adapters/weather';
 import type { WikidataStore } from '../core/adapters/wikidata';
 import { Narrator } from '../core/narrator';
 import type { OsmData } from '../core/osm';
@@ -22,8 +21,6 @@ export interface Config {
 	historyDir?: string;
 	/** Where dated copies of Wikidata are kept. The newest is used. */
 	wikidataDir?: string;
-	/** Where the weather on recorded days is kept. The newest file is used. */
-	weatherDir?: string;
 }
 
 export function readConfig(
@@ -41,8 +38,7 @@ export function readConfig(
 		start: start?.length === 2 && start.every(Number.isFinite) ? [start[0], start[1]] : undefined,
 		narrationPath: source.NARRATION_PATH,
 		historyDir: source.HISTORY_DIR,
-		wikidataDir: source.WIKIDATA_DIR,
-		weatherDir: source.WEATHER_DIR
+		wikidataDir: source.WIKIDATA_DIR
 	};
 }
 
@@ -96,8 +92,7 @@ export function loadNarrator(config: Config): Narrator {
 		spacing: config.spacing,
 		renderer: new CachedRenderer(loadNarration(config.narrationPath)),
 		history: loadHistory(config.historyDir),
-		wikidata: loadLatest<WikidataStore>(config.wikidataDir),
-		weather: loadLatest<WeatherStore>(config.weatherDir)
+		wikidata: loadLatest<WikidataStore>(config.wikidataDir)
 	});
 }
 

@@ -122,25 +122,6 @@ Given(
 const CODES: Record<string, number> = { overcast: 3, 'light rain': 61 };
 
 Given(
-	/^the weather on (\S+) was ([a-z ]+), (-?\d+) to (-?\d+) °C$/,
-	function (this: NarratorWorld, date: string, words: string, min: string, max: string) {
-		this.weather ??= {
-			source: 'invented',
-			latitude: O[0],
-			longitude: O[1],
-			days: []
-		};
-		this.weather.days.push({
-			date,
-			code: CODES[words],
-			temperatureMin: Number(min),
-			temperatureMax: Number(max)
-		});
-		restart(this);
-	}
-);
-
-Given(
 	'the map of {word} had a bakery called {string} right beside the reader',
 	function (this: NarratorWorld, asOf: string, name: string) {
 		const here = this.narrator.graph.get(state(this).started!)!.position;
