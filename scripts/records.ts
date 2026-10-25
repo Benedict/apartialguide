@@ -16,6 +16,7 @@ import {
 	protectedRecords
 } from '../src/lib/server/sources/more';
 import { wardAreas } from '../src/lib/server/sources/wards';
+import { parseCsv, treeRecords } from '../src/lib/server/sources/trees';
 
 const headers = {
 	'User-Agent': 'a-partial-guide/0.1 (art project; https://github.com/Benedict/osm-text-adventure)'
@@ -214,8 +215,73 @@ SELECT ?paon ?street ?amount ?date WHERE {
 			}
 		}
 		throw new Error('no ward layer answered');
+	},
+	/** Trees the boroughs list, from the GLA's London Datastore, counted along each named street. */
+	trees: async () => {
+		const streets = namedStreets();
+		for (const slug of ['london-public-realm-trees-2r45m', 'local-authority-maintained-trees']) {
+			for (const csv of await datastoreCsvs(slug)) {
+				const res = await fetch(csv.url, { headers });
+				if (!res.ok) {
+					console.log(`trees: ${csv.url} answered ${res.status}`);
+					continue;
+				}
+				const rows = parseCsv(await res.text());
+				console.log(
+					`trees: ${csv.title}: ${rows.length} rows; columns ${Object.keys(rows[0] ?? {}).join(', ')}`
+				);
+				console.log(`trees: first row ${JSON.stringify(rows[0])}`);
+				const records = treeRecords(rows, bbox, streets);
+				if (records.length)
+					return { source: `Greater London Authority, ${csv.title}`, prefix: 'trees', records };
+			}
+		}
+		throw new Error('no tree list answered with trees in the box');
 	}
 };
+
+/** The snapshot's named streets, as lines, for counting what stands along each. */
+function namedStreets() {
+	const at = new Map<number, [number, number]>();
+	for (const el of snapshot.elements)
+		if (el.type === 'node' && el.lat !== undefined) at.set(el.id, [el.lat, el.lon]);
+	return snapshot.elements
+		.filter(
+			(el: { type: string; tags?: Record<string, string> }) =>
+				el.type === 'way' && el.tags?.highway && el.tags?.name
+		)
+		.map((el: { tags: Record<string, string>; nodes: number[] }) => ({
+			name: el.tags.name,
+			line: el.nodes.map((id) => at.get(id)).filter(Boolean) as [number, number][]
+		}));
+}
+
+/** The London Datastore's CSV files for a dataset, found through its API, whichever answers. */
+async function datastoreCsvs(slug: string): Promise<{ title: string; url: string }[]> {
+	for (const api of [
+		`https://data.london.gov.uk/api/dataset/${slug}`,
+		`https://data.london.gov.uk/api/action/package_show?id=${slug}`
+	]) {
+		try {
+			const answer = await getJson(api);
+			const body = answer.result ?? answer;
+			const resources = Array.isArray(body.resources)
+				? body.resources
+				: Object.values(body.resources ?? {});
+			const all = (resources as Record<string, string>[]).map((r) => ({
+				title: r.title ?? r.name ?? '',
+				url: r.url ?? r.download_url ?? '',
+				format: (r.format ?? '').toLowerCase()
+			}));
+			console.log(`trees: ${api} lists ${JSON.stringify(all).slice(0, 1500)}`);
+			const csvs = all.filter((r) => r.format.includes('csv') || /\.csv(\?|$)/i.test(r.url));
+			if (csvs.length) return csvs;
+		} catch (err) {
+			console.log(`trees: ${api} did not answer: ${(err as Error).message.slice(0, 200)}`);
+		}
+	}
+	return [];
+}
 
 const wanted = (process.env.SOURCES ?? Object.keys(SOURCES).join(','))
 	.split(',')

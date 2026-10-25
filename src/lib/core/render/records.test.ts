@@ -52,6 +52,17 @@ describe('recordSentences, other sources', () => {
 	});
 });
 
+describe('recordSentences, trees', () => {
+	it('counts the trees along a street, by their names as found', () => {
+		expect(
+			recordSentences({ 'trees:count': '3', 'trees:kinds': 'London plane (2), Lime (1)' })
+		).toEqual(['3 trees along it, by the borough’s count: London plane (2), Lime (1).']);
+		expect(recordSentences({ 'trees:count': '1', 'trees:kinds': 'Cherry (1)' })).toEqual([
+			'1 tree along it, by the borough’s count: Cherry (1).'
+		]);
+	});
+});
+
 describe('recordSentences, in a room', () => {
 	it('keeps to the short sayings in a room, and tells the rest on a closer look', () => {
 		const tags = {

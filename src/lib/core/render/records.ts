@@ -57,6 +57,13 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 			t['crime:reports']
 				? `In ${monthYear(`${t['crime:month']}-01`)}, ${t['crime:reports']} report${t['crime:reports'] === '1' ? '' : 's'} on or near it: ${t['crime:kinds']}.`
 				: undefined
+	],
+	[
+		false,
+		(t) =>
+			t['trees:count']
+				? `${t['trees:count']} tree${t['trees:count'] === '1' ? '' : 's'} along it, by the borough’s count: ${t['trees:kinds']}.`
+				: undefined
 	]
 ];
 
