@@ -76,7 +76,99 @@ const SOURCES: Record<string, () => Promise<Taken | Taken[]>> = {
 			prefix: 'hygiene',
 			records: hygieneRecords(answer, bbox)
 		};
-	}
+	},
+	/** Listed buildings and protected trees, from planning.data.gov.uk. */
+	protected: async () => [
+		{
+			source: 'Historic England, via planning.data.gov.uk',
+			prefix: 'listed',
+			records: protectedRecords(await entities('listed-building'), bbox)
+		},
+		{
+			source: 'planning.data.gov.uk',
+			prefix: 'tree',
+			records: protectedRecords(await entities('tree'), bbox)
+		}
+	],
+	/** Planning applications in the box, from the London Planning Datahub's public search. */
+	planning: async () => {
+		const res = await fetch('https://planningdata.london.gov.uk/api-guest/applications/_search', {
+			method: 'POST',
+			headers: {
+				...headers,
+				'Content-Type': 'application/json',
+				Accept: 'application/json',
+				'X-API-AllowRequest': 'be2rmRnt&'
+			},
+			body: JSON.stringify({
+				size: 5000,
+				query: {
+					bool: {
+						filter: [
+							{
+								geo_bounding_box: {
+									location: { top_left: { lat: n, lon: w }, bottom_right: { lat: s, lon: e } }
+								}
+							}
+						]
+					}
+				}
+			})
+		});
+		if (!res.ok)
+			throw new Error(
+				`Planning Datahub answered ${res.status}: ${(await res.text()).slice(0, 500)}`
+			);
+		return {
+			source: 'London Planning Datahub',
+			prefix: 'planning',
+			records: planningRecords(await res.json(), bbox)
+		};
+	},
+	/** Plaques in the box, from Open Plaques. */
+	plaques: async () => ({
+		source: 'Open Plaques',
+		prefix: 'plaque',
+		records: plaqueRecords(
+			await getJson(`https://openplaques.org/plaques.json?box=[${n},${w}],[${s},${e}]`),
+			bbox
+		)
+	}),
+	/** Sales at the snapshot's postcodes, from the Land Registry's Price Paid data. */
+	prices: async () => {
+		const query = `PREFIX lrppi: <http://landregistry.data.gov.uk/def/ppi/>
+PREFIX lrcommon: <http://landregistry.data.gov.uk/def/common/>
+SELECT ?paon ?street ?amount ?date WHERE {
+  VALUES ?postcode { ${postcodes.map((p) => JSON.stringify(p)).join(' ')} }
+  ?address lrcommon:postcode ?postcode .
+  ?sale lrppi:propertyAddress ?address ; lrppi:pricePaid ?amount ; lrppi:transactionDate ?date .
+  ?address lrcommon:paon ?paon ; lrcommon:street ?street .
+  FILTER NOT EXISTS { ?address lrcommon:saon ?saon }
+}`;
+		const res = await fetch('https://landregistry.data.gov.uk/landregistry/query', {
+			method: 'POST',
+			headers: {
+				...headers,
+				'Content-Type': 'application/x-www-form-urlencoded',
+				Accept: 'application/sparql-results+json'
+			},
+			body: new URLSearchParams({ query })
+		});
+		if (!res.ok)
+			throw new Error(`Land Registry answered ${res.status}: ${(await res.text()).slice(0, 500)}`);
+		console.log(`prices: asked about ${postcodes.length} postcodes`);
+		return { source: 'HM Land Registry', prefix: 'price', records: priceRecords(await res.json()) };
+	},
+	/** The latest month of street-level crime in the box, from police.uk. */
+	crime: async () => ({
+		source: 'police.uk',
+		prefix: 'crime',
+		records: crimeRecords(
+			await getJson(
+				`https://data.police.uk/api/crimes-street/all-crime?poly=${n},${w}:${n},${e}:${s},${e}:${s},${w}`
+			)
+		)
+	})
 };
 
 const wanted = (process.env.SOURCES ?? Object.keys(SOURCES).join(','))
@@ -93,10 +185,12 @@ for (const key of wanted) {
 		continue;
 	}
 	try {
-		const taken = await take();
-		const path = `data/records/${taken.prefix}-${retrieved}.json`;
-		writeFileSync(path, JSON.stringify({ ...taken, retrieved }, null, '\t') + '\n');
-		console.log(`${key}: ${taken.records.length} records written to ${path}`);
+		const got = await take();
+		for (const taken of Array.isArray(got) ? got : [got]) {
+			const path = `data/records/${taken.prefix}-${retrieved}.json`;
+			writeFileSync(path, JSON.stringify({ ...taken, retrieved }, null, '\t') + '\n');
+			console.log(`${key}: ${taken.records.length} records written to ${path}`);
+		}
 	} catch (err) {
 		// One source failing leaves the others' records to be kept.
 		console.error(`${key} failed: ${(err as Error).message}`);
