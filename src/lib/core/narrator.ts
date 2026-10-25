@@ -66,12 +66,12 @@ export class Narrator {
 		const near = (f: Fact) => distanceToPolyline(stop.position, f.geometry);
 		// Something addressed to a street that does not meet this stop is told only right beside it.
 		const streets = new Set(stop.exits.map((e) => e.street).filter(Boolean));
+		const seen = this.perception.inView(stop.position);
 		const addressed = new Map<string, string>();
-		for (const f of this.perception.inView(stop.position))
+		for (const f of seen)
 			if (f.claim.key === 'addr:street' || f.claim.key === 'was:addr:street')
 				addressed.set(f.subject, f.claim.value);
-		const inView = this.perception
-			.inView(stop.position)
+		const inView = seen
 			.filter((f) => {
 				const street = addressed.get(f.subject);
 				return !street || streets.has(street) || near(f) <= OFF_STREET_REACH;

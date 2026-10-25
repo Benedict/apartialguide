@@ -1,19 +1,60 @@
 {
 	"retrieved": "2026-10-25",
 	"bbox": [
-		-0.080026,
-		51.3763,
-		-0.068499,
-		51.383494
+		-0.091572,
+		51.3689,
+		-0.056992,
+		51.390483
 	],
-	"snapshot": "data/snapshots/addiscombe-2026-10-24.json",
+	"snapshot": "data/snapshots/addiscombe-2026-10-25.json",
 	"items": {
+		"Q137680": {
+			"label": "Angela Burdett-Coutts, 1st Baroness Burdett-Coutts",
+			"description": "British peer, philanthropist and humanitarian (1814-1906)"
+		},
+		"Q336307": {
+			"label": "Randall Davidson",
+			"description": "Scottish Archbishop of Canterbury (1848-1930)"
+		},
+		"Q336875": {
+			"label": "Archibald Campbell Tait",
+			"description": "Archbishop of Canterbury; Bishop of London; Dean of Carlisle (1811-1882)"
+		},
+		"Q796940": {
+			"label": "BRIT School for Performing Arts and Technology",
+			"description": "school in Croydon, UK",
+			"inception": "1991-10-22",
+			"coordinates": [
+				51.3899,
+				-0.0914
+			]
+		},
+		"Q971990": {
+			"label": "Gatwick Express",
+			"description": "high-frequency rail passenger service between London Victoria and Gatwick Airport"
+		},
+		"Q2268251": {
+			"label": "Selhurst",
+			"description": "suburb in the London Borough of Croydon, London, England",
+			"coordinates": [
+				51.3995,
+				-0.0747
+			]
+		},
 		"Q2446177": {
 			"label": "Arena",
 			"description": "Tramlink tram stop in London, England",
 			"coordinates": [
 				51.3916,
 				-0.058324
+			]
+		},
+		"Q2817234": {
+			"label": "Woodside",
+			"description": "area of the London Borough of Croydon",
+			"coordinates": [
+				51.387847222222,
+				-0.067508333333333
 			]
 		},
 		"Q2824155": {
@@ -49,6 +90,14 @@
 				-0.0705556
 			]
 		},
+		"Q4681214": {
+			"label": "Addiscombe railway station",
+			"description": "former terminus to the east of central Croydon",
+			"coordinates": [
+				51.3791,
+				-0.08172
+			]
+		},
 		"Q4681215": {
 			"label": "Addiscombe",
 			"description": "stop on the Tramlink line in Croydon, London, United Kingdom",
@@ -56,6 +105,33 @@
 			"coordinates": [
 				51.3799,
 				-0.073222
+			]
+		},
+		"Q4704203": {
+			"label": "Al-Khair School",
+			"description": "school in Croydon, UK",
+			"inception": "2003-08-18",
+			"coordinates": [
+				51.3794,
+				-0.0889
+			]
+		},
+		"Q4736731": {
+			"label": "Altitude 25",
+			"description": "apartment tower; Croydon's tallest building",
+			"inception": "2009",
+			"coordinates": [
+				51.3725,
+				-0.0913889
+			]
+		},
+		"Q4785647": {
+			"label": "Archbishop Tenison's CofE High School",
+			"description": "school in Croydon, UK",
+			"inception": "1714",
+			"coordinates": [
+				51.36943,
+				-0.08191
 			]
 		},
 		"Q4804662": {
@@ -66,12 +142,94 @@
 				-0.057
 			]
 		},
+		"Q4804675": {
+			"label": "Ashburton Park",
+			"description": "park in the United Kingdom",
+			"coordinates": [
+				51.3852,
+				-0.06709
+			]
+		},
+		"Q4804677": {
+			"label": "Ashburton Playing Fields",
+			"description": "playing field in Woodside, London",
+			"coordinates": [
+				51.3844,
+				-0.0546
+			]
+		},
 		"Q4923016": {
 			"label": "Blackhorse Lane",
 			"description": "tramstop in Croydon, UK",
 			"coordinates": [
 				51.3849,
 				-0.070329
+			]
+		},
+		"Q4966012": {
+			"label": "Brickfields Meadow",
+			"description": "meadow in Croydon, London",
+			"coordinates": [
+				51.3902,
+				-0.0728
+			]
+		},
+		"Q5430232": {
+			"label": "Fairfield",
+			"description": "electoral ward in the London borough of Croydon",
+			"coordinates": [
+				51.3709,
+				-0.0875
+			]
+		},
+		"Q6511121": {
+			"label": "Lebanon Road",
+			"description": "light rail stop in Croydon",
+			"coordinates": [
+				51.3752087,
+				-0.0847328
+			]
+		},
+		"Q7043088": {
+			"label": "No. 1 Croydon",
+			"description": "office block in Croydon, south London",
+			"inception": "1970",
+			"coordinates": [
+				51.3749,
+				-0.091
+			]
+		},
+		"Q7074415": {
+			"label": "Oasis Academy Shirley Park",
+			"description": "school in Croydon, UK",
+			"inception": "2009-09-01",
+			"coordinates": [
+				51.383,
+				-0.06315
+			]
+		},
+		"Q7137782": {
+			"label": "Park Hill Recreation Ground",
+			"description": "park in the United Kingdom",
+			"coordinates": [
+				51.3712,
+				-0.08924
+			]
+		},
+		"Q7416357": {
+			"label": "Sandilands",
+			"description": "tram stop in London Borough of Croydon, UK",
+			"coordinates": [
+				51.375,
+				-0.0782
+			]
+		},
+		"Q7448358": {
+			"label": "Selhurst Road",
+			"description": "street in the London Borough of Croydon",
+			"coordinates": [
+				51.3945,
+				-0.08561
 			]
 		},
 		"Q7833148": {
@@ -83,6 +241,36 @@
 			"label": "Tramlink route 2 (London)",
 			"description": "tram line in London, England, UK",
 			"inception": "2000-05"
+		},
+		"Q7833152": {
+			"label": "Tramlink route 3 (London)",
+			"description": "tram line in London, England, UK",
+			"inception": "2000-05-10"
+		},
+		"Q7842970": {
+			"label": "Trinity School",
+			"description": "school in Croydon, UK",
+			"inception": "1596",
+			"coordinates": [
+				51.3739,
+				-0.05967
+			]
+		},
+		"Q7914850": {
+			"label": "Vanguard Way",
+			"description": "long distance trail from Croydon in outer London to Newhaven, the south coast of England",
+			"coordinates": [
+				50.983302,
+				0.148689
+			]
+		},
+		"Q8033332": {
+			"label": "Woodside Green",
+			"description": "street and green space in the London Borough of Croydon, England, UK",
+			"coordinates": [
+				51.3885,
+				-0.0682
+			]
 		},
 		"Q8033361": {
 			"label": "Woodside",
@@ -96,12 +284,93 @@
 			"label": "William Cheyne, 2nd Viscount Newhaven",
 			"description": "English politician and Scottish viscount"
 		},
+		"Q17550803": {
+			"label": "Church of St Mary Magdalene",
+			"description": "church in Addiscombe, London",
+			"coordinates": [
+				51.3775,
+				-0.0827813
+			]
+		},
+		"Q26351381": {
+			"label": "Church of St Luke",
+			"description": "church building in Woodside, London, England, UK",
+			"coordinates": [
+				51.389367,
+				-0.065323
+			]
+		},
+		"Q28405080": {
+			"label": "Selhurst Train and Rolling Stock Maintenance Depot",
+			"description": "railway maintenance depot in Selhurst, Croydon",
+			"coordinates": [
+				51.391329,
+				-0.084803
+			]
+		},
+		"Q55125706": {
+			"label": "Ashburton Library",
+			"description": "public library in London, UK",
+			"coordinates": [
+				51.382928,
+				-0.063788
+			]
+		},
+		"Q63491467": {
+			"label": "Lloyd Park",
+			"description": "public park in Croydon, UK",
+			"inception": "1927",
+			"coordinates": [
+				51.364,
+				-0.07945
+			]
+		},
+		"Q65937125": {
+			"label": "Addiscombe Road",
+			"description": "street in the London Borough of Croydon",
+			"coordinates": [
+				51.37505,
+				-0.07628
+			]
+		},
+		"Q65937453": {
+			"label": "Sydenham Road",
+			"description": "street in the London Borough of Croydon",
+			"coordinates": [
+				51.38295,
+				-0.09363
+			]
+		},
+		"Q65937676": {
+			"label": "Cherry Orchard Road",
+			"description": "street in the London Borough of Croydon",
+			"coordinates": [
+				51.3774,
+				-0.0918
+			]
+		},
 		"Q65937692": {
 			"label": "Lower Addiscombe Road",
 			"description": "street in the London Borough of Croydon",
 			"coordinates": [
 				51.38017,
 				-0.07347
+			]
+		},
+		"Q65964150": {
+			"label": "Lebanon Road",
+			"description": "street in the London Borough of Croydon",
+			"coordinates": [
+				51.37724,
+				-0.08554
+			]
+		},
+		"Q65964153": {
+			"label": "Canning Road",
+			"description": "street in the London Borough of Croydon",
+			"coordinates": [
+				51.37734,
+				-0.08217
 			]
 		},
 		"Q65964165": {
@@ -112,6 +381,85 @@
 				-0.07792
 			]
 		},
+		"Q65964178": {
+			"label": "Oval Road",
+			"description": "street in the London Borough of Croydon",
+			"coordinates": [
+				51.37801,
+				-0.08845
+			]
+		},
+		"Q66221697": {
+			"label": "Park Hill Infant School",
+			"description": "school in Croydon, UK",
+			"coordinates": [
+				51.3709374,
+				-0.0894409
+			]
+		},
+		"Q66229277": {
+			"label": "Ark Oval Primary Academy",
+			"description": "school in Croydon, UK",
+			"inception": "2011-09-01",
+			"coordinates": [
+				51.3782483,
+				-0.0899374
+			]
+		},
+		"Q66229632": {
+			"label": "Robert Fitzroy Academy",
+			"description": "school in Croydon, UK",
+			"inception": "2012-09-01",
+			"coordinates": [
+				51.3871423,
+				-0.0808913
+			]
+		},
+		"Q66229671": {
+			"label": "St Thomas Becket Catholic Primary School",
+			"description": "school in Croydon, UK",
+			"inception": "2012-09-01",
+			"coordinates": [
+				51.3893918,
+				-0.0701781
+			]
+		},
+		"Q66230587": {
+			"label": "Broadmead Primary School",
+			"description": "school in Croydon, UK",
+			"inception": "2014-06-01",
+			"coordinates": [
+				51.386335,
+				-0.0916979
+			]
+		},
+		"Q66231324": {
+			"label": "Davidson Primary Academy",
+			"description": "school in Croydon, UK",
+			"inception": "2016-04-01",
+			"coordinates": [
+				51.3853401,
+				-0.0792414
+			]
+		},
+		"Q67149955": {
+			"label": "The Woodside Academy",
+			"description": "school in Croydon, UK",
+			"inception": "2016-09-01",
+			"coordinates": [
+				51.3854433,
+				-0.0722755
+			]
+		},
+		"Q67150053": {
+			"label": "Park Hill Junior School",
+			"description": "school in Croydon, UK",
+			"inception": "2017-04-01",
+			"coordinates": [
+				51.3706042,
+				-0.0897956
+			]
+		},
 		"Q105074335": {
 			"label": "St Mildred's Church",
 			"description": "church in Addiscombe, Surrey, England, UK",
@@ -120,12 +468,309 @@
 				-0.0699481555555556
 			]
 		},
+		"Q105075364": {
+			"label": "St Matthew's Parish Church",
+			"description": "church in Croydon, Greater London",
+			"coordinates": [
+				51.3704758166667,
+				-0.0856132166666667
+			]
+		},
+		"Q110199215": {
+			"label": "Highbury & Islington to West Croydon",
+			"description": "train service of the London Overground"
+		},
+		"Q110688440": {
+			"label": "Northcote Road",
+			"description": "street in the London Borough of Croydon",
+			"coordinates": [
+				51.38846,
+				-0.09245
+			]
+		},
+		"Q114840883": {
+			"label": "Red Court Care Home",
+			"description": "Care Home",
+			"coordinates": [
+				51.3690159,
+				-0.0900815
+			]
+		},
+		"Q115381432": {
+			"label": "Shirley Road",
+			"description": "street in the London Borough of Croydon",
+			"coordinates": [
+				51.3792,
+				-0.0621
+			]
+		},
+		"Q115697914": {
+			"label": "King George's Field",
+			"coordinates": [
+				51.387186,
+				-0.090219
+			]
+		},
+		"Q116142901": {
+			"label": "DnR vinyl",
+			"description": "dubstep record shop in Croydon, UK",
+			"coordinates": [
+				51.38331171888075,
+				-0.06570008825397092
+			]
+		},
+		"Q125903421": {
+			"label": "Cambridge - Brighton"
+		},
+		"Q125903424": {
+			"label": "Peterborough - Horsham"
+		},
+		"Q125903425": {
+			"label": "Bedford <> Three Bridges"
+		},
+		"Q125903426": {
+			"label": "Bedford <> Brighton"
+		},
+		"Q128600864": {
+			"label": "Frederick George Creed's Blue Plaque",
+			"coordinates": [
+				51.375989887031,
+				-0.076246931544829
+			]
+		},
+		"Q131524925": {
+			"label": "Morland Road Surgery",
+			"description": "doctors surgery in East Croydon, Surrey, United Kingdom",
+			"coordinates": [
+				51.380598,
+				-0.086272
+			]
+		},
+		"Q131524926": {
+			"label": "East Croydon Medical Centre",
+			"description": "doctors surgery in Croydon, United Kingdom",
+			"coordinates": [
+				51.37529,
+				-0.0878
+			]
+		},
+		"Q131524928": {
+			"label": "Addiscombe Road Surgery",
+			"description": "doctors surgery in Croydon, Surrey, United Kingdom",
+			"coordinates": [
+				51.376469,
+				-0.060493
+			]
+		},
+		"Q136226010": {
+			"label": "The Builders Arms",
+			"description": "pub in Croydon, London, England, UK",
+			"coordinates": [
+				51.3794773,
+				-0.085901
+			]
+		},
+		"Q136645545": {
+			"label": "The Cricketers",
+			"description": "pub on Addiscombe Road, Addiscombe, Croydon, London, England, UK",
+			"coordinates": [
+				51.3751766,
+				-0.0836591
+			]
+		},
+		"Q136646240": {
+			"label": "The Cricketers",
+			"description": "pub on Shirley Road, Addiscombe, Croydon, London, England, UK",
+			"coordinates": [
+				51.3812987,
+				-0.0629125
+			]
+		},
+		"Q136698176": {
+			"label": "The Two Brewers",
+			"description": "pub in Croydon, London, England, UK",
+			"coordinates": [
+				51.38843977367066,
+				-0.09006197474836596
+			]
+		},
+		"Q136698181": {
+			"label": "The White Horse",
+			"description": "pub in Croydon, London, England, UK",
+			"coordinates": [
+				51.389030363825526,
+				-0.09090916648701881
+			]
+		},
+		"Q136721154": {
+			"label": "The Oval Tavern",
+			"description": "pub in Croydon, London, England, UK",
+			"coordinates": [
+				51.3782981,
+				-0.087598
+			]
+		},
+		"Q136721157": {
+			"label": "The Orchard",
+			"description": "pub in Croydon, London, England, UK",
+			"coordinates": [
+				51.378963,
+				-0.08876
+			]
+		},
+		"Q136721164": {
+			"label": "Glamorgan",
+			"description": "former pub in Croydon, London, England, UK",
+			"coordinates": [
+				51.378555,
+				-0.09012
+			]
+		},
+		"Q136721391": {
+			"label": "The Joiners Arms",
+			"description": "pub in Croydon, London, England, UK",
+			"coordinates": [
+				51.38672509886051,
+				-0.07060953834529841
+			]
+		},
 		"Q136733730": {
 			"label": "The Claret & Ale",
 			"description": "pub in Croydon, London, England, UK",
 			"coordinates": [
 				51.379938,
 				-0.0736716
+			]
+		},
+		"Q136936663": {
+			"label": "Our Lady of the Annunciation, Addiscombe",
+			"description": "catholic church in Croydon, Surrey, UK",
+			"inception": "1963",
+			"coordinates": [
+				51.3812514,
+				-0.0637887
+			]
+		},
+		"Q27085676": {
+			"label": "Redcourt",
+			"description": "grade II listed building in Croydon, Greater London, CR0",
+			"coordinates": [
+				51.369118,
+				-0.09017
+			]
+		},
+		"Q115694022": {
+			"label": "Cotelands",
+			"description": "small park near Park Hill, managed by the London Borough of Croydon",
+			"coordinates": [
+				51.37111111111111,
+				-0.08861111111111111
+			]
+		},
+		"Q55629049": {
+			"label": "Park Hill & Whitgift",
+			"description": "electoral ward in the London borough of Croydon",
+			"coordinates": [
+				51.3692904055,
+				-0.0779090882544
+			]
+		},
+		"Q64868064": {
+			"label": "Sandilands Tunnel",
+			"description": "former railway tunnel, now tram tunnel, in Croydon, London, UK",
+			"coordinates": [
+				51.371805555556,
+				-0.077472222222222
+			]
+		},
+		"Q38517806": {
+			"label": "Addiscombe Picture Palace",
+			"description": "former cinema in Addiscombe, Croydon, London, England",
+			"coordinates": [
+				51.3793046,
+				-0.0885514
+			]
+		},
+		"Q27083571": {
+			"label": "Leslie Arms Public House",
+			"description": "pub in Croydon, London, England, UK",
+			"coordinates": [
+				51.380113,
+				-0.086643
+			]
+		},
+		"Q26351398": {
+			"label": "Entrance Lodge To Davidson Lodge",
+			"description": "gatehouse in Croydon, London, England, UK",
+			"coordinates": [
+				51.381896,
+				-0.089048
+			]
+		},
+		"Q27085678": {
+			"label": "Walls And Four Piers At Entrance To Davidson Lodge",
+			"description": "wall in Croydon, London, England, UK",
+			"coordinates": [
+				51.381894,
+				-0.088919
+			]
+		},
+		"Q26351394": {
+			"label": "Davidson Lodge",
+			"description": "almshouse in Croydon, London, England, UK",
+			"coordinates": [
+				51.382316,
+				-0.088858
+			]
+		},
+		"Q110151483": {
+			"label": "Fox Silver Limited",
+			"description": "manufacturing company specialising in silverware and jewellery",
+			"inception": "1993",
+			"coordinates": [
+				51.382472,
+				-0.091471
+			]
+		},
+		"Q128152305": {
+			"label": "Windmill Bridge Junction",
+			"description": "railway junction",
+			"coordinates": [
+				51.38315,
+				-0.08901
+			]
+		},
+		"Q128924093": {
+			"label": "Gloucester Road Junction NFE/WCS",
+			"description": "railway junction",
+			"coordinates": [
+				51.38691,
+				-0.0871
+			]
+		},
+		"Q27084136": {
+			"label": "17, Canning Road",
+			"description": "building in Croydon, London, England, UK",
+			"coordinates": [
+				51.377655,
+				-0.082644
+			]
+		},
+		"Q66221659": {
+			"label": "Tunstall Nursery School",
+			"description": "school in Croydon, UK",
+			"coordinates": [
+				51.378593,
+				-0.0836163
+			]
+		},
+		"Q115309610": {
+			"label": "D A Lindsay & Sons Ltd",
+			"description": "funeral director",
+			"inception": "2009-02-10",
+			"coordinates": [
+				51.379574,
+				-0.081935
 			]
 		},
 		"Q142575": {
@@ -143,6 +788,30 @@
 			"coordinates": [
 				51.378178,
 				-0.077262
+			]
+		},
+		"Q27807478": {
+			"label": "2016 Croydon tram derailment",
+			"description": "November 2016 fatal derailment in south London",
+			"coordinates": [
+				51.374205,
+				-0.07541
+			]
+		},
+		"Q27085671": {
+			"label": "Heron's Croft",
+			"description": "architectural structure in Croydon, London, England, UK",
+			"coordinates": [
+				51.374726,
+				-0.075108
+			]
+		},
+		"Q27085685": {
+			"label": "Addiscombe Farm Cottage",
+			"description": "cottage in Croydon, London, England, UK",
+			"coordinates": [
+				51.374594,
+				-0.070932
 			]
 		},
 		"Q131524924": {
@@ -167,6 +836,139 @@
 			"coordinates": [
 				51.379,
 				-0.0731
+			]
+		},
+		"Q4681210": {
+			"label": "Addiscombe",
+			"description": "former ward of the London Borough of Croydon, in the United Kingdom",
+			"coordinates": [
+				51.381,
+				-0.081
+			]
+		},
+		"Q56148991": {
+			"label": "Addiscombe West",
+			"description": "electoral ward in the London borough of Croydon",
+			"inception": "2018",
+			"coordinates": [
+				51.381,
+				-0.081
+			]
+		},
+		"Q131532477": {
+			"label": "Jayaratne S (branch surgery)",
+			"description": "doctors surgery in Croydon, United Kingdom",
+			"inception": "2004-04-01",
+			"coordinates": [
+				51.387645,
+				-0.080588
+			]
+		},
+		"Q26351377": {
+			"label": "2, Woodside Green",
+			"description": "building in Croydon, London, England, UK",
+			"coordinates": [
+				51.385579,
+				-0.071246
+			]
+		},
+		"Q136733270": {
+			"label": "The Beehive",
+			"description": "former pub in Croydon, London, England, UK",
+			"coordinates": [
+				51.38709901956722,
+				-0.07062825767914084
+			]
+		},
+		"Q66478501": {
+			"label": "Woodside War Memorial",
+			"description": "war memorial in Croydon, London, UK",
+			"coordinates": [
+				51.387308669818,
+				-0.069966230393799
+			]
+		},
+		"Q4804658": {
+			"label": "Ashburton",
+			"description": "area in the London Borough of Croydon, England, UK",
+			"coordinates": [
+				51.3878,
+				-0.067509
+			]
+		},
+		"Q131529213": {
+			"label": "Selhurst Medical Centre",
+			"description": "doctors surgery in South Norwood, London, United Kingdom",
+			"coordinates": [
+				51.389565,
+				-0.089131
+			]
+		},
+		"Q66228184": {
+			"label": "Selhurst Nursery School and Children's Centre",
+			"description": "school in Croydon, UK",
+			"inception": "1998-09-01",
+			"coordinates": [
+				51.3902095,
+				-0.0900049
+			]
+		},
+		"Q66478500": {
+			"label": "Selhurst War Memorial",
+			"description": "war memorial in London",
+			"coordinates": [
+				51.38986898999,
+				-0.088457571140967
+			]
+		},
+		"Q27080271": {
+			"label": "Woodside Cottage",
+			"description": "cottage in Croydon, London, England, UK",
+			"coordinates": [
+				51.389943,
+				-0.068073
+			]
+		},
+		"Q140277582": {
+			"label": "Disappearance of Kevin Hicks",
+			"description": "1986 unsolved disappearance in the UK",
+			"coordinates": [
+				51.38348127734834,
+				-0.06504129295665505
+			]
+		},
+		"Q4804673": {
+			"label": "Ashburton Learning Village",
+			"description": "Educational complex in London, England",
+			"inception": "2006",
+			"coordinates": [
+				51.3829425,
+				-0.06291
+			]
+		},
+		"Q131524927": {
+			"label": "Ashburton Park Medical Centre",
+			"description": "doctors surgery in Addiscombe, Surrey, United Kingdom",
+			"coordinates": [
+				51.384741,
+				-0.063679
+			]
+		},
+		"Q8033322": {
+			"label": "Woodside railway station",
+			"description": "railway station in Croydon, London, England, UK (1871-1997)",
+			"coordinates": [
+				51.3874,
+				-0.0647
+			]
+		},
+		"Q56148845": {
+			"label": "Addiscombe East",
+			"description": "electoral ward in the London borough of Croydon",
+			"inception": "2018",
+			"coordinates": [
+				51.385,
+				-0.057
 			]
 		}
 	}

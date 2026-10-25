@@ -1,3 +1,4 @@
+import { gzipSync } from 'node:zlib';
 import type { AdventureWorld } from '../core/adventure/world';
 import { longDate } from '../core/render/words';
 
@@ -9,8 +10,9 @@ export interface ExportInput {
 	snapshotDate: string;
 }
 
-/** JSON that is safe inside a script element: no "<" can close it early. */
-const scriptSafe = (value: unknown) => JSON.stringify(value).replace(/</g, '\\u003c');
+/** The world as the page carries it: gzip, then base64, which nothing in a script element can break out of. */
+const packed = (world: AdventureWorld) =>
+	gzipSync(Buffer.from(JSON.stringify(world), 'utf8'), { level: 9 }).toString('base64');
 
 /** The whole game as one self-contained page: engine, world, styles and prompt. */
 export function exportPage({ engine, world, snapshotDate }: ExportInput): string {
@@ -66,9 +68,13 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 	<footer>Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL, as of ${longDate(snapshotDate)}. Weather from <a href="https://open-meteo.com/">Open-Meteo.com</a>, CC BY 4.0. Another account from <a href="https://www.wikidata.org/">Wikidata</a>, CC0.</footer>
 </div>
 <script>${engine}</script>
+<script type="application/gzip" id="world">${packed(world)}</script>
 <script>
-const WORLD = ${scriptSafe(world)};
-(() => {
+(async () => {
+	// The world arrives compressed: a large place would otherwise weigh tens of megabytes.
+	const bytes = Uint8Array.from(atob(document.getElementById('world').textContent), (c) => c.charCodeAt(0));
+	const unzipped = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+	const WORLD = JSON.parse(await new Response(unzipped).text());
 	const game = new Adventure(WORLD);
 	const transcript = document.getElementById('transcript');
 	const input = document.getElementById('command');

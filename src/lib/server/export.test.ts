@@ -1,6 +1,18 @@
 import { describe, expect, it } from 'vitest';
 import type { AdventureWorld } from '../core/adventure/world';
+import { gunzipSync } from 'node:zlib';
 import { exportPage } from './export';
+
+/** The world as the page carries it: gzip, base64, in a script element of its own. */
+const worldIn = (html: string) =>
+	JSON.parse(
+		gunzipSync(
+			Buffer.from(
+				html.match(/<script type="application\/gzip" id="world">([^<]*)<\/script>/)![1],
+				'base64'
+			)
+		).toString('utf8')
+	);
 
 const world: AdventureWorld = {
 	start: 'a',
@@ -18,16 +30,21 @@ const page = (w: AdventureWorld = world) =>
 	exportPage({ engine: 'var Adventure = function () {};', world: w, snapshotDate: '2026-10-24' });
 
 describe('exportPage', () => {
-	it('inlines the engine and the world', () => {
+	it('inlines the engine, and the world compressed', () => {
 		expect(page()).toContain('var Adventure = function () {};');
-		expect(page()).toContain('"title":"Long Street"');
+		expect(worldIn(page())).toEqual(world);
+		expect(page()).not.toContain('"title":"Long Street"');
 	});
 
 	it('cannot be broken out of by a map value that closes the script', () => {
 		const hostile = { ...world, stops: { a: { ...world.stops.a, title: '</script><b>x</b>' } } };
 		const html = page(hostile);
-		expect(html).not.toContain('</script><b>');
-		expect(html).toContain('\\u003c/script>');
+		expect(html).not.toContain('</script>' + '<b>');
+		expect(worldIn(html).stops.a.title).toBe('</script><b>x</b>');
+	});
+
+	it('opens the world in the browser with its own decompression', () => {
+		expect(page()).toContain("new DecompressionStream('gzip')");
 	});
 
 	it('is called A Partial Guide', () => {
