@@ -1,4 +1,5 @@
 import type { Fact } from '../facts';
+import { skyLine } from '../render/sky';
 import { weatherNow } from '../render/weather';
 import { departuresLine } from '../render/departures';
 import { longDate } from '../render/words';
@@ -65,7 +66,7 @@ export class Adventure {
 		{ said: string; at: string; move: number; street?: boolean }[]
 	>();
 	private readonly connected = new Set<string>();
-	/** Today's weather, as the browser found it when the walk began. */
+	/** Today's weather and the sky, as the browser found them when the walk began. */
 	private now: Fact[] = [];
 
 	constructor(
@@ -78,7 +79,7 @@ export class Adventure {
 		this.choosing = true;
 		this.now = now;
 		const { asOf } = this.world;
-		const today = weatherNow(now);
+		const today = [weatherNow(now), skyLine(now)].filter(Boolean).join(' ');
 		const sky = today ? ` ${today}` : '';
 		const map = asOf
 			? `The map I carry is dated ${longDate(asOf)}.${sky} Beyond it there may be more. I could not say what.`
@@ -120,7 +121,13 @@ export class Adventure {
 			case 'help':
 				return { lines: [HELP] };
 			case 'weather':
-				return { lines: [weatherNow(this.now) ?? 'I have no word of the weather today.'] };
+				return {
+					lines: [
+						[weatherNow(this.now) ?? 'I have no word of the weather today.', skyLine(this.now)]
+							.filter(Boolean)
+							.join(' ')
+					]
+				};
 			case 'exits':
 				return { lines: [this.exits()] };
 			case 'back':

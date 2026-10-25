@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { tick } from 'svelte';
 	import { Adventure, type Reply } from '#lib/core/adventure/engine.ts';
-	import { fetchWeatherNow } from '#lib/browser/sky.ts';
+	import { skyNow } from '#lib/browser/sky.ts';
 	import { fetchArrivals } from '#lib/browser/transit.ts';
 	import type { PageProps } from './$types';
 
@@ -24,7 +24,7 @@
 
 	// Guide begins once the browser has asked after today's weather, or given up asking.
 	$effect(() => {
-		fetchWeatherNow(data.world.weatherAt).then(async (now) => {
+		skyNow(data.world.weatherAt).then(async (now) => {
 			transcript.push(...game.begin(now).map((reply): Entry => ({ kind: 'reply', reply })));
 			ready = true;
 			await tick();

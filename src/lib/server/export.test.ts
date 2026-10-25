@@ -66,8 +66,8 @@ describe('exportPage', () => {
 		expect(page()).toContain('game.begin(now).forEach(show)');
 	});
 
-	it('asks for today’s weather before Guide begins, and begins without it if none comes', () => {
-		expect(page()).toContain('fetchWeatherNow(WORLD.weatherAt)');
+	it('asks after the sky and today’s weather before Guide begins, and begins without the weather if none comes', () => {
+		expect(page()).toContain('skyNow(WORLD.weatherAt)');
 		expect(page()).toMatch(/\.then\(\(now\) => \{\s*game\.begin\(now\)/);
 	});
 

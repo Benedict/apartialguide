@@ -1,3 +1,4 @@
+import { heavensFacts } from '../core/adapters/heavens';
 import { currentWeatherFacts, type OpenMeteoCurrent } from '../core/adapters/weather';
 import type { Fact } from '../core/facts';
 
@@ -30,4 +31,13 @@ export async function fetchWeatherNow(
 	} catch {
 		return [];
 	}
+}
+
+/** The sky now over the map's own place: the sun and moon, worked out here, and the weather, if asked in time. */
+export async function skyNow(
+	at: WeatherAt | undefined,
+	now = new Date(),
+	get?: (url: string) => Promise<Response>
+): Promise<Fact[]> {
+	return [...heavensFacts(now, at), ...(await fetchWeatherNow(at, get))];
 }

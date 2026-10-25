@@ -118,7 +118,7 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 	});
 	// Until Guide has begun, there is nothing to answer.
 	input.disabled = true;
-	fetchWeatherNow(WORLD.weatherAt).then((now) => {
+	skyNow(WORLD.weatherAt).then((now) => {
 		game.begin(now).forEach(show);
 		input.disabled = false;
 		input.focus({ preventScroll: true });
