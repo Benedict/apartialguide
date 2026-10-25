@@ -29,6 +29,9 @@ jobs:
           . data/records/request.env
           set +a
           npm run records
+        env:
+          # The tree lists run to hundreds of megabytes.
+          NODE_OPTIONS: --max-old-space-size=6144
       - name: Commit records
         run: |
           git config user.name "github-actions[bot]"
