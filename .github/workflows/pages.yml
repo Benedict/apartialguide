@@ -1,9 +1,11 @@
 name: Pages
 
-# Publishes the exported page to GitHub Pages, where today's weather can be fetched as the reader
-# plays (the claude.ai preview's security policy blocks it). Run by hand, once Pages is switched on
-# with "GitHub Actions" as its source in the repository's settings.
+# Publishes the exported page to GitHub Pages, where live data can be fetched as the reader plays
+# (the claude.ai preview's security policy blocks it). Runs on every push to main, so each merged
+# change is published, and by hand.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
