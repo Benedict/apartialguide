@@ -8,6 +8,13 @@
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import type { RecordStore } from '../src/lib/core/adapters/records';
 import { hygieneRecords } from '../src/lib/server/sources/hygiene';
+import {
+	crimeRecords,
+	planningRecords,
+	plaqueRecords,
+	priceRecords,
+	protectedRecords
+} from '../src/lib/server/sources/more';
 
 const headers = {
 	'User-Agent': 'a-partial-guide/0.1 (art project; https://github.com/Benedict/osm-text-adventure)'
@@ -31,8 +38,33 @@ const [w, s, e, n] = bbox.split(',').map(Number);
 const centre = { lat: (s + n) / 2, lon: (w + e) / 2 };
 console.log(`box ${bbox}, from ${newest}`);
 
+const snapshot = JSON.parse(readFileSync(`${snapshots}/${newest}`, 'utf8'));
+const postcodes = [
+	...new Set(
+		snapshot.elements
+			.map((el: { tags?: Record<string, string> }) =>
+				el.tags?.['addr:postcode']?.toUpperCase().trim()
+			)
+			.filter(Boolean) as string[]
+	)
+].sort();
+
+/** Every page of a planning.data.gov.uk dataset within the box. */
+async function entities(dataset: string) {
+	const polygon = `POLYGON((${w} ${s}, ${e} ${s}, ${e} ${n}, ${w} ${n}, ${w} ${s}))`;
+	let url: string | undefined =
+		`https://www.planning.data.gov.uk/entity.json?dataset=${dataset}&geometry=${encodeURIComponent(polygon)}&geometry_relation=intersects&limit=500`;
+	const all: Record<string, unknown>[] = [];
+	while (url) {
+		const page = await getJson(url);
+		all.push(...(page.entities ?? []));
+		url = page.links?.next;
+	}
+	return { entities: all };
+}
+
 type Taken = Omit<RecordStore, 'retrieved'>;
-const SOURCES: Record<string, () => Promise<Taken>> = {
+const SOURCES: Record<string, () => Promise<Taken | Taken[]>> = {
 	/** Food hygiene ratings, from the FSA's ratings API, within about a mile of the middle of the box. */
 	hygiene: async () => {
 		const answer = await getJson(
