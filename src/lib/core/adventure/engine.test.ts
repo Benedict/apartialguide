@@ -236,3 +236,90 @@ describe('Fragments Guide carries', () => {
 		expect(replies.flatMap((r) => r.lines).join(' ')).not.toContain('ld Invented Mill');
 	});
 });
+
+describe('Chance', () => {
+	const stop = (i: number, terms?: { term: string; said: string; street?: boolean }[]) => ({
+		title: `Stop ${i}`,
+		paragraphs: [`You are at stop ${i}.`, 'Exits: east, west.'],
+		exits: [
+			{ label: 'east', to: `s${i + 1}` },
+			{ label: 'west', to: `s${i - 1}` }
+		],
+		things: [],
+		...(terms ? { terms } : {})
+	});
+	const world = (stops: Record<number, ReturnType<typeof stop>>): AdventureWorld => ({
+		start: 's0',
+		stops: Object.fromEntries(Array.from({ length: 10 }, (_, i) => [`s${i}`, stops[i] ?? stop(i)]))
+	});
+	const play = (w: AdventureWorld, moves: string[], chance = () => 0) => {
+		const game = new Adventure(w);
+		game.chance = chance;
+		game.begin();
+		game.respond('take the tour');
+		return moves.map((m) => game.respond(m).lines.join(' '));
+	};
+	const quillon = { term: 'quillon', said: 'The Quillon Arms' };
+	const row = { term: 'quillon', said: 'Quillon Row', street: true };
+
+	it('sets two names side by side when they share a word, met in different places', () => {
+		const said = play(world({ 0: stop(0, [quillon]), 4: stop(4, [row]) }), [
+			'east',
+			'east',
+			'east',
+			'east'
+		]);
+		expect(said[3]).toContain('“Quillon Row”. Earlier, “The Quillon Arms”.');
+		expect(said.slice(0, 3).join(' ')).not.toContain('Earlier');
+	});
+
+	it('does not connect a name with itself, nor two places on the same street', () => {
+		const again = play(world({ 0: stop(0, [quillon]), 4: stop(4, [quillon]) }), [
+			'east',
+			'east',
+			'east',
+			'east'
+		]);
+		expect(again.join(' ')).not.toContain('Earlier');
+		const streets = play(
+			world({
+				0: stop(0, [{ ...row, said: 'Quillon Row' }]),
+				4: stop(4, [{ ...row, said: 'Quillon Row West' }])
+			}),
+			['east', 'east', 'east', 'east']
+		);
+		expect(streets.join(' ')).not.toContain('Earlier');
+	});
+
+	it('does not connect a name with one that only adds to it', () => {
+		const said = play(
+			world({
+				0: stop(0, [{ term: 'quillon', said: 'Quillon Close', street: true }]),
+				4: stop(4, [{ term: 'quillon', said: '31-59 Quillon Close' }])
+			}),
+			['east', 'east', 'east', 'east']
+		);
+		expect(said.join(' ')).not.toContain('Earlier');
+	});
+
+	it('does it twice a walk at most', () => {
+		const terms = (word: string, i: number) => [{ term: word, said: `${word} ${i}` }];
+		const w = world({
+			0: stop(0, [...terms('alpha', 0), ...terms('beta', 0), ...terms('gamma', 0)]),
+			4: stop(4, terms('alpha', 4)),
+			5: stop(5, terms('beta', 5)),
+			6: stop(6, terms('gamma', 6))
+		});
+		const said = play(w, ['east', 'east', 'east', 'east', 'east', 'east']);
+		expect(said.filter((s) => s.includes('Earlier'))).toHaveLength(2);
+	});
+
+	it('leaves it to chance', () => {
+		const said = play(
+			world({ 0: stop(0, [quillon]), 4: stop(4, [row]) }),
+			['east', 'east', 'east', 'east'],
+			() => 0.99
+		);
+		expect(said.join(' ')).not.toContain('Earlier');
+	});
+});

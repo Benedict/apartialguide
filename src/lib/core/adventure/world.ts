@@ -14,11 +14,35 @@ export interface CompiledStop {
 	paragraphs: string[];
 	exits: CompiledExit[];
 	things: Thing[];
+	/** Distinctive words in the names spoken here, each with the name as found, for chance. */
+	terms?: Term[];
 	/** Broken names spoken here, for Guide to carry on. */
 	fragments?: string[];
 	/** What a closer look finds, if anything is hidden here. */
 	hidden?: { lines: string[]; things: Thing[] };
 }
+
+/** A word that few names in the map share, and the name it was found in. */
+export interface Term {
+	term: string;
+	said: string;
+	/** Whether the name is a street's. */
+	street?: boolean;
+}
+
+/** Words too common in place names to connect anything. */
+const GENERIC = new Set(
+	'road street lane avenue close crescent drive gardens grove place park parade terrace court square hall house church chapel station halt railway line tram stop ward area village shopping centre recreation ground surgery school walk passage cafe food branch parking office shop store market north south east west lower upper great little'.split(
+		' '
+	)
+);
+/** A word shared by more names than this says nothing in particular. */
+const MOST_NAMES = 3;
+
+const wordsOf = (name: string) =>
+	[...new Set(name.split(/[^\p{L}]+/u).filter((w) => w.length >= 4 && /^\p{Lu}/u.test(w)))]
+		.map((w) => w.toLowerCase())
+		.filter((w) => !GENERIC.has(w));
 
 /** Every stop's narration, written ahead of time. The game plays from this alone. */
 export interface AdventureWorld {
@@ -36,8 +60,15 @@ export function compileWorld(
 	options: { asOf?: string } = {}
 ): AdventureWorld {
 	const stops: Record<StopId, CompiledStop> = {};
+	const names = new Map<StopId, { said: string; street?: boolean }[]>();
 	for (const stop of narrator.graph.all()) {
-		const { room, plan } = narrator.visit(stop.id)!;
+		const { room, plan, scene } = narrator.visit(stop.id)!;
+		const things = plan.beats.flatMap((b) =>
+			b.facts
+				.filter((f) => ['name', 'wikidata:label', 'etymology:label'].includes(f.claim.key))
+				.map((f) => ({ said: f.claim.value }))
+		);
+		names.set(stop.id, [...things, ...scene.here.map((said) => ({ said, street: true }))]);
 		const fragments = [
 			...new Set(
 				plan.beats
@@ -55,6 +86,19 @@ export function compileWorld(
 			...(room.hidden ? { hidden: room.hidden } : {}),
 			...(fragments.length ? { fragments } : {})
 		};
+	}
+	// How many distinct names in the whole map share each word: a word in few is distinctive.
+	const shared = new Map<string, Set<string>>();
+	for (const list of names.values())
+		for (const { said } of list)
+			for (const w of wordsOf(said)) shared.set(w, (shared.get(w) ?? new Set()).add(said));
+	for (const [id, list] of names) {
+		const terms = list.flatMap(({ said, street }) =>
+			wordsOf(said)
+				.filter((term) => (shared.get(term)?.size ?? 0) <= MOST_NAMES)
+				.map((term) => ({ term, said, ...(street ? { street } : {}) }))
+		);
+		if (terms.length) stops[id].terms = terms;
 	}
 	const begins = narrator.graph.get(start)?.position;
 	return {
