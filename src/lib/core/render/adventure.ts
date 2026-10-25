@@ -1,10 +1,19 @@
 import { groupBySubject } from '../facts';
-import { bearing, compassLabel, insideRing, nearestOnPolyline, type LatLon } from '../geo';
+import {
+	bearing,
+	compassLabel,
+	distance,
+	distanceToPolyline,
+	headingAt,
+	insideRing,
+	nearestOnPolyline,
+	type LatLon
+} from '../geo';
 import type { Tags } from '../osm';
 import type { Scene, SceneExit } from '../scene';
 import { isBackground, type Beat } from '../slippage';
 import { isElsewhere, isHistory } from '../tensions';
-import type { Renderer, Room, Thing } from './renderer';
+import type { Part, Renderer, Room, Thing } from './renderer';
 import {
 	address,
 	article,
@@ -27,22 +36,46 @@ import {
 export class AdventureRenderer implements Renderer {
 	render(scene: Scene): Room {
 		const street = streetTags(scene);
-		const paragraphs = [
-			[whereYouStand(scene, street), ...streetCharacter(street), setting(scene)]
-				.filter(Boolean)
-				.join(' '),
+		const part = (kind: Part['kind'], text: string, more: Partial<Part> = {}): Part => ({
+			kind,
+			text,
+			key: text,
+			...more
+		});
+		const along = scene.here.length === 1 ? scene.here[0] : undefined;
+		const around = setting(scene);
+		const parts: Part[][] = [
+			[
+				part('where', whereYouStand(scene, street), along ? { street: along } : {}),
+				...streetCharacter(street).map((s) => part('street', s)),
+				...(around ? [part('setting', around, { key: settingKey(around) })] : [])
+			],
 			...whatYouSee(scene),
-			exitsLine(scene.exits)
+			...(scene.mood === 'hesitant'
+				? [[part('frame', pick(scene.stopId, HESITATIONS), { options: HESITATIONS })]]
+				: []),
+			[part('exits', exitsLine(scene.exits))]
 		];
-		if (scene.mood === 'hesitant') paragraphs.splice(-1, 0, pick(scene.stopId, HESITATIONS));
 		return {
 			title: title(scene, street),
-			paragraphs: paragraphs.filter(Boolean),
+			paragraphs: parts.map((p) => p.map((x) => x.text).join(' ')),
+			parts,
 			things: scene.beats.filter((b) => !isHalf(b)).map(thing),
 			hidden: closerLook(scene)
 		};
 	}
 }
+
+/** A setting as a listener hears it: what it names, whatever the order and wherever each lies. */
+const settingKey = (setting: string) =>
+	setting
+		.replace(/^Here you are /, '')
+		.replace(/\.$/, '')
+		.replace(/ to the [a-z-]+/g, '')
+		.split(/,? and |, (?=in |beside )/)
+		.map((s) => s.trim())
+		.sort()
+		.join(' | ');
 
 const HESITATIONS = [
 	'Beyond that… nothing I can put a name to.',
@@ -52,7 +85,9 @@ const HESITATIONS = [
 
 const LOST_COUNT = [
 	'And more besides, or perhaps not — I lose count. Where was I.',
-	'And more, possibly — I lose count.'
+	'And more, possibly — I lose count.',
+	'There is more. I have stopped counting.',
+	'Others besides. I lose the thread.'
 ];
 
 /** Tags of the main street underfoot. */
@@ -103,29 +138,73 @@ export function streetCharacter(street: Tags): string[] {
 	return sentences;
 }
 
-function whatYouSee(scene: Scene): string[] {
+function whatYouSee(scene: Scene): Part[][] {
 	let previous = '';
-	const streets: Said = new Set();
-	const told = scene.beats
-		.filter((b) => !isBackground(b) && !isHalf(b))
-		.map((b) => {
-			const place = placement(scene.position, b);
-			const said = describeBeat(
-				b,
-				place === previous && place.startsWith('To the') ? 'Next to it' : place,
-				streets
-			);
-			previous = place;
-			return said;
-		});
+	const said: Said = new Set();
+	const slipped = new Set<string>();
+	const told = alongTheStreet(
+		scene,
+		scene.beats.filter((b) => !isBackground(b) && !isHalf(b))
+	).map((b): Part => {
+		const place = placement(scene.position, b);
+		const text = describeBeat(
+			b,
+			place === previous && place.startsWith('To the') ? 'Next to it' : place,
+			said,
+			slipped
+		);
+		previous = place;
+		return { kind: 'thing', text, key: b.subject };
+	});
 	const more = scene.hidden.length > 0;
 	if (scene.mood === 'rambling') {
 		// A crowd: what is noticed in full, then Guide loses count of the rest.
-		const lost = more ? [pick(scene.stopId, LOST_COUNT)] : [];
-		return [[pick(scene.stopId, CROWD_OPENERS), ...told, ...lost].join(' ')];
+		const opener = pick(scene.stopId, CROWD_OPENERS);
+		const lost: Part[] = more
+			? [{ kind: 'frame', text: pick(scene.stopId, LOST_COUNT), key: 'lost', options: LOST_COUNT }]
+			: [];
+		return [
+			[{ kind: 'frame', text: opener, key: 'crowd', options: CROWD_OPENERS }, ...told, ...lost]
+		];
 	}
 	// Guide points to nothing: what goes unnoticed is for the reader to find.
-	return told;
+	return told.map((t) => [t]);
+}
+
+/** Things in the order they lie along the street underfoot, as a walker passes them. */
+function alongTheStreet(scene: Scene, beats: Beat[]): Beat[] {
+	// At a junction, the street the things here are addressed to; else the street underfoot.
+	const counts = new Map<string, number>();
+	for (const b of beats) {
+		const street = tagsFor(b)['addr:street'];
+		if (street && scene.here.includes(street)) counts.set(street, (counts.get(street) ?? 0) + 1);
+	}
+	const parade = [...counts].sort((a, b) => b[1] - a[1])[0]?.[0] ?? scene.here[0];
+	// The street may be cut into many short ways: its heading here orders things, not any one way.
+	const ways = [...groupBySubject(scene.street).values()];
+	const named = ways.filter((facts) => tagsOf(facts).name === parade);
+	const lines = (named.length ? named : ways)
+		.map((facts) => facts[0].geometry)
+		.filter((line) => line.length >= 2);
+	if (!lines.length) return beats;
+	const nearest = lines.reduce((a, b) =>
+		distanceToPolyline(scene.position, b) < distanceToPolyline(scene.position, a) ? b : a
+	);
+	const heading = headingAt(scene.position, nearest);
+	const ahead = (b: Beat) => {
+		const point = nearestOnPolyline(scene.position, b.facts[0].geometry).point;
+		const turn = ((bearing(scene.position, point) - heading) * Math.PI) / 180;
+		return distance(scene.position, point) * Math.cos(turn);
+	};
+	const placed = beats.map((b) => ({ b, at: ahead(b) })).sort((x, y) => x.at - y.at);
+	// Either way along the street could be first: let its house numbers say which way is up.
+	const numbered = placed
+		.map(({ b }) => parseInt(tagsFor(b)['addr:housenumber'] ?? '', 10))
+		.filter((n, i) => !Number.isNaN(n) && tagsFor(placed[i].b)['addr:street'] === parade);
+	const falling = numbered.slice(1).filter((n, i) => n < numbered[i]).length;
+	const rising = numbered.slice(1).filter((n, i) => n > numbered[i]).length;
+	if (falling > rising) placed.reverse();
+	return placed.map(({ b }) => b);
 }
 
 /** What a closer look finds: the hidden things in one breath, named things by name and repeats counted. */
@@ -139,7 +218,12 @@ function closerLook(scene: Scene): Room['hidden'] {
 	};
 }
 
-const CROWD_OPENERS = ['There is a great deal here.', 'Too much to take in at once.'];
+const CROWD_OPENERS = [
+	'There is a great deal here.',
+	'Too much to take in at once.',
+	'A crowd of things.',
+	'Everything at once, here.'
+];
 
 /** A crowd member in a breath: named things by name, the unnamed by what they are. */
 function brief(beat: Beat): { phrase: string; noun?: string } {
@@ -315,7 +399,12 @@ export const oldNames = (beat: Beat) =>
 		.sort((a, b) => (a.observed ?? '').localeCompare(b.observed ?? ''))
 		.map((f) => ({ name: f.claim.value, asOf: f.observed }));
 
-function describeBeat(beat: Beat, place: string, streets: Said = new Set()): string {
+function describeBeat(
+	beat: Beat,
+	place: string,
+	streets: Said = new Set(),
+	slipped: Set<string> = new Set()
+): string {
 	const tags = tagsFor(beat);
 	const use = currentUse(tags);
 
@@ -332,10 +421,14 @@ function describeBeat(beat: Beat, place: string, streets: Said = new Set()): str
 	if (use && beat.effects.includes('tense-slip')) {
 		const where = addressIn(tags, streets);
 		const at = where ? ` at ${where}` : '';
-		const observed = mapObserved(beat)?.observed;
+		const month = monthYear(mapObserved(beat)?.observed);
+		// A second thing last recorded the same month: the formula once is enough.
 		sentences.push(
-			`${lead(place)} there is ${article(use)}${at}, or there was in ${monthYear(observed)}, when it was last recorded.`
+			slipped.has(month)
+				? `${lead(place)} there is ${article(use)}${at}, or there was, then too.`
+				: `${lead(place)} there is ${article(use)}${at}, or there was in ${month}, when it was last recorded.`
 		);
+		slipped.add(month);
 	} else {
 		sentences.push(`${lead(place)} is ${nounPhrase(tags, streets)}.`);
 	}

@@ -34,6 +34,9 @@ export interface Visit {
 	exits: Exit[];
 }
 
+/** How near something addressed to another street must be to be told here, in metres. */
+const OFF_STREET_REACH = 12;
+
 /** The pipeline from snapshot to narration: facts, perception, tensions, slippage, rendering. */
 export class Narrator {
 	private readonly renderer: Renderer;
@@ -61,7 +64,19 @@ export class Narrator {
 		const stop = this.graph.get(id);
 		if (!stop) return undefined;
 		const near = (f: Fact) => distanceToPolyline(stop.position, f.geometry);
-		const inView = this.perception.inView(stop.position).sort((a, b) => near(a) - near(b));
+		// Something addressed to a street that does not meet this stop is told only right beside it.
+		const streets = new Set(stop.exits.map((e) => e.street).filter(Boolean));
+		const addressed = new Map<string, string>();
+		for (const f of this.perception.inView(stop.position))
+			if (f.claim.key === 'addr:street' || f.claim.key === 'was:addr:street')
+				addressed.set(f.subject, f.claim.value);
+		const inView = this.perception
+			.inView(stop.position)
+			.filter((f) => {
+				const street = addressed.get(f.subject);
+				return !street || streets.has(street) || near(f) <= OFF_STREET_REACH;
+			})
+			.sort((a, b) => near(a) - near(b));
 		const plan = chooseSlippage(
 			id,
 			inView,

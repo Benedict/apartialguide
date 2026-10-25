@@ -188,6 +188,20 @@ Given(
 	}
 );
 
+Given(
+	/^a house at "(\S+) ([^"]+)" (\d+) metres (north|south) of the reader$/,
+	function (this: NarratorWorld, number: string, street: string, metres: string, way: string) {
+		const s = state(this);
+		const here = this.narrator.graph.get(s.started!)!.position;
+		this.map.node(destination(here, way === 'north' ? 0 : 180, Number(metres)), {
+			building: 'house',
+			'addr:housenumber': number,
+			'addr:street': street
+		});
+		restart(this);
+	}
+);
+
 Given('chance favours memory', function (this: NarratorWorld) {
 	state(this).game!.chance = () => 0;
 });

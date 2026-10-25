@@ -323,3 +323,101 @@ describe('Chance', () => {
 		expect(said.join(' ')).not.toContain('Earlier');
 	});
 });
+
+describe('Not repeating itself', () => {
+	type P = NonNullable<AdventureWorld['stops'][string]['parts']>[number][number];
+	const part = (kind: P['kind'], text: string, more: Partial<P> = {}): P => ({
+		kind,
+		text,
+		key: text,
+		...more
+	});
+	const room = (i: number, parts: P[][]) => ({
+		title: 'Long Street',
+		paragraphs: parts.map((p) => p.map((x) => x.text).join(' ')),
+		parts,
+		exits: [
+			{ label: 'east', to: `s${i + 1}` },
+			{ label: 'west', to: `s${i - 1}` }
+		],
+		things: []
+	});
+	const crowd = ['There is a great deal here.', 'Too much to take in at once.'];
+	const stop = (i: number, things: string[]) =>
+		room(i, [
+			[
+				part('where', 'You are standing on Long Street, between A and B.', {
+					street: 'Long Street'
+				}),
+				part('street', 'Asphalt underfoot.'),
+				part(
+					'setting',
+					`Here you are beside a residential area to the ${i % 2 ? 'north' : 'south'}.`,
+					{
+						key: 'a residential area'
+					}
+				)
+			],
+			[
+				part('frame', crowd[0], { options: crowd }),
+				...things.map((t) => part('thing', `To the north is ${t}.`, { key: t })),
+				part('frame', 'And more — I lose count.')
+			],
+			[part('exits', 'Exits: east, west.')]
+		]);
+	const world: AdventureWorld = {
+		start: 's0',
+		stops: {
+			s0: stop(0, ['a pub', 'a bakery']),
+			s1: stop(1, ['a pub', 'a florist']),
+			s2: stop(2, ['a pub']),
+			s3: stop(3, ['a chapel']),
+			s4: stop(4, ['a forge'])
+		}
+	};
+	const walk = () => {
+		const game = new Adventure(world);
+		game.begin();
+		return [
+			game.respond('take the tour'),
+			game.respond('east'),
+			game.respond('east'),
+			game.respond('east')
+		];
+	};
+
+	it('says the street and the setting once, and goes on along the street without starting again', () => {
+		const [first, second] = walk();
+		expect(first.lines[0]).toContain('Asphalt underfoot.');
+		expect(second.lines[0]).not.toContain('Asphalt underfoot.');
+		expect(second.lines[0]).not.toContain('residential area');
+		expect(second.lines[0]).toMatch(/^(Further along|Still on) Long Street, between A and B\.$/);
+	});
+
+	it('does not describe again a thing it has just described', () => {
+		const [, second] = walk();
+		expect(second.lines[1]).not.toContain('a pub');
+		expect(second.lines[1]).toContain('a florist');
+	});
+
+	it('drops its framing when nothing new is left to frame', () => {
+		const [, , third] = walk();
+		expect(third.lines.join(' ')).not.toMatch(/great deal|take in|lose count/);
+		expect(third.lines.at(-1)).toBe('Exits: east, west.');
+	});
+
+	it('does not frame two places in a row the same way', () => {
+		const [first, second] = walk();
+		expect(first.lines[1].split('.')[0]).not.toBe(second.lines[1].split('.')[0]);
+	});
+
+	it('forgets after two places, and says it all again when asked to look', () => {
+		const [, , , fourth] = walk();
+		expect(fourth.lines[0]).toContain('Asphalt underfoot.');
+		const game = new Adventure(world);
+		game.begin();
+		game.respond('take the tour');
+		game.respond('east');
+		expect(game.respond('look').lines[0]).toContain('Asphalt underfoot.');
+	});
+});
