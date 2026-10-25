@@ -1,0 +1,173 @@
+{
+	"retrieved": "2026-10-25",
+	"bbox": [
+		-0.080026,
+		51.3763,
+		-0.068499,
+		51.383494
+	],
+	"snapshot": "data/snapshots/addiscombe-2026-10-24.json",
+	"items": {
+		"Q2446177": {
+			"label": "Arena",
+			"description": "Tramlink tram stop in London, England",
+			"coordinates": [
+				51.3916,
+				-0.058324
+			]
+		},
+		"Q2824155": {
+			"label": "Addiscombe",
+			"description": "area of south London within the London Borough of Croydon",
+			"coordinates": [
+				51.381,
+				-0.0663
+			]
+		},
+		"Q4681211": {
+			"label": "Addiscombe Line",
+			"description": "abandoned railway",
+			"coordinates": [
+				51.381,
+				-0.08
+			]
+		},
+		"Q4681212": {
+			"label": "Addiscombe Railway Park",
+			"description": "park in London Borough of Croydon, United Kingdom",
+			"inception": "1998",
+			"coordinates": [
+				51.3822,
+				-0.0783333
+			]
+		},
+		"Q4681213": {
+			"label": "Addiscombe Recreation Ground",
+			"description": "park in Addiscombe, London, England",
+			"coordinates": [
+				51.3775,
+				-0.0705556
+			]
+		},
+		"Q4681215": {
+			"label": "Addiscombe",
+			"description": "stop on the Tramlink line in Croydon, London, United Kingdom",
+			"inception": "2000",
+			"coordinates": [
+				51.3799,
+				-0.073222
+			]
+		},
+		"Q4804662": {
+			"label": "Ashburton",
+			"description": "former ward in the London Borough of Croydon",
+			"coordinates": [
+				51.385,
+				-0.057
+			]
+		},
+		"Q4923016": {
+			"label": "Blackhorse Lane",
+			"description": "tramstop in Croydon, UK",
+			"coordinates": [
+				51.3849,
+				-0.070329
+			]
+		},
+		"Q7833148": {
+			"label": "Tramlink route 1 (London)",
+			"description": "tram line in London, England, UK",
+			"inception": "2000-05"
+		},
+		"Q7833150": {
+			"label": "Tramlink route 2 (London)",
+			"description": "tram line in London, England, UK",
+			"inception": "2000-05"
+		},
+		"Q8033361": {
+			"label": "Woodside",
+			"description": "tramlink tram stop in London, England",
+			"coordinates": [
+				51.387,
+				-0.065566
+			]
+		},
+		"Q15502156": {
+			"label": "William Cheyne, 2nd Viscount Newhaven",
+			"description": "English politician and Scottish viscount"
+		},
+		"Q65937692": {
+			"label": "Lower Addiscombe Road",
+			"description": "street in the London Borough of Croydon",
+			"coordinates": [
+				51.38017,
+				-0.07347
+			]
+		},
+		"Q65964165": {
+			"label": "Havelock Road",
+			"description": "street in the London Borough of Croydon",
+			"coordinates": [
+				51.37688,
+				-0.07792
+			]
+		},
+		"Q105074335": {
+			"label": "St Mildred's Church",
+			"description": "church in Addiscombe, Surrey, England, UK",
+			"coordinates": [
+				51.3792329666667,
+				-0.0699481555555556
+			]
+		},
+		"Q136733730": {
+			"label": "The Claret & Ale",
+			"description": "pub in Croydon, London, England, UK",
+			"coordinates": [
+				51.379938,
+				-0.0736716
+			]
+		},
+		"Q142575": {
+			"label": "Addiscombe Military Seminary",
+			"description": "British military academy",
+			"inception": "1809",
+			"coordinates": [
+				51.3769,
+				-0.07947
+			]
+		},
+		"Q27085677": {
+			"label": "Havelock Hall",
+			"description": "house in Croydon, London, England, UK",
+			"coordinates": [
+				51.378178,
+				-0.077262
+			]
+		},
+		"Q131524924": {
+			"label": "Stovell House Surgery",
+			"description": "doctors surgery in Addiscombe, Croydon, Surrey, United Kingdom",
+			"coordinates": [
+				51.378985,
+				-0.07513
+			]
+		},
+		"Q4914210": {
+			"label": "Bingham Road Halt railway station",
+			"description": "railway stop in London Borough of Croydon, the UK",
+			"coordinates": [
+				51.379,
+				-0.0731
+			]
+		},
+		"Q25348270": {
+			"label": "Bingham Road railway station",
+			"description": "railway station in London Borough of Croydon, the UK",
+			"coordinates": [
+				51.379,
+				-0.0731
+			]
+		}
+	}
+}
