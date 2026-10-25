@@ -63,13 +63,25 @@ let bbox = process.env.BBOX;
 let area: string[] | undefined;
 if (!bbox && process.env.AREA) {
 	const pattern = process.env.AREA.replace(/"/g, '\\"');
-	const found = bboxAroundBoundaries(
-		await ask(
-			`[out:json][timeout:60];rel["boundary"="administrative"]["name"~"${pattern}"];out tags bb;`,
-			`the boundaries named ${process.env.AREA}`
-		)
+	// Any kind of boundary: wards are tagged administrative in some places and political in others.
+	const answer = await ask(
+		`[out:json][timeout:60];rel["boundary"]["name"~"${pattern}"];out tags bb;`,
+		`the boundaries named ${process.env.AREA}`
 	);
-	({ bbox, names: area } = found);
+	if (!answer.elements.length) {
+		const near = await ask(
+			`[out:json][timeout:60];rel["boundary"]["name"~"Addiscombe"];out tags;`,
+			'boundaries named Addiscombe'
+		);
+		const names = near.elements.map(
+			(e: { tags: Record<string, string> }) => `${e.tags.name} (${e.tags.boundary})`
+		);
+		console.error(
+			`No boundary matches ${process.env.AREA}. Boundaries named Addiscombe: ${names.join('; ') || 'none'}`
+		);
+		process.exit(1);
+	}
+	({ bbox, names: area } = bboxAroundBoundaries(answer));
 	console.log(`${area.join(', ')} → bbox ${bbox}`);
 }
 if (!bbox && process.env.AS_OF) {
