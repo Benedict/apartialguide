@@ -1353,24 +1353,6 @@
 			}
 		},
 		{
-			"id": "33085",
-			"link": {
-				"key": "fhrs:id",
-				"value": "33085"
-			},
-			"at": [
-				51.3807700146877,
-				-0.0716330727401025
-			],
-			"observed": "2010-10-20",
-			"claims": {
-				"name": "Sainsbury's",
-				"kind": "Retailers - supermarkets/hypermarkets",
-				"rating": "5",
-				"date": "2010-10-20"
-			}
-		},
-		{
 			"id": "859665",
 			"link": {
 				"key": "fhrs:id",
@@ -1386,6 +1368,24 @@
 				"kind": "Retailers - supermarkets/hypermarkets",
 				"rating": "5",
 				"date": "2026-05-09"
+			}
+		},
+		{
+			"id": "33085",
+			"link": {
+				"key": "fhrs:id",
+				"value": "33085"
+			},
+			"at": [
+				51.3807700146877,
+				-0.0716330727401025
+			],
+			"observed": "2010-10-20",
+			"claims": {
+				"name": "Sainsbury's",
+				"kind": "Retailers - supermarkets/hypermarkets",
+				"rating": "5",
+				"date": "2010-10-20"
 			}
 		},
 		{
@@ -1497,24 +1497,6 @@
 			}
 		},
 		{
-			"id": "1689554",
-			"link": {
-				"key": "fhrs:id",
-				"value": "1689554"
-			},
-			"at": [
-				51.3871765136719,
-				-0.0705590024590492
-			],
-			"observed": "2026-04-29",
-			"claims": {
-				"name": "Tesco Express",
-				"kind": "Retailers - supermarkets/hypermarkets",
-				"rating": "5",
-				"date": "2026-04-29"
-			}
-		},
-		{
 			"id": "5543",
 			"link": {
 				"key": "fhrs:id",
@@ -1530,6 +1512,24 @@
 				"kind": "Retailers - supermarkets/hypermarkets",
 				"rating": "5",
 				"date": "2009-05-19"
+			}
+		},
+		{
+			"id": "1689554",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1689554"
+			},
+			"at": [
+				51.3871765136719,
+				-0.0705590024590492
+			],
+			"observed": "2026-04-29",
+			"claims": {
+				"name": "Tesco Express",
+				"kind": "Retailers - supermarkets/hypermarkets",
+				"rating": "5",
+				"date": "2026-04-29"
 			}
 		},
 		{
