@@ -48,6 +48,11 @@ describe('parse', () => {
 			expect(parse(text)).toEqual({ verb: 'weather' });
 	});
 
+	it('reads examine on its own as examining everything here', () => {
+		expect(parse('examine')).toEqual({ verb: 'examine', target: '' });
+		expect(parse('x')).toEqual({ verb: 'examine', target: '' });
+	});
+
 	it('keeps what it cannot read', () => {
 		expect(parse('Dance!')).toEqual({ verb: 'unknown', text: 'dance' });
 	});

@@ -13,7 +13,7 @@ export interface Reply {
 
 export const HELP =
 	'Type a direction to walk: north, ne, go east, or the name of a street. ' +
-	'Type look to hear the place again, explore to find what I have not mentioned, examine and a thing to look closer, ' +
+	'Type look to hear the place again, explore to find what I have not mentioned, examine to see what there is, or examine a thing or a street to look closer, ' +
 	'exits for the ways on, back to retrace your step, and weather to ask after the sky.';
 
 /** Guide's words about themselves, said once, before the first place. */
@@ -276,19 +276,54 @@ export class Adventure {
 	}
 
 	private examine(target: string): Reply {
-		const words = target.split(/\s+/);
 		const stop = this.world.stops[this.here];
+		if (EVERYTHING.has(target)) return { lines: [this.whatToExamine()] };
+		const words = target.split(/\s+/);
 		const named = (among: Thing[]) =>
 			among.filter((t) => words.every((w) => t.aliases.includes(w)));
 		let things = named(stop.things);
 		// Something unnoticed can still be found by naming it.
 		if (things.length === 0 && stop.hidden) things = named(stop.hidden.things);
+		if (things.length === 0) things = named(stop.streets ?? []);
 		if (things.length === 0) return { lines: [`You see no ${target} here.`] };
 		if (things.length > 1 && !things.every((t) => t.name === things[0].name))
 			return { lines: [`Which do you mean: ${things.map((t) => t.name).join(' or ')}?`] };
 		return { lines: things.map((t) => t.description) };
 	}
+
+	/** What there is to examine here, by name: the street, and each thing told or found. */
+	private whatToExamine(): string {
+		const stop = this.world.stops[this.here];
+		const found = this.explored.has(this.here) ? (stop.hidden?.things ?? []) : [];
+		const things = [...stop.things, ...found].filter(
+			(t, i, all) => !t.background && all.findIndex((o) => o.name === t.name) === i
+		);
+		const names = things.map((t) =>
+			/^[\p{Lu}\p{N}“]/u.test(t.name)
+				? t.name
+				: `${/^[aeiou]/i.test(t.name) ? 'an' : 'a'} ${t.name}`
+		);
+		const streets = (stop.streets ?? []).map((s) => s.name);
+		if (!names.length)
+			return streets.length
+				? `There is nothing here to examine but ${streets.join(' and ')}.`
+				: 'There is nothing here to examine.';
+		const all = [...streets, ...names];
+		return `You could examine ${all.length < 2 ? all[0] : `${all.slice(0, -1).join(', ')}, or ${all.at(-1)}`}.`;
+	}
 }
+
+/** What a reader means by examining everything, or nothing in particular. */
+const EVERYTHING = new Set([
+	'',
+	'things',
+	'thing',
+	'everything',
+	'all',
+	'around',
+	'stuff',
+	'here things'
+]);
 
 /** Exits the reader could mean: an exact compass label, a label with a street after it, or a street name. */
 function matchExits(exits: readonly CompiledExit[], where: string): CompiledExit[] {

@@ -81,6 +81,7 @@ export function parse(input: string): Command {
 		return { verb: 'weather' };
 	if (first === 'look' && rest[0] === 'at' && rest.length > 1)
 		return { verb: 'examine', target: dropFiller(rest).join(' ') };
+	if (EXAMINE.has(text)) return { verb: 'examine', target: '' };
 	if (EXAMINE.has(first) && rest.length)
 		return { verb: 'examine', target: dropFiller(rest).join(' ') };
 	if (text === 'l' || text === 'look') return { verb: 'look' };

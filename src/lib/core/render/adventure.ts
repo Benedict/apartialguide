@@ -1,4 +1,4 @@
-import { groupBySubject } from '../facts';
+import { groupBySubject, type Fact } from '../facts';
 import {
 	bearing,
 	compassLabel,
@@ -61,6 +61,7 @@ export class AdventureRenderer implements Renderer {
 			paragraphs: parts.map((p) => p.map((x) => x.text).join(' ')),
 			parts,
 			things: scene.beats.filter((b) => !isHalf(b)).map(thing),
+			streets: streetsHere(scene),
 			hidden: closerLook(scene)
 		};
 	}
@@ -205,6 +206,37 @@ function alongTheStreet(scene: Scene, beats: Beat[]): Beat[] {
 	const rising = numbered.slice(1).filter((n, i) => n > numbered[i]).length;
 	if (falling > rising) placed.reverse();
 	return placed.map(({ b }) => b);
+}
+
+/** Each named street underfoot, to examine: what the map says of it, in words. */
+function streetsHere(scene: Scene): Thing[] {
+	const byName = new Map<string, Fact[]>();
+	for (const facts of groupBySubject(scene.street).values()) {
+		const name = tagsOf(facts).name;
+		if (name && scene.here.includes(name))
+			byName.set(name, [...(byName.get(name) ?? []), ...facts]);
+	}
+	return [...byName].map(([name, facts]) => {
+		const observed = facts.find((f) => f.observed && !isElsewhere(f));
+		const words = name
+			.toLowerCase()
+			.split(/[^\p{L}\p{N}-]+/u)
+			.filter((w) => w.length > 1);
+		return {
+			id: facts[0].subject,
+			name,
+			aliases: [...new Set([...words, 'street', 'road', 'way', 'here'])],
+			description: [
+				`${name}.`,
+				...streetCharacter(tagsOf(facts)),
+				observed
+					? `Last ${observed.observedBy === 'survey' ? 'surveyed' : 'edited'} in ${monthYear(observed.observed)}.`
+					: ''
+			]
+				.filter(Boolean)
+				.join(' ')
+		};
+	});
 }
 
 /** What a closer look finds: the hidden things in one breath, named things by name and repeats counted. */
@@ -568,6 +600,7 @@ function thing(beat: Beat): Thing {
 		id: beat.subject,
 		name,
 		aliases: [...new Set(words)],
-		description: description.filter(Boolean).join(' ')
+		description: description.filter(Boolean).join(' '),
+		...(isBackground(beat) ? { background: true as const } : {})
 	};
 }
