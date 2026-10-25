@@ -16,6 +16,8 @@ export interface Fact {
 	/** How far from its geometry the fact can be perceived, in metres. */
 	reach: number;
 	geometry: LatLon[];
+	/** Set on facts from another account than the map's, which Guide never gives as the map's. */
+	elsewhere?: true;
 }
 
 export interface SourceAdapter {

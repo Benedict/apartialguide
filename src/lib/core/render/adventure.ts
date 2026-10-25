@@ -14,6 +14,7 @@ import type { Scene, SceneExit } from '../scene';
 import { isBackground, type Beat } from '../slippage';
 import { isElsewhere, isHistory } from '../tensions';
 import type { Part, Renderer, Room, Thing } from './renderer';
+import { recordSentences } from './records';
 import {
 	address,
 	article,
@@ -229,6 +230,7 @@ function streetsHere(scene: Scene): Thing[] {
 			description: [
 				`${name}.`,
 				...streetCharacter(tagsOf(facts)),
+				...recordSentences(tagsOf(facts)),
 				observed
 					? `Last ${observed.observedBy === 'survey' ? 'surveyed' : 'edited'} in ${monthYear(observed.observed)}.`
 					: ''
@@ -441,9 +443,11 @@ function describeBeat(
 	const use = currentUse(tags);
 
 	if (isElsewhereOnly(beat)) {
-		const label = tags['wikidata:label'];
-		const what = tags['wikidata:description'];
-		return `${place}, by another account, is “${label}”${what ? `, “${what}”` : ''}.`;
+		const { label, what } = otherAccount(tags);
+		return [
+			`${place}, by another account, is “${label}”${what ? `, “${what}”` : ''}.`,
+			...recordSentences(tags, 'room')
+		].join(' ');
 	}
 	if (beat.effects.includes('remembered')) {
 		const asOf = beat.facts.find((f) => f.observed)?.observed;
@@ -465,7 +469,7 @@ function describeBeat(
 		sentences.push(`${lead(place)} is ${nounPhrase(tags, streets)}.`);
 	}
 	if (tags.name && !namedInline(tags)) sentences.push(`“${tags.name}”, it says.`);
-	return [...sentences, ...history(beat, tags), ...elsewhere(tags)].join(' ');
+	return [...sentences, ...history(beat, tags), ...elsewhere(tags, 'room')].join(' ');
 }
 
 /** When the map last had word of a thing: its own facts, never another account's or an older map's. */
@@ -513,8 +517,21 @@ function history(beat: Beat, tags: Tags): string[] {
 	return sentences;
 }
 
+/** A thing only another account has: its name and what it is, as that account gives them. */
+function otherAccount(tags: Tags): { label?: string; what?: string } {
+	const ending = (suffix: string) => Object.entries(tags).find(([k]) => k.endsWith(suffix))?.[1];
+	return {
+		label: tags['wikidata:label'] ?? ending(':name'),
+		what: tags['wikidata:description'] ?? ending(':description') ?? ending(':kind')
+	};
+}
+
 /** What another account says of a thing the map has. */
-function elsewhere(tags: Tags): string[] {
+function elsewhere(tags: Tags, where: 'room' | 'closer' = 'closer'): string[] {
+	return [...wikidataSays(tags), ...recordSentences(tags, where)];
+}
+
+function wikidataSays(tags: Tags): string[] {
 	const listed = tags['wikidata:description'];
 	const begun = tags['wikidata:inception'];
 	if (listed)
@@ -544,7 +561,7 @@ function when(date: string): string {
 }
 
 /** A thing only another account places here: the map does not link to it. */
-const isElsewhereOnly = (beat: Beat) => beat.subject.startsWith('wikidata/');
+const isElsewhereOnly = (beat: Beat) => !/^(node|way|relation)\//.test(beat.subject);
 
 /** Another account of something the map has, seen without the map's own facts: not a thing to speak of. */
 export const isHalf = (beat: Beat) => !isElsewhereOnly(beat) && beat.facts.every(isElsewhere);
@@ -566,7 +583,7 @@ function thing(beat: Beat): Thing {
 	const past = pastUse(tags);
 	const name =
 		tags.name ??
-		tags['wikidata:label'] ??
+		otherAccount(tags).label ??
 		(currentUse(tags) || !past ? noun(tags) : `former ${past}`);
 	const words = [
 		name,

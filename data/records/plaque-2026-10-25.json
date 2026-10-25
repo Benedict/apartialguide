@@ -1,0 +1,67 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "40326",
+			"at": [
+				51.38002,
+				-0.07259
+			],
+			"claims": {
+				"name": "Betty Westgate MBE 1919-2000 A pioneer and campaigner for breast cancer support and education. Founded Breast Cancer\r\nCare from this house in 1973",
+				"description": "plaque",
+				"inscription": "Betty Westgate MBE 1919-2000 A pioneer and campaigner for breast cancer support and education. Founded Breast Cancer\r\nCare from this house in 1973"
+			}
+		},
+		{
+			"id": "31549",
+			"at": [
+				51.37959,
+				-0.06405
+			],
+			"claims": {
+				"name": "R. F. Delderfield 1912-1972 writer & dramatist lived here from 1918 to 1923. His books \"The Avenue\" are based on his life in this area",
+				"description": "plaque",
+				"inscription": "R. F. Delderfield 1912-1972 writer & dramatist lived here from 1918 to 1923. His books \"The Avenue\" are based on his life in this area"
+			}
+		},
+		{
+			"id": "12258",
+			"at": [
+				51.37982,
+				-0.07254
+			],
+			"claims": {
+				"name": "D. H. Lawrence lived and wrote 'Sons & Lovers' here at number 16 1908-1911 Writer and artist",
+				"description": "plaque",
+				"inscription": "D. H. Lawrence lived and wrote 'Sons & Lovers' here at number 16 1908-1911 Writer and artist"
+			}
+		},
+		{
+			"id": "9736",
+			"at": [
+				51.37601,
+				-0.07627
+			],
+			"claims": {
+				"name": "Frederick George Creed 1871-1957 electrical engineer, inventor of the teleprinter lived and died here",
+				"description": "plaque",
+				"inscription": "Frederick George Creed 1871-1957 electrical engineer, inventor of the teleprinter lived and died here"
+			}
+		},
+		{
+			"id": "9577",
+			"at": [
+				51.37512,
+				-0.08237
+			],
+			"claims": {
+				"name": "Ashleigh & India Houses 1848 Houses for professors of the East India Company's Military Seminary",
+				"description": "plaque",
+				"inscription": "Ashleigh & India Houses 1848 Houses for professors of the East India Company's Military Seminary"
+			}
+		}
+	],
+	"retrieved": "2026-10-25"
+}

@@ -66,7 +66,7 @@ export function detectTensions(
 }
 
 /** Facts from another account than the map's. */
-export const isElsewhere = (f: Fact) => f.source === 'wikidata';
+export const isElsewhere = (f: Fact) => f.source === 'wikidata' || f.elsewhere === true;
 
 /** Facts from a past map, not the current one. */
 export const isHistory = (f: Fact) => f.source === 'osm-history';

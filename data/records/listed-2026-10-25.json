@@ -1,0 +1,231 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536770",
+			"at": [
+				51.385692,
+				-0.07113
+			],
+			"observed": "1981-08-14",
+			"claims": {
+				"name": "2, WOODSIDE GREEN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1981-08-14"
+			}
+		},
+		{
+			"id": "31536771",
+			"at": [
+				51.389363,
+				-0.065297
+			],
+			"observed": "1976-10-29",
+			"claims": {
+				"name": "Church of St Luke",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1976-10-29"
+			}
+		},
+		{
+			"id": "31536774",
+			"at": [
+				51.382312,
+				-0.088833
+			],
+			"observed": "1973-08-01",
+			"claims": {
+				"name": "DAVIDSON LODGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1973-08-01"
+			}
+		},
+		{
+			"id": "31536775",
+			"at": [
+				51.381893,
+				-0.089023
+			],
+			"observed": "1973-11-19",
+			"claims": {
+				"name": "ENTRANCE LODGE TO DAVIDSON LODGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1973-11-19"
+			}
+		},
+		{
+			"id": "31647184",
+			"at": [
+				51.389898,
+				-0.068037
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "WOODSIDE COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31728734",
+			"at": [
+				51.38011,
+				-0.086617
+			],
+			"observed": "2002-10-30",
+			"claims": {
+				"name": "LESLIE ARMS PUBLIC HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2002-10-30"
+			}
+		},
+		{
+			"id": "31750916",
+			"at": [
+				51.377651,
+				-0.082618
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "17, CANNING ROAD",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31814576",
+			"at": [
+				51.377456,
+				-0.082756
+			],
+			"observed": "1976-10-29",
+			"claims": {
+				"name": "CHURCH OF ST MARY MAGDALENE",
+				"description": "listed building",
+				"grade": "II*",
+				"listed": "1976-10-29"
+			}
+		},
+		{
+			"id": "31814586",
+			"at": [
+				51.374722,
+				-0.075082
+			],
+			"observed": "1969-07-07",
+			"claims": {
+				"name": "HERON'S CROFT",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1969-07-07"
+			}
+		},
+		{
+			"id": "31814596",
+			"at": [
+				51.369114,
+				-0.090144
+			],
+			"observed": "1983-04-18",
+			"claims": {
+				"name": "REDCOURT",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-04-18"
+			}
+		},
+		{
+			"id": "31814597",
+			"at": [
+				51.378175,
+				-0.077236
+			],
+			"observed": "1987-11-25",
+			"claims": {
+				"name": "HAVELOCK HALL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-11-25"
+			}
+		},
+		{
+			"id": "31814598",
+			"at": [
+				51.381891,
+				-0.088894
+			],
+			"observed": "1973-11-19",
+			"claims": {
+				"name": "WALLS AND FOUR PIERS AT ENTRANCE TO DAVIDSON LODGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1973-11-19"
+			}
+		},
+		{
+			"id": "31814606",
+			"at": [
+				51.37459,
+				-0.070906
+			],
+			"observed": "1979-06-13",
+			"claims": {
+				"name": "ADDISCOMBE FARM COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1979-06-13"
+			}
+		},
+		{
+			"id": "31855904",
+			"at": [
+				51.389865,
+				-0.088436
+			],
+			"observed": "2017-02-21",
+			"claims": {
+				"name": "Selhurst War Memorial",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-21"
+			}
+		},
+		{
+			"id": "31855905",
+			"at": [
+				51.387306,
+				-0.069934
+			],
+			"observed": "2017-02-21",
+			"claims": {
+				"name": "Woodside War Memorial",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-21"
+			}
+		},
+		{
+			"id": "31863638",
+			"at": [
+				51.379246,
+				-0.069932
+			],
+			"observed": "2023-05-26",
+			"claims": {
+				"name": "Church of St Mildred, Addiscombe",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2023-05-26"
+			}
+		}
+	],
+	"retrieved": "2026-10-25"
+}
