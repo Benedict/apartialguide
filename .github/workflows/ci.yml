@@ -19,3 +19,17 @@ jobs:
       - run: npm run check
       - run: npm test
       - run: npm run build
+      # The exported page must play in a real browser, not only pass its tests.
+      - name: Export the page
+        env:
+          SNAPSHOT_PATH: data/snapshots/addiscombe-2026-10-25.json
+          START_AT: 51.379897,-0.074294
+          HISTORY_DIR: data/history
+          WIKIDATA_DIR: data/wikidata
+          RECORDS_DIR: data/records
+          EXPORT_PATH: site/index.html
+        run: npm run export
+      - run: npx playwright install --with-deps chromium
+      - run: npm run smoke
+        env:
+          EXPORT_PATH: site/index.html
