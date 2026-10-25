@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { fetchWeatherNow } from './sky';
+import { fetchWeatherNow, skyNow } from './sky';
 
 const answer = { current: { time: '2026-10-25T16:45', weather_code: 3, temperature_2m: 12 } };
 const ok = (body: unknown) => async () => new Response(JSON.stringify(body));
@@ -35,5 +35,23 @@ describe('fetchWeatherNow', () => {
 	it('gives up rather than keep the reader waiting', async () => {
 		const never = () => new Promise<Response>(() => {});
 		expect(await fetchWeatherNow({ latitude: 0, longitude: 0 }, never, 20)).toEqual([]);
+	});
+});
+
+describe('skyNow', () => {
+	it('gives the sun and moon even when the weather has no answer', async () => {
+		const facts = await skyNow(
+			{ latitude: 51.38, longitude: -0.07 },
+			new Date('2026-06-21T12:00:00Z'),
+			async () => {
+				throw new Error('offline');
+			}
+		);
+		expect(facts.map((f) => f.subject)).toEqual(Array(5).fill('sky/now'));
+	});
+
+	it('gives the weather beside them when there is word of it', async () => {
+		const facts = await skyNow({ latitude: 51.38, longitude: -0.07 }, new Date(), ok(answer));
+		expect(facts.filter((f) => f.subject === 'weather/now')).toHaveLength(2);
 	});
 });

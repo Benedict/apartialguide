@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { Adventure, INTRO } from './engine';
 import type { AdventureWorld } from './world';
 import { currentWeatherFacts } from '../adapters/weather';
+import { heavensFacts } from '../adapters/heavens';
 import { arrivalFacts } from '../adapters/tfl';
 
 const room = (title: string, exits: AdventureWorld['stops'][string]['exits']) => ({
@@ -71,6 +72,35 @@ describe('Adventure', () => {
 			untold.begin();
 			untold.respond('take the tour');
 			expect(untold.respond('sky').lines).toEqual(['I have no word of the weather today.']);
+		});
+
+		it('says where the sun stands, after the weather, when the facts give it', () => {
+			const now = [
+				...currentWeatherFacts({
+					current: { time: '2026-06-21T13:00', weather_code: 0, temperature_2m: 24 }
+				}),
+				...heavensFacts(new Date('2026-06-21T12:00:00Z'), { latitude: 51.38, longitude: -0.07 })
+			];
+			const game = new Adventure({ ...world, asOf: '2026-06-20' });
+			const [intro] = game.begin(now);
+			expect(intro.lines.join(' ')).toContain('Today: clear, 24 °C. The sun is high in the south.');
+			game.respond('take the tour');
+			expect(game.respond('weather').lines).toEqual([
+				'Today: clear, 24 °C. The sun is high in the south.'
+			]);
+		});
+
+		it('tells of the sky without the weather, when there is no word of the weather', () => {
+			const now = heavensFacts(new Date('2026-06-21T12:00:00Z'), {
+				latitude: 51.38,
+				longitude: -0.07
+			});
+			const game = new Adventure(world);
+			game.begin(now);
+			game.respond('take the tour');
+			expect(game.respond('sky').lines).toEqual([
+				'I have no word of the weather today. The sun is high in the south.'
+			]);
 		});
 
 		it('begins the tour at the start', () => {

@@ -57,6 +57,19 @@ describe('exportPage', () => {
 		expect(page()).toContain('Wikidata');
 	});
 
+	it('credits the other sources, as the Open Government Licence asks', () => {
+		for (const credit of [
+			'Food Standards Agency',
+			'HM Land Registry data © Crown copyright and database right',
+			'police.uk',
+			'planning.data.gov.uk',
+			'London Planning Datahub',
+			'Open Plaques',
+			'Open Government Licence v3.0'
+		])
+			expect(page()).toContain(credit);
+	});
+
 	it('credits OpenStreetMap and dates the map', () => {
 		expect(page()).toContain('OpenStreetMap contributors');
 		expect(page()).toContain('24 October 2026');
@@ -66,8 +79,8 @@ describe('exportPage', () => {
 		expect(page()).toContain('game.begin(now).forEach(show)');
 	});
 
-	it('asks for today’s weather before Guide begins, and begins without it if none comes', () => {
-		expect(page()).toContain('fetchWeatherNow(WORLD.weatherAt)');
+	it('asks after the sky and today’s weather before Guide begins, and begins without the weather if none comes', () => {
+		expect(page()).toContain('skyNow(WORLD.weatherAt)');
 		expect(page()).toMatch(/\.then\(\(now\) => \{\s*game\.begin\(now\)/);
 	});
 
