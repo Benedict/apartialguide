@@ -1,13 +1,13 @@
 {
-	"source": "Greater London Authority, Borough_tree_list_2021July.csv",
+	"source": "Greater London Authority, Public_Realm_tree_list_2025_November.csv",
 	"prefix": "trees",
 	"records": [
 		{
-			"id": "trees:Chepstow Road",
-			"street": "Chepstow Road",
+			"id": "trees:Fairfield Road",
+			"street": "Fairfield Road",
 			"claims": {
-				"count": "89",
-				"kinds": "Large leaved lime (27), Alder (15), Beech (5), Rowan (5), A flowering plant (4), Common whitebeam (4), Undetermined (4), Ash (3), Hazel (3), Norway maple (3), Birch (2), Crab apple (2), Field maple (2), Flowering cherry (2), Horse chestnut (2), Sycamore (2), A conifer (1), Corsican pine (1), Evergreen oak (1), London plane (1)"
+				"count": "20",
+				"kinds": "Alder (10), Plane (5), Birch (3), Large-leaved Lime (1), Norway Maple (1)"
 			}
 		},
 		{
@@ -15,47 +15,63 @@
 			"street": "Addiscombe Road",
 			"claims": {
 				"count": "65",
-				"kinds": "London plane (26), Large leaved lime (21), Ash (4), Norway maple (4), Acorn (2), Alder (2), A flowering plant (1), Apple (1), Field maple (1), Hazel (1), Rowan (1), Silver maple (1)"
+				"kinds": "Plane (26), Large-leaved Lime (21), Ash (4), Norway Maple (4), Alder (2), Blackthorn (2), Oak (2), Apple (1), Field Maple (1), Hazel (1), Silver Maple (1)"
 			}
 		},
 		{
-			"id": "trees:Fairfield Road",
-			"street": "Fairfield Road",
+			"id": "trees:Chepstow Road",
+			"street": "Chepstow Road",
 			"claims": {
-				"count": "23",
-				"kinds": "Alder (11), London plane (5), Birch (3), Large leaved lime (1), Norway maple (1), Sycamore (1), Undetermined (1)"
+				"count": "96",
+				"kinds": "Large-leaved Lime (29), Alder (16), Beech (5), Common Whitebeam (5), Ash (4), Rowan (4), Cherry (3), Hazel (3), Norway Maple (3), Pyrus Species (3), Sycamore (3), Birch (2), Crab Apple (2), Field Maple (2), Horse-chestnut (2), Pedunculate Oak (2), A Conifer (1), Blackthorn (1), Cedar (1), Evergreen Oak (1), False-acacia (1), Honey Locust (1), Plane (1), Yew (1)"
 			}
 		},
 		{
 			"id": "trees:Shirley Road",
 			"street": "Shirley Road",
 			"claims": {
-				"count": "42",
-				"kinds": "Undetermined (13), Acorn (7), Corsican pine (5), Yew (5), Sycamore (4), A flowering plant (3), Evergreen oak (3), A conifer (1), Hazel (1)"
+				"count": "46",
+				"kinds": "Oak (7), Plant (6), Yew (6), Honey Locust (5), Holly (4), Sycamore (4), Evergreen Oak (3), Norway Maple (3), Pyrus Species (3), A Conifer (1), Blackthorn (1), Cherry (1), Elder (1), Sweet Chestnut (1)"
 			}
 		},
 		{
 			"id": "trees:Park Hill Road",
 			"street": "Park Hill Road",
 			"claims": {
-				"count": "8",
-				"kinds": "Sycamore (2), A conifer (1), Alder (1), Common whitebeam (1), London plane (1), Norway maple (1), Undetermined (1)"
-			}
-		},
-		{
-			"id": "trees:Maresfield",
-			"street": "Maresfield",
-			"claims": {
-				"count": "5",
-				"kinds": "Large leaved lime (3), Alder (1), Flowering cherry (1)"
+				"count": "7",
+				"kinds": "A Conifer (1), Alder (1), Cedar (1), Common Whitebeam (1), Norway Maple (1), Plane (1), Sycamore (1)"
 			}
 		},
 		{
 			"id": "trees:Park Hill Rise",
 			"street": "Park Hill Rise",
 			"claims": {
-				"count": "5",
-				"kinds": "Sycamore (2), Common whitebeam (1), Rowan (1), Undetermined (1)"
+				"count": "4",
+				"kinds": "Sycamore (2), Common Whitebeam (1), Rowan (1)"
+			}
+		},
+		{
+			"id": "trees:Siskin Court",
+			"street": "Siskin Court",
+			"claims": {
+				"count": "1",
+				"kinds": "Horse-chestnut (1)"
+			}
+		},
+		{
+			"id": "trees:Maresfield",
+			"street": "Maresfield",
+			"claims": {
+				"count": "2",
+				"kinds": "Cherry (1), Large-leaved Lime (1)"
+			}
+		},
+		{
+			"id": "trees:Leafy Way",
+			"street": "Leafy Way",
+			"claims": {
+				"count": "2",
+				"kinds": "False-acacia (1), Large-leaved Lime (1)"
 			}
 		},
 		{
@@ -67,19 +83,19 @@
 			}
 		},
 		{
-			"id": "trees:Siskin Court",
-			"street": "Siskin Court",
+			"id": "trees:Ashburton Road",
+			"street": "Ashburton Road",
 			"claims": {
 				"count": "1",
-				"kinds": "Horse chestnut (1)"
+				"kinds": "Lime (1)"
 			}
 		},
 		{
-			"id": "trees:Leafy Way",
-			"street": "Leafy Way",
+			"id": "trees:Radcliffe Road",
+			"street": "Radcliffe Road",
 			"claims": {
 				"count": "1",
-				"kinds": "Large leaved lime (1)"
+				"kinds": "Plane (1)"
 			}
 		}
 	],
