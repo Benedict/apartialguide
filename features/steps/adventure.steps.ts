@@ -174,6 +174,44 @@ Given(
 	}
 );
 
+Given(
+	'a building once called {string} at the west end of Long Street',
+	function (this: NarratorWorld, name: string) {
+		this.map.building(destination(O, 0, 12), 8, { building: 'yes', old_name: name });
+	}
+);
+
+Given('chance favours memory', function (this: NarratorWorld) {
+	state(this).game!.chance = () => 0;
+});
+
+Given('chance does not favour memory', function (this: NarratorWorld) {
+	state(this).game!.chance = () => 0.99;
+});
+
+When(
+	/^the reader walks (east|west) (\d+) times?$/,
+	function (this: NarratorWorld, way: string, times: string) {
+		const s = state(this);
+		const said: string[] = [];
+		for (let i = 0; i < Number(times); i++) {
+			const reply = s.game!.respond(way);
+			said.push(replyText(reply));
+		}
+		s.reply = { lines: said };
+	}
+);
+
+Then(
+	'what it says of “ld Invented Mill” gives no street and no number',
+	function (this: NarratorWorld) {
+		const lines = state(this).reply!.lines.join('\n').split('\n');
+		const recalled = lines.filter((l) => l.includes('ld Invented Mill'));
+		assert.ok(recalled.length, 'nothing recalled');
+		for (const line of recalled) assert.ok(!/Long Street|\d/.test(line), line);
+	}
+);
+
 Given('the reader opens the game', function (this: NarratorWorld) {
 	const s = state(this);
 	s.game = new Adventure(

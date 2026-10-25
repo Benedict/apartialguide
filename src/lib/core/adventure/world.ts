@@ -1,6 +1,7 @@
 import type { Narrator } from '../narrator';
 import type { Thing } from '../render/renderer';
 import type { StopId } from '../stops';
+import { looksBroken, NAME_KEY } from '../tensions';
 
 export interface CompiledExit {
 	label: string;
@@ -13,6 +14,8 @@ export interface CompiledStop {
 	paragraphs: string[];
 	exits: CompiledExit[];
 	things: Thing[];
+	/** Broken names spoken here, for Guide to carry on. */
+	fragments?: string[];
 	/** What a closer look finds, if anything is hidden here. */
 	hidden?: { lines: string[]; things: Thing[] };
 }
@@ -34,13 +37,23 @@ export function compileWorld(
 ): AdventureWorld {
 	const stops: Record<StopId, CompiledStop> = {};
 	for (const stop of narrator.graph.all()) {
-		const { room } = narrator.visit(stop.id)!;
+		const { room, plan } = narrator.visit(stop.id)!;
+		const fragments = [
+			...new Set(
+				plan.beats
+					.filter((b) => b.effects.includes('spoken-as-found'))
+					.flatMap((b) => b.facts)
+					.filter((f) => NAME_KEY.test(f.claim.key) && looksBroken(f.claim.value))
+					.map((f) => f.claim.value)
+			)
+		];
 		stops[stop.id] = {
 			title: room.title,
 			paragraphs: room.paragraphs,
 			exits: stop.exits.map(({ label, to, street }) => ({ label, to, street })),
 			things: room.things,
-			...(room.hidden ? { hidden: room.hidden } : {})
+			...(room.hidden ? { hidden: room.hidden } : {}),
+			...(fragments.length ? { fragments } : {})
 		};
 	}
 	const begins = narrator.graph.get(start)?.position;
