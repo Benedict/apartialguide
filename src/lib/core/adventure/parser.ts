@@ -1,7 +1,7 @@
 export type Command =
 	| { verb: 'go'; direction: string }
 	| { verb: 'examine'; target: string }
-	| { verb: 'look' | 'explore' | 'exits' | 'back' | 'help' | 'weather' | 'empty' }
+	| { verb: 'look' | 'explore' | 'exits' | 'back' | 'help' | 'weather' | 'gps' | 'empty' }
 	| { verb: 'unknown'; text: string };
 
 const POINTS = [
@@ -77,6 +77,7 @@ export function parse(input: string): Command {
 		const target = dropFiller(rest).join(' ');
 		return { verb: 'go', direction: direction(target) ?? target };
 	}
+	if (['gps', 'where am i', 'where am i?', 'map'].includes(text)) return { verb: 'gps' };
 	if (['weather', 'the weather', 'sky', 'look up', 'look at the sky'].includes(text))
 		return { verb: 'weather' };
 	if (first === 'look' && rest[0] === 'at' && rest.length > 1)

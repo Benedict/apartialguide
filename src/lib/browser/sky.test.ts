@@ -54,4 +54,19 @@ describe('skyNow', () => {
 		const facts = await skyNow({ latitude: 51.38, longitude: -0.07 }, new Date(), ok(answer));
 		expect(facts.filter((f) => f.subject === 'weather/now')).toHaveLength(2);
 	});
+
+	it('asks nothing of Open-Meteo when the reader has turned the weather off', async () => {
+		let asked = false;
+		const facts = await skyNow(
+			{ latitude: 51.38, longitude: -0.07 },
+			new Date('2026-06-21T12:00:00Z'),
+			async () => {
+				asked = true;
+				return new Response(JSON.stringify(answer));
+			},
+			{ weather: false }
+		);
+		expect(asked).toBe(false);
+		expect(facts.every((f) => f.subject === 'sky/now')).toBe(true);
+	});
 });

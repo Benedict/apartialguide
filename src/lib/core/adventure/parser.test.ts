@@ -43,6 +43,11 @@ describe('parse', () => {
 		}
 	);
 
+	it('reads asking where on a map this is', () => {
+		for (const text of ['gps', 'GPS', 'where am i', 'where am I?', 'map'])
+			expect(parse(text)).toEqual({ verb: 'gps' });
+	});
+
 	it('reads asking after the weather', () => {
 		for (const text of ['weather', 'sky', 'look up', 'look at the sky'])
 			expect(parse(text)).toEqual({ verb: 'weather' });

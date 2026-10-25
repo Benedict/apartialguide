@@ -11,12 +11,14 @@ export interface Reply {
 	/** Set when the reply describes a place. */
 	title?: string;
 	lines: string[];
+	/** Somewhere to go beyond the page, such as this place on a map. */
+	link?: { href: string; text: string };
 }
 
 export const HELP =
 	'Type a direction to walk: north, ne, go east, or the name of a street. ' +
 	'Type look to hear the place again, explore to find what I have not mentioned, examine to see what there is, or examine a thing or a street to look closer, ' +
-	'exits for the ways on, back to retrace your step, and weather to ask after the sky.';
+	'exits for the ways on, back to retrace your step, weather to ask after the sky, and gps to see this place on a map.';
 
 /** Guide's words about themselves, said once, before the first place. */
 export const INTRO = ['I am Guide. I lived here a long time ago, yesterday, and tomorrow.'];
@@ -128,6 +130,8 @@ export class Adventure {
 							.join(' ')
 					]
 				};
+			case 'gps':
+				return this.gps();
 			case 'exits':
 				return { lines: [this.exits()] };
 			case 'back':
@@ -195,6 +199,20 @@ export class Adventure {
 			lines.length && lines.at(-1)!.startsWith('Exits:') ? lines.length - 1 : lines.length;
 		lines.splice(exits, 0, back);
 		return { ...reply, lines };
+	}
+
+	/** Where the map puts this stop, and a link to it on Google Maps: never where the reader is. */
+	private gps(): Reply {
+		const at = this.world.stops[this.here].at;
+		if (!at) return { lines: ['I cannot say where this is on any map.'] };
+		const [lat, lon] = at.map((n) => n.toFixed(5));
+		return {
+			lines: [`By the map, you are at ${lat}, ${lon}.`],
+			link: {
+				href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${lat},${lon}`)}`,
+				text: 'See it on Google Maps'
+			}
+		};
 	}
 
 	/** A step into, out of or between the areas another account draws, such as wards. */

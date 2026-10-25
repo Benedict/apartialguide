@@ -33,11 +33,16 @@ export async function fetchWeatherNow(
 	}
 }
 
-/** The sky now over the map's own place: the sun and moon, worked out here, and the weather, if asked in time. */
+/**
+ * The sky now over the map's own place: the sun and moon, worked out here, and the weather, if the
+ * reader lets it be asked and it answers in time.
+ */
 export async function skyNow(
 	at: WeatherAt | undefined,
 	now = new Date(),
-	get?: (url: string) => Promise<Response>
+	get?: (url: string) => Promise<Response>,
+	ask: { weather?: boolean } = {}
 ): Promise<Fact[]> {
-	return [...heavensFacts(now, at), ...(await fetchWeatherNow(at, get))];
+	const weather = ask.weather === false ? [] : await fetchWeatherNow(at, get);
+	return [...heavensFacts(now, at), ...weather];
 }

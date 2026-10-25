@@ -25,6 +25,8 @@ export interface CompiledStop {
 	terms?: Term[];
 	/** Broken names spoken here, for Guide to carry on. */
 	fragments?: string[];
+	/** Where the map puts the stop, as latitude and longitude. */
+	at?: [number, number];
 	/** The area another account puts this stop in, such as a ward. */
 	area?: { name: string; kind: string };
 	/** What a closer look finds, if anything is hidden here. */
@@ -118,6 +120,7 @@ export function compileWorld(
 		stops[stop.id] = {
 			title: room.title,
 			paragraphs: room.paragraphs,
+			at: [+stop.position[0].toFixed(5), +stop.position[1].toFixed(5)],
 			...(room.parts ? { parts: room.parts } : {}),
 			exits: stop.exits.map(({ label, to, street }) => ({ label, to, street })),
 			things: room.things,

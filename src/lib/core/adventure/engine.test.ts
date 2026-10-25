@@ -613,4 +613,36 @@ describe('Departures', () => {
 			);
 		});
 	});
+
+	describe('gps', () => {
+		const placed: AdventureWorld = {
+			start: 'a',
+			stops: {
+				a: { ...room('Mill Parade', [{ label: 'east', to: 'b' }]), at: [51.38, -0.07] },
+				b: room('Cross Row', [])
+			}
+		};
+		const touring = () => {
+			const game = new Adventure(placed);
+			game.begin();
+			game.respond('take the tour');
+			return game;
+		};
+
+		it('gives where the map puts this stop, with a link to it on Google Maps', () => {
+			expect(touring().respond('gps')).toEqual({
+				lines: ['By the map, you are at 51.38000, -0.07000.'],
+				link: {
+					href: 'https://www.google.com/maps/search/?api=1&query=51.38000%2C-0.07000',
+					text: 'See it on Google Maps'
+				}
+			});
+		});
+
+		it('says so when the map gives no place for the stop', () => {
+			const game = touring();
+			game.respond('east');
+			expect(game.respond('gps')).toEqual({ lines: ['I cannot say where this is on any map.'] });
+		});
+	});
 });
