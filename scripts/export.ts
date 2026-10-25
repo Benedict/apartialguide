@@ -27,7 +27,8 @@ const bundle = await build({
 	format: 'iife',
 	globalName: 'AdventureEngine',
 	footer: {
-		js: 'var Adventure = AdventureEngine.Adventure; var fetchWeatherNow = AdventureEngine.fetchWeatherNow; var fetchArrivals = AdventureEngine.fetchArrivals;'
+		// Everything play.ts exports becomes a global for the page's script, so the two cannot drift.
+		js: 'Object.assign(globalThis, AdventureEngine);'
 	},
 	minify: true,
 	target: 'es2020',

@@ -18,6 +18,7 @@
 		"snapshot": "tsx scripts/snapshot.ts",
 		"narrate": "tsx scripts/narrate.ts",
 		"export": "tsx scripts/export.ts",
+		"smoke": "tsx scripts/smoke.ts",
 		"wikidata": "tsx scripts/wikidata.ts",
 		"records": "tsx scripts/records.ts"
 	},
@@ -33,6 +34,7 @@
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.19.0",
 		"globals": "^17.6.0",
+		"playwright": "1.63.0",
 		"prettier": "^3.8.3",
 		"prettier-plugin-svelte": "^4.1.0",
 		"svelte": "^5.57.1",
