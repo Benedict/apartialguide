@@ -106,7 +106,8 @@ const replyText = (r?: Reply) => [r?.title, ...(r?.lines ?? [])].join('\n');
 
 When('the game begins', function (this: NarratorWorld) {
 	const s = state(this);
-	s.reply = s.game!.look();
+	const replies = s.game!.begin();
+	s.reply = { lines: replies.flatMap((r) => [...(r.title ? [r.title] : []), ...r.lines]) };
 });
 
 When('the reader types {string}', function (this: NarratorWorld, input: string) {

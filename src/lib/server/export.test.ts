@@ -35,6 +35,10 @@ describe('exportPage', () => {
 		expect(page()).toContain('24 October 2026');
 	});
 
+	it('begins with Guide introducing themselves', () => {
+		expect(page()).toContain('game.begin().forEach(show)');
+	});
+
 	it('has a prompt to type at', () => {
 		expect(page()).toMatch(/<input[^>]+id="command"/);
 	});

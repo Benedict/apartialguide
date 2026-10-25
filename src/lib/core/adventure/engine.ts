@@ -13,6 +13,9 @@ export const HELP =
 	'Type look to hear the place again, explore to find what I have not mentioned, examine and a thing to look closer, ' +
 	'exits for the ways on, and back to retrace your step.';
 
+/** Guide's words about themselves, said once, before the first place. */
+export const INTRO = 'I am Guide. I lived here a long time ago, yesterday, and tomorrow.';
+
 /** A reader's walk through a compiled world. */
 export class Adventure {
 	private previous?: string;
@@ -23,6 +26,11 @@ export class Adventure {
 		private readonly world: AdventureWorld,
 		public here = world.start
 	) {}
+
+	/** The start of the walk: Guide introduces themselves, then the first place. */
+	begin(): Reply[] {
+		return [{ lines: [INTRO] }, this.look()];
+	}
 
 	look(): Reply {
 		const stop = this.world.stops[this.here];

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Adventure } from './engine';
+import { Adventure, INTRO } from './engine';
 import type { AdventureWorld } from './world';
 
 const room = (title: string, exits: AdventureWorld['stops'][string]['exits']) => ({
@@ -24,6 +24,12 @@ const world: AdventureWorld = {
 };
 
 describe('Adventure', () => {
+	it('begins with Guide introducing themselves, then the first place', () => {
+		const [intro, place] = new Adventure(world).begin();
+		expect(intro).toEqual({ lines: [INTRO] });
+		expect(place).toEqual(new Adventure(world).look());
+	});
+
 	it('asks which way when a direction fits two exits', () => {
 		const game = new Adventure({
 			...world,

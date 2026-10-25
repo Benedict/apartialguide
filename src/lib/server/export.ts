@@ -104,7 +104,7 @@ const WORLD = ${scriptSafe(world)};
 		else return;
 		event.preventDefault();
 	});
-	show(game.look());
+	game.begin().forEach(show);
 	input.focus({ preventScroll: true });
 })();
 </script>
