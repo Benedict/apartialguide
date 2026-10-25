@@ -92,38 +92,47 @@ const SOURCES: Record<string, () => Promise<Taken | Taken[]>> = {
 	],
 	/** Planning applications in the box, from the London Planning Datahub's public search. */
 	planning: async () => {
-		const res = await fetch('https://planningdata.london.gov.uk/api-guest/applications/_search', {
-			method: 'POST',
-			headers: {
-				...headers,
-				'Content-Type': 'application/json',
-				Accept: 'application/json',
-				'X-API-AllowRequest': 'be2rmRnt&'
-			},
-			body: JSON.stringify({
+		const search = async (body: unknown) =>
+			fetch('https://planningdata.london.gov.uk/api-guest/applications/_search', {
+				method: 'POST',
+				headers: {
+					...headers,
+					'Content-Type': 'application/json',
+					Accept: 'application/json',
+					'X-API-AllowRequest': 'be2rmRnt&'
+				},
+				body: JSON.stringify(body)
+			});
+		// The Datahub's geographic field is not documented: try the likely names in turn.
+		for (const field of ['centroid', 'location', 'geo_point', 'point', 'geometry']) {
+			const res = await search({
 				size: 5000,
 				query: {
 					bool: {
 						filter: [
 							{
 								geo_bounding_box: {
-									location: { top_left: { lat: n, lon: w }, bottom_right: { lat: s, lon: e } }
+									[field]: { top_left: { lat: n, lon: w }, bottom_right: { lat: s, lon: e } }
 								}
 							}
 						]
 					}
 				}
-			})
-		});
-		if (!res.ok)
-			throw new Error(
-				`Planning Datahub answered ${res.status}: ${(await res.text()).slice(0, 500)}`
-			);
-		return {
-			source: 'London Planning Datahub',
-			prefix: 'planning',
-			records: planningRecords(await res.json(), bbox)
-		};
+			});
+			if (!res.ok) continue;
+			console.log(`planning: the Datahub's geographic field is ${field}`);
+			return {
+				source: 'London Planning Datahub',
+				prefix: 'planning',
+				records: planningRecords(await res.json(), bbox)
+			};
+		}
+		const sample = await (
+			await search({ size: 1, query: { match: { lpa_name: 'Croydon' } } })
+		).json();
+		throw new Error(
+			`no geographic field found; one application has: ${Object.keys(sample?.hits?.hits?.[0]?._source ?? {}).join(', ')}`
+		);
 	},
 	/** Plaques in the box, from Open Plaques. */
 	plaques: async () => ({
