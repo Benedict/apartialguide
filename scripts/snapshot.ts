@@ -12,7 +12,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { bboxAround, type LatLon } from '../src/lib/core/geo';
 
 const api = process.env.OSM_API ?? 'https://api.openstreetmap.org/api/0.6';
-const headers = { 'User-Agent': 'addiscombe-narrator/0.1 (art project; snapshot script)' };
+const headers = { 'User-Agent': 'a-partial-guide/0.1 (art project; snapshot script)' };
 
 async function get(path: string) {
 	const res = await fetch(`${api}${path}`, { headers });

@@ -1,6 +1,6 @@
-# Addiscombe Narrator
+# A Partial Guide
 
-A text "street view" of Addiscombe, Croydon. One narrator, Guide, describes the place from open data, and its confusion is earned by that data. It is an art piece, not a game. The spec lives in the project doc "Addiscombe Narrator: spec sketch".
+A text "street view" of Addiscombe, Croydon. Its name is A Partial Guide. One narrator, Guide, describes the place from open data, and its confusion is earned by that data. It is an art piece, not a game. The spec lives in the project doc "Addiscombe Narrator: spec sketch".
 
 ## Hard rules
 

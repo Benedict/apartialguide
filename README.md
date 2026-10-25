@@ -1,4 +1,4 @@
-# Addiscombe Narrator
+# A Partial Guide
 
 A text "street view" of Addiscombe, Croydon, read in the browser. One narrator, Guide, walks the streets from OpenStreetMap data, and where the data disagrees, decays or falls silent, so does Guide.
 

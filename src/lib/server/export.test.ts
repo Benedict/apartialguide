@@ -30,6 +30,10 @@ describe('exportPage', () => {
 		expect(html).toContain('\\u003c/script>');
 	});
 
+	it('is called A Partial Guide', () => {
+		expect(page()).toContain('<title>A Partial Guide</title>');
+	});
+
 	it('credits OpenStreetMap and dates the map', () => {
 		expect(page()).toContain('OpenStreetMap contributors');
 		expect(page()).toContain('24 October 2026');
