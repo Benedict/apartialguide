@@ -25,94 +25,40 @@ const world: AdventureWorld = {
 
 describe('Adventure', () => {
 	describe('beginning', () => {
-		const placed: AdventureWorld = {
-			...world,
-			positions: {
-				a: [51.38, -0.07],
-				b: [51.381, -0.069],
-				c: [51.381, -0.071],
-				d: [51.38, -0.072]
-			},
-			places: [{ name: 'Cross Row', kind: 'street', at: 'b' }]
-		};
 		const begun = () => {
-			const game = new Adventure(placed);
+			const game = new Adventure(world);
 			game.begin();
 			return game;
 		};
 
-		it('opens with Guide introducing themselves, then asks where to begin', () => {
-			const [intro, question] = new Adventure(placed).begin();
+		it('opens with Guide introducing themselves, then offers the tour', () => {
+			const [intro, offer] = new Adventure(world).begin();
 			expect(intro.lines[0]).toBe(INTRO[0]);
 			expect(intro.title).toBeUndefined();
-			expect(question.lines.join(' ')).toContain('Where would you like to begin?');
+			expect(offer.lines.join(' ')).toContain('take the tour');
 		});
 
 		it('dates the map Guide carries, when it has a date', () => {
-			const [intro] = new Adventure({ ...placed, asOf: '2026-10-24' }).begin();
+			const [intro] = new Adventure({ ...world, asOf: '2026-10-24' }).begin();
 			expect(intro.lines.join(' ')).toContain('24 October 2026');
 		});
 
-		it('begins at a place the reader names', () => {
+		it('begins the tour at the start', () => {
 			const game = begun();
-			expect(game.respond('cross row').title).toBe('Cross Row');
-			expect(game.here).toBe('b');
+			game.here = 'c';
+			expect(game.respond('Take the tour.').title).toBe('Mill Parade');
 		});
 
-		it('begins near a postcode it lacks, and says it has only its neighbours', () => {
-			const game = new Adventure({
-				...placed,
-				places: [{ name: 'ZZ1 1AB', kind: 'postcode', at: 'c' }]
-			});
-			game.begin();
-			const reply = game.respond('zz1 1xy');
-			expect(reply.title).toBe('Weir Steps');
-			expect(reply.lines[0]).toBe('I have no record of ZZ1 1XY. Only of its neighbours, ZZ1 1.');
-		});
-
-		it('asks which, when the name could be several places', () => {
-			const game = new Adventure({
-				...placed,
-				places: [
-					{ name: 'Cross Row', kind: 'street', at: 'b' },
-					{ name: 'Cross Keys', kind: 'place', at: 'c' }
-				]
-			});
-			game.begin();
-			expect(game.respond('cross').lines[0]).toBe('Which: Cross Keys or Cross Row?');
-		});
-
-		it('says so when it has no record of a place', () => {
+		it('offers the tour again to anything else', () => {
 			const game = begun();
-			expect(game.respond('Atlantis').lines[0]).toContain('I have no record of “Atlantis”.');
-			expect(game.here).toBe('a');
-		});
-
-		it('asks the browser where the reader is', () => {
-			expect(begun().respond('current location').locate).toBe(true);
-			expect(begun().respond('here').locate).toBe(true);
-		});
-
-		it('begins at the stop nearest the reader', () => {
-			const game = begun();
-			expect(game.startAt(51.3809, -0.0711).title).toBe('Weir Steps');
-		});
-
-		it('will not begin somewhere far off the map', () => {
-			const game = begun();
-			expect(game.startAt(52, 0).lines[0]).toContain('That is not on my map.');
-			expect(game.respond('cross row').title).toBe('Cross Row');
-		});
-
-		it('begins where Guide chooses, if the reader leaves it to them', () => {
-			expect(begun().respond('anywhere').title).toBe('Mill Parade');
+			expect(game.respond('north').lines.join(' ')).toContain('take the tour');
+			expect(game.respond('').lines).toEqual([]);
 		});
 
 		it('plays as usual once begun', () => {
 			const game = begun();
-			game.respond('cross row');
-			expect(game.respond('look').title).toBe('Cross Row');
-			expect(game.respond('here').locate).toBeUndefined();
+			game.respond('take the tour');
+			expect(game.respond('go west').title).toBe('Mill Parade west');
 		});
 	});
 

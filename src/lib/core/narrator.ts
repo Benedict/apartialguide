@@ -38,9 +38,7 @@ export class Narrator {
 	constructor(
 		readonly graph: StopGraph,
 		private readonly perception: Perception,
-		private readonly options: NarratorOptions,
-		/** The map itself, when the narrator was built from one. */
-		readonly osm?: OsmIndex
+		private readonly options: NarratorOptions
 	) {
 		this.renderer = options.renderer ?? new AdventureRenderer();
 	}
@@ -49,7 +47,7 @@ export class Narrator {
 		const osm = new OsmIndex(data);
 		const past = (options.history ?? []).map((h) => ({ asOf: h.asOf, osm: new OsmIndex(h.data) }));
 		const facts = [...new OsmAdapter(osm).facts(), ...new HistoryAdapter(osm, past).facts()];
-		return new Narrator(buildStopGraph(osm, options), Perception.fromOsm(osm, facts), options, osm);
+		return new Narrator(buildStopGraph(osm, options), Perception.fromOsm(osm, facts), options);
 	}
 
 	visit(id: StopId): Visit | undefined {

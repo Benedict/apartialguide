@@ -38,9 +38,7 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 		padding-right: max(16px, env(safe-area-inset-right, 0px));
 	}
 	.page { max-width: 36rem; margin: 0 auto; padding-block: 2rem 4rem; display: grid; gap: 1.8rem; }
-	.note, footer { font-family: var(--small); color: var(--muted); }
-	.note { font-size: 0.8rem; line-height: 1.5; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; margin: 0; }
-	.note code { font-family: var(--mono); color: var(--accent); }
+	footer { font-family: var(--small); color: var(--muted); }
 	#transcript { display: grid; gap: 1.6rem; min-width: 0; }
 	section { display: grid; gap: 0.9em; }
 	h2 { font-size: 1rem; margin: 0; }
@@ -60,11 +58,10 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 </head>
 <body>
 <div class="page">
-	<p class="note">Addiscombe, Croydon. Begin with a postcode, a street, a place, or <code>here</code>. Then type a direction (<code>n</code>, <code>go east</code>, or a street name), <code>look</code>, <code>explore</code>, <code>examine</code> something, <code>exits</code>, <code>back</code> or <code>help</code>.</p>
 	<div id="transcript" aria-live="polite"></div>
 	<form id="prompt" autocomplete="off">
 		<label for="command">&gt;</label>
-		<input id="command" autocapitalize="off" spellcheck="false" aria-label="What do you do?" placeholder="a postcode, a street, here…">
+		<input id="command" autocapitalize="off" spellcheck="false" aria-label="What do you do?" placeholder="take the tour">
 	</form>
 	<footer>Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL, as of ${longDate(snapshotDate)}.</footer>
 </div>
@@ -85,17 +82,9 @@ const WORLD = ${scriptSafe(world)};
 		for (const line of reply.lines) section.append(el('p', line));
 		transcript.append(section);
 		input.scrollIntoView({ block: 'end' });
-		if (reply.locate) locate();
+		if (reply.title) input.placeholder = 'north, look, examine… or help';
 	}
-	// Only when the reader says here: the browser asks their leave first.
-	function locate() {
-		if (!navigator.geolocation) return show(game.notFound());
-		navigator.geolocation.getCurrentPosition(
-			(p) => show(game.startAt(p.coords.latitude, p.coords.longitude)),
-			() => show(game.notFound()),
-			{ timeout: 15000 }
-		);
-	}
+
 	document.getElementById('prompt').addEventListener('submit', (event) => {
 		event.preventDefault();
 		const text = input.value.trim();
