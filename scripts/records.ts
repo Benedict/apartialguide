@@ -16,7 +16,7 @@ import {
 	protectedRecords
 } from '../src/lib/server/sources/more';
 import { wardAreas } from '../src/lib/server/sources/wards';
-import { parseCsv, treeRecords } from '../src/lib/server/sources/trees';
+import { parseCsv, rowInBox, treeRecords } from '../src/lib/server/sources/trees';
 
 const headers = {
 	'User-Agent': 'a-partial-guide/0.1 (art project; https://github.com/Benedict/osm-text-adventure)'
@@ -226,9 +226,9 @@ SELECT ?paon ?street ?amount ?date WHERE {
 					console.log(`trees: ${csv.url} answered ${res.status}`);
 					continue;
 				}
-				const rows = parseCsv(await res.text());
+				const rows = parseCsv(await res.text(), (row) => rowInBox(row, bbox));
 				console.log(
-					`trees: ${csv.title}: ${rows.length} rows; columns ${Object.keys(rows[0] ?? {}).join(', ')}`
+					`trees: ${csv.title}: ${rows.length} rows in the box; columns ${Object.keys(rows[0] ?? {}).join(', ')}`
 				);
 				console.log(`trees: first row ${JSON.stringify(rows[0])}`);
 				const records = treeRecords(rows, bbox, streets);

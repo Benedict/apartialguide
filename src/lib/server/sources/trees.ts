@@ -2,15 +2,26 @@ import type { SourceRecord } from '../../core/adapters/records';
 import { distanceToPolyline, type LatLon } from '../../core/geo';
 import { inBox } from './box';
 
-/** Rows of a CSV file as objects keyed by its header. Quoted fields may hold commas and quotes. */
-export function parseCsv(text: string): Record<string, string>[] {
-	const rows: string[][] = [];
+/**
+ * Rows of a CSV file as objects keyed by its header, only those `keep` accepts, made one at a
+ * time so a long file is not held twice over. Quoted fields may hold commas and quotes.
+ */
+export function parseCsv(
+	text: string,
+	keep: (row: Record<string, string>) => boolean = () => true
+): Record<string, string>[] {
+	const kept: Record<string, string>[] = [];
+	let header: string[] | undefined;
 	let row: string[] = [];
 	let field = '';
 	let quoted = false;
 	const endRow = () => {
 		row.push(field);
-		rows.push(row);
+		if (!header) header = row.map((h) => h.trim());
+		else if (row.some((v) => v !== '')) {
+			const object = Object.fromEntries(header.map((h, i) => [h, row[i] ?? '']));
+			if (keep(object)) kept.push(object);
+		}
 		row = [];
 		field = '';
 	};
@@ -31,12 +42,16 @@ export function parseCsv(text: string): Record<string, string>[] {
 			endRow();
 		} else field += c;
 	}
-	if (field || row.length) rows.push([...row, field]);
-	const [header, ...body] = rows;
-	return body
-		.filter((r) => r.some((v) => v !== ''))
-		.map((r) => Object.fromEntries(header.map((h, i) => [h.trim(), r[i] ?? ''])));
+	if (field || row.length) endRow();
+	return kept;
 }
+
+/** Whether a row's latitude and longitude, under whatever names, fall in the box. */
+export const rowInBox = (row: Record<string, string>, box: string) => {
+	const lat = Number(pick(row, /^lat(itude)?$/i));
+	const lon = Number(pick(row, /^(lon|long|longitude|lng)$/i));
+	return Number.isFinite(lat) && Number.isFinite(lon) && inBox([lat, lon], box);
+};
 
 const pick = (row: Record<string, string>, pattern: RegExp) =>
 	Object.entries(row)

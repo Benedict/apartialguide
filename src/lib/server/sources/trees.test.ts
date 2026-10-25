@@ -10,6 +10,15 @@ describe('parseCsv', () => {
 	});
 });
 
+describe('parseCsv, keeping', () => {
+	it('keeps only the rows asked for', () => {
+		expect(parseCsv('a,b\n1,x\n2,y\n3,z', (row) => row.a !== '2')).toEqual([
+			{ a: '1', b: 'x' },
+			{ a: '3', b: 'z' }
+		]);
+	});
+});
+
 describe('treeRecords', () => {
 	const box = '-0.08,51.37,-0.06,51.39';
 	const streets = [
