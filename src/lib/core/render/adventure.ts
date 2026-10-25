@@ -1,5 +1,14 @@
 import { groupBySubject } from '../facts';
-import { bearing, compassLabel, insideRing, nearestOnPolyline, type LatLon } from '../geo';
+import {
+	bearing,
+	compassLabel,
+	distance,
+	distanceToPolyline,
+	headingAt,
+	insideRing,
+	nearestOnPolyline,
+	type LatLon
+} from '../geo';
 import type { Tags } from '../osm';
 import type { Scene, SceneExit } from '../scene';
 import { isBackground, type Beat } from '../slippage';
@@ -133,19 +142,20 @@ function whatYouSee(scene: Scene): Part[][] {
 	let previous = '';
 	const said: Said = new Set();
 	const slipped = new Set<string>();
-	const told = scene.beats
-		.filter((b) => !isBackground(b) && !isHalf(b))
-		.map((b): Part => {
-			const place = placement(scene.position, b);
-			const text = describeBeat(
-				b,
-				place === previous && place.startsWith('To the') ? 'Next to it' : place,
-				said,
-				slipped
-			);
-			previous = place;
-			return { kind: 'thing', text, key: b.subject };
-		});
+	const told = alongTheStreet(
+		scene,
+		scene.beats.filter((b) => !isBackground(b) && !isHalf(b))
+	).map((b): Part => {
+		const place = placement(scene.position, b);
+		const text = describeBeat(
+			b,
+			place === previous && place.startsWith('To the') ? 'Next to it' : place,
+			said,
+			slipped
+		);
+		previous = place;
+		return { kind: 'thing', text, key: b.subject };
+	});
 	const more = scene.hidden.length > 0;
 	if (scene.mood === 'rambling') {
 		// A crowd: what is noticed in full, then Guide loses count of the rest.
@@ -159,6 +169,42 @@ function whatYouSee(scene: Scene): Part[][] {
 	}
 	// Guide points to nothing: what goes unnoticed is for the reader to find.
 	return told.map((t) => [t]);
+}
+
+/** Things in the order they lie along the street underfoot, as a walker passes them. */
+function alongTheStreet(scene: Scene, beats: Beat[]): Beat[] {
+	// At a junction, the street the things here are addressed to; else the street underfoot.
+	const counts = new Map<string, number>();
+	for (const b of beats) {
+		const street = tagsFor(b)['addr:street'];
+		if (street && scene.here.includes(street)) counts.set(street, (counts.get(street) ?? 0) + 1);
+	}
+	const parade = [...counts].sort((a, b) => b[1] - a[1])[0]?.[0] ?? scene.here[0];
+	// The street may be cut into many short ways: its heading here orders things, not any one way.
+	const ways = [...groupBySubject(scene.street).values()];
+	const named = ways.filter((facts) => tagsOf(facts).name === parade);
+	const lines = (named.length ? named : ways)
+		.map((facts) => facts[0].geometry)
+		.filter((line) => line.length >= 2);
+	if (!lines.length) return beats;
+	const nearest = lines.reduce((a, b) =>
+		distanceToPolyline(scene.position, b) < distanceToPolyline(scene.position, a) ? b : a
+	);
+	const heading = headingAt(scene.position, nearest);
+	const ahead = (b: Beat) => {
+		const point = nearestOnPolyline(scene.position, b.facts[0].geometry).point;
+		const turn = ((bearing(scene.position, point) - heading) * Math.PI) / 180;
+		return distance(scene.position, point) * Math.cos(turn);
+	};
+	const placed = beats.map((b) => ({ b, at: ahead(b) })).sort((x, y) => x.at - y.at);
+	// Either way along the street could be first: let its house numbers say which way is up.
+	const numbered = placed
+		.map(({ b }) => parseInt(tagsFor(b)['addr:housenumber'] ?? '', 10))
+		.filter((n, i) => !Number.isNaN(n) && tagsFor(placed[i].b)['addr:street'] === parade);
+	const falling = numbered.slice(1).filter((n, i) => n < numbered[i]).length;
+	const rising = numbered.slice(1).filter((n, i) => n > numbered[i]).length;
+	if (falling > rising) placed.reverse();
+	return placed.map(({ b }) => b);
 }
 
 /** What a closer look finds: the hidden things in one breath, named things by name and repeats counted. */

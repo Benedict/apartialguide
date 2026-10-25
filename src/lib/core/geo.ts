@@ -124,6 +124,16 @@ export function nearestOnPolyline(
 	return best;
 }
 
+/** The bearing of the stretch of a line nearest `p`, in the line's own direction. */
+export function headingAt(p: LatLon, line: readonly LatLon[]): number {
+	let best = { metres: Infinity, heading: 0 };
+	for (let i = 1; i < line.length; i++) {
+		const metres = distanceToPolyline(p, [line[i - 1], line[i]]);
+		if (metres < best.metres) best = { metres, heading: bearing(line[i - 1], line[i]) };
+	}
+	return best.heading;
+}
+
 export const distanceToPolyline = (p: LatLon, line: readonly LatLon[]) =>
 	nearestOnPolyline(p, line).metres;
 

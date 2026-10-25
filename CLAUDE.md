@@ -32,7 +32,7 @@ The core in `src/lib/core/` is plain TypeScript with no framework imports, so Cu
 - `osm.ts`: snapshot format and index.
 - `adapters/`: one `SourceAdapter` per source, each returning `Fact`s (`facts.ts`). `history.ts` compares past maps (`HISTORY_DIR`) with the current one: what has gone becomes `was:` facts, an older name a `was:name` fact. `wikidata.ts` is another account (`WIKIDATA_DIR`): facts about what the map links to, who a street is named for, and things only Wikidata places here; Guide never gives them as the map's. `weather.ts` reads today's weather, as the reader's browser fetched it; it is outside perception, and no past day's weather is ever spoken.
 - `stops.ts`: street graph to stops. Junctions plus corridor stops at most `spacing` metres apart; exits named by compass point.
-- `perception.ts`: facts within reach, occluded by mapped buildings.
+- `perception.ts`: facts within reach, occluded by mapped buildings. `narrator.ts` tells something addressed to a street that does not meet the stop only within 12 m, and the template tells things in the order they lie along the street they are addressed to, its house numbers rising.
 - `tensions.ts`: conditions in the data (fragment, dated, gone, renamed, sparse, dense).
 - `slippage.ts`: tensions to a `NarrationPlan` of beats and effects.
 - `scene.ts`: places a plan in the network: streets here, what lies either side, where each exit leads.

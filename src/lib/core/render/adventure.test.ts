@@ -361,6 +361,109 @@ describe('AdventureRenderer', () => {
 			expect(area(0)).toBe(area(180));
 		});
 
+		it('tells things in the order they lie along the street underfoot, not nearest first', () => {
+			const along = (metres: number, number: string) => ({
+				subject: `node/${number}`,
+				facts: facts(
+					`node/${number}`,
+					{ shop: 'bakery', 'addr:housenumber': number, 'addr:street': 'Everton Road' },
+					{ geometry: [destination(destination(O, 90, metres), 0, 8)] }
+				),
+				effects: []
+			});
+			const street = facts(
+				'way/1',
+				{ highway: 'residential', name: 'Everton Road' },
+				{ geometry: [destination(O, 270, 100), destination(O, 90, 100)] }
+			);
+			const t = text(scene({ street, beats: [along(5, '23'), along(-20, '21'), along(25, '25')] }));
+			expect(t.indexOf('21')).toBeLessThan(t.indexOf('23'));
+			expect(t.indexOf('23')).toBeLessThan(t.indexOf('25'));
+		});
+
+		it('reads a parade upwards, whichever way the street was drawn', () => {
+			const along = (metres: number, number: string) => ({
+				subject: `node/${number}`,
+				facts: facts(
+					`node/${number}`,
+					{ shop: 'bakery', 'addr:housenumber': number, 'addr:street': 'Everton Road' },
+					{ geometry: [destination(destination(O, 90, metres), 0, 8)] }
+				),
+				effects: []
+			});
+			const drawnWestward = facts(
+				'way/1',
+				{ highway: 'residential', name: 'Everton Road' },
+				{ geometry: [destination(O, 90, 100), destination(O, 270, 100)] }
+			);
+			const t = text(
+				scene({ street: drawnWestward, beats: [along(5, '23'), along(-20, '21'), along(25, '25')] })
+			);
+			expect(t.indexOf('21')).toBeLessThan(t.indexOf('23'));
+			expect(t.indexOf('23')).toBeLessThan(t.indexOf('25'));
+		});
+
+		it('orders things along a street cut into short ways, by the street’s heading here', () => {
+			const along = (metres: number, number: string) => ({
+				subject: `node/${number}`,
+				facts: facts(
+					`node/${number}`,
+					{ shop: 'bakery', 'addr:housenumber': number, 'addr:street': 'Everton Road' },
+					{ geometry: [destination(destination(O, 90, metres), 0, 8)] }
+				),
+				effects: []
+			});
+			const stub = facts(
+				'way/1',
+				{ highway: 'residential', name: 'Everton Road' },
+				{ geometry: [destination(O, 270, 3), destination(O, 90, 3)] }
+			);
+			const t = text(
+				scene({
+					street: stub,
+					beats: [along(15, '25'), along(25, '27'), along(-20, '21'), along(5, '23')]
+				})
+			);
+			expect(t.match(/at (\d+)/g)).toEqual(['at 21', 'at 23', 'at 25', 'at 27']);
+		});
+
+		it('at a junction, orders things along the street they are addressed to', () => {
+			const along = (metres: number, number: string) => ({
+				subject: `node/${number}`,
+				facts: facts(
+					`node/${number}`,
+					{ shop: 'bakery', 'addr:housenumber': number, 'addr:street': 'Parade Road' },
+					{ geometry: [destination(destination(O, 90, metres), 0, 8)] }
+				),
+				effects: []
+			});
+			const street = [
+				...facts(
+					'way/1',
+					{ highway: 'residential', name: 'Everton Road' },
+					{
+						geometry: [destination(O, 0, 100), O]
+					}
+				),
+				...facts(
+					'way/2',
+					{ highway: 'primary', name: 'Parade Road' },
+					{
+						geometry: [destination(O, 90, 100), destination(O, 270, 100)]
+					}
+				)
+			];
+			const t = text(
+				scene({
+					kind: 'junction',
+					here: ['Everton Road', 'Parade Road'],
+					street,
+					beats: [along(5, '29'), along(-10, '27'), along(20, '31')]
+				})
+			);
+			expect(t.match(/at (\d+)/g)).toEqual(['at 27', 'at 29', 'at 31']);
+		});
+
 		it('tells a disused use in the past tense', () => {
 			const t = text(scene({ beats: [beat('way/2', { 'disused:amenity': 'bank' })] }));
 			expect(t).toMatch(/was a bank/);
