@@ -65,7 +65,7 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 		<label for="command">&gt;</label>
 		<input id="command" autocapitalize="off" spellcheck="false" aria-label="What do you do?" placeholder="take the tour">
 	</form>
-	<footer>Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL, as of ${longDate(snapshotDate)}. Weather from <a href="https://open-meteo.com/">Open-Meteo.com</a>, CC BY 4.0. Another account from <a href="https://www.wikidata.org/">Wikidata</a>, CC0.</footer>
+	<footer>Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL, as of ${longDate(snapshotDate)}. Weather from <a href="https://open-meteo.com/">Open-Meteo.com</a>, CC BY 4.0. Departures: Powered by TfL Open Data. Another account from <a href="https://www.wikidata.org/">Wikidata</a>, CC0.</footer>
 </div>
 <script>${engine}</script>
 <script type="application/gzip" id="world">${packed(world)}</script>
@@ -88,7 +88,16 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 		for (const line of reply.lines) section.append(el('p', line));
 		transcript.append(section);
 		input.scrollIntoView({ block: 'end' });
-		if (reply.title) input.placeholder = 'north, look, examine… or help';
+		if (reply.title) {
+			input.placeholder = 'north, look, examine… or help';
+			// What is due at the stops here, from TfL, as the reader arrives; nothing without an answer.
+			const here = game.here;
+			for (const stop of game.transitHere())
+				fetchArrivals(stop).then((facts) => {
+					const due = game.here === here && game.departures(stop, facts);
+					if (due) show(due);
+				});
+		}
 	}
 
 	document.getElementById('prompt').addEventListener('submit', (event) => {

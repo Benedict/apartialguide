@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { Adventure, INTRO } from './engine';
 import type { AdventureWorld } from './world';
 import { currentWeatherFacts } from '../adapters/weather';
+import { arrivalFacts } from '../adapters/tfl';
 
 const room = (title: string, exits: AdventureWorld['stops'][string]['exits']) => ({
 	title,
@@ -493,5 +494,41 @@ describe('Examining what is here', () => {
 		expect(game.respond('examine things').lines).toEqual([
 			'There is nothing here to examine but Empty Row.'
 		]);
+	});
+});
+
+describe('Departures', () => {
+	const stop = { name: 'Invented Corner', kind: 'bus' as const, naptan: '490000000X' };
+	const world: AdventureWorld = {
+		start: 'a',
+		stops: {
+			a: { title: 'Long Street', paragraphs: ['Here.'], exits: [], things: [], transit: [stop] }
+		}
+	};
+
+	it('names the stops here that TfL has arrivals for', () => {
+		expect(new Adventure(world).transitHere()).toEqual([stop]);
+	});
+
+	it('tells what is due, says when nothing is, and says nothing without an answer', () => {
+		const game = new Adventure(world);
+		const facts = arrivalFacts(
+			[
+				{
+					id: '1',
+					lineName: '410',
+					destinationName: 'Invented Palace',
+					timeToStation: 185,
+					modeName: 'bus'
+				}
+			],
+			stop.name,
+			'2026-10-25T20:15:00Z'
+		);
+		expect(game.departures(stop, facts)).toEqual({
+			lines: ['Invented Corner: the 410 to Invented Palace in 3 minutes.']
+		});
+		expect(game.departures(stop, [])).toEqual({ lines: ['Invented Corner: nothing is due.'] });
+		expect(game.departures(stop, undefined)).toBeUndefined();
 	});
 });

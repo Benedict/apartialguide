@@ -9,7 +9,7 @@ A text "street view" of Addiscombe, Croydon. Its name is A Partial Guide. One na
 - Never repair data. Broken values ("est Bank") are spoken as found.
 - Never edit OpenStreetMap. Gaps stay as found.
 - Never call public Overpass, or any OSM API, from the app. Snapshots are taken by hand with `npm run snapshot`.
-- The one live source is today's weather: `src/lib/browser/sky.ts` asks Open-Meteo from the reader's browser, for the map's own place, never the reader's. No answer in time, no weather.
+- Live sources are asked from the reader's browser, for the map's own places, never the reader's location, and say nothing without an answer in time: today's weather (`src/lib/browser/sky.ts`, Open-Meteo) and departures at the map's bus and tram stops (`src/lib/browser/transit.ts`, TfL: buses by the NaPTAN code the map gives, tram stops found by their mapped name). They work where the page is served normally, not in the claude.ai preview.
 - Write the failing scenario or test before the code.
 - Real places come only from dated snapshots in `data/snapshots/`. Test fixtures are synthetic and must not pose as real Addiscombe data.
 
@@ -30,7 +30,7 @@ A text "street view" of Addiscombe, Croydon. Its name is A Partial Guide. One na
 The core in `src/lib/core/` is plain TypeScript with no framework imports, so Cucumber can load it directly.
 
 - `osm.ts`: snapshot format and index.
-- `adapters/`: one `SourceAdapter` per source, each returning `Fact`s (`facts.ts`). `history.ts` compares past maps (`HISTORY_DIR`) with the current one: what has gone becomes `was:` facts, an older name a `was:name` fact. `wikidata.ts` is another account (`WIKIDATA_DIR`): facts about what the map links to, who a street is named for, and things only Wikidata places here; Guide never gives them as the map's. `weather.ts` reads today's weather, as the reader's browser fetched it; it is outside perception, and no past day's weather is ever spoken.
+- `adapters/`: one `SourceAdapter` per source, each returning `Fact`s (`facts.ts`). `history.ts` compares past maps (`HISTORY_DIR`) with the current one: what has gone becomes `was:` facts, an older name a `was:name` fact. `wikidata.ts` is another account (`WIKIDATA_DIR`): facts about what the map links to, who a street is named for, and things only Wikidata places here; Guide never gives them as the map's. `tfl.ts` reads TfL's arrivals as facts, `render/departures.ts` says the soonest three. `weather.ts` reads today's weather, as the reader's browser fetched it; it is outside perception, and no past day's weather is ever spoken.
 - `stops.ts`: street graph to stops. Junctions plus corridor stops at most `spacing` metres apart; exits named by compass point.
 - `perception.ts`: facts within reach, occluded by mapped buildings. `narrator.ts` tells something addressed to a street that does not meet the stop only within 12 m, and the template tells things in the order they lie along the street they are addressed to, its house numbers rising.
 - `tensions.ts`: conditions in the data (fragment, dated, gone, renamed, sparse, dense).

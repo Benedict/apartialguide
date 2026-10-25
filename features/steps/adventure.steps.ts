@@ -9,6 +9,7 @@ import { bearing, destination } from '../../src/lib/core/geo';
 import type { OsmElement } from '../../src/lib/core/osm';
 import type { WikidataItem } from '../../src/lib/core/adapters/wikidata';
 import { currentWeatherFacts } from '../../src/lib/core/adapters/weather';
+import { arrivalFacts, type TflArrival } from '../../src/lib/core/adapters/tfl';
 import type { Fact } from '../../src/lib/core/facts';
 import { junctionId } from '../../src/lib/core/stops';
 import { SyntheticMap } from '../../src/lib/core/testing/synthetic';
@@ -23,6 +24,8 @@ interface AdventureState {
 	streetStart?: number;
 	/** Today's weather, as the browser would fetch it. */
 	now?: Fact[];
+	/** What TfL would answer for a stop. */
+	arrivals?: { naptan: string; arrivals: TflArrival[] };
 }
 const state = (w: NarratorWorld) => w as NarratorWorld & AdventureState;
 
@@ -201,6 +204,74 @@ Given(
 		restart(this);
 	}
 );
+
+Given(
+	'a bus stop called {string} with the code {string} right beside the reader',
+	function (this: NarratorWorld, name: string, naptan: string) {
+		const here = this.narrator.graph.get(state(this).started!)!.position;
+		this.map.node(destination(here, 0, 5), {
+			highway: 'bus_stop',
+			public_transport: 'platform',
+			name,
+			'naptan:AtcoCode': naptan
+		});
+		restart(this);
+	}
+);
+
+Given(
+	'a tram stop called {string} right beside the reader',
+	function (this: NarratorWorld, name: string) {
+		const here = this.narrator.graph.get(state(this).started!)!.position;
+		this.map.node(destination(here, 180, 5), {
+			railway: 'tram_stop',
+			public_transport: 'stop_position',
+			name
+		});
+		restart(this);
+	}
+);
+
+Given(
+	/^TfL says the (\S+) to (.+) is due at "([^"]+)" in (\d+) minutes$/,
+	function (this: NarratorWorld, line: string, to: string, naptan: string, minutes: string) {
+		const s = state(this);
+		s.arrivals = {
+			naptan,
+			arrivals: [
+				{
+					id: 'x1',
+					lineName: line,
+					destinationName: to,
+					timeToStation: Number(minutes) * 60,
+					modeName: 'bus'
+				}
+			]
+		};
+	}
+);
+
+Then('the reader can hear departures from {string}', function (this: NarratorWorld, name: string) {
+	assert.ok(
+		state(this)
+			.game!.transitHere()
+			.some((t) => t.name === name),
+		JSON.stringify(state(this).game!.transitHere())
+	);
+});
+
+Then('the departures say {string}', function (this: NarratorWorld, words: string) {
+	const s = state(this);
+	const stop = s.game!.transitHere().find((t) => t.naptan === s.arrivals?.naptan)!;
+	const facts = arrivalFacts(s.arrivals!.arrivals, stop.name, '2026-10-24T12:00:00Z');
+	assert.deepEqual(s.game!.departures(stop, facts)?.lines, [words]);
+});
+
+Then('the departures say nothing', function (this: NarratorWorld) {
+	const s = state(this);
+	for (const stop of s.game!.transitHere())
+		assert.equal(s.game!.departures(stop, undefined), undefined);
+});
 
 Given('chance favours memory', function (this: NarratorWorld) {
 	state(this).game!.chance = () => 0;

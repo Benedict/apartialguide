@@ -1,3 +1,4 @@
+import { groupBySubject, type Fact } from '../facts';
 import type { Narrator } from '../narrator';
 import type { Part, Thing } from '../render/renderer';
 import type { StopId } from '../stops';
@@ -18,12 +19,40 @@ export interface CompiledStop {
 	things: Thing[];
 	/** The street or streets underfoot, to examine. */
 	streets?: Thing[];
+	/** Bus and tram stops in view, for live departures. */
+	transit?: TransitStop[];
 	/** Distinctive words in the names spoken here, each with the name as found, for chance. */
 	terms?: Term[];
 	/** Broken names spoken here, for Guide to carry on. */
 	fragments?: string[];
 	/** What a closer look finds, if anything is hidden here. */
 	hidden?: { lines: string[]; things: Thing[] };
+}
+
+/** A stop on the map that TfL has live arrivals for. */
+export interface TransitStop {
+	/** As the map names it. */
+	name: string;
+	kind: 'bus' | 'tram';
+	/** The NaPTAN code the map gives it, which TfL uses too. Tram stops on the map have none. */
+	naptan?: string;
+}
+
+/** The bus and tram stops in view, once each. */
+function transitIn(facts: readonly Fact[]): TransitStop[] {
+	const stops = new Map<string, TransitStop>();
+	for (const group of groupBySubject(facts).values()) {
+		const tags = Object.fromEntries(group.map((f) => [f.claim.key, f.claim.value]));
+		if (!tags.name) continue;
+		const stop: TransitStop | undefined =
+			tags.highway === 'bus_stop' && tags['naptan:AtcoCode']
+				? { name: tags.name, kind: 'bus', naptan: tags['naptan:AtcoCode'] }
+				: tags.railway === 'tram_stop'
+					? { name: tags.name, kind: 'tram' }
+					: undefined;
+		if (stop) stops.set(`${stop.kind}:${stop.naptan ?? stop.name}`, stop);
+	}
+	return [...stops.values()];
 }
 
 /** A word that few names in the map share, and the name it was found in. */
@@ -66,7 +95,8 @@ export function compileWorld(
 	const stops: Record<StopId, CompiledStop> = {};
 	const names = new Map<StopId, { said: string; street?: boolean }[]>();
 	for (const stop of narrator.graph.all()) {
-		const { room, plan, scene } = narrator.visit(stop.id)!;
+		const { room, plan, scene, inView } = narrator.visit(stop.id)!;
+		const transit = transitIn(inView);
 		const things = plan.beats.flatMap((b) =>
 			b.facts
 				.filter((f) => ['name', 'wikidata:label', 'etymology:label'].includes(f.claim.key))
@@ -90,7 +120,8 @@ export function compileWorld(
 			things: room.things,
 			...(room.streets?.length ? { streets: room.streets } : {}),
 			...(room.hidden ? { hidden: room.hidden } : {}),
-			...(fragments.length ? { fragments } : {})
+			...(fragments.length ? { fragments } : {}),
+			...(transit.length ? { transit } : {})
 		};
 	}
 	// How many distinct names in the whole map share each word: a word in few is distinctive.

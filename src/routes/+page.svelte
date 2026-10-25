@@ -2,6 +2,7 @@
 	import { tick } from 'svelte';
 	import { Adventure, type Reply } from '#lib/core/adventure/engine.ts';
 	import { fetchWeatherNow } from '#lib/browser/sky.ts';
+	import { fetchArrivals } from '#lib/browser/transit.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -44,7 +45,16 @@
 
 	async function show(reply: Reply) {
 		transcript.push({ kind: 'reply', reply });
-		if (reply.title) touring = true;
+		if (reply.title) {
+			touring = true;
+			// What is due at the stops here, from TfL, as the reader arrives; nothing without an answer.
+			const here = game.here;
+			for (const stop of game.transitHere())
+				fetchArrivals(stop).then((facts) => {
+					const due = game.here === here && game.departures(stop, facts);
+					if (due) show(due);
+				});
+		}
 		await tick();
 		input.scrollIntoView({ block: 'end' });
 	}
