@@ -30,9 +30,25 @@
 		if (!text) return;
 		history = [...history, text];
 		recall = history.length;
-		transcript.push({ kind: 'command', text }, { kind: 'reply', reply: game.respond(text) });
+		transcript.push({ kind: 'command', text });
+		await show(game.respond(text));
+	}
+
+	async function show(reply: Reply) {
+		transcript.push({ kind: 'reply', reply });
 		await tick();
 		input.scrollIntoView({ block: 'end' });
+		if (reply.locate) locate();
+	}
+
+	/** Only when the reader says here: the browser asks their leave first. */
+	function locate() {
+		if (!navigator.geolocation) return show(game.notFound());
+		navigator.geolocation.getCurrentPosition(
+			({ coords }) => show(game.startAt(coords.latitude, coords.longitude)),
+			() => show(game.notFound()),
+			{ timeout: 15000 }
+		);
 	}
 
 	function keydown(event: KeyboardEvent) {
@@ -73,7 +89,7 @@
 		autocapitalize="off"
 		spellcheck="false"
 		aria-label="What do you do?"
-		placeholder="north, look, examine…"
+		placeholder="a postcode, a street, here…"
 	/>
 </form>
 

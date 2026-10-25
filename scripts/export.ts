@@ -17,7 +17,9 @@ if (!config) {
 	process.exit(1);
 }
 const narrator = loadNarrator(config);
-const world = compileWorld(narrator, startStop(narrator, config).id);
+const world = compileWorld(narrator, startStop(narrator, config).id, {
+	asOf: config.snapshotDate
+});
 
 const bundle = await build({
 	entryPoints: ['src/lib/core/adventure/engine.ts'],

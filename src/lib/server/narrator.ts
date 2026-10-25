@@ -46,7 +46,12 @@ export function adventureWorld(): { world: AdventureWorld; config: Config } | un
 	const config = readConfig();
 	if (!config) return undefined;
 	const narrator = loadNarrator(config);
-	cached = { config, world: compileWorld(narrator, startStop(narrator, config).id) };
+	cached = {
+		config,
+		world: compileWorld(narrator, startStop(narrator, config).id, {
+			asOf: config.snapshotDate
+		})
+	};
 	return cached;
 }
 
