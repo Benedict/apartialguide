@@ -7,6 +7,14 @@ Feature: Playing it as a text adventure
     And a pub called "The Sextant" beside Long Street
     And the reader starts part way along Long Street
 
+  Scenario: Guide introduces themselves before the first place
+    When the game begins
+    Then it says "I am Guide. I lived here a long time ago, yesterday, and tomorrow."
+
+  Scenario: Guide introduces themselves only once
+    When the reader types "look"
+    Then it does not say "I am Guide"
+
   Scenario: The reader is told where they stand
     When the game begins
     Then it says "You are standing on Long Street, between Short Row and Blind Alley."

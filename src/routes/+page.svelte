@@ -10,7 +10,7 @@
 	// The world is fixed for the life of the page, so the game reads it once.
 	// svelte-ignore state_referenced_locally
 	const game = new Adventure(data.world);
-	let transcript: Entry[] = $state([{ kind: 'reply', reply: game.look() }]);
+	let transcript: Entry[] = $state(game.begin().map((reply): Entry => ({ kind: 'reply', reply })));
 	let command = $state('');
 	let history: string[] = [];
 	let recall = 0;
