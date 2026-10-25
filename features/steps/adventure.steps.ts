@@ -181,6 +181,13 @@ Given(
 	}
 );
 
+Given(
+	'a pub called {string} at the west end of Long Street',
+	function (this: NarratorWorld, name: string) {
+		this.map.node(destination(O, 0, 8), { amenity: 'pub', name });
+	}
+);
+
 Given('chance favours memory', function (this: NarratorWorld) {
 	state(this).game!.chance = () => 0;
 });

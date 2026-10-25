@@ -3,7 +3,7 @@ import { weatherNow } from '../render/weather';
 import { longDate } from '../render/words';
 import { direction, parse } from './parser';
 import type { Thing } from '../render/renderer';
-import type { AdventureWorld, CompiledExit } from './world';
+import type { AdventureWorld, CompiledExit, Term } from './world';
 
 export interface Reply {
 	/** Set when the reply describes a place. */
@@ -34,6 +34,11 @@ const RECALLED = [
 	(f: string) => `“${f}”, again. Or still.`
 ];
 
+/** Moves between two names before chance may set them side by side, and how often it may in a walk. */
+const CONNECT_AFTER = 3;
+const CONNECTIONS = 2;
+const CONNECT_CHANCE = 1 / 3;
+
 /** A reader's walk through a compiled world. */
 export class Adventure {
 	private previous?: string;
@@ -47,6 +52,12 @@ export class Adventure {
 	private readonly carried = new Map<string, { at: string; move: number }>();
 	private readonly recalled = new Set<string>();
 	private moves = 0;
+	/** Distinctive words met on this walk, with where and in what name. */
+	private readonly met = new Map<
+		string,
+		{ said: string; at: string; move: number; street?: boolean }[]
+	>();
+	private readonly connected = new Set<string>();
 	/** Today's weather, as the browser found it when the walk began. */
 	private now: Fact[] = [];
 
@@ -154,15 +165,41 @@ export class Adventure {
 	private arrive(): Reply {
 		const reply = this.look();
 		const stop = this.world.stops[this.here];
-		const back = this.recall(stop.fragments ?? []);
+		const back = this.recall(stop.fragments ?? []) ?? this.connect(stop.terms ?? []);
 		for (const f of stop.fragments ?? [])
 			if (!this.carried.has(f)) this.carried.set(f, { at: this.here, move: this.moves });
+		for (const t of stop.terms ?? [])
+			this.met.set(t.term, [
+				...(this.met.get(t.term) ?? []),
+				{ said: t.said, at: this.here, move: this.moves, street: t.street }
+			]);
 		if (!back) return reply;
 		const lines = [...reply.lines];
 		const exits =
 			lines.length && lines.at(-1)!.startsWith('Exits:') ? lines.length - 1 : lines.length;
 		lines.splice(exits, 0, back);
 		return { ...reply, lines };
+	}
+
+	/** Two names that share a word, met in different places, set side by side if chance allows. */
+	private connect(here: readonly Term[]): string | undefined {
+		if (this.connected.size >= CONNECTIONS) return undefined;
+		for (const t of here) {
+			if (this.connected.has(t.term)) continue;
+			const earlier = (this.met.get(t.term) ?? []).find(
+				(e) =>
+					!e.said.toLowerCase().includes(t.said.toLowerCase()) &&
+					!t.said.toLowerCase().includes(e.said.toLowerCase()) &&
+					e.at !== this.here &&
+					this.moves - e.move >= CONNECT_AFTER &&
+					!(e.street && t.street)
+			);
+			if (!earlier) continue;
+			if (this.chance() >= CONNECT_CHANCE) return undefined;
+			this.connected.add(t.term);
+			return `“${t.said}”. Earlier, “${earlier.said}”.`;
+		}
+		return undefined;
 	}
 
 	/** A fragment carried long enough to come back here, out of place, if chance allows. */
