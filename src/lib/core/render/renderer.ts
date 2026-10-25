@@ -7,6 +7,8 @@ export interface Thing {
 	/** Lower-case words the reader might type to mean this thing. */
 	aliases: string[];
 	description: string;
+	/** Land and place: the setting, examinable but not offered as a thing. */
+	background?: true;
 }
 
 /** One sentence or more of a room, labelled so the game can leave out what the reader just heard. */
@@ -27,6 +29,8 @@ export interface Room {
 	/** The paragraphs as labelled parts, when the renderer can tell them apart. */
 	parts?: Part[][];
 	things: Thing[];
+	/** The street or streets underfoot, to examine. */
+	streets?: Thing[];
 	/** What is in view but unnoticed: told, and examinable, only once the reader looks closer. */
 	hidden?: { lines: string[]; things: Thing[] };
 }

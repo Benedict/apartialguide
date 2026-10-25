@@ -624,6 +624,36 @@ describe('AdventureRenderer', () => {
 		});
 	});
 
+	describe('the street to examine', () => {
+		it('offers the street underfoot to examine, in words', () => {
+			const room = renderer.render(scene());
+			expect(room.streets).toEqual([
+				expect.objectContaining({
+					name: 'Everton Road',
+					aliases: expect.arrayContaining(['everton', 'road', 'street', 'here'])
+				})
+			]);
+			const [street] = room.streets!;
+			expect(street.description).toContain('Everton Road. Asphalt underfoot.');
+			expect(street.description).not.toContain('=');
+		});
+
+		it('offers only the streets that meet here, not those merely in view', () => {
+			const nearby = facts('way/5', { highway: 'residential', name: 'Clyde Road' });
+			const room = renderer.render(scene({ street: [...everton, ...nearby] }));
+			expect(room.streets?.map((s) => s.name)).toEqual(['Everton Road']);
+		});
+
+		it('marks the setting, so it is not offered as a thing', () => {
+			const land = {
+				subject: 'way/9',
+				facts: facts('way/9', { landuse: 'residential' }, north(20)),
+				effects: []
+			};
+			expect(renderer.render(scene({ beats: [land] })).things[0].background).toBe(true);
+		});
+	});
+
 	describe('things to examine', () => {
 		it('offers each feature with words to call it by', () => {
 			const [thing] = renderer.render(

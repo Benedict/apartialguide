@@ -421,3 +421,77 @@ describe('Not repeating itself', () => {
 		expect(game.respond('look').lines[0]).toContain('Asphalt underfoot.');
 	});
 });
+
+describe('Examining what is here', () => {
+	const pub = {
+		id: 'node/1',
+		name: 'The Sextant',
+		aliases: ['sextant', 'pub'],
+		description: 'A pub, “The Sextant”.'
+	};
+	const bakery = { id: 'node/2', name: 'bakery', aliases: ['bakery'], description: 'A bakery.' };
+	const street = {
+		id: 'way/1',
+		name: 'Long Street',
+		aliases: ['long', 'street', 'road', 'here'],
+		description: 'Long Street. Asphalt underfoot.'
+	};
+	const world: AdventureWorld = {
+		start: 'a',
+		stops: {
+			a: {
+				title: 'Long Street',
+				paragraphs: ['You are standing on Long Street.'],
+				exits: [],
+				things: [pub, bakery],
+				streets: [street]
+			},
+			b: {
+				title: 'Empty Row',
+				paragraphs: ['You are standing on Empty Row.'],
+				exits: [],
+				things: [],
+				streets: [{ ...street, name: 'Empty Row', aliases: ['empty', 'row', 'street', 'here'] }]
+			}
+		}
+	};
+
+	it('describes the street underfoot', () => {
+		const game = new Adventure(world);
+		expect(game.respond('examine street').lines).toEqual(['Long Street. Asphalt underfoot.']);
+		expect(game.respond('x long street').lines).toEqual(['Long Street. Asphalt underfoot.']);
+		expect(game.respond('examine the road').lines).toEqual(['Long Street. Asphalt underfoot.']);
+	});
+
+	it('lists what there is to examine, when asked to examine everything or nothing in particular', () => {
+		const game = new Adventure(world);
+		for (const asked of ['examine things', 'examine everything', 'examine'])
+			expect(game.respond(asked).lines).toEqual([
+				'You could examine Long Street, The Sextant, or a bakery.'
+			]);
+	});
+
+	it('leaves the setting out of what there is to examine, and names each thing once', () => {
+		const land = {
+			id: 'way/9',
+			name: 'residential area',
+			aliases: ['residential'],
+			description: 'Land.',
+			background: true
+		};
+		const game = new Adventure({
+			...world,
+			stops: { a: { ...world.stops.a, things: [pub, land, { ...pub, id: 'node/3' }] } }
+		});
+		expect(game.respond('examine').lines).toEqual([
+			'You could examine Long Street, or The Sextant.'
+		]);
+	});
+
+	it('says so when there is only the street', () => {
+		const game = new Adventure(world, 'b');
+		expect(game.respond('examine things').lines).toEqual([
+			'There is nothing here to examine but Empty Row.'
+		]);
+	});
+});
