@@ -109,39 +109,12 @@ When('the game begins', function (this: NarratorWorld) {
 	s.reply = s.game!.look();
 });
 
-Given(
-	'a house with the postcode {string} at the east end of Long Street',
-	function (this: NarratorWorld, postcode: string) {
-		this.map.node(destination(destination(O, 90, 200), 0, 8), {
-			building: 'house',
-			'addr:postcode': postcode
-		});
-	}
-);
-
 Given('the reader opens the game', function (this: NarratorWorld) {
 	const s = state(this);
 	s.game = new Adventure(compileWorld(this.narrator, junctionId(s.streetStart!)));
 	const replies = s.game.begin();
 	s.reply = { lines: replies.flatMap((r) => [...(r.title ? [r.title] : []), ...r.lines]) };
 });
-
-Then('the game asks where the reader is', function (this: NarratorWorld) {
-	assert.equal(state(this).reply?.locate, true);
-});
-
-When('the reader is found beside The Sextant', function (this: NarratorWorld) {
-	const [lat, lon] = destination(destination(O, 90, 85), 0, 12);
-	state(this).reply = state(this).game!.startAt(lat, lon);
-});
-
-When(
-	'the reader is found {int} kilometres north of Long Street',
-	function (this: NarratorWorld, km: number) {
-		const [lat, lon] = destination(O, 0, km * 1000);
-		state(this).reply = state(this).game!.startAt(lat, lon);
-	}
-);
 
 When('the reader types {string}', function (this: NarratorWorld, input: string) {
 	const s = state(this);

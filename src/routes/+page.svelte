@@ -12,6 +12,8 @@
 	const game = new Adventure(data.world);
 	let transcript: Entry[] = $state(game.begin().map((reply): Entry => ({ kind: 'reply', reply })));
 	let command = $state('');
+	// Until the tour begins, the only thing to type is to take it.
+	let touring = $state(false);
 	let history: string[] = [];
 	let recall = 0;
 	let input: HTMLInputElement;
@@ -36,19 +38,9 @@
 
 	async function show(reply: Reply) {
 		transcript.push({ kind: 'reply', reply });
+		if (reply.title) touring = true;
 		await tick();
 		input.scrollIntoView({ block: 'end' });
-		if (reply.locate) locate();
-	}
-
-	/** Only when the reader says here: the browser asks their leave first. */
-	function locate() {
-		if (!navigator.geolocation) return show(game.notFound());
-		navigator.geolocation.getCurrentPosition(
-			({ coords }) => show(game.startAt(coords.latitude, coords.longitude)),
-			() => show(game.notFound()),
-			{ timeout: 15000 }
-		);
 	}
 
 	function keydown(event: KeyboardEvent) {
@@ -89,7 +81,7 @@
 		autocapitalize="off"
 		spellcheck="false"
 		aria-label="What do you do?"
-		placeholder="a postcode, a street, here…"
+		placeholder={touring ? 'north, look, examine… or help' : 'take the tour'}
 	/>
 </form>
 

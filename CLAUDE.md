@@ -36,6 +36,6 @@ The core in `src/lib/core/` is plain TypeScript with no framework imports, so Cu
 - `render/`: `Renderer` port, scene to `Room` (title, paragraphs, things to examine). `AdventureRenderer` is the template; `CachedRenderer` uses prose written ahead of time, keyed by `promptKey(buildPrompt(scene))`, and falls back to the template. `prompt.ts` holds Guide's voice (Wainwright and Auster) and the reference page; bump `PROMPT_VERSION` when it changes.
 - `narration.ts`: `narrateWorld` writes prose ahead of time through a `ProseModel` port; prose that repairs a broken name is not stored. `src/lib/server/anthropic.ts` is the Claude adapter; tests use `testing/recorded.ts`.
 - `narrator.ts`: wires the pipeline.
-- `adventure/`: `compileWorld` narrates every stop ahead of time; `parser.ts` and `engine.ts` play it from a prompt. The game opens with Guide's introduction and asks where to begin: `gazetteer.ts` gathers the snapshot's streets, named places and postcodes, `places.ts` looks the reader's words up among them, and "here" uses the browser's location. Nothing is looked up outside the snapshot.
+- `adventure/`: `compileWorld` narrates every stop ahead of time; `parser.ts` and `engine.ts` play it from a prompt. The game opens with Guide's introduction and offers the tour, which begins at `START_AT`.
 
 The web reader is SvelteKit (`src/routes/`): a text adventure with a `>` prompt, playing the compiled world in the browser. Guide speaks to the reader as "you". Configuration comes from environment variables only.
