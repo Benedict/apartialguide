@@ -3,6 +3,7 @@ import { fixedClock } from '../../src/lib/core/facts';
 import { Narrator, type Visit } from '../../src/lib/core/narrator';
 import type { OsmData } from '../../src/lib/core/osm';
 import type { Renderer } from '../../src/lib/core/render/renderer';
+import type { RecordStore } from '../../src/lib/core/adapters/records';
 import type { WikidataStore } from '../../src/lib/core/adapters/wikidata';
 import type { StopId } from '../../src/lib/core/stops';
 import { SyntheticMap } from '../../src/lib/core/testing/synthetic';
@@ -23,6 +24,8 @@ export class NarratorWorld extends World {
 	history: { asOf: string; data: OsmData }[] = [];
 	/** What Wikidata holds, when a scenario sets it. */
 	wikidata?: WikidataStore;
+	/** Other sources' records, when a scenario sets them. */
+	records: RecordStore[] = [];
 	private built?: Narrator;
 
 	get narrator(): Narrator {
@@ -30,7 +33,8 @@ export class NarratorWorld extends World {
 			clock: fixedClock(this.snapshotDate),
 			renderer: this.renderer,
 			history: this.history,
-			wikidata: this.wikidata
+			wikidata: this.wikidata,
+			records: this.records
 		});
 		return this.built;
 	}

@@ -15,6 +15,7 @@ import {
 	priceRecords,
 	protectedRecords
 } from '../src/lib/server/sources/more';
+import { wardAreas } from '../src/lib/server/sources/wards';
 
 const headers = {
 	'User-Agent': 'a-partial-guide/0.1 (art project; https://github.com/Benedict/osm-text-adventure)'
@@ -177,7 +178,43 @@ SELECT ?paon ?street ?amount ?date WHERE {
 				`https://data.police.uk/api/crimes-street/all-crime?poly=${n},${w}:${n},${e}:${s},${e}:${s},${w}`
 			)
 		)
-	})
+	}),
+	/**
+	 * Ward boundaries from the ONS Open Geography Portal, for the wards the box touches. The newest
+	 * published layer that answers is taken; its name is not documented the same way twice.
+	 */
+	wards: async () => {
+		const layers = [
+			'Wards_December_2025_Boundaries_UK_BGC',
+			'Wards_May_2025_Boundaries_UK_BGC',
+			'Wards_December_2024_Boundaries_UK_BGC',
+			'Wards_May_2024_Boundaries_UK_BGC',
+			'Wards_December_2023_Boundaries_UK_BGC',
+			'WD_DEC_2024_UK_BGC',
+			'WD_DEC_2023_UK_BGC'
+		];
+		const query =
+			`query?where=1%3D1&geometry=${w},${s},${e},${n}&geometryType=esriGeometryEnvelope&inSR=4326` +
+			'&spatialRel=esriSpatialRelIntersects&outFields=*&outSR=4326&f=geojson';
+		for (const layer of layers) {
+			const url = `https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/${layer}/FeatureServer/0/${query}`;
+			try {
+				const answer = await getJson(url);
+				const areas = wardAreas(answer);
+				if (!areas.length) throw new Error(`no wards: ${JSON.stringify(answer).slice(0, 300)}`);
+				console.log(`wards: from ${layer}`);
+				return {
+					source: `Office for National Statistics (${layer})`,
+					prefix: 'ward',
+					records: [],
+					areas
+				};
+			} catch (err) {
+				console.log(`wards: ${layer} did not answer: ${(err as Error).message.slice(0, 200)}`);
+			}
+		}
+		throw new Error('no ward layer answered');
+	}
 };
 
 const wanted = (process.env.SOURCES ?? Object.keys(SOURCES).join(','))
@@ -198,7 +235,9 @@ for (const key of wanted) {
 		for (const taken of Array.isArray(got) ? got : [got]) {
 			const path = `data/records/${taken.prefix}-${retrieved}.json`;
 			writeFileSync(path, JSON.stringify({ ...taken, retrieved }, null, '\t') + '\n');
-			console.log(`${key}: ${taken.records.length} records written to ${path}`);
+			console.log(
+				`${key}: ${taken.records.length} records${taken.areas ? `, ${taken.areas.length} areas` : ''} written to ${path}`
+			);
 		}
 	} catch (err) {
 		// One source failing leaves the others' records to be kept.

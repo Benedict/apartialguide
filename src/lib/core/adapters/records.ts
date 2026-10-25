@@ -1,4 +1,5 @@
 import type { Fact, SourceAdapter } from '../facts';
+import type { AreaRecord } from '../areas';
 import { distance, type LatLon } from '../geo';
 import { elementRef, type OsmElement, type OsmIndex } from '../osm';
 
@@ -29,6 +30,8 @@ export interface RecordStore {
 	records: SourceRecord[];
 	/** Whether a record the map does not have stands as a thing of its own. Default true. */
 	standalone?: boolean;
+	/** Areas the source draws, such as wards, rather than things. */
+	areas?: AreaRecord[];
 }
 
 /** How near a thing of the same name must be to be the one a record means, in metres. */

@@ -22,8 +22,10 @@
 	<a href="https://www.planning.data.gov.uk/">planning.data.gov.uk</a>; planning applications from
 	the <a href="https://planningdata.london.gov.uk/">London Planning Datahub</a>; street-level crime
 	from <a href="https://data.police.uk/">police.uk</a>; plaques from
-	<a href="https://openplaques.org/">Open Plaques</a>. Contains HM Land Registry data © Crown
-	copyright and database right 2026, and other public sector information, licensed under the
+	<a href="https://openplaques.org/">Open Plaques</a>. Ward boundaries from the
+	<a href="https://geoportal.statistics.gov.uk/">Office for National Statistics</a>; contains OS
+	data © Crown copyright and database right 2026. Contains HM Land Registry data © Crown copyright
+	and database right 2026, and other public sector information, licensed under the
 	<a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
 		>Open Government Licence v3.0</a
 	>.

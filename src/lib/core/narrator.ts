@@ -2,6 +2,7 @@ import { HistoryAdapter } from './adapters/history';
 import { OsmAdapter } from './adapters/osm';
 import { WikidataAdapter, type WikidataStore } from './adapters/wikidata';
 import { RecordsAdapter, type RecordStore } from './adapters/records';
+import { areaAt, type AreaRecord } from './areas';
 import type { Clock, Fact } from './facts';
 import { distance, distanceToPolyline, type LatLon } from './geo';
 import { OsmIndex, type OsmData } from './osm';
@@ -43,6 +44,7 @@ const OFF_STREET_REACH = 12;
 /** The pipeline from snapshot to narration: facts, perception, tensions, slippage, rendering. */
 export class Narrator {
 	private readonly renderer: Renderer;
+	private readonly areas: AreaRecord[];
 
 	constructor(
 		readonly graph: StopGraph,
@@ -50,6 +52,7 @@ export class Narrator {
 		private readonly options: NarratorOptions
 	) {
 		this.renderer = options.renderer ?? new AdventureRenderer();
+		this.areas = (options.records ?? []).flatMap((store) => store.areas ?? []);
 	}
 
 	static fromOsm(data: OsmData, options: NarratorOptions): Narrator {
@@ -62,6 +65,11 @@ export class Narrator {
 			...(options.records ?? []).flatMap((store) => new RecordsAdapter(osm, store).facts())
 		];
 		return new Narrator(buildStopGraph(osm, options), Perception.fromOsm(osm, facts), options);
+	}
+
+	/** The area another account puts a point in, such as a ward, if any. */
+	areaAt(p: LatLon): AreaRecord | undefined {
+		return areaAt(p, this.areas);
 	}
 
 	visit(id: StopId): Visit | undefined {
