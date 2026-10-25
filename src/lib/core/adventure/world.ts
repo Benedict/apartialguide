@@ -16,6 +16,8 @@ export interface CompiledStop {
 	parts?: Part[][];
 	exits: CompiledExit[];
 	things: Thing[];
+	/** The street or streets underfoot, to examine. */
+	streets?: Thing[];
 	/** Distinctive words in the names spoken here, each with the name as found, for chance. */
 	terms?: Term[];
 	/** Broken names spoken here, for Guide to carry on. */
@@ -86,6 +88,7 @@ export function compileWorld(
 			...(room.parts ? { parts: room.parts } : {}),
 			exits: stop.exits.map(({ label, to, street }) => ({ label, to, street })),
 			things: room.things,
+			...(room.streets?.length ? { streets: room.streets } : {}),
 			...(room.hidden ? { hidden: room.hidden } : {}),
 			...(fragments.length ? { fragments } : {})
 		};
