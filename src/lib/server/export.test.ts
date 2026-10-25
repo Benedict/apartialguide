@@ -68,6 +68,7 @@ describe('exportPage', () => {
 			'Open Plaques',
 			'Open Government Licence v3.0',
 			'Office for National Statistics',
+			'London Datastore',
 			'Contains OS data © Crown copyright and database right'
 		])
 			expect(page()).toContain(credit);
