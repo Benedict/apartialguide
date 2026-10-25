@@ -8,13 +8,14 @@
  * With AS_OF=2013-01-01,2017-01-01 it instead fetches the map as it stood on each date, from
  * Overpass, into data/history/<SNAPSHOT_NAME>-<date>.json.
  *
+ * AROUND_PLACE=Addiscombe RADIUS_M=1200 takes the box around the map's own point for the place.
  * AREA="^Addiscombe (East|West)$" takes the box around the administrative boundaries whose names
  * match, from Overpass, and fetches the map in it from Overpass too: a whole area is more than the
  * OSM API will give at once. Without BBOX, AS_OF uses the box of the newest snapshot.
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { bboxAround, type LatLon } from '../src/lib/core/geo';
-import { bboxAroundBoundaries } from '../src/lib/server/area';
+import { bboxAroundBoundaries, placeCentre } from '../src/lib/server/area';
 
 const api = process.env.OSM_API ?? 'https://api.openstreetmap.org/api/0.6';
 const headers = { 'User-Agent': 'a-partial-guide/0.1 (art project; snapshot script)' };
@@ -83,6 +84,19 @@ if (!bbox && process.env.AREA) {
 	}
 	({ bbox, names: area } = bboxAroundBoundaries(answer));
 	console.log(`${area.join(', ')} → bbox ${bbox}`);
+}
+if (!bbox && process.env.AROUND_PLACE) {
+	// The map's own point for a place, and a radius around it: OSM has no outline for every district.
+	const radius = Number(process.env.RADIUS_M ?? 1200);
+	const place = process.env.AROUND_PLACE.replace(/"/g, '\\"');
+	const centre = placeCentre(
+		await ask(`[out:json][timeout:60];node["place"]["name"="${place}"];out;`, `the place ${place}`)
+	);
+	bbox = bboxAround(centre, radius)
+		.map((v) => v.toFixed(6))
+		.join(',');
+	area = [`${process.env.AROUND_PLACE}, ${radius} m around ${centre.join(',')}`];
+	console.log(`${area[0]} → bbox ${bbox}`);
 }
 if (!bbox && process.env.AS_OF) {
 	const snapshots = process.env.SNAPSHOT_DIR ?? 'data/snapshots';

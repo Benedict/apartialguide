@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { bboxAroundBoundaries } from './area';
+import { bboxAroundBoundaries, placeCentre } from './area';
 
 describe('bboxAroundBoundaries', () => {
 	it('takes the box around every boundary Overpass matched, as minLon,minLat,maxLon,maxLat', () => {
@@ -27,5 +27,22 @@ describe('bboxAroundBoundaries', () => {
 
 	it('refuses an answer with no boundary in it', () => {
 		expect(() => bboxAroundBoundaries({ elements: [] })).toThrow(/no boundary/);
+	});
+});
+
+describe('placeCentre', () => {
+	it('takes the point of the place itself, preferring a suburb to anything else of the name', () => {
+		expect(
+			placeCentre({
+				elements: [
+					{ type: 'node', lat: 51.1, lon: -0.1, tags: { place: 'locality', name: 'Inventon' } },
+					{ type: 'node', lat: 51.2, lon: -0.2, tags: { place: 'suburb', name: 'Inventon' } }
+				]
+			})
+		).toEqual([51.2, -0.2]);
+	});
+
+	it('refuses an answer with no place in it', () => {
+		expect(() => placeCentre({ elements: [] })).toThrow(/no place/);
 	});
 });
