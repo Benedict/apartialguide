@@ -4,6 +4,7 @@
 	import { skyNow } from '#lib/browser/sky.ts';
 	import { fetchArrivals } from '#lib/browser/transit.ts';
 	import { loadSettings } from '#lib/browser/settings.ts';
+	import { browserSaves } from '#lib/browser/saves.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -14,6 +15,7 @@
 	// The world is fixed for the life of the page, so the game reads it once.
 	// svelte-ignore state_referenced_locally
 	const game = new Adventure(data.world);
+	game.saves = browserSaves();
 	let transcript: Entry[] = $state([]);
 	let command = $state('');
 	// Until the tour begins, the only thing to type is to take it.

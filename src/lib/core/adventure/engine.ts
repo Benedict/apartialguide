@@ -6,6 +6,7 @@ import { longDate } from '../render/words';
 import { direction, parse } from './parser';
 import type { Thing } from '../render/renderer';
 import { distance } from '../geo';
+import { AUTO, SLOTS, type SaveStore, type SavedWalk, type WalkState } from './saves';
 import type { AdventureWorld, CompiledExit, Term, TransitStop } from './world';
 
 export interface Reply {
@@ -24,6 +25,7 @@ export const HELP =
 	'Type a direction to walk: north, ne, go east, or the name of a street; back retraces your step. ' +
 	'Look (l) tells the place again in full; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name and drop it somewhere else; inventory (i) says what you carry. ' +
+	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
 	'Exits, weather, gps for this place on a map, score for how far you have walked, wait (z), again (g), and verbose or brief.';
 
 /** Guide's words about themselves, said once, before the first place. */
@@ -111,6 +113,9 @@ export class Adventure {
 	private readonly pocket: string[] = [];
 	/** Names the reader has left, by the stop they were left at. */
 	private readonly left = new Map<string, string[]>();
+	/** Where walks are kept, if anywhere; the walk keeps itself in its own slot after each command. */
+	saves?: SaveStore;
+	clock: () => Date = () => new Date();
 
 	constructor(
 		private readonly world: AdventureWorld,
@@ -127,7 +132,10 @@ export class Adventure {
 		const map = asOf
 			? `The map I carry is dated ${longDate(asOf)}.${sky} Beyond it there may be more. I could not say what.`
 			: 'Beyond my map there may be more. I could not say what.';
-		return [{ lines: [...INTRO, map] }, { lines: [OFFER], actions: TAKE_TOUR }];
+		return [
+			{ lines: [...INTRO, map] },
+			{ lines: [OFFER], actions: [...this.continuing(), ...TAKE_TOUR] }
+		];
 	}
 
 	private beginAt(id: string): Reply {
@@ -137,7 +145,21 @@ export class Adventure {
 		return this.arrive();
 	}
 
+	/** A button to pick up the walk kept from before, on this map, if there is one. */
+	private continuing(): { label: string; command: string }[] {
+		const kept = this.saves?.get(AUTO);
+		if (!kept || kept.map !== this.mapId()) return [];
+		return [
+			{
+				label: `Continue the walk (${kept.place}, ${distanceWords(kept.walked)})`,
+				command: `restore ${AUTO}`
+			}
+		];
+	}
+
 	private choose(input: string): Reply {
+		const command = parse(input);
+		if (command.verb === 'restore') return this.restore(command.slot);
 		const words = input
 			.trim()
 			.toLowerCase()
@@ -159,12 +181,18 @@ export class Adventure {
 	}
 
 	respond(input: string): Reply {
+		const reply = this.answer(input);
+		if (!this.choosing && this.saves) this.keep(AUTO);
+		return reply;
+	}
+
+	private answer(input: string): Reply {
 		if (this.choosing) return this.choose(input);
 		const command = parse(input);
 		if (command.verb === 'again')
 			return this.lastCommand === undefined
 				? { lines: ['You have done nothing yet to do again.'] }
-				: this.respond(this.lastCommand);
+				: this.answer(this.lastCommand);
 		if (command.verb !== 'empty') this.lastCommand = input;
 		switch (command.verb) {
 			case 'empty':
@@ -209,6 +237,10 @@ export class Adventure {
 				return { lines: ['Nothing happens. Nothing has happened here for some time.'] };
 			case 'inventory':
 				return { lines: [this.inventory()] };
+			case 'save':
+				return this.save(command.slot);
+			case 'restore':
+				return this.restore(command.slot);
 			case 'take':
 				return { lines: [this.take(command.target)] };
 			case 'drop':
@@ -258,6 +290,130 @@ export class Adventure {
 		return passed
 			? { ...reply, lines: [...reply.lines, `You have walked ${distanceWords(passed)}.`] }
 			: reply;
+	}
+
+	/** Which map this is, so a walk saved on another is never picked up here. */
+	private mapId(): string {
+		return `${this.world.asOf ?? ''}|${this.world.start}|${Object.keys(this.world.stops).length}`;
+	}
+
+	/** The walk as plain data, to keep. */
+	snapshot(): SavedWalk {
+		const state: WalkState = {
+			here: this.here,
+			...(this.previous ? { previous: this.previous } : {}),
+			moves: this.moves,
+			walked: this.walked,
+			verbose: this.verbose,
+			...(this.lastCommand ? { lastCommand: this.lastCommand } : {}),
+			...(this.lastStreet ? { lastStreet: this.lastStreet } : {}),
+			visited: [...this.visited],
+			explored: [...this.explored],
+			pocket: [...this.pocket],
+			left: [...this.left],
+			carried: [...this.carried],
+			recalled: [...this.recalled],
+			heard: this.heard,
+			framed: [...this.framed],
+			met: [...this.met],
+			connected: [...this.connected]
+		};
+		return {
+			version: 1,
+			map: this.mapId(),
+			savedAt: this.clock().toISOString(),
+			place: this.world.stops[this.here].title,
+			walked: this.walked,
+			moves: this.moves,
+			state
+		};
+	}
+
+	private keep(slot: string): SavedWalk {
+		const walk = this.snapshot();
+		try {
+			this.saves?.put(slot, walk);
+		} catch {
+			// A browser that will keep nothing more loses the save, never the walk.
+		}
+		return walk;
+	}
+
+	private save(slot?: string): Reply {
+		const saves = this.saves;
+		if (!saves) return { lines: ['I have nowhere to keep a walk here.'] };
+		if (!slot)
+			return {
+				lines: ['Save in which slot?'],
+				actions: SLOTS.map((s) => {
+					const kept = saves.get(s);
+					return {
+						label: kept ? `${s}: ${kept.place}, ${distanceWords(kept.walked)}` : `${s}: empty`,
+						command: `save ${s}`
+					};
+				})
+			};
+		if (!SLOTS.includes(slot))
+			return { lines: [`There are slots ${SLOTS[0]} to ${SLOTS.at(-1)}.`] };
+		const walk = this.keep(slot);
+		const moves = `${walk.moves} move${walk.moves === 1 ? '' : 's'}`;
+		return {
+			lines: [`Saved in slot ${slot}: ${walk.place}, ${distanceWords(walk.walked)}, ${moves}.`]
+		};
+	}
+
+	private restore(slot?: string): Reply {
+		const saves = this.saves;
+		if (!saves) return { lines: ['I have nowhere a walk could be kept.'] };
+		if (!slot) {
+			const kept = [AUTO, ...SLOTS]
+				.map((s) => ({ s, walk: saves.get(s) }))
+				.filter(
+					(k): k is { s: string; walk: SavedWalk } => !!k.walk && k.walk.map === this.mapId()
+				);
+			if (!kept.length) return { lines: ['There is no walk kept to restore.'] };
+			return {
+				lines: ['Restore which walk?'],
+				actions: kept.map(({ s, walk }) => ({
+					label: `${s === AUTO ? 'Last walk' : s}: ${walk.place}, ${distanceWords(walk.walked)}`,
+					command: `restore ${s}`
+				}))
+			};
+		}
+		if (slot !== AUTO && !SLOTS.includes(slot))
+			return { lines: [`There are slots ${SLOTS[0]} to ${SLOTS.at(-1)}.`] };
+		const walk = saves.get(slot);
+		if (!walk)
+			return {
+				lines: [slot === AUTO ? 'There is no walk kept to continue.' : `Slot ${slot} is empty.`]
+			};
+		if (walk.version !== 1 || walk.map !== this.mapId() || !this.world.stops[walk.state.here])
+			return { lines: ['That walk was on another map. I cannot pick it up on this one.'] };
+		this.load(walk.state);
+		const place = this.look();
+		const said = slot === AUTO ? 'We go on from where we were.' : `Restored from slot ${slot}.`;
+		return { ...place, lines: [said, ...place.lines] };
+	}
+
+	private load(state: WalkState): void {
+		this.choosing = false;
+		this.here = state.here;
+		this.previous = state.previous;
+		this.moves = state.moves;
+		this.walked = state.walked;
+		this.verbose = state.verbose;
+		this.lastCommand = state.lastCommand;
+		this.lastStreet = state.lastStreet;
+		this.heard = state.heard;
+		refill(this.visited, state.visited);
+		refill(this.explored, state.explored);
+		refill(this.recalled, state.recalled);
+		refill(this.connected, state.connected);
+		this.pocket.splice(0, this.pocket.length, ...state.pocket);
+		refillMap(this.left, state.left);
+		refillMap(this.carried, state.carried);
+		refillMap(this.framed, state.framed);
+		refillMap(this.met, state.met);
 	}
 
 	private score(): string {
@@ -540,4 +696,16 @@ function matchExits(exits: readonly CompiledExit[], where: string): CompiledExit
 	const qualified = exits.filter((e) => e.label.startsWith(`${where} (`));
 	if (qualified.length) return qualified;
 	return exits.filter((e) => e.street?.toLowerCase() === where);
+}
+
+/** A set holding just these items. */
+function refill<T>(set: Set<T>, items: readonly T[]): void {
+	set.clear();
+	for (const item of items) set.add(item);
+}
+
+/** A map holding just these entries. */
+function refillMap<K, V>(map: Map<K, V>, entries: readonly [K, V][]): void {
+	map.clear();
+	for (const [k, v] of entries) map.set(k, v);
 }

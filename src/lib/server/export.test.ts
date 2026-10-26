@@ -144,4 +144,8 @@ describe('exportPage', () => {
 		expect(page()).toContain("matchMedia('(min-width:");
 		expect(page()).toContain('settings.maps');
 	});
+
+	it('keeps saved walks in the reader’s browser', () => {
+		expect(page()).toContain('game.saves = browserSaves()');
+	});
 });

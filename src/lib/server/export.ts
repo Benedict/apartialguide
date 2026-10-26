@@ -194,6 +194,8 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 	const unzipped = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
 	const WORLD = JSON.parse(await new Response(unzipped).text());
 	const game = new Adventure(WORLD);
+	// Saved walks, in this browser: five slots, and the walk kept as it goes.
+	game.saves = browserSaves();
 	const transcript = document.getElementById('transcript');
 	const statusBar = document.getElementById('status');
 	const input = document.getElementById('command');
