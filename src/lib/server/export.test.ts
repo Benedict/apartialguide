@@ -128,4 +128,20 @@ describe('exportPage', () => {
 	it('shows the link a reply carries, such as a place on a map', () => {
 		expect(page()).toContain('reply.link');
 	});
+
+	it('offers a reply’s actions as buttons', () => {
+		expect(page()).toContain('reply.actions');
+	});
+
+	it('keeps a status line: the place, the distance walked and the moves', () => {
+		expect(page()).toContain('id="status"');
+		expect(page()).toContain('game.status()');
+	});
+
+	it('draws gps’s place on a map, on a wide screen, from pinned MapLibre and OpenFreeMap', () => {
+		expect(page()).toMatch(/maplibre-gl@\d+\.\d+\.\d+\/dist\/maplibre-gl\.js/);
+		expect(page()).toContain('https://tiles.openfreemap.org/styles/');
+		expect(page()).toContain("matchMedia('(min-width:");
+		expect(page()).toContain('settings.maps');
+	});
 });

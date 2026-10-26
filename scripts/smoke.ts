@@ -1,6 +1,7 @@
 /**
  * Opens the exported page in a real browser, at phone size, and checks that it plays: Guide
- * introduces themselves, the tour can be taken, gps links to the map, the About and Settings pages
+ * introduces themselves, the tour can be taken with a click, the status line counts moves, gps
+ * links to the map and asks for one on a wide screen, the About and Settings pages
  * open, and a setting turned off is kept and obeyed. Run after `npm run export`:
  *   EXPORT_PATH=site/index.html npm run smoke
  * Outside requests are refused, as they may be anywhere, and the page must still play without them.
@@ -44,9 +45,12 @@ try {
 		'the weather was not asked after'
 	);
 	const input = page.locator('#command');
-	await input.fill('take the tour');
-	await input.press('Enter');
+	await page.getByRole('button', { name: 'Take the tour' }).click();
 	await says(page, /Exits?:/);
+	check(
+		/\d+ moves?/.test(await page.locator('#status').innerText()),
+		'the status line does not show the moves'
+	);
 	check(await input.isEnabled(), 'the prompt is not enabled');
 
 	await input.fill('gps');
@@ -54,6 +58,16 @@ try {
 	await says(page, 'By the map, you are at');
 	const map = page.locator('#transcript a[href^="https://www.google.com/maps/"]').last();
 	check((await map.count()) === 1, 'gps gives no link to Google Maps');
+
+	// On a wide screen gps tries for a map; with nothing answering, the walk carries on without one.
+	await page.setViewportSize({ width: 1200, height: 800 });
+	await input.fill('gps');
+	await input.press('Enter');
+	await page.waitForTimeout(500);
+	await input.fill('look');
+	await input.press('Enter');
+	await says(page, /Exits?:/);
+	await page.setViewportSize({ width: 390, height: 844 });
 
 	await page.click('a[href="#about"]');
 	check(await shows(page, '#about'), 'the About page does not open');

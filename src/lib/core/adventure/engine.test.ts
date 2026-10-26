@@ -34,6 +34,11 @@ describe('Adventure', () => {
 			return game;
 		};
 
+		it('offers the tour as something to click as well as type', () => {
+			const [, offer] = new Adventure(world).begin();
+			expect(offer.actions).toEqual([{ label: 'Take the tour', command: 'take the tour' }]);
+		});
+
 		it('opens with Guide introducing themselves, then offers the tour', () => {
 			const [intro, offer] = new Adventure(world).begin();
 			expect(intro.lines[0]).toBe(INTRO[0]);
@@ -155,7 +160,7 @@ describe('Adventure', () => {
 	});
 
 	it('answers words it does not know', () => {
-		expect(new Adventure(world).respond('dance').lines[0]).toMatch(/I don’t know how to “dance”/);
+		expect(new Adventure(world).respond('dance').lines[0]).toMatch(/I don’t know the word “dance”/);
 	});
 
 	it('cannot go back before moving', () => {
@@ -632,6 +637,7 @@ describe('Departures', () => {
 		it('gives where the map puts this stop, with a link to it on Google Maps', () => {
 			expect(touring().respond('gps')).toEqual({
 				lines: ['By the map, you are at 51.38000, -0.07000.'],
+				map: { latitude: 51.38, longitude: -0.07, label: 'Mill Parade' },
 				link: {
 					href: 'https://www.google.com/maps/search/?api=1&query=51.38000%2C-0.07000',
 					text: 'See it on Google Maps'

@@ -61,4 +61,21 @@ describe('parse', () => {
 	it('keeps what it cannot read', () => {
 		expect(parse('Dance!')).toEqual({ verb: 'unknown', text: 'dance' });
 	});
+
+	it('reads the classic verbs', () => {
+		for (const t of ['z', 'wait']) expect(parse(t)).toEqual({ verb: 'wait' });
+		for (const t of ['g', 'again']) expect(parse(t)).toEqual({ verb: 'again' });
+		for (const t of ['i', 'inv', 'inventory']) expect(parse(t)).toEqual({ verb: 'inventory' });
+		expect(parse('verbose')).toEqual({ verb: 'verbose' });
+		expect(parse('brief')).toEqual({ verb: 'brief' });
+		expect(parse('score')).toEqual({ verb: 'score' });
+		for (const t of ['xyzzy', 'plugh']) expect(parse(t)).toEqual({ verb: 'magic' });
+	});
+
+	it('reads taking and dropping', () => {
+		for (const t of ['take sextant', 'get the sextant', 'pick up the sextant'])
+			expect(parse(t)).toEqual({ verb: 'take', target: 'sextant' });
+		for (const t of ['drop sextant', 'leave the sextant', 'put down sextant'])
+			expect(parse(t)).toEqual({ verb: 'drop', target: 'sextant' });
+	});
 });

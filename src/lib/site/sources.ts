@@ -10,7 +10,7 @@ export interface Source {
 	live?: LiveKey;
 }
 
-export type LiveKey = 'weather' | 'departures';
+export type LiveKey = 'weather' | 'departures' | 'maps';
 
 const OGL = 'Open Government Licence v3.0';
 
@@ -35,6 +35,14 @@ export const SOURCES: Source[] = [
 		gives: 'what is due next at the bus and tram stops on the map',
 		terms: 'Powered by TfL Open Data. Contains OS data © Crown copyright and database rights 2016',
 		live: 'departures'
+	},
+	{
+		name: 'OpenFreeMap',
+		href: 'https://openfreemap.org/',
+		gives:
+			'the map shown with gps on a wide screen, drawn with MapLibre GL JS, around where the map puts the stop, never where you are',
+		terms: '© OpenMapTiles, © OpenStreetMap contributors. MapLibre GL JS, BSD-3-Clause',
+		live: 'maps'
 	},
 	{
 		name: 'SunCalc',
@@ -98,12 +106,17 @@ export const SOURCES: Source[] = [
 	}
 ];
 
+const LABELS: Record<LiveKey, string> = {
+	weather: 'Ask after today’s weather',
+	departures: 'Ask what is due at bus and tram stops',
+	maps: 'Show a map beside gps, on a wide screen'
+};
+
 /** The settings for the sources asked from the reader's browser. */
 export const LIVE: { key: LiveKey; label: string; source: string }[] = SOURCES.filter(
 	(s): s is Source & { live: LiveKey } => !!s.live
 ).map((s) => ({
 	key: s.live,
-	label:
-		s.live === 'weather' ? 'Ask after today’s weather' : 'Ask what is due at bus and tram stops',
+	label: LABELS[s.live],
 	source: s.name
 }));

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { tick } from 'svelte';
-	import { Adventure, type Reply } from '#lib/core/adventure/engine.ts';
+	import { Adventure, distanceWords, type Reply } from '#lib/core/adventure/engine.ts';
 	import { skyNow } from '#lib/browser/sky.ts';
 	import { fetchArrivals } from '#lib/browser/transit.ts';
 	import { loadSettings } from '#lib/browser/settings.ts';
@@ -40,15 +40,22 @@
 		event.preventDefault();
 		const text = command.trim();
 		command = '';
-		if (!text) return;
+		if (text) await run(text);
+	}
+
+	async function run(text: string) {
 		history = [...history, text];
 		recall = history.length;
 		transcript.push({ kind: 'command', text });
 		await show(game.respond(text));
 	}
 
+	// The status line: where you are, how far you have walked, in how many moves.
+	let status = $state(game.status());
+
 	async function show(reply: Reply) {
 		transcript.push({ kind: 'reply', reply });
+		status = game.status();
 		if (reply.title) {
 			touring = true;
 			// What is due at the stops here, from TfL, as the reader arrives; nothing without an answer.
@@ -77,6 +84,15 @@
 	<title>A Partial Guide</title>
 </svelte:head>
 
+{#if touring}
+	<p class="status">
+		<span>{status.place}</span>
+		<span
+			>{distanceWords(status.walked)} · {status.moves} {status.moves === 1 ? 'move' : 'moves'}</span
+		>
+	</p>
+{/if}
+
 <div class="transcript" aria-live="polite">
 	{#each transcript as entry, i (i)}
 		{#if entry.kind === 'command'}
@@ -85,6 +101,15 @@
 			<section>
 				{#if entry.reply.title}<h2>{entry.reply.title}</h2>{/if}
 				{#each entry.reply.lines as line, j (j)}<p>{line}</p>{/each}
+				{#if entry.reply.actions}
+					<p class="actions">
+						{#each entry.reply.actions as action (action.command)}
+							<button type="button" disabled={touring} onclick={() => run(action.command)}
+								>{action.label}</button
+							>
+						{/each}
+					</p>
+				{/if}
 				{#if entry.reply.link}
 					<p>
 						<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- another site -->
@@ -115,6 +140,37 @@
 </form>
 
 <style>
+	.status {
+		position: sticky;
+		top: 0;
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		margin: 0 0 1rem;
+		padding: 0.25rem 0.5rem;
+		font-family: var(--mono);
+		font-size: 0.8rem;
+		background: var(--ink);
+		color: var(--paper);
+	}
+
+	.actions button {
+		font: inherit;
+		font-family: var(--mono);
+		font-size: 0.95rem;
+		color: var(--paper);
+		background: var(--accent);
+		border: 0;
+		border-radius: 4px;
+		padding: 0.5rem 0.9rem;
+		min-height: 44px;
+		cursor: pointer;
+	}
+
+	.actions button:disabled {
+		opacity: 0.5;
+	}
+
 	.transcript {
 		display: grid;
 		gap: 1.6rem;
