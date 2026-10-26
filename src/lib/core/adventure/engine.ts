@@ -5,6 +5,7 @@ import { departuresLine } from '../render/departures';
 import { longDate } from '../render/words';
 import { direction, parse } from './parser';
 import type { Thing } from '../render/renderer';
+import { distance } from '../geo';
 import type { AdventureWorld, CompiledExit, Term, TransitStop } from './world';
 
 export interface Reply {
@@ -13,17 +14,24 @@ export interface Reply {
 	lines: string[];
 	/** Somewhere to go beyond the page, such as this place on a map. */
 	link?: { href: string; text: string };
+	/** A place to show on a map, where the page can. */
+	map?: { latitude: number; longitude: number; label: string };
+	/** Commands to offer as buttons, as well as to type. */
+	actions?: { label: string; command: string }[];
 }
 
 export const HELP =
-	'Type a direction to walk: north, ne, go east, or the name of a street. ' +
-	'Type look to hear the place again, explore to find what I have not mentioned, examine to see what there is, or examine a thing or a street to look closer, ' +
-	'exits for the ways on, back to retrace your step, weather to ask after the sky, and gps to see this place on a map.';
+	'Type a direction to walk: north, ne, go east, or the name of a street; back retraces your step. ' +
+	'Look (l) tells the place again in full; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
+	'Take a name and drop it somewhere else; inventory (i) says what you carry. ' +
+	'Exits, weather, gps for this place on a map, score for how far you have walked, wait (z), again (g), and verbose or brief.';
 
 /** Guide's words about themselves, said once, before the first place. */
 export const INTRO = ['I am Guide. I lived here a long time ago, yesterday, and tomorrow.'];
 
-const OFFER = 'Shall I show you round? Type take the tour, and we will begin.';
+export const OFFER = 'Shall I show you round? Type take the tour, and we will begin.';
+/** The tour, offered as a button as well as to type. */
+const TAKE_TOUR = [{ label: 'Take the tour', command: 'take the tour' }];
 const TOUR = /^(take the tour|take tour|the tour|tour|yes|begin|start)$/;
 
 /** Moves after collecting a fragment before it can come back, and how many come back in a walk. */
@@ -42,6 +50,30 @@ const RECALLED = [
 const CONNECT_AFTER = 3;
 const CONNECTIONS = 2;
 const CONNECT_CHANCE = 1 / 3;
+
+/** The distances that mark a walk, in metres: the goal is to walk, and each is told once passed. */
+const MARKS = [250, 500, 1000, 2000, 5000, 10_000, 20_000, 50_000];
+
+/** A distance as Guide says it: tens of metres under a kilometre, then tenths of a kilometre. */
+export function distanceWords(metres: number): string {
+	if (metres < 1000) return `${Math.round(metres / 10) * 10} metres`;
+	const km = metres / 1000;
+	return `${Number.isInteger(km) ? km : km.toFixed(1)} km`;
+}
+
+/** “A”, “A” and “B”, or “A”, “B” and “C”. */
+const listed = (names: readonly string[]) =>
+	names.length < 2 ? (names[0] ?? '') : `${names.slice(0, -1).join(', ')} and ${names.at(-1)}`;
+
+const quote = (name: string) => `“${name}”`;
+
+/** Where the walk stands: the place, the steps taken and how far they came to. */
+export interface Status {
+	place: string;
+	moves: number;
+	/** Metres walked, between where the map puts each stop. */
+	walked: number;
+}
 
 /** A reader's walk through a compiled world. */
 export class Adventure {
@@ -70,6 +102,15 @@ export class Adventure {
 	private readonly connected = new Set<string>();
 	/** Today's weather and the sky, as the browser found them when the walk began. */
 	private now: Fact[] = [];
+	/** Places already told in full; told briefly on return unless verbose. */
+	private readonly visited = new Set<string>();
+	private verbose = false;
+	private walked = 0;
+	private lastCommand?: string;
+	/** The names the reader carries, in the order taken. */
+	private readonly pocket: string[] = [];
+	/** Names the reader has left, by the stop they were left at. */
+	private readonly left = new Map<string, string[]>();
 
 	constructor(
 		private readonly world: AdventureWorld,
@@ -86,7 +127,7 @@ export class Adventure {
 		const map = asOf
 			? `The map I carry is dated ${longDate(asOf)}.${sky} Beyond it there may be more. I could not say what.`
 			: 'Beyond my map there may be more. I could not say what.';
-		return [{ lines: [...INTRO, map] }, { lines: [OFFER] }];
+		return [{ lines: [...INTRO, map] }, { lines: [OFFER], actions: TAKE_TOUR }];
 	}
 
 	private beginAt(id: string): Reply {
@@ -102,7 +143,9 @@ export class Adventure {
 			.toLowerCase()
 			.replace(/[.!?]+$/, '');
 		if (!words) return { lines: [] };
-		return TOUR.test(words) ? this.beginAt(this.world.start) : { lines: [OFFER] };
+		return TOUR.test(words)
+			? this.beginAt(this.world.start)
+			: { lines: [OFFER], actions: TAKE_TOUR };
 	}
 
 	look(): Reply {
@@ -110,9 +153,19 @@ export class Adventure {
 		return { title: stop.title, lines: stop.paragraphs };
 	}
 
+	/** Where the walk stands, for a status line. */
+	status(): Status {
+		return { place: this.world.stops[this.here].title, moves: this.moves, walked: this.walked };
+	}
+
 	respond(input: string): Reply {
 		if (this.choosing) return this.choose(input);
 		const command = parse(input);
+		if (command.verb === 'again')
+			return this.lastCommand === undefined
+				? { lines: ['You have done nothing yet to do again.'] }
+				: this.respond(this.lastCommand);
+		if (command.verb !== 'empty') this.lastCommand = input;
 		switch (command.verb) {
 			case 'empty':
 				return { lines: [] };
@@ -142,9 +195,29 @@ export class Adventure {
 				return this.go(command.direction);
 			case 'examine':
 				return this.examine(command.target);
+			case 'wait':
+				return { lines: ['Time passes. Not much else does.'] };
+			case 'verbose':
+				this.verbose = true;
+				return { lines: ['I will tell every place in full, however often you come back to it.'] };
+			case 'brief':
+				this.verbose = false;
+				return { lines: ['Brief, then: a place in full the first time, and briefly after.'] };
+			case 'score':
+				return { lines: [this.score()] };
+			case 'magic':
+				return { lines: ['Nothing happens. Nothing has happened here for some time.'] };
+			case 'inventory':
+				return { lines: [this.inventory()] };
+			case 'take':
+				return { lines: [this.take(command.target)] };
+			case 'drop':
+				return { lines: [this.drop(command.target)] };
 			case 'unknown':
 				return {
-					lines: [`I don’t know how to “${command.text}”. Type help to see what I understand.`]
+					lines: [
+						`I don’t know the word “${command.text.split(/\s+/)[0]}”. Type help to see what I understand.`
+					]
 				};
 		}
 	}
@@ -173,15 +246,98 @@ export class Adventure {
 	}
 
 	private moveTo(to: string): Reply {
+		const from = this.world.stops[this.here].at;
+		const at = this.world.stops[to].at;
+		const before = this.walked;
+		if (from && at) this.walked += distance(from, at);
 		this.previous = this.here;
 		this.here = to;
 		this.moves++;
-		return this.arrive();
+		const reply = this.arrive();
+		const passed = MARKS.filter((m) => m > before && m <= this.walked).at(-1);
+		return passed
+			? { ...reply, lines: [...reply.lines, `You have walked ${distanceWords(passed)}.`] }
+			: reply;
+	}
+
+	private score(): string {
+		const moves = `${this.moves} move${this.moves === 1 ? '' : 's'}`;
+		const next = MARKS.find((m) => m > this.walked);
+		const mark = next
+			? ` The next mark is ${distanceWords(next)}.`
+			: ' You have passed every mark I know.';
+		return `You have walked ${distanceWords(this.walked)} in ${moves}.${mark}`;
+	}
+
+	private inventory(): string {
+		return this.pocket.length
+			? `You are carrying ${listed(this.pocket.map(quote))}.`
+			: 'You are carrying nothing. Names, perhaps, if you take them.';
+	}
+
+	/** Takes a name: of something left here, a broken name spoken here, or a thing here. Never the thing. */
+	private take(target: string): string {
+		const stop = this.world.stops[this.here];
+		const words = target.toLowerCase().split(/\s+/);
+		const means = (name: string) => words.every((w) => name.toLowerCase().includes(w));
+		const left = this.left.get(this.here) ?? [];
+		const name =
+			left.find(means) ??
+			(stop.fragments ?? []).find(means) ??
+			this.visibleThings().find((t) => words.every((w) => t.aliases.includes(w)))?.name;
+		if (!name) return `You see no ${target} here.`;
+		if (this.pocket.includes(name)) return `You already carry ${quote(name)}.`;
+		this.pocket.push(name);
+		if (!this.carried.has(name)) this.carried.set(name, { at: this.here, move: this.moves });
+		if (left.includes(name)) {
+			this.left.set(
+				this.here,
+				left.filter((n) => n !== name)
+			);
+			return `Taken: ${quote(name)}.`;
+		}
+		return (stop.fragments ?? []).includes(name)
+			? `Taken: ${quote(name)}.`
+			: `You cannot take ${name}. I take its name, ${quote(name)}, for you.`;
+	}
+
+	private drop(target: string): string {
+		const words = target.toLowerCase().split(/\s+/);
+		const name = this.pocket.find((n) => words.every((w) => n.toLowerCase().includes(w)));
+		if (!name) return 'You are not carrying that.';
+		this.pocket.splice(this.pocket.indexOf(name), 1);
+		this.left.set(this.here, [...(this.left.get(this.here) ?? []), name]);
+		return `You leave ${quote(name)} here.`;
+	}
+
+	/** The things here a reader can see: told, or found by exploring; not the land they stand on. */
+	private visibleThings(): Thing[] {
+		const stop = this.world.stops[this.here];
+		const found = this.explored.has(this.here) ? (stop.hidden?.things ?? []) : [];
+		return [...stop.things, ...found].filter(
+			(t, i, all) => !t.background && all.findIndex((o) => o.name === t.name) === i
+		);
+	}
+
+	/** A place returned to: its name, what can be seen, and the ways on. */
+	private brief(): Reply {
+		const stop = this.world.stops[this.here];
+		const names = this.visibleThings().map((t) => withArticle(t.name));
+		this.heard = [...this.heard, []].slice(-2);
+		this.lastStreet = undefined;
+		return {
+			title: stop.title,
+			lines: [...(names.length ? [`You can see ${listed(names)} here.`] : []), this.exits()]
+		};
 	}
 
 	/** A place reached: told, its broken names carried on, and now and then one carried before comes back. */
 	private arrive(): Reply {
-		const told = this.told();
+		const told = this.visited.has(this.here) && !this.verbose ? this.brief() : this.told();
+		this.visited.add(this.here);
+		const left = (this.left.get(this.here) ?? []).map(
+			(n) => `${quote(n)} lies here, where you left it.`
+		);
 		const crossed = this.crossing();
 		const reply = crossed ? { ...told, lines: [crossed, ...told.lines] } : told;
 		const stop = this.world.stops[this.here];
@@ -193,21 +349,22 @@ export class Adventure {
 				...(this.met.get(t.term) ?? []),
 				{ said: t.said, at: this.here, move: this.moves, street: t.street }
 			]);
-		if (!back) return reply;
 		const lines = [...reply.lines];
 		const exits =
 			lines.length && lines.at(-1)!.startsWith('Exits:') ? lines.length - 1 : lines.length;
-		lines.splice(exits, 0, back);
+		lines.splice(exits, 0, ...left, ...(back ? [back] : []));
 		return { ...reply, lines };
 	}
 
 	/** Where the map puts this stop, and a link to it on Google Maps: never where the reader is. */
 	private gps(): Reply {
-		const at = this.world.stops[this.here].at;
+		const stop = this.world.stops[this.here];
+		const at = stop.at;
 		if (!at) return { lines: ['I cannot say where this is on any map.'] };
 		const [lat, lon] = at.map((n) => n.toFixed(5));
 		return {
 			lines: [`By the map, you are at ${lat}, ${lon}.`],
+			map: { latitude: at[0], longitude: at[1], label: stop.title },
 			link: {
 				href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${lat},${lon}`)}`,
 				text: 'See it on Google Maps'
@@ -349,11 +506,7 @@ export class Adventure {
 		const things = [...stop.things, ...found].filter(
 			(t, i, all) => !t.background && all.findIndex((o) => o.name === t.name) === i
 		);
-		const names = things.map((t) =>
-			/^[\p{Lu}\p{N}“]/u.test(t.name)
-				? t.name
-				: `${/^[aeiou]/i.test(t.name) ? 'an' : 'a'} ${t.name}`
-		);
+		const names = things.map((t) => withArticle(t.name));
 		const streets = (stop.streets ?? []).map((s) => s.name);
 		if (!names.length)
 			return streets.length
@@ -363,6 +516,10 @@ export class Adventure {
 		return `You could examine ${all.length < 2 ? all[0] : `${all.slice(0, -1).join(', ')}, or ${all.at(-1)}`}.`;
 	}
 }
+
+/** A name as it stands, or a kind of thing with its article. */
+const withArticle = (name: string) =>
+	/^[\p{Lu}\p{N}“]/u.test(name) ? name : `${/^[aeiou]/i.test(name) ? 'an' : 'a'} ${name}`;
 
 /** What a reader means by examining everything, or nothing in particular. */
 const EVERYTHING = new Set([

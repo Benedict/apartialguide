@@ -90,6 +90,21 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 		padding-top: max(0.6rem, env(safe-area-inset-top, 0px)); padding-bottom: 0.6rem;
 	}
 	header nav { display: flex; gap: 1rem; }
+	.status {
+		box-sizing: border-box; display: flex; justify-content: space-between; gap: 1rem;
+		font-family: var(--mono); font-size: 0.78rem; background: var(--ink); color: var(--paper);
+		padding: 0.25rem max(16px, env(safe-area-inset-left, 0px));
+	}
+	.status span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+	.status span:last-child { flex: none; }
+	.actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+	.actions button {
+		font: inherit; font-family: var(--mono); font-size: 0.92rem; color: var(--paper); background: var(--accent);
+		border: 0; border-radius: 4px; padding: 0.5rem 0.9rem; cursor: pointer; min-height: 44px;
+	}
+	.actions button:disabled { opacity: 0.5; cursor: default; }
+	.map { height: 0; border-radius: 4px; overflow: hidden; visibility: hidden; }
+	.map.drawn { height: 320px; visibility: visible; }
 	header a { color: inherit; }
 	.scroll { flex: 1; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
 	#transcript { display: grid; gap: 1.6rem; padding-block: 1rem 1.5rem; }
@@ -124,6 +139,7 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 	<span>A Partial Guide</span>
 	<nav><a href="#about">About</a><a href="#settings">Settings</a></nav>
 </header>
+<div class="status" id="status" hidden><span></span><span></span></div>
 <div class="scroll" id="scroll">
 	<div id="game"><div id="transcript" aria-live="polite"></div></div>
 	${aboutPage(snapshotDate)}
@@ -179,6 +195,7 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 	const WORLD = JSON.parse(await new Response(unzipped).text());
 	const game = new Adventure(WORLD);
 	const transcript = document.getElementById('transcript');
+	const statusBar = document.getElementById('status');
 	const input = document.getElementById('command');
 	const history = [];
 	let recall = 0;
@@ -197,8 +214,23 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 			p.append(a);
 			section.append(p);
 		}
+		if (reply.actions) {
+			const actions = el('p', '', 'actions');
+			for (const action of reply.actions) {
+				const button = el('button', action.label);
+				button.type = 'button';
+				button.addEventListener('click', () => {
+					for (const b of actions.querySelectorAll('button')) b.disabled = true;
+					run(action.command);
+				});
+				actions.append(button);
+			}
+			section.append(actions);
+		}
 		transcript.append(section);
+		if (reply.map) drawMap(section, reply.map);
 		scroll.scrollTop = scroll.scrollHeight;
+		showStatus();
 		if (reply.title) {
 			input.placeholder = 'north, look, examine… or help';
 			// What is due at the stops here, from TfL, as the reader arrives, if they allow it; nothing without an answer.
@@ -212,15 +244,70 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 		}
 	}
 
-	form.addEventListener('submit', (event) => {
-		event.preventDefault();
-		const text = input.value.trim();
-		input.value = '';
-		if (!text) return;
+	// The status line, as classic adventures kept one: where you are, how far you have walked, in how many moves.
+	let touring = false;
+	function showStatus() {
+		const now = game.status();
+		if (!touring && now.moves === 0 && !transcript.querySelector('h2')) return;
+		touring = true;
+		const [place, count] = statusBar.children;
+		place.textContent = now.place;
+		count.textContent = distanceWords(now.walked) + ' · ' + now.moves + (now.moves === 1 ? ' move' : ' moves');
+		statusBar.hidden = false;
+	}
+
+	// gps draws its place on a map, on a wide screen, if the reader allows it; nothing at all if the map does not come.
+	let maplibre;
+	const MAPLIBRE_JS = 'https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js';
+	const MAPLIBRE_CSS = 'https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css';
+	function loadMaplibre() {
+		maplibre ??= new Promise((resolve, reject) => {
+			const css = Object.assign(document.createElement('link'), { rel: 'stylesheet', href: MAPLIBRE_CSS });
+			const js = Object.assign(document.createElement('script'), { src: MAPLIBRE_JS });
+			js.onload = () => (window.maplibregl ? resolve(window.maplibregl) : reject(new Error('no maplibre')));
+			js.onerror = reject;
+			document.head.append(css, js);
+		});
+		return maplibre;
+	}
+	function drawMap(section, place) {
+		if (settings.maps === false || !window.matchMedia('(min-width: 700px)').matches) return;
+		loadMaplibre()
+			.then((gl) => {
+				const box = el('div', '', 'map');
+				section.append(box);
+				const map = new gl.Map({
+					container: box,
+					style: 'https://tiles.openfreemap.org/styles/liberty',
+					center: [place.longitude, place.latitude],
+					zoom: 16.5,
+					attributionControl: { compact: true }
+				});
+				new gl.Marker({ color: getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#8a3b1f' })
+					.setLngLat([place.longitude, place.latitude])
+					.addTo(map);
+				const late = setTimeout(() => { map.remove(); box.remove(); }, 8000);
+				map.once('load', () => {
+					clearTimeout(late);
+					box.classList.add('drawn');
+					map.resize();
+					scroll.scrollTop = scroll.scrollHeight;
+				});
+			})
+			.catch(() => {});
+	}
+
+	function run(text) {
 		history.push(text);
 		recall = history.length;
 		transcript.append(el('p', '> ' + text, 'command'));
 		show(game.respond(text));
+	}
+	form.addEventListener('submit', (event) => {
+		event.preventDefault();
+		const text = input.value.trim();
+		input.value = '';
+		if (text) run(text);
 	});
 	input.addEventListener('keydown', (event) => {
 		if (event.key === 'ArrowUp' && recall > 0) input.value = history[--recall];

@@ -33,3 +33,8 @@ jobs:
       - run: npm run smoke
         env:
           EXPORT_PATH: site/index.html
+      # The inline map depends on jsDelivr and OpenFreeMap; say whether it came, without failing on it.
+      - run: npm run map-check
+        continue-on-error: true
+        env:
+          EXPORT_PATH: site/index.html

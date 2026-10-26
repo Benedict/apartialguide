@@ -12,8 +12,12 @@ describe('SOURCES', () => {
 	});
 
 	it('marks the sources asked from the reader’s browser, each with a setting', () => {
-		expect(SOURCES.filter((s) => s.live).map((s) => s.live)).toEqual(['weather', 'departures']);
-		expect(LIVE.map((l) => l.key)).toEqual(['weather', 'departures']);
+		expect(SOURCES.filter((s) => s.live).map((s) => s.live)).toEqual([
+			'weather',
+			'departures',
+			'maps'
+		]);
+		expect(LIVE.map((l) => l.key)).toEqual(['weather', 'departures', 'maps']);
 	});
 
 	it('gives the attribution the Open Government Licence and TfL ask for', () => {

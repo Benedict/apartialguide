@@ -11,13 +11,13 @@ const memory = () => {
 
 describe('settings', () => {
 	it('asks after the weather and departures unless told not to', () => {
-		expect(loadSettings(memory())).toEqual({ weather: true, departures: true });
+		expect(loadSettings(memory())).toEqual({ weather: true, departures: true, maps: true });
 	});
 
 	it('keeps what the reader chose', () => {
 		const store = memory();
-		saveSettings({ weather: false, departures: true }, store);
-		expect(loadSettings(store)).toEqual({ weather: false, departures: true });
+		saveSettings({ weather: false, departures: true, maps: false }, store);
+		expect(loadSettings(store)).toEqual({ weather: false, departures: true, maps: false });
 	});
 
 	it('falls back to asking when the browser keeps nothing, or refuses', () => {
@@ -29,11 +29,13 @@ describe('settings', () => {
 				throw new Error('blocked');
 			}
 		};
-		expect(() => saveSettings({ weather: false, departures: false }, refusing)).not.toThrow();
-		expect(loadSettings(refusing)).toEqual({ weather: true, departures: true });
-		expect(loadSettings(undefined)).toEqual({ weather: true, departures: true });
+		expect(() =>
+			saveSettings({ weather: false, departures: false, maps: false }, refusing)
+		).not.toThrow();
+		expect(loadSettings(refusing)).toEqual({ weather: true, departures: true, maps: true });
+		expect(loadSettings(undefined)).toEqual({ weather: true, departures: true, maps: true });
 		const garbled = memory();
 		garbled.setItem('a-partial-guide:settings', '{not json');
-		expect(loadSettings(garbled)).toEqual({ weather: true, departures: true });
+		expect(loadSettings(garbled)).toEqual({ weather: true, departures: true, maps: true });
 	});
 });

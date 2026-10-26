@@ -1,7 +1,24 @@
 export type Command =
 	| { verb: 'go'; direction: string }
-	| { verb: 'examine'; target: string }
-	| { verb: 'look' | 'explore' | 'exits' | 'back' | 'help' | 'weather' | 'gps' | 'empty' }
+	| { verb: 'examine' | 'take' | 'drop'; target: string }
+	| {
+			verb:
+				| 'look'
+				| 'explore'
+				| 'exits'
+				| 'back'
+				| 'help'
+				| 'weather'
+				| 'gps'
+				| 'wait'
+				| 'again'
+				| 'inventory'
+				| 'verbose'
+				| 'brief'
+				| 'score'
+				| 'magic'
+				| 'empty';
+	  }
 	| { verb: 'unknown'; text: string };
 
 const POINTS = [
@@ -37,6 +54,26 @@ const DIRECTIONS = new Map<string, string>(
 	})
 );
 
+/** One-word commands, as classic adventures took them. */
+const SAYINGS = new Map<
+	string,
+	'wait' | 'again' | 'inventory' | 'verbose' | 'brief' | 'score' | 'magic'
+>([
+	['z', 'wait'],
+	['wait', 'wait'],
+	['g', 'again'],
+	['again', 'again'],
+	['i', 'inventory'],
+	['inv', 'inventory'],
+	['inventory', 'inventory'],
+	['verbose', 'verbose'],
+	['brief', 'brief'],
+	['score', 'score'],
+	['xyzzy', 'magic'],
+	['plugh', 'magic']
+]);
+const TAKE = new Set(['take', 'get', 'carry', 'collect']);
+const DROP = new Set(['drop', 'leave', 'discard']);
 const MOVE = new Set(['go', 'walk', 'head', 'move', 'run', 'travel']);
 const EXAMINE = new Set(['x', 'examine', 'inspect', 'read', 'check']);
 const FILLER = new Set([
@@ -86,6 +123,14 @@ export function parse(input: string): Command {
 	if (EXAMINE.has(first) && rest.length)
 		return { verb: 'examine', target: dropFiller(rest).join(' ') };
 	if (text === 'l' || text === 'look') return { verb: 'look' };
+	const said = SAYINGS.get(text);
+	if (said) return { verb: said };
+	if (TAKE.has(first) && rest.length) return { verb: 'take', target: dropFiller(rest).join(' ') };
+	if (first === 'pick' && rest[0] === 'up' && rest.length > 1)
+		return { verb: 'take', target: dropFiller(rest.slice(1)).join(' ') };
+	if (DROP.has(first) && rest.length) return { verb: 'drop', target: dropFiller(rest).join(' ') };
+	if (first === 'put' && rest[0] === 'down' && rest.length > 1)
+		return { verb: 'drop', target: dropFiller(rest.slice(1)).join(' ') };
 	if (['explore', 'search', 'look around', 'look closer', 'look about'].includes(text))
 		return { verb: 'explore' };
 	if (text === 'exits' || text === 'ways') return { verb: 'exits' };
