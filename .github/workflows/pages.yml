@@ -37,6 +37,7 @@ jobs:
           HISTORY_DIR: data/history
           WIKIDATA_DIR: data/wikidata
           RECORDS_DIR: data/records
+          NARRATION_PATH: data/narration/addiscombe.json
           EXPORT_PATH: site/index.html
         run: npm run export
       # Publish only a page that plays.
