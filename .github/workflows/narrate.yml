@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   narrate:
@@ -34,13 +35,15 @@ jobs:
       - name: Write prose
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          NARRATION_PATH: data/narration/addiscombe.json
-          HISTORY_DIR: data/history
           NARRATE_LIMIT: ${{ inputs.limit }}
+          # The same world the Pages workflow publishes, or the prose will not be found.
+          SNAPSHOT_PATH: data/snapshots/addiscombe-2026-10-25.json
           START_AT: 51.379897,-0.074294
-        run: |
-          export SNAPSHOT_PATH="$(ls data/snapshots/addiscombe-*.json | sort | tail -1)"
-          npm run narrate
+          HISTORY_DIR: data/history
+          WIKIDATA_DIR: data/wikidata
+          RECORDS_DIR: data/records
+          NARRATION_PATH: data/narration/addiscombe.json
+        run: npm run narrate
       - name: Commit prose
         run: |
           git config user.name "github-actions[bot]"
@@ -49,3 +52,8 @@ jobs:
           git diff --cached --quiet && { echo "No new prose"; exit 0; }
           git commit -m "Add narration written by the Narrate workflow"
           git push origin "HEAD:${GITHUB_REF_NAME}"
+      # A push by this workflow starts no other, so it asks for the page to be published again.
+      - name: Publish the page with the new prose
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref "${GITHUB_REF_NAME}"
