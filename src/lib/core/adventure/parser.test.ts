@@ -78,4 +78,13 @@ describe('parse', () => {
 		for (const t of ['drop sextant', 'leave the sextant', 'put down sextant'])
 			expect(parse(t)).toEqual({ verb: 'drop', target: 'sextant' });
 	});
+
+	it('reads saving and restoring, with or without a slot', () => {
+		expect(parse('save')).toEqual({ verb: 'save' });
+		expect(parse('save 3')).toEqual({ verb: 'save', slot: '3' });
+		for (const t of ['restore', 'load', 'saves']) expect(parse(t)).toEqual({ verb: 'restore' });
+		for (const t of ['restore 3', 'load 3'])
+			expect(parse(t)).toEqual({ verb: 'restore', slot: '3' });
+		expect(parse('restore auto')).toEqual({ verb: 'restore', slot: 'auto' });
+	});
 });

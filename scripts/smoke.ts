@@ -69,13 +69,31 @@ try {
 	await says(page, /Exits?:/);
 	await page.setViewportSize({ width: 390, height: 844 });
 
+	// A walk saved in a slot, and kept as it goes, comes back after the page is closed.
+	await input.fill('save 1');
+	await input.press('Enter');
+	await says(page, 'Saved in slot 1');
+	const before = await page.locator('#status').innerText();
+	await page.goto('about:blank');
+	await page.goto(`file://${path}`);
+	await page.getByRole('button', { name: /^Continue the walk/ }).click({ timeout: 15_000 });
+	await says(page, 'We go on from where we were.');
+	check(
+		(await page.locator('#status').innerText()) === before,
+		'the continued walk is not where it was'
+	);
+	await input.fill('restore');
+	await input.press('Enter');
+	await page.getByRole('button', { name: /^1: / }).click();
+	await says(page, 'Restored from slot 1.');
+
 	await page.click('a[href="#about"]');
 	check(await shows(page, '#about'), 'the About page does not open');
 	check(!(await page.locator('#game').isVisible()), 'the walk still shows behind About');
 	await page.click('#about a[href="#"]');
 	check(await shows(page, '#game'), 'the walk does not come back after About');
 	check(
-		(await page.locator('#transcript').innerText()).includes('By the map'),
+		(await page.locator('#transcript').innerText()).includes('Restored from slot 1.'),
 		'the walk was lost on the way to About and back'
 	);
 

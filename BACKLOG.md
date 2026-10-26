@@ -9,7 +9,7 @@ What is left, and ideas for later phases. Done items move to the changelog in th
   - Where do they meet: at the same stop only, or within earshot along a street?
   - What is said, and is any of it kept? Moderation, privacy, and whether a reader can stay unseen.
   - What carries it: a shared service (WebSockets, or an artifact's shared state). Today the piece is one static file.
-- **More of the classic engine.** Ideas the distance goal opens: a walk's end (a "you have walked as far as Guide remembers" at the last mark), a map of where you have been, `save`/`restore` in the browser.
+- **More of the classic engine.** Ideas the distance goal opens: a walk's end (a "you have walked as far as Guide remembers" at the last mark), a map of where you have been.
 - **The inline map on the SvelteKit reader.** The exported page has it; the dev reader does not.
 
 ## Waiting on you

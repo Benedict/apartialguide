@@ -1,6 +1,7 @@
 export type Command =
 	| { verb: 'go'; direction: string }
 	| { verb: 'examine' | 'take' | 'drop'; target: string }
+	| { verb: 'save' | 'restore'; slot?: string }
 	| {
 			verb:
 				| 'look'
@@ -123,6 +124,12 @@ export function parse(input: string): Command {
 	if (EXAMINE.has(first) && rest.length)
 		return { verb: 'examine', target: dropFiller(rest).join(' ') };
 	if (text === 'l' || text === 'look') return { verb: 'look' };
+	if (first === 'save') return rest.length ? { verb: 'save', slot: rest[0] } : { verb: 'save' };
+	if (text === 'continue') return { verb: 'restore', slot: 'auto' };
+	if (['restore', 'load', 'saves'].includes(first))
+		return rest.length && first !== 'saves'
+			? { verb: 'restore', slot: rest[0] }
+			: { verb: 'restore' };
 	const said = SAYINGS.get(text);
 	if (said) return { verb: said };
 	if (TAKE.has(first) && rest.length) return { verb: 'take', target: dropFiller(rest).join(' ') };
