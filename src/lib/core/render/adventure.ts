@@ -621,3 +621,46 @@ function thing(beat: Beat): Thing {
 		...(isBackground(beat) ? { background: true as const } : {})
 	};
 }
+
+/** The street furniture a thing has, as the map gives it, in words. */
+const KIT = ['bench', 'bin', 'shelter'] as const;
+const WHEELCHAIR: Record<string, string> = {
+	yes: 'Wheelchairs can use it.',
+	limited: 'Wheelchairs can use some of it.',
+	no: 'Not for wheelchairs.'
+};
+
+/**
+ * What the map says of a thing, in words: what it is, its name, what it was, what it has, and a
+ * reference if it carries one. Never its raw record, and none of its technical values.
+ */
+export function mapWords(tags: Tags): string[] {
+	const sentences = [`${capitalise(nounPhrase(tags))}.`];
+	if (tags.name && !namedInline(tags)) sentences.push(`“${tags.name}”, it says.`);
+	if (tags.old_name) sentences.push(`Once “${tags.old_name}”.`);
+	const past = pastUse(tags);
+	if (past) sentences.push(`It was ${article(past)}.`);
+	const kit = KIT.filter((k) => tags[k] === 'yes').map((k) => `a ${k}`);
+	if (kit.length) sentences.push(`${capitalise(list(kit))}.`);
+	if (tags.lit === 'yes') sentences.push('Lit at night.');
+	if (tags.wheelchair && WHEELCHAIR[tags.wheelchair]) sentences.push(WHEELCHAIR[tags.wheelchair]);
+	if (tags.tactile_paving === 'yes') sentences.push('Tactile paving.');
+	if (tags.outdoor_seating === 'yes') sentences.push('Outdoor seating.');
+	if (tags.opening_hours) sentences.push(`Its hours are given as “${tags.opening_hours}”.`);
+	sentences.push(...details(tags));
+	if (tags.ref) sentences.push(`It carries a reference, “${tags.ref}”.`);
+	return sentences;
+}
+
+/** What another account says of a thing, in words. */
+export function otherWords(tags: Tags): string[] {
+	const said = elsewhere(tags, 'closer');
+	const namesake = tags['etymology:label'];
+	if (namesake)
+		said.push(
+			`Named for ${namesake}${tags['etymology:description'] ? `, ${tags['etymology:description']}` : ''}.`
+		);
+	if (said.length) return said;
+	const { label, what } = otherAccount(tags);
+	return label ? [`“${label}”${what ? `, “${what}”` : ''}.`] : [];
+}
