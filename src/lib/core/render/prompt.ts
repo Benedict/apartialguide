@@ -4,7 +4,9 @@ import type { Fact } from '../facts';
 import { isElsewhere, looksBroken, NAME_KEY } from '../tensions';
 import {
 	isHalf,
+	mapWords,
 	nounPhrase,
+	otherWords,
 	oldNames,
 	placement,
 	setting,
@@ -13,10 +15,10 @@ import {
 	tagsFor,
 	whereYouStand
 } from './adventure';
-import { monthYear } from './words';
+import { monthYear, tagsOf } from './words';
 
 /** Bump when the prompt changes, so cached narration written under the old one is redone. */
-export const PROMPT_VERSION = 10;
+export const PROMPT_VERSION = 11;
 
 export interface Prompt {
 	/** Fixed for every stop, so it can be cached. */
@@ -39,7 +41,8 @@ Rules.
 - Something marked gone was on an older map and is not on this one. Say there was, never that there is.
 - Something that was called something else: correct yourself between the names, unsure which is right.
 - A survey date is when something was last recorded. Never say anyone came to look. Slip between present and past for it: there is a shop; there was a shop when it was last recorded.
-- When told the place is crowded, lose count partway through. When told there is little here, hesitate.
+- When told the place is crowded or bare, do as the user message says, once. Never end on counting, losing count, or what else there may be: end on something the facts give. The reference page below ends on losing count; yours must not.
+- Speak no technical values (voltages, gauges, frequencies, speeds of lines) and no codes but a reference you are given as one.
 - Facts marked Elsewhere come from another account, not the map. Give them lightly as that (elsewhere, by another account), never as the map's. Where the two disagree, leave them disagreeing.
 - Never point out that a name is broken, or that you resemble anyone. Point the reader to nothing, and never say that anything goes unnoticed. Noticing is the reader’s.
 - Do not list the exits; the game prints them after your text.
@@ -55,6 +58,21 @@ Next door, at 207, there is a kebab shop, Brothers Kebab. There was a kebab shop
 
 Beyond it there may be more. I could not say what, or how much. I lose count before I have begun. The parade does not.`;
 
+/** How a crowded or empty place may be told, turned by stop so no two neighbours end alike. */
+const MOODS: Record<Scene['mood'], string[]> = {
+	plain: [],
+	hesitant: [
+		'There is little here. Hesitate once.',
+		'There is little here. Say so plainly, and end on the street.',
+		'There is little here. Give what there is its due, and stop.'
+	],
+	rambling: [
+		'The place is crowded. Lose count once, partway through, then carry on.',
+		'The place is crowded. Give the nearest few and let the rest go without counting them.',
+		'The place is crowded. Say there is more in a few plain words, early, and end on something named.'
+	]
+};
+
 /** The broken names in a beat: values the narration must carry exactly as found. */
 export function brokenNames(beat: Beat): string[] {
 	if (!beat.effects.includes('spoken-as-found')) return [];
@@ -65,8 +83,12 @@ export function brokenNames(beat: Beat): string[] {
 
 function beatLine(scene: Scene, beat: Beat, n: number): string {
 	const tags = tagsFor(beat);
-	const record = (facts: readonly Fact[]) =>
-		facts.map((f) => `${f.claim.key}=${f.claim.value}`).join('; ');
+	const words = (facts: readonly Fact[]) => mapWords(tagsOf(facts)).join(' ');
+	const others = (facts: readonly Fact[]) => otherWords(tagsOf(facts)).join(' ');
+	const gone = (facts: readonly Fact[]) =>
+		nounPhrase(
+			Object.fromEntries(facts.map((f) => [f.claim.key.replace(/^was:/, ''), f.claim.value]))
+		);
 	const folded = beat.facts.filter((f) => f.subject !== beat.subject && !isElsewhere(f));
 	const map = beat.facts.filter((f) => !isElsewhere(f) && !folded.includes(f));
 	const elsewhere = beat.facts.filter(isElsewhere);
@@ -74,16 +96,16 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 		? nounPhrase(tags)
 		: `“${tags['wikidata:label'] ?? Object.entries(tags).find(([k]) => k.endsWith(':name'))?.[1]}”, which the map does not have`;
 	const lines = [`${n}. ${placement(scene.position, beat)}: ${what}.`];
-	if (map.length) lines.push(`   The map: ${record(map)}.`);
+	if (map.length) lines.push(`   The map: ${words(map)}`);
 	if (folded.length) {
 		const since = folded.reduce((a, f) => (f.observed && f.observed > a ? f.observed : a), '');
 		lines.push(
-			`   Once at this address, gone from the map since ${monthYear(since)}: ${record(folded)}. One place: tell it once.`
+			`   Once at this address, gone from the map since ${monthYear(since)}: ${gone(folded)}. One place: tell it once.`
 		);
 	}
 	for (const source of [...new Set(elsewhere.map((f) => f.source))])
 		lines.push(
-			`   Elsewhere (${source === 'wikidata' ? 'Wikidata' : source}): ${record(elsewhere.filter((f) => f.source === source))}.`
+			`   Elsewhere (${source === 'wikidata' ? 'Wikidata' : source}): ${others(elsewhere.filter((f) => f.source === source))}`
 		);
 	for (const name of brokenNames(beat)) lines.push(`   Speak the name “${name}” exactly as found.`);
 	if (beat.effects.includes('remembered')) {
@@ -106,11 +128,10 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 export function buildPrompt(scene: Scene): Prompt {
 	const street = streetTags(scene);
 	const noticed = scene.beats.filter((b) => !isBackground(b) && !isHalf(b));
-	const mood = {
-		plain: '',
-		hesitant: 'There is little here. Hesitate.',
-		rambling: 'The place is crowded. Lose count partway through.'
-	}[scene.mood];
+	const moods = MOODS[scene.mood];
+	const mood = moods.length
+		? moods[parseInt(hash(scene.stopId).slice(0, 8), 16) % moods.length]
+		: '';
 	const user = [
 		'Where the reader stands:',
 		[whereYouStand(scene, street), ...streetCharacter(street), setting(scene)]

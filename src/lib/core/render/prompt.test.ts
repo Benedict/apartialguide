@@ -57,7 +57,7 @@ describe('buildPrompt', () => {
 	it('gives each noticed thing its place, its record and what to do with it', () => {
 		const user = buildPrompt(scene({ beats: [bank, shop] })).user;
 		expect(user).toContain('To the north, a few steps away: a retail building');
-		expect(user).toContain('old_name=est Bank');
+		expect(user).toContain('Once “est Bank”.');
 		expect(user).toContain('Speak the name “est Bank” exactly as found');
 		expect(user).toContain('last recorded in October 2018');
 	});
@@ -124,8 +124,10 @@ describe('buildPrompt', () => {
 			effects: []
 		};
 		const user = buildPrompt(scene({ beats: [pub] })).user;
-		expect(user).toContain('The map: amenity=pub; name=The Sextant.');
-		expect(user).toContain('Elsewhere (Wikidata): wikidata:description=invented public house.');
+		expect(user).toContain('The map: A pub, “The Sextant”.');
+		expect(user).toContain(
+			'Elsewhere (Wikidata): Elsewhere it is listed as “invented public house”.'
+		);
 		expect(buildPrompt(scene()).system).toMatch(/elsewhere/i);
 	});
 
@@ -162,9 +164,9 @@ describe('buildPrompt', () => {
 			effects: ['was-here' as const]
 		};
 		const user = buildPrompt(scene({ beats: [building] })).user;
-		expect(user).toContain('The map: building=retail; addr:housenumber=9.');
+		expect(user).toContain('The map: A retail building at 9.');
 		expect(user).toContain(
-			'Once at this address, gone from the map since January 2021: was:amenity=bank; was:name=Invented Bank. One place: tell it once.'
+			'Once at this address, gone from the map since January 2021: a bank, “Invented Bank”. One place: tell it once.'
 		);
 	});
 
@@ -177,5 +179,80 @@ describe('buildPrompt', () => {
 		expect(k).toBe(promptKey(buildPrompt(scene())));
 		expect(k).not.toBe(promptKey(buildPrompt(scene({ beats: [shop] }))));
 		expect(k.startsWith(`v${PROMPT_VERSION}-`)).toBe(true);
+	});
+
+	it('gives the model the map in words, never its raw record', () => {
+		const platform = {
+			subject: 'node/11',
+			facts: facts(
+				'node/11',
+				{
+					public_transport: 'platform',
+					railway: 'platform',
+					bench: 'yes',
+					bin: 'yes',
+					shelter: 'yes',
+					lit: 'yes',
+					wheelchair: 'yes',
+					tactile_paving: 'yes',
+					'naptan:AtcoCode': '9400ZZINVENT1',
+					ref: 'INV-1'
+				},
+				near
+			),
+			effects: []
+		};
+		const line = {
+			subject: 'way/12',
+			facts: facts(
+				'way/12',
+				{ railway: 'tram', name: 'Invented Line', voltage: '750', gauge: '1435', frequency: '0' },
+				near
+			),
+			effects: []
+		};
+		const user = buildPrompt(scene({ beats: [platform, line] })).user;
+		expect(user).not.toMatch(/[a-z_:]+=/);
+		expect(user).toContain('A bench, a bin and a shelter.');
+		expect(user).toContain('Lit at night.');
+		expect(user).toContain('Wheelchairs can use it.');
+		expect(user).toContain('Tactile paving.');
+		expect(user).toContain('It carries a reference, “INV-1”.');
+		for (const raw of ['9400ZZ', 'voltage', '750', 'gauge', '1435', 'frequency'])
+			expect(user).not.toContain(raw);
+	});
+
+	it('gives the model other accounts in words too', () => {
+		const cafe = {
+			subject: 'node/13',
+			facts: [
+				...facts('node/13', { amenity: 'cafe', name: 'Invented Cafe' }, near),
+				...facts('node/13', { 'hygiene:rating': '5', 'hygiene:date': '2025-04-01' }, near).map(
+					(f) => ({ ...f, source: 'Food Standards Agency', elsewhere: true as const })
+				)
+			],
+			effects: []
+		};
+		const user = buildPrompt(scene({ beats: [cafe] })).user;
+		expect(user).toContain(
+			'Elsewhere (Food Standards Agency): Its food hygiene rating is 5, given in April 2025.'
+		);
+	});
+
+	it('does not ask every crowded place to end the same way', () => {
+		const said = new Set(
+			['s1', 's2', 's3', 's4', 's5', 's6'].map((stopId) =>
+				buildPrompt(scene({ stopId, mood: 'rambling', beats: [shop] }))
+					.user.split('\n')
+					.at(-2)
+			)
+		);
+		expect(said.size).toBeGreaterThan(1);
+		const { system } = buildPrompt(scene());
+		expect(system).toMatch(/never end on (counting|losing count)/i);
+	});
+
+	it('is version 11', () => {
+		expect(PROMPT_VERSION).toBe(11);
 	});
 });
