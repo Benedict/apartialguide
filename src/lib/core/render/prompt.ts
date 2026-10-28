@@ -80,6 +80,15 @@ const MOODS: Record<Scene['mood'], string[]> = {
 	]
 };
 
+/** A thing only another account has: by its name in quotes, or, with none, by its kind. */
+function calledElsewhere(tags: Record<string, string>): string {
+	const ending = (suffix: string) => Object.entries(tags).find(([k]) => k.endsWith(suffix))?.[1];
+	const label = tags['wikidata:label'] ?? ending(':name');
+	if (label) return `“${label}”`;
+	const kind = ending(':kind') ?? 'thing';
+	return `${/^[aeiou]/i.test(kind) ? 'an' : 'a'} ${kind}`;
+}
+
 /** The broken names in a beat: values the narration must carry exactly as found. */
 export function brokenNames(beat: Beat): string[] {
 	if (!beat.effects.includes('spoken-as-found')) return [];
@@ -101,7 +110,7 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 	const elsewhere = beat.facts.filter(isElsewhere);
 	const what = map.length
 		? plainKind(tags)
-		: `“${tags['wikidata:label'] ?? Object.entries(tags).find(([k]) => k.endsWith(':name'))?.[1]}”, which the map does not have`;
+		: `${calledElsewhere(tags)}, which the map does not have`;
 	const lines = [`${n}. ${placement(scene.position, beat)}: ${what}.`];
 	if (map.length) lines.push(`   The map: ${words(map)}`);
 	if (folded.length) {

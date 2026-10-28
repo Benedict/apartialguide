@@ -8,7 +8,7 @@ import { build } from 'esbuild';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { compileWorld } from '../src/lib/core/adventure/world';
-import { exportPage } from '../src/lib/server/export';
+import { exportPage, wordsAmiss } from '../src/lib/server/export';
 import { loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
 
 const config = readConfig();
@@ -20,6 +20,13 @@ const narrator = loadNarrator(config);
 const world = compileWorld(narrator, startStop(narrator, config).id, {
 	asOf: config.snapshotDate
 });
+
+const amiss = wordsAmiss(world);
+if (amiss.length) {
+	console.error(`Guide would say what the code let slip, at ${amiss.length} places:`);
+	for (const line of amiss.slice(0, 10)) console.error(`  ${line.slice(0, 200)}`);
+	process.exit(1);
+}
 
 const bundle = await build({
 	entryPoints: ['src/lib/browser/play.ts'],

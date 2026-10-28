@@ -262,7 +262,10 @@ const CROWD_OPENERS = [
 /** A crowd member in a breath: named things by name, the unnamed by what they are. */
 function brief(beat: Beat): { phrase: string; noun?: string } {
 	const tags = tagsFor(beat);
-	if (isElsewhereOnly(beat)) return { phrase: `“${tags['wikidata:label']}”, by another account` };
+	if (isElsewhereOnly(beat)) {
+		const { label, what } = otherAccount(tags);
+		return { phrase: `${label ? `“${label}”` : article(what ?? 'thing')}, by another account` };
+	}
 	const what = noun(tags);
 	if (tags.name) {
 		const saysItAll = tags.name.toLowerCase().includes(what.split(' ').at(-1)!);
@@ -444,10 +447,11 @@ function describeBeat(
 
 	if (isElsewhereOnly(beat)) {
 		const { label, what } = otherAccount(tags);
-		return [
-			`${place}, by another account, is “${label}”${what ? `, “${what}”` : ''}.`,
-			...recordSentences(tags, 'room')
-		].join(' ');
+		// A thing with words but no name, such as a bench, is told by its kind.
+		const called = label ? `“${label}”${what ? `, “${what}”` : ''}` : article(what ?? 'thing');
+		return [`${place}, by another account, is ${called}.`, ...recordSentences(tags, 'room')].join(
+			' '
+		);
 	}
 	if (beat.effects.includes('remembered')) {
 		const asOf = beat.facts.find((f) => f.observed)?.observed;
@@ -581,10 +585,17 @@ export function exitsLine(exits: readonly SceneExit[]): string {
 function thing(beat: Beat): Thing {
 	const tags = tagsFor(beat);
 	const past = pastUse(tags);
+	const other = otherAccount(tags);
+	// A thing only another account has, with no name, is called by the kind that account gives.
+	const unnamedElsewhere = isElsewhereOnly(beat) && !tags.name && !other.label;
 	const name =
 		tags.name ??
-		otherAccount(tags).label ??
-		(currentUse(tags) || !past ? noun(tags) : `former ${past}`);
+		other.label ??
+		(unnamedElsewhere && other.what
+			? other.what
+			: currentUse(tags) || !past
+				? noun(tags)
+				: `former ${past}`);
 	const words = [
 		name,
 		noun(tags),
@@ -605,7 +616,11 @@ function thing(beat: Beat): Thing {
 		? beat.facts.find((f) => f.observed)
 		: mapObserved(beat);
 	const description = isElsewhereOnly(beat)
-		? [`“${name}”.`, 'The map does not have it.', ...elsewhere(tags)]
+		? [
+				unnamedElsewhere ? `${capitalise(article(name))}.` : `“${name}”.`,
+				'The map does not have it.',
+				...elsewhere(tags)
+			]
 		: beat.effects.includes('remembered')
 			? [`There was ${what}.`, 'The map no longer has it.']
 			: [`${capitalise(what)}.`, ...details(tags), ...history(beat, tags), ...elsewhere(tags)];

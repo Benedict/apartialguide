@@ -290,4 +290,20 @@ describe('buildPrompt', () => {
 		expect(user).toContain('A point the map marks without saying what it is.');
 		expect(user).not.toMatch(/The map: Something/);
 	});
+
+	it('gives a bench only another account has by its kind, never as undefined', () => {
+		const bench = {
+			subject: 'bench/7',
+			facts: facts('bench/7', { 'bench:kind': 'bench', 'bench:inscription': 'For Ada' }, near).map(
+				(f) => ({ ...f, source: 'OpenBenches', elsewhere: true as const })
+			),
+			effects: []
+		};
+		const user = buildPrompt(scene({ beats: [bench] })).user;
+		expect(user).toContain('a bench, which the map does not have');
+		expect(user).toContain(
+			'Another account, kept by those who read the benches: On it: “For Ada”.'
+		);
+		expect(user).not.toContain('undefined');
+	});
 });

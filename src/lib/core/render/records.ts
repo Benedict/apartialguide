@@ -42,6 +42,7 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 		true,
 		(t) => (t['plaque:inscription'] ? `A plaque: ${quoted(t['plaque:inscription'])}` : undefined)
 	],
+	[true, (t) => (t['bench:inscription'] ? `On it: ${quoted(t['bench:inscription'])}` : undefined)],
 	[
 		false,
 		(t) => {

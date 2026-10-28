@@ -53,6 +53,28 @@ function settingsPage(): string {
 	</section>`;
 }
 
+/**
+ * Words the code let slip into what Guide says: undefined, null, NaN, never the data's own. Each as
+ * the stop and the text it is in. A world with any is not fit to publish.
+ */
+export function wordsAmiss(world: AdventureWorld): string[] {
+	const amiss: string[] = [];
+	for (const [id, stop] of Object.entries(world.stops)) {
+		const said = [
+			stop.title,
+			...stop.paragraphs,
+			...(stop.hidden?.lines ?? []),
+			...[...stop.things, ...(stop.hidden?.things ?? []), ...(stop.streets ?? [])].flatMap((t) => [
+				t.name,
+				t.description
+			])
+		];
+		for (const text of said)
+			if (/\b(undefined|null|NaN)\b/.test(text)) amiss.push(`${id}: ${text}`);
+	}
+	return amiss;
+}
+
 /** The whole game as one self-contained page: engine, world, styles and prompt. */
 export function exportPage({ engine, world, snapshotDate }: ExportInput): string {
 	return `<!doctype html>

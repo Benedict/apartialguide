@@ -17,6 +17,7 @@ import {
 } from '../src/lib/server/sources/more';
 import { wardAreas } from '../src/lib/server/sources/wards';
 import { parseCsv, rowInBox, treeRecords } from '../src/lib/server/sources/trees';
+import { benchRecords } from '../src/lib/server/sources/benches';
 
 const headers = {
 	'User-Agent': 'a-partial-guide/0.1 (art project; https://github.com/Benedict/osm-text-adventure)'
@@ -215,6 +216,44 @@ SELECT ?paon ?street ?amount ?date WHERE {
 			}
 		}
 		throw new Error('no ward layer answered');
+	},
+	/** Benches and their inscriptions, from OpenBenches: whichever of its feeds answers first. */
+	benches: async () => {
+		const radiusKm = Math.ceil(
+			Math.max((e - w) * 111 * Math.cos((centre.lat * Math.PI) / 180), (n - s) * 111) / 2 + 1
+		);
+		for (const url of [
+			`https://openbenches.org/api/nearest/?latitude=${centre.lat}&longitude=${centre.lon}&distance=${radiusKm}&truncated=false`,
+			'https://openbenches.org/api/benches?truncated=false',
+			`https://openbenches.org/api/v1.0/data.json/?latitude=${centre.lat}&longitude=${centre.lon}&radius=${radiusKm}&truncated=false&format=raw`
+		]) {
+			try {
+				const answer = await getJson(url);
+				console.log(
+					`benches: ${url} gave ${answer.features?.length ?? 0} features; first ${JSON.stringify(answer.features?.[0]).slice(0, 400)}`
+				);
+				const records = benchRecords(answer, bbox);
+				// A search may cut inscriptions short; each cut one is asked for whole, bench by bench.
+				for (const [i, r] of records.entries()) {
+					if (!r.claims.inscription.endsWith('…')) continue;
+					try {
+						const whole = benchRecords(
+							await getJson(`https://openbenches.org/api/bench/${r.id}?truncated=false`),
+							bbox
+						)[0];
+						if (whole) records[i] = whole;
+					} catch (err) {
+						console.log(
+							`benches: bench ${r.id} whole did not answer: ${(err as Error).message.slice(0, 120)}`
+						);
+					}
+				}
+				if (records.length) return { source: 'OpenBenches', prefix: 'bench', records };
+			} catch (err) {
+				console.log(`benches: ${url} did not answer: ${(err as Error).message.slice(0, 200)}`);
+			}
+		}
+		throw new Error('no OpenBenches feed answered with benches in the box');
 	},
 	/** Trees the boroughs list, from the GLA's London Datastore, counted along each named street. */
 	trees: async () => {

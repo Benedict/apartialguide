@@ -1,0 +1,119 @@
+{
+	"source": "OpenBenches",
+	"prefix": "bench",
+	"records": [
+		{
+			"id": "24010",
+			"at": [
+				51.378624,
+				-0.070708
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF S. GURDEV SINGH SURI A BELOVED HUSBAND, FATHER AND GRANDFATHER 13.10.1931 15.10.2019 YOU WILL STAY IN OUR HEARTS FOREVER"
+			}
+		},
+		{
+			"id": "24011",
+			"at": [
+				51.37846,
+				-0.069917
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "is Loving Memory of Grandad / Peter Edwards / 1928-2002"
+			}
+		},
+		{
+			"id": "24012",
+			"at": [
+				51.377861,
+				-0.069725
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "GEOFFREY M.P. MYERS / LOCAL CAMPAIGNER & FRIEND / 1927-2013"
+			}
+		},
+		{
+			"id": "24013",
+			"at": [
+				51.377861,
+				-0.069725
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In loving memory / Chandubhai R Patel / (1932 - 2021) / Forever in our hearts"
+			}
+		},
+		{
+			"id": "13750",
+			"at": [
+				51.375175,
+				-0.064886
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF FRANK BARNABAS / SEPTEMBER 25th 1978"
+			}
+		},
+		{
+			"id": "26763",
+			"at": [
+				51.370121,
+				-0.085444
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "Given by the residents of Park Hill / to mark / THE QUEEN'S GOLDEN JUBILEE / 2002"
+			}
+		},
+		{
+			"id": "26863",
+			"at": [
+				51.37162,
+				-0.091175
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "19 [E II R] 53"
+			}
+		}
+	],
+	"retrieved": "2026-10-28"
+}
