@@ -223,9 +223,9 @@ SELECT ?paon ?street ?amount ?date WHERE {
 			Math.max((e - w) * 111 * Math.cos((centre.lat * Math.PI) / 180), (n - s) * 111) / 2 + 1
 		);
 		for (const url of [
-			`https://openbenches.org/api/v1.0/data.json/?latitude=${centre.lat}&longitude=${centre.lon}&radius=${radiusKm}&truncated=false`,
-			'https://openbenches.org/api/v1.0/data.json/?truncated=false',
-			'https://openbenches.org/data.json'
+			`https://openbenches.org/api/nearest/?latitude=${centre.lat}&longitude=${centre.lon}&distance=${radiusKm}&truncated=false`,
+			'https://openbenches.org/api/benches?truncated=false',
+			`https://openbenches.org/api/v1.0/data.json/?latitude=${centre.lat}&longitude=${centre.lon}&radius=${radiusKm}&truncated=false&format=raw`
 		]) {
 			try {
 				const answer = await getJson(url);
