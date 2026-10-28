@@ -233,6 +233,21 @@ SELECT ?paon ?street ?amount ?date WHERE {
 					`benches: ${url} gave ${answer.features?.length ?? 0} features; first ${JSON.stringify(answer.features?.[0]).slice(0, 400)}`
 				);
 				const records = benchRecords(answer, bbox);
+				// A search may cut inscriptions short; each cut one is asked for whole, bench by bench.
+				for (const [i, r] of records.entries()) {
+					if (!r.claims.inscription.endsWith('…')) continue;
+					try {
+						const whole = benchRecords(
+							await getJson(`https://openbenches.org/api/bench/${r.id}?truncated=false`),
+							bbox
+						)[0];
+						if (whole) records[i] = whole;
+					} catch (err) {
+						console.log(
+							`benches: bench ${r.id} whole did not answer: ${(err as Error).message.slice(0, 120)}`
+						);
+					}
+				}
 				if (records.length) return { source: 'OpenBenches', prefix: 'bench', records };
 			} catch (err) {
 				console.log(`benches: ${url} did not answer: ${(err as Error).message.slice(0, 200)}`);
