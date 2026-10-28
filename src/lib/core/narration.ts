@@ -57,7 +57,7 @@ export async function narrateWorld(
 			continue;
 		}
 		calls++;
-		const text = await model.write(prompt);
+		const text = await model.write(withNeighbours(prompt, neighboursSaid(narrator, stop, store)));
 		if (text === undefined) {
 			result.declined.push(stop);
 			continue;
@@ -74,6 +74,34 @@ export async function narrateWorld(
 		result.written++;
 	}
 	return result;
+}
+
+/** The prose already written for the stops one step from this one, under their current facts. */
+function neighboursSaid(narrator: Narrator, id: StopId, store: NarrationStore): string[] {
+	const stop = narrator.graph.get(id);
+	const next = [...new Set((stop?.exits ?? []).map((e) => e.to))];
+	return next.flatMap((to) => {
+		const visit = narrator.visit(to);
+		const said = visit && store[promptKey(buildPrompt(visit.scene))];
+		return said ? [said.paragraphs.join(' ')] : [];
+	});
+}
+
+/**
+ * The prompt as sent: with what the stops next door already say, so the model does not say it
+ * again. Only the prompt without them makes the key, so prose is still found by a stop's facts.
+ */
+function withNeighbours(prompt: Prompt, said: string[]): Prompt {
+	if (!said.length) return prompt;
+	return {
+		...prompt,
+		user: [
+			prompt.user,
+			'',
+			'Already said at the places next to this one. Do not repeat their remarks, jokes or turns of phrase; where you must give the same things, give them another way, briefly:',
+			...said.map((p) => `— ${p}`)
+		].join('\n')
+	};
 }
 
 function order(narrator: Narrator, from?: StopId): StopId[] {
