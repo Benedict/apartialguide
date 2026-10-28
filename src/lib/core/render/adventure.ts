@@ -622,6 +622,18 @@ function thing(beat: Beat): Thing {
 	};
 }
 
+/**
+ * What a thing is, for the model: its noun phrase, or for a point the map gives no kind, what the
+ * map does say of it. Never “something”, which is the template's word, not the map's.
+ */
+export function plainKind(tags: Tags): string {
+	const phrase = nounPhrase(tags);
+	if (!/^something\b/.test(phrase)) return phrase;
+	if (tags.noexit === 'yes') return 'the way ends here';
+	if (tags.entrance) return 'an entrance';
+	return 'a point the map marks without saying what it is';
+}
+
 /** The street furniture a thing has, as the map gives it, in words. */
 const KIT = ['bench', 'bin', 'shelter'] as const;
 const WHEELCHAIR: Record<string, string> = {
@@ -635,7 +647,7 @@ const WHEELCHAIR: Record<string, string> = {
  * reference if it carries one. Never its raw record, and none of its technical values.
  */
 export function mapWords(tags: Tags): string[] {
-	const sentences = [`${capitalise(nounPhrase(tags))}.`];
+	const sentences = [`${capitalise(plainKind(tags))}.`];
 	if (tags.name && !namedInline(tags)) sentences.push(`“${tags.name}”, it says.`);
 	if (tags.old_name) sentences.push(`Once “${tags.old_name}”.`);
 	const past = pastUse(tags);

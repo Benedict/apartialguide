@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { fixedClock } from './facts';
 import { narrateWorld } from './narration';
+import { buildPrompt, promptKey } from './render/prompt';
 import { Narrator } from './narrator';
 import type { NarrationStore } from './render/cached';
 import { junctionId } from './stops';
@@ -85,5 +86,22 @@ describe('narrateWorld', () => {
 		});
 		expect(result.declined).toEqual([west]);
 		expect(store).toEqual({});
+	});
+
+	it('shows the model what the stops next door already say, without changing how prose is found', async () => {
+		const { n, west } = narrator();
+		const store: NarrationStore = {};
+		let i = 0;
+		const model = new RecordedModel(() => `Prose number ${++i}. “rumb”.`);
+		await narrateWorld(n, model, store, { limit: 2, from: west });
+		expect(model.prompts[0].user).not.toMatch(/already said/i);
+		expect(model.prompts[1].user).toMatch(/already said at the places next to this one/i);
+		expect(model.prompts[1].user).toContain('Prose number 1.');
+		const second = n.graph
+			.all()
+			.find((s) => model.prompts[1].user.startsWith(buildPrompt(n.visit(s.id)!.scene).user))!;
+		expect(store[promptKey(buildPrompt(n.visit(second.id)!.scene))].paragraphs[0]).toBe(
+			'Prose number 2. “rumb”.'
+		);
 	});
 });

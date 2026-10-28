@@ -143,7 +143,7 @@ describe('buildPrompt', () => {
 	it('keeps Auster in what is noticed and Wainwright in the voice, lost about facts, never meaning', () => {
 		const { system } = buildPrompt(scene());
 		expect(system).not.toMatch(/who you are|unsure of who it is/);
-		expect(system).toMatch(/never about what anything means/);
+		expect(system).toMatch(/at most one sentence/i);
 		expect(system).toMatch(/never point out that a name is broken/i);
 		expect(system).not.toMatch(/no weather/);
 	});
@@ -252,7 +252,37 @@ describe('buildPrompt', () => {
 		expect(system).toMatch(/never end on (counting|losing count)/i);
 	});
 
-	it('is version 11', () => {
-		expect(PROMPT_VERSION).toBe(11);
+	it('is version 12', () => {
+		expect(PROMPT_VERSION).toBe(12);
+	});
+
+	it('gives each of the five writers a part, and lets one sentence a place reach for meaning', () => {
+		const { system } = buildPrompt(scene());
+		for (const writer of ['Wainwright', 'Defoe', 'Sinclair', 'Auster', 'Blake'])
+			expect(system).toContain(writer);
+		expect(system).toMatch(/at most one sentence/i);
+		expect(system).toMatch(/no purpose, use or history that the facts do not give/i);
+		expect(system).toMatch(/do not muse on yourself/i);
+	});
+
+	it('never calls a thing the map gives no kind “something”, as though the map said so', () => {
+		const point = (subject: string, tags: Record<string, string>) => ({
+			subject,
+			facts: facts(subject, tags, near),
+			effects: []
+		});
+		const user = buildPrompt(
+			scene({
+				beats: [
+					point('node/21', { noexit: 'yes' }),
+					point('node/22', { entrance: 'yes' }),
+					point('node/23', { fixme: 'what is this' })
+				]
+			})
+		).user;
+		expect(user).toContain('The way ends here.');
+		expect(user).toContain('An entrance.');
+		expect(user).toContain('A point the map marks without saying what it is.');
+		expect(user).not.toMatch(/The map: Something/);
 	});
 });
