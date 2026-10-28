@@ -44,4 +44,12 @@ describe('benchRecords (OpenBenches, as GeoJSON)', () => {
 	it('skips a bench without words', () => {
 		expect(benchRecords({ features: [feature(9, -0.07, 51.38, ' <br/> ')] }, box)).toEqual([]);
 	});
+
+	it('keeps lines apart however the feed breaks them', () => {
+		const [record] = benchRecords(
+			{ features: [feature(10, -0.07, 51.38, 'IN LOVING MEMORY\r\nOF ADA\nINVENTA')] },
+			box
+		);
+		expect(record.claims.inscription).toBe('IN LOVING MEMORY / OF ADA / INVENTA');
+	});
 });

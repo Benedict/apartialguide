@@ -21,7 +21,7 @@ const ENTITIES: Record<string, string> = {
 /** An inscription as the bench bears it: its lines kept apart by “ / ”, the page's markup undone. */
 function inscription(html: string): string {
 	return html
-		.split(/<br\s*\/?>/i)
+		.split(/<br\s*\/?>|\r?\n/i)
 		.map((line) =>
 			line
 				.replace(/<[^>]*>/g, '')
