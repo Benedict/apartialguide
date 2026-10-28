@@ -2,7 +2,7 @@ import type { Fact } from '../facts';
 import { skyLine } from '../render/sky';
 import { weatherNow } from '../render/weather';
 import { departuresLine } from '../render/departures';
-import { longDate, monthYear } from '../render/words';
+import { longDate, monthYear, numberWord } from '../render/words';
 import { direction, parse } from './parser';
 import type { Thing } from '../render/renderer';
 import { distance } from '../geo';
@@ -67,7 +67,7 @@ function ledgerLines(asOf: string, about: Ledger): string[] {
 	];
 	if (about.accounts.length)
 		lines.push(
-			`The map is not the only account. Others have been kept, by ${listed(about.accounts.map(theKeeper))}. Where they disagree with the map, I leave them disagreeing.`
+			`The map is not the only account. Others have been kept, ${numberWord(about.accounts.length)} of them. Where they disagree with the map, I leave them disagreeing.`
 		);
 	const areas = about.areas;
 	if (areas && areas.count > 1)
@@ -76,10 +76,6 @@ function ledgerLines(asOf: string, about: Ledger): string[] {
 		);
 	return lines;
 }
-
-/** A keeper as named in a sentence: “the Food Standards Agency”, but “Historic England”, “Wikidata”. */
-const theKeeper = (name: string) =>
-	/\b(Agency|Authority|Datahub|Office)\b/.test(name) ? `the ${name}` : name;
 
 /** A distance as Guide says it: tens of metres under a kilometre, then tenths of a kilometre. */
 export function distanceWords(metres: number): string {

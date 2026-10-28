@@ -125,6 +125,9 @@ const NUMBERS = [
 	'ten'
 ];
 
+/** "nine", or 12 above ten. */
+export const numberWord = (n: number) => NUMBERS[n] ?? n.toLocaleString('en-GB');
+
 /** "two residential areas", "three bicycle parking" */
 export function counted(n: number, noun: string): string {
 	if (n === 1) return article(noun);

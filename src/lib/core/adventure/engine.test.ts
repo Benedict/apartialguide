@@ -54,34 +54,20 @@ describe('Adventure', () => {
 			expect(intro.lines).toEqual([
 				INTRO[0],
 				'I walk by a map. Mine is dated 24 October 2026: 412 named streets and 5,688 places to stand, the oldest of them last recorded in March 2009. Beyond it there may be more. I could not say what.',
-				'The map is not the only account. Others have been kept, by the Food Standards Agency, HM Land Registry and Wikidata. Where they disagree with the map, I leave them disagreeing.',
+				'The map is not the only account. Others have been kept, three of them. Where they disagree with the map, I leave them disagreeing.',
 				'By another account, the map runs into 9 wards, most of it in Inventa East and Inventa West. I will say when we cross from one to another.'
 			]);
 		});
 
-		it('names each keeper as one would in a sentence', () => {
+		it('never names who kept the other accounts', () => {
 			const [intro] = new Adventure({
 				...world,
 				asOf: '2026-10-24',
-				about: {
-					streets: 1,
-					places: 1,
-					accounts: [
-						'Wikidata',
-						'police.uk',
-						'Food Standards Agency',
-						'Historic England',
-						'London Planning Datahub',
-						'Open Plaques',
-						'HM Land Registry',
-						'Greater London Authority',
-						'Office for National Statistics'
-					]
-				}
+				about: { streets: 1, places: 1, accounts: ['Wikidata', 'Invented Registry'] }
 			}).begin();
-			expect(intro.lines[2]).toContain(
-				'by Wikidata, police.uk, the Food Standards Agency, Historic England, the London Planning Datahub, Open Plaques, HM Land Registry, the Greater London Authority and the Office for National Statistics.'
-			);
+			const text = intro.lines.join(' ');
+			expect(text).toContain('Others have been kept, two of them.');
+			expect(text).not.toMatch(/Wikidata|Invented Registry/);
 		});
 
 		it('ends the account with the sky, when there is word of it', () => {

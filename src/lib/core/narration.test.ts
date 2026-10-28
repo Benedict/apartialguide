@@ -104,4 +104,15 @@ describe('narrateWorld', () => {
 			'Prose number 2. “rumb”.'
 		);
 	});
+
+	it('does not store prose that names a source', async () => {
+		const { n, west } = narrator();
+		const store: NarrationStore = {};
+		const result = await narrateWorld(n, new RecordedModel(() => '“rumb”, says Wikidata.'), store, {
+			limit: 1,
+			from: west
+		});
+		expect(result.rejected).toEqual([west]);
+		expect(store).toEqual({});
+	});
 });

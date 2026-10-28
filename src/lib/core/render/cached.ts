@@ -1,3 +1,4 @@
+import { isElsewhere } from '../tensions';
 import type { Scene } from '../scene';
 import { AdventureRenderer, exitsLine } from './adventure';
 import { brokenNames, buildPrompt, promptKey } from './prompt';
@@ -26,7 +27,12 @@ export class CachedRenderer implements Renderer {
 	render(scene: Scene): Room {
 		const room = this.fallback.render(scene);
 		const entry = this.store[promptKey(buildPrompt(scene))];
-		if (!entry || !keepsBrokenNames(scene, entry.paragraphs)) return room;
+		if (
+			!entry ||
+			!keepsBrokenNames(scene, entry.paragraphs) ||
+			!namesNoSource(scene, entry.paragraphs)
+		)
+			return room;
 		return { ...room, paragraphs: [...entry.paragraphs, exitsLine(scene.exits)] };
 	}
 }
@@ -37,6 +43,23 @@ export function keepsBrokenNames(scene: Scene, paragraphs: readonly string[]): b
 	return scene.beats
 		.flatMap(brokenNames)
 		.every((name) => new RegExp(`(?<![\\p{L}\\p{N}])${escape(name)}`, 'u').test(text));
+}
+
+/**
+ * Whether the prose leaves every source unnamed: Wikidata, and the keeper of each other account at
+ * the stop, unless that name is also one of the map's own facts there (a tram's operator, say).
+ */
+export function namesNoSource(scene: Scene, paragraphs: readonly string[]): boolean {
+	const text = paragraphs.join('\n').toLowerCase();
+	const facts = scene.beats.flatMap((b) => b.facts);
+	const mapValues = new Set(
+		facts.filter((f) => !isElsewhere(f)).map((f) => f.claim.value.toLowerCase())
+	);
+	const keepers = new Set([
+		'wikidata',
+		...facts.filter(isElsewhere).map((f) => f.source.split(/,|\(/)[0].trim().toLowerCase())
+	]);
+	return [...keepers].every((k) => mapValues.has(k) || !text.includes(k));
 }
 
 const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

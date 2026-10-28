@@ -125,9 +125,8 @@ describe('buildPrompt', () => {
 		};
 		const user = buildPrompt(scene({ beats: [pub] })).user;
 		expect(user).toContain('The map: A pub, “The Sextant”.');
-		expect(user).toContain(
-			'Elsewhere (Wikidata): Elsewhere it is listed as “invented public house”.'
-		);
+		expect(user).toContain('Another account: Elsewhere it is listed as “invented public house”.');
+		expect(user).not.toContain('Wikidata');
 		expect(buildPrompt(scene()).system).toMatch(/elsewhere/i);
 	});
 
@@ -234,9 +233,7 @@ describe('buildPrompt', () => {
 			effects: []
 		};
 		const user = buildPrompt(scene({ beats: [cafe] })).user;
-		expect(user).toContain(
-			'Elsewhere (Food Standards Agency): Its food hygiene rating is 5, given in April 2025.'
-		);
+		expect(user).toContain('Another account: Its food hygiene rating is 5, given in April 2025.');
 	});
 
 	it('does not ask every crowded place to end the same way', () => {
@@ -252,8 +249,12 @@ describe('buildPrompt', () => {
 		expect(system).toMatch(/never end on (counting|losing count)/i);
 	});
 
-	it('is version 12', () => {
-		expect(PROMPT_VERSION).toBe(12);
+	it('is version 13', () => {
+		expect(PROMPT_VERSION).toBe(13);
+	});
+
+	it('tells the model never to name a source', () => {
+		expect(buildPrompt(scene()).system).toMatch(/never name a source/i);
 	});
 
 	it('gives each of the five writers a part, and lets one sentence a place reach for meaning', () => {
