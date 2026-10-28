@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { AdventureWorld } from '../core/adventure/world';
 import { gunzipSync } from 'node:zlib';
-import { exportPage } from './export';
+import { exportPage, wordsAmiss } from './export';
 import { LIVE, SOURCES } from '../site/sources';
 
 /** The world as the page carries it: gzip, base64, in a script element of its own. */
@@ -147,5 +147,14 @@ describe('exportPage', () => {
 
 	it('keeps saved walks in the reader’s browser', () => {
 		expect(page()).toContain('game.saves = browserSaves()');
+	});
+
+	it('finds words the code let slip into the world: undefined, null, NaN', () => {
+		expect(wordsAmiss(world)).toEqual([]);
+		const slipped = {
+			...world,
+			stops: { a: { ...world.stops.a, paragraphs: ['There is “undefined”, by another account.'] } }
+		};
+		expect(wordsAmiss(slipped)).toEqual(['a: There is “undefined”, by another account.']);
 	});
 });

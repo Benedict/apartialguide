@@ -501,6 +501,27 @@ describe('AdventureRenderer', () => {
 			expect(t).not.toContain('undefined');
 		});
 
+		it('lets a bench only another account has be examined as a bench', () => {
+			const bench = {
+				subject: 'bench/7',
+				facts: facts(
+					'bench/7',
+					{ 'bench:kind': 'bench', 'bench:inscription': 'For Ada Inventa' },
+					north(5)
+				).map((f) => ({ ...f, source: 'OpenBenches', elsewhere: true as const })),
+				effects: []
+			};
+			const room = new AdventureRenderer().render(scene({ beats: [bench] }));
+			const found = [...room.things, ...(room.hidden?.things ?? [])].find(
+				(t) => t.id === 'bench/7'
+			)!;
+			expect(found.name).toBe('bench');
+			expect(found.aliases).toContain('bench');
+			expect(found.description).toBe(
+				'A bench. The map does not have it. On it: “For Ada Inventa”.'
+			);
+		});
+
 		it('tells the inscription on a bench the map has', () => {
 			const bench = {
 				subject: 'node/7',
@@ -594,6 +615,31 @@ describe('AdventureRenderer', () => {
 				expect(room.hidden?.lines[0]).toBe(
 					'Looking closer, you find Brothers Kebab, a fast food place, and Larchwood Pharmacy, and six benches.'
 				);
+			});
+
+			it('finds things only another account has by their name, or by their kind, never undefined', () => {
+				const elsewhereOnly = (subject: string, tags: Record<string, string>) => ({
+					subject,
+					facts: facts(subject, tags, north(10)).map((f) => ({
+						...f,
+						source: 'Another Source',
+						elsewhere: true as const
+					})),
+					effects: []
+				});
+				const found = renderer.render(
+					scene({
+						mood: 'rambling',
+						beats: [bank, pub],
+						hidden: [
+							elsewhereOnly('bench/1', { 'bench:kind': 'bench', 'bench:inscription': 'For Ada' }),
+							elsewhereOnly('listed/2', { 'listed:name': 'Invented Chapel' })
+						]
+					})
+				).hidden?.lines[0];
+				expect(found).toContain('a bench, by another account');
+				expect(found).toContain('“Invented Chapel”, by another account');
+				expect(found).not.toContain('undefined');
 			});
 
 			it('lets hidden things be examined once found', () => {
