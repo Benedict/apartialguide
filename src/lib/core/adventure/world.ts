@@ -82,11 +82,27 @@ const wordsOf = (name: string) =>
 		.filter((w) => !GENERIC.has(w));
 
 /** Every stop's narration, written ahead of time. The game plays from this alone. */
+/** What Guide carries, as the introduction tells it: every figure from the data. */
+export interface Ledger {
+	/** Named streets on the map. */
+	streets: number;
+	/** Places to stand: the stops. */
+	places: number;
+	/** The earliest date anything on the map was last recorded, YYYY-MM-DD. */
+	oldest?: string;
+	/** Other accounts kept of the place, by their keepers' names. */
+	accounts: string[];
+	/** The areas another account draws: how many the map runs into, and those most of it lies in. */
+	areas?: { kind: string; count: number; most: string[] };
+}
+
 export interface AdventureWorld {
 	start: StopId;
 	stops: Record<StopId, CompiledStop>;
 	/** The date of the map Guide carries, YYYY-MM-DD. */
 	asOf?: string;
+	/** What Guide carries, for the introduction. */
+	about?: Ledger;
 	/** Where to ask about today's weather: where the tour begins. */
 	weatherAt?: { latitude: number; longitude: number };
 }
@@ -144,13 +160,38 @@ export function compileWorld(
 		);
 		if (terms.length) stops[id].terms = terms;
 	}
+	const about = ledger(narrator, stops);
 	const begins = narrator.graph.get(start)?.position;
 	return {
 		start,
 		stops,
 		...(options.asOf ? { asOf: options.asOf } : {}),
+		about,
 		...(begins
 			? { weatherAt: { latitude: +begins[0].toFixed(4), longitude: +begins[1].toFixed(4) } }
 			: {})
+	};
+}
+
+/** What Guide carries, from the narrator's ledger and the stops: the areas counted where stops lie. */
+function ledger(narrator: Narrator, stops: Record<StopId, CompiledStop>): Ledger {
+	const { streets, oldest, accounts } = narrator.ledger;
+	const inArea = new Map<string, number>();
+	let kind: string | undefined;
+	for (const stop of Object.values(stops))
+		if (stop.area) {
+			kind = stop.area.kind;
+			inArea.set(stop.area.name, (inArea.get(stop.area.name) ?? 0) + 1);
+		}
+	const most = [...inArea]
+		.sort((a, b) => b[1] - a[1])
+		.slice(0, 2)
+		.map(([name]) => name);
+	return {
+		streets,
+		places: Object.keys(stops).length,
+		...(oldest ? { oldest } : {}),
+		accounts,
+		...(kind ? { areas: { kind, count: inArea.size, most } } : {})
 	};
 }

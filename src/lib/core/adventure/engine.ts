@@ -2,12 +2,12 @@ import type { Fact } from '../facts';
 import { skyLine } from '../render/sky';
 import { weatherNow } from '../render/weather';
 import { departuresLine } from '../render/departures';
-import { longDate } from '../render/words';
+import { longDate, monthYear } from '../render/words';
 import { direction, parse } from './parser';
 import type { Thing } from '../render/renderer';
 import { distance } from '../geo';
 import { AUTO, SLOTS, type SaveStore, type SavedWalk, type WalkState } from './saves';
-import type { AdventureWorld, CompiledExit, Term, TransitStop } from './world';
+import type { AdventureWorld, CompiledExit, Ledger, Term, TransitStop } from './world';
 
 export interface Reply {
 	/** Set when the reply describes a place. */
@@ -55,6 +55,31 @@ const CONNECT_CHANCE = 1 / 3;
 
 /** The distances that mark a walk, in metres: the goal is to walk, and each is told once passed. */
 const MARKS = [250, 500, 1000, 2000, 5000, 10_000, 20_000, 50_000];
+
+/** Guide's account of what they carry: the map, the other accounts, the areas. Every figure is the data's. */
+function ledgerLines(asOf: string, about: Ledger): string[] {
+	const n = (x: number) => x.toLocaleString('en-GB');
+	const oldest = about.oldest
+		? `, the oldest of them last recorded in ${monthYear(about.oldest)}`
+		: '';
+	const lines = [
+		`I walk by a map. Mine is dated ${longDate(asOf)}: ${n(about.streets)} named streets and ${n(about.places)} places to stand${oldest}. Beyond it there may be more. I could not say what.`
+	];
+	if (about.accounts.length)
+		lines.push(
+			`The map is not the only account. Others have been kept, by ${listed(about.accounts.map(theKeeper))}. Where they disagree with the map, I leave them disagreeing.`
+		);
+	const areas = about.areas;
+	if (areas && areas.count > 1)
+		lines.push(
+			`By another account, the map runs into ${n(areas.count)} ${areas.kind}s${areas.most.length ? `, most of it in ${listed(areas.most)}` : ''}. I will say when we cross from one to another.`
+		);
+	return lines;
+}
+
+/** A keeper as named in a sentence: “the Food Standards Agency”, but “Historic England”, “Wikidata”. */
+const theKeeper = (name: string) =>
+	/\b(Agency|Authority|Datahub|Office)\b/.test(name) ? `the ${name}` : name;
 
 /** A distance as Guide says it: tens of metres under a kilometre, then tenths of a kilometre. */
 export function distanceWords(metres: number): string {
@@ -126,8 +151,13 @@ export class Adventure {
 	begin(now: Fact[] = []): Reply[] {
 		this.choosing = true;
 		this.now = now;
-		const { asOf } = this.world;
+		const { asOf, about } = this.world;
 		const today = [weatherNow(now), skyLine(now)].filter(Boolean).join(' ');
+		if (about && asOf)
+			return [
+				{ lines: [...INTRO, ...ledgerLines(asOf, about), ...(today ? [today] : [])] },
+				{ lines: [OFFER], actions: [...this.continuing(), ...TAKE_TOUR] }
+			];
 		const sky = today ? ` ${today}` : '';
 		const map = asOf
 			? `The map I carry is dated ${longDate(asOf)}.${sky} Beyond it there may be more. I could not say what.`

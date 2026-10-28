@@ -8,10 +8,11 @@ Feature: The weather, as the reader reads
     And a pub called "The Sextant" beside Long Street
     And the reader starts part way along Long Street
 
-  Scenario: Guide knows today's weather, beside the map's date
+  Scenario: Guide knows today's weather, after the map's date
     Given the weather now is overcast, 12 °C
     When the reader opens the game
-    Then it says "The map I carry is dated 24 October 2026. Today: overcast, 12 °C."
+    Then it says "Mine is dated 24 October 2026"
+    And it says "Today: overcast, 12 °C."
 
   Scenario: The reader asks after the weather
     Given the weather now is overcast, 12 °C
