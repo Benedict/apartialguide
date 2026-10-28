@@ -444,10 +444,11 @@ function describeBeat(
 
 	if (isElsewhereOnly(beat)) {
 		const { label, what } = otherAccount(tags);
-		return [
-			`${place}, by another account, is “${label}”${what ? `, “${what}”` : ''}.`,
-			...recordSentences(tags, 'room')
-		].join(' ');
+		// A thing with words but no name, such as a bench, is told by its kind.
+		const called = label ? `“${label}”${what ? `, “${what}”` : ''}` : article(what ?? 'thing');
+		return [`${place}, by another account, is ${called}.`, ...recordSentences(tags, 'room')].join(
+			' '
+		);
 	}
 	if (beat.effects.includes('remembered')) {
 		const asOf = beat.facts.find((f) => f.observed)?.observed;

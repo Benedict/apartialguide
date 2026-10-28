@@ -126,4 +126,47 @@ describe('RecordsAdapter', () => {
 			)
 		).toEqual([]);
 	});
+
+	describe('benches, by inscription', () => {
+		const bench: OsmElement = {
+			type: 'node',
+			id: 3,
+			lat: 51.381,
+			lon: -0.072,
+			tags: { amenity: 'bench' }
+		};
+		const withBench = new OsmIndex({ elements: [shop, cafe, bench] });
+		const benches = (records: RecordStore['records']) =>
+			new RecordsAdapter(
+				withBench,
+				store(records, { source: 'OpenBenches', prefix: 'bench' })
+			).facts();
+
+		it('goes with a bench the map has close by', () => {
+			const found = benches([
+				{
+					id: '7',
+					at: [51.38104, -0.07204],
+					near: { key: 'amenity', value: 'bench', within: 15 },
+					claims: { kind: 'bench', inscription: 'For Ada Inventa, who sat here' }
+				}
+			]);
+			expect(found.map((f) => [f.subject, f.claim.key])).toEqual([
+				['node/3', 'bench:kind'],
+				['node/3', 'bench:inscription']
+			]);
+		});
+
+		it('stands alone by its inscription, when the map has no bench near', () => {
+			const found = benches([
+				{
+					id: '8',
+					at: [51.39, -0.08],
+					near: { key: 'amenity', value: 'bench', within: 15 },
+					claims: { kind: 'bench', inscription: 'For Ada Inventa' }
+				}
+			]);
+			expect(found.map((f) => f.subject)).toEqual(['bench/8', 'bench/8']);
+		});
+	});
 });

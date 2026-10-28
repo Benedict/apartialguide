@@ -99,6 +99,12 @@ export const SOURCES: Source[] = [
 		terms: `Source: Office for National Statistics. Contains OS data © Crown copyright and database right 2026. ${OGL}`
 	},
 	{
+		name: 'OpenBenches',
+		href: 'https://openbenches.org/',
+		gives: 'benches and what is written on them',
+		terms: 'OpenBenches contributors, CC BY-SA 4.0'
+	},
+	{
 		name: 'London Datastore',
 		href: 'https://data.london.gov.uk/dataset/london-public-realm-trees-2r45m',
 		gives: 'the trees listed along streets',

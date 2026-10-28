@@ -484,6 +484,39 @@ describe('AdventureRenderer', () => {
 			);
 		});
 
+		it('tells a bench only another account has, by its inscription as found', () => {
+			const bench = {
+				subject: 'bench/7',
+				facts: facts(
+					'bench/7',
+					{ 'bench:kind': 'bench', 'bench:inscription': 'For Ada Inventa, who sat here' },
+					north(5)
+				).map((f) => ({ ...f, source: 'OpenBenches', elsewhere: true as const })),
+				effects: []
+			};
+			const t = text(scene({ beats: [bench] }));
+			expect(t).toContain(
+				'by another account, is a bench. On it: “For Ada Inventa, who sat here”.'
+			);
+			expect(t).not.toContain('undefined');
+		});
+
+		it('tells the inscription on a bench the map has', () => {
+			const bench = {
+				subject: 'node/7',
+				facts: [
+					...facts('node/7', { amenity: 'bench' }, north(5)),
+					...facts(
+						'node/7',
+						{ 'bench:kind': 'bench', 'bench:inscription': 'For Ada Inventa' },
+						north(5)
+					).map((f) => ({ ...f, source: 'OpenBenches', elsewhere: true as const }))
+				],
+				effects: []
+			};
+			expect(text(scene({ beats: [bench] }))).toContain('On it: “For Ada Inventa”.');
+		});
+
 		it('tells a disused use in the past tense', () => {
 			const t = text(scene({ beats: [beat('way/2', { 'disused:amenity': 'bank' })] }));
 			expect(t).toMatch(/was a bank/);
