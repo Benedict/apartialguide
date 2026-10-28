@@ -39,6 +39,52 @@ describe('Adventure', () => {
 			expect(offer.actions).toEqual([{ label: 'Take the tour', command: 'take the tour' }]);
 		});
 
+		it('gives an account of what Guide carries, from the map and the other accounts', () => {
+			const [intro] = new Adventure({
+				...world,
+				asOf: '2026-10-24',
+				about: {
+					streets: 412,
+					places: 5688,
+					oldest: '2009-03-14',
+					accounts: ['Food Standards Agency', 'HM Land Registry', 'Wikidata'],
+					areas: { kind: 'ward', count: 9, most: ['Inventa East', 'Inventa West'] }
+				}
+			}).begin();
+			expect(intro.lines).toEqual([
+				INTRO[0],
+				'I walk by a map. Mine is dated 24 October 2026: 412 named streets and 5,688 places to stand, the oldest of them last recorded in March 2009. Beyond it there may be more. I could not say what.',
+				'The map is not the only account. Others have been kept: by those who inspect kitchens, those who write down what houses sell for and those who keep an encyclopaedia of everything. Where they disagree with the map, I leave them disagreeing.',
+				'By another account, the map runs into 9 wards, most of it in Inventa East and Inventa West. I will say when we cross from one to another.'
+			]);
+		});
+
+		it('never names who kept the other accounts', () => {
+			const [intro] = new Adventure({
+				...world,
+				asOf: '2026-10-24',
+				about: { streets: 1, places: 1, accounts: ['Wikidata', 'Invented Registry'] }
+			}).begin();
+			const text = intro.lines.join(' ');
+			expect(text).toContain(
+				'Others have been kept: by those who keep an encyclopaedia of everything, and others.'
+			);
+			expect(text).not.toMatch(/Wikidata|Invented Registry/);
+		});
+
+		it('ends the account with the sky, when there is word of it', () => {
+			const now = currentWeatherFacts({
+				current: { time: '2026-10-25T16:45', weather_code: 61, temperature_2m: 11 }
+			});
+			const [intro] = new Adventure({
+				...world,
+				asOf: '2026-10-24',
+				about: { streets: 2, places: 3, accounts: [] }
+			}).begin(now);
+			expect(intro.lines.at(-1)).toBe('Today: light rain, 11 °C.');
+			expect(intro.lines.join(' ')).not.toContain('The map is not the only account');
+		});
+
 		it('opens with Guide introducing themselves, then offers the tour', () => {
 			const [intro, offer] = new Adventure(world).begin();
 			expect(intro.lines[0]).toBe(INTRO[0]);

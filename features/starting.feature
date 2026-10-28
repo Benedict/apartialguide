@@ -14,6 +14,10 @@ Feature: Taking the tour
     And it does not say "You are standing"
     And it does not say "postcode"
 
+  Scenario: Guide gives an account of the map they carry
+    Then it says "I walk by a map. Mine is dated 24 October 2026: 3 named streets and"
+    And it says "places to stand"
+
   Scenario: Taking the tour
     When the reader types "take the tour"
     Then it says "You are standing"

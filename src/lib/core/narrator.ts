@@ -3,6 +3,7 @@ import { OsmAdapter } from './adapters/osm';
 import { WikidataAdapter, type WikidataStore } from './adapters/wikidata';
 import { RecordsAdapter, type RecordStore } from './adapters/records';
 import { areaAt, type AreaRecord } from './areas';
+import { keeper } from './keepers';
 import type { Clock, Fact } from './facts';
 import { distance, distanceToPolyline, type LatLon } from './geo';
 import { OsmIndex, type OsmData } from './osm';
@@ -12,7 +13,7 @@ import type { Renderer, Room } from './render/renderer';
 import { buildScene, type Scene } from './scene';
 import { chooseSlippage, type NarrationPlan } from './slippage';
 import { buildStopGraph, type Exit, type Stop, type StopGraph, type StopId } from './stops';
-import { detectTensions, type TensionOptions } from './tensions';
+import { detectTensions, isElsewhere, type TensionOptions } from './tensions';
 
 export interface NarratorOptions extends TensionOptions {
 	clock: Clock;
@@ -38,6 +39,33 @@ export interface Visit {
 	exits: Exit[];
 }
 
+/** What the map and the other accounts hold, as a whole. */
+export interface MapLedger {
+	streets: number;
+	oldest?: string;
+	accounts: string[];
+}
+
+function ledgerOf(
+	osm: OsmIndex,
+	facts: readonly Fact[],
+	records: readonly RecordStore[]
+): MapLedger {
+	const streets = new Set(
+		osm.ways.filter((w) => w.tags?.highway && w.tags?.name).map((w) => w.tags!.name)
+	).size;
+	const oldest = facts
+		.filter((f) => f.source === 'osm' && f.observed)
+		.reduce<string | undefined>((a, f) => (!a || f.observed! < a ? f.observed : a), undefined);
+	const accounts = [
+		...new Set([
+			...facts.filter(isElsewhere).map((f) => keeper(f.source)),
+			...records.filter((r) => r.areas?.length).map((r) => keeper(r.source))
+		])
+	];
+	return { streets, ...(oldest ? { oldest } : {}), accounts };
+}
+
 /** How near something addressed to another street must be to be told here, in metres. */
 const OFF_STREET_REACH = 12;
 
@@ -49,7 +77,9 @@ export class Narrator {
 	constructor(
 		readonly graph: StopGraph,
 		private readonly perception: Perception,
-		private readonly options: NarratorOptions
+		private readonly options: NarratorOptions,
+		/** What the map and the other accounts hold, as a whole: for Guide's introduction. */
+		readonly ledger: MapLedger = { streets: 0, accounts: [] }
 	) {
 		this.renderer = options.renderer ?? new AdventureRenderer();
 		this.areas = (options.records ?? []).flatMap((store) => store.areas ?? []);
@@ -64,7 +94,12 @@ export class Narrator {
 			...(options.wikidata ? new WikidataAdapter(osm, options.wikidata).facts() : []),
 			...(options.records ?? []).flatMap((store) => new RecordsAdapter(osm, store).facts())
 		];
-		return new Narrator(buildStopGraph(osm, options), Perception.fromOsm(osm, facts), options);
+		return new Narrator(
+			buildStopGraph(osm, options),
+			Perception.fromOsm(osm, facts),
+			options,
+			ledgerOf(osm, facts, options.records ?? [])
+		);
 	}
 
 	/** The area another account puts a point in, such as a ward, if any. */

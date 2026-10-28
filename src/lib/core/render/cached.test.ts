@@ -4,7 +4,7 @@ import type { Scene } from '../scene';
 import { facts } from '../testing/facts';
 import { SyntheticMap } from '../testing/synthetic';
 import { AdventureRenderer } from './adventure';
-import { CachedRenderer, type NarrationStore } from './cached';
+import { CachedRenderer, namesNoSource, type NarrationStore } from './cached';
 import { buildPrompt, promptKey } from './prompt';
 
 const O = SyntheticMap.ORIGIN;
@@ -67,5 +67,41 @@ describe('CachedRenderer', () => {
 	it('falls back to the template when the prose repairs a broken name', () => {
 		const room = new CachedRenderer(store(['The West Bank stands here.'])).render(scene);
 		expect(room).toEqual(template);
+	});
+});
+
+describe('namesNoSource', () => {
+	const pub = (source: string, operator?: string) =>
+		({
+			beats: [
+				{
+					subject: 'node/4',
+					facts: [
+						...facts('node/4', {
+							amenity: 'pub',
+							name: 'The Sextant',
+							...(operator ? { operator } : {})
+						}),
+						...facts('node/4', { 'hygiene:rating': '5' }).map((f) => ({
+							...f,
+							source,
+							elsewhere: true as const
+						}))
+					],
+					effects: []
+				}
+			]
+		}) as unknown as Scene;
+
+	it('refuses prose that names the keeper of another account, or Wikidata', () => {
+		expect(namesNoSource(pub('Invented Registry'), ['By the Invented Registry, a 5.'])).toBe(false);
+		expect(namesNoSource(pub('Invented Registry'), ['Wikidata lists it.'])).toBe(false);
+		expect(namesNoSource(pub('Invented Registry'), ['By another account, a 5.'])).toBe(true);
+	});
+
+	it('lets a name stand that is also one of the map’s own facts', () => {
+		expect(
+			namesNoSource(pub('Invented Registry', 'Invented Registry'), ['Run by Invented Registry.'])
+		).toBe(true);
 	});
 });

@@ -17,9 +17,10 @@ import {
 	whereYouStand
 } from './adventure';
 import { monthYear, tagsOf } from './words';
+import { allusion } from '../keepers';
 
 /** Bump when the prompt changes, so cached narration written under the old one is redone. */
-export const PROMPT_VERSION = 12;
+export const PROMPT_VERSION = 13;
 
 export interface Prompt {
 	/** Fixed for every stop, so it can be cached. */
@@ -46,6 +47,7 @@ Rules.
 - Something that was called something else: correct yourself between the names, unsure which is right.
 - A survey date is when something was last recorded. Never say anyone came to look. Slip between present and past for it: there is a shop; there was a shop when it was last recorded.
 - When told the place is crowded or bare, do as the user message says, once. Never end on counting, losing count, or what else there may be: end on something the facts give. The reference page below ends on losing count; yours must not.
+- Never name a source or who kept an account: not the map's makers, not any other. Allude to them only by what they do, as you are told it ("those who inspect kitchens"), or say another account.
 - Give no purpose, use or history that the facts do not give: not what a thing is for, why it is there, or how such things usually are.
 - Speak no technical values (voltages, gauges, frequencies, speeds of lines) and no codes but a reference you are given as one.
 - Facts marked Elsewhere come from another account, not the map. Give them lightly as that (elsewhere, by another account), never as the map's. Where the two disagree, leave them disagreeing.
@@ -110,7 +112,7 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 	}
 	for (const source of [...new Set(elsewhere.map((f) => f.source))])
 		lines.push(
-			`   Elsewhere (${source === 'wikidata' ? 'Wikidata' : source}): ${others(elsewhere.filter((f) => f.source === source))}`
+			`   Another account${allusion(source) ? `, kept by ${allusion(source)}` : ''}: ${others(elsewhere.filter((f) => f.source === source))}`
 		);
 	for (const name of brokenNames(beat)) lines.push(`   Speak the name “${name}” exactly as found.`);
 	if (beat.effects.includes('remembered')) {

@@ -1,6 +1,6 @@
 import { distance } from './geo';
 import type { Narrator } from './narrator';
-import { keepsBrokenNames, type NarrationStore } from './render/cached';
+import { keepsBrokenNames, namesNoSource, type NarrationStore } from './render/cached';
 import { buildPrompt, promptKey, type Prompt } from './render/prompt';
 import type { StopId } from './stops';
 
@@ -66,7 +66,7 @@ export async function narrateWorld(
 			.split(/\n\s*\n/)
 			.map((p) => p.trim())
 			.filter(Boolean);
-		if (!keepsBrokenNames(scene, paragraphs)) {
+		if (!keepsBrokenNames(scene, paragraphs) || !namesNoSource(scene, paragraphs)) {
 			result.rejected.push(stop);
 			continue;
 		}
