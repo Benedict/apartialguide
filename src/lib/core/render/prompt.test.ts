@@ -125,7 +125,9 @@ describe('buildPrompt', () => {
 		};
 		const user = buildPrompt(scene({ beats: [pub] })).user;
 		expect(user).toContain('The map: A pub, “The Sextant”.');
-		expect(user).toContain('Another account: Elsewhere it is listed as “invented public house”.');
+		expect(user).toContain(
+			'Another account, kept by those who keep an encyclopaedia of everything: Elsewhere it is listed as “invented public house”.'
+		);
 		expect(user).not.toContain('Wikidata');
 		expect(buildPrompt(scene()).system).toMatch(/elsewhere/i);
 	});
@@ -233,7 +235,9 @@ describe('buildPrompt', () => {
 			effects: []
 		};
 		const user = buildPrompt(scene({ beats: [cafe] })).user;
-		expect(user).toContain('Another account: Its food hygiene rating is 5, given in April 2025.');
+		expect(user).toContain(
+			'Another account, kept by those who inspect kitchens: Its food hygiene rating is 5, given in April 2025.'
+		);
 	});
 
 	it('does not ask every crowded place to end the same way', () => {

@@ -3,6 +3,7 @@ import { OsmAdapter } from './adapters/osm';
 import { WikidataAdapter, type WikidataStore } from './adapters/wikidata';
 import { RecordsAdapter, type RecordStore } from './adapters/records';
 import { areaAt, type AreaRecord } from './areas';
+import { keeper } from './keepers';
 import type { Clock, Fact } from './facts';
 import { distance, distanceToPolyline, type LatLon } from './geo';
 import { OsmIndex, type OsmData } from './osm';
@@ -44,10 +45,6 @@ export interface MapLedger {
 	oldest?: string;
 	accounts: string[];
 }
-
-/** A keeper's name as found, without the file or layer a fetch noted after it. */
-const keeper = (source: string) =>
-	source === 'wikidata' ? 'Wikidata' : source.split(/,|\(/)[0].trim();
 
 function ledgerOf(
 	osm: OsmIndex,

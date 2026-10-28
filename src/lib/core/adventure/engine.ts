@@ -2,7 +2,8 @@ import type { Fact } from '../facts';
 import { skyLine } from '../render/sky';
 import { weatherNow } from '../render/weather';
 import { departuresLine } from '../render/departures';
-import { longDate, monthYear, numberWord } from '../render/words';
+import { longDate, monthYear } from '../render/words';
+import { alludedTo } from '../keepers';
 import { direction, parse } from './parser';
 import type { Thing } from '../render/renderer';
 import { distance } from '../geo';
@@ -67,7 +68,7 @@ function ledgerLines(asOf: string, about: Ledger): string[] {
 	];
 	if (about.accounts.length)
 		lines.push(
-			`The map is not the only account. Others have been kept, ${numberWord(about.accounts.length)} of them. Where they disagree with the map, I leave them disagreeing.`
+			`The map is not the only account. Others have been kept: by ${alludedTo(about.accounts)}. Where they disagree with the map, I leave them disagreeing.`
 		);
 	const areas = about.areas;
 	if (areas && areas.count > 1)

@@ -54,7 +54,7 @@ describe('Adventure', () => {
 			expect(intro.lines).toEqual([
 				INTRO[0],
 				'I walk by a map. Mine is dated 24 October 2026: 412 named streets and 5,688 places to stand, the oldest of them last recorded in March 2009. Beyond it there may be more. I could not say what.',
-				'The map is not the only account. Others have been kept, three of them. Where they disagree with the map, I leave them disagreeing.',
+				'The map is not the only account. Others have been kept: by those who inspect kitchens, those who write down what houses sell for and those who keep an encyclopaedia of everything. Where they disagree with the map, I leave them disagreeing.',
 				'By another account, the map runs into 9 wards, most of it in Inventa East and Inventa West. I will say when we cross from one to another.'
 			]);
 		});
@@ -66,7 +66,9 @@ describe('Adventure', () => {
 				about: { streets: 1, places: 1, accounts: ['Wikidata', 'Invented Registry'] }
 			}).begin();
 			const text = intro.lines.join(' ');
-			expect(text).toContain('Others have been kept, two of them.');
+			expect(text).toContain(
+				'Others have been kept: by those who keep an encyclopaedia of everything, and others.'
+			);
 			expect(text).not.toMatch(/Wikidata|Invented Registry/);
 		});
 

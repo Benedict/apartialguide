@@ -1,3 +1,4 @@
+import { keeper } from '../keepers';
 import { isElsewhere } from '../tensions';
 import type { Scene } from '../scene';
 import { AdventureRenderer, exitsLine } from './adventure';
@@ -57,7 +58,7 @@ export function namesNoSource(scene: Scene, paragraphs: readonly string[]): bool
 	);
 	const keepers = new Set([
 		'wikidata',
-		...facts.filter(isElsewhere).map((f) => f.source.split(/,|\(/)[0].trim().toLowerCase())
+		...facts.filter(isElsewhere).map((f) => keeper(f.source).toLowerCase())
 	]);
 	return [...keepers].every((k) => mapValues.has(k) || !text.includes(k));
 }
