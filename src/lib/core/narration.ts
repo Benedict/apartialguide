@@ -159,7 +159,9 @@ function order(narrator: Narrator, from?: StopId): StopId[] {
 
 /** How many words make a turn of phrase, and in how many places it may already stand. */
 const PHRASE_WORDS = 6;
-const PHRASE_PLACES = 2;
+const PHRASE_PLACES = 3;
+/** How many of its words must be Guide's own, not the facts', for a run to be a turn of phrase. */
+const OWN_WORDS = 2;
 
 const wordsOf = (text: string) =>
 	text
@@ -185,17 +187,36 @@ function phrasesIn(store: NarrationStore): Map<string, number> {
 	return used;
 }
 
+/** Lines of a prompt that tell the writer what to do, rather than give facts. */
+const INSTRUCTION =
+	/^(do not|speak|say|give|lose|hesitate|the place is|there is little|already said|— )/i;
+
+/** The words a stop's facts give, leaving out the prompt's instructions and its neighbours. */
+function factWords(user: string): Set<string> {
+	const facts = user.split(/\n\nAlready said/)[0];
+	return new Set(
+		facts
+			.split('\n')
+			.map((l) => l.trim())
+			.filter((l) => !INSTRUCTION.test(l))
+			.flatMap(wordsOf)
+	);
+}
+
 /**
- * A turn of phrase of Guide's own already in several stored pieces, if the prose reuses one. The
- * facts' own words may recur as often as the facts do: a run found in the stop's facts is let be.
+ * A turn of phrase of Guide's own already in several stored pieces, if the prose reuses one. A run
+ * counts as Guide's own only where two or more of its words are not the stop's facts: the facts
+ * may be said again, in any order, as often as they recur.
  */
 function repeatedPhrase(
 	paragraphs: readonly string[],
-	facts: string,
+	user: string,
 	used: Map<string, number>
 ): string | undefined {
-	const given = wordsOf(facts).join(' ');
-	for (const gram of grams(paragraphs.join(' ')))
-		if ((used.get(gram) ?? 0) >= PHRASE_PLACES && !given.includes(gram)) return gram;
+	const facts = factWords(user);
+	for (const gram of grams(paragraphs.join(' '))) {
+		if ((used.get(gram) ?? 0) < PHRASE_PLACES) continue;
+		if (gram.split(' ').filter((w) => !facts.has(w)).length >= OWN_WORDS) return gram;
+	}
 	return undefined;
 }

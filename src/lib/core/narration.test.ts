@@ -161,7 +161,8 @@ describe('narrateWorld', () => {
 		const phrase = 'and the dark sits quietly between them all';
 		const store: NarrationStore = {
 			a: { paragraphs: [`One street, ${phrase}.`], model: 'x', written: '2026-10-24' },
-			b: { paragraphs: [`Another, ${phrase}.`], model: 'x', written: '2026-10-24' }
+			b: { paragraphs: [`Another, ${phrase}.`], model: 'x', written: '2026-10-24' },
+			c: { paragraphs: [`A third, ${phrase}.`], model: 'x', written: '2026-10-24' }
 		};
 		const result = await narrateWorld(n, new RecordedModel(said(`Here, ${phrase}.`)), store, {
 			limit: 1,
@@ -193,5 +194,29 @@ describe('narrateWorld', () => {
 			{ limit: 1, from: west }
 		);
 		expect(result.repeated).toEqual([]);
+	});
+
+	it('lets the facts be said again in another order, but not an instruction echoed', async () => {
+		const { n, west } = narrator();
+		const store = (text: string): NarrationStore =>
+			Object.fromEntries(
+				['a', 'b', 'c'].map((k) => [k, { paragraphs: [text], model: 'x', written: '2026-10-24' }])
+			);
+		// The facts' own words, reordered, are not a turn of phrase.
+		const reordered = await narrateWorld(
+			n,
+			new RecordedModel(said('The end of Long Street, you are at.')),
+			store('The end of Long Street, you are at.'),
+			{ limit: 1, from: west }
+		);
+		expect(reordered.repeated).toEqual([]);
+		// The prompt's instructions are not facts: echoing them is a stock phrase.
+		const echoed = await narrateWorld(
+			n,
+			new RecordedModel(said('Do not list the exits; the game prints them.')),
+			store('Do not list the exits; the game prints them.'),
+			{ limit: 1, from: west }
+		);
+		expect(echoed.repeated.map((r) => r.stop)).toEqual([west]);
 	});
 });
