@@ -144,6 +144,7 @@ describe('exportPage', () => {
 		expect(page()).toMatch(/<div class="status" id="status"><span>A Partial Guide<\/span>/);
 		expect(page()).toContain("'Walked: ' + distanceWords(now.walked) + '  Moves: ' + now.moves");
 		expect(page()).not.toContain('<header>');
+		expect(page()).toMatch(/form \{[^}]*gap: 1ch/);
 	});
 
 	it('draws gps’s place on a map, on a wide screen, from pinned MapLibre and OpenFreeMap', () => {

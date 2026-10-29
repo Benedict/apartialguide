@@ -206,7 +206,7 @@
 		padding-block: 0.6rem max(0.8rem, env(safe-area-inset-bottom, 0px));
 		display: flex;
 		align-items: baseline;
-		gap: 0.6rem;
+		gap: 1ch;
 		margin-top: 1.6rem;
 		font-family: var(--mono);
 		font-size: 0.95rem;
