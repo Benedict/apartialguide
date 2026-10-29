@@ -232,7 +232,7 @@ export class Adventure {
 		const at = this.position();
 		if (!p.lit || !at) return p.text;
 		const sun = sunPosition(this.clock(), at.latitude, at.longitude).altitude;
-		return lightingNow(p.lit, p.pavement, sun);
+		return lightingNow(p.lit, p.pavement, sun, this.moves);
 	}
 
 	/** Where the walk stands, for a status line. */
