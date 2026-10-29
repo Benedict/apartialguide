@@ -39,14 +39,14 @@
 			}
 		},
 		{
-			"id": "19|FLAT 3",
+			"id": "19|MORLAND ROAD",
 			"address": {
 				"number": "19",
-				"street": "FLAT 3"
+				"street": "MORLAND ROAD"
 			},
 			"claims": {
-				"count": "1",
-				"names": "19 MORLAND ROAD RTM COMPANY LTD",
+				"count": "2",
+				"names": "19 MORLAND ROAD RTM COMPANY LTD|PLANA INTERNATIONAL LTD",
 				"since": "2019-08-21"
 			}
 		},
@@ -6183,18 +6183,6 @@
 			}
 		},
 		{
-			"id": "345A|FLAT 2 CRO 6RG LOWER ADDISCOMBE ROAD",
-			"address": {
-				"number": "345A",
-				"street": "FLAT 2 CRO 6RG LOWER ADDISCOMBE ROAD"
-			},
-			"claims": {
-				"count": "1",
-				"names": "MARTI FOX CONSULTANCY LTD",
-				"since": "2023-09-13"
-			}
-		},
-		{
 			"id": "45D|MORLAND AVENUE",
 			"address": {
 				"number": "45D",
@@ -7248,18 +7236,6 @@
 				"count": "1",
 				"names": "PLAN & PARCEL LTD",
 				"since": "2025-01-12"
-			}
-		},
-		{
-			"id": "19|MORLAND ROAD",
-			"address": {
-				"number": "19",
-				"street": "MORLAND ROAD"
-			},
-			"claims": {
-				"count": "1",
-				"names": "PLANA INTERNATIONAL LTD",
-				"since": "2025-05-14"
 			}
 		},
 		{
