@@ -1,0 +1,48 @@
+name: Compare models
+
+# Narrates the same busier stops with several models and uploads a report: what each wrote and what
+# the guards refused. Stores nothing. Started by hand. Models named "claude:<id>" need the
+# ANTHROPIC_API_KEY secret; others go through OpenRouter and need OPENROUTER_API_KEY.
+on:
+  workflow_dispatch:
+    inputs:
+      models:
+        description: Models to compare, comma-separated (OpenRouter names, or claude:<id>)
+        required: true
+        default: 'deepseek/deepseek-chat,qwen/qwen-2.5-72b-instruct,google/gemini-2.0-flash-001,claude:claude-haiku-5-5'
+      limit:
+        description: Busier stops per model
+        required: true
+        default: '25'
+
+permissions:
+  contents: read
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Narrate with each model
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MODELS: ${{ inputs.models }}
+          COMPARE_LIMIT: ${{ inputs.limit }}
+          # The same world the Pages workflow publishes.
+          SNAPSHOT_PATH: data/snapshots/addiscombe-2026-10-25.json
+          START_AT: 51.379897,-0.074294
+          HISTORY_DIR: data/history
+          WIKIDATA_DIR: data/wikidata
+          RECORDS_DIR: data/records
+          COMPARE_PATH: build/compare/report.md
+        run: npm run compare
+      - uses: actions/upload-artifact@v4
+        with:
+          name: model-comparison
+          path: build/compare/report.md
