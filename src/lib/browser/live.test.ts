@@ -33,7 +33,7 @@ describe('fetchCamera', () => {
 		expect(asked[0]).toBe(
 			'GET https://api.tfl.gov.uk/Place?type=JamCam&lat=51.5&lon=-0.1&radius=1500'
 		);
-		expect(asked[1]).toBe('HEAD https://example.org/near.jpg');
+		expect(asked[1]).toBe('GET https://example.org/near.jpg');
 		const claims = Object.fromEntries(facts!.map((f) => [f.claim.key, f.claim.value]));
 		expect(claims).toMatchObject({
 			name: 'Invented Rd near',

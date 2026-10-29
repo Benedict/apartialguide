@@ -38,7 +38,9 @@ export function fetchCamera(
 		if (!camera) return [];
 		const image = camera.additionalProperties!.find((p) => p.key === 'imageUrl')!.value;
 		// When the picture was taken is when it was last written; without word of it, Guide leaves it out.
-		const head = await get(image, { method: 'HEAD' }).catch(() => undefined);
+		// Asked with GET, as the pictures' store answers no other method from another site; the page's
+		// picture then comes from the browser's cache.
+		const head = await get(image).catch(() => undefined);
 		const modified = head?.ok ? head.headers.get('Last-Modified') : null;
 		const taken = modified ? new Date(modified).toISOString() : undefined;
 		return cameraFacts(camera, taken, new Date().toISOString());
