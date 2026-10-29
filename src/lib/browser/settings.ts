@@ -3,7 +3,7 @@ import type { LiveKey } from '../site/sources';
 export type Settings = Record<LiveKey, boolean>;
 
 const KEY = 'a-partial-guide:settings';
-const ASK_ALL: Settings = { weather: true, departures: true, maps: true };
+const ASK_ALL: Settings = { weather: true, departures: true, maps: true, air: true };
 
 type Store = Pick<Storage, 'getItem' | 'setItem'>;
 
@@ -22,7 +22,8 @@ export function loadSettings(store: Store | undefined = browserStore()): Setting
 		return {
 			weather: kept.weather !== false,
 			departures: kept.departures !== false,
-			maps: kept.maps !== false
+			maps: kept.maps !== false,
+			air: kept.air !== false
 		};
 	} catch {
 		return { ...ASK_ALL };

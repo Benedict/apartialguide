@@ -18,6 +18,15 @@ import {
 import { wardAreas } from '../src/lib/server/sources/wards';
 import { parseCsv, rowInBox, treeRecords } from '../src/lib/server/sources/trees';
 import { benchRecords } from '../src/lib/server/sources/benches';
+import { wildlifeRecords } from '../src/lib/server/sources/wildlife';
+import { postcodeRecords } from '../src/lib/server/sources/postcodes';
+import { companyRecords } from '../src/lib/server/sources/companies';
+import { spawn } from 'node:child_process';
+import { createWriteStream } from 'node:fs';
+import { createInterface } from 'node:readline';
+import { Readable } from 'node:stream';
+import { pipeline } from 'node:stream/promises';
+import type { ReadableStream as WebStream } from 'node:stream/web';
 
 const headers = {
 	'User-Agent': 'a-partial-guide/0.1 (art project; https://github.com/Benedict/osm-text-adventure)'
@@ -216,6 +225,109 @@ SELECT ?paon ?street ?amount ?date WHERE {
 			}
 		}
 		throw new Error('no ward layer answered');
+	},
+	/** Sightings of living things in the box, from the NBN Atlas: up to 20,000, a page at a time. */
+	wildlife: async () => {
+		const polygon = `POLYGON((${w} ${s}, ${e} ${s}, ${e} ${n}, ${w} ${n}, ${w} ${s}))`;
+		const occurrences: unknown[] = [];
+		for (let start = 0; start < 20_000; start += 1000) {
+			const page = await getJson(
+				`https://records-ws.nbnatlas.org/occurrences/search?q=*:*&wkt=${encodeURIComponent(polygon)}&pageSize=1000&startIndex=${start}`
+			);
+			if (start === 0)
+				console.log(
+					`wildlife: ${page.totalRecords} records; first ${JSON.stringify(page.occurrences?.[0]).slice(0, 500)}`
+				);
+			occurrences.push(...(page.occurrences ?? []));
+			if (!page.occurrences?.length || occurrences.length >= page.totalRecords) break;
+		}
+		const records = wildlifeRecords({ occurrences: occurrences as never }, bbox);
+		return { source: 'NBN Atlas', prefix: 'wildlife', records };
+	},
+	/**
+	 * Postcodes in the box that have ended, from the ONS Postcode Directory on the ONS Open
+	 * Geography Portal: the service is found by searching the portal, as its name changes each issue.
+	 */
+	postcodes: async () => {
+		const search = await getJson(
+			`https://www.arcgis.com/sharing/rest/search?q=${encodeURIComponent('title:"ONS Postcode Directory" AND type:"Feature Service"')}&sortField=modified&sortOrder=desc&num=20&f=json`
+		);
+		const services = (search.results ?? []).map((r: { title: string; url: string }) => r);
+		console.log(
+			`postcodes: services ${JSON.stringify(services.map((r: { title: string }) => r.title)).slice(0, 600)}`
+		);
+		// The live directory holds only postcodes still in use; the dated tables keep those that ended.
+		for (const service of services.filter((r: { title: string }) => !/\(Live\)/.test(r.title))) {
+			try {
+				// Each issue names its columns in its own case: ask the table for them.
+				const layer = await getJson(`${service.url}/0?f=json`);
+				const names: string[] = (layer.fields ?? []).map((f: { name: string }) => f.name);
+				const col = (re: RegExp) => names.find((f) => re.test(f));
+				const [lat, lon, ended] = [col(/^lat$/i), col(/^long$/i), col(/^doterm$/i)];
+				if (!lat || !lon || !ended) {
+					console.log(
+						`postcodes: ${service.title}: no lat, long or doterm in ${names.slice(0, 30).join(',')}`
+					);
+					continue;
+				}
+				const where = `${lat} >= ${s} AND ${lat} <= ${n} AND ${lon} >= ${w} AND ${lon} <= ${e} AND ${ended} IS NOT NULL`;
+				const features: unknown[] = [];
+				for (let offset = 0; offset < 50_000; offset += 2000) {
+					const page = await getJson(
+						`${service.url}/0/query?where=${encodeURIComponent(where)}&outFields=*&f=geojson&resultOffset=${offset}&resultRecordCount=2000`
+					);
+					if (page.error) throw new Error(JSON.stringify(page.error).slice(0, 300));
+					if (offset === 0)
+						console.log(
+							`postcodes: ${service.title}: first ${JSON.stringify(page.features?.[0]?.properties).slice(0, 300)}`
+						);
+					features.push(...(page.features ?? []));
+					if ((page.features?.length ?? 0) < 2000) break;
+				}
+				const records = postcodeRecords({ features: features as never }, bbox);
+				console.log(
+					`postcodes: ${service.title}: ${features.length} ended in the box, ${records.length} kept`
+				);
+				return { source: 'Office for National Statistics', prefix: 'postcode', records };
+			} catch (err) {
+				console.log(
+					`postcodes: ${service.title} did not answer: ${(err as Error).message.slice(0, 300)}`
+				);
+			}
+		}
+		throw new Error('no postcode directory answered');
+	},
+	/**
+	 * Companies registered at the snapshot's addresses, from Companies House's free monthly file of
+	 * every company on the register, read line by line and kept only for the snapshot's postcodes.
+	 */
+	companies: async () => {
+		const page = await (
+			await fetch('https://download.companieshouse.gov.uk/en_output.html', { headers })
+		).text();
+		const file = page.match(/BasicCompanyDataAsOneFile-\d{4}-\d{2}-\d{2}\.zip/)?.[0];
+		if (!file) throw new Error('no company data file is listed');
+		console.log(`companies: ${file}`);
+		const zip = '/tmp/companies.zip';
+		const res = await fetch(`https://download.companieshouse.gov.uk/${file}`, { headers });
+		if (!res.ok || !res.body) throw new Error(`${file} answered ${res.status}`);
+		await pipeline(Readable.fromWeb(res.body as WebStream), createWriteStream(zip));
+		const wanted = new Set(postcodes);
+		const outward = [...new Set(postcodes.map((p) => p.split(' ')[0]))];
+		const unzip = spawn('unzip', ['-p', zip]);
+		const rows: Record<string, string>[] = [];
+		let header = '';
+		for await (const line of createInterface({ input: unzip.stdout })) {
+			if (!header) {
+				header = line;
+				continue;
+			}
+			if (!outward.some((o) => line.includes(`${o} `))) continue;
+			rows.push(...parseCsv(`${header}\n${line}`));
+		}
+		const records = companyRecords(rows, wanted);
+		console.log(`companies: ${rows.length} rows near, ${records.length} addresses`);
+		return { source: 'Companies House', prefix: 'company', records };
 	},
 	/** Benches and their inscriptions, from OpenBenches: whichever of its feeds answers first. */
 	benches: async () => {

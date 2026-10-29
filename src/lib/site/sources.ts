@@ -10,7 +10,7 @@ export interface Source {
 	live?: LiveKey;
 }
 
-export type LiveKey = 'weather' | 'departures' | 'maps';
+export type LiveKey = 'weather' | 'departures' | 'maps' | 'air';
 
 const OGL = 'Open Government Licence v3.0';
 
@@ -43,6 +43,13 @@ export const SOURCES: Source[] = [
 			'the map shown with gps on a wide screen, drawn with MapLibre GL JS, around where the map puts the stop, never where you are',
 		terms: '© OpenMapTiles, © OpenStreetMap contributors. MapLibre GL JS, BSD-3-Clause',
 		live: 'maps'
+	},
+	{
+		name: 'Open-Meteo Air Quality',
+		href: 'https://open-meteo.com/en/docs/air-quality-api',
+		gives: 'the air today, modelled for the map’s own place, never yours',
+		terms: 'CC BY 4.0; data from the Copernicus Atmosphere Monitoring Service',
+		live: 'air'
 	},
 	{
 		name: 'SunCalc',
@@ -95,7 +102,7 @@ export const SOURCES: Source[] = [
 	{
 		name: 'Office for National Statistics',
 		href: 'https://geoportal.statistics.gov.uk/',
-		gives: 'ward boundaries',
+		gives: 'ward boundaries, and postcodes that have ended',
 		terms: `Source: Office for National Statistics. Contains OS data © Crown copyright and database right 2026. ${OGL}`
 	},
 	{
@@ -103,6 +110,18 @@ export const SOURCES: Source[] = [
 		href: 'https://openbenches.org/',
 		gives: 'benches and what is written on them',
 		terms: 'OpenBenches contributors, CC BY-SA 4.0'
+	},
+	{
+		name: 'NBN Atlas',
+		href: 'https://nbnatlas.org/',
+		gives: 'what has been seen living here, and when',
+		terms: 'NBN Atlas and its data partners; only records under CC0, CC BY or the OGL'
+	},
+	{
+		name: 'Companies House',
+		href: 'https://www.gov.uk/government/organisations/companies-house',
+		gives: 'the companies registered at addresses',
+		terms: `Contains public sector information licensed under the ${OGL}`
 	},
 	{
 		name: 'London Datastore',
@@ -115,7 +134,8 @@ export const SOURCES: Source[] = [
 const LABELS: Record<LiveKey, string> = {
 	weather: 'Ask after today’s weather',
 	departures: 'Ask what is due at bus and tram stops',
-	maps: 'Show a map beside gps, on a wide screen'
+	maps: 'Show a map beside gps, on a wide screen',
+	air: 'Ask after the air today'
 };
 
 /** The settings for the sources asked from the reader's browser. */

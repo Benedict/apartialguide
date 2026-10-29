@@ -1,6 +1,7 @@
 import type { Fact } from '../facts';
 import { skyLine } from '../render/sky';
 import { weatherNow } from '../render/weather';
+import { airNow } from '../render/air';
 import { departuresLine } from '../render/departures';
 import { longDate, monthYear } from '../render/words';
 import { alludedTo } from '../keepers';
@@ -149,7 +150,7 @@ export class Adventure {
 		this.choosing = true;
 		this.now = now;
 		const { asOf, about } = this.world;
-		const today = [weatherNow(now), skyLine(now)].filter(Boolean).join(' ');
+		const today = [weatherNow(now), airNow(now), skyLine(now)].filter(Boolean).join(' ');
 		if (about && asOf)
 			return [
 				{ lines: [...INTRO, ...ledgerLines(asOf, about), ...(today ? [today] : [])] },
@@ -233,7 +234,11 @@ export class Adventure {
 			case 'weather':
 				return {
 					lines: [
-						[weatherNow(this.now) ?? 'I have no word of the weather today.', skyLine(this.now)]
+						[
+							weatherNow(this.now) ?? 'I have no word of the weather today.',
+							airNow(this.now),
+							skyLine(this.now)
+						]
 							.filter(Boolean)
 							.join(' ')
 					]

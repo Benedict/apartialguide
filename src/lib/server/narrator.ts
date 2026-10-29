@@ -91,13 +91,32 @@ export function loadLatest<T>(dir?: string): T | undefined {
 /** The newest records of each source in a directory: files named <prefix>-<date>.json. */
 export function loadRecords(dir?: string): RecordStore[] {
 	if (!dir || !existsSync(dir)) return [];
+	const left = leftOut(dir);
 	const newest = new Map<string, string>();
 	for (const f of readdirSync(dir)
 		.filter((f) => /-\d{4}-\d{2}-\d{2}\.json$/.test(f))
 		.sort())
 		newest.set(f.replace(/-\d{4}-\d{2}-\d{2}\.json$/, ''), f);
-	return [...newest.values()].map(
-		(f) => JSON.parse(readFileSync(join(dir, f), 'utf8')) as RecordStore
+	return [...newest]
+		.filter(([prefix]) => !left.has(prefix))
+		.map(([, f]) => JSON.parse(readFileSync(join(dir, f), 'utf8')) as RecordStore);
+}
+
+/**
+ * The sources a directory's use.env leaves out of the walk (LEAVE_OUT=wildlife,postcode): fetched
+ * and kept, but not spoken until taken off the list.
+ */
+function leftOut(dir: string): Set<string> {
+	const path = join(dir, 'use.env');
+	if (!existsSync(path)) return new Set();
+	const line = readFileSync(path, 'utf8')
+		.split('\n')
+		.find((l) => /^\s*LEAVE_OUT\s*=/.test(l));
+	return new Set(
+		(line?.split('=')[1] ?? '')
+			.split(',')
+			.map((p) => p.trim())
+			.filter(Boolean)
 	);
 }
 

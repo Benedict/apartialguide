@@ -263,8 +263,9 @@ const CROWD_OPENERS = [
 function brief(beat: Beat): { phrase: string; noun?: string } {
 	const tags = tagsFor(beat);
 	if (isElsewhereOnly(beat)) {
-		const { label, what } = otherAccount(tags);
-		return { phrase: `${label ? `“${label}”` : article(what ?? 'thing')}, by another account` };
+		const { label, what, kind } = otherAccount(tags);
+		const called = label ? `“${label}”` : kind ? article(kind) : what ? `“${what}”` : 'a thing';
+		return { phrase: `${called}, by another account` };
 	}
 	const what = noun(tags);
 	if (tags.name) {
@@ -446,12 +447,10 @@ function describeBeat(
 	const use = currentUse(tags);
 
 	if (isElsewhereOnly(beat)) {
-		const { label, what } = otherAccount(tags);
-		// A thing with words but no name, such as a bench, is told by its kind.
-		const called = label ? `“${label}”${what ? `, “${what}”` : ''}` : article(what ?? 'thing');
-		return [`${place}, by another account, is ${called}.`, ...recordSentences(tags, 'room')].join(
-			' '
-		);
+		return [
+			`${place}, by another account, is ${calledElsewhere(tags)}.`,
+			...recordSentences(tags, 'room')
+		].join(' ');
 	}
 	if (beat.effects.includes('remembered')) {
 		const asOf = beat.facts.find((f) => f.observed)?.observed;
@@ -522,12 +521,23 @@ function history(beat: Beat, tags: Tags): string[] {
 }
 
 /** A thing only another account has: its name and what it is, as that account gives them. */
-function otherAccount(tags: Tags): { label?: string; what?: string } {
+function otherAccount(tags: Tags): { label?: string; what?: string; kind?: string } {
 	const ending = (suffix: string) => Object.entries(tags).find(([k]) => k.endsWith(suffix))?.[1];
 	return {
 		label: tags['wikidata:label'] ?? ending(':name'),
-		what: tags['wikidata:description'] ?? ending(':description') ?? ending(':kind')
+		// The account's own words for what it is, quoted when said.
+		what: tags['wikidata:description'] ?? ending(':description'),
+		// A kind given with the account's records, such as bench or postcode: said as a kind.
+		kind: ending(':kind')
 	};
+}
+
+/** A thing only another account has, as Guide calls it: “CR0 9ZZ”, a postcode; “REDCOURT”, “listed building”; a bench. */
+function calledElsewhere(tags: Tags): string {
+	const { label, what, kind } = otherAccount(tags);
+	const said = what ? `“${what}”` : kind ? article(kind) : undefined;
+	if (label) return said ? `“${label}”, ${said}` : `“${label}”`;
+	return said ?? 'a thing';
 }
 
 /** What another account says of a thing the map has. */
@@ -591,8 +601,8 @@ function thing(beat: Beat): Thing {
 	const name =
 		tags.name ??
 		other.label ??
-		(unnamedElsewhere && other.what
-			? other.what
+		(unnamedElsewhere && (other.kind ?? other.what)
+			? (other.kind ?? other.what)!
 			: currentUse(tags) || !past
 				? noun(tags)
 				: `former ${past}`);
@@ -688,6 +698,5 @@ export function otherWords(tags: Tags): string[] {
 			`Named for ${namesake}${tags['etymology:description'] ? `, ${tags['etymology:description']}` : ''}.`
 		);
 	if (said.length) return said;
-	const { label, what } = otherAccount(tags);
-	return label ? [`“${label}”${what ? `, “${what}”` : ''}.`] : [];
+	return otherAccount(tags).label ? [`${calledElsewhere(tags)}.`] : [];
 }

@@ -3,6 +3,7 @@ import { Adventure, INTRO } from './engine';
 import type { AdventureWorld } from './world';
 import { currentWeatherFacts } from '../adapters/weather';
 import { heavensFacts } from '../adapters/heavens';
+import { currentAirFacts } from '../adapters/air';
 import { arrivalFacts } from '../adapters/tfl';
 
 const room = (title: string, exits: AdventureWorld['stops'][string]['exits']) => ({
@@ -70,6 +71,26 @@ describe('Adventure', () => {
 				'Others have been kept: by those who keep an encyclopaedia of everything, and others.'
 			);
 			expect(text).not.toMatch(/Wikidata|Invented Registry/);
+		});
+
+		it('tells the air with the weather, when there is word of it', () => {
+			const now = [
+				...currentWeatherFacts({
+					current: { time: '2026-10-25T16:45', weather_code: 61, temperature_2m: 11 }
+				}),
+				...currentAirFacts({ current: { time: '2026-10-25T16:00', european_aqi: 32 } })
+			];
+			const game = new Adventure({
+				...world,
+				asOf: '2026-10-24',
+				about: { streets: 1, places: 1, accounts: [] }
+			});
+			const [intro] = game.begin(now);
+			expect(intro.lines.at(-1)).toBe(
+				'Today: light rain, 11 °C. The air: fair, 32 on the European index.'
+			);
+			game.respond('take the tour');
+			expect(game.respond('weather').lines[0]).toContain('The air: fair');
 		});
 
 		it('ends the account with the sky, when there is word of it', () => {

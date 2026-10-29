@@ -24,7 +24,7 @@ describe('allusion', () => {
 describe('alludedTo', () => {
 	it('lists the keepers by what they do, and owns to others it cannot place', () => {
 		expect(alludedTo(['Food Standards Agency', 'Office for National Statistics'])).toBe(
-			'those who inspect kitchens and those who draw the wards'
+			'those who inspect kitchens and those who draw the wards and number the streets'
 		);
 		expect(alludedTo(['Food Standards Agency', 'Invented Registry'])).toBe(
 			'those who inspect kitchens, and others'

@@ -522,6 +522,26 @@ describe('AdventureRenderer', () => {
 			);
 		});
 
+		it('gives a kind it was given as a kind, not as the account’s own words', () => {
+			const postcode = {
+				subject: 'postcode/CR0 9ZZ',
+				facts: facts(
+					'postcode/CR0 9ZZ',
+					{
+						'postcode:name': 'CR0 9ZZ',
+						'postcode:kind': 'postcode',
+						'postcode:began': '1980-01',
+						'postcode:ended': '1998-06'
+					},
+					north(5)
+				).map((f) => ({ ...f, source: 'Another Source', elsewhere: true as const })),
+				effects: []
+			};
+			expect(text(scene({ beats: [postcode] }))).toContain(
+				'by another account, is “CR0 9ZZ”, a postcode. In use from January 1980 to June 1998.'
+			);
+		});
+
 		it('tells the inscription on a bench the map has', () => {
 			const bench = {
 				subject: 'node/7',

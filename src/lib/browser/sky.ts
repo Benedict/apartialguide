@@ -1,4 +1,5 @@
 import { heavensFacts } from '../core/adapters/heavens';
+import { currentAirFacts, type OpenMeteoAir } from '../core/adapters/air';
 import { currentWeatherFacts, type OpenMeteoCurrent } from '../core/adapters/weather';
 import type { Fact } from '../core/facts';
 
@@ -41,8 +42,31 @@ export async function skyNow(
 	at: WeatherAt | undefined,
 	now = new Date(),
 	get?: (url: string) => Promise<Response>,
-	ask: { weather?: boolean } = {}
+	ask: { weather?: boolean; air?: boolean } = {}
 ): Promise<Fact[]> {
-	const weather = ask.weather === false ? [] : await fetchWeatherNow(at, get);
-	return [...heavensFacts(now, at), ...weather];
+	const [weather, air] = await Promise.all([
+		ask.weather === false ? [] : fetchWeatherNow(at, get),
+		ask.air === false ? [] : fetchAirNow(at, get)
+	]);
+	return [...heavensFacts(now, at), ...weather, ...air];
+}
+
+/** The air now, from Open-Meteo's air quality model, for the map's own place; nothing without an answer in time. */
+export async function fetchAirNow(
+	at: WeatherAt | undefined,
+	get: (url: string) => Promise<Response> = (url) => fetch(url),
+	timeoutMs = 3000
+): Promise<Fact[]> {
+	if (!at) return [];
+	const url = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${at.latitude}&longitude=${at.longitude}&current=european_aqi`;
+	const late = new Promise<never>((_, reject) =>
+		setTimeout(() => reject(new Error('no answer in time')), timeoutMs)
+	);
+	try {
+		const res = await Promise.race([get(url), late]);
+		if (!res.ok) return [];
+		return currentAirFacts((await Promise.race([res.json(), late])) as OpenMeteoAir);
+	} catch {
+		return [];
+	}
 }

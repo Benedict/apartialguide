@@ -2,7 +2,7 @@ import { mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { loadHistory, loadLatest, readConfig } from './narrator';
+import { loadHistory, loadLatest, loadRecords, readConfig } from './narrator';
 
 describe('readConfig', () => {
 	it('is undefined without a snapshot', () => {
@@ -82,5 +82,30 @@ describe('loadLatest', () => {
 	it('is nothing without a directory or a file', () => {
 		expect(loadLatest(undefined)).toBeUndefined();
 		expect(loadLatest(mkdtempSync(join(tmpdir(), 'empty-')))).toBeUndefined();
+	});
+});
+
+describe('loadRecords', () => {
+	const store = (prefix: string) =>
+		JSON.stringify({ source: 'Invented', prefix, retrieved: '2026-10-25', records: [] });
+
+	it('reads the newest store of each source, leaving out those use.env names', () => {
+		const dir = mkdtempSync(join(tmpdir(), 'records-'));
+		writeFileSync(join(dir, 'bench-2026-10-25.json'), store('bench'));
+		writeFileSync(join(dir, 'wildlife-2026-10-25.json'), store('wildlife'));
+		writeFileSync(join(dir, 'postcode-2026-10-25.json'), store('postcode'));
+		writeFileSync(
+			join(dir, 'use.env'),
+			'# Sources to leave out of the walk\nLEAVE_OUT=wildlife, postcode\n'
+		);
+		expect(loadRecords(dir).map((s) => s.prefix)).toEqual(['bench']);
+	});
+
+	it('uses every source when use.env leaves none out, or is missing', () => {
+		const dir = mkdtempSync(join(tmpdir(), 'records-'));
+		writeFileSync(join(dir, 'bench-2026-10-25.json'), store('bench'));
+		expect(loadRecords(dir).map((s) => s.prefix)).toEqual(['bench']);
+		writeFileSync(join(dir, 'use.env'), 'LEAVE_OUT=\n');
+		expect(loadRecords(dir).map((s) => s.prefix)).toEqual(['bench']);
 	});
 });
