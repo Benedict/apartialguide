@@ -497,6 +497,15 @@
   "model": "claude-opus-5-5",
   "written": "2026-10-29"
  },
+ "v14-0ec2f3f1301a9899": {
+  "paragraphs": [
+   "An unnamed footway, with the residential area off to the south-east.",
+   "Beside you to the north-east, a speed table. A few steps east, a building. A table, a building, a table — I have gone round once too often, and begin again. North-east, the speed table. East, the building.",
+   "A table with nothing on it but its name, and a building without one."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v14-104d87ef37fd5641": {
   "paragraphs": [
    "Lower Addiscombe Road. Asphalt, lit at night, a 30 mph limit. Houses lie to the south-east. To the north-west lies the “Addiscombe Village shopping area”. You stand on the seam between them.",
@@ -515,6 +524,15 @@
    "On the same side are two postcodes the map does not carry. They say \"CR9 6DD\" was in use from January 1980 to December 1990. A number is lent to a corner and taken back. \"CR9 6HE\" ran from January 1980 to December 1981, and then no longer."
   ],
   "model": "claude-opus-5-5",
+  "written": "2026-10-29"
+ },
+ "v14-15c00d314820bd59": {
+  "paragraphs": [
+   "Ashburton Road again, on the length of it that leans towards Lower Addiscombe Road. Asphalt underfoot. The limit is 20 mph, for what that is worth.",
+   "A few steps north, a speed hump. The map gives it that name and nothing more: no number, no month. It is the one thing set down here, and it is set down plainly.",
+   "The asphalt rises once, and the map says so."
+  ],
+  "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
  "v14-1791680cf9d715ff": {
@@ -537,6 +555,24 @@
   "model": "claude-opus-5-5",
   "written": "2026-10-29"
  },
+ "v14-1ec2399b1a36f132": {
+  "paragraphs": [
+   "Bingham Road: asphalt, lit at night, 20 mph for what that is worth. The residential area lies to the north.",
+   "Beside you to the north-east, a tree; beside you to the north, a building. The rest stays where it is, uncounted.",
+   "Here the road's name does all the naming. The tree and the building take what the map gives them, and ask no more."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v14-227187bc395cd14e": {
+  "paragraphs": [
+   "Inglis Road and Sundridge Place meet here, under a limit of 20 mph, for what that is worth. The residential area lies to the north-west, the “Addiscombe Village shopping area” to the north-east, and the corner stands between the residential and the retail.",
+   "A few steps north there is a building, or there was in July 2013, when it was last recorded. The map has only the word. Nothing has been set down against it since.",
+   "A building in July 2013. I keep it standing, and keep the month beside it."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v14-2a707fd17d3f97d8": {
   "paragraphs": [
    "Ashburton Road, on the length of it that leads towards Lower Addiscombe Road. Asphalt underfoot. A limit of 20 mph. The ground on either hand is residential, and the map leaves it at that word.",
@@ -544,6 +580,15 @@
    "Ashburton Road is a name. The asphalt is the road. Between the name and Lower Addiscombe Road, a few steps south of where you stand, lies the hump."
   ],
   "model": "claude-opus-5-5",
+  "written": "2026-10-29"
+ },
+ "v14-2a7978bafd1d2ecf": {
+  "paragraphs": [
+   "Bingham Road. Asphalt underfoot, lit at night, and 20 mph for what that is worth. The residential area lies to the north-east.",
+   "Beside you to the north, a building. Beside you to the north-east, a building. Then another, or the same one counted twice; I have lost my place and take it up again. North: a building. North-east: a building.",
+   "The map names neither. It gives the word twice and leaves it there."
+  ],
+  "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
  "v14-2e1e7ca67114208f": {
@@ -575,6 +620,24 @@
   "model": "claude-opus-5-5",
   "written": "2026-10-29"
  },
+ "v14-3b42973ebf409dac": {
+  "paragraphs": [
+   "The service road ends here, without a name to end with. All round is the residential area.",
+   "Right here, a building. Beside you to the south-east, another. There is more close by than that, and I let it go uncounted.",
+   "The road stops where the buildings begin, or the buildings begin where the road stops. The map does not say which."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v14-4693751ba2ef424b": {
+  "paragraphs": [
+   "Bingham Road, under the same rule as before: asphalt, lit at night, 20 mph for what that is worth. The residential area stays to the north-east.",
+   "Beside you to the north, a tree. A few steps north-east, a building. Then the tree again, or another; I have lost the count and pick it up: the tree, north; the building, north-east.",
+   "The tree stands at your side. The building keeps its distance."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v14-46ae77bdac56e6f4": {
   "paragraphs": [
    "Everton Road, between Addiscombe Avenue and Lower Addiscombe Road. Asphalt, lamps for the dark, a pavement on each side, 20 mph. Houses round about. The “Addiscombe Village shopping area” begins to the south-east.",
@@ -593,6 +656,33 @@
    "The road is thick with more beyond these two. I let the rest go by. January 2025: a food hygiene rating of 5, it is said, from those who inspect kitchens."
   ],
   "model": "claude-opus-5-5",
+  "written": "2026-10-29"
+ },
+ "v14-4f9371c9eed90a3e": {
+  "paragraphs": [
+   "A footway, unnamed, with more near it than I mean to give. The map does not say what lies underfoot, or how it is lit.",
+   "East, beside you: a building. East, beside you: a building. The map sets them down as alike as two words can be, and I cannot tell you which is which.",
+   "I take those two and let the rest go by uncounted, as nameless as the footway."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v14-51b12881b513c70c": {
+  "paragraphs": [
+   "A service road with no name. The residential area lies to the south-west.",
+   "Beside you to the south-west, a tree. A few steps south, a building. A tree, a building, and then I cannot say whether I gave the tree already or a second one. Start again: the tree, south-west; the building, south.",
+   "Neither has a name, and the road has none. Here each thing is called only what it is."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v14-5314b0464db3c319": {
+  "paragraphs": [
+   "Inglis Road comes in here to meet Lower Addiscombe Road. The limit is 20 mph, for what that is worth. The residential area keeps to the south-east; the “Addiscombe Village shopping area” keeps to the north.",
+   "A few steps east there is a bus stop called “Ashburton Road”, set down at a corner that belongs to neither road of that name. So it was in December 2020, when it was last recorded. There was a stop then. There is one now, if nothing has been said against it.",
+   "About 25 metres north-east, the post box once more: Royal Mail's, “CR0 208”. A stop named for a road not here, and a box that answers only to its number."
+  ],
+  "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
  "v14-564c2aceb1596b34": {
@@ -626,6 +716,16 @@
   "model": "claude-opus-5-5",
   "written": "2026-10-29"
  },
+ "v14-615bead460a3d00b": {
+  "paragraphs": [
+   "Pavement Square meets Lower Addiscombe Road: asphalt, unlit, 20 mph for what that is worth. The “Addiscombe Village shopping area” and the residential area both lie to the north-west. More is near than I will give.",
+   "A few steps north, at 237 Lower Addiscombe Road, a fast food place, “Pizza On Line”, serving pizza, or so it was in July 2018, when it was last recorded. They say: January 2006, an application, “Alteration from B1 use to form one 2 bedroom flat.”, and against it, “Approved”. July 2019, sold for £400,000. November 2025, a food hygiene rating of 5.",
+   "At 237B, to the north-east, an internet cafe, “H Mobile & Vape Laptop & Internet Cafe”, last recorded in July 2018. Someone wrote down two companies there, the first since April 2018: “H MOBILE & VAPES LIMITED” and “T I JAPAN CO LTD”.",
+   "One number, two doors, and a B to keep them apart."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v14-67ea23df7e2368a1": {
   "paragraphs": [
    "Ashburton Road comes in here and meets Lower Addiscombe Road. Asphalt. A limit of 20 mph. All of it Addiscombe: houses to the south-east, and to the north-west the retail ground of the “Addiscombe Village shopping area”.",
@@ -644,6 +744,15 @@
    "A few steps east is the tram, “London Trams (Elmers End Branch)”. The name carries Elmers End along with it, and sets it down here on Bingham Road all the same. The gate keeps still; the tram keeps on. Transport for London runs it."
   ],
   "model": "claude-opus-5-5",
+  "written": "2026-10-29"
+ },
+ "v14-6ac3d87fae4fc1c8": {
+  "paragraphs": [
+   "Here the service road gives out, unnamed to the last. The residential area is all about.",
+   "Right here, a building. A few steps west, a tree. More is near than these, and I let it pass without a count.",
+   "A building where the road ends, a tree a few steps off, and between them only the word the map has for each."
+  ],
+  "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
  "v14-6bc34a52c2da8e62": {
@@ -665,6 +774,24 @@
   "model": "claude-opus-5-5",
   "written": "2026-10-29"
  },
+ "v14-7c436ca21f2601c3": {
+  "paragraphs": [
+   "An unnamed footway. Right here, they say, is a plaque, though the map does not have it. It reads: “Betty Westgate MBE 1919-2000 A pioneer and campaigner for breast cancer support and education. Founded Breast Cancer\r\nCare from this house in 1973”.",
+   "Right here too, a tree. A plaque, a tree, and then a third that was only the plaque again; I start over. The plaque, as those who record plaques keep it. The tree, as the map keeps it.",
+   "The map holds the tree. The words hold 1973, and a house I am not shown."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v14-7e0d545d95a0618c": {
+  "paragraphs": [
+   "A footway with no name, in the residential area. Underfoot the map says only footway; it does not say of what.",
+   "North, beside you, a building. North-east, beside you, a building. There are others near, and I leave them standing without me.",
+   "The footway keeps to itself. The buildings keep the one word the map allows them, and the footway keeps none."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v14-7eca6ce37eb0ccb8": {
   "paragraphs": [
    "The footway ends here, and it has no name. Asphalt underfoot, lit at night. There is more about you than I will set down. A residential area lies to the east.",
@@ -682,6 +809,33 @@
    "The place is crowded. I give these two and let the rest pass. Bingham Road lies one way, the dead end the other, and the gate keeps to the north, where it was last put."
   ],
   "model": "claude-opus-5-5",
+  "written": "2026-10-29"
+ },
+ "v14-9334336bea7e637b": {
+  "paragraphs": [
+   "Inglis Road, on the length between Sundridge Place and Grant Road. The limit is 20 mph, for what that is worth.",
+   "A few steps north-east there is a building. There was a building, at least, in July 2013, when it was last recorded, and nothing has been set down since. Is it, or was it? I keep both.",
+   "A road between two names, and a building between two tenses."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v14-a154c2572491aa3c": {
+  "paragraphs": [
+   "Colworth Road again: asphalt and lit, a pavement on each side, 20 mph for what that is worth. There is more about than I set down.",
+   "East of you, close, a tree. West of you, close, a building. The road runs between them, or they stand either side of it; it comes to the same.",
+   "I end on the road itself, since it has the only name here: Colworth Road."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v14-a189ca70838bbf7d": {
+  "paragraphs": [
+   "Lower Addiscombe Road, on asphalt, lit when it is dark. The “Addiscombe Village shopping area” holds the north-west; the residential area, the south-east. More stands close than I will give.",
+   "West of you, beside you, the tram: “London Trams (Elmers End Branch)”, run by Transport for London. South-west, just as close, the tram level crossing, where the map sets the tram across the road.",
+   "I keep to those two. The road goes on with its name, the tram with its long one, and the crossing holds them both in one place."
+  ],
+  "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
  "v14-a3860b315d6da252": {
@@ -712,6 +866,42 @@
   "model": "claude-opus-5-5",
   "written": "2026-10-29"
  },
+ "v14-b2c73eb4766c4e58": {
+  "paragraphs": [
+   "Another footway the map leaves unnamed, and nothing underfoot that it sets down. The residential area lies to the south.",
+   "A building beside you to the south; a building beside you to the south-west; a building — no, that was the first again. South, then, and south-west, both close.",
+   "Unnamed footway, unnamed buildings. The map is sparing with names here, and I must be sparing too."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v14-c1cdb012f102c0f4": {
+  "paragraphs": [
+   "An unnamed footway, with more about it than I will tell. The residential area lies to the south.",
+   "Beside you to the south, a building. A few steps south-west, another building. Neither carries a name; each carries the same word.",
+   "The footway goes on with nothing to call itself, and so do they. I end on the nearer one: a building, south, beside you."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v14-c66ededd2fa2b931": {
+  "paragraphs": [
+   "An unnamed footway, and more close by than I will name.",
+   "To the west, beside you, a building. To the west again, beside you again, a building. The map gives the same word, the same side, the same nearness, twice over, and I cannot tell you which came first.",
+   "I end on the second of them, since it came last: a building, west, beside you."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v14-cbcf270de0cde03e": {
+  "paragraphs": [
+   "Colworth Road. Asphalt, lit at night, pavement on both sides, 20 mph for what that is worth. There is more here than I give.",
+   "Right here, they say, is a plaque, which the map does not have: “Betty Westgate MBE 1919-2000 A pioneer and campaigner for breast cancer support and education. Founded Breast Cancer\r\nCare from this house in 1973”.",
+   "Beside you to the south-west, a tree. The map has the tree; the words have the house. I end on the name the plaque gives first: Betty Westgate."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v14-d146798d79c6369f": {
   "paragraphs": [
    "Bingham Road, still. The surface is asphalt, there are lamps for after dark, and the limit is 20 mph. The residential area holds the south side, close by and unremarkable.",
@@ -720,6 +910,33 @@
    "The branch carries the name of Elmers End; the crossing carries no name but its own. One is named for somewhere else, and one for nothing more than what it is. Westward, the tram and its crossing; southward, the residential area, keeping to its side of the asphalt."
   ],
   "model": "claude-opus-5-5",
+  "written": "2026-10-29"
+ },
+ "v14-da2272209b5bfe97": {
+  "paragraphs": [
+   "Bingham Road once more: asphalt, lit at night, 20 mph for what that is worth. The residential area keeps to the north-east.",
+   "Beside you to the north-east, a tree. A few steps north, a building. Others are near, and I do not count them.",
+   "A tree is set down as a tree and a building as a building. On Bingham Road, at least, things are what the map calls them."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v14-db40e72d3b7b57e1": {
+  "paragraphs": [
+   "Everton Road meets Addiscombe Avenue. Asphalt, lit at night, a pavement on each side, and 20 mph for what that is worth.",
+   "There is — no. I thought there was something more to give here, and there is not. The map sets down the meeting, the surface, the pavement, and stops.",
+   "Two names meet at one corner and have nothing to tell each other. That is all the corner holds."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v14-df52fb529507f1fc": {
+  "paragraphs": [
+   "Lower Addiscombe Road, between Crabtree Walk and Inglis Road. Asphalt underfoot, lit at night, and 30 mph for what that is worth. The residential area lies to the south-east.",
+   "About 30 metres south-east, they say, is “Stovell House Surgery”. The map does not have it. Elsewhere it is listed as “doctors surgery in Addiscombe, Croydon, Surrey, United Kingdom”, placing it again and again, from the place outwards to the kingdom.",
+   "The map does not have it, and the list cannot stop placing it."
+  ],
+  "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
  "v14-fdfa5b4365299188": {

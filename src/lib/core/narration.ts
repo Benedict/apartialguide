@@ -1,13 +1,15 @@
 import { distance } from './geo';
 import type { Narrator } from './narrator';
 import { keepsBrokenNames, namesNoSource, type NarrationStore } from './render/cached';
+import { unfounded } from './render/founded';
 import { buildPrompt, promptKey, type Prompt } from './render/prompt';
 import type { StopId } from './stops';
 
 /** Something that writes a stop's prose from its prompt. Undefined means it declined. */
 export interface ProseModel {
 	readonly name: string;
-	write(prompt: Prompt): Promise<string | undefined>;
+	/** `about` names the stop and the key its prose is kept under, for prose written elsewhere. */
+	write(prompt: Prompt, about?: { stop: StopId; key: string }): Promise<string | undefined>;
 }
 
 export interface NarrateOptions {
@@ -29,6 +31,8 @@ export interface NarrateResult {
 	rejected: StopId[];
 	/** Stops the model declined to write. */
 	declined: StopId[];
+	/** Stops whose prose said what the facts do not: the words it could not found on them. */
+	unfounded: { stop: StopId; words: string[] }[];
 }
 
 /**
@@ -42,7 +46,14 @@ export async function narrateWorld(
 	store: NarrationStore,
 	{ limit = Infinity, from, today = new Date().toISOString().slice(0, 10) }: NarrateOptions = {}
 ): Promise<NarrateResult> {
-	const result: NarrateResult = { written: 0, kept: 0, remaining: 0, rejected: [], declined: [] };
+	const result: NarrateResult = {
+		written: 0,
+		kept: 0,
+		remaining: 0,
+		rejected: [],
+		declined: [],
+		unfounded: []
+	};
 	let calls = 0;
 	for (const stop of order(narrator, from)) {
 		const { scene } = narrator.visit(stop)!;
@@ -57,7 +68,10 @@ export async function narrateWorld(
 			continue;
 		}
 		calls++;
-		const text = await model.write(withNeighbours(prompt, neighboursSaid(narrator, stop, store)));
+		const text = await model.write(withNeighbours(prompt, neighboursSaid(narrator, stop, store)), {
+			stop,
+			key
+		});
 		if (text === undefined) {
 			result.declined.push(stop);
 			continue;
@@ -66,7 +80,9 @@ export async function narrateWorld(
 			.split(/\n\s*\n/)
 			.map((p) => p.trim())
 			.filter(Boolean);
-		if (!keepsBrokenNames(scene, paragraphs) || !namesNoSource(scene, paragraphs)) {
+		const words = unfounded(prompt.user, paragraphs);
+		if (words.length) result.unfounded.push({ stop, words });
+		if (!keepsBrokenNames(scene, paragraphs) || !namesNoSource(scene, paragraphs) || words.length) {
 			result.rejected.push(stop);
 			continue;
 		}

@@ -2,6 +2,7 @@
  * Writes each stop's prose ahead of time with a Claude model, and keeps it in NARRATION_PATH.
  * Run by hand or from the Narrate workflow, never from the app. Needs ANTHROPIC_API_KEY.
  *   SNAPSHOT_PATH=data/snapshots/addiscombe-2026-10-24.json NARRATE_LIMIT=10 npm run narrate
+ * With PROSE_FROM, prose written in a session (see scripts/prompts.ts) is read instead of asked.
  * NARRATE_LIMIT caps the model calls in one run (default 25), nearest START_AT first. Stops whose
  * facts are unchanged keep their prose, so each run continues where the last one stopped.
  */
@@ -10,6 +11,7 @@ import { dirname } from 'node:path';
 import { narrateWorld, type NarrateResult } from '../src/lib/core/narration';
 import type { NarrationStore } from '../src/lib/core/render/cached';
 import { AnthropicProse } from '../src/lib/server/anthropic';
+import { WrittenProse } from '../src/lib/server/written';
 import { loadNarration, loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
 
 const config = readConfig();
@@ -20,7 +22,10 @@ if (!config) {
 const path = config.narrationPath ?? 'data/narration/addiscombe.json';
 const store = loadNarration(path);
 const narrator = loadNarrator(config);
-const model = new AnthropicProse();
+// Prose written in a session (PROSE_FROM, a file of key to prose), or the API.
+const model = process.env.PROSE_FROM
+	? new WrittenProse(process.env.PROSE_FROM)
+	: new AnthropicProse();
 const limit = Number(process.env.NARRATE_LIMIT ?? 25);
 
 let result: NarrateResult | undefined;
@@ -41,7 +46,9 @@ console.log(
 if (result.declined.length)
 	console.log(`Declined, keeping the template: ${result.declined.join(', ')}`);
 if (result.rejected.length)
-	console.log(`Repaired a broken name, keeping the template: ${result.rejected.join(', ')}`);
+	console.log(`Not stored, keeping the template: ${result.rejected.join(', ')}`);
+for (const { stop, words } of result.unfounded)
+	console.log(`  ${stop} said what its facts do not: ${words.join(', ')}`);
 
 /** Keys in order, so each run's diff shows only what changed. */
 function sorted(s: NarrationStore): NarrationStore {

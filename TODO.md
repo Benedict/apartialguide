@@ -4,7 +4,7 @@ Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
 
 ## Keys and workflows
 
-- [ ] **Re-run Narrate.** Guide's voice changed (hearsay instead of "by another account"), so the prose written ahead of time is stale. Until then the walk falls back to the template. Go to Actions → Narrate → Run workflow. It republishes the site when done.
+- [x] **Re-run Narrate.** Guide's voice changed (hearsay instead of "by another account"), so the prose written ahead of time is stale. Until then the walk falls back to the template. Go to Actions → Narrate → Run workflow. It republishes the site when done.
 - [ ] **Energy certificate keys.** Register at <https://epc.opendatacommunities.org/>. Then add two repository secrets (Settings → Secrets and variables → Actions):
   - `EPC_EMAIL`
   - `EPC_API_KEY`
