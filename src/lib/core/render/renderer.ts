@@ -21,6 +21,9 @@ export interface Part {
 	street?: string;
 	/** For framing lines: the ways Guide may put it, to turn between. */
 	options?: string[];
+	/** For the street's lighting: what the map says, so the engine can say it for the hour. */
+	lit?: 'yes' | 'no';
+	pavement?: string;
 }
 
 export interface Room {

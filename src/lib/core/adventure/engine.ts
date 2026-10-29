@@ -5,6 +5,8 @@ import { weatherNow } from '../render/weather';
 import { airNow } from '../render/air';
 import { departuresLine } from '../render/departures';
 import { beyondLine } from '../render/beyond';
+import { lightingNow } from '../render/lighting';
+import { sunPosition } from '../astronomy';
 import { cameraLines, flightsLine, planetsLine, satellitesLine } from '../render/overhead';
 import {
 	flightFacts,
@@ -217,7 +219,20 @@ export class Adventure {
 
 	look(): Reply {
 		const stop = this.world.stops[this.here];
-		return { title: stop.title, lines: stop.paragraphs };
+		// The lighting as the template gave it is said again for the hour.
+		const lit = (stop.parts ?? []).flat().filter((p) => p.lit);
+		const lines = stop.paragraphs.map((line) =>
+			lit.reduce((said, p) => said.replace(p.text, this.saidNow(p)), line)
+		);
+		return { title: stop.title, lines };
+	}
+
+	/** A part as said now: the street's lighting by the hour, worked out for where the map puts it. */
+	private saidNow(p: { text: string; lit?: 'yes' | 'no'; pavement?: string }): string {
+		const at = this.position();
+		if (!p.lit || !at) return p.text;
+		const sun = sunPosition(this.clock(), at.latitude, at.longitude).altitude;
+		return lightingNow(p.lit, p.pavement, sun);
 	}
 
 	/** Where the walk stands, for a status line. */
@@ -690,6 +705,7 @@ export class Adventure {
 								return p.options[this.whereForm];
 							}
 						}
+						if (p.lit) return this.saidNow(p);
 						return p.kind === 'frame' && p.options ? this.frame(p.options) : p.text;
 					})
 					.join(' ');
