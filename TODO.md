@@ -13,7 +13,12 @@ Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
 
 - [ ] **Deploy the flights function**, so `look up` can tell the aircraft overhead. See `functions/flights/README.md`: `npx wrangler login`, then `npx wrangler deploy` in `functions/flights`. Then add the URL it prints as a repository **variable** (not a secret) called `FLIGHTS_URL`. Any FaaS that runs a standard `fetch` handler will do.
 
+- [ ] **Send the Bomb Sight letter.** It's drafted in `docs/letters/bomb-sight.md`. Check that Dr Kate Jones is still the right person: she directed the project at Portsmouth in 2011–13 and may have moved.
+- [ ] **Digital Britannia's licence and files.** Open <https://roadsofromanbritain.org/digital-britannia/downloads.html>; this session can't reach that site. Check whether the licence is CC BY-NC 4.0, as the viewer's author reports, or "under copyright", as the RRRA's press release says. If it's CC BY-NC, download the **GeoJSON** layers (roads, settlement, military, camps, milestones) in longitude and latitude, put them in a folder, and tell Claude where. `look beyond` then tells them. If they come only in British National Grid, say so; they need converting first.
+
 ## Decisions
+
+- [ ] **Is the piece non-commercial, for good?** Bomb Sight and Digital Britannia both forbid commercial use. An exhibition with a fee, or a sale or commission, would breach both.
 
 - [ ] **Geograph's licence.** CC BY-SA asks for each photographer's name. Do you want each photographer named where the photograph is told, or Geograph left out (`LEAVE_OUT=geograph`)?
 - [ ] **Which sources the walk uses.** List any to leave out on `LEAVE_OUT=` in `data/records/use.env`, comma-separated: `bench`, `wildlife`, `postcode`, `company`, `hygiene`, `listed`, `tree`, `planning`, `plaque`, `price`, `crime`, `trees`, `ward`, `flood`, `floodzone`, `epc`, `geograph`.

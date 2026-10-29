@@ -57,6 +57,11 @@ describe('parse', () => {
 			expect(parse(text)).toEqual({ verb: 'overhead' });
 	});
 
+	it('reads looking beyond the map', () => {
+		for (const text of ['look beyond', 'beyond', 'look further', 'what lies beyond'])
+			expect(parse(text)).toEqual({ verb: 'beyond' });
+	});
+
 	it('reads using the camera', () => {
 		for (const text of ['use the camera', 'use camera', 'camera', 'look through the camera'])
 			expect(parse(text)).toEqual({ verb: 'camera' });

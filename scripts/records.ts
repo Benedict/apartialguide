@@ -22,6 +22,7 @@ import { wildlifeRecords } from '../src/lib/server/sources/wildlife';
 import { postcodeRecords } from '../src/lib/server/sources/postcodes';
 import { companyRecords } from '../src/lib/server/sources/companies';
 import { epcRecords } from '../src/lib/server/sources/epc';
+import { britanniaBeyond } from '../src/lib/server/sources/britannia';
 import { geographRecords } from '../src/lib/server/sources/geograph';
 import {
 	floodZoneName,
@@ -422,6 +423,39 @@ SELECT ?paon ?street ?amount ?date WHERE {
 		const records = geographRecords({ items: items as never }, bbox);
 		console.log(`geograph: ${items.length} photographs, ${records.length} kept`);
 		return { source: 'Geograph', prefix: 'geograph', records };
+	},
+	/**
+	 * Digital Britannia's Roman roads and sites near the map, beyond its edge: read from its GeoJSON
+	 * layers in BRITANNIA_DIR (roads, settlement, military, camps, milestones .geojson), downloaded by
+	 * hand from the RRRA, whose site does not answer scripts. Longitude and latitude only.
+	 */
+	britannia: async () => {
+		const dir = process.env.BRITANNIA_DIR;
+		if (!dir) throw new Error('britannia needs BRITANNIA_DIR, a folder of its GeoJSON layers');
+		const layer = (name: string) => {
+			try {
+				return JSON.parse(readFileSync(`${dir}/${name}.geojson`, 'utf8'));
+			} catch {
+				console.log(`britannia: no ${name}.geojson`);
+				return undefined;
+			}
+		};
+		const layers = Object.fromEntries(
+			['roads', 'settlement', 'military', 'camps', 'milestones'].map((n) => [n, layer(n)])
+		);
+		const first = layers.roads?.features?.[0]?.geometry?.coordinates?.flat(3)?.[0];
+		if (typeof first === 'number' && Math.abs(first) > 180)
+			throw new Error(
+				'britannia: the layers are in British National Grid; give them in longitude and latitude'
+			);
+		const beyond = britanniaBeyond(layers, bbox);
+		console.log(`britannia: ${beyond.length} Roman things near the map`);
+		return {
+			source: 'Roman Roads Research Association, Digital Britannia v1',
+			prefix: 'roman',
+			records: [],
+			beyond
+		};
 	},
 	/** The Environment Agency's flood zones over the box, from the Flood Map for Planning. */
 	floodzones: async () => {

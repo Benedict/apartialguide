@@ -12,6 +12,7 @@ export type Command =
 				| 'weather'
 				| 'overhead'
 				| 'camera'
+				| 'beyond'
 				| 'gps'
 				| 'wait'
 				| 'again'
@@ -119,6 +120,12 @@ export function parse(input: string): Command {
 	}
 	if (['gps', 'where am i', 'where am i?', 'map'].includes(text)) return { verb: 'gps' };
 	if (['weather', 'the weather', 'sky'].includes(text)) return { verb: 'weather' };
+	if (
+		['look beyond', 'beyond', 'look further', 'what lies beyond', 'look past the map'].includes(
+			text
+		)
+	)
+		return { verb: 'beyond' };
 	if (['look up', 'lookup', 'look at the sky', 'look skyward', 'up'].includes(text))
 		return { verb: 'overhead' };
 	if (

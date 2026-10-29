@@ -4,6 +4,7 @@ import { skyLine } from '../render/sky';
 import { weatherNow } from '../render/weather';
 import { airNow } from '../render/air';
 import { departuresLine } from '../render/departures';
+import { beyondLine } from '../render/beyond';
 import { cameraLines, flightsLine, planetsLine, satellitesLine } from '../render/overhead';
 import {
 	flightFacts,
@@ -43,7 +44,7 @@ export const HELP =
 	'Look (l) tells the place again in full; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name and drop it somewhere else; inventory (i) says what you carry. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
-	'Exits, weather, look up at what passes overhead, use the camera nearest here, gps for this place on a map, score for how far you have walked, wait (z), again (g), and verbose or brief.';
+	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, gps for this place on a map, score for how far you have walked, wait (z), again (g), and verbose or brief.';
 
 /** Guide's words about themselves, said once, before the first place. */
 export const INTRO = [
@@ -260,6 +261,8 @@ export class Adventure {
 				return this.lookUp();
 			case 'camera':
 				return { lines: [], ask: 'camera' };
+			case 'beyond':
+				return { lines: [this.beyond()] };
 			case 'exits':
 				return { lines: [this.exits()] };
 			case 'back':
@@ -628,6 +631,15 @@ export class Adventure {
 			flights && flightsLine(flightFacts(flights, at, now.toISOString()))
 		].filter((l): l is string => !!l);
 		return lines.length ? { lines } : undefined;
+	}
+
+	/** What others keep beyond the map, from where the map puts this place; or owning to not knowing. */
+	private beyond(): string {
+		const at = this.world.stops[this.here].at;
+		return (
+			(at && beyondLine(this.world.beyond ?? [], at)) ??
+			'Beyond the map there may be more. I could not say what.'
+		);
 	}
 
 	/** What the nearest camera saw, as the page found it; nothing happens without an answer. */

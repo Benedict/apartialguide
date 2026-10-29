@@ -18,7 +18,8 @@ const DOINGS: Record<string, string> = {
 	'Companies House': 'those who register companies',
 	'Environment Agency': 'those who map where the water goes',
 	'Energy Performance of Buildings Register': 'those who rate houses for the heat they lose',
-	Geograph: 'those who photograph every square of the country'
+	Geograph: 'those who photograph every square of the country',
+	'Roman Roads Research Association': 'those who trace the Roman roads'
 };
 
 /** A keeper by what they do, if Guide knows; never their name. */

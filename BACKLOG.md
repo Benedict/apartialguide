@@ -23,6 +23,8 @@ What is left, and ideas for later phases. Done items move to the changelog in th
 
 ## Sources still to plug in
 
+- **A Roman road in a room:** Digital Britannia's conjectured London–Brighton road passes inside the map's western edge. Once its data is in, Guide could tell it, as hearsay, at stops within a few metres of its line, not only when the reader looks beyond.
+
 - **Roadworks**, live, from TfL's road disruption API (no key).
 - Not possible as feeds: the WWII bomb census (no download, non-commercial licence; ask the University of Portsmouth), CWGC civilian war dead (needs a written licence), Defra road noise (bulk files only, modelled).
 
