@@ -145,4 +145,53 @@ describe('narrateWorld', () => {
 		expect(asked[0].stop).toBe(west);
 		expect(asked[0].key).toBe(promptKey(buildPrompt(n.visit(west)!.scene)));
 	});
+
+	it('narrates only the stops it is asked to, and leaves the rest to the template', async () => {
+		const { n, west } = narrator();
+		const store: NarrationStore = {};
+		const result = await narrateWorld(n, new RecordedModel(said('A street.')), store, {
+			only: (scene) => scene.stopId === west
+		});
+		expect(result.written).toBe(1);
+		expect(result.skipped).toBe(n.graph.all().length - 1);
+	});
+
+	it('does not store a turn of phrase already used in several places', async () => {
+		const { n, west } = narrator();
+		const phrase = 'and the dark sits quietly between them all';
+		const store: NarrationStore = {
+			a: { paragraphs: [`One street, ${phrase}.`], model: 'x', written: '2026-10-24' },
+			b: { paragraphs: [`Another, ${phrase}.`], model: 'x', written: '2026-10-24' }
+		};
+		const result = await narrateWorld(n, new RecordedModel(said(`Here, ${phrase}.`)), store, {
+			limit: 1,
+			from: west
+		});
+		expect(result.rejected).toEqual([west]);
+		expect(result.repeated[0].stop).toBe(west);
+		expect(result.repeated[0].phrase).toMatch(/dark sits quietly/);
+	});
+
+	it('lets the facts’ own words recur, as they must', async () => {
+		const { n, west } = narrator();
+		const store: NarrationStore = {
+			a: {
+				paragraphs: ['You are at the end of Long Street, once more.'],
+				model: 'x',
+				written: '2026-10-24'
+			},
+			b: {
+				paragraphs: ['You are at the end of Long Street, again.'],
+				model: 'x',
+				written: '2026-10-24'
+			}
+		};
+		const result = await narrateWorld(
+			n,
+			new RecordedModel(said('You are at the end of Long Street, here.')),
+			store,
+			{ limit: 1, from: west }
+		);
+		expect(result.repeated).toEqual([]);
+	});
 });

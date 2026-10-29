@@ -7,6 +7,7 @@
  */
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
+import { isBusier } from '../src/lib/core/busier';
 import { narrateWorld } from '../src/lib/core/narration';
 import type { Prompt } from '../src/lib/core/render/prompt';
 import { loadNarration, loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
@@ -29,7 +30,12 @@ await narrateWorld(
 		}
 	},
 	store,
-	{ limit: Number(process.env.NARRATE_LIMIT ?? 25), from: startStop(narrator, config).id }
+	{
+		limit: Number(process.env.NARRATE_LIMIT ?? 25),
+		from: startStop(narrator, config).id,
+		// NARRATE_ONLY=busier narrates only stops whose data has something going on.
+		...(process.env.NARRATE_ONLY === 'busier' ? { only: isBusier } : {})
+	}
 );
 
 const out = process.env.PROMPTS_PATH ?? 'build/narrate/prompts.md';
