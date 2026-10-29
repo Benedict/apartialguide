@@ -1013,6 +1013,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-014ef9854c934137": {
+  "paragraphs": [
+   "An unnamed service inside “Selhurst Depot”. Past the depot, to the south-west, the map lays another railway area.",
+   "Everything here lies the same way. South-west, close: “Norwood Yard and Selhurst Workshop Sidings”, its reference “NYD”. South-west, as near: “Selhurst to Norwood Fork Junction Line”, its reference “SNF”. South-west again, about 25 metres off, the junction line a second time.",
+   "Network Rail runs all three, laid side by side towards the south-west."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-0152c97347890fb2": {
   "paragraphs": [
    "Grass underfoot, on a path with no name. All around is “Lloyd Park”. Begun in 1927, so it is told, a “public park in Croydon, UK”.",
@@ -1031,20 +1040,20 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-021026d3e6a8642b": {
-  "paragraphs": [
-   "Teevan Close ends here, lit, with a pavement on each side and a limit of 20 mph, among houses.",
-   "Everything is north-west, a few steps off. First comes “London Trams (Elmers End Branch)”, a tram. A point with nothing said of it. Then the tram again, the same name, the same operator, Transport for London.",
-   "The map has the branch twice, and between the two, a point without a word."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-022a3924551822d6": {
   "paragraphs": [
    "The end of a footway that has no name. Nothing is said of what lies underfoot, nor of lights. A residential area lies south-west.",
    "To the west, close by, the tram: “London Trams (Elmers End Branch)”. Transport for London runs it. With it, a point the map has marked and left without a word.",
    "One thing, two things; I lose the count there and pick it up at the point. Marked, unnamed, at the end of an unnamed way."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-023f03c3f4b936bf": {
+  "paragraphs": [
+   "Oaks Lane, on ground, going towards a dead end. All around you lies a golf course, “Shirley Park Golf Club”, keeping hours of “Tu-Sa 08:00-23:00” and shorter on the two days left over.",
+   "To the west, a few steps away, a wedding venue at Oaks Lane: “Oaks Farm”. The map's entry for it dates from August 2018, and nothing has been added since.",
+   "The lane and the farm share a name; the club has its own."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -1076,11 +1085,39 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-028860e3bfcddbf0": {
+  "paragraphs": [
+   "Altyre Road, asphalt, lit at night, with no pavement at all. The limit is 20 mph. A residential area lies to the north-east.",
+   "You are standing on a crossing. Close to the north-east rises the building of 25 storeys, “Altitude 25”, as the map held it in March 2020. Beyond those two I give you nothing; they are the nearest, and the others can wait unnamed.",
+   "They say it is an “apartment tower; Croydon's tallest building”, begun in 2009. A crossing at its foot, and no pavement to reach it by."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-029faf5e372e548f": {
+  "paragraphs": [
+   "An unnamed footway, with a residential area around it and a grass area to the south.",
+   "North-west, beside you, the kindergarten at Malling Close, “Oasis Academy Shirley Park Childrens Centre”.",
+   "North-east, a few steps off, three buildings, one after another, alike in everything the map says of them, which is only that each is a building.",
+   "Three buildings to one side and a long name to the other, and the footway running between."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-02fbc9d5e85b738c": {
   "paragraphs": [
    "An unnamed path, and you are in a wood on it, or were in December 2019, when the map last set the wood down.",
    "All around is “Lloyd Park”, a “public park in Croydon, UK”, as some have it, begun in 1927. A few steps east lies a golf course, “Shirley Park Golf Club”, its hours given as “Tu-Sa 08:00-23:00”, and an hour shorter on the other days. Near it the map marks a point from August 2019 and says nothing of it.",
    "A wood in a park, and beside the park a golf club that carries “Park” too. The names lean on each other."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-0327515e1e00bd50": {
+  "paragraphs": [
+   "An unnamed service, asphalt, ends at the edge of a residential area. A railway area lies to the east.",
+   "A few steps that way runs a rail, “Brighton Main Line”, reference “VTB1”, run by Network Rail. About 25 metres off, the map has it again, with name, reference and operator unchanged.",
+   "Twice drawn, once named, and both of them run by the one hand. Main, and main again."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -1177,6 +1214,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-04acb2c8511ee176": {
+  "paragraphs": [
+   "Sydenham Road, between Selhurst Road and Owen Close. Asphalt, lit at night, 20 mph.",
+   "A terrace beside you to the east, another a few steps west.",
+   "To the south-west lie two codes the map does not have. Those who draw the wards and number the streets keep them. “CR9 2LN” was in use from January 1980 to December 1990. “SE25 5QG”, from June 1981 to July 1995. For a while they ran together, two numbers for one spot, and then neither."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-04c8d4db225b41c5": {
   "paragraphs": [
    "Gloucester Road, heading towards Bridge Place. Asphalt, lit at night, 20 mph. Residential here, industrial to the north, a railway area to the south-east.",
@@ -1214,15 +1260,6 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-05e676f020e03205": {
-  "paragraphs": [
-   "Lower Addiscombe Road, with homes lying southward. A crossing sits a little east, its paving tactile.",
-   "Some 30 metres north rises an apartments building that calls itself “Havelock House”. At about that distance south-east is “Lotus House”, which the map leaves out entirely. Those who inspect kitchens rated it 3, they say, in April 2024.",
-   "Two houses, then, one on the map and one off it. One is apartments. The other is a rating and a name."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-062d08f7be6eeb47": {
   "paragraphs": [
    "Sundridge Road comes down to Lower Addiscombe Road here. Asphalt and lights, a pavement each way, 20 mph. More is here than these few things. Beside you to the south-east there is bicycle parking, and a residential area beyond it; the shopping area called Addiscombe Village lies north-west.",
@@ -1237,6 +1274,24 @@
    "Dalmally Road and Camborne Road meet here. Asphalt, lit at night, 20 mph.",
    "About 30 metres north-west lies Addiscombe Railway Park. Report has it begun in 1998: “park in London Borough of Croydon, United Kingdom”.",
    "That is all I am given at this corner: two roads and a park. The roads have names; the park has a name and a year."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-06c2f470b73d8601": {
+  "paragraphs": [
+   "Cotelands meets Crusader Gardens here, and the limit is 20 mph. To the south-west lies a recreation ground.",
+   "Close by that way stands “Park Hill Junior School”. Its address is Stanhope Road, a street that is neither of these. Greenshaw Learning Trust runs it. The map, after the name, has written “None”, and leaves it there.",
+   "Its beginning, someone noted, fell on 1 April 2017, and the school, by hearsay, counts as a “school in Croydon, UK”. A school stands near a corner and gives its address to another road."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-06da0639fc869bc6": {
+  "paragraphs": [
+   "Addiscombe Grove: asphalt, lit at night, 30 mph, a residential area to the east.",
+   "Beside you to the east is a garage. A few steps north-east, a building; a few steps south-east, another. The map says nothing else of either.",
+   "To the west, an apartments building of four storeys, at Longitude Aparments Addiscombe Grove, which says “Longitude Apartments” of itself. It said so in February 2020. Of everything here, only the apartments have a name to give."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -1426,29 +1481,11 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-0b4061166a874a05": {
-  "paragraphs": [
-   "An unnamed trunk road stops here, lit, at 30 mph. Houses north-east, a transport area west.",
-   "Underfoot is a point with no description. A few steps south is the bus stop “Ashburton Road”, with a bench, a bin and a shelter, lit at night, reference 53345.",
-   "Those I give you; the rest goes by. The stop is furnished; the point is bare."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-0b5f8bd8f519adba": {
   "paragraphs": [
    "Lower Addiscombe Road, with the limit at 30 mph and pavement down both sides. To the south-east, a residential area.",
    "North of you, a short distance, lie “Ashburton Park” and a fence, the park with a date of June 2017, the fence with September 2012. North-west, a gate of the same September. They say elsewhere that this is a “park in the United Kingdom”.",
    "North as well, the stop “Ashburton Park”, bench and shelter, reference “51177”. Road, fence, gate, park, stop: and the last two answer to one name."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-0b6a94ea80d95bea": {
-  "paragraphs": [
-   "Sherwood Road meets Lower Addiscombe Road. Asphalt, lights, pavements, 20 mph. There is more here than these few lines.",
-   "A building stands a few steps south. To the south lies a retail area; to the north-west the “Addiscombe Village shopping area”, with houses behind.",
-   "North-west, a few steps off, is a cafe at 351 Lower Addiscombe Road. It was new in July 2018, by its name, and that is the last it was recorded. It is called “The New Cafe & Restaurant”."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -1496,15 +1533,6 @@
    "South-east, a “Grey Squirrel”, absent from the map; one was seen here, they say, in April 2026.",
    "South-west, an address at 8 Canning Road; west, 9b. Both stood in July 2014, and nothing has been entered of either since. Of 9b, someone wrote down an application in March 2025: “Ash tree x5”, to be felled to ground level, and an “Oak tree” to be reduced. The answer came back “No Objection to Proposal (OBS only)”.",
    "Five ash and one oak on paper, a squirrel in the margin."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-0c9301ae74d7a74d": {
-  "paragraphs": [
-   "Morland Road, bound for Gowlland Close; lit and paved, 30 mph, with houses to the north-west.",
-   "The bus stop beside you on the west is called “Northway Road”.",
-   "About 25 metres north, the kitchen ledger has two names side by side that the map lacks. “Martil Cafe”: 5, in November 2025. “Morleys”: 4, in May 2026. Two names, two ratings, the same 25 metres off."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -1572,20 +1600,11 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-0f00afe95c10dcb8": {
+ "v15-0ebf04a71c731f8d": {
   "paragraphs": [
-   "An unnamed footway, with homes south-eastward. Around this spot is more than I shall give.",
-   "A tree near you eastward; a building near you south-eastward, unnamed.",
-   "A little north, a bus stop, bench and shelter, carrying the reference “77192”. Its name is “Parkview Road”. In January 2013 it was “Park View Road (CR0)”, with a space and a bracket the present name lacks. I am no longer sure which belongs to the stop. Call it “Parkview Road”."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-0f3f0a41c0219eba": {
-  "paragraphs": [
-   "The end of an unnamed service, and parking on all sides. Crowded, though I keep to two things.",
-   "Directly south is a kindergarten at 23 Dagnall Park, “Selhurst Children's Centre”. Its kitchen got a 4, in October 2025, from those who inspect kitchens.",
-   "A car park and a kindergarten, a rating and a month. The service road ends between them, against “Selhurst Children's Centre”."
+   "On Stanhope Road. The road is fuller than my account of it. Grass lies to the north-east.",
+   "Close to the north-west stands a building the map leaves unnamed. Beside you, eastward, a school run by London Borough of Croydon; off the map it is noted as a “school in Croydon, UK”, and given it no beginning.",
+   "The road gives it an address; the map gives it a keeper and a grass verge. Its name is “Park Hill Infant School”."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -1631,15 +1650,6 @@
    "The footway ends here, unnamed, on asphalt, lit at night. A residential area lies west.",
    "You are on a platform. It has a bench, a bin and a shelter, and tactile paving; wheelchairs can use it. One, two, three things on it, and then I lose the count and begin again with the paving.",
    "The tram is right here too: “London Trams (Elmers End Branch)”, run by Transport for London. A platform, a tram, and a footway with no name that brought you to them."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-1088dd2704cd72a6": {
-  "paragraphs": [
-   "Addiscombe Grove, asphalt, lit, 30 mph. A residential area lies west, a commercial area north-west. Not all of it fits here.",
-   "West, a short way off, a tree. There was a tree there in December 2019.",
-   "North-east, a residential building. It does not carry a house name. It carries the street it stands on, with three characters after, as though that were enough to call it by: “Addiscombe Grove CR0”."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -1725,15 +1735,6 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-1354a704c88cefc6": {
-  "paragraphs": [
-   "Through the railway park, “Addiscombe Railway Park”, and on to Dalmally Passage: asphalt, no lights, houses to the south-east.",
-   "Here runs “Elmers End and Addiscombe Branch”, which the map marks abandoned, with “EEA”. A tree row runs beside you to the south-east, last recorded in January 2021.",
-   "North, a few steps away, is “Woodside Primary School”, at Morland Road, run by Inspire Partnership Academy Trust. It is said it was begun on 1 September 2016, and the park in 1998. Of the railway no beginning is given, only its abandoning."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-135c9d072fb99da5": {
   "paragraphs": [
    "Woodside Green, the road, between Morland Road and Dickenson's Lane. Asphalt, lit, pavement on one side, 20 mph. A residential area north-west, a meadow south-east, a flowerbed south-west.",
@@ -1748,6 +1749,15 @@
    "An unnamed bridleway, asphalt and lit, between Chichester Road and a dead end. A residential area is on every side.",
    "North-east, close by, a bollard. It went into the record in June 2019 and has not gone in since; it was a bollard then and, as far as anyone has said, is one now.",
    "Some 30 metres south-west lies “Park Hill Recreation Ground”, a park. It is written down elsewhere as a “park in the United Kingdom”. A bridleway that leads to a dead end, a park off to one side: the route here is short, and does not pretend otherwise."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-13ca374390906ccb": {
+  "paragraphs": [
+   "Billinton Hill ends here. Asphalt, lit at night, in a commercial area.",
+   "Beside you to the south-west, “East Croydon Bus Station”, which wheelchairs can use some of. A few steps north-west, an unnamed point on the map.",
+   "Those two will do. I leave the rest of the commercial area to itself. The hill has ended here; “East Croydon Bus Station” is still beside you."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -1788,11 +1798,30 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-145201b5491d558f": {
+  "paragraphs": [
+   "Chichester Road, at 20 mph. Beside you to the north stands a place of worship, “St Matthew's Parish Church”, Anglican. Some call it a “church in Croydon, Greater London”. It stood there in February 2021; so the map has it.",
+   "A few steps south-west is an apartments building at 50-72 Chichester Road. “Castle Oaks”, it says, or it said in August 2020.",
+   "Parish on one side of the road, “Castle Oaks” on the other, and the road between them with a number for its limit."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-1486414b5b90db4f": {
   "paragraphs": [
    "Fine gravel, an unnamed service. Nothing here is close.",
    "To the west, about 30 metres off, a rail: “Brighton Main Line”. To the west, about 30 metres off, a rail: “Brighton Main Line”. Network Rail runs it, and it carries “VTB1”, both times.",
    "At this distance the two entries are hard to tell apart, and the map does not try to. The gravel, the service, and thirty metres of ground between you and the line. There the place ends."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-14f87535d623e2a7": {
+  "paragraphs": [
+   "Dagnall Park again, at 30 mph, residential on all sides, asphalt underfoot.",
+   "The gate is to the south-east now, and close. It was set down in September 2019 and stands in the same words.",
+   "Just past it, those who inspect kitchens keep a ledger of two. April 2025, “Moorish Caribbean Grill”, rated 5. October 2025, “Nazz Grills”, rated 4. The map has neither.",
+   "A crossing lies about 30 metres to the south."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -1835,6 +1864,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-170f9ac6a12d3653": {
+  "paragraphs": [
+   "An unnamed path, with grass underfoot, and all around you a park, “Lloyd Park”.",
+   "Nothing else is mapped by the path. By hearsay it ranks as a “public park in Croydon, UK”, dating its beginning to 1927.",
+   "A path of grass through a park of grass, with no name to tell the one from the other. Walk it whichever way you like; every side of it is “Lloyd Park”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-175c3c2b064edec2": {
   "paragraphs": [
    "An unnamed service road ends, in a residential area.",
@@ -1871,15 +1909,6 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-18b6e6d4cbb07c7d": {
-  "paragraphs": [
-   "An unnamed footway, homes lying south-east. A tree at your south side. A crossing at your north-east.",
-   "Just west is a bus stop, “Parkview Road”, bench and shelter, reference “77192”. About 30 metres north-east is another, also “Parkview Road”, bench and shelter, reference “77711”. Or was it the other way round? I have lost count of the stops already, two or three; I start over from the tree.",
-   "In January 2013 each was “Park View Road (CR0)”. Which name is right I cannot settle."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-18c396efe20ed947": {
   "paragraphs": [
    "An unnamed service, towards a dead end. “Chalk Sidings” and “AC Sidings” both lie to the north-west. The yard holds more; two things will do.",
@@ -1889,11 +1918,29 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-18d6f54bc14d95df": {
+  "paragraphs": [
+   "Selhurst New Road, running towards Selhurst Road, at 20 mph. A speed hump lies beside you to the north.",
+   "To the west, beside you, a supermarket: “Welcome Newhurst”. A terrace lies just south, and another about 30 metres south-east.",
+   "A new road leading to a road without the word, and a supermarket that takes the new from one and the hurst from both for its own name. The welcome is its own."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-18f5fc2cc113f0b4": {
   "paragraphs": [
    "An unnamed trunk road ends here, lit, at 30 mph, with a residential area to the north. More is here than I will tell.",
    "Beside you to the south the map marks a point and gives it no word. Just past it, the tram runs, run by Transport for London.",
    "A road with no name, a point with no word, and then the tram, which has a name and gives it: “London Trams”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-197ece0aad6d310f": {
+  "paragraphs": [
+   "The unnamed cycleway gives out here, asphalt and unlit, with a residential area to the east.",
+   "You are inside “Park Hill Recreation Ground” now. Others say only that it is a “park in the United Kingdom”. A fence stands right here as well.",
+   "Those two I give, and the rest I leave where it is. The fence, then, and the park on either side of it."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -2062,15 +2109,6 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-1f626c0884824671": {
-  "paragraphs": [
-   "Underfoot, an unnamed footway; to the east, houses; to the south-west, a transport area.",
-   "Here the map sets down a point, wordless. Here too, the tram the map calls “London Trams (Elmers End Branch)”. Point, tram, point again, or was it the tram; I lose count, and begin over with the tram.",
-   "It is run by Transport for London, the map says. The point is run by nobody it names."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-1f9175d0e538d0c4": {
   "paragraphs": [
    "The unnamed service ends, and the map has nothing more to put here.",
@@ -2235,20 +2273,29 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-233e62c626ab3c98": {
+ "v15-23e607e6d10745d0": {
   "paragraphs": [
-   "An unnamed service road among houses, with retail off to the north-west.",
-   "South-west of you, close by, is a Christian place of worship. Its name holds a road and a hall. West, just as close, a building stands unnamed.",
-   "The rest I leave uncounted. Of all of it, I keep only the place of worship, by the name the map gives it: “Sherwood Road Hall”."
+   "Gloucester Road, inside a residential area. The limit is 20 mph. It is busier here than I can set down; I keep to two.",
+   "To the south-west, beside you, a terrace. To the north-west, a few steps off, a place absent from the map. Those who inspect kitchens keep it instead, and rated it 5 for food hygiene in June 2025.",
+   "Its name, as they wrote it, is “Michael's Cafe”."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-2366d4210b0125ed": {
+ "v15-242d8638963fa5d5": {
   "paragraphs": [
-   "Havelock Road comes in to Lower Addiscombe Road here, on asphalt, lit, paved either side, 20 mph, homes to the south.",
-   "Westward, very near, a bus stop with bench and shelter: “Havelock Road”. Or “Havelock Road (CR0)”, as it went in January 2013. I am not sure which it answers to now. The street's name either way, with a code tacked on or taken off.",
-   "About 25 metres east is a crossing with tactile paving; about 25 metres north, the apartments called “Havelock House”. The road lends its name to the stop and to the house, and keeps it."
+   "Selborne Road meets Waldegrove here, at 20 mph.",
+   "Beside you to the north is a school, “Archbishop Tenison's Church of England High School”, Anglican, and not for wheelchairs. They call it a “school in Croydon, UK”, begun in 1714. The map gives it no year at all; the year belongs to whoever said so.",
+   "A few steps east there is a speed cushion. A long name and an old date on one side of the corner; a cushion on the other."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-2471fc87b9fd139a": {
+  "paragraphs": [
+   "Fairfield Road, with a residential area to the north.",
+   "To the south, beside you, a fence, and beside it, as the map sets them, “Park Hill Recreation Ground”. That makes two, or three with the road, or more; I lose the tally there and go on.",
+   "They say the ground is a “park in the United Kingdom”, and say nothing narrower. On the map it is a park with that name, and the name says recreation ground. The fence stands between the road and both of them."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -2334,11 +2381,11 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-258e7889356fc007": {
+ "v15-26140273dc542e28": {
   "paragraphs": [
-   "Parkview Road, asphalt, lit, a pavement each way, 20 mph, with homes to the south-east. The place holds more than this.",
-   "You stand on a crossing. A tree grows close by, south.",
-   "Two bus stops sit a few steps off, west and north-east, each with a bench and a shelter, carrying “77192” and “77711”. Both were “Park View Road (CR0)” in January 2013. Now both are “Parkview Road”, run together, the brackets gone."
+   "Sydenham Road, lit asphalt, the limit 20 mph, a residential area on the west side.",
+   "Just south there is a crossing with tactile paving, and a speed table there as well. About 25 metres east lies parking.",
+   "Beside you to the south-east is “Broadmead Primary School”, 366 Sydenham Road, run by The Pioneer Academy. Hearsay dates the school from 1 June 2014; its kind, a “school in Croydon, UK”. The crossing comes first, then the table, then the school."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -2489,6 +2536,24 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-2bda4852d03279cf": {
+  "paragraphs": [
+   "An unnamed path, grass underfoot, inside “Lloyd Park”, entered by some as a “public park in Croydon, UK”, begun in 1927.",
+   "North-east, a few steps off, a wood stands on the map as of July 2012. South-east, as near, a golf course, “Shirley Park Golf Club”, keeping hours of “Tu-Sa 08:00-23:00; Su,Mo 08:00-22:00”, and a point beside it that the map set down in August 2019 and left without a word.",
+   "Three dates for one patch of grass: 1927, 2012, 2019. None of them is now."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-2be160a9aeb09957": {
+  "paragraphs": [
+   "Malling Close, 20 mph, in a residential area with grass to the north-east.",
+   "The nearest things are both north-west, both at your side: a kindergarten, “Oasis Academy Shirley Park Childrens Centre”, and a gate, which stood there in March 2021 and may stand there still.",
+   "The rest of the close I leave to itself, unnumbered. The gate and the centre will serve."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-2c61a7a1c7098942": {
   "paragraphs": [
    "Harland Avenue, between Sandilands and Radcliffe Road. The limit is 20 mph.",
@@ -2498,11 +2563,12 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-2cda27920d330572": {
+ "v15-2cdeca5301257a63": {
   "paragraphs": [
-   "An unnamed path on grass. A residential area lies to the north-west, and a wood beside you on the same side.",
-   "There was a wood there in December 2019. That is the last time it was entered, and I speak of it as if it stands, which it may.",
-   "Around you, all of it, is “Lloyd Park”. Somebody once entered it as a “public park in Croydon, UK”, begun in 1927. Houses, trees and grass, in that order from the edge in. The park holds them, and the oldest date belongs to the park."
+   "An unnamed footway ends here on paving stones, a construction area to the north-west. Much is near; I give two.",
+   "Right here, a point, unexplained.",
+   "South-east, beside you, at 12-18 Addiscombe Road, a commercial building of two storeys that calls itself “No. 1 Croydon”. Elsewhere it is an “office block in Croydon, south London”, begun in 1970.",
+   "Number one, by its own account, and twelve to eighteen by the street's."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -2512,6 +2578,15 @@
    "The end of an unnamed service. “Chalk Sidings” and “AC Sidings” lie to the north-west, both of them.",
    "To the north-west, a few steps away, a rail: “Norwood Yard and Selhurst Workshop Sidings”. Run by Network Rail; reference “NYD”. And again to the north-west, a rail by the same name. Those two are nearest. The rest I leave uncounted.",
    "The service ends. The sidings do not, nor does the name, which runs on with the rail towards “AC Sidings”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-2d312f7bc20ba119": {
+  "paragraphs": [
+   "Sydenham Road ends here, asphalt and lit, 20 mph. This end is crowded beyond my telling. To the west lies a residential area, a recreation ground to the north-east, an industrial area to the south-east.",
+   "Beside you, on the south-east side, two rails run together. One is “Up Wallington”. The other is “Down Wallington”. Both are run by Network Rail, and both bear the reference “NFE”.",
+   "Up and down, one name either way. The road stops here; “Up Wallington” and “Down Wallington” do not."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -2552,6 +2627,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-2e79a970facec343": {
+  "paragraphs": [
+   "An unnamed service, from Selhurst Road to a dead end, through a residential area.",
+   "A few steps south-east is a pub, “White Horse”. Others describe it as a “pub in Croydon, London, England, UK”, giving its place four times over, each larger than the last. The map gives a pub and a name and stops there.",
+   "A horse, white, by name only."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-2e975aa2a36f77de": {
   "paragraphs": [
    "An unnamed path, grass underfoot. A residential area lies to the south-east.",
@@ -2577,15 +2661,6 @@
    "South-west, beside you, the school at Becket Close, “St Thomas Becket Catholic Primary School”. Roman catholic; run by St Benedict Catholic Academy Trust. Begun on 1 September 2012, it is said.",
    "To the south, an entrance. To the south-east, a speed hump.",
    "The school gives its address as Becket Close. Here on Birchanger Road there is an entrance, and a hump in the road."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-2fb42930e7616215": {
-  "paragraphs": [
-   "An unnamed path, with a residential area to the west. The ground is not described.",
-   "On every side lies “Lloyd Park”. A ledger elsewhere calls it a “public park in Croydon, UK”, begun in 1927.",
-   "No gate here, no wood, no club. The houses are to the west and the park is everywhere else. The path is the one thing between, and it has no name to offer. The park has one, and a year to go with it, given by others."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -2631,6 +2706,15 @@
    "Shirley Road, asphalt underfoot, lit at night, a pavement on either hand. The limit is 30 mph. A residential area lies off to the south-west.",
    "Just south of you stands a bus stop, “Shirley Clinic”, with the reference “48413”. Then a building, close, to the south-west. Then, past those, the tally slips from me; I take it up again from the stop.",
    "“Shirley Clinic”, the stop says. The building beside it says nothing at all."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-30593461c485c1d2": {
+  "paragraphs": [
+   "An unnamed footway, asphalt and unlit, a residential area to the east. I set down less than is here.",
+   "A few steps north stands a tree. There was a tree there in December 2019; there is a tree on the map yet.",
+   "Some call all of this a “park in the United Kingdom”. The map, around you on every side, calls it “Park Hill Recreation Ground”."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -2916,6 +3000,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-38404d6eeb9cd9a4": {
+  "paragraphs": [
+   "An unnamed path, grass underfoot, and all of it inside a park, “Lloyd Park”. Someone recorded it as a “public park in Croydon, UK”, begun in 1927.",
+   "Here too the map marks a point and leaves it unexplained. It stood so in August 2019, and it is marked so still; what it was then, it may be now.",
+   "A few steps east is a golf course, “Shirley Park Golf Club”. Its hours are given as “Tu-Sa 08:00-23:00; Su,Mo 08:00-22:00”. A park with no hours beside a club with two sets of them."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-39b669a592092492": {
   "paragraphs": [
    "Oval Road meets Cherry Orchard Road, and the limit is 20 mph. To the north-west lies “Morello”, a residential area,; to the north-east, a construction area; to the east, commercial and residential side by side.",
@@ -2985,6 +3078,25 @@
    "Morland Road, asphalt, lit, paved both sides, 30 mph, with a residential area off to the north-west.",
    "A few steps south is a school: “Woodside Primary School”, run by Inspire Partnership Academy Trust. The map puts it at Morland Road and adds one word more: “None”.",
    "It is said elsewhere to be a “school in Croydon, UK”, begun on 1 September 2016. The school is on the map; its beginning is only told."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-3bc63a94894ed825": {
+  "paragraphs": [
+   "Selhurst Road, asphalt and lit, at 30 mph, running towards Gloucester Road. Much is crowded in around here; I name little.",
+   "To the south-east, a residential area. Beside you, to the south, bicycle parking.",
+   "A few steps south-east, something the map does not have. Its food hygiene rating is 5, given in April 2026 by those who inspect kitchens, and they wrote its name down so: “Welcome Co-Operative - Selhurst”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-3bd9ba3d435df6f3": {
+  "paragraphs": [
+   "An unnamed cycleway, unlit, on asphalt, running out towards a dead end.",
+   "All around lies “Ashburton Playing Fields”, a park, as of June 2017. Elsewhere it is listed as a “playing field in Woodside, London”.",
+   "Right here, at Poppy Lane, a hospital: “Shirley Oaks Hospital”. A few steps south-east, a point with nothing written against it.",
+   "A playing field and a hospital share the one spot, and the cycleway ends beside them."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -3127,21 +3239,21 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-400b9450cf5543ee": {
+  "paragraphs": [
+   "Stanhope Road, 20 mph. Two schools are nearest, and I will give you only them.",
+   "East, beside you, “Park Hill Infant School”, run by London Borough of Croydon. South, a short way on, “Park Hill Junior School”, run by Greenshaw Learning Trust, and marked with the word “None”. Both give Stanhope Road as their address.",
+   "They say the junior school was begun on 1 April 2017. Of the infant school they give no date at all. The rest of the road can go untold. Infant, then junior, close together on one road."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-4049d1d04a717c6d": {
   "paragraphs": [
    "Tait Road, asphalt, named it is said for Archibald Campbell Tait, 1811-1882.",
    "North-west, at 1 Tait Road, a hardware shop, “SL Hardwoods”. A shop was there in October 2018, the last the map says of it. They say two companies are registered there, the first since June 1996: “SOUTH LONDON HARDWOODS LIMITED” and “LONDONR LIMITED”. In August 2020, an application for a “single storey rear extension”: “Approved”.",
    "South-west, a substation and a fence. East, “CR9 2NB”, a postcode in use from January 1980 to July 1995, by hearsay only.",
    "SL on the shop, “SOUTH LONDON HARDWOODS LIMITED” among the companies."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-40c0067cfb2f98f7": {
-  "paragraphs": [
-   "An unnamed service, asphalt, 10 mph, running out towards a dead end. A residential area lies to the north-east.",
-   "All around is “Trinity School”, at Shirley Park. Others keep it as a school in Croydon, UK, begun in 1596. Those who inspect kitchens gave it a 5 in September 2026. Two entries, four centuries and more apart, and the kitchen's the newer.",
-   "West, a few steps off, a golf course, “Shirley Park Golf Club”. Its hours are written “Tu-Sa 08:00-23:00; Su,Mo 08:00-22:00”. The hours run late into the evening, by that reckoning."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -3201,6 +3313,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-4352e5a0bdde6e2b": {
+  "paragraphs": [
+   "An unnamed footway, a residential area to the south. Close that way is “Alden Court”, a social facility at 1 Fairfield Path, with parking to the south-west.",
+   "An application about its trees is noted for May 2024, and it was “Approved”. A horse chestnut, a yew, a willow, numbered among them; for one, “Tree NO 702 - Willow - Repollard canopy”.",
+   "About 25 metres north, an apartments building of nine storeys, held on the map as of February 2020. The trees have numbers; the building has storeys."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-435f99ebbfd52326": {
   "paragraphs": [
    "Glenthorne Avenue, on its way to Blackthorne Avenue. Paved on both sides, 20 mph, a residential area here and a recreation ground to the north-west.",
@@ -3216,6 +3337,15 @@
    "Right here, a building. Of what kind, the map is silent.",
    "South-west, beside you, a Catholic place of worship at 147 Bingham Road. It is said to have begun in 1963, and to be a “catholic church in Croydon, Surrey, UK”.",
    "These are the nearest, and I stop with them. A building with no name, and next door, “Our Lady of the Annunciation”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-43e74b323b837f74": {
+  "paragraphs": [
+   "The unnamed service ends. Eastward a residential area; otherwise the map is empty here.",
+   "Just to the south-east, they say, a “Harlequin Ladybird” was seen in November 2019. The map does not keep it.",
+   "A harlequin, where an unnamed service gives out. It is set down once, with its month and its year, and appears nowhere else on this stretch."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -3262,6 +3392,15 @@
    "An unnamed service, between Freemason's Road and a dead end. A residential area, a grass area to the west, a railway area to the north-west. Parking, right where you stand.",
    "East of you, a little way, are two things the map does not have. One is “Davidson Lodge”, said to be an “almshouse in Croydon, London, England, UK”. The other is “DAVIDSON LODGE”, listed at grade II in August 1973.",
    "They may be one place, written down twice in two hands. I cannot tell you which hand had it right."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-4520309bf947f5c5": {
+  "paragraphs": [
+   "An unnamed footway, with a railway area, “AC Sidings”, off to the north-east. More stands here than two rails, but two is what I give.",
+   "North-east, a few steps off, a rail of “Norwood Yard and Selhurst Workshop Sidings”, run by Network Rail and marked “NYD”. East, as near, the same name again, the same keeper, the same three letters.",
+   "One yard, one workshop, two rails, and the name over all of them: “Norwood Yard and Selhurst Workshop Sidings”."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -3335,6 +3474,15 @@
    "To the north-west, an address: 186 Chichester Road. A sale is noted against it: £71,000, August 1999. Beside it, a point the map sets down without a word of what it is. The map had both in August 2020 and has nothing newer.",
    "To the north-east, 1 Coverdale Gardens. Against that one, a sale too: £80,000, February 1996.",
    "Two sales on two streets, the earlier one the cheaper. The addresses stood as of August 2020."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-4673bcfce9755f61": {
+  "paragraphs": [
+   "Malling Close ends here, and where it ends you are inside a kindergarten: “Oasis Academy Shirley Park Childrens Centre”, at Malling Close.",
+   "Buildings stand close on three sides, east, north-west and south-west. Not one carries a name or an address. A residential area lies to the south-west.",
+   "A close that closes on a centre. The map says no more than the name, and the name says a great deal: an oasis, an academy, a park, a centre, in one line."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -3429,6 +3577,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-498595c208dffb21": {
+  "paragraphs": [
+   "Fairfield Path meets Chichester Road. Asphalt, lit at night. A recreation ground opens to the west.",
+   "Next to you on the west is “Park Hill Junior School”, run by Greenshaw Learning Trust. Its address is Stanhope Road. The map adds, where a value might be, “None”.",
+   "A start of 1 April 2017 is given for it. Elsewhere it is a “school in Croydon, UK”, and that is all they say of it. Here it is a school at a corner, between a path and a road, with its address on another street."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-4a409008713a3eb9": {
   "paragraphs": [
    "Here a service way stops at a parking entrance. A commercial area; the residential area lies north.",
@@ -3443,6 +3600,15 @@
    "Green Court Gardens ends here: asphalt, lit at night, 30 mph, the residential area to the north.",
    "Underfoot, the map has put a point and named nothing. South, beside you, is the golf course, “Shirley Park Golf Club”. These two are nearest, and I leave the others where they are.",
    "The club gives its hours: “Tu-Sa 08:00-23:00; Su,Mo 08:00-22:00”. The gardens give none. A street called Green Court Gardens, ending at a golf club."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-4ab085d20fe1ca3b": {
+  "paragraphs": [
+   "An unnamed footway, a residential area, and a grass area to the south.",
+   "Here is the kindergarten at Malling Close, “Oasis Academy Shirley Park Childrens Centre”. To the east, a few steps away, a building. One kindergarten, one building, one grass area, one footway; somewhere about there the count slips, and I let it, and go on.",
+   "Malling Close is its address. An unnamed footway is yours."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -3470,6 +3636,15 @@
    "A service way without a name, and parking on every side of it. The residential area lies to the east.",
    "West, near, a sports centre: “Sandilands Club”. About 30 metres south, a wood, as it stood in December 2019; the map has nothing newer of it.",
    "Parking, a club, a wood. Of the three, only the club has a name to give, and it gives it: “Sandilands Club”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-4bf5d9736388b623": {
+  "paragraphs": [
+   "The unnamed service ends here, in a residential area. North, beside you, stands “The BRIT School”, a school at 60 The Crescent.",
+   "It is said a company was registered here in April 1989, “THE BRIT SCHOOL LIMITED”. It is said the school began on 22 October 1991. In June 2024 someone asked for the “Installation of Air Source Heat Pumps to rooftop of main building.” The answer came back “Approved”.",
+   "First the company, then the school, then the rooftop."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -3548,6 +3723,16 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-4eb20b0f1a605cce": {
+  "paragraphs": [
+   "An unnamed service, running from Dagnall Park to a dead end.",
+   "A few steps south, a gate, of September 2019, then and now.",
+   "About 25 metres further south, two names the map lacks and others keep. It is said that “Nazz Grills” was rated 4 for food hygiene, in October 2025, and “Moorish Caribbean Grill” 5, in April 2025. The later inspection, the lower figure.",
+   "The service goes on to its dead end; the grills stay where they are said to be."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-4ebea8dd435d5e42": {
   "paragraphs": [
    "An unnamed service road, at its end. No surface given, no limit.",
@@ -3572,6 +3757,16 @@
    "An unnamed trunk ends here, and it holds more than I will give. Asphalt, lit at night, 30 mph; a residential area to the north.",
    "Where you stand, a point the map has set down without a word about what it is.",
    "To the south, beside you, the tram, run by Transport for London. A point with no name and a line with a plain one. I end on the line: “London Trams”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-4f2cd5e9dceaa958": {
+  "paragraphs": [
+   "Stanhope Road, 20 mph, a recreation ground off to the east.",
+   "East, beside you, the school, “Park Hill Junior School”, run by Greenshaw Learning Trust; a “school in Croydon, UK” from 1 April 2017, by others' reckoning. Also east, a few steps on, a pitch area.",
+   "South, a post box, run by Royal Mail, reference “CR0 247”. West, a building, and only that.",
+   "The post box has a reference; the building has none."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -3636,6 +3831,15 @@
    "The unnamed service ends in a parking space, which is all around you. A retail area lies north-west.",
    "I give the nearest and stop. North-west, beside you, at 112 Cherry Orchard Road, a pub: “The Orchard”. Hearsay makes it a pub in Croydon, London, England, UK. Someone wrote down that “CROYDON TAVERNS LIMITED” has been registered here since January 2006.",
    "Those who inspect kitchens gave it a 1, in March 2026. The ledger reads: a pub, a company, a rating of 1. The orchard is in the name twice, once the road's and once the pub's."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-510a071fd0a30bd7": {
+  "paragraphs": [
+   "Stanhope Road, at 20 mph.",
+   "On the east side, beside you, is “Park Hill Junior School”, a school at Stanhope Road, run by Greenshaw Learning Trust. The map adds a single word: “None”. Elsewhere it is listed as a “school in Croydon, UK”, opened on 1 April 2017. A first of April for a beginning.",
+   "Then buildings, unnamed, each a few steps off: east, north-west, west."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -3748,6 +3952,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-522bf5bf0128e817": {
+  "paragraphs": [
+   "An unnamed footway, heading for Altyre Road, and here you are at the foot of a building of 25 storeys. “Altitude 25”, it says, and its address is “Altitude 25 Altyre Road”, the name and the number folded together.",
+   "They say it is an “apartment tower; Croydon's tallest building”, begun in 2009. The map held it so in March 2020.",
+   "North-east, beside you, a second apartments building, nine storeys, last put down in February 2020, a month before its neighbour. Nine beside twenty-five. A residential area lies to the north."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-523410fc567beecb": {
   "paragraphs": [
    "An unlit footway, asphalt, with no name. There is more here than this. A residential area lies to the west and a meadow to the south.",
@@ -3831,6 +4044,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-5448344c84fed1e4": {
+  "paragraphs": [
+   "Selborne Road, heading for Waldegrove, at 20 mph.",
+   "Beside you to the north stands a school, “Archbishop Tenison's Church of England High School”. The map gives it as Anglican and not for wheelchairs. Others list it as a “school in Croydon, UK”, begun in 1714.",
+   "Nothing else is close enough to give. A school begun, they say, in 1714, on a road with a limit of 20 mph: the oldest figure here and the plainest, side by side."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-54583c7e0e3a83ee": {
   "paragraphs": [
    "An unnamed service ends here, in a residential area.",
@@ -3885,6 +4107,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-5644357d73bbbab5": {
+  "paragraphs": [
+   "Stanhope Road, 20 mph.",
+   "To the east, beside you, a school at Stanhope Road, “Park Hill Junior School”, run by Greenshaw Learning Trust. Next to its name the map writes “None”, and leaves it there. In other hands it is a “school in Croydon, UK”, begun on 1 April 2017.",
+   "A gate, also to the east. Two things that way, or three if the “None” is counted; I lose the tally here and resume with the gate. A gate stood here in August 2020. A gate stands."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-566627bf8dbefa2c": {
   "paragraphs": [
    "Morland Road, asphalt, lit, pavement on both sides, 30 mph; a residential area to the south-east.",
@@ -3903,20 +4134,20 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-56e4bd6dcf2ed055": {
-  "paragraphs": [
-   "An unnamed service, with a residential area to the north. All around, parking.",
-   "Beside you, to the west, is a sports centre, “Sandilands Club”. A little to the north-west, a gate.",
-   "You are in the parking, then, not beside it. The club is close enough to touch and the gate a few steps further. The map gives the club a name and the parking none, and the gate stands at the edge, on the way to the houses or away from them. “Sandilands Club”, to the west."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-577d6380ba5ed3bd": {
   "paragraphs": [
    "Fine gravel underfoot. The service is unnamed and heads for a dead end.",
    "To the south-east lies a rail called “London Bridge to Windmill Bridge Junction”, run by Network Rail and marked “LBW”. The map draws it twice. Past those two the figures fail me; back, then, to the first.",
    "The rail's name runs from one place to another. The service has no name at all, and runs only to a dead end."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-5820bd6dd0eeb31d": {
+  "paragraphs": [
+   "Fairfield Road, asphalt, lit at night, with pavement on both sides and a limit of 20 mph. A residential area lies to the north.",
+   "Beside you to the south is “Park Hill Recreation Ground”, and a fence beside it. One, two; after that the tally slips from me, and the fence is where I begin again.",
+   "Off the map, it is only a “park in the United Kingdom”. The map has it as a park, and the fence along the road."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -3953,6 +4184,15 @@
    "Bingham Road, asphalt, at 20 mph, with the residential area keeping to the south. The map is busier here than I can follow.",
    "Beside you to the south stands a gate, or stood one in October 2021, the month it was set down. Shut or open, it does not say.",
    "A few steps east runs the tram, “London Trams (Elmers End Branch)”, which Transport for London runs. A gate that keeps its month, and a branch that keeps its name."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-59477bf934916c7f": {
+  "paragraphs": [
+   "St Bernards meets Chichester Road, and the limit is 20 mph. To the north lies a recreation ground.",
+   "Beside you on that side, “Park Hill Junior School”, with its address on Stanhope Road, a road that is not here. Greenshaw Learning Trust runs it. After the name the map writes a single word, “None”.",
+   "Hearsay puts its beginning at 1 April 2017. Elsewhere it is filed as a “school in Croydon, UK”. A saint's name on the corner, a school's beside it."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -4077,11 +4317,29 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-5d0f6f3317fbbd87": {
+  "paragraphs": [
+   "On Sydenham Road the asphalt is lit and the limit is 20 mph; the road goes on to a dead end. A residential area lies west.",
+   "About 25 metres north is a speed table. About 25 metres south is a speed hump. Table and hump, an equal way off each side.",
+   "East, beside you, “Broadmead Primary School”, number 366, run by The Pioneer Academy. It is listed elsewhere as a “school in Croydon, UK”, begun, they say, on 1 June 2014."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-5d3cd849ca4231ea": {
   "paragraphs": [
    "Woodside Green and Morland Road meet here, on asphalt, lit, with pavement on one side only. The limit is 20 mph. A residential area lies south; a flowerbed and a meadow lie north-east.",
    "Beside you to the north-east is the park, “Woodside Green”, the same name as the road. A little further that way, a memorial: “Woodside War Memorial”. Those are the nearest, and I take you no further among the rest.",
    "A road and a park, one name shared between them, and the memorial set down beside both."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-5d8df0c3d593259c": {
+  "paragraphs": [
+   "An unnamed cycleway, asphalt, unlit, bound for a dead end.",
+   "All around is a park, “Ashburton Playing Fields”. The map's date for it is June 2017, and it holds the park today: a park then, a park since. Others call it a “playing field in Woodside, London”, the many fields come down to one.",
+   "The cycleway goes into the fields and stops there, with nothing on the far side that the map will give."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -4213,6 +4471,24 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-6021c83da68630b3": {
+  "paragraphs": [
+   "Selhurst Road, between Dagnall Park and Selhurst New Road. Asphalt, lit, 30 mph. A residential area lies to the south.",
+   "To the south-west, beside you, a stop position called “Selhurst New Road”. To the west, beside you as well, a bus stop of the same name, with a bench, a bin and a shelter, and the reference “72195”.",
+   "The road, the stop position, the stop: one name said twice, or three times; I lose the count, then find it by the shelter. The shelter stands, and the name stands over it."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-60a96a46ac188939": {
+  "paragraphs": [
+   "Dagnall Park, asphalt, 30 mph, inside a residential area.",
+   "A few steps north is a kindergarten at 23 Dagnall Park, “Selhurst Children's Centre”. The street is its address and the street is where you stand.",
+   "Its food hygiene rating is 4, given in October 2025; those who inspect kitchens hold that. A centre for children, and a figure set beside it by others."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-60f0326c71996111": {
   "paragraphs": [
    "Addiscombe Road meets Canning Road. Asphalt, lit at night, pavement on both sides, 20 mph.",
@@ -4237,6 +4513,15 @@
    "East, beside you, a postcode the map does not have: “CR9 2LL”. Its use ran, they say, between January 1980 and February 2003.",
    "North-west, two rails run by Network Rail, both with the reference “NFE”: “Down Wallington” and “Up Wallington”. The footpath has a number; the rails have a direction each.",
    "About 30 metres east, a substation, run by UK Power Networks."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-61cc5401737da582": {
+  "paragraphs": [
+   "Coleridge Road comes to its end. The limit, while it lasts, is 20 mph.",
+   "Beside you to the north, two names stand off the map. “Ashburton”, they say, is a “former ward in the London Borough of Croydon”. “Addiscombe East” is said to be an “electoral ward in the London borough of Croydon”, begun in 2018.",
+   "The road ends between a ward that was and a ward that is. The map does not mark where one gives way to the other."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -4327,15 +4612,6 @@
    "Adams Way, at 20 mph. The map gives nothing else here, neither surface nor light.",
    "To the south-west, a few steps off, others have written down a “Blackbird”, a “House Sparrow”, a “Robin” and a “Magpie”. Each was seen here in January 2023, and none of them is on the map.",
    "Adams Way has its name; the four have theirs, and the same January for every one of them."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-64a39ffa4bd37e59": {
-  "paragraphs": [
-   "A path without a name ends here, with homes to the south.",
-   "North-east, near, flats named “1-61 Academy Gardens”; to the north an entrance. North-west lie two bare addresses: 30, close, and 32-35, about 25 metres on. Their last entry is October 2013, and they are given to me as they were then.",
-   "Here the homes are an area, and the numbers stray from their street. The flats alone are named."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -4439,15 +4715,6 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-66efb6f604810ea3": {
-  "paragraphs": [
-   "The footway runs out here, unlit and unnamed, on asphalt, with houses off to the north-west.",
-   "South-east, close by, there is a crossing; there was one in January 2021, at least. Beside it a “Swift” was seen, they say, in June 2022.",
-   "A crossing, a swift, and then I lose the count, and pick it up again at the crossing. The swift and the crossing: both of them go over."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-66f39f4918d0c2ad": {
   "paragraphs": [
    "On “Addiscombe Recreation Ground” the footways go unnamed, and this one is asphalt.",
@@ -4512,20 +4779,20 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-68f7a9f786cdef97": {
-  "paragraphs": [
-   "Sandilands ends here. Asphalt underfoot, 20 mph, houses to the north-east and a transport area to the west.",
-   "The map puts a point where you stand and leaves it nameless. Just north-west lies a tram the map names “London Trams (Elmers End Branch)”; Transport for London runs it.",
-   "I give you those and let the others go. The point has no name; Sandilands has, and so has the branch."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-68fde15049ba54e3": {
   "paragraphs": [
    "An unnamed path, grass underfoot, with a residential area to the north.",
    "All around is a park, “Lloyd Park”. Some list it as a “public park in Croydon, UK”, begun, they add, in 1927. The map gives only park and name, and leaves the year to someone else.",
    "A path of grass through a park, and the path itself without a name. The park keeps the name for both."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-6952d930f7c6b4ce": {
+  "paragraphs": [
+   "Sydenham Road, lit asphalt, 20 mph, a residential area to the west. Beside you to the south is a speed hump, and just past it, “Broadmead Primary School”, at 366, run by The Pioneer Academy, begun, they say, on 1 June 2014.",
+   "To the north-east, two postcodes absent from the map. “CR9 2PE” ran, so it is said, from January 1980 to January 1995. “CR9 2PF” from May 1994 to January 1995.",
+   "One came late, and both ended in the same month. Their letters differ by one, and their years overlapped by a few months."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -4572,6 +4839,24 @@
    "An unnamed service road, between Addiscombe Road and a dead end. Asphalt, unlit, in a commercial area. More is crowded in than these lines carry.",
    "Right where you are, the map puts a point and says nothing of it.",
    "And right where you are, too, a commercial building of two storeys at 12-18 Addiscombe Road. They say it is an “office block in Croydon, south London”, begun in 1970. On the building itself, the name “No. 1 Croydon”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-6b906b7934ac1d76": {
+  "paragraphs": [
+   "Stanhope Road, 20 mph, with a recreation ground to the east.",
+   "The school is there too, beside you, “Park Hill Junior School”, run by Greenshaw Learning Trust. On the map, after its name, the single word “None”. Someone dates it to 1 April 2017 and files it as a “school in Croydon, UK”.",
+   "On the other side, buildings: south-west, west, and about 25 metres south-west again. The map names none of them, which is not the same as calling one “None”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-6bbe408b64bc6630": {
+  "paragraphs": [
+   "Willow Wood Crescent meets Selhurst Road. Asphalt, 20 mph, a residential area off to the north-west.",
+   "A few steps south is a bus stop. It has a bench, a bin and a shelter, and the reference “57831”. Its name is “Selhurst New Road”, a road that is neither of the two that meet here.",
+   "So the corner holds two names and the stop brings a third. The crescent keeps its own."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -4830,6 +5115,16 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-71d227189fa1321f": {
+  "paragraphs": [
+   "An unnamed footway in a residential area.",
+   "To the south-west, beside you, the kindergarten at Malling Close, “Oasis Academy Shirley Park Childrens Centre”. A few steps north-west, a tram, as the map has it, “London Trams (Elmers End Branch)”, run by Transport for London.",
+   "The names here run long: an academy, a park, a centre, a branch. I count them and the tally slips; I start again from the tram.",
+   "A branch with an end in its name, and a footway with no name at all."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-71e9b8c8584f5468": {
   "paragraphs": [
    "An unnamed service road, nothing said of its surface. There is a good deal near it; I take a little.",
@@ -5065,22 +5360,21 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-76bd2a12a2f89cdb": {
+  "paragraphs": [
+   "Cotelands runs here between Pageant Walk and Crusader Gardens, at 20 mph. A pageant at one end, a crusader at the other, and a short street holding them apart.",
+   "To the south-west lies a recreation ground, and against it a school, “Park Hill Junior School”, given an address on Stanhope Road though you are not on Stanhope Road. It is run by Greenshaw Learning Trust. Under its name the map writes one more word: “None”.",
+   "Off the map it goes by “school in Croydon, UK”, with a beginning given as 1 April 2017. A school begun on the first of April. I set the date down as it was given."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-777cbc4fc529d4bc": {
   "paragraphs": [
    "A path with no name, grass underfoot. A residential area lies to the north-west.",
    "Right here, “Woodside Green”, a park. Right here too, a street cabinet, standing in the park, or the park lying around it; the map does not choose.",
    "The park, the cabinet, and from there the sum runs off from me. I start over with the cabinet.",
    "A green, a cabinet in it, and the residential area keeping to the north-west."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-779452a287013597": {
-  "paragraphs": [
-   "Parkview Road meets Lower Addiscombe Road, asphalt and lit, pavement both sides, 20 mph. Homes lie south-east of the corner, and the “Addiscombe Village shopping area” north-west of it.",
-   "Nearest, a crossing south-east and bicycle parking east. A few steps west, the bus stop “Parkview Road”, reference “77192”, which in January 2013 went by “Park View Road (CR0)”.",
-   "Just north, at 311-313 Lower Addiscombe Road, a convenience shop, “The Co-operative Food”, open “Mo-Sa 07:00-22:00”. It was “Co-operative Food” in January 2021; I cannot say which name it trades under. Those who inspect kitchens gave it a 5 in October 2025, they say.",
-   "The rest I leave without a tally, the “Addiscombe Exchange Post Office” among it."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -5139,6 +5433,16 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-7a8b20970a205fb7": {
+  "paragraphs": [
+   "An unnamed footway through a residential area, a grass area to the south.",
+   "Right here, the kindergarten at Malling Close: “Oasis Academy Shirley Park Childrens Centre”.",
+   "The buildings fall away to the west and north-west: one a few steps west, one a few steps north-west, one about 25 metres north-west. None of the three is named.",
+   "The footway passes through the long name and out the other side of it."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-7a9825591ea1525d": {
   "paragraphs": [
    "Gloucester Road. Asphalt, lit, 20 mph. Residential on this side; industrial to the west.",
@@ -5148,11 +5452,29 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-7ab392415d4e8f22": {
+  "paragraphs": [
+   "Chichester Road, between Stanhope Road and Alpine Close, 20 mph. A recreation ground lies north-west.",
+   "Next to you, that side, a school at Stanhope Road: “Park Hill Junior School”, run by Greenshaw Learning Trust. Its beginning, as others give it, was 1 April 2017; they file it under “school in Croydon, UK”.",
+   "Stanhope Road at one end of this stretch, and Stanhope Road in the school's address. The road you stand on gets no mention from it."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-7ab691c314619527": {
   "paragraphs": [
    "An unnamed footway, asphalt, lit at night, through a residential area; a flowerbed lies to the east. More stands about than I name.",
    "Eastward, a short way, the park begins: “Woodside Green”. In the same direction and about as near, a memorial.",
    "Park and memorial lie the same way from you, the same short distance off. The green has the one name; the memorial takes the first word of it and adds two more: “Woodside War Memorial”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-7b9d9116a0edfc25": {
+  "paragraphs": [
+   "An unnamed footway in a residential area. It is fuller here than I will say; two things will do.",
+   "Beside you, to the west, a building, which the map leaves unnamed, plainly and without apology.",
+   "All around you is a kindergarten at Malling Close, and that one carries name enough for both and to spare. I give it whole: “Oasis Academy Shirley Park Childrens Centre”."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -5284,11 +5606,29 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-7feb78c5b89ce3aa": {
+  "paragraphs": [
+   "An unnamed service ends here, in a residential area, between two terraces: one to the west, beside you, one to the east, a few steps off.",
+   "To the north-west is “Jose Bakery”, which the map does not have. Those who inspect kitchens rated its food hygiene 5, in January 2026.",
+   "About 25 metres north-west, bicycle parking. The map has the parking and not the bakery."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-800a52ec7bce06c9": {
   "paragraphs": [
    "Sandilands meets Fitzjames Avenue. Asphalt, 20 mph, a residential area to the west.",
    "West, close by, a point the map marks and does not explain. There was such a point in October 2018.",
    "North-west, an address: 12 Sandilands, also from October 2018. Those who hear what is planned say that in August 2026 someone asked for the “Conversion of garage into habitable space”, with a “two-storey rear extension”. It was “Approved”. The map has the number; the rest is said elsewhere."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-8024a87b32711ed2": {
+  "paragraphs": [
+   "Stanhope Road, Fairfield Path and The Avenue meet here, at 20 mph. Grass lies to the south-east.",
+   "On that side, close against you, stands “Park Hill Infant School”, at Stanhope Road, run by London Borough of Croydon. Elsewhere they list it, briefly, as a “school in Croydon, UK”, and add no date.",
+   "To the north-west, close by, a bollard. Those two are all I offer; the corner holds others, and they can stay uncounted. Three roads meet at a school and a bollard."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -5457,15 +5797,6 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-846c1a7d34ae07ff": {
-  "paragraphs": [
-   "East India Way, asphalt, 20 mph, homes about you and a retail area to the west.",
-   "A few steps north there is bicycle parking. A few steps west, where the map shows nothing, someone wrote down “D A Lindsay & Sons Ltd”, a “funeral director”, begun on 10 February 2009.",
-   "I give you those two and let the others pass. A funeral director, with its own beginning written down to the day."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-84be260e36093d33": {
   "paragraphs": [
    "Bingham Road again, asphalt, 20 mph, the residential area to the south. Much is close; I keep to two.",
@@ -5561,6 +5892,15 @@
    "Sandilands, between a dead end and Fitzjames Avenue. Asphalt, 20 mph, a residential area to the east.",
    "East, a short way off, an address at 5 Sandilands. It stood there in October 2018, and the map has had no fresh word of it since.",
    "Someone wrote down that a company is registered here, “W&S CONSULTING LTD”, since November 2018. The map's account of the address stops in October; the company's begins in November. One month apart, and the same door between them."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-87d2e4cb2cd0a77a": {
+  "paragraphs": [
+   "An unnamed service, running to a dead end through a residential area. Beside you to the east is a hotel of six storeys at 7 Altyre Road, “Croydon Park Hotel”. The map, holding it in May 2019, says wheelchairs can use it.",
+   "The ledger runs so. Sold for £29,800,000 in September 2018. In September 2026, an application to fit “37 additional hotel rooms” into the ground floor and mezzanine; “Approved”.",
+   "Just east, a postcode, “CR9 5AA”, they say in use from July 1983 to May 2024. The hotel stays on the map; the postcode went out of use."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -5709,6 +6049,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-8b5cd6d67498fe60": {
+  "paragraphs": [
+   "An unnamed footway inside “Selhurst Depot”, a railway area, with another railway area lying beyond to the south-west.",
+   "Close that way runs a rail, “Norwood Yard and Selhurst Workshop Sidings”, reference “NYD”. About 30 metres further, a second: “Selhurst to Norwood Fork Junction Line”, reference “SNF”. Network Rail runs both.",
+   "One name puts Norwood first, the other Selhurst. Each is laid beside the other, and neither gives way."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-8bb1e2631a54c41d": {
   "paragraphs": [
    "A cycleway with no name, asphalt, unlit, a residential area to the north-west.",
@@ -5750,15 +6099,6 @@
    "Leyburn Gardens meets Addiscombe Road. 20 mph. A fuller corner than I give it.",
    "Right here, the tram, “London Trams”, run by Transport for London.",
    "Right here too, a tram level crossing. A road and a line share a single point, and the point has two entries, one for the line and one for the crossing. The crossing takes no name; the line has one: “London Trams”."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-8c1ca5e358cf5625": {
-  "paragraphs": [
-   "Elgin Road, running towards Lower Addiscombe Road: asphalt, lit, pavement either side, 20 mph. More is here than I set down.",
-   "To the north-east, 58 Elgin Road. It was recorded in June 2014 and stands in the record so.",
-   "To the south-east, 54 Elgin Road, recorded the same June. In March 2024, they say, someone applied for the “Erection of single storey rear outbuilding.” The answer was “Approved”. A house, and behind it, if it was ever built, something smaller: 54 Elgin Road."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -5817,6 +6157,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-8db40cea242a6e31": {
+  "paragraphs": [
+   "Fairfield Path, asphalt, lit, heading for Stanhope Road through a residential area. You are standing on parking. There is more parking about 30 metres east.",
+   "North, beside you, “Alden Court”, at 1 Fairfield Path, a social facility. West, close, a building at 2 Fairfield Path. One and two, side by side.",
+   "In May 2024, they say, an application covered the trees: a yew, a willow, plane and chestnut, each by number. “Tree NO 690 - Horse Chestnut - Crown lift to 5m over highway”. It was “Approved”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-8df6793fb0e67881": {
   "paragraphs": [
    "An unnamed footway, asphalt and unlit. There is more here than the two I name.",
@@ -5831,6 +6180,15 @@
    "Capri Road ends here, still asphalt, still lit, footway both sides, 20 mph right to the finish.",
    "On the north-west, adjoining, is the edge of “Addiscombe Railway Park”. They say it was begun in 1998, and that it is a “park in London Borough of Croydon, United Kingdom”.",
    "The road stops and the park takes up the ground. Of the railway in the park's name, the map says nothing at this end of the road."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-8e4643f5c781d904": {
+  "paragraphs": [
+   "Winchet Walk, between Knowle Close and Medway Close, in a residential area.",
+   "To the west, a few steps away, a wall, and a playground. About 25 metres off, still west, a pitch.",
+   "To the east is “CR0 7ZX”, which the map does not have. Those who draw the wards and number the streets give it dates: in use from October 2000 to October 2000. Begun and ended within the one month, and given, if to anything, briefly."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -5867,15 +6225,6 @@
    "Dirt underfoot, and no lights. You are on Addiscombe Railway Park, somewhere between East India Way and Dalmally Passage.",
    "Under your feet runs the abandoned “Elmers End and Addiscombe Branch”, “EEA” its reference. They say it is an “abandoned railway”. The path is the branch, or the branch is the path.",
    "The park is all around. It is said to be a “park in London Borough of Croydon, United Kingdom”, begun in 1998. A few steps north-west, a terraced house."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-8fdbdc642789f719": {
-  "paragraphs": [
-   "Deepdene Avenue, towards Selborne Road. Asphalt, lit, 20 mph. A residential area to the east. I set down only some of it.",
-   "Right here runs a tram, “London Trams (New Addington Branch)”, run by Transport for London. At that spot once more: the branch, and Transport for London. Two of them, at the very spot, or one entered twice.",
-   "The avenue has houses on one side and rails underfoot, or near enough. The branch carries part of its name in brackets. Deepdene Avenue runs on, and so does “London Trams (New Addington Branch)”."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -5922,6 +6271,15 @@
    "Gloucester Road, heading for Roden Gardens. The limit is 20 mph. A residential area lies to the east.",
    "Right here, a speed hump. Beside you to the west, a park, “King George's Field”. I went to count what lay past the park and lost the tally before it was a tally.",
    "Back to the road, then. A hump underfoot, a residential area on one side, and on the other a field that is, by its name, “King George's”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-9094b39b84ffe093": {
+  "paragraphs": [
+   "Selhurst Road, asphalt, lit, 30 mph, heading for Willow Wood Crescent. A residential area lies to the west.",
+   "To the south-east, a few steps off, the map has nothing. Others have “Selhurst War Memorial”. One says it is a “war memorial in London”. Someone else wrote down that it was listed, grade II, in February 2017.",
+   "Two hands have set it down and the map has left it out. It is kept by them, and not by the map."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -5981,6 +6339,25 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-9271faa40a6d6ece": {
+  "paragraphs": [
+   "Dagnall Park, asphalt, 30 mph, residential to every side.",
+   "Beside you to the east, a gate. A gate in September 2019; a gate on the map today.",
+   "A few steps south-east, two places the map does not have, entered by those who inspect kitchens. “Moorish Caribbean Grill”: 5, in April 2025. “Nazz Grills”: 4, in October 2025. A grill and grills, one point apart.",
+   "To the south there is a crossing."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-93054512d11eb8e3": {
+  "paragraphs": [
+   "The unnamed footway ends here, still within “Selhurst Depot”, a railway area, with a second railway area against it to the south-west.",
+   "The industrial building is no longer beside you but at you, right here. “Repair Shop”, it says. A crossing shares the spot with it, and neither makes room for the other on the map.",
+   "Beyond, to the south-west, the rail “Norwood Yard and Selhurst Workshop Sidings”, run by Network Rail, reference “NYD”. The footway gives out short of the rail."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-933194d51fb8668e": {
   "paragraphs": [
    "A service road with no name, in a commercial area. To the south, right beside you, is a warehouse; there was a warehouse when it was last recorded, in May 2014.",
@@ -6023,6 +6400,15 @@
    "South-east, at 80 Brampton Road, “Robert Fitzroy Academy”, run by REAch2 Academy Trust. The map adds one word to it: none. Elsewhere it appears as a school in Croydon, UK, begun on 1 September 2012.",
    "North-east, the bus stop “Brampton Road”, lit, reference “77991”, and near it a point given no description.",
    "About 25 metres east is “Davidson Pre School”, which the map leaves out. Those who inspect kitchens rated it 5 in November 2024. The archbishop's name, twice on one street: once for the road, once for the pre school."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-93f085c1b7e6647d": {
+  "paragraphs": [
+   "Bullrush Close meets Gloucester Road here, at 20 mph. A terrace lies beside you to the south-west, and a speed hump just south.",
+   "North-west, beside you, the pub: “Two Brewers”, at 221 Gloucester Road, run by Shepherd Neame. Elsewhere they call it a “pub in Croydon, London, England, UK”, setting it in four places at once.",
+   "The ledger. Food hygiene rated 5, in November 2023. Sold for £492,000, in February 2025. Through the rating and the sale the name stays “Two Brewers”."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -6238,6 +6624,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-995ab051a088f4ef": {
+  "paragraphs": [
+   "Billinton Hill, on asphalt, in a commercial area. The limit is 10 mph.",
+   "Beside you to the west is a bus station, “East Croydon Bus Station”. Wheelchairs can use some of it, which part being left unsaid. A few steps south, a give way.",
+   "East of you, a few steps off, a point is marked and left at that. North-west, the same distance, it marks another and says the same nothing. Two blanks, one either side of a hill with a name."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-99eb5b3de4e55d5c": {
   "paragraphs": [
    "Cherry Orchard Road crosses Caithness Walk. Asphalt, lit, pavement on both sides; the limit is 30 mph. A commercial area keeps to the east.",
@@ -6253,6 +6648,24 @@
    "An unnamed path ends inside, or under, a block of flats: “31-59 Fisher Close”, all around you.",
    "Close at the south-west, the address 1-29, last recorded in October 2013. About 30 metres south-east, the other block, “1-61 Academy Gardens”. About 30 metres north-west, another address, 56-59, recorded in the same October.",
    "Numbers overlap here. Fisher Close has 31 to 59; elsewhere 56-59 is given on its own; Academy Gardens claims 1 to 61. Which 56 is which, I could not tell you."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-9a5fd9ee81c39299": {
+  "paragraphs": [
+   "Hastings Place stops short here, at 20 mph, in the residential area, with retail off to the south. Not everything near gets a mention.",
+   "North-east, close by, a postcode the map has dropped: “CR9 6BL”. It ran, they say, from December 1995 to January 2007.",
+   "South, a few steps on and absent from the map, “JD Kebab”, rated 5 for its kitchen in June 2025 by those who inspect kitchens. The last word goes to “JD Kebab”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-9a5fe206e4440a5e": {
+  "paragraphs": [
+   "Fairfield Path, asphalt and lit, with a residential area to the north. More lies about you than these few lines hold.",
+   "You are at “Alden Court”, 1 Fairfield Path, a social facility. Parking lies beside you to the north-west.",
+   "In May 2024, it is said, someone applied to reduce its trees, a London Plane among them: “Reduce secondary east side stem by 4m”. The answer, as given, was “Approved”. The trees are numbered, and the plane is “Tree NO 694”."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -6320,6 +6733,24 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-9bb02b5bfd09925d": {
+  "paragraphs": [
+   "An unnamed service ends here, and you are standing inside a school: “Broadmead Primary School”, at 366 Sydenham Road. The Pioneer Academy runs it. Off the map it is a “school in Croydon, UK”, so they say, begun on 1 June 2014.",
+   "Directly north, “King George's Field” begins. There is parking just to the south-west, and a residential area to the north-west.",
+   "About 30 metres east stands a fence, set down in June 2013 and not since. It stood a year before the school was begun, if both dates are right. Both may be."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-9be3503f60a1dc19": {
+  "paragraphs": [
+   "Alpine Close meets Chichester Road, 20 mph, a recreation ground to the north-west.",
+   "On that side, beside you, the school: “Park Hill Junior School”. The map puts it at Stanhope Road and has it run by Greenshaw Learning Trust. One record has it as a “school in Croydon, UK”, begun on 1 April 2017.",
+   "About 25 metres the same way, a pitch area. A school, then a pitch, both off the same side of the corner."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-9bffd343b4ae4667": {
   "paragraphs": [
    "Nihill Place ends here, on paving stones.",
@@ -6374,6 +6805,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-9d8789946eaec78c": {
+  "paragraphs": [
+   "An unnamed service, bound for a dead end. No surface is given for it, no lighting, no limit.",
+   "To the north, beside you, stands an industrial building. “Repair Shop”, it says. Nothing else is written on it.",
+   "A nameless service ends at a building whose only words are two. Between the road and the building, a short way, and nothing else set down."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-9da800632b5696df": {
   "paragraphs": [
    "An unnamed cycleway, asphalt and unlit, bound for Glenthorne Avenue. A recreation ground lies to the west, a residential area to the south.",
@@ -6393,11 +6833,29 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-9e986c8f488274b4": {
+  "paragraphs": [
+   "An unnamed path with grass underfoot, inside “Lloyd Park”, whose beginning, they say, was 1927.",
+   "Beside you to the east the map marks a point, silent as to its kind. It marked it in August 2019, and has left it unexplained since.",
+   "About 25 metres north lies a golf course, “Shirley Park Golf Club”. Its hours are given as “Tu-Sa 08:00-23:00; Su,Mo 08:00-22:00”. A park inside a park's name, and beside it a point that is only a point."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-9ee1f82ff3d6b542": {
   "paragraphs": [
    "An unnamed footway, asphalt. A residential area to the north. Much surrounds you; I keep to the plain things.",
    "All around is “King George's Field”, a park. Right here, a fence. The fence was last recorded in June 2013, and stands on the map as if that were yesterday. A fence in June 2013, and a fence today, on paper.",
    "The footway runs along it. Beyond it, on every side, “King George's Field”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-9eedc8c640275adf": {
+  "paragraphs": [
+   "An unnamed service, heading for a dead end inside “Selhurst Depot”, a railway area. Another railway area lies south-west.",
+   "Nearest, to the east, the industrial building, “Repair Shop”, as it says. To the south-west, the rail “Norwood Yard and Selhurst Workshop Sidings”, run by Network Rail, reference “NYD”.",
+   "Past those two I give nothing. A shop and sidings, side by side, where an unnamed service runs out."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -6484,6 +6942,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-a2383cf1dd039cc2": {
+  "paragraphs": [
+   "Fairfield Path, asphalt and lit at night, between Chichester Road and Stanhope Road. A recreation ground lies to the south-west.",
+   "Hard by you there stands “Park Hill Junior School”, run by Greenshaw Learning Trust, its address on Stanhope Road at the far end of this path. The map has one more word for it: “None”.",
+   "Elsewhere it passes for a “school in Croydon, UK”, begun on 1 April 2017. The path runs from one road to the other, and the school lies along it, addressed to only one."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-a2401e7d8ee6a2e0": {
   "paragraphs": [
    "Where Elgin Road and The Narrows meet: asphalt, lit, a pavement either hand, 20 mph, a speed hump underfoot. Other things are here; these will serve.",
@@ -6498,6 +6965,15 @@
    "An unnamed path. A residential area keeps to the north-west. The path is not said to be made of anything.",
    "All around: “Lloyd Park”. Others file it under “public park in Croydon, UK”, begun in 1927.",
    "Nothing further. No gate, no wood, no bench is entered at this spot. A path, a park, a date someone else gave. If the park was begun in 1927, the path may be as old or may be yesterday's. The map holds the name, and the name holds the place."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-a29b06c6c8ec6193": {
+  "paragraphs": [
+   "Sydenham Road and Burdett Road meet in a residential area. Asphalt, lit at night, 20 mph. An industrial area sits off to the south-east.",
+   "A terrace stands a few steps to the north-west. To the south, about as near, “King George's Field”, a park, with a speed hump on the way to it.",
+   "A second speed hump lies about 25 metres to the north. One hump either side of the corner, a field to one hand and a terrace to the other, and the corner held between them."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -6520,6 +6996,25 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-a2dfea72caa1fd2d": {
+  "paragraphs": [
+   "An unnamed service comes to an end here, a residential area to the north-east.",
+   "You are within a kindergarten at Malling Close, “Oasis Academy Shirley Park Childrens Centre”. It lies all around you.",
+   "Buildings stand close: one to the north-west, beside you; another north-west, a few steps further; a third to the south-west. Each is a building, by the map, and no more.",
+   "An academy, a park and a centre, all in one name, and three buildings with none."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-a2e79ee9b2121374": {
+  "paragraphs": [
+   "An unnamed service road ends inside the grounds of “The BRIT School”, at 60 The Crescent.",
+   "The ledger runs backwards from the roof: June 2024, an application, “Installation of Air Source Heat Pumps to rooftop of main building.”, and against it “Approved”. October 1991, the school begun, they say. April 1989, earlier still, “THE BRIT SCHOOL LIMITED” registered here.",
+   "South-east, a few steps off, a school of three storeys called “The BRIT School Zone 1”, a point that says “Cantean”, and a point that says nothing. The company came before the school, and the school before its zones."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-a34955ff2ffad9ed": {
   "paragraphs": [
    "Milton Avenue ends here. 20 mph to the last, a residential area around you, an industrial one to the south.",
@@ -6534,6 +7029,15 @@
    "Woodside Court Road, between Blackhorse Lane and Lower Addiscombe Road. A lit asphalt road at 20 mph. The “Addiscombe Village shopping area” is off south-east.",
    "Two postcodes the map lacks lie close. South-east, “CR9 6DR”, in use, they say, from January 1980 to March 2009. East, “CR9 6DN”, from January 1980 to October 2008.",
    "They began together and ended months apart. The street still answers to its name."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-a38c0f113bfe1388": {
+  "paragraphs": [
+   "An unnamed footway, paving stones underfoot, a residential area to the north.",
+   "You stand on parking. Beside you to the south is “Park Hill Recreation Ground”. Those are the nearest two, and they are all I will give; the others stay unnumbered.",
+   "Elsewhere it is set down only as a “park in the United Kingdom”, with no date and no town. Paving stones, parking, and then the ground itself."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -6656,6 +7160,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-a7aa64c277163051": {
+  "paragraphs": [
+   "Fairfield Road ends here, asphalt and lit at night, with pavement on both sides. The limit is 20 mph. This end holds more than I will give.",
+   "A residential area lies east. At your feet, a crossing, with tactile paving.",
+   "South, beside you, a park. Someone calls it a “park in the United Kingdom”, which is a large place to be in. The map is closer, and calls it “Park Hill Recreation Ground”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-a7c7f479ef907c76": {
   "paragraphs": [
    "Nameless, a service road gives out at this point. A residential area lies to the south-east.",
@@ -6719,6 +7232,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-a8bc6a861cda9111": {
+  "paragraphs": [
+   "An unnamed cycleway, unlit, heading for a dead end. A residential area lies to the north-west.",
+   "A few steps south-west there is a wood, or was in February 2021. All around is a park, “Ashburton Playing Fields”, as of June 2017, and called, by some, a “playing field in Woodside, London”.",
+   "The wood's month is later than the field's. Neither is this one. The cycleway runs on between them and stops."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-a8c7132734889801": {
   "paragraphs": [
    "Shirley Road. Asphalt, lit, pavement both sides, 30 mph, and a residential area to the west. I tell only the nearest part of what is here.",
@@ -6746,11 +7268,29 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-aaa93883cb4a99f7": {
+  "paragraphs": [
+   "Selhurst New Road meets Selhurst Road. The limit is 20 mph. A residential area lies to the north-west.",
+   "Nearest, to the south-east, a give way. Then, a few steps east, a bus stop with a bench, a bin and a shelter, and a reference, “57831”.",
+   "Past those I stop giving. Two roads share the word Selhurst here, and the stop keeps the one with New in it: “Selhurst New Road”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-aaf2068997c2243a": {
   "paragraphs": [
    "The footway ends here, at an entrance. Much is close by; I name little. A residential area holds it; a grass area lies off to the south-east.",
    "All around you, the community centre. Its address is given as St Luke's Church Hall Spring Lane, and its name as the first part of that.",
    "The nameless footway stops at the entrance to something named twice: “St Luke's Church Hall”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-ab6b6d5c56ae7041": {
+  "paragraphs": [
+   "Sydenham Road, asphalt, lit at night, 20 mph. This stretch is crowded, and I give only a little of it.",
+   "Westward, a residential area; to the north-east, an industrial area. Between the two, right where you stand, a speed hump, set across the asphalt as the map has it.",
+   "To the east, beside you, a park. The map calls it “King George's Field”."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -6836,15 +7376,6 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-ad593d72db7e13cc": {
-  "paragraphs": [
-   "Mapledale Avenue. Asphalt, 20 mph. A residential area lies to the east.",
-   "Right here is a gate. Past it, and all around, is “Lloyd Park”. Hearsay makes it a “public park in Croydon, UK”, its beginning put at 1927.",
-   "An avenue, a gate, and a park, each with its own name but the gate. The houses keep to the east side; the park keeps to the rest. The gate stands where they meet and takes no side. Begun in 1927, they say. The gate is given no year."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-ad627b864571c8fc": {
   "paragraphs": [
    "An unnamed service, in a railway area. Industry lies south-west.",
@@ -6860,6 +7391,15 @@
    "All around lies a park, “Ashburton Playing Fields”. It was a park in June 2017, the last time anyone set it down, and I will call it one still. Others list it as a “playing field in Woodside, London”. The two descriptions stand side by side and do not trouble each other.",
    "To the south, close, there is a wood. There was a wood in February 2021. Since then the record is silent and the wood, if it is there, has gone on without it.",
    "Field and wood: one for play, one for trees, and the cycleway between, with no lamp."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-aeacc510c46553d0": {
+  "paragraphs": [
+   "Stroud Green Way, between Delamare Crescent and Keats Way. The limit is 20 mph, and the map has nothing else to set beside you.",
+   "Just to the south-east, they say, a “Green Woodpecker” was seen, in February 2023. No bird is on the map.",
+   "A green way, and a green bird on it once. The two names met by chance, and the record kept them both."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -6902,11 +7442,30 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-af8b44e432ed4205": {
+  "paragraphs": [
+   "Dagnall Park, asphalt, 30 mph, a residential area to the east.",
+   "Beside you to the west, the kindergarten at 23 Dagnall Park, “Selhurst Children's Centre”, given a 4 for food hygiene in October 2025.",
+   "To the north-west, a few steps off, a building, and with it a name the map does not have: “Selhurst Nursery School and Children's Centre”. Elsewhere it is entered as a “school in Croydon, UK”, begun on 1 September 1998. The map has the centre; others have the nursery school and the centre both.",
+   "About 30 metres north, parking."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-b026469ec23e416e": {
   "paragraphs": [
    "Addiscombe Road ends here, on asphalt, lit at night, with pavement on one side. The limit is 20 mph, in a commercial area.",
    "Beside you to the north, “East Croydon Bus Station”, which wheelchairs can use some of. A few steps south, a commercial building of five storeys, its address Tolley House and no number.",
    "East, a few steps off, a give way; north-west, a crossing. Addiscombe Road stops with both of them in reach."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-b04fa5be22b6acde": {
+  "paragraphs": [
+   "An unnamed footway, asphalt and unlit, inside “Park Hill Recreation Ground”, with a residential area to the north-east. Some say it is a “park in the United Kingdom”.",
+   "North, a few steps away, the map gathers a fence, a gate and a crossing with tactile paving. The gate is of May 2012: there was a gate then, and there is a gate on the map now, which may be the same gate.",
+   "Fence, gate, crossing, in that order, all on the north side."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -7105,11 +7664,11 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-b6d647e26077a7b6": {
+ "v15-b676ed1e732400a2": {
   "paragraphs": [
-   "Northway Road, between Alderton Road and Morland Road, at 20 mph. Asphalt. Houses here, a retail area to the south.",
-   "A speed cushion lies to the south-east, at your side.",
-   "A few steps south-west is a church at 201a Morland Road. “Addiscombe Baptist Church”, it says, or said in March 2021, its last recording. So the church keeps a Morland Road address while you stand on Northway Road, a few steps apart."
+   "An unnamed cycleway, unlit, running to a dead end on asphalt. All around is a park, “Ashburton Playing Fields”, as it was in June 2017. One record gives it as a “playing field in Woodside, London”.",
+   "Right here, the map puts a hospital at Poppy Lane, “Shirley Oaks Hospital”. Right here too is a point it marks without saying what it is.",
+   "So two things share the spot, one named and one not. The cycleway leads past both and stops."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -7137,6 +7696,15 @@
    "An unnamed footway, asphalt, a residential area to the north. More lies close than I set down.",
    "To the north, right beside you, the map has marked a point and said nothing about it. To the south, just as close, it has said a good deal more: a tram, run by Transport for London.",
    "Between the silent point and the tram, the footway goes on without a name of its own. South of you: “London Trams”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-b840d2fa75406bf7": {
+  "paragraphs": [
+   "Sydenham Road, lit, asphalt, running to a dead end at 20 mph. Residential area to the west; recreation ground to the east.",
+   "Beside you on the east is “Broadmead Primary School”, number 366, run by The Pioneer Academy. A beginning of 1 June 2014 is noted for it elsewhere, a “school in Croydon, UK”.",
+   "About 30 metres north there is a speed hump, and about 30 metres south there is another. Between the pair, at an even distance, you have as near a centre as this road offers."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -7207,15 +7775,6 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-ba30c6cbeb1b9b9a": {
-  "paragraphs": [
-   "Unlit asphalt through the “Addiscombe Railway Park”, on towards Dalmally Passage. Houses lie south-east.",
-   "Three things share the ground under you: the park, a tree row last recorded in January 2021, and “Elmers End and Addiscombe Branch”, lettered “EEA”, and abandoned. One kept by its date, one by its letters, one by being abandoned.",
-   "Beside you to the north-west is “Woodside Primary School”, in the keeping of Inspire Partnership Academy Trust. Someone wrote down the day it began: 1 September 2016."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-ba93ebed70141cbc": {
   "paragraphs": [
    "Engadine Close comes to Chichester Road. The limit is 20 mph.",
@@ -7259,6 +7818,15 @@
    "East, a give way. South, a name outside the map: “KD'S Delight Catering”, rated 5 by those who inspect kitchens, it is said, in May 2026.",
    "South-east, “Pizza Napolitana”, a restaurant at 74 Lower Addiscombe Road, pizza and takeaway, as of August 2018. Word is four companies are registered there, the first since August 2019, among them “GRILLOS PROPERTIES LIMITED” and “ESPORTS WORLDWIDE LTD”.",
    "Close by, too, a postcode, “CR9 6HY”. In use from July 2000 to July 2000, they say. A postcode that began and ended in the same month."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-bb8c37a961f83bcc": {
+  "paragraphs": [
+   "An unnamed service ends in a residential area, and beside you, to the west, is a school at 60 The Crescent: “The BRIT School”.",
+   "What others hold of it, entry by entry. April 1989: a company registered here, “THE BRIT SCHOOL LIMITED”. 22 October 1991: the school begun, filed as a “school in Croydon, UK”. June 2024: an application, “Installation of Air Source Heat Pumps to rooftop of main building.” “Approved”.",
+   "The company comes before the school it names."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -7369,6 +7937,15 @@
    "Just south is a rail, “Norwood Yard and Selhurst Workshop Sidings”, run by Network Rail. Its reference is “NYD”. Three letters for a long name.",
    "South-west, as close, a second rail: “Selhurst to Norwood Fork Junction Line”, Network Rail again, reference “SNF”. One name begins at the yard, the other at the junction, and both begin at Selhurst.",
    "Rail beside rail, and the depot holds both. The last word goes to “Selhurst to Norwood Fork Junction Line”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-bd2cd8fa267c3bf7": {
+  "paragraphs": [
+   "On Malling Close, inside the bounds of “Oasis Academy Shirley Park Childrens Centre”, a kindergarten the map places at Malling Close itself.",
+   "Buildings stand close to the north, the south-west and the west. None is named, numbered or described.",
+   "A residential area lies to the south-west. The close and the centre share an address and, so far as anything here shows, a single ground."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -7500,15 +8077,6 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-c1cd1f4a46ab901d": {
-  "paragraphs": [
-   "Regent Place ends here among houses, with retail to the south. The limit is 20 mph.",
-   "North, a few steps away, the map has a speed bump, last recorded in August 2020. North-west it has a point with a single word on it, “Addiscombe”, and nothing to say what kind of thing it is. It is said the word stood for a “former terminus”.",
-   "About 30 metres south is “Croydon Cafe”, which the map leaves off. Those who inspect kitchens gave it a 4 in November 2024."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-c1ce3457ed486cae": {
   "paragraphs": [
    "Grass, and a path through it that has no name.",
@@ -7523,6 +8091,15 @@
    "Three roads meet here: Clyde Road, Grant Road, Lower Addiscombe Road. Asphalt and lamps, a pavement on each side, 20 mph. A residential area lies to the south, a retail area to the north.",
    "About 30 metres north, at 129 Lower Addiscombe Road, a pub: “The Alma Tavern”. They say its food hygiene rating is 5, given in April 2024.",
    "Three roads, one pub. The pub has a number and a name; the roads have names, and meet."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-c30adb4fe513a388": {
+  "paragraphs": [
+   "Owen Close, asphalt, 20 mph, running towards Sydenham Road. A residential area holds you; an industrial area lies to the south-east.",
+   "About 25 metres south-east is a park, “King George's Field”. About 25 metres north-west is a speed hump. The same distance either way, a field one side and a hump the other.",
+   "A close that opens onto a road. Between the industrial and the residential, the king's field."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -7573,6 +8150,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-c4894f7d98664e99": {
+  "paragraphs": [
+   "Chichester Road, between Alpine Close and St Bernards, at 20 mph. A recreation ground lies to the north-west.",
+   "Close by, that way, a school, “Park Hill Junior School”. The map puts its address on Stanhope Road, though you stand on Chichester Road. Greenshaw Learning Trust runs it. Elsewhere they list it as a “school in Croydon, UK”, and date it to 1 April 2017.",
+   "A school with its address on one road and its side turned to another."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-c5034c324c46e000": {
   "paragraphs": [
    "The end of Crusader Gardens. The limit is 20 mph, and the road stops here.",
@@ -7588,6 +8174,15 @@
    "To the north-west lies a residential area called “Morello”, and in it, a few steps off, an apartments building of 17 storeys. To the south-east, a construction area. There, they say, was a postcode, “CR0 6BH”, in use from January 1980 to May 2008, and then not.",
    "North-east, a crossing with tactile paving, as of August 2021.",
    "The orchard is in the road's name, and the 17 storeys are on the map."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-c538272ee7b654db": {
+  "paragraphs": [
+   "An unnamed footway, and you are inside a railway area the map calls “Selhurst Depot”. Beyond it, south-west, a second railway area stretches with no name of its own.",
+   "The rails a few steps off to the south-west and to the south both answer to “Norwood Yard and Selhurst Workshop Sidings”, a name with room in it for a yard and a workshop together. Network Rail runs them. Each carries the same reference, “NYD”.",
+   "To the south the map sets a switch among them, and says nothing further about it."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -7629,15 +8224,6 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-c601357a1d64fac0": {
-  "paragraphs": [
-   "On Blackhorse Lane, going towards Lower Addiscombe Road. Asphalt and street lights, pavement either side, 20 mph. The “Addiscombe Village shopping area” lies south-east; houses lie south-west.",
-   "Bicycle parking is beside you on the west. A crossing a few steps south-east has tactile paving, and a give way sits about 25 metres off in that direction.",
-   "Some 30 metres south-west a marked point bears the words “Addiscombe / Black Horse”. In January 2017 it bore “Park View Road (CR0)” instead. Black horse or park view: I go back and forth, and settle on neither. The first was last recorded in August 2018."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-c6c070eb9e43c544": {
   "paragraphs": [
    "Hermitage Lane, 20 mph. Right here, a point the map keeps without a word.",
@@ -7661,6 +8247,15 @@
    "An unnamed cycleway towards Tenterden Road, asphalt, unlit. A residential area lies south-west, a grass area south-east.",
    "Right here, “Ashburton Park”, as it was in June 2017, and a “park in the United Kingdom” by others' reckoning. A fence runs here too, set down in September 2012, well before the park's own entry.",
    "East, close, a playground that wheelchairs can use, recorded in September 2021. Of the three, the playground has the latest word: a fence from 2012, a park from 2017, a playground from 2021."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-c78eabc1e959fa26": {
+  "paragraphs": [
+   "Owen Close, asphalt, 20 mph. You are in a residential area, with an industrial area to the south-west.",
+   "Just south begins a park, “King George's Field”. About 25 metres north-east stands a terrace.",
+   "That is what the map gives here: a close, a terrace, a field. Between the residential and the industrial, the field holds the ground that neither does, and keeps a king's name on it."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -7752,6 +8347,15 @@
    "An unnamed cycleway, asphalt, lit, commercial on all sides but the east, where it turns residential.",
    "Right here: traffic signals. Right here as well: the tram, “London Trams”, run by Transport for London. Signals, tram, cycleway, the commercial area, the residential area, and I have counted the cycleway twice, or not at all. Again.",
    "Signals, and the tram, at one point. The map puts them in the same place and leaves them there."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-cab0d4fc6e970182": {
+  "paragraphs": [
+   "Here an unnamed service stops short, a railway area to the south-east that the map calls “AC Sidings”.",
+   "To the north, beside you, an industrial building. “Repair Shop”, it says, and says nothing more.",
+   "South-east, close, a rail named “Norwood Yard and Selhurst Workshop Sidings”, reference “NYD”; beside it a rail with no name at all, though Network Rail runs it as it runs the others. At about 25 metres the long name comes round again. Sidings inside sidings, and a shop for repair at the end of the road."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -7903,21 +8507,20 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-ce130d2cd9463e97": {
+  "paragraphs": [
+   "An unnamed service inside “Selhurst Depot”, a railway area, with another railway area to the south-west.",
+   "Two rails lie that way. The nearer is “Norwood Yard and Selhurst Workshop Sidings”, reference “NYD”. The other, a few steps further, is the “Selhurst to Norwood Fork Junction Line”, reference “SNF”. Network Rail runs both. One name puts Norwood first, the other Selhurst.",
+   "North is the industrial building that says “Repair Shop”. East, a crossing."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-ce8dc249b1d82be8": {
   "paragraphs": [
    "Deepdene Avenue. Asphalt, lit, 20 mph, with the residential area on the west.",
    "North-west, near, the tram: “London Trams (New Addington Branch)”, drawn twice, run by Transport for London.",
    "South-west is 4 Deepdene Avenue, an address as of August 2020. About 30 metres north-west, 2 Deepdene Avenue, entered that same August. Of number 2, the entries run so. Sold for £450,000 in April 2014. Two companies registered there, the first since June 2024: “BRIGHT BUDS LTD” and “AUREX LIVING LTD”. That much is said, not mapped."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-cea6201d606d6794": {
-  "paragraphs": [
-   "Elgin Road, heading for The Narrows. Asphalt, lit, pavements on both sides, 20 mph.",
-   "Right beside you to the north, they say, is “Addiscombe Military Seminary”, a “British military academy” begun in 1809. The map draws nothing of it.",
-   "West, a few steps on, is an address: 25 Elgin Road. Or there was, in June 2014, when it was last set down. After that I lose count of what stands here, and come back to the one number I am sure of.",
-   "An academy without a building, an address without a house. Elgin Road holds both."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -7936,6 +8539,15 @@
    "An unnamed path, grass underfoot, a residential area to the north.",
    "A wood to the north, a few steps away, entered in December 2019. Another wood to the east, as near, entered in July 2012. Seven years between them in the record and almost none on the ground.",
    "All around is “Lloyd Park”, which others set down as a “public park in Croydon, UK”, begun in 1927. Two woods, one park, three dates, and the path on its grass going between them as if dates were no concern of a path."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-cf888770086b8ac7": {
+  "paragraphs": [
+   "Grass underfoot, on a path that has no name. A wood lies a few steps north-east, dated July 2012 and no later.",
+   "The park around you is “Lloyd Park”: a “public park in Croydon, UK”, by one telling, begun in 1927.",
+   "About 30 metres south-east: a golf course, “Shirley Park Golf Club”, hours “Tu-Sa 08:00-23:00; Su,Mo 08:00-22:00”, and beside it a point the map marked in August 2019 without a word."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -7963,6 +8575,15 @@
    "Grant Road and Windermere Road cross. Asphalt underfoot. Lit at night. The limit is 20 mph.",
    "Nearest, south-east, are two addresses on Grant Road: 54 and 56. Both date their last entry to October 2013 and are, or were, only numbers. Of 56 someone wrote down that in November 2021 there was an application, “Erection of single storey side/rear extension.” It was “Approved”.",
    "Whatever else stands here, I leave it uncounted. 56 Grant Road, approved."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-d039964b4f546c8b": {
+  "paragraphs": [
+   "Long Lane, asphalt and lit, running towards a dead end. A residential area lies to the north-west.",
+   "A few steps north is “CR0 7ZX”. The map does not have it. By the reckoning of those who draw the wards and number the streets, its use ran from October 2000 to October 2000, and not after.",
+   "A long lane, and beside it a number that lasted a single October. The lane is on the map. The number is not."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -8121,12 +8742,39 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-d452deebac54f6e7": {
+  "paragraphs": [
+   "Oaks Lane ends here, on bare ground, and the ground is a golf course, “Shirley Park Golf Club”. The map gives its hours as “Su,Mo 08:00-22:00”, and longer on the other days.",
+   "Just north is a wedding venue at Oaks Lane, “Oaks Farm”. August 2018 is its date; the map has it yet. A farm by name, a venue by kind.",
+   "The lane runs out where the club begins."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-d5747b85e8e73376": {
+  "paragraphs": [
+   "The path, grass and unnamed, ends here. To the west lies “Lloyd Park”, a park, which they call a “public park in Croydon, UK” and date to 1927.",
+   "Also to the west, the map has a point it does not explain. August 2019 is the date on it, and no word with it. I do not explain it now.",
+   "To the east, a few steps over, the golf course, “Shirley Park Golf Club”, open by the map's reckoning “Tu-Sa 08:00-23:00”. The path stops between the park and the club, belonging to neither."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-d5a59cbb07f28880": {
   "paragraphs": [
    "Northway Road, between Davidson Road and Rees Gardens. Asphalt, 20 mph.",
    "Right here, a speed cushion.",
    "South-west, a few steps, “Jayaratne S (branch surgery)”, which the map leaves out. Someone entered it as a “doctors surgery in Croydon, United Kingdom”, from 1 April 2004.",
    "South, a few steps, a point the map marks and does not explain. A surgery absent from the drawing, a point drawn and unnamed; they lie a few paces apart."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-d5c5592314b3e19d": {
+  "paragraphs": [
+   "The footway is unnamed and asphalt, and it leads towards Sydenham Road. All around you is a park, “King George's Field”. A residential area lies to the west.",
+   "About 25 metres east there is a pitch. Further, about 30 metres south-east, stands a playground with a fence, or there was, in June 2013. Neither has been set down since.",
+   "A king's name on a field, and a pitch and a playground inside it. The field outlasts what was written of its fence."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -8367,6 +9015,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-daa1d18ca8e9e34b": {
+  "paragraphs": [
+   "The unnamed cycleway ends here, asphalt, unlit.",
+   "North of you, beside you, is a park, “Ashburton Playing Fields”. There was a park there in June 2017, and the map has not been told otherwise. Elsewhere it goes as a “playing field in Woodside, London”: one field where the map has several.",
+   "The cycleway stops at its edge, and the park takes over from there."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-daf1b8fd363e601b": {
   "paragraphs": [
    "A nameless service way, bound for a dead end.",
@@ -8427,15 +9084,6 @@
    "The cycleway has no name and no lights; asphalt underfoot, a residential area off to the north-east.",
    "You stand in a playground, or stood in one in January 2021, which is as late as it was put down. Around it, the park “Ashburton Playing Fields”, on file since June 2017. Some say it is a “playing field in Woodside, London”, and say no more.",
    "A tree to the south, in the entry for February 2021. Playground, park, tree: three months apart, and none of them this one."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-dc3dcd2876b2a6d5": {
-  "paragraphs": [
-   "Woodside Court Road joins Lower Addiscombe Road; asphalt, lit, 20 mph. Homes on the south-east side; on the north-west, a retail area, “Addiscombe Village shopping area”. Much is here that I will leave unnamed.",
-   "Two buildings stand just south-east, nameless both. About 30 metres west is the charity shop at 289 Lower Addiscombe Road, “Mind”, which in January 2021 was “Mind in Croydon”; I could not say which is right.",
-   "About 30 metres north-east, a bus stop, bench, shelter, reference “77192”. It is “Parkview Road” now; in January 2013, “Park View Road (CR0)”. One word or two."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -8521,6 +9169,16 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-ddcf89533ab8c9b4": {
+  "paragraphs": [
+   "Oaks Lane, on ground, towards a dead end. Of the lane itself, the map offers only this much.",
+   "About 30 metres to the north, those who note what lives here wrote down a “Blackcap”, seen in May 2015. The map lacks it, and has nothing in its place.",
+   "May 2015 is all they give of when.",
+   "One sighting, one month, one name, on a lane that stops."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-de28d38477bbe825": {
   "paragraphs": [
    "Spring Lane, lit at night, 30 mph, with a residential area to the north-east.",
@@ -8539,20 +9197,20 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-de695fe9710153e8": {
+  "paragraphs": [
+   "An unnamed footway, inside a railway area the map calls “Selhurst Depot”. A second railway area lies to the south-west, unnamed, pressed against the first.",
+   "A crossing is under your feet. To the north, close enough to touch, stands an industrial building. “Repair Shop”, it says, and says nothing further.",
+   "To the south-west, a few steps off, runs a rail: “Norwood Yard and Selhurst Workshop Sidings”. Network Rail runs it, and it carries a reference, “NYD”. A yard, a workshop and sidings, all in one name, and the depot around them."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-de8acfdc4718e429": {
   "paragraphs": [
    "The end of Cul-De-Sac. Asphalt, 20 mph, a residential area all about and a grass area to the south-west.",
    "On that side, a hedge. There was a hedge in September 2012; the map has nothing later of it.",
    "On the other side, north-east, “H28 Woodside Fire Station”, at 2 Long Lane, run by London Fire Brigade. In July 2026, it is said, came an application for “Air Source Heat Pumps enclosed in an acoustic attenuating enclosure”, with a brick plantroom below. The word set against it was “Approved”."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-de90ddb154d169ac": {
-  "paragraphs": [
-   "An unnamed path on grass. A residential area lies to the north-east.",
-   "To the north, beside you, a gate. All around, “Lloyd Park”, which they say is a “public park in Croydon, UK”, begun in 1927.",
-   "A gate on the north side, between the park and the houses. The map does not say whether it stands open. It gives the gate, the grass and the name, and stops there. Through the gate one way, the residential area; the other way, more of the park, as far as the park goes."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -8571,6 +9229,15 @@
    "The end of a trunk road the map leaves unnamed. Asphalt, lit, 30 mph, with a residential area to the south.",
    "Right here, a point marked with no description. I had begun on what surrounds it and lost the count before the second item; I begin again with the stop.",
    "North-east, a few steps, a bus stop: “Trinity School”, reference “58911”. The stop carries the school's name. The school is nowhere among what I am given here."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-ded6ab8349cfef75": {
+  "paragraphs": [
+   "Oaks Lane again, or still, on ground, towards a dead end. A residential area lies to the south-east.",
+   "The golf course “Shirley Park Golf Club” is all around. Its hours are given as “Tu-Sa 08:00-23:00; Su,Mo 08:00-22:00”.",
+   "Right here, a fence. The date the map holds for it is February 2014, and it stands on the map in the present tense. The lane, the fence, the club: in that order, going in."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -8720,11 +9387,37 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-e379cda381cf1cf6": {
+  "paragraphs": [
+   "An unnamed service ends on asphalt. There is more around it than these few lines. A commercial area holds it, and a construction area lies to the north.",
+   "Right here, a point the map makes and does not explain. Neither the service nor the point is given a name. Beside you to the south is a bus station, one that wheelchairs can use some of: “East Croydon Bus Station”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-e37de0048779f1b4": {
   "paragraphs": [
    "Morland Road meets Anthony Road. Asphalt, lit at night, pavement on each side, 30 mph, a residential area to the north-west.",
    "West, close, “NPR Woodside Store”, which the map does not have. Those who inspect kitchens put it at 4, in March 2024.",
    "North-east, close, a pub building, and next to it a second pub building. The map gives neither a name. About 25 metres east, a tree. Two pubs without names, and a store with a name and no place on the map."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-e3db0250e935709f": {
+  "paragraphs": [
+   "An unnamed service, between Gloucester Road and a dead end, with a recreation ground to the south.",
+   "All around is a school, “Broadmead Primary School”, at 366 Sydenham Road, run by The Pioneer Academy. Some call it a “school in Croydon, UK”, begun on 1 June 2014.",
+   "Beside you to the north is a park, “King George's Field”, and a few steps north, a playground. There was a playground in June 2013, a year before the school is said to have begun. The two dates lie together and quarrel with nothing."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-e3decf0480cbf855": {
+  "paragraphs": [
+   "Gloucester Road, 20 mph, with the residential area to the north. More lies about than I set down.",
+   "West, beside you, a gate. The map set it down in June 2013 and has not set it down again; whether it still hangs there, the map leaves open, as a gate may be.",
+   "West as well, and just as close, the park the gate belongs to, or stands beside: “King George's Field”."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -8857,15 +9550,6 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
- "v15-e760900679b34376": {
-  "paragraphs": [
-   "An unnamed service, with a residential area to the north. The ground is not described.",
-   "Parking lies to the south, beside you. To the west, a little way on, is a sports centre, “Sandilands Club”, and near it a gate. The gate is not said to belong to the club, nor the parking to either. They are only near one another.",
-   "So: parking, a club, a gate. Cars, play, and a way in or out, set down in that order by distance and by nothing else. The service road leads past all three and keeps its own counsel about which one it serves."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
  "v15-e761cfb0b51979fc": {
   "paragraphs": [
    "On Lower Addiscombe Road, asphalt, lit. North-west is the shopping area, south a residential area. I name the nearest two and let the others pass.",
@@ -8880,6 +9564,15 @@
    "Thanescroft Court meets Selborne Road.",
    "To the north-east, a few steps away, the school: “Archbishop Tenison's Church of England High School”, at Selborne Road. Anglican. Not for wheelchairs. Its start, they say, was 1714; its description, a “school in Croydon, UK”.",
    "A court and a road meet, and the school fills one side of the corner. 1714, by their reckoning. The court is given no year."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-e7f63f4c1424703d": {
+  "paragraphs": [
+   "Here Sydenham Road is lit and asphalt, and runs at 20 mph towards a dead end. To the west, a residential area; to the south-east, a recreation ground.",
+   "A speed hump just south, another just north. You are caught neatly between them.",
+   "East, beside you, “Broadmead Primary School”, at 366 Sydenham Road, run by The Pioneer Academy. Begun on 1 June 2014, it is said, a “school in Croydon, UK”. The humps were given no date."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -8931,6 +9624,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-e96a598fad9423ba": {
+  "paragraphs": [
+   "Chichester Road, 20 mph. A recreation ground lies to the north.",
+   "Against it, beside you, “Park Hill Junior School”. Its address is on Stanhope Road. Greenshaw Learning Trust runs it, and the map, under its name, writes “None”, as though answering a question nobody set.",
+   "They date its start to 1 April 2017, and its kind given as a “school in Croydon, UK”. The school lies along this road and is addressed to another."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-e96a5f432cb290d7": {
   "paragraphs": [
    "Cherry Orchard Road and Addiscombe Grove meet on a tram level crossing. Asphalt, lit, 30 mph. A construction area lies to the west.",
@@ -8963,15 +9665,6 @@
    "This is where an unnamed service stops. A residential area lies south of you, and all around is a school at 60 The Crescent: “The BRIT School”.",
    "By others' reckoning it is a “school in Croydon, UK”, begun on 22 October 1991. A company, they add, has stood registered here since April 1989: “THE BRIT SCHOOL LIMITED”: the company older than the school, if both are right. In June 2024 someone asked for “Installation of Air Source Heat Pumps to rooftop of main building.” The answer was “Approved”.",
    "About 25 metres north are two points, both marked, neither explained, and a school of three storeys that calls itself “The BRIT School Zone 1”. A zone has a number. Its neighbours, if any, I cannot give."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-ea79a4ad3fefbd77": {
-  "paragraphs": [
-   "Blackhorse Lane comes into Lower Addiscombe Road here. Asphalt, lit, pavement either side, 20 mph. A retail area lies to the south; to the north, the “Addiscombe Village shopping area”, and houses behind it.",
-   "A give way to the north, a building to the south. Then one, two, and I have lost the thread of them. I start again from the west.",
-   "About 25 metres that way the map has a point and does not say what it is. “Addiscombe / Black Horse”, it says. Or “Park View Road (CR0)”, as it said in January 2017. I cannot tell you which is right. It gave the first in August 2018, when it was last recorded, and gives it still."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -9075,6 +9768,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-ec9930c6669fc282": {
+  "paragraphs": [
+   "Park Hill Road runs on towards Selborne Road, asphalt and lit, 30 mph. A residential area lies to the east.",
+   "North, almost at once, a bus stop, and the stop is called “Selborne Road” before Selborne Road arrives. It has a bench, a bin and a shelter, and is lit at night. Its reference is “53690”.",
+   "Here the name arrives before the road does."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-ecfbbfedea4d8eac": {
   "paragraphs": [
    "Davidson Road, which bears the name of Randall Davidson, Scottish Archbishop of Canterbury. Asphalt, lit, pavement on both sides, 20 mph. A retail area here; a residential area to the north-east.",
@@ -9121,6 +9823,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-edfff62571350d54": {
+  "paragraphs": [
+   "Owen Close stops here, asphalt, 20 mph, in a residential area. A terrace lies just east, and another just north-west. A third stands about 30 metres north.",
+   "About 25 metres south, the edge of a park, “King George's Field”.",
+   "Terraces on three sides and a king's field on the fourth. The close is shut on all of them but the field."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-ee4168e4aea84d50": {
   "paragraphs": [
    "An unnamed service road, heading for Shirley Road. Around it, a residential area; to the east, a meadow that goes by “Stroud Green Well”.",
@@ -9130,11 +9841,29 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-ee543ef2c1bfd0f7": {
+  "paragraphs": [
+   "Asphalt, unlit, on a cycleway with no name that goes on to a dead end.",
+   "You are inside a park, “Ashburton Playing Fields”, as it stood in June 2017. Some would have it a “playing field in Woodside, London”. Beside you to the west the map puts a hospital at Poppy Lane, “Shirley Oaks Hospital”, and with it a point it does not explain.",
+   "A hospital at a lane, inside a field, by a cycleway that ends. The map holds them all in one place and asks nothing of them."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-ef3a32e75c6cef5f": {
   "paragraphs": [
    "Sherwood Road: asphalt, lit, pavement each side, 20 mph. Residential to the south, retail to the south-west.",
    "Two things lie south-west, both beside you. One is a building the map leaves plain. The other is “MyPhysio”, a therapist office whose address is 308 Lower Addiscombe Road, though it is from Sherwood Road that you come to it.",
    "I let the rest of the street go. Of this one, they say that an application of February 2012, a “two storey rear extension”, was “Approved”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-f07a730a53743e2b": {
+  "paragraphs": [
+   "You are on an unnamed service inside “Selhurst Depot”, a railway area. Past its edge, to the south-west, is a second railway area.",
+   "Two rails lie close by, one south-west, one south. Each is called “Norwood Yard and Selhurst Workshop Sidings”; the pair are run by Network Rail, and on both the reference reads “NYD”. A switch is marked to the south.",
+   "A yard, a workshop, sidings: three things in one name, and the name laid twice along the ground."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -9249,6 +9978,24 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-f49aceebf77c58df": {
+  "paragraphs": [
+   "The unnamed footway, asphalt, leads towards Sydenham Road. A residential area lies to the south-west and an industrial area to the north.",
+   "At this very spot the map has a fence and a gate. Or there were, in June 2013; nothing has been set down of either since.",
+   "All around you, the park: “King George's Field”. The field has no date. The gate and the fence share one."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-f4a7604179ddc45e": {
+  "paragraphs": [
+   "An unnamed service stops here, with “Chalk Sidings” to the south-east and “AC Sidings” to the north-west: one name on each side.",
+   "To the south-east, beside you, a rail, “Norwood Yard and Selhurst Workshop Sidings”, run by Network Rail. A few steps on in the same direction, another, named alike and lettered alike, “NYD”.",
+   "I keep to these and give no more. The service ends between two sidings and runs into neither."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-f4d0eb44470a4c0f": {
   "paragraphs": [
    "Selborne Road, 20 mph.",
@@ -9263,15 +10010,6 @@
    "Park Hill Road, towards Rochester Gardens. Asphalt, lit, 30 mph. A residential area lies to the east.",
    "Just north stands a bus stop called “Fairfield Road”: bench, bin and shelter, lit at night. It carries the reference “50356”. A stop with a road's name, standing on a different road, and the reference to tell it apart.",
    "About 30 metres to the north-east, a building. Neither name nor number is given for it."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-f59f2e9cd72d6f14": {
-  "paragraphs": [
-   "The footway gives out where the tram runs. There is more about than I can set down.",
-   "Houses lie south-east, a transport area south-west. The footway has no name of its own to set against the tram's. Beside you, south-east, sits an unexplained point.",
-   "Where you stand, the map runs the tram, run in turn by Transport for London. Its name: “London Trams (Elmers End Branch)”."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -9394,6 +10132,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-f7a50d99d6d1fb23": {
+  "paragraphs": [
+   "Grass underfoot, on a path without a name. Beside you to the west stands a tree, or stood one in December 2019.",
+   "A few steps south-east, a point is marked, with nothing said of it, as of August 2019. A golf course lies that way too, “Shirley Park Golf Club”, its hours set down as “Tu-Sa 08:00-23:00; Su,Mo 08:00-22:00”.",
+   "All of this is inside a park, “Lloyd Park”. Begun in 1927, they tell, and a “public park in Croydon, UK”. The tree is younger on the map than the park is in the telling."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-f892b5504b73966f": {
   "paragraphs": [
    "An unnamed path, grass. A residential area to the north-west, and a wood beside you on that side.",
@@ -9408,6 +10155,15 @@
    "Addiscombe Road and Park Hill Road meet here, asphalt and lit, at 20 mph. There is more mapped at this corner than the tram alone.",
    "Right here runs the tram, “London Trams”, run by Transport for London, and the map lays it here twice, one on the other.",
    "Two roads meet, and in the middle of them, twice over, under the one name, “London Trams”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-f9af6140dadf1c2b": {
+  "paragraphs": [
+   "Stanhope Road, 20 mph, with grass to the north-east. This stretch holds more than my few words.",
+   "Just north is a bollard. Beside you on the south-east is a school, run by London Borough of Croydon and listed elsewhere, they say, as a “school in Croydon, UK”, with no date given for its beginning.",
+   "The road lends the school its address, and the school keeps its own name. It is “Park Hill Infant School”."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -9457,6 +10213,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-fbc71a24c4f0f177": {
+  "paragraphs": [
+   "An unnamed service ends in a residential area, and the end is parking: it lies all around you.",
+   "Close to the east, “Alden Court”, the social facility at 1 Fairfield Path. Past those two I will not go.",
+   "They say there was an application in May 2024 for its trees, numbered one by one, with yew and willow among them: “Tree NO 691 - Horse Chestnut - Remove epicormic up to 4m in height”. It was “Approved”."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-fbd1363d9eeae3a9": {
   "paragraphs": [
    "Woodside Green meets Birchanger Road. Asphalt, lit, pavement on both sides, 30 mph.",
@@ -9475,6 +10240,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-fc330191414b173f": {
+  "paragraphs": [
+   "The service has no name. It runs in a residential area, a building to its east and “Alden Court” to its west, a social facility at 1 Fairfield Path. Parking lies just south.",
+   "Someone wrote down an application here in May 2024, a long one, about trees, each numbered. “Tree NO 697 - Yew - Crown lift to 3m”, among others; a horse chestnut lifted, a willow to “Repollard canopy to previous points”. It was “Approved”.",
+   "Westward there was once a postcode, “CR0 5LJ”, used, so the story goes, between January 1980 and December 1985. The map does not have it."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-fc8997d7e91900a2": {
   "paragraphs": [
    "Asphalt, a footway with no name, and no word of lighting.",
@@ -9489,15 +10263,6 @@
    "A service road, unnamed. Residential all round, and a retail area to the north.",
    "About 25 metres north-west is “Peri Peri Chicken Bite”, which is not on the map at all. Those who inspect kitchens, it is said, gave it a 3 in September 2025.",
    "The rating has a month and a number. The service road has neither, nor a name. Of the two, only the chicken comes with words attached: “Peri Peri Chicken Bite”."
-  ],
-  "model": "written in a Claude Code session",
-  "written": "2026-10-29"
- },
- "v15-fd31b56702916b85": {
-  "paragraphs": [
-   "Baring Road and Lower Addiscombe Road meet. Asphalt underfoot. Lit at night, with pavement on both sides. The limit is 20 mph. The homes keep to the south-east, the retail area to the north-west, “Addiscombe Village shopping area”.",
-   "A tree at your side southward, another eastward. Then a third, or was that the second again? I lose the count and let it go.",
-   "Just north, at 289 Lower Addiscombe Road, a charity shop called “Mind”. Or “Mind in Croydon”, as it was called in January 2021. The shorter name is the one on the map now, and I am not certain it is the right one."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
@@ -9548,6 +10313,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
  },
+ "v15-fe2039d1c13c0279": {
+  "paragraphs": [
+   "Here Sydenham Road is asphalt and lit, the limit 20 mph, the road bound for a dead end. Recreation ground east, residential area west.",
+   "“Broadmead Primary School” stands beside you, eastward, at 366. The Pioneer Academy runs it. Its start, they reckon, was 1 June 2014, and it is held to be a “school in Croydon, UK”.",
+   "A short way south, a speed hump. Nothing else stands mapped between you and the dead end."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
  "v15-fe4ed841e563a4ef": {
   "paragraphs": [
    "An unnamed service gives out here. Parking lies all around you, and to the west, beside you, the commercial building that says “Stephenson House & Knollys House”.",
@@ -9562,6 +10336,15 @@
    "Cherry Orchard Road, lit and paved on both sides, 30 mph, a residential area all round.",
    "Facing each other, near enough: to the south-east, “Ark Oval Primary Academy” at 98, run by Ark, begun on 1 September 2011 by one telling, with a kitchen given 5; to the north-west, at 87, an antiques shop, “Oscar Dahling Antiques”.",
    "The shop was there in August 2018. A ledger elsewhere has 87 sold for £60,000 in June 2001. Past the pair, the road goes untold."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-29"
+ },
+ "v15-ff4f08702ebbc476": {
+  "paragraphs": [
+   "On Billinton Hill. Asphalt, a commercial area, and a limit of 10 mph.",
+   "Beside you to the south, a give way. Beside you to the west, “East Croydon Bus Station”, of which wheelchairs can use some. A few steps north-east, a point sits on the map unexplained.",
+   "A few steps south rises a commercial building of five storeys, at Tolley House. Its address is Tolley House and nothing else: no number to go with it."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-29"
