@@ -4,7 +4,7 @@ Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
 
 ## Keys and workflows
 
-- [x] **Re-run Narrate.** Guide's voice changed (hearsay instead of "by another account"), so the prose written ahead of time is stale. Until then the walk falls back to the template. Go to Actions → Narrate → Run workflow. It republishes the site when done.
+- [ ] **Re-narrate (prompt v15).** The speed limit is now given plainly, so the 99 pieces of prose written before are stale and the walk shows the template until they're rewritten. Either run the Narrate workflow (API, about $2–4 for 99 stops), or ask Claude to narrate them in a session on your Max plan.
 - [ ] **Energy certificate keys.** Register at <https://epc.opendatacommunities.org/>. Then add two repository secrets (Settings → Secrets and variables → Actions):
   - `EPC_EMAIL`
   - `EPC_API_KEY`
