@@ -33,7 +33,10 @@ export function satellitesLine(facts: readonly Fact[]): string | undefined {
 	const said = bySubject(facts, 'satellite/')
 		.filter((s) => s.name)
 		.slice(0, 3)
-		.map((s) => `“${s.name}”, ${s.height} km up, ${where(s.elevation, s.azimuth)}`);
+		.map(
+			(s) =>
+				`“${s.name}”, ${Number(s.height).toLocaleString('en-GB')} km up, ${where(s.elevation, s.azimuth)}`
+		);
 	if (!said.length) return undefined;
 	if (said.length === 1) return `Above the roofs, ${said[0].replace(/^(“[^”]*”),/, '$1 passes,')}.`;
 	return `Above the roofs pass ${clauses(said)}.`;

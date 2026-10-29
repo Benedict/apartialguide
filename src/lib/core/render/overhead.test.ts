@@ -40,6 +40,17 @@ describe('satellitesLine', () => {
 		).toBe('Above the roofs, “INVENTED SAT” passes, 418 km up, high in the south-west.');
 	});
 
+	it('says a great height with its thousands marked', () => {
+		expect(
+			satellitesLine([
+				f('satellite/2', 'name', 'INVENTED HIGH'),
+				f('satellite/2', 'elevation', 62),
+				f('satellite/2', 'azimuth', 45),
+				f('satellite/2', 'height', 2672)
+			])
+		).toBe('Above the roofs, “INVENTED HIGH” passes, 2,672 km up, high in the north-east.');
+	});
+
 	it('tells three at most', () => {
 		const many = [1, 2, 3, 4].flatMap((n) => [
 			f(`satellite/${n}`, 'name', `SAT ${n}`),
