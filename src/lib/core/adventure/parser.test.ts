@@ -58,7 +58,14 @@ describe('parse', () => {
 	});
 
 	it('reads looking beyond the map', () => {
-		for (const text of ['look beyond', 'beyond', 'look further', 'what lies beyond'])
+		for (const text of [
+			'look beyond',
+			'beyond',
+			'look further',
+			'what lies beyond',
+			'look past',
+			'past'
+		])
 			expect(parse(text)).toEqual({ verb: 'beyond' });
 	});
 
