@@ -124,6 +124,24 @@ export const SOURCES: Source[] = [
 		terms: `Contains public sector information licensed under the ${OGL}`
 	},
 	{
+		name: 'Energy Performance of Buildings Register',
+		href: 'https://epc.opendatacommunities.org/',
+		gives: 'when houses were built, and how they are rated for energy',
+		terms: `Contains public sector information licensed under the ${OGL}; Royal Mail and Ordnance Survey data © Crown copyright and database right`
+	},
+	{
+		name: 'Geograph',
+		href: 'https://www.geograph.org.uk/',
+		gives: 'the titles of photographs taken here, and when',
+		terms: 'Photograph titles © their photographers, licensed under CC BY-SA 2.0'
+	},
+	{
+		name: 'Environment Agency',
+		href: 'https://environment.data.gov.uk/',
+		gives: 'flood zones, and the floods it has recorded',
+		terms: `© Environment Agency copyright and/or database right. ${OGL}`
+	},
+	{
 		name: 'London Datastore',
 		href: 'https://data.london.gov.uk/dataset/london-public-realm-trees-2r45m',
 		gives: 'the trees listed along streets',

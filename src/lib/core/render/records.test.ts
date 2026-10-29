@@ -99,6 +99,24 @@ describe('recordSentences, newer accounts', () => {
 	});
 });
 
+describe('recordSentences, keyed accounts', () => {
+	it('says when a house was built, by its certificate, on a closer look', () => {
+		expect(
+			recordSentences({ 'epc:built': '1900-1929', 'epc:rating': 'D', 'epc:lodged': '2019-03-14' })
+		).toEqual(['By another account it was built 1900-1929, and rated D for energy in March 2019.']);
+		expect(recordSentences({ 'epc:rating': 'D', 'epc:lodged': '2019-03-14' })).toEqual([
+			'By another account it was rated D for energy in March 2019.'
+		]);
+		expect(recordSentences({ 'epc:built': '1900-1929' }, 'room')).toEqual([]);
+	});
+
+	it('says when a photograph was taken', () => {
+		expect(recordSentences({ 'geograph:taken': '2009-05' }, 'room')).toEqual([
+			'Taken in May 2009.'
+		]);
+	});
+});
+
 describe('recordSentences, in a room', () => {
 	it('keeps to the short sayings in a room, and tells the rest on a closer look', () => {
 		const tags = {

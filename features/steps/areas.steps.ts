@@ -75,3 +75,24 @@ When('the reader takes the tour from part way along Long Street', function (this
 	s.game.begin();
 	s.reply = s.game.respond('take the tour');
 });
+
+Given(
+	'a flood zone called {string} east of just beyond the reader',
+	function (this: NarratorWorld, name: string) {
+		const s = this as State;
+		const here = this.narrator.graph.get(s.started!)!.position;
+		const edge = destination(here, 90, 10)[1];
+		this.records = [
+			{
+				source: 'Invented Floods',
+				prefix: 'flood',
+				retrieved: '2026-10-24',
+				records: [],
+				overlay: true,
+				areas: [{ ...ward(name, box(here, edge, here[1] + 0.01)), kind: 'flood zone' }]
+			}
+		];
+		this.rebuild();
+		s.game = new Adventure(compileWorld(this.narrator, s.started!));
+	}
+);

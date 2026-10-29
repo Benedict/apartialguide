@@ -44,6 +44,20 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 	],
 	[true, (t) => (t['bench:inscription'] ? `On it: ${quoted(t['bench:inscription'])}` : undefined)],
 	[
+		false,
+		(t) => {
+			const when = t['epc:lodged'] ? ` in ${monthYear(t['epc:lodged'])}` : '';
+			const rated = t['epc:rating'] ? `rated ${t['epc:rating']} for energy${when}` : '';
+			if (t['epc:built'])
+				return `By another account it was built ${t['epc:built']}${rated ? `, and ${rated}` : ''}.`;
+			return rated ? `By another account it was ${rated}.` : undefined;
+		}
+	],
+	[
+		true,
+		(t) => (t['geograph:taken'] ? `Taken in ${monthYear(`${t['geograph:taken']}-01`)}.` : undefined)
+	],
+	[
 		true,
 		(t) =>
 			t['wildlife:seen'] ? `Seen here in ${monthYear(`${t['wildlife:seen']}-01`)}.` : undefined

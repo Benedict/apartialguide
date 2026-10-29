@@ -21,6 +21,14 @@ import { benchRecords } from '../src/lib/server/sources/benches';
 import { wildlifeRecords } from '../src/lib/server/sources/wildlife';
 import { postcodeRecords } from '../src/lib/server/sources/postcodes';
 import { companyRecords } from '../src/lib/server/sources/companies';
+import { epcRecords } from '../src/lib/server/sources/epc';
+import { geographRecords } from '../src/lib/server/sources/geograph';
+import {
+	floodZoneName,
+	recordedFloodName,
+	zoneAreas,
+	type ZoneFeature
+} from '../src/lib/server/sources/zones';
 import { spawn } from 'node:child_process';
 import { createWriteStream } from 'node:fs';
 import { createInterface } from 'node:readline';
@@ -76,6 +84,44 @@ async function entities(dataset: string) {
 }
 
 type Taken = Omit<RecordStore, 'retrieved'>;
+/**
+ * Every feature in the box from an OGC API Features service, whichever of the given services
+ * answers: its collections are listed, the first taken, its pages followed.
+ */
+async function ogcFeatures(label: string, bases: string[]): Promise<ZoneFeature[]> {
+	for (const base of bases) {
+		try {
+			const list = await getJson(`${base}/collections?f=json`);
+			const ids: string[] = (list.collections ?? []).map((c: { id: string }) => c.id);
+			console.log(`${label}: ${base} has ${ids.join(', ')}`);
+			if (!ids.length) continue;
+			const features: ZoneFeature[] = [];
+			const crs84 = encodeURIComponent('http://www.opengis.net/def/crs/OGC/1.3/CRS84');
+			const items = `${base}/collections/${ids[0]}/items?f=json&limit=500&bbox-crs=${crs84}&crs=${crs84}`;
+			// A control by the Thames at Westminster, where there must be something: an empty box is
+			// told from a query the service misread.
+			const control = await getJson(`${items}&bbox=-0.13,51.49,-0.11,51.51`);
+			console.log(
+				`${label}: control by the Thames matched ${control.numberMatched ?? control.features?.length}`
+			);
+			let url: string | undefined = `${items}&bbox=${w},${s},${e},${n}`;
+			for (let pages = 0; url && pages < 40; pages++) {
+				const page = await getJson(url);
+				if (pages === 0)
+					console.log(
+						`${label}: ${page.numberMatched ?? '?'} matched, ${page.features?.length ?? 0} on the first page; ${String(JSON.stringify(page.features?.[0]?.properties ?? page)).slice(0, 400)}`
+					);
+				features.push(...(page.features ?? []));
+				url = (page.links ?? []).find((l: { rel: string; href: string }) => l.rel === 'next')?.href;
+			}
+			return features;
+		} catch (err) {
+			console.log(`${label}: ${base} did not answer: ${(err as Error).message.slice(0, 200)}`);
+		}
+	}
+	throw new Error(`no ${label} service answered`);
+}
+
 const SOURCES: Record<string, () => Promise<Taken | Taken[]>> = {
 	/** Food hygiene ratings, from the FSA's ratings API, within about a mile of the middle of the box. */
 	hygiene: async () => {
@@ -279,7 +325,7 @@ SELECT ?paon ?street ?amount ?date WHERE {
 					if (page.error) throw new Error(JSON.stringify(page.error).slice(0, 300));
 					if (offset === 0)
 						console.log(
-							`postcodes: ${service.title}: first ${JSON.stringify(page.features?.[0]?.properties).slice(0, 300)}`
+							`postcodes: ${service.title}: first ${String(JSON.stringify(page.features?.[0]?.properties)).slice(0, 300)}`
 						);
 					features.push(...(page.features ?? []));
 					if ((page.features?.length ?? 0) < 2000) break;
@@ -328,6 +374,71 @@ SELECT ?paon ?street ?amount ?date WHERE {
 		const records = companyRecords(rows, wanted);
 		console.log(`companies: ${rows.length} rows near, ${records.length} addresses`);
 		return { source: 'Companies House', prefix: 'company', records };
+	},
+	/**
+	 * Energy performance certificates at the snapshot's postcodes, asked of the register one postcode
+	 * at a time. Needs EPC_EMAIL and EPC_API_KEY, given on registering with the register.
+	 */
+	epc: async () => {
+		const email = process.env.EPC_EMAIL;
+		const key = process.env.EPC_API_KEY;
+		if (!email || !key) throw new Error('epc needs EPC_EMAIL and EPC_API_KEY');
+		const auth = `Basic ${Buffer.from(`${email}:${key}`).toString('base64')}`;
+		const rows: Record<string, string>[] = [];
+		for (const postcode of postcodes) {
+			const page = await getJson(
+				`https://epc.opendatacommunities.org/api/v1/domestic/search?postcode=${encodeURIComponent(postcode)}&size=5000`,
+				{ Authorization: auth }
+			).catch((err) => {
+				console.log(`epc: ${postcode}: ${(err as Error).message.slice(0, 200)}`);
+				return { rows: [] };
+			});
+			rows.push(...(page.rows ?? []));
+		}
+		const records = epcRecords(rows);
+		console.log(
+			`epc: ${postcodes.length} postcodes, ${rows.length} certificates, ${records.length} addresses`
+		);
+		return { source: 'Energy Performance of Buildings Register', prefix: 'epc', records };
+	},
+	/** Photographs of the box from Geograph, page by page around its centre. Needs GEOGRAPH_API_KEY. */
+	geograph: async () => {
+		const key = process.env.GEOGRAPH_API_KEY;
+		if (!key) throw new Error('geograph needs GEOGRAPH_API_KEY');
+		const km = Math.ceil(
+			Math.hypot((n - s) * 111, (e - w) * 111 * Math.cos((centre.lat * Math.PI) / 180)) / 2
+		);
+		const items: unknown[] = [];
+		for (let page = 1; page <= 50; page++) {
+			const answer = await getJson(
+				`https://api.geograph.org.uk/syndicator.php?key=${encodeURIComponent(key)}&format=JSON&q=${centre.lat.toFixed(5)},${centre.lon.toFixed(5)}&distance=${km}&perpage=100&page=${page}`
+			);
+			const got = answer.items ?? [];
+			if (page === 1)
+				console.log(`geograph: first item ${JSON.stringify(got[0] ?? {}).slice(0, 300)}`);
+			items.push(...got);
+			if (got.length < 100) break;
+		}
+		const records = geographRecords({ items: items as never }, bbox);
+		console.log(`geograph: ${items.length} photographs, ${records.length} kept`);
+		return { source: 'Geograph', prefix: 'geograph', records };
+	},
+	/** The Environment Agency's flood zones over the box, from the Flood Map for Planning. */
+	floodzones: async () => {
+		const features = await ogcFeatures('floodzones', [
+			'https://environment.data.gov.uk/spatialdata/flood-map-for-planning-flood-zones/ogc/features/v1',
+			'https://environment.data.gov.uk/spatialdata/flood-zones/ogc/features/v1'
+		]);
+		const areas = zoneAreas(features, 'flood zone', floodZoneName);
+		return { source: 'Environment Agency', prefix: 'floodzone', records: [], overlay: true, areas };
+	},
+	/** Floods the Environment Agency has recorded over the box, each by the month it began. */
+	floods: async () => {
+		const features = await ogcFeatures('floods', [
+			'https://environment.data.gov.uk/spatialdata/recorded-flood-outlines/ogc/features/v1'
+		]);
+		const areas = zoneAreas(features, 'recorded flood', recordedFloodName);
+		return { source: 'Environment Agency', prefix: 'flood', records: [], overlay: true, areas };
 	},
 	/** Benches and their inscriptions, from OpenBenches: whichever of its feeds answers first. */
 	benches: async () => {

@@ -526,8 +526,8 @@ export class Adventure {
 		const left = (this.left.get(this.here) ?? []).map(
 			(n) => `${quote(n)} lies here, where you left it.`
 		);
-		const crossed = this.crossing();
-		const reply = crossed ? { ...told, lines: [crossed, ...told.lines] } : told;
+		const crossed = [this.crossing(), ...this.zoning()].filter((l): l is string => !!l);
+		const reply = crossed.length ? { ...told, lines: [...crossed, ...told.lines] } : told;
 		const stop = this.world.stops[this.here];
 		const back = this.recall(stop.fragments ?? []) ?? this.connect(stop.terms ?? []);
 		for (const f of stop.fragments ?? [])
@@ -558,6 +558,23 @@ export class Adventure {
 				text: 'See it on Google Maps'
 			}
 		};
+	}
+
+	/** A step into or out of the zones another account draws over the map, each told once. */
+	private zoning(): string[] {
+		const before = this.previous === undefined ? [] : (this.world.stops[this.previous].zones ?? []);
+		const now = this.world.stops[this.here].zones ?? [];
+		const names = (zones: { name: string }[]) => new Set(zones.map((z) => z.name));
+		const was = names(before);
+		const is = names(now);
+		return [
+			...now
+				.filter((z) => !was.has(z.name))
+				.map((z) => `By another account, you are within ${z.name}, ${withArticle(z.kind)}.`),
+			...before
+				.filter((z) => !is.has(z.name))
+				.map((z) => `By another account, you have come out of ${z.name}.`)
+		];
 	}
 
 	/** A step into, out of or between the areas another account draws, such as wards. */
