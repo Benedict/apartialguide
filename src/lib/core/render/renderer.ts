@@ -13,7 +13,7 @@ export interface Thing {
 
 /** One sentence or more of a room, labelled so the game can leave out what the reader just heard. */
 export interface Part {
-	kind: 'where' | 'street' | 'setting' | 'thing' | 'frame' | 'exits';
+	kind: 'where' | 'street' | 'setting' | 'thing' | 'nearest' | 'frame' | 'exits';
 	text: string;
 	/** What makes two parts the same to a listener: a thing's subject, a setting's names. */
 	key: string;

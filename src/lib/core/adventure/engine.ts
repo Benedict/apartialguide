@@ -46,6 +46,9 @@ export const HELP =
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
 	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, gps for this place on a map, score for how far you have walked, wait (z), again (g), and verbose or brief.';
 
+/** What is not said again if heard at either of the last two places: framing lines among them. */
+const RATIONED = ['street', 'setting', 'thing', 'nearest', 'frame'];
+
 /** Guide's words about themselves, said once, before the first place. */
 export const INTRO = [
 	'I am Guide. I lived here long ago. I lived here yesterday. I will have lived here tomorrow.'
@@ -129,6 +132,8 @@ export class Adventure {
 	private heard: string[][] = [];
 	/** The one street the reader was part way along at the last place, if any. */
 	private lastStreet?: string;
+	/** Which form of the opening was said last, so the next place opens another way. */
+	private whereForm = -1;
 	/** The last way each framing line was put, so the next place puts it another way. */
 	private readonly framed = new Map<string, string>();
 	/** Distinctive words met on this walk, with where and in what name. */
@@ -670,18 +675,20 @@ export class Adventure {
 		let street: string | undefined;
 		const lines = stop.parts
 			.map((parts) => {
-				const fresh = parts.filter(
-					(p) => !['street', 'setting', 'thing'].includes(p.kind) || !recent.has(p.key)
-				);
+				const fresh = parts.filter((p) => !RATIONED.includes(p.kind) || !recent.has(p.key));
 				const framesNothing =
 					parts.some((p) => p.kind === 'thing') && !fresh.some((p) => p.kind === 'thing');
 				return fresh
 					.filter((p) => !(framesNothing && p.kind === 'frame'))
 					.map((p) => {
-						if (['street', 'setting', 'thing'].includes(p.kind)) heard.push(p.key);
+						if (RATIONED.includes(p.kind)) heard.push(p.key);
 						if (p.kind === 'where') {
 							street = p.street;
 							if (p.street && p.street === this.lastStreet) return this.goOn(p.text);
+							if (p.options) {
+								this.whereForm = (this.whereForm + 1) % p.options.length;
+								return p.options[this.whereForm];
+							}
 						}
 						return p.kind === 'frame' && p.options ? this.frame(p.options) : p.text;
 					})

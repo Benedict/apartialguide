@@ -490,6 +490,57 @@ describe('Not repeating itself', () => {
 		];
 	};
 
+	it('never opens two places in a row with the same form of words', () => {
+		const at = (i: number, street: string) =>
+			room(i, [
+				[
+					part('where', `You are standing on ${street}.`, {
+						street,
+						options: [`You are standing on ${street}.`, `${street}.`, `On ${street}.`]
+					})
+				],
+				[part('exits', 'Exits: east, west.')]
+			]);
+		const game = new Adventure({
+			start: 's0',
+			stops: { s0: at(0, 'A Road'), s1: at(1, 'B Road'), s2: at(2, 'C Road'), s3: at(3, 'D Road') }
+		});
+		game.begin();
+		const openings = [
+			game.respond('take the tour'),
+			game.respond('east'),
+			game.respond('east'),
+			game.respond('east')
+		].map((r) => r.lines[0]);
+		expect(openings).toEqual([
+			'You are standing on A Road.',
+			'B Road.',
+			'On C Road.',
+			'You are standing on D Road.'
+		]);
+	});
+
+	it('points to the same nearest name once, not at every step', () => {
+		const near = (i: number, name: string) =>
+			room(i, [
+				[part('where', 'You are standing on Long Street.', { street: 'Long Street' })],
+				[
+					part('nearest', `The nearest name is “${name}”, a cafe, ${i}0 metres to the north.`, {
+						key: name
+					})
+				],
+				[part('exits', 'Exits: east, west.')]
+			]);
+		const game = new Adventure({
+			start: 's0',
+			stops: { s0: near(0, 'Inventa Cafe'), s1: near(1, 'Inventa Cafe'), s2: near(2, 'Other Cafe') }
+		});
+		game.begin();
+		expect(game.respond('take the tour').lines.join(' ')).toContain('Inventa Cafe');
+		expect(game.respond('east').lines.join(' ')).not.toContain('Inventa Cafe');
+		expect(game.respond('east').lines.join(' ')).toContain('Other Cafe');
+	});
+
 	it('says the street and the setting once, and goes on along the street without starting again', () => {
 		const [first, second] = walk();
 		expect(first.lines[0]).toContain('Asphalt underfoot.');
@@ -508,6 +559,13 @@ describe('Not repeating itself', () => {
 		const [, , third] = walk();
 		expect(third.lines.join(' ')).not.toMatch(/great deal|take in|lose count/);
 		expect(third.lines.at(-1)).toBe('Exits: east, west.');
+	});
+
+	it('says a place is crowded, or loses count, at most once in any three places', () => {
+		const said = walk().map((r) => /great deal|take in/.test(r.lines.join(' ')));
+		expect(said).toEqual([true, false, false, true]);
+		const lost = walk().map((r) => /lose count/.test(r.lines.join(' ')));
+		expect(lost).toEqual([true, false, false, true]);
 	});
 
 	it('does not frame two places in a row the same way', () => {

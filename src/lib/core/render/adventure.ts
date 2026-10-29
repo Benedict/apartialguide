@@ -22,11 +22,13 @@ import {
 	capitalise,
 	counted,
 	currentUse,
+	distanceWords,
 	humanise,
 	list,
 	longDate,
 	monthYear,
 	pastUse,
+	numberWord,
 	pick,
 	tagsOf
 } from './words';
@@ -48,13 +50,26 @@ export class AdventureRenderer implements Renderer {
 		const around = setting(scene);
 		const parts: Part[][] = [
 			[
-				part('where', whereYouStand(scene, street), along ? { street: along } : {}),
+				part('where', whereYouStand(scene, street), {
+					...(along ? { street: along } : {}),
+					options: whereForms(scene, street)
+				}),
 				...streetCharacter(street).map((s) => part('street', s)),
 				...(around ? [part('setting', around, { key: settingKey(around) })] : [])
 			],
 			...whatYouSee(scene),
+			...(scene.nearest
+				? [[part('nearest', nearestLine(scene.nearest), { key: scene.nearest.tags.name })]]
+				: []),
 			...(scene.mood === 'hesitant'
-				? [[part('frame', pick(scene.stopId, HESITATIONS), { options: HESITATIONS })]]
+				? [
+						[
+							part('frame', pick(scene.stopId, HESITATIONS), {
+								key: 'hesitate',
+								options: HESITATIONS
+							})
+						]
+					]
 				: []),
 			[part('exits', exitsLine(scene.exits))]
 		];
@@ -109,13 +124,33 @@ function title(scene: Scene, street: Tags): string {
 }
 
 export function whereYouStand(scene: Scene, street: Tags): string {
+	return whereForms(scene, street)[0];
+}
+
+/** Three ways of saying where you stand, the first the plainest; the engine turns between them. */
+export function whereForms(scene: Scene, street: Tags): [string, string, string] {
 	const name = streetName(scene, street);
-	if (isDeadEnd(scene)) return `You are at the end of ${name}.`;
-	if (scene.here.length >= 2) return `You are standing where ${list(scene.here)} meet.`;
+	const Name = capitalise(name);
+	if (isDeadEnd(scene))
+		return [`You are at the end of ${name}.`, `${Name} ends here.`, `The end of ${name}.`];
+	if (scene.here.length >= 2) {
+		const meet = list(scene.here);
+		return [`You are standing where ${meet} meet.`, `${meet} meet here.`, `Here ${meet} meet.`];
+	}
 	const [a, b] = scene.between ?? [];
-	if (a && b && a !== b) return `You are standing on ${name}, between ${a} and ${b}.`;
-	if (a || b) return `You are standing on ${name}, towards ${a ?? b}.`;
-	return `You are standing on ${name}.`;
+	if (a && b && a !== b)
+		return [
+			`You are standing on ${name}, between ${a} and ${b}.`,
+			`${Name}, between ${a} and ${b}.`,
+			`On ${name}, with ${a} one way and ${b} the other.`
+		];
+	if (a || b)
+		return [
+			`You are standing on ${name}, towards ${a ?? b}.`,
+			`${Name}, towards ${a ?? b}.`,
+			`On ${name}, on the way to ${a ?? b}.`
+		];
+	return [`You are standing on ${name}.`, `${Name}.`, `On ${name}.`];
 }
 
 const SIDEWALKS: Record<string, string> = {
@@ -145,10 +180,24 @@ function whatYouSee(scene: Scene): Part[][] {
 	let previous = '';
 	const said: Said = new Set();
 	const slipped = new Set<string>();
-	const told = alongTheStreet(
+	const shown = alongTheStreet(
 		scene,
 		scene.beats.filter((b) => !isBackground(b) && !isHalf(b))
-	).map((b): Part => {
+	);
+	// Plain things of one kind, two or more, are counted together where the first of them lies.
+	const kinds = new Map<string, Beat[]>();
+	for (const b of shown) {
+		const k = plainKindOf(b);
+		if (k) kinds.set(k, [...(kinds.get(k) ?? []), b]);
+	}
+	const counted = new Set([...kinds.values()].filter((g) => g.length > 1).flat());
+	const told = shown.flatMap((b): Part[] => {
+		if (counted.has(b)) {
+			const k = plainKindOf(b)!;
+			const group = kinds.get(k)!;
+			if (group[0] !== b) return [];
+			return countedParts(scene, k, group);
+		}
 		const place = placement(scene.position, b);
 		const text = describeBeat(
 			b,
@@ -157,7 +206,7 @@ function whatYouSee(scene: Scene): Part[][] {
 			slipped
 		);
 		previous = place;
-		return { kind: 'thing', text, key: b.subject };
+		return [{ kind: 'thing', text, key: b.subject }];
 	});
 	const more = scene.hidden.length > 0;
 	if (scene.mood === 'rambling') {
@@ -172,6 +221,44 @@ function whatYouSee(scene: Scene): Part[][] {
 	}
 	// Guide points to nothing: what goes unnoticed is for the reader to find.
 	return told.map((t) => [t]);
+}
+
+/** "The nearest name is “Inventa Cafe”, a cafe, 200 metres to the north." */
+function nearestLine({ tags, metres, bearing: towards }: NonNullable<Scene['nearest']>): string {
+	const { name, ...rest } = tags;
+	return `The nearest name is “${name}”, ${nounPhrase(rest)}, ${distanceWords(metres)} to the ${compassLabel(towards)}.`;
+}
+
+/** The kind of a plain thing (no name, no address, no record, no past): "building". */
+function plainKindOf(beat: Beat): string | undefined {
+	if (beat.effects.length || beat.facts.some((f) => isElsewhere(f) || isHistory(f))) return;
+	const tags = tagsFor(beat);
+	// A name sets a thing apart; an address does too, and shows in its noun phrase below.
+	if (Object.keys(tags).some((k) => /name/.test(k))) return;
+	const phrase = nounPhrase(tags);
+	return /^an? [a-z -]+$/.test(phrase) ? phrase.replace(/^an? /, '') : undefined;
+}
+
+const NAMES_NEITHER = ['The map names neither.', 'Neither has a name.', 'No name to either.'];
+const NAMES_NONE = ['The map names none of them.', 'None has a name.', 'Not one of them is named.'];
+
+/** "Two buildings: to the north, …; to the east, …" with what the map names of them. */
+function countedParts(scene: Scene, kind: string, group: Beat[]): Part[] {
+	const where = group.map((b) => {
+		const p = placement(scene.position, b);
+		return p.charAt(0).toLowerCase() + p.slice(1);
+	});
+	const many = capitalise(counted(group.length, kind));
+	const text = where.every((w) => w === where[0])
+		? `${many}, ${group.length === 2 ? 'both' : 'all'} ${where[0]}.`
+		: group.length === 2
+			? `${many}: ${where.join('; ')}.`
+			: `${many}, the nearest ${where[0]}.`;
+	const names = group.length === 2 ? NAMES_NEITHER : NAMES_NONE;
+	return [
+		{ kind: 'thing', text, key: group.map((b) => b.subject).join(' ') },
+		{ kind: 'frame', text: names[0], key: names[0], options: names }
+	];
 }
 
 /** Things in the order they lie along the street underfoot, as a walker passes them. */
@@ -416,7 +503,20 @@ export function nounPhrase(tags: Tags, said?: Said): string {
 	const where = addressIn(tags, said);
 	const at = where ? ` at ${where}` : '';
 	const name = namedInline(tags) ? `, “${tags.name}”` : '';
-	return `${article(noun(tags))}${at}${name}`;
+	return `${article(houseKind(tags, noun(tags)))}${storeys(tags)}${at}${name}`;
+}
+
+/** A house as the map gives its kind: "terraced house". Other nouns as they are. */
+const houseKind = (tags: Tags, noun: string) =>
+	tags.house && noun.endsWith('house') ? `${humanise(tags.house)} ${noun}` : noun;
+
+/** " of two storeys", from the levels the map gives; a value it cannot read, as found. */
+function storeys(tags: Tags): string {
+	const levels = tags['building:levels'];
+	if (!levels) return '';
+	if (!/^\d+$/.test(levels)) return ` of ${levels} storeys`;
+	const n = Number(levels);
+	return ` of ${numberWord(n)} ${n === 1 ? 'storey' : 'storeys'}`;
 }
 
 /** "To the north, a few steps away," takes a comma before what follows; "Right here" does not. */
@@ -586,6 +686,7 @@ export function exitsLine(exits: readonly SceneExit[]): string {
 	const each = exits.map((e) => {
 		const street = e.street ?? 'a path';
 		if (!e.towards) return `${e.label} (${street})`;
+		if (e.metres) return `${e.label} (${street}, ${distanceWords(e.metres)} to ${e.towards})`;
 		return e.towards === 'a dead end'
 			? `${e.label} (${street}, a dead end)`
 			: `${e.label} (${street}, towards ${e.towards})`;

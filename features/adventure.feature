@@ -11,9 +11,10 @@ Feature: Playing it as a text adventure
     When the game begins
     Then it says "You are standing on Long Street, between Short Row and Blind Alley."
 
-  Scenario: Exits say where they lead
+  Scenario: Exits say where they lead, and how far
     When the game begins
-    Then it says "east (Long Street, towards Blind Alley)"
+    Then it says "east (Long Street, "
+    And it says " metres to Blind Alley)"
 
   Scenario: Walking by typing a direction
     When the reader types "e"
