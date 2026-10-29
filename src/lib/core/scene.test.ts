@@ -49,10 +49,20 @@ describe('buildScene', () => {
 		const stop = graph.get(junctionId(west))!;
 		const exits = buildScene(graph, stop, plan(stop.id)).exits;
 		expect(exits).toContainEqual(
-			expect.objectContaining({ label: 'east', street: 'Long Street', towards: 'Blind Alley' })
+			expect.objectContaining({
+				label: 'east',
+				street: 'Long Street',
+				towards: 'Blind Alley',
+				metres: expect.closeTo(200, -1)
+			})
 		);
 		expect(exits).toContainEqual(
-			expect.objectContaining({ label: 'north', street: 'Short Row', towards: 'a dead end' })
+			expect.objectContaining({
+				label: 'north',
+				street: 'Short Row',
+				towards: 'a dead end',
+				metres: expect.closeTo(40, -1)
+			})
 		);
 	});
 });

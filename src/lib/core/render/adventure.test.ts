@@ -3,7 +3,7 @@ import { destination, type LatLon } from '../geo';
 import type { Scene } from '../scene';
 import { facts } from '../testing/facts';
 import { SyntheticMap } from '../testing/synthetic';
-import { AdventureRenderer } from './adventure';
+import { AdventureRenderer, nounPhrase } from './adventure';
 import { aside } from './hearsay';
 
 const O = SyntheticMap.ORIGIN;
@@ -750,6 +750,20 @@ describe('AdventureRenderer', () => {
 				'Exits: east (Everton Road, towards Clyde Road); west (Everton Road, a dead end).'
 			);
 		});
+
+		it('says how far each way runs, where it knows', () => {
+			const t = text(
+				scene({
+					exits: [
+						{ label: 'east', to: 'a', street: 'Everton Road', towards: 'Clyde Road', metres: 84 },
+						{ label: 'west', to: 'b', street: 'Everton Road', towards: 'a dead end', metres: 1260 }
+					]
+				})
+			);
+			expect(t).toContain(
+				'Exits: east (Everton Road, 80 metres to Clyde Road); west (Everton Road, 1.3 km to a dead end).'
+			);
+		});
 	});
 
 	describe('the street to examine', () => {
@@ -840,5 +854,93 @@ describe('AdventureRenderer', () => {
 			expect(thing.description).toContain('It serves kebab and pizza. Takeaway.');
 			expect(thing.description).not.toMatch(/=|fhrs|123456|Inventon/);
 		});
+	});
+});
+
+describe('a building as the map describes it', () => {
+	it('gives a house its kind, and a building its storeys, where the map gives them', () => {
+		expect(nounPhrase({ building: 'house', house: 'terraced', 'building:levels': '2' })).toBe(
+			'a terraced house of two storeys'
+		);
+		expect(nounPhrase({ building: 'house', house: 'semi-detached' })).toBe('a semi-detached house');
+		expect(nounPhrase({ building: 'yes', 'building:levels': '1' })).toBe(
+			'a building of one storey'
+		);
+		expect(nounPhrase({ building: 'yes' })).toBe('a building');
+	});
+
+	it('speaks a number of storeys it cannot read as found', () => {
+		expect(nounPhrase({ building: 'yes', 'building:levels': '2;3' })).toBe(
+			'a building of 2;3 storeys'
+		);
+	});
+});
+
+describe('plain things counted, not listed', () => {
+	const east = (metres: number) => ({ geometry: [destination(O, 90, metres)] });
+	const plain = (id: string, at = {}) => beat(id, { building: 'yes' }, at);
+
+	it('counts plain things of one kind together, nearest first, and lets the rest stand', () => {
+		const shop = beat('node/9', { shop: 'bakery', name: 'Inventa Bakes' }, north(30));
+		const t = text(scene({ beats: [plain('way/1', north(15)), plain('way/2', east(15)), shop] }));
+		expect(t).toContain(
+			'Two buildings: to the north, a few steps away; to the east, a few steps away.'
+		);
+		expect(t).toContain('The map names neither.');
+		expect(t).toContain('“Inventa Bakes”');
+		expect(t.match(/a building/g)).toBeNull();
+	});
+
+	it('counts things whose only other tags are ones Guide never speaks, such as a postcode', () => {
+		const coded = (id: string, at = {}) =>
+			beat(id, { building: 'yes', 'addr:postcode': 'ZZ9 9ZZ', 'ref:GB:uprn': '1' }, at);
+		expect(text(scene({ beats: [coded('way/1', north(15)), coded('way/2', east(15))] }))).toContain(
+			'Two buildings: '
+		);
+	});
+
+	it('says both lie one way when they do', () => {
+		const t = text(scene({ beats: [plain('way/1', north(15)), plain('way/2', north(16))] }));
+		expect(t).toContain('Two buildings, both to the north, a few steps away.');
+	});
+
+	it('says none of three or more', () => {
+		const t = text(
+			scene({
+				beats: [plain('way/1', north(15)), plain('way/2', east(15)), plain('way/3', east(30))]
+			})
+		);
+		expect(t).toContain('Three buildings, the nearest to the north, a few steps away.');
+		expect(t).toContain('The map names none of them.');
+	});
+
+	it('leaves a single plain thing as it is, and never counts what has a name or a past', () => {
+		expect(text(scene({ beats: [plain('way/1')] }))).toContain('a building');
+		const named = beat('way/2', { building: 'yes', name: 'Inventa House' }, east(15));
+		const t = text(scene({ beats: [plain('way/1'), named] }));
+		expect(t).not.toContain('Two buildings');
+	});
+});
+
+describe('ways of saying where you stand', () => {
+	it('offers three forms of the opening, the first as it has always been', () => {
+		const forms = (s: Partial<Scene>) => renderer.render(scene(s)).parts![0][0].options;
+		expect(forms({ between: ['Clyde Road', 'Havelock Road'] })).toEqual([
+			'You are standing on Everton Road, between Clyde Road and Havelock Road.',
+			'Everton Road, between Clyde Road and Havelock Road.',
+			'On Everton Road, with Clyde Road one way and Havelock Road the other.'
+		]);
+		expect(forms({ kind: 'junction', here: ['Everton Road', 'Clyde Road'] })).toEqual([
+			'You are standing where Everton Road and Clyde Road meet.',
+			'Everton Road and Clyde Road meet here.',
+			'Here Everton Road and Clyde Road meet.'
+		]);
+		expect(
+			forms({ kind: 'junction', exits: [{ label: 'west', to: 'x', street: 'Everton Road' }] })
+		).toEqual([
+			'You are at the end of Everton Road.',
+			'Everton Road ends here.',
+			'The end of Everton Road.'
+		]);
 	});
 });

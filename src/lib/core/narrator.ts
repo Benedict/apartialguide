@@ -6,13 +6,20 @@ import { areaAt, type AreaRecord } from './areas';
 import type { Beyond } from './render/beyond';
 import { keeper } from './keepers';
 import type { Clock, Fact } from './facts';
-import { distance, distanceToPolyline, insideRing, type LatLon } from './geo';
-import { OsmIndex, type OsmData } from './osm';
+import {
+	bearing,
+	distance,
+	distanceToPolyline,
+	insideRing,
+	nearestOnPolyline,
+	type LatLon
+} from './geo';
+import { OsmIndex, type OsmData, type Tags } from './osm';
 import { Perception } from './perception';
 import { AdventureRenderer } from './render/adventure';
 import type { Renderer, Room } from './render/renderer';
 import { buildScene, type Scene } from './scene';
-import { chooseSlippage, type NarrationPlan } from './slippage';
+import { chooseSlippage, isBackground, type NarrationPlan } from './slippage';
 import { buildStopGraph, type Exit, type Stop, type StopGraph, type StopId } from './stops';
 import { detectTensions, isElsewhere, type TensionOptions } from './tensions';
 
@@ -67,6 +74,29 @@ function ledgerOf(
 	return { streets, ...(oldest ? { oldest } : {}), accounts };
 }
 
+/** How far Guide looks for the nearest name, at a stop with none in view, in metres. */
+const NEAREST_NAME_REACH = 400;
+
+/** A named thing on the map, not a street, and where it lies: for the nearest name. */
+export interface Named {
+	subject: string;
+	tags: Tags;
+	geometry: LatLon[];
+}
+
+/** The map's own named things, other than streets, each with where it lies. */
+function namedThings(facts: readonly Fact[]): Named[] {
+	const bySubject = new Map<string, Fact[]>();
+	for (const f of facts)
+		if (!isElsewhere(f) && !f.claim.key.startsWith('was:'))
+			bySubject.set(f.subject, [...(bySubject.get(f.subject) ?? []), f]);
+	return [...bySubject].flatMap(([subject, fs]) => {
+		const tags = Object.fromEntries(fs.map((f) => [f.claim.key, f.claim.value]));
+		const geometry = fs.find((f) => f.geometry.length)?.geometry;
+		return tags.name && !tags.highway && geometry ? [{ subject, tags, geometry }] : [];
+	});
+}
+
 /** How near something addressed to another street must be to be told here, in metres. */
 const OFF_STREET_REACH = 12;
 
@@ -83,7 +113,9 @@ export class Narrator {
 		private readonly perception: Perception,
 		private readonly options: NarratorOptions,
 		/** What the map and the other accounts hold, as a whole: for Guide's introduction. */
-		readonly ledger: MapLedger = { streets: 0, accounts: [] }
+		readonly ledger: MapLedger = { streets: 0, accounts: [] },
+		/** The map's named things, for the nearest name at a stop with none in view. */
+		private readonly named: Named[] = []
 	) {
 		this.renderer = options.renderer ?? new AdventureRenderer();
 		const stores = options.records ?? [];
@@ -107,8 +139,28 @@ export class Narrator {
 			buildStopGraph(osm, options),
 			Perception.fromOsm(osm, facts),
 			options,
-			ledgerOf(osm, facts, options.records ?? [])
+			ledgerOf(osm, facts, options.records ?? []),
+			namedThings(facts)
 		);
+	}
+
+	/** The nearest named thing out of view, when nothing named is in view here. */
+	private nearestName(at: LatLon, plan: NarrationPlan, seen: readonly Fact[]): Scene['nearest'] {
+		// An empty stop stays empty: the nearest name is for a quiet stop, with things but no names.
+		const things = plan.beats.filter((b) => !isBackground(b));
+		if (!things.length) return undefined;
+		if (things.some((b) => b.facts.some((f) => f.claim.key === 'name' && !isElsewhere(f))))
+			return undefined;
+		// Nothing in view either, told or left for the reader to find by exploring.
+		const inView = new Set(seen.map((f) => f.subject));
+		let best: Scene['nearest'];
+		for (const thing of this.named) {
+			if (inView.has(thing.subject)) continue;
+			const { point, metres } = nearestOnPolyline(at, thing.geometry);
+			if (metres <= NEAREST_NAME_REACH && (!best || metres < best.metres))
+				best = { tags: thing.tags, metres, bearing: bearing(at, point) };
+		}
+		return best;
 	}
 
 	/** Every zone another account draws over a point, such as flood zones. */
@@ -143,7 +195,8 @@ export class Narrator {
 			inView,
 			detectTensions(inView, this.options.clock, this.options)
 		);
-		const scene = buildScene(this.graph, stop, plan);
+		const nearest = this.nearestName(stop.position, plan, inView);
+		const scene = { ...buildScene(this.graph, stop, plan), ...(nearest ? { nearest } : {}) };
 		const room = this.renderer.render(scene);
 		return {
 			stop,
