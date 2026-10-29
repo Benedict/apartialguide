@@ -16,7 +16,6 @@ Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
 - [ ] **Geograph's licence.** CC BY-SA asks for each photographer's name. Do you want each photographer named where the photograph is told, or Geograph left out (`LEAVE_OUT=geograph`)?
 - [ ] **Which sources the walk uses.** List any to leave out on `LEAVE_OUT=` in `data/records/use.env`, comma-separated: `bench`, `wildlife`, `postcode`, `company`, `hygiene`, `listed`, `tree`, `planning`, `plaque`, `price`, `crime`, `trees`, `ward`, `flood`, `floodzone`, `epc`, `geograph`.
 - [ ] **The edge of the map.** Crop to the Addiscombe East and West wards, or keep the wider walk and let Guide tell the boundaries as now?
-- [ ] **"lived" or "loved"** in Guide's introduction ("I lived here a long time ago, yesterday, and tomorrow").
 - [ ] **Auster step 3.** Answer the brief's open questions so the drawn route can be built.
 
 ## Words

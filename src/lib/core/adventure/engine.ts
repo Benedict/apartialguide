@@ -32,7 +32,9 @@ export const HELP =
 	'Exits, weather, gps for this place on a map, score for how far you have walked, wait (z), again (g), and verbose or brief.';
 
 /** Guide's words about themselves, said once, before the first place. */
-export const INTRO = ['I am Guide. I lived here a long time ago, yesterday, and tomorrow.'];
+export const INTRO = [
+	'I am Guide. I lived here long ago. I lived here yesterday. I will have lived here tomorrow.'
+];
 
 export const OFFER = 'Shall I show you round? Type take the tour, and we will begin.';
 /** The tour, offered as a button as well as to type. */
