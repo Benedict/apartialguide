@@ -4,7 +4,17 @@ import { skyLine } from '../render/sky';
 import { weatherNow } from '../render/weather';
 import { airNow } from '../render/air';
 import { departuresLine } from '../render/departures';
-import { longDate, monthYear } from '../render/words';
+import { cameraLines, flightsLine, planetsLine, satellitesLine } from '../render/overhead';
+import {
+	flightFacts,
+	planetFacts,
+	satelliteFacts,
+	type Aircraft,
+	type Omm
+} from '../adapters/overhead';
+import { distanceWords, longDate, monthYear } from '../render/words';
+
+export { distanceWords };
 import { alludedTo } from '../keepers';
 import { direction, parse } from './parser';
 import type { Thing } from '../render/renderer';
@@ -22,6 +32,10 @@ export interface Reply {
 	map?: { latitude: number; longitude: number; label: string };
 	/** Commands to offer as buttons, as well as to type. */
 	actions?: { label: string; command: string }[];
+	/** What the page should ask after, from the reader's browser, and hand back. */
+	ask?: 'overhead' | 'camera';
+	/** A picture to show, such as what a camera saw. */
+	image?: { src: string; alt: string };
 }
 
 export const HELP =
@@ -29,7 +43,7 @@ export const HELP =
 	'Look (l) tells the place again in full; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name and drop it somewhere else; inventory (i) says what you carry. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
-	'Exits, weather, gps for this place on a map, score for how far you have walked, wait (z), again (g), and verbose or brief.';
+	'Exits, weather, look up at what passes overhead, use the camera nearest here, gps for this place on a map, score for how far you have walked, wait (z), again (g), and verbose or brief.';
 
 /** Guide's words about themselves, said once, before the first place. */
 export const INTRO = [
@@ -83,12 +97,6 @@ function ledgerLines(asOf: string, about: Ledger): string[] {
 }
 
 /** A distance as Guide says it: tens of metres under a kilometre, then tenths of a kilometre. */
-export function distanceWords(metres: number): string {
-	if (metres < 1000) return `${Math.round(metres / 10) * 10} metres`;
-	const km = metres / 1000;
-	return `${Number.isInteger(km) ? km : km.toFixed(1)} km`;
-}
-
 /** “A”, “A” and “B”, or “A”, “B” and “C”. */
 const listed = (names: readonly string[]) =>
 	names.length < 2 ? (names[0] ?? '') : `${names.slice(0, -1).join(', ')} and ${names.at(-1)}`;
@@ -248,6 +256,10 @@ export class Adventure {
 				};
 			case 'gps':
 				return this.gps();
+			case 'overhead':
+				return this.lookUp();
+			case 'camera':
+				return { lines: [], ask: 'camera' };
 			case 'exits':
 				return { lines: [this.exits()] };
 			case 'back':
@@ -587,6 +599,42 @@ export class Adventure {
 		return to
 			? hearsay(`you have left ${from.name} for ${to.name}`)
 			: hearsay(`you have left ${from.name}`);
+	}
+
+	/** Where the map puts this place, for what is asked of it: never where the reader is. */
+	position(): { latitude: number; longitude: number } | undefined {
+		const at = this.world.stops[this.here].at;
+		return at ? { latitude: at[0], longitude: at[1] } : this.world.weatherAt;
+	}
+
+	/** The weather and the planets at once; the page then asks after what passes overhead. */
+	private lookUp(): Reply {
+		const sky = [weatherNow(this.now), airNow(this.now), skyLine(this.now)]
+			.filter(Boolean)
+			.join(' ');
+		const planets = planetsLine(planetFacts(this.clock(), this.position()));
+		return { lines: [sky, planets].filter((l): l is string => !!l), ask: 'overhead' };
+	}
+
+	/** What passes overhead, as the page found it: satellites worked out, aircraft as broadcast. */
+	overhead(
+		satellites: readonly Omm[] | undefined,
+		flights: { ac?: Aircraft[] } | undefined
+	): Reply | undefined {
+		const at = this.position();
+		const now = this.clock();
+		const lines = [
+			satellites && satellitesLine(satelliteFacts(satellites, now, at)),
+			flights && flightsLine(flightFacts(flights, at, now.toISOString()))
+		].filter((l): l is string => !!l);
+		return lines.length ? { lines } : undefined;
+	}
+
+	/** What the nearest camera saw, as the page found it; nothing happens without an answer. */
+	camera(facts: readonly Fact[] | undefined): Reply {
+		const at = this.world.stops[this.here].at;
+		if (!facts || !at) return { lines: ['Nothing happens.'] };
+		return cameraLines(facts, at);
 	}
 
 	/** The bus and tram stops here that TfL has live arrivals for. */

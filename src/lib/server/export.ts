@@ -9,6 +9,8 @@ export interface ExportInput {
 	world: AdventureWorld;
 	/** The snapshot's date, as YYYY-MM-DD. */
 	snapshotDate: string;
+	/** Where the flights function answers, if one is deployed (`FLIGHTS_URL`). */
+	flightsUrl?: string;
 }
 
 /** The world as the page carries it: gzip, then base64, which nothing in a script element can break out of. */
@@ -76,7 +78,7 @@ export function wordsAmiss(world: AdventureWorld): string[] {
 }
 
 /** The whole game as one self-contained page: engine, world, styles and prompt. */
-export function exportPage({ engine, world, snapshotDate }: ExportInput): string {
+export function exportPage({ engine, world, snapshotDate, flightsUrl }: ExportInput): string {
 	return `<!doctype html>
 <html lang="en">
 <head>
@@ -117,6 +119,7 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 	}
 	.actions button:hover:not(:disabled), .actions button:focus-visible { background: var(--ink); color: var(--paper); outline: none; }
 	.actions button:disabled { opacity: 0.4; cursor: default; }
+	.picture { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
 	.map { height: 0; overflow: hidden; visibility: hidden; }
 	.map.drawn { height: 320px; visibility: visible; border: 1px solid var(--rule); }
 	.scroll { flex: 1; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
@@ -195,6 +198,8 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 	route();
 
 	const settings = loadSettings();
+	// The flights function, if one was deployed when the page was built; without one, no aircraft are asked after.
+	const FLIGHTS = ${JSON.stringify(flightsUrl ?? '')};
 	for (const box of document.querySelectorAll('#settings input[type="checkbox"]')) {
 		box.checked = settings[box.name] !== false;
 		box.addEventListener('change', () => {
@@ -216,7 +221,27 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 	const history = [];
 	let recall = 0;
 	const el = (tag, text, cls) => Object.assign(document.createElement(tag), { textContent: text, className: cls || '' });
+	// What a reply wants asked, from the reader's browser, for the map's own place, if they allow it.
+	function askFor(ask) {
+		const here = game.here;
+		if (ask === 'overhead')
+			Promise.all([
+				settings.satellites !== false ? fetchSatellites() : undefined,
+				settings.flights !== false ? fetchFlights(FLIGHTS) : undefined
+			]).then(([satellites, flights]) => {
+				const seen = game.here === here && game.overhead(satellites, flights);
+				if (seen) show(seen);
+			});
+		if (ask === 'camera') {
+			const at = game.position();
+			if (settings.cameras === false || !at) return show(game.camera(undefined));
+			fetchCamera(at).then((facts) => {
+				if (game.here === here) show(game.camera(facts));
+			});
+		}
+	}
 	function show(reply) {
+		if (reply.ask) askFor(reply.ask);
 		if (!reply.lines.length) return;
 		const section = document.createElement('section');
 		if (reply.title) section.append(el('h2', reply.title));
@@ -242,6 +267,13 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 				actions.append(button);
 			}
 			section.append(actions);
+		}
+		if (reply.image) {
+			const img = el('img', '', 'picture');
+			img.src = reply.image.src;
+			img.alt = reply.image.alt;
+			img.addEventListener('load', () => (scroll.scrollTop = scroll.scrollHeight));
+			section.append(img);
 		}
 		transcript.append(section);
 		if (reply.map) drawMap(section, reply.map);

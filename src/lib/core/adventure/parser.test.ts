@@ -49,8 +49,17 @@ describe('parse', () => {
 	});
 
 	it('reads asking after the weather', () => {
-		for (const text of ['weather', 'sky', 'look up', 'look at the sky'])
-			expect(parse(text)).toEqual({ verb: 'weather' });
+		for (const text of ['weather', 'sky']) expect(parse(text)).toEqual({ verb: 'weather' });
+	});
+
+	it('reads looking up at what is overhead', () => {
+		for (const text of ['look up', 'lookup', 'look at the sky', 'up'])
+			expect(parse(text)).toEqual({ verb: 'overhead' });
+	});
+
+	it('reads using the camera', () => {
+		for (const text of ['use the camera', 'use camera', 'camera', 'look through the camera'])
+			expect(parse(text)).toEqual({ verb: 'camera' });
 	});
 
 	it('reads examine on its own as examining everything here', () => {

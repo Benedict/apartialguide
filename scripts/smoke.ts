@@ -69,6 +69,11 @@ try {
 	await says(page, /Exits?:/);
 	await page.setViewportSize({ width: 390, height: 844 });
 
+	// The camera, with nothing answering, comes to nothing; the walk carries on.
+	await input.fill('use the camera');
+	await input.press('Enter');
+	await says(page, 'Nothing happens.');
+
 	// A walk saved in a slot, and kept as it goes, comes back after the page is closed.
 	await input.fill('save 1');
 	await input.press('Enter');

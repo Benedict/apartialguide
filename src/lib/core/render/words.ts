@@ -140,3 +140,10 @@ export function counted(n: number, noun: string): string {
 			: `${noun}s`;
 	return `${number} ${plural}`;
 }
+
+/** A distance as said aloud: "40 metres", "1.2 km". */
+export function distanceWords(metres: number): string {
+	if (metres < 1000) return `${Math.round(metres / 10) * 10} metres`;
+	const km = metres / 1000;
+	return `${Number.isInteger(km) ? km : km.toFixed(1)} km`;
+}

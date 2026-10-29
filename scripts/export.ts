@@ -46,6 +46,11 @@ const path = process.env.EXPORT_PATH ?? 'build/export/addiscombe.html';
 mkdirSync(dirname(path), { recursive: true });
 writeFileSync(
 	path,
-	exportPage({ engine: bundle.outputFiles[0].text, world, snapshotDate: config.snapshotDate })
+	exportPage({
+		engine: bundle.outputFiles[0].text,
+		world,
+		snapshotDate: config.snapshotDate,
+		flightsUrl: process.env.FLIGHTS_URL
+	})
 );
 console.log(`${Object.keys(world.stops).length} stops written to ${path}`);
