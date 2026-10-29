@@ -22,7 +22,7 @@ Feature: Another account, from Wikidata
   Scenario: Something Wikidata places here that the map does not have
     Given Wikidata places "The Old Invented Works", "former invented factory", right beside the reader
     When the game begins
-    Then it says "by another account"
+    Then it gives it as hearsay, never as another account
     And it says "“The Old Invented Works”"
 
   Scenario: Wikidata's facts keep their source when examined

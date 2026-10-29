@@ -1,5 +1,6 @@
 import type { Tags } from '../osm';
-import { capitalise, list as listOf, monthYear, numberWord } from './words';
+import { aside, hearsay } from './hearsay';
+import { list as listOf, monthYear, numberWord } from './words';
 
 /** What Guide says of each other source's facts about a thing. Nouns, numbers and dates are the source's. */
 /** A quotation as found, closing the sentence itself when it ends with its own full stop. */
@@ -49,8 +50,8 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 			const when = t['epc:lodged'] ? ` in ${monthYear(t['epc:lodged'])}` : '';
 			const rated = t['epc:rating'] ? `rated ${t['epc:rating']} for energy${when}` : '';
 			if (t['epc:built'])
-				return `By another account it was built ${t['epc:built']}${rated ? `, and ${rated}` : ''}.`;
-			return rated ? `By another account it was ${rated}.` : undefined;
+				return hearsay(`it was built ${t['epc:built']}${rated ? `, and ${rated}` : ''}`);
+			return rated ? hearsay(`it was ${rated}`) : undefined;
 		}
 	],
 	[
@@ -80,9 +81,13 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 				.map((n) => `“${n}”`);
 			const since = t['company:since'] ? monthYear(t['company:since']) : undefined;
 			if (count === 1)
-				return `A company is registered here, by another account: ${names[0]}${since ? `, since ${since}` : ''}.`;
+				return hearsay(
+					`a company is registered here: ${names[0]}${since ? `, since ${since}` : ''}`
+				);
 			const shown = names.length < count ? `${names.join(', ')} and others` : listOf(names);
-			return `${capitalise(numberWord(count))} companies are registered here, by another account${since ? `, the first since ${since}` : ''}: ${shown}.`;
+			return hearsay(
+				`${numberWord(count)} companies are registered here${since ? `, the first since ${since}` : ''}: ${shown}`
+			);
 		}
 	],
 	[
@@ -105,7 +110,9 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 		false,
 		(t) =>
 			t['trees:count']
-				? `${t['trees:count']} tree${t['trees:count'] === '1' ? '' : 's'} along it, by another account: ${t['trees:kinds']}.`
+				? ((along) => `${along}, ${aside(along)}: ${t['trees:kinds']}.`)(
+						`${t['trees:count']} tree${t['trees:count'] === '1' ? '' : 's'} along it`
+					)
 				: undefined
 	]
 ];

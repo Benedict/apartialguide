@@ -4,6 +4,7 @@ import type { Scene } from '../scene';
 import { facts } from '../testing/facts';
 import { SyntheticMap } from '../testing/synthetic';
 import { AdventureRenderer } from './adventure';
+import { aside } from './hearsay';
 
 const O = SyntheticMap.ORIGIN;
 const renderer = new AdventureRenderer();
@@ -178,7 +179,7 @@ describe('AdventureRenderer', () => {
 				effects: []
 			};
 			const t = text(scene({ beats: [half] }));
-			expect(t).not.toContain('by another account');
+			expect(t).not.toMatch(/they say|it is said|someone wrote down/);
 			expect(t).not.toContain('undefined');
 		});
 
@@ -193,7 +194,9 @@ describe('AdventureRenderer', () => {
 				effects: []
 			};
 			const room = renderer.render(scene({ hidden: [works] }));
-			expect(room.hidden?.lines[0]).toContain('“The Old Invented Works”, by another account');
+			expect(room.hidden?.lines[0]).toContain(
+				`“The Old Invented Works”, ${aside('“The Old Invented Works”')}`
+			);
 		});
 
 		it('speaks a broken name as found without remarking on it', () => {
@@ -480,7 +483,7 @@ describe('AdventureRenderer', () => {
 			};
 			const t = text(scene({ beats: [chapel] }));
 			expect(t).toContain(
-				'by another account, is “Invented Chapel”, “listed building”. Listed, grade II.'
+				`, ${aside('“Invented Chapel”, “listed building”')}, is “Invented Chapel”, “listed building”. Listed, grade II.`
 			);
 		});
 
@@ -496,7 +499,7 @@ describe('AdventureRenderer', () => {
 			};
 			const t = text(scene({ beats: [bench] }));
 			expect(t).toContain(
-				'by another account, is a bench. On it: “For Ada Inventa, who sat here”.'
+				`, ${aside('a bench')}, is a bench. On it: “For Ada Inventa, who sat here”.`
 			);
 			expect(t).not.toContain('undefined');
 		});
@@ -538,7 +541,7 @@ describe('AdventureRenderer', () => {
 				effects: []
 			};
 			expect(text(scene({ beats: [postcode] }))).toContain(
-				'by another account, is “CR0 9ZZ”, a postcode. In use from January 1980 to June 1998.'
+				`, ${aside('“CR0 9ZZ”, a postcode')}, is “CR0 9ZZ”, a postcode. In use from January 1980 to June 1998.`
 			);
 		});
 
@@ -657,8 +660,8 @@ describe('AdventureRenderer', () => {
 						]
 					})
 				).hidden?.lines[0];
-				expect(found).toContain('a bench, by another account');
-				expect(found).toContain('“Invented Chapel”, by another account');
+				expect(found).toContain(`a bench, ${aside('a bench')}`);
+				expect(found).toContain(`“Invented Chapel”, ${aside('“Invented Chapel”')}`);
 				expect(found).not.toContain('undefined');
 			});
 

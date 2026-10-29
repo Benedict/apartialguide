@@ -48,7 +48,7 @@ try {
 	await page.getByRole('button', { name: 'Take the tour' }).click();
 	await says(page, /Exits?:/);
 	check(
-		/\d+ moves?/.test(await page.locator('#status').innerText()),
+		/Moves: \d+/.test(await page.locator('#status').innerText()),
 		'the status line does not show the moves'
 	);
 	check(await input.isEnabled(), 'the prompt is not enabled');

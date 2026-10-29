@@ -323,6 +323,22 @@ Then('it says {string}', function (this: NarratorWorld, words: string) {
 	assert.ok(text.includes(words), text);
 });
 
+const SAID = /(They say|It is said that|Someone wrote down that|Word is) /;
+
+Then('it says, as hearsay, {string}', function (this: NarratorWorld, words: string) {
+	const text = replyText(state(this).reply);
+	assert.ok(
+		new RegExp(SAID.source + words.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).test(text),
+		text
+	);
+});
+
+Then('it gives it as hearsay, never as another account', function (this: NarratorWorld) {
+	const text = replyText(state(this).reply);
+	assert.match(text, /they say|it is said|someone wrote down|word is/i);
+	assert.doesNotMatch(text, /another account/i);
+});
+
 Then('it does not say {string}', function (this: NarratorWorld, words: string) {
 	const text = replyText(state(this).reply);
 	assert.ok(!text.includes(words), text);

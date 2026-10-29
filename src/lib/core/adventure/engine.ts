@@ -1,4 +1,5 @@
 import type { Fact } from '../facts';
+import { hearsay } from '../render/hearsay';
 import { skyLine } from '../render/sky';
 import { weatherNow } from '../render/weather';
 import { airNow } from '../render/air';
@@ -74,7 +75,7 @@ function ledgerLines(asOf: string, about: Ledger): string[] {
 	const areas = about.areas;
 	if (areas && areas.count > 1)
 		lines.push(
-			`By another account, the map runs into ${n(areas.count)} ${areas.kind}s${areas.most.length ? `, most of it in ${listed(areas.most)}` : ''}. I will say when we cross from one to another.`
+			`${hearsay(`the map runs into ${n(areas.count)} ${areas.kind}s${areas.most.length ? `, most of it in ${listed(areas.most)}` : ''}`)} I will say when we cross from one to another.`
 		);
 	return lines;
 }
@@ -570,10 +571,8 @@ export class Adventure {
 		return [
 			...now
 				.filter((z) => !was.has(z.name))
-				.map((z) => `By another account, you are within ${z.name}, ${withArticle(z.kind)}.`),
-			...before
-				.filter((z) => !is.has(z.name))
-				.map((z) => `By another account, you have come out of ${z.name}.`)
+				.map((z) => hearsay(`you are within ${z.name}, ${withArticle(z.kind)}`)),
+			...before.filter((z) => !is.has(z.name)).map((z) => hearsay(`you have come out of ${z.name}`))
 		];
 	}
 
@@ -582,10 +581,10 @@ export class Adventure {
 		const from = this.previous === undefined ? undefined : this.world.stops[this.previous].area;
 		const to = this.world.stops[this.here].area;
 		if (from?.name === to?.name) return undefined;
-		if (!from) return `By another account, you are in ${to!.name}, a ${to!.kind}.`;
+		if (!from) return hearsay(`you are in ${to!.name}, a ${to!.kind}`);
 		return to
-			? `By another account, you have left ${from.name} for ${to.name}.`
-			: `By another account, you have left ${from.name}.`;
+			? hearsay(`you have left ${from.name} for ${to.name}`)
+			: hearsay(`you have left ${from.name}`);
 	}
 
 	/** The bus and tram stops here that TfL has live arrivals for. */
