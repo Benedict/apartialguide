@@ -84,84 +84,75 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <title>A Partial Guide</title>
 <style>
+	/* As the classic adventures looked: one typeface, light on dark, an inverse status bar on top. */
 	:root {
-		--paper: #f6f4ef; --ink: #26231f; --muted: #6f685e; --rule: #dcd6cb; --accent: #8a3b1f;
-		--serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
-		--mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-		--small: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+		--paper: #000; --ink: #d4d4cc; --bright: #fff; --muted: #8e8e86; --rule: #3a3a36; --accent: #fff;
+		--mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
+		--serif: var(--mono); --small: var(--mono);
 		--height: 100dvh;
-		color-scheme: light dark;
-	}
-	@media (prefers-color-scheme: dark) {
-		:root { --paper: #1b1a18; --ink: #e7e1d6; --muted: #9c958a; --rule: #3a3732; --accent: #e0a07e; }
+		color-scheme: dark;
 	}
 	html, body { margin: 0; height: var(--height); overflow: hidden; }
 	body {
 		background: var(--paper); color: var(--ink);
-		font-family: var(--serif); font-size: 1.15rem; line-height: 1.6;
+		font-family: var(--mono); font-size: 1rem; line-height: 1.5;
 		display: flex; flex-direction: column;
 	}
-	header, .scroll > *, form {
-		box-sizing: border-box; width: 100%; max-width: 38rem; margin-inline: auto;
+	.scroll > *, form, .menu {
+		box-sizing: border-box; width: 100%; max-width: 40rem; margin-inline: auto;
 		padding-left: max(16px, env(safe-area-inset-left, 0px));
 		padding-right: max(16px, env(safe-area-inset-right, 0px));
 	}
-	header {
-		display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
-		font-family: var(--small); font-size: 0.8rem; color: var(--muted);
-		padding-top: max(0.6rem, env(safe-area-inset-top, 0px)); padding-bottom: 0.6rem;
-	}
-	header nav { display: flex; gap: 1rem; }
 	.status {
 		box-sizing: border-box; display: flex; justify-content: space-between; gap: 1rem;
-		font-family: var(--mono); font-size: 0.78rem; background: var(--ink); color: var(--paper);
-		padding: 0.25rem max(16px, env(safe-area-inset-left, 0px));
+		font-size: 0.85rem; font-weight: 700; background: var(--ink); color: var(--paper);
+		padding: max(0.25rem, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 0.25rem max(16px, env(safe-area-inset-left, 0px));
 	}
 	.status span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-	.status span:last-child { flex: none; }
+	.status span:last-child { flex: none; white-space: pre; }
 	.actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
 	.actions button {
-		font: inherit; font-family: var(--mono); font-size: 0.92rem; color: var(--paper); background: var(--accent);
-		border: 0; border-radius: 4px; padding: 0.5rem 0.9rem; cursor: pointer; min-height: 44px;
+		font: inherit; color: var(--bright); background: transparent;
+		border: 1px solid var(--ink); border-radius: 0; padding: 0.5rem 0.9rem; cursor: pointer; min-height: 44px;
 	}
-	.actions button:disabled { opacity: 0.5; cursor: default; }
-	.map { height: 0; border-radius: 4px; overflow: hidden; visibility: hidden; }
-	.map.drawn { height: 320px; visibility: visible; }
-	header a { color: inherit; }
+	.actions button:hover:not(:disabled), .actions button:focus-visible { background: var(--ink); color: var(--paper); outline: none; }
+	.actions button:disabled { opacity: 0.4; cursor: default; }
+	.map { height: 0; overflow: hidden; visibility: hidden; }
+	.map.drawn { height: 320px; visibility: visible; border: 1px solid var(--rule); }
 	.scroll { flex: 1; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
-	#transcript { display: grid; gap: 1.6rem; padding-block: 1rem 1.5rem; }
-	section { display: grid; gap: 0.9em; }
+	#transcript { display: grid; gap: 1.5em; padding-block: 1rem 1.5rem; }
+	section { display: grid; gap: 1em; }
 	.view { padding-block: 1rem 2rem; }
 	[hidden] { display: none !important; }
-	h2 { font-size: 1rem; margin: 0; }
-	h3 { font-size: 0.95rem; margin: 0.6rem 0 0; }
+	h2 { font-size: 1em; font-weight: 700; color: var(--bright); margin: 0; }
+	h3 { font-size: 1em; font-weight: 700; color: var(--bright); margin: 0.6rem 0 0; }
 	p { margin: 0; overflow-wrap: anywhere; }
-	a { color: var(--accent); }
-	.command { font-family: var(--mono); font-size: 0.92rem; color: var(--accent); }
+	a { color: var(--bright); }
+	.command { color: var(--bright); }
 	.sources { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.6rem; }
-	.terms { font-family: var(--small); font-size: 0.8rem; color: var(--muted); }
+	.terms { font-size: 0.85rem; color: var(--muted); }
 	.choice { display: flex; gap: 0.6rem; align-items: baseline; }
-	.choice input { width: 1.1rem; height: 1.1rem; flex: none; accent-color: var(--accent); }
+	.choice input { width: 1.1rem; height: 1.1rem; flex: none; accent-color: var(--ink); }
 	form {
-		display: flex; align-items: baseline; gap: 0.6rem; font-family: var(--mono); font-size: 0.92rem;
-		border-top: 1px solid var(--rule); background: var(--paper);
-		padding-top: 0.6rem; padding-bottom: max(0.8rem, env(safe-area-inset-bottom, 0px));
+		display: flex; align-items: baseline; gap: 0; background: var(--paper);
+		padding-top: 0.5rem; padding-bottom: 0.25rem;
 	}
-	form label { color: var(--accent); }
+	form label { color: var(--bright); }
 	#command {
-		flex: 1; min-width: 0; font: inherit; font-size: max(16px, 1em); color: var(--ink);
-		background: transparent; border: 0; border-bottom: 1px solid var(--rule); border-radius: 0;
-		padding: 0.3rem 0; outline: none;
+		flex: 1; min-width: 0; font: inherit; font-size: max(16px, 1em); color: var(--bright);
+		background: transparent; border: 0; border-radius: 0; padding: 0; outline: none;
+		caret-color: var(--bright);
 	}
-	#command:focus { border-bottom-color: var(--accent); }
+	#command::placeholder { color: var(--muted); }
+	.menu {
+		display: flex; justify-content: flex-end; gap: 1.2rem; font-size: 0.8rem;
+		padding-bottom: max(0.6rem, env(safe-area-inset-bottom, 0px));
+	}
+	.menu a { color: var(--muted); }
 </style>
 </head>
 <body>
-<header>
-	<span>A Partial Guide</span>
-	<nav><a href="#about">About</a><a href="#settings">Settings</a></nav>
-</header>
-<div class="status" id="status" hidden><span></span><span></span></div>
+<div class="status" id="status"><span>A Partial Guide</span><span></span></div>
 <div class="scroll" id="scroll">
 	<div id="game"><div id="transcript" aria-live="polite"></div></div>
 	${aboutPage(snapshotDate)}
@@ -171,6 +162,7 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 	<label for="command">&gt;</label>
 	<input id="command" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-label="What do you do?" placeholder="take the tour">
 </form>
+<nav class="menu"><a href="#about">About</a><a href="#settings">Settings</a></nav>
 <script>${engine}</script>
 <script type="application/gzip" id="world">${packed(world)}</script>
 <script>
@@ -276,8 +268,7 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 		touring = true;
 		const [place, count] = statusBar.children;
 		place.textContent = now.place;
-		count.textContent = distanceWords(now.walked) + ' · ' + now.moves + (now.moves === 1 ? ' move' : ' moves');
-		statusBar.hidden = false;
+		count.textContent = 'Walked: ' + distanceWords(now.walked) + '  Moves: ' + now.moves;
 	}
 
 	// gps draws its place on a map, on a wide screen, if the reader allows it; nothing at all if the map does not come.

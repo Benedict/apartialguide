@@ -87,14 +87,10 @@
 	<title>A Partial Guide</title>
 </svelte:head>
 
-{#if touring}
-	<p class="status">
-		<span>{status.place}</span>
-		<span
-			>{distanceWords(status.walked)} · {status.moves} {status.moves === 1 ? 'move' : 'moves'}</span
-		>
-	</p>
-{/if}
+<p class="status">
+	<span>{touring ? status.place : 'A Partial Guide'}</span>
+	{#if touring}<span>Walked: {distanceWords(status.walked)}&nbsp; Moves: {status.moves}</span>{/if}
+</p>
 
 <div class="transcript" aria-live="polite">
 	{#each transcript as entry, i (i)}
@@ -153,6 +149,7 @@
 		padding: 0.25rem 0.5rem;
 		font-family: var(--mono);
 		font-size: 0.8rem;
+		font-weight: 700;
 		background: var(--ink);
 		color: var(--paper);
 	}
@@ -161,10 +158,10 @@
 		font: inherit;
 		font-family: var(--mono);
 		font-size: 0.95rem;
-		color: var(--paper);
-		background: var(--accent);
-		border: 0;
-		border-radius: 4px;
+		color: var(--accent);
+		background: transparent;
+		border: 1px solid var(--ink);
+		border-radius: 0;
 		padding: 0.5rem 0.9rem;
 		min-height: 44px;
 		cursor: pointer;

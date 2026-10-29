@@ -138,6 +138,14 @@ describe('exportPage', () => {
 		expect(page()).toContain('game.status()');
 	});
 
+	it('looks like a classic adventure: one typeface, light on dark, the status bar always on top', () => {
+		expect(page()).toMatch(/body \{[^}]*font-family: var\(--mono\)/);
+		expect(page()).toContain('color-scheme: dark');
+		expect(page()).toMatch(/<div class="status" id="status"><span>A Partial Guide<\/span>/);
+		expect(page()).toContain("'Walked: ' + distanceWords(now.walked) + '  Moves: ' + now.moves");
+		expect(page()).not.toContain('<header>');
+	});
+
 	it('draws gps’s place on a map, on a wide screen, from pinned MapLibre and OpenFreeMap', () => {
 		expect(page()).toMatch(/maplibre-gl@\d+\.\d+\.\d+\/dist\/maplibre-gl\.js/);
 		expect(page()).toContain('https://tiles.openfreemap.org/styles/');

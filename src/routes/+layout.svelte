@@ -20,33 +20,24 @@
 </footer>
 
 <style>
+	/* As the classic adventures looked: one typeface, light on dark. */
 	:global(:root) {
-		--paper: #f6f3ec;
-		--ink: #26231f;
-		--muted: #6f685e;
-		--accent: #8a3b1f;
-		--rule: #dcd6cb;
-		--mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-		color-scheme: light dark;
-	}
-
-	@media (prefers-color-scheme: dark) {
-		:global(:root) {
-			--paper: #1b1a18;
-			--ink: #e7e1d6;
-			--muted: #9c958a;
-			--accent: #e0a07e;
-			--rule: #3a3732;
-		}
+		--paper: #000;
+		--ink: #d4d4cc;
+		--muted: #8e8e86;
+		--accent: #fff;
+		--rule: #3a3a36;
+		--mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
+		color-scheme: dark;
 	}
 
 	:global(body) {
 		margin: 0;
 		background: var(--paper);
 		color: var(--ink);
-		font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
-		font-size: 1.2rem;
-		line-height: 1.6;
+		font-family: var(--mono);
+		font-size: 1rem;
+		line-height: 1.5;
 	}
 
 	main {

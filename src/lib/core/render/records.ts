@@ -1,6 +1,6 @@
 import type { Tags } from '../osm';
 import { aside, hearsay } from './hearsay';
-import { capitalise, list as listOf, monthYear, numberWord } from './words';
+import { list as listOf, monthYear, numberWord } from './words';
 
 /** What Guide says of each other source's facts about a thing. Nouns, numbers and dates are the source's. */
 /** A quotation as found, closing the sentence itself when it ends with its own full stop. */
