@@ -13,6 +13,10 @@ let drawn: boolean;
 try {
 	const page = await browser.newPage({ viewport: { width: 1200, height: 900 } });
 	page.on('pageerror', (e) => console.error(`page error: ${e.message}`));
+	page.on('response', (r) => {
+		if (r.url().includes('jamcams'))
+			console.log(`response: ${r.status()} ${r.url().slice(0, 120)}`);
+	});
 	page.on('requestfailed', (r) =>
 		console.log(`request failed: ${r.url().slice(0, 120)} ${r.failure()?.errorText}`)
 	);
@@ -50,6 +54,30 @@ try {
 			.getAttribute('src')
 			.catch(() => null);
 		console.log(`picture: ${src ?? 'none shown'}`);
+		const file = src?.split('/').at(-1);
+		const forms = file
+			? [
+					src!,
+					`https://s3.eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/${file}`,
+					`https://jamcams.tfl.gov.uk.s3.eu-west-1.amazonaws.com/${file}`,
+					`https://jamcams.tfl.gov.uk/${file}`
+				]
+			: [];
+		for (const form of forms)
+			console.log(
+				`${form}: ` +
+					(await page.evaluate(
+						(url) =>
+							new Promise<string>((done) => {
+								const img = new Image();
+								img.onload = () => done(`image loads, ${img.naturalWidth} px`);
+								img.onerror = () => done('image fails');
+								img.src = url;
+								setTimeout(() => done('image times out'), 10_000);
+							}),
+						form
+					))
+			);
 		if (src)
 			console.log(
 				await page.evaluate(async (url) => {
