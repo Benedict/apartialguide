@@ -134,7 +134,7 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 	.choice { display: flex; gap: 0.6rem; align-items: baseline; }
 	.choice input { width: 1.1rem; height: 1.1rem; flex: none; accent-color: var(--ink); }
 	form {
-		display: flex; align-items: baseline; gap: 0; background: var(--paper);
+		display: flex; align-items: baseline; gap: 1ch; background: var(--paper);
 		padding-top: 0.5rem; padding-bottom: 0.25rem;
 	}
 	form label { color: var(--bright); }
