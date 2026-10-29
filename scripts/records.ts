@@ -100,7 +100,7 @@ async function ogcFeatures(label: string, bases: string[]): Promise<ZoneFeature[
 				const page = await getJson(url);
 				if (pages === 0)
 					console.log(
-						`${label}: first ${JSON.stringify(page.features?.[0]?.properties).slice(0, 400)}`
+						`${label}: ${page.numberMatched ?? '?'} matched, ${page.features?.length ?? 0} on the first page; ${String(JSON.stringify(page.features?.[0]?.properties ?? page)).slice(0, 400)}`
 					);
 				features.push(...(page.features ?? []));
 				url = (page.links ?? []).find((l: { rel: string; href: string }) => l.rel === 'next')?.href;
@@ -316,7 +316,7 @@ SELECT ?paon ?street ?amount ?date WHERE {
 					if (page.error) throw new Error(JSON.stringify(page.error).slice(0, 300));
 					if (offset === 0)
 						console.log(
-							`postcodes: ${service.title}: first ${JSON.stringify(page.features?.[0]?.properties).slice(0, 300)}`
+							`postcodes: ${service.title}: first ${String(JSON.stringify(page.features?.[0]?.properties)).slice(0, 300)}`
 						);
 					features.push(...(page.features ?? []));
 					if ((page.features?.length ?? 0) < 2000) break;
