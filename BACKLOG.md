@@ -20,6 +20,13 @@ What is left, and ideas for later phases. Done items move to the changelog in th
 - **Auster step 3:** the drawn route, once the brief's open questions are answered.
 - **"lived" or "loved"** in Guide's introduction.
 
+## Sources still to plug in
+
+- **Flood zones** (Environment Agency) as areas, like wards: next.
+- **EPC** house ages (needs `EPC_EMAIL` and `EPC_API_KEY`) and **Geograph** captions (needs `GEOGRAPH_API_KEY`).
+- **Roadworks**, live, from TfL's road disruption API (no key).
+- Not possible as feeds: the WWII bomb census (no download, non-commercial licence; ask the University of Portsmouth), CWGC civilian war dead (needs a written licence), Defra road noise (bulk files only, modelled).
+
 ## Known gaps, as found
 
 - The GLA tree list holds only TfL's highway trees here; Croydon Council's are not in it.
