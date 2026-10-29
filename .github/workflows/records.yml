@@ -32,6 +32,10 @@ jobs:
         env:
           # The tree lists run to hundreds of megabytes.
           NODE_OPTIONS: --max-old-space-size=6144
+          # Keyed sources: unset, they say so and the rest still fetch.
+          EPC_EMAIL: ${{ secrets.EPC_EMAIL }}
+          EPC_API_KEY: ${{ secrets.EPC_API_KEY }}
+          GEOGRAPH_API_KEY: ${{ secrets.GEOGRAPH_API_KEY }}
       - name: Commit records
         run: |
           git config user.name "github-actions[bot]"

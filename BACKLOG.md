@@ -16,18 +16,20 @@ What is left, and ideas for later phases. Done items move to the changelog in th
 
 - **About page:** a few lines about Benedict, and a link if wanted.
 - **The edge of the map:** crop to the Addiscombe East and West wards, or keep the wider walk and let Guide note the boundaries (as now)?
-- **Keys** as repository secrets: `GEOGRAPH_API_KEY` (photo captions), `COMPANIES_HOUSE_API_KEY` (businesses at addresses), `ANTHROPIC_API_KEY` (prose written ahead of time).
+- **Keys** as repository secrets: `EPC_EMAIL` and `EPC_API_KEY` (when houses were built), `GEOGRAPH_API_KEY` (photo titles). Then add `epc,geograph` to `data/records/request.env` and push. Companies need no key (the free monthly file).
+- **Geograph's licence:** CC BY-SA asks for each photographer's name; the About page credits them only as a body. Name each, or leave Geograph out?
 - **Auster step 3:** the drawn route, once the brief's open questions are answered.
 - **"lived" or "loved"** in Guide's introduction.
 
 ## Sources still to plug in
 
-- **Flood zones** (Environment Agency) as areas, like wards: next.
-- **EPC** house ages (needs `EPC_EMAIL` and `EPC_API_KEY`) and **Geograph** captions (needs `GEOGRAPH_API_KEY`).
 - **Roadworks**, live, from TfL's road disruption API (no key).
 - Not possible as feeds: the WWII bomb census (no download, non-commercial licence; ask the University of Portsmouth), CWGC civilian war dead (needs a written licence), Defra road noise (bulk files only, modelled).
 
 ## Known gaps, as found
+
+- No flood zone or recorded flood lies in the box (the same queries by the Thames find them): the fetchers are kept, the stores are empty.
+- The template says "is a garages" of a plural kind.
 
 - The GLA tree list holds only TfL's highway trees here; Croydon Council's are not in it.
 - Past maps cover only the first, smaller box: Overpass refuses automated use for the history.

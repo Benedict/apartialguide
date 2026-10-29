@@ -21,6 +21,8 @@ import { benchRecords } from '../src/lib/server/sources/benches';
 import { wildlifeRecords } from '../src/lib/server/sources/wildlife';
 import { postcodeRecords } from '../src/lib/server/sources/postcodes';
 import { companyRecords } from '../src/lib/server/sources/companies';
+import { epcRecords } from '../src/lib/server/sources/epc';
+import { geographRecords } from '../src/lib/server/sources/geograph';
 import {
 	floodZoneName,
 	recordedFloodName,
@@ -372,6 +374,54 @@ SELECT ?paon ?street ?amount ?date WHERE {
 		const records = companyRecords(rows, wanted);
 		console.log(`companies: ${rows.length} rows near, ${records.length} addresses`);
 		return { source: 'Companies House', prefix: 'company', records };
+	},
+	/**
+	 * Energy performance certificates at the snapshot's postcodes, asked of the register one postcode
+	 * at a time. Needs EPC_EMAIL and EPC_API_KEY, given on registering with the register.
+	 */
+	epc: async () => {
+		const email = process.env.EPC_EMAIL;
+		const key = process.env.EPC_API_KEY;
+		if (!email || !key) throw new Error('epc needs EPC_EMAIL and EPC_API_KEY');
+		const auth = `Basic ${Buffer.from(`${email}:${key}`).toString('base64')}`;
+		const rows: Record<string, string>[] = [];
+		for (const postcode of postcodes) {
+			const page = await getJson(
+				`https://epc.opendatacommunities.org/api/v1/domestic/search?postcode=${encodeURIComponent(postcode)}&size=5000`,
+				{ Authorization: auth }
+			).catch((err) => {
+				console.log(`epc: ${postcode}: ${(err as Error).message.slice(0, 200)}`);
+				return { rows: [] };
+			});
+			rows.push(...(page.rows ?? []));
+		}
+		const records = epcRecords(rows);
+		console.log(
+			`epc: ${postcodes.length} postcodes, ${rows.length} certificates, ${records.length} addresses`
+		);
+		return { source: 'Energy Performance of Buildings Register', prefix: 'epc', records };
+	},
+	/** Photographs of the box from Geograph, page by page around its centre. Needs GEOGRAPH_API_KEY. */
+	geograph: async () => {
+		const key = process.env.GEOGRAPH_API_KEY;
+		if (!key) throw new Error('geograph needs GEOGRAPH_API_KEY');
+		const km = Math.ceil(
+			Math.hypot((n - s) * 111, (e - w) * 111 * Math.cos((centre.lat * Math.PI) / 180)) / 2
+		);
+		const items: unknown[] = [];
+		for (let page = 1; page <= 50; page++) {
+			const answer = await getJson(
+				`https://api.geograph.org.uk/syndicator.php?key=${encodeURIComponent(key)}&format=JSON&q=${centre.lat.toFixed(5)},${centre.lon.toFixed(5)}&distance=${km}&perpage=100&page=${page}`
+			);
+			const got = answer.items ?? [];
+			if (page === 1)
+				console.log(`geograph: first item ${JSON.stringify(got[0] ?? {}).slice(0, 300)}`);
+			items.push(...got);
+			if (got.length < 100) break;
+		}
+		const records = geographRecords({ items: items as never }, bbox);
+		console.log(`geograph: ${items.length} photographs, ${records.length} kept`);
+		return { source: 'Geograph', prefix: 'geograph', records };
 	},
 	/** The Environment Agency's flood zones over the box, from the Flood Map for Planning. */
 	floodzones: async () => {
