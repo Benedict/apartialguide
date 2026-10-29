@@ -9,7 +9,7 @@ Feature: Taking the tour
     And the reader opens the game
 
   Scenario: Guide introduces themselves and offers the tour
-    Then it says "I am Guide. I lived here a long time ago, yesterday, and tomorrow."
+    Then it says "I am Guide. I lived here long ago. I lived here yesterday. I will have lived here tomorrow."
     And it says "take the tour"
     And it does not say "You are standing"
     And it does not say "postcode"
