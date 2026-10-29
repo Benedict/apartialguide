@@ -261,7 +261,7 @@ SELECT ?paon ?street ?amount ?date WHERE {
 				const features: unknown[] = [];
 				for (let offset = 0; offset < 50_000; offset += 2000) {
 					const page = await getJson(
-						`${service.url}/0/query?where=1%3D1&geometry=${w},${s},${e},${n}&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&outSR=4326&f=geojson&resultOffset=${offset}&resultRecordCount=2000`
+						`${service.url}/0/query?where=${encodeURIComponent(`lat >= ${s} AND lat <= ${n} AND long >= ${w} AND long <= ${e}`)}&outFields=*&f=geojson&resultOffset=${offset}&resultRecordCount=2000`
 					);
 					if (offset === 0)
 						console.log(

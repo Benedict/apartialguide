@@ -40,4 +40,18 @@ describe('postcodeRecords (ONS Postcode Directory)', () => {
 			postcodeRecords({ features: [pc({ PCDS: 'X1 1XX', DOTERM: '199806' }, 1, 52)] }, box)
 		).toEqual([]);
 	});
+
+	it('reads where a postcode is from the directory’s own columns when it has no shape', () => {
+		const [r] = postcodeRecords(
+			{
+				features: [
+					{
+						properties: { pcds: 'CR0 9ZW', dointr: 198001, doterm: 199606, lat: 51.38, long: -0.07 }
+					}
+				]
+			},
+			box
+		);
+		expect(r.at).toEqual([51.38, -0.07]);
+	});
 });

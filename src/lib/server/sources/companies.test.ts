@@ -41,4 +41,22 @@ describe('companyRecords (Companies House basic company data)', () => {
 			}
 		]);
 	});
+
+	it('skips a flat or unit number to find the house and street', () => {
+		const records = companyRecords(
+			[
+				row({ 'RegAddress.AddressLine1': '19 FLAT 3', 'RegAddress.AddressLine2': 'MORLAND ROAD' }),
+				row({
+					CompanyNumber: '5',
+					'RegAddress.AddressLine1': 'UNIT 4',
+					'RegAddress.AddressLine2': '22 HIGH STREET'
+				})
+			],
+			new Set(['CR0 9ZZ'])
+		);
+		expect(records.map((r) => r.address)).toEqual([
+			{ number: '19', street: 'MORLAND ROAD' },
+			{ number: '22', street: 'HIGH STREET' }
+		]);
+	});
 });

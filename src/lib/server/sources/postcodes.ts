@@ -29,7 +29,10 @@ export function postcodeRecords(
 		const name = String(field(props, 'pcds') ?? '').trim();
 		const ended = month(field(props, 'doterm'));
 		const began = month(field(props, 'dointr'));
-		const [lon, lat] = f.geometry?.coordinates ?? [];
+		const [lon, lat] = f.geometry?.coordinates ?? [
+			Number(field(props, 'long')),
+			Number(field(props, 'lat'))
+		];
 		if (!name || !ended || typeof lat !== 'number' || typeof lon !== 'number') return [];
 		if (!inBox([lat, lon], box)) return [];
 		return [

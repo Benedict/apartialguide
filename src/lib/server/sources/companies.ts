@@ -9,11 +9,23 @@ const isoDay = (d = '') => {
 	return m ? `${m[3]}-${m[2]}-${m[1]}` : undefined;
 };
 
-/** A house number and street from the first address line that starts with a number. */
+/** A flat, unit or the like within a building: not a street. */
+const WITHIN = /^(FLAT|UNIT|APARTMENT|APT|SUITE|ROOM|OFFICE|FLOOR|STUDIO|BLOCK)\b/i;
+
+/**
+ * A house number and street from the address lines: the first line that starts with a number and
+ * goes on to a street, or a number followed only by a flat, with the street on the next line.
+ */
 function numberAndStreet(row: Record<string, string>) {
-	for (const line of [row['RegAddress.AddressLine1'], row['RegAddress.AddressLine2']]) {
-		const m = line?.trim().match(/^(\d+[A-Za-z]?)[,\s]+(.+)$/);
-		if (m) return { number: m[1], street: m[2].trim() };
+	const lines = [row['RegAddress.AddressLine1'], row['RegAddress.AddressLine2']].map(
+		(l) => l?.trim() ?? ''
+	);
+	for (const [i, line] of lines.entries()) {
+		const m = line.match(/^(\d+[A-Za-z]?)[,\s]+(.+)$/);
+		if (!m) continue;
+		if (!WITHIN.test(m[2])) return { number: m[1], street: m[2].trim() };
+		const next = lines[i + 1];
+		if (next && !/^\d/.test(next) && !WITHIN.test(next)) return { number: m[1], street: next };
 	}
 	return undefined;
 }
