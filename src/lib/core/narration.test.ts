@@ -10,6 +10,10 @@ import { SyntheticMap } from './testing/synthetic';
 
 const O = SyntheticMap.ORIGIN;
 
+/** Prose made of a stop's own facts: the broken name only where the stop's facts hold it. */
+const said = (text: string) => (prompt: { user: string }) =>
+	prompt.user.split(/\n\nAlready said/)[0].includes('“rumb”') ? `${text} “rumb”.` : text;
+
 /** An invented street of a few stops, with a broken name beside its west end. */
 function narrator() {
 	const m = new SyntheticMap();
@@ -26,15 +30,11 @@ describe('narrateWorld', () => {
 	it('writes prose for every stop that has none, once for stops with the same facts', async () => {
 		const { n } = narrator();
 		const store: NarrationStore = {};
-		const result = await narrateWorld(
-			n,
-			new RecordedModel(() => 'A street. “rumb”, it says.'),
-			store
-		);
+		const result = await narrateWorld(n, new RecordedModel(said('A street.')), store);
 		expect(result.written + result.kept).toBe(n.graph.all().length);
 		expect(Object.keys(store)).toHaveLength(result.written);
 		expect(Object.values(store)[0]).toMatchObject({
-			paragraphs: ['A street. “rumb”, it says.'],
+			paragraphs: ['A street. “rumb”.'],
 			model: 'recorded'
 		});
 	});
@@ -49,8 +49,8 @@ describe('narrateWorld', () => {
 	it('leaves stops that already have prose alone', async () => {
 		const { n } = narrator();
 		const store: NarrationStore = {};
-		await narrateWorld(n, new RecordedModel(() => '“rumb”.'), store);
-		const again = new RecordedModel(() => 'Different. “rumb”.');
+		await narrateWorld(n, new RecordedModel(said('Here.')), store);
+		const again = new RecordedModel(said('Different.'));
 		const result = await narrateWorld(n, again, store);
 		expect(result.written).toBe(0);
 		expect(again.prompts).toHaveLength(0);
@@ -92,16 +92,17 @@ describe('narrateWorld', () => {
 		const { n, west } = narrator();
 		const store: NarrationStore = {};
 		let i = 0;
-		const model = new RecordedModel(() => `Prose number ${++i}. “rumb”.`);
+		const words = ['one', 'two', 'three'];
+		const model = new RecordedModel((p) => said(`Prose number ${words[i++]}.`)(p));
 		await narrateWorld(n, model, store, { limit: 2, from: west });
 		expect(model.prompts[0].user).not.toMatch(/already said/i);
 		expect(model.prompts[1].user).toMatch(/already said at the places next to this one/i);
-		expect(model.prompts[1].user).toContain('Prose number 1.');
+		expect(model.prompts[1].user).toContain('Prose number one.');
 		const second = n.graph
 			.all()
 			.find((s) => model.prompts[1].user.startsWith(buildPrompt(n.visit(s.id)!.scene).user))!;
-		expect(store[promptKey(buildPrompt(n.visit(second.id)!.scene))].paragraphs[0]).toBe(
-			'Prose number 2. “rumb”.'
+		expect(store[promptKey(buildPrompt(n.visit(second.id)!.scene))].paragraphs[0]).toMatch(
+			/^Prose number two\./
 		);
 	});
 
@@ -114,5 +115,34 @@ describe('narrateWorld', () => {
 		});
 		expect(result.rejected).toEqual([west]);
 		expect(store).toEqual({});
+	});
+
+	it('does not store prose that says what the facts do not, and says what it was', async () => {
+		const { n, west } = narrator();
+		const store: NarrationStore = {};
+		const result = await narrateWorld(
+			n,
+			new RecordedModel(() => '“rumb”, a Victorian bakery since 1887.'),
+			store,
+			{ limit: 1, from: west }
+		);
+		expect(result.rejected).toEqual([west]);
+		expect(result.unfounded).toEqual([{ stop: west, words: ['1887', 'Victorian'] }]);
+		expect(store).toEqual({});
+	});
+
+	it('tells the model which stop and key it writes for, so prose written elsewhere can be found', async () => {
+		const { n, west } = narrator();
+		const asked: { stop: string; key: string }[] = [];
+		const model = {
+			name: 'written',
+			async write(_prompt: unknown, about?: { stop: string; key: string }) {
+				if (about) asked.push(about);
+				return '“rumb”.';
+			}
+		};
+		await narrateWorld(n, model, {}, { limit: 1, from: west });
+		expect(asked[0].stop).toBe(west);
+		expect(asked[0].key).toBe(promptKey(buildPrompt(n.visit(west)!.scene)));
 	});
 });
