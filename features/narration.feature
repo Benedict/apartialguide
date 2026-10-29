@@ -15,6 +15,12 @@ Feature: Prose written ahead of time
     And it says "Exits: "
     And it does not say "You are standing on Long Street"
 
+  Scenario: Written prose is what the reader reads on walking in
+    Given prose has been written ahead of time for every stop, reading "Long Street, and a pub."
+    When the reader types "e"
+    Then it says "Long Street, and a pub."
+    And it does not say "You are standing on Long Street"
+
   Scenario: A stop without written prose keeps the template
     When the game begins
     Then it says "You are standing on Long Street"

@@ -8,6 +8,7 @@
  */
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
+import { isBusier } from '../src/lib/core/busier';
 import { narrateWorld, type NarrateResult } from '../src/lib/core/narration';
 import type { NarrationStore } from '../src/lib/core/render/cached';
 import { AnthropicProse } from '../src/lib/server/anthropic';
@@ -32,7 +33,9 @@ let result: NarrateResult | undefined;
 try {
 	result = await narrateWorld(narrator, model, store, {
 		limit,
-		from: startStop(narrator, config).id
+		from: startStop(narrator, config).id,
+		// NARRATE_ONLY=busier narrates only stops whose data has something going on.
+		...(process.env.NARRATE_ONLY === 'busier' ? { only: isBusier } : {})
 	});
 } finally {
 	// Keep whatever was written, even if the run stopped part way.
@@ -47,6 +50,9 @@ if (result.declined.length)
 	console.log(`Declined, keeping the template: ${result.declined.join(', ')}`);
 if (result.rejected.length)
 	console.log(`Not stored, keeping the template: ${result.rejected.join(', ')}`);
+for (const { stop, phrase } of result.repeated)
+	console.log(`  ${stop} used a turn of phrase already in several places: “${phrase}”`);
+if (result.skipped) console.log(`${result.skipped} stops left to the template`);
 for (const { stop, words } of result.unfounded)
 	console.log(`  ${stop} said what its facts do not: ${words.join(', ')}`);
 
