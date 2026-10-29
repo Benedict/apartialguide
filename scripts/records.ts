@@ -256,29 +256,42 @@ SELECT ?paon ?street ?amount ?date WHERE {
 		console.log(
 			`postcodes: services ${JSON.stringify(services.map((r: { title: string }) => r.title)).slice(0, 600)}`
 		);
-		for (const service of services) {
+		// The live directory holds only postcodes still in use; the dated tables keep those that ended.
+		for (const service of services.filter((r: { title: string }) => !/\(Live\)/.test(r.title))) {
 			try {
+				// Each issue names its columns in its own case: ask the table for them.
+				const layer = await getJson(`${service.url}/0?f=json`);
+				const names: string[] = (layer.fields ?? []).map((f: { name: string }) => f.name);
+				const col = (re: RegExp) => names.find((f) => re.test(f));
+				const [lat, lon, ended] = [col(/^lat$/i), col(/^long$/i), col(/^doterm$/i)];
+				if (!lat || !lon || !ended) {
+					console.log(
+						`postcodes: ${service.title}: no lat, long or doterm in ${names.slice(0, 30).join(',')}`
+					);
+					continue;
+				}
+				const where = `${lat} >= ${s} AND ${lat} <= ${n} AND ${lon} >= ${w} AND ${lon} <= ${e} AND ${ended} IS NOT NULL`;
 				const features: unknown[] = [];
 				for (let offset = 0; offset < 50_000; offset += 2000) {
 					const page = await getJson(
-						`${service.url}/0/query?where=${encodeURIComponent(`lat >= ${s} AND lat <= ${n} AND long >= ${w} AND long <= ${e}`)}&outFields=*&f=geojson&resultOffset=${offset}&resultRecordCount=2000`
+						`${service.url}/0/query?where=${encodeURIComponent(where)}&outFields=*&f=geojson&resultOffset=${offset}&resultRecordCount=2000`
 					);
+					if (page.error) throw new Error(JSON.stringify(page.error).slice(0, 300));
 					if (offset === 0)
 						console.log(
-							`postcodes: ${service.title}: first ${JSON.stringify(page.features?.[0]?.properties).slice(0, 400)}`
+							`postcodes: ${service.title}: first ${JSON.stringify(page.features?.[0]?.properties).slice(0, 300)}`
 						);
 					features.push(...(page.features ?? []));
 					if ((page.features?.length ?? 0) < 2000) break;
 				}
 				const records = postcodeRecords({ features: features as never }, bbox);
 				console.log(
-					`postcodes: ${service.title}: ${features.length} postcodes, ${records.length} ended`
+					`postcodes: ${service.title}: ${features.length} ended in the box, ${records.length} kept`
 				);
-				if (features.length)
-					return { source: 'Office for National Statistics', prefix: 'postcode', records };
+				return { source: 'Office for National Statistics', prefix: 'postcode', records };
 			} catch (err) {
 				console.log(
-					`postcodes: ${service.title} did not answer: ${(err as Error).message.slice(0, 200)}`
+					`postcodes: ${service.title} did not answer: ${(err as Error).message.slice(0, 300)}`
 				);
 			}
 		}
