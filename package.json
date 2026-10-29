@@ -16,6 +16,7 @@
 		"test": "npm run test:unit -- --run && npm run test:acceptance",
 		"test:acceptance": "NODE_OPTIONS=\"--import tsx\" cucumber-js",
 		"snapshot": "tsx scripts/snapshot.ts",
+		"compare": "tsx scripts/compare.ts",
 		"narrate:prompts": "tsx scripts/prompts.ts",
 		"narrate": "tsx scripts/narrate.ts",
 		"export": "tsx scripts/export.ts",

@@ -13,6 +13,7 @@ import { narrateWorld, type NarrateResult } from '../src/lib/core/narration';
 import type { NarrationStore } from '../src/lib/core/render/cached';
 import { AnthropicProse } from '../src/lib/server/anthropic';
 import { WrittenProse } from '../src/lib/server/written';
+import { OpenRouterProse } from '../src/lib/server/openrouter';
 import { loadNarration, loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
 
 const config = readConfig();
@@ -23,10 +24,13 @@ if (!config) {
 const path = config.narrationPath ?? 'data/narration/addiscombe.json';
 const store = loadNarration(path);
 const narrator = loadNarrator(config);
-// Prose written in a session (PROSE_FROM, a file of key to prose), or the API.
+// Prose written in a session (PROSE_FROM, a file of key to prose), another provider's model
+// through OpenRouter (NARRATOR_PROVIDER=openrouter, NARRATOR_MODEL), or Claude.
 const model = process.env.PROSE_FROM
 	? new WrittenProse(process.env.PROSE_FROM)
-	: new AnthropicProse();
+	: process.env.NARRATOR_PROVIDER === 'openrouter'
+		? new OpenRouterProse(process.env.NARRATOR_MODEL ?? '')
+		: new AnthropicProse();
 const limit = Number(process.env.NARRATE_LIMIT ?? 25);
 
 let result: NarrateResult | undefined;
