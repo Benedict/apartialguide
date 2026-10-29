@@ -13,6 +13,7 @@ import type { Tags } from '../osm';
 import type { Scene, SceneExit } from '../scene';
 import { isBackground, type Beat } from '../slippage';
 import { isElsewhere, isHistory } from '../tensions';
+import { aside } from './hearsay';
 import type { Part, Renderer, Room, Thing } from './renderer';
 import { recordSentences } from './records';
 import {
@@ -265,7 +266,7 @@ function brief(beat: Beat): { phrase: string; noun?: string } {
 	if (isElsewhereOnly(beat)) {
 		const { label, what, kind } = otherAccount(tags);
 		const called = label ? `“${label}”` : kind ? article(kind) : what ? `“${what}”` : 'a thing';
-		return { phrase: `${called}, by another account` };
+		return { phrase: `${called}, ${aside(called)}` };
 	}
 	const what = noun(tags);
 	if (tags.name) {
@@ -448,7 +449,7 @@ function describeBeat(
 
 	if (isElsewhereOnly(beat)) {
 		return [
-			`${place}, by another account, is ${calledElsewhere(tags)}.`,
+			`${place}, ${aside(calledElsewhere(tags))}, is ${calledElsewhere(tags)}.`,
 			...recordSentences(tags, 'room')
 		].join(' ');
 	}

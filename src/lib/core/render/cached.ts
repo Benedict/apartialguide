@@ -60,7 +60,10 @@ export function namesNoSource(scene: Scene, paragraphs: readonly string[]): bool
 		'wikidata',
 		...facts.filter(isElsewhere).map((f) => keeper(f.source).toLowerCase())
 	]);
-	return [...keepers].every((k) => mapValues.has(k) || !text.includes(k));
+	return (
+		!text.includes('another account') &&
+		[...keepers].every((k) => mapValues.has(k) || !text.includes(k))
+	);
 }
 
 const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

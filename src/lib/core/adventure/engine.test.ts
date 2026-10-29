@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { Adventure, INTRO } from './engine';
+import { hearsay } from '../render/hearsay';
 import type { AdventureWorld } from './world';
 import { currentWeatherFacts } from '../adapters/weather';
 import { heavensFacts } from '../adapters/heavens';
@@ -56,7 +57,7 @@ describe('Adventure', () => {
 				INTRO[0],
 				'I walk by a map. Mine is dated 24 October 2026: 412 named streets and 5,688 places to stand, the oldest of them last recorded in March 2009. Beyond it there may be more. I could not say what.',
 				'The map is not the only account. Others have been kept: by those who inspect kitchens, those who write down what houses sell for and those who keep an encyclopaedia of everything. Where they disagree with the map, I leave them disagreeing.',
-				'By another account, the map runs into 9 wards, most of it in Inventa East and Inventa West. I will say when we cross from one to another.'
+				`${hearsay('the map runs into 9 wards, most of it in Inventa East and Inventa West')} I will say when we cross from one to another.`
 			]);
 		});
 
@@ -634,7 +635,7 @@ describe('Departures', () => {
 		expect(game.departures(stop, undefined)).toBeUndefined();
 	});
 
-	describe('wards, by another account', () => {
+	describe('wards, as hearsay', () => {
 		const ward = (name: string) => ({ name, kind: 'ward' });
 		const wardWorld: AdventureWorld = {
 			start: 'a',
@@ -658,31 +659,29 @@ describe('Departures', () => {
 		};
 
 		it('says which ward the tour begins in', () => {
-			expect(touring().first.lines[0]).toBe('By another account, you are in Inventa West, a ward.');
+			expect(touring().first.lines[0]).toBe(hearsay('you are in Inventa West, a ward'));
 		});
 
 		it('says nothing of wards on a step within one', () => {
 			const { game } = touring();
-			expect(game.respond('east').lines.join(' ')).not.toContain('By another account, you');
+			expect(game.respond('east').lines.join(' ')).not.toMatch(/you (are in|have left) Inventa/);
 		});
 
 		it('tells a step from one ward into another, first', () => {
 			const { game } = touring();
 			game.respond('east');
 			expect(game.respond('east').lines[0]).toBe(
-				'By another account, you have left Inventa West for Inventa East.'
+				hearsay('you have left Inventa West for Inventa East')
 			);
 			expect(game.respond('west').lines[0]).toBe(
-				'By another account, you have left Inventa East for Inventa West.'
+				hearsay('you have left Inventa East for Inventa West')
 			);
 		});
 
 		it('tells a step out of every ward it knows', () => {
 			const { game } = touring();
 			game.respond('east');
-			expect(game.respond('north').lines[0]).toBe(
-				'By another account, you have left Inventa West.'
-			);
+			expect(game.respond('north').lines[0]).toBe(hearsay('you have left Inventa West'));
 		});
 	});
 
@@ -719,7 +718,7 @@ describe('Departures', () => {
 		});
 	});
 
-	describe('zones, by another account', () => {
+	describe('zones, as hearsay', () => {
 		const zone = (name: string, kind: string) => ({ name, kind });
 		const zoned: AdventureWorld = {
 			start: 'a',
@@ -750,8 +749,8 @@ describe('Departures', () => {
 
 		it('tells a step into zones, each once', () => {
 			expect(touring().respond('east').lines.slice(0, 2)).toEqual([
-				'By another account, you are within Flood Zone 3, a flood zone.',
-				'By another account, you are within the flood of September 1968, a recorded flood.'
+				hearsay('you are within Flood Zone 3, a flood zone'),
+				hearsay('you are within the flood of September 1968, a recorded flood')
 			]);
 		});
 
@@ -759,9 +758,7 @@ describe('Departures', () => {
 			const game = touring();
 			game.respond('east');
 			const lines = game.respond('east').lines;
-			expect(lines[0]).toBe(
-				'By another account, you have come out of the flood of September 1968.'
-			);
+			expect(lines[0]).toBe(hearsay('you have come out of the flood of September 1968'));
 			expect(lines.join(' ')).not.toContain('Flood Zone 3');
 		});
 	});

@@ -6,7 +6,7 @@ A text "street view" of Addiscombe, Croydon. Its name is A Partial Guide. One na
 
 - Never invent a fact. Guide speaks only from facts a source adapter returned. Phrases around the facts are Guide's; nouns, names, numbers and dates come from facts.
 - Every fact carries provenance: source, subject, observed date.
-- Guide never names a source or who kept an account (no "Wikidata", no "Food Standards Agency"): Guide alludes to them only by what they do (`keepers.ts`: "those who inspect kitchens", "those who draw the wards"), or says "another account". The sources are credited on the About page, as their licences ask. Prose that names one is not stored or shown (`namesNoSource`), unless the name is also one of the map's own facts there (a tram's operator).
+- Guide never names a source or who kept an account (no "Wikidata", no "Food Standards Agency"): Guide alludes to them only by what they do (`keepers.ts`: "those who inspect kitchens", "those who draw the wards"), or gives what they keep as hearsay (`render/hearsay.ts`: "They say…", "It is said that…", "Someone wrote down that…"), never "another account", which stored prose may not say either. The sources are credited on the About page, as their licences ask. Prose that names one is not stored or shown (`namesNoSource`), unless the name is also one of the map's own facts there (a tram's operator).
 - Never repair data. Broken values ("est Bank") are spoken as found.
 - Never edit OpenStreetMap. Gaps stay as found.
 - Never call public Overpass, or any OSM API, from the app. Snapshots are taken by hand with `npm run snapshot`.

@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { aside, hearsay } from './hearsay';
 import { recordSentences } from './records';
 
 describe('recordSentences', () => {
@@ -53,12 +54,12 @@ describe('recordSentences, other sources', () => {
 });
 
 describe('recordSentences, trees', () => {
-	it('counts the trees along a street, by their names as found, as another account', () => {
+	it('counts the trees along a street, by their names as found, as hearsay', () => {
 		expect(
 			recordSentences({ 'trees:count': '3', 'trees:kinds': 'London plane (2), Lime (1)' })
-		).toEqual(['3 trees along it, by another account: London plane (2), Lime (1).']);
+		).toEqual([`3 trees along it, ${aside('3 trees along it')}: London plane (2), Lime (1).`]);
 		expect(recordSentences({ 'trees:count': '1', 'trees:kinds': 'Cherry (1)' })).toEqual([
-			'1 tree along it, by another account: Cherry (1).'
+			`1 tree along it, ${aside('1 tree along it')}: Cherry (1).`
 		]);
 	});
 });
@@ -83,9 +84,7 @@ describe('recordSentences, newer accounts', () => {
 				'company:names': 'INVENTED LTD',
 				'company:since': '2019-05-02'
 			})
-		).toEqual([
-			'A company is registered here, by another account: “INVENTED LTD”, since May 2019.'
-		]);
+		).toEqual([hearsay('a company is registered here: “INVENTED LTD”, since May 2019')]);
 		expect(
 			recordSentences({
 				'company:count': '7',
@@ -93,7 +92,9 @@ describe('recordSentences, newer accounts', () => {
 				'company:since': '2004-01-09'
 			})
 		).toEqual([
-			'Seven companies are registered here, by another account, the first since January 2004: “A LTD”, “B LTD”, “C LTD” and others.'
+			hearsay(
+				'seven companies are registered here, the first since January 2004: “A LTD”, “B LTD”, “C LTD” and others'
+			)
 		]);
 		expect(recordSentences({ 'company:count': '1', 'company:names': 'X' }, 'room')).toEqual([]);
 	});
@@ -103,9 +104,9 @@ describe('recordSentences, keyed accounts', () => {
 	it('says when a house was built, by its certificate, on a closer look', () => {
 		expect(
 			recordSentences({ 'epc:built': '1900-1929', 'epc:rating': 'D', 'epc:lodged': '2019-03-14' })
-		).toEqual(['By another account it was built 1900-1929, and rated D for energy in March 2019.']);
+		).toEqual([hearsay('it was built 1900-1929, and rated D for energy in March 2019')]);
 		expect(recordSentences({ 'epc:rating': 'D', 'epc:lodged': '2019-03-14' })).toEqual([
-			'By another account it was rated D for energy in March 2019.'
+			hearsay('it was rated D for energy in March 2019')
 		]);
 		expect(recordSentences({ 'epc:built': '1900-1929' }, 'room')).toEqual([]);
 	});

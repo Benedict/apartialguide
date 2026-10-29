@@ -126,7 +126,7 @@ describe('buildPrompt', () => {
 		const user = buildPrompt(scene({ beats: [pub] })).user;
 		expect(user).toContain('The map: A pub, “The Sextant”.');
 		expect(user).toContain(
-			'Another account, kept by those who keep an encyclopaedia of everything: Elsewhere it is listed as “invented public house”.'
+			'Elsewhere, kept by those who keep an encyclopaedia of everything: Elsewhere it is listed as “invented public house”.'
 		);
 		expect(user).not.toContain('Wikidata');
 		expect(buildPrompt(scene()).system).toMatch(/elsewhere/i);
@@ -236,7 +236,7 @@ describe('buildPrompt', () => {
 		};
 		const user = buildPrompt(scene({ beats: [cafe] })).user;
 		expect(user).toContain(
-			'Another account, kept by those who inspect kitchens: Its food hygiene rating is 5, given in April 2025.'
+			'Elsewhere, kept by those who inspect kitchens: Its food hygiene rating is 5, given in April 2025.'
 		);
 	});
 
@@ -253,8 +253,8 @@ describe('buildPrompt', () => {
 		expect(system).toMatch(/never end on (counting|losing count)/i);
 	});
 
-	it('is version 13', () => {
-		expect(PROMPT_VERSION).toBe(13);
+	it('is version 14', () => {
+		expect(PROMPT_VERSION).toBe(14);
 	});
 
 	it('tells the model never to name a source', () => {
@@ -301,9 +301,7 @@ describe('buildPrompt', () => {
 		};
 		const user = buildPrompt(scene({ beats: [bench] })).user;
 		expect(user).toContain('a bench, which the map does not have');
-		expect(user).toContain(
-			'Another account, kept by those who read the benches: On it: “For Ada”.'
-		);
+		expect(user).toContain('Elsewhere, kept by those who read the benches: On it: “For Ada”.');
 		expect(user).not.toContain('undefined');
 	});
 });

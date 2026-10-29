@@ -96,7 +96,11 @@ describe('namesNoSource', () => {
 	it('refuses prose that names the keeper of another account, or Wikidata', () => {
 		expect(namesNoSource(pub('Invented Registry'), ['By the Invented Registry, a 5.'])).toBe(false);
 		expect(namesNoSource(pub('Invented Registry'), ['Wikidata lists it.'])).toBe(false);
-		expect(namesNoSource(pub('Invented Registry'), ['By another account, a 5.'])).toBe(true);
+		expect(namesNoSource(pub('Invented Registry'), ['They say a 5.'])).toBe(true);
+	});
+
+	it('refuses prose that calls what others keep another account', () => {
+		expect(namesNoSource(pub('Invented Registry'), ['By another account, a 5.'])).toBe(false);
 	});
 
 	it('lets a name stand that is also one of the map’s own facts', () => {
