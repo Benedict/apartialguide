@@ -260,3 +260,28 @@ describe('using the camera', () => {
 		expect(game.camera(undefined).lines).toEqual(['Nothing happens.']);
 	});
 });
+
+describe('looking beyond the map', () => {
+	it('tells what another keeps beyond the map, from where the map puts this place', () => {
+		const road = destination(west, 270, 2300);
+		const game = new Adventure({
+			...world,
+			beyond: [
+				{ name: 'Invented Way?', kind: 'a road', points: [[road[0], road[1]]], source: 'Invented' }
+			]
+		});
+		game.begin();
+		game.respond('take the tour');
+		const said = game.respond('look beyond').lines.join(' ');
+		expect(said).toContain(
+			'beyond what the map shows, “Invented Way?”, a road, 2.3 km to the west.'
+		);
+	});
+
+	it('owns to not knowing, when nothing is kept near enough', () => {
+		const { game } = touring();
+		expect(game.respond('look beyond').lines).toEqual([
+			'Beyond the map there may be more. I could not say what.'
+		]);
+	});
+});

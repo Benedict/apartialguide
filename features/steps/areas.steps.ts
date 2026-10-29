@@ -96,3 +96,29 @@ Given(
 		s.game = new Adventure(compileWorld(this.narrator, s.started!));
 	}
 );
+
+Given(
+	'a road called {string} is kept {int} km west of the reader, beyond the map',
+	function (this: NarratorWorld, name: string, km: number) {
+		const s = this as State;
+		const here = this.narrator.graph.get(s.started!)!.position;
+		const west = destination(here, 270, km * 1000);
+		this.records = [
+			{
+				source: 'Invented Roads',
+				prefix: 'road',
+				retrieved: '2026-10-24',
+				records: [],
+				beyond: [
+					{
+						name,
+						kind: 'a road',
+						points: [destination(west, 0, 500) as LatLon, destination(west, 180, 500) as LatLon]
+					}
+				]
+			}
+		];
+		this.rebuild();
+		s.game = new Adventure(compileWorld(this.narrator, s.started!));
+	}
+);

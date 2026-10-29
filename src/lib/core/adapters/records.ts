@@ -36,6 +36,8 @@ export interface RecordStore {
 	areas?: AreaRecord[];
 	/** Whether its areas lie over the map as zones (flood zones), rather than dividing it (wards). */
 	overlay?: boolean;
+	/** What it keeps beyond the map's edge, told only when the reader looks beyond. */
+	beyond?: { name?: string; kind: string; points: LatLon[] }[];
 }
 
 /** How near a thing of the same name must be to be the one a record means, in metres. */

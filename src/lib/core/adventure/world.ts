@@ -1,4 +1,6 @@
 import { groupBySubject, type Fact } from '../facts';
+import type { LatLon } from '../geo';
+import type { Beyond } from '../render/beyond';
 import type { Narrator } from '../narrator';
 import type { Part, Thing } from '../render/renderer';
 import type { StopId } from '../stops';
@@ -107,6 +109,8 @@ export interface AdventureWorld {
 	about?: Ledger;
 	/** Where to ask about today's weather: where the tour begins. */
 	weatherAt?: { latitude: number; longitude: number };
+	/** What others keep beyond the map's edge, told only when the reader looks beyond. */
+	beyond?: Beyond[];
 }
 
 export function compileWorld(
@@ -173,6 +177,15 @@ export function compileWorld(
 		about,
 		...(begins
 			? { weatherAt: { latitude: +begins[0].toFixed(4), longitude: +begins[1].toFixed(4) } }
+			: {}),
+		...(narrator.beyond.length
+			? {
+					beyond: narrator.beyond.map((b) => ({
+						...b,
+						// A metre is near enough for what lies kilometres off.
+						points: b.points.map(([lat, lon]): LatLon => [+lat.toFixed(5), +lon.toFixed(5)])
+					}))
+				}
 			: {})
 	};
 }

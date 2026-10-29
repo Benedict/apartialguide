@@ -3,6 +3,7 @@ import { OsmAdapter } from './adapters/osm';
 import { WikidataAdapter, type WikidataStore } from './adapters/wikidata';
 import { RecordsAdapter, type RecordStore } from './adapters/records';
 import { areaAt, type AreaRecord } from './areas';
+import type { Beyond } from './render/beyond';
 import { keeper } from './keepers';
 import type { Clock, Fact } from './facts';
 import { distance, distanceToPolyline, insideRing, type LatLon } from './geo';
@@ -73,6 +74,8 @@ const OFF_STREET_REACH = 12;
 export class Narrator {
 	private readonly renderer: Renderer;
 	private readonly areas: AreaRecord[];
+	/** What others keep beyond the map's edge, by whom. */
+	readonly beyond: Beyond[];
 	private readonly zones: AreaRecord[];
 
 	constructor(
@@ -86,6 +89,9 @@ export class Narrator {
 		const stores = options.records ?? [];
 		this.areas = stores.filter((s) => !s.overlay).flatMap((store) => store.areas ?? []);
 		this.zones = stores.filter((s) => s.overlay).flatMap((store) => store.areas ?? []);
+		this.beyond = stores.flatMap((store) =>
+			(store.beyond ?? []).map((b) => ({ ...b, source: store.source }))
+		);
 	}
 
 	static fromOsm(data: OsmData, options: NarratorOptions): Narrator {
