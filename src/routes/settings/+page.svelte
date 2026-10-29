@@ -13,8 +13,8 @@
 
 <h2>Settings</h2>
 <p>
-	Guide can ask two sources from your browser as you read. Turn either off and nothing is asked of
-	it; Guide then says nothing of it.
+	Guide can ask these sources from your browser as you read, always for the map’s own places, never
+	yours. Turn any off and nothing is asked of it; Guide then says nothing of it.
 </p>
 {#each LIVE as l (l.key)}
 	<label>

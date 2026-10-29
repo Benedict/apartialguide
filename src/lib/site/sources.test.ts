@@ -15,9 +15,10 @@ describe('SOURCES', () => {
 		expect(SOURCES.filter((s) => s.live).map((s) => s.live)).toEqual([
 			'weather',
 			'departures',
-			'maps'
+			'maps',
+			'air'
 		]);
-		expect(LIVE.map((l) => l.key)).toEqual(['weather', 'departures', 'maps']);
+		expect(LIVE.map((l) => l.key)).toEqual(['weather', 'departures', 'maps', 'air']);
 	});
 
 	it('gives the attribution the Open Government Licence and TfL ask for', () => {

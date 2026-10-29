@@ -55,7 +55,7 @@ describe('skyNow', () => {
 		expect(facts.filter((f) => f.subject === 'weather/now')).toHaveLength(2);
 	});
 
-	it('asks nothing of Open-Meteo when the reader has turned the weather off', async () => {
+	it('asks nothing of Open-Meteo when the reader has turned the weather and the air off', async () => {
 		let asked = false;
 		const facts = await skyNow(
 			{ latitude: 51.38, longitude: -0.07 },
@@ -64,9 +64,30 @@ describe('skyNow', () => {
 				asked = true;
 				return new Response(JSON.stringify(answer));
 			},
-			{ weather: false }
+			{ weather: false, air: false }
 		);
 		expect(asked).toBe(false);
 		expect(facts.every((f) => f.subject === 'sky/now')).toBe(true);
+	});
+
+	it('asks after the air beside the weather, unless the reader turned it off', async () => {
+		const asked: string[] = [];
+		const get = async (url: string) => {
+			asked.push(url);
+			return new Response(
+				JSON.stringify(
+					url.includes('air-quality') ? { current: { time: 't', european_aqi: 32 } } : answer
+				)
+			);
+		};
+		const at = { latitude: 51.38, longitude: -0.07 };
+		const facts = await skyNow(at, new Date(), get);
+		expect(
+			asked.some((u) => u.startsWith('https://air-quality-api.open-meteo.com/v1/air-quality?'))
+		).toBe(true);
+		expect(facts.some((f) => f.subject === 'air/now')).toBe(true);
+		asked.length = 0;
+		await skyNow(at, new Date(), get, { air: false });
+		expect(asked.some((u) => u.includes('air-quality'))).toBe(false);
 	});
 });

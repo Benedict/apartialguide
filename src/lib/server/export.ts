@@ -46,7 +46,7 @@ function settingsPage(): string {
 	).join('\n\t\t');
 	return `<section id="settings" class="view" hidden>
 		<h2>Settings</h2>
-		<p>Guide can ask two sources from your browser as you read. Turn either off and nothing is asked of it; Guide then says nothing of it.</p>
+		<p>Guide can ask these sources from your browser as you read, always for the map’s own places, never yours. Turn any off and nothing is asked of it; Guide then says nothing of it.</p>
 		${choices}
 		<p class="terms">Kept in this browser only. A change to the weather applies when the walk next begins.</p>
 		<p><a href="#">Back to the walk</a></p>
@@ -342,7 +342,7 @@ export function exportPage({ engine, world, snapshotDate }: ExportInput): string
 	input.addEventListener('focus', () => setTimeout(fit, 300));
 	// Until Guide has begun, there is nothing to answer.
 	input.disabled = true;
-	skyNow(WORLD.weatherAt, new Date(), undefined, { weather: settings.weather !== false }).then((now) => {
+	skyNow(WORLD.weatherAt, new Date(), undefined, { weather: settings.weather !== false, air: settings.air !== false }).then((now) => {
 		game.begin(now).forEach(show);
 		input.disabled = false;
 		if (!location.hash) input.focus({ preventScroll: true });

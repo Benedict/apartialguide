@@ -41,7 +41,7 @@ try {
 	await page.goto(`file://${path}`);
 	await says(page, 'I am Guide');
 	check(
-		asked.some((u) => u.includes('open-meteo')),
+		asked.some((u) => u.includes('api.open-meteo.com/v1/forecast')),
 		'the weather was not asked after'
 	);
 	const input = page.locator('#command');
@@ -104,7 +104,10 @@ try {
 	await page.goto('about:blank');
 	await page.goto(`file://${path}`);
 	await says(page, 'I am Guide');
-	check(!asked.some((u) => u.includes('open-meteo')), 'the weather was asked after when off');
+	check(
+		!asked.some((u) => u.includes('api.open-meteo.com/v1/forecast')),
+		'the weather was asked after when off'
+	);
 	await page.goto(`file://${path}#settings`);
 	await shows(page, '#settings');
 	check(

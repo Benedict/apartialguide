@@ -28,14 +28,15 @@
 
 	// Guide begins once the browser has asked after today's weather, or given up asking.
 	$effect(() => {
-		skyNow(data.world.weatherAt, new Date(), undefined, { weather: settings.weather }).then(
-			async (now) => {
-				transcript.push(...game.begin(now).map((reply): Entry => ({ kind: 'reply', reply })));
-				ready = true;
-				await tick();
-				input.focus();
-			}
-		);
+		skyNow(data.world.weatherAt, new Date(), undefined, {
+			weather: settings.weather,
+			air: settings.air
+		}).then(async (now) => {
+			transcript.push(...game.begin(now).map((reply): Entry => ({ kind: 'reply', reply })));
+			ready = true;
+			await tick();
+			input.focus();
+		});
 	});
 
 	async function submit(event: SubmitEvent) {
