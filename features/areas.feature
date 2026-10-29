@@ -27,3 +27,8 @@ Feature: Wards, by another account
     Given a ward called "Inventa West" all along Long Street
     When the reader takes the tour from part way along Long Street
     Then it says "By another account, you are in Inventa West, a ward."
+
+  Scenario: A step into a zone drawn over the map
+    Given a flood zone called "Inventa Zone" east of just beyond the reader
+    When the reader types "east"
+    Then it says "By another account, you are within Inventa Zone, a flood zone."

@@ -15,7 +15,8 @@ const DOINGS: Record<string, string> = {
 	'Office for National Statistics': 'those who draw the wards and number the streets',
 	OpenBenches: 'those who read the benches',
 	'NBN Atlas': 'those who note what lives here',
-	'Companies House': 'those who register companies'
+	'Companies House': 'those who register companies',
+	'Environment Agency': 'those who map where the water goes'
 };
 
 /** A keeper by what they do, if Guide knows; never their name. */

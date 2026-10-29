@@ -124,6 +124,12 @@ export const SOURCES: Source[] = [
 		terms: `Contains public sector information licensed under the ${OGL}`
 	},
 	{
+		name: 'Environment Agency',
+		href: 'https://environment.data.gov.uk/',
+		gives: 'flood zones, and the floods it has recorded',
+		terms: `© Environment Agency copyright and/or database right. ${OGL}`
+	},
+	{
 		name: 'London Datastore',
 		href: 'https://data.london.gov.uk/dataset/london-public-realm-trees-2r45m',
 		gives: 'the trees listed along streets',

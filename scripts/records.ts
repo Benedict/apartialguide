@@ -21,6 +21,12 @@ import { benchRecords } from '../src/lib/server/sources/benches';
 import { wildlifeRecords } from '../src/lib/server/sources/wildlife';
 import { postcodeRecords } from '../src/lib/server/sources/postcodes';
 import { companyRecords } from '../src/lib/server/sources/companies';
+import {
+	floodZoneName,
+	recordedFloodName,
+	zoneAreas,
+	type ZoneFeature
+} from '../src/lib/server/sources/zones';
 import { spawn } from 'node:child_process';
 import { createWriteStream } from 'node:fs';
 import { createInterface } from 'node:readline';
@@ -76,6 +82,37 @@ async function entities(dataset: string) {
 }
 
 type Taken = Omit<RecordStore, 'retrieved'>;
+/**
+ * Every feature in the box from an OGC API Features service, whichever of the given services
+ * answers: its collections are listed, the first taken, its pages followed.
+ */
+async function ogcFeatures(label: string, bases: string[]): Promise<ZoneFeature[]> {
+	for (const base of bases) {
+		try {
+			const list = await getJson(`${base}/collections?f=json`);
+			const ids: string[] = (list.collections ?? []).map((c: { id: string }) => c.id);
+			console.log(`${label}: ${base} has ${ids.join(', ')}`);
+			if (!ids.length) continue;
+			const features: ZoneFeature[] = [];
+			let url: string | undefined =
+				`${base}/collections/${ids[0]}/items?bbox=${w},${s},${e},${n}&f=json&limit=500`;
+			for (let pages = 0; url && pages < 40; pages++) {
+				const page = await getJson(url);
+				if (pages === 0)
+					console.log(
+						`${label}: first ${JSON.stringify(page.features?.[0]?.properties).slice(0, 400)}`
+					);
+				features.push(...(page.features ?? []));
+				url = (page.links ?? []).find((l: { rel: string; href: string }) => l.rel === 'next')?.href;
+			}
+			return features;
+		} catch (err) {
+			console.log(`${label}: ${base} did not answer: ${(err as Error).message.slice(0, 200)}`);
+		}
+	}
+	throw new Error(`no ${label} service answered`);
+}
+
 const SOURCES: Record<string, () => Promise<Taken | Taken[]>> = {
 	/** Food hygiene ratings, from the FSA's ratings API, within about a mile of the middle of the box. */
 	hygiene: async () => {
@@ -328,6 +365,23 @@ SELECT ?paon ?street ?amount ?date WHERE {
 		const records = companyRecords(rows, wanted);
 		console.log(`companies: ${rows.length} rows near, ${records.length} addresses`);
 		return { source: 'Companies House', prefix: 'company', records };
+	},
+	/** The Environment Agency's flood zones over the box, from the Flood Map for Planning. */
+	floodzones: async () => {
+		const features = await ogcFeatures('floodzones', [
+			'https://environment.data.gov.uk/spatialdata/flood-map-for-planning-flood-zones/ogc/features/v1',
+			'https://environment.data.gov.uk/spatialdata/flood-zones/ogc/features/v1'
+		]);
+		const areas = zoneAreas(features, 'flood zone', floodZoneName);
+		return { source: 'Environment Agency', prefix: 'floodzone', records: [], overlay: true, areas };
+	},
+	/** Floods the Environment Agency has recorded over the box, each by the month it began. */
+	floods: async () => {
+		const features = await ogcFeatures('floods', [
+			'https://environment.data.gov.uk/spatialdata/recorded-flood-outlines/ogc/features/v1'
+		]);
+		const areas = zoneAreas(features, 'recorded flood', recordedFloodName);
+		return { source: 'Environment Agency', prefix: 'flood', records: [], overlay: true, areas };
 	},
 	/** Benches and their inscriptions, from OpenBenches: whichever of its feeds answers first. */
 	benches: async () => {

@@ -718,4 +718,51 @@ describe('Departures', () => {
 			expect(game.respond('gps')).toEqual({ lines: ['I cannot say where this is on any map.'] });
 		});
 	});
+
+	describe('zones, by another account', () => {
+		const zone = (name: string, kind: string) => ({ name, kind });
+		const zoned: AdventureWorld = {
+			start: 'a',
+			stops: {
+				a: room('Mill Parade', [{ label: 'east', to: 'b' }]),
+				b: {
+					...room('Cross Row', [
+						{ label: 'west', to: 'a' },
+						{ label: 'east', to: 'c' }
+					]),
+					zones: [
+						zone('Flood Zone 3', 'flood zone'),
+						zone('the flood of September 1968', 'recorded flood')
+					]
+				},
+				c: {
+					...room('Weir Steps', [{ label: 'west', to: 'b' }]),
+					zones: [zone('Flood Zone 3', 'flood zone')]
+				}
+			}
+		};
+		const touring = () => {
+			const game = new Adventure(zoned);
+			game.begin();
+			game.respond('take the tour');
+			return game;
+		};
+
+		it('tells a step into zones, each once', () => {
+			expect(touring().respond('east').lines.slice(0, 2)).toEqual([
+				'By another account, you are within Flood Zone 3, a flood zone.',
+				'By another account, you are within the flood of September 1968, a recorded flood.'
+			]);
+		});
+
+		it('tells a step out of one, and nothing of one still around you', () => {
+			const game = touring();
+			game.respond('east');
+			const lines = game.respond('east').lines;
+			expect(lines[0]).toBe(
+				'By another account, you have come out of the flood of September 1968.'
+			);
+			expect(lines.join(' ')).not.toContain('Flood Zone 3');
+		});
+	});
 });

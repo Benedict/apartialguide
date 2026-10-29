@@ -29,6 +29,8 @@ export interface CompiledStop {
 	at?: [number, number];
 	/** The area another account puts this stop in, such as a ward. */
 	area?: { name: string; kind: string };
+	/** Other areas another account draws over this stop, such as flood zones: any number at once. */
+	zones?: { name: string; kind: string }[];
 	/** What a closer look finds, if anything is hidden here. */
 	hidden?: { lines: string[]; things: Thing[] };
 }
@@ -118,6 +120,7 @@ export function compileWorld(
 		const { room, plan, scene, inView } = narrator.visit(stop.id)!;
 		const transit = transitIn(inView);
 		const area = narrator.areaAt(stop.position);
+		const zones = narrator.zonesAt(stop.position).map(({ name, kind }) => ({ name, kind }));
 		const things = plan.beats.flatMap((b) =>
 			b.facts
 				.filter((f) => ['name', 'wikidata:label', 'etymology:label'].includes(f.claim.key))
@@ -144,7 +147,8 @@ export function compileWorld(
 			...(room.hidden ? { hidden: room.hidden } : {}),
 			...(fragments.length ? { fragments } : {}),
 			...(transit.length ? { transit } : {}),
-			...(area ? { area: { name: area.name, kind: area.kind } } : {})
+			...(area ? { area: { name: area.name, kind: area.kind } } : {}),
+			...(zones.length ? { zones } : {})
 		};
 	}
 	// How many distinct names in the whole map share each word: a word in few is distinctive.

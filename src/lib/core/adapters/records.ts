@@ -34,6 +34,8 @@ export interface RecordStore {
 	standalone?: boolean;
 	/** Areas the source draws, such as wards, rather than things. */
 	areas?: AreaRecord[];
+	/** Whether its areas lie over the map as zones (flood zones), rather than dividing it (wards). */
+	overlay?: boolean;
 }
 
 /** How near a thing of the same name must be to be the one a record means, in metres. */

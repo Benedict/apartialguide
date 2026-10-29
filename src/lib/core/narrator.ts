@@ -5,7 +5,7 @@ import { RecordsAdapter, type RecordStore } from './adapters/records';
 import { areaAt, type AreaRecord } from './areas';
 import { keeper } from './keepers';
 import type { Clock, Fact } from './facts';
-import { distance, distanceToPolyline, type LatLon } from './geo';
+import { distance, distanceToPolyline, insideRing, type LatLon } from './geo';
 import { OsmIndex, type OsmData } from './osm';
 import { Perception } from './perception';
 import { AdventureRenderer } from './render/adventure';
@@ -73,6 +73,7 @@ const OFF_STREET_REACH = 12;
 export class Narrator {
 	private readonly renderer: Renderer;
 	private readonly areas: AreaRecord[];
+	private readonly zones: AreaRecord[];
 
 	constructor(
 		readonly graph: StopGraph,
@@ -82,7 +83,9 @@ export class Narrator {
 		readonly ledger: MapLedger = { streets: 0, accounts: [] }
 	) {
 		this.renderer = options.renderer ?? new AdventureRenderer();
-		this.areas = (options.records ?? []).flatMap((store) => store.areas ?? []);
+		const stores = options.records ?? [];
+		this.areas = stores.filter((s) => !s.overlay).flatMap((store) => store.areas ?? []);
+		this.zones = stores.filter((s) => s.overlay).flatMap((store) => store.areas ?? []);
 	}
 
 	static fromOsm(data: OsmData, options: NarratorOptions): Narrator {
@@ -100,6 +103,11 @@ export class Narrator {
 			options,
 			ledgerOf(osm, facts, options.records ?? [])
 		);
+	}
+
+	/** Every zone another account draws over a point, such as flood zones. */
+	zonesAt(p: LatLon): AreaRecord[] {
+		return this.zones.filter((z) => z.rings.some((ring) => insideRing(p, ring)));
 	}
 
 	/** The area another account puts a point in, such as a ward, if any. */
