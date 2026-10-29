@@ -63,6 +63,42 @@ describe('recordSentences, trees', () => {
 	});
 });
 
+describe('recordSentences, newer accounts', () => {
+	it('says when a living thing was seen', () => {
+		expect(recordSentences({ 'wildlife:seen': '2021-06' }, 'room')).toEqual([
+			'Seen here in June 2021.'
+		]);
+	});
+
+	it('says when a postcode was in use', () => {
+		expect(
+			recordSentences({ 'postcode:began': '1980-01', 'postcode:ended': '1998-06' }, 'room')
+		).toEqual(['In use from January 1980 to June 1998.']);
+	});
+
+	it('names the companies registered at an address, on a closer look', () => {
+		expect(
+			recordSentences({
+				'company:count': '1',
+				'company:names': 'INVENTED LTD',
+				'company:since': '2019-05-02'
+			})
+		).toEqual([
+			'A company is registered here, by another account: “INVENTED LTD”, since May 2019.'
+		]);
+		expect(
+			recordSentences({
+				'company:count': '7',
+				'company:names': 'A LTD|B LTD|C LTD',
+				'company:since': '2004-01-09'
+			})
+		).toEqual([
+			'Seven companies are registered here, by another account, the first since January 2004: “A LTD”, “B LTD”, “C LTD” and others.'
+		]);
+		expect(recordSentences({ 'company:count': '1', 'company:names': 'X' }, 'room')).toEqual([]);
+	});
+});
+
 describe('recordSentences, in a room', () => {
 	it('keeps to the short sayings in a room, and tells the rest on a closer look', () => {
 		const tags = {

@@ -12,8 +12,10 @@ const DOINGS: Record<string, string> = {
 	'HM Land Registry': 'those who write down what houses sell for',
 	'police.uk': 'those who count crimes by the month',
 	'Greater London Authority': 'those who count trees',
-	'Office for National Statistics': 'those who draw the wards',
-	OpenBenches: 'those who read the benches'
+	'Office for National Statistics': 'those who draw the wards and number the streets',
+	OpenBenches: 'those who read the benches',
+	'NBN Atlas': 'those who note what lives here',
+	'Companies House': 'those who register companies'
 };
 
 /** A keeper by what they do, if Guide knows; never their name. */

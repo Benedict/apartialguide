@@ -1,5 +1,5 @@
 import type { Tags } from '../osm';
-import { monthYear } from './words';
+import { capitalise, list as listOf, monthYear, numberWord } from './words';
 
 /** What Guide says of each other source's facts about a thing. Nouns, numbers and dates are the source's. */
 /** A quotation as found, closing the sentence itself when it ends with its own full stop. */
@@ -43,6 +43,34 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 		(t) => (t['plaque:inscription'] ? `A plaque: ${quoted(t['plaque:inscription'])}` : undefined)
 	],
 	[true, (t) => (t['bench:inscription'] ? `On it: ${quoted(t['bench:inscription'])}` : undefined)],
+	[
+		true,
+		(t) =>
+			t['wildlife:seen'] ? `Seen here in ${monthYear(`${t['wildlife:seen']}-01`)}.` : undefined
+	],
+	[
+		true,
+		(t) =>
+			t['postcode:ended']
+				? `In use ${t['postcode:began'] ? `from ${monthYear(`${t['postcode:began']}-01`)} ` : ''}to ${monthYear(`${t['postcode:ended']}-01`)}.`
+				: undefined
+	],
+	[
+		false,
+		(t) => {
+			const count = Number(t['company:count']);
+			if (!count) return undefined;
+			const names = (t['company:names'] ?? '')
+				.split('|')
+				.filter(Boolean)
+				.map((n) => `“${n}”`);
+			const since = t['company:since'] ? monthYear(t['company:since']) : undefined;
+			if (count === 1)
+				return `A company is registered here, by another account: ${names[0]}${since ? `, since ${since}` : ''}.`;
+			const shown = names.length < count ? `${names.join(', ')} and others` : listOf(names);
+			return `${capitalise(numberWord(count))} companies are registered here, by another account${since ? `, the first since ${since}` : ''}: ${shown}.`;
+		}
+	],
 	[
 		false,
 		(t) => {

@@ -95,7 +95,7 @@ export const SOURCES: Source[] = [
 	{
 		name: 'Office for National Statistics',
 		href: 'https://geoportal.statistics.gov.uk/',
-		gives: 'ward boundaries',
+		gives: 'ward boundaries, and postcodes that have ended',
 		terms: `Source: Office for National Statistics. Contains OS data © Crown copyright and database right 2026. ${OGL}`
 	},
 	{
@@ -103,6 +103,18 @@ export const SOURCES: Source[] = [
 		href: 'https://openbenches.org/',
 		gives: 'benches and what is written on them',
 		terms: 'OpenBenches contributors, CC BY-SA 4.0'
+	},
+	{
+		name: 'NBN Atlas',
+		href: 'https://nbnatlas.org/',
+		gives: 'what has been seen living here, and when',
+		terms: 'NBN Atlas and its data partners; only records under CC0, CC BY or the OGL'
+	},
+	{
+		name: 'Companies House',
+		href: 'https://www.gov.uk/government/organisations/companies-house',
+		gives: 'the companies registered at addresses',
+		terms: `Contains public sector information licensed under the ${OGL}`
 	},
 	{
 		name: 'London Datastore',
