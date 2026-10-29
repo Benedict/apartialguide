@@ -34,7 +34,16 @@ export class CachedRenderer implements Renderer {
 			!namesNoSource(scene, entry.paragraphs)
 		)
 			return room;
-		return { ...room, paragraphs: [...entry.paragraphs, exitsLine(scene.exits)] };
+		const exits = exitsLine(scene.exits);
+		// The prose is what the engine tells on arrival too: its paragraphs as parts, then the exits.
+		return {
+			...room,
+			paragraphs: [...entry.paragraphs, exits],
+			parts: [
+				...entry.paragraphs.map((text) => [{ kind: 'prose' as const, text, key: text }]),
+				[{ kind: 'exits' as const, text: exits, key: exits }]
+			]
+		};
 	}
 }
 

@@ -53,6 +53,18 @@ describe('CachedRenderer', () => {
 		]);
 	});
 
+	it('gives the prose as the parts the engine tells on arrival, with the exits after', () => {
+		const room = new CachedRenderer(store(['Long Street.', 'The name says “est Bank”.'])).render(
+			scene
+		);
+		expect(room.parts?.map((p) => p.map((x) => x.text).join(' '))).toEqual([
+			'Long Street.',
+			'The name says “est Bank”.',
+			'Exits: east (Long Street, towards Blind Alley).'
+		]);
+		expect(room.parts?.flat().some((p) => p.kind === 'where')).toBe(false);
+	});
+
 	it('keeps the title, the things to examine and the closer look from the template', () => {
 		const room = new CachedRenderer(store(['“est Bank”.'])).render(scene);
 		expect(room.title).toBe(template.title);
