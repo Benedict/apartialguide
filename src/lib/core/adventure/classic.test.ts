@@ -313,16 +313,16 @@ describe('the lighting, by the hour', () => {
 
 	it('says the lit street is lit and dark at midnight, and lit only at night at noon', () => {
 		expect(game('2026-10-29T00:00:00Z').respond('take the tour').lines[0]).toContain(
-			'Lit, and it is dark now.'
+			'Street lamps light the way.'
 		);
 		expect(game('2026-10-29T12:00:00Z').respond('take the tour').lines[0]).toContain(
-			'Lit at night, though it is day now.'
+			'There are street lamps along here, unlit by day.'
 		);
 	});
 
 	it('says it for the hour when the reader looks again', () => {
 		const g = game('2026-10-29T00:00:00Z');
 		g.respond('take the tour');
-		expect(g.respond('look').lines[0]).toContain('Lit, and it is dark now.');
+		expect(g.respond('look').lines[0]).toContain('Street lamps light the way.');
 	});
 });
