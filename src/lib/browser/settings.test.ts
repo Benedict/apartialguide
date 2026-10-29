@@ -15,18 +15,35 @@ describe('settings', () => {
 			weather: true,
 			departures: true,
 			maps: true,
-			air: true
+			air: true,
+			cameras: true,
+			satellites: true,
+			flights: true
 		});
 	});
 
 	it('keeps what the reader chose', () => {
 		const store = memory();
-		saveSettings({ weather: false, departures: true, maps: false, air: false }, store);
+		saveSettings(
+			{
+				weather: false,
+				departures: true,
+				maps: false,
+				air: false,
+				cameras: false,
+				satellites: false,
+				flights: false
+			},
+			store
+		);
 		expect(loadSettings(store)).toEqual({
 			weather: false,
 			departures: true,
 			maps: false,
-			air: false
+			air: false,
+			cameras: false,
+			satellites: false,
+			flights: false
 		});
 	});
 
@@ -40,19 +57,36 @@ describe('settings', () => {
 			}
 		};
 		expect(() =>
-			saveSettings({ weather: false, departures: false, maps: false, air: false }, refusing)
+			saveSettings(
+				{
+					weather: false,
+					departures: false,
+					maps: false,
+					air: false,
+					cameras: false,
+					satellites: false,
+					flights: false
+				},
+				refusing
+			)
 		).not.toThrow();
 		expect(loadSettings(refusing)).toEqual({
 			weather: true,
 			departures: true,
 			maps: true,
-			air: true
+			air: true,
+			cameras: true,
+			satellites: true,
+			flights: true
 		});
 		expect(loadSettings(undefined)).toEqual({
 			weather: true,
 			departures: true,
 			maps: true,
-			air: true
+			air: true,
+			cameras: true,
+			satellites: true,
+			flights: true
 		});
 		const garbled = memory();
 		garbled.setItem('a-partial-guide:settings', '{not json');
@@ -60,7 +94,10 @@ describe('settings', () => {
 			weather: true,
 			departures: true,
 			maps: true,
-			air: true
+			air: true,
+			cameras: true,
+			satellites: true,
+			flights: true
 		});
 	});
 });

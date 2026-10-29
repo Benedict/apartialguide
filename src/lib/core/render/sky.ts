@@ -19,7 +19,7 @@ export function moonPhaseWords(phase: number): string {
 	return names[Math.round(phase * 8) % 8];
 }
 
-const height = (altitude: number) => (altitude < 15 ? 'low' : altitude > 45 ? 'high' : 'up');
+export const height = (altitude: number) => (altitude < 15 ? 'low' : altitude > 45 ? 'high' : 'up');
 
 /** "The sun is low in the south-west.", from the facts about the sky now, or nothing. */
 export function skyLine(facts: readonly Fact[]): string | undefined {

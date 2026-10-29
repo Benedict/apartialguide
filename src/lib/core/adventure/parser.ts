@@ -10,6 +10,8 @@ export type Command =
 				| 'back'
 				| 'help'
 				| 'weather'
+				| 'overhead'
+				| 'camera'
 				| 'gps'
 				| 'wait'
 				| 'again'
@@ -116,8 +118,15 @@ export function parse(input: string): Command {
 		return { verb: 'go', direction: direction(target) ?? target };
 	}
 	if (['gps', 'where am i', 'where am i?', 'map'].includes(text)) return { verb: 'gps' };
-	if (['weather', 'the weather', 'sky', 'look up', 'look at the sky'].includes(text))
-		return { verb: 'weather' };
+	if (['weather', 'the weather', 'sky'].includes(text)) return { verb: 'weather' };
+	if (['look up', 'lookup', 'look at the sky', 'look skyward', 'up'].includes(text))
+		return { verb: 'overhead' };
+	if (
+		['use the camera', 'use camera', 'camera', 'the camera', 'look through the camera'].includes(
+			text
+		)
+	)
+		return { verb: 'camera' };
 	if (first === 'look' && rest[0] === 'at' && rest.length > 1)
 		return { verb: 'examine', target: dropFiller(rest).join(' ') };
 	if (EXAMINE.has(text)) return { verb: 'examine', target: '' };

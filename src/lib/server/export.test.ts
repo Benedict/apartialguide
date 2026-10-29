@@ -133,6 +133,25 @@ describe('exportPage', () => {
 		expect(page()).toContain('reply.actions');
 	});
 
+	it('asks after what a reply wants asked, and shows the picture a reply carries', () => {
+		expect(page()).toContain('reply.ask');
+		expect(page()).toContain('fetchCamera(');
+		expect(page()).toContain('fetchSatellites(');
+		expect(page()).toContain('game.overhead(');
+		expect(page()).toContain('reply.image');
+	});
+
+	it('asks the flights function it was built with, and none without one', () => {
+		const withFlights = exportPage({
+			engine: '',
+			world,
+			snapshotDate: '2026-10-24',
+			flightsUrl: 'https://flights.example.org/'
+		});
+		expect(withFlights).toContain('const FLIGHTS = "https://flights.example.org/";');
+		expect(page()).toContain('const FLIGHTS = "";');
+	});
+
 	it('keeps a status line: the place, the distance walked and the moves', () => {
 		expect(page()).toContain('id="status"');
 		expect(page()).toContain('game.status()');

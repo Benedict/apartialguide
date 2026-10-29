@@ -39,6 +39,8 @@ jobs:
           RECORDS_DIR: data/records
           NARRATION_PATH: data/narration/addiscombe.json
           EXPORT_PATH: site/index.html
+          # The flights function, once deployed (functions/flights); without it no aircraft are asked after.
+          FLIGHTS_URL: ${{ vars.FLIGHTS_URL }}
         run: npm run export
       # Publish only a page that plays.
       - run: npx playwright install --with-deps chromium

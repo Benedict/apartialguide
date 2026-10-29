@@ -10,7 +10,8 @@ export interface Source {
 	live?: LiveKey;
 }
 
-export type LiveKey = 'weather' | 'departures' | 'maps' | 'air';
+export type LiveKey =
+	'weather' | 'departures' | 'maps' | 'air' | 'cameras' | 'satellites' | 'flights';
 
 const OGL = 'Open Government Licence v3.0';
 
@@ -43,6 +44,39 @@ export const SOURCES: Source[] = [
 			'the map shown with gps on a wide screen, drawn with MapLibre GL JS, around where the map puts the stop, never where you are',
 		terms: '© OpenMapTiles, © OpenStreetMap contributors. MapLibre GL JS, BSD-3-Clause',
 		live: 'maps'
+	},
+	{
+		name: 'TfL JamCams',
+		href: 'https://api.tfl.gov.uk/',
+		gives: 'what the traffic camera nearest the map’s place last saw',
+		terms: 'Powered by TfL Open Data',
+		live: 'cameras'
+	},
+	{
+		name: 'CelesTrak',
+		href: 'https://celestrak.org/',
+		gives: 'the orbits of the bright satellites, from which those overhead are worked out',
+		terms: 'Orbital elements from CelesTrak, by Dr T.S. Kelso',
+		live: 'satellites'
+	},
+	{
+		name: 'adsb.lol',
+		href: 'https://adsb.lol/',
+		gives: 'the aircraft overhead, as they broadcast themselves',
+		terms: 'Open Database License (ODbL)',
+		live: 'flights'
+	},
+	{
+		name: 'Astronomy Engine',
+		href: 'https://github.com/cosinekitty/astronomy',
+		gives: 'where the planets stand, worked out in your browser',
+		terms: 'MIT License, by Don Cross'
+	},
+	{
+		name: 'satellite.js',
+		href: 'https://github.com/shashwatak/satellite-js',
+		gives: 'the working out of where each satellite is',
+		terms: 'MIT License'
 	},
 	{
 		name: 'Open-Meteo Air Quality',
@@ -153,7 +187,10 @@ const LABELS: Record<LiveKey, string> = {
 	weather: 'Ask after today’s weather',
 	departures: 'Ask what is due at bus and tram stops',
 	maps: 'Show a map beside gps, on a wide screen',
-	air: 'Ask after the air today'
+	air: 'Ask after the air today',
+	cameras: 'Show what the nearest traffic camera saw, when you use the camera',
+	satellites: 'Work out the satellites overhead, when you look up',
+	flights: 'Ask after the aircraft overhead, when you look up'
 };
 
 /** The settings for the sources asked from the reader's browser. */

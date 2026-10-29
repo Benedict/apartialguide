@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { Adventure } from './engine';
 import type { AdventureWorld, CompiledStop } from './world';
 import { destination } from '../geo';
+import type { Fact } from '../facts';
+import type { Omm } from '../adapters/overhead';
 
 // An invented street running east, its stops 100 m apart.
 const west: [number, number] = [51.38, -0.07];
@@ -195,5 +197,66 @@ describe('carrying names', () => {
 	it('cannot drop what it does not carry', () => {
 		const { game } = touring();
 		expect(game.respond('drop sextant').lines).toEqual(['You are not carrying that.']);
+	});
+});
+
+describe('looking up', () => {
+	const night = new Date('2026-10-29T19:39:35Z');
+
+	it('tells the weather and the planets at once, and asks the page after what passes overhead', () => {
+		const { game } = touring();
+		game.clock = () => night;
+		const reply = game.respond('look up');
+		expect(reply.ask).toBe('overhead');
+		expect(reply.lines.join(' ')).toContain('Saturn is up in the south-east');
+	});
+
+	it('tells what passes overhead when the page has asked, and nothing without an answer', () => {
+		const { game } = touring();
+		game.clock = () => night;
+		expect(game.overhead(undefined, undefined)).toBeUndefined();
+		const plane = {
+			ac: [{ hex: 'a', flight: 'INV123 ', alt_baro: 5800, track: 91, lat: 51.381, lon: -0.07 }]
+		};
+		expect(game.overhead([] as Omm[], plane)?.lines).toEqual([
+			'Overhead, INV123 at 5,800 feet, heading east.'
+		]);
+	});
+});
+
+describe('using the camera', () => {
+	const camera = (key: string, value: string): Fact => ({
+		id: `camera/1:${key}`,
+		subject: 'camera/1',
+		claim: { key, value },
+		source: 'TfL',
+		observed: '2026-10-29T19:39:35Z',
+		reach: 0,
+		geometry: []
+	});
+
+	it('asks the page to find the nearest camera', () => {
+		const { game } = touring();
+		expect(game.respond('use the camera')).toEqual({ lines: [], ask: 'camera' });
+	});
+
+	it('shows what the nearest camera saw, from where the map puts this place', () => {
+		const { game } = touring();
+		const there = destination(west, 90, 450);
+		const reply = game.camera([
+			camera('name', 'Invented Rd/Other Rd'),
+			camera('image', 'https://example.org/cam.jpg'),
+			camera('latitude', String(there[0])),
+			camera('longitude', String(there[1]))
+		]);
+		expect(reply.lines).toEqual([
+			'The nearest camera is at “Invented Rd/Other Rd”, 450 metres to the east. This is what it saw.'
+		]);
+		expect(reply.image?.src).toBe('https://example.org/cam.jpg');
+	});
+
+	it('says nothing happens without an answer', () => {
+		const { game } = touring();
+		expect(game.camera(undefined).lines).toEqual(['Nothing happens.']);
 	});
 });
