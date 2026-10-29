@@ -285,3 +285,44 @@ describe('looking beyond the map', () => {
 		]);
 	});
 });
+
+describe('the lighting, by the hour', () => {
+	const litStop = (title: string, at: [number, number]): CompiledStop => ({
+		title,
+		paragraphs: [`You are standing on ${title}. Lit at night.`, 'Exits: east.'],
+		parts: [
+			[
+				{ kind: 'where', text: `You are standing on ${title}.`, key: title, street: title },
+				{ kind: 'street', text: 'Lit at night.', key: 'Lit at night.', lit: 'yes' }
+			],
+			[{ kind: 'exits', text: 'Exits: east.', key: 'exits' }]
+		],
+		exits: [{ label: 'east', to: 'b', street: title }],
+		things: [],
+		at
+	});
+	const game = (when: string) => {
+		const g = new Adventure({
+			start: 'a',
+			stops: { a: litStop('Lamp Street', west), b: litStop('Lamp Street', west) }
+		});
+		g.clock = () => new Date(when);
+		g.begin();
+		return g;
+	};
+
+	it('says the lit street is lit and dark at midnight, and lit only at night at noon', () => {
+		expect(game('2026-10-29T00:00:00Z').respond('take the tour').lines[0]).toContain(
+			'Lit, and it is dark now.'
+		);
+		expect(game('2026-10-29T12:00:00Z').respond('take the tour').lines[0]).toContain(
+			'Lit at night, though it is day now.'
+		);
+	});
+
+	it('says it for the hour when the reader looks again', () => {
+		const g = game('2026-10-29T00:00:00Z');
+		g.respond('take the tour');
+		expect(g.respond('look').lines[0]).toContain('Lit, and it is dark now.');
+	});
+});

@@ -944,3 +944,14 @@ describe('ways of saying where you stand', () => {
 		]);
 	});
 });
+
+describe('the street lighting, marked for the hour', () => {
+	it('marks the sentence that gives the lighting, with what the map says', () => {
+		const street = renderer.render(scene()).parts![0].find((p) => p.lit);
+		expect(street).toMatchObject({
+			text: 'Lit at night, with pavement on both sides.',
+			lit: 'yes',
+			pavement: 'pavement on both sides'
+		});
+	});
+});

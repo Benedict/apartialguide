@@ -54,7 +54,9 @@ export class AdventureRenderer implements Renderer {
 					...(along ? { street: along } : {}),
 					options: whereForms(scene, street)
 				}),
-				...streetCharacter(street).map((s) => part('street', s)),
+				...streetCharacter(street).map((s) =>
+					part('street', s, /^(Lit at night|Unlit)\b/.test(s) ? lightingOf(street) : {})
+				),
 				...(around ? [part('setting', around, { key: settingKey(around) })] : [])
 			],
 			...whatYouSee(scene),
@@ -160,6 +162,14 @@ const SIDEWALKS: Record<string, string> = {
 	separate: 'the pavement running apart from the road',
 	no: 'no pavement at all'
 };
+
+/** What the map says of a street's lighting, and its pavement, for saying them by the hour. */
+function lightingOf(street: Tags): { lit?: 'yes' | 'no'; pavement?: string } {
+	if (street.lit !== 'yes' && street.lit !== 'no') return {};
+	const pavement =
+		street.sidewalk && (SIDEWALKS[street.sidewalk] ?? `pavement: ${street.sidewalk}`);
+	return { lit: street.lit, ...(pavement ? { pavement } : {}) };
+}
 
 export function streetCharacter(street: Tags): string[] {
 	const sentences: string[] = [];
