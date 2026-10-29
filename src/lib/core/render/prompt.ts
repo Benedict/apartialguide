@@ -20,7 +20,7 @@ import { monthYear, tagsOf } from './words';
 import { allusion } from '../keepers';
 
 /** Bump when the prompt changes, so cached narration written under the old one is redone. */
-export const PROMPT_VERSION = 14;
+export const PROMPT_VERSION = 15;
 
 export interface Prompt {
 	/** Fixed for every stop, so it can be cached. */
@@ -49,6 +49,7 @@ Rules.
 - When told the place is crowded or bare, do as the user message says, once. Never end on counting, losing count, or what else there may be: end on something the facts give. The reference page below ends on losing count; yours must not.
 - Never name a source or who kept an account: not the map's makers, not any other. Allude to them only by what they do, as you are told it ("those who inspect kitchens"), or give what they keep as hearsay.
 - Give no purpose, use or history that the facts do not give: not what a thing is for, why it is there, or how such things usually are.
+- Give a speed limit plainly, if at all, and never remark on it or on whether anyone keeps to it.
 - Speak no technical values (voltages, gauges, frequencies, speeds of lines) and no codes but a reference you are given as one.
 - Facts marked Elsewhere are kept by others, not the map. Give them lightly as hearsay (they say, it is said, someone wrote down), never as the map's, and never call them another account. Where the two disagree, leave them disagreeing.
 - Never point out that a name is broken, or that you resemble anyone. Point the reader to nothing, and never say that anything goes unnoticed. Noticing is the reader’s.

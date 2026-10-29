@@ -253,8 +253,8 @@ describe('buildPrompt', () => {
 		expect(system).toMatch(/never end on (counting|losing count)/i);
 	});
 
-	it('is version 14', () => {
-		expect(PROMPT_VERSION).toBe(14);
+	it('is version 15', () => {
+		expect(PROMPT_VERSION).toBe(15);
 	});
 
 	it('tells the model never to name a source', () => {
@@ -303,5 +303,9 @@ describe('buildPrompt', () => {
 		expect(user).toContain('a bench, which the map does not have');
 		expect(user).toContain('Elsewhere, kept by those who read the benches: On it: “For Ada”.');
 		expect(user).not.toContain('undefined');
+	});
+
+	it('asks for the limit plainly, never with a remark on it', () => {
+		expect(buildPrompt(scene()).system).toMatch(/speed limit plainly/i);
 	});
 });

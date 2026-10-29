@@ -134,7 +134,7 @@ export function streetCharacter(street: Tags): string[] {
 		street.sidewalk && (SIDEWALKS[street.sidewalk] ?? `pavement: ${street.sidewalk}`);
 	if (lit && pavement) sentences.push(`${lit}, with ${pavement}.`);
 	else if (lit || pavement) sentences.push(`${capitalise((lit ?? pavement)!)}.`);
-	if (street.maxspeed) sentences.push(`The limit is ${street.maxspeed}, for what that is worth.`);
+	if (street.maxspeed) sentences.push(`The limit is ${street.maxspeed}.`);
 	const namesake = street['etymology:label'];
 	const who = street['etymology:description'];
 	if (namesake) sentences.push(`Named for ${namesake}${who ? `, ${who}` : ''}.`);

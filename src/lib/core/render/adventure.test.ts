@@ -71,6 +71,12 @@ describe('AdventureRenderer', () => {
 			expect(t).toContain('Lit at night, with pavement on both sides.');
 			expect(t).toContain('20 mph');
 		});
+
+		it('gives the limit plainly, without remark', () => {
+			const t = text(scene());
+			expect(t).toContain('The limit is 20 mph.');
+			expect(t).not.toContain('for what that is worth');
+		});
 	});
 
 	describe('what you see', () => {
