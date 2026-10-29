@@ -94,8 +94,15 @@ async function ogcFeatures(label: string, bases: string[]): Promise<ZoneFeature[
 			console.log(`${label}: ${base} has ${ids.join(', ')}`);
 			if (!ids.length) continue;
 			const features: ZoneFeature[] = [];
-			let url: string | undefined =
-				`${base}/collections/${ids[0]}/items?bbox=${w},${s},${e},${n}&f=json&limit=500`;
+			const crs84 = encodeURIComponent('http://www.opengis.net/def/crs/OGC/1.3/CRS84');
+			const items = `${base}/collections/${ids[0]}/items?f=json&limit=500&bbox-crs=${crs84}&crs=${crs84}`;
+			// A control by the Thames at Westminster, where there must be something: an empty box is
+			// told from a query the service misread.
+			const control = await getJson(`${items}&bbox=-0.13,51.49,-0.11,51.51`);
+			console.log(
+				`${label}: control by the Thames matched ${control.numberMatched ?? control.features?.length}`
+			);
+			let url: string | undefined = `${items}&bbox=${w},${s},${e},${n}`;
 			for (let pages = 0; url && pages < 40; pages++) {
 				const page = await getJson(url);
 				if (pages === 0)
