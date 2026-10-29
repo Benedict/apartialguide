@@ -16,6 +16,8 @@ Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
 - [ ] **Send the Bomb Sight letter.** It's drafted in `docs/letters/bomb-sight.md`. Check that Dr Kate Jones is still the right person: she directed the project at Portsmouth in 2011–13 and may have moved.
 - [ ] **Digital Britannia's licence and files.** Open <https://roadsofromanbritain.org/digital-britannia/downloads.html>; this session can't reach that site. Check whether the licence is CC BY-NC 4.0, as the viewer's author reports, or "under copyright", as the RRRA's press release says. If it's CC BY-NC, download the **GeoJSON** layers (roads, settlement, military, camps, milestones) in longitude and latitude, put them in a folder, and tell Claude where. `look beyond` then tells them. If they come only in British National Grid, say so; they need converting first.
 
+- [ ] **OpenRouter key, to compare models.** Create a key at <https://openrouter.ai/>, add some credit (a comparison of four models on 25 stops costs pennies), and add it as the repository secret `OPENROUTER_API_KEY`. Then Actions → Compare models → Run workflow; the report is attached to the run.
+
 ## Decisions
 
 - [ ] **Is the piece non-commercial, for good?** Bomb Sight and Digital Britannia both forbid commercial use. An exhibition with a fee, or a sale or commission, would breach both.
