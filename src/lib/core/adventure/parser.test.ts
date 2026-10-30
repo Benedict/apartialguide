@@ -49,6 +49,13 @@ describe('parse', () => {
 	it('reads asking where on a map this is', () => {
 		for (const text of ['gps', 'GPS', 'where am i', 'where am I?', 'map'])
 			expect(parse(text)).toEqual({ verb: 'gps' });
+		for (const text of [
+			'remember est bank',
+			'mark down est bank',
+			'note est bank',
+			'write down est bank'
+		])
+			expect(parse(text)).toEqual({ verb: 'remember', target: 'est bank' });
 		for (const text of ['gps on', 'GPS on', 'map on'])
 			expect(parse(text)).toEqual({ verb: 'follow', on: true });
 		for (const text of ['gps off', 'map off'])

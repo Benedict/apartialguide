@@ -1,6 +1,6 @@
 export type Command =
 	| { verb: 'go'; direction: string }
-	| { verb: 'examine' | 'take' | 'drop'; target: string }
+	| { verb: 'examine' | 'take' | 'drop' | 'remember'; target: string }
 	| { verb: 'save' | 'restore'; slot?: string }
 	| { verb: 'follow'; on: boolean }
 	| {
@@ -163,6 +163,9 @@ export function parse(input: string): Command {
 	const said = SAYINGS.get(text);
 	if (said) return { verb: said };
 	if (TAKE.has(first) && rest.length) return { verb: 'take', target: dropFiller(rest).join(' ') };
+	// Asking Guide to keep a name: the only way anything is carried.
+	const asked = text.match(/^(?:remember|note|(?:mark|write|note) down)\s+(.+)$/);
+	if (asked) return { verb: 'remember', target: dropFiller(asked[1].split(/\s+/)).join(' ') };
 	if (first === 'pick' && rest[0] === 'up' && rest.length > 1)
 		return { verb: 'take', target: dropFiller(rest.slice(1)).join(' ') };
 	if (DROP.has(first) && rest.length) return { verb: 'drop', target: dropFiller(rest).join(' ') };

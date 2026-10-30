@@ -321,6 +321,8 @@ describe('Fragments Guide carries', () => {
 		game.chance = chance;
 		game.begin();
 		game.respond('take the tour');
+		// Guide carries only what it is asked to.
+		game.respond('remember ld invented mill');
 		return game;
 	};
 
