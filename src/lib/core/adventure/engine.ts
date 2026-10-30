@@ -750,9 +750,21 @@ export class Adventure {
 		const stop = this.world.stops[this.here];
 		if (!stop.parts) return this.look();
 		const recent = new Set(this.heard.flat());
-		const heard: string[] = [];
+		// Prose cannot be cut; where it would say again most of what was just heard, the template can.
+		const things = (stop.plain?.parts ?? [])
+			.flat()
+			.filter((p) => p.kind === 'thing')
+			.flatMap((p) => p.key.split(' '));
+		const heardThings = new Set([...recent].flatMap((k) => k.split(' ')));
+		const repeats = things.filter((k) => heardThings.has(k)).length;
+		const plainly = !!stop.plain?.parts && things.length > 0 && repeats * 2 >= things.length;
+		const told = plainly ? stop.plain!.parts! : stop.parts;
+		// What the prose tells, as the template would name it, so the next place does not repeat it.
+		const heard: string[] = plainly
+			? []
+			: (stop.plain?.parts ?? []).flat().flatMap((p) => (RATIONED.includes(p.kind) ? [p.key] : []));
 		let street: string | undefined;
-		const lines = stop.parts
+		const lines = told
 			.map((parts) => {
 				const fresh = parts.filter((p) => !RATIONED.includes(p.kind) || !recent.has(p.key));
 				const framesNothing =
