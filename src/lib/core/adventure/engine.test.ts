@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Adventure, INTRO } from './engine';
+import { Adventure, INTRO, OFFER, introduction } from './engine';
 import { hearsay } from '../render/hearsay';
 import type { AdventureWorld } from './world';
 import { currentWeatherFacts } from '../adapters/weather';
@@ -105,6 +105,29 @@ describe('Adventure', () => {
 			}).begin(now);
 			expect(intro.lines.at(-1)).toBe('Today: light rain, 11 °C.');
 			expect(intro.lines.join(' ')).not.toContain('The map is not the only account');
+		});
+
+		it('introduces Guide from the head of the world alone, before the map is opened', () => {
+			const head = {
+				asOf: '2026-10-24',
+				about: { streets: 412, places: 5688, accounts: ['Wikidata'] }
+			};
+			const [intro] = new Adventure({ ...world, ...head }).begin();
+			expect(introduction(head)).toEqual(intro);
+			expect(introduction({}).lines).toEqual(new Adventure(world).begin()[0].lines);
+		});
+
+		it('offers the tour once the map is open, the day told first when there is word of it', () => {
+			const now = currentWeatherFacts({
+				current: { time: '2026-10-25T16:45', weather_code: 61, temperature_2m: 11 }
+			});
+			const game = new Adventure(world);
+			expect(game.offer(now)).toEqual([
+				{ lines: ['Today: light rain, 11 °C.'] },
+				{ lines: [OFFER], actions: [{ label: 'Take the tour', command: 'take the tour' }] }
+			]);
+			expect(new Adventure(world).offer()).toHaveLength(1);
+			expect(game.respond('take the tour').title).toBeDefined();
 		});
 
 		it('opens with Guide introducing themselves, then offers the tour', () => {

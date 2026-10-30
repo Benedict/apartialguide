@@ -51,6 +51,22 @@ export const HELP =
 /** What is not said again if heard at either of the last two places: framing lines among them. */
 const RATIONED = ['street', 'setting', 'thing', 'nearest', 'frame'];
 
+/** What the page carries apart from the map, so Guide can speak before it is opened. */
+export type WorldHead = Pick<AdventureWorld, 'asOf' | 'about'>;
+
+/** Guide's introduction and the account of what they carry, from the head of the world alone. */
+export function introduction({ asOf, about }: WorldHead): Reply {
+	if (about && asOf) return { lines: [...INTRO, ...ledgerLines(asOf, about)] };
+	return {
+		lines: [
+			...INTRO,
+			asOf
+				? `The map I carry is dated ${longDate(asOf)}. Beyond it there may be more. I could not say what.`
+				: 'Beyond my map there may be more. I could not say what.'
+		]
+	};
+}
+
 /** Guide's words about themselves, said once, before the first place. */
 export const INTRO = [
 	'I am Guide. I lived here long ago. I lived here yesterday. I will have lived here tomorrow.'
@@ -163,6 +179,20 @@ export class Adventure {
 		private readonly world: AdventureWorld,
 		public here = world.start
 	) {}
+
+	/**
+	 * The rest of the start, once the map is open: today, when there is word of it, and the tour.
+	 * The page says the introduction first, while the map is still being opened.
+	 */
+	offer(now: Fact[] = []): Reply[] {
+		this.choosing = true;
+		this.now = now;
+		const today = [weatherNow(now), airNow(now), skyLine(now)].filter(Boolean).join(' ');
+		return [
+			...(today ? [{ lines: [today] }] : []),
+			{ lines: [OFFER], actions: [...this.continuing(), ...TAKE_TOUR] }
+		];
+	}
 
 	/** The start of the walk: Guide introduces themselves and offers the tour. */
 	begin(now: Fact[] = []): Reply[] {
