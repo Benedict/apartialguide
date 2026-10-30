@@ -512,7 +512,7 @@ describe('AdventureRenderer', () => {
 				effects: []
 			};
 			const t = text(scene({ beats: [plaque] }));
-			expect(t).toMatch(new RegExp(`^To the north, [^.]*, is a plaque: “${words}”\.`, 'm'));
+			expect(t).toMatch(new RegExp(`^To the north, [^.]*, is a plaque: “${words}”\\.`, 'm'));
 			expect(t.split(words)).toHaveLength(2);
 			expect(t).not.toMatch(/they say|it is said|someone wrote down/i);
 		});
