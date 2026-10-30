@@ -1,3 +1,4 @@
+import { fontFaces, MONO } from './type';
 import { faviconLinks, LOCKUP, ogMeta } from '../site/brand';
 import { gzipSync } from 'node:zlib';
 import { packWorld } from '../core/adventure/packed';
@@ -69,6 +70,7 @@ function aboutPage(snapshotDate: string, counted: boolean): string {
 		</ul>
 		<h3>Who made it</h3>
 		<p>Made by Benedict. The code is on <a href="https://github.com/Benedict/osm-text-adventure">GitHub</a>.</p>
+		<p>Set in <a href="https://commitmono.com">Commit Mono</a>, by Eigil Nikolajsen, under the SIL Open Font License.</p>
 		<p><a href="#">Back to the walk</a></p>
 	</section>`;
 }
@@ -134,10 +136,11 @@ export function exportPage({
 ${faviconLinks(tiles ? '/' : undefined)}
 ${ogMeta(siteUrl)}
 <style>
+${fontFaces(tiles ? '/' : undefined)}
 	/* As the classic adventures looked: one typeface, light on dark, an inverse status bar on top. */
 	:root {
 		--paper: #000; --ink: #d4d4cc; --bright: #fff; --muted: #8e8e86; --rule: #3a3a36; --accent: #fff;
-		--mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
+		--mono: ${MONO};
 		--serif: var(--mono); --small: var(--mono);
 		--height: 100dvh;
 		color-scheme: dark;

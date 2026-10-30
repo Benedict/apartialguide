@@ -17,6 +17,7 @@ import { Adventure } from '../src/lib/core/adventure/engine';
 import { tileWorld } from '../src/lib/core/adventure/tiles';
 import { landingPage } from '../src/lib/server/landing';
 import { notFoundPage } from '../src/lib/server/notfound';
+import { FONT_FILES } from '../src/lib/server/type';
 import { compileWorld } from '../src/lib/core/adventure/world';
 import { exportPage, wordsAmiss } from '../src/lib/server/export';
 import { loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
@@ -76,6 +77,10 @@ if (site) {
 	);
 	writeFileSync(join(site, 'index.html'), await microsite());
 	writeFileSync(join(site, '404.html'), notFoundPage());
+	// The type, with its licence, as the Open Font License asks.
+	mkdirSync(join(site, 'fonts'), { recursive: true });
+	for (const file of FONT_FILES)
+		copyFileSync(join('static', 'fonts', file), join(site, 'fonts', file));
 	// The brand's pictures, drawn by `npm run brand`: the home-screen icon and the preview image.
 	for (const picture of ['apple-touch-icon.png', 'og.png'])
 		copyFileSync(join('static', picture), join(site, picture));
