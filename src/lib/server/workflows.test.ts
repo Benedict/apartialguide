@@ -33,13 +33,13 @@ describe('the workflows', () => {
 	it('write prose for the same world the published page plays', () => {
 		// Prose is found by a key made from each stop's scene: a different world finds none of it.
 		const narrate = worldEnv('narrate.yml');
-		const pages = worldEnv('pages.yml');
+		const pages = worldEnv('deploy.yml');
 		expect(narrate).toEqual(pages);
 		expect(pages.NARRATION_PATH).toBeTruthy();
 	});
 
 	it('publish the site in tiles, and check that it plays as served', () => {
-		const pages = readFileSync('.github/workflows/pages.yml', 'utf8');
+		const pages = readFileSync('.github/workflows/deploy.yml', 'utf8');
 		expect(pages).toMatch(/SITE_DIR: site\n[^]*?run: npm run export/);
 		expect(pages).not.toContain('EXPORT_PATH');
 		expect(pages).toMatch(/run: npm run smoke\n\s+env:\n\s+SITE_DIR: site/);
@@ -52,14 +52,14 @@ describe('the workflows', () => {
 	});
 
 	it('publish with the Google Analytics measurement ID, a variable and not a secret', () => {
-		expect(readFileSync('.github/workflows/pages.yml', 'utf8')).toContain(
+		expect(readFileSync('.github/workflows/deploy.yml', 'utf8')).toContain(
 			'GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}'
 		);
 	});
 
 	it('publish the page again once prose is written', () => {
 		expect(readFileSync('.github/workflows/narrate.yml', 'utf8')).toContain(
-			'gh workflow run pages.yml'
+			'gh workflow run deploy.yml'
 		);
 	});
 });

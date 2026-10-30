@@ -1,0 +1,11 @@
+# The site is built and checked in GitHub Actions (.github/workflows/deploy.yml), which deploys the
+# folder it built: Netlify runs no build of its own.
+[build]
+  publish = "site"
+  edge_functions = "netlify/edge-functions"
+
+# A walk behind a flag is kept out of search engines by header as well as by its page.
+[[headers]]
+  for = "/croydon/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
