@@ -372,6 +372,8 @@ function brief(beat: Beat): { phrase: string; noun?: string } {
 	if (isElsewhereOnly(beat)) {
 		if (tags['plaque:inscription'])
 			return { phrase: `a plaque reading “${tags['plaque:inscription']}”` };
+		if (tags['bench:inscription'])
+			return { phrase: `a bench with “${tags['bench:inscription']}” on it` };
 		const { label, what, kind } = otherAccount(tags);
 		const called = label ? `“${label}”` : kind ? article(kind) : what ? `“${what}”` : 'a thing';
 		return { phrase: `${called}, ${aside(called)}` };
@@ -569,13 +571,15 @@ function describeBeat(
 	const use = currentUse(tags);
 
 	if (isElsewhereOnly(beat)) {
-		// A plaque is put up to be read: its words are read, not passed on as hearsay.
+		// A plaque or a bench carries words to be read: they are read, not passed on as hearsay.
 		const { 'plaque:inscription': words, ...rest } = tags;
 		if (words)
 			return [
 				`${lead(place)} is a plaque: ${quoted(words)}`,
 				...recordSentences(rest, 'room')
 			].join(' ');
+		if (tags['bench:inscription'])
+			return [`${lead(place)} is a bench.`, ...recordSentences(tags, 'room')].join(' ');
 		return [
 			`${place}, ${aside(calledElsewhere(tags))}, is ${calledElsewhere(tags)}.`,
 			...recordSentences(tags, 'room')
