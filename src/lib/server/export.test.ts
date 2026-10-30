@@ -289,3 +289,11 @@ describe('exportPage', () => {
 		expect(wordsAmiss(slipped)).toEqual(['a: There is “undefined”, by another account.']);
 	});
 });
+
+describe('the brand in the page', () => {
+	it('carries its icon in the page, as the single page plays from one file, and the mark and name on About', () => {
+		expect(page()).toContain('<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,');
+		expect(page()).not.toContain('apple-touch-icon');
+		expect(page()).toMatch(/<section id="about"[^]*aria-label="A Partial Guide"/);
+	});
+});

@@ -33,6 +33,16 @@ describe('landingPage', () => {
 		expect(text).not.toMatch(/art piece|as it was played|earned by the data/);
 	});
 
+	it('carries the brand: the icon, the mark and name at the top, and the preview image where the address is known', () => {
+		expect(html).toContain('<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,');
+		expect(html).toContain('<link rel="apple-touch-icon" href="/apple-touch-icon.png">');
+		expect(html).toMatch(/class="brand"[^>]*>\s*<svg[^>]*aria-label="A Partial Guide"/);
+		expect(html).not.toContain('og:image');
+		expect(landingPage({ ...input, siteUrl: 'https://example.org' })).toContain(
+			'content="https://example.org/og.png"'
+		);
+	});
+
 	it('leads to the walk', () => {
 		expect(html).toMatch(/<a class="begin" href="walk\/"[^>]*>Start in Addiscombe/);
 	});

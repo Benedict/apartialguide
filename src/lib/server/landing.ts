@@ -1,4 +1,5 @@
 import type { Ledger } from '../core/adventure/world';
+import { faviconLinks, LOCKUP, ogMeta } from '../site/brand';
 import { longDate } from '../core/render/words';
 import { consentStrip, PRIVACY } from './export';
 
@@ -13,6 +14,8 @@ export interface LandingInput {
 	script: string;
 	/** The Google Analytics measurement ID: counted only once the reader says yes. */
 	gaId?: string;
+	/** The site's own address (`SITE_URL`), for the image shown where it is shared. */
+	siteUrl?: string;
 }
 
 const esc = (text: string) =>
@@ -24,7 +27,14 @@ const DESCRIPTION =
 	'The world as a text adventure, built from open data. It starts with Addiscombe, in Croydon.';
 
 /** The front door: what the piece is, a walk as it was played, and the way in. */
-export function landingPage({ snapshotDate, about, excerpt, script, gaId }: LandingInput): string {
+export function landingPage({
+	snapshotDate,
+	about,
+	excerpt,
+	script,
+	gaId,
+	siteUrl
+}: LandingInput): string {
 	const played = excerpt
 		.map((e) =>
 			'said' in e
@@ -38,6 +48,8 @@ export function landingPage({ snapshotDate, about, excerpt, script, gaId }: Land
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>A Partial Guide</title>
+${faviconLinks('/')}
+${ogMeta(siteUrl)}
 <meta name="description" content="${esc(DESCRIPTION)}">
 <meta property="og:title" content="A Partial Guide">
 <meta property="og:description" content="${esc(DESCRIPTION)}">
@@ -61,6 +73,7 @@ export function landingPage({ snapshotDate, about, excerpt, script, gaId }: Land
 	.bar a { color: var(--paper); }
 	main { max-width: 44rem; margin: 0 auto; padding: 0 1rem 4rem; }
 	.hero { padding: 3.5rem 0 2rem; }
+	.brand svg { display: block; width: min(100%, 22rem); height: auto; margin: 0 0 2.5rem; }
 	h1 { color: var(--bright); font-size: clamp(2rem, 8vw, 3.25rem); line-height: 1.1; margin: 0 0 1rem; letter-spacing: -0.02em; }
 	.lede { font-size: 1.1rem; color: var(--bright); margin: 0 0 1.75rem; }
 	.begin {
@@ -89,6 +102,7 @@ export function landingPage({ snapshotDate, about, excerpt, script, gaId }: Land
 <div class="bar"><span>A Partial Guide</span><a href="walk/">Start</a></div>
 <main>
 	<section class="hero">
+		<div class="brand">${LOCKUP}</div>
 		<h1>The world as a text adventure.</h1>
 		<p class="lede">Type a direction and walk. Every street, building, name and date comes from open data.</p>
 		<p>It starts with Addiscombe, in Croydon: ${n(about.streets)} streets and ${n(about.places)} places, from a map dated ${esc(longDate(snapshotDate))}.</p>

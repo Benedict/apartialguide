@@ -1,3 +1,4 @@
+import { faviconLinks, LOCKUP, ogMeta } from '../site/brand';
 import { gzipSync } from 'node:zlib';
 import { packWorld } from '../core/adventure/packed';
 import { headOf } from '../core/adventure/tiles';
@@ -20,6 +21,8 @@ export interface ExportInput {
 	tiles?: string;
 	/** The Google Analytics measurement ID (`GA_MEASUREMENT_ID`): counted only once the reader says yes. */
 	gaId?: string;
+	/** The site's own address (`SITE_URL`), for the image shown where it is shared. */
+	siteUrl?: string;
 }
 
 /** What the page tells the reader it sends, with analytics or without. */
@@ -56,6 +59,7 @@ function aboutPage(snapshotDate: string, counted: boolean): string {
 			`<li><a href="${esc(s.href)}">${esc(s.name)}</a>: ${esc(s.gives)}.${s.live ? ' <em>Asked from your browser as you read; you can turn it off in Settings.</em>' : ''} <span class="terms">${esc(s.terms)}.</span></li>`
 	).join('\n\t\t\t');
 	return `<section id="about" class="view" hidden>
+		<div class="brand">${LOCKUP}</div>
 		<h2>About</h2>
 		<p>A Partial Guide is a text adventure of the real world, built from open data, and nothing in it is made up. It starts with Addiscombe, in Croydon, told by Guide, who says only what the sources say, as they say it: where the data is broken, Guide is too.</p>
 		<p>The map Guide carries is dated ${esc(longDate(snapshotDate))}. ${counted ? PRIVACY.counted : PRIVACY.none}</p>
@@ -118,7 +122,8 @@ export function exportPage({
 	snapshotDate,
 	flightsUrl,
 	tiles,
-	gaId
+	gaId,
+	siteUrl
 }: ExportInput): string {
 	return `<!doctype html>
 <html lang="en">
@@ -126,6 +131,8 @@ export function exportPage({
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <title>A Partial Guide</title>
+${faviconLinks(tiles ? '/' : undefined)}
+${ogMeta(siteUrl)}
 <style>
 	/* As the classic adventures looked: one typeface, light on dark, an inverse status bar on top. */
 	:root {
