@@ -52,7 +52,11 @@ export const HELP =
 	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name, or ask me to remember or mark down one, and drop it somewhere else; inventory (i) says what you carry. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
+<<<<<<< HEAD
 	'Drift, and I choose the way. Hints off, or on, for a word now and then about a command. ' +
+=======
+	'Drift, and I choose the way. ' +
+>>>>>>> origin/main
 	'Route to a street or a named place for the way there (route off to let it go). ' +
 	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, gps for this place on a map (gps on to keep the map beside you, gps off to put it away), score for how far you have walked, wait (z), again (g), and verbose or brief.';
 
@@ -400,9 +404,12 @@ export class Adventure {
 				return { lines: [this.score()] };
 			case 'drift':
 				return this.drift();
+<<<<<<< HEAD
 			case 'hints':
 				this.hinting = command.on;
 				return { lines: [command.on ? 'Hints on.' : 'Hints off.'] };
+=======
+>>>>>>> origin/main
 			case 'magic':
 				return { lines: ['Nothing happens. Nothing has happened here for some time.'] };
 			case 'inventory':
