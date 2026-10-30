@@ -362,3 +362,66 @@ describe('a world opened as the walk goes', () => {
 		expect(partial.respond('restore 1').lines[0]).toBe('Restored from slot 1.');
 	});
 });
+
+describe('prose that would say again what was just said', () => {
+	// Two invented corners 10 m apart, each with prose written ahead of time telling the same pub.
+	const prose = (text: string) => [{ kind: 'prose' as const, text, key: text }];
+	const exits = (text: string) => [{ kind: 'exits' as const, text, key: text }];
+	const pub = (text: string) => ({ kind: 'thing' as const, text, key: 'node/1' });
+	const corner = (
+		title: string,
+		said: string,
+		plain: CompiledStop['parts'],
+		way: CompiledStop['exits']
+	): CompiledStop => ({
+		title,
+		paragraphs: [said, 'Exits: on.'],
+		parts: [prose(said), exits('Exits: on.')],
+		plain: { paragraphs: plain!.map((r) => r.map((p) => p.text).join(' ')), parts: plain },
+		exits: way,
+		things: [sextant],
+		at: west
+	});
+	const twice: AdventureWorld = {
+		start: 'a',
+		stops: {
+			a: corner(
+				'Long Street',
+				'Long Street, and The Sextant beside you.',
+				[[pub('A pub, The Sextant.')], exits('Exits: east.')],
+				[{ label: 'east', to: 'b' }]
+			),
+			b: corner(
+				'Long Street and Short Row',
+				'Short Row comes down here; The Sextant a few steps west.',
+				[
+					[
+						{ kind: 'where', text: 'You are standing where Short Row meets Long Street.', key: 'w' }
+					],
+					[pub('A pub, The Sextant.'), { kind: 'thing', text: 'A post box.', key: 'node/2' }],
+					exits('Exits: west.')
+				],
+				[{ label: 'west', to: 'a' }]
+			)
+		}
+	};
+	const walk = () => {
+		const game = new Adventure(twice);
+		game.chance = () => 0.99;
+		game.begin();
+		return { game, first: game.respond('take the tour') };
+	};
+
+	it('tells the prose where nothing in it was just heard', () => {
+		expect(walk().first.lines[0]).toBe('Long Street, and The Sextant beside you.');
+	});
+
+	it('tells the place plainly instead, leaving out what was just heard, when the prose would repeat it', () => {
+		const { game } = walk();
+		const next = game.respond('east').lines.join(' ');
+		expect(next).not.toContain('Short Row comes down here');
+		expect(next).not.toContain('The Sextant');
+		expect(next).toContain('Short Row meets Long Street');
+		expect(next).toContain('A post box.');
+	});
+});
