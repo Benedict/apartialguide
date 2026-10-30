@@ -9,6 +9,12 @@ What is left, and ideas for later phases. Done items move to the changelog in th
   - Where do they meet: at the same stop only, or within earshot along a street?
   - What is said, and is any of it kept? Moderation, privacy, and whether a reader can stay unseen.
   - What carries it: a shared service (WebSockets, or an artifact's shared state). Today the piece is one static file.
+- **Ride the bus, in real time.** At a stop with departures, `wait for the 289` and `board` when it is due; the reader then travels with that bus, told each stop as TfL predicts it is reached, and `get off` at the next. To settle first:
+  - What "real time" means: the ride takes as long as the bus does (the slowness is the point, a Sinclair walk against the grain), or time is compressed to a stop a move.
+  - What Guide says on board. Only facts: the stops TfL names and when, the line and its destination. Between mapped stops the map has nothing to say, and Guide should say so rather than fill it.
+  - Beyond the map's edge (the 289 runs to Purley and Elmers End): ride on, told only as stop names and hearsay, or step off at the last mapped stop?
+  - Whether TfL lets a page follow one vehicle (`/Vehicle/{id}/Arrivals`) from the browser, as it does arrivals; check its CORS before building. Trams the same, by line.
+  - Does riding count as distance walked? The goal is walking, so probably not: a separate `Ridden:` on the status line, or nothing.
 - **More of the classic engine.** Ideas the distance goal opens: a walk's end (a "you have walked as far as Guide remembers" at the last mark), a map of where you have been.
 - **The inline map on the SvelteKit reader.** The exported page has it; the dev reader does not.
 
