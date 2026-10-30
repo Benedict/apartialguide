@@ -19,6 +19,8 @@ export interface WalkState {
 	verbose: boolean;
 	/** Whether the map was kept beside the walk (gps on). */
 	following?: boolean;
+	/** The way the reader asked for: the name, and the stops it is found at. */
+	route?: { to: string; goals: [string, string][] };
 	lastCommand?: string;
 	lastStreet?: string;
 	visited: string[];

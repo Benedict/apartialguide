@@ -24,6 +24,7 @@ import type { Telling, Thing } from '../render/renderer';
 import { distance } from '../geo';
 import { AUTO, SLOTS, type SaveStore, type SavedWalk, type WalkState } from './saves';
 import type { StopId } from '../stops';
+import { goalsFor, planRoute, routeIndex, routeWords, type RouteIndex } from './route';
 import type { AdventureWorld, CompiledExit, Ledger, Term, TransitStop } from './world';
 
 export interface Reply {
@@ -49,6 +50,7 @@ export const HELP =
 	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name, or ask me to remember or mark down one, and drop it somewhere else; inventory (i) says what you carry. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
+	'Route to a street or a named place for the way there (route off to let it go). ' +
 	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, gps for this place on a map (gps on to keep the map beside you, gps off to put it away), score for how far you have walked, wait (z), again (g), and verbose or brief.';
 
 /** What is not said again if heard at either of the last two places: framing lines among them. */
@@ -182,6 +184,8 @@ export class Adventure {
 	/** Places already told in full; told briefly on return unless verbose. */
 	private readonly visited = new Set<string>();
 	private verbose = false;
+	/** The way the reader asked for, kept until they arrive or let it go. */
+	private routing?: { to: string; goals: [StopId, string][] };
 	/** Whether the reader keeps the map beside the walk (gps on). */
 	private following = false;
 	private walked = 0;
@@ -341,6 +345,8 @@ export class Adventure {
 				return this.gps();
 			case 'follow':
 				return this.follow(command.on);
+			case 'route':
+				return { lines: command.target ? this.route(command.target) : this.unroute() };
 			case 'overhead':
 				return this.lookUp();
 			case 'camera':
@@ -465,6 +471,7 @@ export class Adventure {
 			walked: this.walked,
 			verbose: this.verbose,
 			...(this.following ? { following: true } : {}),
+			...(this.routing ? { route: this.routing } : {}),
 			...(this.lastCommand ? { lastCommand: this.lastCommand } : {}),
 			...(this.lastStreet ? { lastStreet: this.lastStreet } : {}),
 			visited: [...this.visited],
@@ -563,6 +570,7 @@ export class Adventure {
 		this.walked = state.walked;
 		this.verbose = state.verbose;
 		this.following = state.following ?? false;
+		this.routing = state.route;
 		this.lastCommand = state.lastCommand;
 		this.lastStreet = state.lastStreet;
 		this.heard = state.heard;
@@ -668,8 +676,67 @@ export class Adventure {
 		const lines = [...reply.lines];
 		const exits =
 			lines.length && lines.at(-1)!.startsWith('Exits:') ? lines.length - 1 : lines.length;
-		lines.splice(exits, 0, ...left, ...(back ? [back] : []));
+		const way = this.wayOn();
+		lines.splice(exits, 0, ...left, ...(back ? [back] : []), ...(way ? [way] : []));
 		return this.followed({ ...reply, lines });
+	}
+
+	/** The street network to plan a way across, given by the page, or worked out from a whole world. */
+	routes?: RouteIndex;
+	private index(): RouteIndex | undefined {
+		const { about, stops } = this.world;
+		if (!this.routes && (!about || Object.keys(stops).length >= about.places))
+			this.routes = routeIndex(this.world);
+		return this.routes;
+	}
+
+	/** Whether answering this needs the route index the page has not yet given. */
+	needsRoutes(input: string): boolean {
+		if (this.index()) return false;
+		const command = parse(input);
+		if (command.verb === 'route') return !!command.target;
+		if (command.verb === 'restore' && command.slot)
+			return !!this.saves?.get(command.slot)?.state.route;
+		return command.verb === 'go' && !!this.routing;
+	}
+
+	/** The way to a named street or thing, along the streets, kept and said again at each stop. */
+	private route(target: string): string[] {
+		const index = this.index();
+		if (!index) return ['I cannot find the way just now.'];
+		const goals = goalsFor(index, target);
+		const plan = planRoute(index, this.here, goals);
+		switch (plan.kind) {
+			case 'unknown':
+				return ['I know of nowhere by that name on my map.'];
+			case 'here':
+				return [`You are there already: ${quote(plan.to)}.`];
+			case 'unreachable':
+				return [`I know of no way from here to ${quote(plan.to)}.`];
+			case 'way':
+				this.routing = { to: plan.to, goals: [...goals] };
+				return [routeWords(plan), 'I will say the way at each turn.'];
+		}
+	}
+
+	private unroute(): string[] {
+		const had = !!this.routing;
+		this.routing = undefined;
+		return [had ? 'I let the way go.' : 'There is no way I am keeping.'];
+	}
+
+	/** The way on from here, while one is kept: the next turn, or arrival, when it lets the way go. */
+	private wayOn(): string | undefined {
+		const index = this.routing && this.index();
+		if (!this.routing || !index) return undefined;
+		const plan = planRoute(index, this.here, new Map(this.routing.goals));
+		if (plan.kind === 'here') {
+			this.routing = undefined;
+			return `You are at ${quote(plan.to)}. That was the way.`;
+		}
+		if (plan.kind !== 'way') return undefined;
+		const [next] = plan.legs;
+		return `Your way to ${quote(this.routing.to)}: ${next.label}${next.street ? ` (${next.street})` : ''}.`;
 	}
 
 	/** gps on keeps the map beside the walk, stop after stop; gps off puts it away. */

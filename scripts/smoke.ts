@@ -112,6 +112,11 @@ try {
 		'the map kept by gps on is still there after gps off'
 	);
 
+	// The way somewhere: answering at all needs the street network, which the site fetches apart.
+	await input.fill('route to nowhere the map has');
+	await input.press('Enter');
+	await says(page, 'I know of nowhere by that name on my map.');
+
 	// The camera, with nothing answering, comes to nothing; the walk carries on.
 	await input.fill('use the camera');
 	await input.press('Enter');

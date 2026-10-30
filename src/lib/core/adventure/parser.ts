@@ -3,6 +3,7 @@ export type Command =
 	| { verb: 'examine' | 'take' | 'drop' | 'remember'; target: string }
 	| { verb: 'save' | 'restore'; slot?: string }
 	| { verb: 'follow'; on: boolean }
+	| { verb: 'route'; target?: string }
 	| {
 			verb:
 				| 'look'
@@ -115,6 +116,10 @@ export function parse(input: string): Command {
 	const [first, ...rest] = words;
 
 	if (['back', 'b', 'return', 'go back'].includes(text)) return { verb: 'back' };
+	// Asking the way somewhere, or letting it go.
+	if (['route off', 'no route', 'forget the way'].includes(text)) return { verb: 'route' };
+	const way = text.match(/^(?:route to|(?:the )?way to|directions to|how do i get to)\s+(.+?)\??$/);
+	if (way) return { verb: 'route', target: way[1] };
 	if (direction(text)) return { verb: 'go', direction: direction(text)! };
 	if (MOVE.has(first) && rest.length) {
 		const target = dropFiller(rest).join(' ');

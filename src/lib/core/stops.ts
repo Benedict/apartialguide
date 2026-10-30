@@ -139,6 +139,7 @@ export function buildStopGraph(osm: OsmIndex, { spacing = 150 }: StopGraphOption
 		for (let i = 1; i < present.length; i++)
 			if (present[i] !== present[i - 1]) link(present[i - 1], present[i], way);
 	}
+	bridge(osm, edges, link);
 	const degree = (id: number) => edges.get(id)?.length ?? 0;
 	const unlink = (a: number, b: number) => {
 		const drop = (x: number, y: number) => {
@@ -307,6 +308,126 @@ export function buildStopGraph(osm: OsmIndex, { spacing = 150 }: StopGraphOption
 
 	for (const stop of stops.values()) labelExits(stop.exits);
 	return new StopGraph(stops);
+}
+
+/**
+ * Pavements and crossings make no place to stop, but where they alone join one part of the network
+ * to another (across a main road no one walks along, say), the shortest such way is kept, so no
+ * street is cut off from the rest. From the largest part, the nearest other is joined, until none is left.
+ */
+function bridge(
+	osm: OsmIndex,
+	edges: Map<number, Edge[]>,
+	link: (a: number, b: number, way: OsmWay) => void
+) {
+	const minor = new Map<number, { to: number; way: OsmWay; metres: number }[]>();
+	for (const way of osm.ways.filter((w) => isWalkable(w) && isMinor(w))) {
+		const present = way.nodes.filter((id) => osm.nodes.has(id));
+		for (let i = 1; i < present.length; i++) {
+			const [a, b] = [present[i - 1], present[i]];
+			if (a === b) continue;
+			const metres = distance(
+				[osm.nodes.get(a)!.lat, osm.nodes.get(a)!.lon],
+				[osm.nodes.get(b)!.lat, osm.nodes.get(b)!.lon]
+			);
+			minor.set(a, [...(minor.get(a) ?? []), { to: b, way, metres }]);
+			minor.set(b, [...(minor.get(b) ?? []), { to: a, way, metres }]);
+		}
+	}
+	if (!minor.size) return;
+	// Which part of the street network each node lies in.
+	const part = new Map<number, number>();
+	const sizes = new Map<number, number>();
+	for (const start of edges.keys()) {
+		if (part.has(start)) continue;
+		const queue = [start];
+		part.set(start, start);
+		let size = 0;
+		while (queue.length) {
+			const id = queue.pop()!;
+			size++;
+			for (const e of edges.get(id) ?? [])
+				if (!part.has(e.to)) {
+					part.set(e.to, start);
+					queue.push(e.to);
+				}
+		}
+		sizes.set(start, size);
+	}
+	if (sizes.size < 2) return;
+	const main = [...sizes].sort((a, b) => b[1] - a[1])[0][0];
+	for (;;) {
+		// The nearest node of another part, along pavements and crossings from the largest.
+		const metres = new Map<number, number>();
+		const came = new Map<number, { from: number; way: OsmWay }>();
+		const heap = new Heap();
+		for (const [id, p] of part)
+			if (p === main && minor.has(id)) {
+				heap.push(id, 0);
+				metres.set(id, 0);
+			}
+		let reached: number | undefined;
+		while (heap.size) {
+			const [id, m] = heap.pop();
+			if (m > metres.get(id)!) continue;
+			const p = part.get(id);
+			if (p !== undefined && p !== main) {
+				reached = id;
+				break;
+			}
+			for (const e of minor.get(id) ?? []) {
+				const next = m + e.metres;
+				if (next < (metres.get(e.to) ?? Infinity)) {
+					metres.set(e.to, next);
+					came.set(e.to, { from: id, way: e.way });
+					heap.push(e.to, next);
+				}
+			}
+		}
+		if (reached === undefined) return;
+		for (let id = reached; came.has(id); id = came.get(id)!.from)
+			link(came.get(id)!.from, id, came.get(id)!.way);
+		const joined = part.get(reached)!;
+		for (const [id, p] of part) if (p === joined) part.set(id, main);
+		for (let id = reached; came.has(id); id = came.get(id)!.from)
+			part.set(came.get(id)!.from, main);
+	}
+}
+
+/** A smallest-first queue of nodes by distance. */
+class Heap {
+	private readonly items: [number, number][] = [];
+	get size() {
+		return this.items.length;
+	}
+	push(id: number, metres: number) {
+		const a = this.items;
+		a.push([id, metres]);
+		for (let i = a.length - 1; i > 0;) {
+			const up = (i - 1) >> 1;
+			if (a[up][1] <= a[i][1]) break;
+			[a[up], a[i]] = [a[i], a[up]];
+			i = up;
+		}
+	}
+	pop(): [number, number] {
+		const a = this.items;
+		const top = a[0];
+		const last = a.pop()!;
+		if (a.length) {
+			a[0] = last;
+			for (let i = 0; ;) {
+				const [l, r] = [2 * i + 1, 2 * i + 2];
+				let m = i;
+				if (l < a.length && a[l][1] < a[m][1]) m = l;
+				if (r < a.length && a[r][1] < a[m][1]) m = r;
+				if (m === i) break;
+				[a[m], a[i]] = [a[i], a[m]];
+				i = m;
+			}
+		}
+		return top;
+	}
 }
 
 /** Named things that are not streets: the places a walker might stop beside. */

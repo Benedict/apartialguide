@@ -1,5 +1,6 @@
 import type { StopId } from '../stops';
 import { packWorld, unpackWorld, type PackedWorld } from './packed';
+import { routeIndex, type RouteIndex } from './route';
 import type { AdventureWorld, CompiledStop } from './world';
 
 /** Everything the walk needs before any place is opened: the world without its stops. */
@@ -27,7 +28,7 @@ export const tileOf = (id: StopId): string | undefined =>
 export function tileWorld(
 	world: AdventureWorld,
 	metres = 300
-): { head: WorldHead; tiles: Record<string, Tile> } {
+): { head: WorldHead; tiles: Record<string, Tile>; routes: RouteIndex } {
 	const placed = Object.entries(world.stops);
 	const lats = placed.flatMap(([, s]) => (s.at ? [s.at[0]] : []));
 	const lons = placed.flatMap(([, s]) => (s.at ? [s.at[1]] : []));
@@ -58,12 +59,14 @@ export function tileWorld(
 		byTile.set(tileOf(name)!, stops);
 	}
 	const head: WorldHead = { ...headOf(world), start: names.get(world.start) ?? world.start };
+	// The street network whole, under the tiles' names, for planning a way without opening them all.
+	const routes = routeIndex({ stops: Object.assign({}, ...byTile.values()) });
 	const tiles: Record<string, Tile> = {};
 	for (const [key, stops] of byTile) {
 		const { things, stops: packed } = packWorld({ start: '', stops });
 		tiles[key] = { things, stops: packed };
 	}
-	return { head, tiles };
+	return { head, tiles, routes };
 }
 
 /**

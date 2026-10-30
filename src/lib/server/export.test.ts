@@ -83,6 +83,9 @@ describe('exportPage', () => {
 		expect(html).toContain('const TILES = "tiles/"');
 		expect(html).toContain('tiledWorld(HEAD');
 		expect(html).toContain('await ensure(game.needs(text))');
+		// The street network, for planning a way, is fetched the first time a way is asked for.
+		expect(html).toContain('if (game.needsRoutes(text)) await loadRoutes();');
+		expect(html).toContain("fetch('routes.json')");
 	});
 
 	it('keeps one map under the status bar while gps is on, moved at each stop, and puts it away with gps off', () => {
