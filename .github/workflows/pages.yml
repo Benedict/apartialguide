@@ -41,6 +41,8 @@ jobs:
           SITE_DIR: site
           # The flights function, once deployed (functions/flights); without it no aircraft are asked after.
           FLIGHTS_URL: ${{ vars.FLIGHTS_URL }}
+          # Google Analytics, counted only once a reader says yes; without it nothing is asked.
+          GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
         run: npm run export
       # Publish only a page that plays.
       - run: npx playwright install --with-deps chromium

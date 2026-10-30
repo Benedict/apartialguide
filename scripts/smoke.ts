@@ -32,9 +32,11 @@ const server = !site
 				res.writeHead(404).end();
 			}
 		}).listen(0);
-const url = server
+// The site's microsite at its root, and the walk at walk/; the single page is the walk alone.
+const root = server
 	? `http://localhost:${(server.address() as { port: number }).port}/`
-	: `file://${path}`;
+	: undefined;
+const url = root ? `${root}walk/` : `file://${path}`;
 const browser = await chromium.launch();
 const failures: string[] = [];
 const check = (ok: boolean, what: string) => ok || failures.push(what);
@@ -66,7 +68,28 @@ try {
 	);
 	const page = await context.newPage();
 	page.on('pageerror', (e) => failures.push(`page error: ${e.message}`));
-	await page.goto(url);
+	if (root) {
+		// The microsite leads into the walk.
+		await page.goto(root);
+		check(
+			(await page.title()) === 'A Partial Guide',
+			'the microsite is not called A Partial Guide'
+		);
+		await page.locator('a.begin').first().click();
+		await page.waitForURL(url);
+	} else await page.goto(url);
+	// Where analytics are asked for, nothing is counted until the reader says yes; here, no.
+	if (await page.locator('#consent').isVisible()) {
+		await page.locator('#consent button[data-consent="denied"]').click();
+		check(
+			await page.locator('#consent').isHidden(),
+			'the question about counting the visit stays after an answer'
+		);
+	}
+	check(
+		!asked.some((u) => u.includes('googletagmanager')),
+		'Google Analytics was asked for without a yes'
+	);
 	await says(page, 'I am Guide');
 	check(
 		asked.some((u) => u.includes('api.open-meteo.com/v1/forecast')),

@@ -42,6 +42,12 @@ describe('the workflows', () => {
 		expect(narrate).toContain('NARRATE_ONLY: ${{ inputs.only }}');
 	});
 
+	it('publish with the Google Analytics measurement ID, a variable and not a secret', () => {
+		expect(readFileSync('.github/workflows/pages.yml', 'utf8')).toContain(
+			'GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}'
+		);
+	});
+
 	it('publish the page again once prose is written', () => {
 		expect(readFileSync('.github/workflows/narrate.yml', 'utf8')).toContain(
 			'gh workflow run pages.yml'

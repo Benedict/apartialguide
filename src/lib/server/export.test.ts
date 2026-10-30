@@ -98,6 +98,33 @@ describe('exportPage', () => {
 		expect(html).toContain('followed.map.easeTo({ center: [place.longitude, place.latitude] })');
 	});
 
+	it('asks nothing of Google without a measurement ID', () => {
+		const html = page();
+		expect(html).not.toContain('googletagmanager');
+		expect(html).not.toContain('id="consent"');
+		expect(html).toContain('Nothing you do on the walk is sent anywhere');
+	});
+
+	it('counts a visit with Google Analytics only once the reader says yes, and never what they type', () => {
+		const html = exportPage({
+			engine: '',
+			world,
+			snapshotDate: '2026-10-24',
+			gaId: 'G-TEST123'
+		});
+		expect(html).toContain('const GA = "G-TEST123"');
+		expect(html).toMatch(
+			/<div class="consent" id="consent" hidden>[^]*?<button[^>]*>Yes<\/button>[^]*?<button[^>]*>No<\/button>/
+		);
+		// Loaded only on a yes: given before, or given now.
+		expect(html).toContain("if (GA && loadConsent() === 'granted') startAnalytics(GA);");
+		// The kind of command, never its words.
+		expect(html).toContain("count('command', { verb: parse(text).verb });");
+		expect(html).toContain('<input type="checkbox" name="analytics">');
+		expect(html).toContain('never what you type');
+		expect(html).not.toContain('Nothing you do on the walk is sent anywhere');
+	});
+
 	it('opens the world in the browser with its own decompression', () => {
 		expect(page()).toContain("new DecompressionStream('gzip')");
 	});
