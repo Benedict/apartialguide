@@ -1,3 +1,4 @@
+import { themeBoot, themeCss } from '../site/themes';
 import { faviconLinks, LOCKUP } from '../site/brand';
 
 /**
@@ -12,6 +13,7 @@ export function notFoundPage(): string {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>A Partial Guide</title>
+${themeBoot()}
 <meta name="robots" content="noindex">
 ${faviconLinks('/')}
 <meta name="theme-color" content="#000000">
@@ -29,6 +31,7 @@ ${faviconLinks('/')}
 	.brand svg { display: block; width: min(100%, 16rem); height: auto; margin: 0 0 2.5rem; }
 	.command { color: var(--bright); }
 	.reply { color: var(--bright); font-size: 1.25rem; margin: 0.5rem 0 2rem; }
+${themeCss()}
 </style>
 </head>
 <body>

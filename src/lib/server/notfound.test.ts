@@ -21,9 +21,17 @@ describe('notFoundPage', () => {
 		expect(html).toContain('aria-label="A Partial Guide"');
 	});
 
+	it('takes the reader’s colours before it is drawn', () => {
+		expect(html.indexOf("localStorage.getItem('a-partial-guide:theme')")).toBeLessThan(
+			html.indexOf('<body')
+		);
+		expect(html).toContain(':root[data-theme="green"]');
+	});
+
 	it('is kept out of search engines, and asks nothing of anyone else', () => {
 		expect(html).toContain('<meta name="robots" content="noindex">');
-		expect(html).not.toMatch(/<script|googletagmanager/);
+		expect(html).not.toMatch(/googletagmanager/);
+		expect(html.match(/<script>/g)).toHaveLength(1);
 	});
 
 	it('says nothing of a place: it is the page speaking, not Guide', () => {

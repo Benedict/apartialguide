@@ -43,6 +43,13 @@ describe('landingPage', () => {
 		);
 	});
 
+	it('takes the reader’s colours before it is drawn', () => {
+		expect(html.indexOf("localStorage.getItem('a-partial-guide:theme')")).toBeLessThan(
+			html.indexOf('<body')
+		);
+		expect(html).toContain(':root[data-theme="amber"]');
+	});
+
 	it('leads to the walk', () => {
 		expect(html).toMatch(/<a class="begin" href="walk\/"[^>]*>Start in Addiscombe/);
 	});

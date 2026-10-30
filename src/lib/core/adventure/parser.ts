@@ -4,6 +4,7 @@ export type Command =
 	| { verb: 'save' | 'restore'; slot?: string }
 	| { verb: 'follow'; on: boolean }
 	| { verb: 'hints'; on: boolean }
+	| { verb: 'colour'; colour?: string }
 	| { verb: 'route'; target?: string }
 	| {
 			verb:
@@ -132,6 +133,8 @@ export function parse(input: string): Command {
 	}
 	if (['gps', 'where am i', 'where am i?', 'map'].includes(text)) return { verb: 'gps' };
 	if (text === 'hint' || text === 'a hint') return { verb: 'hint' };
+	const colour = text.match(/^(?:colou?rs?|theme)(?:\s+(.+))?$/);
+	if (colour) return { verb: 'colour', ...(colour[1] ? { colour: colour[1] } : {}) };
 	if (text === 'hints on' || text === 'hints off')
 		return { verb: 'hints', on: text === 'hints on' };
 	if (['gps on', 'map on'].includes(text)) return { verb: 'follow', on: true };

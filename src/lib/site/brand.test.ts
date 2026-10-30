@@ -16,6 +16,12 @@ describe('the brand', () => {
 		expect(LOCKUP).not.toMatch(/font-family/);
 	});
 
+	it('takes the page’s colours in the mark and name on a page, and keeps its own in the icon', () => {
+		expect(LOCKUP).toContain('var(--ink');
+		expect(LOCKUP).toContain('var(--bright');
+		expect(MARK).not.toContain('var(');
+	});
+
 	it('gives the page its icon in the page itself, and the home-screen icon where the site serves it', () => {
 		const links = faviconLinks();
 		expect(links).toMatch(
