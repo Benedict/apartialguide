@@ -8,4 +8,5 @@ export { skyNow } from './sky';
 export { fetchArrivals } from './transit';
 export { loadSettings, saveSettings } from './settings';
 export { browserSaves } from './saves';
+export { browserHints } from './hints';
 export { fetchCamera, fetchFlights, fetchSatellites } from './live';

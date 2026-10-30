@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { Adventure } from './engine';
+import { MemoryHints, type HintKeeper } from './hints';
 import { MemorySaves } from './saves';
 import type { AdventureWorld, CompiledStop } from './world';
 import { destination } from '../geo';
@@ -532,9 +533,10 @@ describe('drift', () => {
 });
 
 describe('hints', () => {
-	const walking = () => {
+	const walking = (keeper: HintKeeper = new MemoryHints()) => {
 		const game = new Adventure(world);
 		game.chance = () => 0.99;
+		game.hintKeeper = keeper;
 		game.begin();
 		game.respond('take the tour');
 		return game;
@@ -560,10 +562,39 @@ describe('hints', () => {
 		expect(new Set(hints).size).toBe(3);
 	});
 
-	it('stops with hints off, and starts again with hints on', () => {
-		const game = walking();
+	it('remembers across walks what it has hinted and what the reader has used', () => {
+		const keeper = new MemoryHints();
+		const first = walking(keeper);
+		pace(first, 1);
+		first.respond('drift');
+		expect(pace(walking(keeper), 1)[0]).toBe(
+			'Hint: type route to, then a street or a place, for the way there.'
+		);
+	});
+
+	it('gives none of its own once every hint has been given, on any walk', () => {
+		const keeper = new MemoryHints();
+		pace(walking(keeper), 200);
+		expect(pace(walking(keeper), 40).filter(Boolean)).toEqual([]);
+	});
+
+	it('gives a hint whenever asked, even once all are given or hints are off', () => {
+		const keeper = new MemoryHints();
+		pace(walking(keeper), 200);
+		const game = walking(keeper);
+		game.respond('hints off');
+		const asked = [game.respond('hint').hint, game.respond('hint').hint];
+		expect(asked[0]).toMatch(/^Hint: /);
+		expect(asked[1]).toMatch(/^Hint: /);
+		expect(asked[0]).not.toBe(asked[1]);
+	});
+
+	it('stops with hints off, on this walk and the next, and starts again with hints on', () => {
+		const keeper = new MemoryHints();
+		const game = walking(keeper);
 		expect(game.respond('hints off').lines).toEqual(['Hints off.']);
 		expect(pace(game, 9).filter(Boolean)).toEqual([]);
+		expect(pace(walking(keeper), 9).filter(Boolean)).toEqual([]);
 		expect(game.respond('hints on').lines).toEqual(['Hints on.']);
 		expect(pace(game, 1)[0]).toMatch(/^Hint: /);
 	});

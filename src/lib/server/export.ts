@@ -335,7 +335,7 @@ ${consentStrip('this page')}`
 	}
 	function show(reply) {
 		if (reply.ask) askFor(reply.ask);
-		if (!reply.lines.length) return;
+		if (!reply.lines.length && !reply.hint) return;
 		const section = document.createElement('section');
 		if (reply.title) section.append(el('h2', reply.title));
 		for (const line of reply.lines) section.append(el('p', line));
@@ -545,6 +545,8 @@ ${consentStrip('this page')}`
 	} else game = new Adventure(await openWorld());
 	// Saved walks, in this browser: five slots, and the walk kept as it goes.
 	game.saves = browserSaves();
+	// What the hints have said, kept in this browser across walks.
+	game.hintKeeper = browserHints();
 	game.offer(await today).forEach(show);
 	input.disabled = false;
 	if (!location.hash) input.focus({ preventScroll: true });

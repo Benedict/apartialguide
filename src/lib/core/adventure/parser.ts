@@ -25,6 +25,7 @@ export type Command =
 				| 'brief'
 				| 'score'
 				| 'drift'
+				| 'hint'
 				| 'magic'
 				| 'empty';
 	  }
@@ -130,6 +131,7 @@ export function parse(input: string): Command {
 		return { verb: 'go', direction: direction(target) ?? target };
 	}
 	if (['gps', 'where am i', 'where am i?', 'map'].includes(text)) return { verb: 'gps' };
+	if (text === 'hint' || text === 'a hint') return { verb: 'hint' };
 	if (text === 'hints on' || text === 'hints off')
 		return { verb: 'hints', on: text === 'hints on' };
 	if (['gps on', 'map on'].includes(text)) return { verb: 'follow', on: true };
