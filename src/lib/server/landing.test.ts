@@ -1,3 +1,4 @@
+import { unhashedScripts } from './csp-check';
 import { structureFaults } from './structure';
 import { describe, expect, it } from 'vitest';
 import { landingPage } from './landing';
@@ -60,6 +61,14 @@ describe('landingPage', () => {
 		expect(structureFaults(html)).toEqual([]);
 	});
 
+	it('runs only the scripts it was built with', () => {
+		expect(unhashedScripts(html)).toEqual([]);
+		expect(unhashedScripts(landingPage({ ...input, gaId: 'G-TEST123' }))).toEqual([]);
+		expect(landingPage({ ...input, gaId: 'G-TEST123' })).toMatch(
+			/script-src [^;]*https:\/\/www\.googletagmanager\.com/
+		);
+	});
+
 	it('leads to the walk', () => {
 		expect(html).toMatch(/<a class="begin" href="walk\/"[^>]*>Start in Addiscombe/);
 	});
@@ -85,6 +94,7 @@ describe('landingPage', () => {
 		const counted = landingPage({ ...input, gaId: 'G-TEST123' });
 		expect(counted).toContain('id="consent"');
 		expect(counted).toContain('LandingPage.landing("G-TEST123")');
-		expect(counted).not.toContain('googletagmanager');
+		// Its policy may allow Google's script, for after a yes; the page itself loads none.
+		expect(counted).not.toMatch(/<script[^>]*googletagmanager/);
 	});
 });

@@ -1,3 +1,4 @@
+import { unhashedScripts } from './csp-check';
 import { structureFaults } from './structure';
 import { describe, expect, it } from 'vitest';
 import type { AdventureWorld } from '../core/adventure/world';
@@ -334,5 +335,30 @@ describe('the structure of the page', () => {
 	it('can be read by everyone: headings in order, a main, and a skip link to the prompt', () => {
 		expect(structureFaults(page())).toEqual([]);
 		expect(page()).toMatch(/<a class="skip" href="#command">/);
+	});
+});
+
+describe('the policy of the page', () => {
+	it('runs only the scripts it was built with, in the single page and on the site', () => {
+		expect(unhashedScripts(page())).toEqual([]);
+		expect(
+			unhashedScripts(
+				exportPage({
+					engine: 'var Adventure = function () {};',
+					world,
+					snapshotDate: '2026-10-24',
+					tiles: 'tiles/',
+					gaId: 'G-TEST123'
+				})
+			)
+		).toEqual([]);
+		expect(
+			exportPage({
+				engine: 'var Adventure = function () {};',
+				world,
+				snapshotDate: '2026-10-24',
+				gaId: 'G-TEST123'
+			})
+		).toMatch(/connect-src [^;]*https:\/\/\*\.google-analytics\.com/);
 	});
 });

@@ -1,3 +1,4 @@
+import { withCsp } from './csp';
 import { themeBoot, themeCss } from '../site/themes';
 import { fontFaces, MONO } from './type';
 import type { Ledger } from '../core/adventure/world';
@@ -44,7 +45,8 @@ export function landingPage({
 				: `${e.title ? `<h2 class="place">${esc(e.title)}</h2>` : ''}${e.lines.map((l) => `<p>${esc(l)}</p>`).join('')}`
 		)
 		.join('\n\t\t\t');
-	return `<!doctype html>
+	return withCsp(
+		`<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -150,5 +152,7 @@ ${gaId ? consentStrip('this site') : ''}
 <script>LandingPage.landing(${JSON.stringify(gaId ?? '')});</script>
 </body>
 </html>
-`;
+`,
+		{ analytics: !!gaId }
+	);
 }

@@ -1,3 +1,4 @@
+import { unhashedScripts } from './csp-check';
 import { structureFaults } from './structure';
 import { describe, expect, it } from 'vitest';
 import { notFoundPage } from './notfound';
@@ -36,6 +37,10 @@ describe('notFoundPage', () => {
 
 	it('can be read by everyone: headings in order, a main, and a skip link to it', () => {
 		expect(structureFaults(html)).toEqual([]);
+	});
+
+	it('runs only the scripts it was built with', () => {
+		expect(unhashedScripts(html)).toEqual([]);
 	});
 
 	it('is kept out of search engines, and asks nothing of anyone else', () => {
