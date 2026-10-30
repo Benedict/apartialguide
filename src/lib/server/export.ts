@@ -161,6 +161,8 @@ export function exportPage({
 	.actions button:hover:not(:disabled), .actions button:focus-visible { background: var(--ink); color: var(--paper); outline: none; }
 	.actions button:disabled { opacity: 0.4; cursor: default; }
 	.picture { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+	/* A word about a command: the page's, not Guide's, so quieter. */
+	.hint { color: var(--muted); font-size: 0.85rem; }
 	.map { height: 0; overflow: hidden; visibility: hidden; }
 	/* The map kept under the status bar while gps is on, on any screen. */
 	.follow { flex: none; height: min(32vh, 260px); border-bottom: 1px solid var(--rule); }
@@ -337,6 +339,7 @@ ${consentStrip('this page')}`
 		const section = document.createElement('section');
 		if (reply.title) section.append(el('h2', reply.title));
 		for (const line of reply.lines) section.append(el('p', line));
+		if (reply.hint) section.append(el('p', reply.hint, 'hint'));
 		if (reply.link) {
 			const a = el('a', reply.link.text);
 			a.href = reply.link.href;

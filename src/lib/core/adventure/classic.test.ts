@@ -530,3 +530,41 @@ describe('drift', () => {
 		expect(game.status().moves).toBe(before.moves + 1);
 	});
 });
+
+describe('hints', () => {
+	const walking = () => {
+		const game = new Adventure(world);
+		game.chance = () => 0.99;
+		game.begin();
+		game.respond('take the tour');
+		return game;
+	};
+	/** Steps back and forth along the invented street, each step's hint, if any. */
+	const pace = (game: Adventure, steps: number) =>
+		Array.from({ length: steps }, (_, i) => game.respond(i % 2 ? 'west' : 'east').hint);
+
+	it('gives a hint after the first step, apart from what Guide says', () => {
+		const [first] = pace(walking(), 1);
+		expect(first).toBe('Hint: type gps to see this place on a map.');
+	});
+
+	it('hints at nothing the reader has used already', () => {
+		const game = walking();
+		game.respond('gps');
+		expect(pace(game, 1)[0]).toBe('Hint: type drift to let the walk choose the way.');
+	});
+
+	it('hints now and then, never the same twice', () => {
+		const hints = pace(walking(), 17).filter(Boolean);
+		expect(hints).toHaveLength(3);
+		expect(new Set(hints).size).toBe(3);
+	});
+
+	it('stops with hints off, and starts again with hints on', () => {
+		const game = walking();
+		expect(game.respond('hints off').lines).toEqual(['Hints off.']);
+		expect(pace(game, 9).filter(Boolean)).toEqual([]);
+		expect(game.respond('hints on').lines).toEqual(['Hints on.']);
+		expect(pace(game, 1)[0]).toMatch(/^Hint: /);
+	});
+});

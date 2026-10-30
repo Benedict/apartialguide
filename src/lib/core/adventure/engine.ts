@@ -35,6 +35,8 @@ export interface Reply {
 	link?: { href: string; text: string };
 	/** A place to show on a map, where the page can. */
 	map?: { latitude: number; longitude: number; label: string };
+	/** A word about a command the reader has not used yet: the page's, not Guide's. */
+	hint?: string;
 	/** True to keep the map beside the walk, moved to `map` at each stop; false to put it away. */
 	follow?: boolean;
 	/** Commands to offer as buttons, as well as to type. */
@@ -50,7 +52,7 @@ export const HELP =
 	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name, or ask me to remember or mark down one, and drop it somewhere else; inventory (i) says what you carry. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
-	'Drift, and I choose the way. ' +
+	'Drift, and I choose the way. Hints off, or on, for a word now and then about a command. ' +
 	'Route to a street or a named place for the way there (route off to let it go). ' +
 	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, gps for this place on a map (gps on to keep the map beside you, gps off to put it away), score for how far you have walked, wait (z), again (g), and verbose or brief.';
 
@@ -97,6 +99,22 @@ const MARKED: Said = {
 	thing: (name) => `I mark it down: ${quote(name)}.`,
 	already: (name) => `I have it marked down already: ${quote(name)}.`
 };
+
+/** Commands worth knowing, each hinted at once at most, and only before the reader has used it. */
+const HINTS: [verb: string, hint: string][] = [
+	['gps', 'type gps to see this place on a map.'],
+	['drift', 'type drift to let the walk choose the way.'],
+	['route', 'type route to, then a street or a place, for the way there.'],
+	['overhead', 'type look up for the sky over this place now.'],
+	['camera', 'type use the camera for what the nearest traffic camera last saw.'],
+	['plainly', 'type plainly to hear this place again from the records alone.'],
+	['remember', 'type remember, then a name, and it may come back to you later.'],
+	['follow', 'type gps on to keep a map beside the walk.'],
+	['examine', 'type examine, then a thing, to look closer.'],
+	['save', 'type save 1 to keep this walk.']
+];
+/** Steps between one hint and the next. */
+const HINT_EVERY = 8;
 
 const RECALL_AFTER = 4;
 const RECALLS = 2;
@@ -187,6 +205,11 @@ export class Adventure {
 	private verbose = false;
 	/** The way the reader asked for, kept until they arrive or let it go. */
 	private routing?: { to: string; goals: [StopId, string][] };
+	/** Commands the reader has used, hints given, and whether they are wanted. */
+	private readonly used = new Set<string>();
+	private readonly hinted = new Set<string>();
+	private hintedAt?: number;
+	private hinting = true;
 	/** Whether the reader keeps the map beside the walk (gps on). */
 	private following = false;
 	private walked = 0;
@@ -319,6 +342,7 @@ export class Adventure {
 				? { lines: ['You have done nothing yet to do again.'] }
 				: this.answer(this.lastCommand);
 		if (command.verb !== 'empty') this.lastCommand = input;
+		this.used.add(command.verb);
 		switch (command.verb) {
 			case 'empty':
 				return { lines: [] };
@@ -376,6 +400,9 @@ export class Adventure {
 				return { lines: [this.score()] };
 			case 'drift':
 				return this.drift();
+			case 'hints':
+				this.hinting = command.on;
+				return { lines: [command.on ? 'Hints on.' : 'Hints off.'] };
 			case 'magic':
 				return { lines: ['Nothing happens. Nothing has happened here for some time.'] };
 			case 'inventory':
@@ -432,9 +459,23 @@ export class Adventure {
 		this.moves++;
 		const reply = this.arrive();
 		const passed = MARKS.filter((m) => m > before && m <= this.walked).at(-1);
-		return passed
-			? { ...reply, lines: [...reply.lines, `You have walked ${distanceWords(passed)}.`] }
-			: reply;
+		const hint = this.hint();
+		return {
+			...reply,
+			...(passed ? { lines: [...reply.lines, `You have walked ${distanceWords(passed)}.`] } : {}),
+			...(hint ? { hint } : {})
+		};
+	}
+
+	/** Now and then, a command the reader has not used yet, once each. */
+	private hint(): string | undefined {
+		if (!this.hinting) return undefined;
+		if (this.hintedAt !== undefined && this.moves - this.hintedAt < HINT_EVERY) return undefined;
+		const next = HINTS.find(([verb]) => !this.used.has(verb) && !this.hinted.has(verb));
+		if (!next) return undefined;
+		this.hinted.add(next[0]);
+		this.hintedAt = this.moves;
+		return `Hint: ${next[1]}`;
 	}
 
 	/**
@@ -475,6 +516,12 @@ export class Adventure {
 			verbose: this.verbose,
 			...(this.following ? { following: true } : {}),
 			...(this.routing ? { route: this.routing } : {}),
+			hints: {
+				used: [...this.used],
+				given: [...this.hinted],
+				...(this.hintedAt !== undefined ? { at: this.hintedAt } : {}),
+				on: this.hinting
+			},
 			...(this.lastCommand ? { lastCommand: this.lastCommand } : {}),
 			...(this.lastStreet ? { lastStreet: this.lastStreet } : {}),
 			visited: [...this.visited],
@@ -574,6 +621,10 @@ export class Adventure {
 		this.verbose = state.verbose;
 		this.following = state.following ?? false;
 		this.routing = state.route;
+		refill(this.used, state.hints?.used ?? []);
+		refill(this.hinted, state.hints?.given ?? []);
+		this.hintedAt = state.hints?.at;
+		this.hinting = state.hints?.on ?? true;
 		this.lastCommand = state.lastCommand;
 		this.lastStreet = state.lastStreet;
 		this.heard = state.heard;

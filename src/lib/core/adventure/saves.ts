@@ -21,6 +21,8 @@ export interface WalkState {
 	following?: boolean;
 	/** The way the reader asked for: the name, and the stops it is found at. */
 	route?: { to: string; goals: [string, string][] };
+	/** Commands used, hints given and when the last was, and whether hints are wanted. */
+	hints?: { used: string[]; given: string[]; at?: number; on: boolean };
 	lastCommand?: string;
 	lastStreet?: string;
 	visited: string[];

@@ -103,6 +103,12 @@ describe('exportPage', () => {
 		expect(page()).not.toContain('art piece');
 	});
 
+	it('shows a hint apart from what Guide says, quieter', () => {
+		const html = page();
+		expect(html).toContain("if (reply.hint) section.append(el('p', reply.hint, 'hint'));");
+		expect(html).toMatch(/\.hint \{[^}]*color: var\(--muted\)/);
+	});
+
 	it('asks nothing of Google without a measurement ID', () => {
 		const html = page();
 		expect(html).not.toContain('googletagmanager');
