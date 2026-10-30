@@ -36,6 +36,12 @@ describe('the workflows', () => {
 		expect(pages).toMatch(/run: npm run smoke\n\s+env:\n\s+SITE_DIR: site/);
 	});
 
+	it('narrate only the busier stops unless asked for all', () => {
+		const narrate = readFileSync('.github/workflows/narrate.yml', 'utf8');
+		expect(narrate).toMatch(/only:\n[^]*?default: busier/);
+		expect(narrate).toContain('NARRATE_ONLY: ${{ inputs.only }}');
+	});
+
 	it('publish the page again once prose is written', () => {
 		expect(readFileSync('.github/workflows/narrate.yml', 'utf8')).toContain(
 			'gh workflow run pages.yml'
