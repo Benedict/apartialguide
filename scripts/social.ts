@@ -4,7 +4,7 @@
  * Every word Guide says in them is the walk's own, as it played; nothing is written for the post.
  *   npm run social
  */
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync } from 'node:fs';
 import { chromium } from 'playwright';
 import { LOCKUP, MARK } from '../src/lib/site/brand';
 import { SOURCES } from '../src/lib/site/sources';
