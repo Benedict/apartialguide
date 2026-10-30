@@ -7,6 +7,16 @@ describe('the site on Netlify', () => {
 	const toml = read('netlify.toml');
 	const deploy = read('.github/workflows/deploy.yml');
 
+	it('has a page for a path the site does not have, written with the site', () => {
+		const exporter = read('scripts/export.ts');
+		expect(exporter).toContain("writeFileSync(join(site, '404.html'), notFoundPage())");
+	});
+
+	it('builds a preview of a pull request only when it is labelled preview', () => {
+		expect(deploy).toMatch(/pull_request:\n\s+types: \[opened, synchronize, reopened, labeled\]/);
+		expect(deploy).toContain("contains(github.event.pull_request.labels.*.name, 'preview')");
+	});
+
 	it('publishes the site the workflow builds, with no build of its own', () => {
 		expect(toml).toMatch(/^\[build\]\n\s+publish = "site"/m);
 		expect(toml).not.toMatch(/^\s+command =/m);
