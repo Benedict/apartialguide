@@ -18,6 +18,10 @@ export interface ExportInput {
 const packed = (world: AdventureWorld) =>
 	gzipSync(Buffer.from(JSON.stringify(packWorld(world)), 'utf8'), { level: 9 }).toString('base64');
 
+/** What Guide needs to speak before the map is opened, as JSON nothing in a script element can break out of. */
+const head = ({ asOf, about, weatherAt }: AdventureWorld) =>
+	JSON.stringify({ asOf, about, weatherAt }).replace(/</g, '\\u003c');
+
 const esc = (text: string) =>
 	text.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
@@ -168,7 +172,7 @@ export function exportPage({ engine, world, snapshotDate, flightsUrl }: ExportIn
 </form>
 <nav class="menu"><a href="#about">About</a><a href="#settings">Settings</a></nav>
 <script>${engine}</script>
-<script type="application/gzip" id="world">${packed(world)}</script>
+<script type="application/json" id="head">${head(world)}</script>
 <script>
 (async () => {
 	const scroll = document.getElementById('scroll');
@@ -209,16 +213,21 @@ export function exportPage({ engine, world, snapshotDate, flightsUrl }: ExportIn
 		});
 	}
 
-	// The world arrives compressed: a large place would otherwise weigh tens of megabytes.
-	// A plain loop: Uint8Array.from with a callback is many times slower on a phone.
-	const base64 = atob(document.getElementById('world').textContent);
-	const bytes = new Uint8Array(base64.length);
-	for (let i = 0; i < base64.length; i++) bytes[i] = base64.charCodeAt(i);
-	const unzipped = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
-	const WORLD = unpackWorld(JSON.parse(await new Response(unzipped).text()));
-	const game = new Adventure(WORLD);
-	// Saved walks, in this browser: five slots, and the walk kept as it goes.
-	game.saves = browserSaves();
+	// What Guide says before the map is opened: the introduction, and where to ask about the weather.
+	const HEAD = JSON.parse(document.getElementById('head').textContent);
+	// The world arrives compressed, after this script, so Guide can speak while the page still reads it.
+	async function openWorld() {
+		if (document.readyState === 'loading')
+			await new Promise((resolve) => document.addEventListener('DOMContentLoaded', resolve, { once: true }));
+		// A plain loop: Uint8Array.from with a callback is many times slower on a phone.
+		const base64 = atob(document.getElementById('world').textContent);
+		const bytes = new Uint8Array(base64.length);
+		for (let i = 0; i < base64.length; i++) bytes[i] = base64.charCodeAt(i);
+		const unzipped = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+		return unpackWorld(JSON.parse(await new Response(unzipped).text()));
+	}
+	// Set once the world is open; nothing asks it anything before then.
+	let game;
 	const transcript = document.getElementById('transcript');
 	const statusBar = document.getElementById('status');
 	const input = document.getElementById('command');
@@ -299,6 +308,7 @@ export function exportPage({ engine, world, snapshotDate, flightsUrl }: ExportIn
 	// The status line, as classic adventures kept one: where you are, how far you have walked, in how many moves.
 	let touring = false;
 	function showStatus() {
+		if (!game) return;
 		const now = game.status();
 		if (!touring && now.moves === 0 && !transcript.querySelector('h2')) return;
 		touring = true;
@@ -369,13 +379,18 @@ export function exportPage({ engine, world, snapshotDate, flightsUrl }: ExportIn
 	input.addEventListener('focus', () => setTimeout(fit, 300));
 	// Until Guide has begun, there is nothing to answer.
 	input.disabled = true;
-	skyNow(WORLD.weatherAt, new Date(), undefined, { weather: settings.weather !== false, air: settings.air !== false }).then((now) => {
-		game.begin(now).forEach(show);
-		input.disabled = false;
-		if (!location.hash) input.focus({ preventScroll: true });
-	});
+	// Guide speaks first; the weather is asked and the world opened while the reader reads.
+	show(introduction(HEAD));
+	const today = skyNow(HEAD.weatherAt, new Date(), undefined, { weather: settings.weather !== false, air: settings.air !== false });
+	game = new Adventure(await openWorld());
+	// Saved walks, in this browser: five slots, and the walk kept as it goes.
+	game.saves = browserSaves();
+	game.offer(await today).forEach(show);
+	input.disabled = false;
+	if (!location.hash) input.focus({ preventScroll: true });
 })();
 </script>
+<script type="application/gzip" id="world">${packed(world)}</script>
 </body>
 </html>
 `;

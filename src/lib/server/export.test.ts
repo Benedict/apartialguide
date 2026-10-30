@@ -48,6 +48,26 @@ describe('exportPage', () => {
 		expect(worldIn(html).stops.a.title).toBe('</script><b>x</b>');
 	});
 
+	it('lets Guide speak before the map is opened, from a head the page carries apart', () => {
+		const html = page({
+			...world,
+			asOf: '2026-10-24',
+			about: { streets: 1, places: 1, accounts: ['</script><b>x</b>'] }
+		});
+		const head = JSON.parse(
+			html.match(/<script type="application\/json" id="head">([^<]*)<\/script>/)![1]
+		);
+		expect(head.about.accounts).toEqual(['</script><b>x</b>']);
+		expect(head.asOf).toBe('2026-10-24');
+		const script = html.slice(html.indexOf('(async () =>'));
+		expect(script.indexOf('introduction(HEAD)')).toBeGreaterThan(-1);
+		expect(script.indexOf('show(introduction(HEAD))')).toBeLessThan(
+			script.indexOf('await openWorld()')
+		);
+		// The map comes after the script, so the page can be read up to Guide's first words without it.
+		expect(html.indexOf('id="world"')).toBeGreaterThan(html.indexOf('show(introduction(HEAD))'));
+	});
+
 	it('opens the world in the browser with its own decompression', () => {
 		expect(page()).toContain("new DecompressionStream('gzip')");
 	});
@@ -84,12 +104,13 @@ describe('exportPage', () => {
 	});
 
 	it('begins with Guide introducing themselves', () => {
-		expect(page()).toContain('game.begin(now).forEach(show)');
+		expect(page()).toContain('show(introduction(HEAD))');
+		expect(page()).toContain('game.offer(await today).forEach(show)');
 	});
 
-	it('asks after the sky and today’s weather before Guide begins, and begins without the weather if none comes', () => {
-		expect(page()).toContain('skyNow(WORLD.weatherAt');
-		expect(page()).toMatch(/\.then\(\(now\) => \{\s*game\.begin\(now\)/);
+	it('asks after the sky and today’s weather while the world opens, and offers the tour without the weather if none comes', () => {
+		expect(page()).toContain('const today = skyNow(HEAD.weatherAt');
+		expect(page()).toContain('game.offer(await today)');
 	});
 
 	it('asks TfL what is due at the stops of each place shown', () => {
