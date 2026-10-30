@@ -85,6 +85,16 @@ describe('exportPage', () => {
 		expect(html).toContain('await ensure(game.needs(text))');
 	});
 
+	it('keeps one map under the status bar while gps is on, moved at each stop, and puts it away with gps off', () => {
+		const html = page();
+		expect(html).toMatch(
+			/<div class="status" id="status">[^]*?<\/div>\s*<div class="follow" id="follow" hidden><\/div>/
+		);
+		expect(html).toContain('if (reply.follow === false) unfollow();');
+		expect(html).toContain('reply.follow ? follow(reply.map) : drawMap(section, reply.map)');
+		expect(html).toContain('followed.map.easeTo({ center: [place.longitude, place.latitude] })');
+	});
+
 	it('opens the world in the browser with its own decompression', () => {
 		expect(page()).toContain("new DecompressionStream('gzip')");
 	});

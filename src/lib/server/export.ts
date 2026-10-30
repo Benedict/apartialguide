@@ -143,6 +143,9 @@ export function exportPage({
 	.actions button:disabled { opacity: 0.4; cursor: default; }
 	.picture { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
 	.map { height: 0; overflow: hidden; visibility: hidden; }
+	/* The map kept under the status bar while gps is on, on any screen. */
+	.follow { flex: none; height: min(32vh, 260px); border-bottom: 1px solid var(--rule); }
+	.follow[hidden] { display: none; }
 	.map.drawn { height: 320px; visibility: visible; border: 1px solid var(--rule); }
 	.scroll { flex: 1; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
 	#transcript { display: grid; gap: 1.5em; padding-block: 1rem 1.5rem; }
@@ -178,6 +181,7 @@ export function exportPage({
 </head>
 <body>
 <div class="status" id="status"><span>A Partial Guide</span><span></span></div>
+<div class="follow" id="follow" hidden></div>
 <div class="scroll" id="scroll">
 	<div id="game"><div id="transcript" aria-live="polite"></div></div>
 	${aboutPage(snapshotDate)}
@@ -312,7 +316,8 @@ export function exportPage({
 			section.append(img);
 		}
 		transcript.append(section);
-		if (reply.map) drawMap(section, reply.map);
+		if (reply.follow === false) unfollow();
+		if (reply.map) reply.follow ? follow(reply.map) : drawMap(section, reply.map);
 		scroll.scrollTop = scroll.scrollHeight;
 		showStatus();
 		if (reply.title) {
@@ -379,6 +384,53 @@ export function exportPage({
 				});
 			})
 			.catch(() => {});
+	}
+
+	// gps on: one map kept under the status bar, moved to each stop; gps off puts it away.
+	const followBox = document.getElementById('follow');
+	let followed;
+	function follow(place) {
+		if (settings.maps === false) return;
+		loadMaplibre()
+			.then((gl) => {
+				if (followed) {
+					followed.map.easeTo({ center: [place.longitude, place.latitude] });
+					followed.marker.setLngLat([place.longitude, place.latitude]);
+					return;
+				}
+				// Laid out but unseen until it has drawn, as a map must have its size to draw.
+				followBox.hidden = false;
+				followBox.style.visibility = 'hidden';
+				fit();
+				const map = new gl.Map({
+					container: followBox,
+					style: 'https://tiles.openfreemap.org/styles/liberty',
+					center: [place.longitude, place.latitude],
+					zoom: 16.5,
+					attributionControl: { compact: true }
+				});
+				const marker = new gl.Marker({ color: getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#8a3b1f' })
+					.setLngLat([place.longitude, place.latitude])
+					.addTo(map);
+				followed = { map, marker };
+				// Shown once it has drawn; if it never does, the walk carries on without it.
+				const late = setTimeout(() => followed?.map === map && unfollow(), 8000);
+				map.once('load', () => {
+					clearTimeout(late);
+					if (followed?.map !== map) return;
+					followBox.style.visibility = '';
+					map.resize();
+				});
+			})
+			.catch(() => {});
+	}
+	function unfollow() {
+		followed?.map.remove();
+		followed = undefined;
+		followBox.hidden = true;
+		followBox.style.visibility = '';
+		followBox.textContent = '';
+		fit();
 	}
 
 	async function run(text) {

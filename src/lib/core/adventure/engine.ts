@@ -34,6 +34,8 @@ export interface Reply {
 	link?: { href: string; text: string };
 	/** A place to show on a map, where the page can. */
 	map?: { latitude: number; longitude: number; label: string };
+	/** True to keep the map beside the walk, moved to `map` at each stop; false to put it away. */
+	follow?: boolean;
 	/** Commands to offer as buttons, as well as to type. */
 	actions?: { label: string; command: string }[];
 	/** What the page should ask after, from the reader's browser, and hand back. */
@@ -47,7 +49,7 @@ export const HELP =
 	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name and drop it somewhere else; inventory (i) says what you carry. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
-	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, gps for this place on a map, score for how far you have walked, wait (z), again (g), and verbose or brief.';
+	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, gps for this place on a map (gps on to keep the map beside you, gps off to put it away), score for how far you have walked, wait (z), again (g), and verbose or brief.';
 
 /** What is not said again if heard at either of the last two places: framing lines among them. */
 const RATIONED = ['street', 'setting', 'thing', 'nearest', 'frame'];
@@ -163,6 +165,8 @@ export class Adventure {
 	/** Places already told in full; told briefly on return unless verbose. */
 	private readonly visited = new Set<string>();
 	private verbose = false;
+	/** Whether the reader keeps the map beside the walk (gps on). */
+	private following = false;
 	private walked = 0;
 	private lastCommand?: string;
 	/** The names the reader carries, in the order taken. */
@@ -318,6 +322,8 @@ export class Adventure {
 				};
 			case 'gps':
 				return this.gps();
+			case 'follow':
+				return this.follow(command.on);
 			case 'overhead':
 				return this.lookUp();
 			case 'camera':
@@ -439,6 +445,7 @@ export class Adventure {
 			moves: this.moves,
 			walked: this.walked,
 			verbose: this.verbose,
+			...(this.following ? { following: true } : {}),
 			...(this.lastCommand ? { lastCommand: this.lastCommand } : {}),
 			...(this.lastStreet ? { lastStreet: this.lastStreet } : {}),
 			visited: [...this.visited],
@@ -526,7 +533,7 @@ export class Adventure {
 		this.load(walk.state);
 		const place = this.look();
 		const said = slot === AUTO ? 'We go on from where we were.' : `Restored from slot ${slot}.`;
-		return { ...place, lines: [said, ...place.lines] };
+		return this.followed({ ...place, lines: [said, ...place.lines] });
 	}
 
 	private load(state: WalkState): void {
@@ -536,6 +543,7 @@ export class Adventure {
 		this.moves = state.moves;
 		this.walked = state.walked;
 		this.verbose = state.verbose;
+		this.following = state.following ?? false;
 		this.lastCommand = state.lastCommand;
 		this.lastStreet = state.lastStreet;
 		this.heard = state.heard;
@@ -643,7 +651,26 @@ export class Adventure {
 		const exits =
 			lines.length && lines.at(-1)!.startsWith('Exits:') ? lines.length - 1 : lines.length;
 		lines.splice(exits, 0, ...left, ...(back ? [back] : []));
-		return { ...reply, lines };
+		return this.followed({ ...reply, lines });
+	}
+
+	/** gps on keeps the map beside the walk, stop after stop; gps off puts it away. */
+	private follow(on: boolean): Reply {
+		this.following = on;
+		return on
+			? this.followed({ lines: ['I will keep the map beside you as we go.'] })
+			: { lines: ['I put the map away.'], follow: false };
+	}
+
+	/** A reply about a place, with the map moved to it while the reader keeps the map on. */
+	private followed(reply: Reply): Reply {
+		const stop = this.world.stops[this.here];
+		if (!this.following || !stop.at) return reply;
+		return {
+			...reply,
+			map: { latitude: stop.at[0], longitude: stop.at[1], label: stop.title },
+			follow: true
+		};
 	}
 
 	/** Where the map puts this stop, and a link to it on Google Maps: never where the reader is. */

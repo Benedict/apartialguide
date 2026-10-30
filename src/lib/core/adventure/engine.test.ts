@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { Adventure, INTRO, OFFER, introduction } from './engine';
 import { hearsay } from '../render/hearsay';
 import type { AdventureWorld } from './world';
+import { MemorySaves } from './saves';
 import { currentWeatherFacts } from '../adapters/weather';
 import { heavensFacts } from '../adapters/heavens';
 import { currentAirFacts } from '../adapters/air';
@@ -796,6 +797,72 @@ describe('Departures', () => {
 			const game = touring();
 			game.respond('east');
 			expect(game.respond('gps')).toEqual({ lines: ['I cannot say where this is on any map.'] });
+		});
+
+		// An invented street of three stops, each with a place on the map.
+		const street: AdventureWorld = {
+			start: 'a',
+			stops: {
+				a: { ...room('Mill Parade', [{ label: 'east', to: 'b' }]), at: [51.38, -0.07] },
+				b: {
+					...room('Cross Row', [
+						{ label: 'west', to: 'a' },
+						{ label: 'east', to: 'c' }
+					]),
+					at: [51.38, -0.069]
+				},
+				c: { ...room('Weir Steps', [{ label: 'west', to: 'b' }]), at: [51.38, -0.068] }
+			}
+		};
+		const walking = () => {
+			const game = new Adventure(street);
+			game.begin();
+			game.respond('take the tour');
+			return game;
+		};
+
+		it('gives the map once with gps, and not again on the next step', () => {
+			const game = walking();
+			expect(game.respond('gps').follow).toBeUndefined();
+			const next = game.respond('east');
+			expect(next.map).toBeUndefined();
+			expect(next.follow).toBeUndefined();
+		});
+
+		it('keeps the map beside the reader, stop after stop, with gps on', () => {
+			const game = walking();
+			const on = game.respond('gps on');
+			expect(on.follow).toBe(true);
+			expect(on.map).toEqual({ latitude: 51.38, longitude: -0.07, label: 'Mill Parade' });
+			expect(on.lines[0]).toBe('I will keep the map beside you as we go.');
+			const next = game.respond('east');
+			expect(next.follow).toBe(true);
+			expect(next.map).toEqual({ latitude: 51.38, longitude: -0.069, label: 'Cross Row' });
+			expect(game.respond('east').map?.label).toBe('Weir Steps');
+		});
+
+		it('puts the map away with gps off', () => {
+			const game = walking();
+			game.respond('gps on');
+			const off = game.respond('gps off');
+			expect(off).toEqual({ lines: ['I put the map away.'], follow: false });
+			const next = game.respond('east');
+			expect(next.map).toBeUndefined();
+			expect(next.follow).toBeUndefined();
+		});
+
+		it('keeps the map on through a walk saved and picked up again', () => {
+			const game = walking();
+			game.saves = new MemorySaves();
+			game.respond('gps on');
+			game.respond('east');
+			game.respond('save 1');
+			const later = new Adventure(street);
+			later.saves = game.saves;
+			later.begin();
+			const back = later.respond('restore 1');
+			expect(back.follow).toBe(true);
+			expect(back.map?.label).toBe('Cross Row');
 		});
 	});
 
