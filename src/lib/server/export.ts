@@ -18,7 +18,20 @@ export interface ExportInput {
 	 * (`tileWorld`); the world passed is then the head alone. Without it the page carries the world.
 	 */
 	tiles?: string;
+	/** The Google Analytics measurement ID (`GA_MEASUREMENT_ID`): counted only once the reader says yes. */
+	gaId?: string;
 }
+
+/** What the page tells the reader it sends, with analytics or without. */
+export const PRIVACY = {
+	none: 'Nothing you do on the walk is sent anywhere, and Guide never asks where you are.',
+	counted:
+		'If you agree, this page counts your visit with Google Analytics: which page you opened and, on the walk, the kind of each command (a step, a look, a route), never what you type. Without your yes nothing is sent. You can change your answer in Settings. Guide never asks where you are.'
+};
+
+/** The strip that asks, once, whether the visit may be counted. */
+export const consentStrip = (page: string) =>
+	`<div class="consent" id="consent" hidden><p>May ${page} count your visit with Google Analytics? It would know which page you opened and the kind of each command, never what you type. <button type="button" data-consent="granted">Yes</button> <button type="button" data-consent="denied">No</button></p></div>`;
 
 /** The world as the page carries it: packed, gzip, then base64, which nothing in a script element can break out of. */
 const packed = (world: AdventureWorld) =>
@@ -37,7 +50,7 @@ const esc = (text: string) =>
 	text.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
 /** The About page: what the piece is, every source and its terms, and who made it. */
-function aboutPage(snapshotDate: string): string {
+function aboutPage(snapshotDate: string, counted: boolean): string {
 	const sources = SOURCES.map(
 		(s) =>
 			`<li><a href="${esc(s.href)}">${esc(s.name)}</a>: ${esc(s.gives)}.${s.live ? ' <em>Asked from your browser as you read; you can turn it off in Settings.</em>' : ''} <span class="terms">${esc(s.terms)}.</span></li>`
@@ -45,7 +58,7 @@ function aboutPage(snapshotDate: string): string {
 	return `<section id="about" class="view" hidden>
 		<h2>About</h2>
 		<p>A Partial Guide is a walk through Addiscombe, in Croydon, told by Guide from open data. Guide says only what its sources say, as they say it: where the data is broken, Guide is too. It is an art piece, not a game.</p>
-		<p>The map Guide carries is dated ${esc(longDate(snapshotDate))}. Nothing you do on the walk is sent anywhere, and Guide never asks where you are.</p>
+		<p>The map Guide carries is dated ${esc(longDate(snapshotDate))}. ${counted ? PRIVACY.counted : PRIVACY.none}</p>
 		<h3>Where Guide’s words come from</h3>
 		<ul class="sources">
 			${sources}
@@ -57,7 +70,7 @@ function aboutPage(snapshotDate: string): string {
 }
 
 /** The Settings page: whether to ask each live source from the reader's browser. */
-function settingsPage(): string {
+function settingsPage(counted: boolean): string {
 	const choices = LIVE.map(
 		(l) =>
 			`<label class="choice"><input type="checkbox" name="${l.key}" checked><span>${esc(l.label)} <span class="terms">(${esc(l.source)})</span></span></label>`
@@ -65,7 +78,12 @@ function settingsPage(): string {
 	return `<section id="settings" class="view" hidden>
 		<h2>Settings</h2>
 		<p>Guide can ask these sources from your browser as you read, always for the map’s own places, never yours. Turn any off and nothing is asked of it; Guide then says nothing of it.</p>
-		${choices}
+		${choices}${
+			counted
+				? `
+		<label class="choice"><input type="checkbox" name="analytics"><span>Count my visit <span class="terms">(Google Analytics; the kind of each command, never what you type)</span></span></label>`
+				: ''
+		}
 		<p class="terms">Kept in this browser only. A change to the weather applies when the walk next begins.</p>
 		<p><a href="#">Back to the walk</a></p>
 	</section>`;
@@ -99,7 +117,8 @@ export function exportPage({
 	world,
 	snapshotDate,
 	flightsUrl,
-	tiles
+	tiles,
+	gaId
 }: ExportInput): string {
 	return `<!doctype html>
 <html lang="en">
@@ -146,6 +165,11 @@ export function exportPage({
 	/* The map kept under the status bar while gps is on, on any screen. */
 	.follow { flex: none; height: min(32vh, 260px); border-bottom: 1px solid var(--rule); }
 	.follow[hidden] { display: none; }
+	/* Asked once, before anything is counted. */
+	.consent { flex: none; border-bottom: 1px solid var(--rule); padding: 0.5rem 1rem; font-size: 0.85rem; }
+	.consent[hidden] { display: none; }
+	.consent p { margin: 0; }
+	.consent button { font: inherit; margin-left: 0.5ch; }
 	.map.drawn { height: 320px; visibility: visible; border: 1px solid var(--rule); }
 	.scroll { flex: 1; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
 	#transcript { display: grid; gap: 1.5em; padding-block: 1rem 1.5rem; }
@@ -181,11 +205,16 @@ export function exportPage({
 </head>
 <body>
 <div class="status" id="status"><span>A Partial Guide</span><span></span></div>
-<div class="follow" id="follow" hidden></div>
+<div class="follow" id="follow" hidden></div>${
+		gaId
+			? `
+${consentStrip('this page')}`
+			: ''
+	}
 <div class="scroll" id="scroll">
 	<div id="game"><div id="transcript" aria-live="polite"></div></div>
-	${aboutPage(snapshotDate)}
-	${settingsPage()}
+	${aboutPage(snapshotDate, !!gaId)}
+	${settingsPage(!!gaId)}
 </div>
 <form id="prompt" autocomplete="off">
 	<label for="command">&gt;</label>
@@ -228,7 +257,29 @@ export function exportPage({
 	const FLIGHTS = ${JSON.stringify(flightsUrl ?? '')};
 	// Where the world's tiles are served, when it comes in pieces; empty when the page carries it.
 	const TILES = ${JSON.stringify(tiles ?? '')};
-	for (const box of document.querySelectorAll('#settings input[type="checkbox"]')) {
+	// Google Analytics, only on the reader's yes: given before, or given now. Never what they type.
+	const GA = ${JSON.stringify(gaId ?? '')};
+	if (GA && loadConsent() === 'granted') startAnalytics(GA);
+	const count = (name, params) => {
+		if (GA && loadConsent() === 'granted') track(name, params);
+	};
+	const consentBox = document.querySelector('#settings input[name="analytics"]');
+	const consentStrip = document.getElementById('consent');
+	function answer(consent) {
+		saveConsent(consent);
+		if (consent === 'granted') startAnalytics(GA);
+		if (consentStrip) consentStrip.hidden = true;
+		if (consentBox) consentBox.checked = consent === 'granted';
+		fit();
+	}
+	if (GA) {
+		if (!loadConsent()) consentStrip.hidden = false;
+		for (const button of consentStrip.querySelectorAll('button'))
+			button.addEventListener('click', () => answer(button.dataset.consent));
+		consentBox.checked = loadConsent() === 'granted';
+		consentBox.addEventListener('change', () => answer(consentBox.checked ? 'granted' : 'denied'));
+	}
+	for (const box of document.querySelectorAll('#settings input[type="checkbox"]:not([name="analytics"])')) {
 		box.checked = settings[box.name] !== false;
 		box.addEventListener('change', () => {
 			settings[box.name] = box.checked;
@@ -456,8 +507,12 @@ export function exportPage({
 		} catch {
 			return show({ lines: ['The way will not come clear. Try again in a moment.'] });
 		}
-		show(game.respond(text));
+		const reply = game.respond(text);
+		show(reply);
 		ahead();
+		count('command', { verb: parse(text).verb });
+		if (reply.lines.some((line) => line.startsWith('You have walked ')))
+			count('distance_mark', { walked: Math.round(game.status().walked) });
 	}
 	form.addEventListener('submit', (event) => {
 		event.preventDefault();

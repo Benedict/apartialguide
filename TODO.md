@@ -18,6 +18,8 @@ Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
 
 - [ ] **OpenRouter key, to compare models.** Create a key at <https://openrouter.ai/>, add some credit (a comparison of four models on 25 stops costs pennies), and add it as the repository secret `OPENROUTER_API_KEY`. Then Actions → Compare models → Run workflow; the report is attached to the run.
 
+- [ ] **Google Analytics.** Create a GA4 property for the site, then add its measurement ID (`G-…`) as a repository **variable** (not a secret) called `GA_MEASUREMENT_ID` (Settings → Secrets and variables → Actions → Variables), and run the Pages workflow. Until then nothing is counted and no one is asked. In GA, under Admin → Data retention, consider the shortest retention, and leave Google signals off.
+
 ## Decisions
 
 - [ ] **Is the piece non-commercial, for good?** Bomb Sight and Digital Britannia both forbid commercial use. An exhibition with a fee, or a sale or commission, would breach both.

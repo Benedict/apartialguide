@@ -2,6 +2,8 @@
 export { Adventure, distanceWords, introduction } from '../core/adventure/engine';
 export { unpackWorld } from '../core/adventure/packed';
 export { tiledWorld } from '../core/adventure/tiles';
+export { parse } from '../core/adventure/parser';
+export { loadConsent, saveConsent, startAnalytics, track } from './analytics';
 export { skyNow } from './sky';
 export { fetchArrivals } from './transit';
 export { loadSettings, saveSettings } from './settings';

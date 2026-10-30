@@ -4,14 +4,18 @@
  * Uses prose written ahead of time when NARRATION_PATH is set. Writes EXPORT_PATH
  * (default build/export/addiscombe.html).
  *
- * With SITE_DIR set it writes the site instead: SITE_DIR/index.html carrying only the head, and the
- * world in tiles (SITE_DIR/tiles/<key>.json, TILE_M metres across, default 300) that the page
- * fetches as the walk reaches them, so it opens at once however large the map.
+ * With SITE_DIR set it writes the site instead: the microsite at SITE_DIR/index.html, and the walk at
+ * SITE_DIR/walk/, its index.html carrying only the head, the world in tiles (walk/tiles/<key>.json,
+ * TILE_M metres across, default 300) fetched as the walk reaches them, and the street network
+ * (walk/routes.json) fetched when a way is first asked for. GA_MEASUREMENT_ID adds Google Analytics,
+ * counted only once a reader says yes.
  */
 import { build } from 'esbuild';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+import { Adventure } from '../src/lib/core/adventure/engine';
 import { tileWorld } from '../src/lib/core/adventure/tiles';
+import { landingPage } from '../src/lib/server/landing';
 import { compileWorld } from '../src/lib/core/adventure/world';
 import { exportPage, wordsAmiss } from '../src/lib/server/export';
 import { loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
@@ -50,23 +54,27 @@ const bundle = await build({
 const engine = bundle.outputFiles[0].text;
 const site = process.env.SITE_DIR;
 if (site) {
+	// The walk at walk/, in tiles; the microsite at the root, its way in.
+	const walk = join(site, 'walk');
 	const { head, tiles, routes } = tileWorld(world, Number(process.env.TILE_M ?? 300));
-	mkdirSync(join(site, 'tiles'), { recursive: true });
+	mkdirSync(join(walk, 'tiles'), { recursive: true });
 	for (const [key, tile] of Object.entries(tiles))
-		writeFileSync(join(site, 'tiles', `${key}.json`), JSON.stringify(tile));
-	writeFileSync(join(site, 'routes.json'), JSON.stringify(routes));
+		writeFileSync(join(walk, 'tiles', `${key}.json`), JSON.stringify(tile));
+	writeFileSync(join(walk, 'routes.json'), JSON.stringify(routes));
 	writeFileSync(
-		join(site, 'index.html'),
+		join(walk, 'index.html'),
 		exportPage({
 			engine,
 			world: { ...head, stops: {} },
 			snapshotDate: config.snapshotDate,
 			flightsUrl: process.env.FLIGHTS_URL,
+			gaId: process.env.GA_MEASUREMENT_ID || undefined,
 			tiles: 'tiles/'
 		})
 	);
+	writeFileSync(join(site, 'index.html'), await microsite());
 	console.log(
-		`${Object.keys(world.stops).length} stops written to ${site} in ${Object.keys(tiles).length} tiles`
+		`${Object.keys(world.stops).length} stops written to ${walk} in ${Object.keys(tiles).length} tiles, and the microsite to ${site}`
 	);
 } else {
 	const path = process.env.EXPORT_PATH ?? 'build/export/addiscombe.html';
@@ -81,4 +89,32 @@ if (site) {
 		})
 	);
 	console.log(`${Object.keys(world.stops).length} stops written to ${path}`);
+}
+
+/** The microsite: what the piece is, the start of the walk as it plays, and the way in. */
+async function microsite(): Promise<string> {
+	const bundle = await build({
+		entryPoints: ['src/lib/browser/landing.ts'],
+		bundle: true,
+		format: 'iife',
+		globalName: 'LandingPage',
+		minify: true,
+		target: 'es2020',
+		write: false
+	});
+	// The tour's first place, played at noon on the map's date, so the lamps are out and it reads the same each build.
+	const game = new Adventure(world);
+	game.clock = () => new Date(`${config!.snapshotDate}T12:00:00Z`);
+	game.begin();
+	const first = game.respond('take the tour');
+	return landingPage({
+		snapshotDate: config!.snapshotDate,
+		about: world.about!,
+		excerpt: [
+			{ said: 'take the tour' },
+			{ title: first.title, lines: first.lines.filter((l) => !l.startsWith('Exits:')) }
+		],
+		script: bundle.outputFiles[0].text,
+		gaId: process.env.GA_MEASUREMENT_ID || undefined
+	});
 }
