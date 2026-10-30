@@ -26,16 +26,20 @@ describe('landingPage', () => {
 		expect(html).toContain('<meta property="og:title" content="A Partial Guide">');
 	});
 
-	it('leads to the walk', () => {
-		expect(html).toMatch(/<a class="begin" href="walk\/"[^>]*>Begin the walk/);
+	it('says plainly what it is for: the world as a text adventure, starting with one place', () => {
+		const text = html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ');
+		expect(text).toContain('The world as a text adventure.');
+		expect(text).toContain('It starts with Addiscombe');
+		expect(text).not.toMatch(/art piece|as it was played|earned by the data/);
 	});
 
-	it('gives what Guide carries, every figure the data’s', () => {
+	it('leads to the walk', () => {
+		expect(html).toMatch(/<a class="begin" href="walk\/"[^>]*>Start in Addiscombe/);
+	});
+
+	it('gives the map’s size and date, every figure the data’s', () => {
 		const text = html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ');
-		expect(text).toContain('12 named streets');
-		expect(text).toContain('340 places to stand');
-		expect(text).toContain('2 other accounts');
-		expect(text).toContain('March 2009');
+		expect(text).toContain('12 streets and 340 places');
 		expect(text).toContain('25 October 2026');
 	});
 
