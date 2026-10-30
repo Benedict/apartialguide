@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+	alongPolyline,
 	headingAt,
 	bearing,
 	compassLabel,
@@ -134,5 +135,16 @@ describe('headingAt', () => {
 		const line = [start, corner, destination(corner, 0, 100)];
 		expect(headingAt(destination(destination(start, 90, 30), 0, 5), line)).toBeCloseTo(90, 0);
 		expect(headingAt(destination(corner, 0, 60), line)).toBeCloseTo(0, 0);
+	});
+});
+
+describe('alongPolyline', () => {
+	it('says how far along a line its nearest point to something lies, and how far off it is', () => {
+		const start: LatLon = [51.38, -0.07];
+		const line = [start, destination(start, 90, 100), destination(start, 90, 200)];
+		const beside = destination(destination(start, 90, 150), 0, 12);
+		const { along, metres } = alongPolyline(beside, line);
+		expect(along).toBeCloseTo(150, 0);
+		expect(metres).toBeCloseTo(12, 0);
 	});
 });

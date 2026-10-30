@@ -4,7 +4,7 @@ Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
 
 ## Keys and workflows
 
-- [ ] **Re-narrate (prompt v15).** The speed limit is now given plainly, so the 99 pieces of prose written before are stale and the walk shows the template until they're rewritten. Either run the Narrate workflow (API, about $2–4 for 99 stops), or ask Claude to narrate them in a session on your Max plan.
+- [ ] **Re-narrate.** The walk now stops only at junctions and named places, so every stop is new and the prose written before no longer matches any of them: the walk shows the template until it is rewritten. There are 384 busier stops now (was 1,094). Either run the Narrate workflow with `NARRATE_ONLY=busier` (API, roughly $8–15), or ask Claude to narrate them in a session on your Max plan.
 - [ ] **Energy certificate keys.** Register at <https://epc.opendatacommunities.org/>. Then add two repository secrets (Settings → Secrets and variables → Actions):
   - `EPC_EMAIL`
   - `EPC_API_KEY`

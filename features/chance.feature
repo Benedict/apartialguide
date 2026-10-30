@@ -5,7 +5,7 @@ Feature: Chance
   Streets and names here are invented.
 
   Background:
-    Given an invented street called "Long Street" running east from "Short Row" to "Quillon Row"
+    Given an invented street called "Long Street" running 600 metres east from "Short Row" to "Quillon Row"
     And a pub called "The Quillon Arms" at the west end of Long Street
     And the reader opens the game
 
