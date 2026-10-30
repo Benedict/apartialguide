@@ -5,6 +5,7 @@ export type Command =
 	| {
 			verb:
 				| 'look'
+				| 'plainly'
 				| 'explore'
 				| 'exits'
 				| 'back'
@@ -146,6 +147,10 @@ export function parse(input: string): Command {
 	if (EXAMINE.has(first) && rest.length)
 		return { verb: 'examine', target: dropFiller(rest).join(' ') };
 	if (text === 'l' || text === 'look') return { verb: 'look' };
+	if (
+		['plainly', 'look plainly', 'again plainly', 'say it plainly', 'tell it plainly'].includes(text)
+	)
+		return { verb: 'plainly' };
 	if (first === 'save') return rest.length ? { verb: 'save', slot: rest[0] } : { verb: 'save' };
 	if (text === 'continue') return { verb: 'restore', slot: 'auto' };
 	if (['restore', 'load', 'saves'].includes(first))

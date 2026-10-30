@@ -24,3 +24,14 @@ Feature: Prose written ahead of time
   Scenario: A stop without written prose keeps the template
     When the game begins
     Then it says "You are standing on Long Street"
+
+  Scenario: Plainly tells a written stop again from the template alone
+    Given prose has been written ahead of time for every stop, reading "Long Street, and a pub."
+    When the reader types "plainly"
+    Then it says "You are standing on Long Street"
+    And it says "The Sextant"
+    And it does not say "Long Street, and a pub."
+
+  Scenario: Plainly where nothing was written owns to having said it plainly
+    When the reader types "plainly"
+    Then it says "I have told it plainly already."

@@ -21,6 +21,9 @@ describe('parse', () => {
 
 	it.each([
 		['l', { verb: 'look' }],
+		['plainly', { verb: 'plainly' }],
+		['again, plainly', { verb: 'plainly' }],
+		['look plainly', { verb: 'plainly' }],
 		['look', { verb: 'look' }],
 		['exits', { verb: 'exits' }],
 		['back', { verb: 'back' }],

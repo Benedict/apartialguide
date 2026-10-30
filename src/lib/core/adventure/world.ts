@@ -2,7 +2,7 @@ import { groupBySubject, type Fact } from '../facts';
 import type { LatLon } from '../geo';
 import type { Beyond } from '../render/beyond';
 import type { Narrator } from '../narrator';
-import type { Part, Thing } from '../render/renderer';
+import type { Part, Telling, Thing } from '../render/renderer';
 import type { StopId } from '../stops';
 import { looksBroken, NAME_KEY } from '../tensions';
 
@@ -35,6 +35,8 @@ export interface CompiledStop {
 	zones?: { name: string; kind: string }[];
 	/** What a closer look finds, if anything is hidden here. */
 	hidden?: { lines: string[]; things: Thing[] };
+	/** The template's telling, where prose written ahead of time is told instead: for plainly. */
+	plain?: Telling;
 }
 
 /** A stop on the map that TfL has live arrivals for. */
@@ -149,6 +151,7 @@ export function compileWorld(
 			things: room.things,
 			...(room.streets?.length ? { streets: room.streets } : {}),
 			...(room.hidden ? { hidden: room.hidden } : {}),
+			...(room.plain ? { plain: room.plain } : {}),
 			...(fragments.length ? { fragments } : {}),
 			...(transit.length ? { transit } : {}),
 			...(area ? { area: { name: area.name, kind: area.kind } } : {}),
