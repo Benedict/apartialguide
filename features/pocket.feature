@@ -5,7 +5,7 @@ Feature: Fragments Guide carries
   Streets and names here are invented.
 
   Background:
-    Given an invented street called "Long Street" running east from "Short Row" to "Blind Alley"
+    Given an invented street called "Long Street" running 600 metres east from "Short Row" to "Blind Alley"
     And a building once called "ld Invented Mill" at the west end of Long Street
     And the reader opens the game
 

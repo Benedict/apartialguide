@@ -37,7 +37,7 @@ export function readConfig(
 	return {
 		snapshotPath,
 		snapshotDate: date,
-		spacing: Number(source.STOP_SPACING_M ?? 50),
+		spacing: Number(source.STOP_SPACING_M ?? 150),
 		start: start?.length === 2 && start.every(Number.isFinite) ? [start[0], start[1]] : undefined,
 		narrationPath: source.NARRATION_PATH,
 		historyDir: source.HISTORY_DIR,

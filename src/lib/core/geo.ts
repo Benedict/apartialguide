@@ -124,6 +124,29 @@ export function nearestOnPolyline(
 	return best;
 }
 
+/** How far along a polyline its nearest point to `p` lies, and how far `p` is from it, in metres. */
+export function alongPolyline(
+	p: LatLon,
+	line: readonly LatLon[]
+): { along: number; metres: number } {
+	const toXY = flatProjection(p);
+	let best = { along: 0, metres: line.length ? distance(p, line[0]) : Infinity };
+	let walked = 0;
+	for (let i = 1; i < line.length; i++) {
+		const [ax, ay] = toXY(line[i - 1]);
+		const [bx, by] = toXY(line[i]);
+		const dx = bx - ax;
+		const dy = by - ay;
+		const len2 = dx * dx + dy * dy;
+		const t = len2 === 0 ? 0 : Math.max(0, Math.min(1, (-ax * dx - ay * dy) / len2));
+		const metres = Math.hypot(ax + t * dx, ay + t * dy);
+		const step = Math.sqrt(len2);
+		if (metres < best.metres) best = { along: walked + t * step, metres };
+		walked += step;
+	}
+	return best;
+}
+
 /** The bearing of the stretch of a line nearest `p`, in the line's own direction. */
 export function headingAt(p: LatLon, line: readonly LatLon[]): number {
 	let best = { metres: Infinity, heading: 0 };

@@ -32,18 +32,36 @@ const state = (w: NarratorWorld) => w as NarratorWorld & AdventureState;
 Given(
 	'an invented street called {string} running east from {string} to {string}',
 	function (this: NarratorWorld, name: string, from: string, to: string) {
-		const s = state(this);
-		const west = this.map.node(O);
-		const east = this.map.nodeFrom(O, 90, 200);
-		this.map.way([west, east], { highway: 'residential', name });
-		this.map.way([west, this.map.nodeFrom(O, 180, 40)], { highway: 'residential', name: from });
-		this.map.way([east, this.map.nodeFrom(this.map.position(east), 0, 40)], {
-			highway: 'residential',
-			name: to
-		});
-		s.streetStart = west;
+		inventStreet(this, name, from, to, 200);
 	}
 );
+
+Given(
+	'an invented street called {string} running {int} metres east from {string} to {string}',
+	function (this: NarratorWorld, name: string, metres: number, from: string, to: string) {
+		inventStreet(this, name, from, to, metres);
+	}
+);
+
+/** Long Street, or another invented name, with a street at each end; no real place. */
+function inventStreet(
+	world: NarratorWorld,
+	name: string,
+	from: string,
+	to: string,
+	metres: number
+) {
+	const s = state(world);
+	const west = world.map.node(O);
+	const east = world.map.nodeFrom(O, 90, metres);
+	world.map.way([west, east], { highway: 'residential', name });
+	world.map.way([west, world.map.nodeFrom(O, 180, 40)], { highway: 'residential', name: from });
+	world.map.way([east, world.map.nodeFrom(world.map.position(east), 0, 40)], {
+		highway: 'residential',
+		name: to
+	});
+	s.streetStart = west;
+}
 
 Given('a pub called {string} beside Long Street', function (this: NarratorWorld, name: string) {
 	this.map.node(destination(destination(O, 90, 85), 0, 10), { amenity: 'pub', name });
@@ -152,7 +170,7 @@ Given(
 
 Given('the reader starts part way along Long Street', function (this: NarratorWorld) {
 	const s = state(this);
-	const start = this.narrator.graph.walk(junctionId(s.streetStart!), 'east')[2];
+	const start = this.narrator.graph.walk(junctionId(s.streetStart!), 'east')[1];
 	s.game = new Adventure(compileWorld(this.narrator, start));
 	s.started = start;
 });

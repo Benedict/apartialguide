@@ -16,6 +16,10 @@ export class NarratorWorld extends World {
 	path: StopId[] = [];
 	offered: string[] = [];
 	visit?: Visit;
+	/** The nodes of the street a scenario laid down, with how far along each lies, in metres. */
+	street: { id: number; metres: number }[] = [];
+	/** How far along the street each named place a scenario set down stands, in metres. */
+	placed: Record<string, number> = {};
 	/** OSM refs of the features a scenario is about. */
 	subjects: string[] = [];
 	/** The renderer the narrator uses, when a scenario sets one. */

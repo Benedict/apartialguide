@@ -21,9 +21,9 @@ describe('buildStopGraph', () => {
 	});
 
 	it('falls back to sixteen points when two exits share a label', () => {
-		const { graph, centre } = star([30, 55]);
+		const { graph, centre } = star([30, 55, 200]);
 		const labels = graph.get(junctionId(centre))!.exits.map((e) => e.label);
-		expect(labels.sort()).toEqual(['north-east', 'north-north-east']);
+		expect(labels.sort()).toEqual(['north-east', 'north-north-east', 'south']);
 	});
 
 	it('adds the street name when sixteen points still collide', () => {
@@ -42,7 +42,7 @@ describe('buildStopGraph', () => {
 		const a = map.node(O);
 		const b = map.nodeFrom(O, 90, 230);
 		map.way([a, b]);
-		const graph = buildStopGraph(new OsmIndex(map.toData()));
+		const graph = buildStopGraph(new OsmIndex(map.toData()), { spacing: 50 });
 		const path = graph.walk(junctionId(a), 'east');
 		expect(path.at(-1)).toBe(junctionId(b));
 		expect(path).toHaveLength(6);

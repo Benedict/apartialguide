@@ -139,9 +139,15 @@ Given('no buildings are mapped along it', function (this: NarratorWorld) {
 
 When('the reader is on Everton Road', function (this: NarratorWorld) {
 	const ids = new Set(evertonRoad(this).map((w) => w.id));
+	// A stop on Everton Road alone: part way along it, or where only it goes on.
+	const off = (s: { exits: { wayId: number }[] }) =>
+		s.exits.filter((e) => !ids.has(e.wayId)).length;
 	const stop = this.narrator.graph
 		.all()
-		.find((s) => s.kind === 'corridor' && s.exits.every((e) => ids.has(e.wayId)));
+		.filter((s) => s.exits.some((e) => ids.has(e.wayId)))
+		.sort(
+			(a, b) => off(a) - off(b) || Number(b.kind === 'corridor') - Number(a.kind === 'corridor')
+		)[0];
 	this.arrive(stop?.id);
 });
 

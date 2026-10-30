@@ -37,7 +37,7 @@ describe('buildScene', () => {
 
 	it('says which streets a corridor stop lies between', () => {
 		const { graph, west } = town();
-		const mid = graph.walk(junctionId(west), 'east')[2];
+		const mid = graph.walk(junctionId(west), 'east')[1];
 		expect(buildScene(graph, graph.get(mid)!, plan(mid)).between).toEqual([
 			'Short Row',
 			'Blind Alley'

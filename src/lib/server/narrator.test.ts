@@ -13,7 +13,7 @@ describe('readConfig', () => {
 		expect(readConfig({ SNAPSHOT_PATH: 'data/snapshots/addiscombe-2026-10-24.json' })).toEqual({
 			snapshotPath: 'data/snapshots/addiscombe-2026-10-24.json',
 			snapshotDate: '2026-10-24',
-			spacing: 50,
+			spacing: 150,
 			start: undefined,
 			narrationPath: undefined,
 			historyDir: undefined,
