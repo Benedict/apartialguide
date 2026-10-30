@@ -33,6 +33,19 @@ jobs:
       - run: npm run smoke
         env:
           EXPORT_PATH: site/index.html
+      # And the site as Pages publishes it, the world in tiles, served over http.
+      - name: Export the site in tiles
+        env:
+          SNAPSHOT_PATH: data/snapshots/addiscombe-2026-10-25.json
+          START_AT: 51.379897,-0.074294
+          HISTORY_DIR: data/history
+          WIKIDATA_DIR: data/wikidata
+          RECORDS_DIR: data/records
+          SITE_DIR: tiled
+        run: npm run export
+      - run: npm run smoke
+        env:
+          SITE_DIR: tiled
       # The inline map depends on jsDelivr and OpenFreeMap; say whether it came, without failing on it.
       - run: npm run map-check
         continue-on-error: true

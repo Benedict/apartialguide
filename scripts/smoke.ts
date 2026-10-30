@@ -3,13 +3,38 @@
  * introduces themselves, the tour can be taken with a click, the status line counts moves, gps
  * links to the map and asks for one on a wide screen, the About and Settings pages
  * open, and a setting turned off is kept and obeyed. Run after `npm run export`:
- *   EXPORT_PATH=site/index.html npm run smoke
+ *   EXPORT_PATH=build/export/addiscombe.html npm run smoke
+ * or, for the site served in tiles, SITE_DIR=site npm run smoke, which serves it over http.
  * Outside requests are refused, as they may be anywhere, and the page must still play without them.
  */
-import { resolve } from 'node:path';
+import { createServer } from 'node:http';
+import { readFile } from 'node:fs/promises';
+import { join, normalize, resolve } from 'node:path';
 import { chromium, type Page } from 'playwright';
 
-const path = resolve(process.env.EXPORT_PATH ?? 'build/export/addiscombe.html');
+const site = process.env.SITE_DIR ? resolve(process.env.SITE_DIR) : undefined;
+const path = site ?? resolve(process.env.EXPORT_PATH ?? 'build/export/addiscombe.html');
+// The site is served, as Pages serves it; the single page is opened as a file.
+const server = !site
+	? undefined
+	: createServer(async (req, res) => {
+			const file = normalize(new URL(req.url ?? '/', 'http://x').pathname).replace(
+				/\/$/,
+				'/index.html'
+			);
+			try {
+				const body = await readFile(join(site, file));
+				res.writeHead(200, {
+					'Content-Type': file.endsWith('.html') ? 'text/html; charset=utf-8' : 'application/json'
+				});
+				res.end(body);
+			} catch {
+				res.writeHead(404).end();
+			}
+		}).listen(0);
+const url = server
+	? `http://localhost:${(server.address() as { port: number }).port}/`
+	: `file://${path}`;
 const browser = await chromium.launch();
 const failures: string[] = [];
 const check = (ok: boolean, what: string) => ok || failures.push(what);
@@ -32,13 +57,16 @@ const says = (page: Page, words: string | RegExp) =>
 try {
 	const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
 	const asked: string[] = [];
-	await context.route(/^https?:/, (route) => {
-		asked.push(route.request().url());
-		return route.abort();
-	});
+	await context.route(
+		(u) => u.protocol.startsWith('http') && u.hostname !== 'localhost',
+		(route) => {
+			asked.push(route.request().url());
+			return route.abort();
+		}
+	);
 	const page = await context.newPage();
 	page.on('pageerror', (e) => failures.push(`page error: ${e.message}`));
-	await page.goto(`file://${path}`);
+	await page.goto(url);
 	await says(page, 'I am Guide');
 	check(
 		asked.some((u) => u.includes('api.open-meteo.com/v1/forecast')),
@@ -80,7 +108,7 @@ try {
 	await says(page, 'Saved in slot 1');
 	const before = await page.locator('#status').innerText();
 	await page.goto('about:blank');
-	await page.goto(`file://${path}`);
+	await page.goto(url);
 	await page.getByRole('button', { name: /^Continue the walk/ }).click({ timeout: 15_000 });
 	await says(page, 'We go on from where we were.');
 	check(
@@ -107,13 +135,13 @@ try {
 	await page.uncheck('#settings input[name="weather"]');
 	asked.length = 0;
 	await page.goto('about:blank');
-	await page.goto(`file://${path}`);
+	await page.goto(url);
 	await says(page, 'I am Guide');
 	check(
 		!asked.some((u) => u.includes('api.open-meteo.com/v1/forecast')),
 		'the weather was asked after when off'
 	);
-	await page.goto(`file://${path}#settings`);
+	await page.goto(`${url}#settings`);
 	await shows(page, '#settings');
 	check(
 		!(await page.locator('#settings input[name="weather"]').isChecked()),
@@ -123,6 +151,7 @@ try {
 	failures.push((err as Error).message.split('\n')[0]);
 } finally {
 	await browser.close();
+	server?.close();
 }
 if (failures.length) {
 	console.error(`The page at ${path} does not play:\n${failures.join('\n')}`);

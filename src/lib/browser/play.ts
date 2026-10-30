@@ -1,6 +1,7 @@
 // Everything the exported page needs to play, bundled as one script.
 export { Adventure, distanceWords, introduction } from '../core/adventure/engine';
 export { unpackWorld } from '../core/adventure/packed';
+export { tiledWorld } from '../core/adventure/tiles';
 export { skyNow } from './sky';
 export { fetchArrivals } from './transit';
 export { loadSettings, saveSettings } from './settings';

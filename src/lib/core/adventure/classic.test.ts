@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { Adventure } from './engine';
+import { MemorySaves } from './saves';
 import type { AdventureWorld, CompiledStop } from './world';
 import { destination } from '../geo';
 import type { Fact } from '../facts';
@@ -324,5 +325,40 @@ describe('the lighting, by the hour', () => {
 		const g = game('2026-10-29T00:00:00Z');
 		g.respond('take the tour');
 		expect(g.respond('look').lines[0]).toContain('Street lamps light the way.');
+	});
+});
+
+describe('a world opened as the walk goes', () => {
+	it('says which places a command needs: here, where you came from and where the exits lead', () => {
+		const { game } = touring();
+		expect(game.needs('east')).toEqual(['a', 'b']);
+		game.respond('east');
+		expect(game.needs('look')).toEqual(['b', 'a', 'c']);
+	});
+
+	it('needs the place a walk was kept at, to restore it', () => {
+		const { game } = touring();
+		game.saves = new MemorySaves();
+		game.respond('east');
+		game.respond('east');
+		game.respond('save 2');
+		const other = new Adventure(world);
+		other.saves = game.saves;
+		expect(other.needs('restore 2')).toEqual(['c', 'b']);
+		expect(other.needs('restore 4')).toEqual([]);
+	});
+
+	it('knows its map by the places the account counts, however few are open', () => {
+		const counted = { ...world, about: { streets: 1, places: 3, accounts: [] } };
+		const kept = new MemorySaves();
+		const full = new Adventure(counted);
+		full.saves = kept;
+		full.begin();
+		full.respond('take the tour');
+		full.respond('save 1');
+		const partial = new Adventure({ ...counted, stops: { a: world.stops.a } });
+		partial.saves = kept;
+		partial.begin();
+		expect(partial.respond('restore 1').lines[0]).toBe('Restored from slot 1.');
 	});
 });
