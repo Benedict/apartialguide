@@ -68,7 +68,11 @@ export async function narrateWorld(
 		repeated: [],
 		skipped: 0
 	};
-	const used = phrasesIn(store);
+	// Only prose a reader can meet counts: pieces kept for stops the map no longer has do not.
+	const current = new Set(
+		narrator.graph.all().map((s) => promptKey(buildPrompt(narrator.visit(s.id)!.scene)))
+	);
+	const used = phrasesIn(store, current);
 	let calls = 0;
 	for (const stop of order(narrator, from)) {
 		const { scene } = narrator.visit(stop)!;
@@ -179,11 +183,13 @@ function grams(text: string): Set<string> {
 	return out;
 }
 
-/** How many stored pieces each run of six words stands in. */
-function phrasesIn(store: NarrationStore): Map<string, number> {
+/** How many stored pieces for the current stops each run of six words stands in. */
+function phrasesIn(store: NarrationStore, current: ReadonlySet<string>): Map<string, number> {
 	const used = new Map<string, number>();
-	for (const entry of Object.values(store))
-		for (const gram of grams(entry.paragraphs.join(' '))) used.set(gram, (used.get(gram) ?? 0) + 1);
+	for (const [key, entry] of Object.entries(store))
+		if (current.has(key))
+			for (const gram of grams(entry.paragraphs.join(' ')))
+				used.set(gram, (used.get(gram) ?? 0) + 1);
 	return used;
 }
 

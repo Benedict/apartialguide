@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { fixedClock } from './facts';
+import { destination } from './geo';
 import { narrateWorld } from './narration';
 import { buildPrompt, promptKey } from './render/prompt';
 import { Narrator } from './narrator';
@@ -24,6 +25,35 @@ function narrator() {
 		n: Narrator.fromOsm(m.toData(), { clock: fixedClock('2026-10-24') }),
 		west: junctionId(west)
 	};
+}
+
+/** An invented street long enough for several stops, a bakery of its own name at each. */
+function longStreet() {
+	const m = new SyntheticMap();
+	const west = m.node(O);
+	m.way([west, m.nodeFrom(O, 90, 600)], { highway: 'residential', name: 'Long Street' });
+	// So no two stops share their facts.
+	['Alder', 'Birch', 'Cedar', 'Damson', 'Elder'].forEach((name, i) =>
+		m.node(destination(destination(O, 90, i * 150), 0, 8), { shop: 'bakery', name })
+	);
+	return {
+		n: Narrator.fromOsm(m.toData(), { clock: fixedClock('2026-10-24') }),
+		west: junctionId(west)
+	};
+}
+
+/** The same prose stored for three stops other than `west`, under their current facts. */
+function storedElsewhere(n: Narrator, west: string, text: string): NarrationStore {
+	const others = n.graph
+		.all()
+		.filter((s) => s.id !== west)
+		.slice(0, 3);
+	return Object.fromEntries(
+		others.map((s) => [
+			promptKey(buildPrompt(n.visit(s.id)!.scene)),
+			{ paragraphs: [text], model: 'x', written: '2026-10-24' }
+		])
+	);
 }
 
 describe('narrateWorld', () => {
@@ -157,6 +187,16 @@ describe('narrateWorld', () => {
 	});
 
 	it('does not store a turn of phrase already used in several places', async () => {
+		const { n } = longStreet();
+		const phrase = 'and the dark sits quietly between them all';
+		const store: NarrationStore = {};
+		const result = await narrateWorld(n, new RecordedModel(said(`Here, ${phrase}.`)), store);
+		expect(result.written).toBe(3);
+		expect(result.repeated).toHaveLength(n.graph.all().length - 3);
+		expect(result.repeated[0].phrase).toMatch(/dark sits quietly/);
+	});
+
+	it('counts a turn of phrase only in prose a reader can meet, not in pieces for stops the map no longer has', async () => {
 		const { n, west } = narrator();
 		const phrase = 'and the dark sits quietly between them all';
 		const store: NarrationStore = {
@@ -168,9 +208,8 @@ describe('narrateWorld', () => {
 			limit: 1,
 			from: west
 		});
-		expect(result.rejected).toEqual([west]);
-		expect(result.repeated[0].stop).toBe(west);
-		expect(result.repeated[0].phrase).toMatch(/dark sits quietly/);
+		expect(result.repeated).toEqual([]);
+		expect(result.written).toBe(1);
 	});
 
 	it('lets the facts’ own words recur, as they must', async () => {
@@ -197,11 +236,8 @@ describe('narrateWorld', () => {
 	});
 
 	it('lets the facts be said again in another order, but not an instruction echoed', async () => {
-		const { n, west } = narrator();
-		const store = (text: string): NarrationStore =>
-			Object.fromEntries(
-				['a', 'b', 'c'].map((k) => [k, { paragraphs: [text], model: 'x', written: '2026-10-24' }])
-			);
+		const { n, west } = longStreet();
+		const store = (text: string) => storedElsewhere(n, west, text);
 		// The facts' own words, reordered, are not a turn of phrase.
 		const reordered = await narrateWorld(
 			n,
