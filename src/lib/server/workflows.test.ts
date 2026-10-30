@@ -21,6 +21,15 @@ function worldEnv(file: string): Record<string, string> {
 }
 
 describe('the workflows', () => {
+	it('fail CI when there are fewer tests than on the branch it would merge into', () => {
+		const ci = readFileSync('.github/workflows/ci.yml', 'utf8');
+		expect(ci).toContain('git worktree add');
+		expect(ci).toMatch(/^\s+TEST_COUNT_BASE: \S+$/m);
+		expect(ci).toMatch(/^\s+npm run test:count$/m);
+		expect(ci).toContain('github.base_ref');
+		expect(ci).toContain('github.event.before');
+	});
+
 	it('write prose for the same world the published page plays', () => {
 		// Prose is found by a key made from each stop's scene: a different world finds none of it.
 		const narrate = worldEnv('narrate.yml');
