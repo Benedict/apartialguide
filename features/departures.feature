@@ -14,6 +14,12 @@ Feature: Live departures
     Then the reader can hear departures from "Invented Corner"
     And the departures say "Invented Corner: the 410 to Invented Palace in 3 minutes."
 
+  Scenario: A stop with nothing due is told by the letter the map has for it
+    Given a bus stop called "Invented Corner" with the code "490000000X" and the letter "Q" right beside the reader
+    And TfL says nothing is due at "490000000X"
+    When the game begins
+    Then the departures say "Invented Corner, stop Q: nothing is due."
+
   Scenario: A tram stop, found at TfL by its name
     Given a tram stop called "Inventon" right beside the reader
     When the game begins

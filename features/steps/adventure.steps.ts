@@ -238,6 +238,25 @@ Given(
 );
 
 Given(
+	'a bus stop called {string} with the code {string} and the letter {string} right beside the reader',
+	function (this: NarratorWorld, name: string, naptan: string, letter: string) {
+		const here = this.narrator.graph.get(state(this).started!)!.position;
+		this.map.node(destination(here, 0, 5), {
+			highway: 'bus_stop',
+			public_transport: 'platform',
+			name,
+			'naptan:AtcoCode': naptan,
+			local_ref: letter
+		});
+		restart(this);
+	}
+);
+
+Given('TfL says nothing is due at {string}', function (this: NarratorWorld, naptan: string) {
+	state(this).arrivals = { naptan, arrivals: [] };
+});
+
+Given(
 	'a tram stop called {string} right beside the reader',
 	function (this: NarratorWorld, name: string) {
 		const here = this.narrator.graph.get(state(this).started!)!.position;

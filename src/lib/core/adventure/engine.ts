@@ -786,7 +786,7 @@ export class Adventure {
 	/** What is due at a stop, as TfL answered; nothing at all without an answer. */
 	departures(stop: TransitStop, facts: Fact[] | undefined): Reply | undefined {
 		if (!facts) return undefined;
-		const line = departuresLine(facts, stop.name);
+		const line = departuresLine(facts, stop.name, stop.letter);
 		return line ? { lines: [line] } : undefined;
 	}
 

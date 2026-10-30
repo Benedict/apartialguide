@@ -4,17 +4,26 @@ import { groupBySubject, type Fact } from '../facts';
 const SOONEST = 3;
 
 /**
- * "Invented Road: the 410 to Invented Palace in 3 minutes, the 289 to Invented End in 7.",
+ * "Invented Road, towards Invented Palace: the 410 to Invented Palace in 3 minutes, the 289 to
+ * Invented End in 7.", headed by the way the stop serves, or its letter, where TfL gives one,
  * from TfL's arrivals. An answer with nothing due says so; no answer says nothing.
  */
-export function departuresLine(facts: readonly Fact[], stop?: string): string | undefined {
+export function departuresLine(
+	facts: readonly Fact[],
+	stop?: string,
+	mapLetter?: string
+): string | undefined {
 	const arrivals = [...groupBySubject(facts.filter((f) => f.source === 'TfL')).values()]
 		.map((group) => Object.fromEntries(group.map((f) => [f.claim.key, f.claim.value])))
 		.sort((a, b) => Number(a.due) - Number(b.due))
 		.slice(0, SOONEST);
 	const name = arrivals[0]?.stop ?? stop;
 	if (!name) return undefined;
-	if (!arrivals.length) return `${name}: nothing is due.`;
+	// Two stops of one name, either side of the road, are told apart by the way each serves.
+	const way = arrivals.find((a) => a.towards)?.towards;
+	const letter = arrivals.find((a) => a.platform)?.platform ?? mapLetter;
+	const where = way ? `${name}, towards ${way}` : letter ? `${name}, stop ${letter}` : name;
+	if (!arrivals.length) return `${where}: nothing is due.`;
 	let unitSaid = false;
 	const said = arrivals.map((a) => {
 		const what = a.mode === 'tram' ? 'a tram' : `the ${a.line}`;
@@ -26,5 +35,5 @@ export function departuresLine(facts: readonly Fact[], stop?: string): string | 
 		unitSaid = true;
 		return `${what}${to} in ${minutes}${unit}`;
 	});
-	return `${name}: ${said.join(', ')}.`;
+	return `${where}: ${said.join(', ')}.`;
 }
