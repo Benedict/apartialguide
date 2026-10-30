@@ -47,7 +47,7 @@ export interface Reply {
 export const HELP =
 	'Type a direction to walk: north, ne, go east, or the name of a street; back retraces your step. ' +
 	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
-	'Take a name and drop it somewhere else; inventory (i) says what you carry. ' +
+	'Take a name, or ask me to remember or mark down one, and drop it somewhere else; inventory (i) says what you carry. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
 	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, gps for this place on a map (gps on to keep the map beside you, gps off to put it away), score for how far you have walked, wait (z), again (g), and verbose or brief.';
 
@@ -78,6 +78,23 @@ const TAKE_TOUR = [{ label: 'Take the tour', command: 'take the tour' }];
 const TOUR = /^(take the tour|take tour|the tour|tour|yes|begin|start)$/;
 
 /** Moves after collecting a fragment before it can come back, and how many come back in a walk. */
+/** What is said on taking a name, and on asking Guide to mark one down. */
+interface Said {
+	taken: (name: string) => string;
+	thing: (name: string) => string;
+	already: (name: string) => string;
+}
+const TAKEN: Said = {
+	taken: (name) => `Taken: ${quote(name)}.`,
+	thing: (name) => `You cannot take ${name}. I take its name, ${quote(name)}, for you.`,
+	already: (name) => `You already carry ${quote(name)}.`
+};
+const MARKED: Said = {
+	taken: (name) => `I mark it down: ${quote(name)}.`,
+	thing: (name) => `I mark it down: ${quote(name)}.`,
+	already: (name) => `I have it marked down already: ${quote(name)}.`
+};
+
 const RECALL_AFTER = 4;
 const RECALLS = 2;
 /** How likely a fragment is to come back, at a stop where one may. */
@@ -360,6 +377,8 @@ export class Adventure {
 				return this.restore(command.slot);
 			case 'take':
 				return { lines: [this.take(command.target)] };
+			case 'remember':
+				return { lines: [this.take(command.target, MARKED)] };
 			case 'drop':
 				return { lines: [this.drop(command.target)] };
 			case 'unknown':
@@ -572,12 +591,12 @@ export class Adventure {
 			? `You are carrying ${listed(this.pocket.map(quote))}.`
 			: 'You are carrying nothing. Names, perhaps, if you take them.';
 		// What Guide carries is told once it has come back, never where it was found.
-		const mine = [...this.recalled];
+		const mine = [...this.recalled].filter((n) => !this.pocket.includes(n));
 		return mine.length ? `${yours} I am still carrying ${listed(mine.map(quote))}.` : yours;
 	}
 
 	/** Takes a name: of something left here, a broken name spoken here, or a thing here. Never the thing. */
-	private take(target: string): string {
+	private take(target: string, said: Said = TAKEN): string {
 		const stop = this.world.stops[this.here];
 		const words = target.toLowerCase().split(/\s+/);
 		const means = (name: string) => words.every((w) => name.toLowerCase().includes(w));
@@ -587,7 +606,7 @@ export class Adventure {
 			(stop.fragments ?? []).find(means) ??
 			this.visibleThings().find((t) => words.every((w) => t.aliases.includes(w)))?.name;
 		if (!name) return `You see no ${target} here.`;
-		if (this.pocket.includes(name)) return `You already carry ${quote(name)}.`;
+		if (this.pocket.includes(name)) return said.already(name);
 		this.pocket.push(name);
 		if (!this.carried.has(name)) this.carried.set(name, { at: this.here, move: this.moves });
 		if (left.includes(name)) {
@@ -595,11 +614,9 @@ export class Adventure {
 				this.here,
 				left.filter((n) => n !== name)
 			);
-			return `Taken: ${quote(name)}.`;
+			return said.taken(name);
 		}
-		return (stop.fragments ?? []).includes(name)
-			? `Taken: ${quote(name)}.`
-			: `You cannot take ${name}. I take its name, ${quote(name)}, for you.`;
+		return (stop.fragments ?? []).includes(name) ? said.taken(name) : said.thing(name);
 	}
 
 	private drop(target: string): string {
@@ -632,7 +649,7 @@ export class Adventure {
 		};
 	}
 
-	/** A place reached: told, its broken names carried on, and now and then one carried before comes back. */
+	/** A place reached: told, and now and then a name the reader asked to be kept comes back. */
 	private arrive(): Reply {
 		const told = this.visited.has(this.here) && !this.verbose ? this.brief() : this.told();
 		this.visited.add(this.here);
@@ -643,8 +660,6 @@ export class Adventure {
 		const reply = crossed.length ? { ...told, lines: [...crossed, ...told.lines] } : told;
 		const stop = this.world.stops[this.here];
 		const back = this.recall(stop.fragments ?? []) ?? this.connect(stop.terms ?? []);
-		for (const f of stop.fragments ?? [])
-			if (!this.carried.has(f)) this.carried.set(f, { at: this.here, move: this.moves });
 		for (const t of stop.terms ?? [])
 			this.met.set(t.term, [
 				...(this.met.get(t.term) ?? []),
