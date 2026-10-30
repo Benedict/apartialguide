@@ -15,7 +15,7 @@ import { isBackground, type Beat } from '../slippage';
 import { isElsewhere, isHistory } from '../tensions';
 import { aside } from './hearsay';
 import type { Part, Renderer, Room, Thing } from './renderer';
-import { recordSentences } from './records';
+import { quoted, recordSentences } from './records';
 import {
 	address,
 	article,
@@ -54,7 +54,7 @@ export class AdventureRenderer implements Renderer {
 					...(along ? { street: along } : {}),
 					options: whereForms(scene, street)
 				}),
-				...streetCharacter(street).map((s) =>
+				...streetCharacter(street, true).map((s) =>
 					part('street', s, /^(Lit at night|Unlit)\b/.test(s) ? lightingOf(street) : {})
 				),
 				...(around ? [part('setting', around, { key: settingKey(around) })] : [])
@@ -171,9 +171,18 @@ function lightingOf(street: Tags): { lit?: 'yes' | 'no'; pavement?: string } {
 	return { lit: street.lit, ...(pavement ? { pavement } : {}) };
 }
 
-export function streetCharacter(street: Tags): string[] {
+/** Surfaces in the words a walker here would use. */
+const SURFACES: Record<string, string> = { asphalt: 'tarmac' };
+
+/** The surface nearly every street has, left unsaid in a room: told, it would tell nothing. */
+const USUAL_SURFACE = 'asphalt';
+
+/** What the map says of a street, in words; in a room (`inRoom`), the usual surface unsaid. */
+export function streetCharacter(street: Tags, inRoom = false): string[] {
 	const sentences: string[] = [];
-	if (street.surface) sentences.push(`${capitalise(humanise(street.surface))} underfoot.`);
+	const surface = street.surface;
+	if (surface && !(inRoom && surface === USUAL_SURFACE))
+		sentences.push(`${capitalise(SURFACES[surface] ?? humanise(surface))} underfoot.`);
 	const lit = street.lit === 'yes' ? 'Lit at night' : street.lit === 'no' ? 'Unlit' : undefined;
 	const pavement =
 		street.sidewalk && (SIDEWALKS[street.sidewalk] ?? `pavement: ${street.sidewalk}`);
@@ -361,6 +370,8 @@ const CROWD_OPENERS = [
 function brief(beat: Beat): { phrase: string; noun?: string } {
 	const tags = tagsFor(beat);
 	if (isElsewhereOnly(beat)) {
+		if (tags['plaque:inscription'])
+			return { phrase: `a plaque reading “${tags['plaque:inscription']}”` };
 		const { label, what, kind } = otherAccount(tags);
 		const called = label ? `“${label}”` : kind ? article(kind) : what ? `“${what}”` : 'a thing';
 		return { phrase: `${called}, ${aside(called)}` };
@@ -558,6 +569,13 @@ function describeBeat(
 	const use = currentUse(tags);
 
 	if (isElsewhereOnly(beat)) {
+		// A plaque is put up to be read: its words are read, not passed on as hearsay.
+		const { 'plaque:inscription': words, ...rest } = tags;
+		if (words)
+			return [
+				`${lead(place)} is a plaque: ${quoted(words)}`,
+				...recordSentences(rest, 'room')
+			].join(' ');
 		return [
 			`${place}, ${aside(calledElsewhere(tags))}, is ${calledElsewhere(tags)}.`,
 			...recordSentences(tags, 'room')

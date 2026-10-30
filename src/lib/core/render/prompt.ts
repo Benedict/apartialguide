@@ -20,7 +20,7 @@ import { monthYear, tagsOf } from './words';
 import { allusion } from '../keepers';
 
 /** Bump when the prompt changes, so cached narration written under the old one is redone. */
-export const PROMPT_VERSION = 15;
+export const PROMPT_VERSION = 16;
 
 export interface Prompt {
 	/** Fixed for every stop, so it can be cached. */
@@ -58,7 +58,7 @@ Rules.
 
 For tone only, here is a reference page written for one corner. Do not reuse its sentences elsewhere.
 
-Bingham Road meets Lower Addiscombe Road here. Asphalt, lit, 20 mph. The Addiscombe Village shopping area lies to the north-west, an area that calls itself a village. Addiscombe lies all around, if the map is to be believed, and for the moment I have nothing else to believe.
+Bingham Road meets Lower Addiscombe Road here. Lit, 20 mph. The Addiscombe Village shopping area lies to the north-west, an area that calls itself a village. Addiscombe lies all around, if the map is to be believed, and for the moment I have nothing else to believe.
 
 Nearest is 209–213, a retail building, formerly a bank. Its old name is recorded as “est Bank”. The building has kept its address and lost its purpose. Whoever wrote it down knew what they meant, or thought they did.
 
@@ -109,9 +109,10 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 	const folded = beat.facts.filter((f) => f.subject !== beat.subject && !isElsewhere(f));
 	const map = beat.facts.filter((f) => !isElsewhere(f) && !folded.includes(f));
 	const elsewhere = beat.facts.filter(isElsewhere);
+	const plaque = !map.length && !!tags['plaque:inscription'];
 	const what = map.length
 		? plainKind(tags)
-		: `${calledElsewhere(tags)}, which the map does not have`;
+		: `${plaque ? 'a plaque' : calledElsewhere(tags)}, which the map does not have`;
 	const lines = [`${n}. ${placement(scene.position, beat)}: ${what}.`];
 	if (map.length) lines.push(`   The map: ${words(map)}`);
 	if (folded.length) {
@@ -124,6 +125,7 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 		lines.push(
 			`   Elsewhere${allusion(source) ? `, kept by ${allusion(source)}` : ''}: ${others(elsewhere.filter((f) => f.source === source))}`
 		);
+	if (plaque) lines.push('   Read the plaque’s words as it gives them, not as hearsay.');
 	for (const name of brokenNames(beat)) lines.push(`   Speak the name “${name}” exactly as found.`);
 	if (beat.effects.includes('remembered')) {
 		const asOf = beat.facts.find((f) => f.observed)?.observed;
@@ -151,7 +153,7 @@ export function buildPrompt(scene: Scene): Prompt {
 		: '';
 	const user = [
 		'Where the reader stands:',
-		[whereYouStand(scene, street), ...streetCharacter(street), setting(scene)]
+		[whereYouStand(scene, street), ...streetCharacter(street, true), setting(scene)]
 			.filter(Boolean)
 			.join(' '),
 		'',
