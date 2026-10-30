@@ -13,8 +13,9 @@
  * match, from Overpass, and fetches the map in it from Overpass too: a whole area is more than the
  * OSM API will give at once. Without BBOX, AS_OF uses the box of the newest snapshot.
  */
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, writeFileSync } from 'node:fs';
 import { bboxAround, type LatLon } from '../src/lib/core/geo';
+import { readJson, writeJson } from '../src/lib/server/json';
 import { bboxAroundBoundaries, mergeElements, placeCentre, tiles } from '../src/lib/server/area';
 
 const api = process.env.OSM_API ?? 'https://api.openstreetmap.org/api/0.6';
@@ -93,14 +94,14 @@ if (!bbox && process.env.AROUND_PLACE) {
 	const radius = Number(process.env.RADIUS_M ?? 1200);
 	const snapshots = process.env.SNAPSHOT_DIR ?? 'data/snapshots';
 	const newest = readdirSync(snapshots)
-		.filter((f) => f.startsWith(name) && f.endsWith('.json'))
+		.filter((f) => f.startsWith(name) && /\.json(\.gz)?$/.test(f))
 		.sort()
 		.at(-1);
 	if (!newest) {
 		console.error(`AROUND_PLACE reads the place from a snapshot, and ${snapshots} has none`);
 		process.exit(1);
 	}
-	const { elements } = JSON.parse(readFileSync(`${snapshots}/${newest}`, 'utf8'));
+	const { elements } = readJson<{ elements: never[]; bbox: string }>(`${snapshots}/${newest}`);
 	const centre = placeCentre({
 		elements: elements.filter(
 			(e: { tags?: Record<string, string> }) => e.tags?.name === process.env.AROUND_PLACE
@@ -118,10 +119,10 @@ if (!bbox && process.env.AROUND_PLACE) {
 if (!bbox && process.env.AS_OF) {
 	const snapshots = process.env.SNAPSHOT_DIR ?? 'data/snapshots';
 	const newest = readdirSync(snapshots)
-		.filter((f) => f.startsWith(name) && f.endsWith('.json'))
+		.filter((f) => f.startsWith(name) && /\.json(\.gz)?$/.test(f))
 		.sort()
 		.at(-1);
-	bbox = newest && JSON.parse(readFileSync(`${snapshots}/${newest}`, 'utf8')).bbox;
+	bbox = newest && readJson<{ elements: never[]; bbox: string }>(`${snapshots}/${newest}`).bbox;
 	if (bbox) console.log(`bbox ${bbox}, from ${newest}`);
 }
 if (!bbox && process.env.AROUND_WAY) {
@@ -173,16 +174,17 @@ const data = tiled
 	? { elements: await inTiles(bbox) }
 	: area
 		? await ask(
-				`[out:json][timeout:300];(node(${south},${w},${north},${e});way(${south},${w},${north},${e}););(._;>;);out meta;`,
+				`[out:json][timeout:900][maxsize:2147483648];(node(${south},${w},${north},${e});way(${south},${w},${north},${e}););(._;>;);out meta;`,
 				'the map'
 			)
 		: await get(`/map.json?bbox=${bbox}`);
 const dir = process.env.SNAPSHOT_DIR ?? 'data/snapshots';
 mkdirSync(dir, { recursive: true });
-const path = `${dir}/${name}-${date}.json`;
+// A whole borough is kept gzipped (SNAPSHOT_GZIP=1): raw, it is more than a repository takes in one file.
+const path = `${dir}/${name}-${date}.json${process.env.SNAPSHOT_GZIP ? '.gz' : ''}`;
 // The same map again keeps the first capture, so its time of taking stays true.
 if (existsSync(path)) {
-	const previous = JSON.parse(readFileSync(path, 'utf8'));
+	const previous = readJson<{ bbox: string; taken: string; elements: unknown[] }>(path);
 	if (
 		previous.bbox === bbox &&
 		JSON.stringify(previous.elements) === JSON.stringify(data.elements)
@@ -191,13 +193,10 @@ if (existsSync(path)) {
 		process.exit(0);
 	}
 }
-writeFileSync(
-	path,
-	JSON.stringify({
-		bbox,
-		...(area ? { area } : {}),
-		taken: new Date().toISOString(),
-		elements: data.elements
-	})
-);
+writeJson(path, {
+	bbox,
+	...(area ? { area } : {}),
+	taken: new Date().toISOString(),
+	elements: data.elements
+});
 console.log(`${data.elements.length} elements written to ${path}`);

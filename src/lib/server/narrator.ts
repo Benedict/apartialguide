@@ -1,5 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { readJson } from './json';
 import { fixedClock } from '../core/facts';
 import type { WikidataStore } from '../core/adapters/wikidata';
 import type { RecordStore } from '../core/adapters/records';
@@ -122,7 +123,7 @@ function leftOut(dir: string): Set<string> {
 
 /** The narrator for the configured snapshot, using any prose written ahead of time. */
 export function loadNarrator(config: Config): Narrator {
-	const data = JSON.parse(readFileSync(config.snapshotPath, 'utf8'));
+	const data = readJson<OsmData>(config.snapshotPath);
 	return Narrator.fromOsm(data, {
 		clock: fixedClock(config.snapshotDate),
 		spacing: config.spacing,

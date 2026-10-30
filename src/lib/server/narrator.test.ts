@@ -2,7 +2,24 @@ import { mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { loadHistory, loadLatest, loadRecords, readConfig } from './narrator';
+import { SyntheticMap } from '../core/testing/synthetic';
+import { writeJson } from './json';
+import { loadHistory, loadLatest, loadNarrator, loadRecords, readConfig } from './narrator';
+
+describe('loadNarrator', () => {
+	it('reads a snapshot kept gzipped, as a whole borough is', () => {
+		const map = new SyntheticMap();
+		const a = map.node(SyntheticMap.ORIGIN);
+		map.way([a, map.nodeFrom(SyntheticMap.ORIGIN, 90, 200)], {
+			highway: 'residential',
+			name: 'Inventa Road'
+		});
+		const path = join(mkdtempSync(join(tmpdir(), 'snap-')), 'testtown-2026-01-01.json.gz');
+		writeJson(path, { bbox: '0,0,1,1', ...map.toData() });
+		const narrator = loadNarrator(readConfig({ SNAPSHOT_PATH: path })!);
+		expect(narrator.graph.all().length).toBeGreaterThan(1);
+	});
+});
 
 describe('readConfig', () => {
 	it('is undefined without a snapshot', () => {

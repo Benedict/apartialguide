@@ -5,7 +5,8 @@
  * Takes every item the snapshot links to (wikidata, name:etymology:wikidata) and every item
  * Wikidata places in the box. Writes data/wikidata/<SNAPSHOT_NAME>-<today>.json.
  */
-import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { readJson } from '../src/lib/server/json';
+import { mkdirSync, readdirSync, writeFileSync } from 'node:fs';
 import type { WikidataStore } from '../src/lib/core/adapters/wikidata';
 import { itemFromEntity, qidsInSnapshot, type WikidataEntity } from '../src/lib/server/wikidata';
 
@@ -38,7 +39,7 @@ if (!bbox || bbox.length !== 4 || bbox.some((v) => !Number.isFinite(v))) {
 }
 const [west, south, east, north] = bbox;
 
-const linked = qidsInSnapshot(JSON.parse(readFileSync(snapshotPath, 'utf8')));
+const linked = qidsInSnapshot(readJson(snapshotPath));
 const sparql = `SELECT ?item WHERE { SERVICE wikibase:box { ?item wdt:P625 ?where .
   bd:serviceParam wikibase:cornerSouthWest "Point(${west} ${south})"^^geo:wktLiteral .
   bd:serviceParam wikibase:cornerNorthEast "Point(${east} ${north})"^^geo:wktLiteral . } }`;
