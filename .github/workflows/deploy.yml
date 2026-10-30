@@ -66,6 +66,8 @@ jobs:
           PLACE_NAME: Croydon
           NOINDEX: 1
           SITE_DIR: site/croydon
+          # About 27,000 stops: the whole borough is compiled in one go.
+          NODE_OPTIONS: --max-old-space-size=6144
           FLIGHTS_URL: ${{ vars.NETLIFY_SITE_ID != '' && '/api/flights' || vars.FLIGHTS_URL }}
           GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
         run: |
