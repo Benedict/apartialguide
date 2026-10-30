@@ -18,7 +18,13 @@ Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
 
 - [ ] **OpenRouter key, to compare models.** Create a key at <https://openrouter.ai/>, add some credit (a comparison of four models on 25 stops costs pennies), and add it as the repository secret `OPENROUTER_API_KEY`. Then Actions → Compare models → Run workflow; the report is attached to the run.
 
-- [ ] **Google Analytics.** Create a GA4 property for the site, then add its measurement ID (`G-…`) as a repository **variable** (not a secret) called `GA_MEASUREMENT_ID` (Settings → Secrets and variables → Actions → Variables), and run the Pages workflow. Until then nothing is counted and no one is asked. In GA, under Admin → Data retention, consider the shortest retention, and leave Google signals off.
+- [ ] **Netlify.** The site moves from GitHub Pages to Netlify once two settings exist; until then it keeps publishing to Pages.
+  1. At app.netlify.com, "Let's create your new project": not "Import a Git repository" (Netlify would then build it itself, without the smoke check), but **Upload your project files**: drop any one HTML file. The workflow replaces it with the real site. Then Project configuration → General → copy the **Project ID** (the workflow calls it the site ID).
+  2. User settings → Applications → Personal access tokens → New access token. Copy it.
+  3. In the repository, Settings → Secrets and variables → Actions: a **variable** `NETLIFY_SITE_ID` (the Project ID), and a **secret** `NETLIFY_AUTH_TOKEN` (the token).
+  4. Run the Deploy workflow (Actions → Deploy → Run workflow), or merge anything. Its summary gives the URL.
+  5. Once the Netlify site plays, Settings → Pages → turn GitHub Pages off, and give the Netlify URL to anyone who has the old one. `FLIGHTS_URL` and the Cloudflare worker are then no longer needed: flights answer from the site itself.
+- [ ] **Google Analytics.** Create a GA4 property for the site, then add its measurement ID (`G-…`) as a repository **variable** (not a secret) called `GA_MEASUREMENT_ID` (Settings → Secrets and variables → Actions → Variables), and run the Deploy workflow. Until then nothing is counted and no one is asked. In GA, under Admin → Data retention, consider the shortest retention, and leave Google signals off.
 
 ## Decisions
 
