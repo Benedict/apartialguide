@@ -60,6 +60,17 @@ describe('landingPage', () => {
 		expect(structureFaults(html)).toEqual([]);
 	});
 
+	it('says once what it is, where it lives, and what it is to search engines, and lists colour among the commands', () => {
+		const known = landingPage({ ...input, siteUrl: 'https://example.org' });
+		expect(known.match(/name="description"/g)).toHaveLength(1);
+		expect(known.match(/property="og:title"/g)).toHaveLength(1);
+		expect(known).toContain('<link rel="canonical" href="https://example.org/">');
+		expect(known).toContain('"@type":"WebSite"');
+		expect(known).toContain('<link rel="manifest" href="/site.webmanifest">');
+		expect(html).toContain('<meta name="color-scheme" content="dark">');
+		expect(html).toContain('<code>colour green</code>');
+	});
+
 	it('leads to the walk', () => {
 		expect(html).toMatch(/<a class="begin" href="walk\/"[^>]*>Start in Addiscombe/);
 	});
