@@ -1,3 +1,4 @@
+import { fontFaces, MONO } from './type';
 import type { Ledger } from '../core/adventure/world';
 import { faviconLinks, LOCKUP, ogMeta } from '../site/brand';
 import { longDate } from '../core/render/words';
@@ -57,10 +58,11 @@ ${ogMeta(siteUrl)}
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#000000">
 <style>
+${fontFaces('/')}
 	/* As the walk looks: one typeface, light on dark, inverse bars. */
 	:root {
 		--paper: #000; --ink: #d4d4cc; --bright: #fff; --muted: #8e8e86; --rule: #3a3a36;
-		--mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
+		--mono: ${MONO};
 	}
 	* { box-sizing: border-box; }
 	html { background: var(--paper); }

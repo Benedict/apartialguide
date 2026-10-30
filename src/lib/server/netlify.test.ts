@@ -19,6 +19,12 @@ describe('the site on Netlify', () => {
 		expect(deploy).toContain('SITE_URL: ${{ vars.SITE_URL }}');
 	});
 
+	it('copies the fonts and their licence into the site', () => {
+		const exporter = read('scripts/export.ts');
+		expect(exporter).toContain('FONT_FILES');
+		expect(exporter).toContain("join(site, 'fonts'");
+	});
+
 	it('builds a preview of a pull request only when it is labelled preview', () => {
 		expect(deploy).toMatch(/pull_request:\n\s+types: \[opened, synchronize, reopened, labeled\]/);
 		expect(deploy).toContain("contains(github.event.pull_request.labels.*.name, 'preview')");

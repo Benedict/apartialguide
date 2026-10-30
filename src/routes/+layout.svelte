@@ -20,14 +20,26 @@
 </footer>
 
 <style>
-	/* As the classic adventures looked: one typeface, light on dark. */
+	/* As the classic adventures looked: one typeface, light on dark. Commit Mono, from static/fonts. */
+	@font-face {
+		font-family: 'Commit Mono';
+		font-weight: 400;
+		font-display: swap;
+		src: url('/fonts/commit-mono-400.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Commit Mono';
+		font-weight: 700;
+		font-display: swap;
+		src: url('/fonts/commit-mono-700.woff2') format('woff2');
+	}
 	:global(:root) {
 		--paper: #000;
 		--ink: #d4d4cc;
 		--muted: #8e8e86;
 		--accent: #fff;
 		--rule: #3a3a36;
-		--mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
+		--mono: 'Commit Mono', ui-monospace, 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
 		color-scheme: dark;
 	}
 

@@ -21,6 +21,11 @@ describe('notFoundPage', () => {
 		expect(html).toContain('aria-label="A Partial Guide"');
 	});
 
+	it('is set in Commit Mono, served from the site', () => {
+		expect(html).toContain("url('/fonts/commit-mono-700.woff2')");
+		expect(html).toContain("--mono: 'Commit Mono',");
+	});
+
 	it('is kept out of search engines, and asks nothing of anyone else', () => {
 		expect(html).toContain('<meta name="robots" content="noindex">');
 		expect(html).not.toMatch(/<script|googletagmanager/);
