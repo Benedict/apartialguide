@@ -20,7 +20,26 @@ export interface ExportInput {
 	tiles?: string;
 	/** The Google Analytics measurement ID (`GA_MEASUREMENT_ID`): counted only once the reader says yes. */
 	gaId?: string;
+	/** The place the map is of (`PLACE_NAME`, `PLACE_WITHIN`): Addiscombe, in Croydon, unless told. */
+	place?: Place;
+	/** Kept out of search engines (`NOINDEX`), as a walk behind a flag is. */
+	noindex?: boolean;
 }
+
+/** A place, and the larger one it lies in, if any. */
+export interface Place {
+	name: string;
+	within?: string;
+}
+
+export const ADDISCOMBE: Place = { name: 'Addiscombe', within: 'Croydon' };
+
+/** "Addiscombe, in Croydon"; "Croydon". */
+export const placeWords = ({ name, within }: Place) => (within ? `${name}, in ${within}` : name);
+
+/** The meta line that keeps a page out of search engines, or nothing. */
+export const robots = (noindex?: boolean) =>
+	noindex ? '\n<meta name="robots" content="noindex">' : '';
 
 /** What the page tells the reader it sends, with analytics or without. */
 export const PRIVACY = {
@@ -50,14 +69,14 @@ const esc = (text: string) =>
 	text.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
 /** The About page: what the piece is, every source and its terms, and who made it. */
-function aboutPage(snapshotDate: string, counted: boolean): string {
+function aboutPage(snapshotDate: string, counted: boolean, place: Place): string {
 	const sources = SOURCES.map(
 		(s) =>
 			`<li><a href="${esc(s.href)}">${esc(s.name)}</a>: ${esc(s.gives)}.${s.live ? ' <em>Asked from your browser as you read; you can turn it off in Settings.</em>' : ''} <span class="terms">${esc(s.terms)}.</span></li>`
 	).join('\n\t\t\t');
 	return `<section id="about" class="view" hidden>
 		<h2>About</h2>
-		<p>A Partial Guide is a text adventure of the real world, built from open data, and nothing in it is made up. It starts with Addiscombe, in Croydon, told by Guide, who says only what the sources say, as they say it: where the data is broken, Guide is too.</p>
+		<p>A Partial Guide is a text adventure of the real world, built from open data, and nothing in it is made up. It starts with ${esc(placeWords(place))}, told by Guide, who says only what the sources say, as they say it: where the data is broken, Guide is too.</p>
 		<p>The map Guide carries is dated ${esc(longDate(snapshotDate))}. ${counted ? PRIVACY.counted : PRIVACY.none}</p>
 		<h3>Where Guide’s words come from</h3>
 		<ul class="sources">
@@ -118,14 +137,16 @@ export function exportPage({
 	snapshotDate,
 	flightsUrl,
 	tiles,
-	gaId
+	gaId,
+	place = ADDISCOMBE,
+	noindex
 }: ExportInput): string {
 	return `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
-<title>A Partial Guide</title>
+<title>A Partial Guide</title>${robots(noindex)}
 <style>
 	/* As the classic adventures looked: one typeface, light on dark, an inverse status bar on top. */
 	:root {
@@ -215,7 +236,7 @@ ${consentStrip('this page')}`
 	}
 <div class="scroll" id="scroll">
 	<div id="game"><div id="transcript" aria-live="polite"></div></div>
-	${aboutPage(snapshotDate, !!gaId)}
+	${aboutPage(snapshotDate, !!gaId, place)}
 	${settingsPage(!!gaId)}
 </div>
 <form id="prompt" autocomplete="off">

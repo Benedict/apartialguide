@@ -1,6 +1,6 @@
 import type { Ledger } from '../core/adventure/world';
 import { longDate } from '../core/render/words';
-import { consentStrip, PRIVACY } from './export';
+import { ADDISCOMBE, consentStrip, placeWords, PRIVACY, robots, type Place } from './export';
 
 export interface LandingInput {
 	/** The snapshot's date, as YYYY-MM-DD. */
@@ -13,6 +13,10 @@ export interface LandingInput {
 	script: string;
 	/** The Google Analytics measurement ID: counted only once the reader says yes. */
 	gaId?: string;
+	/** The place the map is of: Addiscombe, in Croydon, unless told. */
+	place?: Place;
+	/** Kept out of search engines, as a walk behind a flag is. */
+	noindex?: boolean;
 }
 
 const esc = (text: string) =>
@@ -20,11 +24,20 @@ const esc = (text: string) =>
 
 const n = (x: number) => x.toLocaleString('en-GB');
 
-const DESCRIPTION =
-	'The world as a text adventure, built from open data. It starts with Addiscombe, in Croydon.';
+const description = (place: Place) =>
+	`The world as a text adventure, built from open data. It starts with ${placeWords(place)}.`;
 
 /** The front door: what the piece is, a walk as it was played, and the way in. */
-export function landingPage({ snapshotDate, about, excerpt, script, gaId }: LandingInput): string {
+export function landingPage({
+	snapshotDate,
+	about,
+	excerpt,
+	script,
+	gaId,
+	place = ADDISCOMBE,
+	noindex
+}: LandingInput): string {
+	const DESCRIPTION = description(place);
 	const played = excerpt
 		.map((e) =>
 			'said' in e
@@ -37,7 +50,7 @@ export function landingPage({ snapshotDate, about, excerpt, script, gaId }: Land
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>A Partial Guide</title>
+<title>A Partial Guide</title>${robots(noindex)}
 <meta name="description" content="${esc(DESCRIPTION)}">
 <meta property="og:title" content="A Partial Guide">
 <meta property="og:description" content="${esc(DESCRIPTION)}">
@@ -91,8 +104,8 @@ export function landingPage({ snapshotDate, about, excerpt, script, gaId }: Land
 	<section class="hero">
 		<h1>The world as a text adventure.</h1>
 		<p class="lede">Type a direction and walk. Every street, building, name and date comes from open data.</p>
-		<p>It starts with Addiscombe, in Croydon: ${n(about.streets)} streets and ${n(about.places)} places, from a map dated ${esc(longDate(snapshotDate))}.</p>
-		<a class="begin" href="walk/">Start in Addiscombe</a>
+		<p>It starts with ${esc(placeWords(place))}: ${n(about.streets)} streets and ${n(about.places)} places, from a map dated ${esc(longDate(snapshotDate))}.</p>
+		<a class="begin" href="walk/">Start in ${esc(place.name)}</a>
 	</section>
 
 	<div class="played">
@@ -115,7 +128,7 @@ export function landingPage({ snapshotDate, about, excerpt, script, gaId }: Land
 		<li><code>save</code> <code>restore</code> <code>help</code></li>
 	</ul>
 
-	<p class="again"><a class="begin" href="walk/">Start in Addiscombe</a></p>
+	<p class="again"><a class="begin" href="walk/">Start in ${esc(place.name)}</a></p>
 
 	<footer>
 		<p>${gaId ? PRIVACY.counted : PRIVACY.none}</p>

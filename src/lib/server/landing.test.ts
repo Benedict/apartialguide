@@ -33,6 +33,23 @@ describe('landingPage', () => {
 		expect(text).not.toMatch(/art piece|as it was played|earned by the data/);
 	});
 
+	it('starts wherever the map it is built with is, and says so everywhere it names the place', () => {
+		const croydon = landingPage({ ...input, place: { name: 'Croydon' } });
+		expect(croydon).not.toContain('Addiscombe');
+		expect(croydon).toContain('Start in Croydon');
+		expect(croydon).toMatch(/<meta name="description" content="[^"]*starts with Croydon\.[^"]*">/);
+		expect(landingPage({ ...input, place: { name: 'Inventa', within: 'Testshire' } })).toContain(
+			'It starts with Inventa, in Testshire:'
+		);
+	});
+
+	it('keeps a walk behind a flag out of search engines, and only then', () => {
+		expect(html).not.toContain('noindex');
+		expect(landingPage({ ...input, noindex: true })).toContain(
+			'<meta name="robots" content="noindex">'
+		);
+	});
+
 	it('leads to the walk', () => {
 		expect(html).toMatch(/<a class="begin" href="walk\/"[^>]*>Start in Addiscombe/);
 	});

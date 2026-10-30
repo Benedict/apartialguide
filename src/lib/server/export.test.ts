@@ -289,3 +289,20 @@ describe('exportPage', () => {
 		expect(wordsAmiss(slipped)).toEqual(['a: There is “undefined”, by another account.']);
 	});
 });
+
+describe('the page for another place', () => {
+	it('names the place the map is of, and keeps a flagged walk out of search engines', () => {
+		const html = exportPage({
+			engine: 'var Adventure = function () {};',
+			world,
+			snapshotDate: '2026-10-24',
+			place: { name: 'Croydon' },
+			noindex: true
+		});
+		expect(html).toContain('It starts with Croydon, told by Guide');
+		expect(html).not.toContain('Addiscombe');
+		expect(html).toContain('<meta name="robots" content="noindex">');
+		expect(page()).not.toContain('noindex');
+		expect(page()).toContain('It starts with Addiscombe, in Croydon, told by Guide');
+	});
+});
