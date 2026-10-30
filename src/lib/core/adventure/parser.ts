@@ -3,6 +3,7 @@ export type Command =
 	| { verb: 'examine' | 'take' | 'drop' | 'remember'; target: string }
 	| { verb: 'save' | 'restore'; slot?: string }
 	| { verb: 'follow'; on: boolean }
+	| { verb: 'hints'; on: boolean }
 	| { verb: 'route'; target?: string }
 	| {
 			verb:
@@ -24,6 +25,7 @@ export type Command =
 				| 'brief'
 				| 'score'
 				| 'drift'
+				| 'hint'
 				| 'magic'
 				| 'empty';
 	  }
@@ -129,6 +131,9 @@ export function parse(input: string): Command {
 		return { verb: 'go', direction: direction(target) ?? target };
 	}
 	if (['gps', 'where am i', 'where am i?', 'map'].includes(text)) return { verb: 'gps' };
+	if (text === 'hint' || text === 'a hint') return { verb: 'hint' };
+	if (text === 'hints on' || text === 'hints off')
+		return { verb: 'hints', on: text === 'hints on' };
 	if (['gps on', 'map on'].includes(text)) return { verb: 'follow', on: true };
 	if (['gps off', 'map off'].includes(text)) return { verb: 'follow', on: false };
 	if (['weather', 'the weather', 'sky'].includes(text)) return { verb: 'weather' };

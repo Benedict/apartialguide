@@ -9,6 +9,11 @@ What is left, and ideas for later phases. Done items move to the changelog in th
   - Where do they meet: at the same stop only, or within earshot along a street?
   - What is said, and is any of it kept? Moderation, privacy, and whether a reader can stay unseen.
   - What carries it: a shared service (WebSockets, or an artifact's shared state). Today the piece is one static file.
+- **Take the drift out into the street.** Download a walk (a drift, or any walk) to follow on foot: a GPX track for a phone's map app (OsmAnd, Organic Maps, Komoot), and directions to print or read as you go: "At Bingham Road, turn left. 210 metres. Right into Northampton Road." The game speaks in compass points; on foot people need left and right, worked out from the change of bearing between one leg and the next (on within about 30°, then bear, turn, sharp, back). To settle first:
+  - What goes in the directions: the turns alone, or Guide's words for each place too, as a handout to walk with.
+  - The walk as the reader took it, doubling back and all, or tidied into a route; only the first is honest to the drift.
+  - Safety, as the game walks on paper: main roads it leaves out, crossings it keeps. The directions should name the crossings, and say plainly they are no substitute for looking.
+  - Made in the reader's browser from their own walk, sent nowhere, like the saves.
 - **Ride the bus, in real time.** At a stop with departures, `wait for the 289` and `board` when it is due; the reader then travels with that bus, told each stop as TfL predicts it is reached, and `get off` at the next. To settle first:
   - What "real time" means: the ride takes as long as the bus does (the slowness is the point, a Sinclair walk against the grain), or time is compressed to a stop a move.
   - What Guide says on board. Only facts: the stops TfL names and when, the line and its destination. Between mapped stops the map has nothing to say, and Guide should say so rather than fill it.

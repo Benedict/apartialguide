@@ -103,6 +103,15 @@ describe('exportPage', () => {
 		expect(page()).not.toContain('art piece');
 	});
 
+	it('shows a hint apart from what Guide says, quieter', () => {
+		const html = page();
+		expect(html).toContain("if (reply.hint) section.append(el('p', reply.hint, 'hint'));");
+		// A hint asked for comes alone, and is still shown; what was hinted is kept across walks.
+		expect(html).toContain('if (!reply.lines.length && !reply.hint) return;');
+		expect(html).toContain('game.hintKeeper = browserHints();');
+		expect(html).toMatch(/\.hint \{[^}]*color: var\(--muted\)/);
+	});
+
 	it('asks nothing of Google without a measurement ID', () => {
 		const html = page();
 		expect(html).not.toContain('googletagmanager');
