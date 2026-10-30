@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { bboxAroundBoundaries, mergeElements, placeCentre, tiles } from './area';
+import { bboxAroundBoundaries, mergeElements, placeCentre, politely, tiles } from './area';
 
 describe('bboxAroundBoundaries', () => {
 	it('takes the box around every boundary Overpass matched, as minLon,minLat,maxLon,maxLat', () => {
@@ -67,5 +67,31 @@ describe('mergeElements', () => {
 				[b, c, a]
 			])
 		).toEqual([a, b, c]);
+	});
+});
+
+describe('politely', () => {
+	const answers = (...statuses: number[]) => {
+		let i = 0;
+		return async () => ({ status: statuses[i++] });
+	};
+
+	it('asks again after a wait, doubling it, while the server is busy, and stops at an answer', async () => {
+		const waited: number[] = [];
+		const res = await politely(answers(502, 429, 200), [30, 60, 120], async (s) => {
+			waited.push(s);
+		});
+		expect(res.status).toBe(200);
+		expect(waited).toEqual([30, 60]);
+	});
+
+	it('gives the last answer once the waits run out, and never asks again after a refusal', async () => {
+		const waited: number[] = [];
+		const sleep = async (s: number) => {
+			waited.push(s);
+		};
+		expect((await politely(answers(504, 504, 504), [1, 2], sleep)).status).toBe(504);
+		expect(waited).toEqual([1, 2]);
+		expect((await politely(answers(400, 200), [1, 2], sleep)).status).toBe(400);
 	});
 });

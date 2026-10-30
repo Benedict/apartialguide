@@ -16,7 +16,13 @@
 import { existsSync, mkdirSync, readdirSync, writeFileSync } from 'node:fs';
 import { bboxAround, type LatLon } from '../src/lib/core/geo';
 import { readJson, writeJson } from '../src/lib/server/json';
-import { bboxAroundBoundaries, mergeElements, placeCentre, tiles } from '../src/lib/server/area';
+import {
+	bboxAroundBoundaries,
+	mergeElements,
+	placeCentre,
+	politely,
+	tiles
+} from '../src/lib/server/area';
 
 const api = process.env.OSM_API ?? 'https://api.openstreetmap.org/api/0.6';
 const headers = { 'User-Agent': 'a-partial-guide/0.1 (art project; snapshot script)' };
@@ -44,11 +50,20 @@ const name = process.env.SNAPSHOT_NAME ?? 'addiscombe';
 
 /** An Overpass query's answer, refusing a partial one (Overpass reports a timeout as a remark). */
 async function ask(query: string, what: string) {
-	const res = await fetch(overpass, {
-		method: 'POST',
-		headers: { ...headers, 'Content-Type': 'application/x-www-form-urlencoded' },
-		body: new URLSearchParams({ data: query })
-	});
+	// A busy server is asked again after 1, 2, 4, 8 and 16 minutes.
+	const res = await politely(
+		() =>
+			fetch(overpass, {
+				method: 'POST',
+				headers: { ...headers, 'Content-Type': 'application/x-www-form-urlencoded' },
+				body: new URLSearchParams({ data: query })
+			}),
+		[60, 120, 240, 480, 960],
+		async (seconds) => {
+			console.log(`Overpass is busy; asking again in ${seconds} s`);
+			await new Promise((r) => setTimeout(r, seconds * 1000));
+		}
+	);
 	if (!res.ok) {
 		console.error(`Overpass answered ${res.status} for ${what}: ${await res.text()}`);
 		process.exit(1);
