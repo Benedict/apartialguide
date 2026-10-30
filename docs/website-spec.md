@@ -3,7 +3,8 @@
 Where A Partial Guide stands against [The Website Specification](https://specification.website/)
 (Joost de Valk and contributors, CC BY 4.0): every Required and Avoid item, and the Recommended
 items worth doing here. Checked on the built site (`SITE_DIR=… npm run export`): the front page,
-the walk and the 404. Update it when a row changes.
+the walk and the 404; and, where a row says live, on https://apartialguide.com itself (30 October
+2026). Update it when a row changes.
 
 ✓ meets it · ✗ does not yet · ◑ partly · — does not apply · ⚑ needs Benedict
 
@@ -33,8 +34,8 @@ the walk and the 404. Update it when a row changes.
 | Captions and transcripts         | —   | No audio or video.                                                                                                                       |
 | Accessible data tables           | —   | No tables.                                                                                                                               |
 | Touch target size                | ✓   | Every control at least 24×24 px, checked by `npm run smoke` on every page.                                                               |
-| HTTPS and TLS                    | ✓   | Netlify serves HTTPS only.                                                                                                               |
-| HSTS                             | ✓   | `netlify.toml`, one year.                                                                                                                |
+| HTTPS and TLS                    | ✓   | Live: HTTPS only; `www.` redirects (301) to `https://apartialguide.com/`.                                                                |
+| HSTS                             | ✓   | Live: one year, from Netlify; `netlify.toml` asks the same.                                                                              |
 | X-Content-Type-Options: nosniff  | ✓   | `netlify.toml`.                                                                                                                          |
 | Clickjacking protection          | ✓   | `frame-ancestors 'none'` and `X-Frame-Options: DENY`.                                                                                    |
 | Cookie attributes                | —   | The site sets no cookies; Google Analytics, once a reader says yes, sets its own.                                                        |
@@ -42,7 +43,7 @@ the walk and the 404. Update it when a row changes.
 | Core Web Vitals                  | ◑   | First words in well under a second; not yet measured in the field.                                                                       |
 | Image optimisation               | ✓   | Two small PNGs; the rest is SVG.                                                                                                         |
 | Cache-Control headers            | ✓   | Fonts a week; pages and tiles checked each deploy.                                                                                       |
-| Compression                      | ✓   | Netlify compresses; the world is gzipped as well.                                                                                        |
+| Compression                      | ✓   | Live: Brotli; the world is gzipped as well.                                                                                              |
 | Privacy policy                   | ⚑   | The About page says what is counted, but a policy needs the controller's name, a postal address and a contact, linked from every footer. |
 | Cookie consent                   | ✓   | Nothing of Google's loads before a yes; Settings changes the answer.                                                                     |
 | Custom error pages (404, 500)    | ◑   | A 404 in the site's voice; a static site has no 500 of its own.                                                                          |
@@ -52,7 +53,7 @@ the walk and the 404. Update it when a row changes.
 
 | Item                                  |     |                                                                                                   |
 | ------------------------------------- | --- | ------------------------------------------------------------------------------------------------- |
-| Soft 404s                             | ✓   | Netlify answers a missing path with 404 and `404.html`.                                           |
+| Soft 404s                             | ✓   | Live: a missing path answers 404, with `404.html`.                                                |
 | Empty links and buttons               | ✓   | Every control has words.                                                                          |
 | Accessibility overlays                | ✓   | None.                                                                                             |
 | X-XSS-Protection                      | ✓   | Not sent.                                                                                         |
@@ -64,8 +65,8 @@ the walk and the 404. Update it when a row changes.
 Worth doing here, in roughly this order:
 
 - `<meta name="description">` on the walk and the 404, and `<meta name="color-scheme" content="dark">` everywhere.
-- robots.txt (in `static/`, not yet copied into the site), and a sitemap: needs `SITE_URL` ⚑.
-- Canonical URLs and `og:url`: need `SITE_URL` ⚑.
+- robots.txt (in `static/`, not yet copied into the site), and a sitemap, at `https://apartialguide.com` (`SITE_URL`).
+- Canonical URLs and `og:url`, at the same address.
 - A web app manifest, a maskable icon and `/favicon.ico`.
 - Structured data: the site as a `WebSite`, the walk as a `VideoGame`.
 - `/llms.txt`: what the walk is, for agents.
