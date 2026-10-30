@@ -473,3 +473,60 @@ describe('names Guide carries, once they have come back', () => {
 		expect(game.respond('examine est bank').lines).toEqual(['You see no est bank here.']);
 	});
 });
+
+describe('drift', () => {
+	// An invented crossroads: east is plain, north holds a broken name, west is where the reader came from.
+	const crossroads = (): AdventureWorld => ({
+		start: 'came',
+		stops: {
+			here: stop('Long Street and Short Row', west, {
+				exits: [
+					{ label: 'east', to: 'plain', street: 'Long Street' },
+					{ label: 'north', to: 'odd', street: 'Short Row' },
+					{ label: 'west', to: 'came', street: 'Long Street' }
+				]
+			}),
+			plain: stop('Long Street', east1, { exits: [{ label: 'west', to: 'here' }] }),
+			odd: stop('Short Row', east2, {
+				exits: [{ label: 'south', to: 'here' }],
+				fragments: ['ld Invented Mill']
+			}),
+			came: stop('Long Street, west', west, {
+				exits: [{ label: 'east', to: 'here', street: 'Long Street' }]
+			})
+		}
+	});
+	const from = (chance: number) => {
+		const game = new Adventure(crossroads());
+		game.chance = () => chance;
+		game.begin();
+		game.respond('take the tour');
+		game.respond('east');
+		return game;
+	};
+
+	it('takes a way of its own, saying only which', () => {
+		const reply = from(0).respond('drift');
+		expect(reply.lines[0]).toMatch(/^You drift (east|north)\.$/);
+		expect(reply.title).toBeDefined();
+	});
+
+	it('leans towards what is odd in the data, never doubling back while there is another way', () => {
+		const ways = Array.from({ length: 20 }, (_, i) => {
+			const game = from((i + 0.5) / 20);
+			game.respond('drift');
+			return game.status().place;
+		});
+		const odd = ways.filter((p) => p === 'Short Row').length;
+		const plain = ways.filter((p) => p === 'Long Street').length;
+		expect(odd).toBeGreaterThan(plain);
+		expect(ways).not.toContain('Long Street, west');
+	});
+
+	it('counts as a step taken', () => {
+		const game = from(0);
+		const before = game.status();
+		game.respond('drift');
+		expect(game.status().moves).toBe(before.moves + 1);
+	});
+});

@@ -50,6 +50,7 @@ export const HELP =
 	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name, or ask me to remember or mark down one, and drop it somewhere else; inventory (i) says what you carry. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
+	'Drift, and I choose the way. ' +
 	'Route to a street or a named place for the way there (route off to let it go). ' +
 	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, gps for this place on a map (gps on to keep the map beside you, gps off to put it away), score for how far you have walked, wait (z), again (g), and verbose or brief.';
 
@@ -373,6 +374,8 @@ export class Adventure {
 				return { lines: ['Brief, then: a place in full the first time, and briefly after.'] };
 			case 'score':
 				return { lines: [this.score()] };
+			case 'drift':
+				return this.drift();
 			case 'magic':
 				return { lines: ['Nothing happens. Nothing has happened here for some time.'] };
 			case 'inventory':
@@ -698,6 +701,34 @@ export class Adventure {
 		if (command.verb === 'restore' && command.slot)
 			return !!this.saves?.get(command.slot)?.state.route;
 		return command.verb === 'go' && !!this.routing;
+	}
+
+	/**
+	 * A step Guide chooses: by chance, but leaning towards what is odd in the data ahead (a broken
+	 * name, a word met before, a place with something going on, a place not yet seen), never doubling
+	 * back while there is another way. Guide says which way, never why.
+	 */
+	private drift(): Reply {
+		const exits = this.world.stops[this.here].exits;
+		const onward = exits.filter((e) => e.to !== this.previous);
+		const ways = onward.length ? onward : exits;
+		if (!ways.length) return { lines: ['There is nowhere to drift to.'] };
+		const pull = (to: StopId) => {
+			const there = this.world.stops[to];
+			if (!there) return 1;
+			return (
+				1 +
+				3 * (there.fragments?.length ?? 0) +
+				((there.terms ?? []).some((t) => this.met.has(t.term)) ? 2 : 0) +
+				(there.plain ? 1 : 0) +
+				(this.visited.has(to) ? 0 : 1)
+			);
+		};
+		const weights = ways.map((e) => pull(e.to));
+		let r = this.chance() * weights.reduce((a, b) => a + b, 0);
+		const way = ways.find((_, i) => (r -= weights[i]) < 0) ?? ways.at(-1)!;
+		const reply = this.moveTo(way.to);
+		return { ...reply, lines: [`You drift ${way.label}.`, ...reply.lines] };
 	}
 
 	/** The way to a named street or thing, along the streets, kept and said again at each stop. */
