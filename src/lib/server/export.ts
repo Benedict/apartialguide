@@ -57,7 +57,7 @@ function aboutPage(snapshotDate: string, counted: boolean): string {
 	).join('\n\t\t\t');
 	return `<section id="about" class="view" hidden>
 		<h2>About</h2>
-		<p>A Partial Guide is a walk through Addiscombe, in Croydon, told by Guide from open data. Guide says only what its sources say, as they say it: where the data is broken, Guide is too. It is an art piece, not a game.</p>
+		<p>A Partial Guide is a text adventure of the real world, built from open data, and nothing in it is made up. It starts with Addiscombe, in Croydon, told by Guide, who says only what the sources say, as they say it: where the data is broken, Guide is too.</p>
 		<p>The map Guide carries is dated ${esc(longDate(snapshotDate))}. ${counted ? PRIVACY.counted : PRIVACY.none}</p>
 		<h3>Where Guide’s words come from</h3>
 		<ul class="sources">

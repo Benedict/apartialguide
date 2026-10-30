@@ -98,6 +98,11 @@ describe('exportPage', () => {
 		expect(html).toContain('followed.map.easeTo({ center: [place.longitude, place.latitude] })');
 	});
 
+	it('says what the walk is in plain words, with no label for it', () => {
+		expect(page()).toContain('nothing in it is made up');
+		expect(page()).not.toContain('art piece');
+	});
+
 	it('asks nothing of Google without a measurement ID', () => {
 		const html = page();
 		expect(html).not.toContain('googletagmanager');

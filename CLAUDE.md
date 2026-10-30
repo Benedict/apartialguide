@@ -1,6 +1,6 @@
 # A Partial Guide
 
-A text "street view" of Addiscombe, Croydon. Its name is A Partial Guide. One narrator, Guide, describes the place from open data, and its confusion is earned by that data. It is an art piece, not a game. The spec lives in the project doc "Addiscombe Narrator: spec sketch".
+A Partial Guide is a text adventure of the real world, built from open data. It starts with Addiscombe, Croydon. One narrator, Guide, describes each place from the data alone, and its confusion is earned by that data. It is psychogeography done with data: a walk read through the records others keep of a place, with drift and chance in it, but the reader is never told so; the copy says plainly what it is, and the walk shows the rest. The spec lives in the project doc "Addiscombe Narrator: spec sketch".
 
 ## Hard rules
 
