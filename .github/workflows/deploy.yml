@@ -3,12 +3,14 @@ name: Deploy
 # Builds the site (the microsite, and the walk in tiles fetched as the reader reaches them), checks
 # that it plays, and publishes it where live data can be fetched as the reader plays (the claude.ai
 # preview's security policy blocks it). Once Netlify is set up (the variable NETLIFY_SITE_ID and the
-# secret NETLIFY_AUTH_TOKEN), main goes to production there and each pull request to a preview of
-# its own; until then, main goes to GitHub Pages, as before.
+# secret NETLIFY_AUTH_TOKEN), main goes to production there and a pull request labelled preview to a
+# preview of its own; until then, main goes to GitHub Pages, as before.
 on:
   push:
     branches: [main]
+  # A pull request gets a preview only when labelled preview: most merge before anyone would open one.
   pull_request:
+    types: [opened, synchronize, reopened, labeled]
   workflow_dispatch:
 
 concurrency:
@@ -17,8 +19,10 @@ concurrency:
 
 jobs:
   build:
-    # A pull request is built only for a preview: CI checks it otherwise.
-    if: github.event_name != 'pull_request' || vars.NETLIFY_SITE_ID != ''
+    # A pull request is built only for a preview, asked for by its label: CI checks it otherwise.
+    if: >-
+      github.event_name != 'pull_request' ||
+      (vars.NETLIFY_SITE_ID != '' && contains(github.event.pull_request.labels.*.name, 'preview'))
     runs-on: ubuntu-latest
     permissions:
       contents: read
