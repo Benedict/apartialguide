@@ -362,3 +362,24 @@ describe('the policy of the page', () => {
 		).toMatch(/connect-src [^;]*https:\/\/\*\.google-analytics\.com/);
 	});
 });
+
+describe('the head of the walk', () => {
+	it('says what the walk is and that it is dark, in the single page as on the site', () => {
+		expect(page()).toContain('<meta name="description" content="Walk Addiscombe');
+		expect(page()).toContain('<meta name="color-scheme" content="dark">');
+		expect(page()).not.toContain('rel="manifest"');
+	});
+
+	it('names its address, the manifest and what it is to search engines, where it is served', () => {
+		const html = exportPage({
+			engine: 'var Adventure = function () {};',
+			world,
+			snapshotDate: '2026-10-24',
+			tiles: 'tiles/',
+			siteUrl: 'https://example.org'
+		});
+		expect(html).toContain('<link rel="canonical" href="https://example.org/walk/">');
+		expect(html).toContain('<link rel="manifest" href="/site.webmanifest">');
+		expect(html).toContain('"@type":"VideoGame"');
+	});
+});

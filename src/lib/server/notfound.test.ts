@@ -43,6 +43,12 @@ describe('notFoundPage', () => {
 		expect(unhashedScripts(html)).toEqual([]);
 	});
 
+	it('says what it is and that it is dark, but names no address of its own', () => {
+		expect(html).toContain('<meta name="description" content="There is no page here.">');
+		expect(html).toContain('<meta name="color-scheme" content="dark">');
+		expect(html).not.toContain('rel="canonical"');
+	});
+
 	it('is kept out of search engines, and asks nothing of anyone else', () => {
 		expect(html).toContain('<meta name="robots" content="noindex">');
 		expect(html).not.toMatch(/googletagmanager/);

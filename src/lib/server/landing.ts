@@ -1,4 +1,5 @@
 import { withCsp } from './csp';
+import { COMMANDS, headMeta, jsonLd, PAGES } from './meta';
 import { themeBoot, themeCss } from '../site/themes';
 import { fontFaces, MONO } from './type';
 import type { Ledger } from '../core/adventure/world';
@@ -26,9 +27,6 @@ const esc = (text: string) =>
 
 const n = (x: number) => x.toLocaleString('en-GB');
 
-const DESCRIPTION =
-	'The world as a text adventure, built from open data. It starts with Addiscombe, in Croydon.';
-
 /** The front door: what the piece is, a walk as it was played, and the way in. */
 export function landingPage({
 	snapshotDate,
@@ -55,11 +53,8 @@ export function landingPage({
 ${themeBoot()}
 ${faviconLinks('/')}
 ${ogMeta(siteUrl)}
-<meta name="description" content="${esc(DESCRIPTION)}">
-<meta property="og:title" content="A Partial Guide">
-<meta property="og:description" content="${esc(DESCRIPTION)}">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
+${headMeta({ ...PAGES.home, siteUrl, site: true })}
+${jsonLd('home', siteUrl)}${siteUrl ? '' : '\n<meta name="twitter:card" content="summary">'}
 <meta name="theme-color" content="#000000">
 <style>
 ${fontFaces('/')}
@@ -131,13 +126,7 @@ ${themeCss()}
 
 	<h2>Commands</h2>
 	<ul class="commands">
-		<li><code>n</code> <code>se</code> <code>back</code></li>
-		<li><code>drift</code></li>
-		<li><code>look</code> <code>examine</code> <code>explore</code></li>
-		<li><code>route to</code> a street or a place</li>
-		<li><code>gps on</code></li>
-		<li><code>look up</code> <code>use the camera</code></li>
-		<li><code>save</code> <code>restore</code> <code>help</code></li>
+		${COMMANDS.map(([words, rest]) => `<li>${words.map((w) => `<code>${esc(w)}</code>`).join(' ')}${rest ? ` ${esc(rest)}` : ''}</li>`).join('\n\t\t')}
 	</ul>
 
 	<p class="again"><a class="begin" href="walk/">Start in Addiscombe</a></p>

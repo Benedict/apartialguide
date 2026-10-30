@@ -25,6 +25,14 @@ describe('the site on Netlify', () => {
 		expect(exporter).toContain("join(site, 'fonts'");
 	});
 
+	it('writes the site’s own files: robots.txt, the sitemap, llms.txt, the manifest and its icons', () => {
+		const exporter = read('scripts/export.ts');
+		for (const file of ['robots.txt', 'sitemap.xml', 'llms.txt', 'site.webmanifest'])
+			expect(exporter).toContain(`'${file}'`);
+		for (const icon of ['icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'favicon.ico'])
+			expect(exporter).toContain(`'${icon}'`);
+	});
+
 	it('builds a preview of a pull request only when it is labelled preview', () => {
 		expect(deploy).toMatch(/pull_request:\n\s+types: \[opened, synchronize, reopened, labeled\]/);
 		expect(deploy).toContain("contains(github.event.pull_request.labels.*.name, 'preview')");

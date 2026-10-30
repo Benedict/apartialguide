@@ -1,4 +1,5 @@
 import { withCsp } from './csp';
+import { headMeta, PAGES } from './meta';
 import { themeBoot, themeCss } from '../site/themes';
 import { fontFaces, MONO } from './type';
 import { faviconLinks, LOCKUP } from '../site/brand';
@@ -18,6 +19,7 @@ export function notFoundPage(): string {
 <title>A Partial Guide</title>
 ${themeBoot()}
 <meta name="robots" content="noindex">
+${headMeta({ ...PAGES.missing, site: true })}
 ${faviconLinks('/')}
 <meta name="theme-color" content="#000000">
 <style>
