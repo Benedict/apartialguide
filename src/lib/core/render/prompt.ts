@@ -110,6 +110,7 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 	const map = beat.facts.filter((f) => !isElsewhere(f) && !folded.includes(f));
 	const elsewhere = beat.facts.filter(isElsewhere);
 	const plaque = !map.length && !!tags['plaque:inscription'];
+	const inscribed = !map.length && !!(tags['plaque:inscription'] || tags['bench:inscription']);
 	const what = map.length
 		? plainKind(tags)
 		: `${plaque ? 'a plaque' : calledElsewhere(tags)}, which the map does not have`;
@@ -125,7 +126,7 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 		lines.push(
 			`   Elsewhere${allusion(source) ? `, kept by ${allusion(source)}` : ''}: ${others(elsewhere.filter((f) => f.source === source))}`
 		);
-	if (plaque) lines.push('   Read the plaque’s words as it gives them, not as hearsay.');
+	if (inscribed) lines.push('   Read the words on it as they are, not as hearsay.');
 	for (const name of brokenNames(beat)) lines.push(`   Speak the name “${name}” exactly as found.`);
 	if (beat.effects.includes('remembered')) {
 		const asOf = beat.facts.find((f) => f.observed)?.observed;

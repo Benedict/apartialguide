@@ -73,7 +73,7 @@ describe('buildPrompt', () => {
 		};
 		const user = buildPrompt(scene({ beats: [plaque] })).user;
 		expect(user).toContain(': a plaque, which the map does not have.');
-		expect(user).toContain('Read the plaque’s words as it gives them, not as hearsay.');
+		expect(user).toContain('Read the words on it as they are, not as hearsay.');
 	});
 
 	it('gives each noticed thing its place, its record and what to do with it', () => {
@@ -324,6 +324,7 @@ describe('buildPrompt', () => {
 		const user = buildPrompt(scene({ beats: [bench] })).user;
 		expect(user).toContain('a bench, which the map does not have');
 		expect(user).toContain('Elsewhere, kept by those who read the benches: On it: “For Ada”.');
+		expect(user).toContain('Read the words on it as they are, not as hearsay.');
 		expect(user).not.toContain('undefined');
 	});
 

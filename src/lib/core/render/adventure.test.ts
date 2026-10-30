@@ -528,9 +528,10 @@ describe('AdventureRenderer', () => {
 				effects: []
 			};
 			const t = text(scene({ beats: [bench] }));
-			expect(t).toContain(
-				`, ${aside('a bench')}, is a bench. On it: “For Ada Inventa, who sat here”.`
+			expect(t).toMatch(
+				/^To the north, [^.]*, is a bench\. On it: “For Ada Inventa, who sat here”\./m
 			);
+			expect(t).not.toMatch(/they say|it is said|someone wrote down/i);
 			expect(t).not.toContain('undefined');
 		});
 
@@ -690,7 +691,7 @@ describe('AdventureRenderer', () => {
 						]
 					})
 				).hidden?.lines[0];
-				expect(found).toContain(`a bench, ${aside('a bench')}`);
+				expect(found).toContain('a bench with “For Ada” on it');
 				expect(found).toContain(`“Invented Chapel”, ${aside('“Invented Chapel”')}`);
 				expect(found).not.toContain('undefined');
 			});
