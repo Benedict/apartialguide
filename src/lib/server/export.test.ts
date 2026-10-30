@@ -1,18 +1,21 @@
 import { describe, expect, it } from 'vitest';
 import type { AdventureWorld } from '../core/adventure/world';
 import { gunzipSync } from 'node:zlib';
+import { unpackWorld } from '../core/adventure/packed';
 import { exportPage, wordsAmiss } from './export';
 import { LIVE, SOURCES } from '../site/sources';
 
 /** The world as the page carries it: gzip, base64, in a script element of its own. */
 const worldIn = (html: string) =>
-	JSON.parse(
-		gunzipSync(
-			Buffer.from(
-				html.match(/<script type="application\/gzip" id="world">([^<]*)<\/script>/)![1],
-				'base64'
-			)
-		).toString('utf8')
+	unpackWorld(
+		JSON.parse(
+			gunzipSync(
+				Buffer.from(
+					html.match(/<script type="application\/gzip" id="world">([^<]*)<\/script>/)![1],
+					'base64'
+				)
+			).toString('utf8')
+		)
 	);
 
 const world: AdventureWorld = {
@@ -34,6 +37,7 @@ describe('exportPage', () => {
 	it('inlines the engine, and the world compressed', () => {
 		expect(page()).toContain('var Adventure = function () {};');
 		expect(worldIn(page())).toEqual(world);
+		expect(page()).toContain('unpackWorld(');
 		expect(page()).not.toContain('"title":"Long Street"');
 	});
 

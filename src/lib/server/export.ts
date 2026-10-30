@@ -1,4 +1,5 @@
 import { gzipSync } from 'node:zlib';
+import { packWorld } from '../core/adventure/packed';
 import type { AdventureWorld } from '../core/adventure/world';
 import { longDate } from '../core/render/words';
 import { LIVE, SOURCES } from '../site/sources';
@@ -13,9 +14,9 @@ export interface ExportInput {
 	flightsUrl?: string;
 }
 
-/** The world as the page carries it: gzip, then base64, which nothing in a script element can break out of. */
+/** The world as the page carries it: packed, gzip, then base64, which nothing in a script element can break out of. */
 const packed = (world: AdventureWorld) =>
-	gzipSync(Buffer.from(JSON.stringify(world), 'utf8'), { level: 9 }).toString('base64');
+	gzipSync(Buffer.from(JSON.stringify(packWorld(world)), 'utf8'), { level: 9 }).toString('base64');
 
 const esc = (text: string) =>
 	text.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
@@ -209,9 +210,12 @@ export function exportPage({ engine, world, snapshotDate, flightsUrl }: ExportIn
 	}
 
 	// The world arrives compressed: a large place would otherwise weigh tens of megabytes.
-	const bytes = Uint8Array.from(atob(document.getElementById('world').textContent), (c) => c.charCodeAt(0));
+	// A plain loop: Uint8Array.from with a callback is many times slower on a phone.
+	const base64 = atob(document.getElementById('world').textContent);
+	const bytes = new Uint8Array(base64.length);
+	for (let i = 0; i < base64.length; i++) bytes[i] = base64.charCodeAt(i);
 	const unzipped = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
-	const WORLD = JSON.parse(await new Response(unzipped).text());
+	const WORLD = unpackWorld(JSON.parse(await new Response(unzipped).text()));
 	const game = new Adventure(WORLD);
 	// Saved walks, in this browser: five slots, and the walk kept as it goes.
 	game.saves = browserSaves();
