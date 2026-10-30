@@ -18,6 +18,17 @@ jobs:
       - run: npm run lint
       - run: npm run check
       - run: npm test
+      # A test is never got out of the way: no fewer here than on the branch this would merge into
+      # (or, on main, than before this push), and none skipped, left to do, or run alone.
+      - name: No fewer tests than the base
+        env:
+          BASE: ${{ github.event_name == 'pull_request' && github.base_ref || github.event.before }}
+          TEST_COUNT_BASE: ../base
+        run: |
+          git fetch --depth=1 origin "$BASE"
+          git worktree add ../base FETCH_HEAD
+          ln -s "$PWD/node_modules" ../base/node_modules
+          npm run test:count
       - run: npm run build
       # The exported page must play in a real browser, not only pass its tests.
       - name: Export the page

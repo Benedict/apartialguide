@@ -17,6 +17,7 @@ A Partial Guide is a text adventure of the real world, built from open data. It 
 ## Commands
 
 - `npm test`: unit tests (Vitest), then acceptance scenarios (Cucumber).
+- `npm run test:count`: counts the tests without running them, and fails on any test skipped, left to do, or run alone (`it.skip`, `.todo`, `.only`); with `TEST_COUNT_BASE` (another checkout) it fails if there are fewer unit tests or scenarios here. CI runs it against the branch a pull request would merge into, or on main against the commit before the push.
 - `npm run test:acceptance`: Gherkin in `features/`. `@snapshot` scenarios run only once the snapshot file exists; `@icebox` and `@later` never run.
 - `npm run lint`, `npm run check`: Prettier, ESLint, svelte-check.
 - `npm run dev`: needs `SNAPSHOT_PATH` (see `.env.example`).
