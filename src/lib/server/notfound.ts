@@ -32,16 +32,20 @@ ${fontFaces('/')}
 	main { max-width: 44rem; margin: 0 auto; padding: 3rem 1rem; }
 	.brand svg { display: block; width: min(100%, 16rem); height: auto; margin: 0 0 2.5rem; }
 	.command { color: var(--bright); }
-	.reply { color: var(--bright); font-size: 1.25rem; margin: 0.5rem 0 2rem; }
+	.reply { color: var(--bright); font-size: 1.25rem; font-weight: 400; margin: 0.5rem 0 2rem; }
 ${themeCss()}
+	/* A link first in the page, seen only when a keyboard reaches it, to skip to what matters. */
+	.skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; background: var(--bright); color: var(--paper); padding: 0.6rem 1rem; font-weight: 700; }
+	.skip:focus { top: 0.5rem; }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to the content</a>
 <div class="bar">A Partial Guide</div>
-<main>
+<main id="main">
 	<div class="brand">${LOCKUP}</div>
 	<p class="command">&gt; go there</p>
-	<p class="reply">You can't go that way.</p>
+	<h1 class="reply">You can't go that way.</h1>
 	<p>There is no page here. <a href="/walk/">Take up the walk</a>, or go back to <a href="/">the start</a>.</p>
 </main>
 </body>

@@ -204,8 +204,8 @@ ${fontFaces(tiles ? '/' : undefined)}
 	.command { color: var(--bright); }
 	.sources { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.6rem; }
 	.terms { font-size: 0.85rem; color: var(--muted); }
-	.choice { display: flex; gap: 0.6rem; align-items: baseline; }
-	.choice input { width: 1.1rem; height: 1.1rem; flex: none; accent-color: var(--ink); }
+	.choice { display: flex; gap: 0.6rem; align-items: center; min-height: 44px; }
+	.choice input { width: 1.5rem; height: 1.5rem; flex: none; margin: 0; accent-color: var(--ink); }
 	form {
 		display: flex; align-items: baseline; gap: 1ch; background: var(--paper);
 		padding-top: 0.5rem; padding-bottom: 0.25rem;
@@ -221,13 +221,20 @@ ${fontFaces(tiles ? '/' : undefined)}
 		display: flex; justify-content: flex-end; gap: 1.2rem; font-size: 0.8rem;
 		padding-bottom: max(0.6rem, env(safe-area-inset-bottom, 0px));
 	}
-	.menu a { color: var(--muted); }
+	.menu a { color: var(--muted); display: inline-block; padding: 0.6rem 0.25rem; }
+	/* A link alone on its line is a control, and gets a control's room to touch. */
+	.view p > a:only-child { display: inline-block; padding: 0.6rem 0; }
 ${themeCss()}
 	.colours { border: 0; padding: 0; margin: 0.6rem 0 1rem; display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
 	.colours legend { color: var(--bright); font-weight: 700; padding: 0; margin-bottom: 0.3rem; }
+	/* A link first in the page, seen only when a keyboard reaches it, to skip to what matters. */
+	.skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; background: var(--bright); color: var(--paper); padding: 0.6rem 1rem; font-weight: 700; }
+	.skip:focus { top: 0.5rem; }
+	.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 </style>
 </head>
 <body>
+<a class="skip" href="#command">Skip to the prompt</a>
 <div class="status" id="status"><span>A Partial Guide</span><span></span></div>
 <div class="follow" id="follow" hidden></div>${
 		gaId
@@ -235,11 +242,12 @@ ${themeCss()}
 ${consentStrip('this page')}`
 			: ''
 	}
-<div class="scroll" id="scroll">
+<main class="scroll" id="scroll">
+	<h1 class="visually-hidden">A Partial Guide: the walk</h1>
 	<div id="game"><div id="transcript" aria-live="polite"></div></div>
 	${aboutPage(snapshotDate, !!gaId)}
 	${settingsPage(!!gaId)}
-</div>
+</main>
 <form id="prompt" autocomplete="off">
 	<label for="command">&gt;</label>
 	<input id="command" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-label="What do you do?" placeholder="take the tour">

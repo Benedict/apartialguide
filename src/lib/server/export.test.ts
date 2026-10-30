@@ -1,3 +1,4 @@
+import { structureFaults } from './structure';
 import { describe, expect, it } from 'vitest';
 import type { AdventureWorld } from '../core/adventure/world';
 import { gunzipSync } from 'node:zlib';
@@ -326,5 +327,12 @@ describe('the type of the page', () => {
 		});
 		expect(html).toContain("url('/fonts/commit-mono-400.woff2')");
 		expect(html).not.toContain('data:font/woff2');
+	});
+});
+
+describe('the structure of the page', () => {
+	it('can be read by everyone: headings in order, a main, and a skip link to the prompt', () => {
+		expect(structureFaults(page())).toEqual([]);
+		expect(page()).toMatch(/<a class="skip" href="#command">/);
 	});
 });
