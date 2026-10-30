@@ -24,6 +24,7 @@ Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
   3. In the repository, Settings → Secrets and variables → Actions: a **variable** `NETLIFY_SITE_ID` (the Project ID), and a **secret** `NETLIFY_AUTH_TOKEN` (the token).
   4. Run the Deploy workflow (Actions → Deploy → Run workflow), or merge anything. Its summary gives the URL.
   5. Once the Netlify site plays, Settings → Pages → turn GitHub Pages off, and give the Netlify URL to anyone who has the old one. `FLIGHTS_URL` and the Cloudflare worker are then no longer needed: flights answer from the site itself.
+- [ ] **Site address.** Add the repository **variable** `SITE_URL`, the site's address on Netlify (or its own domain), such as `https://a-partial-guide.netlify.app`. With it, a shared link shows the logo as its preview image.
 - [ ] **Google Analytics.** Create a GA4 property for the site, then add its measurement ID (`G-…`) as a repository **variable** (not a secret) called `GA_MEASUREMENT_ID` (Settings → Secrets and variables → Actions → Variables), and run the Deploy workflow. Until then nothing is counted and no one is asked. In GA, under Admin → Data retention, consider the shortest retention, and leave Google signals off.
 
 ## Decisions

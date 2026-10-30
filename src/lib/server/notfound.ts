@@ -1,3 +1,5 @@
+import { faviconLinks, LOCKUP } from '../site/brand';
+
 /**
  * The page for a path the site does not have (Netlify serves `404.html` for any). It is the page
  * speaking, as a text adventure does at a wall, not Guide: it says nothing of any place. Its links
@@ -11,6 +13,7 @@ export function notFoundPage(): string {
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>A Partial Guide</title>
 <meta name="robots" content="noindex">
+${faviconLinks('/')}
 <meta name="theme-color" content="#000000">
 <style>
 	/* As the walk looks: one typeface, light on dark, an inverse bar. */
@@ -23,6 +26,7 @@ export function notFoundPage(): string {
 	a { color: var(--bright); }
 	.bar { background: var(--ink); color: var(--paper); padding: 0.35rem 1rem; font-weight: bold; }
 	main { max-width: 44rem; margin: 0 auto; padding: 3rem 1rem; }
+	.brand svg { display: block; width: min(100%, 16rem); height: auto; margin: 0 0 2.5rem; }
 	.command { color: var(--bright); }
 	.reply { color: var(--bright); font-size: 1.25rem; margin: 0.5rem 0 2rem; }
 </style>
@@ -30,6 +34,7 @@ export function notFoundPage(): string {
 <body>
 <div class="bar">A Partial Guide</div>
 <main>
+	<div class="brand">${LOCKUP}</div>
 	<p class="command">&gt; go there</p>
 	<p class="reply">You can't go that way.</p>
 	<p>There is no page here. <a href="/walk/">Take up the walk</a>, or go back to <a href="/">the start</a>.</p>

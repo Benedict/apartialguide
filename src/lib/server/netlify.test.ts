@@ -12,6 +12,13 @@ describe('the site on Netlify', () => {
 		expect(exporter).toContain("writeFileSync(join(site, '404.html'), notFoundPage())");
 	});
 
+	it('copies the brand’s pictures into the site, and names the site’s address for the preview image', () => {
+		const exporter = read('scripts/export.ts');
+		expect(exporter).toContain("'apple-touch-icon.png'");
+		expect(exporter).toContain("'og.png'");
+		expect(deploy).toContain('SITE_URL: ${{ vars.SITE_URL }}');
+	});
+
 	it('builds a preview of a pull request only when it is labelled preview', () => {
 		expect(deploy).toMatch(/pull_request:\n\s+types: \[opened, synchronize, reopened, labeled\]/);
 		expect(deploy).toContain("contains(github.event.pull_request.labels.*.name, 'preview')");

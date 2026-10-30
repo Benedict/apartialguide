@@ -11,7 +11,7 @@
  * counted only once a reader says yes.
  */
 import { build } from 'esbuild';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { copyFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { Adventure } from '../src/lib/core/adventure/engine';
 import { tileWorld } from '../src/lib/core/adventure/tiles';
@@ -70,11 +70,15 @@ if (site) {
 			snapshotDate: config.snapshotDate,
 			flightsUrl: process.env.FLIGHTS_URL,
 			gaId: process.env.GA_MEASUREMENT_ID || undefined,
+			siteUrl: process.env.SITE_URL || undefined,
 			tiles: 'tiles/'
 		})
 	);
 	writeFileSync(join(site, 'index.html'), await microsite());
 	writeFileSync(join(site, '404.html'), notFoundPage());
+	// The brand's pictures, drawn by `npm run brand`: the home-screen icon and the preview image.
+	for (const picture of ['apple-touch-icon.png', 'og.png'])
+		copyFileSync(join('static', picture), join(site, picture));
 	console.log(
 		`${Object.keys(world.stops).length} stops written to ${walk} in ${Object.keys(tiles).length} tiles, and the microsite to ${site}`
 	);
@@ -117,6 +121,7 @@ async function microsite(): Promise<string> {
 			{ title: first.title, lines: first.lines.filter((l) => !l.startsWith('Exits:')) }
 		],
 		script: bundle.outputFiles[0].text,
-		gaId: process.env.GA_MEASUREMENT_ID || undefined
+		gaId: process.env.GA_MEASUREMENT_ID || undefined,
+		siteUrl: process.env.SITE_URL || undefined
 	});
 }
