@@ -1,5 +1,5 @@
 import type { Ledger } from '../core/adventure/world';
-import { longDate, monthYear } from '../core/render/words';
+import { longDate } from '../core/render/words';
 import { consentStrip, PRIVACY } from './export';
 
 export interface LandingInput {
@@ -21,7 +21,7 @@ const esc = (text: string) =>
 const n = (x: number) => x.toLocaleString('en-GB');
 
 const DESCRIPTION =
-	'A Partial Guide: a text walk through Addiscombe, Croydon, told from open data by a narrator who knows only what the records say. Where the data is broken, so is Guide.';
+	'The world as a text adventure, built from open data. It starts with Addiscombe, in Croydon.';
 
 /** The front door: what the piece is, a walk as it was played, and the way in. */
 export function landingPage({ snapshotDate, about, excerpt, script, gaId }: LandingInput): string {
@@ -32,7 +32,6 @@ export function landingPage({ snapshotDate, about, excerpt, script, gaId }: Land
 				: `${e.title ? `<h3>${esc(e.title)}</h3>` : ''}${e.lines.map((l) => `<p>${esc(l)}</p>`).join('')}`
 		)
 		.join('\n\t\t\t');
-	const others = about.accounts.length;
 	return `<!doctype html>
 <html lang="en">
 <head>
@@ -69,18 +68,15 @@ export function landingPage({ snapshotDate, about, excerpt, script, gaId }: Land
 		font-weight: bold; padding: 0.7rem 1.2rem; border: 2px solid var(--bright);
 	}
 	.begin:hover, .begin:focus-visible { background: var(--paper); color: var(--bright); }
-	.note { color: var(--muted); font-size: 0.85rem; margin-top: 0.75rem; }
 	h2 { color: var(--bright); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 3rem 0 1rem; }
-	.played { border: 1px solid var(--rule); padding: 1rem 1.25rem; }
+	.played { border: 1px solid var(--rule); padding: 1rem 1.25rem; margin-top: 1rem; }
 	.played h3 { color: var(--bright); font-size: 1rem; margin: 1rem 0 0.5rem; }
 	.played p { margin: 0 0 0.75rem; }
 	.played .command { color: var(--bright); }
-	.figures { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
-	.figures li { background: var(--paper); padding: 1rem; }
-	.figures strong { display: block; color: var(--bright); font-size: 1.5rem; }
-	dl { margin: 0; }
-	dt { color: var(--bright); margin-top: 1rem; }
-	dd { margin: 0.25rem 0 0; }
+	.commands { list-style: none; padding: 0; margin: 0; }
+	.commands li { padding: 0.35rem 0; border-bottom: 1px solid var(--rule); }
+	.commands code { margin-right: 1ch; }
+	.again { margin-top: 2.5rem; }
 	code { color: var(--bright); }
 	footer { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1rem; color: var(--muted); font-size: 0.85rem; }
 	.consent { position: sticky; bottom: 0; background: var(--paper); border-top: 1px solid var(--rule); padding: 0.75rem 1rem; font-size: 0.85rem; }
@@ -90,49 +86,39 @@ export function landingPage({ snapshotDate, about, excerpt, script, gaId }: Land
 </style>
 </head>
 <body>
-<div class="bar"><span>A Partial Guide</span><a href="walk/">Begin the walk</a></div>
+<div class="bar"><span>A Partial Guide</span><a href="walk/">Start</a></div>
 <main>
 	<section class="hero">
-		<h1>A Partial Guide</h1>
-		<p class="lede">A walk through Addiscombe, in Croydon, told by Guide, a narrator who knows only what the open records say. Where the data is broken, so is Guide.</p>
-		<a class="begin" href="walk/">Begin the walk</a>
-		<p class="note">Plays in your browser, on a phone or a desk. Nothing to install.</p>
+		<h1>The world as a text adventure.</h1>
+		<p class="lede">Type a direction and walk. Every street, building, name and date comes from open data.</p>
+		<p>It starts with Addiscombe, in Croydon: ${n(about.streets)} streets and ${n(about.places)} places, from a map dated ${esc(longDate(snapshotDate))}.</p>
+		<a class="begin" href="walk/">Start in Addiscombe</a>
 	</section>
 
-	<h2>A walk, as it was played</h2>
 	<div class="played">
 			${played}
 	</div>
 
-	<h2>What it is</h2>
-	<p>A text adventure in the old manner: a place told in words, a prompt, and directions to type. But nothing in it is invented. Every street, name, number and date comes from open data: the map, and the accounts others keep of the same streets. The voice around them is Guide’s.</p>
-	<p>Guide never repairs what it finds. A name recorded half-missing is spoken half-missing; a place the map has lost is told as gone; where the records disagree, Guide leaves them disagreeing. Its confusion is earned by the data. It is an art piece, not a game.</p>
+	<h2>How it works</h2>
+	<p>The places are built from OpenStreetMap and public records: food hygiene ratings, planning applications, house sales, listed buildings, bus stops.</p>
+	<p>Nothing is made up. Where the data is wrong or missing, the game says so as it stands. A bank whose sign was recorded as “est Bank” is called “est Bank”.</p>
+	<p>Some of it is live: the buses due at a stop, today’s weather, the nearest traffic camera.</p>
 
-	<h2>What Guide carries</h2>
-	<ul class="figures">
-		<li><strong>${n(about.streets)}</strong> ${about.streets === 1 ? 'named street' : 'named streets'}</li>
-		<li><strong>${n(about.places)}</strong> ${about.places === 1 ? 'place to stand' : 'places to stand'}</li>
-		<li><strong>${n(others)}</strong> ${others === 1 ? 'other account' : 'other accounts'} kept of the same streets</li>
-		${about.oldest ? `<li><strong>${esc(monthYear(about.oldest))}</strong> the oldest thing on the map was last recorded</li>` : ''}
+	<h2>Commands</h2>
+	<ul class="commands">
+		<li><code>n</code> <code>se</code> <code>back</code></li>
+		<li><code>look</code> <code>examine</code> <code>explore</code></li>
+		<li><code>route to</code> a street or a place</li>
+		<li><code>gps on</code></li>
+		<li><code>look up</code> <code>use the camera</code></li>
+		<li><code>save</code> <code>restore</code> <code>help</code></li>
 	</ul>
-	<p class="note">From a map dated ${esc(longDate(snapshotDate))}.</p>
 
-	<h2>Things to try</h2>
-	<dl>
-		<dt><code>north</code>, <code>se</code>, <code>back</code></dt><dd>Walk. The goal is distance; Guide marks it as you go.</dd>
-		<dt><code>look up</code></dt><dd>The sky over the map’s place now: the weather, the planets, the satellites above the roofs.</dd>
-		<dt><code>use the camera</code></dt><dd>What the nearest traffic camera last saw.</dd>
-		<dt><code>route to a pub</code></dt><dd>The way there, street by street. You still walk it.</dd>
-		<dt><code>gps on</code></dt><dd>A map kept beside the walk.</dd>
-		<dt><code>remember</code> a name</dt><dd>Guide will carry it, and may bring it back somewhere else.</dd>
-		<dt><code>plainly</code></dt><dd>The same place, told again from the records alone.</dd>
-	</dl>
-
-	<p style="margin-top:2.5rem"><a class="begin" href="walk/">Begin the walk</a></p>
+	<p class="again"><a class="begin" href="walk/">Start in Addiscombe</a></p>
 
 	<footer>
 		<p>${gaId ? PRIVACY.counted : PRIVACY.none}</p>
-		<p>Where Guide’s words come from, and on what terms: <a href="walk/#about">sources and licences</a>. Made by Benedict. The code is on <a href="https://github.com/Benedict/osm-text-adventure">GitHub</a>.</p>
+		<p><a href="walk/#about">Sources and licences</a> · <a href="https://github.com/Benedict/osm-text-adventure">Code</a> · Made by Benedict</p>
 	</footer>
 </main>
 ${gaId ? consentStrip('this site') : ''}
