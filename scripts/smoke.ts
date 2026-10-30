@@ -97,6 +97,21 @@ try {
 	await says(page, /Exits?:/);
 	await page.setViewportSize({ width: 390, height: 844 });
 
+	// gps on keeps a map beside the walk, though none can come here; gps off puts it away.
+	await input.fill('gps on');
+	await input.press('Enter');
+	await says(page, 'I will keep the map beside you as we go.');
+	await input.fill('look');
+	await input.press('Enter');
+	await says(page, /Exits?:/);
+	await input.fill('gps off');
+	await input.press('Enter');
+	await says(page, 'I put the map away.');
+	check(
+		await page.locator('#follow').isHidden(),
+		'the map kept by gps on is still there after gps off'
+	);
+
 	// The camera, with nothing answering, comes to nothing; the walk carries on.
 	await input.fill('use the camera');
 	await input.press('Enter');

@@ -17,6 +17,8 @@ export interface WalkState {
 	moves: number;
 	walked: number;
 	verbose: boolean;
+	/** Whether the map was kept beside the walk (gps on). */
+	following?: boolean;
 	lastCommand?: string;
 	lastStreet?: string;
 	visited: string[];
