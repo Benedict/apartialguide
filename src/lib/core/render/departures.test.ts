@@ -93,3 +93,68 @@ describe('departuresLine', () => {
 		expect(departuresLine([])).toBeUndefined();
 	});
 });
+
+describe('which way a stop serves', () => {
+	it('heads the departures with the way TfL says the stop serves, so two stops of one name are told apart', () => {
+		const facts = arrivalFacts(
+			[
+				{
+					id: '1',
+					lineName: '289',
+					destinationName: 'Invented End',
+					timeToStation: 300,
+					towards: 'Invented End',
+					platformName: 'Q'
+				}
+			],
+			'Invented Road',
+			at
+		);
+		expect(departuresLine(facts)).toBe(
+			'Invented Road, towards Invented End: the 289 to Invented End in 5 minutes.'
+		);
+	});
+
+	it('gives the stop letter where TfL gives no way', () => {
+		const facts = arrivalFacts(
+			[
+				{
+					id: '1',
+					lineName: '289',
+					destinationName: 'Invented End',
+					timeToStation: 300,
+					platformName: 'Q'
+				}
+			],
+			'Invented Road',
+			at
+		);
+		expect(departuresLine(facts)).toBe(
+			'Invented Road, stop Q: the 289 to Invented End in 5 minutes.'
+		);
+	});
+
+	it('leaves out a stop letter TfL gives as none', () => {
+		const facts = arrivalFacts(
+			[
+				{
+					id: '1',
+					lineName: '289',
+					destinationName: 'Invented End',
+					timeToStation: 300,
+					platformName: 'null'
+				}
+			],
+			'Invented Road',
+			at
+		);
+		expect(departuresLine(facts)).toBe('Invented Road: the 289 to Invented End in 5 minutes.');
+	});
+});
+
+describe('a stop with nothing due', () => {
+	it('gives the letter the map has for it, so two stops of one name are still told apart', () => {
+		expect(departuresLine([], 'Invented Road', 'Q')).toBe('Invented Road, stop Q: nothing is due.');
+		expect(departuresLine([], 'Invented Road')).toBe('Invented Road: nothing is due.');
+	});
+});

@@ -46,6 +46,8 @@ export interface TransitStop {
 	kind: 'bus' | 'tram';
 	/** The NaPTAN code the map gives it, which TfL uses too. Tram stops on the map have none. */
 	naptan?: string;
+	/** The letter on its flag, as the map gives it: two stops of one name are told apart by it. */
+	letter?: string;
 }
 
 /** The bus and tram stops in view, once each. */
@@ -56,7 +58,12 @@ function transitIn(facts: readonly Fact[]): TransitStop[] {
 		if (!tags.name) continue;
 		const stop: TransitStop | undefined =
 			tags.highway === 'bus_stop' && tags['naptan:AtcoCode']
-				? { name: tags.name, kind: 'bus', naptan: tags['naptan:AtcoCode'] }
+				? {
+						name: tags.name,
+						kind: 'bus',
+						naptan: tags['naptan:AtcoCode'],
+						...(tags.local_ref ? { letter: tags.local_ref } : {})
+					}
 				: tags.railway === 'tram_stop'
 					? { name: tags.name, kind: 'tram' }
 					: undefined;

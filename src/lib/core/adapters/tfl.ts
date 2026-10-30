@@ -8,7 +8,14 @@ export interface TflArrival {
 	/** Seconds until it reaches the stop. */
 	timeToStation?: number;
 	modeName?: string;
+	/** Which way the stop serves, as TfL puts it: "Purley". */
+	towards?: string;
+	/** The stop's letter, as on its flag: "Q". TfL gives "null" where there is none. */
+	platformName?: string;
 }
+
+/** TfL's way of saying it has nothing to say. */
+const said = (value: string | undefined) => (value && value !== 'null' ? value : undefined);
 
 /** Each predicted arrival at a stop as facts about that arrival, from TfL, observed now. */
 export function arrivalFacts(
@@ -24,7 +31,9 @@ export function arrivalFacts(
 			['destination', a.destinationName],
 			['due', a.timeToStation],
 			['mode', a.modeName],
-			['stop', stop]
+			['stop', stop],
+			['towards', said(a.towards)],
+			['platform', said(a.platformName)]
 		];
 		return claims
 			.filter((c): c is [string, string | number] => c[1] !== undefined && c[1] !== '')
