@@ -29,6 +29,13 @@ describe('the workflows', () => {
 		expect(pages.NARRATION_PATH).toBeTruthy();
 	});
 
+	it('publish the site in tiles, and check that it plays as served', () => {
+		const pages = readFileSync('.github/workflows/pages.yml', 'utf8');
+		expect(pages).toMatch(/SITE_DIR: site\n[^]*?run: npm run export/);
+		expect(pages).not.toContain('EXPORT_PATH');
+		expect(pages).toMatch(/run: npm run smoke\n\s+env:\n\s+SITE_DIR: site/);
+	});
+
 	it('publish the page again once prose is written', () => {
 		expect(readFileSync('.github/workflows/narrate.yml', 'utf8')).toContain(
 			'gh workflow run pages.yml'

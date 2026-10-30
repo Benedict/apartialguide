@@ -1,6 +1,6 @@
 name: Pages
 
-# Publishes the exported page to GitHub Pages, where live data can be fetched as the reader plays
+# Publishes the site, the world in tiles fetched as the walk reaches them, to GitHub Pages, where live data can be fetched as the reader plays
 # (the claude.ai preview's security policy blocks it). Runs on every push to main, so each merged
 # change is published, and by hand.
 on:
@@ -38,7 +38,7 @@ jobs:
           WIKIDATA_DIR: data/wikidata
           RECORDS_DIR: data/records
           NARRATION_PATH: data/narration/addiscombe.json
-          EXPORT_PATH: site/index.html
+          SITE_DIR: site
           # The flights function, once deployed (functions/flights); without it no aircraft are asked after.
           FLIGHTS_URL: ${{ vars.FLIGHTS_URL }}
         run: npm run export
@@ -46,7 +46,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run smoke
         env:
-          EXPORT_PATH: site/index.html
+          SITE_DIR: site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

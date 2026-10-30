@@ -1,5 +1,6 @@
 import { gzipSync } from 'node:zlib';
 import { packWorld } from '../core/adventure/packed';
+import { headOf } from '../core/adventure/tiles';
 import type { AdventureWorld } from '../core/adventure/world';
 import { longDate } from '../core/render/words';
 import { LIVE, SOURCES } from '../site/sources';
@@ -12,6 +13,11 @@ export interface ExportInput {
 	snapshotDate: string;
 	/** Where the flights function answers, if one is deployed (`FLIGHTS_URL`). */
 	flightsUrl?: string;
+	/**
+	 * Where the world's tiles are served, relative to the page, when it is served in pieces
+	 * (`tileWorld`); the world passed is then the head alone. Without it the page carries the world.
+	 */
+	tiles?: string;
 }
 
 /** The world as the page carries it: packed, gzip, then base64, which nothing in a script element can break out of. */
@@ -19,8 +25,13 @@ const packed = (world: AdventureWorld) =>
 	gzipSync(Buffer.from(JSON.stringify(packWorld(world)), 'utf8'), { level: 9 }).toString('base64');
 
 /** What Guide needs to speak before the map is opened, as JSON nothing in a script element can break out of. */
-const head = ({ asOf, about, weatherAt }: AdventureWorld) =>
-	JSON.stringify({ asOf, about, weatherAt }).replace(/</g, '\\u003c');
+const head = (world: AdventureWorld, tiled: boolean) => {
+	const { asOf, about, weatherAt } = world;
+	return JSON.stringify(tiled ? headOf(world) : { asOf, about, weatherAt }).replace(
+		/</g,
+		'\\u003c'
+	);
+};
 
 const esc = (text: string) =>
 	text.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
@@ -83,7 +94,13 @@ export function wordsAmiss(world: AdventureWorld): string[] {
 }
 
 /** The whole game as one self-contained page: engine, world, styles and prompt. */
-export function exportPage({ engine, world, snapshotDate, flightsUrl }: ExportInput): string {
+export function exportPage({
+	engine,
+	world,
+	snapshotDate,
+	flightsUrl,
+	tiles
+}: ExportInput): string {
 	return `<!doctype html>
 <html lang="en">
 <head>
@@ -172,7 +189,7 @@ export function exportPage({ engine, world, snapshotDate, flightsUrl }: ExportIn
 </form>
 <nav class="menu"><a href="#about">About</a><a href="#settings">Settings</a></nav>
 <script>${engine}</script>
-<script type="application/json" id="head">${head(world)}</script>
+<script type="application/json" id="head">${head(world, !!tiles)}</script>
 <script>
 (async () => {
 	const scroll = document.getElementById('scroll');
@@ -205,6 +222,8 @@ export function exportPage({ engine, world, snapshotDate, flightsUrl }: ExportIn
 	const settings = loadSettings();
 	// The flights function, if one was deployed when the page was built; without one, no aircraft are asked after.
 	const FLIGHTS = ${JSON.stringify(flightsUrl ?? '')};
+	// Where the world's tiles are served, when it comes in pieces; empty when the page carries it.
+	const TILES = ${JSON.stringify(tiles ?? '')};
 	for (const box of document.querySelectorAll('#settings input[type="checkbox"]')) {
 		box.checked = settings[box.name] !== false;
 		box.addEventListener('change', () => {
@@ -228,6 +247,10 @@ export function exportPage({ engine, world, snapshotDate, flightsUrl }: ExportIn
 	}
 	// Set once the world is open; nothing asks it anything before then.
 	let game;
+	// Opens the places a command needs, when the world comes in pieces; nothing to do when it is carried.
+	let ensure = async () => {};
+	// The way ahead, fetched while the reader reads, so a step seldom waits.
+	const ahead = () => ensure(game.needs('look')).catch(() => {});
 	const transcript = document.getElementById('transcript');
 	const statusBar = document.getElementById('status');
 	const input = document.getElementById('command');
@@ -358,11 +381,17 @@ export function exportPage({ engine, world, snapshotDate, flightsUrl }: ExportIn
 			.catch(() => {});
 	}
 
-	function run(text) {
+	async function run(text) {
 		history.push(text);
 		recall = history.length;
 		transcript.append(el('p', '> ' + text, 'command'));
+		try {
+			await ensure(game.needs(text));
+		} catch {
+			return show({ lines: ['The way will not come clear. Try again in a moment.'] });
+		}
 		show(game.respond(text));
+		ahead();
 	}
 	form.addEventListener('submit', (event) => {
 		event.preventDefault();
@@ -382,7 +411,14 @@ export function exportPage({ engine, world, snapshotDate, flightsUrl }: ExportIn
 	// Guide speaks first; the weather is asked and the world opened while the reader reads.
 	show(introduction(HEAD));
 	const today = skyNow(HEAD.weatherAt, new Date(), undefined, { weather: settings.weather !== false, air: settings.air !== false });
-	game = new Adventure(await openWorld());
+	if (TILES) {
+		const tiled = tiledWorld(HEAD, (key) =>
+			fetch(TILES + key + '.json').then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
+		);
+		ensure = tiled.ensure;
+		game = new Adventure(tiled.world);
+		await ensure(game.needs('take the tour')).catch(() => {});
+	} else game = new Adventure(await openWorld());
 	// Saved walks, in this browser: five slots, and the walk kept as it goes.
 	game.saves = browserSaves();
 	game.offer(await today).forEach(show);
@@ -390,7 +426,7 @@ export function exportPage({ engine, world, snapshotDate, flightsUrl }: ExportIn
 	if (!location.hash) input.focus({ preventScroll: true });
 })();
 </script>
-<script type="application/gzip" id="world">${packed(world)}</script>
+${tiles ? '' : `<script type="application/gzip" id="world">${packed(world)}</script>`}
 </body>
 </html>
 `;

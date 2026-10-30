@@ -23,6 +23,7 @@ import { direction, parse } from './parser';
 import type { Telling, Thing } from '../render/renderer';
 import { distance } from '../geo';
 import { AUTO, SLOTS, type SaveStore, type SavedWalk, type WalkState } from './saves';
+import type { StopId } from '../stops';
 import type { AdventureWorld, CompiledExit, Ledger, Term, TransitStop } from './world';
 
 export interface Reply {
@@ -51,11 +52,8 @@ export const HELP =
 /** What is not said again if heard at either of the last two places: framing lines among them. */
 const RATIONED = ['street', 'setting', 'thing', 'nearest', 'frame'];
 
-/** What the page carries apart from the map, so Guide can speak before it is opened. */
-export type WorldHead = Pick<AdventureWorld, 'asOf' | 'about'>;
-
 /** Guide's introduction and the account of what they carry, from the head of the world alone. */
-export function introduction({ asOf, about }: WorldHead): Reply {
+export function introduction({ asOf, about }: Pick<AdventureWorld, 'asOf' | 'about'>): Reply {
 	if (about && asOf) return { lines: [...INTRO, ...ledgerLines(asOf, about)] };
 	return {
 		lines: [
@@ -405,9 +403,32 @@ export class Adventure {
 			: reply;
 	}
 
+	/**
+	 * The places a command needs open before it is answered, for a world opened as the walk goes:
+	 * where a kept walk stood, to restore it; otherwise here, where you came from and where the exits lead.
+	 */
+	needs(input: string): StopId[] {
+		const command = parse(input);
+		if (command.verb === 'again') return this.lastCommand ? this.needs(this.lastCommand) : [];
+		if (command.verb === 'restore') {
+			const kept = command.slot ? this.saves?.get(command.slot)?.state : undefined;
+			return kept ? [kept.here, ...(kept.previous ? [kept.previous] : [])] : [];
+		}
+		const stop = this.world.stops[this.here];
+		return [
+			...new Set([
+				this.here,
+				...(this.previous ? [this.previous] : []),
+				...(stop?.exits.map((e) => e.to) ?? [])
+			])
+		];
+	}
+
 	/** Which map this is, so a walk saved on another is never picked up here. */
 	private mapId(): string {
-		return `${this.world.asOf ?? ''}|${this.world.start}|${Object.keys(this.world.stops).length}`;
+		// Counted by the account, not by what is open: a world opened as the walk goes has few stops at first.
+		const places = this.world.about?.places ?? Object.keys(this.world.stops).length;
+		return `${this.world.asOf ?? ''}|${this.world.start}|${places}`;
 	}
 
 	/** The walk as plain data, to keep. */

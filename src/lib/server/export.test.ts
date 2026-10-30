@@ -68,6 +68,23 @@ describe('exportPage', () => {
 		expect(html.indexOf('id="world"')).toBeGreaterThan(html.indexOf('show(introduction(HEAD))'));
 	});
 
+	it('serves a tiled world without carrying it: the head inline, the tiles fetched as the walk reaches them', () => {
+		const html = exportPage({
+			engine: '',
+			world: { ...world, start: '0-0:0', stops: {} },
+			snapshotDate: '2026-10-24',
+			tiles: 'tiles/'
+		});
+		expect(html).not.toContain('id="world"');
+		const head = JSON.parse(
+			html.match(/<script type="application\/json" id="head">([^<]*)<\/script>/)![1]
+		);
+		expect(head.start).toBe('0-0:0');
+		expect(html).toContain('const TILES = "tiles/"');
+		expect(html).toContain('tiledWorld(HEAD');
+		expect(html).toContain('await ensure(game.needs(text))');
+	});
+
 	it('opens the world in the browser with its own decompression', () => {
 		expect(page()).toContain("new DecompressionStream('gzip')");
 	});
