@@ -29,6 +29,14 @@ if (!config) {
 	process.exit(1);
 }
 const narrator = loadNarrator(config);
+// The place the map is of (PLACE_NAME, PLACE_WITHIN; Addiscombe, in Croydon, unless told), and
+// whether to keep it out of search engines (NOINDEX), as a walk behind a flag is.
+const shown = {
+	...(process.env.PLACE_NAME
+		? { place: { name: process.env.PLACE_NAME, within: process.env.PLACE_WITHIN || undefined } }
+		: {}),
+	noindex: !!process.env.NOINDEX
+};
 const world = compileWorld(narrator, startStop(narrator, config).id, {
 	asOf: config.snapshotDate
 });
@@ -72,6 +80,7 @@ if (site) {
 			snapshotDate: config.snapshotDate,
 			flightsUrl: process.env.FLIGHTS_URL,
 			gaId: process.env.GA_MEASUREMENT_ID || undefined,
+			...shown,
 			siteUrl: process.env.SITE_URL || undefined,
 			tiles: 'tiles/'
 		})
@@ -111,7 +120,8 @@ if (site) {
 			engine,
 			world,
 			snapshotDate: config.snapshotDate,
-			flightsUrl: process.env.FLIGHTS_URL
+			flightsUrl: process.env.FLIGHTS_URL,
+			...shown
 		})
 	);
 	console.log(`${Object.keys(world.stops).length} stops written to ${path}`);
@@ -142,6 +152,7 @@ async function microsite(): Promise<string> {
 		],
 		script: bundle.outputFiles[0].text,
 		gaId: process.env.GA_MEASUREMENT_ID || undefined,
+		...shown,
 		siteUrl: process.env.SITE_URL || undefined
 	});
 }

@@ -73,3 +73,24 @@ export function mergeElements<T extends { type: string; id: number }>(lists: T[]
 		for (const e of list) if (!seen.has(`${e.type}/${e.id}`)) seen.set(`${e.type}/${e.id}`, e);
 	return [...seen.values()];
 }
+
+/** Answers that mean the server is busy, not that the question is wrong. */
+const BUSY = new Set([429, 502, 503, 504]);
+
+/**
+ * Asks, and while the server answers that it is busy, asks again after each wait in turn (in
+ * seconds), as Overpass asks of those who use it: the last answer, busy or not, is returned.
+ */
+export async function politely<T extends { status: number }>(
+	ask: () => Promise<T>,
+	waits: number[],
+	sleep: (seconds: number) => Promise<void>
+): Promise<T> {
+	let res = await ask();
+	for (const wait of waits) {
+		if (!BUSY.has(res.status)) return res;
+		await sleep(wait);
+		res = await ask();
+	}
+	return res;
+}

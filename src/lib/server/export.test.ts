@@ -383,3 +383,36 @@ describe('the head of the walk', () => {
 		expect(html).toContain('"@type":"VideoGame"');
 	});
 });
+
+describe('the page for another place', () => {
+	it('names the place the map is of, and keeps a flagged walk out of search engines', () => {
+		const html = exportPage({
+			engine: 'var Adventure = function () {};',
+			world,
+			snapshotDate: '2026-10-24',
+			place: { name: 'Croydon' },
+			noindex: true
+		});
+		expect(html).toContain('It starts with Croydon, told by Guide');
+		expect(html).not.toContain('Addiscombe');
+		expect(html).toContain('<meta name="robots" content="noindex">');
+		expect(html).toContain('<meta name="description" content="Walk Croydon as a text adventure');
+		expect(page()).not.toContain('noindex');
+		expect(page()).toContain('It starts with Addiscombe, in Croydon, told by Guide');
+	});
+
+	it('claims no address of the site’s own when kept out of search engines', () => {
+		const html = exportPage({
+			engine: 'var Adventure = function () {};',
+			world,
+			snapshotDate: '2026-10-24',
+			tiles: 'tiles/',
+			siteUrl: 'https://example.org',
+			place: { name: 'Croydon' },
+			noindex: true
+		});
+		expect(html).not.toContain('rel="canonical"');
+		expect(html).not.toContain('og:url');
+		expect(html).not.toContain('application/ld+json');
+	});
+});

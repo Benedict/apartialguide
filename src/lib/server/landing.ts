@@ -1,11 +1,11 @@
 import { withCsp } from './csp';
-import { COMMANDS, headMeta, jsonLd, PAGES } from './meta';
+import { COMMANDS, headMeta, homeDescription, jsonLd, PAGES } from './meta';
 import { themeBoot, themeCss } from '../site/themes';
 import { fontFaces, MONO } from './type';
 import type { Ledger } from '../core/adventure/world';
 import { faviconLinks, LOCKUP, ogMeta } from '../site/brand';
 import { longDate } from '../core/render/words';
-import { consentStrip, PRIVACY } from './export';
+import { ADDISCOMBE, consentStrip, placeWords, PRIVACY, robots, type Place } from './export';
 
 export interface LandingInput {
 	/** The snapshot's date, as YYYY-MM-DD. */
@@ -18,6 +18,10 @@ export interface LandingInput {
 	script: string;
 	/** The Google Analytics measurement ID: counted only once the reader says yes. */
 	gaId?: string;
+	/** The place the map is of: Addiscombe, in Croydon, unless told. */
+	place?: Place;
+	/** Kept out of search engines, as a walk behind a flag is. */
+	noindex?: boolean;
 	/** The site's own address (`SITE_URL`), for the image shown where it is shared. */
 	siteUrl?: string;
 }
@@ -34,6 +38,8 @@ export function landingPage({
 	excerpt,
 	script,
 	gaId,
+	place = ADDISCOMBE,
+	noindex,
 	siteUrl
 }: LandingInput): string {
 	const played = excerpt
@@ -49,12 +55,12 @@ export function landingPage({
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>A Partial Guide</title>
+<title>A Partial Guide</title>${robots(noindex)}
 ${themeBoot()}
 ${faviconLinks('/')}
 ${ogMeta(siteUrl)}
-${headMeta({ ...PAGES.home, siteUrl, site: true })}
-${jsonLd('home', siteUrl)}${siteUrl ? '' : '\n<meta name="twitter:card" content="summary">'}
+${headMeta({ ...PAGES.home, description: homeDescription(place), siteUrl: noindex ? undefined : siteUrl, site: true })}
+${jsonLd('home', noindex ? undefined : siteUrl)}${siteUrl ? '' : '\n<meta name="twitter:card" content="summary">'}
 <meta name="theme-color" content="#000000">
 <style>
 ${fontFaces('/')}
@@ -111,8 +117,8 @@ ${themeCss()}
 		<div class="brand">${LOCKUP}</div>
 		<h1>The world as a text adventure.</h1>
 		<p class="lede">Type a direction and walk. Every street, building, name and date comes from open data.</p>
-		<p>It starts with Addiscombe, in Croydon: ${n(about.streets)} streets and ${n(about.places)} places, from a map dated ${esc(longDate(snapshotDate))}.</p>
-		<a class="begin" href="walk/">Start in Addiscombe</a>
+		<p>It starts with ${esc(placeWords(place))}: ${n(about.streets)} streets and ${n(about.places)} places, from a map dated ${esc(longDate(snapshotDate))}.</p>
+		<a class="begin" href="walk/">Start in ${esc(place.name)}</a>
 	</section>
 
 	<div class="played">
@@ -129,7 +135,7 @@ ${themeCss()}
 		${COMMANDS.map(([words, rest]) => `<li>${words.map((w) => `<code>${esc(w)}</code>`).join(' ')}${rest ? ` ${esc(rest)}` : ''}</li>`).join('\n\t\t')}
 	</ul>
 
-	<p class="again"><a class="begin" href="walk/">Start in Addiscombe</a></p>
+	<p class="again"><a class="begin" href="walk/">Start in ${esc(place.name)}</a></p>
 
 	<footer>
 		<p>${gaId ? PRIVACY.counted : PRIVACY.none}</p>

@@ -35,6 +35,26 @@ describe('landingPage', () => {
 		expect(text).not.toMatch(/art piece|as it was played|earned by the data/);
 	});
 
+	it('starts wherever the map it is built with is, and says so everywhere it names the place', () => {
+		const croydon = landingPage({ ...input, place: { name: 'Croydon' } });
+		expect(croydon).not.toContain('Addiscombe');
+		expect(croydon).toContain('Start in Croydon');
+		expect(croydon).toMatch(/<meta name="description" content="[^"]*starts with Croydon\.[^"]*">/);
+		expect(landingPage({ ...input, place: { name: 'Inventa', within: 'Testshire' } })).toContain(
+			'It starts with Inventa, in Testshire:'
+		);
+	});
+
+	it('keeps a walk behind a flag out of search engines, and only then', () => {
+		expect(html).not.toContain('noindex');
+		expect(landingPage({ ...input, noindex: true })).toContain(
+			'<meta name="robots" content="noindex">'
+		);
+		const hidden = landingPage({ ...input, noindex: true, siteUrl: 'https://example.org' });
+		expect(hidden).not.toContain('rel="canonical"');
+		expect(hidden).not.toContain('application/ld+json');
+	});
+
 	it('carries the brand: the icon, the mark and name at the top, and the preview image where the address is known', () => {
 		expect(html).toContain('<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,');
 		expect(html).toContain('<link rel="apple-touch-icon" href="/apple-touch-icon.png">');

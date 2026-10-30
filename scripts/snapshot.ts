@@ -12,10 +12,22 @@
  * AREA="^Addiscombe (East|West)$" takes the box around the administrative boundaries whose names
  * match, from Overpass, and fetches the map in it from Overpass too: a whole area is more than the
  * OSM API will give at once. Without BBOX, AS_OF uses the box of the newest snapshot.
+ *
+ * FROM_OPL=croydon.opl BBOX=… SNAPSHOT_DATE=… reads a downloaded extract instead, cut to the box and
+ * written as OPL by osmium: the way to take a whole borough without asking a shared server for it.
  */
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { createReadStream, existsSync, mkdirSync, readdirSync, writeFileSync } from 'node:fs';
+import { createInterface } from 'node:readline';
 import { bboxAround, type LatLon } from '../src/lib/core/geo';
-import { bboxAroundBoundaries, mergeElements, placeCentre, tiles } from '../src/lib/server/area';
+import { readJson, writeJson } from '../src/lib/server/json';
+import { oplElement } from '../src/lib/server/opl';
+import {
+	bboxAroundBoundaries,
+	mergeElements,
+	placeCentre,
+	politely,
+	tiles
+} from '../src/lib/server/area';
 
 const api = process.env.OSM_API ?? 'https://api.openstreetmap.org/api/0.6';
 const headers = { 'User-Agent': 'a-partial-guide/0.1 (art project; snapshot script)' };
@@ -43,11 +55,20 @@ const name = process.env.SNAPSHOT_NAME ?? 'addiscombe';
 
 /** An Overpass query's answer, refusing a partial one (Overpass reports a timeout as a remark). */
 async function ask(query: string, what: string) {
-	const res = await fetch(overpass, {
-		method: 'POST',
-		headers: { ...headers, 'Content-Type': 'application/x-www-form-urlencoded' },
-		body: new URLSearchParams({ data: query })
-	});
+	// A busy server is asked again after 1, 2, 4, 8 and 16 minutes.
+	const res = await politely(
+		() =>
+			fetch(overpass, {
+				method: 'POST',
+				headers: { ...headers, 'Content-Type': 'application/x-www-form-urlencoded' },
+				body: new URLSearchParams({ data: query })
+			}),
+		[60, 120, 240, 480, 960],
+		async (seconds) => {
+			console.log(`Overpass is busy; asking again in ${seconds} s`);
+			await new Promise((r) => setTimeout(r, seconds * 1000));
+		}
+	);
 	if (!res.ok) {
 		console.error(`Overpass answered ${res.status} for ${what}: ${await res.text()}`);
 		process.exit(1);
@@ -93,14 +114,14 @@ if (!bbox && process.env.AROUND_PLACE) {
 	const radius = Number(process.env.RADIUS_M ?? 1200);
 	const snapshots = process.env.SNAPSHOT_DIR ?? 'data/snapshots';
 	const newest = readdirSync(snapshots)
-		.filter((f) => f.startsWith(name) && f.endsWith('.json'))
+		.filter((f) => f.startsWith(name) && /\.json(\.gz)?$/.test(f))
 		.sort()
 		.at(-1);
 	if (!newest) {
 		console.error(`AROUND_PLACE reads the place from a snapshot, and ${snapshots} has none`);
 		process.exit(1);
 	}
-	const { elements } = JSON.parse(readFileSync(`${snapshots}/${newest}`, 'utf8'));
+	const { elements } = readJson<{ elements: never[]; bbox: string }>(`${snapshots}/${newest}`);
 	const centre = placeCentre({
 		elements: elements.filter(
 			(e: { tags?: Record<string, string> }) => e.tags?.name === process.env.AROUND_PLACE
@@ -118,10 +139,10 @@ if (!bbox && process.env.AROUND_PLACE) {
 if (!bbox && process.env.AS_OF) {
 	const snapshots = process.env.SNAPSHOT_DIR ?? 'data/snapshots';
 	const newest = readdirSync(snapshots)
-		.filter((f) => f.startsWith(name) && f.endsWith('.json'))
+		.filter((f) => f.startsWith(name) && /\.json(\.gz)?$/.test(f))
 		.sort()
 		.at(-1);
-	bbox = newest && JSON.parse(readFileSync(`${snapshots}/${newest}`, 'utf8')).bbox;
+	bbox = newest && readJson<{ elements: never[]; bbox: string }>(`${snapshots}/${newest}`).bbox;
 	if (bbox) console.log(`bbox ${bbox}, from ${newest}`);
 }
 if (!bbox && process.env.AROUND_WAY) {
@@ -169,20 +190,32 @@ async function inTiles(box: string) {
 }
 const [w, south, e, north] = bbox.split(',');
 // Nodes and ways only, as for past maps: relations would pull in far-off members.
-const data = tiled
-	? { elements: await inTiles(bbox) }
-	: area
-		? await ask(
-				`[out:json][timeout:300];(node(${south},${w},${north},${e});way(${south},${w},${north},${e}););(._;>;);out meta;`,
-				'the map'
-			)
-		: await get(`/map.json?bbox=${bbox}`);
+/** A downloaded extract, cut to the box and written as OPL by osmium (FROM_OPL), read a line at a time. */
+async function fromOpl(path: string) {
+	const elements = [];
+	for await (const line of createInterface({ input: createReadStream(path) })) {
+		const element = oplElement(line);
+		if (element) elements.push(element);
+	}
+	return elements;
+}
+const data = process.env.FROM_OPL
+	? { elements: await fromOpl(process.env.FROM_OPL) }
+	: tiled
+		? { elements: await inTiles(bbox) }
+		: area
+			? await ask(
+					`[out:json][timeout:900][maxsize:2147483648];(node(${south},${w},${north},${e});way(${south},${w},${north},${e}););(._;>;);out meta;`,
+					'the map'
+				)
+			: await get(`/map.json?bbox=${bbox}`);
 const dir = process.env.SNAPSHOT_DIR ?? 'data/snapshots';
 mkdirSync(dir, { recursive: true });
-const path = `${dir}/${name}-${date}.json`;
+// A whole borough is kept gzipped (SNAPSHOT_GZIP=1): raw, it is more than a repository takes in one file.
+const path = `${dir}/${name}-${date}.json${process.env.SNAPSHOT_GZIP ? '.gz' : ''}`;
 // The same map again keeps the first capture, so its time of taking stays true.
 if (existsSync(path)) {
-	const previous = JSON.parse(readFileSync(path, 'utf8'));
+	const previous = readJson<{ bbox: string; taken: string; elements: unknown[] }>(path);
 	if (
 		previous.bbox === bbox &&
 		JSON.stringify(previous.elements) === JSON.stringify(data.elements)
@@ -191,13 +224,10 @@ if (existsSync(path)) {
 		process.exit(0);
 	}
 }
-writeFileSync(
-	path,
-	JSON.stringify({
-		bbox,
-		...(area ? { area } : {}),
-		taken: new Date().toISOString(),
-		elements: data.elements
-	})
-);
+writeJson(path, {
+	bbox,
+	...(area ? { area } : {}),
+	taken: new Date().toISOString(),
+	elements: data.elements
+});
 console.log(`${data.elements.length} elements written to ${path}`);

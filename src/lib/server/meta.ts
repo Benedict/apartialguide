@@ -14,17 +14,20 @@ export interface Page {
 	description: string;
 }
 
+/** The place a map is of, and the larger one it lies in, if any, as its descriptions name it. */
+type Named = { name: string; within?: string };
+const words = ({ name, within }: Named) => (within ? `${name}, in ${within}` : name);
+
+export const homeDescription = (place: Named) =>
+	`The world as a text adventure, built from open data. It starts with ${words(place)}.`;
+export const walkDescription = (place: Named) =>
+	`Walk ${words(place)}${place.within ? ',' : ''} as a text adventure: type a direction and go. Every street, building, name and date comes from open data.`;
+
+const HERE = { name: 'Addiscombe', within: 'Croydon' };
+
 export const PAGES = {
-	home: {
-		path: '/',
-		description:
-			'The world as a text adventure, built from open data. It starts with Addiscombe, in Croydon.'
-	},
-	walk: {
-		path: '/walk/',
-		description:
-			'Walk Addiscombe, in Croydon, as a text adventure: type a direction and go. Every street, building, name and date comes from open data.'
-	},
+	home: { path: '/', description: homeDescription(HERE) },
+	walk: { path: '/walk/', description: walkDescription(HERE) },
 	missing: { description: 'There is no page here.' }
 } satisfies Record<string, Page>;
 

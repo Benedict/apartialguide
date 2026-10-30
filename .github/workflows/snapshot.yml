@@ -31,7 +31,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/snapshots/*.json
+          git add data/snapshots/
           git diff --cached --quiet && { echo "No new snapshot"; exit 0; }
           git commit -m "Add OSM snapshot $(date -u +%F)"
           git push origin "HEAD:${GITHUB_REF_NAME}"
