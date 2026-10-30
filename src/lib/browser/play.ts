@@ -9,4 +9,5 @@ export { fetchArrivals } from './transit';
 export { loadSettings, saveSettings } from './settings';
 export { browserSaves } from './saves';
 export { browserHints } from './hints';
+export { applyTheme, loadTheme, saveTheme } from './theme';
 export { fetchCamera, fetchFlights, fetchSatellites } from './live';

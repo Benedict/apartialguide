@@ -43,6 +43,13 @@ describe('landingPage', () => {
 		);
 	});
 
+	it('takes the reader’s colours before it is drawn', () => {
+		expect(html.indexOf("localStorage.getItem('a-partial-guide:theme')")).toBeLessThan(
+			html.indexOf('<body')
+		);
+		expect(html).toContain(':root[data-theme="amber"]');
+	});
+
 	it('is set in Commit Mono, served from the site', () => {
 		expect(html).toContain("url('/fonts/commit-mono-400.woff2')");
 		expect(html).toContain("--mono: 'Commit Mono',");

@@ -1,3 +1,4 @@
+import { themeBoot, themeCss } from '../site/themes';
 import { fontFaces, MONO } from './type';
 import type { Ledger } from '../core/adventure/world';
 import { faviconLinks, LOCKUP, ogMeta } from '../site/brand';
@@ -49,6 +50,7 @@ export function landingPage({
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>A Partial Guide</title>
+${themeBoot()}
 ${faviconLinks('/')}
 ${ogMeta(siteUrl)}
 <meta name="description" content="${esc(DESCRIPTION)}">
@@ -98,6 +100,7 @@ ${fontFaces('/')}
 	.consent[hidden] { display: none; }
 	.consent p { margin: 0 auto; max-width: 44rem; }
 	.consent button { font: inherit; margin-left: 0.5ch; }
+${themeCss()}
 </style>
 </head>
 <body>

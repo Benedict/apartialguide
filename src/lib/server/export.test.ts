@@ -298,6 +298,18 @@ describe('the brand in the page', () => {
 	});
 });
 
+describe('the colours of the page', () => {
+	it('takes the reader’s colours before it is drawn, and offers all four in Settings', () => {
+		const html = page();
+		expect(html.indexOf("localStorage.getItem('a-partial-guide:theme')")).toBeLessThan(
+			html.indexOf('<body')
+		);
+		expect(html).toContain(':root[data-theme="red"]');
+		for (const colour of ['paper', 'green', 'amber', 'red'])
+			expect(html).toMatch(new RegExp(`<input type="radio" name="theme" value="${colour}"`));
+	});
+});
+
 describe('the type of the page', () => {
 	it('carries Commit Mono inside the single page, and credits it on About under its licence', () => {
 		expect(page()).toContain("--mono: 'Commit Mono',");

@@ -1,3 +1,4 @@
+import { THEMES, themeBoot, themeCss } from '../site/themes';
 import { fontFaces, MONO } from './type';
 import { faviconLinks, LOCKUP, ogMeta } from '../site/brand';
 import { gzipSync } from 'node:zlib';
@@ -81,8 +82,15 @@ function settingsPage(counted: boolean): string {
 		(l) =>
 			`<label class="choice"><input type="checkbox" name="${l.key}" checked><span>${esc(l.label)} <span class="terms">(${esc(l.source)})</span></span></label>`
 	).join('\n\t\t');
+	const colours = THEMES.map(
+		(t) =>
+			`<label class="choice"><input type="radio" name="theme" value="${t.key}"><span>${esc(t.label)}</span></label>`
+	).join('\n\t\t\t');
 	return `<section id="settings" class="view" hidden>
 		<h2>Settings</h2>
+		<fieldset class="colours"><legend>Colours</legend>
+			${colours}
+		</fieldset>
 		<p>Guide can ask these sources from your browser as you read, always for the map’s own places, never yours. Turn any off and nothing is asked of it; Guide then says nothing of it.</p>
 		${choices}${
 			counted
@@ -133,6 +141,7 @@ export function exportPage({
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <title>A Partial Guide</title>
+${themeBoot()}
 ${faviconLinks(tiles ? '/' : undefined)}
 ${ogMeta(siteUrl)}
 <style>
@@ -213,6 +222,9 @@ ${fontFaces(tiles ? '/' : undefined)}
 		padding-bottom: max(0.6rem, env(safe-area-inset-bottom, 0px));
 	}
 	.menu a { color: var(--muted); }
+${themeCss()}
+	.colours { border: 0; padding: 0; margin: 0.6rem 0 1rem; display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
+	.colours legend { color: var(--bright); font-weight: 700; padding: 0; margin-bottom: 0.3rem; }
 </style>
 </head>
 <body>
@@ -300,6 +312,16 @@ ${consentStrip('this page')}`
 			button.addEventListener('click', () => answer(button.dataset.consent));
 		consentBox.checked = loadConsent() === 'granted';
 		consentBox.addEventListener('change', () => answer(consentBox.checked ? 'granted' : 'denied'));
+	}
+	// The colours, chosen here or by "colour green" on the walk, kept in this browser.
+	function colour(theme) {
+		applyTheme(theme);
+		saveTheme(theme);
+		for (const radio of document.querySelectorAll('#settings input[name="theme"]')) radio.checked = radio.value === theme;
+	}
+	for (const radio of document.querySelectorAll('#settings input[name="theme"]')) {
+		radio.checked = radio.value === loadTheme();
+		radio.addEventListener('change', () => colour(radio.value));
 	}
 	for (const box of document.querySelectorAll('#settings input[type="checkbox"]:not([name="analytics"])')) {
 		box.checked = settings[box.name] !== false;
@@ -390,6 +412,7 @@ ${consentStrip('this page')}`
 			section.append(img);
 		}
 		transcript.append(section);
+		if (reply.theme) colour(reply.theme);
 		if (reply.follow === false) unfollow();
 		if (reply.map) reply.follow ? follow(reply.map) : drawMap(section, reply.map);
 		reveal();

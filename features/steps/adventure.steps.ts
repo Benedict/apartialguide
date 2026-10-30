@@ -402,3 +402,11 @@ Then('it links to Google Maps at where the map puts the reader', function (this:
 		`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${lat},${lon}`)}`
 	);
 });
+
+Then('the page is coloured {string}', function (this: NarratorWorld, theme: string) {
+	assert.equal(state(this).reply!.theme, theme);
+});
+
+Then('the page keeps its colours', function (this: NarratorWorld) {
+	assert.equal(state(this).reply!.theme, undefined);
+});

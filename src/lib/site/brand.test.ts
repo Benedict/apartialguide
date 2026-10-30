@@ -12,8 +12,15 @@ describe('the brand', () => {
 	it('sets the name beside it as shapes, so it looks the same on every device', () => {
 		expect(LOCKUP).toContain('role="img"');
 		expect(LOCKUP).toContain('aria-label="A Partial Guide"');
+		expect(LOCKUP).toMatch(/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" viewBox="0 0 \d+ 112"/);
 		expect(LOCKUP).not.toContain('<text');
 		expect(LOCKUP).not.toMatch(/font-family/);
+	});
+
+	it('takes the page’s colours in the mark and name on a page, and keeps its own in the icon', () => {
+		expect(LOCKUP).toContain('var(--ink');
+		expect(LOCKUP).toContain('var(--bright');
+		expect(MARK).not.toContain('var(');
 	});
 
 	it('gives the page its icon in the page itself, and the home-screen icon where the site serves it', () => {
