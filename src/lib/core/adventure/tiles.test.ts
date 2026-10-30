@@ -46,6 +46,13 @@ describe('tileWorld', () => {
 		expect(all).toContain(head.start);
 	});
 
+	it('carries the street network apart, under the names the tiles give', () => {
+		const { routes } = tileWorld(world, 300);
+		expect(Object.keys(routes.stops).sort()).toEqual([...all].sort());
+		for (const s of Object.values(routes.stops))
+			for (const [, to] of s.exits) expect(all).toContain(to);
+	});
+
 	it('carries the head apart: everything but the stops', () => {
 		expect(head).not.toHaveProperty('stops');
 		expect(head.about?.places).toBe(3);

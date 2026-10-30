@@ -433,12 +433,26 @@ export function exportPage({
 		fit();
 	}
 
+	// The street network, served apart, for planning a way: fetched the first time one is asked for.
+	let routes;
+	function loadRoutes() {
+		routes ??= fetch('routes.json')
+			.then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
+			.then((index) => (game.routes = index))
+			.catch((error) => {
+				routes = undefined;
+				throw error;
+			});
+		return routes;
+	}
+
 	async function run(text) {
 		history.push(text);
 		recall = history.length;
 		transcript.append(el('p', '> ' + text, 'command'));
 		try {
 			await ensure(game.needs(text));
+			if (game.needsRoutes(text)) await loadRoutes();
 		} catch {
 			return show({ lines: ['The way will not come clear. Try again in a moment.'] });
 		}

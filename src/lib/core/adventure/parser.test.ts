@@ -56,6 +56,16 @@ describe('parse', () => {
 			'write down est bank'
 		])
 			expect(parse(text)).toEqual({ verb: 'remember', target: 'est bank' });
+		for (const text of [
+			'route to the sextant',
+			'way to the sextant',
+			'the way to the sextant',
+			'directions to the sextant',
+			'how do i get to the sextant'
+		])
+			expect(parse(text)).toEqual({ verb: 'route', target: 'the sextant' });
+		for (const text of ['route off', 'no route', 'forget the way'])
+			expect(parse(text)).toEqual({ verb: 'route' });
 		for (const text of ['gps on', 'GPS on', 'map on'])
 			expect(parse(text)).toEqual({ verb: 'follow', on: true });
 		for (const text of ['gps off', 'map off'])

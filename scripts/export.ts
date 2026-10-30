@@ -50,10 +50,11 @@ const bundle = await build({
 const engine = bundle.outputFiles[0].text;
 const site = process.env.SITE_DIR;
 if (site) {
-	const { head, tiles } = tileWorld(world, Number(process.env.TILE_M ?? 300));
+	const { head, tiles, routes } = tileWorld(world, Number(process.env.TILE_M ?? 300));
 	mkdirSync(join(site, 'tiles'), { recursive: true });
 	for (const [key, tile] of Object.entries(tiles))
 		writeFileSync(join(site, 'tiles', `${key}.json`), JSON.stringify(tile));
+	writeFileSync(join(site, 'routes.json'), JSON.stringify(routes));
 	writeFileSync(
 		join(site, 'index.html'),
 		exportPage({
