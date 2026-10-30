@@ -425,3 +425,40 @@ describe('prose that would say again what was just said', () => {
 		expect(next).toContain('A post box.');
 	});
 });
+
+describe('names Guide carries, once they have come back', () => {
+	// The invented street: "est Bank" is spoken at its west end, and comes back four moves on.
+	const recalling = () => {
+		const game = new Adventure(world);
+		game.chance = () => 0;
+		game.begin();
+		game.respond('take the tour');
+		for (const way of ['east', 'east', 'west']) game.respond(way);
+		return { game, back: game.respond('east') };
+	};
+
+	it('says in the inventory what Guide is still carrying, once it has come back', () => {
+		const { game, back } = recalling();
+		expect(back.lines.join(' ')).toContain('“est Bank”');
+		expect(game.respond('i').lines).toEqual([
+			'You are carrying nothing. Names, perhaps, if you take them. I am still carrying “est Bank”.'
+		]);
+	});
+
+	it('lets the reader examine what Guide carries, and says only that it is a name as found', () => {
+		const { game } = recalling();
+		expect(game.respond('examine est bank').lines).toEqual(['A name, as I found it.']);
+	});
+
+	it('says nothing of it before it has come back', () => {
+		const game = new Adventure(world);
+		game.chance = () => 0.99;
+		game.begin();
+		game.respond('take the tour');
+		game.respond('east');
+		expect(game.respond('i').lines).toEqual([
+			'You are carrying nothing. Names, perhaps, if you take them.'
+		]);
+		expect(game.respond('examine est bank').lines).toEqual(['You see no est bank here.']);
+	});
+});

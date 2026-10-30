@@ -568,9 +568,12 @@ export class Adventure {
 	}
 
 	private inventory(): string {
-		return this.pocket.length
+		const yours = this.pocket.length
 			? `You are carrying ${listed(this.pocket.map(quote))}.`
 			: 'You are carrying nothing. Names, perhaps, if you take them.';
+		// What Guide carries is told once it has come back, never where it was found.
+		const mine = [...this.recalled];
+		return mine.length ? `${yours} I am still carrying ${listed(mine.map(quote))}.` : yours;
 	}
 
 	/** Takes a name: of something left here, a broken name spoken here, or a thing here. Never the thing. */
@@ -867,6 +870,12 @@ export class Adventure {
 		return RECALLED[Math.floor(this.chance() * RECALLED.length)](fragment);
 	}
 
+	/** Whether Guide carries a name the words mean, one that has already come back. */
+	private carrying(target: string): boolean {
+		const words = target.toLowerCase().split(/\s+/);
+		return [...this.recalled].some((n) => words.every((w) => n.toLowerCase().includes(w)));
+	}
+
 	private explore(): Reply {
 		const hidden = this.world.stops[this.here].hidden;
 		if (!hidden || this.explored.has(this.here))
@@ -885,6 +894,7 @@ export class Adventure {
 		// Something unnoticed can still be found by naming it.
 		if (things.length === 0 && stop.hidden) things = named(stop.hidden.things);
 		if (things.length === 0) things = named(stop.streets ?? []);
+		if (things.length === 0 && this.carrying(target)) return { lines: ['A name, as I found it.'] };
 		if (things.length === 0) return { lines: [`You see no ${target} here.`] };
 		if (things.length > 1 && !things.every((t) => t.name === things[0].name))
 			return { lines: [`Which do you mean: ${things.map((t) => t.name).join(' or ')}?`] };
