@@ -13054,6 +13054,15 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-30"
  },
+ "v16-0df00f57a26792ec": {
+  "paragraphs": [
+   "Ashburton Avenue and Craigen Avenue meet, lit at night, at 20 mph.",
+   "North, beside you, a plaque the map does not have: “R. F. Delderfield 1912-1972 writer & dramatist lived here from 1918 to 1923. His books \"The Avenue\" are based on his life in this area”. South-west, as close, a tree. Those two; the rest can stand.",
+   "The Avenue in his books, and Ashburton Avenue here."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-30"
+ },
  "v16-0f3342de005c9f25": {
   "paragraphs": [
    "Lower Addiscombe Road, lit, with pavement both sides and a limit of 30 mph. More is here than I set down. Residential lies north, retail east.",
@@ -14172,6 +14181,16 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-30"
  },
+ "v16-51a0e64737496274": {
+  "paragraphs": [
+   "Lower Addiscombe Road takes in Colworth Road here, lit by night, a pavement to each hand, 20 mph; the “Addiscombe Village shopping area” and a residential area lie together to the north-west.",
+   "North, beside you, a telephone run by BT. It was there in January 2021, when it was last recorded; it is there still, or it was. South, as near, a speed table.",
+   "North-east, at 257, an address that was “Boots” in January 2021, or is “Boots” and the address the newer word. It sold for £600,000 in May 2022, it is said, and since May 2026 “M&J HOUSEWARE LTD” is registered there. Here I lose count, and take it up again.",
+   "South, some 45 metres down Colworth Road, a plaque the map does not carry: “Betty Westgate MBE 1919-2000 A pioneer and campaigner for breast cancer support and education.”"
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-30"
+ },
  "v16-51f95b86cb64c9a0": {
   "paragraphs": [
    "An unnamed path, grass underfoot, a residential area to the north.",
@@ -14891,11 +14910,31 @@
   "model": "written in a Claude Code session",
   "written": "2026-10-30"
  },
+ "v16-86064ab293d2bc3b": {
+  "paragraphs": [
+   "Colworth Road, halfway between Lower Addiscombe Road and Northampton Road. Lit at night, a pavement on both sides, 20 mph.",
+   "Right here, a plaque the map does not have. It reads: “D. H. Lawrence lived and wrote 'Sons & Lovers' here at number 16 1908-1911 Writer and artist”.",
+   "A tree to the west, beside you, and then I lose count, and find my place a few steps north, at another plaque: “Betty Westgate MBE 1919-2000 A pioneer and campaigner for breast cancer support and education.” From this house, it goes on, in 1973.",
+   "A writer and a campaigner, a few steps apart on Colworth Road."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-30"
+ },
  "v16-8766d7befcac568c": {
   "paragraphs": [
    "The end of an unnamed path. Ground underfoot, and a residential area off to the south-east.",
    "The park is here, “Woodside Green”. So is a kerb, with tactile paving, at the point where the path runs out.",
    "I give you those and no others. Ground, then paving, then the kerb; the path ends on a hard edge, inside a green."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-30"
+ },
+ "v16-880fca1070624421": {
+  "paragraphs": [
+   "Addiscombe Road and Canning Road meet here: pavement on one side, 20 mph, a residential area round about.",
+   "Right where you stand, the tram, “London Trams”, run by Transport for London, and the level crossing it takes over the road. Those two, and I go no further.",
+   "West, beside you, a plaque the map does not have. It reads: “Ashleigh & India Houses 1848 Houses for professors of the East India Company's Military Seminary”.",
+   "Houses for professors, 1848; at the crossing, the tram."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-30"
@@ -15442,6 +15481,15 @@
    "Coleridge Road comes to its end. The limit, while it lasts, is 20 mph.",
    "Beside you to the north, two names stand off the map. “Ashburton”, they say, is a “former ward in the London Borough of Croydon”. “Addiscombe East” is said to be an “electoral ward in the London borough of Croydon”, begun in 2018.",
    "The road ends between a ward that was and a ward that is. The map does not mark where one gives way to the other."
+  ],
+  "model": "written in a Claude Code session",
+  "written": "2026-10-30"
+ },
+ "v16-b390b2cc56e04dee": {
+  "paragraphs": [
+   "Outram Road, between a dead end and Mulberry Lane. Lit at night, pavement on both sides, 20 mph. More is here than I give.",
+   "A few steps east, a detached building, 20 Outram Road, and by it a plaque the map does not have. It reads: “Frederick George Creed 1871-1957 electrical engineer, inventor of the teleprinter lived and died here”.",
+   "Lived and died here, at a building the map numbers 20."
   ],
   "model": "written in a Claude Code session",
   "written": "2026-10-30"

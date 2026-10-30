@@ -4,7 +4,7 @@ import { list as listOf, monthYear, numberWord } from './words';
 
 /** What Guide says of each other source's facts about a thing. Nouns, numbers and dates are the source's. */
 /** A quotation as found, closing the sentence itself when it ends with its own full stop. */
-const quoted = (text: string) => (/[.!?]$/.test(text.trim()) ? `“${text}”` : `“${text}”.`);
+export const quoted = (text: string) => (/[.!?]$/.test(text.trim()) ? `“${text}”` : `“${text}”.`);
 
 /** Each saying, and whether it is short enough to tell in a room rather than on a closer look. */
 const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [

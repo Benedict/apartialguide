@@ -136,7 +136,13 @@ export class Narrator {
 			...(options.records ?? []).flatMap((store) => new RecordsAdapter(osm, store).facts())
 		];
 		return new Narrator(
-			buildStopGraph(osm, options),
+			buildStopGraph(osm, {
+				...options,
+				// A plaque is worth stopping at, wherever it is recorded.
+				landmarks: facts
+					.filter((f) => f.claim.key === 'plaque:inscription' && f.geometry.length)
+					.map((f) => f.geometry[0])
+			}),
 			Perception.fromOsm(osm, facts),
 			options,
 			ledgerOf(osm, facts, options.records ?? []),

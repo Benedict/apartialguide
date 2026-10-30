@@ -62,6 +62,20 @@ describe('buildPrompt', () => {
 		expect(buildPrompt(scene()).system).not.toMatch(/asphalt/i);
 	});
 
+	it('has a plaque read as it reads, not given as hearsay', () => {
+		const words = 'A. Inventa 1900-1950 wrote here';
+		const plaque = {
+			subject: 'plaque/7',
+			facts: facts('plaque/7', { 'plaque:name': words, 'plaque:inscription': words }, near).map(
+				(f) => ({ ...f, source: 'Open Plaques', elsewhere: true as const })
+			),
+			effects: []
+		};
+		const user = buildPrompt(scene({ beats: [plaque] })).user;
+		expect(user).toContain(': a plaque, which the map does not have.');
+		expect(user).toContain('Read the plaque’s words as it gives them, not as hearsay.');
+	});
+
 	it('gives each noticed thing its place, its record and what to do with it', () => {
 		const user = buildPrompt(scene({ beats: [bank, shop] })).user;
 		expect(user).toContain('To the north, a few steps away: a retail building');

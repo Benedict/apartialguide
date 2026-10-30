@@ -15,7 +15,7 @@ import { isBackground, type Beat } from '../slippage';
 import { isElsewhere, isHistory } from '../tensions';
 import { aside } from './hearsay';
 import type { Part, Renderer, Room, Thing } from './renderer';
-import { recordSentences } from './records';
+import { quoted, recordSentences } from './records';
 import {
 	address,
 	article,
@@ -370,6 +370,8 @@ const CROWD_OPENERS = [
 function brief(beat: Beat): { phrase: string; noun?: string } {
 	const tags = tagsFor(beat);
 	if (isElsewhereOnly(beat)) {
+		if (tags['plaque:inscription'])
+			return { phrase: `a plaque reading “${tags['plaque:inscription']}”` };
 		const { label, what, kind } = otherAccount(tags);
 		const called = label ? `“${label}”` : kind ? article(kind) : what ? `“${what}”` : 'a thing';
 		return { phrase: `${called}, ${aside(called)}` };
@@ -567,6 +569,13 @@ function describeBeat(
 	const use = currentUse(tags);
 
 	if (isElsewhereOnly(beat)) {
+		// A plaque is put up to be read: its words are read, not passed on as hearsay.
+		const { 'plaque:inscription': words, ...rest } = tags;
+		if (words)
+			return [
+				`${lead(place)} is a plaque: ${quoted(words)}`,
+				...recordSentences(rest, 'room')
+			].join(' ');
 		return [
 			`${place}, ${aside(calledElsewhere(tags))}, is ${calledElsewhere(tags)}.`,
 			...recordSentences(tags, 'room')

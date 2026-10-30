@@ -32,6 +32,8 @@ export interface Stop {
 export interface StopGraphOptions {
 	/** Largest gap between stops along a street, in metres. */
 	spacing?: number;
+	/** Other places to stop beside, as named places are: plaques another account records. */
+	landmarks?: readonly LatLon[];
 }
 
 /** Highways a person can walk along. Anything else is not a street to the reader. */
@@ -121,7 +123,10 @@ const nameOf = (way: OsmWay) => way.tags?.name ?? way.tags?.ref;
  * metres apart. Driveways, parking aisles, pavements and crossings make no stop, nor does a short
  * unnamed way that leads nowhere; a junction drawn as several close nodes is one stop.
  */
-export function buildStopGraph(osm: OsmIndex, { spacing = 150 }: StopGraphOptions = {}): StopGraph {
+export function buildStopGraph(
+	osm: OsmIndex,
+	{ spacing = 150, landmarks = [] }: StopGraphOptions = {}
+): StopGraph {
 	const ways = osm.ways.filter((w) => isWalkable(w) && !isMinor(w));
 	const at = (id: number): LatLon => {
 		const n = osm.nodes.get(id)!;
@@ -232,7 +237,7 @@ export function buildStopGraph(osm: OsmIndex, { spacing = 150 }: StopGraphOption
 		return stop;
 	};
 
-	const places = namedPlaces(osm);
+	const places = [...namedPlaces(osm), ...landmarks];
 	const walked = new Set<string>();
 	let chains = 0;
 	for (const id of keys)
@@ -454,7 +459,12 @@ function namedPlaces(osm: OsmIndex): LatLon[] {
  * Where along a street, between its two ends, to put stops: beside named places (those close
  * together sharing one), and then wherever the gap would still be longer than `spacing`.
  */
-function stopsAlong(line: LatLon[], length: number, places: LatLon[], spacing: number): number[] {
+function stopsAlong(
+	line: LatLon[],
+	length: number,
+	places: readonly LatLon[],
+	spacing: number
+): number[] {
 	const [s, w, n, e] = boxAround(line, PLACE_REACH_M);
 	const near = places
 		.filter(([lat, lon]) => lat >= s && lat <= n && lon >= w && lon <= e)

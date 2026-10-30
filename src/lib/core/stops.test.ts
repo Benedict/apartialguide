@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { distance } from './geo';
+import { destination, distance } from './geo';
 import { OsmIndex } from './osm';
 import { buildStopGraph, junctionId } from './stops';
 import { SyntheticMap } from './testing/synthetic';
@@ -50,6 +50,18 @@ describe('buildStopGraph', () => {
 			const gap = distance(graph.get(path[i - 1])!.position, graph.get(path[i])!.position);
 			expect(gap).toBeCloseTo(46, 0);
 		}
+	});
+
+	it('stops beside a landmark along a street, such as a plaque', () => {
+		const map = new SyntheticMap();
+		const a = map.node(O);
+		const b = map.nodeFrom(O, 90, 200);
+		map.way([a, b]);
+		const plaque = destination(destination(O, 90, 80), 0, 12);
+		const graph = buildStopGraph(new OsmIndex(map.toData()), { landmarks: [plaque] });
+		const path = graph.walk(junctionId(a), 'east');
+		expect(path).toHaveLength(3);
+		expect(distance(graph.get(path[1])!.position, plaque)).toBeLessThan(15);
 	});
 
 	it('ignores ways that are not walkable streets', () => {

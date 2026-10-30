@@ -500,6 +500,23 @@ describe('AdventureRenderer', () => {
 			);
 		});
 
+		it('reads a plaque only another account has, as a plaque, not as hearsay', () => {
+			const words = 'A. Inventa 1900-1950 wrote here';
+			const plaque = {
+				subject: 'plaque/7',
+				facts: facts(
+					'plaque/7',
+					{ 'plaque:name': words, 'plaque:description': 'plaque', 'plaque:inscription': words },
+					north(5)
+				).map((f) => ({ ...f, source: 'Open Plaques', elsewhere: true as const })),
+				effects: []
+			};
+			const t = text(scene({ beats: [plaque] }));
+			expect(t).toMatch(new RegExp(`^To the north, [^.]*, is a plaque: “${words}”\.`, 'm'));
+			expect(t.split(words)).toHaveLength(2);
+			expect(t).not.toMatch(/they say|it is said|someone wrote down/i);
+		});
+
 		it('tells a bench only another account has, by its inscription as found', () => {
 			const bench = {
 				subject: 'bench/7',
