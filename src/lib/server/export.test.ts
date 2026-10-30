@@ -112,6 +112,13 @@ describe('exportPage', () => {
 		expect(html).toMatch(/\.hint \{[^}]*color: var\(--muted\)/);
 	});
 
+	it('keeps the start of the latest reply in view, never scrolling past what the reader has not read', () => {
+		const html = page();
+		expect(html).toContain("anchor = transcript.appendChild(el('p', '> ' + text, 'command'));");
+		expect(html).toContain('scroll.scrollTop = Math.max(0, Math.min(start, end));');
+		expect(html).not.toContain('scroll.scrollTop = scroll.scrollHeight');
+	});
+
 	it('asks nothing of Google without a measurement ID', () => {
 		const html = page();
 		expect(html).not.toContain('googletagmanager');

@@ -230,11 +230,21 @@ ${consentStrip('this page')}`
 	const scroll = document.getElementById('scroll');
 	const form = document.getElementById('prompt');
 	const views = { game: document.getElementById('game'), about: document.getElementById('about'), settings: document.getElementById('settings') };
+	// What the reader last typed: the reply below it is read from its start, never scrolled past.
+	let anchor;
+	// The newest of the walk in view: to the end, unless that would scroll the start of the latest reply away.
+	function reveal() {
+		const end = scroll.scrollHeight - scroll.clientHeight;
+		const start = anchor
+			? anchor.getBoundingClientRect().top - scroll.getBoundingClientRect().top + scroll.scrollTop
+			: end;
+		scroll.scrollTop = Math.max(0, Math.min(start, end));
+	}
 	// The page is as tall as what is visible, so an on-screen keyboard pushes the prompt up, not over it.
 	const fit = () => {
 		const vv = window.visualViewport;
 		document.documentElement.style.setProperty('--height', (vv ? vv.height : window.innerHeight) + 'px');
-		if (!views.game.hidden) scroll.scrollTop = scroll.scrollHeight;
+		if (!views.game.hidden) reveal();
 	};
 	if (window.visualViewport) {
 		window.visualViewport.addEventListener('resize', fit);
@@ -248,7 +258,7 @@ ${consentStrip('this page')}`
 		const view = at in views && at !== 'game' ? at : 'game';
 		for (const [name, el] of Object.entries(views)) el.hidden = name !== view;
 		form.hidden = view !== 'game';
-		if (view === 'game') scroll.scrollTop = scroll.scrollHeight;
+		if (view === 'game') reveal();
 		else scroll.scrollTop = 0;
 	}
 	window.addEventListener('hashchange', route);
@@ -366,13 +376,13 @@ ${consentStrip('this page')}`
 			const img = el('img', '', 'picture');
 			img.src = reply.image.src;
 			img.alt = reply.image.alt;
-			img.addEventListener('load', () => (scroll.scrollTop = scroll.scrollHeight));
+			img.addEventListener('load', reveal);
 			section.append(img);
 		}
 		transcript.append(section);
 		if (reply.follow === false) unfollow();
 		if (reply.map) reply.follow ? follow(reply.map) : drawMap(section, reply.map);
-		scroll.scrollTop = scroll.scrollHeight;
+		reveal();
 		showStatus();
 		if (reply.title) {
 			input.placeholder = 'north, look, examine… or help';
@@ -434,7 +444,7 @@ ${consentStrip('this page')}`
 					clearTimeout(late);
 					box.classList.add('drawn');
 					map.resize();
-					scroll.scrollTop = scroll.scrollHeight;
+					reveal();
 				});
 			})
 			.catch(() => {});
@@ -503,7 +513,7 @@ ${consentStrip('this page')}`
 	async function run(text) {
 		history.push(text);
 		recall = history.length;
-		transcript.append(el('p', '> ' + text, 'command'));
+		anchor = transcript.appendChild(el('p', '> ' + text, 'command'));
 		try {
 			await ensure(game.needs(text));
 			if (game.needsRoutes(text)) await loadRoutes();

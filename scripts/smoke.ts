@@ -110,6 +110,26 @@ try {
 	const map = page.locator('#transcript a[href^="https://www.google.com/maps/"]').last();
 	check((await map.count()) === 1, 'gps gives no link to Google Maps');
 
+	// A reply longer than the screen is read from its start: the command typed stays in view, at the top,
+	// not scrolled away above (a phone with its keyboard up has little room).
+	await page.setViewportSize({ width: 390, height: 420 });
+	await input.fill('look');
+	await input.press('Enter');
+	await says(page, /Exits?:/);
+	await page.waitForTimeout(200);
+	const typed = await page.evaluate(() => {
+		const scroll = document.getElementById('scroll')!.getBoundingClientRect();
+		const line = [...document.querySelectorAll('#transcript .command')]
+			.at(-1)!
+			.getBoundingClientRect();
+		return { line: line.top - scroll.top, height: scroll.height };
+	});
+	check(
+		typed.line >= -1 && typed.line < typed.height / 3,
+		`a long reply's start is out of view: the command typed is ${Math.round(typed.line)} px from the top`
+	);
+	await page.setViewportSize({ width: 390, height: 844 });
+
 	// On a wide screen gps tries for a map; with nothing answering, the walk carries on without one.
 	await page.setViewportSize({ width: 1200, height: 800 });
 	await input.fill('gps');
