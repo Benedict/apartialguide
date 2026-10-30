@@ -4,6 +4,26 @@
   publish = "site"
   edge_functions = "netlify/edge-functions"
 
+# The headers The Website Specification requires of every page: HTTPS only, no sniffing, no
+# framing by another site, a careful referrer, and none of the device's powers asked for: the walk
+# never asks where the reader is, nor for a camera or a microphone.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Content-Security-Policy = "frame-ancestors 'none'"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()"
+
+# The fonts never change between deploys, so a browser may keep them a week; the pages and the walk's
+# tiles change with each deploy, and keep Netlify's own rule, to ask again each time.
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
 # A walk behind a flag is kept out of search engines by header as well as by its page.
 [[headers]]
   for = "/croydon/*"

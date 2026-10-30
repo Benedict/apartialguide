@@ -11,12 +11,14 @@
  * counted only once a reader says yes.
  */
 import { build } from 'esbuild';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { copyFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { Adventure } from '../src/lib/core/adventure/engine';
 import { tileWorld } from '../src/lib/core/adventure/tiles';
 import { landingPage } from '../src/lib/server/landing';
+import { llmsTxt, manifest, robotsTxt, sitemapXml } from '../src/lib/server/meta';
 import { notFoundPage } from '../src/lib/server/notfound';
+import { FONT_FILES } from '../src/lib/server/type';
 import { compileWorld } from '../src/lib/core/adventure/world';
 import { exportPage, wordsAmiss } from '../src/lib/server/export';
 import { loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
@@ -79,11 +81,33 @@ if (site) {
 			flightsUrl: process.env.FLIGHTS_URL,
 			gaId: process.env.GA_MEASUREMENT_ID || undefined,
 			...shown,
+			siteUrl: process.env.SITE_URL || undefined,
 			tiles: 'tiles/'
 		})
 	);
 	writeFileSync(join(site, 'index.html'), await microsite());
 	writeFileSync(join(site, '404.html'), notFoundPage());
+	// What the site says of itself: robots.txt, the sitemap (once it knows its address), llms.txt for
+	// agents, and the manifest that lets the walk be added to a home screen.
+	const siteUrl = process.env.SITE_URL || undefined;
+	writeFileSync(join(site, 'robots.txt'), robotsTxt(siteUrl));
+	if (siteUrl) writeFileSync(join(site, 'sitemap.xml'), sitemapXml(siteUrl, config.snapshotDate));
+	writeFileSync(join(site, 'llms.txt'), llmsTxt(siteUrl));
+	writeFileSync(join(site, 'site.webmanifest'), manifest());
+	// The type, with its licence, as the Open Font License asks.
+	mkdirSync(join(site, 'fonts'), { recursive: true });
+	for (const file of FONT_FILES)
+		copyFileSync(join('static', 'fonts', file), join(site, 'fonts', file));
+	// The brand's pictures, drawn by `npm run brand`: the home-screen icon and the preview image.
+	for (const picture of [
+		'apple-touch-icon.png',
+		'og.png',
+		'icon-192.png',
+		'icon-512.png',
+		'icon-maskable-512.png',
+		'favicon.ico'
+	])
+		copyFileSync(join('static', picture), join(site, picture));
 	console.log(
 		`${Object.keys(world.stops).length} stops written to ${walk} in ${Object.keys(tiles).length} tiles, and the microsite to ${site}`
 	);
@@ -128,6 +152,7 @@ async function microsite(): Promise<string> {
 		],
 		script: bundle.outputFiles[0].text,
 		gaId: process.env.GA_MEASUREMENT_ID || undefined,
-		...shown
+		...shown,
+		siteUrl: process.env.SITE_URL || undefined
 	});
 }

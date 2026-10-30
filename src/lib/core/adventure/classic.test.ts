@@ -599,3 +599,15 @@ describe('hints', () => {
 		expect(pace(game, 1)[0]).toMatch(/^Hint: /);
 	});
 });
+
+describe('colours', () => {
+	it('changes the colours before the tour begins as well as after, and still offers the tour', () => {
+		const game = new Adventure(world);
+		game.begin();
+		const reply = game.respond('colour amber');
+		expect(reply.theme).toBe('amber');
+		expect(reply.lines).toEqual(['The screen turns amber.']);
+		expect(game.respond('hints off').lines).toEqual(['Hints off.']);
+		expect(game.respond('take the tour').lines).toContain('You are standing on Long Street.');
+	});
+});

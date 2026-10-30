@@ -47,6 +47,8 @@ jobs:
           FLIGHTS_URL: ${{ vars.NETLIFY_SITE_ID != '' && '/api/flights' || vars.FLIGHTS_URL }}
           # Google Analytics, counted only once a reader says yes; without it nothing is asked.
           GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
+          # The site's own address, for the image shown where it is shared; without it none is named.
+          SITE_URL: ${{ vars.SITE_URL }}
         run: npm run export
       # Publish only a site that plays.
       - run: npx playwright install --with-deps chromium

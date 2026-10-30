@@ -1,3 +1,8 @@
+import { withCsp } from './csp';
+import { headMeta, jsonLd, PAGES, walkDescription } from './meta';
+import { THEMES, themeBoot, themeCss } from '../site/themes';
+import { fontFaces, MONO } from './type';
+import { faviconLinks, LOCKUP, ogMeta } from '../site/brand';
 import { gzipSync } from 'node:zlib';
 import { packWorld } from '../core/adventure/packed';
 import { headOf } from '../core/adventure/tiles';
@@ -24,6 +29,8 @@ export interface ExportInput {
 	place?: Place;
 	/** Kept out of search engines (`NOINDEX`), as a walk behind a flag is. */
 	noindex?: boolean;
+	/** The site's own address (`SITE_URL`), for the image shown where it is shared. */
+	siteUrl?: string;
 }
 
 /** A place, and the larger one it lies in, if any. */
@@ -75,6 +82,7 @@ function aboutPage(snapshotDate: string, counted: boolean, place: Place): string
 			`<li><a href="${esc(s.href)}">${esc(s.name)}</a>: ${esc(s.gives)}.${s.live ? ' <em>Asked from your browser as you read; you can turn it off in Settings.</em>' : ''} <span class="terms">${esc(s.terms)}.</span></li>`
 	).join('\n\t\t\t');
 	return `<section id="about" class="view" hidden>
+		<div class="brand">${LOCKUP}</div>
 		<h2>About</h2>
 		<p>A Partial Guide is a text adventure of the real world, built from open data, and nothing in it is made up. It starts with ${esc(placeWords(place))}, told by Guide, who says only what the sources say, as they say it: where the data is broken, Guide is too.</p>
 		<p>The map Guide carries is dated ${esc(longDate(snapshotDate))}. ${counted ? PRIVACY.counted : PRIVACY.none}</p>
@@ -84,6 +92,7 @@ function aboutPage(snapshotDate: string, counted: boolean, place: Place): string
 		</ul>
 		<h3>Who made it</h3>
 		<p>Made by Benedict. The code is on <a href="https://github.com/Benedict/osm-text-adventure">GitHub</a>.</p>
+		<p>Set in <a href="https://commitmono.com">Commit Mono</a>, by Eigil Nikolajsen, under the SIL Open Font License.</p>
 		<p><a href="#">Back to the walk</a></p>
 	</section>`;
 }
@@ -94,8 +103,15 @@ function settingsPage(counted: boolean): string {
 		(l) =>
 			`<label class="choice"><input type="checkbox" name="${l.key}" checked><span>${esc(l.label)} <span class="terms">(${esc(l.source)})</span></span></label>`
 	).join('\n\t\t');
+	const colours = THEMES.map(
+		(t) =>
+			`<label class="choice"><input type="radio" name="theme" value="${t.key}"><span>${esc(t.label)}</span></label>`
+	).join('\n\t\t\t');
 	return `<section id="settings" class="view" hidden>
 		<h2>Settings</h2>
+		<fieldset class="colours"><legend>Colours</legend>
+			${colours}
+		</fieldset>
 		<p>Guide can ask these sources from your browser as you read, always for the map’s own places, never yours. Turn any off and nothing is asked of it; Guide then says nothing of it.</p>
 		${choices}${
 			counted
@@ -139,19 +155,27 @@ export function exportPage({
 	tiles,
 	gaId,
 	place = ADDISCOMBE,
-	noindex
+	noindex,
+	siteUrl
 }: ExportInput): string {
-	return `<!doctype html>
+	return withCsp(
+		`<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <title>A Partial Guide</title>${robots(noindex)}
+${themeBoot()}
+${headMeta({ ...PAGES.walk, description: walkDescription(place), siteUrl: noindex ? undefined : siteUrl, site: !!tiles })}
+${jsonLd('walk', tiles && !noindex ? siteUrl : undefined)}
+${faviconLinks(tiles ? '/' : undefined)}
+${ogMeta(siteUrl)}
 <style>
+${fontFaces(tiles ? '/' : undefined)}
 	/* As the classic adventures looked: one typeface, light on dark, an inverse status bar on top. */
 	:root {
 		--paper: #000; --ink: #d4d4cc; --bright: #fff; --muted: #8e8e86; --rule: #3a3a36; --accent: #fff;
-		--mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
+		--mono: ${MONO};
 		--serif: var(--mono); --small: var(--mono);
 		--height: 100dvh;
 		color-scheme: dark;
@@ -206,8 +230,8 @@ export function exportPage({
 	.command { color: var(--bright); }
 	.sources { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.6rem; }
 	.terms { font-size: 0.85rem; color: var(--muted); }
-	.choice { display: flex; gap: 0.6rem; align-items: baseline; }
-	.choice input { width: 1.1rem; height: 1.1rem; flex: none; accent-color: var(--ink); }
+	.choice { display: flex; gap: 0.6rem; align-items: center; min-height: 44px; }
+	.choice input { width: 1.5rem; height: 1.5rem; flex: none; margin: 0; accent-color: var(--ink); }
 	form {
 		display: flex; align-items: baseline; gap: 1ch; background: var(--paper);
 		padding-top: 0.5rem; padding-bottom: 0.25rem;
@@ -223,22 +247,33 @@ export function exportPage({
 		display: flex; justify-content: flex-end; gap: 1.2rem; font-size: 0.8rem;
 		padding-bottom: max(0.6rem, env(safe-area-inset-bottom, 0px));
 	}
-	.menu a { color: var(--muted); }
+	.menu a { color: var(--muted); display: inline-block; padding: 0.6rem 0.25rem; }
+	/* A link alone on its line is a control, and gets a control's room to touch. */
+	.view p > a:only-child { display: inline-block; padding: 0.6rem 0; }
+${themeCss()}
+	.colours { border: 0; padding: 0; margin: 0.6rem 0 1rem; display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
+	.colours legend { color: var(--bright); font-weight: 700; padding: 0; margin-bottom: 0.3rem; }
+	/* A link first in the page, seen only when a keyboard reaches it, to skip to what matters. */
+	.skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; background: var(--bright); color: var(--paper); padding: 0.6rem 1rem; font-weight: 700; }
+	.skip:focus { top: 0.5rem; }
+	.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 </style>
 </head>
 <body>
+<a class="skip" href="#command">Skip to the prompt</a>
 <div class="status" id="status"><span>A Partial Guide</span><span></span></div>
 <div class="follow" id="follow" hidden></div>${
-		gaId
-			? `
+			gaId
+				? `
 ${consentStrip('this page')}`
-			: ''
-	}
-<div class="scroll" id="scroll">
+				: ''
+		}
+<main class="scroll" id="scroll">
+	<h1 class="visually-hidden">A Partial Guide: the walk</h1>
 	<div id="game"><div id="transcript" aria-live="polite"></div></div>
 	${aboutPage(snapshotDate, !!gaId, place)}
 	${settingsPage(!!gaId)}
-</div>
+</main>
 <form id="prompt" autocomplete="off">
 	<label for="command">&gt;</label>
 	<input id="command" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-label="What do you do?" placeholder="take the tour">
@@ -311,6 +346,16 @@ ${consentStrip('this page')}`
 			button.addEventListener('click', () => answer(button.dataset.consent));
 		consentBox.checked = loadConsent() === 'granted';
 		consentBox.addEventListener('change', () => answer(consentBox.checked ? 'granted' : 'denied'));
+	}
+	// The colours, chosen here or by "colour green" on the walk, kept in this browser.
+	function colour(theme) {
+		applyTheme(theme);
+		saveTheme(theme);
+		for (const radio of document.querySelectorAll('#settings input[name="theme"]')) radio.checked = radio.value === theme;
+	}
+	for (const radio of document.querySelectorAll('#settings input[name="theme"]')) {
+		radio.checked = radio.value === loadTheme();
+		radio.addEventListener('change', () => colour(radio.value));
 	}
 	for (const box of document.querySelectorAll('#settings input[type="checkbox"]:not([name="analytics"])')) {
 		box.checked = settings[box.name] !== false;
@@ -401,6 +446,7 @@ ${consentStrip('this page')}`
 			section.append(img);
 		}
 		transcript.append(section);
+		if (reply.theme) colour(reply.theme);
 		if (reply.follow === false) unfollow();
 		if (reply.map) reply.follow ? follow(reply.map) : drawMap(section, reply.map);
 		reveal();
@@ -586,5 +632,7 @@ ${consentStrip('this page')}`
 ${tiles ? '' : `<script type="application/gzip" id="world">${packed(world)}</script>`}
 </body>
 </html>
-`;
+`,
+		{ flightsUrl, analytics: !!gaId }
+	);
 }

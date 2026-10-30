@@ -68,6 +68,11 @@ try {
 	);
 	const page = await context.newPage();
 	page.on('pageerror', (e) => failures.push(`page error: ${e.message}`));
+	// Whatever the page's policy refuses, it was built to need: a refusal is a fault in the page.
+	page.on('console', (m) => {
+		if (m.type() === 'error' && /Content Security Policy/.test(m.text()))
+			failures.push(`refused by the page's policy: ${m.text().slice(0, 200)}`);
+	});
 	if (root) {
 		// The microsite leads into the walk.
 		await page.goto(root);
@@ -210,6 +215,39 @@ try {
 		!(await page.locator('#settings input[name="weather"]').isChecked()),
 		'the weather setting was not kept'
 	);
+	// Every control big enough to touch: 24 by 24 pixels at least, as WCAG asks, links within a
+	// sentence aside; seen on each page, and in Settings.
+	const targets = async (where: string) => {
+		const small = await page.evaluate(() =>
+			[...document.querySelectorAll('a, button, input')]
+				.filter((e) => (e as HTMLElement).offsetParent !== null && !e.classList.contains('skip'))
+				.filter(
+					(e) =>
+						!(
+							e.tagName === 'A' &&
+							e.parentElement?.tagName === 'P' &&
+							(e.parentElement.textContent ?? '').trim() !== (e.textContent ?? '').trim()
+						)
+				)
+				.map((e) => ({ e, r: e.getBoundingClientRect() }))
+				.filter(({ r }) => r.width < 24 || r.height < 24)
+				.map(
+					({ e, r }) =>
+						`${(e.textContent || (e as HTMLInputElement).name || e.tagName).trim().slice(0, 24)} (${Math.round(r.width)}×${Math.round(r.height)})`
+				)
+		);
+		check(!small.length, `too small to touch on ${where}: ${small.join(', ')}`);
+	};
+	await targets('the walk’s settings');
+	await page.goto(url);
+	await says(page, 'I am Guide');
+	await targets('the walk');
+	if (root) {
+		await page.goto(root);
+		await targets('the microsite');
+		await page.goto(`${root}404.html`);
+		await targets('the 404');
+	}
 } catch (err) {
 	failures.push((err as Error).message.split('\n')[0]);
 } finally {

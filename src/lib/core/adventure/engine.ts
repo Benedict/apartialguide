@@ -1,3 +1,4 @@
+import { COLOURS, isColour, type Colour } from './colours';
 import type { Fact } from '../facts';
 import { hearsay } from '../render/hearsay';
 import { skyLine } from '../render/sky';
@@ -38,6 +39,8 @@ export interface Reply {
 	map?: { latitude: number; longitude: number; label: string };
 	/** A word about a command the reader has not used yet: the page's, not Guide's. */
 	hint?: string;
+	/** The colours the page should take, and keep, as the reader asked. */
+	theme?: Colour;
 	/** True to keep the map beside the walk, moved to `map` at each stop; false to put it away. */
 	follow?: boolean;
 	/** Commands to offer as buttons, as well as to type. */
@@ -282,9 +285,34 @@ export class Adventure {
 		];
 	}
 
+	/** The page's colours, as the reader asked, or which there are. */
+	private colour(colour?: string): Reply {
+		if (!colour || !isColour(colour))
+			return {
+				lines: [
+					`The screen can be ${COLOURS.slice(0, -1).join(', ')} or ${COLOURS.at(-1)}: say “colour green”.`
+				]
+			};
+		return {
+			lines: [colour === 'paper' ? 'The screen turns as it was.' : `The screen turns ${colour}.`],
+			theme: colour
+		};
+	}
+
+	/** Hints on or off, on this walk and the next. */
+	private hints(on: boolean): Reply {
+		this.remember((m) => {
+			m.off = !on;
+		});
+		return { lines: [on ? 'Hints on.' : 'Hints off.'] };
+	}
+
 	private choose(input: string): Reply {
 		const command = parse(input);
 		if (command.verb === 'restore') return this.restore(command.slot);
+		// The page's own settings answer before the walk begins as after it.
+		if (command.verb === 'colour') return this.colour(command.colour);
+		if (command.verb === 'hints') return this.hints(command.on);
 		const words = input
 			.trim()
 			.toLowerCase()
@@ -404,12 +432,11 @@ export class Adventure {
 			case 'drift':
 				return this.drift();
 			case 'hints':
-				this.remember((m) => {
-					m.off = !command.on;
-				});
-				return { lines: [command.on ? 'Hints on.' : 'Hints off.'] };
+				return this.hints(command.on);
 			case 'hint':
 				return { lines: [], hint: this.askedHint() };
+			case 'colour':
+				return this.colour(command.colour);
 			case 'magic':
 				return { lines: ['Nothing happens. Nothing has happened here for some time.'] };
 			case 'inventory':

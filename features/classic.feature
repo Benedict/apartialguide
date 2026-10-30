@@ -27,3 +27,15 @@ Feature: A classic text adventure
     And the reader types "score"
     Then it says "You have walked"
     And it says "in 1 move."
+
+  Scenario: The screen takes a terminal's colours
+    When the reader types "colour green"
+    Then it says "The screen turns green."
+    And the page is coloured "green"
+    When the reader types "color paper"
+    Then the page is coloured "paper"
+    When the reader types "colour"
+    Then it says "paper, green, amber or red"
+    When the reader types "colour purple"
+    Then it says "paper, green, amber or red"
+    And the page keeps its colours

@@ -12,9 +12,50 @@ describe('the site on Netlify', () => {
 		expect(exporter).toContain("writeFileSync(join(site, '404.html'), notFoundPage())");
 	});
 
+	it('copies the brand’s pictures into the site, and names the site’s address for the preview image', () => {
+		const exporter = read('scripts/export.ts');
+		expect(exporter).toContain("'apple-touch-icon.png'");
+		expect(exporter).toContain("'og.png'");
+		expect(deploy).toContain('SITE_URL: ${{ vars.SITE_URL }}');
+	});
+
+	it('copies the fonts and their licence into the site', () => {
+		const exporter = read('scripts/export.ts');
+		expect(exporter).toContain('FONT_FILES');
+		expect(exporter).toContain("join(site, 'fonts'");
+	});
+
+	it('writes the site’s own files: robots.txt, the sitemap, llms.txt, the manifest and its icons', () => {
+		const exporter = read('scripts/export.ts');
+		for (const file of ['robots.txt', 'sitemap.xml', 'llms.txt', 'site.webmanifest'])
+			expect(exporter).toContain(`'${file}'`);
+		for (const icon of ['icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'favicon.ico'])
+			expect(exporter).toContain(`'${icon}'`);
+	});
+
 	it('builds a preview of a pull request only when it is labelled preview', () => {
 		expect(deploy).toMatch(/pull_request:\n\s+types: \[opened, synchronize, reopened, labeled\]/);
 		expect(deploy).toContain("contains(github.event.pull_request.labels.*.name, 'preview')");
+	});
+
+	it('lets the fonts be kept a week, and the pages and tiles, which change with each deploy, checked each time', () => {
+		expect(toml).toMatch(
+			/for = "\/fonts\/\*"\n\s+\[headers.values\]\n\s+Cache-Control = "public, max-age=604800"/
+		);
+		expect(toml).not.toMatch(/for = "\/walk\/[^"]*"\n\s+\[headers.values\]\n\s+Cache-Control/);
+	});
+
+	it('sends the security headers the specification requires on every path', () => {
+		const all = toml.slice(toml.indexOf('for = "/*"'));
+		for (const header of [
+			'Strict-Transport-Security = "max-age=31536000"',
+			'X-Content-Type-Options = "nosniff"',
+			'X-Frame-Options = "DENY"',
+			'Referrer-Policy = "strict-origin-when-cross-origin"'
+		])
+			expect(all).toContain(header);
+		expect(all).toMatch(/Content-Security-Policy = "frame-ancestors 'none'"/);
+		expect(all).toMatch(/Permissions-Policy = "[^"]*geolocation=\(\)[^"]*"/);
 	});
 
 	it('publishes the site the workflow builds, with no build of its own', () => {

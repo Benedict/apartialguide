@@ -1,3 +1,5 @@
+import { unhashedScripts } from './csp-check';
+import { structureFaults } from './structure';
 import { describe, expect, it } from 'vitest';
 import { landingPage } from './landing';
 
@@ -48,6 +50,54 @@ describe('landingPage', () => {
 		expect(landingPage({ ...input, noindex: true })).toContain(
 			'<meta name="robots" content="noindex">'
 		);
+		const hidden = landingPage({ ...input, noindex: true, siteUrl: 'https://example.org' });
+		expect(hidden).not.toContain('rel="canonical"');
+		expect(hidden).not.toContain('application/ld+json');
+	});
+
+	it('carries the brand: the icon, the mark and name at the top, and the preview image where the address is known', () => {
+		expect(html).toContain('<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,');
+		expect(html).toContain('<link rel="apple-touch-icon" href="/apple-touch-icon.png">');
+		expect(html).toMatch(/class="brand"[^>]*>\s*<svg[^>]*aria-label="A Partial Guide"/);
+		expect(html).not.toContain('og:image');
+		expect(landingPage({ ...input, siteUrl: 'https://example.org' })).toContain(
+			'content="https://example.org/og.png"'
+		);
+	});
+
+	it('takes the reader’s colours before it is drawn', () => {
+		expect(html.indexOf("localStorage.getItem('a-partial-guide:theme')")).toBeLessThan(
+			html.indexOf('<body')
+		);
+		expect(html).toContain(':root[data-theme="amber"]');
+	});
+
+	it('is set in Commit Mono, served from the site', () => {
+		expect(html).toContain("url('/fonts/commit-mono-400.woff2')");
+		expect(html).toContain("--mono: 'Commit Mono',");
+	});
+
+	it('can be read by everyone: headings in order, a main, and a skip link to it', () => {
+		expect(structureFaults(html)).toEqual([]);
+	});
+
+	it('runs only the scripts it was built with', () => {
+		expect(unhashedScripts(html)).toEqual([]);
+		expect(unhashedScripts(landingPage({ ...input, gaId: 'G-TEST123' }))).toEqual([]);
+		expect(landingPage({ ...input, gaId: 'G-TEST123' })).toMatch(
+			/script-src [^;]*https:\/\/www\.googletagmanager\.com/
+		);
+	});
+
+	it('says once what it is, where it lives, and what it is to search engines, and lists colour among the commands', () => {
+		const known = landingPage({ ...input, siteUrl: 'https://example.org' });
+		expect(known.match(/name="description"/g)).toHaveLength(1);
+		expect(known.match(/property="og:title"/g)).toHaveLength(1);
+		expect(known).toContain('<link rel="canonical" href="https://example.org/">');
+		expect(known).toContain('"@type":"WebSite"');
+		expect(known).toContain('<link rel="manifest" href="/site.webmanifest">');
+		expect(html).toContain('<meta name="color-scheme" content="dark">');
+		expect(html).toContain('<code>colour green</code>');
 	});
 
 	it('leads to the walk', () => {
@@ -75,6 +125,7 @@ describe('landingPage', () => {
 		const counted = landingPage({ ...input, gaId: 'G-TEST123' });
 		expect(counted).toContain('id="consent"');
 		expect(counted).toContain('LandingPage.landing("G-TEST123")');
-		expect(counted).not.toContain('googletagmanager');
+		// Its policy may allow Google's script, for after a yes; the page itself loads none.
+		expect(counted).not.toMatch(/<script[^>]*googletagmanager/);
 	});
 });

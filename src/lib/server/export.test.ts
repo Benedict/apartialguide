@@ -1,3 +1,5 @@
+import { unhashedScripts } from './csp-check';
+import { structureFaults } from './structure';
 import { describe, expect, it } from 'vitest';
 import type { AdventureWorld } from '../core/adventure/world';
 import { gunzipSync } from 'node:zlib';
@@ -290,6 +292,98 @@ describe('exportPage', () => {
 	});
 });
 
+describe('the brand in the page', () => {
+	it('carries its icon in the page, as the single page plays from one file, and the mark and name on About', () => {
+		expect(page()).toContain('<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,');
+		expect(page()).not.toContain('apple-touch-icon');
+		expect(page()).toMatch(/<section id="about"[^]*aria-label="A Partial Guide"/);
+	});
+});
+
+describe('the colours of the page', () => {
+	it('takes the reader’s colours before it is drawn, and offers all four in Settings', () => {
+		const html = page();
+		expect(html.indexOf("localStorage.getItem('a-partial-guide:theme')")).toBeLessThan(
+			html.indexOf('<body')
+		);
+		expect(html).toContain(':root[data-theme="red"]');
+		for (const colour of ['paper', 'green', 'amber', 'red'])
+			expect(html).toMatch(new RegExp(`<input type="radio" name="theme" value="${colour}"`));
+	});
+});
+
+describe('the type of the page', () => {
+	it('carries Commit Mono inside the single page, and credits it on About under its licence', () => {
+		expect(page()).toContain("--mono: 'Commit Mono',");
+		expect(page()).toContain('url(data:font/woff2;base64,');
+		expect(page()).toMatch(/<section id="about"[^]*Commit Mono[^]*SIL Open Font License/);
+	});
+
+	it('takes the fonts from the site where it is served in tiles', () => {
+		const html = exportPage({
+			engine: 'var Adventure = function () {};',
+			world,
+			snapshotDate: '2026-10-24',
+			tiles: 'tiles/'
+		});
+		expect(html).toContain("url('/fonts/commit-mono-400.woff2')");
+		expect(html).not.toContain('data:font/woff2');
+	});
+});
+
+describe('the structure of the page', () => {
+	it('can be read by everyone: headings in order, a main, and a skip link to the prompt', () => {
+		expect(structureFaults(page())).toEqual([]);
+		expect(page()).toMatch(/<a class="skip" href="#command">/);
+	});
+});
+
+describe('the policy of the page', () => {
+	it('runs only the scripts it was built with, in the single page and on the site', () => {
+		expect(unhashedScripts(page())).toEqual([]);
+		expect(
+			unhashedScripts(
+				exportPage({
+					engine: 'var Adventure = function () {};',
+					world,
+					snapshotDate: '2026-10-24',
+					tiles: 'tiles/',
+					gaId: 'G-TEST123'
+				})
+			)
+		).toEqual([]);
+		expect(
+			exportPage({
+				engine: 'var Adventure = function () {};',
+				world,
+				snapshotDate: '2026-10-24',
+				gaId: 'G-TEST123'
+			})
+		).toMatch(/connect-src [^;]*https:\/\/\*\.google-analytics\.com/);
+	});
+});
+
+describe('the head of the walk', () => {
+	it('says what the walk is and that it is dark, in the single page as on the site', () => {
+		expect(page()).toContain('<meta name="description" content="Walk Addiscombe');
+		expect(page()).toContain('<meta name="color-scheme" content="dark">');
+		expect(page()).not.toContain('rel="manifest"');
+	});
+
+	it('names its address, the manifest and what it is to search engines, where it is served', () => {
+		const html = exportPage({
+			engine: 'var Adventure = function () {};',
+			world,
+			snapshotDate: '2026-10-24',
+			tiles: 'tiles/',
+			siteUrl: 'https://example.org'
+		});
+		expect(html).toContain('<link rel="canonical" href="https://example.org/walk/">');
+		expect(html).toContain('<link rel="manifest" href="/site.webmanifest">');
+		expect(html).toContain('"@type":"VideoGame"');
+	});
+});
+
 describe('the page for another place', () => {
 	it('names the place the map is of, and keeps a flagged walk out of search engines', () => {
 		const html = exportPage({
@@ -302,7 +396,23 @@ describe('the page for another place', () => {
 		expect(html).toContain('It starts with Croydon, told by Guide');
 		expect(html).not.toContain('Addiscombe');
 		expect(html).toContain('<meta name="robots" content="noindex">');
+		expect(html).toContain('<meta name="description" content="Walk Croydon as a text adventure');
 		expect(page()).not.toContain('noindex');
 		expect(page()).toContain('It starts with Addiscombe, in Croydon, told by Guide');
+	});
+
+	it('claims no address of the site’s own when kept out of search engines', () => {
+		const html = exportPage({
+			engine: 'var Adventure = function () {};',
+			world,
+			snapshotDate: '2026-10-24',
+			tiles: 'tiles/',
+			siteUrl: 'https://example.org',
+			place: { name: 'Croydon' },
+			noindex: true
+		});
+		expect(html).not.toContain('rel="canonical"');
+		expect(html).not.toContain('og:url');
+		expect(html).not.toContain('application/ld+json');
 	});
 });
