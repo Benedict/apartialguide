@@ -1,3 +1,4 @@
+import { withCsp } from './csp';
 import { headMeta, jsonLd, PAGES } from './meta';
 import { THEMES, themeBoot, themeCss } from '../site/themes';
 import { fontFaces, MONO } from './type';
@@ -136,7 +137,8 @@ export function exportPage({
 	gaId,
 	siteUrl
 }: ExportInput): string {
-	return `<!doctype html>
+	return withCsp(
+		`<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -240,11 +242,11 @@ ${themeCss()}
 <a class="skip" href="#command">Skip to the prompt</a>
 <div class="status" id="status"><span>A Partial Guide</span><span></span></div>
 <div class="follow" id="follow" hidden></div>${
-		gaId
-			? `
+			gaId
+				? `
 ${consentStrip('this page')}`
-			: ''
-	}
+				: ''
+		}
 <main class="scroll" id="scroll">
 	<h1 class="visually-hidden">A Partial Guide: the walk</h1>
 	<div id="game"><div id="transcript" aria-live="polite"></div></div>
@@ -609,5 +611,7 @@ ${consentStrip('this page')}`
 ${tiles ? '' : `<script type="application/gzip" id="world">${packed(world)}</script>`}
 </body>
 </html>
-`;
+`,
+		{ flightsUrl, analytics: !!gaId }
+	);
 }

@@ -1,3 +1,4 @@
+import { unhashedScripts } from './csp-check';
 import { structureFaults } from './structure';
 import { describe, expect, it } from 'vitest';
 import { landingPage } from './landing';
@@ -60,6 +61,14 @@ describe('landingPage', () => {
 		expect(structureFaults(html)).toEqual([]);
 	});
 
+	it('runs only the scripts it was built with', () => {
+		expect(unhashedScripts(html)).toEqual([]);
+		expect(unhashedScripts(landingPage({ ...input, gaId: 'G-TEST123' }))).toEqual([]);
+		expect(landingPage({ ...input, gaId: 'G-TEST123' })).toMatch(
+			/script-src [^;]*https:\/\/www\.googletagmanager\.com/
+		);
+	});
+
 	it('says once what it is, where it lives, and what it is to search engines, and lists colour among the commands', () => {
 		const known = landingPage({ ...input, siteUrl: 'https://example.org' });
 		expect(known.match(/name="description"/g)).toHaveLength(1);
@@ -96,6 +105,7 @@ describe('landingPage', () => {
 		const counted = landingPage({ ...input, gaId: 'G-TEST123' });
 		expect(counted).toContain('id="consent"');
 		expect(counted).toContain('LandingPage.landing("G-TEST123")');
-		expect(counted).not.toContain('googletagmanager');
+		// Its policy may allow Google's script, for after a yes; the page itself loads none.
+		expect(counted).not.toMatch(/<script[^>]*googletagmanager/);
 	});
 });

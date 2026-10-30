@@ -1,3 +1,4 @@
+import { withCsp } from './csp';
 import { headMeta, PAGES } from './meta';
 import { themeBoot, themeCss } from '../site/themes';
 import { fontFaces, MONO } from './type';
@@ -9,7 +10,8 @@ import { faviconLinks, LOCKUP } from '../site/brand';
  * go from the root, as it may be served at any depth.
  */
 export function notFoundPage(): string {
-	return `<!doctype html>
+	return withCsp(
+		`<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -52,5 +54,6 @@ ${themeCss()}
 </main>
 </body>
 </html>
-`;
+`
+	);
 }
