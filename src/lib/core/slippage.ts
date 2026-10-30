@@ -40,6 +40,14 @@ const ALWAYS_NOTICED = new Set<Effect>([
 	'was-here'
 ]);
 
+/** A plaque is put up to be read: one on the map, or one another account records. */
+const isPlaque = (beat: Beat) =>
+	beat.facts.some(
+		(f) =>
+			f.claim.key === 'plaque:inscription' ||
+			(f.claim.key === 'memorial' && /^(blue_)?plaque$/.test(f.claim.value))
+	);
+
 /** Features noticed at a stop when nothing crowds the view, and when the view is crowded. */
 const ATTENTION = { plain: 4, rambling: 2, hesitant: 4 };
 
@@ -74,13 +82,13 @@ export function chooseSlippage(
 	}
 	foldIntoAddresses(beats);
 
-	// The land underfoot is always told and costs no attention. A broken name, and what the map
-	// has lost or renamed, are always noticed.
+	// The land underfoot is always told and costs no attention. A broken name, what the map
+	// has lost or renamed, and a plaque, are always noticed.
 	// Otherwise only the nearest few.
 	let attention = ATTENTION[mood];
 	const noticed = beats.filter((b) => {
 		if (isBackground(b)) return true;
-		const seen = attention > 0 || b.effects.some((e) => ALWAYS_NOTICED.has(e));
+		const seen = attention > 0 || b.effects.some((e) => ALWAYS_NOTICED.has(e)) || isPlaque(b);
 		attention--;
 		return seen;
 	});

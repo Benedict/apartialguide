@@ -20,7 +20,7 @@ import { monthYear, tagsOf } from './words';
 import { allusion } from '../keepers';
 
 /** Bump when the prompt changes, so cached narration written under the old one is redone. */
-export const PROMPT_VERSION = 15;
+export const PROMPT_VERSION = 16;
 
 export interface Prompt {
 	/** Fixed for every stop, so it can be cached. */
@@ -58,7 +58,7 @@ Rules.
 
 For tone only, here is a reference page written for one corner. Do not reuse its sentences elsewhere.
 
-Bingham Road meets Lower Addiscombe Road here. Asphalt, lit, 20 mph. The Addiscombe Village shopping area lies to the north-west, an area that calls itself a village. Addiscombe lies all around, if the map is to be believed, and for the moment I have nothing else to believe.
+Bingham Road meets Lower Addiscombe Road here. Lit, 20 mph. The Addiscombe Village shopping area lies to the north-west, an area that calls itself a village. Addiscombe lies all around, if the map is to be believed, and for the moment I have nothing else to believe.
 
 Nearest is 209–213, a retail building, formerly a bank. Its old name is recorded as “est Bank”. The building has kept its address and lost its purpose. Whoever wrote it down knew what they meant, or thought they did.
 
@@ -151,7 +151,7 @@ export function buildPrompt(scene: Scene): Prompt {
 		: '';
 	const user = [
 		'Where the reader stands:',
-		[whereYouStand(scene, street), ...streetCharacter(street), setting(scene)]
+		[whereYouStand(scene, street), ...streetCharacter(street, true), setting(scene)]
 			.filter(Boolean)
 			.join(' '),
 		'',

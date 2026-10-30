@@ -67,9 +67,16 @@ describe('AdventureRenderer', () => {
 
 		it('describes the street underfoot', () => {
 			const t = text(scene());
-			expect(t).toContain('Asphalt underfoot.');
 			expect(t).toContain('Lit at night, with pavement on both sides.');
 			expect(t).toContain('20 mph');
+		});
+
+		it('leaves the usual tarmac unsaid, and tells a surface out of the ordinary', () => {
+			expect(text(scene())).not.toMatch(/asphalt|tarmac|underfoot/i);
+			const gravel = scene({
+				street: facts('way/1', { highway: 'footway', name: 'Everton Road', surface: 'gravel' })
+			});
+			expect(text(gravel)).toContain('Gravel underfoot.');
 		});
 
 		it('gives the limit plainly, without remark', () => {
@@ -297,7 +304,7 @@ describe('AdventureRenderer', () => {
 				})
 			);
 			expect(room.parts?.map((p) => p.map((x) => x.text).join(' '))).toEqual(room.paragraphs);
-			expect(room.parts?.[0].map((x) => x.kind)).toEqual(['where', 'street', 'street', 'street']);
+			expect(room.parts?.[0].map((x) => x.kind)).toEqual(['where', 'street', 'street']);
 			expect(room.parts?.[0][0].street).toBe('Everton Road');
 			expect(room.parts?.[1]).toEqual([expect.objectContaining({ kind: 'thing', key: 'node/2' })]);
 		});
@@ -776,7 +783,7 @@ describe('AdventureRenderer', () => {
 				})
 			]);
 			const [street] = room.streets!;
-			expect(street.description).toContain('Everton Road. Asphalt underfoot.');
+			expect(street.description).toContain('Everton Road. Tarmac underfoot.');
 			expect(street.description).not.toContain('=');
 		});
 

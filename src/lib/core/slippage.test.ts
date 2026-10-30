@@ -107,6 +107,23 @@ describe('chooseSlippage', () => {
 		expect(plan.hidden.map((b) => b.subject)).not.toContain('way/2');
 	});
 
+	it('always notices a plaque, however crowded the view', () => {
+		const many = Array.from({ length: 9 }, (_, i) =>
+			facts(`node/${i}`, { amenity: 'bench' })
+		).flat();
+		const plaque = facts('plaque/1', {
+			name: 'A. Writer lived here',
+			'plaque:inscription': 'A. Writer lived here'
+		});
+		const memorial = facts('node/20', { historic: 'memorial', memorial: 'blue_plaque' });
+		const plan = chooseSlippage(
+			's1',
+			[...street, ...many, ...plaque, ...memorial],
+			[{ kind: 'dense' }]
+		);
+		expect(plan.beats.map((b) => b.subject)).toEqual(['node/0', 'node/1', 'plaque/1', 'node/20']);
+	});
+
 	it('leaves an old survey hidden when it is beyond attention', () => {
 		const some = Array.from({ length: 6 }, (_, i) =>
 			facts(`node/${i}`, { amenity: 'bench' })

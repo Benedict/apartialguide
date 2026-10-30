@@ -151,12 +151,15 @@ When('the reader is on Everton Road', function (this: NarratorWorld) {
 	this.arrive(stop?.id);
 });
 
-Then('the narration speaks of surface, lighting, and speed', function (this: NarratorWorld) {
-	const text = this.visit!.text;
-	assert.match(text, /underfoot/);
-	assert.match(text, /lit|unlit/i);
-	assert.match(text, /mph|km\/h|\d/);
-});
+Then(
+	'the narration speaks of lighting and speed, and leaves the usual tarmac unsaid',
+	function (this: NarratorWorld) {
+		const text = this.visit!.text;
+		assert.doesNotMatch(text, /asphalt|tarmac|underfoot/i);
+		assert.match(text, /lit|unlit/i);
+		assert.match(text, /mph|km\/h|\d/);
+	}
+);
 
 Then('the narration hesitates or falls silent', function (this: NarratorWorld) {
 	assert.equal(this.visit!.plan.mood, 'hesitant');

@@ -33,7 +33,7 @@ Feature: Earned confusion on Lower Addiscombe Road
     Given Everton Road has only highway, lanes, lit, maxspeed, sidewalk, and surface tags
     And no buildings are mapped along it
     When the reader is on Everton Road
-    Then the narration speaks of surface, lighting, and speed
+    Then the narration speaks of lighting and speed, and leaves the usual tarmac unsaid
     And the narration hesitates or falls silent
     And the narration does not place the button factory on Everton Road
 

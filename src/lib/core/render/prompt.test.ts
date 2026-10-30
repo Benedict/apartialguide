@@ -51,7 +51,15 @@ describe('buildPrompt', () => {
 	it('states where the reader stands and what is underfoot', () => {
 		const user = buildPrompt(scene()).user;
 		expect(user).toContain('You are standing on Long Street, between Short Row and Blind Alley.');
-		expect(user).toContain('Asphalt underfoot.');
+		expect(user).not.toMatch(/asphalt|tarmac|underfoot/i);
+	});
+
+	it('tells a surface out of the ordinary, and never the usual tarmac, even in its example', () => {
+		const user = buildPrompt(
+			scene({ street: facts('way/1', { highway: 'path', name: 'Long Street', surface: 'dirt' }) })
+		).user;
+		expect(user).toContain('Dirt underfoot.');
+		expect(buildPrompt(scene()).system).not.toMatch(/asphalt/i);
 	});
 
 	it('gives each noticed thing its place, its record and what to do with it', () => {
@@ -253,8 +261,8 @@ describe('buildPrompt', () => {
 		expect(system).toMatch(/never end on (counting|losing count)/i);
 	});
 
-	it('is version 15', () => {
-		expect(PROMPT_VERSION).toBe(15);
+	it('is version 16', () => {
+		expect(PROMPT_VERSION).toBe(16);
 	});
 
 	it('tells the model never to name a source', () => {
