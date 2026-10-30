@@ -66,6 +66,8 @@ describe('parse', () => {
 			expect(parse(text)).toEqual({ verb: 'route', target: 'the sextant' });
 		for (const text of ['route off', 'no route', 'forget the way'])
 			expect(parse(text)).toEqual({ verb: 'route' });
+		for (const text of ['drift', 'wander', 'go anywhere'])
+			expect(parse(text)).toEqual({ verb: 'drift' });
 		for (const text of ['gps on', 'GPS on', 'map on'])
 			expect(parse(text)).toEqual({ verb: 'follow', on: true });
 		for (const text of ['gps off', 'map off'])

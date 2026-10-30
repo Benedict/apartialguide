@@ -23,6 +23,7 @@ export type Command =
 				| 'verbose'
 				| 'brief'
 				| 'score'
+				| 'drift'
 				| 'magic'
 				| 'empty';
 	  }
@@ -121,6 +122,8 @@ export function parse(input: string): Command {
 	const way = text.match(/^(?:route to|(?:the )?way to|directions to|how do i get to)\s+(.+?)\??$/);
 	if (way) return { verb: 'route', target: way[1] };
 	if (direction(text)) return { verb: 'go', direction: direction(text)! };
+	if (['drift', 'wander', 'go anywhere', 'dérive', 'derive'].includes(text))
+		return { verb: 'drift' };
 	if (MOVE.has(first) && rest.length) {
 		const target = dropFiller(rest).join(' ');
 		return { verb: 'go', direction: direction(target) ?? target };

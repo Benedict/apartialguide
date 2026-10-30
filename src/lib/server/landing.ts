@@ -107,6 +107,7 @@ export function landingPage({ snapshotDate, about, excerpt, script, gaId }: Land
 	<h2>Commands</h2>
 	<ul class="commands">
 		<li><code>n</code> <code>se</code> <code>back</code></li>
+		<li><code>drift</code></li>
 		<li><code>look</code> <code>examine</code> <code>explore</code></li>
 		<li><code>route to</code> a street or a place</li>
 		<li><code>gps on</code></li>
