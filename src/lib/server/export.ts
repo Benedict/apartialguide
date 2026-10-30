@@ -1,3 +1,4 @@
+import { headMeta, jsonLd, PAGES } from './meta';
 import { THEMES, themeBoot, themeCss } from '../site/themes';
 import { fontFaces, MONO } from './type';
 import { faviconLinks, LOCKUP, ogMeta } from '../site/brand';
@@ -142,6 +143,8 @@ export function exportPage({
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <title>A Partial Guide</title>
 ${themeBoot()}
+${headMeta({ ...PAGES.walk, siteUrl, site: !!tiles })}
+${jsonLd('walk', tiles ? siteUrl : undefined)}
 ${faviconLinks(tiles ? '/' : undefined)}
 ${ogMeta(siteUrl)}
 <style>

@@ -60,16 +60,22 @@ the walk and the 404; and, where a row says live, on https://apartialguide.com i
 | HTTP/1.1 workarounds                  | ◑   | The engine is one bundle, as the single page needs; the site's world is already split into tiles. |
 | Automatic IP-based language redirects | ✓   | None.                                                                                             |
 
-## Recommended, next
+## Recommended
 
-Worth doing here, in roughly this order:
+| Item                         |     | How                                                                                                                       |
+| ---------------------------- | --- | ------------------------------------------------------------------------------------------------------------------------- |
+| `<meta name="description">`  | ✓   | Its own on each page (`server/meta.ts`, `PAGES`).                                                                         |
+| Canonical URL                | ✓   | The front page and the walk, at `SITE_URL`; none for the 404.                                                             |
+| Favicons and app icons       | ✓   | SVG in the page, `/favicon.ico`, the apple-touch icon, 192 and 512 px icons and a maskable one, drawn by `npm run brand`. |
+| `<meta name="theme-color">`  | ✓   | Black, the page's paper; the green, amber and red papers are within a shade of it.                                        |
+| `<meta name="color-scheme">` | ✓   | `dark` on every page.                                                                                                     |
+| Open Graph                   | ✓   | Title, description, type, URL and image, on the front page and the walk.                                                  |
+| robots.txt                   | ✓   | Every crawler welcome; names the sitemap.                                                                                 |
+| XML sitemaps                 | ✓   | The front page and the walk, dated by the map.                                                                            |
+| Structured data (JSON-LD)    | ✓   | The site as a `WebSite`, the walk as a `VideoGame`.                                                                       |
+| Web app manifest             | ✓   | `/site.webmanifest`: the walk can be added to a home screen and opens at the prompt.                                      |
+| `/llms.txt`                  | ✓   | What the walk is, how it is played, where its words come from (from `site/sources.ts`).                                   |
+| `/.well-known/security.txt`  | ⚑   | Needs a contact address.                                                                                                  |
+| Content Security Policy      | ✗   | Possible, but the walk asks several outside services from the reader's browser, so it needs care.                         |
 
-- `<meta name="description">` on the walk and the 404, and `<meta name="color-scheme" content="dark">` everywhere.
-- robots.txt (in `static/`, not yet copied into the site), and a sitemap, at `https://apartialguide.com` (`SITE_URL`).
-- Canonical URLs and `og:url`, at the same address.
-- A web app manifest, a maskable icon and `/favicon.ico`.
-- Structured data: the site as a `WebSite`, the walk as a `VideoGame`.
-- `/llms.txt`: what the walk is, for agents.
-- `/.well-known/security.txt`: needs a contact address ⚑.
-- `theme-color` following the reader's colours.
-- A Content Security Policy: possible, but the walk asks several outside services from the reader's browser, so it needs care.
+Croydon behind its flag is served from `/croydon/`: its pages are `noindex`, but their canonical URLs would name the root's; give the export a base path before the flag is turned on for long.
