@@ -12,10 +12,15 @@
  * AREA="^Addiscombe (East|West)$" takes the box around the administrative boundaries whose names
  * match, from Overpass, and fetches the map in it from Overpass too: a whole area is more than the
  * OSM API will give at once. Without BBOX, AS_OF uses the box of the newest snapshot.
+ *
+ * FROM_OPL=croydon.opl BBOX=… SNAPSHOT_DATE=… reads a downloaded extract instead, cut to the box and
+ * written as OPL by osmium: the way to take a whole borough without asking a shared server for it.
  */
-import { existsSync, mkdirSync, readdirSync, writeFileSync } from 'node:fs';
+import { createReadStream, existsSync, mkdirSync, readdirSync, writeFileSync } from 'node:fs';
+import { createInterface } from 'node:readline';
 import { bboxAround, type LatLon } from '../src/lib/core/geo';
 import { readJson, writeJson } from '../src/lib/server/json';
+import { oplElement } from '../src/lib/server/opl';
 import {
 	bboxAroundBoundaries,
 	mergeElements,
@@ -185,14 +190,25 @@ async function inTiles(box: string) {
 }
 const [w, south, e, north] = bbox.split(',');
 // Nodes and ways only, as for past maps: relations would pull in far-off members.
-const data = tiled
-	? { elements: await inTiles(bbox) }
-	: area
-		? await ask(
-				`[out:json][timeout:900][maxsize:2147483648];(node(${south},${w},${north},${e});way(${south},${w},${north},${e}););(._;>;);out meta;`,
-				'the map'
-			)
-		: await get(`/map.json?bbox=${bbox}`);
+/** A downloaded extract, cut to the box and written as OPL by osmium (FROM_OPL), read a line at a time. */
+async function fromOpl(path: string) {
+	const elements = [];
+	for await (const line of createInterface({ input: createReadStream(path) })) {
+		const element = oplElement(line);
+		if (element) elements.push(element);
+	}
+	return elements;
+}
+const data = process.env.FROM_OPL
+	? { elements: await fromOpl(process.env.FROM_OPL) }
+	: tiled
+		? { elements: await inTiles(bbox) }
+		: area
+			? await ask(
+					`[out:json][timeout:900][maxsize:2147483648];(node(${south},${w},${north},${e});way(${south},${w},${north},${e}););(._;>;);out meta;`,
+					'the map'
+				)
+			: await get(`/map.json?bbox=${bbox}`);
 const dir = process.env.SNAPSHOT_DIR ?? 'data/snapshots';
 mkdirSync(dir, { recursive: true });
 // A whole borough is kept gzipped (SNAPSHOT_GZIP=1): raw, it is more than a repository takes in one file.
