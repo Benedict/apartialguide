@@ -30,6 +30,12 @@ Feature: Moving through Addiscombe
     When the reader walks along it
     Then it is divided into stops about 115 metres apart
 
+  Scenario: Pavements and a crossing that alone join two streets are kept as a way to go
+    Given a main road no one walks along, with a street leaving it north and another leaving it south
+    And the only way between them is along a pavement and over a crossing
+    When the reader walks from the north street
+    Then the south street can be reached
+
   Scenario: A short way that leads nowhere makes no stop
     Given a street runs 230 metres between two junctions
     And an unnamed way 20 metres long leaves it part way along and ends

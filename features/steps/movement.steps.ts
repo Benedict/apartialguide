@@ -111,6 +111,55 @@ Given(
 );
 
 Given(
+	'a main road no one walks along, with a street leaving it north and another leaving it south',
+	function (this: NarratorWorld) {
+		const west = this.map.nodeFrom(O, 270, 100);
+		const north = this.map.node(O);
+		const south = this.map.nodeFrom(O, 90, 40);
+		const east = this.map.nodeFrom(O, 90, 140);
+		this.map.way([west, north, south, east], { highway: 'trunk', name: 'Long Road' });
+		const up = this.map.nodeFrom(O, 0, 120);
+		this.map.way([north, up], { highway: 'residential', name: 'Short Row' });
+		const down = this.map.nodeFrom(this.map.position(south), 180, 120);
+		this.map.way([south, down], { highway: 'residential', name: 'Blind Alley' });
+		this.here = junctionId(up);
+		this.subjects = [junctionId(down)];
+		this.street = [
+			{ id: north, metres: 0 },
+			{ id: south, metres: 40 }
+		];
+	}
+);
+
+Given(
+	'the only way between them is along a pavement and over a crossing',
+	function (this: NarratorWorld) {
+		const [north, south] = this.street.map((n) => n.id);
+		// A pavement along the north side, from the north street to a crossing, and over to the south street.
+		const kerb = this.map.nodeFrom(this.map.position(north), 90, 20);
+		this.map.way([north, kerb], { highway: 'footway', footway: 'sidewalk' });
+		this.map.way([kerb, south], { highway: 'footway', footway: 'crossing' });
+	}
+);
+
+When('the reader walks from the north street', function (this: NarratorWorld) {
+	const graph = this.narrator.graph;
+	const seen = new Set([this.here!]);
+	const queue = [this.here!];
+	while (queue.length)
+		for (const e of graph.get(queue.pop()!)!.exits)
+			if (!seen.has(e.to)) {
+				seen.add(e.to);
+				queue.push(e.to);
+			}
+	this.path = [...seen];
+});
+
+Then('the south street can be reached', function (this: NarratorWorld) {
+	assert.ok(this.path.includes(this.subjects[0]), `reached ${this.path.join(', ')}`);
+});
+
+Given(
 	'an unnamed {word} road {int} metres long leaves it part way along and ends',
 	function (this: NarratorWorld, highway: string, metres: number) {
 		const from = streetAt(this, 100);
