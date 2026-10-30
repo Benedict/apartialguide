@@ -38,6 +38,7 @@ export class CachedRenderer implements Renderer {
 		// The prose is what the engine tells on arrival too: its paragraphs as parts, then the exits.
 		return {
 			...room,
+			plain: { paragraphs: room.paragraphs, ...(room.parts ? { parts: room.parts } : {}) },
 			paragraphs: [...entry.paragraphs, exits],
 			parts: [
 				...entry.paragraphs.map((text) => [{ kind: 'prose' as const, text, key: text }]),

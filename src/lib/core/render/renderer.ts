@@ -36,6 +36,14 @@ export interface Room {
 	streets?: Thing[];
 	/** What is in view but unnoticed: told, and examinable, only once the reader looks closer. */
 	hidden?: { lines: string[]; things: Thing[] };
+	/** The template's telling, where prose written ahead of time took its place. */
+	plain?: Telling;
+}
+
+/** A place as told: its paragraphs, and the same as labelled parts where they can be told apart. */
+export interface Telling {
+	paragraphs: string[];
+	parts?: Part[][];
 }
 
 /** Turns a scene into words. The adventure renderer and, later, a model sit behind this port. */

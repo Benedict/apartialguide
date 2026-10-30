@@ -20,7 +20,7 @@ import { distanceWords, longDate, monthYear } from '../render/words';
 export { distanceWords };
 import { alludedTo } from '../keepers';
 import { direction, parse } from './parser';
-import type { Thing } from '../render/renderer';
+import type { Telling, Thing } from '../render/renderer';
 import { distance } from '../geo';
 import { AUTO, SLOTS, type SaveStore, type SavedWalk, type WalkState } from './saves';
 import type { AdventureWorld, CompiledExit, Ledger, Term, TransitStop } from './world';
@@ -43,7 +43,7 @@ export interface Reply {
 
 export const HELP =
 	'Type a direction to walk: north, ne, go east, or the name of a street; back retraces your step. ' +
-	'Look (l) tells the place again in full; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
+	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name and drop it somewhere else; inventory (i) says what you carry. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
 	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, gps for this place on a map, score for how far you have walked, wait (z), again (g), and verbose or brief.';
@@ -219,12 +219,23 @@ export class Adventure {
 
 	look(): Reply {
 		const stop = this.world.stops[this.here];
-		// The lighting as the template gave it is said again for the hour.
-		const lit = (stop.parts ?? []).flat().filter((p) => p.lit);
-		const lines = stop.paragraphs.map((line) =>
+		return { title: stop.title, lines: this.inFull(stop) };
+	}
+
+	/** The place again from the template alone, where prose was told instead. */
+	private plainly(): Reply {
+		const stop = this.world.stops[this.here];
+		return stop.plain
+			? { title: stop.title, lines: this.inFull(stop.plain) }
+			: { lines: ['I have told it plainly already.'] };
+	}
+
+	/** A telling in full, its lighting as the template gave it said again for the hour. */
+	private inFull({ paragraphs, parts }: Telling): string[] {
+		const lit = (parts ?? []).flat().filter((p) => p.lit);
+		return paragraphs.map((line) =>
 			lit.reduce((said, p) => said.replace(p.text, this.saidNow(p)), line)
 		);
-		return { title: stop.title, lines };
 	}
 
 	/** A part as said now: the street's lighting by the hour, worked out for where the map puts it. */
@@ -259,6 +270,8 @@ export class Adventure {
 				return { lines: [] };
 			case 'look':
 				return this.look();
+			case 'plainly':
+				return this.plainly();
 			case 'explore':
 				return this.explore();
 			case 'help':
