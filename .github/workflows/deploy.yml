@@ -72,7 +72,7 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ vars.NETLIFY_SITE_ID }}
         run: |
-          npx --yes netlify-cli@27.12.1 deploy --dir=site --site "$NETLIFY_SITE_ID" \
+          npx --yes netlify-cli@27.12.1 deploy --no-build --dir=site --site "$NETLIFY_SITE_ID" \
             ${{ github.ref == 'refs/heads/main' && '--prod' || format('--alias=pr-{0}', github.event.number) }} \
             --message "${{ github.sha }}" --json > deploy.json
           echo "Deployed: $(jq -r '.deploy_url' deploy.json)" >> "$GITHUB_STEP_SUMMARY"

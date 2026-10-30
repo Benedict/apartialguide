@@ -33,6 +33,8 @@ describe('the site on Netlify', () => {
 
 	it('deploys main to production and each pull request to a preview, only once Netlify is set up', () => {
 		expect(deploy).toMatch(/netlify-cli@\d+\.\d+\.\d+ deploy/);
+		// The folder as built and smoked: Netlify's own build would find the framework and run it.
+		expect(deploy).toMatch(/netlify-cli@\S+ deploy --no-build /);
 		expect(deploy).toContain("github.ref == 'refs/heads/main' && '--prod'");
 		expect(deploy).toContain('--alias');
 		expect(deploy).toContain("vars.NETLIFY_SITE_ID != ''");
