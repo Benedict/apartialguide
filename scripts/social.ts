@@ -1,6 +1,6 @@
 /**
  * Draws pictures for the site's social profiles into build/social/: a profile picture (the mark,
- * centred to survive a circle) and portrait posts at 1080×1350, in the site's own type and colours.
+ * centred to survive a circle, in red, and in paper beside it) and portrait posts at 1080×1350, in the site's own type and colours.
  * Every word Guide says in them is the walk's own, as it played; nothing is written for the post.
  *   npm run social
  */
@@ -50,12 +50,21 @@ const screen = (
 		.join('')}</div>${foot()}</div>`;
 
 const pictures: [name: string, width: number, height: number, html: string, style?: string][] = [
-	[
-		'profile',
-		1080,
-		1080,
-		`<div style="width:1080px;height:1080px;background:#000;display:flex;align-items:center;justify-content:center">${MARK.replace('<svg ', '<svg width="620" height="620" ')}</div>`
-	],
+	// The profile picture in the red phosphor, the one on Instagram, and in paper beside it.
+	...(['red', 'paper'] as const).map((key) => {
+		const t = THEMES.find((theme) => theme.key === key)!;
+		return [
+			key === 'red' ? 'profile' : `profile-${key}`,
+			1080,
+			1080,
+			`<div style="width:1080px;height:1080px;background:${t.paper};display:flex;align-items:center;justify-content:center">${MARK.replace(
+				'<svg ',
+				'<svg width="620" height="620" '
+			)
+				.replace(/#d4d4cc/g, t.ink)
+				.replace(/#fff\b/g, t.bright)}</div>`
+		] as [string, number, number, string];
+	}),
 	[
 		'post-1-hello',
 		1080,
