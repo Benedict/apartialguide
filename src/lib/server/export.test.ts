@@ -309,3 +309,22 @@ describe('the colours of the page', () => {
 			expect(html).toMatch(new RegExp(`<input type="radio" name="theme" value="${colour}"`));
 	});
 });
+
+describe('the type of the page', () => {
+	it('carries Commit Mono inside the single page, and credits it on About under its licence', () => {
+		expect(page()).toContain("--mono: 'Commit Mono',");
+		expect(page()).toContain('url(data:font/woff2;base64,');
+		expect(page()).toMatch(/<section id="about"[^]*Commit Mono[^]*SIL Open Font License/);
+	});
+
+	it('takes the fonts from the site where it is served in tiles', () => {
+		const html = exportPage({
+			engine: 'var Adventure = function () {};',
+			world,
+			snapshotDate: '2026-10-24',
+			tiles: 'tiles/'
+		});
+		expect(html).toContain("url('/fonts/commit-mono-400.woff2')");
+		expect(html).not.toContain('data:font/woff2');
+	});
+});

@@ -50,6 +50,11 @@ describe('landingPage', () => {
 		expect(html).toContain(':root[data-theme="amber"]');
 	});
 
+	it('is set in Commit Mono, served from the site', () => {
+		expect(html).toContain("url('/fonts/commit-mono-400.woff2')");
+		expect(html).toContain("--mono: 'Commit Mono',");
+	});
+
 	it('leads to the walk', () => {
 		expect(html).toMatch(/<a class="begin" href="walk\/"[^>]*>Start in Addiscombe/);
 	});

@@ -1,4 +1,5 @@
 import { themeBoot, themeCss } from '../site/themes';
+import { fontFaces, MONO } from './type';
 import { faviconLinks, LOCKUP } from '../site/brand';
 
 /**
@@ -18,10 +19,11 @@ ${themeBoot()}
 ${faviconLinks('/')}
 <meta name="theme-color" content="#000000">
 <style>
+${fontFaces('/')}
 	/* As the walk looks: one typeface, light on dark, an inverse bar. */
 	:root {
 		--paper: #000; --ink: #d4d4cc; --bright: #fff; --muted: #8e8e86;
-		--mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
+		--mono: ${MONO};
 	}
 	html { background: var(--paper); }
 	body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.6 var(--mono); }
