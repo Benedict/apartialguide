@@ -68,6 +68,11 @@ try {
 	);
 	const page = await context.newPage();
 	page.on('pageerror', (e) => failures.push(`page error: ${e.message}`));
+	// Whatever the page's policy refuses, it was built to need: a refusal is a fault in the page.
+	page.on('console', (m) => {
+		if (m.type() === 'error' && /Content Security Policy/.test(m.text()))
+			failures.push(`refused by the page's policy: ${m.text().slice(0, 200)}`);
+	});
 	if (root) {
 		// The microsite leads into the walk.
 		await page.goto(root);
