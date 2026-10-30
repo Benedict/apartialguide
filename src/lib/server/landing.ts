@@ -41,7 +41,7 @@ export function landingPage({
 		.map((e) =>
 			'said' in e
 				? `<p class="command">&gt; ${esc(e.said)}</p>`
-				: `${e.title ? `<h3>${esc(e.title)}</h3>` : ''}${e.lines.map((l) => `<p>${esc(l)}</p>`).join('')}`
+				: `${e.title ? `<h2 class="place">${esc(e.title)}</h2>` : ''}${e.lines.map((l) => `<p>${esc(l)}</p>`).join('')}`
 		)
 		.join('\n\t\t\t');
 	return `<!doctype html>
@@ -87,7 +87,7 @@ ${fontFaces('/')}
 	.begin:hover, .begin:focus-visible { background: var(--paper); color: var(--bright); }
 	h2 { color: var(--bright); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 3rem 0 1rem; }
 	.played { border: 1px solid var(--rule); padding: 1rem 1.25rem; margin-top: 1rem; }
-	.played h3 { color: var(--bright); font-size: 1rem; margin: 1rem 0 0.5rem; }
+	.played h2.place { color: var(--bright); font-size: 1rem; margin: 1rem 0 0.5rem; }
 	.played p { margin: 0 0 0.75rem; }
 	.played .command { color: var(--bright); }
 	.commands { list-style: none; padding: 0; margin: 0; }
@@ -101,11 +101,15 @@ ${fontFaces('/')}
 	.consent p { margin: 0 auto; max-width: 44rem; }
 	.consent button { font: inherit; margin-left: 0.5ch; }
 ${themeCss()}
+	/* A link first in the page, seen only when a keyboard reaches it, to skip to what matters. */
+	.skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; background: var(--bright); color: var(--paper); padding: 0.6rem 1rem; font-weight: 700; }
+	.skip:focus { top: 0.5rem; }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to the content</a>
 <div class="bar"><span>A Partial Guide</span><a href="walk/">Start</a></div>
-<main>
+<main id="main">
 	<section class="hero">
 		<div class="brand">${LOCKUP}</div>
 		<h1>The world as a text adventure.</h1>

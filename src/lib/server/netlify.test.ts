@@ -30,6 +30,26 @@ describe('the site on Netlify', () => {
 		expect(deploy).toContain("contains(github.event.pull_request.labels.*.name, 'preview')");
 	});
 
+	it('lets the fonts be kept a week, and the pages and tiles, which change with each deploy, checked each time', () => {
+		expect(toml).toMatch(
+			/for = "\/fonts\/\*"\n\s+\[headers.values\]\n\s+Cache-Control = "public, max-age=604800"/
+		);
+		expect(toml).not.toMatch(/for = "\/walk\/[^"]*"\n\s+\[headers.values\]\n\s+Cache-Control/);
+	});
+
+	it('sends the security headers the specification requires on every path', () => {
+		const all = toml.slice(toml.indexOf('for = "/*"'));
+		for (const header of [
+			'Strict-Transport-Security = "max-age=31536000"',
+			'X-Content-Type-Options = "nosniff"',
+			'X-Frame-Options = "DENY"',
+			'Referrer-Policy = "strict-origin-when-cross-origin"'
+		])
+			expect(all).toContain(header);
+		expect(all).toMatch(/Content-Security-Policy = "frame-ancestors 'none'"/);
+		expect(all).toMatch(/Permissions-Policy = "[^"]*geolocation=\(\)[^"]*"/);
+	});
+
 	it('publishes the site the workflow builds, with no build of its own', () => {
 		expect(toml).toMatch(/^\[build\]\n\s+publish = "site"/m);
 		expect(toml).not.toMatch(/^\s+command =/m);

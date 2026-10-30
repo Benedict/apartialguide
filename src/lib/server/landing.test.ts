@@ -1,3 +1,4 @@
+import { structureFaults } from './structure';
 import { describe, expect, it } from 'vitest';
 import { landingPage } from './landing';
 
@@ -53,6 +54,10 @@ describe('landingPage', () => {
 	it('is set in Commit Mono, served from the site', () => {
 		expect(html).toContain("url('/fonts/commit-mono-400.woff2')");
 		expect(html).toContain("--mono: 'Commit Mono',");
+	});
+
+	it('can be read by everyone: headings in order, a main, and a skip link to it', () => {
+		expect(structureFaults(html)).toEqual([]);
 	});
 
 	it('leads to the walk', () => {
