@@ -9,6 +9,14 @@ on:
         description: Most stops to write in this run (each is one model call)
         required: true
         default: '25'
+      only:
+        description: Which stops to write, busier (something going on; the template carries the rest) or all
+        required: true
+        default: busier
+        type: choice
+        options:
+          - busier
+          - all
 
 permissions:
   contents: write
@@ -36,6 +44,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NARRATE_LIMIT: ${{ inputs.limit }}
+          NARRATE_ONLY: ${{ inputs.only }}
           # The same world the Pages workflow publishes, or the prose will not be found.
           SNAPSHOT_PATH: data/snapshots/addiscombe-2026-10-25.json
           START_AT: 51.379897,-0.074294
