@@ -486,8 +486,8 @@ describe('drift', () => {
 					{ label: 'west', to: 'came', street: 'Long Street' }
 				]
 			}),
-			plain: stop('Long Street', east1, { exits: [{ label: 'west', to: 'here' }] }),
-			odd: stop('Short Row', east2, {
+			plain: stop('Long Street', [east1[0], east1[1]], { exits: [{ label: 'west', to: 'here' }] }),
+			odd: stop('Short Row', [east2[0], east2[1]], {
 				exits: [{ label: 'south', to: 'here' }],
 				fragments: ['ld Invented Mill']
 			}),
