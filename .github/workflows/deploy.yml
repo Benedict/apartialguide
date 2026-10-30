@@ -1,0 +1,122 @@
+name: Deploy
+
+# Builds the site (the microsite, and the walk in tiles fetched as the reader reaches them), checks
+# that it plays, and publishes it where live data can be fetched as the reader plays (the claude.ai
+# preview's security policy blocks it). Once Netlify is set up (the variable NETLIFY_SITE_ID and the
+# secret NETLIFY_AUTH_TOKEN), main goes to production there and a pull request labelled preview to a
+# preview of its own; until then, main goes to GitHub Pages, as before.
+on:
+  push:
+    branches: [main]
+  # A pull request gets a preview only when labelled preview: most merge before anyone would open one.
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    # A pull request is built only for a preview, asked for by its label: CI checks it otherwise.
+    if: >-
+      github.event_name != 'pull_request' ||
+      (vars.NETLIFY_SITE_ID != '' && contains(github.event.pull_request.labels.*.name, 'preview'))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Export the site
+        env:
+          SNAPSHOT_PATH: data/snapshots/addiscombe-2026-10-25.json
+          START_AT: 51.379897,-0.074294
+          HISTORY_DIR: data/history
+          WIKIDATA_DIR: data/wikidata
+          RECORDS_DIR: data/records
+          NARRATION_PATH: data/narration/addiscombe.json
+          SITE_DIR: site
+          # On Netlify the flights function answers from the same site (netlify/edge-functions);
+          # on Pages, from wherever it was deployed on its own, if anywhere.
+          FLIGHTS_URL: ${{ vars.NETLIFY_SITE_ID != '' && '/api/flights' || vars.FLIGHTS_URL }}
+          # Google Analytics, counted only once a reader says yes; without it nothing is asked.
+          GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
+        run: npm run export
+      # Publish only a site that plays.
+      - run: npx playwright install --with-deps chromium
+      - run: npm run smoke
+        env:
+          SITE_DIR: site
+      # Croydon-wide, behind a flag: published at /croydon/, linked from nowhere and kept from search
+      # engines, only while the repository variable CROYDON_WALK is "on". The map alone, from its
+      # newest snapshot: no prose written ahead of time and no other accounts yet. It starts at
+      # East Croydon station.
+      - name: Export Croydon
+        if: vars.CROYDON_WALK == 'on'
+        env:
+          START_AT: 51.37535,-0.09264
+          PLACE_NAME: Croydon
+          NOINDEX: 1
+          SITE_DIR: site/croydon
+          FLIGHTS_URL: ${{ vars.NETLIFY_SITE_ID != '' && '/api/flights' || vars.FLIGHTS_URL }}
+          GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
+        run: |
+          SNAPSHOT_PATH=$(ls data/snapshots/croydon-*.json* | sort | tail -1) npm run export
+      - if: vars.CROYDON_WALK == 'on'
+        run: npm run smoke
+        env:
+          SITE_DIR: site/croydon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: site
+
+  netlify:
+    needs: build
+    if: vars.NETLIFY_SITE_ID != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      # For netlify.toml and the edge function, deployed with the site.
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: site
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ vars.NETLIFY_SITE_ID }}
+        run: |
+          npx --yes netlify-cli@27.12.1 deploy --no-build --dir=site --site "$NETLIFY_SITE_ID" \
+            ${{ github.ref == 'refs/heads/main' && '--prod' || format('--alias=pr-{0}', github.event.number) }} \
+            --message "${{ github.sha }}" --json > deploy.json
+          echo "Deployed: $(jq -r '.deploy_url' deploy.json)" >> "$GITHUB_STEP_SUMMARY"
+
+  pages:
+    needs: build
+    if: vars.NETLIFY_SITE_ID == '' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

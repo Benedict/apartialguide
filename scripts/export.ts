@@ -16,6 +16,7 @@ import { dirname, join } from 'node:path';
 import { Adventure } from '../src/lib/core/adventure/engine';
 import { tileWorld } from '../src/lib/core/adventure/tiles';
 import { landingPage } from '../src/lib/server/landing';
+import { notFoundPage } from '../src/lib/server/notfound';
 import { compileWorld } from '../src/lib/core/adventure/world';
 import { exportPage, wordsAmiss } from '../src/lib/server/export';
 import { loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
@@ -82,6 +83,7 @@ if (site) {
 		})
 	);
 	writeFileSync(join(site, 'index.html'), await microsite());
+	writeFileSync(join(site, '404.html'), notFoundPage());
 	console.log(
 		`${Object.keys(world.stops).length} stops written to ${walk} in ${Object.keys(tiles).length} tiles, and the microsite to ${site}`
 	);
