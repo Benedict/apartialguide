@@ -1,0 +1,43 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "49503",
+			"at": [
+				51.39663,
+				-0.07002
+			],
+			"claims": {
+				"name": "William Walker MVO 1869-1918 \"The deep sea diver who saved Winchester Cathedral\".....while living here",
+				"description": "plaque",
+				"inscription": "William Walker MVO 1869-1918 \"The deep sea diver who saved Winchester Cathedral\".....while living here"
+			}
+		},
+		{
+			"id": "39072",
+			"at": [
+				51.39351,
+				-0.06712
+			],
+			"claims": {
+				"name": "16 August 1930 Stamford Bridge Stadium. Ellen E. (Ciss) Wright of Croydon Harriers became All England 440 yards Champion when aged 20 & living at 6 Clifford Road",
+				"description": "plaque",
+				"inscription": "16 August 1930 Stamford Bridge Stadium. Ellen E. (Ciss) Wright of Croydon Harriers became All England 440 yards Champion when aged 20 & living at 6 Clifford Road"
+			}
+		},
+		{
+			"id": "12267",
+			"at": [
+				51.3969,
+				-0.07432
+			],
+			"claims": {
+				"name": "Conceived by Borough Engineer George Carter and constructed by Robert McAlpine & Sons, Norwood Junction Subway the world's first reinforced concrete underpass opened 31 July 1912",
+				"description": "plaque",
+				"inscription": "Conceived by Borough Engineer George Carter and constructed by Robert McAlpine & Sons, Norwood Junction Subway the world's first reinforced concrete underpass opened 31 July 1912"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

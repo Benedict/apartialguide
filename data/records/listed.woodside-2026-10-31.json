@@ -1,0 +1,63 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536770",
+			"at": [
+				51.385692,
+				-0.07113
+			],
+			"observed": "1981-08-14",
+			"claims": {
+				"name": "2, WOODSIDE GREEN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1981-08-14"
+			}
+		},
+		{
+			"id": "31536771",
+			"at": [
+				51.389363,
+				-0.065297
+			],
+			"observed": "1976-10-29",
+			"claims": {
+				"name": "Church of St Luke",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1976-10-29"
+			}
+		},
+		{
+			"id": "31647184",
+			"at": [
+				51.389898,
+				-0.068037
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "WOODSIDE COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31855905",
+			"at": [
+				51.387306,
+				-0.069934
+			],
+			"observed": "2017-02-21",
+			"claims": {
+				"name": "Woodside War Memorial",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-21"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
