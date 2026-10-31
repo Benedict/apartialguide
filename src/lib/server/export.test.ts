@@ -265,6 +265,8 @@ describe('exportPage', () => {
 			'Some places were written by people who know them: Ada Inventa and Bo &lt;Invented&gt;.'
 		);
 		expect(about()).not.toContain('people who know them');
+	});
+
 	it('leads from About to the walk’s profile on Instagram', () => {
 		const about = page().match(/<section id="about"[^]*?<\/section>/)![0];
 		expect(about).toContain(
