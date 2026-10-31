@@ -1,0 +1,307 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "12|GREEN LANE",
+			"address": {
+				"number": "12",
+				"street": "GREEN LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ALLFOR CARE AMBULANCE LIMITED",
+				"since": "2025-10-24"
+			}
+		},
+		{
+			"id": "10|GREEN LANE",
+			"address": {
+				"number": "10",
+				"street": "GREEN LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "C K MIAMI LTD",
+				"since": "2025-06-12"
+			}
+		},
+		{
+			"id": "8|POLLARDS HILL NORTH",
+			"address": {
+				"number": "8",
+				"street": "POLLARDS HILL NORTH"
+			},
+			"claims": {
+				"count": "3",
+				"names": "LANDLORDS CHOICE MAINTENANCE LIMITED|CHOICE & INDEPENDENCE ACCOMMODATION LIMITED|COMMERCIAL CERTS LTD",
+				"since": "2026-03-12"
+			}
+		},
+		{
+			"id": "2|GREEN LANE",
+			"address": {
+				"number": "2",
+				"street": "GREEN LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DD UK RETAIL LIMITED",
+				"since": "2022-03-04"
+			}
+		},
+		{
+			"id": "2|POLLARDS HILL NORTH",
+			"address": {
+				"number": "2",
+				"street": "POLLARDS HILL NORTH"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EHM CONSULTING LTD",
+				"since": "2005-07-04"
+			}
+		},
+		{
+			"id": "4|GREEN LANE",
+			"address": {
+				"number": "4",
+				"street": "GREEN LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GLAM AND BEYOND LIMITED",
+				"since": "2023-12-03"
+			}
+		},
+		{
+			"id": "42|GREEN LANE",
+			"address": {
+				"number": "42",
+				"street": "GREEN LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GREEN LANE LOCAL LTD",
+				"since": "2026-04-27"
+			}
+		},
+		{
+			"id": "24|GREEN LANE",
+			"address": {
+				"number": "24",
+				"street": "GREEN LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GREENLANE DRYCLEANERS LTD",
+				"since": "2019-06-12"
+			}
+		},
+		{
+			"id": "463|STREATHAM HIGH ROAD",
+			"address": {
+				"number": "463",
+				"street": "STREATHAM HIGH ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "QUINTESSENTIAL VAPOUR LTD|HM CHAIRS LTD|KLIKD LTD",
+				"since": "2015-04-27"
+			}
+		},
+		{
+			"id": "18|GREEN LANE",
+			"address": {
+				"number": "18",
+				"street": "GREEN LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KARIM'S BAKERY LIMITED",
+				"since": "2003-08-06"
+			}
+		},
+		{
+			"id": "8|GREEN LANE",
+			"address": {
+				"number": "8",
+				"street": "GREEN LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MARK'S VILLAGE LIMITED",
+				"since": "2016-06-25"
+			}
+		},
+		{
+			"id": "447|STREATHAM HIGH ROAD",
+			"address": {
+				"number": "447",
+				"street": "STREATHAM HIGH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MAROQUE LIMITED",
+				"since": "2019-03-04"
+			}
+		},
+		{
+			"id": "6|POLLARDS HILL NORTH",
+			"address": {
+				"number": "6",
+				"street": "POLLARDS HILL NORTH"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MARSHALL RESIDENTIALS LLP",
+				"since": "2017-01-25"
+			}
+		},
+		{
+			"id": "30|GREEN LANE",
+			"address": {
+				"number": "30",
+				"street": "GREEN LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NEW OCEAN BREEZE LIMITED",
+				"since": "2026-07-31"
+			}
+		},
+		{
+			"id": "2|FORREST GARDENS",
+			"address": {
+				"number": "2",
+				"street": "FORREST GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "OCEAN PROPERTY DEVELOPERS LIMITED",
+				"since": "2012-11-05"
+			}
+		},
+		{
+			"id": "38|GREEN LANE",
+			"address": {
+				"number": "38",
+				"street": "GREEN LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PIZZA HUB CR7 LTD",
+				"since": "2025-01-21"
+			}
+		},
+		{
+			"id": "22|GREEN LANE",
+			"address": {
+				"number": "22",
+				"street": "GREEN LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PREMIER CAR AUDIO & STYLING LTD",
+				"since": "2023-07-14"
+			}
+		},
+		{
+			"id": "1212|LONDON ROAD",
+			"address": {
+				"number": "1212",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PROPERTY ARK LIMITED",
+				"since": "2025-10-07"
+			}
+		},
+		{
+			"id": "6|FORREST GARDENS",
+			"address": {
+				"number": "6",
+				"street": "FORREST GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RANDOM STUFF MY FRIENDS SAY LIMITED",
+				"since": "2016-04-21"
+			}
+		},
+		{
+			"id": "1168|LONDON ROAD",
+			"address": {
+				"number": "1168",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SORRENTO IN LIMITED",
+				"since": "2016-01-13"
+			}
+		},
+		{
+			"id": "262|BEULAH HILL",
+			"address": {
+				"number": "262",
+				"street": "BEULAH HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TAYLOR-ROSS INNS LIMITED",
+				"since": "2005-08-15"
+			}
+		},
+		{
+			"id": "20|GREEN LANE",
+			"address": {
+				"number": "20",
+				"street": "GREEN LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TEGGZ KITCHEN LTD",
+				"since": "2023-02-02"
+			}
+		},
+		{
+			"id": "4|POLLARDS HILL NORTH",
+			"address": {
+				"number": "4",
+				"street": "POLLARDS HILL NORTH"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE SCENT GALLERY LTD",
+				"since": "2024-01-29"
+			}
+		},
+		{
+			"id": "16|GREEN LANE",
+			"address": {
+				"number": "16",
+				"street": "GREEN LANE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "TRICREST CONSULTANTS LTD|ZANET HOUSING SOLUTIONS LTD",
+				"since": "2025-01-13"
+			}
+		},
+		{
+			"id": "413|BEULAH HILL",
+			"address": {
+				"number": "413",
+				"street": "BEULAH HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "VEMBANAM LTD",
+				"since": "2015-06-15"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

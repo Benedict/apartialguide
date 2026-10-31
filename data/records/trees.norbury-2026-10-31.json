@@ -1,0 +1,55 @@
+{
+	"source": "Greater London Authority, Public_Realm_tree_list_2025_November.csv",
+	"prefix": "trees",
+	"records": [
+		{
+			"id": "trees:Copgate Path",
+			"street": "Copgate Path",
+			"claims": {
+				"count": "4",
+				"kinds": "Ash (1), Cherry Plum (1), Horse-chestnut (1), Pedunculate Oak (1)"
+			}
+		},
+		{
+			"id": "trees:Somerset Gardens",
+			"street": "Somerset Gardens",
+			"claims": {
+				"count": "1",
+				"kinds": "Pyrus Species (1)"
+			}
+		},
+		{
+			"id": "trees:Pollards Hill North",
+			"street": "Pollards Hill North",
+			"claims": {
+				"count": "1",
+				"kinds": "Pedunculate Oak (1)"
+			}
+		},
+		{
+			"id": "trees:Southbrook Road",
+			"street": "Southbrook Road",
+			"claims": {
+				"count": "5",
+				"kinds": "London Plane (5)"
+			}
+		},
+		{
+			"id": "trees:Pollards Hill South",
+			"street": "Pollards Hill South",
+			"claims": {
+				"count": "1",
+				"kinds": "Plane (1)"
+			}
+		},
+		{
+			"id": "trees:Ederline Avenue",
+			"street": "Ederline Avenue",
+			"claims": {
+				"count": "1",
+				"kinds": "Plane (1)"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

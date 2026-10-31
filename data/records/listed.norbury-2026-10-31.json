@@ -1,0 +1,105 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536772",
+			"at": [
+				51.407593,
+				-0.11817
+			],
+			"observed": "1986-04-22",
+			"claims": {
+				"name": "NORBURY HALL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1986-04-22"
+			}
+		},
+		{
+			"id": "31536776",
+			"at": [
+				51.419429,
+				-0.114007
+			],
+			"observed": "1951-01-29",
+			"claims": {
+				"name": "NORWOOD GROVE, INCLUDING TERRACE STEPS TO GARDEN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1951-01-29"
+			}
+		},
+		{
+			"id": "31536796",
+			"at": [
+				51.420362,
+				-0.10777
+			],
+			"observed": "1973-10-11",
+			"claims": {
+				"name": "HOUSE AND OUTBUILDINGS",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1973-10-11"
+			}
+		},
+		{
+			"id": "31645595",
+			"at": [
+				51.410726,
+				-0.122562
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "BARCLAYS BANK",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31814599",
+			"at": [
+				51.420258,
+				-0.107429
+			],
+			"observed": "1972-11-22",
+			"claims": {
+				"name": "BEECH COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1972-11-22"
+			}
+		},
+		{
+			"id": "31814607",
+			"at": [
+				51.420601,
+				-0.108091
+			],
+			"observed": "1973-04-25",
+			"claims": {
+				"name": "THE OLD COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1973-04-25"
+			}
+		},
+		{
+			"id": "31849469",
+			"at": [
+				51.41422,
+				-0.119176
+			],
+			"observed": "2010-08-10",
+			"claims": {
+				"name": "CIRCULAR DRINKING TROUGH IN NORBURY PARK",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2010-08-10"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
