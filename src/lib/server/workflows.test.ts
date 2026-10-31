@@ -21,24 +21,15 @@ function worldEnv(file: string): Record<string, string> {
 }
 
 describe('the workflows', () => {
-	it('publish Croydon at /croydon/ only while the CROYDON_WALK flag is on, the map alone, kept from search engines', () => {
+	it('publish the whole borough at the root, enriched area by area, with no walk of its own at /croydon/', () => {
 		const pages = readFileSync('.github/workflows/deploy.yml', 'utf8');
-		const steps = pages.split(/\n\s+- /).filter((s) => s.includes("vars.CROYDON_WALK == 'on'"));
-		const exported = steps.find((s) => s.includes('npm run export'))!;
-		expect(exported).toContain('SITE_DIR: site/croydon');
-		expect(exported).toContain('data/snapshots/croydon-');
-		expect(exported).toContain('PLACE_NAME: Croydon');
-		expect(exported).toContain('NOINDEX: 1');
-		// The map alone: no prose written ahead of time, and no other accounts yet.
-		for (const key of ['NARRATION_PATH', 'RECORDS_DIR', 'HISTORY_DIR', 'WIKIDATA_DIR'])
-			expect(exported).not.toContain(key);
-		expect(steps.some((s) => /npm run smoke\n\s+env:\n\s+SITE_DIR: site\/croydon/.test(s))).toBe(
-			true
-		);
-		// Before the whole site is uploaded.
-		expect(pages.indexOf('SITE_DIR: site/croydon')).toBeLessThan(
-			pages.indexOf('actions/upload-artifact')
-		);
+		expect(worldEnv('deploy.yml').SNAPSHOT_PATH).toMatch(/^data\/snapshots\/croydon-.+\.json\.gz$/);
+		expect(pages).not.toContain('site/croydon');
+		expect(pages).not.toContain('CROYDON_WALK');
+		// One area at a time: the Narrate workflow asks which, by its name in data/areas.json.
+		const narrate = readFileSync('.github/workflows/narrate.yml', 'utf8');
+		expect(narrate).toMatch(/^\s+area:$/m);
+		expect(narrate).toContain('NARRATE_AREA: ${{ inputs.area }}');
 	});
 
 	it('fail CI when there are fewer tests than on the branch it would merge into', () => {

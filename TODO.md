@@ -4,6 +4,9 @@ Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
 
 ## Keys and workflows
 
+- [ ] **Restore Addiscombe's prose on the borough map.** On the borough snapshot 168 of Addiscombe's 200 busier stops keep their prose; 32 lost theirs to map edits between the snapshots. Actions → Narrate → Run workflow, with `only` busier, `area` Addiscombe and `limit` 40.
+- [ ] **Remove the `CROYDON_WALK` variable.** The walk at the root is now the whole borough, so `/croydon/` is no longer built.
+
 - [ ] **Re-narrate.** The walk now stops only at junctions and named places, so every stop is new and the prose written before no longer matches any of them: the walk shows the template until it is rewritten. There are 384 busier stops now (was 1,094). Either run the Narrate workflow with `NARRATE_ONLY=busier` (API, roughly $8–15), or ask Claude to narrate them in a session on your Max plan.
 - [ ] **Energy certificate keys.** Register at <https://epc.opendatacommunities.org/>. Then add two repository secrets (Settings → Secrets and variables → Actions):
   - `EPC_EMAIL`

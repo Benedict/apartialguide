@@ -17,6 +17,10 @@ on:
         options:
           - busier
           - all
+      area:
+        description: Which area to write, by its name in data/areas.json (Addiscombe, Shirley…); empty for all
+        required: false
+        default: Addiscombe
 
 permissions:
   contents: write
@@ -45,8 +49,10 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NARRATE_LIMIT: ${{ inputs.limit }}
           NARRATE_ONLY: ${{ inputs.only }}
+          NARRATE_AREA: ${{ inputs.area }}
           # The same world the Deploy workflow publishes, or the prose will not be found.
-          SNAPSHOT_PATH: data/snapshots/addiscombe-2026-10-25.json
+          SNAPSHOT_PATH: data/snapshots/croydon-2026-10-29.json.gz
+          NODE_OPTIONS: --max-old-space-size=6144
           START_AT: 51.379897,-0.074294
           HISTORY_DIR: data/history
           WIKIDATA_DIR: data/wikidata

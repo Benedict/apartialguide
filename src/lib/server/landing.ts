@@ -117,7 +117,7 @@ ${themeCss()}
 		<div class="brand">${LOCKUP}</div>
 		<h1>The world as a text adventure.</h1>
 		<p class="lede">Type a direction and walk. Every street, building, name and date comes from open data.</p>
-		<p>It starts with ${esc(placeWords(place))}: ${n(about.streets)} streets and ${n(about.places)} places, from a map dated ${esc(longDate(snapshotDate))}.</p>
+		<p>It starts with ${esc(placeWords(place))}. Guide’s map has ${n(about.streets)} streets and ${n(about.places)} places, and is dated ${esc(longDate(snapshotDate))}.</p>
 		<a class="begin" href="walk/">Start in ${esc(place.name)}</a>
 	</section>
 

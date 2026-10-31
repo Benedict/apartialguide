@@ -125,4 +125,37 @@ describe('loadRecords', () => {
 		writeFileSync(join(dir, 'use.env'), 'LEAVE_OUT=\n');
 		expect(loadRecords(dir).map((s) => s.prefix)).toEqual(['bench']);
 	});
+
+	// Invented records: an area's files are named <prefix>.<area>-<date>.json.
+	const kept = (prefix: string, retrieved: string, ids: string[]) =>
+		JSON.stringify({
+			source: 'Invented',
+			prefix,
+			retrieved,
+			records: ids.map((id) => ({ id, at: [51, 0], observed: retrieved, claims: { name: id } }))
+		});
+
+	it('joins each area’s records of a source into one store, each record once, the newest copy kept', () => {
+		const dir = mkdtempSync(join(tmpdir(), 'records-'));
+		writeFileSync(join(dir, 'hygiene-2026-10-25.json'), kept('hygiene', '2026-10-25', ['a', 'b']));
+		writeFileSync(
+			join(dir, 'hygiene.inventa-2026-11-01.json'),
+			kept('hygiene', '2026-11-01', ['b', 'c'])
+		);
+		const stores = loadRecords(dir);
+		expect(stores.map((s) => s.prefix)).toEqual(['hygiene']);
+		expect(stores[0].records.map((r) => [r.id, r.observed])).toEqual([
+			['a', '2026-10-25'],
+			['b', '2026-11-01'],
+			['c', '2026-11-01']
+		]);
+	});
+
+	it('leaves out an area’s records of a source use.env names', () => {
+		const dir = mkdtempSync(join(tmpdir(), 'records-'));
+		writeFileSync(join(dir, 'bench-2026-10-25.json'), store('bench'));
+		writeFileSync(join(dir, 'wildlife.inventa-2026-11-01.json'), store('wildlife'));
+		writeFileSync(join(dir, 'use.env'), 'LEAVE_OUT=wildlife\n');
+		expect(loadRecords(dir).map((s) => s.prefix)).toEqual(['bench']);
+	});
 });

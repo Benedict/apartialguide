@@ -77,5 +77,3 @@ the walk and the 404; and, where a row says live, on https://apartialguide.com i
 | `/llms.txt`                  | ✓   | What the walk is, how it is played, where its words come from (from `site/sources.ts`).                                                                                                                                                     |
 | `/.well-known/security.txt`  | ⚑   | Needs a contact address.                                                                                                                                                                                                                    |
 | Content Security Policy      | ✓   | Per page (`server/csp.ts`): the page's own scripts by their hashes, worked out at build, and only the map's library and, where visits are counted, Google's; data only from the places the walk asks. `npm run smoke` fails on any refusal. |
-
-Croydon behind its flag is served from `/croydon/`: its pages are `noindex`, but their canonical URLs would name the root's; give the export a base path before the flag is turned on for long.
