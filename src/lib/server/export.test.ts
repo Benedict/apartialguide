@@ -70,6 +70,21 @@ describe('exportPage', () => {
 		expect(html.indexOf('id="world"')).toBeGreaterThan(html.indexOf('show(introduction(HEAD))'));
 	});
 
+	it('leads from About to the site’s privacy page, on the site alone, as the single page has none', () => {
+		const site = exportPage({
+			engine: '',
+			world: { ...world, start: '0-0:0', stops: {} },
+			snapshotDate: '2026-10-24',
+			tiles: 'tiles/',
+			gaId: 'G-TEST'
+		});
+		expect(site).toContain('href="/privacy/"');
+		expect(site.match(/id="consent"[^]*?<\/div>/)![0]).toContain('href="/privacy/"');
+		expect(exportPage({ engine: '', world, snapshotDate: '2026-10-24' })).not.toContain(
+			'/privacy/'
+		);
+	});
+
 	it('serves a tiled world without carrying it: the head inline, the tiles fetched as the walk reaches them', () => {
 		const html = exportPage({
 			engine: '',

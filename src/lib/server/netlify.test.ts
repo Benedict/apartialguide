@@ -63,10 +63,8 @@ describe('the site on Netlify', () => {
 		expect(toml).not.toMatch(/^\s+command =/m);
 	});
 
-	it('keeps a walk behind a flag out of search engines by header as well', () => {
-		expect(toml).toMatch(
-			/for = "\/croydon\/\*"\n\s+\[headers.values\]\n\s+X-Robots-Tag = "noindex"/
-		);
+	it('keeps no header for the walk once behind a flag at /croydon/, which is no longer built', () => {
+		expect(toml).not.toContain('/croydon/');
 	});
 
 	it('answers flights from the same site, as an Edge Function, with the shared handler', () => {

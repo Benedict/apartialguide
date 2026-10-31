@@ -28,6 +28,10 @@ const HERE = { name: 'Addiscombe', within: 'Croydon' };
 export const PAGES = {
 	home: { path: '/', description: homeDescription(HERE) },
 	walk: { path: '/walk/', description: walkDescription(HERE) },
+	privacy: {
+		path: '/privacy/',
+		description: 'What A Partial Guide keeps, what it sends and to whom: very little.'
+	},
 	missing: { description: 'There is no page here.' }
 } satisfies Record<string, Page>;
 
@@ -76,7 +80,7 @@ export const robotsTxt = (siteUrl?: string): string =>
 
 /** The pages worth finding, dated by the map they are built from. */
 export function sitemapXml(siteUrl: string, lastmod: string): string {
-	const urls = [PAGES.home, PAGES.walk]
+	const urls = [PAGES.home, PAGES.walk, PAGES.privacy]
 		.map((p) => `  <url><loc>${at(siteUrl, p.path)}</loc><lastmod>${lastmod}</lastmod></url>`)
 		.join('\n');
 	return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;

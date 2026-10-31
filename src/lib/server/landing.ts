@@ -154,10 +154,10 @@ ${themeCss()}
 
 	<footer>
 		<p>${gaId ? PRIVACY.counted : PRIVACY.none}</p>
-		<p><a href="walk/#about">Sources and licences</a> · <a href="https://github.com/Benedict/osm-text-adventure">Code</a> · Made by Benedict</p>
+		<p><a href="walk/#about">Sources and licences</a> · <a href="privacy/">Privacy</a> · <a href="https://github.com/Benedict/osm-text-adventure">Code</a> · Made by Benedict</p>
 	</footer>
 </main>
-${gaId ? consentStrip('this site') : ''}
+${gaId ? consentStrip('this site', 'privacy/') : ''}
 <script>${script}</script>
 <script>LandingPage.landing(${JSON.stringify(gaId ?? '')});</script>
 </body>

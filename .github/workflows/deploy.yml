@@ -54,6 +54,8 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
           # Where a reader at the edge of an area not open yet may ask to hear when it opens.
           SIGNUP_URL: ${{ vars.SIGNUP_URL }}
+          # Where a reader may write about their data, on the privacy page.
+          CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
         run: npm run export
       # Publish only a site that plays.
       - run: npx playwright install --with-deps chromium
