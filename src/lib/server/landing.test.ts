@@ -122,6 +122,10 @@ describe('landingPage', () => {
 		expect(html).toContain('href="walk/#about"');
 	});
 
+	it('leads to the privacy page', () => {
+		expect(html).toContain('href="privacy/"');
+	});
+
 	it('asks nothing of Google without a measurement ID, and asks first with one', () => {
 		expect(html).not.toContain('id="consent"');
 		const counted = landingPage({ ...input, gaId: 'G-TEST123' });

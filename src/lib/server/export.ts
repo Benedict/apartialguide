@@ -56,8 +56,8 @@ export const PRIVACY = {
 };
 
 /** The strip that asks, once, whether the visit may be counted. */
-export const consentStrip = (page: string) =>
-	`<div class="consent" id="consent" hidden><p>May ${page} count your visit with Google Analytics? It would know which page you opened and the kind of each command, never what you type. <button type="button" data-consent="granted">Yes</button> <button type="button" data-consent="denied">No</button></p></div>`;
+export const consentStrip = (page: string, privacy?: string) =>
+	`<div class="consent" id="consent" hidden><p>May ${page} count your visit with Google Analytics? It would know which page you opened and the kind of each command, never what you type.${privacy ? ` <a href="${privacy}">Privacy</a>.` : ''} <button type="button" data-consent="granted">Yes</button> <button type="button" data-consent="denied">No</button></p></div>`;
 
 /** The world as the page carries it: packed, gzip, then base64, which nothing in a script element can break out of. */
 const packed = (world: AdventureWorld) =>
@@ -76,7 +76,7 @@ const esc = (text: string) =>
 	text.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
 /** The About page: what the piece is, every source and its terms, and who made it. */
-function aboutPage(snapshotDate: string, counted: boolean, place: Place): string {
+function aboutPage(snapshotDate: string, counted: boolean, place: Place, privacy?: string): string {
 	const sources = SOURCES.map(
 		(s) =>
 			`<li><a href="${esc(s.href)}">${esc(s.name)}</a>: ${esc(s.gives)}.${s.live ? ' <em>Asked from your browser as you read; you can turn it off in Settings.</em>' : ''} <span class="terms">${esc(s.terms)}.</span></li>`
@@ -85,7 +85,7 @@ function aboutPage(snapshotDate: string, counted: boolean, place: Place): string
 		<div class="brand">${LOCKUP}</div>
 		<h2>About</h2>
 		<p>A Partial Guide is a text adventure of the real world, built from open data, and nothing in it is made up. It starts with ${esc(placeWords(place))}, told by Guide, who says only what the sources say, as they say it: where the data is broken, Guide is too.</p>
-		<p>The map Guide carries is dated ${esc(longDate(snapshotDate))}. ${counted ? PRIVACY.counted : PRIVACY.none}</p>
+		<p>The map Guide carries is dated ${esc(longDate(snapshotDate))}. ${counted ? PRIVACY.counted : PRIVACY.none}${privacy ? ` <a href="${privacy}">Privacy</a>.` : ''}</p>
 		<h3>Where Guide’s words come from</h3>
 		<ul class="sources">
 			${sources}
@@ -265,13 +265,13 @@ ${themeCss()}
 <div class="follow" id="follow" hidden></div>${
 			gaId
 				? `
-${consentStrip('this page')}`
+${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 				: ''
 		}
 <main class="scroll" id="scroll">
 	<h1 class="visually-hidden">A Partial Guide: the walk</h1>
 	<div id="game"><div id="transcript" aria-live="polite"></div></div>
-	${aboutPage(snapshotDate, !!gaId, place)}
+	${aboutPage(snapshotDate, !!gaId, place, tiles ? '/privacy/' : undefined)}
 	${settingsPage(!!gaId)}
 </main>
 <form id="prompt" autocomplete="off">
