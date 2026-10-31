@@ -22,3 +22,21 @@ export function inArea(wards: readonly AreaRecord[], names: string[]): (p: LatLo
 	const these = wards.filter((w) => names.includes(w.name));
 	return (p) => areaAt(p, these) !== undefined;
 }
+
+/** The box round the named wards, as `west,south,east,north`, the way records are fetched. */
+export function areaBox(wards: readonly AreaRecord[], names: string[]): string {
+	const points = wards.filter((w) => names.includes(w.name)).flatMap((w) => w.rings.flat());
+	if (!points.length) throw new Error(`No ward boundaries for ${names.join(', ')}`);
+	const lats = points.map(([lat]) => lat);
+	const lons = points.map(([, lon]) => lon);
+	return [Math.min(...lons), Math.min(...lats), Math.max(...lons), Math.max(...lats)]
+		.map((x) => +x.toFixed(6))
+		.join(',');
+}
+
+/** An area's name as it goes in a file name: park-hill-whitgift. */
+export const areaSlug = (name: string) =>
+	name
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-|-$/g, '');

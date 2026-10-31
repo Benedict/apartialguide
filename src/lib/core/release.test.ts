@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { AreaRecord } from './areas';
-import { areaWards, inArea, type AreaList } from './release';
+import { areaBox, areaSlug, areaWards, inArea, type AreaList } from './release';
 
 // Invented wards and areas, two squares side by side: not real boundaries.
 const square = (west: number): AreaRecord['rings'] => [
@@ -40,5 +40,13 @@ describe('areas made of wards', () => {
 		expect(inside([51.5, 0.5])).toBe(true);
 		expect(inside([51.5, 1.5])).toBe(true);
 		expect(inside([51.5, 2.5])).toBe(false);
+	});
+
+	it('gives the box round an area’s wards, west, south, east, north, as records are fetched by', () => {
+		expect(areaBox(wards, ['Inventa North', 'Inventa South'])).toBe('0,51,2,52');
+	});
+
+	it('names an area’s files by a slug of its name', () => {
+		expect(areaSlug('Park Hill & Whitgift')).toBe('park-hill-whitgift');
 	});
 });

@@ -89,7 +89,11 @@ export function loadLatest<T>(dir?: string): T | undefined {
 	return newest ? (JSON.parse(readFileSync(join(dir, newest), 'utf8')) as T) : undefined;
 }
 
-/** The newest records of each source in a directory: files named <prefix>-<date>.json. */
+/**
+ * The newest records of each source in a directory: files named <prefix>-<date>.json, or, for one
+ * area's, <prefix>.<area>-<date>.json. A source's areas are joined into one store, each record
+ * (and each area it draws) once, the newest copy kept.
+ */
 export function loadRecords(dir?: string): RecordStore[] {
 	if (!dir || !existsSync(dir)) return [];
 	const left = leftOut(dir);
@@ -98,9 +102,31 @@ export function loadRecords(dir?: string): RecordStore[] {
 		.filter((f) => /-\d{4}-\d{2}-\d{2}\.json$/.test(f))
 		.sort())
 		newest.set(f.replace(/-\d{4}-\d{2}-\d{2}\.json$/, ''), f);
-	return [...newest]
-		.filter(([prefix]) => !left.has(prefix))
-		.map(([, f]) => JSON.parse(readFileSync(join(dir, f), 'utf8')) as RecordStore);
+	const bySource = new Map<string, RecordStore[]>();
+	for (const [key, f] of newest) {
+		const prefix = key.split('.')[0];
+		if (left.has(prefix)) continue;
+		bySource.set(prefix, [
+			...(bySource.get(prefix) ?? []),
+			JSON.parse(readFileSync(join(dir, f), 'utf8')) as RecordStore
+		]);
+	}
+	return [...bySource.values()].map(joined);
+}
+
+/** One source's stores, from several areas, as one: oldest first, so a newer copy replaces it. */
+function joined(stores: RecordStore[]): RecordStore {
+	if (stores.length === 1) return stores[0];
+	const ordered = [...stores].sort((a, b) => a.retrieved.localeCompare(b.retrieved));
+	const once = <T extends { id: string }>(lists: (T[] | undefined)[]) => [
+		...new Map(lists.flatMap((list) => list ?? []).map((item) => [item.id, item])).values()
+	];
+	const areas = once(ordered.map((s) => s.areas));
+	return {
+		...ordered.at(-1)!,
+		records: once(ordered.map((s) => s.records)),
+		...(areas.length ? { areas } : {})
+	};
 }
 
 /**

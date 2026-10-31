@@ -2,12 +2,17 @@
  * Takes dated copies of other sources' records about the place, into data/records/<prefix>-<date>.json.
  * Run by hand or from the Records workflow, never from the app:
  *   SOURCES=hygiene npm run records
- * The box is the newest snapshot's. Each source's answer is turned into records by a parser in
+ * The box is the newest snapshot's (SNAPSHOT_NAME, addiscombe unless told), or with AREA=Shirley
+ * the box round that area's wards, keeping only the records inside them, in files named
+ * <prefix>.<area>-<date>.json. Each source's answer is turned into records by a parser in
  * src/lib/server/sources/, tested without the network.
  */
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import type { RecordStore } from '../src/lib/core/adapters/records';
 import { readJson } from '../src/lib/server/json';
+import { distance } from '../src/lib/core/geo';
+import { loadRecords } from '../src/lib/server/narrator';
+import { areaBox, areaSlug, areaWards, inArea, type AreaList } from '../src/lib/core/release';
 import { hygieneRecords } from '../src/lib/server/sources/hygiene';
 import {
 	crimeRecords,
@@ -58,9 +63,24 @@ const newest = readdirSync(snapshots)
 // Gzipped or not, as the borough's is; its elements as varied as the map.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const snapshot = readJson<{ bbox: string; elements: any[] }>(`${snapshots}/${newest}`);
-const bbox: string = snapshot.bbox;
+// AREA=Shirley: the box round that area's wards (data/areas.json), keeping only the records that
+// lie in them, so a neighbouring area's stops, and their prose, are left as they were.
+const area = process.env.AREA?.trim() || undefined;
+const wards = loadRecords('data/records').flatMap((store) => store.areas ?? []);
+const areaNames = area
+	? areaWards(JSON.parse(readFileSync('data/areas.json', 'utf8')).areas as AreaList, area)
+	: [];
+const within = area ? inArea(wards, areaNames) : undefined;
+const bbox: string = area ? areaBox(wards, areaNames) : snapshot.bbox;
+if (area) console.log(`${area}: ${areaNames.join(', ')}`);
 const [w, s, e, n] = bbox.split(',').map(Number);
 const centre = { lat: (s + n) / 2, lon: (w + e) / 2 };
+// A circle round the centre that reaches the box's corners, in miles, for sources asked by radius;
+// what they answer is clipped to the box.
+const reachMiles = Math.max(
+	1.2,
+	Math.ceil((distance([centre.lat, centre.lon], [n, e]) / 1609.344) * 10) / 10
+);
 console.log(`box ${bbox}, from ${newest}`);
 
 const postcodes = [
@@ -130,7 +150,7 @@ const SOURCES: Record<string, () => Promise<Taken | Taken[]>> = {
 	/** Food hygiene ratings, from the FSA's ratings API, within about a mile of the middle of the box. */
 	hygiene: async () => {
 		const answer = await getJson(
-			`https://api.ratings.food.gov.uk/Establishments?latitude=${centre.lat}&longitude=${centre.lon}&maxDistanceLimit=1.2&pageSize=5000&pageNumber=1`,
+			`https://api.ratings.food.gov.uk/Establishments?latitude=${centre.lat}&longitude=${centre.lon}&maxDistanceLimit=${reachMiles}&pageSize=5000&pageNumber=1`,
 			{ 'x-api-version': '2' }
 		);
 		return {
@@ -600,7 +620,9 @@ for (const key of wanted) {
 	try {
 		const got = await take();
 		for (const taken of Array.isArray(got) ? got : [got]) {
-			const path = `data/records/${taken.prefix}-${retrieved}.json`;
+			const path = `data/records/${taken.prefix}${area ? `.${areaSlug(area)}` : ''}-${retrieved}.json`;
+			const records = within ? taken.records.filter((r) => !r.at || within(r.at)) : taken.records;
+			taken.records = records;
 			writeFileSync(path, JSON.stringify({ ...taken, retrieved }, null, '\t') + '\n');
 			console.log(
 				`${key}: ${taken.records.length} records${taken.areas ? `, ${taken.areas.length} areas` : ''} written to ${path}`
