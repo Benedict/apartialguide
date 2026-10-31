@@ -1,0 +1,35 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536768",
+			"at": [
+				51.401427,
+				-0.116933
+			],
+			"observed": "1976-10-20",
+			"claims": {
+				"name": "CHURCH OF ST STEPHEN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1976-10-20"
+			}
+		},
+		{
+			"id": "31536790",
+			"at": [
+				51.389682,
+				-0.104064
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "QUEEN'S ROAD HOSPITAL (ENTRANCE BLOCK)",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

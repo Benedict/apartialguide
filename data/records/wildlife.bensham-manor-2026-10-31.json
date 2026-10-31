@@ -1,0 +1,91 @@
+{
+	"source": "NBN Atlas",
+	"prefix": "wildlife",
+	"records": [
+		{
+			"id": "30ebf907-91cc-403c-8d8d-419e238f1d54",
+			"at": [
+				51.400333,
+				-0.115984
+			],
+			"observed": "2021-09-05",
+			"claims": {
+				"name": "Migrant Hawker",
+				"seen": "2021-09"
+			}
+		},
+		{
+			"id": "43940fd2-0564-43e1-8332-8692681fd26d",
+			"at": [
+				51.398016,
+				-0.108963
+			],
+			"observed": "2020-07-20",
+			"claims": {
+				"name": "Swift",
+				"seen": "2020-07"
+			}
+		},
+		{
+			"id": "01fc0bb8-4446-4a0e-894a-ebc57e101391",
+			"at": [
+				51.40175,
+				-0.117435
+			],
+			"observed": "1984-12-21",
+			"claims": {
+				"name": "Brown Long-eared Bat",
+				"seen": "1984-12"
+			}
+		},
+		{
+			"id": "e4c1600c-302a-422c-9146-95cbcdc28dd4",
+			"at": [
+				51.401762,
+				-0.108133
+			],
+			"observed": "1996-07-02",
+			"claims": {
+				"name": "Horse-chestnut",
+				"seen": "1996-07"
+			}
+		},
+		{
+			"id": "5774f3cc-3d31-42e2-aeee-c976a593636a",
+			"at": [
+				51.393251,
+				-0.106241
+			],
+			"observed": "2013-07-02",
+			"claims": {
+				"name": "Swift",
+				"seen": "2013-07"
+			}
+		},
+		{
+			"id": "e443b0b1-c456-4c7b-9749-9d089beb1ea3",
+			"at": [
+				51.391087,
+				-0.103672
+			],
+			"observed": "2015-05-29",
+			"claims": {
+				"name": "Tick",
+				"seen": "2015-05"
+			}
+		},
+		{
+			"id": "cbb36b3e-8450-46f5-a6ef-92719a434583",
+			"at": [
+				51.401762,
+				-0.108133
+			],
+			"observed": "1996-07-02",
+			"claims": {
+				"name": "Hawthorn",
+				"seen": "1996-07"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

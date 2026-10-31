@@ -1,0 +1,199 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "11|BRIGSTOCK ROAD",
+			"address": {
+				"number": "11",
+				"street": "BRIGSTOCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AYAN RETAILS LTD",
+				"since": "2021-02-01"
+			}
+		},
+		{
+			"id": "46|KYNASTON ROAD",
+			"address": {
+				"number": "46",
+				"street": "KYNASTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BEYOND EXPECTATION SERVICES LIMITED",
+				"since": "2025-07-14"
+			}
+		},
+		{
+			"id": "48|KYNASTON ROAD",
+			"address": {
+				"number": "48",
+				"street": "KYNASTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BMG CREATIVE COLLECTIVE LIMITED",
+				"since": "2024-11-04"
+			}
+		},
+		{
+			"id": "2|NORMAN ROAD",
+			"address": {
+				"number": "2",
+				"street": "NORMAN ROAD"
+			},
+			"claims": {
+				"count": "5",
+				"names": "SH (2013) UK LTD|THORNTON AND ASSOCIATES LTD|NORMAN ACCOUNTAX LTD",
+				"since": "2013-02-12"
+			}
+		},
+		{
+			"id": "19|BRIGSTOCK ROAD",
+			"address": {
+				"number": "19",
+				"street": "BRIGSTOCK ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "DESI CATERING LTD|XPRESS BURGERS WINGS&MORE LTD|SHAKES THERAPY LTD",
+				"since": "2023-05-31"
+			}
+		},
+		{
+			"id": "30|ECCLESBOURNE ROAD",
+			"address": {
+				"number": "30",
+				"street": "ECCLESBOURNE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ENVY TREATMENTS LTD",
+				"since": "2021-08-26"
+			}
+		},
+		{
+			"id": "35|BRIGSTOCK ROAD",
+			"address": {
+				"number": "35",
+				"street": "BRIGSTOCK ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "EXCELSIOR CONSULTING GROUP LIMITED|LIKE WHOLE SALE LTD|J FRESH MART LTD",
+				"since": "2015-07-08"
+			}
+		},
+		{
+			"id": "2|KYNASTON ROAD",
+			"address": {
+				"number": "2",
+				"street": "KYNASTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FELIJOS LTD",
+				"since": "2020-06-24"
+			}
+		},
+		{
+			"id": "46|BRIGSTOCK ROAD",
+			"address": {
+				"number": "46",
+				"street": "BRIGSTOCK ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "UNIQUE BARBER AND BEAUTY LTD|GLAM HAVEN UNISEX SALON LTD",
+				"since": "2019-02-08"
+			}
+		},
+		{
+			"id": "20|ECCLESBOURNE ROAD",
+			"address": {
+				"number": "20",
+				"street": "ECCLESBOURNE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "OPTIMIZE GAS & PLUMBING LIMITED|GREEN EARTH DISTRIBUTIONS LIMITED",
+				"since": "2015-01-28"
+			}
+		},
+		{
+			"id": "3|BRIGSTOCK ROAD",
+			"address": {
+				"number": "3",
+				"street": "BRIGSTOCK ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "HEATH FOODS LTD|MAMA FOODS LONDON LTD",
+				"since": "2025-09-10"
+			}
+		},
+		{
+			"id": "138|BENSHAM LANE",
+			"address": {
+				"number": "138",
+				"street": "BENSHAM LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KAREN WRIGHT LTD",
+				"since": "2016-10-13"
+			}
+		},
+		{
+			"id": "13|BRIGSTOCK ROAD",
+			"address": {
+				"number": "13",
+				"street": "BRIGSTOCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MISS PRO NAIL SALON LIMITED",
+				"since": "2025-03-24"
+			}
+		},
+		{
+			"id": "146|BENSHAM LANE",
+			"address": {
+				"number": "146",
+				"street": "BENSHAM LANE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "SD MOTORS LIMITED|SD MOTORS (PVT) LTD",
+				"since": "2012-03-02"
+			}
+		},
+		{
+			"id": "18|ECCLESBOURNE ROAD",
+			"address": {
+				"number": "18",
+				"street": "ECCLESBOURNE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TLASH LIMITED",
+				"since": "2014-02-18"
+			}
+		},
+		{
+			"id": "163|WINTERBOURNE ROAD",
+			"address": {
+				"number": "163",
+				"street": "WINTERBOURNE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TVK FOOD AND WINE LIMITED",
+				"since": "2025-08-11"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
