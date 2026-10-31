@@ -1,0 +1,417 @@
+{
+	"source": "police.uk",
+	"prefix": "crime",
+	"records": [
+		{
+			"id": "Sheldon Street|2026-08",
+			"street": "Sheldon Street",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (2), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Mason's Avenue|2026-08",
+			"street": "Mason's Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (2)"
+			}
+		},
+		{
+			"id": "Dingwall Avenue|2026-08",
+			"street": "Dingwall Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "16",
+				"kinds": "anti-social behaviour (8), public order (5), violent crime (2), burglary (1)"
+			}
+		},
+		{
+			"id": "Thanet Place|2026-08",
+			"street": "Thanet Place",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "15",
+				"kinds": "anti-social behaviour (6), violent crime (5), burglary (3), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Robert Street|2026-08",
+			"street": "Robert Street",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "6",
+				"kinds": "violent crime (2), anti-social behaviour (1), drugs (1), other theft (1), shoplifting (1)"
+			}
+		},
+		{
+			"id": "Priddy's Yard|2026-08",
+			"street": "Priddy's Yard",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "9",
+				"kinds": "anti-social behaviour (3), shoplifting (2), violent crime (2), bicycle theft (1), other theft (1)"
+			}
+		},
+		{
+			"id": "Tamworth Road|2026-08",
+			"street": "Tamworth Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "6",
+				"kinds": "anti-social behaviour (4), other theft (1), shoplifting (1)"
+			}
+		},
+		{
+			"id": "North End|2026-08",
+			"street": "North End",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "58",
+				"kinds": "violent crime (14), anti-social behaviour (13), shoplifting (11), other theft (6), public order (5), theft from the person (5), robbery (2), criminal damage arson (1), drugs (1)"
+			}
+		},
+		{
+			"id": "Poplar Walk|2026-08",
+			"street": "Poplar Walk",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "drugs (2), anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Drummond Road|2026-08",
+			"street": "Drummond Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (2), drugs (1)"
+			}
+		},
+		{
+			"id": "Fell Road|2026-08",
+			"street": "Fell Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "18",
+				"kinds": "anti-social behaviour (8), vehicle crime (3), robbery (2), burglary (1), drugs (1), other theft (1), shoplifting (1), theft from the person (1)"
+			}
+		},
+		{
+			"id": "College Road|2026-08",
+			"street": "College Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "17",
+				"kinds": "violent crime (7), public order (3), anti-social behaviour (2), other theft (2), burglary (1), robbery (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Dingwall Road|2026-08",
+			"street": "Dingwall Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "26",
+				"kinds": "shoplifting (18), drugs (2), other theft (2), violent crime (2), anti-social behaviour (1), possession of weapons (1)"
+			}
+		},
+		{
+			"id": "Lambert's Place|2026-08",
+			"street": "Lambert's Place",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "6",
+				"kinds": "public order (3), violent crime (2), anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Newgate|2026-08",
+			"street": "Newgate",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "5",
+				"kinds": "violent crime (3), anti-social behaviour (1), other theft (1)"
+			}
+		},
+		{
+			"id": "Halstead Close|2026-08",
+			"street": "Halstead Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Beech House Road|2026-08",
+			"street": "Beech House Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "violent crime (2), anti-social behaviour (1), burglary (1)"
+			}
+		},
+		{
+			"id": "Park Street|2026-08",
+			"street": "Park Street",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "12",
+				"kinds": "violent crime (6), anti-social behaviour (3), burglary (1), robbery (1), theft from the person (1)"
+			}
+		},
+		{
+			"id": "Wellesley Road|2026-08",
+			"street": "Wellesley Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "5",
+				"kinds": "anti-social behaviour (2), violent crime (2), drugs (1)"
+			}
+		},
+		{
+			"id": "Otterbourne Road|2026-08",
+			"street": "Otterbourne Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Woburn Road|2026-08",
+			"street": "Woburn Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Walpole Road|2026-08",
+			"street": "Walpole Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Bedford Park|2026-08",
+			"street": "Bedford Park",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (1), other theft (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Lewen Close|2026-08",
+			"street": "Lewen Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "burglary (2), bicycle theft (1), public order (1)"
+			}
+		},
+		{
+			"id": "Surrey Street|2026-08",
+			"street": "Surrey Street",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "6",
+				"kinds": "violent crime (3), bicycle theft (1), burglary (1), robbery (1)"
+			}
+		},
+		{
+			"id": "Whitgift Street|2026-08",
+			"street": "Whitgift Street",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "burglary (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Smith's Yard|2026-08",
+			"street": "Smith's Yard",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "9",
+				"kinds": "drugs (4), violent crime (2), criminal damage arson (1), other theft (1), public order (1)"
+			}
+		},
+		{
+			"id": "Chatsworth Road|2026-08",
+			"street": "Chatsworth Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "drugs (1), possession of weapons (1)"
+			}
+		},
+		{
+			"id": "Middle Street|2026-08",
+			"street": "Middle Street",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "8",
+				"kinds": "other theft (2), theft from the person (2), drugs (1), shoplifting (1), vehicle crime (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Keeley Road|2026-08",
+			"street": "Keeley Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "6",
+				"kinds": "violent crime (3), drugs (2), shoplifting (1)"
+			}
+		},
+		{
+			"id": "Wellesley Grove|2026-08",
+			"street": "Wellesley Grove",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "drugs (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Meadow Stile|2026-08",
+			"street": "Meadow Stile",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "vehicle crime (2), other theft (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Church Street|2026-08",
+			"street": "Church Street",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "6",
+				"kinds": "violent crime (3), other theft (1), robbery (1), theft from the person (1)"
+			}
+		},
+		{
+			"id": "Bedford Place|2026-08",
+			"street": "Bedford Place",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "6",
+				"kinds": "violent crime (4), other theft (1), public order (1)"
+			}
+		},
+		{
+			"id": "Cairo New Road|2026-08",
+			"street": "Cairo New Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "5",
+				"kinds": "violent crime (2), public order (1), robbery (1), theft from the person (1)"
+			}
+		},
+		{
+			"id": "Charles Street|2026-08",
+			"street": "Charles Street",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "robbery (1)"
+			}
+		},
+		{
+			"id": "Charrington Road|2026-08",
+			"street": "Charrington Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Frith Road|2026-08",
+			"street": "Frith Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Queen Street|2026-08",
+			"street": "Queen Street",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Old Palace Road|2026-08",
+			"street": "Old Palace Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Mulgrave Road|2026-08",
+			"street": "Mulgrave Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

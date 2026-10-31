@@ -1,0 +1,2671 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "36|SYDENHAM ROAD",
+			"address": {
+				"number": "36",
+				"street": "SYDENHAM ROAD"
+			},
+			"claims": {
+				"count": "57",
+				"names": "RUSSETS MANAGEMENT COMPANY LIMITED|GRANGEDALE MANAGEMENT COMPANY LIMITED|PARKVIEW (CHIVALRY ROAD) MANAGEMENT LIMITED",
+				"since": "1981-08-17"
+			}
+		},
+		{
+			"id": "39|TAMWORTH ROAD",
+			"address": {
+				"number": "39",
+				"street": "TAMWORTH ROAD"
+			},
+			"claims": {
+				"count": "33",
+				"names": "WADDON COURT(INVESTMENTS)LIMITED|WADDON COURT(PROPERTIES)LIMITED|HAROLD PALMER LIMITED",
+				"since": "1958-03-18"
+			}
+		},
+		{
+			"id": "73|PARK LANE",
+			"address": {
+				"number": "73",
+				"street": "PARK LANE"
+			},
+			"claims": {
+				"count": "140",
+				"names": "TRANSAC INTERNATIONAL HOLDING LTD|TRANSAC INTERNATIONAL LIMITED|TOWN CENTRE PARKING LIMITED",
+				"since": "1976-07-12"
+			}
+		},
+		{
+			"id": "306|HIGH STREET",
+			"address": {
+				"number": "306",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "65",
+				"names": "HINDE PROPERTY HOLDING LIMITED|FAIRMOUNT REAL ESTATE COMPANY LIMITED|FRECREST PROPERTIES LIMITED",
+				"since": "1936-12-12"
+			}
+		},
+		{
+			"id": "13|MULGRAVE ROAD",
+			"address": {
+				"number": "13",
+				"street": "MULGRAVE ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "19 PARK HILL CRT LIMITED|RKY DEVELOPMENTS LTD|TRINTON SERVICES LIMITED",
+				"since": "2020-10-28"
+			}
+		},
+		{
+			"id": "62|GEORGE STREET",
+			"address": {
+				"number": "62",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "8",
+				"names": "360 LIFESTYLE SUPPORT NETWORK CIC|SICKLE SYNCED CIC|CARIBUENA CIC",
+				"since": "2021-03-16"
+			}
+		},
+		{
+			"id": "23|WOODSTOCK ROAD",
+			"address": {
+				"number": "23",
+				"street": "WOODSTOCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "23 WOODSTOCK ROAD FREEHOLD LTD",
+				"since": "2022-06-08"
+			}
+		},
+		{
+			"id": "1|ROBERT STREET",
+			"address": {
+				"number": "1",
+				"street": "ROBERT STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ADORAR ELECTRICS LIMITED|2B3DIMENTIONAL CIC",
+				"since": "2025-05-02"
+			}
+		},
+		{
+			"id": "31|WOODSTOCK ROAD",
+			"address": {
+				"number": "31",
+				"street": "WOODSTOCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "31 WOODSTOCK ROAD LIMITED",
+				"since": "2014-04-17"
+			}
+		},
+		{
+			"id": "38|SOUTH END",
+			"address": {
+				"number": "38",
+				"street": "SOUTH END"
+			},
+			"claims": {
+				"count": "4",
+				"names": "3D WORLD LTD|PRIME COUNTY LIMITED|LYNXWAY LIMITED",
+				"since": "2016-09-15"
+			}
+		},
+		{
+			"id": "256|HIGH STREET",
+			"address": {
+				"number": "256",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "500 DEGREES HIGH STREET CROYDON LTD",
+				"since": "2017-10-11"
+			}
+		},
+		{
+			"id": "308|HIGH STREET",
+			"address": {
+				"number": "308",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "105",
+				"names": "CZECHOSLOVAK NATIONAL HOUSE LIMITED|R.S.CURRIE & COMPANY LIMITED|MEHAN PROPERTIES LIMITED",
+				"since": "1941-06-20"
+			}
+		},
+		{
+			"id": "8|WOODSTOCK ROAD",
+			"address": {
+				"number": "8",
+				"street": "WOODSTOCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "8 WOODSTOCK ROAD MANAGEMENT COMPANY LIMITED",
+				"since": "2016-02-24"
+			}
+		},
+		{
+			"id": "87|DRUMMOND ROAD",
+			"address": {
+				"number": "87",
+				"street": "DRUMMOND ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "87 DRUMMOND ROAD LTD",
+				"since": "2026-07-16"
+			}
+		},
+		{
+			"id": "302|HIGH STREET",
+			"address": {
+				"number": "302",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "A & A ALTERATION TAILOR LTD",
+				"since": "2026-06-29"
+			}
+		},
+		{
+			"id": "52|GEORGE STREET",
+			"address": {
+				"number": "52",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "A & H FOOD DISTRIBUTION LIMITED",
+				"since": "2023-07-07"
+			}
+		},
+		{
+			"id": "37|SURREY STREET",
+			"address": {
+				"number": "37",
+				"street": "SURREY STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "AJ NATURALS LTD|A & J PROPERTY (LONDON) LIMITED",
+				"since": "2014-02-03"
+			}
+		},
+		{
+			"id": "43|GEORGE STREET",
+			"address": {
+				"number": "43",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "6",
+				"names": "DENTAL SOLUTION LTD|K R&D LTD|SOFTWARE AND DEVELOPMENT SERVICES LTD",
+				"since": "2008-02-26"
+			}
+		},
+		{
+			"id": "210|HIGH STREET",
+			"address": {
+				"number": "210",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "AAIM EVENT AND PROJECT MANAGEMENT LIMITED|IKO CORPORATION LIMITED",
+				"since": "2017-11-16"
+			}
+		},
+		{
+			"id": "10|SURREY STREET",
+			"address": {
+				"number": "10",
+				"street": "SURREY STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "AARON STITCH LTD|AFRICA’S DELICACY RESORT LIMITED",
+				"since": "2018-11-07"
+			}
+		},
+		{
+			"id": "20|CHURCH STREET",
+			"address": {
+				"number": "20",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ABAD LTD|ABAD PROPERTY MANAGEMENT LTD",
+				"since": "2019-06-14"
+			}
+		},
+		{
+			"id": "4|BEDFORD PARK",
+			"address": {
+				"number": "4",
+				"street": "BEDFORD PARK"
+			},
+			"claims": {
+				"count": "42",
+				"names": "HENRY RILEY CONSULTING LIMITED|CROYDON COMMITMENT LIMITED|KNOWCO LIMITED",
+				"since": "2005-01-27"
+			}
+		},
+		{
+			"id": "34|SURREY STREET",
+			"address": {
+				"number": "34",
+				"street": "SURREY STREET"
+			},
+			"claims": {
+				"count": "6",
+				"names": "CR34 HOLDINGS LTD|SURREY STREET HOLDINGS LTD|ABCR2 LTD",
+				"since": "2018-05-01"
+			}
+		},
+		{
+			"id": "38|TAMWORTH ROAD",
+			"address": {
+				"number": "38",
+				"street": "TAMWORTH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ACORNEDGE PROPERTY MANAGEMENT COMPANY LIMITED",
+				"since": "1991-07-04"
+			}
+		},
+		{
+			"id": "6|WOODSTOCK ROAD",
+			"address": {
+				"number": "6",
+				"street": "WOODSTOCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ADD-INS SCAFFOLDING SERVICE LTD",
+				"since": "2024-08-21"
+			}
+		},
+		{
+			"id": "300|HIGH STREET",
+			"address": {
+				"number": "300",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ADEENA CUISINE LTD",
+				"since": "2026-07-16"
+			}
+		},
+		{
+			"id": "33|CHATSWORTH ROAD",
+			"address": {
+				"number": "33",
+				"street": "CHATSWORTH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AH TRANSPORT LTD",
+				"since": "2025-05-09"
+			}
+		},
+		{
+			"id": "11|STATION ROAD",
+			"address": {
+				"number": "11",
+				"street": "STATION ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AHR FOOD & BOOZ LTD",
+				"since": "2025-01-20"
+			}
+		},
+		{
+			"id": "77A|STATION ROAD",
+			"address": {
+				"number": "77A",
+				"street": "STATION ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AHR INDIAN CUISINE LTD",
+				"since": "2025-01-22"
+			}
+		},
+		{
+			"id": "242|HIGH STREET",
+			"address": {
+				"number": "242",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "AJA LOUNGE LTD|CROWN AND PEPPER LIMITED",
+				"since": "2009-06-18"
+			}
+		},
+		{
+			"id": "31|SURREY STREET",
+			"address": {
+				"number": "31",
+				"street": "SURREY STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ALBONE JEWELLERS (CROYDON) LTD|ALBONE PROPERTIES LTD",
+				"since": "2005-01-25"
+			}
+		},
+		{
+			"id": "96|CHURCH STREET",
+			"address": {
+				"number": "96",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ALIS HALAL LTD|FAMILY DAILY FRESH HALAL MEAT AND GROCERY LTD",
+				"since": "2023-04-26"
+			}
+		},
+		{
+			"id": "79|PARK LANE",
+			"address": {
+				"number": "79",
+				"street": "PARK LANE"
+			},
+			"claims": {
+				"count": "9",
+				"names": "BIRCHFIELD PROPERTY MANAGEMENT LIMITED|FLEXISTAY LTD|FLEXISTAY MANAGEMENT SERVICES LTD",
+				"since": "1995-12-01"
+			}
+		},
+		{
+			"id": "66|CHURCH STREET",
+			"address": {
+				"number": "66",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AM KITCHENWARE AND LUGGAGE LIMITED",
+				"since": "2025-08-10"
+			}
+		},
+		{
+			"id": "6|GEORGE STREET",
+			"address": {
+				"number": "6",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "5",
+				"names": "ASHNAA HAIR & BEAUTY LTD|AMAYA FASHION LIMITED|AMEE NAILS LTD",
+				"since": "2010-06-23"
+			}
+		},
+		{
+			"id": "2|WOODSTOCK ROAD",
+			"address": {
+				"number": "2",
+				"street": "WOODSTOCK ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CRADLEFIELD LIMITED|ANDALL ENTERPRISES LIMITED",
+				"since": "2010-05-24"
+			}
+		},
+		{
+			"id": "136|NORTH END",
+			"address": {
+				"number": "136",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ANGEL KHAN FOODS LTD",
+				"since": "2022-03-22"
+			}
+		},
+		{
+			"id": "281|HIGH STREET",
+			"address": {
+				"number": "281",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ANNASCROYDON LTD",
+				"since": "2022-03-16"
+			}
+		},
+		{
+			"id": "13|WOODSTOCK ROAD",
+			"address": {
+				"number": "13",
+				"street": "WOODSTOCK ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "HALANCROFT PROPERTIES LTD|ANTHONY BRAVO CONSULTING LTD",
+				"since": "2023-05-01"
+			}
+		},
+		{
+			"id": "20|GEORGE STREET",
+			"address": {
+				"number": "20",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "3",
+				"names": "ATOMMA LTD|MOTHER HUBBARDS CROYDON LIMITED|MOTHER HUBBARDS FEAST LTD",
+				"since": "2018-08-30"
+			}
+		},
+		{
+			"id": "49|SOUTH END",
+			"address": {
+				"number": "49",
+				"street": "SOUTH END"
+			},
+			"claims": {
+				"count": "6",
+				"names": "ENJOY INTERNATIONAL LIMITED|KAVIDEH LTD|H&M CARPET AND FLOORING SERVICES LIMITED",
+				"since": "2007-09-19"
+			}
+		},
+		{
+			"id": "108|HIGH STREET",
+			"address": {
+				"number": "108",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "7",
+				"names": "BARZINJI & CO LTD|H & S DRIVING SERVICES LTD|INTERNATIONAL FOOD SWANSEA LIMITED",
+				"since": "2011-05-03"
+			}
+		},
+		{
+			"id": "99|GEORGE STREET",
+			"address": {
+				"number": "99",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "4",
+				"names": "THE BARBER CLUB CROYDON LTD|GOURMILO LIMITED|BEMYGUESTTATTOO LTD",
+				"since": "2025-02-28"
+			}
+		},
+		{
+			"id": "102|TAMWORTH ROAD",
+			"address": {
+				"number": "102",
+				"street": "TAMWORTH ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "BG TRADE LIMITED|BK HOMES LIMITED|BG FOOD TRADE LTD",
+				"since": "2016-10-07"
+			}
+		},
+		{
+			"id": "77|SOUTH END",
+			"address": {
+				"number": "77",
+				"street": "SOUTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BIDAS PROPERTIES LTD",
+				"since": "2026-05-19"
+			}
+		},
+		{
+			"id": "7|CHURCH ROAD",
+			"address": {
+				"number": "7",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BIMMAX LIMITED",
+				"since": "2025-04-07"
+			}
+		},
+		{
+			"id": "233|HIGH STREET",
+			"address": {
+				"number": "233",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "5",
+				"names": "YOCHEVED LIMITED|QUALITY ENGINEERED LTD|BLACK SPECTRE ENTERTAINMENT LTD",
+				"since": "2015-10-26"
+			}
+		},
+		{
+			"id": "91|GEORGE STREET",
+			"address": {
+				"number": "91",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BLG SECURITY LTD",
+				"since": "2025-05-01"
+			}
+		},
+		{
+			"id": "20|MINT WALK",
+			"address": {
+				"number": "20",
+				"street": "MINT WALK"
+			},
+			"claims": {
+				"count": "5",
+				"names": "NOVAFRICA LIMITED|BOMOKO ESTATES LIMITED|BOMOKO SOURCING LIMITED",
+				"since": "2020-10-13"
+			}
+		},
+		{
+			"id": "33|GEORGE STREET",
+			"address": {
+				"number": "33",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "13",
+				"names": "GADGETS AND GAMING LIMITED|GAMING & GADGETS LIMITED|GADGETS & GAMES LTD",
+				"since": "2004-06-22"
+			}
+		},
+		{
+			"id": "39|CHATSWORTH ROAD",
+			"address": {
+				"number": "39",
+				"street": "CHATSWORTH ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "BRUNO CROSIER LTD|ORIGBEMI UK LTD",
+				"since": "2020-08-31"
+			}
+		},
+		{
+			"id": "96|PARK LANE",
+			"address": {
+				"number": "96",
+				"street": "PARK LANE"
+			},
+			"claims": {
+				"count": "10",
+				"names": "C L MANAGEMENT SERVICES LIMITED|PARK GARAGE GROUP PLC|TANDON 96 PARK LANE LTD",
+				"since": "1992-05-19"
+			}
+		},
+		{
+			"id": "47|FRITH ROAD",
+			"address": {
+				"number": "47",
+				"street": "FRITH ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "GERALDINE LIMITED|C.A. SAMUEL DENTAL PROSTHETICS LTD",
+				"since": "2003-11-04"
+			}
+		},
+		{
+			"id": "244|HIGH STREET",
+			"address": {
+				"number": "244",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CAR & COMMERCIAL SALES LIMITED|PARATHA INN LTD",
+				"since": "1991-09-11"
+			}
+		},
+		{
+			"id": "1|LONDON ROAD",
+			"address": {
+				"number": "1",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "DEMPSEYS PROPERTIES LTD|CELTIC FOX LTD",
+				"since": "2012-04-20"
+			}
+		},
+		{
+			"id": "84|PARK LANE",
+			"address": {
+				"number": "84",
+				"street": "PARK LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CHANGE IS GOOD LTD",
+				"since": "2013-03-01"
+			}
+		},
+		{
+			"id": "6|SOUTH END",
+			"address": {
+				"number": "6",
+				"street": "SOUTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CHARCOAL GRILL CROYDON LTD",
+				"since": "2021-02-05"
+			}
+		},
+		{
+			"id": "3|CHURCH ROAD",
+			"address": {
+				"number": "3",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CHORDBECK LIMITED|CHECKULTRA LIMITED",
+				"since": "1977-12-08"
+			}
+		},
+		{
+			"id": "100|HIGH STREET",
+			"address": {
+				"number": "100",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CHICKEN VALLEY HIGH STREET CROYDON LTD|PERI PERI GRILL OUT LTD",
+				"since": "2023-09-26"
+			}
+		},
+		{
+			"id": "282|HIGH STREET",
+			"address": {
+				"number": "282",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "5",
+				"names": "PIZZERIA TRE SORELLE LTD|NBL ACCOMMODATIONS PVT LTD|CHICKING LONDON LTD",
+				"since": "2021-01-08"
+			}
+		},
+		{
+			"id": "83|PARK LANE",
+			"address": {
+				"number": "83",
+				"street": "PARK LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CHOICE HAIR PLACE LIMITED",
+				"since": "2025-06-30"
+			}
+		},
+		{
+			"id": "208|HIGH STREET",
+			"address": {
+				"number": "208",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "COB RECORDS LTD|JENNZ HAIR LOUNGE LTD",
+				"since": "2019-01-07"
+			}
+		},
+		{
+			"id": "25|WOODSTOCK ROAD",
+			"address": {
+				"number": "25",
+				"street": "WOODSTOCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CODESURVEY LTD",
+				"since": "2026-08-08"
+			}
+		},
+		{
+			"id": "49|WANDLE ROAD",
+			"address": {
+				"number": "49",
+				"street": "WANDLE ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "STABLES&CO LTD|CONSULT AFRICA INVESTMENT NETWORK LIMITED|KEYSTONE EMPIRE LTD",
+				"since": "2025-05-20"
+			}
+		},
+		{
+			"id": "111|HIGH STREET",
+			"address": {
+				"number": "111",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CR0 HIGH STREET KEBAB LTD",
+				"since": "2025-02-13"
+			}
+		},
+		{
+			"id": "299|HIGH STREET",
+			"address": {
+				"number": "299",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CRONXTHAIFOOD LTD",
+				"since": "2025-09-18"
+			}
+		},
+		{
+			"id": "151|NORTH END",
+			"address": {
+				"number": "151",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "5",
+				"names": "KANNAPPAR & KASINATHAN LIMITED|IUNLOCK TECH LIMITED|NIMZ PROPERTIES LTD",
+				"since": "2015-04-28"
+			}
+		},
+		{
+			"id": "12|INNES YARD",
+			"address": {
+				"number": "12",
+				"street": "INNES YARD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CROYDON BOXING GYM LTD|IMPACT BOXING CLUB C.I.C.",
+				"since": "2019-01-28"
+			}
+		},
+		{
+			"id": "89|CHURCH STREET",
+			"address": {
+				"number": "89",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CROYDON DIY LTD",
+				"since": "2023-07-12"
+			}
+		},
+		{
+			"id": "5|DERBY ROAD",
+			"address": {
+				"number": "5",
+				"street": "DERBY ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CROYDON FOOD HOUSE LTD|DERA CUISINE 2025 LTD",
+				"since": "2018-05-16"
+			}
+		},
+		{
+			"id": "3|DERBY ROAD",
+			"address": {
+				"number": "3",
+				"street": "DERBY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CROYDON FOODS LTD",
+				"since": "2021-04-15"
+			}
+		},
+		{
+			"id": "76|HIGH STREET",
+			"address": {
+				"number": "76",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CROYDON KEBAB CENTRE LTD",
+				"since": "2020-10-01"
+			}
+		},
+		{
+			"id": "149|NORTH END",
+			"address": {
+				"number": "149",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "3",
+				"names": "CROYDON OYSTERCARD LTD|RICHARDS CROYDON LTD|RICHARDS TOPUP LTD",
+				"since": "2015-03-02"
+			}
+		},
+		{
+			"id": "25|CHURCH STREET",
+			"address": {
+				"number": "25",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CROYDON QUALITY FISH LTD",
+				"since": "2018-03-11"
+			}
+		},
+		{
+			"id": "35|GEORGE STREET",
+			"address": {
+				"number": "35",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "DEVICES EXPERTS LTD|CROYDON VAPE LTD",
+				"since": "2023-05-17"
+			}
+		},
+		{
+			"id": "35|LONDON ROAD",
+			"address": {
+				"number": "35",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "M & H SHOP REPAIR CENTRE LTD|TAGAB LTD|CROYDON VAPES 35 LTD",
+				"since": "2018-04-04"
+			}
+		},
+		{
+			"id": "132|CHURCH STREET",
+			"address": {
+				"number": "132",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CROYDON YOUTH INFORMATION & COUNSELLING SERVICE LIMITED",
+				"since": "1995-08-17"
+			}
+		},
+		{
+			"id": "42|SYDENHAM ROAD",
+			"address": {
+				"number": "42",
+				"street": "SYDENHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "D&G (M) LTD",
+				"since": "2014-07-18"
+			}
+		},
+		{
+			"id": "143|NORTH END",
+			"address": {
+				"number": "143",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "D-DRIP SHOES LTD.",
+				"since": "2025-04-28"
+			}
+		},
+		{
+			"id": "20|SOUTH END",
+			"address": {
+				"number": "20",
+				"street": "SOUTH END"
+			},
+			"claims": {
+				"count": "5",
+				"names": "DATA BOND LIMITED|TRADE ALL IN LIMITED|JDC TRADING LIMITED",
+				"since": "2021-11-12"
+			}
+		},
+		{
+			"id": "27|LONDON ROAD",
+			"address": {
+				"number": "27",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DAWAT ART OF COOKING LTD",
+				"since": "2013-05-03"
+			}
+		},
+		{
+			"id": "70|CHATSWORTH ROAD",
+			"address": {
+				"number": "70",
+				"street": "CHATSWORTH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DENTAL PROFESSIONALS LIMITED",
+				"since": "2009-01-09"
+			}
+		},
+		{
+			"id": "26|BARCLAY ROAD",
+			"address": {
+				"number": "26",
+				"street": "BARCLAY ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "MIRABELLE COMMUNICATIONS LIMITED|REFTECK SOLUTIONS LIMITED|DESAI HOLDINGS LIMITED",
+				"since": "1991-12-13"
+			}
+		},
+		{
+			"id": "54|SOUTH END",
+			"address": {
+				"number": "54",
+				"street": "SOUTH END"
+			},
+			"claims": {
+				"count": "4",
+				"names": "REMKIT2 LIMITED|DESFACT2 LTD|NR CAFE LTD",
+				"since": "2018-09-19"
+			}
+		},
+		{
+			"id": "35|CHURCH STREET",
+			"address": {
+				"number": "35",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "3",
+				"names": "PRECIOUS HAIR AND BEAUTY SALON LIMITED|DESHON LIMITED|DJM HAIR AND BEAUTY SALON LTD",
+				"since": "2017-03-21"
+			}
+		},
+		{
+			"id": "78|SOUTH END",
+			"address": {
+				"number": "78",
+				"street": "SOUTH END"
+			},
+			"claims": {
+				"count": "2",
+				"names": "HAPPYLAND INVESTMENTS LTD|DIGITAL ONEZEROONE LTD",
+				"since": "2001-04-04"
+			}
+		},
+		{
+			"id": "296|HIGH STREET",
+			"address": {
+				"number": "296",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DNC CROYDON LIMITED",
+				"since": "2020-07-09"
+			}
+		},
+		{
+			"id": "9|DERBY ROAD",
+			"address": {
+				"number": "9",
+				"street": "DERBY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DOCTOR SIMBA UNISEX SALON UK LTD",
+				"since": "2020-07-21"
+			}
+		},
+		{
+			"id": "48|HIGH STREET",
+			"address": {
+				"number": "48",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "DORDALE (JOINERY) LIMITED|THE DISTINCTIVE DEVELOPER LTD",
+				"since": "1984-12-27"
+			}
+		},
+		{
+			"id": "62|SOUTH END",
+			"address": {
+				"number": "62",
+				"street": "SOUTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "E CROYDON FOODS LTD",
+				"since": "2024-02-14"
+			}
+		},
+		{
+			"id": "120|CHURCH STREET",
+			"address": {
+				"number": "120",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "E.REEVES LIMITED",
+				"since": "1947-04-28"
+			}
+		},
+		{
+			"id": "77|PARK LANE",
+			"address": {
+				"number": "77",
+				"street": "PARK LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EAO-INTEGRATED FORENSIC & SOCIAL WORK CONSULTANCY LTD",
+				"since": "2026-01-26"
+			}
+		},
+		{
+			"id": "82|CHURCH STREET",
+			"address": {
+				"number": "82",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "EASY MOBILE LTD|I SMASH MOBILE LIMITED",
+				"since": "2018-06-11"
+			}
+		},
+		{
+			"id": "52|SURREY STREET",
+			"address": {
+				"number": "52",
+				"street": "SURREY STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ELMA CO. LTD|JAGMAMA FOOD AND WINE LTD",
+				"since": "2018-08-03"
+			}
+		},
+		{
+			"id": "71|GEORGE STREET",
+			"address": {
+				"number": "71",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ESRA - ZA CATERING LIMITED|FLAMOZ LTD",
+				"since": "2015-05-06"
+			}
+		},
+		{
+			"id": "79|CHURCH STREET",
+			"address": {
+				"number": "79",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EVERYDAY SHOP LIMITED",
+				"since": "2025-06-11"
+			}
+		},
+		{
+			"id": "73|GEORGE STREET",
+			"address": {
+				"number": "73",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "EXPO DRINKS LIMITED|EXPO CITY RETAIL LIMITED",
+				"since": "2021-06-25"
+			}
+		},
+		{
+			"id": "14|BEECH HOUSE ROAD",
+			"address": {
+				"number": "14",
+				"street": "BEECH HOUSE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EXPRESS BASKET LIMITED",
+				"since": "2026-07-29"
+			}
+		},
+		{
+			"id": "27|PARKER ROAD",
+			"address": {
+				"number": "27",
+				"street": "PARKER ROAD"
+			},
+			"claims": {
+				"count": "4",
+				"names": "FELCOS CONSULTANTS LIMITED|SHERO'S 99 LTD|MAJKHALAH LTD",
+				"since": "2023-08-03"
+			}
+		},
+		{
+			"id": "304|HIGH STREET",
+			"address": {
+				"number": "304",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FESCO (U.K.) LIMITED",
+				"since": "1980-07-17"
+			}
+		},
+		{
+			"id": "109|CHURCH STREET",
+			"address": {
+				"number": "109",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FILIA PARTNERSHIP LTD",
+				"since": "2019-02-25"
+			}
+		},
+		{
+			"id": "1|CAIRO NEW ROAD",
+			"address": {
+				"number": "1",
+				"street": "CAIRO NEW ROAD"
+			},
+			"claims": {
+				"count": "6",
+				"names": "THE GLOBAL INNOVATION IDEAS COMPANY LIMITED|PHOENIX INVESTMENTS CORP LTD|FINESSE REPUBLIC LTD",
+				"since": "2019-05-02"
+			}
+		},
+		{
+			"id": "26|CHURCH ROAD",
+			"address": {
+				"number": "26",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FIRST STEPS NURSERIES LIMITED",
+				"since": "2004-01-29"
+			}
+		},
+		{
+			"id": "277|HIGH STREET",
+			"address": {
+				"number": "277",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "FK FOOD 99P LIMITED|WYNFORDE & CO LTD",
+				"since": "2025-01-24"
+			}
+		},
+		{
+			"id": "17|LONDON ROAD",
+			"address": {
+				"number": "17",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "4",
+				"names": "SIZZLERS PERI PERI CROYDON LIMITED|SIZZLERS ICE CREAM LTD|FLAVOUR ON FIRE LIMITED",
+				"since": "2025-03-17"
+			}
+		},
+		{
+			"id": "23|COLLEGE ROAD",
+			"address": {
+				"number": "23",
+				"street": "COLLEGE ROAD"
+			},
+			"claims": {
+				"count": "4",
+				"names": "FLUOR SERVICES LTD|MAKE IT YOUR OWN LTD|HERRON CONTROLS LTD",
+				"since": "2017-08-17"
+			}
+		},
+		{
+			"id": "133|NORTH END",
+			"address": {
+				"number": "133",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FONES4ALL LTD",
+				"since": "2021-05-18"
+			}
+		},
+		{
+			"id": "39|CHURCH STREET",
+			"address": {
+				"number": "39",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FOOD WISE STORES UK LTD",
+				"since": "2014-04-01"
+			}
+		},
+		{
+			"id": "4|LOWER COOMBE STREET",
+			"address": {
+				"number": "4",
+				"street": "LOWER COOMBE STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FORGE GABLE LIMITED",
+				"since": "2024-04-20"
+			}
+		},
+		{
+			"id": "28|CHURCH STREET",
+			"address": {
+				"number": "28",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "KUN FOODS LTD.|FRESH N FRUITY LONDON LTD",
+				"since": "2019-10-07"
+			}
+		},
+		{
+			"id": "65|CHURCH STREET",
+			"address": {
+				"number": "65",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FRESH ORIENTAL FOODS EXPRESS LTD",
+				"since": "2025-09-17"
+			}
+		},
+		{
+			"id": "79|HIGH STREET",
+			"address": {
+				"number": "79",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "G PUGAZH LIMITED",
+				"since": "2024-06-23"
+			}
+		},
+		{
+			"id": "64|SYDENHAM ROAD",
+			"address": {
+				"number": "64",
+				"street": "SYDENHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GALIMPLANT UK LIMITED",
+				"since": "2026-09-29"
+			}
+		},
+		{
+			"id": "10|SOUTH END",
+			"address": {
+				"number": "10",
+				"street": "SOUTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GALITOS PIZZA AND GRILL LTD",
+				"since": "2023-09-11"
+			}
+		},
+		{
+			"id": "310|HIGH STREET",
+			"address": {
+				"number": "310",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GALLAXI LTD",
+				"since": "2024-01-02"
+			}
+		},
+		{
+			"id": "37|LONDON ROAD",
+			"address": {
+				"number": "37",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GANESH KERR LIMITED",
+				"since": "2023-06-27"
+			}
+		},
+		{
+			"id": "64|GEORGE STREET",
+			"address": {
+				"number": "64",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "GEEKY EXCHANGE LIMITED|NOBLERISE HOLDING LTD",
+				"since": "2018-04-23"
+			}
+		},
+		{
+			"id": "88|EDRIDGE ROAD",
+			"address": {
+				"number": "88",
+				"street": "EDRIDGE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GENCREVAST LTD",
+				"since": "2025-06-29"
+			}
+		},
+		{
+			"id": "69|HIGH STREET",
+			"address": {
+				"number": "69",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GLOBE RECRUITMENT (UK) SERVICES LIMITED",
+				"since": "2018-09-27"
+			}
+		},
+		{
+			"id": "2|WANDLE ROAD",
+			"address": {
+				"number": "2",
+				"street": "WANDLE ROAD"
+			},
+			"claims": {
+				"count": "5",
+				"names": "GLORIOUS CAR DETAILING LTD|LILY LAKE LIMITED|KOF TOWN VENTURES LIMITED",
+				"since": "2024-07-16"
+			}
+		},
+		{
+			"id": "75|PARK LANE",
+			"address": {
+				"number": "75",
+				"street": "PARK LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GOLD MASTER GAME CONSULTANCY LIMITED",
+				"since": "2010-10-14"
+			}
+		},
+		{
+			"id": "206|HIGH STREET",
+			"address": {
+				"number": "206",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GOLDEN MARKET SERVICES LTD",
+				"since": "2020-10-09"
+			}
+		},
+		{
+			"id": "22|CHATSWORTH ROAD",
+			"address": {
+				"number": "22",
+				"street": "CHATSWORTH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GTA PROPERTY MANAGEMENT LTD",
+				"since": "2024-05-02"
+			}
+		},
+		{
+			"id": "23|GEORGE STREET",
+			"address": {
+				"number": "23",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HAIR (CAMBRIDGE) LIMITED",
+				"since": "2015-07-14"
+			}
+		},
+		{
+			"id": "1|THE CROYDON FLYOVER",
+			"address": {
+				"number": "1",
+				"street": "THE CROYDON FLYOVER"
+			},
+			"claims": {
+				"count": "2",
+				"names": "HAPPY LITTLE ANGELS DAY NURSERY LIMITED|RAINBOWS ACROSS BORDERS CIC",
+				"since": "2018-06-19"
+			}
+		},
+		{
+			"id": "6|BEDFORD PARK",
+			"address": {
+				"number": "6",
+				"street": "BEDFORD PARK"
+			},
+			"claims": {
+				"count": "5",
+				"names": "SUNSET TRAVEL LIMITED|SUNSET TRAVEL PROPERTY LLP|LAM & MEERABUX SOLICITORS LIMITED",
+				"since": "1981-05-28"
+			}
+		},
+		{
+			"id": "23|COOMBE ROAD",
+			"address": {
+				"number": "23",
+				"street": "COOMBE ROAD"
+			},
+			"claims": {
+				"count": "7",
+				"names": "NEW RUSKIN HOUSE (CROYDON) CLUB LIMITED|HATJAB LTD|SLAVERY REMEMBRANCE LTD",
+				"since": "1969-07-04"
+			}
+		},
+		{
+			"id": "64|CHURCH STREET",
+			"address": {
+				"number": "64",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HAWWA PROPERTY LTD",
+				"since": "2026-07-20"
+			}
+		},
+		{
+			"id": "78|HIGH STREET",
+			"address": {
+				"number": "78",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "NIIYII LTD|HELENA MACRIS LTD",
+				"since": "2021-08-29"
+			}
+		},
+		{
+			"id": "28|GEORGE STREET",
+			"address": {
+				"number": "28",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HOGGS HOSPITALITY LTD",
+				"since": "2022-03-04"
+			}
+		},
+		{
+			"id": "246|HIGH STREET",
+			"address": {
+				"number": "246",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HUNG MANH LTD",
+				"since": "2022-04-27"
+			}
+		},
+		{
+			"id": "40|CHURCH STREET",
+			"address": {
+				"number": "40",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "IFEGO SERVICES LIMITED|WOFA JOE MARKET LTD",
+				"since": "2018-05-04"
+			}
+		},
+		{
+			"id": "26|DINGWALL ROAD",
+			"address": {
+				"number": "26",
+				"street": "DINGWALL ROAD"
+			},
+			"claims": {
+				"count": "6",
+				"names": "JUNGLE BOI ENTERTAINMENT LIMITED|SIGNATURE OF LONDON LTD|INFINITUDE OUTCOMES LTD",
+				"since": "2016-04-27"
+			}
+		},
+		{
+			"id": "35|CHATSWORTH ROAD",
+			"address": {
+				"number": "35",
+				"street": "CHATSWORTH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "INFO BLUETECH LIMITED",
+				"since": "2025-12-30"
+			}
+		},
+		{
+			"id": "1|DERBY ROAD",
+			"address": {
+				"number": "1",
+				"street": "DERBY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ITALIAN LIVING STYLE LTD",
+				"since": "2024-02-18"
+			}
+		},
+		{
+			"id": "179|NORTH END",
+			"address": {
+				"number": "179",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "IZZA LIMITED",
+				"since": "2012-12-05"
+			}
+		},
+		{
+			"id": "92|HIGH STREET",
+			"address": {
+				"number": "92",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "KHAN FAST FOODS LIMITED|JERK VALLEY LIMITED",
+				"since": "2025-02-18"
+			}
+		},
+		{
+			"id": "16|SYDENHAM ROAD",
+			"address": {
+				"number": "16",
+				"street": "SYDENHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JH COLLECTIVE PUB COMPANY LIMITED",
+				"since": "2026-08-19"
+			}
+		},
+		{
+			"id": "46|SOUTH END",
+			"address": {
+				"number": "46",
+				"street": "SOUTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JUST FLUTES LIMITED",
+				"since": "2023-03-13"
+			}
+		},
+		{
+			"id": "102|NORTH END",
+			"address": {
+				"number": "102",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "6",
+				"names": "MOBILE XCHANGE LTD|SMART PHONE HUB LTD|U MOBILE PHONE LTD",
+				"since": "2017-01-03"
+			}
+		},
+		{
+			"id": "38|EDEN ROAD",
+			"address": {
+				"number": "38",
+				"street": "EDEN ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KAIMES LTD",
+				"since": "2024-10-11"
+			}
+		},
+		{
+			"id": "94|CHATSWORTH ROAD",
+			"address": {
+				"number": "94",
+				"street": "CHATSWORTH ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "SOCINOVA LTD|STAQQ LIMITED|KENZIE HOLDINGS LTD",
+				"since": "2025-01-31"
+			}
+		},
+		{
+			"id": "94|HIGH STREET",
+			"address": {
+				"number": "94",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "MAX PHONE & VAPE LTD|KHAN VAPE LTD",
+				"since": "2025-02-05"
+			}
+		},
+		{
+			"id": "35|SURREY STREET",
+			"address": {
+				"number": "35",
+				"street": "SURREY STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KIM MI SA LIMITED",
+				"since": "2026-03-16"
+			}
+		},
+		{
+			"id": "42|TAMWORTH ROAD",
+			"address": {
+				"number": "42",
+				"street": "TAMWORTH ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "THE LUDOQUIST LIMITED|LARES DIGITAL LTD",
+				"since": "2016-04-12"
+			}
+		},
+		{
+			"id": "28|SURREY STREET",
+			"address": {
+				"number": "28",
+				"street": "SURREY STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "MAJDI THE BARBER LTD|LIN'S UNISEX BEAUTY SALON LTD",
+				"since": "2024-01-10"
+			}
+		},
+		{
+			"id": "104|NORTH END",
+			"address": {
+				"number": "104",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LINEN GALLERY LIMITED",
+				"since": "2016-03-07"
+			}
+		},
+		{
+			"id": "34|LOWER COOMBE STREET",
+			"address": {
+				"number": "34",
+				"street": "LOWER COOMBE STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LISETTE CONSTRUCTION LTD",
+				"since": "2025-05-21"
+			}
+		},
+		{
+			"id": "283|HIGH STREET",
+			"address": {
+				"number": "283",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LOUIS NAILS 24 LTD",
+				"since": "2026-09-09"
+			}
+		},
+		{
+			"id": "58|NORTH END",
+			"address": {
+				"number": "58",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LUCKY HOUSEWARES LTD",
+				"since": "2025-06-10"
+			}
+		},
+		{
+			"id": "290|HIGH STREET",
+			"address": {
+				"number": "290",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LUSHUPCOSMETICS LTD",
+				"since": "2018-01-24"
+			}
+		},
+		{
+			"id": "44|HIGH STREET",
+			"address": {
+				"number": "44",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "M.R. SQUARED LTD",
+				"since": "2009-01-16"
+			}
+		},
+		{
+			"id": "265|HIGH STREET",
+			"address": {
+				"number": "265",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "MAAJ GROUP LIMITED|T S A DRAWING LIMITED",
+				"since": "2024-07-09"
+			}
+		},
+		{
+			"id": "32|NORTH END",
+			"address": {
+				"number": "32",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MALIHA AER LTD",
+				"since": "2026-09-05"
+			}
+		},
+		{
+			"id": "23|SURREY STREET",
+			"address": {
+				"number": "23",
+				"street": "SURREY STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MARKET23 COFFEE LTD",
+				"since": "2019-08-19"
+			}
+		},
+		{
+			"id": "3|MULGRAVE ROAD",
+			"address": {
+				"number": "3",
+				"street": "MULGRAVE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MCGUIRK CAPITAL LIMITED",
+				"since": "2026-04-03"
+			}
+		},
+		{
+			"id": "15|LANSDOWNE ROAD",
+			"address": {
+				"number": "15",
+				"street": "LANSDOWNE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MCMM PR LIMITED",
+				"since": "2021-09-23"
+			}
+		},
+		{
+			"id": "19|LONDON ROAD",
+			"address": {
+				"number": "19",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "MEER PROPERTY SERVICES LIMITED|WEST CROYDON FISH LTD",
+				"since": "2017-01-30"
+			}
+		},
+		{
+			"id": "67|DRUMMOND ROAD",
+			"address": {
+				"number": "67",
+				"street": "DRUMMOND ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MICHAEL FURLONGER LTD",
+				"since": "2023-03-10"
+			}
+		},
+		{
+			"id": "252|HIGH STREET",
+			"address": {
+				"number": "252",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MK LIVIN LTD",
+				"since": "2024-03-22"
+			}
+		},
+		{
+			"id": "297|HIGH STREET",
+			"address": {
+				"number": "297",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MK-2 BARBER LIMITED",
+				"since": "2023-04-11"
+			}
+		},
+		{
+			"id": "212|HIGH STREET",
+			"address": {
+				"number": "212",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MK1 BARBERS LIMITED",
+				"since": "2019-10-24"
+			}
+		},
+		{
+			"id": "74|HIGH STREET",
+			"address": {
+				"number": "74",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "4",
+				"names": "MOJEEK LIMITED|STREETER MARSHALL LLP|THE ADDISCOMBE SPORTS FIELD TRUST COMPANY (NO. 1) LIMITED",
+				"since": "2009-05-28"
+			}
+		},
+		{
+			"id": "101|CHURCH STREET",
+			"address": {
+				"number": "101",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NASHAT",
+				"since": "2019-05-15"
+			}
+		},
+		{
+			"id": "60|SOUTH END",
+			"address": {
+				"number": "60",
+				"street": "SOUTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NAVARATNA SOUTH INDIAN RESTAURANT LIMITED",
+				"since": "2018-02-13"
+			}
+		},
+		{
+			"id": "106|HIGH STREET",
+			"address": {
+				"number": "106",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "YV TRUCKING LTD|NBR FUD LTD",
+				"since": "2019-06-27"
+			}
+		},
+		{
+			"id": "29|CHURCH STREET",
+			"address": {
+				"number": "29",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NEW CROYDON MOBILE ZONE LTD",
+				"since": "2019-03-14"
+			}
+		},
+		{
+			"id": "108|NORTH END",
+			"address": {
+				"number": "108",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NORTH END NEWS LIMITED",
+				"since": "2013-02-13"
+			}
+		},
+		{
+			"id": "53|FRITH ROAD",
+			"address": {
+				"number": "53",
+				"street": "FRITH ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "NOVA2 LADIES SALON LTD|TONY AND PETER'S LTD",
+				"since": "2026-02-13"
+			}
+		},
+		{
+			"id": "35A|GEORGE STREET",
+			"address": {
+				"number": "35A",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "PINK DRAGON UK LIMITED|ORANGE AL LTD",
+				"since": "2016-07-20"
+			}
+		},
+		{
+			"id": "99|CHURCH STREET",
+			"address": {
+				"number": "99",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PAINDIVINE TATTOO LTD",
+				"since": "2026-05-01"
+			}
+		},
+		{
+			"id": "81|CHURCH STREET",
+			"address": {
+				"number": "81",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PAPA ALFIE'S CORNER SHOP LTD",
+				"since": "2018-01-30"
+			}
+		},
+		{
+			"id": "25|GEORGE STREET",
+			"address": {
+				"number": "25",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PHOU INVESTMENTS LTD",
+				"since": "2025-03-19"
+			}
+		},
+		{
+			"id": "81|STATION ROAD",
+			"address": {
+				"number": "81",
+				"street": "STATION ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "PIVOT SECURITY LIMITED|TRAVEL LODGE LTD",
+				"since": "2018-04-07"
+			}
+		},
+		{
+			"id": "27|GEORGE STREET",
+			"address": {
+				"number": "27",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PLATINUM CORPORATIONS LTD",
+				"since": "2026-01-15"
+			}
+		},
+		{
+			"id": "36|SURREY STREET",
+			"address": {
+				"number": "36",
+				"street": "SURREY STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "POLONEZZ LIMITED",
+				"since": "2012-01-04"
+			}
+		},
+		{
+			"id": "10|BEECH HOUSE ROAD",
+			"address": {
+				"number": "10",
+				"street": "BEECH HOUSE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "POPOV STRUCTURAL ENGINEERS LIMITED",
+				"since": "2011-06-09"
+			}
+		},
+		{
+			"id": "88|PARK LANE",
+			"address": {
+				"number": "88",
+				"street": "PARK LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PORODICA LTD",
+				"since": "2022-03-24"
+			}
+		},
+		{
+			"id": "23|LONDON ROAD",
+			"address": {
+				"number": "23",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PRESTIGE HAIRDRESSER LIMITED",
+				"since": "2014-02-18"
+			}
+		},
+		{
+			"id": "29|LONDON ROAD",
+			"address": {
+				"number": "29",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PRESTIGE NAILS & BEAUTY LTD",
+				"since": "2023-11-02"
+			}
+		},
+		{
+			"id": "109|HIGH STREET",
+			"address": {
+				"number": "109",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "R J CONVENIENCE LIMITED",
+				"since": "2015-08-25"
+			}
+		},
+		{
+			"id": "21|NORTH END",
+			"address": {
+				"number": "21",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RANT DOT LIMITED",
+				"since": "2018-05-14"
+			}
+		},
+		{
+			"id": "38|SURREY STREET",
+			"address": {
+				"number": "38",
+				"street": "SURREY STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "REAL FLAVOUR CARIBBEAN TAKEAWAY LTD",
+				"since": "2015-07-09"
+			}
+		},
+		{
+			"id": "103|CHURCH STREET",
+			"address": {
+				"number": "103",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "REEVES CORNER OFF LICENCE LTD",
+				"since": "2012-11-06"
+			}
+		},
+		{
+			"id": "91|CHURCH STREET",
+			"address": {
+				"number": "91",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "TECH HOUSE GADGETS LTD|RIB'S TECH LTD",
+				"since": "2019-11-20"
+			}
+		},
+		{
+			"id": "46|HIGH STREET",
+			"address": {
+				"number": "46",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "RIO'S PIRI PIRI (CROYDON) LIMITED|RIO'S PIRI PIRI HOLDINGS LTD",
+				"since": "2013-08-16"
+			}
+		},
+		{
+			"id": "19|PARK STREET",
+			"address": {
+				"number": "19",
+				"street": "PARK STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ROUTE ONE BUILDING CONSULTANCY LIMITED",
+				"since": "2007-07-25"
+			}
+		},
+		{
+			"id": "110|HIGH STREET",
+			"address": {
+				"number": "110",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RUBINA HAIR & BEAUTY LIMITED",
+				"since": "2026-04-01"
+			}
+		},
+		{
+			"id": "25|TAVISTOCK ROAD",
+			"address": {
+				"number": "25",
+				"street": "TAVISTOCK ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "WCRA LIMITED|S&K CONSULTING LTD",
+				"since": "2001-11-14"
+			}
+		},
+		{
+			"id": "25|LONDON ROAD",
+			"address": {
+				"number": "25",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SAFI CROYDON LTD",
+				"since": "2024-11-26"
+			}
+		},
+		{
+			"id": "62|HIGH STREET",
+			"address": {
+				"number": "62",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SANA COSMETICS LTD",
+				"since": "2012-06-22"
+			}
+		},
+		{
+			"id": "46|CHURCH STREET",
+			"address": {
+				"number": "46",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SAVE & SMILE LTD",
+				"since": "2014-12-09"
+			}
+		},
+		{
+			"id": "20|BEECH HOUSE ROAD",
+			"address": {
+				"number": "20",
+				"street": "BEECH HOUSE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "STAND WITH JA COMMUNITY INTEREST COMPANY|SELECTFURNITURE LTD",
+				"since": "2025-11-05"
+			}
+		},
+		{
+			"id": "32|SURREY STREET",
+			"address": {
+				"number": "32",
+				"street": "SURREY STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SHREE DATTA LTD",
+				"since": "2019-05-03"
+			}
+		},
+		{
+			"id": "41|TAMWORTH ROAD",
+			"address": {
+				"number": "41",
+				"street": "TAMWORTH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SML UK SOLUTIONS LTD",
+				"since": "2012-10-03"
+			}
+		},
+		{
+			"id": "26|CHATSWORTH ROAD",
+			"address": {
+				"number": "26",
+				"street": "CHATSWORTH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SOFTMETRICA LIMITED",
+				"since": "2023-10-16"
+			}
+		},
+		{
+			"id": "18|SOUTH END",
+			"address": {
+				"number": "18",
+				"street": "SOUTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SOUTH END 99 PLUS LTD",
+				"since": "2022-05-09"
+			}
+		},
+		{
+			"id": "31|GEORGE STREET",
+			"address": {
+				"number": "31",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "STY CROYDON LTD",
+				"since": "2019-09-21"
+			}
+		},
+		{
+			"id": "64|HIGH STREET",
+			"address": {
+				"number": "64",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SURREY NEWS LIMITED",
+				"since": "2025-06-05"
+			}
+		},
+		{
+			"id": "31|ST GEORGE'S WALK",
+			"address": {
+				"number": "31",
+				"street": "ST GEORGE'S WALK"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TANZCARGO LIMITED",
+				"since": "2020-01-03"
+			}
+		},
+		{
+			"id": "71|HIGH STREET",
+			"address": {
+				"number": "71",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TAP COMMUNITY BARS LTD",
+				"since": "2024-11-04"
+			}
+		},
+		{
+			"id": "54|SURREY STREET",
+			"address": {
+				"number": "54",
+				"street": "SURREY STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TASTE MAX PIZZA LIMITED",
+				"since": "2026-09-08"
+			}
+		},
+		{
+			"id": "141|NORTH END",
+			"address": {
+				"number": "141",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "3",
+				"names": "TECH GEEK 19 LTD|TECH LUGGAGE LTD|TECH LUGGAGE & VAPES LTD",
+				"since": "2019-06-25"
+			}
+		},
+		{
+			"id": "47|HIGH STREET",
+			"address": {
+				"number": "47",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE ROCK PUB (CROYDON) LTD",
+				"since": "2026-09-30"
+			}
+		},
+		{
+			"id": "101|TAMWORTH ROAD",
+			"address": {
+				"number": "101",
+				"street": "TAMWORTH ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "WUS (CROYDON) LTD|THIAGO MOTORCYCLE LTD",
+				"since": "2026-02-03"
+			}
+		},
+		{
+			"id": "216|HIGH STREET",
+			"address": {
+				"number": "216",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TOPS CROYDON LIMITED",
+				"since": "2025-08-18"
+			}
+		},
+		{
+			"id": "15|STATION ROAD",
+			"address": {
+				"number": "15",
+				"street": "STATION ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TREND SETTERS ENTERPRISES LIMITED",
+				"since": "2014-04-14"
+			}
+		},
+		{
+			"id": "92|CHATSWORTH ROAD",
+			"address": {
+				"number": "92",
+				"street": "CHATSWORTH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "UK VOLTIX ELECTRICAL LTD",
+				"since": "2026-03-11"
+			}
+		},
+		{
+			"id": "1|RUSKIN SQUARE",
+			"address": {
+				"number": "1",
+				"street": "RUSKIN SQUARE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "UMBRELLA LINK LTD",
+				"since": "2023-06-21"
+			}
+		},
+		{
+			"id": "30|EDEN ROAD",
+			"address": {
+				"number": "30",
+				"street": "EDEN ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "UNIMEX LIMITED",
+				"since": "1987-12-03"
+			}
+		},
+		{
+			"id": "42|CHURCH STREET",
+			"address": {
+				"number": "42",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "V&T SUPERMARKET LIMITED",
+				"since": "2025-05-13"
+			}
+		},
+		{
+			"id": "79|GEORGE STREET",
+			"address": {
+				"number": "79",
+				"street": "GEORGE STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "VERY PERI CHICKEN LIMITED",
+				"since": "2016-04-18"
+			}
+		},
+		{
+			"id": "38|CHURCH STREET",
+			"address": {
+				"number": "38",
+				"street": "CHURCH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "VI NAILS LIMITED",
+				"since": "2011-03-23"
+			}
+		},
+		{
+			"id": "49|FRITH ROAD",
+			"address": {
+				"number": "49",
+				"street": "FRITH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "WANDERLUST INK LTD",
+				"since": "2023-04-27"
+			}
+		},
+		{
+			"id": "60|PARK LANE",
+			"address": {
+				"number": "60",
+				"street": "PARK LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "WAVE TRUST",
+				"since": "1999-10-21"
+			}
+		},
+		{
+			"id": "7|DERBY ROAD",
+			"address": {
+				"number": "7",
+				"street": "DERBY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "WEST CROYDON DENTAL PRACTICE LTD",
+				"since": "2011-06-28"
+			}
+		},
+		{
+			"id": "13|STATION ROAD",
+			"address": {
+				"number": "13",
+				"street": "STATION ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "WEST CROYDON TAKEAWAY LTD",
+				"since": "2023-07-03"
+			}
+		},
+		{
+			"id": "21|LONDON ROAD",
+			"address": {
+				"number": "21",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "WINDRUSH ENTERPRISE LTD",
+				"since": "2011-02-10"
+			}
+		},
+		{
+			"id": "92|NORTH END",
+			"address": {
+				"number": "92",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "XPRESS GSM SERVICES LTD",
+				"since": "2018-09-24"
+			}
+		},
+		{
+			"id": "175|NORTH END",
+			"address": {
+				"number": "175",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "YELLOW 175 LTD",
+				"since": "2026-01-28"
+			}
+		},
+		{
+			"id": "181|NORTH END",
+			"address": {
+				"number": "181",
+				"street": "NORTH END"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ZAMCALL CROYDON LTD|ZAM LAPTOP LTD",
+				"since": "2017-10-04"
+			}
+		},
+		{
+			"id": "5|LONDON ROAD",
+			"address": {
+				"number": "5",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ZAM SUPERMARKET LTD",
+				"since": "2020-07-01"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

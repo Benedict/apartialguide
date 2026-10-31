@@ -1,0 +1,119 @@
+{
+	"source": "OpenBenches",
+	"prefix": "bench",
+	"records": [
+		{
+			"id": "41010",
+			"at": [
+				51.376064,
+				-0.098514
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "This memorial bench is dedicated to the enduring memory / of our beloved Elianne whose life was a tapestry of beauty, strength, and kindness. / In her 15 years, she embraced humility, faith, and compassion, leaving an indelible mark / on our hearts. / May those who rest here find solace in the enduring spirit of an amazing soul, / forever missed but never forgotten. / Elianne Andam / 28.06.2008 27.09.2023"
+			}
+		},
+		{
+			"id": "39015",
+			"at": [
+				51.376068,
+				-0.09777
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "This memorial bench is dedicated to the enduring memory of our beloved Elianne whose life was a tapestry of beauty, strength, and kindness. In her 15 years, she embraced humility, faith, and compassion, leaving an indelible mark on our hearts. / May those who rest here find solace in the enduring spirit of an amazing soul, / forever missed but never forgotten. / Elianne Andam / 28.06.2008-27.09.2023"
+			}
+		},
+		{
+			"id": "19816",
+			"at": [
+				51.371952,
+				-0.102952
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "www.sustrans.org.uk/poctraitbench / about these / local people / Ronnie Corbett CBE / Actor, comedian and ștar of / The Two Ronnies and many TV sketch shows / Find out more / Samuel Coleridge Taylor 1875-1912 / Musician, composer and professor.of music who / composed the carntata Hiawatha's Wedding-Feast / Dame Peggy Ashcroft. / DBE 1907-1991 / Renowred Oscar-winning actress, for / over 60 years on the stage, screen / and television / at.."
+			}
+		},
+		{
+			"id": "11500",
+			"at": [
+				51.369816,
+				-0.09351
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF DOCTORS STEPHEN AND JANET MICHAEL"
+			}
+		},
+		{
+			"id": "30977",
+			"at": [
+				51.367722,
+				-0.096602
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF / GRACE WALKER J. P. / SECRETARY CROYDON LABOUR PARTY / 1960-65"
+			}
+		},
+		{
+			"id": "26839",
+			"at": [
+				51.367649,
+				-0.096674
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "WE OUGHT TO BE TOGETHER, YOU AND I, COMPANION, COMFORTER, LOVER & FRIEND / LIFE IS SO SHORT WE CANNOT COMPREHEND / HOW FAST / THE HOURS FLY. WE OUGHT TO BE TOGETHER. YOU AND I - LORRAINE / MY LOVE ALWAYS / IN LOVING MEMORY OF MY DEAR HUSBAND ALFRED SORKIN / WHO DIED 11TH AUGUST 1992"
+			}
+		},
+		{
+			"id": "26838",
+			"at": [
+				51.367451,
+				-0.096581
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF JOHN de GROOTE / 1944-2006 / FROM ALL HIS MANY FRIENDS"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

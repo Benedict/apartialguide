@@ -1,0 +1,4207 @@
+{
+	"source": "Office for National Statistics",
+	"prefix": "postcode",
+	"records": [
+		{
+			"id": "CR0 0XB",
+			"at": [
+				51.375212,
+				-0.099575
+			],
+			"observed": "2016-08-01",
+			"claims": {
+				"name": "CR0 0XB",
+				"kind": "postcode",
+				"began": "1994-05",
+				"ended": "2016-08"
+			}
+		},
+		{
+			"id": "CR0 0XF",
+			"at": [
+				51.37852,
+				-0.098964
+			],
+			"observed": "1995-12-01",
+			"claims": {
+				"name": "CR0 0XF",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "1995-12"
+			}
+		},
+		{
+			"id": "CR0 0XH",
+			"at": [
+				51.375838,
+				-0.094391
+			],
+			"observed": "2009-01-01",
+			"claims": {
+				"name": "CR0 0XH",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "2009-01"
+			}
+		},
+		{
+			"id": "CR0 0YA",
+			"at": [
+				51.371499,
+				-0.100217
+			],
+			"observed": "2001-01-01",
+			"claims": {
+				"name": "CR0 0YA",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2001-01"
+			}
+		},
+		{
+			"id": "CR0 0YD",
+			"at": [
+				51.372604,
+				-0.099597
+			],
+			"observed": "2001-03-01",
+			"claims": {
+				"name": "CR0 0YD",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2001-03"
+			}
+		},
+		{
+			"id": "CR0 0YE",
+			"at": [
+				51.374636,
+				-0.098464
+			],
+			"observed": "2010-02-01",
+			"claims": {
+				"name": "CR0 0YE",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2010-02"
+			}
+		},
+		{
+			"id": "CR0 0YF",
+			"at": [
+				51.374949,
+				-0.096684
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "CR0 0YF",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "CR0 1BY",
+			"at": [
+				51.371454,
+				-0.09578
+			],
+			"observed": "2024-06-01",
+			"claims": {
+				"name": "CR0 1BY",
+				"kind": "postcode",
+				"began": "2007-01",
+				"ended": "2024-06"
+			}
+		},
+		{
+			"id": "CR0 1DA",
+			"at": [
+				51.370832,
+				-0.101797
+			],
+			"observed": "2005-04-01",
+			"claims": {
+				"name": "CR0 1DA",
+				"kind": "postcode",
+				"began": "2003-07",
+				"ended": "2005-04"
+			}
+		},
+		{
+			"id": "CR0 1DH",
+			"at": [
+				51.370269,
+				-0.100872
+			],
+			"observed": "2008-04-01",
+			"claims": {
+				"name": "CR0 1DH",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2008-04"
+			}
+		},
+		{
+			"id": "CR0 1DZ",
+			"at": [
+				51.371232,
+				-0.09928
+			],
+			"observed": "2005-04-01",
+			"claims": {
+				"name": "CR0 1DZ",
+				"kind": "postcode",
+				"began": "2001-06",
+				"ended": "2005-04"
+			}
+		},
+		{
+			"id": "CR0 1EE",
+			"at": [
+				51.369534,
+				-0.099336
+			],
+			"observed": "1999-06-01",
+			"claims": {
+				"name": "CR0 1EE",
+				"kind": "postcode",
+				"began": "1997-12",
+				"ended": "1999-06"
+			}
+		},
+		{
+			"id": "CR0 1EH",
+			"at": [
+				51.374648,
+				-0.094196
+			],
+			"observed": "2011-01-01",
+			"claims": {
+				"name": "CR0 1EH",
+				"kind": "postcode",
+				"began": "2000-06",
+				"ended": "2011-01"
+			}
+		},
+		{
+			"id": "CR0 1YG",
+			"at": [
+				51.372769,
+				-0.099202
+			],
+			"observed": "2021-05-01",
+			"claims": {
+				"name": "CR0 1YG",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2021-05"
+			}
+		},
+		{
+			"id": "CR0 2NF",
+			"at": [
+				51.374986,
+				-0.093981
+			],
+			"observed": "2014-04-01",
+			"claims": {
+				"name": "CR0 2NF",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2014-04"
+			}
+		},
+		{
+			"id": "CR0 1YH",
+			"at": [
+				51.37304,
+				-0.099306
+			],
+			"observed": "2021-05-01",
+			"claims": {
+				"name": "CR0 1YH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2021-05"
+			}
+		},
+		{
+			"id": "CR0 1PH",
+			"at": [
+				51.37424,
+				-0.093983
+			],
+			"observed": "2002-03-01",
+			"claims": {
+				"name": "CR0 1PH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2002-03"
+			}
+		},
+		{
+			"id": "CR0 1QA",
+			"at": [
+				51.373345,
+				-0.099782
+			],
+			"observed": "2016-01-01",
+			"claims": {
+				"name": "CR0 1QA",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2016-01"
+			}
+		},
+		{
+			"id": "CR0 1QZ",
+			"at": [
+				51.373342,
+				-0.101276
+			],
+			"observed": "1999-06-01",
+			"claims": {
+				"name": "CR0 1QZ",
+				"kind": "postcode",
+				"began": "1984-02",
+				"ended": "1999-06"
+			}
+		},
+		{
+			"id": "CR0 2AH",
+			"at": [
+				51.382102,
+				-0.098543
+			],
+			"observed": "2009-01-01",
+			"claims": {
+				"name": "CR0 2AH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2009-01"
+			}
+		},
+		{
+			"id": "CR0 1SF",
+			"at": [
+				51.370358,
+				-0.103052
+			],
+			"observed": "1998-06-01",
+			"claims": {
+				"name": "CR0 1SF",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1998-06"
+			}
+		},
+		{
+			"id": "CR0 1XA",
+			"at": [
+				51.376793,
+				-0.103346
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "CR0 1XA",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "CR0 1XN",
+			"at": [
+				51.375134,
+				-0.095871
+			],
+			"observed": "2020-04-01",
+			"claims": {
+				"name": "CR0 1XN",
+				"kind": "postcode",
+				"began": "2013-02",
+				"ended": "2020-04"
+			}
+		},
+		{
+			"id": "CR0 2RA",
+			"at": [
+				51.378576,
+				-0.100154
+			],
+			"observed": "2010-12-01",
+			"claims": {
+				"name": "CR0 2RA",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2010-12"
+			}
+		},
+		{
+			"id": "CR0 1YE",
+			"at": [
+				51.373157,
+				-0.099272
+			],
+			"observed": "2021-05-01",
+			"claims": {
+				"name": "CR0 1YE",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2021-05"
+			}
+		},
+		{
+			"id": "CR0 1YF",
+			"at": [
+				51.373345,
+				-0.098158
+			],
+			"observed": "2021-05-01",
+			"claims": {
+				"name": "CR0 1YF",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2021-05"
+			}
+		},
+		{
+			"id": "CR0 2FL",
+			"at": [
+				51.380565,
+				-0.093045
+			],
+			"observed": "2021-07-01",
+			"claims": {
+				"name": "CR0 2FL",
+				"kind": "postcode",
+				"began": "2012-02",
+				"ended": "2021-07"
+			}
+		},
+		{
+			"id": "CR0 1TU",
+			"at": [
+				51.373656,
+				-0.101249
+			],
+			"observed": "1999-12-01",
+			"claims": {
+				"name": "CR0 1TU",
+				"kind": "postcode",
+				"began": "1992-08",
+				"ended": "1999-12"
+			}
+		},
+		{
+			"id": "CR0 2YN",
+			"at": [
+				51.379564,
+				-0.093992
+			],
+			"observed": "2024-10-01",
+			"claims": {
+				"name": "CR0 2YN",
+				"kind": "postcode",
+				"began": "2024-08",
+				"ended": "2024-10"
+			}
+		},
+		{
+			"id": "CR0 2ZA",
+			"at": [
+				51.378549,
+				-0.100184
+			],
+			"observed": "2025-06-01",
+			"claims": {
+				"name": "CR0 2ZA",
+				"kind": "postcode",
+				"began": "2025-03",
+				"ended": "2025-06"
+			}
+		},
+		{
+			"id": "CR0 5LG",
+			"at": [
+				51.372136,
+				-0.093481
+			],
+			"observed": "1985-12-01",
+			"claims": {
+				"name": "CR0 5LG",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1985-12"
+			}
+		},
+		{
+			"id": "CR0 9AY",
+			"at": [
+				51.379496,
+				-0.099225
+			],
+			"observed": "2015-04-01",
+			"claims": {
+				"name": "CR0 9AY",
+				"kind": "postcode",
+				"began": "2010-08",
+				"ended": "2015-04"
+			}
+		},
+		{
+			"id": "CR0 9XA",
+			"at": [
+				51.375175,
+				-0.095079
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR0 9XA",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR0 9XB",
+			"at": [
+				51.375935,
+				-0.097605
+			],
+			"observed": "2015-08-01",
+			"claims": {
+				"name": "CR0 9XB",
+				"kind": "postcode",
+				"began": "2008-06",
+				"ended": "2015-08"
+			}
+		},
+		{
+			"id": "CR0 9XD",
+			"at": [
+				51.377558,
+				-0.097279
+			],
+			"observed": "2010-05-01",
+			"claims": {
+				"name": "CR0 9XD",
+				"kind": "postcode",
+				"began": "2007-07",
+				"ended": "2010-05"
+			}
+		},
+		{
+			"id": "CR0 9XE",
+			"at": [
+				51.377558,
+				-0.097279
+			],
+			"observed": "2015-06-01",
+			"claims": {
+				"name": "CR0 9XE",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2015-06"
+			}
+		},
+		{
+			"id": "CR0 9XG",
+			"at": [
+				51.378206,
+				-0.096189
+			],
+			"observed": "2004-11-01",
+			"claims": {
+				"name": "CR0 9XG",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2004-11"
+			}
+		},
+		{
+			"id": "CR0 9XL",
+			"at": [
+				51.375778,
+				-0.096204
+			],
+			"observed": "1998-06-01",
+			"claims": {
+				"name": "CR0 9XL",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1998-06"
+			}
+		},
+		{
+			"id": "CR0 9XN",
+			"at": [
+				51.371188,
+				-0.100992
+			],
+			"observed": "2016-01-01",
+			"claims": {
+				"name": "CR0 9XN",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2016-01"
+			}
+		},
+		{
+			"id": "CR0 9XQ",
+			"at": [
+				51.375778,
+				-0.096204
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "CR0 9XQ",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "CR0 9XT",
+			"at": [
+				51.369175,
+				-0.098834
+			],
+			"observed": "2017-09-01",
+			"claims": {
+				"name": "CR0 9XT",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2017-09"
+			}
+		},
+		{
+			"id": "CR0 9XU",
+			"at": [
+				51.375778,
+				-0.096204
+			],
+			"observed": "1996-06-01",
+			"claims": {
+				"name": "CR0 9XU",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1996-06"
+			}
+		},
+		{
+			"id": "CR0 9XW",
+			"at": [
+				51.375778,
+				-0.096204
+			],
+			"observed": "1995-07-01",
+			"claims": {
+				"name": "CR0 9XW",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1995-07"
+			}
+		},
+		{
+			"id": "CR0 9XX",
+			"at": [
+				51.375217,
+				-0.098196
+			],
+			"observed": "2010-03-01",
+			"claims": {
+				"name": "CR0 9XX",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2010-03"
+			}
+		},
+		{
+			"id": "CR0 9XZ",
+			"at": [
+				51.375778,
+				-0.096204
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR0 9XZ",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR0 9YD",
+			"at": [
+				51.378052,
+				-0.098897
+			],
+			"observed": "2001-05-01",
+			"claims": {
+				"name": "CR0 9YD",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2001-05"
+			}
+		},
+		{
+			"id": "CR0 9YE",
+			"at": [
+				51.375778,
+				-0.096204
+			],
+			"observed": "1997-06-01",
+			"claims": {
+				"name": "CR0 9YE",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1997-06"
+			}
+		},
+		{
+			"id": "CR0 9YF",
+			"at": [
+				51.375542,
+				-0.095006
+			],
+			"observed": "2009-01-01",
+			"claims": {
+				"name": "CR0 9YF",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2009-01"
+			}
+		},
+		{
+			"id": "CR0 9YG",
+			"at": [
+				51.375778,
+				-0.096204
+			],
+			"observed": "1997-08-01",
+			"claims": {
+				"name": "CR0 9YG",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1997-08"
+			}
+		},
+		{
+			"id": "CR0 9YH",
+			"at": [
+				51.375778,
+				-0.096204
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR0 9YH",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR2 2PA",
+			"at": [
+				51.375801,
+				-0.09764
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR2 2PA",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR2 2PB",
+			"at": [
+				51.379326,
+				-0.093183
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR2 2PB",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR2 2PD",
+			"at": [
+				51.375801,
+				-0.09764
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR2 2PD",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR2 2PE",
+			"at": [
+				51.379326,
+				-0.093183
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR2 2PE",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR4 3TS",
+			"at": [
+				51.370525,
+				-0.105042
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR4 3TS",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR4 8UL",
+			"at": [
+				51.371354,
+				-0.100697
+			],
+			"observed": "1988-12-01",
+			"claims": {
+				"name": "CR4 8UL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1988-12"
+			}
+		},
+		{
+			"id": "CR4 8UN",
+			"at": [
+				51.369557,
+				-0.100772
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR4 8UN",
+				"kind": "postcode",
+				"began": "1986-07",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 1UH",
+			"at": [
+				51.369175,
+				-0.098834
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 1UH",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 1UR",
+			"at": [
+				51.374368,
+				-0.09744
+			],
+			"observed": "2008-12-01",
+			"claims": {
+				"name": "CR9 1UR",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2008-12"
+			}
+		},
+		{
+			"id": "CR9 1US",
+			"at": [
+				51.377863,
+				-0.096132
+			],
+			"observed": "2009-01-01",
+			"claims": {
+				"name": "CR9 1US",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2009-01"
+			}
+		},
+		{
+			"id": "CR9 1NW",
+			"at": [
+				51.373581,
+				-0.099944
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 1NW",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 1UT",
+			"at": [
+				51.373297,
+				-0.100746
+			],
+			"observed": "2004-03-01",
+			"claims": {
+				"name": "CR9 1UT",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "2004-03"
+			}
+		},
+		{
+			"id": "CR9 1WW",
+			"at": [
+				51.375134,
+				-0.095871
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 1WW",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 1XA",
+			"at": [
+				51.372199,
+				-0.100102
+			],
+			"observed": "2006-02-01",
+			"claims": {
+				"name": "CR9 1XA",
+				"kind": "postcode",
+				"began": "2003-07",
+				"ended": "2006-02"
+			}
+		},
+		{
+			"id": "CR9 1XB",
+			"at": [
+				51.369916,
+				-0.100154
+			],
+			"observed": "2004-02-01",
+			"claims": {
+				"name": "CR9 1XB",
+				"kind": "postcode",
+				"began": "2002-12",
+				"ended": "2004-02"
+			}
+		},
+		{
+			"id": "CR9 1XD",
+			"at": [
+				51.370937,
+				-0.099939
+			],
+			"observed": "2005-10-01",
+			"claims": {
+				"name": "CR9 1XD",
+				"kind": "postcode",
+				"began": "2002-09",
+				"ended": "2005-10"
+			}
+		},
+		{
+			"id": "CR9 1XE",
+			"at": [
+				51.370937,
+				-0.099939
+			],
+			"observed": "2016-01-01",
+			"claims": {
+				"name": "CR9 1XE",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "2016-01"
+			}
+		},
+		{
+			"id": "CR9 1XG",
+			"at": [
+				51.371326,
+				-0.100598
+			],
+			"observed": "2008-06-01",
+			"claims": {
+				"name": "CR9 1XG",
+				"kind": "postcode",
+				"began": "2004-01",
+				"ended": "2008-06"
+			}
+		},
+		{
+			"id": "CR9 1NX",
+			"at": [
+				51.374004,
+				-0.097714
+			],
+			"observed": "2000-10-01",
+			"claims": {
+				"name": "CR9 1NX",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "2000-10"
+			}
+		},
+		{
+			"id": "CR9 1DG",
+			"at": [
+				51.372524,
+				-0.095778
+			],
+			"observed": "2018-03-01",
+			"claims": {
+				"name": "CR9 1DG",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2018-03"
+			}
+		},
+		{
+			"id": "CR9 1NY",
+			"at": [
+				51.373957,
+				-0.094842
+			],
+			"observed": "1984-12-01",
+			"claims": {
+				"name": "CR9 1NY",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1984-12"
+			}
+		},
+		{
+			"id": "CR9 1DJ",
+			"at": [
+				51.371354,
+				-0.100697
+			],
+			"observed": "1995-12-01",
+			"claims": {
+				"name": "CR9 1DJ",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "1995-12"
+			}
+		},
+		{
+			"id": "CR9 1DP",
+			"at": [
+				51.373599,
+				-0.096079
+			],
+			"observed": "2017-03-01",
+			"claims": {
+				"name": "CR9 1DP",
+				"kind": "postcode",
+				"began": "1987-04",
+				"ended": "2017-03"
+			}
+		},
+		{
+			"id": "CR9 1DR",
+			"at": [
+				51.373898,
+				-0.09621
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 1DR",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 1DT",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "2001-07-01",
+			"claims": {
+				"name": "CR9 1DT",
+				"kind": "postcode",
+				"began": "2000-06",
+				"ended": "2001-07"
+			}
+		},
+		{
+			"id": "CR9 1DU",
+			"at": [
+				51.373638,
+				-0.098994
+			],
+			"observed": "2010-08-01",
+			"claims": {
+				"name": "CR9 1DU",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2010-08"
+			}
+		},
+		{
+			"id": "CR9 1DY",
+			"at": [
+				51.375134,
+				-0.095871
+			],
+			"observed": "2016-09-01",
+			"claims": {
+				"name": "CR9 1DY",
+				"kind": "postcode",
+				"began": "2015-02",
+				"ended": "2016-09"
+			}
+		},
+		{
+			"id": "CR9 1ED",
+			"at": [
+				51.374791,
+				-0.094678
+			],
+			"observed": "2004-03-01",
+			"claims": {
+				"name": "CR9 1ED",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2004-03"
+			}
+		},
+		{
+			"id": "CR9 1EG",
+			"at": [
+				51.371232,
+				-0.09928
+			],
+			"observed": "2003-06-01",
+			"claims": {
+				"name": "CR9 1EG",
+				"kind": "postcode",
+				"began": "2000-06",
+				"ended": "2003-06"
+			}
+		},
+		{
+			"id": "CR9 1EH",
+			"at": [
+				51.376741,
+				-0.097946
+			],
+			"observed": "1999-12-01",
+			"claims": {
+				"name": "CR9 1EH",
+				"kind": "postcode",
+				"began": "1983-01",
+				"ended": "1999-12"
+			}
+		},
+		{
+			"id": "CR9 1EL",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 1EL",
+				"kind": "postcode",
+				"began": "2000-06",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 1ER",
+			"at": [
+				51.369175,
+				-0.098834
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 1ER",
+				"kind": "postcode",
+				"began": "2003-01",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 1ES",
+			"at": [
+				51.373858,
+				-0.098137
+			],
+			"observed": "2025-01-01",
+			"claims": {
+				"name": "CR9 1ES",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2025-01"
+			}
+		},
+		{
+			"id": "CR9 1EU",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "2008-08-01",
+			"claims": {
+				"name": "CR9 1EU",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2008-08"
+			}
+		},
+		{
+			"id": "CR9 1EY",
+			"at": [
+				51.374368,
+				-0.09744
+			],
+			"observed": "2018-03-01",
+			"claims": {
+				"name": "CR9 1EY",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2018-03"
+			}
+		},
+		{
+			"id": "CR9 1HA",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "2001-04-01",
+			"claims": {
+				"name": "CR9 1HA",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2001-04"
+			}
+		},
+		{
+			"id": "CR9 1HB",
+			"at": [
+				51.371835,
+				-0.100951
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 1HB",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 1HF",
+			"at": [
+				51.371835,
+				-0.100951
+			],
+			"observed": "2000-10-01",
+			"claims": {
+				"name": "CR9 1HF",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "2000-10"
+			}
+		},
+		{
+			"id": "CR9 1HG",
+			"at": [
+				51.374004,
+				-0.097714
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "CR9 1HG",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "CR9 1HH",
+			"at": [
+				51.373575,
+				-0.100677
+			],
+			"observed": "2001-10-01",
+			"claims": {
+				"name": "CR9 1HH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2001-10"
+			}
+		},
+		{
+			"id": "CR9 1HN",
+			"at": [
+				51.374856,
+				-0.094805
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CR9 1HN",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CR9 1HQ",
+			"at": [
+				51.374709,
+				-0.09517
+			],
+			"observed": "2000-10-01",
+			"claims": {
+				"name": "CR9 1HQ",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2000-10"
+			}
+		},
+		{
+			"id": "CR9 1HU",
+			"at": [
+				51.371326,
+				-0.100598
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 1HU",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 1PA",
+			"at": [
+				51.372457,
+				-0.103281
+			],
+			"observed": "2008-12-01",
+			"claims": {
+				"name": "CR9 1PA",
+				"kind": "postcode",
+				"began": "1992-01",
+				"ended": "2008-12"
+			}
+		},
+		{
+			"id": "CR9 1RQ",
+			"at": [
+				51.374375,
+				-0.101219
+			],
+			"observed": "2020-09-01",
+			"claims": {
+				"name": "CR9 1RQ",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2020-09"
+			}
+		},
+		{
+			"id": "CR9 1HW",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 1HW",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 1PB",
+			"at": [
+				51.369916,
+				-0.100154
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "CR9 1PB",
+				"kind": "postcode",
+				"began": "1987-10",
+				"ended": "2024-05"
+			}
+		},
+		{
+			"id": "CR9 0EF",
+			"at": [
+				51.375778,
+				-0.096204
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CR9 0EF",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CR9 1HX",
+			"at": [
+				51.371835,
+				-0.100951
+			],
+			"observed": "2006-08-01",
+			"claims": {
+				"name": "CR9 1HX",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2006-08"
+			}
+		},
+		{
+			"id": "CR9 1HY",
+			"at": [
+				51.370832,
+				-0.101797
+			],
+			"observed": "2008-12-01",
+			"claims": {
+				"name": "CR9 1HY",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2008-12"
+			}
+		},
+		{
+			"id": "CR9 1PE",
+			"at": [
+				51.373152,
+				-0.100623
+			],
+			"observed": "1995-07-01",
+			"claims": {
+				"name": "CR9 1PE",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1995-07"
+			}
+		},
+		{
+			"id": "CR9 0EH",
+			"at": [
+				51.37398,
+				-0.096278
+			],
+			"observed": "1996-06-01",
+			"claims": {
+				"name": "CR9 0EH",
+				"kind": "postcode",
+				"began": "1990-07",
+				"ended": "1996-06"
+			}
+		},
+		{
+			"id": "CR9 1PF",
+			"at": [
+				51.369916,
+				-0.100154
+			],
+			"observed": "2011-05-01",
+			"claims": {
+				"name": "CR9 1PF",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "2011-05"
+			}
+		},
+		{
+			"id": "CR9 1HZ",
+			"at": [
+				51.369175,
+				-0.098834
+			],
+			"observed": "2017-09-01",
+			"claims": {
+				"name": "CR9 1HZ",
+				"kind": "postcode",
+				"began": "2004-04",
+				"ended": "2017-09"
+			}
+		},
+		{
+			"id": "CR9 1PG",
+			"at": [
+				51.370385,
+				-0.099717
+			],
+			"observed": "2001-12-01",
+			"claims": {
+				"name": "CR9 1PG",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2001-12"
+			}
+		},
+		{
+			"id": "CR9 1PH",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "CR9 1PH",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "CR9 1PJ",
+			"at": [
+				51.370492,
+				-0.09911
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 1PJ",
+				"kind": "postcode",
+				"began": "2004-03",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 1JE",
+			"at": [
+				51.372819,
+				-0.097332
+			],
+			"observed": "2003-08-01",
+			"claims": {
+				"name": "CR9 1JE",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2003-08"
+			}
+		},
+		{
+			"id": "CR9 1PL",
+			"at": [
+				51.372163,
+				-0.098997
+			],
+			"observed": "1997-12-01",
+			"claims": {
+				"name": "CR9 1PL",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "1997-12"
+			}
+		},
+		{
+			"id": "CR9 1PN",
+			"at": [
+				51.371331,
+				-0.099262
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CR9 1PN",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CR9 1SB",
+			"at": [
+				51.374284,
+				-0.099499
+			],
+			"observed": "2014-04-01",
+			"claims": {
+				"name": "CR9 1SB",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2014-04"
+			}
+		},
+		{
+			"id": "CR9 1SD",
+			"at": [
+				51.376327,
+				-0.101225
+			],
+			"observed": "2025-10-01",
+			"claims": {
+				"name": "CR9 1SD",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2025-10"
+			}
+		},
+		{
+			"id": "CR9 1PP",
+			"at": [
+				51.372457,
+				-0.103281
+			],
+			"observed": "1996-12-01",
+			"claims": {
+				"name": "CR9 1PP",
+				"kind": "postcode",
+				"began": "1992-08",
+				"ended": "1996-12"
+			}
+		},
+		{
+			"id": "CR9 1AF",
+			"at": [
+				51.370511,
+				-0.098074
+			],
+			"observed": "2011-09-01",
+			"claims": {
+				"name": "CR9 1AF",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "2011-09"
+			}
+		},
+		{
+			"id": "CR9 1JQ",
+			"at": [
+				51.371574,
+				-0.09872
+			],
+			"observed": "2001-03-01",
+			"claims": {
+				"name": "CR9 1JQ",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2001-03"
+			}
+		},
+		{
+			"id": "CR9 1PQ",
+			"at": [
+				51.371232,
+				-0.09928
+			],
+			"observed": "2006-09-01",
+			"claims": {
+				"name": "CR9 1PQ",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2006-09"
+			}
+		},
+		{
+			"id": "CR9 1AG",
+			"at": [
+				51.370202,
+				-0.097886
+			],
+			"observed": "2025-12-01",
+			"claims": {
+				"name": "CR9 1AG",
+				"kind": "postcode",
+				"began": "1992-08",
+				"ended": "2025-12"
+			}
+		},
+		{
+			"id": "CR9 1SE",
+			"at": [
+				51.37826,
+				-0.102323
+			],
+			"observed": "2010-02-01",
+			"claims": {
+				"name": "CR9 1SE",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2010-02"
+			}
+		},
+		{
+			"id": "CR9 1PR",
+			"at": [
+				51.376741,
+				-0.097946
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 1PR",
+				"kind": "postcode",
+				"began": "1999-11",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 1PS",
+			"at": [
+				51.375848,
+				-0.100512
+			],
+			"observed": "1994-05-01",
+			"claims": {
+				"name": "CR9 1PS",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1994-05"
+			}
+		},
+		{
+			"id": "CR9 1PU",
+			"at": [
+				51.369557,
+				-0.100772
+			],
+			"observed": "1984-12-01",
+			"claims": {
+				"name": "CR9 1PU",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1984-12"
+			}
+		},
+		{
+			"id": "CR9 1PX",
+			"at": [
+				51.369557,
+				-0.100772
+			],
+			"observed": "1996-12-01",
+			"claims": {
+				"name": "CR9 1PX",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1996-12"
+			}
+		},
+		{
+			"id": "CR9 1SL",
+			"at": [
+				51.376065,
+				-0.101149
+			],
+			"observed": "2009-06-01",
+			"claims": {
+				"name": "CR9 1SL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2009-06"
+			}
+		},
+		{
+			"id": "CR9 1AJ",
+			"at": [
+				51.373957,
+				-0.093161
+			],
+			"observed": "2012-06-01",
+			"claims": {
+				"name": "CR9 1AJ",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2012-06"
+			}
+		},
+		{
+			"id": "CR9 1PY",
+			"at": [
+				51.371196,
+				-0.099813
+			],
+			"observed": "2009-08-01",
+			"claims": {
+				"name": "CR9 1PY",
+				"kind": "postcode",
+				"began": "2001-06",
+				"ended": "2009-08"
+			}
+		},
+		{
+			"id": "CR9 1JU",
+			"at": [
+				51.372819,
+				-0.097332
+			],
+			"observed": "2003-10-01",
+			"claims": {
+				"name": "CR9 1JU",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "2003-10"
+			}
+		},
+		{
+			"id": "CR9 1AL",
+			"at": [
+				51.369818,
+				-0.099123
+			],
+			"observed": "2002-07-01",
+			"claims": {
+				"name": "CR9 1AL",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2002-07"
+			}
+		},
+		{
+			"id": "CR9 1PZ",
+			"at": [
+				51.370492,
+				-0.09911
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 1PZ",
+				"kind": "postcode",
+				"began": "1997-12",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 1JX",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "CR9 1JX",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "CR9 1QA",
+			"at": [
+				51.371574,
+				-0.09872
+			],
+			"observed": "2012-05-01",
+			"claims": {
+				"name": "CR9 1QA",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "2012-05"
+			}
+		},
+		{
+			"id": "CR9 1AP",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 1AP",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 1LA",
+			"at": [
+				51.3733,
+				-0.104769
+			],
+			"observed": "2013-05-01",
+			"claims": {
+				"name": "CR9 1LA",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2013-05"
+			}
+		},
+		{
+			"id": "CR9 1LB",
+			"at": [
+				51.372206,
+				-0.097789
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "CR9 1LB",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "CR9 1SR",
+			"at": [
+				51.373963,
+				-0.095776
+			],
+			"observed": "2024-06-01",
+			"claims": {
+				"name": "CR9 1SR",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "2024-06"
+			}
+		},
+		{
+			"id": "CR9 1LE",
+			"at": [
+				51.37147,
+				-0.093969
+			],
+			"observed": "2013-05-01",
+			"claims": {
+				"name": "CR9 1LE",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2013-05"
+			}
+		},
+		{
+			"id": "CR9 1AS",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 1AS",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 1LG",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "1999-12-01",
+			"claims": {
+				"name": "CR9 1LG",
+				"kind": "postcode",
+				"began": "1987-10",
+				"ended": "1999-12"
+			}
+		},
+		{
+			"id": "CR9 1LH",
+			"at": [
+				51.368658,
+				-0.100809
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CR9 1LH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CR9 1LJ",
+			"at": [
+				51.369663,
+				-0.099
+			],
+			"observed": "2015-11-01",
+			"claims": {
+				"name": "CR9 1LJ",
+				"kind": "postcode",
+				"began": "2003-09",
+				"ended": "2015-11"
+			}
+		},
+		{
+			"id": "CR9 1ST",
+			"at": [
+				51.376157,
+				-0.099622
+			],
+			"observed": "2014-04-01",
+			"claims": {
+				"name": "CR9 1ST",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2014-04"
+			}
+		},
+		{
+			"id": "CR9 1LL",
+			"at": [
+				51.376829,
+				-0.097281
+			],
+			"observed": "2008-12-01",
+			"claims": {
+				"name": "CR9 1LL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2008-12"
+			}
+		},
+		{
+			"id": "CR9 1LP",
+			"at": [
+				51.369557,
+				-0.100772
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 1LP",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 1LR",
+			"at": [
+				51.368635,
+				-0.099373
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "CR9 1LR",
+				"kind": "postcode",
+				"began": "1993-01",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "CR9 1LS",
+			"at": [
+				51.368635,
+				-0.099373
+			],
+			"observed": "1995-07-01",
+			"claims": {
+				"name": "CR9 1LS",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1995-07"
+			}
+		},
+		{
+			"id": "CR9 1LU",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "1999-12-01",
+			"claims": {
+				"name": "CR9 1LU",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "1999-12"
+			}
+		},
+		{
+			"id": "CR9 1AW",
+			"at": [
+				51.369175,
+				-0.098834
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 1AW",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 1LX",
+			"at": [
+				51.370974,
+				-0.101647
+			],
+			"observed": "2005-10-01",
+			"claims": {
+				"name": "CR9 1LX",
+				"kind": "postcode",
+				"began": "1991-09",
+				"ended": "2005-10"
+			}
+		},
+		{
+			"id": "CR9 1AY",
+			"at": [
+				51.373963,
+				-0.095776
+			],
+			"observed": "2016-04-01",
+			"claims": {
+				"name": "CR9 1AY",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2016-04"
+			}
+		},
+		{
+			"id": "CR9 1NA",
+			"at": [
+				51.37398,
+				-0.096278
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CR9 1NA",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CR9 0AU",
+			"at": [
+				51.375212,
+				-0.099575
+			],
+			"observed": "2017-01-01",
+			"claims": {
+				"name": "CR9 0AU",
+				"kind": "postcode",
+				"began": "2001-06",
+				"ended": "2017-01"
+			}
+		},
+		{
+			"id": "CR9 1NB",
+			"at": [
+				51.375824,
+				-0.099076
+			],
+			"observed": "1994-12-01",
+			"claims": {
+				"name": "CR9 1NB",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1994-12"
+			}
+		},
+		{
+			"id": "CR9 1SY",
+			"at": [
+				51.375776,
+				-0.099422
+			],
+			"observed": "2017-01-01",
+			"claims": {
+				"name": "CR9 1SY",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2017-01"
+			}
+		},
+		{
+			"id": "CR9 1ND",
+			"at": [
+				51.374027,
+				-0.09915
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CR9 1ND",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CR9 1NE",
+			"at": [
+				51.37379,
+				-0.098384
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "CR9 1NE",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2024-05"
+			}
+		},
+		{
+			"id": "CR9 1BB",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 1BB",
+				"kind": "postcode",
+				"began": "2000-01",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 1TB",
+			"at": [
+				51.374146,
+				-0.094863
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 1TB",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 1QZ",
+			"at": [
+				51.369175,
+				-0.098834
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 1QZ",
+				"kind": "postcode",
+				"began": "1990-07",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 1NG",
+			"at": [
+				51.37453,
+				-0.09637
+			],
+			"observed": "2022-11-01",
+			"claims": {
+				"name": "CR9 1NG",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2022-11"
+			}
+		},
+		{
+			"id": "CR9 1BD",
+			"at": [
+				51.36845,
+				-0.09905
+			],
+			"observed": "2005-08-01",
+			"claims": {
+				"name": "CR9 1BD",
+				"kind": "postcode",
+				"began": "2000-06",
+				"ended": "2005-08"
+			}
+		},
+		{
+			"id": "CR9 1NH",
+			"at": [
+				51.373645,
+				-0.099424
+			],
+			"observed": "2010-03-01",
+			"claims": {
+				"name": "CR9 1NH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2010-03"
+			}
+		},
+		{
+			"id": "CR9 1NL",
+			"at": [
+				51.374004,
+				-0.097714
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "CR9 1NL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "CR9 1BE",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "2000-07-01",
+			"claims": {
+				"name": "CR9 1BE",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2000-07"
+			}
+		},
+		{
+			"id": "CR9 1BG",
+			"at": [
+				51.371454,
+				-0.09578
+			],
+			"observed": "2025-09-01",
+			"claims": {
+				"name": "CR9 1BG",
+				"kind": "postcode",
+				"began": "1983-07",
+				"ended": "2025-09"
+			}
+		},
+		{
+			"id": "CR9 1NP",
+			"at": [
+				51.375848,
+				-0.100512
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 1NP",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 1BH",
+			"at": [
+				51.366632,
+				-0.099514
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 1BH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 1TH",
+			"at": [
+				51.373963,
+				-0.095776
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 1TH",
+				"kind": "postcode",
+				"began": "2011-01",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 1NR",
+			"at": [
+				51.373414,
+				-0.097408
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 1NR",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 1RG",
+			"at": [
+				51.375838,
+				-0.094391
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 1RG",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 1TL",
+			"at": [
+				51.373154,
+				-0.099689
+			],
+			"observed": "2008-03-01",
+			"claims": {
+				"name": "CR9 1TL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2008-03"
+			}
+		},
+		{
+			"id": "CR9 1BL",
+			"at": [
+				51.371262,
+				-0.097785
+			],
+			"observed": "2016-05-01",
+			"claims": {
+				"name": "CR9 1BL",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "2016-05"
+			}
+		},
+		{
+			"id": "CR9 1NT",
+			"at": [
+				51.373957,
+				-0.094842
+			],
+			"observed": "1986-12-01",
+			"claims": {
+				"name": "CR9 1NT",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1986-12"
+			}
+		},
+		{
+			"id": "CR9 1BN",
+			"at": [
+				51.371326,
+				-0.100598
+			],
+			"observed": "2001-04-01",
+			"claims": {
+				"name": "CR9 1BN",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2001-04"
+			}
+		},
+		{
+			"id": "CR9 1TN",
+			"at": [
+				51.370213,
+				-0.100184
+			],
+			"observed": "2019-01-01",
+			"claims": {
+				"name": "CR9 1TN",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2019-01"
+			}
+		},
+		{
+			"id": "CR9 0YR",
+			"at": [
+				51.368625,
+				-0.098224
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "CR9 0YR",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "CR9 1TR",
+			"at": [
+				51.375134,
+				-0.095871
+			],
+			"observed": "2015-01-01",
+			"claims": {
+				"name": "CR9 1TR",
+				"kind": "postcode",
+				"began": "2005-06",
+				"ended": "2015-01"
+			}
+		},
+		{
+			"id": "CR9 1BS",
+			"at": [
+				51.371574,
+				-0.09872
+			],
+			"observed": "2021-11-01",
+			"claims": {
+				"name": "CR9 1BS",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2021-11"
+			}
+		},
+		{
+			"id": "CR9 1TT",
+			"at": [
+				51.373379,
+				-0.097984
+			],
+			"observed": "2013-07-01",
+			"claims": {
+				"name": "CR9 1TT",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2013-07"
+			}
+		},
+		{
+			"id": "CR9 1BU",
+			"at": [
+				51.374146,
+				-0.094863
+			],
+			"observed": "2013-11-01",
+			"claims": {
+				"name": "CR9 1BU",
+				"kind": "postcode",
+				"began": "2000-06",
+				"ended": "2013-11"
+			}
+		},
+		{
+			"id": "CR9 1TU",
+			"at": [
+				51.373611,
+				-0.098434
+			],
+			"observed": "2010-03-01",
+			"claims": {
+				"name": "CR9 1TU",
+				"kind": "postcode",
+				"began": "2005-07",
+				"ended": "2010-03"
+			}
+		},
+		{
+			"id": "CR9 1BY",
+			"at": [
+				51.368588,
+				-0.096502
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "CR9 1BY",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "CR9 1DA",
+			"at": [
+				51.375134,
+				-0.095871
+			],
+			"observed": "2008-12-01",
+			"claims": {
+				"name": "CR9 1DA",
+				"kind": "postcode",
+				"began": "1996-06",
+				"ended": "2008-12"
+			}
+		},
+		{
+			"id": "CR9 1TX",
+			"at": [
+				51.378863,
+				-0.097383
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "CR9 1TX",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "2024-05"
+			}
+		},
+		{
+			"id": "CR9 1DB",
+			"at": [
+				51.374307,
+				-0.097587
+			],
+			"observed": "2008-12-01",
+			"claims": {
+				"name": "CR9 1DB",
+				"kind": "postcode",
+				"began": "1981-06",
+				"ended": "2008-12"
+			}
+		},
+		{
+			"id": "CR9 1DD",
+			"at": [
+				51.373957,
+				-0.093161
+			],
+			"observed": "2003-10-01",
+			"claims": {
+				"name": "CR9 1DD",
+				"kind": "postcode",
+				"began": "2001-06",
+				"ended": "2003-10"
+			}
+		},
+		{
+			"id": "CR9 2AA",
+			"at": [
+				51.37508,
+				-0.098115
+			],
+			"observed": "2025-09-01",
+			"claims": {
+				"name": "CR9 2AA",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2025-09"
+			}
+		},
+		{
+			"id": "CR9 2DT",
+			"at": [
+				51.374822,
+				-0.096603
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 2DT",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 2DU",
+			"at": [
+				51.376466,
+				-0.09596
+			],
+			"observed": "2000-10-01",
+			"claims": {
+				"name": "CR9 2DU",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2000-10"
+			}
+		},
+		{
+			"id": "CR9 2DX",
+			"at": [
+				51.37811,
+				-0.095317
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "CR9 2DX",
+				"kind": "postcode",
+				"began": "2005-02",
+				"ended": "2024-05"
+			}
+		},
+		{
+			"id": "CR9 2ED",
+			"at": [
+				51.381727,
+				-0.097078
+			],
+			"observed": "2021-07-01",
+			"claims": {
+				"name": "CR9 2ED",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2021-07"
+			}
+		},
+		{
+			"id": "CR9 2EF",
+			"at": [
+				51.378574,
+				-0.095082
+			],
+			"observed": "2024-06-01",
+			"claims": {
+				"name": "CR9 2EF",
+				"kind": "postcode",
+				"began": "2007-01",
+				"ended": "2024-06"
+			}
+		},
+		{
+			"id": "CR9 2EH",
+			"at": [
+				51.368536,
+				-0.098242
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 2EH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 2EQ",
+			"at": [
+				51.378384,
+				-0.098337
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 2EQ",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 2ET",
+			"at": [
+				51.377942,
+				-0.096588
+			],
+			"observed": "2016-01-01",
+			"claims": {
+				"name": "CR9 2ET",
+				"kind": "postcode",
+				"began": "2001-06",
+				"ended": "2016-01"
+			}
+		},
+		{
+			"id": "CR9 2EY",
+			"at": [
+				51.375032,
+				-0.096781
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 2EY",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 2HB",
+			"at": [
+				51.376676,
+				-0.096166
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "CR9 2HB",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "CR9 2HD",
+			"at": [
+				51.368612,
+				-0.097937
+			],
+			"observed": "1985-12-01",
+			"claims": {
+				"name": "CR9 2HD",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1985-12"
+			}
+		},
+		{
+			"id": "CR9 2HG",
+			"at": [
+				51.377942,
+				-0.096588
+			],
+			"observed": "2002-07-01",
+			"claims": {
+				"name": "CR9 2HG",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2002-07"
+			}
+		},
+		{
+			"id": "CR9 2HR",
+			"at": [
+				51.382229,
+				-0.098063
+			],
+			"observed": "2006-09-01",
+			"claims": {
+				"name": "CR9 2HR",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2006-09"
+			}
+		},
+		{
+			"id": "CR9 2HU",
+			"at": [
+				51.379158,
+				-0.098363
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "CR9 2HU",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "CR9 2HX",
+			"at": [
+				51.380828,
+				-0.091022
+			],
+			"observed": "2014-01-01",
+			"claims": {
+				"name": "CR9 2HX",
+				"kind": "postcode",
+				"began": "1997-12",
+				"ended": "2014-01"
+			}
+		},
+		{
+			"id": "CR9 2JA",
+			"at": [
+				51.375801,
+				-0.09764
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 2JA",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 2JD",
+			"at": [
+				51.378384,
+				-0.098337
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 2JD",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 2JH",
+			"at": [
+				51.378384,
+				-0.098337
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 2JH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 2JN",
+			"at": [
+				51.376333,
+				-0.096626
+			],
+			"observed": "2012-11-01",
+			"claims": {
+				"name": "CR9 2JN",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2012-11"
+			}
+		},
+		{
+			"id": "CR9 2AD",
+			"at": [
+				51.372253,
+				-0.10066
+			],
+			"observed": "1988-12-01",
+			"claims": {
+				"name": "CR9 2AD",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1988-12"
+			}
+		},
+		{
+			"id": "CR9 2JT",
+			"at": [
+				51.377332,
+				-0.096111
+			],
+			"observed": "2021-06-01",
+			"claims": {
+				"name": "CR9 2JT",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2021-06"
+			}
+		},
+		{
+			"id": "CR9 2YW",
+			"at": [
+				51.378985,
+				-0.100425
+			],
+			"observed": "2003-06-01",
+			"claims": {
+				"name": "CR9 2YW",
+				"kind": "postcode",
+				"began": "2002-10",
+				"ended": "2003-06"
+			}
+		},
+		{
+			"id": "CR9 2PU",
+			"at": [
+				51.378544,
+				-0.1004
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "CR9 2PU",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "CR9 2PW",
+			"at": [
+				51.375754,
+				-0.094768
+			],
+			"observed": "1995-12-01",
+			"claims": {
+				"name": "CR9 2PW",
+				"kind": "postcode",
+				"began": "1994-05",
+				"ended": "1995-12"
+			}
+		},
+		{
+			"id": "CR9 2YY",
+			"at": [
+				51.375801,
+				-0.09764
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "CR9 2YY",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "CR9 2YZ",
+			"at": [
+				51.378985,
+				-0.100425
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 2YZ",
+				"kind": "postcode",
+				"began": "1988-03",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 1XS",
+			"at": [
+				51.369995,
+				-0.096185
+			],
+			"observed": "2025-09-01",
+			"claims": {
+				"name": "CR9 1XS",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2025-09"
+			}
+		},
+		{
+			"id": "CR9 2AG",
+			"at": [
+				51.375801,
+				-0.09764
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "CR9 2AG",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "CR9 2JX",
+			"at": [
+				51.377575,
+				-0.096129
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "CR9 2JX",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "CR9 2AL",
+			"at": [
+				51.378666,
+				-0.096271
+			],
+			"observed": "2006-11-01",
+			"claims": {
+				"name": "CR9 2AL",
+				"kind": "postcode",
+				"began": "2006-08",
+				"ended": "2006-11"
+			}
+		},
+		{
+			"id": "CR9 2PX",
+			"at": [
+				51.374856,
+				-0.094805
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "CR9 2PX",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "CR9 2PY",
+			"at": [
+				51.379158,
+				-0.098363
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "CR9 2PY",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "CR9 2SY",
+			"at": [
+				51.377332,
+				-0.096111
+			],
+			"observed": "2014-04-01",
+			"claims": {
+				"name": "CR9 2SY",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "2014-04"
+			}
+		},
+		{
+			"id": "CR9 2AN",
+			"at": [
+				51.376829,
+				-0.097281
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "CR9 2AN",
+				"kind": "postcode",
+				"began": "1997-12",
+				"ended": "2024-05"
+			}
+		},
+		{
+			"id": "CR9 2QA",
+			"at": [
+				51.377715,
+				-0.104745
+			],
+			"observed": "1988-12-01",
+			"claims": {
+				"name": "CR9 2QA",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1988-12"
+			}
+		},
+		{
+			"id": "CR9 2ZF",
+			"at": [
+				51.380224,
+				-0.093145
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CR9 2ZF",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CR9 1XX",
+			"at": [
+				51.376306,
+				-0.102131
+			],
+			"observed": "2011-07-01",
+			"claims": {
+				"name": "CR9 1XX",
+				"kind": "postcode",
+				"began": "2004-05",
+				"ended": "2011-07"
+			}
+		},
+		{
+			"id": "CR9 2AR",
+			"at": [
+				51.374767,
+				-0.097639
+			],
+			"observed": "2008-12-01",
+			"claims": {
+				"name": "CR9 2AR",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2008-12"
+			}
+		},
+		{
+			"id": "CR9 2LE",
+			"at": [
+				51.37765,
+				-0.097419
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "CR9 2LE",
+				"kind": "postcode",
+				"began": "1987-10",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "CR9 2QE",
+			"at": [
+				51.377715,
+				-0.104745
+			],
+			"observed": "2000-10-01",
+			"claims": {
+				"name": "CR9 2QE",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "2000-10"
+			}
+		},
+		{
+			"id": "CR9 2AT",
+			"at": [
+				51.376961,
+				-0.101486
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 2AT",
+				"kind": "postcode",
+				"began": "1983-07",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 2ZJ",
+			"at": [
+				51.379158,
+				-0.098363
+			],
+			"observed": "2005-05-01",
+			"claims": {
+				"name": "CR9 2ZJ",
+				"kind": "postcode",
+				"began": "2005-03",
+				"ended": "2005-05"
+			}
+		},
+		{
+			"id": "CR9 2LH",
+			"at": [
+				51.379158,
+				-0.098363
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "CR9 2LH",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "CR9 2QL",
+			"at": [
+				51.367834,
+				-0.099363
+			],
+			"observed": "2007-04-01",
+			"claims": {
+				"name": "CR9 2QL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2007-04"
+			}
+		},
+		{
+			"id": "CR9 2ZL",
+			"at": [
+				51.379158,
+				-0.098363
+			],
+			"observed": "2015-10-01",
+			"claims": {
+				"name": "CR9 2ZL",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "2015-10"
+			}
+		},
+		{
+			"id": "CR9 2LJ",
+			"at": [
+				51.37765,
+				-0.097419
+			],
+			"observed": "1999-06-01",
+			"claims": {
+				"name": "CR9 2LJ",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "1999-06"
+			}
+		},
+		{
+			"id": "CR9 1XZ",
+			"at": [
+				51.371835,
+				-0.100951
+			],
+			"observed": "2009-08-01",
+			"claims": {
+				"name": "CR9 1XZ",
+				"kind": "postcode",
+				"began": "1987-04",
+				"ended": "2009-08"
+			}
+		},
+		{
+			"id": "CR9 2AU",
+			"at": [
+				51.374899,
+				-0.094703
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "CR9 2AU",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2024-05"
+			}
+		},
+		{
+			"id": "CR9 2QP",
+			"at": [
+				51.37859,
+				-0.103272
+			],
+			"observed": "1999-06-01",
+			"claims": {
+				"name": "CR9 2QP",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "1999-06"
+			}
+		},
+		{
+			"id": "CR9 2XA",
+			"at": [
+				51.371036,
+				-0.099906
+			],
+			"observed": "2004-07-01",
+			"claims": {
+				"name": "CR9 2XA",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2004-07"
+			}
+		},
+		{
+			"id": "CR9 2LQ",
+			"at": [
+				51.37778,
+				-0.097701
+			],
+			"observed": "1996-06-01",
+			"claims": {
+				"name": "CR9 2LQ",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1996-06"
+			}
+		},
+		{
+			"id": "CR9 2LR",
+			"at": [
+				51.377598,
+				-0.097565
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 2LR",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 2XE",
+			"at": [
+				51.379158,
+				-0.098363
+			],
+			"observed": "2003-07-01",
+			"claims": {
+				"name": "CR9 2XE",
+				"kind": "postcode",
+				"began": "2003-06",
+				"ended": "2003-07"
+			}
+		},
+		{
+			"id": "CR9 2TN",
+			"at": [
+				51.375906,
+				-0.09581
+			],
+			"observed": "2021-06-01",
+			"claims": {
+				"name": "CR9 2TN",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2021-06"
+			}
+		},
+		{
+			"id": "CR9 2BB",
+			"at": [
+				51.374146,
+				-0.094863
+			],
+			"observed": "2001-04-01",
+			"claims": {
+				"name": "CR9 2BB",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2001-04"
+			}
+		},
+		{
+			"id": "CR9 2LS",
+			"at": [
+				51.377598,
+				-0.097565
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 2LS",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 2TP",
+			"at": [
+				51.378863,
+				-0.097383
+			],
+			"observed": "2009-03-01",
+			"claims": {
+				"name": "CR9 2TP",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2009-03"
+			}
+		},
+		{
+			"id": "CR9 2LT",
+			"at": [
+				51.377598,
+				-0.097565
+			],
+			"observed": "1994-05-01",
+			"claims": {
+				"name": "CR9 2LT",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1994-05"
+			}
+		},
+		{
+			"id": "CR9 1YH",
+			"at": [
+				51.368713,
+				-0.096956
+			],
+			"observed": "1998-06-01",
+			"claims": {
+				"name": "CR9 1YH",
+				"kind": "postcode",
+				"began": "1993-01",
+				"ended": "1998-06"
+			}
+		},
+		{
+			"id": "CR9 2XJ",
+			"at": [
+				51.373232,
+				-0.10335
+			],
+			"observed": "2004-02-01",
+			"claims": {
+				"name": "CR9 2XJ",
+				"kind": "postcode",
+				"began": "2002-09",
+				"ended": "2004-02"
+			}
+		},
+		{
+			"id": "CR9 2BD",
+			"at": [
+				51.379158,
+				-0.098363
+			],
+			"observed": "2001-04-01",
+			"claims": {
+				"name": "CR9 2BD",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2001-04"
+			}
+		},
+		{
+			"id": "CR9 2BE",
+			"at": [
+				51.371454,
+				-0.09578
+			],
+			"observed": "1999-12-01",
+			"claims": {
+				"name": "CR9 2BE",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1999-12"
+			}
+		},
+		{
+			"id": "CR9 2LY",
+			"at": [
+				51.379158,
+				-0.098363
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 2LY",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 2ZZ",
+			"at": [
+				51.378384,
+				-0.098337
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 2ZZ",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 2RE",
+			"at": [
+				51.378384,
+				-0.098337
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 2RE",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 3AD",
+			"at": [
+				51.376993,
+				-0.106844
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 3AD",
+				"kind": "postcode",
+				"began": "2000-01",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 2ND",
+			"at": [
+				51.378953,
+				-0.096834
+			],
+			"observed": "2015-11-01",
+			"claims": {
+				"name": "CR9 2ND",
+				"kind": "postcode",
+				"began": "1983-07",
+				"ended": "2015-11"
+			}
+		},
+		{
+			"id": "CR9 2BH",
+			"at": [
+				51.373377,
+				-0.100686
+			],
+			"observed": "2000-11-01",
+			"claims": {
+				"name": "CR9 2BH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2000-11"
+			}
+		},
+		{
+			"id": "CR9 2XR",
+			"at": [
+				51.375611,
+				-0.095363
+			],
+			"observed": "2004-08-01",
+			"claims": {
+				"name": "CR9 2XR",
+				"kind": "postcode",
+				"began": "2003-07",
+				"ended": "2004-08"
+			}
+		},
+		{
+			"id": "CR9 3AF",
+			"at": [
+				51.371262,
+				-0.097785
+			],
+			"observed": "2021-07-01",
+			"claims": {
+				"name": "CR9 3AF",
+				"kind": "postcode",
+				"began": "1995-01",
+				"ended": "2021-07"
+			}
+		},
+		{
+			"id": "CR9 2RJ",
+			"at": [
+				51.377369,
+				-0.096152
+			],
+			"observed": "2004-03-01",
+			"claims": {
+				"name": "CR9 2RJ",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2004-03"
+			}
+		},
+		{
+			"id": "CR9 1YS",
+			"at": [
+				51.373386,
+				-0.097912
+			],
+			"observed": "2008-12-01",
+			"claims": {
+				"name": "CR9 1YS",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2008-12"
+			}
+		},
+		{
+			"id": "CR9 2XS",
+			"at": [
+				51.378666,
+				-0.096271
+			],
+			"observed": "2016-10-01",
+			"claims": {
+				"name": "CR9 2XS",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "2016-10"
+			}
+		},
+		{
+			"id": "CR9 2XT",
+			"at": [
+				51.369002,
+				-0.097031
+			],
+			"observed": "2006-03-01",
+			"claims": {
+				"name": "CR9 2XT",
+				"kind": "postcode",
+				"began": "2002-10",
+				"ended": "2006-03"
+			}
+		},
+		{
+			"id": "CR9 2BL",
+			"at": [
+				51.379158,
+				-0.098363
+			],
+			"observed": "2001-04-01",
+			"claims": {
+				"name": "CR9 2BL",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2001-04"
+			}
+		},
+		{
+			"id": "CR9 1YT",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 1YT",
+				"kind": "postcode",
+				"began": "1996-06",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 2BN",
+			"at": [
+				51.377138,
+				-0.097426
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 2BN",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 1YU",
+			"at": [
+				51.375562,
+				-0.097319
+			],
+			"observed": "2009-04-01",
+			"claims": {
+				"name": "CR9 1YU",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2009-04"
+			}
+		},
+		{
+			"id": "CR9 2NL",
+			"at": [
+				51.368504,
+				-0.096821
+			],
+			"observed": "2008-09-01",
+			"claims": {
+				"name": "CR9 2NL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2008-09"
+			}
+		},
+		{
+			"id": "CR9 2XX",
+			"at": [
+				51.378666,
+				-0.096271
+			],
+			"observed": "2009-08-01",
+			"claims": {
+				"name": "CR9 2XX",
+				"kind": "postcode",
+				"began": "1988-03",
+				"ended": "2009-08"
+			}
+		},
+		{
+			"id": "CR9 2NQ",
+			"at": [
+				51.37852,
+				-0.098964
+			],
+			"observed": "1988-12-01",
+			"claims": {
+				"name": "CR9 2NQ",
+				"kind": "postcode",
+				"began": "1981-06",
+				"ended": "1988-12"
+			}
+		},
+		{
+			"id": "CR9 2NR",
+			"at": [
+				51.376676,
+				-0.096166
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "CR9 2NR",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "CR9 2BR",
+			"at": [
+				51.375801,
+				-0.09764
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 2BR",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 1YX",
+			"at": [
+				51.372373,
+				-0.098069
+			],
+			"observed": "2003-11-01",
+			"claims": {
+				"name": "CR9 1YX",
+				"kind": "postcode",
+				"began": "2003-01",
+				"ended": "2003-11"
+			}
+		},
+		{
+			"id": "CR9 2NS",
+			"at": [
+				51.374851,
+				-0.094532
+			],
+			"observed": "2021-06-01",
+			"claims": {
+				"name": "CR9 2NS",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2021-06"
+			}
+		},
+		{
+			"id": "CR9 1YY",
+			"at": [
+				51.369175,
+				-0.098834
+			],
+			"observed": "2006-09-01",
+			"claims": {
+				"name": "CR9 1YY",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2006-09"
+			}
+		},
+		{
+			"id": "CR9 2BS",
+			"at": [
+				51.378384,
+				-0.098337
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 2BS",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 2NT",
+			"at": [
+				51.375754,
+				-0.094768
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 2NT",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 2BT",
+			"at": [
+				51.375935,
+				-0.097605
+			],
+			"observed": "2000-10-01",
+			"claims": {
+				"name": "CR9 2BT",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2000-10"
+			}
+		},
+		{
+			"id": "CR9 2NU",
+			"at": [
+				51.376676,
+				-0.096166
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "CR9 2NU",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "CR9 2NY",
+			"at": [
+				51.375754,
+				-0.094768
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "CR9 2NY",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "CR9 2YD",
+			"at": [
+				51.375611,
+				-0.095363
+			],
+			"observed": "2005-07-01",
+			"claims": {
+				"name": "CR9 2YD",
+				"kind": "postcode",
+				"began": "2004-02",
+				"ended": "2005-07"
+			}
+		},
+		{
+			"id": "CR9 2BW",
+			"at": [
+				51.371262,
+				-0.097785
+			],
+			"observed": "2000-10-01",
+			"claims": {
+				"name": "CR9 2BW",
+				"kind": "postcode",
+				"began": "1997-06",
+				"ended": "2000-10"
+			}
+		},
+		{
+			"id": "CR9 2UL",
+			"at": [
+				51.375935,
+				-0.097605
+			],
+			"observed": "2015-08-01",
+			"claims": {
+				"name": "CR9 2UL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2015-08"
+			}
+		},
+		{
+			"id": "CR9 2NZ",
+			"at": [
+				51.378567,
+				-0.101836
+			],
+			"observed": "1996-06-01",
+			"claims": {
+				"name": "CR9 2NZ",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "1996-06"
+			}
+		},
+		{
+			"id": "CR9 2PB",
+			"at": [
+				51.376676,
+				-0.096166
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "CR9 2PB",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "CR9 2BX",
+			"at": [
+				51.376829,
+				-0.097281
+			],
+			"observed": "1999-12-01",
+			"claims": {
+				"name": "CR9 2BX",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "1999-12"
+			}
+		},
+		{
+			"id": "CR9 2PD",
+			"at": [
+				51.376676,
+				-0.096166
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "CR9 2PD",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "CR9 3BA",
+			"at": [
+				51.376993,
+				-0.106844
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "CR9 3BA",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "CR9 2YH",
+			"at": [
+				51.375611,
+				-0.095363
+			],
+			"observed": "2006-07-01",
+			"claims": {
+				"name": "CR9 2YH",
+				"kind": "postcode",
+				"began": "2003-06",
+				"ended": "2006-07"
+			}
+		},
+		{
+			"id": "CR9 2PH",
+			"at": [
+				51.378384,
+				-0.098337
+			],
+			"observed": "1999-06-01",
+			"claims": {
+				"name": "CR9 2PH",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "1999-06"
+			}
+		},
+		{
+			"id": "CR9 2DE",
+			"at": [
+				51.379158,
+				-0.098363
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 2DE",
+				"kind": "postcode",
+				"began": "2000-06",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 2PL",
+			"at": [
+				51.377369,
+				-0.096152
+			],
+			"observed": "2009-01-01",
+			"claims": {
+				"name": "CR9 2PL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2009-01"
+			}
+		},
+		{
+			"id": "CR9 2YJ",
+			"at": [
+				51.378985,
+				-0.100425
+			],
+			"observed": "2006-02-01",
+			"claims": {
+				"name": "CR9 2YJ",
+				"kind": "postcode",
+				"began": "2002-12",
+				"ended": "2006-02"
+			}
+		},
+		{
+			"id": "CR9 2PN",
+			"at": [
+				51.375838,
+				-0.094391
+			],
+			"observed": "2004-03-01",
+			"claims": {
+				"name": "CR9 2PN",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2004-03"
+			}
+		},
+		{
+			"id": "CR9 2PP",
+			"at": [
+				51.37223,
+				-0.099224
+			],
+			"observed": "1991-12-01",
+			"claims": {
+				"name": "CR9 2PP",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1991-12"
+			}
+		},
+		{
+			"id": "CR9 2DG",
+			"at": [
+				51.37765,
+				-0.097419
+			],
+			"observed": "2008-12-01",
+			"claims": {
+				"name": "CR9 2DG",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2008-12"
+			}
+		},
+		{
+			"id": "CR9 1ZP",
+			"at": [
+				51.372163,
+				-0.098983
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 1ZP",
+				"kind": "postcode",
+				"began": "1993-01",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 2DH",
+			"at": [
+				51.376035,
+				-0.097673
+			],
+			"observed": "1999-06-01",
+			"claims": {
+				"name": "CR9 2DH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1999-06"
+			}
+		},
+		{
+			"id": "CR9 2UZ",
+			"at": [
+				51.378985,
+				-0.100425
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 2UZ",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 2YR",
+			"at": [
+				51.378376,
+				-0.098352
+			],
+			"observed": "1997-12-01",
+			"claims": {
+				"name": "CR9 2YR",
+				"kind": "postcode",
+				"began": "1997-06",
+				"ended": "1997-12"
+			}
+		},
+		{
+			"id": "CR9 2SN",
+			"at": [
+				51.375839,
+				-0.095526
+			],
+			"observed": "2008-06-01",
+			"claims": {
+				"name": "CR9 2SN",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2008-06"
+			}
+		},
+		{
+			"id": "CR9 2DP",
+			"at": [
+				51.379158,
+				-0.098363
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "CR9 2DP",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "CR9 2DQ",
+			"at": [
+				51.376035,
+				-0.097673
+			],
+			"observed": "2009-04-01",
+			"claims": {
+				"name": "CR9 2DQ",
+				"kind": "postcode",
+				"began": "2006-03",
+				"ended": "2009-04"
+			}
+		},
+		{
+			"id": "CR9 3SJ",
+			"at": [
+				51.378576,
+				-0.100154
+			],
+			"observed": "2006-03-01",
+			"claims": {
+				"name": "CR9 3SJ",
+				"kind": "postcode",
+				"began": "2006-02",
+				"ended": "2006-03"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
