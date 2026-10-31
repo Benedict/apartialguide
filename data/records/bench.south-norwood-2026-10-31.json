@@ -1,0 +1,183 @@
+{
+	"source": "OpenBenches",
+	"prefix": "bench",
+	"records": [
+		{
+			"id": "40107",
+			"at": [
+				51.39732,
+				-0.07931
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "PRESENTED BY / THE ROYAL BRITISW LEGION / WOMEN'S SECTION / SOUTH NORWOOD & WOODSIDE BRANCH / AUGUST 2005 / WE WILL REMEMBER THEM"
+			}
+		},
+		{
+			"id": "40108",
+			"at": [
+				51.397137,
+				-0.07965
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "THE TOTAL BRITICE LEGION / SOUTH NORWOOD & WOODSIDE BRANCH / AUGUST 2005 / WE WILL REMEMBER THEM"
+			}
+		},
+		{
+			"id": "15885",
+			"at": [
+				51.406696,
+				-0.073297
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF / LOCAL FISHERMAN / JOHN BRETT / 07-03-54 18-10-10"
+			}
+		},
+		{
+			"id": "15886",
+			"at": [
+				51.406696,
+				-0.073297
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In memory of / Mike Davies. John Salmins. Tony Ward / CSC / And all I ask is a windy day with the white clouds flying"
+			}
+		},
+		{
+			"id": "15883",
+			"at": [
+				51.407146,
+				-0.072458
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In Loving memory of our beloved son / Ripon Mandal who passed away aged 42 years / 27 November 2005 in New York / THOU HATH GIVEN THOU HATH TAKEN / MAY HE REST IN PEACE"
+			}
+		},
+		{
+			"id": "15884",
+			"at": [
+				51.407146,
+				-0.072458
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "Jennifer Smith / Wife, Mother, Nana and Nanny. In our hearts forever. / March 1938 to December 2013"
+			}
+		},
+		{
+			"id": "15882",
+			"at": [
+				51.407486,
+				-0.072711
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / VERA & SPENCER MERVYN-FAGAN"
+			}
+		},
+		{
+			"id": "15881",
+			"at": [
+				51.4076,
+				-0.0728
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "LOVELY ALISON MARY LAMBERT, / SHE TOUCHED OUR LIVES, WITH ALL HER LOVE AND KINDNESS. / SOMETIMES THERE ARE NOT ENOUGH WORDS, OR TEARS. / MISS YOU."
+			}
+		},
+		{
+			"id": "15879",
+			"at": [
+				51.407932,
+				-0.072936
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "Daniel James Henry / 'H' / 27.6.1990 - 29.4.2003 Aged 12 / Gone to play football with the Angels"
+			}
+		},
+		{
+			"id": "15880",
+			"at": [
+				51.407932,
+				-0.072936
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING HEMORY OF MY / BROTHER STANLEY BALL / 1937-1994 / TIME MAY PASS AND FADE AWAY / BUT MEMORIES OF YOU WILL AWAYS STAY / IN LOVING MEMORY OF MY FATHER STANLEY BALL SENIOR / WHO PASSED AWAY AGED 92 ON 1st APRIL 2003 / FOREVER IN MY THOUGHTS / IN LOVING MEMORY OF MY / MUM LILLY BALL / 1911-1988 / MAY GOD BLESS HER AND KEEP HER"
+			}
+		},
+		{
+			"id": "15878",
+			"at": [
+				51.408016,
+				-0.073189
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "16.3.40 - 20.7.07 / In Loving Memory of Harry Smythe / Missed so much by his family and friends / In our thoughts everyday"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

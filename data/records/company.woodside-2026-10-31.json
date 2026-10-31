@@ -1,0 +1,199 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "141|HARRINGTON ROAD",
+			"address": {
+				"number": "141",
+				"street": "HARRINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ALLROUNDPRO LIMITED",
+				"since": "2024-12-27"
+			}
+		},
+		{
+			"id": "56|GRASMERE ROAD",
+			"address": {
+				"number": "56",
+				"street": "GRASMERE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ARCH56 LTD",
+				"since": "2024-03-04"
+			}
+		},
+		{
+			"id": "170|HARRINGTON ROAD",
+			"address": {
+				"number": "170",
+				"street": "HARRINGTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "THE EMMANUEL CENTRE CIC|BRIGHTER BEGINNINGS NURSERY BROMLEY LTD",
+				"since": "2025-05-20"
+			}
+		},
+		{
+			"id": "56|SPRING LANE",
+			"address": {
+				"number": "56",
+				"street": "SPRING LANE"
+			},
+			"claims": {
+				"count": "3",
+				"names": "D.W.HARDWARE SUPPLIES LIMITED|SPRING LANE BUILDERS MERCHANTS LIMITED|WOODSIDE TIMBER LIMITED",
+				"since": "1965-08-18"
+			}
+		},
+		{
+			"id": "151|HARRINGTON ROAD",
+			"address": {
+				"number": "151",
+				"street": "HARRINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "IMIJES LIMITED",
+				"since": "2014-07-18"
+			}
+		},
+		{
+			"id": "191|HARRINGTON ROAD",
+			"address": {
+				"number": "191",
+				"street": "HARRINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "INDIMAZ LIMITED",
+				"since": "2020-03-25"
+			}
+		},
+		{
+			"id": "143|HARRINGTON ROAD",
+			"address": {
+				"number": "143",
+				"street": "HARRINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MRC & UA LTD",
+				"since": "2025-06-26"
+			}
+		},
+		{
+			"id": "185|HARRINGTON ROAD",
+			"address": {
+				"number": "185",
+				"street": "HARRINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NEAT NEST PVT LTD",
+				"since": "2025-05-22"
+			}
+		},
+		{
+			"id": "184|PORTLAND ROAD",
+			"address": {
+				"number": "184",
+				"street": "PORTLAND ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PORTLAND MEDICAL PARTNERSHIP LTD",
+				"since": "2020-01-21"
+			}
+		},
+		{
+			"id": "152|PORTLAND ROAD",
+			"address": {
+				"number": "152",
+				"street": "PORTLAND ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "RESTORATION HACKNEY LIMITED|RESTORATION LONDON LTD",
+				"since": "2014-03-27"
+			}
+		},
+		{
+			"id": "48|GRASMERE ROAD",
+			"address": {
+				"number": "48",
+				"street": "GRASMERE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ST4COMMUNITY LTD",
+				"since": "2025-04-01"
+			}
+		},
+		{
+			"id": "65|HARRINGTON ROAD",
+			"address": {
+				"number": "65",
+				"street": "HARRINGTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "TAMMY HARDY LTD|TJMBEERS LTD",
+				"since": "2022-02-16"
+			}
+		},
+		{
+			"id": "149|HARRINGTON ROAD",
+			"address": {
+				"number": "149",
+				"street": "HARRINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE CAKE BAR LONDON LIMITED",
+				"since": "2019-05-20"
+			}
+		},
+		{
+			"id": "275|PORTLAND ROAD",
+			"address": {
+				"number": "275",
+				"street": "PORTLAND ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TYRETRAX LIMITED",
+				"since": "2007-07-02"
+			}
+		},
+		{
+			"id": "217|HARRINGTON ROAD",
+			"address": {
+				"number": "217",
+				"street": "HARRINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "UNLEASHING TALENT LTD",
+				"since": "2015-05-06"
+			}
+		},
+		{
+			"id": "42|GRASMERE ROAD",
+			"address": {
+				"number": "42",
+				"street": "GRASMERE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "WESTCOTT PARK NUSERIES LIMITED",
+				"since": "2015-02-26"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

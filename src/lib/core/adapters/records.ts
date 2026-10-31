@@ -61,7 +61,7 @@ export class RecordsAdapter implements SourceAdapter {
 
 	facts(): Fact[] {
 		const byTag = new Map<string, OsmElement>();
-		const byAddress = new Map<string, OsmElement>();
+		const byAddress = new Map<string, OsmElement[]>();
 		const byName = new Map<string, OsmElement[]>();
 		const streets = new Map<string, OsmElement[]>();
 		for (const e of this.osm.data.elements) {
@@ -69,7 +69,10 @@ export class RecordsAdapter implements SourceAdapter {
 			for (const [k, v] of Object.entries(e.tags)) byTag.set(`${k}=${v}`, e);
 			const number = e.tags['addr:housenumber'];
 			const street = e.tags['addr:street'];
-			if (number && street) byAddress.set(addressKey(number, street), e);
+			if (number && street) {
+				const key = addressKey(number, street);
+				byAddress.set(key, [...(byAddress.get(key) ?? []), e]);
+			}
 			const name = e.tags.name?.toLowerCase();
 			if (name) byName.set(name, [...(byName.get(name) ?? []), e]);
 			if (name && e.type === 'way' && e.tags.highway)
@@ -91,7 +94,8 @@ export class RecordsAdapter implements SourceAdapter {
 			});
 			const thing =
 				(r.link && byTag.get(`${r.link.key}=${r.link.value}`)) ||
-				(r.address && byAddress.get(addressKey(r.address.number, r.address.street))) ||
+				(r.address &&
+					this.atAddress(r, byAddress.get(addressKey(r.address.number, r.address.street)))) ||
 				nearby ||
 				this.nearest(r);
 			if (thing) {
@@ -110,6 +114,24 @@ export class RecordsAdapter implements SourceAdapter {
 			}
 		}
 		return facts;
+	}
+
+	/**
+	 * The thing at a record's address. An address more than one place shares (a High Street in two
+	 * parts of a borough) is taken for the one nearest where the record lies, and for neither when
+	 * the record lies nowhere, as either might be wrong.
+	 */
+	private atAddress(r: SourceRecord, found: OsmElement[] = []): OsmElement | undefined {
+		if (found.length <= 1) return found[0];
+		if (!r.at) return undefined;
+		let best: { e: OsmElement; metres: number } | undefined;
+		for (const e of found) {
+			const g = this.geometry(e);
+			if (!g.length) continue;
+			const metres = distance(r.at, g[0]);
+			if (!best || metres < best.metres) best = { e, metres };
+		}
+		return best?.e;
 	}
 
 	/** The nearest thing carrying the record's `near` tag, within its distance. */

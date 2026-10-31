@@ -1,0 +1,105 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536761",
+			"at": [
+				51.398162,
+				-0.076752
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "CLOCK TOWER",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536793",
+			"at": [
+				51.397053,
+				-0.07955
+			],
+			"observed": "1976-11-29",
+			"claims": {
+				"name": "CHURCH OF THE HOLY INNOCENTS, AND BOUNDARY WALL",
+				"description": "listed building",
+				"grade": "II*",
+				"listed": "1976-11-29"
+			}
+		},
+		{
+			"id": "31709364",
+			"at": [
+				51.400313,
+				-0.075434
+			],
+			"observed": "1989-04-02",
+			"claims": {
+				"name": "Stanley Technical High School and Stanley Halls",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1989-04-02"
+			}
+		},
+		{
+			"id": "31779675",
+			"at": [
+				51.398864,
+				-0.07043
+			],
+			"observed": "1998-06-01",
+			"claims": {
+				"name": "CHURCH OF ST MARK",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1998-06-01"
+			}
+		},
+		{
+			"id": "31848168",
+			"at": [
+				51.399098,
+				-0.075425
+			],
+			"observed": "2008-05-21",
+			"claims": {
+				"name": "KENNEDYS SAUSAGES",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2008-05-21"
+			}
+		},
+		{
+			"id": "31855903",
+			"at": [
+				51.397127,
+				-0.079705
+			],
+			"observed": "2017-02-27",
+			"claims": {
+				"name": "War Memorial at the Church of Holy Innocents",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-27"
+			}
+		},
+		{
+			"id": "31855906",
+			"at": [
+				51.395843,
+				-0.092467
+			],
+			"observed": "2017-02-23",
+			"claims": {
+				"name": "Whitehorse Manor School War Memorial",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-23"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

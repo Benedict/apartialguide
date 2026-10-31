@@ -1,0 +1,31 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "10581",
+			"at": [
+				51.38555,
+				-0.09815
+			],
+			"claims": {
+				"name": "Gillett and Johnson Foundry",
+				"description": "plaque",
+				"inscription": "Gillett and Johnson Foundry"
+			}
+		},
+		{
+			"id": "136",
+			"at": [
+				51.39131,
+				-0.08955
+			],
+			"claims": {
+				"name": "Samuel Coleridge-Taylor 1875-1912 composer of the 'Song of Hiawatha' lived here",
+				"description": "plaque",
+				"inscription": "Samuel Coleridge-Taylor 1875-1912 composer of the 'Song of Hiawatha' lived here"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

@@ -1,0 +1,115 @@
+{
+	"source": "NBN Atlas",
+	"prefix": "wildlife",
+	"records": [
+		{
+			"id": "89f82d9a-a8c9-470d-b053-15ccdd067531",
+			"at": [
+				51.383335,
+				-0.090885
+			],
+			"observed": "2021-07-13",
+			"claims": {
+				"name": "Swift",
+				"seen": "2021-07"
+			}
+		},
+		{
+			"id": "e9b01fe4-a81e-46ff-8d4b-68b56ecbfb22",
+			"at": [
+				51.38576,
+				-0.09879
+			],
+			"observed": "2016-07-15",
+			"claims": {
+				"name": "Japanese Knotweed",
+				"seen": "2016-07"
+			}
+		},
+		{
+			"id": "6595f774-fe96-442c-8c96-4886baa16626",
+			"at": [
+				51.381561,
+				-0.092396
+			],
+			"observed": "2016-07-22",
+			"claims": {
+				"name": "Swift",
+				"seen": "2016-07"
+			}
+		},
+		{
+			"id": "e807ccb9-b7a1-40fe-903a-08d2f1b2bc9f",
+			"at": [
+				51.38957,
+				-0.09491
+			],
+			"observed": "2025-08-12",
+			"claims": {
+				"name": "Buzzard",
+				"seen": "2025-08"
+			}
+		},
+		{
+			"id": "0d8d9952-49e2-479b-adc4-eeb42c05f515",
+			"at": [
+				51.39255,
+				-0.090718
+			],
+			"observed": "2020-12-15",
+			"claims": {
+				"name": "Leopard Slug",
+				"seen": "2020-12"
+			}
+		},
+		{
+			"id": "343b02cc-6ccf-44a2-b5e9-0a0b8bbbadb7",
+			"at": [
+				51.39329,
+				-0.094783
+			],
+			"observed": "1990-08-24",
+			"claims": {
+				"name": "Lesser Marsh Grasshopper",
+				"seen": "1990-08"
+			}
+		},
+		{
+			"id": "815b48eb-2c03-4558-bb1f-83c1b6079b6c",
+			"at": [
+				51.39082,
+				-0.09884
+			],
+			"observed": "2023-07-03",
+			"claims": {
+				"name": "Grey Squirrel",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "dbdb1cde-60b5-4aff-a53a-0204dd7c53e9",
+			"at": [
+				51.389402,
+				-0.101278
+			],
+			"observed": "2024-01-31",
+			"claims": {
+				"name": "Grey Squirrel",
+				"seen": "2024-01"
+			}
+		},
+		{
+			"id": "44d5ea14-ff2f-44c9-986d-db29120925ac",
+			"at": [
+				51.387335,
+				-0.090791
+			],
+			"observed": "2023-08-19",
+			"claims": {
+				"name": "Roesel's Bush-cricket",
+				"seen": "2023-08"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

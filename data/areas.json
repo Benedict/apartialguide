@@ -8,7 +8,9 @@
 		},
 		{
 			"name": "Woodside",
-			"wards": ["Woodside"]
+			"wards": ["Woodside"],
+			"open": true,
+			"start": "Woodside Green"
 		},
 		{
 			"name": "Shirley",
@@ -28,11 +30,15 @@
 		},
 		{
 			"name": "Selhurst",
-			"wards": ["Selhurst"]
+			"wards": ["Selhurst"],
+			"open": true,
+			"start": "Selhurst"
 		},
 		{
 			"name": "South Norwood",
-			"wards": ["South Norwood"]
+			"wards": ["South Norwood"],
+			"open": true,
+			"start": "Stanley Halls"
 		},
 		{
 			"name": "Thornton Heath",

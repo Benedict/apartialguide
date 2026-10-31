@@ -1,0 +1,79 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "79438",
+			"at": [
+				51.39827,
+				-0.07694
+			],
+			"claims": {
+				"name": "Suffragist Ethel Fennings 1876-1955 lived at 149 Croydon Road, Anerley with her like-minded mother & sisters, northeast of our Clocktower-from the plinth of which on Friday evenings she would advocate the just cause of \"Votes for Women\"",
+				"description": "plaque",
+				"inscription": "Suffragist Ethel Fennings 1876-1955 lived at 149 Croydon Road, Anerley with her like-minded mother & sisters, northeast of our Clocktower-from the plinth of which on Friday evenings she would advocate the just cause of \"Votes for Women\""
+			}
+		},
+		{
+			"id": "79437",
+			"at": [
+				51.3982,
+				-0.07695
+			],
+			"claims": {
+				"name": "Suffragette Mary Pearson born 1871\nlived to the southwest of our Clocktower at\n57 Selhurst Road, Croydon active in the\nWomen's Freedom League, her militancy\nin the support of Female Suffrage was\nto result in imprisonment in 1908",
+				"description": "plaque",
+				"inscription": "Suffragette Mary Pearson born 1871\nlived to the southwest of our Clocktower at\n57 Selhurst Road, Croydon active in the\nWomen's Freedom League, her militancy\nin the support of Female Suffrage was\nto result in imprisonment in 1908"
+			}
+		},
+		{
+			"id": "54005",
+			"at": [
+				51.40033,
+				-0.07578
+			],
+			"claims": {
+				"name": "The Original Stanley Trade School opened in 1907 by William Ford Stanley as a gift to South Norwood",
+				"description": "plaque",
+				"inscription": "The Original Stanley Trade School opened in 1907 by William Ford Stanley as a gift to South Norwood"
+			}
+		},
+		{
+			"id": "49504",
+			"at": [
+				51.39943,
+				-0.07444
+			],
+			"claims": {
+				"name": "Site of the Jolly Sailor Inn, South Norwood's first public building 1810",
+				"description": "plaque",
+				"inscription": "Site of the Jolly Sailor Inn, South Norwood's first public building 1810"
+			}
+		},
+		{
+			"id": "628",
+			"at": [
+				51.39517,
+				-0.08096
+			],
+			"claims": {
+				"name": "Sir Arthur Conan Doyle 1859-1930 creator of Sherlock Holmes lived here 1891-1894",
+				"description": "plaque",
+				"inscription": "Sir Arthur Conan Doyle 1859-1930 creator of Sherlock Holmes lived here 1891-1894"
+			}
+		},
+		{
+			"id": "89",
+			"at": [
+				51.40001,
+				-0.07527
+			],
+			"claims": {
+				"name": "W. F. R. Stanley 1829-1909 inventor, manufacturer and philanthropist, founded and designed these halls and technical school",
+				"description": "plaque",
+				"inscription": "W. F. R. Stanley 1829-1909 inventor, manufacturer and philanthropist, founded and designed these halls and technical school"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
