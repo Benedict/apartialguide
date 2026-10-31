@@ -276,7 +276,7 @@ export class Adventure {
 	/** A button to pick up the walk kept from before, on this map, if there is one. */
 	private continuing(): { label: string; command: string }[] {
 		const kept = this.saves?.get(AUTO);
-		if (!kept || kept.map !== this.mapId()) return [];
+		if (!kept || kept.version !== 1) return [];
 		return [
 			{
 				label: `Continue the walk (${kept.place}, ${distanceWords(kept.walked)})`,
@@ -471,7 +471,8 @@ export class Adventure {
 	private go(where: string): Reply {
 		const exits = this.world.stops[this.here].exits;
 		const matches = matchExits(exits, where);
-		if (matches.length === 1) return this.moveTo(matches[0].to);
+		if (matches.length === 1)
+			return matches[0].closed ? this.edge(matches[0].closed) : this.moveTo(matches[0].to);
 		if (matches.length > 1)
 			return { lines: [`Which way: ${matches.map((e) => e.label).join(' or ')}?`] };
 		return {
@@ -480,6 +481,17 @@ export class Adventure {
 					? `You can’t go ${where} from here.`
 					: `There’s no way to ${where} from here.`
 			]
+		};
+	}
+
+	/** The edge of what is open: Guide goes no further, and the page names the area to come. */
+	private edge(area: string): Reply {
+		return {
+			lines: ['The map I carry stops there.'],
+			hint: `${area} is not open yet.`,
+			...(this.world.signup
+				? { link: { href: this.world.signup, text: `Hear when ${area} opens` } }
+				: {})
 		};
 	}
 
@@ -551,12 +563,12 @@ export class Adventure {
 			...new Set([
 				this.here,
 				...(this.previous ? [this.previous] : []),
-				...(stop?.exits.map((e) => e.to) ?? [])
+				...(stop?.exits.filter((e) => !e.closed).map((e) => e.to) ?? [])
 			])
 		];
 	}
 
-	/** Which map this is, so a walk saved on another is never picked up here. */
+	/** Which map this is, kept with a saved walk for the record; a walk is picked up wherever its place still is. */
 	private mapId(): string {
 		// Counted by the account, not by what is open: a world opened as the walk goes has few stops at first.
 		const places = this.world.about?.places ?? Object.keys(this.world.stops).length;
@@ -637,9 +649,7 @@ export class Adventure {
 		if (!slot) {
 			const kept = [AUTO, ...SLOTS]
 				.map((s) => ({ s, walk: saves.get(s) }))
-				.filter(
-					(k): k is { s: string; walk: SavedWalk } => !!k.walk && k.walk.map === this.mapId()
-				);
+				.filter((k): k is { s: string; walk: SavedWalk } => k.walk?.version === 1);
 			if (!kept.length) return { lines: ['There is no walk kept to restore.'] };
 			return {
 				lines: ['Restore which walk?'],
@@ -656,12 +666,30 @@ export class Adventure {
 			return {
 				lines: [slot === AUTO ? 'There is no walk kept to continue.' : `Slot ${slot} is empty.`]
 			};
-		if (walk.version !== 1 || walk.map !== this.mapId() || !this.world.stops[walk.state.here])
+		if (walk.version !== 1)
 			return { lines: ['That walk was on another map. I cannot pick it up on this one.'] };
-		this.load(walk.state);
+		// Stops are named by the map's own ways and nodes, so a walk outlives a newer map wherever
+		// the place it stood is still on it.
+		if (!this.world.stops[walk.state.here])
+			return {
+				lines: ['The place that walk stood is no longer on my map. I cannot pick it up there.'],
+				actions: TAKE_TOUR
+			};
+		this.load(this.within(walk.state));
 		const place = this.look();
 		const said = slot === AUTO ? 'We go on from where we were.' : `Restored from slot ${slot}.`;
 		return this.followed({ ...place, lines: [said, ...place.lines] });
+	}
+
+	/** A kept walk, without the places this map no longer has: where it came from, and a way it asked for. */
+	private within(state: WalkState): WalkState {
+		const has = (id: string) => !!this.world.stops[id];
+		const goals = state.route?.goals.filter(([id]) => has(id));
+		return {
+			...state,
+			previous: state.previous && has(state.previous) ? state.previous : undefined,
+			route: state.route && goals?.length ? { ...state.route, goals } : undefined
+		};
 	}
 
 	private load(state: WalkState): void {
@@ -809,7 +837,7 @@ export class Adventure {
 	 * back while there is another way. Guide says which way, never why.
 	 */
 	private drift(): Reply {
-		const exits = this.world.stops[this.here].exits;
+		const exits = this.world.stops[this.here].exits.filter((e) => !e.closed);
 		const onward = exits.filter((e) => e.to !== this.previous);
 		const ways = onward.length ? onward : exits;
 		if (!ways.length) return { lines: ['There is nowhere to drift to.'] };

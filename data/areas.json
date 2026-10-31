@@ -1,25 +1,87 @@
 {
-	"about": "Croydon's areas, each made of whole wards as the ONS boundaries name them, in the order the walk is enriched. Wards whose names share a place are one area; the rest stand alone. Reorder, regroup or rename freely: the Narrate workflow takes an area's name.",
+	"about": "Croydon's areas, each made of whole wards as the ONS boundaries name them, in the order the walk is enriched. Wards whose names share a place are one area; the rest stand alone. Reorder, regroup or rename freely: the Narrate workflow takes an area's name. Only areas marked open are walked, once any is: the walk stops at the edge of the rest, and the page names the area to come.",
 	"areas": [
-		{ "name": "Addiscombe", "wards": ["Addiscombe West", "Addiscombe East"] },
-		{ "name": "Woodside", "wards": ["Woodside"] },
-		{ "name": "Shirley", "wards": ["Shirley North", "Shirley South"] },
-		{ "name": "Fairfield", "wards": ["Fairfield"] },
-		{ "name": "Park Hill & Whitgift", "wards": ["Park Hill & Whitgift"] },
-		{ "name": "Selhurst", "wards": ["Selhurst"] },
-		{ "name": "South Norwood", "wards": ["South Norwood"] },
-		{ "name": "Thornton Heath", "wards": ["Thornton Heath", "West Thornton"] },
-		{ "name": "Bensham Manor", "wards": ["Bensham Manor"] },
-		{ "name": "Broad Green", "wards": ["Broad Green"] },
-		{ "name": "South Croydon", "wards": ["South Croydon"] },
-		{ "name": "Waddon", "wards": ["Waddon"] },
-		{ "name": "Crystal Palace & Upper Norwood", "wards": ["Crystal Palace & Upper Norwood"] },
-		{ "name": "Norbury", "wards": ["Norbury & Pollards Hill", "Norbury Park"] },
-		{ "name": "Selsdon", "wards": ["Selsdon & Addington Village", "Selsdon Vale & Forestdale"] },
-		{ "name": "Sanderstead", "wards": ["Sanderstead"] },
-		{ "name": "New Addington", "wards": ["New Addington North", "New Addington South"] },
-		{ "name": "Purley", "wards": ["Purley & Woodcote", "Purley Oaks & Riddlesdown"] },
-		{ "name": "Kenley", "wards": ["Kenley"] },
-		{ "name": "Coulsdon", "wards": ["Coulsdon Town", "Old Coulsdon"] }
+		{
+			"name": "Addiscombe",
+			"wards": ["Addiscombe West", "Addiscombe East"],
+			"open": true
+		},
+		{
+			"name": "Woodside",
+			"wards": ["Woodside"]
+		},
+		{
+			"name": "Shirley",
+			"wards": ["Shirley North", "Shirley South"],
+			"open": true
+		},
+		{
+			"name": "Fairfield",
+			"wards": ["Fairfield"]
+		},
+		{
+			"name": "Park Hill & Whitgift",
+			"wards": ["Park Hill & Whitgift"]
+		},
+		{
+			"name": "Selhurst",
+			"wards": ["Selhurst"]
+		},
+		{
+			"name": "South Norwood",
+			"wards": ["South Norwood"]
+		},
+		{
+			"name": "Thornton Heath",
+			"wards": ["Thornton Heath", "West Thornton"]
+		},
+		{
+			"name": "Bensham Manor",
+			"wards": ["Bensham Manor"]
+		},
+		{
+			"name": "Broad Green",
+			"wards": ["Broad Green"]
+		},
+		{
+			"name": "South Croydon",
+			"wards": ["South Croydon"]
+		},
+		{
+			"name": "Waddon",
+			"wards": ["Waddon"]
+		},
+		{
+			"name": "Crystal Palace & Upper Norwood",
+			"wards": ["Crystal Palace & Upper Norwood"]
+		},
+		{
+			"name": "Norbury",
+			"wards": ["Norbury & Pollards Hill", "Norbury Park"]
+		},
+		{
+			"name": "Selsdon",
+			"wards": ["Selsdon & Addington Village", "Selsdon Vale & Forestdale"]
+		},
+		{
+			"name": "Sanderstead",
+			"wards": ["Sanderstead"]
+		},
+		{
+			"name": "New Addington",
+			"wards": ["New Addington North", "New Addington South"]
+		},
+		{
+			"name": "Purley",
+			"wards": ["Purley & Woodcote", "Purley Oaks & Riddlesdown"]
+		},
+		{
+			"name": "Kenley",
+			"wards": ["Kenley"]
+		},
+		{
+			"name": "Coulsdon",
+			"wards": ["Coulsdon Town", "Old Coulsdon"]
+		}
 	]
 }

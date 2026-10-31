@@ -38,7 +38,7 @@ jobs:
           # The whole borough, enriched area by area (data/areas.json); the walk starts in Addiscombe.
           SNAPSHOT_PATH: data/snapshots/croydon-2026-10-29.json.gz
           START_AT: 51.379897,-0.074294
-          # About 27,000 stops: the whole borough is compiled in one go.
+          # The borough's map, of which only the areas open to walk are compiled.
           NODE_OPTIONS: --max-old-space-size=6144
           HISTORY_DIR: data/history
           WIKIDATA_DIR: data/wikidata
@@ -52,6 +52,8 @@ jobs:
           GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
           # The site's own address, for the image shown where it is shared; without it none is named.
           SITE_URL: ${{ vars.SITE_URL }}
+          # Where a reader at the edge of an area not open yet may ask to hear when it opens.
+          SIGNUP_URL: ${{ vars.SIGNUP_URL }}
         run: npm run export
       # Publish only a site that plays.
       - run: npx playwright install --with-deps chromium
