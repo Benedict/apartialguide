@@ -105,3 +105,28 @@ describe('entering from a link', () => {
 			expect(entryFrom(hash, doors)).toBeUndefined();
 	});
 });
+
+describe('starting anywhere', () => {
+	const pooled: AdventureWorld = { ...world, anywhere: ['b', 'c'] };
+
+	it('reads start anywhere, and its other words', () => {
+		for (const words of ['start anywhere', 'anywhere', 'start somewhere', 'surprise me'])
+			expect(parse(words)).toEqual({ verb: 'start', where: 'anywhere' });
+	});
+
+	it('begins by chance at one of the places the map holds as worth beginning at, opened first', () => {
+		const game = new Adventure(pooled);
+		game.chance = () => 0.99;
+		game.begin();
+		expect(game.needs('start anywhere')).toEqual(['c']);
+		const reply = game.respond('start anywhere');
+		expect(reply.title).toBe('Mill Lane');
+		expect(reply.lines[0]).toBe('Somewhere, then.');
+	});
+
+	it('begins at the tour’s start where the map holds no such places', () => {
+		const game = new Adventure(world);
+		game.begin();
+		expect(game.respond('start anywhere').title).toBe('Long Street');
+	});
+});

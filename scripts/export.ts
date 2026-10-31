@@ -14,7 +14,7 @@ import { build } from 'esbuild';
 import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { Adventure } from '../src/lib/core/adventure/engine';
-import { closeAreas, doorsFor } from '../src/lib/core/adventure/open';
+import { anywhereIn, closeAreas, doorsFor } from '../src/lib/core/adventure/open';
 import { tileWorld } from '../src/lib/core/adventure/tiles';
 import { closedAreaOf, type AreaList } from '../src/lib/core/release';
 import { landingPage } from '../src/lib/server/landing';
@@ -63,17 +63,19 @@ const opened = {
 	...(process.env.SIGNUP_URL ? { signup: process.env.SIGNUP_URL } : {})
 };
 if (closed.size) console.log(`${closed.size} stops in areas not open yet are left out`);
-// Where each area may be begun (`start in Shirley`): an open area at its first place, the rest named.
+// Where each area may be begun (`start in Shirley`): an open area at its first place, the rest named;
+// and the places worth beginning at by chance (`start anywhere`).
 const world = areas.some((a) => a.open)
 	? {
 			...opened,
+			anywhere: anywhereIn(opened),
 			doors: doorsFor(
 				opened,
 				areas,
 				(ward) => areas.find((a) => ward !== undefined && a.wards.includes(ward))?.name
 			)
 		}
-	: opened;
+	: { ...opened, anywhere: anywhereIn(opened) };
 
 const amiss = wordsAmiss(world);
 if (amiss.length) {
