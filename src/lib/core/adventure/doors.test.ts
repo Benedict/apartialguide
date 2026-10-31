@@ -39,6 +39,18 @@ describe('starting in an area', () => {
 		expect(parse('start at 1_2:n3')).toEqual({ verb: 'start', where: '1_2:n3', at: true });
 	});
 
+	it('offers, with the tour, the other open areas and a walk begun by chance, and says what else may be typed', () => {
+		const [, offer] = new Adventure({ ...world, anywhere: ['b'] }).begin();
+		expect(offer.actions).toEqual([
+			{ label: 'Take the tour', command: 'take the tour' },
+			{ label: 'Start in Outer Inventa', command: 'start in Outer Inventa' },
+			{ label: 'Start anywhere', command: 'start anywhere' }
+		]);
+		expect(offer.hint).toBe('Or type start at, then a postcode, a street or a place.');
+		const [later] = new Adventure({ ...world, anywhere: ['b'] }).offer();
+		expect(later.actions).toEqual(offer.actions);
+	});
+
 	it('begins a walk at the area’s door, instead of the tour', () => {
 		const reply = fresh().respond('start in Outer Inventa');
 		expect(reply.title).toBe('Mill Lane');

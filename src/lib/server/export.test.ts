@@ -240,6 +240,15 @@ describe('exportPage', () => {
 		expect(page()).toContain('Benedict');
 	});
 
+	it('warns on About that the data may be wrong, and that much of Guide’s prose was written by an AI from it', () => {
+		const about = page().match(/<section id="about"[^]*?<\/section>/)![0];
+		expect(about).toContain('A word of warning');
+		expect(about).toMatch(/out of date, incomplete or wrong/);
+		expect(about).toMatch(/not for directions/);
+		expect(about).toContain('AI');
+		expect(about).toContain('Claude');
+	});
+
 	it('has a Settings page with a choice for each source asked from the browser', () => {
 		expect(page()).toContain('id="settings"');
 		for (const live of LIVE) expect(page()).toContain(`name="${live.key}"`);
