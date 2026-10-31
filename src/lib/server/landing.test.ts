@@ -41,7 +41,7 @@ describe('landingPage', () => {
 		expect(croydon).toContain('Start in Croydon');
 		expect(croydon).toMatch(/<meta name="description" content="[^"]*starts with Croydon\.[^"]*">/);
 		expect(landingPage({ ...input, place: { name: 'Inventa', within: 'Testshire' } })).toContain(
-			'It starts with Inventa, in Testshire:'
+			'It starts with Inventa, in Testshire. Guide’s map'
 		);
 	});
 
@@ -106,7 +106,9 @@ describe('landingPage', () => {
 
 	it('gives the map’s size and date, every figure the data’s', () => {
 		const text = html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ');
-		expect(text).toContain('12 streets and 340 places');
+		expect(text).toContain('Guide’s map has 12 streets and 340 places');
+		// The map may be larger than the place the walk starts in: its figures are the map's.
+		expect(text).not.toContain('Addiscombe, in Croydon: 12 streets');
 		expect(text).toContain('25 October 2026');
 	});
 
