@@ -1,0 +1,2529 @@
+{
+	"source": "Food Standards Agency",
+	"prefix": "hygiene",
+	"records": [
+		{
+			"id": "1244895",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1244895"
+			},
+			"at": [
+				51.3654866,
+				-0.0987706
+			],
+			"observed": "2026-01-24",
+			"claims": {
+				"name": "Abshar",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2026-01-24"
+			}
+		},
+		{
+			"id": "1027124",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1027124"
+			},
+			"at": [
+				51.3633728027344,
+				-0.0880940034985542
+			],
+			"observed": "2026-07-22",
+			"claims": {
+				"name": "Achieve Together",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-07-22"
+			}
+		},
+		{
+			"id": "1409187",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1409187"
+			},
+			"at": [
+				51.3520812988281,
+				-0.0983579978346825
+			],
+			"observed": "2025-01-15",
+			"claims": {
+				"name": "Amigos Burger Lounge",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-01-15"
+			}
+		},
+		{
+			"id": "1583904",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1583904"
+			},
+			"at": [
+				51.3553975,
+				-0.1049332
+			],
+			"observed": "2025-03-06",
+			"claims": {
+				"name": "Aspens Services At St Giles School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2025-03-06"
+			}
+		},
+		{
+			"id": "459424",
+			"link": {
+				"key": "fhrs:id",
+				"value": "459424"
+			},
+			"at": [
+				51.3621940612793,
+				-0.0937160030007362
+			],
+			"observed": "2025-11-18",
+			"claims": {
+				"name": "Baptist Church Hall",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-11-18"
+			}
+		},
+		{
+			"id": "983337",
+			"link": {
+				"key": "fhrs:id",
+				"value": "983337"
+			},
+			"at": [
+				51.3563232421875,
+				-0.097521997988224
+			],
+			"observed": "2025-07-12",
+			"claims": {
+				"name": "Baris International Food Centre",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2025-07-12"
+			}
+		},
+		{
+			"id": "1750731",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1750731"
+			},
+			"at": [
+				51.3530082702637,
+				-0.0938389971852303
+			],
+			"observed": "2024-09-14",
+			"claims": {
+				"name": "Beas Cafe",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2024-09-14"
+			}
+		},
+		{
+			"id": "6949",
+			"link": {
+				"key": "fhrs:id",
+				"value": "6949"
+			},
+			"at": [
+				51.3525695800781,
+				-0.098581999540329
+			],
+			"observed": "2023-07-22",
+			"claims": {
+				"name": "Best One And Meera Food & Wine",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2023-07-22"
+			}
+		},
+		{
+			"id": "1785792",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1785792"
+			},
+			"at": [
+				51.3663139343262,
+				-0.0970650017261505
+			],
+			"observed": "2025-02-19",
+			"claims": {
+				"name": "Blooming Years Nursery & Pre-School",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2025-02-19"
+			}
+		},
+		{
+			"id": "1131580",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1131580"
+			},
+			"at": [
+				51.3634487,
+				-0.0978781
+			],
+			"observed": "2025-05-10",
+			"claims": {
+				"name": "Bob's Your Uncle Coffee",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-05-10"
+			}
+		},
+		{
+			"id": "1045129",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1045129"
+			},
+			"at": [
+				51.363109588623,
+				-0.0975140035152435
+			],
+			"observed": "2025-06-17",
+			"claims": {
+				"name": "Buongiorno Cafeteria",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-06-17"
+			}
+		},
+		{
+			"id": "1579709",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1579709"
+			},
+			"at": [
+				51.3643314,
+				-0.0985167
+			],
+			"observed": "2025-09-19",
+			"claims": {
+				"name": "Cake Forest",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2025-09-19"
+			}
+		},
+		{
+			"id": "1670458",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1670458"
+			},
+			"at": [
+				51.3563232421875,
+				-0.097521997988224
+			],
+			"observed": "2025-10-19",
+			"claims": {
+				"name": "Canary Cafe",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-10-19"
+			}
+		},
+		{
+			"id": "1704581",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1704581"
+			},
+			"at": [
+				51.3633689880371,
+				-0.0973739996552467
+			],
+			"observed": "2024-09-23",
+			"claims": {
+				"name": "Castella Fish And Chips",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2024-09-23"
+			}
+		},
+		{
+			"id": "1755623",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1755623"
+			},
+			"at": [
+				51.3638516,
+				-0.0922445
+			],
+			"observed": "2025-11-06",
+			"claims": {
+				"name": "Chartwells At Elmhurst School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2025-11-06"
+			}
+		},
+		{
+			"id": "1090585",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1090585"
+			},
+			"at": [
+				51.3587702,
+				-0.0960895
+			],
+			"observed": "2026-03-17",
+			"claims": {
+				"name": "Compass At Harris Primary Academy Haling Park",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2026-03-17"
+			}
+		},
+		{
+			"id": "1871662",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1871662"
+			},
+			"at": [
+				51.362532,
+				-0.0715274
+			],
+			"observed": "2026-04-25",
+			"claims": {
+				"name": "Coombe Lodge",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2026-04-25"
+			}
+		},
+		{
+			"id": "1356971",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1356971"
+			},
+			"at": [
+				51.3662062,
+				-0.0987839
+			],
+			"observed": "2025-10-04",
+			"claims": {
+				"name": "Crystal Restaurant",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-10-04"
+			}
+		},
+		{
+			"id": "1734668",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1734668"
+			},
+			"at": [
+				51.362247467041,
+				-0.0782430022954941
+			],
+			"observed": "2024-07-11",
+			"claims": {
+				"name": "CWS Cafe At Coombe Wood School",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2024-07-11"
+			}
+		},
+		{
+			"id": "1039608",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1039608"
+			},
+			"at": [
+				51.3650588989258,
+				-0.0901930034160614
+			],
+			"observed": "2023-10-18",
+			"claims": {
+				"name": "Evergreen Lodge",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2023-10-18"
+			}
+		},
+		{
+			"id": "1390755",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1390755"
+			},
+			"at": [
+				51.3563232421875,
+				-0.097521997988224
+			],
+			"observed": "2024-03-11",
+			"claims": {
+				"name": "Family Choice",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2024-03-11"
+			}
+		},
+		{
+			"id": "1658969",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1658969"
+			},
+			"at": [
+				51.3498001098633,
+				-0.100722000002861
+			],
+			"observed": "2025-01-26",
+			"claims": {
+				"name": "Golden Bowl / Chicken World / Priest Burger",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2025-01-26"
+			}
+		},
+		{
+			"id": "1738223",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1738223"
+			},
+			"at": [
+				51.362247467041,
+				-0.0782430022954941
+			],
+			"observed": "2026-07-09",
+			"claims": {
+				"name": "Greenshaw Learning Trust At Coombe Wood School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2026-07-09"
+			}
+		},
+		{
+			"id": "1842568",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1842568"
+			},
+			"at": [
+				51.354649,
+				-0.101474
+			],
+			"observed": "2025-05-10",
+			"claims": {
+				"name": "Hayesthorpe Hotel",
+				"kind": "Hotel/bed & breakfast/guest house",
+				"rating": "5",
+				"date": "2025-05-10"
+			}
+		},
+		{
+			"id": "1892738",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1892738"
+			},
+			"at": [
+				51.3666835,
+				-0.0988217
+			],
+			"observed": "2026-03-04",
+			"claims": {
+				"name": "Honeymoon",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2026-03-04"
+			}
+		},
+		{
+			"id": "1784073",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1784073"
+			},
+			"at": [
+				51.3627662658691,
+				-0.0967240035533905
+			],
+			"observed": "2025-03-15",
+			"claims": {
+				"name": "Indian Kitchen",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2025-03-15"
+			}
+		},
+		{
+			"id": "5065",
+			"link": {
+				"key": "fhrs:id",
+				"value": "5065"
+			},
+			"at": [
+				51.3595504760742,
+				-0.0892440006136894
+			],
+			"observed": "2025-03-31",
+			"claims": {
+				"name": "Kinderland Day Nursery",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2025-03-31"
+			}
+		},
+		{
+			"id": "1079227",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1079227"
+			},
+			"at": [
+				51.3626548,
+				-0.0965377
+			],
+			"observed": "2026-04-11",
+			"claims": {
+				"name": "King Kebab",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2026-04-11"
+			}
+		},
+		{
+			"id": "1568507",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1568507"
+			},
+			"at": [
+				51.3627662658691,
+				-0.0967240035533905
+			],
+			"observed": "2025-07-04",
+			"claims": {
+				"name": "La Spezia",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2025-07-04"
+			}
+		},
+		{
+			"id": "1785795",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1785795"
+			},
+			"at": [
+				51.3509427,
+				-0.0997314
+			],
+			"observed": "2025-04-13",
+			"claims": {
+				"name": "Laxmi Narayan",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2025-04-13"
+			}
+		},
+		{
+			"id": "712814",
+			"link": {
+				"key": "fhrs:id",
+				"value": "712814"
+			},
+			"at": [
+				51.3518753051758,
+				-0.0973609983921051
+			],
+			"observed": "2025-08-06",
+			"claims": {
+				"name": "Little Apples Day Nursery",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2025-08-06"
+			}
+		},
+		{
+			"id": "859682",
+			"link": {
+				"key": "fhrs:id",
+				"value": "859682"
+			},
+			"at": [
+				51.3576889038086,
+				-0.100855000317097
+			],
+			"observed": "2026-09-02",
+			"claims": {
+				"name": "Little Learners Day Nursery",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-09-02"
+			}
+		},
+		{
+			"id": "1475517",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1475517"
+			},
+			"at": [
+				51.3595962524414,
+				-0.0853499993681908
+			],
+			"observed": "2022-05-09",
+			"claims": {
+				"name": "Little Whits Nursery",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2022-05-09"
+			}
+		},
+		{
+			"id": "759209",
+			"link": {
+				"key": "fhrs:id",
+				"value": "759209"
+			},
+			"at": [
+				51.3637657165527,
+				-0.080205000936985
+			],
+			"observed": "2024-12-19",
+			"claims": {
+				"name": "Lloyd Park Nursing Home",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2024-12-19"
+			}
+		},
+		{
+			"id": "1670459",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1670459"
+			},
+			"at": [
+				51.3630991,
+				-0.0968439
+			],
+			"observed": "2024-12-10",
+			"claims": {
+				"name": "Londis",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2024-12-10"
+			}
+		},
+		{
+			"id": "1001664",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1001664"
+			},
+			"at": [
+				51.3591804504395,
+				-0.0975620001554489
+			],
+			"observed": "2026-09-28",
+			"claims": {
+				"name": "Londis Whitgift",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2026-09-28"
+			}
+		},
+		{
+			"id": "1787506",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1787506"
+			},
+			"at": [
+				51.3509427,
+				-0.0997314
+			],
+			"observed": "2025-02-03",
+			"claims": {
+				"name": "Love A Slice",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-02-03"
+			}
+		},
+		{
+			"id": "1001675",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1001675"
+			},
+			"at": [
+				51.3530082702637,
+				-0.0938389971852303
+			],
+			"observed": "2018-09-07",
+			"claims": {
+				"name": "Love Hemp",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2018-09-07"
+			}
+		},
+		{
+			"id": "1850170",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1850170"
+			},
+			"at": [
+				51.3563232421875,
+				-0.097521997988224
+			],
+			"observed": "2025-06-17",
+			"claims": {
+				"name": "Morleys",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2025-06-17"
+			}
+		},
+		{
+			"id": "1153188",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1153188"
+			},
+			"at": [
+				51.3559709,
+				-0.0970386
+			],
+			"observed": "2024-04-15",
+			"claims": {
+				"name": "National Autistic Society",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2024-04-15"
+			}
+		},
+		{
+			"id": "1537794",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1537794"
+			},
+			"at": [
+				51.3620273,
+				-0.0906683
+			],
+			"observed": "2025-01-16",
+			"claims": {
+				"name": "Norbury Park Care Home",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2025-01-16"
+			}
+		},
+		{
+			"id": "877503",
+			"link": {
+				"key": "fhrs:id",
+				"value": "877503"
+			},
+			"at": [
+				51.3530082702637,
+				-0.0938389971852303
+			],
+			"observed": "2025-03-26",
+			"claims": {
+				"name": "Nourish Kefir",
+				"kind": "Manufacturers/packers",
+				"rating": "5",
+				"date": "2025-03-26"
+			}
+		},
+		{
+			"id": "1494553",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1494553"
+			},
+			"at": [
+				51.3649072,
+				-0.0902469
+			],
+			"observed": "2026-10-07",
+			"claims": {
+				"name": "Number 9 The Nursery",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-10-07"
+			}
+		},
+		{
+			"id": "1888371",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1888371"
+			},
+			"at": [
+				51.3520812988281,
+				-0.0983579978346825
+			],
+			"observed": "2026-01-10",
+			"claims": {
+				"name": "Papa Johns",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2026-01-10"
+			}
+		},
+		{
+			"id": "855471",
+			"link": {
+				"key": "fhrs:id",
+				"value": "855471"
+			},
+			"at": [
+				51.3645324707031,
+				-0.0986609980463982
+			],
+			"observed": "2026-03-30",
+			"claims": {
+				"name": "Perfect Fried Chicken",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2026-03-30"
+			}
+		},
+		{
+			"id": "1804666",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1804666"
+			},
+			"at": [
+				51.3530325,
+				-0.0938571
+			],
+			"observed": "2025-03-11",
+			"claims": {
+				"name": "Pius Vita Superfoods",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2025-03-11"
+			}
+		},
+		{
+			"id": "190018",
+			"link": {
+				"key": "fhrs:id",
+				"value": "190018"
+			},
+			"at": [
+				51.3555641174316,
+				-0.0974820032715797
+			],
+			"observed": "2011-11-30",
+			"claims": {
+				"name": "Play Place Busy Bee Pre-School Nursery",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2011-11-30"
+			}
+		},
+		{
+			"id": "1863706",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1863706"
+			},
+			"at": [
+				51.3625411987305,
+				-0.0715660005807877
+			],
+			"observed": "2026-02-07",
+			"claims": {
+				"name": "Premier Inn Croydon South",
+				"kind": "Hotel/bed & breakfast/guest house",
+				"rating": "5",
+				"date": "2026-02-07"
+			}
+		},
+		{
+			"id": "1487044",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1487044"
+			},
+			"at": [
+				51.3515476666029,
+				-0.0958162748911708
+			],
+			"observed": "2025-03-18",
+			"claims": {
+				"name": "Purley Oaks Primary School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2025-03-18"
+			}
+		},
+		{
+			"id": "1744924",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1744924"
+			},
+			"at": [
+				51.3626746,
+				-0.0934139
+			],
+			"observed": "2024-11-25",
+			"claims": {
+				"name": "Quick Stop Coffee",
+				"kind": "Mobile caterer",
+				"rating": "5",
+				"date": "2024-11-25"
+			}
+		},
+		{
+			"id": "1434963",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1434963"
+			},
+			"at": [
+				51.3559036254883,
+				-0.106127999722958
+			],
+			"observed": "2025-07-16",
+			"claims": {
+				"name": "Regina Coeli Catholic Primary School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2025-07-16"
+			}
+		},
+		{
+			"id": "4918",
+			"link": {
+				"key": "fhrs:id",
+				"value": "4918"
+			},
+			"at": [
+				51.3613052368164,
+				-0.0793460011482239
+			],
+			"observed": "2023-02-02",
+			"claims": {
+				"name": "Rutherford School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2023-02-02"
+			}
+		},
+		{
+			"id": "1722317",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1722317"
+			},
+			"at": [
+				51.3563232421875,
+				-0.097521997988224
+			],
+			"observed": "2024-10-09",
+			"claims": {
+				"name": "Saffron Indian Restaurant",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2024-10-09"
+			}
+		},
+		{
+			"id": "859768",
+			"link": {
+				"key": "fhrs:id",
+				"value": "859768"
+			},
+			"at": [
+				51.3601434349325,
+				-0.097850595151321
+			],
+			"observed": "2022-01-18",
+			"claims": {
+				"name": "Sainsbury's Local",
+				"kind": "Retailers - supermarkets/hypermarkets",
+				"rating": "5",
+				"date": "2022-01-18"
+			}
+		},
+		{
+			"id": "2036",
+			"link": {
+				"key": "fhrs:id",
+				"value": "2036"
+			},
+			"at": [
+				51.3623313903809,
+				-0.094989001750946
+			],
+			"observed": "2021-07-06",
+			"claims": {
+				"name": "Select Supermarket",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2021-07-06"
+			}
+		},
+		{
+			"id": "1487051",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1487051"
+			},
+			"at": [
+				51.3669013977051,
+				-0.0987790003418922
+			],
+			"observed": "2026-09-10",
+			"claims": {
+				"name": "Smacks Hamburgers Croydon",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2026-09-10"
+			}
+		},
+		{
+			"id": "1025015",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1025015"
+			},
+			"at": [
+				51.3525695800781,
+				-0.098581999540329
+			],
+			"observed": "2020-01-14",
+			"claims": {
+				"name": "Sonu Traders Ltd",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2020-01-14"
+			}
+		},
+		{
+			"id": "1397",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1397"
+			},
+			"at": [
+				51.3629103,
+				-0.0863652
+			],
+			"observed": "2025-12-16",
+			"claims": {
+				"name": "South Croydon Sports Club",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-12-16"
+			}
+		},
+		{
+			"id": "1159920",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1159920"
+			},
+			"at": [
+				51.3671771,
+				-0.0987581
+			],
+			"observed": "2026-01-24",
+			"claims": {
+				"name": "South End Food Centre",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2026-01-24"
+			}
+		},
+		{
+			"id": "1090547",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1090547"
+			},
+			"at": [
+				51.363745,
+				-0.0978515
+			],
+			"observed": "2018-11-23",
+			"claims": {
+				"name": "South End Post Office",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2018-11-23"
+			}
+		},
+		{
+			"id": "1079230",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1079230"
+			},
+			"at": [
+				51.3634104,
+				-0.0955238
+			],
+			"observed": "2018-08-17",
+			"claims": {
+				"name": "St Peter's Church",
+				"kind": "Other catering premises",
+				"rating": "5",
+				"date": "2018-08-17"
+			}
+		},
+		{
+			"id": "1520851",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1520851"
+			},
+			"at": [
+				51.36531766,
+				-0.09750484
+			],
+			"observed": "2025-03-31",
+			"claims": {
+				"name": "STEP Academy Trust At Heathfield Academy",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2025-03-31"
+			}
+		},
+		{
+			"id": "2035",
+			"link": {
+				"key": "fhrs:id",
+				"value": "2035"
+			},
+			"at": [
+				51.3623313903809,
+				-0.094989001750946
+			],
+			"observed": "2024-02-13",
+			"claims": {
+				"name": "The Croham Arms",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2024-02-13"
+			}
+		},
+		{
+			"id": "1962121",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1962121"
+			},
+			"at": [
+				51.3623219,
+				-0.0949512
+			],
+			"observed": "2026-10-08",
+			"claims": {
+				"name": "The Spruces",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-10-08"
+			}
+		},
+		{
+			"id": "1606052",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1606052"
+			},
+			"at": [
+				51.3669013977051,
+				-0.0987790003418922
+			],
+			"observed": "2026-03-31",
+			"claims": {
+				"name": "The Truro",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2026-03-31"
+			}
+		},
+		{
+			"id": "1045119",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1045119"
+			},
+			"at": [
+				51.3562291,
+				-0.0974301
+			],
+			"observed": "2018-09-24",
+			"claims": {
+				"name": "The Winning Margin (Intersport) (Nutrition Zone)",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2018-09-24"
+			}
+		},
+		{
+			"id": "6957",
+			"link": {
+				"key": "fhrs:id",
+				"value": "6957"
+			},
+			"at": [
+				51.3493911,
+				-0.0999823
+			],
+			"observed": "2025-12-16",
+			"claims": {
+				"name": "Toby Carvery Croydon",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-12-16"
+			}
+		},
+		{
+			"id": "6944",
+			"link": {
+				"key": "fhrs:id",
+				"value": "6944"
+			},
+			"at": [
+				51.3538388,
+				-0.0975434
+			],
+			"observed": "2025-07-11",
+			"claims": {
+				"name": "Today's Cafe",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-07-11"
+			}
+		},
+		{
+			"id": "190059",
+			"link": {
+				"key": "fhrs:id",
+				"value": "190059"
+			},
+			"at": [
+				51.3505630493164,
+				-0.0989530012011528
+			],
+			"observed": "2011-11-23",
+			"claims": {
+				"name": "Travelodge South Croydon",
+				"kind": "Hotel/bed & breakfast/guest house",
+				"rating": "5",
+				"date": "2011-11-23"
+			}
+		},
+		{
+			"id": "1723",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1723"
+			},
+			"at": [
+				51.3615379333496,
+				-0.0855130031704903
+			],
+			"observed": "2026-08-20",
+			"claims": {
+				"name": "Tree Tops Tamarind Care",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2026-08-20"
+			}
+		},
+		{
+			"id": "1725",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1725"
+			},
+			"at": [
+				51.3623580932617,
+				-0.0844729989767075
+			],
+			"observed": "2026-08-20",
+			"claims": {
+				"name": "Unicorn House",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-08-20"
+			}
+		},
+		{
+			"id": "1675979",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1675979"
+			},
+			"at": [
+				51.3530325,
+				-0.0938571
+			],
+			"observed": "2024-02-21",
+			"claims": {
+				"name": "VitaBright",
+				"kind": "Distributors/Transporters",
+				"rating": "5",
+				"date": "2024-02-21"
+			}
+		},
+		{
+			"id": "439382",
+			"link": {
+				"key": "fhrs:id",
+				"value": "439382"
+			},
+			"at": [
+				51.3637657165527,
+				-0.080205000936985
+			],
+			"observed": "2023-10-18",
+			"claims": {
+				"name": "Voyage Care",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2023-10-18"
+			}
+		},
+		{
+			"id": "1609050",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1609050"
+			},
+			"at": [
+				51.3595962524414,
+				-0.0853499993681908
+			],
+			"observed": "2024-06-26",
+			"claims": {
+				"name": "Whitgift Sports Club",
+				"kind": "Other catering premises",
+				"rating": "5",
+				"date": "2024-06-26"
+			}
+		},
+		{
+			"id": "1616522",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1616522"
+			},
+			"at": [
+				51.3635343,
+				-0.097616
+			],
+			"observed": "2023-09-06",
+			"claims": {
+				"name": "Zee Food & Wine",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2023-09-06"
+			}
+		},
+		{
+			"id": "1883493",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1883493"
+			},
+			"at": [
+				51.3629811,
+				-0.096777
+			],
+			"observed": "2026-01-25",
+			"claims": {
+				"name": "A & N Brother's Cafe",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2026-01-25"
+			}
+		},
+		{
+			"id": "1025021",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1025021"
+			},
+			"at": [
+				51.3534202575684,
+				-0.0982019975781441
+			],
+			"observed": "2026-08-05",
+			"claims": {
+				"name": "Amera Rani",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2026-08-05"
+			}
+		},
+		{
+			"id": "1181294",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1181294"
+			},
+			"at": [
+				51.3661613,
+				-0.0987858
+			],
+			"observed": "2025-04-30",
+			"claims": {
+				"name": "Ayat Kitchen Lounge",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2025-04-30"
+			}
+		},
+		{
+			"id": "1668800",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1668800"
+			},
+			"at": [
+				51.3656578063965,
+				-0.0987579971551895
+			],
+			"observed": "2025-06-24",
+			"claims": {
+				"name": "Balmoral Express",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2025-06-24"
+			}
+		},
+		{
+			"id": "1344306",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1344306"
+			},
+			"at": [
+				51.3498001098633,
+				-0.100722000002861
+			],
+			"observed": "2026-09-28",
+			"claims": {
+				"name": "Brighton Road Supermarket",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2026-09-28"
+			}
+		},
+		{
+			"id": "1022160",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1022160"
+			},
+			"at": [
+				51.3537940979004,
+				-0.09756900370121
+			],
+			"observed": "2021-10-15",
+			"claims": {
+				"name": "Brockley Food & Wine",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2021-10-15"
+			}
+		},
+		{
+			"id": "1842573",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1842573"
+			},
+			"at": [
+				51.3520812988281,
+				-0.0983579978346825
+			],
+			"observed": "2026-02-14",
+			"claims": {
+				"name": "Burger Cottage / Bangtan At Ruchi",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "4",
+				"date": "2026-02-14"
+			}
+		},
+		{
+			"id": "1840534",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1840534"
+			},
+			"at": [
+				51.3656476,
+				-0.0987209
+			],
+			"observed": "2025-12-08",
+			"claims": {
+				"name": "Butt Karahi",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2025-12-08"
+			}
+		},
+		{
+			"id": "1691256",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1691256"
+			},
+			"at": [
+				51.3530157,
+				-0.0938162
+			],
+			"observed": "2024-02-21",
+			"claims": {
+				"name": "Cake To Differ",
+				"kind": "Manufacturers/packers",
+				"rating": "4",
+				"date": "2024-02-21"
+			}
+		},
+		{
+			"id": "1434960",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1434960"
+			},
+			"at": [
+				51.3542976379395,
+				-0.0975629985332489
+			],
+			"observed": "2025-04-25",
+			"claims": {
+				"name": "Cantinho Do Nando",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2025-04-25"
+			}
+		},
+		{
+			"id": "1923647",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1923647"
+			},
+			"at": [
+				51.3631,
+				-0.0980075
+			],
+			"observed": "2026-06-06",
+			"claims": {
+				"name": "Chennai Dosa / Jasmine Catering",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2026-06-06"
+			}
+		},
+		{
+			"id": "6267",
+			"link": {
+				"key": "fhrs:id",
+				"value": "6267"
+			},
+			"at": [
+				51.3529739379883,
+				-0.100130997598171
+			],
+			"observed": "2026-07-23",
+			"claims": {
+				"name": "Fennies Under 5's Day Nursery",
+				"kind": "Caring Premises",
+				"rating": "4",
+				"date": "2026-07-23"
+			}
+		},
+		{
+			"id": "1901656",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1901656"
+			},
+			"at": [
+				51.3534202575684,
+				-0.0982019975781441
+			],
+			"observed": "2026-05-16",
+			"claims": {
+				"name": "FRNDYS",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "4",
+				"date": "2026-05-16"
+			}
+		},
+		{
+			"id": "1867415",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1867415"
+			},
+			"at": [
+				51.3623313903809,
+				-0.094989001750946
+			],
+			"observed": "2025-08-29",
+			"claims": {
+				"name": "Heavenly Cuisine",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "4",
+				"date": "2025-08-29"
+			}
+		},
+		{
+			"id": "4243",
+			"link": {
+				"key": "fhrs:id",
+				"value": "4243"
+			},
+			"at": [
+				51.357421875,
+				-0.0992719978094101
+			],
+			"observed": "2026-08-06",
+			"claims": {
+				"name": "Immanuels Day Nursery & Preschool",
+				"kind": "Caring Premises",
+				"rating": "4",
+				"date": "2026-08-06"
+			}
+		},
+		{
+			"id": "1413825",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1413825"
+			},
+			"at": [
+				51.3669013977051,
+				-0.0987790003418922
+			],
+			"observed": "2022-04-25",
+			"claims": {
+				"name": "Little Star Drinks Stop",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2022-04-25"
+			}
+		},
+		{
+			"id": "1246446",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1246446"
+			},
+			"at": [
+				51.3625411987305,
+				-0.0715660005807877
+			],
+			"observed": "2026-03-12",
+			"claims": {
+				"name": "Lloyds Park Cafe",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2026-03-12"
+			}
+		},
+		{
+			"id": "1777195",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1777195"
+			},
+			"at": [
+				51.3595731,
+				-0.095137
+			],
+			"observed": "2024-11-08",
+			"claims": {
+				"name": "Madina Bakery",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2024-11-08"
+			}
+		},
+		{
+			"id": "1966274",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1966274"
+			},
+			"at": [
+				51.3648294,
+				-0.098726
+			],
+			"observed": "2026-09-25",
+			"claims": {
+				"name": "Nile Food And Wine",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2026-09-25"
+			}
+		},
+		{
+			"id": "1611385",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1611385"
+			},
+			"at": [
+				51.354862,
+				-0.097975
+			],
+			"observed": "2025-08-04",
+			"claims": {
+				"name": "O Imperio Brazilian Market",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2025-08-04"
+			}
+		},
+		{
+			"id": "1955611",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1955611"
+			},
+			"at": [
+				51.3515396118164,
+				-0.0992849990725517
+			],
+			"observed": "2026-09-17",
+			"claims": {
+				"name": "Pizza Hut",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "4",
+				"date": "2026-09-17"
+			}
+		},
+		{
+			"id": "1660041",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1660041"
+			},
+			"at": [
+				51.3627895,
+				-0.0971584
+			],
+			"observed": "2023-11-10",
+			"claims": {
+				"name": "Pound Redeemed",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2023-11-10"
+			}
+		},
+		{
+			"id": "1670464",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1670464"
+			},
+			"at": [
+				51.3656578063965,
+				-0.0987579971551895
+			],
+			"observed": "2025-12-17",
+			"claims": {
+				"name": "Saigon Blue",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2025-12-17"
+			}
+		},
+		{
+			"id": "1919567",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1919567"
+			},
+			"at": [
+				51.3560039,
+				-0.0974107
+			],
+			"observed": "2026-02-21",
+			"claims": {
+				"name": "Shanmuga Stores",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2026-02-21"
+			}
+		},
+		{
+			"id": "5529",
+			"link": {
+				"key": "fhrs:id",
+				"value": "5529"
+			},
+			"at": [
+				51.3610076904297,
+				-0.0958200022578239
+			],
+			"observed": "2024-01-29",
+			"claims": {
+				"name": "South Croydon Conservative Club",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2024-01-29"
+			}
+		},
+		{
+			"id": "1919569",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1919569"
+			},
+			"at": [
+				51.3645324707031,
+				-0.0986609980463982
+			],
+			"observed": "2026-04-09",
+			"claims": {
+				"name": "Southend Chick Inn",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "4",
+				"date": "2026-04-09"
+			}
+		},
+		{
+			"id": "48449",
+			"link": {
+				"key": "fhrs:id",
+				"value": "48449"
+			},
+			"at": [
+				51.3537940979004,
+				-0.09756900370121
+			],
+			"observed": "2025-07-12",
+			"claims": {
+				"name": "SP Charcoal Grill",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "4",
+				"date": "2025-07-12"
+			}
+		},
+		{
+			"id": "1583910",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1583910"
+			},
+			"at": [
+				51.3542749,
+				-0.1022506
+			],
+			"observed": "2025-08-07",
+			"claims": {
+				"name": "St Augustine's House",
+				"kind": "Caring Premises",
+				"rating": "4",
+				"date": "2025-08-07"
+			}
+		},
+		{
+			"id": "1766245",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1766245"
+			},
+			"at": [
+				51.3595352172852,
+				-0.0900489985942841
+			],
+			"observed": "2026-09-10",
+			"claims": {
+				"name": "St Peters Primary School",
+				"kind": "School/college/university",
+				"rating": "4",
+				"date": "2026-09-10"
+			}
+		},
+		{
+			"id": "1001669",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1001669"
+			},
+			"at": [
+				51.3520812988281,
+				-0.0983579978346825
+			],
+			"observed": "2023-05-30",
+			"claims": {
+				"name": "Star Food & Wine",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2023-05-30"
+			}
+		},
+		{
+			"id": "481365",
+			"link": {
+				"key": "fhrs:id",
+				"value": "481365"
+			},
+			"at": [
+				51.3616256713867,
+				-0.0979340001940727
+			],
+			"observed": "2017-09-07",
+			"claims": {
+				"name": "Tesco",
+				"kind": "Retailers - supermarkets/hypermarkets",
+				"rating": "4",
+				"date": "2017-09-07"
+			}
+		},
+		{
+			"id": "1413826",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1413826"
+			},
+			"at": [
+				51.351261138916,
+				-0.0988660007715225
+			],
+			"observed": "2023-10-11",
+			"claims": {
+				"name": "The Purley Arms",
+				"kind": "Pub/bar/nightclub",
+				"rating": "4",
+				"date": "2023-10-11"
+			}
+		},
+		{
+			"id": "1593398",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1593398"
+			},
+			"at": [
+				51.3656578063965,
+				-0.0987579971551895
+			],
+			"observed": "2026-09-03",
+			"claims": {
+				"name": "Uncle Lim's Kitchen",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2026-09-03"
+			}
+		},
+		{
+			"id": "15449",
+			"link": {
+				"key": "fhrs:id",
+				"value": "15449"
+			},
+			"at": [
+				51.3601455688477,
+				-0.0954679995775223
+			],
+			"observed": "2021-11-04",
+			"claims": {
+				"name": "Vesco Express",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2021-11-04"
+			}
+		},
+		{
+			"id": "1051587",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1051587"
+			},
+			"at": [
+				51.3616842,
+				-0.090582
+			],
+			"observed": "2025-10-30",
+			"claims": {
+				"name": "Villa Maria Private Nursing Home",
+				"kind": "Caring Premises",
+				"rating": "4",
+				"date": "2025-10-30"
+			}
+		},
+		{
+			"id": "1110622",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1110622"
+			},
+			"at": [
+				51.3627548,
+				-0.0966858
+			],
+			"observed": "2023-11-21",
+			"claims": {
+				"name": "Whelans",
+				"kind": "Pub/bar/nightclub",
+				"rating": "4",
+				"date": "2023-11-21"
+			}
+		},
+		{
+			"id": "35510",
+			"link": {
+				"key": "fhrs:id",
+				"value": "35510"
+			},
+			"at": [
+				51.3633689880371,
+				-0.0973739996552467
+			],
+			"observed": "2024-01-23",
+			"claims": {
+				"name": "Whitgift News",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2024-01-23"
+			}
+		},
+		{
+			"id": "5525",
+			"link": {
+				"key": "fhrs:id",
+				"value": "5525"
+			},
+			"at": [
+				51.363109588623,
+				-0.0975140035152435
+			],
+			"observed": "2025-05-08",
+			"claims": {
+				"name": "Cafe Tresor",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "3",
+				"date": "2025-05-08"
+			}
+		},
+		{
+			"id": "1025017",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1025017"
+			},
+			"at": [
+				51.3525695800781,
+				-0.098581999540329
+			],
+			"observed": "2025-07-12",
+			"claims": {
+				"name": "CB Sezen",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "3",
+				"date": "2025-07-12"
+			}
+		},
+		{
+			"id": "1934834",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1934834"
+			},
+			"at": [
+				51.3542976379395,
+				-0.0975629985332489
+			],
+			"observed": "2026-06-06",
+			"claims": {
+				"name": "Chicken Kadai",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "3",
+				"date": "2026-06-06"
+			}
+		},
+		{
+			"id": "1595421",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1595421"
+			},
+			"at": [
+				51.3638015,
+				-0.0980071
+			],
+			"observed": "2025-09-22",
+			"claims": {
+				"name": "Chicken Tingz",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "3",
+				"date": "2025-09-22"
+			}
+		},
+		{
+			"id": "963585",
+			"link": {
+				"key": "fhrs:id",
+				"value": "963585"
+			},
+			"at": [
+				51.3623313903809,
+				-0.094989001750946
+			],
+			"observed": "2025-07-25",
+			"claims": {
+				"name": "Coriander",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "3",
+				"date": "2025-07-25"
+			}
+		},
+		{
+			"id": "1897045",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1897045"
+			},
+			"at": [
+				51.363109588623,
+				-0.0975140035152435
+			],
+			"observed": "2026-05-16",
+			"claims": {
+				"name": "DOSHI Mediterranean Bar & Grill",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "3",
+				"date": "2026-05-16"
+			}
+		},
+		{
+			"id": "6951",
+			"link": {
+				"key": "fhrs:id",
+				"value": "6951"
+			},
+			"at": [
+				51.3525695800781,
+				-0.098581999540329
+			],
+			"observed": "2025-12-08",
+			"claims": {
+				"name": "Ellys Diner",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "3",
+				"date": "2025-12-08"
+			}
+		},
+		{
+			"id": "1059678",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1059678"
+			},
+			"at": [
+				51.3645324707031,
+				-0.0986609980463982
+			],
+			"observed": "2026-05-08",
+			"claims": {
+				"name": "Good Life Jerk Centre",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "3",
+				"date": "2026-05-08"
+			}
+		},
+		{
+			"id": "1883499",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1883499"
+			},
+			"at": [
+				51.3520812988281,
+				-0.0983579978346825
+			],
+			"observed": "2025-11-27",
+			"claims": {
+				"name": "Pinku Grocers",
+				"kind": "Retailers - other",
+				"rating": "3",
+				"date": "2025-11-27"
+			}
+		},
+		{
+			"id": "1658975",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1658975"
+			},
+			"at": [
+				51.363396,
+				-0.0974062
+			],
+			"observed": "2025-12-18",
+			"claims": {
+				"name": "Rikko Express",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "3",
+				"date": "2025-12-18"
+			}
+		},
+		{
+			"id": "1994092",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1994092"
+			},
+			"at": [
+				51.3598747253418,
+				-0.0976189970970154
+			],
+			"observed": "2026-09-24",
+			"claims": {
+				"name": "Sabores Da Terra",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "3",
+				"date": "2026-09-24"
+			}
+		},
+		{
+			"id": "21885",
+			"link": {
+				"key": "fhrs:id",
+				"value": "21885"
+			},
+			"at": [
+				51.3650588989258,
+				-0.0901930034160614
+			],
+			"observed": "2026-07-13",
+			"claims": {
+				"name": "Spice N Ice",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "3",
+				"date": "2026-07-13"
+			}
+		},
+		{
+			"id": "1808942",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1808942"
+			},
+			"at": [
+				51.3669013977051,
+				-0.0987790003418922
+			],
+			"observed": "2025-08-15",
+			"claims": {
+				"name": "Surrey Street Lounge",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "3",
+				"date": "2025-08-15"
+			}
+		},
+		{
+			"id": "1648665",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1648665"
+			},
+			"at": [
+				51.3507232666016,
+				-0.0962029993534088
+			],
+			"observed": "2026-03-04",
+			"claims": {
+				"name": "The Little Coffee Shop",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "3",
+				"date": "2026-03-04"
+			}
+		},
+		{
+			"id": "1474",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1474"
+			},
+			"at": [
+				51.3648964,
+				-0.0884804
+			],
+			"observed": "2025-11-19",
+			"claims": {
+				"name": "Tudor House",
+				"kind": "Caring Premises",
+				"rating": "3",
+				"date": "2025-11-19"
+			}
+		},
+		{
+			"id": "6946",
+			"link": {
+				"key": "fhrs:id",
+				"value": "6946"
+			},
+			"at": [
+				51.3537940979004,
+				-0.09756900370121
+			],
+			"observed": "2026-03-10",
+			"claims": {
+				"name": "Holts",
+				"kind": "Retailers - other",
+				"rating": "2",
+				"date": "2026-03-10"
+			}
+		},
+		{
+			"id": "293584",
+			"link": {
+				"key": "fhrs:id",
+				"value": "293584"
+			},
+			"at": [
+				51.3656578063965,
+				-0.0987579971551895
+			],
+			"observed": "2025-07-12",
+			"claims": {
+				"name": "Le Bon Cafe",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "2",
+				"date": "2025-07-12"
+			}
+		},
+		{
+			"id": "849068",
+			"link": {
+				"key": "fhrs:id",
+				"value": "849068"
+			},
+			"at": [
+				51.3498001098633,
+				-0.100722000002861
+			],
+			"observed": "2026-08-18",
+			"claims": {
+				"name": "Ozzies Charcoal",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "2",
+				"date": "2026-08-18"
+			}
+		},
+		{
+			"id": "1200188",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1200188"
+			},
+			"at": [
+				51.3624337,
+				-0.0962969
+			],
+			"observed": "2026-09-03",
+			"claims": {
+				"name": "Peri Peri Hut",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "2",
+				"date": "2026-09-03"
+			}
+		},
+		{
+			"id": "1227186",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1227186"
+			},
+			"at": [
+				51.355583190918,
+				-0.102895997464657
+			],
+			"observed": "2025-08-07",
+			"claims": {
+				"name": "St Augustines House",
+				"kind": "Caring Premises",
+				"rating": "2",
+				"date": "2025-08-07"
+			}
+		},
+		{
+			"id": "1955592",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1955592"
+			},
+			"at": [
+				51.3620758056641,
+				-0.0962639972567558
+			],
+			"observed": "2026-10-07",
+			"claims": {
+				"name": "Little Bay",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "1",
+				"date": "2026-10-07"
+			}
+		},
+		{
+			"id": "1927458",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1927458"
+			},
+			"at": [
+				51.3549839,
+				-0.0933021
+			],
+			"claims": {
+				"name": "Bociea's Vending",
+				"kind": "Retailers - other",
+				"rating": "AwaitingInspection"
+			}
+		},
+		{
+			"id": "2008900",
+			"link": {
+				"key": "fhrs:id",
+				"value": "2008900"
+			},
+			"at": [
+				51.3624616,
+				-0.0963532
+			],
+			"claims": {
+				"name": "Boulevard Restaurant",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "AwaitingInspection"
+			}
+		},
+		{
+			"id": "1962124",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1962124"
+			},
+			"at": [
+				51.3668684,
+				-0.0987935
+			],
+			"claims": {
+				"name": "CR1",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "AwaitingInspection"
+			}
+		},
+		{
+			"id": "1984860",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1984860"
+			},
+			"at": [
+				51.3645324707031,
+				-0.0986609980463982
+			],
+			"claims": {
+				"name": "MK Mini Market (Croydon)",
+				"kind": "Retailers - other",
+				"rating": "AwaitingInspection"
+			}
+		},
+		{
+			"id": "1959984",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1959984"
+			},
+			"at": [
+				51.3653423,
+				-0.0987479
+			],
+			"claims": {
+				"name": "Saravanaa Bhavan",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "AwaitingInspection"
+			}
+		},
+		{
+			"id": "1994095",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1994095"
+			},
+			"at": [
+				51.3627548,
+				-0.0966858
+			],
+			"claims": {
+				"name": "Southern Soul At Whelan's",
+				"kind": "Hotel/bed & breakfast/guest house",
+				"rating": "AwaitingInspection"
+			}
+		},
+		{
+			"id": "1768222",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1768222"
+			},
+			"at": [
+				51.3530325,
+				-0.0938571
+			],
+			"claims": {
+				"name": "The Swallow Co",
+				"kind": "Distributors/Transporters",
+				"rating": "AwaitingInspection"
+			}
+		},
+		{
+			"id": "6268",
+			"link": {
+				"key": "fhrs:id",
+				"value": "6268"
+			},
+			"at": [
+				51.3532447814941,
+				-0.101210996508598
+			],
+			"claims": {
+				"name": "Augustina Lodge",
+				"kind": "Caring Premises",
+				"rating": "Exempt"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
