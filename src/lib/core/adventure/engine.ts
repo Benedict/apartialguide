@@ -22,7 +22,8 @@ export { distanceWords };
 import { alludedTo } from '../keepers';
 import { direction, parse } from './parser';
 import type { Telling, Thing } from '../render/renderer';
-import { distance } from '../geo';
+import { distance, type LatLon } from '../geo';
+import { circleThrough, FAR, offCurve, walkable, type Circle } from './circle';
 import { AUTO, SLOTS, type SaveStore, type SavedWalk, type WalkState } from './saves';
 import type { StopId } from '../stops';
 import { MemoryHints, type HintKeeper, type HintMemory } from './hints';
@@ -56,6 +57,7 @@ export const HELP =
 	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name, or ask me to remember or mark down one, and drop it somewhere else; inventory (i) says what you carry. ' +
 	'Start in an area by its name begins a walk there, and start anywhere somewhere by chance. ' +
+	'Place a glass sets a circle down to walk round, and keeps a record of it; glass off lifts it. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
 	'Drift, and I choose the way. Hint for a word about a command; hints off, or on, for one now and then. ' +
 	'Route to a street or a named place for the way there (route off to let it go). ' +
@@ -116,7 +118,9 @@ const HINTS: [verb: string, hint: string][] = [
 	['remember', 'type remember, then a name, and it may come back to you later.'],
 	['follow', 'type gps on to keep a map beside the walk.'],
 	['examine', 'type examine, then a thing, to look closer.'],
-	['save', 'type save 1 to keep this walk.']
+	['save', 'type save 1 to keep this walk.'],
+	['glass', 'type place a glass for a circle to walk round.'],
+	['start', 'type start anywhere to begin somewhere by chance.']
 ];
 /** Steps between one hint and the next. */
 const HINT_EVERY = 8;
@@ -210,6 +214,16 @@ export class Adventure {
 	private verbose = false;
 	/** The way the reader asked for, kept until they arrive or let it go. */
 	private routing?: { to: string; goals: [StopId, string][] };
+	/** The circle being walked: its points, the next to reach, what was met, how far the walk strayed. */
+	private circling?: {
+		centre: LatLon;
+		radius: number;
+		points: StopId[];
+		next: number;
+		record: string[];
+		seen: StopId[];
+		strayed: number;
+	};
 	/** What the hints remember across walks: the browser's, given by the page, or memory. */
 	hintKeeper: HintKeeper = new MemoryHints();
 	/** The move at which a hint last came of its own, this walk; and which hint comes next when asked. */
@@ -440,6 +454,8 @@ export class Adventure {
 				return { lines: [] };
 			case 'start':
 				return this.start(command.where, command.at);
+			case 'glass':
+				return command.on ? this.glass() : this.lift();
 			case 'look':
 				return this.look();
 			case 'plainly':
@@ -566,7 +582,9 @@ export class Adventure {
 		this.previous = this.here;
 		this.here = to;
 		this.moves++;
-		const reply = this.arrive();
+		const arrived = this.arrive();
+		const round = this.roundOn();
+		const reply = round.length ? { ...arrived, lines: [...arrived.lines, ...round] } : arrived;
 		const passed = MARKS.filter((m) => m > before && m <= this.walked).at(-1);
 		const hint = this.hint();
 		return {
@@ -893,6 +911,8 @@ export class Adventure {
 	needsRoutes(input: string): boolean {
 		if (this.index()) return false;
 		const command = parse(input);
+		if (command.verb === 'glass') return command.on;
+		if (command.verb === 'go' && this.circling) return true;
 		if (command.verb === 'route') return !!command.target;
 		if (command.verb === 'restore' && command.slot)
 			return !!this.saves?.get(command.slot)?.state.route;
@@ -964,6 +984,109 @@ export class Adventure {
 		if (plan.kind !== 'way') return undefined;
 		const [next] = plan.legs;
 		return `Your way to ${quote(this.routing.to)}: ${next.label}${next.street ? ` (${next.street})` : ''}.`;
+	}
+
+	/** A glass set down on the map, its edge through here, the centre off by chance: the circle to walk. */
+	private glass(): Reply {
+		const index = this.index();
+		if (!index) return { lines: ['I cannot set a glass down just now.'] };
+		// Chance turns the glass; of twelve turns from there, it is set where the streets go round best.
+		const first = this.chance() * 360;
+		const circle = Array.from({ length: 12 }, (_, i) =>
+			circleThrough(index, this.here, (first + i * 30) % 360)
+		)
+			.filter((c) => c !== undefined)
+			.map((c) => ({ c, walked: walkable(index, c) }))
+			.reduce<{ c: Circle; walked: number } | undefined>(
+				(best, next) => (!best || next.walked > best.walked ? next : best),
+				undefined
+			)?.c;
+		if (!circle) return { lines: ['The glass will not sit here: the streets do not go round.'] };
+		this.routing = undefined;
+		this.circling = { ...circle, next: 1, record: [], seen: [], strayed: 0 };
+		this.note(this.here);
+		const across = Math.round((circle.radius * 2) / 10) * 10;
+		return {
+			lines: [
+				`A circle, about ${across} metres across. Its edge runs through where you stand.`,
+				...this.turn()
+			]
+		};
+	}
+
+	private lift(): Reply {
+		const had = !!this.circling;
+		this.circling = undefined;
+		return { lines: [had ? 'I lift the glass.' : 'There is no glass set down.'] };
+	}
+
+	/** What a place gives the record: its names as found, and the named things in it. Nothing new. */
+	private note(id: StopId): void {
+		const c = this.circling;
+		const stop = this.world.stops[id];
+		if (!c || !stop) return;
+		if (stop.at) c.strayed = Math.max(c.strayed, offCurve(c, stop.at));
+		if (c.seen.includes(id)) return;
+		c.seen.push(id);
+		const found = (stop.fragments ?? []).map((f) => `“${f}”`);
+		const named = stop.things
+			.filter((t) => !t.background && /^[\p{Lu}\p{N}“"]/u.test(t.name))
+			.slice(0, 2)
+			.map((t) => t.name);
+		// Each name once in the record, where it was first met.
+		const words = [...new Set([...found, ...named])].filter(
+			(w) => !c.record.some((line) => line.includes(w))
+		);
+		if (words.length) c.record.push(`${stop.title}: ${words.join('; ')}.`);
+	}
+
+	/** The next turn round the circle. */
+	private turn(): string[] {
+		const c = this.circling;
+		const index = this.index();
+		if (!c || !index) return [];
+		// A point the streets reach only far round is passed over: the way is kept to the curve, not to
+		// every point on it.
+		const arc = (2 * Math.PI * c.radius) / c.points.length;
+		let plan = planRoute(
+			index,
+			this.here,
+			new Map([[c.points[c.next % c.points.length], 'the circle']])
+		);
+		while (c.next < c.points.length && (plan.kind !== 'way' || plan.metres > 3 * arc)) {
+			c.next++;
+			plan = planRoute(
+				index,
+				this.here,
+				new Map([[c.points[c.next % c.points.length], 'the circle']])
+			);
+		}
+		if (plan.kind !== 'way') return [];
+		const [leg] = plan.legs;
+		const done = c.next > 1 ? ` ${c.next - 1} of ${c.points.length}.` : '';
+		return [`Your way round: ${leg.label}${leg.street ? ` (${leg.street})` : ''}.${done}`];
+	}
+
+	/** On arriving while a circle is walked: the record kept, the next turn, or the circle closed. */
+	private roundOn(): string[] {
+		const c = this.circling;
+		if (!c) return [];
+		this.note(this.here);
+		const closing = c.next >= c.points.length;
+		if (closing && this.here === c.points[0]) {
+			this.circling = undefined;
+			const strayed = Math.max(1, Math.round(c.strayed));
+			return [
+				'The circle is closed.',
+				'The record:',
+				...(c.record.length ? c.record : ['Nothing written down.']),
+				`You kept within ${strayed} metre${strayed === 1 ? '' : 's'} of the curve.`
+			];
+		}
+		// A point reached, or one further round, passed on the way.
+		const reached = c.points.indexOf(this.here, c.next);
+		if (!closing && reached >= 0) c.next = reached + 1;
+		return this.turn();
 	}
 
 	/** gps on keeps the map beside the walk, stop after stop; gps off puts it away. */

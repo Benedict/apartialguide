@@ -7,6 +7,7 @@ export type Command =
 	| { verb: 'colour'; colour?: string }
 	| { verb: 'route'; target?: string }
 	| { verb: 'start'; where: string; at?: boolean }
+	| { verb: 'glass'; on: boolean }
 	| {
 			verb:
 				| 'look'
@@ -111,6 +112,16 @@ const dropFiller = (words: string[]) => {
 	return words.slice(i);
 };
 
+/** Ways of asking for a circle to walk. */
+const GLASS = new Set([
+	'place a glass',
+	'put down a glass',
+	'glass',
+	'walk a circle',
+	'draw a circle',
+	'circle'
+]);
+
 /** Ways of asking to begin somewhere by chance. */
 const ANYWHERE = new Set([
 	'start anywhere',
@@ -122,6 +133,14 @@ const ANYWHERE = new Set([
 ]);
 
 export function parse(input: string): Command {
+	// A circle to walk, or letting it go.
+	const whole = input
+		.trim()
+		.toLowerCase()
+		.replace(/[.!?]+$/, '');
+	if (GLASS.has(whole)) return { verb: 'glass', on: true };
+	if (['glass off', 'lift the glass', 'circle off'].includes(whole))
+		return { verb: 'glass', on: false };
 	// Beginning somewhere: in an area by its name, or at a place by the map's name for it, as a shared
 	// link gives it, read before punctuation is dropped.
 	if (
