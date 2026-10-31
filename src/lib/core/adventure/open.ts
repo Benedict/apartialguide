@@ -66,7 +66,9 @@ function recount(
 export function doorsFor(
 	world: AdventureWorld,
 	areas: AreaList,
-	areaOf: (ward: string | undefined) => string | undefined
+	areaOf: (ward: string | undefined) => string | undefined,
+	/** Told of an open area whose start this map does not hold, such as a smaller map's edge: it has no door. */
+	missing: (area: string) => void = () => {}
 ): NonNullable<AdventureWorld['doors']> {
 	const index = routeIndex(world);
 	const within = (name: string) => (id: StopId) => areaOf(world.stops[id]?.area?.name) === name;
@@ -75,7 +77,10 @@ export function doorsFor(
 		const inside = within(area.name);
 		if (area.start) {
 			const stop = [...goalsFor(index, area.start).keys()].find(inside);
-			if (!stop) throw new Error(`${area.name}: no place called ${area.start} within it`);
+			if (!stop) {
+				missing(area.name);
+				return [];
+			}
 			return [{ name: area.name, stop }];
 		}
 		return inside(world.start) ? [{ name: area.name, stop: world.start }] : [];

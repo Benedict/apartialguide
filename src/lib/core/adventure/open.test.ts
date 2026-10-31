@@ -145,13 +145,16 @@ describe('doorsFor: where each area may be begun', () => {
 		).toEqual([{ name: 'Inventa', stop: 'b' }]);
 	});
 
-	it('refuses a start that names nowhere in its area', () => {
-		expect(() =>
+	it('gives no door to an area whose start this map does not hold, and says which', () => {
+		const missing: string[] = [];
+		expect(
 			doorsFor(
 				withMill,
 				[{ name: 'Inventa', wards: ['Inventa West'], open: true, start: 'Atlantis' }],
-				areaOf
+				areaOf,
+				(name) => missing.push(name)
 			)
-		).toThrow(/Atlantis/);
+		).toEqual([]);
+		expect(missing).toEqual(['Inventa']);
 	});
 });
