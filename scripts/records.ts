@@ -10,9 +10,18 @@
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import type { RecordStore } from '../src/lib/core/adapters/records';
 import { readJson } from '../src/lib/server/json';
-import { distance } from '../src/lib/core/geo';
+import { distance, type LatLon } from '../src/lib/core/geo';
 import { loadRecords } from '../src/lib/server/narrator';
-import { areaBox, areaSlug, areaWards, inArea, type AreaList } from '../src/lib/core/release';
+import {
+	addressKey,
+	areaBox,
+	areaSlug,
+	areaWards,
+	inArea,
+	keptInArea,
+	type AreaHolds,
+	type AreaList
+} from '../src/lib/core/release';
 import { hygieneRecords } from '../src/lib/server/sources/hygiene';
 import {
 	crimeRecords,
@@ -70,8 +79,9 @@ const wards = loadRecords('data/records').flatMap((store) => store.areas ?? []);
 const areaNames = area
 	? areaWards(JSON.parse(readFileSync('data/areas.json', 'utf8')).areas as AreaList, area)
 	: [];
-const within = area ? inArea(wards, areaNames) : undefined;
 const bbox: string = area ? areaBox(wards, areaNames) : snapshot.bbox;
+const holds = area ? areaHolds(inArea(wards, areaNames), bbox) : undefined;
+const kept = holds ? keptInArea(holds) : () => true;
 if (area) console.log(`${area}: ${areaNames.join(', ')}`);
 const [w, s, e, n] = bbox.split(',').map(Number);
 const centre = { lat: (s + n) / 2, lon: (w + e) / 2 };
@@ -83,9 +93,10 @@ const reachMiles = Math.max(
 );
 console.log(`box ${bbox}, from ${newest}`);
 
+// The snapshot's postcodes, or with AREA those of the things it maps inside the area.
 const postcodes = [
 	...new Set(
-		snapshot.elements
+		(holds ? holds.elements : snapshot.elements)
 			.map((el: { tags?: Record<string, string> }) =>
 				el.tags?.['addr:postcode']?.toUpperCase().trim()
 			)
@@ -559,6 +570,53 @@ SELECT ?paon ?street ?amount ?date WHERE {
 	}
 };
 
+/**
+ * What the snapshot maps inside an area: its things (a way where its first node is), the addresses
+ * they carry, and the named streets that run inside it alone.
+ */
+function areaHolds(
+	inside: (p: LatLon) => boolean,
+	box: string
+): AreaHolds & { elements: { tags?: Record<string, string> }[] } {
+	const [bw, bs, be, bn] = box.split(',').map(Number);
+	const at = new Map<number, [number, number]>();
+	for (const el of snapshot.elements)
+		if (el.type === 'node' && el.lat !== undefined) at.set(el.id, [el.lat, el.lon]);
+	const memo = new Map<number, boolean>();
+	const nodeInside = (id: number) => {
+		if (!memo.has(id)) {
+			const p = at.get(id);
+			memo.set(id, !!p && p[0] >= bs && p[0] <= bn && p[1] >= bw && p[1] <= be && inside(p));
+		}
+		return memo.get(id)!;
+	};
+	const elements = snapshot.elements.filter((el: { type: string; id: number; nodes?: number[] }) =>
+		el.type === 'node' ? nodeInside(el.id) : el.type === 'way' && nodeInside(el.nodes![0])
+	);
+	const addresses = new Set<string>(
+		elements
+			.filter(
+				(el: { tags?: Record<string, string> }) =>
+					el.tags?.['addr:housenumber'] && el.tags?.['addr:street']
+			)
+			.map((el: { tags: Record<string, string> }) =>
+				addressKey(el.tags['addr:housenumber'], el.tags['addr:street'])
+			)
+	);
+	const alone = new Map<string, boolean>();
+	for (const el of snapshot.elements)
+		if (el.type === 'way' && el.tags?.highway && el.tags?.name)
+			alone.set(
+				el.tags.name,
+				(alone.get(el.tags.name) ?? true) && (el.nodes as number[]).every(nodeInside)
+			);
+	const streets = new Set([...alone].filter(([, a]) => a).map(([name]) => name));
+	console.log(
+		`inside: ${elements.length} things, ${addresses.size} addresses, ${streets.size} streets alone`
+	);
+	return { inside, addresses, streets, elements };
+}
+
 /** The snapshot's named streets, as lines, for counting what stands along each. */
 function namedStreets() {
 	const at = new Map<number, [number, number]>();
@@ -621,8 +679,7 @@ for (const key of wanted) {
 		const got = await take();
 		for (const taken of Array.isArray(got) ? got : [got]) {
 			const path = `data/records/${taken.prefix}${area ? `.${areaSlug(area)}` : ''}-${retrieved}.json`;
-			const records = within ? taken.records.filter((r) => !r.at || within(r.at)) : taken.records;
-			taken.records = records;
+			taken.records = taken.records.filter(kept);
 			writeFileSync(path, JSON.stringify({ ...taken, retrieved }, null, '\t') + '\n');
 			console.log(
 				`${key}: ${taken.records.length} records${taken.areas ? `, ${taken.areas.length} areas` : ''} written to ${path}`

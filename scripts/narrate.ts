@@ -7,23 +7,15 @@
  * facts are unchanged keep their prose, so each run continues where the last one stopped.
  * NARRATE_AREA=Shirley narrates only the stops in that area's wards (data/areas.json).
  */
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
-import { isBusier } from '../src/lib/core/busier';
-import type { Scene } from '../src/lib/core/scene';
-import { areaWards, inArea, type AreaList } from '../src/lib/core/release';
 import { narrateWorld, type NarrateResult } from '../src/lib/core/narration';
 import type { NarrationStore } from '../src/lib/core/render/cached';
 import { AnthropicProse } from '../src/lib/server/anthropic';
 import { WrittenProse } from '../src/lib/server/written';
 import { OpenRouterProse } from '../src/lib/server/openrouter';
-import {
-	loadNarration,
-	loadNarrator,
-	loadRecords,
-	readConfig,
-	startStop
-} from '../src/lib/server/narrator';
+import { loadNarration, loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
+import { narrationOnly } from '../src/lib/server/only';
 
 const config = readConfig();
 if (!config) {
@@ -42,24 +34,16 @@ const model = process.env.PROSE_FROM
 		: new AnthropicProse();
 const limit = Number(process.env.NARRATE_LIMIT ?? 25);
 
-// NARRATE_ONLY=busier narrates only stops whose data has something going on; NARRATE_AREA only
-// the stops in one area's wards.
-const tests: ((scene: Scene) => boolean)[] = [];
-if (process.env.NARRATE_ONLY === 'busier') tests.push(isBusier);
-if (process.env.NARRATE_AREA) {
-	const areas: AreaList = JSON.parse(readFileSync('data/areas.json', 'utf8')).areas;
-	const wards = loadRecords(config.recordsDir).flatMap((store) => store.areas ?? []);
-	const inside = inArea(wards, areaWards(areas, process.env.NARRATE_AREA));
-	tests.push((scene) => inside(scene.position));
-	console.log(`Only ${process.env.NARRATE_AREA}`);
-}
+// NARRATE_ONLY=busier, NARRATE_AREA=Shirley: which stops to write (src/lib/server/only.ts).
+const only = narrationOnly(process.env, config.recordsDir);
+if (process.env.NARRATE_AREA) console.log(`Only ${process.env.NARRATE_AREA}`);
 
 let result: NarrateResult | undefined;
 try {
 	result = await narrateWorld(narrator, model, store, {
 		limit,
 		from: startStop(narrator, config).id,
-		...(tests.length ? { only: (scene: Scene) => tests.every((test) => test(scene)) } : {})
+		...(only ? { only } : {})
 	});
 } finally {
 	// Keep whatever was written, even if the run stopped part way.
