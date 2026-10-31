@@ -1,0 +1,215 @@
+{
+	"source": "OpenBenches",
+	"prefix": "bench",
+	"records": [
+		{
+			"id": "30135",
+			"at": [
+				51.36821,
+				-0.112072
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In Memory of / Sinnathurai Kanagalingam / 12.9.1951 - 7.10.2022 / Donated by / Duppas Hill Walking Club"
+			}
+		},
+		{
+			"id": "12083",
+			"at": [
+				51.369053,
+				-0.120039
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY / OF MRS PAT DIVES / MUCH LOVED WIFE AND MOTHER / 28.10.1934 to 20.01.2003"
+			}
+		},
+		{
+			"id": "12084",
+			"at": [
+				51.369137,
+				-0.120197
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "REMEMBERING DUNCAN E BROWN (1958 -2011) / WHO KEPT A KEEN INTEREST IN THE CHANGING BIRD LIFE AT WADDON PONDS / XXX"
+			}
+		},
+		{
+			"id": "12087",
+			"at": [
+				51.369308,
+				-0.119881
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / GINA CHENERY / WHO ALWAYS LOVED THIS PARK X"
+			}
+		},
+		{
+			"id": "12088",
+			"at": [
+				51.369354,
+				-0.119839
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF ERNIE SHELDRAKE / WHO SPENT MANY HAPPY HOURS IN THIS PARK / FROM ALL HIS FAMILY"
+			}
+		},
+		{
+			"id": "12086",
+			"at": [
+				51.369141,
+				-0.120511
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "NORMAN V.DIVES / 17-07-1934 - 01-08-2013 / For a much loved and cherished friend / You can now spend time in the place you loved most / YOUR PARK / XXX"
+			}
+		},
+		{
+			"id": "12089",
+			"at": [
+				51.369408,
+				-0.119819
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF MY / LATE HUSBAND AND DEAR DAD / ALAN THURLBECK / 16.12.1936 - 20.11.2003"
+			}
+		},
+		{
+			"id": "12085",
+			"at": [
+				51.369221,
+				-0.120364
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In Loving Memory of Ken and Joan Norman / Missed by Family and Friends"
+			}
+		},
+		{
+			"id": "26523",
+			"at": [
+				51.35294,
+				-0.116148
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / JACK COOMBS / 1923 - 2004"
+			}
+		},
+		{
+			"id": "26862",
+			"at": [
+				51.369743,
+				-0.106417
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / CATHERINE MARION BRADLEY (1912 - 1997) / WHO LOVED ALL NATURE"
+			}
+		},
+		{
+			"id": "12090",
+			"at": [
+				51.370888,
+				-0.120039
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "Remembering Sylvia Smith / 1939 - 2017 / A Great Friend To Many"
+			}
+		},
+		{
+			"id": "27323",
+			"at": [
+				51.373615,
+				-0.108506
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In Memory of / Mark (Dipstick) Klien / 29.05.1953 - 15.01.2021"
+			}
+		},
+		{
+			"id": "37130",
+			"at": [
+				51.3745,
+				-0.11086
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In memory of / Fred Hayes 1930-2023 & Pam Hayes 1930-2019 / Where it all began - 74 years together / Loved & missed by all"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
