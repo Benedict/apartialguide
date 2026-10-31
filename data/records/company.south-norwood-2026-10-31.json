@@ -1,0 +1,103 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "21|CLIFTON ROAD",
+			"address": {
+				"number": "21",
+				"street": "CLIFTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EB BISTRO BAR LTD",
+				"since": "2019-09-19"
+			}
+		},
+		{
+			"id": "143C|SELHURST ROAD",
+			"address": {
+				"number": "143C",
+				"street": "SELHURST ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "RAPIDFIX PROPERTY MAINTENANCE LTD|FIX IT QUICK LTD",
+				"since": "2026-03-04"
+			}
+		},
+		{
+			"id": "26|AVENUE ROAD",
+			"address": {
+				"number": "26",
+				"street": "AVENUE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "JUST PLUS LTD|PINK CARE SOLUTIONS LTD",
+				"since": "2018-09-03"
+			}
+		},
+		{
+			"id": "9|HIGH STREET",
+			"address": {
+				"number": "9",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "N V & SONS TRANSFORM LTD|RRR FAST FOOD LTD",
+				"since": "2018-11-01"
+			}
+		},
+		{
+			"id": "424|WHITEHORSE ROAD",
+			"address": {
+				"number": "424",
+				"street": "WHITEHORSE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NEAA LIMITED",
+				"since": "2016-12-07"
+			}
+		},
+		{
+			"id": "59|ALBERT ROAD",
+			"address": {
+				"number": "59",
+				"street": "ALBERT ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "STASIASTYLEZ LTD",
+				"since": "2023-12-29"
+			}
+		},
+		{
+			"id": "82|HIGH STREET",
+			"address": {
+				"number": "82",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TAPPAGO TECHNOLOGIES LTD",
+				"since": "2015-11-12"
+			}
+		},
+		{
+			"id": "32|STATION ROAD",
+			"address": {
+				"number": "32",
+				"street": "STATION ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "WTF ELECTRIC LIMITED",
+				"since": "2015-11-05"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
