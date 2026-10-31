@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { Adventure } from './engine';
-import { closeAreas } from './open';
+import { closeAreas, doorsFor } from './open';
 import { routeIndex } from './route';
 import type { AdventureWorld, CompiledStop } from './world';
 
@@ -103,5 +103,58 @@ describe('the edge of what is open', () => {
 		g.chance = () => 0.99;
 		expect(g.needs('look')).not.toContain('c');
 		expect(g.respond('drift').title).toBe('Long Street');
+	});
+});
+
+describe('doorsFor: where each area may be begun', () => {
+	const withMill: AdventureWorld = {
+		...world,
+		stops: {
+			...world.stops,
+			b: {
+				...world.stops.b,
+				things: [
+					{ id: 'node/9', name: 'Inventa Windmill', aliases: [], description: 'A windmill.' }
+				]
+			}
+		}
+	};
+	const areaOf = (ward?: string) =>
+		ward === 'Inventa West' ? 'Inventa' : ward === 'Elsewhere' ? 'Elsewhere' : undefined;
+
+	it('opens the tour’s area at the tour’s start, and names an area not open yet without a place', () => {
+		expect(
+			doorsFor(
+				withMill,
+				[
+					{ name: 'Inventa', wards: ['Inventa West'], open: true },
+					{ name: 'Elsewhere', wards: ['Elsewhere'] }
+				],
+				areaOf
+			)
+		).toEqual([{ name: 'Inventa', stop: 'a' }, { name: 'Elsewhere' }]);
+	});
+
+	it('opens an area at the place its start names', () => {
+		expect(
+			doorsFor(
+				withMill,
+				[{ name: 'Inventa', wards: ['Inventa West'], open: true, start: 'Inventa Windmill' }],
+				areaOf
+			)
+		).toEqual([{ name: 'Inventa', stop: 'b' }]);
+	});
+
+	it('gives no door to an area whose start this map does not hold, and says which', () => {
+		const missing: string[] = [];
+		expect(
+			doorsFor(
+				withMill,
+				[{ name: 'Inventa', wards: ['Inventa West'], open: true, start: 'Atlantis' }],
+				areaOf,
+				(name) => missing.push(name)
+			)
+		).toEqual([]);
+		expect(missing).toEqual(['Inventa']);
 	});
 });

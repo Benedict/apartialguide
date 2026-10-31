@@ -626,6 +626,13 @@ ${consentStrip('this page')}`
 	game.hintKeeper = browserHints();
 	game.offer(await today).forEach(show);
 	input.disabled = false;
+	// A link may begin the walk somewhere: an area (#shirley), or a place someone shared (#at=…).
+	const enter = () => {
+		const entry = entryFrom(location.hash, HEAD.doors ?? []);
+		if (entry) run(entry);
+	};
+	window.addEventListener('hashchange', enter);
+	enter();
 	if (!location.hash) input.focus({ preventScroll: true });
 })();
 </script>

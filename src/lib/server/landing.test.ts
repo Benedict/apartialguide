@@ -130,4 +130,30 @@ describe('landingPage', () => {
 		// Its policy may allow Google's script, for after a yes; the page itself loads none.
 		expect(counted).not.toMatch(/<script[^>]*googletagmanager/);
 	});
+
+	it('offers each open area as a way in, and names those not open yet', () => {
+		const doored = landingPage({
+			...input,
+			doors: [
+				{ name: 'Inventa', stop: 'a' },
+				{ name: 'Outer Inventa', stop: 'c' },
+				{ name: 'Elsewhere' }
+			]
+		});
+		// The place the walk starts in is the button already; the others are offered beside it.
+		const doubled = landingPage({
+			...input,
+			place: { name: 'Inventa' },
+			doors: [
+				{ name: 'Inventa', stop: 'a' },
+				{ name: 'Outer Inventa', stop: 'c' },
+				{ name: 'Inner Inventa', stop: 'd' }
+			]
+		}).replace(/<[^>]+>/g, '');
+		expect(doubled).toContain('Or begin in Outer Inventa or Inner Inventa.');
+		expect(doored).toContain('<a href="walk/#outer-inventa">Outer Inventa</a>');
+		expect(doored).not.toContain('walk/#elsewhere');
+		expect(doored.replace(/<[^>]+>/g, '')).toContain('Not open yet: Elsewhere.');
+		expect(html).not.toContain('class="doors"');
+	});
 });

@@ -1,4 +1,5 @@
 import { withCsp } from './csp';
+import { areaSlug } from '../core/release';
 import { COMMANDS, headMeta, homeDescription, jsonLd, PAGES } from './meta';
 import { themeBoot, themeCss } from '../site/themes';
 import { fontFaces, MONO } from './type';
@@ -24,12 +25,18 @@ export interface LandingInput {
 	noindex?: boolean;
 	/** The site's own address (`SITE_URL`), for the image shown where it is shared. */
 	siteUrl?: string;
+	/** The areas a walk may begin in: those open with their first place, those not open yet without. */
+	doors?: { name: string; stop?: string }[];
 }
 
 const esc = (text: string) =>
 	text.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
 const n = (x: number) => x.toLocaleString('en-GB');
+
+/** "A", "A or B", "A, B or C". */
+const orList = (items: string[]) =>
+	items.length < 2 ? (items[0] ?? '') : `${items.slice(0, -1).join(', ')} or ${items.at(-1)}`;
 
 /** The front door: what the piece is, a walk as it was played, and the way in. */
 export function landingPage({
@@ -40,8 +47,16 @@ export function landingPage({
 	gaId,
 	place = ADDISCOMBE,
 	noindex,
-	siteUrl
+	siteUrl,
+	doors = []
 }: LandingInput): string {
+	const open = doors.filter((d) => d.stop && d.name !== place.name);
+	const shut = doors.filter((d) => !d.stop);
+	const ways = open.length
+		? `\n\t\t<p class="doors">Or begin in ${orList(open.map((d) => `<a href="walk/#${areaSlug(d.name)}">${esc(d.name)}</a>`))}.${
+				shut.length ? ` Not open yet: ${shut.map((d) => esc(d.name)).join(', ')}.` : ''
+			}</p>`
+		: '';
 	const played = excerpt
 		.map((e) =>
 			'said' in e
@@ -118,7 +133,7 @@ ${themeCss()}
 		<h1>The world as a text adventure.</h1>
 		<p class="lede">Type a direction and walk. Every street, building, name and date comes from open data.</p>
 		<p>It starts with ${esc(placeWords(place))}. Guide’s map has ${n(about.streets)} streets and ${n(about.places)} places, and is dated ${esc(longDate(snapshotDate))}.</p>
-		<a class="begin" href="walk/">Start in ${esc(place.name)}</a>
+		<a class="begin" href="walk/">Start in ${esc(place.name)}</a>${ways}
 	</section>
 
 	<div class="played">

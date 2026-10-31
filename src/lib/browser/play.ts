@@ -2,6 +2,7 @@
 export { Adventure, distanceWords, introduction } from '../core/adventure/engine';
 export { unpackWorld } from '../core/adventure/packed';
 export { tiledWorld } from '../core/adventure/tiles';
+export { entryFrom } from '../core/adventure/entry';
 export { parse } from '../core/adventure/parser';
 export { loadConsent, saveConsent, startAnalytics, track } from './analytics';
 export { skyNow } from './sky';

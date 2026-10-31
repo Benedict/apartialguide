@@ -14,7 +14,7 @@ import { build } from 'esbuild';
 import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { Adventure } from '../src/lib/core/adventure/engine';
-import { closeAreas } from '../src/lib/core/adventure/open';
+import { closeAreas, doorsFor } from '../src/lib/core/adventure/open';
 import { tileWorld } from '../src/lib/core/adventure/tiles';
 import { closedAreaOf, type AreaList } from '../src/lib/core/release';
 import { landingPage } from '../src/lib/server/landing';
@@ -42,15 +42,16 @@ const shown = {
 // Only the areas open to walk (data/areas.json, `open`), once any is marked: the rest are left
 // out, uncompiled, and the walk stops at their edge, the page naming the area to come.
 const areasPath = process.env.AREAS_PATH ?? 'data/areas.json';
-const closedOf = closedAreaOf(
-	existsSync(areasPath) ? (JSON.parse(readFileSync(areasPath, 'utf8')).areas as AreaList) : []
-);
+const areas: AreaList = existsSync(areasPath)
+	? JSON.parse(readFileSync(areasPath, 'utf8')).areas
+	: [];
+const closedOf = closedAreaOf(areas);
 const closed = new Map<string, string>();
 for (const stop of narrator.graph.all()) {
 	const area = closedOf(narrator.areaAt(stop.position)?.name);
 	if (area !== undefined) closed.set(stop.id, area);
 }
-const world = {
+const opened = {
 	...closeAreas(
 		compileWorld(narrator, startStop(narrator, config).id, {
 			asOf: config.snapshotDate,
@@ -62,6 +63,21 @@ const world = {
 	...(process.env.SIGNUP_URL ? { signup: process.env.SIGNUP_URL } : {})
 };
 if (closed.size) console.log(`${closed.size} stops in areas not open yet are left out`);
+// Where each area may be begun (`start in Shirley`): an open area at its first place, the rest named.
+const world = areas.some((a) => a.open)
+	? {
+			...opened,
+			doors: doorsFor(
+				opened,
+				areas,
+				(ward) => areas.find((a) => ward !== undefined && a.wards.includes(ward))?.name,
+				(area) =>
+					console.warn(
+						`${area}: its start is not on this map, so it has no door. Check data/areas.json.`
+					)
+			)
+		}
+	: opened;
 
 const amiss = wordsAmiss(world);
 if (amiss.length) {
@@ -175,6 +191,7 @@ async function microsite(): Promise<string> {
 		script: bundle.outputFiles[0].text,
 		gaId: process.env.GA_MEASUREMENT_ID || undefined,
 		...shown,
-		siteUrl: process.env.SITE_URL || undefined
+		siteUrl: process.env.SITE_URL || undefined,
+		...(world.doors ? { doors: world.doors } : {})
 	});
 }

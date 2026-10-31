@@ -1,4 +1,6 @@
 import type { StopId } from '../stops';
+import type { AreaList } from '../release';
+import { goalsFor, routeIndex } from './route';
 import type { AdventureWorld, CompiledStop } from './world';
 
 /**
@@ -54,4 +56,33 @@ function recount(
 		places: Object.keys(stops).length,
 		...(kind ? { areas: { kind, count: inArea.size, most } } : {})
 	};
+}
+
+/**
+ * Where each area may be begun: an open area at the place its `start` names within it, or, with no
+ * start, at the tour's start if that lies within it; an area not open yet without a place, so it
+ * can be named at the edge. An area's stops are told by `areaOf`, from the ward each lies in.
+ */
+export function doorsFor(
+	world: AdventureWorld,
+	areas: AreaList,
+	areaOf: (ward: string | undefined) => string | undefined,
+	/** Told of an open area whose start this map does not hold, such as a smaller map's edge: it has no door. */
+	missing: (area: string) => void = () => {}
+): NonNullable<AdventureWorld['doors']> {
+	const index = routeIndex(world);
+	const within = (name: string) => (id: StopId) => areaOf(world.stops[id]?.area?.name) === name;
+	return areas.flatMap((area) => {
+		if (!area.open) return [{ name: area.name }];
+		const inside = within(area.name);
+		if (area.start) {
+			const stop = [...goalsFor(index, area.start).keys()].find(inside);
+			if (!stop) {
+				missing(area.name);
+				return [];
+			}
+			return [{ name: area.name, stop }];
+		}
+		return inside(world.start) ? [{ name: area.name, stop: world.start }] : [];
+	});
 }

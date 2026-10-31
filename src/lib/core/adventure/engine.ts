@@ -55,6 +55,7 @@ export const HELP =
 	'Type a direction to walk: north, ne, go east, or the name of a street; back retraces your step. ' +
 	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name, or ask me to remember or mark down one, and drop it somewhere else; inventory (i) says what you carry. ' +
+	'Start in an area by its name begins a walk there. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
 	'Drift, and I choose the way. Hint for a word about a command; hints off, or on, for one now and then. ' +
 	'Route to a street or a named place for the way there (route off to let it go). ' +
@@ -266,6 +267,50 @@ export class Adventure {
 		];
 	}
 
+	private door(where: string) {
+		return this.world.doors?.find((d) => d.name.toLowerCase() === where.toLowerCase());
+	}
+
+	/** A walk begun afresh: in an area, at its first place, or at a place a shared link names. */
+	private start(where: string, at?: boolean): Reply {
+		if (at && this.world.stops[where]) return this.afresh(where);
+		const door = this.door(where);
+		if (at && !door) return { lines: ['That place is not on my map.'] };
+		const open = (this.world.doors ?? []).filter((d) => d.stop);
+		if (!door) {
+			const names = open.map((d) => d.name);
+			return {
+				lines: [
+					`I know of nowhere by that name to begin.${
+						names.length
+							? ` I can begin in ${names.slice(0, -1).join(', ')}${names.length > 1 ? ' or ' : ''}${names.at(-1)}.`
+							: ''
+					}`
+				],
+				actions: open.map((d) => ({ label: d.name, command: `start in ${d.name}` }))
+			};
+		}
+		if (!door.stop)
+			return {
+				lines: [`I carry no map of ${door.name} yet.`],
+				hint: `${door.name} is not open yet.`,
+				...(this.world.signup
+					? { link: { href: this.world.signup, text: `Hear when ${door.name} opens` } }
+					: {})
+			};
+		const reply = this.afresh(door.stop);
+		return { ...reply, lines: [`We begin in ${door.name}.`, ...reply.lines] };
+	}
+
+	/** A new walk from here: nothing walked, no way asked for, no step to go back on. */
+	private afresh(id: string): Reply {
+		this.moves = 0;
+		this.walked = 0;
+		this.routing = undefined;
+		this.lastStreet = undefined;
+		return this.beginAt(id);
+	}
+
 	private beginAt(id: string): Reply {
 		this.choosing = false;
 		this.here = id;
@@ -310,6 +355,7 @@ export class Adventure {
 	private choose(input: string): Reply {
 		const command = parse(input);
 		if (command.verb === 'restore') return this.restore(command.slot);
+		if (command.verb === 'start') return this.start(command.where, command.at);
 		// The page's own settings answer before the walk begins as after it.
 		if (command.verb === 'colour') return this.colour(command.colour);
 		if (command.verb === 'hints') return this.hints(command.on);
@@ -377,6 +423,8 @@ export class Adventure {
 		switch (command.verb) {
 			case 'empty':
 				return { lines: [] };
+			case 'start':
+				return this.start(command.where, command.at);
 			case 'look':
 				return this.look();
 			case 'plainly':
@@ -554,6 +602,10 @@ export class Adventure {
 	needs(input: string): StopId[] {
 		const command = parse(input);
 		if (command.verb === 'again') return this.lastCommand ? this.needs(this.lastCommand) : [];
+		if (command.verb === 'start') {
+			const door = this.door(command.where);
+			return door?.stop ? [door.stop] : command.at ? [command.where] : [];
+		}
 		if (command.verb === 'restore') {
 			const kept = command.slot ? this.saves?.get(command.slot)?.state : undefined;
 			return kept ? [kept.here, ...(kept.previous ? [kept.previous] : [])] : [];

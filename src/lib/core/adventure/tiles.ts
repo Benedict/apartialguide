@@ -54,7 +54,15 @@ export function tileWorld(
 		};
 		byTile.set(tileOf(name)!, stops);
 	}
-	const head: WorldHead = { ...headOf(world), start: names.get(world.start) ?? world.start };
+	const head: WorldHead = {
+		...headOf(world),
+		start: names.get(world.start) ?? world.start,
+		...(world.doors
+			? {
+					doors: world.doors.map((d) => (d.stop ? { ...d, stop: names.get(d.stop) ?? d.stop } : d))
+				}
+			: {})
+	};
 	// The street network whole, under the tiles' names, for planning a way without opening them all.
 	const routes = routeIndex({ stops: Object.assign({}, ...byTile.values()) });
 	const tiles: Record<string, Tile> = {};

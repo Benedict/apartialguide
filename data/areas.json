@@ -1,5 +1,5 @@
 {
-	"about": "Croydon's areas, each made of whole wards as the ONS boundaries name them, in the order the walk is enriched. Wards whose names share a place are one area; the rest stand alone. Reorder, regroup or rename freely: the Narrate workflow takes an area's name. Only areas marked open are walked, once any is: the walk stops at the edge of the rest, and the page names the area to come.",
+	"about": "Croydon's areas, each made of whole wards as the ONS boundaries name them, in the order the walk is enriched. Wards whose names share a place are one area; the rest stand alone. Reorder, regroup or rename freely: the Narrate workflow takes an area's name. Only areas marked open are walked, once any is: the walk stops at the edge of the rest, and the page names the area to come. An open area is begun at the place its start names (start in Shirley), or with none at the tour's start.",
 	"areas": [
 		{
 			"name": "Addiscombe",
@@ -13,7 +13,8 @@
 		{
 			"name": "Shirley",
 			"wards": ["Shirley North", "Shirley South"],
-			"open": true
+			"open": true,
+			"start": "Shirley Windmill"
 		},
 		{
 			"name": "Fairfield",

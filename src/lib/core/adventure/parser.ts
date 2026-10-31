@@ -6,6 +6,7 @@ export type Command =
 	| { verb: 'hints'; on: boolean }
 	| { verb: 'colour'; colour?: string }
 	| { verb: 'route'; target?: string }
+	| { verb: 'start'; where: string; at?: boolean }
 	| {
 			verb:
 				| 'look'
@@ -111,6 +112,15 @@ const dropFiller = (words: string[]) => {
 };
 
 export function parse(input: string): Command {
+	// Beginning somewhere: in an area by its name, or at a place by the map's name for it, as a shared
+	// link gives it, read before punctuation is dropped.
+	const at = input.trim().match(/^start at\s+(\S+)$/i);
+	if (at) return { verb: 'start', where: at[1], at: true };
+	const begin = input
+		.trim()
+		.toLowerCase()
+		.match(/^start (in|at)\s+(.+?)[.!?]*$/);
+	if (begin) return { verb: 'start', where: begin[2], ...(begin[1] === 'at' ? { at: true } : {}) };
 	const text = input
 		.toLowerCase()
 		.replace(/[^\p{L}\p{N}\s'’?-]/gu, '')
