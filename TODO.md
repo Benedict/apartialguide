@@ -16,7 +16,7 @@ Repository settings are under **Settings → Secrets and variables → Actions**
 ## Decisions
 
 - [ ] **Sponsoring an area.** What does a sponsor get (a credit on About, or on the area's "not open yet" note)? How do they pay? Can a sponsor's name appear in the walk at all? (Guide itself never names anyone, so a credit would be the page's, not Guide's.)
-- [ ] **Non-commercial for good?** Bomb Sight and Digital Britannia both forbid commercial use. A paid exhibition, a sale or a commission would rule both out.
+- [ ] **Keep the site free to use.** Digital Britannia's terms (below) forbid its use in any site that charges a fee. Asking for voluntary support doesn't charge a fee. If you offer sponsorship with a credit in return, ask Mike Haken first. Bomb Sight isn't used; writing to Croydon Archives for the borough's air raid records is the better route.
 - [ ] **Geograph photographs.** Their licence asks for each photographer's name. Name them where a photograph is mentioned, or leave Geograph out?
 - [ ] **Sources to leave out.** If any source shouldn't be used, list it on `LEAVE_OUT=` in `data/records/use.env`.
 - [ ] **The drawn route ("Auster step 3").** Answer the open questions in its brief so it can be built.
@@ -32,5 +32,5 @@ Repository settings are under **Settings → Secrets and variables → Actions**
 ## Letters and permissions (optional)
 
 - [ ] **Bomb Sight** (the Blitz bomb census). The letter is drafted in `docs/letters/bomb-sight.md`. Check that Dr Kate Jones is still the right person before sending. Or let Claude look first: add `blitzbombcensusmaps.wordpress.com` and `bombsight.org` to the cloud environment's allowed domains.
-- [ ] **Digital Britannia** (Roman roads and sites). Open <https://roadsofromanbritain.org/digital-britannia/downloads.html> and check the licence. If it's CC BY-NC, download the GeoJSON layers in longitude and latitude and tell Claude where they are.
+- [ ] **Digital Britannia** (Roman roads and sites). The licence is confirmed: © Mike Haken 2026, CC BY-NC 4.0, always credited, and never in a site, app or print publication that charges a fee without his written consent. This site is free, so it can be used. Download the GeoJSON layers (roads, settlements, military sites, camps, milestones) in longitude and latitude from <https://roadsofromanbritain.org/digital-britannia/downloads.html>, put them in a folder, and tell Claude where they are. If they come only in British National Grid, say so; they need converting first.
 - [ ] **Civilian war dead.** The CWGC's records need a written licence. Write to them if you want them told.
