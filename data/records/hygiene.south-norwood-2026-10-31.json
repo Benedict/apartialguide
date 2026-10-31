@@ -687,24 +687,6 @@
 			}
 		},
 		{
-			"id": "1082209",
-			"link": {
-				"key": "fhrs:id",
-				"value": "1082209"
-			},
-			"at": [
-				51.4023214,
-				-0.0691213
-			],
-			"observed": "2023-11-28",
-			"claims": {
-				"name": "Qualities Services",
-				"kind": "Caring Premises",
-				"rating": "5",
-				"date": "2023-11-28"
-			}
-		},
-		{
 			"id": "639849",
 			"link": {
 				"key": "fhrs:id",
@@ -720,6 +702,24 @@
 				"kind": "Caring Premises",
 				"rating": "5",
 				"date": "2023-01-23"
+			}
+		},
+		{
+			"id": "1082209",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1082209"
+			},
+			"at": [
+				51.4023214,
+				-0.0691213
+			],
+			"observed": "2023-11-28",
+			"claims": {
+				"name": "Qualities Services",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2023-11-28"
 			}
 		},
 		{
