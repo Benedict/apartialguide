@@ -1,0 +1,223 @@
+{
+	"source": "NBN Atlas",
+	"prefix": "wildlife",
+	"records": [
+		{
+			"id": "396e659b-8891-4830-8db5-7fa12844d920",
+			"at": [
+				51.37092,
+				-0.119439
+			],
+			"observed": "2023-02-26",
+			"claims": {
+				"name": "Canada Goose",
+				"seen": "2023-02"
+			}
+		},
+		{
+			"id": "625b9d41-f2af-4031-b74d-85396ef5398f",
+			"at": [
+				51.374674,
+				-0.111362
+			],
+			"observed": "2013-11-20",
+			"claims": {
+				"name": "Physella acuta",
+				"seen": "2013-11"
+			}
+		},
+		{
+			"id": "1ea912a1-9f73-43a6-8a57-54d02887971e",
+			"at": [
+				51.349124,
+				-0.116864
+			],
+			"observed": "2006-06-14",
+			"claims": {
+				"name": "Silver Birch",
+				"seen": "2006-06"
+			}
+		},
+		{
+			"id": "9d61fad2-8ab9-4d19-8732-6297cc298084",
+			"at": [
+				51.373775,
+				-0.111399
+			],
+			"observed": "1996-06-03",
+			"claims": {
+				"name": "Wych Elm",
+				"seen": "1996-06"
+			}
+		},
+		{
+			"id": "62b5df90-72a8-4c0c-9608-0769951cae00",
+			"at": [
+				51.352276,
+				-0.116591
+			],
+			"observed": "2001-09-04",
+			"claims": {
+				"name": "Woundwort Shieldbug",
+				"seen": "2001-09"
+			}
+		},
+		{
+			"id": "4505075d-128a-4b27-b4e3-d4c753eae81b",
+			"at": [
+				51.36407,
+				-0.100558
+			],
+			"observed": "2023-03-13",
+			"claims": {
+				"name": "Collared Dove",
+				"seen": "2023-03"
+			}
+		},
+		{
+			"id": "88226ef9-1882-4397-84f5-0c03fb5e39e6",
+			"at": [
+				51.373775,
+				-0.111399
+			],
+			"observed": "1996-06-03",
+			"claims": {
+				"name": "Horse-chestnut",
+				"seen": "1996-06"
+			}
+		},
+		{
+			"id": "7b4fd219-4409-4209-bfde-58b4065d293b",
+			"at": [
+				51.3711,
+				-0.120924
+			],
+			"observed": "2023-01-29",
+			"claims": {
+				"name": "Grey Wagtail",
+				"seen": "2023-01"
+			}
+		},
+		{
+			"id": "b06a398d-e0b1-453e-ac6c-f772a8a415b0",
+			"at": [
+				51.374674,
+				-0.111362
+			],
+			"observed": "2014-10-14",
+			"claims": {
+				"name": "Common Darter",
+				"seen": "2014-10"
+			}
+		},
+		{
+			"id": "ca7ec49f-7bb0-481e-a51b-09f71a98054f",
+			"at": [
+				51.366367,
+				-0.110942
+			],
+			"observed": "1996-06-06",
+			"claims": {
+				"name": "London Plane",
+				"seen": "1996-06"
+			}
+		},
+		{
+			"id": "19a1201a-a5e6-4a4d-a7c8-11835e4b57a2",
+			"at": [
+				51.366367,
+				-0.110942
+			],
+			"observed": "1996-06-06",
+			"claims": {
+				"name": "Narrow-leaved Ash",
+				"seen": "1996-06"
+			}
+		},
+		{
+			"id": "e8b34cbb-48e0-43f3-838e-e3ef2b3e4efc",
+			"at": [
+				51.349124,
+				-0.116864
+			],
+			"observed": "2006-06-14",
+			"claims": {
+				"name": "Hawthorn",
+				"seen": "2006-06"
+			}
+		},
+		{
+			"id": "f6437e09-83fc-483b-bc74-adcd3596b2ad",
+			"at": [
+				51.35626,
+				-0.114407
+			],
+			"observed": "2023-01-15",
+			"claims": {
+				"name": "Carrion Crow",
+				"seen": "2023-01"
+			}
+		},
+		{
+			"id": "732fe9cd-4907-4120-8e6e-140b89232c8f",
+			"at": [
+				51.35677,
+				-0.116407
+			],
+			"observed": "2001-09-04",
+			"claims": {
+				"name": "Parent Bug",
+				"seen": "2001-09"
+			}
+		},
+		{
+			"id": "8de3a405-c0d3-4056-b1b6-7230e35cb888",
+			"at": [
+				51.3596,
+				-0.100117
+			],
+			"observed": "2023-01-29",
+			"claims": {
+				"name": "Great Tit",
+				"seen": "2023-01"
+			}
+		},
+		{
+			"id": "01ec54f4-ae64-4af4-ba3a-b372aa619045",
+			"at": [
+				51.3709,
+				-0.120955
+			],
+			"observed": "2022-12-04",
+			"claims": {
+				"name": "Tufted Duck",
+				"seen": "2022-12"
+			}
+		},
+		{
+			"id": "be63668c-eb02-43a4-a300-cf87e2b34761",
+			"at": [
+				51.3596,
+				-0.100117
+			],
+			"observed": "2023-01-29",
+			"claims": {
+				"name": "Great Spotted Woodpecker",
+				"seen": "2023-01"
+			}
+		},
+		{
+			"id": "16bd1807-3161-414f-b1fb-e1b8d16df5c3",
+			"at": [
+				51.37445,
+				-0.110547
+			],
+			"observed": "2023-02-26",
+			"claims": {
+				"name": "Starling",
+				"seen": "2023-02"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

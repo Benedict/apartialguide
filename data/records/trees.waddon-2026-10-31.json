@@ -1,0 +1,47 @@
+{
+	"source": "Greater London Authority, Public_Realm_tree_list_2025_November.csv",
+	"prefix": "trees",
+	"records": [
+		{
+			"id": "trees:Epsom Road",
+			"street": "Epsom Road",
+			"claims": {
+				"count": "3",
+				"kinds": "Large-leaved Lime (2), Sycamore (1)"
+			}
+		},
+		{
+			"id": "trees:Imperial Way",
+			"street": "Imperial Way",
+			"claims": {
+				"count": "1",
+				"kinds": "Ash (1)"
+			}
+		},
+		{
+			"id": "trees:Waddon Court Road",
+			"street": "Waddon Court Road",
+			"claims": {
+				"count": "1",
+				"kinds": "Walnut (1)"
+			}
+		},
+		{
+			"id": "trees:Duppas Hill Road",
+			"street": "Duppas Hill Road",
+			"claims": {
+				"count": "2",
+				"kinds": "Cherry (1), Lime (1)"
+			}
+		},
+		{
+			"id": "trees:Alton Road",
+			"street": "Alton Road",
+			"claims": {
+				"count": "2",
+				"kinds": "Lime (2)"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

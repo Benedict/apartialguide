@@ -1,0 +1,133 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536737",
+			"at": [
+				51.363587,
+				-0.118702
+			],
+			"observed": "1990-06-11",
+			"claims": {
+				"name": "OLD TITHE BARN, WADDON",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1990-06-11"
+			}
+		},
+		{
+			"id": "31536758",
+			"at": [
+				51.36638,
+				-0.10119
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "88, SOUTHBRIDGE ROAD",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536788",
+			"at": [
+				51.370876,
+				-0.116737
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "351, PURLEY WAY",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536789",
+			"at": [
+				51.355784,
+				-0.116623
+			],
+			"observed": "1978-08-01",
+			"claims": {
+				"name": "FORMER LODGE TO CROYDON AIRPORT TERMINAL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1978-08-01"
+			}
+		},
+		{
+			"id": "31645674",
+			"at": [
+				51.371102,
+				-0.116842
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "335-347, PURLEY WAY",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31814610",
+			"at": [
+				51.360437,
+				-0.099023
+			],
+			"observed": "1979-06-13",
+			"claims": {
+				"name": "HALING COTTAGE (WHITGIFT SCHOOL HEADMASTER'S HOUSE)",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1979-06-13"
+			}
+		},
+		{
+			"id": "31814619",
+			"at": [
+				51.360886,
+				-0.11232
+			],
+			"observed": "1991-01-02",
+			"claims": {
+				"name": "CHURCH OF ST GEORGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1991-01-02"
+			}
+		},
+		{
+			"id": "31853124",
+			"at": [
+				51.357569,
+				-0.113921
+			],
+			"observed": "2013-03-21",
+			"claims": {
+				"name": "Diving stage at former Purley Way Lido",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2013-03-21"
+			}
+		},
+		{
+			"id": "31858020",
+			"at": [
+				51.369202,
+				-0.10592
+			],
+			"observed": "2020-10-15",
+			"claims": {
+				"name": "Former Auxiliary Fire Service Drill Tower",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2020-10-15"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

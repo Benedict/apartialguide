@@ -1,0 +1,679 @@
+{
+	"source": "NBN Atlas",
+	"prefix": "wildlife",
+	"records": [
+		{
+			"id": "d8c71e2b-e3b0-47c9-8933-088e924e9829",
+			"at": [
+				51.35964,
+				-0.071761
+			],
+			"observed": "1984-07-17",
+			"claims": {
+				"name": "Pedunculate Oak",
+				"seen": "1984-07"
+			}
+		},
+		{
+			"id": "b505baa0-00b1-4ce2-9e33-81a53bd53751",
+			"at": [
+				51.360223,
+				-0.078124
+			],
+			"observed": "2019-03-29",
+			"claims": {
+				"name": "Harlequin Ladybird",
+				"seen": "2019-03"
+			}
+		},
+		{
+			"id": "74f0d281-576c-4cdb-92bb-b7b8ecd86a76",
+			"at": [
+				51.351928,
+				-0.095064
+			],
+			"observed": "2014-09-02",
+			"claims": {
+				"name": "Southern Green Shieldbug",
+				"seen": "2014-09"
+			}
+		},
+		{
+			"id": "9c74bc7c-2bfb-4322-92d7-f3cdf2faaec7",
+			"at": [
+				51.3591,
+				-0.077678
+			],
+			"observed": "2023-02-13",
+			"claims": {
+				"name": "Jay",
+				"seen": "2023-02"
+			}
+		},
+		{
+			"id": "ab7b94b7-c657-4fd9-8919-f771a2f86c50",
+			"at": [
+				51.352616,
+				-0.08211
+			],
+			"observed": "1996-10-08",
+			"claims": {
+				"name": "Wych Elm",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "7e0016af-29a9-4ad5-aaf5-313617c81270",
+			"at": [
+				51.35439,
+				-0.088858
+			],
+			"observed": "2019-06-09",
+			"claims": {
+				"name": "Cuckoo-Spit Insect",
+				"seen": "2019-06"
+			}
+		},
+		{
+			"id": "021ab6ab-7819-4a20-81ed-5b93f17148cb",
+			"at": [
+				51.35912,
+				-0.077678
+			],
+			"observed": "2023-02-13",
+			"claims": {
+				"name": "Wren",
+				"seen": "2023-02"
+			}
+		},
+		{
+			"id": "a212cfbc-d73a-4561-9a32-ec207ce09b52",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "2004-04-02",
+			"claims": {
+				"name": "Dark-edged Bee-fly",
+				"seen": "2004-04"
+			}
+		},
+		{
+			"id": "d8235b36-08f3-4f4c-aa74-c5e285144c70",
+			"at": [
+				51.360931,
+				-0.092895
+			],
+			"observed": "2019-07-05",
+			"claims": {
+				"name": "Slow-worm",
+				"seen": "2019-07"
+			}
+		},
+		{
+			"id": "5fd31913-7781-4c8e-889e-2eecf1e5db30",
+			"at": [
+				51.352021,
+				-0.100804
+			],
+			"observed": "1993-10-07",
+			"claims": {
+				"name": "Netted Field Slug",
+				"seen": "1993-10"
+			}
+		},
+		{
+			"id": "c35d84fa-49e4-411b-8d9e-ca471cc2a499",
+			"at": [
+				51.352021,
+				-0.100804
+			],
+			"observed": "1993-10-07",
+			"claims": {
+				"name": "Common Garden Snail",
+				"seen": "1993-10"
+			}
+		},
+		{
+			"id": "62374d4a-0f00-4868-b686-ca15ba57eaf3",
+			"at": [
+				51.35964,
+				-0.071761
+			],
+			"observed": "1984-07-17",
+			"claims": {
+				"name": "Downy Birch",
+				"seen": "1984-07"
+			}
+		},
+		{
+			"id": "b1dcf384-9280-4cf6-83f3-282a149df56b",
+			"at": [
+				51.352021,
+				-0.100804
+			],
+			"observed": "1993-10-07",
+			"claims": {
+				"name": "Arion (Arion)",
+				"seen": "1993-10"
+			}
+		},
+		{
+			"id": "8aca1d81-8515-47bd-afa9-e5cc24364ad1",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "2012-07-17",
+			"claims": {
+				"name": "Agraylea multipunctata",
+				"seen": "2012-07"
+			}
+		},
+		{
+			"id": "ead3b22a-b27a-494c-8d92-c9cb8377bb32",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "2004-04-22",
+			"claims": {
+				"name": "Green Shieldbug",
+				"seen": "2004-04"
+			}
+		},
+		{
+			"id": "4e51e7d3-6eee-4390-97eb-9fc3c1ea3556",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "1998-06-19",
+			"claims": {
+				"name": "Nineta flava",
+				"seen": "1998-06"
+			}
+		},
+		{
+			"id": "8c7f7f1f-0981-4289-8d9c-15c2aab45fc5",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "1997-07-06",
+			"claims": {
+				"name": "Chrysoperla carnea group",
+				"seen": "1997-07"
+			}
+		},
+		{
+			"id": "f65a4e20-e2ad-401f-b13e-9e93225142b8",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "2001-08-23",
+			"claims": {
+				"name": "Lydina aenea",
+				"seen": "2001-08"
+			}
+		},
+		{
+			"id": "7c0733c7-cae1-4a23-9e42-f648997964b3",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "2002-09-21",
+			"claims": {
+				"name": "Juniper Shieldbug",
+				"seen": "2002-09"
+			}
+		},
+		{
+			"id": "08d6ac8c-303a-4a3e-bc19-b31d1a006e55",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "1990-07-27",
+			"claims": {
+				"name": "Dichochrysa ventralis",
+				"seen": "1990-07"
+			}
+		},
+		{
+			"id": "1dd34a85-a25f-47cc-b5f6-62cf88e14889",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "1996-06-04",
+			"claims": {
+				"name": "Hemerobius stigma",
+				"seen": "1996-06"
+			}
+		},
+		{
+			"id": "d02905df-beb7-4354-9592-528ef3abaa13",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "1992-05-26",
+			"claims": {
+				"name": "Hemerobius pini",
+				"seen": "1992-05"
+			}
+		},
+		{
+			"id": "c5530183-9729-4592-bc17-2f667bc19482",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "1991-08-03",
+			"claims": {
+				"name": "Dichochrysa flavifrons",
+				"seen": "1991-08"
+			}
+		},
+		{
+			"id": "0f7f4418-5bba-4b8a-a826-9d63829e7926",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "2011-07-28",
+			"claims": {
+				"name": "Red-legged Shieldbug",
+				"seen": "2011-07"
+			}
+		},
+		{
+			"id": "67aff650-a73a-463a-8312-0e30cc9b07fc",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "2010-10-08",
+			"claims": {
+				"name": "Western Conifer Seed Bug",
+				"seen": "2010-10"
+			}
+		},
+		{
+			"id": "aba171a2-c503-47f9-b572-50708d2a2cc2",
+			"at": [
+				51.351694,
+				-0.080712
+			],
+			"observed": "1996-10-09",
+			"claims": {
+				"name": "Sessile Oak",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "be975408-f807-421f-9cac-6276616273c5",
+			"at": [
+				51.354364,
+				-0.090624
+			],
+			"observed": "2023-02-01",
+			"claims": {
+				"name": "Great Tit",
+				"seen": "2023-02"
+			}
+		},
+		{
+			"id": "27f8f4e6-b639-491d-813f-bc98d23edb6b",
+			"at": [
+				51.351006,
+				-0.093666
+			],
+			"observed": "2013-05-07",
+			"claims": {
+				"name": "Vulgar Slug",
+				"seen": "2013-05"
+			}
+		},
+		{
+			"id": "713e8dd3-3dd6-4ec0-9f00-fb95c59a724d",
+			"at": [
+				51.351469,
+				-0.096029
+			],
+			"observed": "2014-04-09",
+			"claims": {
+				"name": "Harlequin Ladybird",
+				"seen": "2014-04"
+			}
+		},
+		{
+			"id": "b0f9a105-c5ff-4377-b158-0275b5be478d",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "2012-05-28",
+			"claims": {
+				"name": "Box Bug",
+				"seen": "2012-05"
+			}
+		},
+		{
+			"id": "bb3987ec-ec1f-4e39-bcc1-ca3aa6a2e42d",
+			"at": [
+				51.352616,
+				-0.08211
+			],
+			"observed": "1996-10-08",
+			"claims": {
+				"name": "Common Whitebeam",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "b99036d7-b729-4c35-ad53-820ddb1c8b6e",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "2001-08-05",
+			"claims": {
+				"name": "Eriothrix rufomaculata",
+				"seen": "2001-08"
+			}
+		},
+		{
+			"id": "b72a3aab-32f7-48d5-8c7b-3ebab09b01b1",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "1990-05-05",
+			"claims": {
+				"name": "Hemerobius lutescens",
+				"seen": "1990-05"
+			}
+		},
+		{
+			"id": "da68dcb2-ff1a-412b-9061-04d5bba2a4ee",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "2000-04-24",
+			"claims": {
+				"name": "Hairy Shieldbug",
+				"seen": "2000-04"
+			}
+		},
+		{
+			"id": "c34311a7-d8a2-4a61-ba3c-0873ff34421a",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "1989-07-13",
+			"claims": {
+				"name": "Chrysopa pallens",
+				"seen": "1989-07"
+			}
+		},
+		{
+			"id": "12211a91-be2d-44d1-9442-0b694493bf5b",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "2009-04-24",
+			"claims": {
+				"name": "Cabbage Bug",
+				"seen": "2009-04"
+			}
+		},
+		{
+			"id": "10cf433b-dc02-44b1-b094-81554b05fe43",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "2010-06-05",
+			"claims": {
+				"name": "Phryganea bipunctata",
+				"seen": "2010-06"
+			}
+		},
+		{
+			"id": "5308e2b2-b8cc-403f-8777-ea32aa23392e",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "2001-09-16",
+			"claims": {
+				"name": "Twin-spot Centurion",
+				"seen": "2001-09"
+			}
+		},
+		{
+			"id": "c9e179d5-5f5a-4718-bb46-409f912ea509",
+			"at": [
+				51.35964,
+				-0.071761
+			],
+			"observed": "1984-07-17",
+			"claims": {
+				"name": "Beech",
+				"seen": "1984-07"
+			}
+		},
+		{
+			"id": "40a66822-8f7c-4dfa-ba8d-aef9b4214c50",
+			"at": [
+				51.351694,
+				-0.080712
+			],
+			"observed": "1996-10-09",
+			"claims": {
+				"name": "Hazel",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "f497f338-a856-42cb-b8b3-5f6966252d07",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "1997-05-02",
+			"claims": {
+				"name": "Wesmaelius (Kimminsia) subnebulosus",
+				"seen": "1997-05"
+			}
+		},
+		{
+			"id": "b9cd7b50-1e65-4f4a-9b0c-f46313b2ab3d",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "1999-05-01",
+			"claims": {
+				"name": "Black-horned Gem",
+				"seen": "1999-05"
+			}
+		},
+		{
+			"id": "5c33e47a-595e-46a0-9a05-8666ea5ab1dc",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "2009-08-31",
+			"claims": {
+				"name": "Birch Shieldbug",
+				"seen": "2009-08"
+			}
+		},
+		{
+			"id": "590c72ec-ddf0-47ef-aace-9e06079d457a",
+			"at": [
+				51.352021,
+				-0.100804
+			],
+			"observed": "1993-10-07",
+			"claims": {
+				"name": "Dusky Slug",
+				"seen": "1993-10"
+			}
+		},
+		{
+			"id": "0705d9c1-c619-4974-a798-4a02d80ebd9e",
+			"at": [
+				51.352616,
+				-0.08211
+			],
+			"observed": "1996-10-08",
+			"claims": {
+				"name": "Turkey Oak",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "8962ec2d-297a-4430-8af2-c35f5155e4ea",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "1995-10-08",
+			"claims": {
+				"name": "Turtle Bug",
+				"seen": "1995-10"
+			}
+		},
+		{
+			"id": "a4ee6e58-b422-4ff4-b285-172cbd001f97",
+			"at": [
+				51.35912,
+				-0.077678
+			],
+			"observed": "2023-02-13",
+			"claims": {
+				"name": "Great Tit",
+				"seen": "2023-02"
+			}
+		},
+		{
+			"id": "549efdd8-fde6-4164-9b41-ad41e1aedd73",
+			"at": [
+				51.355289,
+				-0.080562
+			],
+			"observed": "1997-09-06",
+			"claims": {
+				"name": "Hemerobius micans",
+				"seen": "1997-09"
+			}
+		},
+		{
+			"id": "52dce1d0-3195-48ab-9896-b8a1d74df571",
+			"at": [
+				51.356281,
+				-0.086265
+			],
+			"observed": "1998-07-05",
+			"claims": {
+				"name": "Cunctochrysa albolineata",
+				"seen": "1998-07"
+			}
+		},
+		{
+			"id": "86649b9f-2e0d-4c8d-a460-bcc8ab5ea657",
+			"at": [
+				51.352021,
+				-0.100804
+			],
+			"observed": "1993-10-07",
+			"claims": {
+				"name": "Brown-lipped Snail",
+				"seen": "1993-10"
+			}
+		},
+		{
+			"id": "7e19d3da-c800-4393-972f-fa307eb743b5",
+			"at": [
+				51.352616,
+				-0.08211
+			],
+			"observed": "1996-10-08",
+			"claims": {
+				"name": "Blackthorn",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "d561128c-fd3d-4d44-acd5-2442e3220b46",
+			"at": [
+				51.352616,
+				-0.08211
+			],
+			"observed": "1996-10-08",
+			"claims": {
+				"name": "Hazel",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "d6739d58-228e-4bd5-b0b1-5ff4e26e4285",
+			"at": [
+				51.356234,
+				-0.083395
+			],
+			"observed": "1983-10-01",
+			"claims": {
+				"name": "Twin-spot Centurion",
+				"seen": "1983-10"
+			}
+		},
+		{
+			"id": "915d9a99-4197-4644-a13e-639e6f123a79",
+			"at": [
+				51.352616,
+				-0.08211
+			],
+			"observed": "1996-10-08",
+			"claims": {
+				"name": "Yew",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "ab85ca6d-ce9d-4e6b-81c0-15780e6ccfe6",
+			"at": [
+				51.352593,
+				-0.080674
+			],
+			"observed": "2002-06-06",
+			"claims": {
+				"name": "Dock Bug",
+				"seen": "2002-06"
+			}
+		},
+		{
+			"id": "d353811f-2d01-4584-b0b3-5b9cda8e32b6",
+			"at": [
+				51.356468,
+				-0.097748
+			],
+			"observed": "2019-06-02",
+			"claims": {
+				"name": "Swift",
+				"seen": "2019-06"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

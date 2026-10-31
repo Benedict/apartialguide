@@ -1,0 +1,115 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "56272",
+			"at": [
+				51.41681,
+				-0.08137
+			],
+			"claims": {
+				"name": "Alfred Bray Saddler traded here 1886-1899",
+				"description": "plaque",
+				"inscription": "Alfred Bray Saddler traded here 1886-1899"
+			}
+		},
+		{
+			"id": "56271",
+			"at": [
+				51.41685,
+				-0.08135
+			],
+			"claims": {
+				"name": "Thomas Marfell Smith Draper & Mercer traded here 1859-1891",
+				"description": "plaque",
+				"inscription": "Thomas Marfell Smith Draper & Mercer traded here 1859-1891"
+			}
+		},
+		{
+			"id": "56270",
+			"at": [
+				51.41667,
+				-0.08149
+			],
+			"claims": {
+				"name": "William Poole Decorator traded here 1882-1907",
+				"description": "plaque",
+				"inscription": "William Poole Decorator traded here 1882-1907"
+			}
+		},
+		{
+			"id": "51844",
+			"at": [
+				51.41528,
+				-0.09333
+			],
+			"claims": {
+				"name": "Pickles The Dog 1962 or 1963-1967 Found the Jules Rimet Trophy here in 1966",
+				"description": "plaque",
+				"inscription": "Pickles The Dog 1962 or 1963-1967 Found the Jules Rimet Trophy here in 1966"
+			}
+		},
+		{
+			"id": "31769",
+			"at": [
+				51.41107,
+				-0.08089
+			],
+			"claims": {
+				"name": "Raymond Chandler 1888-1959 Writer lived here",
+				"description": "plaque",
+				"inscription": "Raymond Chandler 1888-1959 Writer lived here"
+			}
+		},
+		{
+			"id": "10040",
+			"at": [
+				51.41366,
+				-0.09231
+			],
+			"claims": {
+				"name": "Tivoli Lodge 1830 built 1830 by Decimus Burton. The entrance lodge to Royal Beulah Spa and Pleasure Gardens",
+				"description": "plaque",
+				"inscription": "Tivoli Lodge 1830 built 1830 by Decimus Burton. The entrance lodge to Royal Beulah Spa and Pleasure Gardens"
+			}
+		},
+		{
+			"id": "9921",
+			"at": [
+				51.41984,
+				-0.079
+			],
+			"claims": {
+				"name": "Camille Pissarro (1830-1903) impressionist painter stayed on this site 1870-71",
+				"description": "plaque",
+				"inscription": "Camille Pissarro (1830-1903) impressionist painter stayed on this site 1870-71"
+			}
+		},
+		{
+			"id": "2197",
+			"at": [
+				51.41372,
+				-0.08419
+			],
+			"claims": {
+				"name": "Admiral Robert Fitzroy 1805-1865 explorer and pioneer of weather forecasting. Captain of HMS Beagle that took Darwin to the Galapagos Islands",
+				"description": "plaque",
+				"inscription": "Admiral Robert Fitzroy 1805-1865 explorer and pioneer of weather forecasting. Captain of HMS Beagle that took Darwin to the Galapagos Islands"
+			}
+		},
+		{
+			"id": "95",
+			"at": [
+				51.41501,
+				-0.08333
+			],
+			"claims": {
+				"name": "Emile Zola 1840-1902 French novelist lived here 1898-1899",
+				"description": "plaque",
+				"inscription": "Emile Zola 1840-1902 French novelist lived here 1898-1899"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

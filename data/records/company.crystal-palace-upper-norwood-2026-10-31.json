@@ -1,0 +1,1459 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "8|STONEY LANE",
+			"address": {
+				"number": "8",
+				"street": "STONEY LANE"
+			},
+			"claims": {
+				"count": "269",
+				"names": "WORDS & PICTURES LIMITED|GAMEBAY LLP|SERP PR LLP",
+				"since": "1981-12-01"
+			}
+		},
+		{
+			"id": "106|CHURCH ROAD",
+			"address": {
+				"number": "106",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "106 CHURCH ROAD RTM COMPANY LIMITED",
+				"since": "2022-03-18"
+			}
+		},
+		{
+			"id": "11|TROY ROAD",
+			"address": {
+				"number": "11",
+				"street": "TROY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "11 TROY ROAD RTM COMPANY LIMITED",
+				"since": "2016-09-15"
+			}
+		},
+		{
+			"id": "12|BEDWARDINE ROAD",
+			"address": {
+				"number": "12",
+				"street": "BEDWARDINE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "12 BEDWARDINE ROAD LIMITED|COLECOM INDUSTRIES LIMITED",
+				"since": "2012-07-23"
+			}
+		},
+		{
+			"id": "18|SPURGEON ROAD",
+			"address": {
+				"number": "18",
+				"street": "SPURGEON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "12-26 SPURGEON ROAD FREEHOLD LIMITED",
+				"since": "2012-10-09"
+			}
+		},
+		{
+			"id": "104|CHURCH ROAD",
+			"address": {
+				"number": "104",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "11",
+				"names": "LONDON LIGHT LIMITED|LONDON PROPERTY INVESTMENT LIMITED|BENSON SQUARE LIMITED",
+				"since": "2001-12-11"
+			}
+		},
+		{
+			"id": "15|ESSEX GROVE",
+			"address": {
+				"number": "15",
+				"street": "ESSEX GROVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "15 ESSEX GROVE, LONDON SE19 3SX LIMITED",
+				"since": "2022-02-04"
+			}
+		},
+		{
+			"id": "67|WESTOW STREET",
+			"address": {
+				"number": "67",
+				"street": "WESTOW STREET"
+			},
+			"claims": {
+				"count": "233",
+				"names": "METROPOLITAN & COUNTRY LAND & ESTATE COMPANY,LIMITED|COOKE BAILEY LIMITED|NAITPARTS DEVELOPMENTS LIMITED",
+				"since": "1935-05-30"
+			}
+		},
+		{
+			"id": "75|WESTOW HILL",
+			"address": {
+				"number": "75",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "149",
+				"names": "SUPREME DISTRIBUTING COMPANY LIMITED|DALOD INVESTMENTS LIMITED|TWELVALEX LIMITED",
+				"since": "1938-02-25"
+			}
+		},
+		{
+			"id": "31|CENTRAL HILL",
+			"address": {
+				"number": "31",
+				"street": "CENTRAL HILL"
+			},
+			"claims": {
+				"count": "2",
+				"names": "31 CENTRAL HILL MANAGEMENT COMPANY LIMITED|BERCHOLA LIMITED",
+				"since": "1984-10-31"
+			}
+		},
+		{
+			"id": "4|MABERLEY ROAD",
+			"address": {
+				"number": "4",
+				"street": "MABERLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "4 MABERLEY ROAD MANAGEMENT LIMITED",
+				"since": "1990-05-01"
+			}
+		},
+		{
+			"id": "41|CENTRAL HILL",
+			"address": {
+				"number": "41",
+				"street": "CENTRAL HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "41 CENTRAL HILL LIMITED",
+				"since": "2000-07-20"
+			}
+		},
+		{
+			"id": "45|SYLVAN ROAD",
+			"address": {
+				"number": "45",
+				"street": "SYLVAN ROAD"
+			},
+			"claims": {
+				"count": "5",
+				"names": "45 SYLVAN ROAD MANAGEMENT LIMITED|RALPH'S ORCHARD LIMITED|AJS CONSULTANCY GROUP LIMITED",
+				"since": "1990-06-04"
+			}
+		},
+		{
+			"id": "5|ESSEX GROVE",
+			"address": {
+				"number": "5",
+				"street": "ESSEX GROVE"
+			},
+			"claims": {
+				"count": "3",
+				"names": "5 ESSEX GROVE FREEHOLD LIMITED|PRODUCTVERSE LTD|RIESSNER-WADE LTD",
+				"since": "2021-04-23"
+			}
+		},
+		{
+			"id": "52|MABERLEY ROAD",
+			"address": {
+				"number": "52",
+				"street": "MABERLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "52 MABERLEY ROAD RESIDENTS COMPANY LIMITED",
+				"since": "2002-03-07"
+			}
+		},
+		{
+			"id": "84|CHURCH ROAD",
+			"address": {
+				"number": "84",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "84 CHURCH ROAD LIMITED",
+				"since": "2025-08-12"
+			}
+		},
+		{
+			"id": "18|MABERLEY ROAD",
+			"address": {
+				"number": "18",
+				"street": "MABERLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "A.I. GIURGEA LIMITED",
+				"since": "2019-11-18"
+			}
+		},
+		{
+			"id": "74|CHURCH ROAD",
+			"address": {
+				"number": "74",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "48",
+				"names": "FLEET & COSY LIMITED|THE CHURCH (WORLD-WIDE) INCORPORATED LIMITED|TRINITY CONSULTING LIMITED",
+				"since": "1995-05-22"
+			}
+		},
+		{
+			"id": "57|WESTOW HILL",
+			"address": {
+				"number": "57",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ABBEY ALEXANDER MEDIA LTD|BAPA PROPERTIES LLP",
+				"since": "2011-12-23"
+			}
+		},
+		{
+			"id": "80|WESTOW HILL",
+			"address": {
+				"number": "80",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "3",
+				"names": "ABODE REFURBISHMENTS LIMITED|ABODE ONLINE LIMITED|CAPITAL PROPERTY ASSET MANAGEMENT LIMITED",
+				"since": "2004-11-19"
+			}
+		},
+		{
+			"id": "6|CHURCH ROAD",
+			"address": {
+				"number": "6",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "4",
+				"names": "AGIRBAS INVESTMENTS PUBLIC LIMITED COMPANY|D3 GLOBAL LTD|GRAE INCORPORATION LIMITED",
+				"since": "1987-12-01"
+			}
+		},
+		{
+			"id": "24|CHURCH ROAD",
+			"address": {
+				"number": "24",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "13",
+				"names": "BEGG, WILLIAMSON & CO LIMITED|S A CONSULTANCY LIMITED|ZAIN BUSINESS INVESTMENTS LTD",
+				"since": "2002-12-04"
+			}
+		},
+		{
+			"id": "11|CENTRAL HILL",
+			"address": {
+				"number": "11",
+				"street": "CENTRAL HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AKPINARS RESTAURANT LTD",
+				"since": "2017-01-13"
+			}
+		},
+		{
+			"id": "9|FITZROY GARDENS",
+			"address": {
+				"number": "9",
+				"street": "FITZROY GARDENS"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CRAIG AINSLEY LIMITED|ALEX SHILLINGFORD LIMITED",
+				"since": "2013-07-12"
+			}
+		},
+		{
+			"id": "70|BEULAH HILL",
+			"address": {
+				"number": "70",
+				"street": "BEULAH HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ALL BY DESIGN LIMITED",
+				"since": "2015-04-14"
+			}
+		},
+		{
+			"id": "38|WAKEFIELD GARDENS",
+			"address": {
+				"number": "38",
+				"street": "WAKEFIELD GARDENS"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ARTISTS' RESEARCH CENTRE|LEJEUNE ENTERPRISES LTD",
+				"since": "2017-01-10"
+			}
+		},
+		{
+			"id": "36|CHURCH ROAD",
+			"address": {
+				"number": "36",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BESPOKE WINDOWS & DOORS RG LTD",
+				"since": "2024-01-05"
+			}
+		},
+		{
+			"id": "45|BEULAH HILL",
+			"address": {
+				"number": "45",
+				"street": "BEULAH HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BEULAH MANAGEMENT 2 LIMITED",
+				"since": "2022-04-27"
+			}
+		},
+		{
+			"id": "62|BEULAH HILL",
+			"address": {
+				"number": "62",
+				"street": "BEULAH HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BEULAH SPA HOLDINGS LTD",
+				"since": "2020-06-10"
+			}
+		},
+		{
+			"id": "20|WAKEFIELD GARDENS",
+			"address": {
+				"number": "20",
+				"street": "WAKEFIELD GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BG LOGISTICS CONSULTING LIMITED",
+				"since": "2017-07-07"
+			}
+		},
+		{
+			"id": "40|CHURCH ROAD",
+			"address": {
+				"number": "40",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BIG MAN VENTURES LTD",
+				"since": "2011-02-03"
+			}
+		},
+		{
+			"id": "273|SOUTH NORWOOD HILL",
+			"address": {
+				"number": "273",
+				"street": "SOUTH NORWOOD HILL"
+			},
+			"claims": {
+				"count": "2",
+				"names": "BOGHIU LIMITED|CAFE DE NIRO SOUTH NORWOOD HILL LIMITED",
+				"since": "2016-10-06"
+			}
+		},
+		{
+			"id": "13|BRAYBROOKE GARDENS",
+			"address": {
+				"number": "13",
+				"street": "BRAYBROOKE GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BORDERLESS WORKS LTD",
+				"since": "2024-09-23"
+			}
+		},
+		{
+			"id": "66|CHURCH ROAD",
+			"address": {
+				"number": "66",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "MICHAEL BROWN LIMITED|BROWNS COUNTRY RETREATS LTD",
+				"since": "1997-03-26"
+			}
+		},
+		{
+			"id": "24|WESTOW HILL",
+			"address": {
+				"number": "24",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "3",
+				"names": "FISHMONGERS PLAICE LTD|FISHMONGERS PLAICE DIRECT LTD|BUTTERFLY ON THE ROCK LTD",
+				"since": "2021-11-18"
+			}
+		},
+		{
+			"id": "6|KITLEY GARDENS",
+			"address": {
+				"number": "6",
+				"street": "KITLEY GARDENS"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CAGUAIRAN LTD|PROMOSITRON LTD",
+				"since": "2018-06-25"
+			}
+		},
+		{
+			"id": "13|CARBERRY ROAD",
+			"address": {
+				"number": "13",
+				"street": "CARBERRY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CARBERRY ROAD RESIDENTS LIMITED",
+				"since": "2011-05-20"
+			}
+		},
+		{
+			"id": "14|CARBERRY ROAD",
+			"address": {
+				"number": "14",
+				"street": "CARBERRY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CARBERRY TRAVEL LTD",
+				"since": "2026-01-16"
+			}
+		},
+		{
+			"id": "82|WESTOW HILL",
+			"address": {
+				"number": "82",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CELINE NAILS & SPA LIMITED",
+				"since": "2025-05-23"
+			}
+		},
+		{
+			"id": "4|WINDALL CLOSE",
+			"address": {
+				"number": "4",
+				"street": "WINDALL CLOSE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CHEEKY SPORT LIMITED|JB HOUSING EXPERIENCES WORLDWIDE LTD",
+				"since": "2014-11-17"
+			}
+		},
+		{
+			"id": "70|WESTOW HILL",
+			"address": {
+				"number": "70",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CIBO PALAZZO LIMITED|JONCISAN LIMITED",
+				"since": "2015-04-10"
+			}
+		},
+		{
+			"id": "15|HAYNES LANE",
+			"address": {
+				"number": "15",
+				"street": "HAYNES LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CINTRA CONSULTING LTD",
+				"since": "2020-07-21"
+			}
+		},
+		{
+			"id": "18|WESTOW HILL",
+			"address": {
+				"number": "18",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "2",
+				"names": "EDO CRYSTAL PALACE LIMITED|COPELANDS RESTAURANT & LOUNGE LTD",
+				"since": "2019-03-27"
+			}
+		},
+		{
+			"id": "21|CANTLEY GARDENS",
+			"address": {
+				"number": "21",
+				"street": "CANTLEY GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CORRIE JONES ARCHITECTURE LIMITED",
+				"since": "2020-08-28"
+			}
+		},
+		{
+			"id": "40|WESTOW HILL",
+			"address": {
+				"number": "40",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CRYSTAL PALACE NAILS LTD",
+				"since": "2026-04-07"
+			}
+		},
+		{
+			"id": "74|WESTOW STREET",
+			"address": {
+				"number": "74",
+				"street": "WESTOW STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "URBAN SAIGON LTD|DAT VIET LIMITED",
+				"since": "2018-08-02"
+			}
+		},
+		{
+			"id": "2|GATESTONE ROAD",
+			"address": {
+				"number": "2",
+				"street": "GATESTONE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DAVID KING PROPERTIES LIMITED",
+				"since": "1965-01-12"
+			}
+		},
+		{
+			"id": "52|SOUTH VALE",
+			"address": {
+				"number": "52",
+				"street": "SOUTH VALE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DAVID NOSSITER ARCHITECTS LIMITED",
+				"since": "2005-12-09"
+			}
+		},
+		{
+			"id": "42|CHURCH ROAD",
+			"address": {
+				"number": "42",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "DE-CHARLES' RESOURCES LIMITED|TRIANGLE VOCATIONAL CENTRE LIMITED",
+				"since": "2001-03-14"
+			}
+		},
+		{
+			"id": "23|SYLVAN ROAD",
+			"address": {
+				"number": "23",
+				"street": "SYLVAN ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DRDWYER LTD",
+				"since": "2022-01-07"
+			}
+		},
+		{
+			"id": "3|HAYNES LANE",
+			"address": {
+				"number": "3",
+				"street": "HAYNES LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DREAM SEQUENCE RECORDINGS LTD",
+				"since": "2021-01-27"
+			}
+		},
+		{
+			"id": "3|NESBITT SQUARE",
+			"address": {
+				"number": "3",
+				"street": "NESBITT SQUARE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DRUMLEAGUE LIMITED",
+				"since": "1986-06-11"
+			}
+		},
+		{
+			"id": "20|BRAYBROOKE GARDENS",
+			"address": {
+				"number": "20",
+				"street": "BRAYBROOKE GARDENS"
+			},
+			"claims": {
+				"count": "2",
+				"names": "DYE JOB LIMITED|HAIR TROUPE LTD",
+				"since": "2026-03-11"
+			}
+		},
+		{
+			"id": "1|MATILDA CLOSE",
+			"address": {
+				"number": "1",
+				"street": "MATILDA CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ELI&CO LIMITED",
+				"since": "2025-04-28"
+			}
+		},
+		{
+			"id": "26|FITZROY GARDENS",
+			"address": {
+				"number": "26",
+				"street": "FITZROY GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ETCH FILMS LTD.",
+				"since": "2021-02-01"
+			}
+		},
+		{
+			"id": "14|BRUNEL CLOSE",
+			"address": {
+				"number": "14",
+				"street": "BRUNEL CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EVANGELICAL PRESBYTERIAN CHURCH, GHANA (UNITED KINGDOM)",
+				"since": "2011-04-08"
+			}
+		},
+		{
+			"id": "3|MATILDA CLOSE",
+			"address": {
+				"number": "3",
+				"street": "MATILDA CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EVE’S HEALTHCARE LIMITED",
+				"since": "2020-12-31"
+			}
+		},
+		{
+			"id": "51|CENTRAL HILL",
+			"address": {
+				"number": "51",
+				"street": "CENTRAL HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FADING LIGHTS LTD",
+				"since": "2014-08-14"
+			}
+		},
+		{
+			"id": "14|OVETT CLOSE",
+			"address": {
+				"number": "14",
+				"street": "OVETT CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FIRST PAXTON'S MANAGEMENT COMPANY LIMITED",
+				"since": "1980-08-26"
+			}
+		},
+		{
+			"id": "43|CENTRAL HILL",
+			"address": {
+				"number": "43",
+				"street": "CENTRAL HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FLASHBACK ENTERTAINMENT LTD",
+				"since": "2023-03-08"
+			}
+		},
+		{
+			"id": "20|GATESTONE ROAD",
+			"address": {
+				"number": "20",
+				"street": "GATESTONE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FOF MANAGEMENT LIMITED",
+				"since": "2017-08-04"
+			}
+		},
+		{
+			"id": "2|THE COVERT",
+			"address": {
+				"number": "2",
+				"street": "THE COVERT"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FREE THE GALLERY LTD",
+				"since": "2020-07-02"
+			}
+		},
+		{
+			"id": "271|SOUTH NORWOOD HILL",
+			"address": {
+				"number": "271",
+				"street": "SOUTH NORWOOD HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FRY BROTHERS LIMITED",
+				"since": "2014-01-07"
+			}
+		},
+		{
+			"id": "46|MABERLEY ROAD",
+			"address": {
+				"number": "46",
+				"street": "MABERLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GLENHOLM MANAGEMENT LIMITED",
+				"since": "2017-04-26"
+			}
+		},
+		{
+			"id": "74|WESTOW HILL",
+			"address": {
+				"number": "74",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GREENLIFE SERVICES LTD",
+				"since": "2017-05-19"
+			}
+		},
+		{
+			"id": "8|MATILDA CLOSE",
+			"address": {
+				"number": "8",
+				"street": "MATILDA CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HAVENSENT LTD",
+				"since": "2019-08-02"
+			}
+		},
+		{
+			"id": "18|PADDOCK GARDENS",
+			"address": {
+				"number": "18",
+				"street": "PADDOCK GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HELIOGRID LTD",
+				"since": "2025-07-25"
+			}
+		},
+		{
+			"id": "8|BRUNEL CLOSE",
+			"address": {
+				"number": "8",
+				"street": "BRUNEL CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HEMSWAY LIMITED",
+				"since": "1983-10-26"
+			}
+		},
+		{
+			"id": "14|PADDOCK GARDENS",
+			"address": {
+				"number": "14",
+				"street": "PADDOCK GARDENS"
+			},
+			"claims": {
+				"count": "2",
+				"names": "HGF FURNITURE (LONDON) LIMITED|HEW STUDIO LTD",
+				"since": "2009-02-11"
+			}
+		},
+		{
+			"id": "27|THE LAWNS",
+			"address": {
+				"number": "27",
+				"street": "THE LAWNS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HIU SERVICE AND MAINTENANCE LIMITED",
+				"since": "2022-10-16"
+			}
+		},
+		{
+			"id": "38|WESTOW STREET",
+			"address": {
+				"number": "38",
+				"street": "WESTOW STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HOST CLAPHAM LTD",
+				"since": "2024-05-31"
+			}
+		},
+		{
+			"id": "6|HAYNES LANE",
+			"address": {
+				"number": "6",
+				"street": "HAYNES LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JAMES HASTIE FINE ART ADVISORY LTD",
+				"since": "2024-07-12"
+			}
+		},
+		{
+			"id": "72|WESTOW HILL",
+			"address": {
+				"number": "72",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JELLEWIS LIMITED",
+				"since": "2019-01-10"
+			}
+		},
+		{
+			"id": "116|CHURCH ROAD",
+			"address": {
+				"number": "116",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JOSEPH PARSONS LIMITED",
+				"since": "2018-02-06"
+			}
+		},
+		{
+			"id": "25|WESTOW STREET",
+			"address": {
+				"number": "25",
+				"street": "WESTOW STREET"
+			},
+			"claims": {
+				"count": "3",
+				"names": "OFF THE LOOM LIMITED|PCS LAND & DEVELOPMENTS LIMITED|KITE DRINKS LIMITED",
+				"since": "2016-04-15"
+			}
+		},
+		{
+			"id": "78|BEULAH HILL",
+			"address": {
+				"number": "78",
+				"street": "BEULAH HILL"
+			},
+			"claims": {
+				"count": "2",
+				"names": "LURESET LTD|LEAVEN MUSIC LTD",
+				"since": "2024-08-13"
+			}
+		},
+		{
+			"id": "48|WESTOW HILL",
+			"address": {
+				"number": "48",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "2",
+				"names": "SMOKIES|LEBANESE TAST LTD",
+				"since": "1992-06-02"
+			}
+		},
+		{
+			"id": "8|BEDWARDINE ROAD",
+			"address": {
+				"number": "8",
+				"street": "BEDWARDINE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LIONDELTA LIMITED",
+				"since": "1987-03-20"
+			}
+		},
+		{
+			"id": "48|SOUTH VALE",
+			"address": {
+				"number": "48",
+				"street": "SOUTH VALE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LOUIS DAVIES (INVESTMENTS) LTD",
+				"since": "2026-02-19"
+			}
+		},
+		{
+			"id": "21|WESTOW STREET",
+			"address": {
+				"number": "21",
+				"street": "WESTOW STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "LUNCH AND MORE LTD|THE PALACE GROOMING LTD",
+				"since": "2016-04-18"
+			}
+		},
+		{
+			"id": "86A|WESTOW HILL",
+			"address": {
+				"number": "86A",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MAKAST BARBERS LTD",
+				"since": "2025-10-24"
+			}
+		},
+		{
+			"id": "77|WESTOW HILL",
+			"address": {
+				"number": "77",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MARUBOO LIMITED",
+				"since": "2022-12-08"
+			}
+		},
+		{
+			"id": "28|WESTOW HILL",
+			"address": {
+				"number": "28",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MWEW LIMITED",
+				"since": "2020-03-03"
+			}
+		},
+		{
+			"id": "1|WESTOW STREET",
+			"address": {
+				"number": "1",
+				"street": "WESTOW STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NYTEQ LTD.",
+				"since": "2023-05-15"
+			}
+		},
+		{
+			"id": "17|WESTOW STREET",
+			"address": {
+				"number": "17",
+				"street": "WESTOW STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "OM HARI LIMITED",
+				"since": "2019-06-13"
+			}
+		},
+		{
+			"id": "147|CENTRAL HILL",
+			"address": {
+				"number": "147",
+				"street": "CENTRAL HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PACT EDUCATIONAL TRUST LIMITED",
+				"since": "1996-02-29"
+			}
+		},
+		{
+			"id": "76|CHURCH ROAD",
+			"address": {
+				"number": "76",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PEARL ROSE GARMENTS LTD",
+				"since": "2020-10-23"
+			}
+		},
+		{
+			"id": "36|HANCOCK ROAD",
+			"address": {
+				"number": "36",
+				"street": "HANCOCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PILGRIM PATHWAY CIC",
+				"since": "2026-07-03"
+			}
+		},
+		{
+			"id": "1|WAKEFIELD GARDENS",
+			"address": {
+				"number": "1",
+				"street": "WAKEFIELD GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PKQS LIMITED",
+				"since": "2026-05-20"
+			}
+		},
+		{
+			"id": "46|CHURCH ROAD",
+			"address": {
+				"number": "46",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PLASTER BEAUTY LTD",
+				"since": "2016-01-18"
+			}
+		},
+		{
+			"id": "16|TROY ROAD",
+			"address": {
+				"number": "16",
+				"street": "TROY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PYTEK LIMITED",
+				"since": "2016-12-06"
+			}
+		},
+		{
+			"id": "34|WAKEFIELD GARDENS",
+			"address": {
+				"number": "34",
+				"street": "WAKEFIELD GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "REGENCY GARDEN MANAGEMENT (UPPER NORWOOD) LIMITED",
+				"since": "1962-07-03"
+			}
+		},
+		{
+			"id": "4|SOUTH COURT",
+			"address": {
+				"number": "4",
+				"street": "SOUTH COURT"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RESHAPE STRATEGY LTD",
+				"since": "2025-10-06"
+			}
+		},
+		{
+			"id": "16|WESTOW HILL",
+			"address": {
+				"number": "16",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RETROSPECT UK LIMITED",
+				"since": "2004-02-23"
+			}
+		},
+		{
+			"id": "45|CHEVENING ROAD",
+			"address": {
+				"number": "45",
+				"street": "CHEVENING ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RF DESIGN (UK) LIMITED",
+				"since": "2002-12-23"
+			}
+		},
+		{
+			"id": "9|CENTRAL HILL",
+			"address": {
+				"number": "9",
+				"street": "CENTRAL HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RN ORGANIC LTD",
+				"since": "2026-07-27"
+			}
+		},
+		{
+			"id": "4|ROCKMOUNT ROAD",
+			"address": {
+				"number": "4",
+				"street": "ROCKMOUNT ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ROCKMOUNT ROAD FREEHOLD LIMITED",
+				"since": "2020-04-16"
+			}
+		},
+		{
+			"id": "115|CHURCH ROAD",
+			"address": {
+				"number": "115",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SAFFLOWER HOUSE LTD",
+				"since": "2026-07-28"
+			}
+		},
+		{
+			"id": "122|CHURCH ROAD",
+			"address": {
+				"number": "122",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SCALE HARD LTD",
+				"since": "2026-07-21"
+			}
+		},
+		{
+			"id": "16|SOUTH VALE",
+			"address": {
+				"number": "16",
+				"street": "SOUTH VALE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SHAPESTONES LTD",
+				"since": "2017-06-05"
+			}
+		},
+		{
+			"id": "11|CANTLEY GARDENS",
+			"address": {
+				"number": "11",
+				"street": "CANTLEY GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SHINBOMBZ LIMITED",
+				"since": "2022-10-24"
+			}
+		},
+		{
+			"id": "25|HANCOCK ROAD",
+			"address": {
+				"number": "25",
+				"street": "HANCOCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SICOMMS LTD",
+				"since": "2016-02-09"
+			}
+		},
+		{
+			"id": "6|ESSEX GROVE",
+			"address": {
+				"number": "6",
+				"street": "ESSEX GROVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SIX ESSEX GROVE LTD",
+				"since": "2002-09-04"
+			}
+		},
+		{
+			"id": "38|HANCOCK ROAD",
+			"address": {
+				"number": "38",
+				"street": "HANCOCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SLK WOODFLOORING LIMITED",
+				"since": "2018-03-10"
+			}
+		},
+		{
+			"id": "75|CENTRAL HILL",
+			"address": {
+				"number": "75",
+				"street": "CENTRAL HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SP & J PROPERTIES LTD",
+				"since": "2025-10-22"
+			}
+		},
+		{
+			"id": "36|WESTOW HILL",
+			"address": {
+				"number": "36",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SPICE INN 2 LTD",
+				"since": "2026-08-13"
+			}
+		},
+		{
+			"id": "189|SOUTH NORWOOD HILL",
+			"address": {
+				"number": "189",
+				"street": "SOUTH NORWOOD HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SPURGEON'S COLLEGE DEVELOPMENTS LIMITED",
+				"since": "2019-04-29"
+			}
+		},
+		{
+			"id": "28|HANCOCK ROAD",
+			"address": {
+				"number": "28",
+				"street": "HANCOCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "STEPHEN JAMES DECOR LIMITED",
+				"since": "1999-07-13"
+			}
+		},
+		{
+			"id": "27|SYLVAN ROAD",
+			"address": {
+				"number": "27",
+				"street": "SYLVAN ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "STUDIO FICTA LIMITED",
+				"since": "2022-03-19"
+			}
+		},
+		{
+			"id": "32|FITZROY GARDENS",
+			"address": {
+				"number": "32",
+				"street": "FITZROY GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "STUDIO HARPER CREATIVE LIMITED",
+				"since": "2025-07-28"
+			}
+		},
+		{
+			"id": "2|WAKEFIELD GARDENS",
+			"address": {
+				"number": "2",
+				"street": "WAKEFIELD GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE CONSTITUTIONAL SCHOOL CIC",
+				"since": "2026-08-13"
+			}
+		},
+		{
+			"id": "70|CHURCH ROAD",
+			"address": {
+				"number": "70",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE KIOSK SNCP CIC",
+				"since": "2025-06-17"
+			}
+		},
+		{
+			"id": "32|CYPRESS ROAD",
+			"address": {
+				"number": "32",
+				"street": "CYPRESS ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE PEGASUS ACADEMY TRUST",
+				"since": "2011-02-24"
+			}
+		},
+		{
+			"id": "40|WESTOW STREET",
+			"address": {
+				"number": "40",
+				"street": "WESTOW STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE WALKTHROUGH LIMITED",
+				"since": "2021-02-01"
+			}
+		},
+		{
+			"id": "5|WESTOW STREET",
+			"address": {
+				"number": "5",
+				"street": "WESTOW STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TOFU LIMITED",
+				"since": "2022-03-05"
+			}
+		},
+		{
+			"id": "38|CHURCH ROAD",
+			"address": {
+				"number": "38",
+				"street": "CHURCH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TOM COX GALLERY LTD",
+				"since": "2023-06-01"
+			}
+		},
+		{
+			"id": "48|FOX HILL",
+			"address": {
+				"number": "48",
+				"street": "FOX HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TOYAS O'MARA LIMITED",
+				"since": "2011-07-27"
+			}
+		},
+		{
+			"id": "9|TROY ROAD",
+			"address": {
+				"number": "9",
+				"street": "TROY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TROY FREEHOLD MANAGEMENT COMPANY LIMITED",
+				"since": "2014-08-29"
+			}
+		},
+		{
+			"id": "53|WESTOW HILL",
+			"address": {
+				"number": "53",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "VAPE & MOBILE WESTOW LTD",
+				"since": "2023-02-24"
+			}
+		},
+		{
+			"id": "78|WESTOW HILL",
+			"address": {
+				"number": "78",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "YAASH PERIPERI LTD",
+				"since": "2025-02-12"
+			}
+		},
+		{
+			"id": "84|WESTOW HILL",
+			"address": {
+				"number": "84",
+				"street": "WESTOW HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ZAO WELLNESS STUDIO LTD",
+				"since": "2024-09-05"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
