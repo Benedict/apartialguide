@@ -46,7 +46,8 @@ function recount(
 		.sort((a, b) => b[1] - a[1])
 		.slice(0, 2)
 		.map(([name]) => name);
-	const { areas: _areas, ...rest } = about;
+	const rest = { ...about };
+	delete rest.areas;
 	return {
 		...rest,
 		streets: streets.size,

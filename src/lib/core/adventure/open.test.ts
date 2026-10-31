@@ -54,7 +54,7 @@ describe('closeAreas: only the areas open to walk', () => {
 	});
 
 	it('marks a way into a closed stop the world was compiled without', () => {
-		const { c: _c, ...without } = world.stops;
+		const without = Object.fromEntries(Object.entries(world.stops).filter(([id]) => id !== 'c'));
 		const fewer = closeAreas({ ...world, stops: without }, (id) =>
 			id === 'c' ? 'Elsewhere' : undefined
 		);
