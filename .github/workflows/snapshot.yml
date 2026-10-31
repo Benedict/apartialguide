@@ -13,6 +13,9 @@ permissions:
 
 jobs:
   snapshot:
+    # Only when the commit pushed edits the request: a new branch carries older commits that did,
+    # and a push of it would otherwise fetch again and change what prose was written from.
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'data/snapshots/request.env') || contains(github.event.head_commit.added, 'data/snapshots/request.env')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
