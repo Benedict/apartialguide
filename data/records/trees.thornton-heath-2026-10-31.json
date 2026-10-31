@@ -1,0 +1,39 @@
+{
+	"source": "Greater London Authority, Public_Realm_tree_list_2025_November.csv",
+	"prefix": "trees",
+	"records": [
+		{
+			"id": "trees:Wingate Crescent",
+			"street": "Wingate Crescent",
+			"claims": {
+				"count": "2",
+				"kinds": "Hawthorn (1), Horse-chestnut (1)"
+			}
+		},
+		{
+			"id": "trees:Thornton Road",
+			"street": "Thornton Road",
+			"claims": {
+				"count": "29",
+				"kinds": "Plane (13), Lime (8), Large-leaved Lime (5), Bird Cherry (2), Pyrus Species (1)"
+			}
+		},
+		{
+			"id": "trees:Boston Road",
+			"street": "Boston Road",
+			"claims": {
+				"count": "1",
+				"kinds": "Lime (1)"
+			}
+		},
+		{
+			"id": "trees:Thornton Heath Pond Roundabout",
+			"street": "Thornton Heath Pond Roundabout",
+			"claims": {
+				"count": "1",
+				"kinds": "Plane (1)"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

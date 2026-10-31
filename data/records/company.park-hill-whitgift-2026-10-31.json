@@ -1,0 +1,199 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "2|DEEPDENE AVENUE",
+			"address": {
+				"number": "2",
+				"street": "DEEPDENE AVENUE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "BRIGHT BUDS LTD|AUREX LIVING LTD",
+				"since": "2024-06-05"
+			}
+		},
+		{
+			"id": "165|COOMBE ROAD",
+			"address": {
+				"number": "165",
+				"street": "COOMBE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CINGH GLOBAL PRODUCTS PRIVATE LIMITED",
+				"since": "2025-11-05"
+			}
+		},
+		{
+			"id": "20|LARCOMBE CLOSE",
+			"address": {
+				"number": "20",
+				"street": "LARCOMBE CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "IP WISE LIMITED",
+				"since": "2002-12-12"
+			}
+		},
+		{
+			"id": "2|HUNTERS WAY",
+			"address": {
+				"number": "2",
+				"street": "HUNTERS WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JNL CLEARY LTD",
+				"since": "2026-01-29"
+			}
+		},
+		{
+			"id": "1|RANMORE AVENUE",
+			"address": {
+				"number": "1",
+				"street": "RANMORE AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KRATOS PROPERTIES LIMITED",
+				"since": "2016-04-11"
+			}
+		},
+		{
+			"id": "1|HUNTERS WAY",
+			"address": {
+				"number": "1",
+				"street": "HUNTERS WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LATITUDE COMPLIANCE & RISK MANAGEMENT LIMITED",
+				"since": "2013-02-05"
+			}
+		},
+		{
+			"id": "141|COOMBE ROAD",
+			"address": {
+				"number": "141",
+				"street": "COOMBE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LEARNING WORLD MONTESSORI LIMITED",
+				"since": "2017-06-06"
+			}
+		},
+		{
+			"id": "24|SANDILANDS",
+			"address": {
+				"number": "24",
+				"street": "SANDILANDS"
+			},
+			"claims": {
+				"count": "2",
+				"names": "SB PRIVATE LTD|NECTAR FINANCE LIMITED",
+				"since": "2019-08-13"
+			}
+		},
+		{
+			"id": "7|DEEPDENE AVENUE",
+			"address": {
+				"number": "7",
+				"street": "DEEPDENE AVENUE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "PARAM COMPANY AND SONS LIMITED|PARAM AND SONS LIMITED",
+				"since": "2026-06-28"
+			}
+		},
+		{
+			"id": "12|DEEPDENE AVENUE",
+			"address": {
+				"number": "12",
+				"street": "DEEPDENE AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SAMVEDH LTD",
+				"since": "2013-02-14"
+			}
+		},
+		{
+			"id": "10|HARLAND AVENUE",
+			"address": {
+				"number": "10",
+				"street": "HARLAND AVENUE"
+			},
+			"claims": {
+				"count": "3",
+				"names": "WOW LONDON LTD|VA CAPITAL LTD|SW8 LONDON LIMITED",
+				"since": "2014-05-27"
+			}
+		},
+		{
+			"id": "29|LARCOMBE CLOSE",
+			"address": {
+				"number": "29",
+				"street": "LARCOMBE CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TAZ SELF LTD",
+				"since": "2024-10-01"
+			}
+		},
+		{
+			"id": "50|CHICHESTER ROAD",
+			"address": {
+				"number": "50",
+				"street": "CHICHESTER ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE KIOSKS (PVT) LTD",
+				"since": "2025-12-11"
+			}
+		},
+		{
+			"id": "35|PARK HILL ROAD",
+			"address": {
+				"number": "35",
+				"street": "PARK HILL ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TOKHI GLOBAL LIMITED",
+				"since": "2026-07-06"
+			}
+		},
+		{
+			"id": "5|SANDILANDS",
+			"address": {
+				"number": "5",
+				"street": "SANDILANDS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "W&S CONSULTING LTD",
+				"since": "2018-11-27"
+			}
+		},
+		{
+			"id": "39|PARK HILL ROAD",
+			"address": {
+				"number": "39",
+				"street": "PARK HILL ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "XMAX TECH LTD",
+				"since": "2022-12-12"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

@@ -1,0 +1,583 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "36|BRIGSTOCK ROAD",
+			"address": {
+				"number": "36",
+				"street": "BRIGSTOCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "1507 COFFEE & TAKEAWAY LTD",
+				"since": "2026-02-10"
+			}
+		},
+		{
+			"id": "104|BENSHAM LANE",
+			"address": {
+				"number": "104",
+				"street": "BENSHAM LANE"
+			},
+			"claims": {
+				"count": "4",
+				"names": "5 GEMS LTD|YA ALI MADAD LIMITED|SABAIFIX TECH SOLUTIONS LTD",
+				"since": "2023-06-21"
+			}
+		},
+		{
+			"id": "658|LONDON ROAD",
+			"address": {
+				"number": "658",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "658 LONDON ROAD FREEHOLD COMPANY LIMITED",
+				"since": "2017-10-16"
+			}
+		},
+		{
+			"id": "75|PARCHMORE ROAD",
+			"address": {
+				"number": "75",
+				"street": "PARCHMORE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "FAST TASTY FOOD LTD|7 TRAINING LTD",
+				"since": "2025-07-10"
+			}
+		},
+		{
+			"id": "115|HIGH STREET",
+			"address": {
+				"number": "115",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "AB MINI CAB LIMITED|PRO CLASS ENTERPRISES LIMITED",
+				"since": "2021-07-28"
+			}
+		},
+		{
+			"id": "50|NORTHWOOD ROAD",
+			"address": {
+				"number": "50",
+				"street": "NORTHWOOD ROAD"
+			},
+			"claims": {
+				"count": "9",
+				"names": "ACADEMY HAIR AND BEAUTY (UK) LTD|BITA COSMETICS LIMITED|BE FAIRALL LIMITED",
+				"since": "1997-05-02"
+			}
+		},
+		{
+			"id": "431|LONDON ROAD",
+			"address": {
+				"number": "431",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AHBRUSHCOURIER LTD",
+				"since": "2025-10-27"
+			}
+		},
+		{
+			"id": "13|NATAL ROAD",
+			"address": {
+				"number": "13",
+				"street": "NATAL ROAD"
+			},
+			"claims": {
+				"count": "4",
+				"names": "FORTITUDE IL LIMITED|FELIDICTA LTD|AJUMOSE EKO LIMITED",
+				"since": "2012-04-02"
+			}
+		},
+		{
+			"id": "70|HEATH ROAD",
+			"address": {
+				"number": "70",
+				"street": "HEATH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AUM SAAYEE LIMITED",
+				"since": "2023-01-27"
+			}
+		},
+		{
+			"id": "119|HIGH STREET",
+			"address": {
+				"number": "119",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "AZIZI HALAL MEAT LTD|BALARABE LIMITED",
+				"since": "2019-08-07"
+			}
+		},
+		{
+			"id": "121|HIGH STREET",
+			"address": {
+				"number": "121",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AZMAT & SONS LTD",
+				"since": "2015-09-10"
+			}
+		},
+		{
+			"id": "78|CANTERBURY ROAD",
+			"address": {
+				"number": "78",
+				"street": "CANTERBURY ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "BEDS4ULONDON LTD|F&A BUILDERS LTD",
+				"since": "2020-07-13"
+			}
+		},
+		{
+			"id": "126|BENSHAM LANE",
+			"address": {
+				"number": "126",
+				"street": "BENSHAM LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BENCHAM CHICKEN LTD",
+				"since": "2023-01-10"
+			}
+		},
+		{
+			"id": "1|WOODVILLE ROAD",
+			"address": {
+				"number": "1",
+				"street": "WOODVILLE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BLACKSTONE GROUP SERVICES LTD",
+				"since": "2026-06-26"
+			}
+		},
+		{
+			"id": "85|HIGH STREET",
+			"address": {
+				"number": "85",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "4",
+				"names": "MKA TRADING (UK) LTD|BLUE & ORANGE 2023 LIMITED|BLUE AND ORANGE ONLINE LTD",
+				"since": "2011-01-26"
+			}
+		},
+		{
+			"id": "482|LONDON ROAD",
+			"address": {
+				"number": "482",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "LEINSTER TRADING LTD|BROAD GREEN TRADING LTD|J & D INNS LTD",
+				"since": "2013-12-18"
+			}
+		},
+		{
+			"id": "7|WOODVILLE ROAD",
+			"address": {
+				"number": "7",
+				"street": "WOODVILLE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CLOCK TOWER BUTCHERS AND GROCERIES LTD",
+				"since": "2021-06-08"
+			}
+		},
+		{
+			"id": "464|LONDON ROAD",
+			"address": {
+				"number": "464",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "6",
+				"names": "OPTIONS ESTATE AGENTS LTD|ELITE PREMIER CRICKET LEAGUE LTD|EURO AUTO TEK LTD",
+				"since": "2009-10-13"
+			}
+		},
+		{
+			"id": "118|BENSHAM LANE",
+			"address": {
+				"number": "118",
+				"street": "BENSHAM LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CROYDON GLASS WORKS LIMITED",
+				"since": "2002-09-24"
+			}
+		},
+		{
+			"id": "19|WOODVILLE ROAD",
+			"address": {
+				"number": "19",
+				"street": "WOODVILLE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CROYDON TOOL HIRE LIMITED|WISPHOME LIMITED",
+				"since": "1976-06-28"
+			}
+		},
+		{
+			"id": "113|PARCHMORE ROAD",
+			"address": {
+				"number": "113",
+				"street": "PARCHMORE ROAD"
+			},
+			"claims": {
+				"count": "4",
+				"names": "PETER OBRIEN CONSTRUCTION SERVICES LIMITED|DARK PICTURES FILM 3 LIMITED|GRACELAND CARE HOME (UK) LIMITED",
+				"since": "2008-12-31"
+			}
+		},
+		{
+			"id": "59|BEULAH ROAD",
+			"address": {
+				"number": "59",
+				"street": "BEULAH ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "T AND AA LTD|SAI AND J LTD|DS RETAIL CROYDON LIMITED",
+				"since": "2019-02-12"
+			}
+		},
+		{
+			"id": "107|BENSHAM LANE",
+			"address": {
+				"number": "107",
+				"street": "BENSHAM LANE"
+			},
+			"claims": {
+				"count": "3",
+				"names": "ER WOK LTD|YYDS FOOD TT LTD|OAKS FOODS LIMITED",
+				"since": "2016-05-31"
+			}
+		},
+		{
+			"id": "56|BEULAH ROAD",
+			"address": {
+				"number": "56",
+				"street": "BEULAH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FAT BELLY'S CAFE LTD",
+				"since": "2014-03-31"
+			}
+		},
+		{
+			"id": "17|WOODVILLE ROAD",
+			"address": {
+				"number": "17",
+				"street": "WOODVILLE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FISH WALA THORNTON HEATH LTD",
+				"since": "2024-10-29"
+			}
+		},
+		{
+			"id": "476|LONDON ROAD",
+			"address": {
+				"number": "476",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "FRESH & TASTY GRILL CHICKEN LTD|TASTY GRILL HOUSE LTD",
+				"since": "2024-01-08"
+			}
+		},
+		{
+			"id": "3|BRIGSTOCK ROAD",
+			"address": {
+				"number": "3",
+				"street": "BRIGSTOCK ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "HEATH FOODS LTD|MAMA FOODS LONDON LTD",
+				"since": "2025-09-10"
+			}
+		},
+		{
+			"id": "106|BENSHAM LANE",
+			"address": {
+				"number": "106",
+				"street": "BENSHAM LANE"
+			},
+			"claims": {
+				"count": "4",
+				"names": "MS DARBAR HYDERABADI LTD|SHAHI MUGHAL DARBAR LIMITED|MEHFIL E HYDERABAD LTD",
+				"since": "2025-02-25"
+			}
+		},
+		{
+			"id": "113|HIGH STREET",
+			"address": {
+				"number": "113",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "HUMZA PRODUCTIONS LTD|TJ FRESH EGG SUPPLIER LTD",
+				"since": "2011-10-03"
+			}
+		},
+		{
+			"id": "143|PARCHMORE ROAD",
+			"address": {
+				"number": "143",
+				"street": "PARCHMORE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JAISAL LIMITED",
+				"since": "2005-08-01"
+			}
+		},
+		{
+			"id": "123|HIGH STREET",
+			"address": {
+				"number": "123",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "JALALS BUTCHERS & GROCERS LIMITED|MEAT MASTER AND GROCERS LIMITED",
+				"since": "2019-09-25"
+			}
+		},
+		{
+			"id": "144|STANLEY ROAD",
+			"address": {
+				"number": "144",
+				"street": "STANLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "K&N @JJ LIMITED",
+				"since": "2023-12-03"
+			}
+		},
+		{
+			"id": "109|BENSHAM LANE",
+			"address": {
+				"number": "109",
+				"street": "BENSHAM LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KISSCUTS335 LTD",
+				"since": "2021-04-21"
+			}
+		},
+		{
+			"id": "80|PARCHMORE ROAD",
+			"address": {
+				"number": "80",
+				"street": "PARCHMORE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "LIFEGRACE BOOKSHOP & GROCERIES LIMITED|LIFEGRACE MINISTRIES INTERNATIONAL LTD",
+				"since": "2020-06-01"
+			}
+		},
+		{
+			"id": "518|LONDON ROAD",
+			"address": {
+				"number": "518",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LM CLINICAL LTD",
+				"since": "2025-05-04"
+			}
+		},
+		{
+			"id": "782|LONDON ROAD",
+			"address": {
+				"number": "782",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MANAG LTD",
+				"since": "2026-03-04"
+			}
+		},
+		{
+			"id": "162|THORNTON ROAD",
+			"address": {
+				"number": "162",
+				"street": "THORNTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "MATHU TRADING UK LTD|NPK STORES LTD",
+				"since": "2011-10-04"
+			}
+		},
+		{
+			"id": "121|PARCHMORE ROAD",
+			"address": {
+				"number": "121",
+				"street": "PARCHMORE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "STARBRIDGE DEVELOPMENTS LIMITED|MEERAKI LIMITED",
+				"since": "2007-03-05"
+			}
+		},
+		{
+			"id": "60|BEULAH ROAD",
+			"address": {
+				"number": "60",
+				"street": "BEULAH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MUNDO LUSITANO LIMITED",
+				"since": "2022-01-13"
+			}
+		},
+		{
+			"id": "117|HIGH STREET",
+			"address": {
+				"number": "117",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "PROFICIENT CONSULTANT LIMITED|N2 SERVICES LIMITED",
+				"since": "2010-04-22"
+			}
+		},
+		{
+			"id": "84B|PARCHMORE ROAD",
+			"address": {
+				"number": "84B",
+				"street": "PARCHMORE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NANANOM GROCERIES LTD",
+				"since": "2017-08-18"
+			}
+		},
+		{
+			"id": "115|PARCHMORE ROAD",
+			"address": {
+				"number": "115",
+				"street": "PARCHMORE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NEWROZ BAZARE LIMITED",
+				"since": "2015-04-02"
+			}
+		},
+		{
+			"id": "12|HOWBERRY ROAD",
+			"address": {
+				"number": "12",
+				"street": "HOWBERRY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PATHFINDER ENTERPRISE LTD",
+				"since": "2026-01-08"
+			}
+		},
+		{
+			"id": "165|NORTHWOOD ROAD",
+			"address": {
+				"number": "165",
+				"street": "NORTHWOOD ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PELANGI LTD",
+				"since": "2022-10-25"
+			}
+		},
+		{
+			"id": "466|LONDON ROAD",
+			"address": {
+				"number": "466",
+				"street": "LONDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "REAL TASTE OF INDIA (PVT) LTD",
+				"since": "2022-06-23"
+			}
+		},
+		{
+			"id": "68|BEULAH ROAD",
+			"address": {
+				"number": "68",
+				"street": "BEULAH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RICHIE’S PATTIE SHOP LTD",
+				"since": "2024-08-27"
+			}
+		},
+		{
+			"id": "109|PARCHMORE ROAD",
+			"address": {
+				"number": "109",
+				"street": "PARCHMORE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SEA FISH LIMITED",
+				"since": "2013-04-04"
+			}
+		},
+		{
+			"id": "25|WOODVILLE ROAD",
+			"address": {
+				"number": "25",
+				"street": "WOODVILLE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TAMMY'S TINY TOTS LIMITED",
+				"since": "2016-05-19"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

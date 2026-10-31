@@ -1,0 +1,23 @@
+{
+	"source": "Greater London Authority, Public_Realm_tree_list_2025_November.csv",
+	"prefix": "trees",
+	"records": [
+		{
+			"id": "trees:Siskin Court",
+			"street": "Siskin Court",
+			"claims": {
+				"count": "1",
+				"kinds": "Horse-chestnut (1)"
+			}
+		},
+		{
+			"id": "trees:Maresfield",
+			"street": "Maresfield",
+			"claims": {
+				"count": "2",
+				"kinds": "Cherry (1), Large-leaved Lime (1)"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

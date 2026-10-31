@@ -1,0 +1,23 @@
+{
+	"source": "Greater London Authority, Public_Realm_tree_list_2025_November.csv",
+	"prefix": "trees",
+	"records": [
+		{
+			"id": "trees:Waddon Marsh Way",
+			"street": "Waddon Marsh Way",
+			"claims": {
+				"count": "1",
+				"kinds": "Pyrus Species (1)"
+			}
+		},
+		{
+			"id": "trees:Miller Road",
+			"street": "Miller Road",
+			"claims": {
+				"count": "1",
+				"kinds": "Lime (1)"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

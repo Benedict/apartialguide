@@ -1,0 +1,19 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "607",
+			"at": [
+				51.38315,
+				-0.10086
+			],
+			"claims": {
+				"name": "C. B. Fry 1872-1956 all-round sportsman was born here",
+				"description": "plaque",
+				"inscription": "C. B. Fry 1872-1956 all-round sportsman was born here"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

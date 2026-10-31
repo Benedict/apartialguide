@@ -1,0 +1,8659 @@
+{
+	"source": "Office for National Statistics",
+	"prefix": "postcode",
+	"records": [
+		{
+			"id": "CR0 0XL",
+			"at": [
+				51.381356,
+				-0.107469
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "CR0 0XL",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "CR0 1ZW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-08-01",
+			"claims": {
+				"name": "CR0 1ZW",
+				"kind": "postcode",
+				"began": "2017-09",
+				"ended": "2021-08"
+			}
+		},
+		{
+			"id": "CR0 3LZ",
+			"at": [
+				51.383384,
+				-0.121756
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "CR0 3LZ",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "CR0 3FQ",
+			"at": [
+				51.38316,
+				-0.108961
+			],
+			"observed": "2024-06-01",
+			"claims": {
+				"name": "CR0 3FQ",
+				"kind": "postcode",
+				"began": "2024-03",
+				"ended": "2024-06"
+			}
+		},
+		{
+			"id": "CR0 2WY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR0 2WY",
+				"kind": "postcode",
+				"began": "2004-09",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR0 4AS",
+			"at": [
+				51.379884,
+				-0.123854
+			],
+			"observed": "2008-12-01",
+			"claims": {
+				"name": "CR0 4AS",
+				"kind": "postcode",
+				"began": "2003-03",
+				"ended": "2008-12"
+			}
+		},
+		{
+			"id": "CR0 4WY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR0 4WY",
+				"kind": "postcode",
+				"began": "2004-09",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR0 4XE",
+			"at": [
+				51.377901,
+				-0.119696
+			],
+			"observed": "2016-10-01",
+			"claims": {
+				"name": "CR0 4XE",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2016-10"
+			}
+		},
+		{
+			"id": "CR0 4XW",
+			"at": [
+				51.384398,
+				-0.128901
+			],
+			"observed": "2005-01-01",
+			"claims": {
+				"name": "CR0 4XW",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2005-01"
+			}
+		},
+		{
+			"id": "CR0 5WW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR0 5WW",
+				"kind": "postcode",
+				"began": "2008-02",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR0 9YB",
+			"at": [
+				51.386234,
+				-0.109984
+			],
+			"observed": "2013-07-01",
+			"claims": {
+				"name": "CR0 9YB",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2013-07"
+			}
+		},
+		{
+			"id": "CR2 0UT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-07-01",
+			"claims": {
+				"name": "CR2 0UT",
+				"kind": "postcode",
+				"began": "2008-06",
+				"ended": "2017-07"
+			}
+		},
+		{
+			"id": "CR2 0ZB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-03-01",
+			"claims": {
+				"name": "CR2 0ZB",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "2015-03"
+			}
+		},
+		{
+			"id": "CR2 0ZS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-01-01",
+			"claims": {
+				"name": "CR2 0ZS",
+				"kind": "postcode",
+				"began": "2014-01",
+				"ended": "2015-01"
+			}
+		},
+		{
+			"id": "CR2 0WS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-11-01",
+			"claims": {
+				"name": "CR2 0WS",
+				"kind": "postcode",
+				"began": "2005-11",
+				"ended": "2018-11"
+			}
+		},
+		{
+			"id": "CR2 0HX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-11-01",
+			"claims": {
+				"name": "CR2 0HX",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2017-11"
+			}
+		},
+		{
+			"id": "CR2 0XQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-11-01",
+			"claims": {
+				"name": "CR2 0XQ",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "2017-11"
+			}
+		},
+		{
+			"id": "CR2 1PR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-03-01",
+			"claims": {
+				"name": "CR2 1PR",
+				"kind": "postcode",
+				"began": "2021-05",
+				"ended": "2022-03"
+			}
+		},
+		{
+			"id": "CR2 1AN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-09-01",
+			"claims": {
+				"name": "CR2 1AN",
+				"kind": "postcode",
+				"began": "2008-08",
+				"ended": "2018-09"
+			}
+		},
+		{
+			"id": "CR2 1LD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-03-01",
+			"claims": {
+				"name": "CR2 1LD",
+				"kind": "postcode",
+				"began": "2013-03",
+				"ended": "2016-03"
+			}
+		},
+		{
+			"id": "CR2 1PS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-04-01",
+			"claims": {
+				"name": "CR2 1PS",
+				"kind": "postcode",
+				"began": "2021-03",
+				"ended": "2021-04"
+			}
+		},
+		{
+			"id": "CR2 1PT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-10-01",
+			"claims": {
+				"name": "CR2 1PT",
+				"kind": "postcode",
+				"began": "2021-03",
+				"ended": "2021-10"
+			}
+		},
+		{
+			"id": "CR2 1LE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-05-01",
+			"claims": {
+				"name": "CR2 1LE",
+				"kind": "postcode",
+				"began": "2013-05",
+				"ended": "2016-05"
+			}
+		},
+		{
+			"id": "CR2 1PU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-08-01",
+			"claims": {
+				"name": "CR2 1PU",
+				"kind": "postcode",
+				"began": "2021-03",
+				"ended": "2021-08"
+			}
+		},
+		{
+			"id": "CR2 1LF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-06-01",
+			"claims": {
+				"name": "CR2 1LF",
+				"kind": "postcode",
+				"began": "2013-05",
+				"ended": "2015-06"
+			}
+		},
+		{
+			"id": "CR2 1FA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-07-01",
+			"claims": {
+				"name": "CR2 1FA",
+				"kind": "postcode",
+				"began": "2009-05",
+				"ended": "2017-07"
+			}
+		},
+		{
+			"id": "CR2 1FE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-06-01",
+			"claims": {
+				"name": "CR2 1FE",
+				"kind": "postcode",
+				"began": "2009-06",
+				"ended": "2015-06"
+			}
+		},
+		{
+			"id": "CR2 1FF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-10-01",
+			"claims": {
+				"name": "CR2 1FF",
+				"kind": "postcode",
+				"began": "2009-06",
+				"ended": "2016-10"
+			}
+		},
+		{
+			"id": "CR2 1FH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-09-01",
+			"claims": {
+				"name": "CR2 1FH",
+				"kind": "postcode",
+				"began": "2009-06",
+				"ended": "2024-09"
+			}
+		},
+		{
+			"id": "CR2 1FJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-07-01",
+			"claims": {
+				"name": "CR2 1FJ",
+				"kind": "postcode",
+				"began": "2009-06",
+				"ended": "2020-07"
+			}
+		},
+		{
+			"id": "CR2 1FU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-03-01",
+			"claims": {
+				"name": "CR2 1FU",
+				"kind": "postcode",
+				"began": "2009-09",
+				"ended": "2021-03"
+			}
+		},
+		{
+			"id": "CR2 1PX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-09-01",
+			"claims": {
+				"name": "CR2 1PX",
+				"kind": "postcode",
+				"began": "2021-05",
+				"ended": "2022-09"
+			}
+		},
+		{
+			"id": "CR2 1LH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-09-01",
+			"claims": {
+				"name": "CR2 1LH",
+				"kind": "postcode",
+				"began": "2013-08",
+				"ended": "2015-09"
+			}
+		},
+		{
+			"id": "CR2 1AU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR2 1AU",
+				"kind": "postcode",
+				"began": "2009-02",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR2 1GT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-09-01",
+			"claims": {
+				"name": "CR2 1GT",
+				"kind": "postcode",
+				"began": "2010-08",
+				"ended": "2019-09"
+			}
+		},
+		{
+			"id": "CR2 1PZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-02-01",
+			"claims": {
+				"name": "CR2 1PZ",
+				"kind": "postcode",
+				"began": "2021-06",
+				"ended": "2022-02"
+			}
+		},
+		{
+			"id": "CR2 1JW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-09-01",
+			"claims": {
+				"name": "CR2 1JW",
+				"kind": "postcode",
+				"began": "2015-06",
+				"ended": "2015-09"
+			}
+		},
+		{
+			"id": "CR2 1JX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-11-01",
+			"claims": {
+				"name": "CR2 1JX",
+				"kind": "postcode",
+				"began": "2012-10",
+				"ended": "2018-11"
+			}
+		},
+		{
+			"id": "CR2 1JY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-08-01",
+			"claims": {
+				"name": "CR2 1JY",
+				"kind": "postcode",
+				"began": "2012-12",
+				"ended": "2015-08"
+			}
+		},
+		{
+			"id": "CR2 1JZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-01-01",
+			"claims": {
+				"name": "CR2 1JZ",
+				"kind": "postcode",
+				"began": "2012-12",
+				"ended": "2015-01"
+			}
+		},
+		{
+			"id": "CR2 1LA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-09-01",
+			"claims": {
+				"name": "CR2 1LA",
+				"kind": "postcode",
+				"began": "2013-02",
+				"ended": "2015-09"
+			}
+		},
+		{
+			"id": "CR2 1LN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-03-01",
+			"claims": {
+				"name": "CR2 1LN",
+				"kind": "postcode",
+				"began": "2014-01",
+				"ended": "2016-03"
+			}
+		},
+		{
+			"id": "CR2 1QA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-02-01",
+			"claims": {
+				"name": "CR2 1QA",
+				"kind": "postcode",
+				"began": "2021-06",
+				"ended": "2022-02"
+			}
+		},
+		{
+			"id": "CR2 1LP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2014-08-01",
+			"claims": {
+				"name": "CR2 1LP",
+				"kind": "postcode",
+				"began": "2014-05",
+				"ended": "2014-08"
+			}
+		},
+		{
+			"id": "CR2 1QB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-03-01",
+			"claims": {
+				"name": "CR2 1QB",
+				"kind": "postcode",
+				"began": "2021-08",
+				"ended": "2022-03"
+			}
+		},
+		{
+			"id": "CR2 1LR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-11-01",
+			"claims": {
+				"name": "CR2 1LR",
+				"kind": "postcode",
+				"began": "2014-11",
+				"ended": "2015-11"
+			}
+		},
+		{
+			"id": "CR2 1QD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-04-01",
+			"claims": {
+				"name": "CR2 1QD",
+				"kind": "postcode",
+				"began": "2021-09",
+				"ended": "2022-04"
+			}
+		},
+		{
+			"id": "CR2 1LS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-04-01",
+			"claims": {
+				"name": "CR2 1LS",
+				"kind": "postcode",
+				"began": "2015-02",
+				"ended": "2020-04"
+			}
+		},
+		{
+			"id": "CR2 1QE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-10-01",
+			"claims": {
+				"name": "CR2 1QE",
+				"kind": "postcode",
+				"began": "2022-02",
+				"ended": "2022-10"
+			}
+		},
+		{
+			"id": "CR2 1QH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-06-01",
+			"claims": {
+				"name": "CR2 1QH",
+				"kind": "postcode",
+				"began": "2023-09",
+				"ended": "2024-06"
+			}
+		},
+		{
+			"id": "CR2 1LT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-03-01",
+			"claims": {
+				"name": "CR2 1LT",
+				"kind": "postcode",
+				"began": "2015-03",
+				"ended": "2016-03"
+			}
+		},
+		{
+			"id": "CR2 1QJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-07-01",
+			"claims": {
+				"name": "CR2 1QJ",
+				"kind": "postcode",
+				"began": "2022-06",
+				"ended": "2023-07"
+			}
+		},
+		{
+			"id": "CR2 1LU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-06-01",
+			"claims": {
+				"name": "CR2 1LU",
+				"kind": "postcode",
+				"began": "2015-05",
+				"ended": "2025-06"
+			}
+		},
+		{
+			"id": "CR2 1BG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-08-01",
+			"claims": {
+				"name": "CR2 1BG",
+				"kind": "postcode",
+				"began": "2010-05",
+				"ended": "2017-08"
+			}
+		},
+		{
+			"id": "CR2 1QL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-02-01",
+			"claims": {
+				"name": "CR2 1QL",
+				"kind": "postcode",
+				"began": "2022-07",
+				"ended": "2023-02"
+			}
+		},
+		{
+			"id": "CR2 1LW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-03-01",
+			"claims": {
+				"name": "CR2 1LW",
+				"kind": "postcode",
+				"began": "2015-08",
+				"ended": "2016-03"
+			}
+		},
+		{
+			"id": "CR2 1QN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-01-01",
+			"claims": {
+				"name": "CR2 1QN",
+				"kind": "postcode",
+				"began": "2022-07",
+				"ended": "2023-01"
+			}
+		},
+		{
+			"id": "CR2 1LX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-03-01",
+			"claims": {
+				"name": "CR2 1LX",
+				"kind": "postcode",
+				"began": "2016-02",
+				"ended": "2018-03"
+			}
+		},
+		{
+			"id": "CR2 1LY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-07-01",
+			"claims": {
+				"name": "CR2 1LY",
+				"kind": "postcode",
+				"began": "2016-07",
+				"ended": "2017-07"
+			}
+		},
+		{
+			"id": "CR2 1QP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-01-01",
+			"claims": {
+				"name": "CR2 1QP",
+				"kind": "postcode",
+				"began": "2022-10",
+				"ended": "2023-01"
+			}
+		},
+		{
+			"id": "CR2 1LZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-07-01",
+			"claims": {
+				"name": "CR2 1LZ",
+				"kind": "postcode",
+				"began": "2016-10",
+				"ended": "2017-07"
+			}
+		},
+		{
+			"id": "CR2 1QQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-07-01",
+			"claims": {
+				"name": "CR2 1QQ",
+				"kind": "postcode",
+				"began": "2023-01",
+				"ended": "2023-07"
+			}
+		},
+		{
+			"id": "CR2 1NA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "CR2 1NA",
+				"kind": "postcode",
+				"began": "2016-12",
+				"ended": "2018-01"
+			}
+		},
+		{
+			"id": "CR2 1QT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-08-01",
+			"claims": {
+				"name": "CR2 1QT",
+				"kind": "postcode",
+				"began": "2023-04",
+				"ended": "2023-08"
+			}
+		},
+		{
+			"id": "CR2 1NB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-11-01",
+			"claims": {
+				"name": "CR2 1NB",
+				"kind": "postcode",
+				"began": "2017-04",
+				"ended": "2017-11"
+			}
+		},
+		{
+			"id": "CR2 1QU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-08-01",
+			"claims": {
+				"name": "CR2 1QU",
+				"kind": "postcode",
+				"began": "2023-04",
+				"ended": "2023-08"
+			}
+		},
+		{
+			"id": "CR2 1ND",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-04-01",
+			"claims": {
+				"name": "CR2 1ND",
+				"kind": "postcode",
+				"began": "2018-03",
+				"ended": "2019-04"
+			}
+		},
+		{
+			"id": "CR2 1NE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-07-01",
+			"claims": {
+				"name": "CR2 1NE",
+				"kind": "postcode",
+				"began": "2017-07",
+				"ended": "2018-07"
+			}
+		},
+		{
+			"id": "CR2 1QW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-01-01",
+			"claims": {
+				"name": "CR2 1QW",
+				"kind": "postcode",
+				"began": "2023-07",
+				"ended": "2024-01"
+			}
+		},
+		{
+			"id": "CR2 1NF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-03-01",
+			"claims": {
+				"name": "CR2 1NF",
+				"kind": "postcode",
+				"began": "2017-08",
+				"ended": "2018-03"
+			}
+		},
+		{
+			"id": "CR2 1QX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-11-01",
+			"claims": {
+				"name": "CR2 1QX",
+				"kind": "postcode",
+				"began": "2023-07",
+				"ended": "2023-11"
+			}
+		},
+		{
+			"id": "CR2 1QY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-04-01",
+			"claims": {
+				"name": "CR2 1QY",
+				"kind": "postcode",
+				"began": "2023-10",
+				"ended": "2024-04"
+			}
+		},
+		{
+			"id": "CR2 1NG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-04-01",
+			"claims": {
+				"name": "CR2 1NG",
+				"kind": "postcode",
+				"began": "2017-09",
+				"ended": "2019-04"
+			}
+		},
+		{
+			"id": "CR2 1QZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-04-01",
+			"claims": {
+				"name": "CR2 1QZ",
+				"kind": "postcode",
+				"began": "2023-12",
+				"ended": "2024-04"
+			}
+		},
+		{
+			"id": "CR2 1NH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-04-01",
+			"claims": {
+				"name": "CR2 1NH",
+				"kind": "postcode",
+				"began": "2017-10",
+				"ended": "2018-04"
+			}
+		},
+		{
+			"id": "CR2 1BX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-06-01",
+			"claims": {
+				"name": "CR2 1BX",
+				"kind": "postcode",
+				"began": "2011-07",
+				"ended": "2015-06"
+			}
+		},
+		{
+			"id": "CR2 1BY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-06-01",
+			"claims": {
+				"name": "CR2 1BY",
+				"kind": "postcode",
+				"began": "2011-07",
+				"ended": "2015-06"
+			}
+		},
+		{
+			"id": "CR2 1DR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-09-01",
+			"claims": {
+				"name": "CR2 1DR",
+				"kind": "postcode",
+				"began": "2011-08",
+				"ended": "2016-09"
+			}
+		},
+		{
+			"id": "CR2 1DX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-03-01",
+			"claims": {
+				"name": "CR2 1DX",
+				"kind": "postcode",
+				"began": "2011-08",
+				"ended": "2016-03"
+			}
+		},
+		{
+			"id": "CR2 1RA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-06-01",
+			"claims": {
+				"name": "CR2 1RA",
+				"kind": "postcode",
+				"began": "2024-01",
+				"ended": "2024-06"
+			}
+		},
+		{
+			"id": "CR2 1NJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-11-01",
+			"claims": {
+				"name": "CR2 1NJ",
+				"kind": "postcode",
+				"began": "2017-11",
+				"ended": "2018-11"
+			}
+		},
+		{
+			"id": "CR2 1RB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-01-01",
+			"claims": {
+				"name": "CR2 1RB",
+				"kind": "postcode",
+				"began": "2024-04",
+				"ended": "2025-01"
+			}
+		},
+		{
+			"id": "CR2 1NL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-08-01",
+			"claims": {
+				"name": "CR2 1NL",
+				"kind": "postcode",
+				"began": "2018-03",
+				"ended": "2018-08"
+			}
+		},
+		{
+			"id": "CR2 1NN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-09-01",
+			"claims": {
+				"name": "CR2 1NN",
+				"kind": "postcode",
+				"began": "2018-02",
+				"ended": "2018-09"
+			}
+		},
+		{
+			"id": "CR2 1RF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-09-01",
+			"claims": {
+				"name": "CR2 1RF",
+				"kind": "postcode",
+				"began": "2025-08",
+				"ended": "2025-09"
+			}
+		},
+		{
+			"id": "CR2 1NP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-10-01",
+			"claims": {
+				"name": "CR2 1NP",
+				"kind": "postcode",
+				"began": "2018-03",
+				"ended": "2018-10"
+			}
+		},
+		{
+			"id": "CR2 1RG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-06-01",
+			"claims": {
+				"name": "CR2 1RG",
+				"kind": "postcode",
+				"began": "2025-05",
+				"ended": "2025-06"
+			}
+		},
+		{
+			"id": "CR2 1NQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-10-01",
+			"claims": {
+				"name": "CR2 1NQ",
+				"kind": "postcode",
+				"began": "2018-03",
+				"ended": "2018-10"
+			}
+		},
+		{
+			"id": "CR2 1NR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-04-01",
+			"claims": {
+				"name": "CR2 1NR",
+				"kind": "postcode",
+				"began": "2018-03",
+				"ended": "2019-04"
+			}
+		},
+		{
+			"id": "CR2 1RH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-12-01",
+			"claims": {
+				"name": "CR2 1RH",
+				"kind": "postcode",
+				"began": "2025-08",
+				"ended": "2025-12"
+			}
+		},
+		{
+			"id": "CR2 1NS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR2 1NS",
+				"kind": "postcode",
+				"began": "2018-04",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR2 1RJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2026-01-01",
+			"claims": {
+				"name": "CR2 1RJ",
+				"kind": "postcode",
+				"began": "2025-08",
+				"ended": "2026-01"
+			}
+		},
+		{
+			"id": "CR2 1NT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-06-01",
+			"claims": {
+				"name": "CR2 1NT",
+				"kind": "postcode",
+				"began": "2018-05",
+				"ended": "2020-06"
+			}
+		},
+		{
+			"id": "CR2 1RL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2026-01-01",
+			"claims": {
+				"name": "CR2 1RL",
+				"kind": "postcode",
+				"began": "2025-09",
+				"ended": "2026-01"
+			}
+		},
+		{
+			"id": "CR2 1RN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2026-01-01",
+			"claims": {
+				"name": "CR2 1RN",
+				"kind": "postcode",
+				"began": "2025-09",
+				"ended": "2026-01"
+			}
+		},
+		{
+			"id": "CR2 1NW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-10-01",
+			"claims": {
+				"name": "CR2 1NW",
+				"kind": "postcode",
+				"began": "2018-09",
+				"ended": "2019-10"
+			}
+		},
+		{
+			"id": "CR2 1NX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-03-01",
+			"claims": {
+				"name": "CR2 1NX",
+				"kind": "postcode",
+				"began": "2019-06",
+				"ended": "2021-03"
+			}
+		},
+		{
+			"id": "CR2 1ST",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-05-01",
+			"claims": {
+				"name": "CR2 1ST",
+				"kind": "postcode",
+				"began": "2012-05",
+				"ended": "2016-05"
+			}
+		},
+		{
+			"id": "CR2 1NY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-11-01",
+			"claims": {
+				"name": "CR2 1NY",
+				"kind": "postcode",
+				"began": "2019-04",
+				"ended": "2019-11"
+			}
+		},
+		{
+			"id": "CR2 1NZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-07-01",
+			"claims": {
+				"name": "CR2 1NZ",
+				"kind": "postcode",
+				"began": "2019-06",
+				"ended": "2020-07"
+			}
+		},
+		{
+			"id": "CR2 1PA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-01-01",
+			"claims": {
+				"name": "CR2 1PA",
+				"kind": "postcode",
+				"began": "2020-01",
+				"ended": "2021-01"
+			}
+		},
+		{
+			"id": "CR2 1PB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-11-01",
+			"claims": {
+				"name": "CR2 1PB",
+				"kind": "postcode",
+				"began": "2020-04",
+				"ended": "2020-11"
+			}
+		},
+		{
+			"id": "CR2 1PD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-06-01",
+			"claims": {
+				"name": "CR2 1PD",
+				"kind": "postcode",
+				"began": "2020-05",
+				"ended": "2021-06"
+			}
+		},
+		{
+			"id": "CR2 1PF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-01-01",
+			"claims": {
+				"name": "CR2 1PF",
+				"kind": "postcode",
+				"began": "2020-07",
+				"ended": "2025-01"
+			}
+		},
+		{
+			"id": "CR2 1PH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-09-01",
+			"claims": {
+				"name": "CR2 1PH",
+				"kind": "postcode",
+				"began": "2020-08",
+				"ended": "2021-09"
+			}
+		},
+		{
+			"id": "CR2 1PJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-02-01",
+			"claims": {
+				"name": "CR2 1PJ",
+				"kind": "postcode",
+				"began": "2020-11",
+				"ended": "2022-02"
+			}
+		},
+		{
+			"id": "CR2 1PL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-11-01",
+			"claims": {
+				"name": "CR2 1PL",
+				"kind": "postcode",
+				"began": "2020-11",
+				"ended": "2021-11"
+			}
+		},
+		{
+			"id": "CR2 1PP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-03-01",
+			"claims": {
+				"name": "CR2 1PP",
+				"kind": "postcode",
+				"began": "2020-11",
+				"ended": "2021-03"
+			}
+		},
+		{
+			"id": "CR2 1PQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-12-01",
+			"claims": {
+				"name": "CR2 1PQ",
+				"kind": "postcode",
+				"began": "2020-11",
+				"ended": "2025-12"
+			}
+		},
+		{
+			"id": "CR2 6UB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-11-01",
+			"claims": {
+				"name": "CR2 6UB",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2017-11"
+			}
+		},
+		{
+			"id": "CR2 6ZN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-01-01",
+			"claims": {
+				"name": "CR2 6ZN",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2015-01"
+			}
+		},
+		{
+			"id": "CR2 6WY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-06-01",
+			"claims": {
+				"name": "CR2 6WY",
+				"kind": "postcode",
+				"began": "2023-07",
+				"ended": "2025-06"
+			}
+		},
+		{
+			"id": "CR2 6XB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-08-01",
+			"claims": {
+				"name": "CR2 6XB",
+				"kind": "postcode",
+				"began": "2004-02",
+				"ended": "2017-08"
+			}
+		},
+		{
+			"id": "CR2 6XL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR2 6XL",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR2 6GX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-01-01",
+			"claims": {
+				"name": "CR2 6GX",
+				"kind": "postcode",
+				"began": "2001-12",
+				"ended": "2017-01"
+			}
+		},
+		{
+			"id": "CR2 6YA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-07-01",
+			"claims": {
+				"name": "CR2 6YA",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "2017-07"
+			}
+		},
+		{
+			"id": "CR2 6YW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR2 6YW",
+				"kind": "postcode",
+				"began": "2004-03",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR2 7ZL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2014-11-01",
+			"claims": {
+				"name": "CR2 7ZL",
+				"kind": "postcode",
+				"began": "1997-12",
+				"ended": "2014-11"
+			}
+		},
+		{
+			"id": "CR2 7WT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-08-01",
+			"claims": {
+				"name": "CR2 7WT",
+				"kind": "postcode",
+				"began": "2003-03",
+				"ended": "2017-08"
+			}
+		},
+		{
+			"id": "CR2 8WN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR2 8WN",
+				"kind": "postcode",
+				"began": "2006-07",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR2 8YT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-07-01",
+			"claims": {
+				"name": "CR2 8YT",
+				"kind": "postcode",
+				"began": "2006-11",
+				"ended": "2018-07"
+			}
+		},
+		{
+			"id": "CR2 8ZQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-08-01",
+			"claims": {
+				"name": "CR2 8ZQ",
+				"kind": "postcode",
+				"began": "2004-08",
+				"ended": "2017-08"
+			}
+		},
+		{
+			"id": "CR2 9WE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-08-01",
+			"claims": {
+				"name": "CR2 9WE",
+				"kind": "postcode",
+				"began": "2003-02",
+				"ended": "2017-08"
+			}
+		},
+		{
+			"id": "CR2 9WW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR2 9WW",
+				"kind": "postcode",
+				"began": "2013-04",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR2 9WX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2014-12-01",
+			"claims": {
+				"name": "CR2 9WX",
+				"kind": "postcode",
+				"began": "2014-01",
+				"ended": "2014-12"
+			}
+		},
+		{
+			"id": "CR2 9WY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-08-01",
+			"claims": {
+				"name": "CR2 9WY",
+				"kind": "postcode",
+				"began": "2005-07",
+				"ended": "2017-08"
+			}
+		},
+		{
+			"id": "CR2 9GA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR2 9GA",
+				"kind": "postcode",
+				"began": "2001-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 6WN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-09-01",
+			"claims": {
+				"name": "CR7 6WN",
+				"kind": "postcode",
+				"began": "2014-10",
+				"ended": "2015-09"
+			}
+		},
+		{
+			"id": "CR7 6WP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR7 6WP",
+				"kind": "postcode",
+				"began": "2003-07",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 6XF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR7 6XF",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 6YA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR7 6YA",
+				"kind": "postcode",
+				"began": "2003-05",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 6SB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-11-01",
+			"claims": {
+				"name": "CR7 6SB",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2017-11"
+			}
+		},
+		{
+			"id": "CR7 7XX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-04-01",
+			"claims": {
+				"name": "CR7 7XX",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-04"
+			}
+		},
+		{
+			"id": "CR7 7FJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR7 7FJ",
+				"kind": "postcode",
+				"began": "2003-08",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 7GE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-11-01",
+			"claims": {
+				"name": "CR7 7GE",
+				"kind": "postcode",
+				"began": "2000-06",
+				"ended": "2017-11"
+			}
+		},
+		{
+			"id": "CR7 7YH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR7 7YH",
+				"kind": "postcode",
+				"began": "2003-09",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 7WA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR7 7WA",
+				"kind": "postcode",
+				"began": "2008-04",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 7YT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-10-01",
+			"claims": {
+				"name": "CR7 7YT",
+				"kind": "postcode",
+				"began": "2017-07",
+				"ended": "2017-10"
+			}
+		},
+		{
+			"id": "CR7 7WB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR7 7WB",
+				"kind": "postcode",
+				"began": "2001-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 7NT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-04-01",
+			"claims": {
+				"name": "CR7 7NT",
+				"kind": "postcode",
+				"began": "1991-09",
+				"ended": "2016-04"
+			}
+		},
+		{
+			"id": "CR7 7WS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR7 7WS",
+				"kind": "postcode",
+				"began": "2008-04",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 8XJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR7 8XJ",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 9DP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2014-08-01",
+			"claims": {
+				"name": "CR7 9DP",
+				"kind": "postcode",
+				"began": "2012-07",
+				"ended": "2014-08"
+			}
+		},
+		{
+			"id": "CR7 9DR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-08-01",
+			"claims": {
+				"name": "CR7 9DR",
+				"kind": "postcode",
+				"began": "2015-02",
+				"ended": "2021-08"
+			}
+		},
+		{
+			"id": "CR7 8TU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-04-01",
+			"claims": {
+				"name": "CR7 8TU",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-04"
+			}
+		},
+		{
+			"id": "CR7 9DS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-04-01",
+			"claims": {
+				"name": "CR7 9DS",
+				"kind": "postcode",
+				"began": "2015-03",
+				"ended": "2020-04"
+			}
+		},
+		{
+			"id": "CR7 9DT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-04-01",
+			"claims": {
+				"name": "CR7 9DT",
+				"kind": "postcode",
+				"began": "2015-03",
+				"ended": "2017-04"
+			}
+		},
+		{
+			"id": "CR7 9DU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-10-01",
+			"claims": {
+				"name": "CR7 9DU",
+				"kind": "postcode",
+				"began": "2015-05",
+				"ended": "2016-10"
+			}
+		},
+		{
+			"id": "CR7 9DW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-09-01",
+			"claims": {
+				"name": "CR7 9DW",
+				"kind": "postcode",
+				"began": "2015-08",
+				"ended": "2016-09"
+			}
+		},
+		{
+			"id": "CR7 9DX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-08-01",
+			"claims": {
+				"name": "CR7 9DX",
+				"kind": "postcode",
+				"began": "2016-05",
+				"ended": "2020-08"
+			}
+		},
+		{
+			"id": "CR7 9DY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-04-01",
+			"claims": {
+				"name": "CR7 9DY",
+				"kind": "postcode",
+				"began": "2016-04",
+				"ended": "2017-04"
+			}
+		},
+		{
+			"id": "CR7 9DZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-02-01",
+			"claims": {
+				"name": "CR7 9DZ",
+				"kind": "postcode",
+				"began": "2016-06",
+				"ended": "2017-02"
+			}
+		},
+		{
+			"id": "CR7 9EB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-09-01",
+			"claims": {
+				"name": "CR7 9EB",
+				"kind": "postcode",
+				"began": "2017-02",
+				"ended": "2017-09"
+			}
+		},
+		{
+			"id": "CR7 9ED",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-11-01",
+			"claims": {
+				"name": "CR7 9ED",
+				"kind": "postcode",
+				"began": "2017-04",
+				"ended": "2017-11"
+			}
+		},
+		{
+			"id": "CR7 9AS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR7 9AS",
+				"kind": "postcode",
+				"began": "2009-02",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 9EE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-07-01",
+			"claims": {
+				"name": "CR7 9EE",
+				"kind": "postcode",
+				"began": "2017-05",
+				"ended": "2023-07"
+			}
+		},
+		{
+			"id": "CR7 9EF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-08-01",
+			"claims": {
+				"name": "CR7 9EF",
+				"kind": "postcode",
+				"began": "2017-05",
+				"ended": "2020-08"
+			}
+		},
+		{
+			"id": "CR7 9EG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-02-01",
+			"claims": {
+				"name": "CR7 9EG",
+				"kind": "postcode",
+				"began": "2017-06",
+				"ended": "2018-02"
+			}
+		},
+		{
+			"id": "CR7 9EH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-04-01",
+			"claims": {
+				"name": "CR7 9EH",
+				"kind": "postcode",
+				"began": "2017-09",
+				"ended": "2018-04"
+			}
+		},
+		{
+			"id": "CR7 9EJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-07-01",
+			"claims": {
+				"name": "CR7 9EJ",
+				"kind": "postcode",
+				"began": "2017-12",
+				"ended": "2018-07"
+			}
+		},
+		{
+			"id": "CR7 9EL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-07-01",
+			"claims": {
+				"name": "CR7 9EL",
+				"kind": "postcode",
+				"began": "2018-01",
+				"ended": "2018-07"
+			}
+		},
+		{
+			"id": "CR7 9EN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-08-01",
+			"claims": {
+				"name": "CR7 9EN",
+				"kind": "postcode",
+				"began": "2018-01",
+				"ended": "2018-08"
+			}
+		},
+		{
+			"id": "CR7 9EP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-04-01",
+			"claims": {
+				"name": "CR7 9EP",
+				"kind": "postcode",
+				"began": "2018-03",
+				"ended": "2019-04"
+			}
+		},
+		{
+			"id": "CR7 9BB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-04-01",
+			"claims": {
+				"name": "CR7 9BB",
+				"kind": "postcode",
+				"began": "2009-07",
+				"ended": "2018-04"
+			}
+		},
+		{
+			"id": "CR7 9EQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-11-01",
+			"claims": {
+				"name": "CR7 9EQ",
+				"kind": "postcode",
+				"began": "2018-04",
+				"ended": "2018-11"
+			}
+		},
+		{
+			"id": "CR7 9BE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR7 9BE",
+				"kind": "postcode",
+				"began": "2009-09",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 9ER",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-06-01",
+			"claims": {
+				"name": "CR7 9ER",
+				"kind": "postcode",
+				"began": "2018-11",
+				"ended": "2019-06"
+			}
+		},
+		{
+			"id": "CR7 8US",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-08-01",
+			"claims": {
+				"name": "CR7 8US",
+				"kind": "postcode",
+				"began": "2022-05",
+				"ended": "2025-08"
+			}
+		},
+		{
+			"id": "CR7 9ET",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-02-01",
+			"claims": {
+				"name": "CR7 9ET",
+				"kind": "postcode",
+				"began": "2019-07",
+				"ended": "2020-02"
+			}
+		},
+		{
+			"id": "CR7 9EU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-08-01",
+			"claims": {
+				"name": "CR7 9EU",
+				"kind": "postcode",
+				"began": "2022-02",
+				"ended": "2022-08"
+			}
+		},
+		{
+			"id": "CR7 9EW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-08-01",
+			"claims": {
+				"name": "CR7 9EW",
+				"kind": "postcode",
+				"began": "2020-07",
+				"ended": "2020-08"
+			}
+		},
+		{
+			"id": "CR7 9EX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-12-01",
+			"claims": {
+				"name": "CR7 9EX",
+				"kind": "postcode",
+				"began": "2020-08",
+				"ended": "2020-12"
+			}
+		},
+		{
+			"id": "CR7 9BL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR7 9BL",
+				"kind": "postcode",
+				"began": "2010-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 9EY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-04-01",
+			"claims": {
+				"name": "CR7 9EY",
+				"kind": "postcode",
+				"began": "2020-09",
+				"ended": "2021-04"
+			}
+		},
+		{
+			"id": "CR7 9EZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-04-01",
+			"claims": {
+				"name": "CR7 9EZ",
+				"kind": "postcode",
+				"began": "2020-11",
+				"ended": "2025-04"
+			}
+		},
+		{
+			"id": "CR7 9BN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR7 9BN",
+				"kind": "postcode",
+				"began": "2010-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 9FA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-10-01",
+			"claims": {
+				"name": "CR7 9FA",
+				"kind": "postcode",
+				"began": "2020-09",
+				"ended": "2024-10"
+			}
+		},
+		{
+			"id": "CR7 9FB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-06-01",
+			"claims": {
+				"name": "CR7 9FB",
+				"kind": "postcode",
+				"began": "2021-02",
+				"ended": "2021-06"
+			}
+		},
+		{
+			"id": "CR7 9BP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR7 9BP",
+				"kind": "postcode",
+				"began": "2010-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR7 9FD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-08-01",
+			"claims": {
+				"name": "CR7 9FD",
+				"kind": "postcode",
+				"began": "2021-02",
+				"ended": "2021-08"
+			}
+		},
+		{
+			"id": "CR7 9BQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-04-01",
+			"claims": {
+				"name": "CR7 9BQ",
+				"kind": "postcode",
+				"began": "2010-02",
+				"ended": "2025-04"
+			}
+		},
+		{
+			"id": "CR7 9FF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-11-01",
+			"claims": {
+				"name": "CR7 9FF",
+				"kind": "postcode",
+				"began": "2021-07",
+				"ended": "2021-11"
+			}
+		},
+		{
+			"id": "CR7 9FG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-11-01",
+			"claims": {
+				"name": "CR7 9FG",
+				"kind": "postcode",
+				"began": "2021-08",
+				"ended": "2021-11"
+			}
+		},
+		{
+			"id": "CR7 9FH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-07-01",
+			"claims": {
+				"name": "CR7 9FH",
+				"kind": "postcode",
+				"began": "2021-08",
+				"ended": "2025-07"
+			}
+		},
+		{
+			"id": "CR7 9FJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-03-01",
+			"claims": {
+				"name": "CR7 9FJ",
+				"kind": "postcode",
+				"began": "2021-12",
+				"ended": "2022-03"
+			}
+		},
+		{
+			"id": "CR7 9FL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-02-01",
+			"claims": {
+				"name": "CR7 9FL",
+				"kind": "postcode",
+				"began": "2021-12",
+				"ended": "2022-02"
+			}
+		},
+		{
+			"id": "CR7 9FN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-04-01",
+			"claims": {
+				"name": "CR7 9FN",
+				"kind": "postcode",
+				"began": "2022-03",
+				"ended": "2023-04"
+			}
+		},
+		{
+			"id": "CR7 9FQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-06-01",
+			"claims": {
+				"name": "CR7 9FQ",
+				"kind": "postcode",
+				"began": "2022-05",
+				"ended": "2023-06"
+			}
+		},
+		{
+			"id": "CR7 9FR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-05-01",
+			"claims": {
+				"name": "CR7 9FR",
+				"kind": "postcode",
+				"began": "2023-02",
+				"ended": "2023-05"
+			}
+		},
+		{
+			"id": "CR7 9FS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-04-01",
+			"claims": {
+				"name": "CR7 9FS",
+				"kind": "postcode",
+				"began": "2022-11",
+				"ended": "2023-04"
+			}
+		},
+		{
+			"id": "CR7 9FT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-08-01",
+			"claims": {
+				"name": "CR7 9FT",
+				"kind": "postcode",
+				"began": "2023-04",
+				"ended": "2023-08"
+			}
+		},
+		{
+			"id": "CR7 9FU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-12-01",
+			"claims": {
+				"name": "CR7 9FU",
+				"kind": "postcode",
+				"began": "2023-04",
+				"ended": "2023-12"
+			}
+		},
+		{
+			"id": "CR7 9FW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "CR7 9FW",
+				"kind": "postcode",
+				"began": "2023-10",
+				"ended": "2024-05"
+			}
+		},
+		{
+			"id": "CR7 9FY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "CR7 9FY",
+				"kind": "postcode",
+				"began": "2023-11",
+				"ended": "2024-05"
+			}
+		},
+		{
+			"id": "CR7 9GA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-04-01",
+			"claims": {
+				"name": "CR7 9GA",
+				"kind": "postcode",
+				"began": "2023-12",
+				"ended": "2024-04"
+			}
+		},
+		{
+			"id": "CR7 9GB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-08-01",
+			"claims": {
+				"name": "CR7 9GB",
+				"kind": "postcode",
+				"began": "2024-01",
+				"ended": "2024-08"
+			}
+		},
+		{
+			"id": "CR7 9GD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-06-01",
+			"claims": {
+				"name": "CR7 9GD",
+				"kind": "postcode",
+				"began": "2024-02",
+				"ended": "2024-06"
+			}
+		},
+		{
+			"id": "CR9 1TY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-09-01",
+			"claims": {
+				"name": "CR9 1TY",
+				"kind": "postcode",
+				"began": "2020-12",
+				"ended": "2022-09"
+			}
+		},
+		{
+			"id": "CR9 1WA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 1WA",
+				"kind": "postcode",
+				"began": "1991-09",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 1WR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-05-01",
+			"claims": {
+				"name": "CR9 1WR",
+				"kind": "postcode",
+				"began": "2015-11",
+				"ended": "2017-05"
+			}
+		},
+		{
+			"id": "CR9 1WX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-03-01",
+			"claims": {
+				"name": "CR9 1WX",
+				"kind": "postcode",
+				"began": "2020-09",
+				"ended": "2021-03"
+			}
+		},
+		{
+			"id": "CR9 1XH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 1XH",
+				"kind": "postcode",
+				"began": "1996-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 1XL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-12-01",
+			"claims": {
+				"name": "CR9 1XL",
+				"kind": "postcode",
+				"began": "2003-09",
+				"ended": "2019-12"
+			}
+		},
+		{
+			"id": "CR9 1EB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 1EB",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 1EN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-03-01",
+			"claims": {
+				"name": "CR9 1EN",
+				"kind": "postcode",
+				"began": "2007-02",
+				"ended": "2023-03"
+			}
+		},
+		{
+			"id": "CR9 1EQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 1EQ",
+				"kind": "postcode",
+				"began": "1983-03",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 1EZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-10-01",
+			"claims": {
+				"name": "CR9 1EZ",
+				"kind": "postcode",
+				"began": "2001-06",
+				"ended": "2018-10"
+			}
+		},
+		{
+			"id": "CR9 1FA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-03-01",
+			"claims": {
+				"name": "CR9 1FA",
+				"kind": "postcode",
+				"began": "2012-04",
+				"ended": "2015-03"
+			}
+		},
+		{
+			"id": "CR9 1JH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 1JH",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 1PT",
+			"at": [
+				51.38236,
+				-0.107298
+			],
+			"observed": "2012-12-01",
+			"claims": {
+				"name": "CR9 1PT",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2012-12"
+			}
+		},
+		{
+			"id": "CR9 1SJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-04-01",
+			"claims": {
+				"name": "CR9 1SJ",
+				"kind": "postcode",
+				"began": "2006-03",
+				"ended": "2019-04"
+			}
+		},
+		{
+			"id": "CR9 1AH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 1AH",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 1JY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 1JY",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 0AE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 0AE",
+				"kind": "postcode",
+				"began": "2000-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 1AU",
+			"at": [
+				51.38236,
+				-0.107298
+			],
+			"observed": "1999-12-01",
+			"claims": {
+				"name": "CR9 1AU",
+				"kind": "postcode",
+				"began": "1993-01",
+				"ended": "1999-12"
+			}
+		},
+		{
+			"id": "CR9 1NQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 1NQ",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 1BX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 1BX",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2YS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2YS",
+				"kind": "postcode",
+				"began": "2003-11",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2SQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2SQ",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2ES",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2ES",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2JL",
+			"at": [
+				51.37999,
+				-0.104766
+			],
+			"observed": "2009-08-01",
+			"claims": {
+				"name": "CR9 2JL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2009-08"
+			}
+		},
+		{
+			"id": "CR9 2YT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2YT",
+				"kind": "postcode",
+				"began": "2002-07",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2SR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2SR",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2SS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2SS",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2ST",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2ST",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 1XQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-11-01",
+			"claims": {
+				"name": "CR9 1XQ",
+				"kind": "postcode",
+				"began": "2003-09",
+				"ended": "2019-11"
+			}
+		},
+		{
+			"id": "CR9 2WE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2WE",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 1XR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 1XR",
+				"kind": "postcode",
+				"began": "1996-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2SW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2SW",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2ZA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2ZA",
+				"kind": "postcode",
+				"began": "1996-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2WH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2WH",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 1XT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-08-01",
+			"claims": {
+				"name": "CR9 1XT",
+				"kind": "postcode",
+				"began": "2008-09",
+				"ended": "2017-08"
+			}
+		},
+		{
+			"id": "CR9 2SX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2SX",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2WL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2WL",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 1XU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 1XU",
+				"kind": "postcode",
+				"began": "2005-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2QB",
+			"at": [
+				51.383603,
+				-0.108512
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 2QB",
+				"kind": "postcode",
+				"began": "1986-04",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 2QD",
+			"at": [
+				51.380411,
+				-0.104634
+			],
+			"observed": "1985-12-01",
+			"claims": {
+				"name": "CR9 2QD",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1985-12"
+			}
+		},
+		{
+			"id": "CR9 2ZG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2ZG",
+				"kind": "postcode",
+				"began": "2004-10",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2TA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2TA",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2WT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2WT",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2TB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2TB",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2QG",
+			"at": [
+				51.383603,
+				-0.108512
+			],
+			"observed": "2014-05-01",
+			"claims": {
+				"name": "CR9 2QG",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2014-05"
+			}
+		},
+		{
+			"id": "CR9 2TD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2TD",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2TE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2TE",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2QN",
+			"at": [
+				51.380411,
+				-0.104634
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 2QN",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 2WY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2WY",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2AW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-01-01",
+			"claims": {
+				"name": "CR9 2AW",
+				"kind": "postcode",
+				"began": "1995-01",
+				"ended": "2023-01"
+			}
+		},
+		{
+			"id": "CR9 2QR",
+			"at": [
+				51.384029,
+				-0.105922
+			],
+			"observed": "1991-12-01",
+			"claims": {
+				"name": "CR9 2QR",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1991-12"
+			}
+		},
+		{
+			"id": "CR9 1YB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-11-01",
+			"claims": {
+				"name": "CR9 1YB",
+				"kind": "postcode",
+				"began": "2003-09",
+				"ended": "2019-11"
+			}
+		},
+		{
+			"id": "CR9 2ZQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-10-01",
+			"claims": {
+				"name": "CR9 2ZQ",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "2016-10"
+			}
+		},
+		{
+			"id": "CR9 2QS",
+			"at": [
+				51.384974,
+				-0.108757
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "CR9 2QS",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "CR9 1YE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-12-01",
+			"claims": {
+				"name": "CR9 1YE",
+				"kind": "postcode",
+				"began": "2003-09",
+				"ended": "2019-12"
+			}
+		},
+		{
+			"id": "CR9 2QX",
+			"at": [
+				51.384144,
+				-0.108058
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 2QX",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 2TL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2TL",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2QY",
+			"at": [
+				51.386817,
+				-0.111555
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 2QY",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 2RA",
+			"at": [
+				51.381333,
+				-0.106033
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "CR9 2RA",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "CR9 2RB",
+			"at": [
+				51.382195,
+				-0.105997
+			],
+			"observed": "1997-12-01",
+			"claims": {
+				"name": "CR9 2RB",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1997-12"
+			}
+		},
+		{
+			"id": "CR9 2TR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2TR",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2RD",
+			"at": [
+				51.382047,
+				-0.106851
+			],
+			"observed": "2004-03-01",
+			"claims": {
+				"name": "CR9 2RD",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2004-03"
+			}
+		},
+		{
+			"id": "CR9 2XL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2XL",
+				"kind": "postcode",
+				"began": "2006-11",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2LZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2LZ",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2TT",
+			"at": [
+				51.38236,
+				-0.107298
+			],
+			"observed": "2017-08-01",
+			"claims": {
+				"name": "CR9 2TT",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2017-08"
+			}
+		},
+		{
+			"id": "CR9 2RF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-06-01",
+			"claims": {
+				"name": "CR9 2RF",
+				"kind": "postcode",
+				"began": "2008-06",
+				"ended": "2019-06"
+			}
+		},
+		{
+			"id": "CR9 2TX",
+			"at": [
+				51.384746,
+				-0.105806
+			],
+			"observed": "2006-01-01",
+			"claims": {
+				"name": "CR9 2TX",
+				"kind": "postcode",
+				"began": "2004-05",
+				"ended": "2006-01"
+			}
+		},
+		{
+			"id": "CR9 2RH",
+			"at": [
+				51.380583,
+				-0.104153
+			],
+			"observed": "1998-06-01",
+			"claims": {
+				"name": "CR9 2RH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1998-06"
+			}
+		},
+		{
+			"id": "CR9 2TZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2TZ",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3AG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3AG",
+				"kind": "postcode",
+				"began": "2006-05",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2RL",
+			"at": [
+				51.383434,
+				-0.107527
+			],
+			"observed": "2008-12-01",
+			"claims": {
+				"name": "CR9 2RL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2008-12"
+			}
+		},
+		{
+			"id": "CR9 2RN",
+			"at": [
+				51.378603,
+				-0.102927
+			],
+			"observed": "1998-06-01",
+			"claims": {
+				"name": "CR9 2RN",
+				"kind": "postcode",
+				"began": "1981-06",
+				"ended": "1998-06"
+			}
+		},
+		{
+			"id": "CR9 2NN",
+			"at": [
+				51.381333,
+				-0.106033
+			],
+			"observed": "1984-12-01",
+			"claims": {
+				"name": "CR9 2NN",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1984-12"
+			}
+		},
+		{
+			"id": "CR9 2UD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2UD",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2UE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2UE",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2XY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-07-01",
+			"claims": {
+				"name": "CR9 2XY",
+				"kind": "postcode",
+				"began": "2007-01",
+				"ended": "2015-07"
+			}
+		},
+		{
+			"id": "CR9 2UG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2UG",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2RR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2RR",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2RT",
+			"at": [
+				51.382613,
+				-0.099556
+			],
+			"observed": "2014-03-01",
+			"claims": {
+				"name": "CR9 2RT",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2014-03"
+			}
+		},
+		{
+			"id": "CR9 1YZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-12-01",
+			"claims": {
+				"name": "CR9 1YZ",
+				"kind": "postcode",
+				"began": "2003-09",
+				"ended": "2019-12"
+			}
+		},
+		{
+			"id": "CR9 2UP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2UP",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2RW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2RW",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2UQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2UQ",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3AZ",
+			"at": [
+				51.378497,
+				-0.111984
+			],
+			"observed": "1999-12-01",
+			"claims": {
+				"name": "CR9 3AZ",
+				"kind": "postcode",
+				"began": "1995-01",
+				"ended": "1999-12"
+			}
+		},
+		{
+			"id": "CR9 2RX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2RX",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2DB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2DB",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 1ZH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 1ZH",
+				"kind": "postcode",
+				"began": "2011-09",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2RY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2RY",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2UT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-11-01",
+			"claims": {
+				"name": "CR9 2UT",
+				"kind": "postcode",
+				"began": "2018-03",
+				"ended": "2018-11"
+			}
+		},
+		{
+			"id": "CR9 2SA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2SA",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3BD",
+			"at": [
+				51.381397,
+				-0.12122
+			],
+			"observed": "2003-01-01",
+			"claims": {
+				"name": "CR9 3BD",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2003-01"
+			}
+		},
+		{
+			"id": "CR9 2UW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2UW",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2SB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-06-01",
+			"claims": {
+				"name": "CR9 2SB",
+				"kind": "postcode",
+				"began": "2006-11",
+				"ended": "2015-06"
+			}
+		},
+		{
+			"id": "CR9 3BE",
+			"at": [
+				51.378819,
+				-0.102975
+			],
+			"observed": "2007-07-01",
+			"claims": {
+				"name": "CR9 3BE",
+				"kind": "postcode",
+				"began": "2006-10",
+				"ended": "2007-07"
+			}
+		},
+		{
+			"id": "CR9 2UX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2UX",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 1ZN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 1ZN",
+				"kind": "postcode",
+				"began": "1992-08",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2SE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2SE",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2SF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2SF",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2SG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2SG",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2SJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2SJ",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2SL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2SL",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 2SP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 2SP",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3SN",
+			"at": [
+				51.382775,
+				-0.123003
+			],
+			"observed": "2006-03-01",
+			"claims": {
+				"name": "CR9 3SN",
+				"kind": "postcode",
+				"began": "2006-02",
+				"ended": "2006-03"
+			}
+		},
+		{
+			"id": "CR9 3BH",
+			"at": [
+				51.384418,
+				-0.122318
+			],
+			"observed": "2001-11-01",
+			"claims": {
+				"name": "CR9 3BH",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2001-11"
+			}
+		},
+		{
+			"id": "CR9 4HE",
+			"at": [
+				51.37784,
+				-0.120891
+			],
+			"observed": "2002-08-01",
+			"claims": {
+				"name": "CR9 4HE",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2002-08"
+			}
+		},
+		{
+			"id": "CR9 3WH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 3WH",
+				"kind": "postcode",
+				"began": "2008-11",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 3WN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3WN",
+				"kind": "postcode",
+				"began": "2006-07",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3WQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3WQ",
+				"kind": "postcode",
+				"began": "2004-05",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3WX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3WX",
+				"kind": "postcode",
+				"began": "2004-04",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3XF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3XF",
+				"kind": "postcode",
+				"began": "2004-05",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3XP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2014-10-01",
+			"claims": {
+				"name": "CR9 3XP",
+				"kind": "postcode",
+				"began": "2001-12",
+				"ended": "2014-10"
+			}
+		},
+		{
+			"id": "CR9 3XT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3XT",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3YD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-02-01",
+			"claims": {
+				"name": "CR9 3YD",
+				"kind": "postcode",
+				"began": "2024-03",
+				"ended": "2025-02"
+			}
+		},
+		{
+			"id": "CR9 3YG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3YG",
+				"kind": "postcode",
+				"began": "2009-02",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 4BD",
+			"at": [
+				51.383253,
+				-0.12202
+			],
+			"observed": "2006-09-01",
+			"claims": {
+				"name": "CR9 4BD",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2006-09"
+			}
+		},
+		{
+			"id": "CR9 3JB",
+			"at": [
+				51.385432,
+				-0.119359
+			],
+			"observed": "2003-10-01",
+			"claims": {
+				"name": "CR9 3JB",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2003-10"
+			}
+		},
+		{
+			"id": "CR9 3YR",
+			"at": [
+				51.380263,
+				-0.107155
+			],
+			"observed": "2001-04-01",
+			"claims": {
+				"name": "CR9 3YR",
+				"kind": "postcode",
+				"began": "1996-12",
+				"ended": "2001-04"
+			}
+		},
+		{
+			"id": "CR9 3LN",
+			"at": [
+				51.381356,
+				-0.107469
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 3LN",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 3BP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3BP",
+				"kind": "postcode",
+				"began": "2010-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 4HS",
+			"at": [
+				51.378357,
+				-0.121747
+			],
+			"observed": "2013-03-01",
+			"claims": {
+				"name": "CR9 4HS",
+				"kind": "postcode",
+				"began": "2003-03",
+				"ended": "2013-03"
+			}
+		},
+		{
+			"id": "CR9 4HT",
+			"at": [
+				51.378357,
+				-0.121747
+			],
+			"observed": "2003-03-01",
+			"claims": {
+				"name": "CR9 4HT",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2003-03"
+			}
+		},
+		{
+			"id": "CR9 3BW",
+			"at": [
+				51.385665,
+				-0.110367
+			],
+			"observed": "2006-02-01",
+			"claims": {
+				"name": "CR9 3BW",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2006-02"
+			}
+		},
+		{
+			"id": "CR9 3BX",
+			"at": [
+				51.385895,
+				-0.110156
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 3BX",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 3QQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-07-01",
+			"claims": {
+				"name": "CR9 3QQ",
+				"kind": "postcode",
+				"began": "2014-06",
+				"ended": "2023-07"
+			}
+		},
+		{
+			"id": "CR9 4JL",
+			"at": [
+				51.379835,
+				-0.124776
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CR9 4JL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CR9 4JN",
+			"at": [
+				51.381656,
+				-0.126138
+			],
+			"observed": "1996-06-01",
+			"claims": {
+				"name": "CR9 4JN",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1996-06"
+			}
+		},
+		{
+			"id": "CR9 3ZH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3ZH",
+				"kind": "postcode",
+				"began": "1990-07",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 4BZ",
+			"at": [
+				51.37707,
+				-0.120578
+			],
+			"observed": "1991-12-01",
+			"claims": {
+				"name": "CR9 4BZ",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "1991-12"
+			}
+		},
+		{
+			"id": "CR9 3ZP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3ZP",
+				"kind": "postcode",
+				"began": "1990-07",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3DN",
+			"at": [
+				51.385003,
+				-0.120627
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 3DN",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 4JU",
+			"at": [
+				51.377992,
+				-0.121977
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 4JU",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 3ZQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3ZQ",
+				"kind": "postcode",
+				"began": "1990-07",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3ZR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3ZR",
+				"kind": "postcode",
+				"began": "1990-07",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3ZW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3ZW",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3ZX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3ZX",
+				"kind": "postcode",
+				"began": "1990-07",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3ZY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 3ZY",
+				"kind": "postcode",
+				"began": "1990-07",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3RH",
+			"at": [
+				51.385895,
+				-0.110156
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "CR9 3RH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "CR9 3RL",
+			"at": [
+				51.385895,
+				-0.110156
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 3RL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 3DS",
+			"at": [
+				51.378729,
+				-0.111888
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CR9 3DS",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CR9 3EA",
+			"at": [
+				51.385112,
+				-0.117374
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 3EA",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 4NL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 4NL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 3EY",
+			"at": [
+				51.379898,
+				-0.102399
+			],
+			"observed": "2025-09-01",
+			"claims": {
+				"name": "CR9 3EY",
+				"kind": "postcode",
+				"began": "1993-01",
+				"ended": "2025-09"
+			}
+		},
+		{
+			"id": "CR9 6RB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 6RB",
+				"kind": "postcode",
+				"began": "1995-07",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 6UH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-06-01",
+			"claims": {
+				"name": "CR9 6UH",
+				"kind": "postcode",
+				"began": "2008-06",
+				"ended": "2017-06"
+			}
+		},
+		{
+			"id": "CR9 6UP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 6UP",
+				"kind": "postcode",
+				"began": "2007-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 6UW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 6UW",
+				"kind": "postcode",
+				"began": "2005-10",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 4NZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 4NZ",
+				"kind": "postcode",
+				"began": "1992-08",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 4RY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-02-01",
+			"claims": {
+				"name": "CR9 4RY",
+				"kind": "postcode",
+				"began": "1991-09",
+				"ended": "2016-02"
+			}
+		},
+		{
+			"id": "CR9 4PB",
+			"at": [
+				51.377278,
+				-0.118946
+			],
+			"observed": "2010-12-01",
+			"claims": {
+				"name": "CR9 4PB",
+				"kind": "postcode",
+				"began": "1990-07",
+				"ended": "2010-12"
+			}
+		},
+		{
+			"id": "CR9 5WJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 5WJ",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 6AA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-04-01",
+			"claims": {
+				"name": "CR9 6AA",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2020-04"
+			}
+		},
+		{
+			"id": "CR9 5XU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-02-01",
+			"claims": {
+				"name": "CR9 5XU",
+				"kind": "postcode",
+				"began": "2018-02",
+				"ended": "2021-02"
+			}
+		},
+		{
+			"id": "CR9 5XW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2014-10-01",
+			"claims": {
+				"name": "CR9 5XW",
+				"kind": "postcode",
+				"began": "2005-10",
+				"ended": "2014-10"
+			}
+		},
+		{
+			"id": "CR9 5YP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2014-12-01",
+			"claims": {
+				"name": "CR9 5YP",
+				"kind": "postcode",
+				"began": "2001-12",
+				"ended": "2014-12"
+			}
+		},
+		{
+			"id": "CR9 5YY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-07-01",
+			"claims": {
+				"name": "CR9 5YY",
+				"kind": "postcode",
+				"began": "2007-10",
+				"ended": "2018-07"
+			}
+		},
+		{
+			"id": "CR9 5ZG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2014-09-01",
+			"claims": {
+				"name": "CR9 5ZG",
+				"kind": "postcode",
+				"began": "2010-10",
+				"ended": "2014-09"
+			}
+		},
+		{
+			"id": "CR9 5BP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2014-08-01",
+			"claims": {
+				"name": "CR9 5BP",
+				"kind": "postcode",
+				"began": "2007-07",
+				"ended": "2014-08"
+			}
+		},
+		{
+			"id": "CR9 4SA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 4SA",
+				"kind": "postcode",
+				"began": "2008-02",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 6AG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 6AG",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 4PL",
+			"at": [
+				51.383453,
+				-0.126065
+			],
+			"observed": "1984-12-01",
+			"claims": {
+				"name": "CR9 4PL",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1984-12"
+			}
+		},
+		{
+			"id": "CR9 4WB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 4WB",
+				"kind": "postcode",
+				"began": "2003-03",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 6DZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 6DZ",
+				"kind": "postcode",
+				"began": "2009-09",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 5DF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-08-01",
+			"claims": {
+				"name": "CR9 5DF",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2015-08"
+			}
+		},
+		{
+			"id": "CR9 6AP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-05-01",
+			"claims": {
+				"name": "CR9 6AP",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2016-05"
+			}
+		},
+		{
+			"id": "CR9 4ZT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 4ZT",
+				"kind": "postcode",
+				"began": "1996-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 6AS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 6AS",
+				"kind": "postcode",
+				"began": "1996-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 4WY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 4WY",
+				"kind": "postcode",
+				"began": "2001-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 4XD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR9 4XD",
+				"kind": "postcode",
+				"began": "2014-03",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR9 4QF",
+			"at": [
+				51.385181,
+				-0.121683
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "CR9 4QF",
+				"kind": "postcode",
+				"began": "1987-10",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "CR9 6AX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 6AX",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 5QJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 5QJ",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 5AU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 5AU",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 6BZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 6BZ",
+				"kind": "postcode",
+				"began": "2009-08",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 5WE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-05-01",
+			"claims": {
+				"name": "CR9 5WE",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2018-05"
+			}
+		},
+		{
+			"id": "CR9 6HL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 6HL",
+				"kind": "postcode",
+				"began": "2010-11",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 9YU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 9YU",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 9ZX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 9ZX",
+				"kind": "postcode",
+				"began": "1996-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR90 9AE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2026-01-01",
+			"claims": {
+				"name": "CR90 9AE",
+				"kind": "postcode",
+				"began": "2025-07",
+				"ended": "2026-01"
+			}
+		},
+		{
+			"id": "CR90 9AQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR90 9AQ",
+				"kind": "postcode",
+				"began": "2008-09",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR90 9AS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR90 9AS",
+				"kind": "postcode",
+				"began": "2008-09",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 6ZD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 6ZD",
+				"kind": "postcode",
+				"began": "1997-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 8DB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 8DB",
+				"kind": "postcode",
+				"began": "1996-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 6ZN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-10-01",
+			"claims": {
+				"name": "CR9 6ZN",
+				"kind": "postcode",
+				"began": "1996-12",
+				"ended": "2017-10"
+			}
+		},
+		{
+			"id": "CR9 7AB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 7AB",
+				"kind": "postcode",
+				"began": "2007-04",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 7AE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-09-01",
+			"claims": {
+				"name": "CR9 7AE",
+				"kind": "postcode",
+				"began": "2006-07",
+				"ended": "2025-09"
+			}
+		},
+		{
+			"id": "CR9 7AQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-12-01",
+			"claims": {
+				"name": "CR9 7AQ",
+				"kind": "postcode",
+				"began": "1981-09",
+				"ended": "2022-12"
+			}
+		},
+		{
+			"id": "CR9 7AU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-01-01",
+			"claims": {
+				"name": "CR9 7AU",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2016-01"
+			}
+		},
+		{
+			"id": "CR9 7AW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-02-01",
+			"claims": {
+				"name": "CR9 7AW",
+				"kind": "postcode",
+				"began": "2008-01",
+				"ended": "2016-02"
+			}
+		},
+		{
+			"id": "CR9 7ZH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 7ZH",
+				"kind": "postcode",
+				"began": "1997-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR90 9BS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR90 9BS",
+				"kind": "postcode",
+				"began": "2009-01",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 8WR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 8WR",
+				"kind": "postcode",
+				"began": "2004-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 8YB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 8YB",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 8YQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 8YQ",
+				"kind": "postcode",
+				"began": "2002-07",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 6WQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 6WQ",
+				"kind": "postcode",
+				"began": "2012-04",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 6WY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 6WY",
+				"kind": "postcode",
+				"began": "2006-02",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 6XD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-01-01",
+			"claims": {
+				"name": "CR9 6XD",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2017-01"
+			}
+		},
+		{
+			"id": "CR9 6XQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-11-01",
+			"claims": {
+				"name": "CR9 6XQ",
+				"kind": "postcode",
+				"began": "2006-03",
+				"ended": "2015-11"
+			}
+		},
+		{
+			"id": "CR9 6YL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-03-01",
+			"claims": {
+				"name": "CR9 6YL",
+				"kind": "postcode",
+				"began": "2004-02",
+				"ended": "2017-03"
+			}
+		},
+		{
+			"id": "CR9 8AD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-04-01",
+			"claims": {
+				"name": "CR9 8AD",
+				"kind": "postcode",
+				"began": "2006-03",
+				"ended": "2015-04"
+			}
+		},
+		{
+			"id": "CR9 7GZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2014-11-01",
+			"claims": {
+				"name": "CR9 7GZ",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2014-11"
+			}
+		},
+		{
+			"id": "CR9 8AL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 8AL",
+				"kind": "postcode",
+				"began": "2009-03",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 7NW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 7NW",
+				"kind": "postcode",
+				"began": "1995-07",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR90 9DP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR90 9DP",
+				"kind": "postcode",
+				"began": "2009-05",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 9LY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-02-01",
+			"claims": {
+				"name": "CR9 9LY",
+				"kind": "postcode",
+				"began": "1994-12",
+				"ended": "2021-02"
+			}
+		},
+		{
+			"id": "CR90 9DZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-07-01",
+			"claims": {
+				"name": "CR90 9DZ",
+				"kind": "postcode",
+				"began": "2017-09",
+				"ended": "2018-07"
+			}
+		},
+		{
+			"id": "CR90 9EB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-07-01",
+			"claims": {
+				"name": "CR90 9EB",
+				"kind": "postcode",
+				"began": "2012-07",
+				"ended": "2015-07"
+			}
+		},
+		{
+			"id": "CR9 9WE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 9WE",
+				"kind": "postcode",
+				"began": "2001-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR90 9EP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR90 9EP",
+				"kind": "postcode",
+				"began": "2011-10",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR90 9EQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR90 9EQ",
+				"kind": "postcode",
+				"began": "2009-11",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR9 9XT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR9 9XT",
+				"kind": "postcode",
+				"began": "2003-08",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR90 9LZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2014-10-01",
+			"claims": {
+				"name": "CR90 9LZ",
+				"kind": "postcode",
+				"began": "2013-09",
+				"ended": "2014-10"
+			}
+		},
+		{
+			"id": "CR90 9TE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-03-01",
+			"claims": {
+				"name": "CR90 9TE",
+				"kind": "postcode",
+				"began": "2020-01",
+				"ended": "2023-03"
+			}
+		},
+		{
+			"id": "CR90 9NA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2014-10-01",
+			"claims": {
+				"name": "CR90 9NA",
+				"kind": "postcode",
+				"began": "2013-09",
+				"ended": "2014-10"
+			}
+		},
+		{
+			"id": "CR90 9TF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-08-01",
+			"claims": {
+				"name": "CR90 9TF",
+				"kind": "postcode",
+				"began": "2020-01",
+				"ended": "2020-08"
+			}
+		},
+		{
+			"id": "CR90 9TG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-09-01",
+			"claims": {
+				"name": "CR90 9TG",
+				"kind": "postcode",
+				"began": "2020-02",
+				"ended": "2020-09"
+			}
+		},
+		{
+			"id": "CR90 9TJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-03-01",
+			"claims": {
+				"name": "CR90 9TJ",
+				"kind": "postcode",
+				"began": "2020-02",
+				"ended": "2023-03"
+			}
+		},
+		{
+			"id": "CR90 9TL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-10-01",
+			"claims": {
+				"name": "CR90 9TL",
+				"kind": "postcode",
+				"began": "2020-02",
+				"ended": "2020-10"
+			}
+		},
+		{
+			"id": "CR90 9TN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-04-01",
+			"claims": {
+				"name": "CR90 9TN",
+				"kind": "postcode",
+				"began": "2020-04",
+				"ended": "2021-04"
+			}
+		},
+		{
+			"id": "CR90 9TP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-10-01",
+			"claims": {
+				"name": "CR90 9TP",
+				"kind": "postcode",
+				"began": "2020-04",
+				"ended": "2020-10"
+			}
+		},
+		{
+			"id": "CR90 9TQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-11-01",
+			"claims": {
+				"name": "CR90 9TQ",
+				"kind": "postcode",
+				"began": "2020-04",
+				"ended": "2020-11"
+			}
+		},
+		{
+			"id": "CR90 9TR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-01-01",
+			"claims": {
+				"name": "CR90 9TR",
+				"kind": "postcode",
+				"began": "2020-06",
+				"ended": "2021-01"
+			}
+		},
+		{
+			"id": "CR90 9TS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-11-01",
+			"claims": {
+				"name": "CR90 9TS",
+				"kind": "postcode",
+				"began": "2020-07",
+				"ended": "2020-11"
+			}
+		},
+		{
+			"id": "CR90 9TT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-01-01",
+			"claims": {
+				"name": "CR90 9TT",
+				"kind": "postcode",
+				"began": "2024-04",
+				"ended": "2025-01"
+			}
+		},
+		{
+			"id": "CR90 9TU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-08-01",
+			"claims": {
+				"name": "CR90 9TU",
+				"kind": "postcode",
+				"began": "2020-07",
+				"ended": "2022-08"
+			}
+		},
+		{
+			"id": "CR90 9TW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-08-01",
+			"claims": {
+				"name": "CR90 9TW",
+				"kind": "postcode",
+				"began": "2020-07",
+				"ended": "2021-08"
+			}
+		},
+		{
+			"id": "CR90 9TX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-01-01",
+			"claims": {
+				"name": "CR90 9TX",
+				"kind": "postcode",
+				"began": "2020-08",
+				"ended": "2025-01"
+			}
+		},
+		{
+			"id": "CR90 9TY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-05-01",
+			"claims": {
+				"name": "CR90 9TY",
+				"kind": "postcode",
+				"began": "2020-09",
+				"ended": "2022-05"
+			}
+		},
+		{
+			"id": "CR90 9TZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-05-01",
+			"claims": {
+				"name": "CR90 9TZ",
+				"kind": "postcode",
+				"began": "2020-10",
+				"ended": "2021-05"
+			}
+		},
+		{
+			"id": "CR90 9UA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-08-01",
+			"claims": {
+				"name": "CR90 9UA",
+				"kind": "postcode",
+				"began": "2020-10",
+				"ended": "2021-08"
+			}
+		},
+		{
+			"id": "CR90 9UB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-10-01",
+			"claims": {
+				"name": "CR90 9UB",
+				"kind": "postcode",
+				"began": "2021-07",
+				"ended": "2021-10"
+			}
+		},
+		{
+			"id": "CR90 9UD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-02-01",
+			"claims": {
+				"name": "CR90 9UD",
+				"kind": "postcode",
+				"began": "2021-07",
+				"ended": "2022-02"
+			}
+		},
+		{
+			"id": "CR90 9UE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-03-01",
+			"claims": {
+				"name": "CR90 9UE",
+				"kind": "postcode",
+				"began": "2020-11",
+				"ended": "2021-03"
+			}
+		},
+		{
+			"id": "CR90 9UF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-12-01",
+			"claims": {
+				"name": "CR90 9UF",
+				"kind": "postcode",
+				"began": "2020-11",
+				"ended": "2021-12"
+			}
+		},
+		{
+			"id": "CR90 9UH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-11-01",
+			"claims": {
+				"name": "CR90 9UH",
+				"kind": "postcode",
+				"began": "2020-11",
+				"ended": "2021-11"
+			}
+		},
+		{
+			"id": "CR90 9UJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-01-01",
+			"claims": {
+				"name": "CR90 9UJ",
+				"kind": "postcode",
+				"began": "2022-10",
+				"ended": "2023-01"
+			}
+		},
+		{
+			"id": "CR90 9UL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-04-01",
+			"claims": {
+				"name": "CR90 9UL",
+				"kind": "postcode",
+				"began": "2020-11",
+				"ended": "2021-04"
+			}
+		},
+		{
+			"id": "CR90 9UN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-07-01",
+			"claims": {
+				"name": "CR90 9UN",
+				"kind": "postcode",
+				"began": "2020-12",
+				"ended": "2021-07"
+			}
+		},
+		{
+			"id": "CR90 9UP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-09-01",
+			"claims": {
+				"name": "CR90 9UP",
+				"kind": "postcode",
+				"began": "2020-12",
+				"ended": "2023-09"
+			}
+		},
+		{
+			"id": "CR90 9UQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-06-01",
+			"claims": {
+				"name": "CR90 9UQ",
+				"kind": "postcode",
+				"began": "2021-01",
+				"ended": "2024-06"
+			}
+		},
+		{
+			"id": "CR90 9UR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-07-01",
+			"claims": {
+				"name": "CR90 9UR",
+				"kind": "postcode",
+				"began": "2021-02",
+				"ended": "2021-07"
+			}
+		},
+		{
+			"id": "CR90 9US",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-03-01",
+			"claims": {
+				"name": "CR90 9US",
+				"kind": "postcode",
+				"began": "2021-02",
+				"ended": "2021-03"
+			}
+		},
+		{
+			"id": "CR90 9UT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-06-01",
+			"claims": {
+				"name": "CR90 9UT",
+				"kind": "postcode",
+				"began": "2021-02",
+				"ended": "2025-06"
+			}
+		},
+		{
+			"id": "CR90 9UW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-04-01",
+			"claims": {
+				"name": "CR90 9UW",
+				"kind": "postcode",
+				"began": "2021-04",
+				"ended": "2023-04"
+			}
+		},
+		{
+			"id": "CR90 9UX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-05-01",
+			"claims": {
+				"name": "CR90 9UX",
+				"kind": "postcode",
+				"began": "2021-05",
+				"ended": "2022-05"
+			}
+		},
+		{
+			"id": "CR90 9UZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "CR90 9UZ",
+				"kind": "postcode",
+				"began": "2023-10",
+				"ended": "2024-05"
+			}
+		},
+		{
+			"id": "CR90 9WA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-07-01",
+			"claims": {
+				"name": "CR90 9WA",
+				"kind": "postcode",
+				"began": "2021-06",
+				"ended": "2023-07"
+			}
+		},
+		{
+			"id": "CR90 9WB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-10-01",
+			"claims": {
+				"name": "CR90 9WB",
+				"kind": "postcode",
+				"began": "2021-07",
+				"ended": "2021-10"
+			}
+		},
+		{
+			"id": "CR90 9WD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-03-01",
+			"claims": {
+				"name": "CR90 9WD",
+				"kind": "postcode",
+				"began": "2021-08",
+				"ended": "2022-03"
+			}
+		},
+		{
+			"id": "CR90 9WF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-08-01",
+			"claims": {
+				"name": "CR90 9WF",
+				"kind": "postcode",
+				"began": "2022-07",
+				"ended": "2022-08"
+			}
+		},
+		{
+			"id": "CR90 9WG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-10-01",
+			"claims": {
+				"name": "CR90 9WG",
+				"kind": "postcode",
+				"began": "2021-09",
+				"ended": "2022-10"
+			}
+		},
+		{
+			"id": "CR90 9WH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-03-01",
+			"claims": {
+				"name": "CR90 9WH",
+				"kind": "postcode",
+				"began": "2021-10",
+				"ended": "2023-03"
+			}
+		},
+		{
+			"id": "CR90 9WL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-12-01",
+			"claims": {
+				"name": "CR90 9WL",
+				"kind": "postcode",
+				"began": "2021-11",
+				"ended": "2022-12"
+			}
+		},
+		{
+			"id": "CR90 9WN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-05-01",
+			"claims": {
+				"name": "CR90 9WN",
+				"kind": "postcode",
+				"began": "2021-12",
+				"ended": "2022-05"
+			}
+		},
+		{
+			"id": "CR90 9WP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-05-01",
+			"claims": {
+				"name": "CR90 9WP",
+				"kind": "postcode",
+				"began": "2021-12",
+				"ended": "2022-05"
+			}
+		},
+		{
+			"id": "CR90 9WQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-04-01",
+			"claims": {
+				"name": "CR90 9WQ",
+				"kind": "postcode",
+				"began": "2021-12",
+				"ended": "2022-04"
+			}
+		},
+		{
+			"id": "CR90 9WR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-05-01",
+			"claims": {
+				"name": "CR90 9WR",
+				"kind": "postcode",
+				"began": "2022-02",
+				"ended": "2022-05"
+			}
+		},
+		{
+			"id": "CR90 9WS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-07-01",
+			"claims": {
+				"name": "CR90 9WS",
+				"kind": "postcode",
+				"began": "2022-02",
+				"ended": "2022-07"
+			}
+		},
+		{
+			"id": "CR90 9WT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-12-01",
+			"claims": {
+				"name": "CR90 9WT",
+				"kind": "postcode",
+				"began": "2022-02",
+				"ended": "2022-12"
+			}
+		},
+		{
+			"id": "CR90 9NB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-12-01",
+			"claims": {
+				"name": "CR90 9NB",
+				"kind": "postcode",
+				"began": "2018-02",
+				"ended": "2021-12"
+			}
+		},
+		{
+			"id": "CR90 9ND",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-12-01",
+			"claims": {
+				"name": "CR90 9ND",
+				"kind": "postcode",
+				"began": "2013-11",
+				"ended": "2020-12"
+			}
+		},
+		{
+			"id": "CR90 9NE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-12-01",
+			"claims": {
+				"name": "CR90 9NE",
+				"kind": "postcode",
+				"began": "2013-11",
+				"ended": "2016-12"
+			}
+		},
+		{
+			"id": "CR90 9EZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-01-01",
+			"claims": {
+				"name": "CR90 9EZ",
+				"kind": "postcode",
+				"began": "2010-02",
+				"ended": "2016-01"
+			}
+		},
+		{
+			"id": "CR90 9NG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-01-01",
+			"claims": {
+				"name": "CR90 9NG",
+				"kind": "postcode",
+				"began": "2013-12",
+				"ended": "2015-01"
+			}
+		},
+		{
+			"id": "CR90 9WU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-05-01",
+			"claims": {
+				"name": "CR90 9WU",
+				"kind": "postcode",
+				"began": "2022-02",
+				"ended": "2022-05"
+			}
+		},
+		{
+			"id": "CR90 9WW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-03-01",
+			"claims": {
+				"name": "CR90 9WW",
+				"kind": "postcode",
+				"began": "2022-02",
+				"ended": "2023-03"
+			}
+		},
+		{
+			"id": "CR90 9WX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-11-01",
+			"claims": {
+				"name": "CR90 9WX",
+				"kind": "postcode",
+				"began": "2022-08",
+				"ended": "2022-11"
+			}
+		},
+		{
+			"id": "CR90 9WY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-11-01",
+			"claims": {
+				"name": "CR90 9WY",
+				"kind": "postcode",
+				"began": "2022-04",
+				"ended": "2023-11"
+			}
+		},
+		{
+			"id": "CR90 9WZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-08-01",
+			"claims": {
+				"name": "CR90 9WZ",
+				"kind": "postcode",
+				"began": "2022-04",
+				"ended": "2022-08"
+			}
+		},
+		{
+			"id": "CR90 9XA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "CR90 9XA",
+				"kind": "postcode",
+				"began": "2022-05",
+				"ended": "2024-05"
+			}
+		},
+		{
+			"id": "CR90 9XB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-10-01",
+			"claims": {
+				"name": "CR90 9XB",
+				"kind": "postcode",
+				"began": "2022-06",
+				"ended": "2022-10"
+			}
+		},
+		{
+			"id": "CR90 9XD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-07-01",
+			"claims": {
+				"name": "CR90 9XD",
+				"kind": "postcode",
+				"began": "2022-07",
+				"ended": "2023-07"
+			}
+		},
+		{
+			"id": "CR90 9XE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-11-01",
+			"claims": {
+				"name": "CR90 9XE",
+				"kind": "postcode",
+				"began": "2022-07",
+				"ended": "2022-11"
+			}
+		},
+		{
+			"id": "CR90 9XF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-12-01",
+			"claims": {
+				"name": "CR90 9XF",
+				"kind": "postcode",
+				"began": "2022-08",
+				"ended": "2022-12"
+			}
+		},
+		{
+			"id": "CR90 9XH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-08-01",
+			"claims": {
+				"name": "CR90 9XH",
+				"kind": "postcode",
+				"began": "2023-01",
+				"ended": "2024-08"
+			}
+		},
+		{
+			"id": "CR90 9XJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-01-01",
+			"claims": {
+				"name": "CR90 9XJ",
+				"kind": "postcode",
+				"began": "2022-10",
+				"ended": "2023-01"
+			}
+		},
+		{
+			"id": "CR90 9XL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-12-01",
+			"claims": {
+				"name": "CR90 9XL",
+				"kind": "postcode",
+				"began": "2022-10",
+				"ended": "2022-12"
+			}
+		},
+		{
+			"id": "CR90 9XN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-05-01",
+			"claims": {
+				"name": "CR90 9XN",
+				"kind": "postcode",
+				"began": "2022-12",
+				"ended": "2023-05"
+			}
+		},
+		{
+			"id": "CR90 9NH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-06-01",
+			"claims": {
+				"name": "CR90 9NH",
+				"kind": "postcode",
+				"began": "2014-01",
+				"ended": "2015-06"
+			}
+		},
+		{
+			"id": "CR90 9XR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-09-01",
+			"claims": {
+				"name": "CR90 9XR",
+				"kind": "postcode",
+				"began": "2023-01",
+				"ended": "2023-09"
+			}
+		},
+		{
+			"id": "CR90 9XS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-04-01",
+			"claims": {
+				"name": "CR90 9XS",
+				"kind": "postcode",
+				"began": "2023-01",
+				"ended": "2023-04"
+			}
+		},
+		{
+			"id": "CR90 9XT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-09-01",
+			"claims": {
+				"name": "CR90 9XT",
+				"kind": "postcode",
+				"began": "2023-01",
+				"ended": "2025-09"
+			}
+		},
+		{
+			"id": "CR90 9XW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-05-01",
+			"claims": {
+				"name": "CR90 9XW",
+				"kind": "postcode",
+				"began": "2023-01",
+				"ended": "2023-05"
+			}
+		},
+		{
+			"id": "CR90 9XX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-09-01",
+			"claims": {
+				"name": "CR90 9XX",
+				"kind": "postcode",
+				"began": "2023-02",
+				"ended": "2025-09"
+			}
+		},
+		{
+			"id": "CR90 9XY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-08-01",
+			"claims": {
+				"name": "CR90 9XY",
+				"kind": "postcode",
+				"began": "2023-03",
+				"ended": "2023-08"
+			}
+		},
+		{
+			"id": "CR90 9XZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-08-01",
+			"claims": {
+				"name": "CR90 9XZ",
+				"kind": "postcode",
+				"began": "2023-04",
+				"ended": "2023-08"
+			}
+		},
+		{
+			"id": "CR90 9YA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-09-01",
+			"claims": {
+				"name": "CR90 9YA",
+				"kind": "postcode",
+				"began": "2023-05",
+				"ended": "2023-09"
+			}
+		},
+		{
+			"id": "CR90 9YD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-04-01",
+			"claims": {
+				"name": "CR90 9YD",
+				"kind": "postcode",
+				"began": "2023-07",
+				"ended": "2024-04"
+			}
+		},
+		{
+			"id": "CR90 9YE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-08-01",
+			"claims": {
+				"name": "CR90 9YE",
+				"kind": "postcode",
+				"began": "2023-07",
+				"ended": "2023-08"
+			}
+		},
+		{
+			"id": "CR90 9YF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-11-01",
+			"claims": {
+				"name": "CR90 9YF",
+				"kind": "postcode",
+				"began": "2023-07",
+				"ended": "2023-11"
+			}
+		},
+		{
+			"id": "CR90 9YG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-09-01",
+			"claims": {
+				"name": "CR90 9YG",
+				"kind": "postcode",
+				"began": "2023-08",
+				"ended": "2024-09"
+			}
+		},
+		{
+			"id": "CR90 9YH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-01-01",
+			"claims": {
+				"name": "CR90 9YH",
+				"kind": "postcode",
+				"began": "2023-09",
+				"ended": "2024-01"
+			}
+		},
+		{
+			"id": "CR90 9YJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-01-01",
+			"claims": {
+				"name": "CR90 9YJ",
+				"kind": "postcode",
+				"began": "2023-09",
+				"ended": "2024-01"
+			}
+		},
+		{
+			"id": "CR90 9YL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-11-01",
+			"claims": {
+				"name": "CR90 9YL",
+				"kind": "postcode",
+				"began": "2023-10",
+				"ended": "2024-11"
+			}
+		},
+		{
+			"id": "CR90 9YN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-01-01",
+			"claims": {
+				"name": "CR90 9YN",
+				"kind": "postcode",
+				"began": "2023-10",
+				"ended": "2024-01"
+			}
+		},
+		{
+			"id": "CR90 9YQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-04-01",
+			"claims": {
+				"name": "CR90 9YQ",
+				"kind": "postcode",
+				"began": "2024-01",
+				"ended": "2024-04"
+			}
+		},
+		{
+			"id": "CR90 9YR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-02-01",
+			"claims": {
+				"name": "CR90 9YR",
+				"kind": "postcode",
+				"began": "2024-01",
+				"ended": "2025-02"
+			}
+		},
+		{
+			"id": "CR90 9YS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-03-01",
+			"claims": {
+				"name": "CR90 9YS",
+				"kind": "postcode",
+				"began": "2024-02",
+				"ended": "2025-03"
+			}
+		},
+		{
+			"id": "CR90 9YT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-03-01",
+			"claims": {
+				"name": "CR90 9YT",
+				"kind": "postcode",
+				"began": "2024-02",
+				"ended": "2025-03"
+			}
+		},
+		{
+			"id": "CR90 9YU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-07-01",
+			"claims": {
+				"name": "CR90 9YU",
+				"kind": "postcode",
+				"began": "2024-03",
+				"ended": "2024-07"
+			}
+		},
+		{
+			"id": "CR90 9YW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-11-01",
+			"claims": {
+				"name": "CR90 9YW",
+				"kind": "postcode",
+				"began": "2024-04",
+				"ended": "2024-11"
+			}
+		},
+		{
+			"id": "CR90 9YX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-01-01",
+			"claims": {
+				"name": "CR90 9YX",
+				"kind": "postcode",
+				"began": "2024-05",
+				"ended": "2025-01"
+			}
+		},
+		{
+			"id": "CR90 9YY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-09-01",
+			"claims": {
+				"name": "CR90 9YY",
+				"kind": "postcode",
+				"began": "2024-05",
+				"ended": "2024-09"
+			}
+		},
+		{
+			"id": "CR90 9YZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-10-01",
+			"claims": {
+				"name": "CR90 9YZ",
+				"kind": "postcode",
+				"began": "2024-06",
+				"ended": "2024-10"
+			}
+		},
+		{
+			"id": "CR90 9ZA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-01-01",
+			"claims": {
+				"name": "CR90 9ZA",
+				"kind": "postcode",
+				"began": "2024-07",
+				"ended": "2025-01"
+			}
+		},
+		{
+			"id": "CR90 9ZD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-10-01",
+			"claims": {
+				"name": "CR90 9ZD",
+				"kind": "postcode",
+				"began": "2024-09",
+				"ended": "2025-10"
+			}
+		},
+		{
+			"id": "CR90 9ZE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-05-01",
+			"claims": {
+				"name": "CR90 9ZE",
+				"kind": "postcode",
+				"began": "2024-10",
+				"ended": "2025-05"
+			}
+		},
+		{
+			"id": "CR90 9QP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-12-01",
+			"claims": {
+				"name": "CR90 9QP",
+				"kind": "postcode",
+				"began": "2017-04",
+				"ended": "2019-12"
+			}
+		},
+		{
+			"id": "CR90 9NJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-06-01",
+			"claims": {
+				"name": "CR90 9NJ",
+				"kind": "postcode",
+				"began": "2014-02",
+				"ended": "2020-06"
+			}
+		},
+		{
+			"id": "CR90 9NP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-10-01",
+			"claims": {
+				"name": "CR90 9NP",
+				"kind": "postcode",
+				"began": "2017-09",
+				"ended": "2023-10"
+			}
+		},
+		{
+			"id": "CR90 9NQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-06-01",
+			"claims": {
+				"name": "CR90 9NQ",
+				"kind": "postcode",
+				"began": "2014-09",
+				"ended": "2015-06"
+			}
+		},
+		{
+			"id": "CR90 9NR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR90 9NR",
+				"kind": "postcode",
+				"began": "2016-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR90 9NS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2014-12-01",
+			"claims": {
+				"name": "CR90 9NS",
+				"kind": "postcode",
+				"began": "2014-06",
+				"ended": "2014-12"
+			}
+		},
+		{
+			"id": "CR90 9NT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-02-01",
+			"claims": {
+				"name": "CR90 9NT",
+				"kind": "postcode",
+				"began": "2014-06",
+				"ended": "2016-02"
+			}
+		},
+		{
+			"id": "CR90 9NW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "CR90 9NW",
+				"kind": "postcode",
+				"began": "2017-08",
+				"ended": "2018-01"
+			}
+		},
+		{
+			"id": "CR90 9NX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-01-01",
+			"claims": {
+				"name": "CR90 9NX",
+				"kind": "postcode",
+				"began": "2014-08",
+				"ended": "2025-01"
+			}
+		},
+		{
+			"id": "CR90 9NY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-09-01",
+			"claims": {
+				"name": "CR90 9NY",
+				"kind": "postcode",
+				"began": "2014-09",
+				"ended": "2016-09"
+			}
+		},
+		{
+			"id": "CR90 9NZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-10-01",
+			"claims": {
+				"name": "CR90 9NZ",
+				"kind": "postcode",
+				"began": "2014-10",
+				"ended": "2015-10"
+			}
+		},
+		{
+			"id": "CR90 9PA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-03-01",
+			"claims": {
+				"name": "CR90 9PA",
+				"kind": "postcode",
+				"began": "2014-10",
+				"ended": "2015-03"
+			}
+		},
+		{
+			"id": "CR90 9PB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-02-01",
+			"claims": {
+				"name": "CR90 9PB",
+				"kind": "postcode",
+				"began": "2014-12",
+				"ended": "2016-02"
+			}
+		},
+		{
+			"id": "CR90 9PD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR90 9PD",
+				"kind": "postcode",
+				"began": "2014-12",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR90 9PE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-08-01",
+			"claims": {
+				"name": "CR90 9PE",
+				"kind": "postcode",
+				"began": "2015-03",
+				"ended": "2017-08"
+			}
+		},
+		{
+			"id": "CR90 9PG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-02-01",
+			"claims": {
+				"name": "CR90 9PG",
+				"kind": "postcode",
+				"began": "2020-11",
+				"ended": "2022-02"
+			}
+		},
+		{
+			"id": "CR90 9PH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-10-01",
+			"claims": {
+				"name": "CR90 9PH",
+				"kind": "postcode",
+				"began": "2015-08",
+				"ended": "2015-10"
+			}
+		},
+		{
+			"id": "CR90 9PJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-10-01",
+			"claims": {
+				"name": "CR90 9PJ",
+				"kind": "postcode",
+				"began": "2015-09",
+				"ended": "2020-10"
+			}
+		},
+		{
+			"id": "CR90 9PL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-01-01",
+			"claims": {
+				"name": "CR90 9PL",
+				"kind": "postcode",
+				"began": "2015-12",
+				"ended": "2016-01"
+			}
+		},
+		{
+			"id": "CR90 9FN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR90 9FN",
+				"kind": "postcode",
+				"began": "2010-04",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR90 9QQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-11-01",
+			"claims": {
+				"name": "CR90 9QQ",
+				"kind": "postcode",
+				"began": "2017-04",
+				"ended": "2017-11"
+			}
+		},
+		{
+			"id": "CR90 9FP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-06-01",
+			"claims": {
+				"name": "CR90 9FP",
+				"kind": "postcode",
+				"began": "2010-05",
+				"ended": "2024-06"
+			}
+		},
+		{
+			"id": "CR90 9QR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-11-01",
+			"claims": {
+				"name": "CR90 9QR",
+				"kind": "postcode",
+				"began": "2017-04",
+				"ended": "2017-11"
+			}
+		},
+		{
+			"id": "CR90 9PN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-03-01",
+			"claims": {
+				"name": "CR90 9PN",
+				"kind": "postcode",
+				"began": "2016-02",
+				"ended": "2017-03"
+			}
+		},
+		{
+			"id": "CR90 9PP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2026-01-01",
+			"claims": {
+				"name": "CR90 9PP",
+				"kind": "postcode",
+				"began": "2016-02",
+				"ended": "2026-01"
+			}
+		},
+		{
+			"id": "CR90 9PQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-11-01",
+			"claims": {
+				"name": "CR90 9PQ",
+				"kind": "postcode",
+				"began": "2016-04",
+				"ended": "2016-11"
+			}
+		},
+		{
+			"id": "CR90 9FT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-07-01",
+			"claims": {
+				"name": "CR90 9FT",
+				"kind": "postcode",
+				"began": "2010-07",
+				"ended": "2018-07"
+			}
+		},
+		{
+			"id": "CR90 9FU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-08-01",
+			"claims": {
+				"name": "CR90 9FU",
+				"kind": "postcode",
+				"began": "2018-05",
+				"ended": "2025-08"
+			}
+		},
+		{
+			"id": "CR90 9QS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-06-01",
+			"claims": {
+				"name": "CR90 9QS",
+				"kind": "postcode",
+				"began": "2017-04",
+				"ended": "2017-06"
+			}
+		},
+		{
+			"id": "CR90 9ZH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-04-01",
+			"claims": {
+				"name": "CR90 9ZH",
+				"kind": "postcode",
+				"began": "2025-01",
+				"ended": "2025-04"
+			}
+		},
+		{
+			"id": "CR90 9PR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-06-01",
+			"claims": {
+				"name": "CR90 9PR",
+				"kind": "postcode",
+				"began": "2016-05",
+				"ended": "2025-06"
+			}
+		},
+		{
+			"id": "CR90 9PS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-06-01",
+			"claims": {
+				"name": "CR90 9PS",
+				"kind": "postcode",
+				"began": "2017-01",
+				"ended": "2017-06"
+			}
+		},
+		{
+			"id": "CR90 9PT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-01-01",
+			"claims": {
+				"name": "CR90 9PT",
+				"kind": "postcode",
+				"began": "2016-05",
+				"ended": "2021-01"
+			}
+		},
+		{
+			"id": "CR90 9HW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-10-01",
+			"claims": {
+				"name": "CR90 9HW",
+				"kind": "postcode",
+				"began": "2018-09",
+				"ended": "2020-10"
+			}
+		},
+		{
+			"id": "CR90 9HX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-11-01",
+			"claims": {
+				"name": "CR90 9HX",
+				"kind": "postcode",
+				"began": "2011-09",
+				"ended": "2016-11"
+			}
+		},
+		{
+			"id": "CR90 9HY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-11-01",
+			"claims": {
+				"name": "CR90 9HY",
+				"kind": "postcode",
+				"began": "2015-01",
+				"ended": "2016-11"
+			}
+		},
+		{
+			"id": "CR90 9JB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-10-01",
+			"claims": {
+				"name": "CR90 9JB",
+				"kind": "postcode",
+				"began": "2011-11",
+				"ended": "2019-10"
+			}
+		},
+		{
+			"id": "CR90 9PU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-07-01",
+			"claims": {
+				"name": "CR90 9PU",
+				"kind": "postcode",
+				"began": "2016-06",
+				"ended": "2018-07"
+			}
+		},
+		{
+			"id": "CR90 9ZJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-05-01",
+			"claims": {
+				"name": "CR90 9ZJ",
+				"kind": "postcode",
+				"began": "2025-01",
+				"ended": "2025-05"
+			}
+		},
+		{
+			"id": "CR90 9QT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-06-01",
+			"claims": {
+				"name": "CR90 9QT",
+				"kind": "postcode",
+				"began": "2017-04",
+				"ended": "2019-06"
+			}
+		},
+		{
+			"id": "CR90 9JT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-11-01",
+			"claims": {
+				"name": "CR90 9JT",
+				"kind": "postcode",
+				"began": "2012-03",
+				"ended": "2017-11"
+			}
+		},
+		{
+			"id": "CR90 9JX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-04-01",
+			"claims": {
+				"name": "CR90 9JX",
+				"kind": "postcode",
+				"began": "2012-03",
+				"ended": "2016-04"
+			}
+		},
+		{
+			"id": "CR90 9LA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "CR90 9LA",
+				"kind": "postcode",
+				"began": "2024-04",
+				"ended": "2024-05"
+			}
+		},
+		{
+			"id": "CR90 9LE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-10-01",
+			"claims": {
+				"name": "CR90 9LE",
+				"kind": "postcode",
+				"began": "2012-08",
+				"ended": "2019-10"
+			}
+		},
+		{
+			"id": "CR90 9LG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-03-01",
+			"claims": {
+				"name": "CR90 9LG",
+				"kind": "postcode",
+				"began": "2015-09",
+				"ended": "2016-03"
+			}
+		},
+		{
+			"id": "CR90 9LL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-01-01",
+			"claims": {
+				"name": "CR90 9LL",
+				"kind": "postcode",
+				"began": "2012-12",
+				"ended": "2015-01"
+			}
+		},
+		{
+			"id": "CR90 9LN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-01-01",
+			"claims": {
+				"name": "CR90 9LN",
+				"kind": "postcode",
+				"began": "2012-12",
+				"ended": "2015-01"
+			}
+		},
+		{
+			"id": "CR90 9LQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CR90 9LQ",
+				"kind": "postcode",
+				"began": "2013-01",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CR90 9LR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-04-01",
+			"claims": {
+				"name": "CR90 9LR",
+				"kind": "postcode",
+				"began": "2016-06",
+				"ended": "2020-04"
+			}
+		},
+		{
+			"id": "CR90 9LT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-04-01",
+			"claims": {
+				"name": "CR90 9LT",
+				"kind": "postcode",
+				"began": "2013-04",
+				"ended": "2015-04"
+			}
+		},
+		{
+			"id": "CR90 9LW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-05-01",
+			"claims": {
+				"name": "CR90 9LW",
+				"kind": "postcode",
+				"began": "2013-05",
+				"ended": "2021-05"
+			}
+		},
+		{
+			"id": "CR90 9LY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-08-01",
+			"claims": {
+				"name": "CR90 9LY",
+				"kind": "postcode",
+				"began": "2013-08",
+				"ended": "2015-08"
+			}
+		},
+		{
+			"id": "CR90 9PW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-09-01",
+			"claims": {
+				"name": "CR90 9PW",
+				"kind": "postcode",
+				"began": "2019-11",
+				"ended": "2024-09"
+			}
+		},
+		{
+			"id": "CR90 9PX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-08-01",
+			"claims": {
+				"name": "CR90 9PX",
+				"kind": "postcode",
+				"began": "2016-07",
+				"ended": "2016-08"
+			}
+		},
+		{
+			"id": "CR90 9PY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-10-01",
+			"claims": {
+				"name": "CR90 9PY",
+				"kind": "postcode",
+				"began": "2016-08",
+				"ended": "2022-10"
+			}
+		},
+		{
+			"id": "CR90 9PZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-11-01",
+			"claims": {
+				"name": "CR90 9PZ",
+				"kind": "postcode",
+				"began": "2016-08",
+				"ended": "2021-11"
+			}
+		},
+		{
+			"id": "CR90 9QA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-09-01",
+			"claims": {
+				"name": "CR90 9QA",
+				"kind": "postcode",
+				"began": "2016-08",
+				"ended": "2018-09"
+			}
+		},
+		{
+			"id": "CR90 9QD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-10-01",
+			"claims": {
+				"name": "CR90 9QD",
+				"kind": "postcode",
+				"began": "2016-10",
+				"ended": "2017-10"
+			}
+		},
+		{
+			"id": "CR90 9QE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-12-01",
+			"claims": {
+				"name": "CR90 9QE",
+				"kind": "postcode",
+				"began": "2016-10",
+				"ended": "2016-12"
+			}
+		},
+		{
+			"id": "CR90 9QF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-05-01",
+			"claims": {
+				"name": "CR90 9QF",
+				"kind": "postcode",
+				"began": "2016-11",
+				"ended": "2017-05"
+			}
+		},
+		{
+			"id": "CR90 9ZL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-05-01",
+			"claims": {
+				"name": "CR90 9ZL",
+				"kind": "postcode",
+				"began": "2025-01",
+				"ended": "2025-05"
+			}
+		},
+		{
+			"id": "CR90 9QG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-01-01",
+			"claims": {
+				"name": "CR90 9QG",
+				"kind": "postcode",
+				"began": "2016-11",
+				"ended": "2017-01"
+			}
+		},
+		{
+			"id": "CR90 9ZN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-02-01",
+			"claims": {
+				"name": "CR90 9ZN",
+				"kind": "postcode",
+				"began": "2025-01",
+				"ended": "2025-02"
+			}
+		},
+		{
+			"id": "CR90 9ZP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-08-01",
+			"claims": {
+				"name": "CR90 9ZP",
+				"kind": "postcode",
+				"began": "2025-01",
+				"ended": "2025-08"
+			}
+		},
+		{
+			"id": "CR90 9ZQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-08-01",
+			"claims": {
+				"name": "CR90 9ZQ",
+				"kind": "postcode",
+				"began": "2025-02",
+				"ended": "2025-08"
+			}
+		},
+		{
+			"id": "CR90 9ZR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2025-08-01",
+			"claims": {
+				"name": "CR90 9ZR",
+				"kind": "postcode",
+				"began": "2025-03",
+				"ended": "2025-08"
+			}
+		},
+		{
+			"id": "CR90 9QH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-11-01",
+			"claims": {
+				"name": "CR90 9QH",
+				"kind": "postcode",
+				"began": "2017-01",
+				"ended": "2024-11"
+			}
+		},
+		{
+			"id": "CR90 9GA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2014-09-01",
+			"claims": {
+				"name": "CR90 9GA",
+				"kind": "postcode",
+				"began": "2010-08",
+				"ended": "2014-09"
+			}
+		},
+		{
+			"id": "CR90 9QL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-02-01",
+			"claims": {
+				"name": "CR90 9QL",
+				"kind": "postcode",
+				"began": "2017-09",
+				"ended": "2018-02"
+			}
+		},
+		{
+			"id": "CR90 9QN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-04-01",
+			"claims": {
+				"name": "CR90 9QN",
+				"kind": "postcode",
+				"began": "2017-03",
+				"ended": "2018-04"
+			}
+		},
+		{
+			"id": "CR90 9QW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-02-01",
+			"claims": {
+				"name": "CR90 9QW",
+				"kind": "postcode",
+				"began": "2017-07",
+				"ended": "2018-02"
+			}
+		},
+		{
+			"id": "CR90 9QX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-11-01",
+			"claims": {
+				"name": "CR90 9QX",
+				"kind": "postcode",
+				"began": "2017-07",
+				"ended": "2018-11"
+			}
+		},
+		{
+			"id": "CR90 9QY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-10-01",
+			"claims": {
+				"name": "CR90 9QY",
+				"kind": "postcode",
+				"began": "2017-07",
+				"ended": "2017-10"
+			}
+		},
+		{
+			"id": "CR90 9QZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-02-01",
+			"claims": {
+				"name": "CR90 9QZ",
+				"kind": "postcode",
+				"began": "2017-07",
+				"ended": "2018-02"
+			}
+		},
+		{
+			"id": "CR90 9RA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-03-01",
+			"claims": {
+				"name": "CR90 9RA",
+				"kind": "postcode",
+				"began": "2017-08",
+				"ended": "2018-03"
+			}
+		},
+		{
+			"id": "CR90 9GB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-09-01",
+			"claims": {
+				"name": "CR90 9GB",
+				"kind": "postcode",
+				"began": "2010-08",
+				"ended": "2016-09"
+			}
+		},
+		{
+			"id": "CR90 9RB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-03-01",
+			"claims": {
+				"name": "CR90 9RB",
+				"kind": "postcode",
+				"began": "2017-08",
+				"ended": "2018-03"
+			}
+		},
+		{
+			"id": "CR90 9GD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2016-09-01",
+			"claims": {
+				"name": "CR90 9GD",
+				"kind": "postcode",
+				"began": "2010-08",
+				"ended": "2016-09"
+			}
+		},
+		{
+			"id": "CR90 9RD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2017-09-01",
+			"claims": {
+				"name": "CR90 9RD",
+				"kind": "postcode",
+				"began": "2017-08",
+				"ended": "2017-09"
+			}
+		},
+		{
+			"id": "CR90 9RE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-09-01",
+			"claims": {
+				"name": "CR90 9RE",
+				"kind": "postcode",
+				"began": "2017-09",
+				"ended": "2018-09"
+			}
+		},
+		{
+			"id": "CR90 9GF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR90 9GF",
+				"kind": "postcode",
+				"began": "2011-06",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR90 9RF",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "CR90 9RF",
+				"kind": "postcode",
+				"began": "2017-09",
+				"ended": "2018-01"
+			}
+		},
+		{
+			"id": "CR90 9RG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-10-01",
+			"claims": {
+				"name": "CR90 9RG",
+				"kind": "postcode",
+				"began": "2017-09",
+				"ended": "2018-10"
+			}
+		},
+		{
+			"id": "CR90 9RH",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-06-01",
+			"claims": {
+				"name": "CR90 9RH",
+				"kind": "postcode",
+				"began": "2017-11",
+				"ended": "2018-06"
+			}
+		},
+		{
+			"id": "CR90 9RJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-07-01",
+			"claims": {
+				"name": "CR90 9RJ",
+				"kind": "postcode",
+				"began": "2017-12",
+				"ended": "2018-07"
+			}
+		},
+		{
+			"id": "CR90 9RL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-09-01",
+			"claims": {
+				"name": "CR90 9RL",
+				"kind": "postcode",
+				"began": "2018-02",
+				"ended": "2018-09"
+			}
+		},
+		{
+			"id": "CR90 9RN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-10-01",
+			"claims": {
+				"name": "CR90 9RN",
+				"kind": "postcode",
+				"began": "2018-02",
+				"ended": "2018-10"
+			}
+		},
+		{
+			"id": "CR90 9RP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-09-01",
+			"claims": {
+				"name": "CR90 9RP",
+				"kind": "postcode",
+				"began": "2018-02",
+				"ended": "2018-09"
+			}
+		},
+		{
+			"id": "CR90 9RQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-05-01",
+			"claims": {
+				"name": "CR90 9RQ",
+				"kind": "postcode",
+				"began": "2018-04",
+				"ended": "2019-05"
+			}
+		},
+		{
+			"id": "CR90 9RR",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-11-01",
+			"claims": {
+				"name": "CR90 9RR",
+				"kind": "postcode",
+				"began": "2018-04",
+				"ended": "2018-11"
+			}
+		},
+		{
+			"id": "CR90 9GJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR90 9GJ",
+				"kind": "postcode",
+				"began": "2010-10",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR90 9RT",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR90 9RT",
+				"kind": "postcode",
+				"began": "2018-05",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR90 9RU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-03-01",
+			"claims": {
+				"name": "CR90 9RU",
+				"kind": "postcode",
+				"began": "2018-06",
+				"ended": "2023-03"
+			}
+		},
+		{
+			"id": "CR90 9GQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2015-11-01",
+			"claims": {
+				"name": "CR90 9GQ",
+				"kind": "postcode",
+				"began": "2014-12",
+				"ended": "2015-11"
+			}
+		},
+		{
+			"id": "CR90 9RW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-09-01",
+			"claims": {
+				"name": "CR90 9RW",
+				"kind": "postcode",
+				"began": "2018-08",
+				"ended": "2019-09"
+			}
+		},
+		{
+			"id": "CR90 9RX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-04-01",
+			"claims": {
+				"name": "CR90 9RX",
+				"kind": "postcode",
+				"began": "2018-08",
+				"ended": "2019-04"
+			}
+		},
+		{
+			"id": "CR90 9RY",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-04-01",
+			"claims": {
+				"name": "CR90 9RY",
+				"kind": "postcode",
+				"began": "2018-09",
+				"ended": "2019-04"
+			}
+		},
+		{
+			"id": "CR90 9HA",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-03-01",
+			"claims": {
+				"name": "CR90 9HA",
+				"kind": "postcode",
+				"began": "2011-02",
+				"ended": "2018-03"
+			}
+		},
+		{
+			"id": "CR90 9RZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-11-01",
+			"claims": {
+				"name": "CR90 9RZ",
+				"kind": "postcode",
+				"began": "2018-10",
+				"ended": "2021-11"
+			}
+		},
+		{
+			"id": "CR90 9SB",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-05-01",
+			"claims": {
+				"name": "CR90 9SB",
+				"kind": "postcode",
+				"began": "2018-10",
+				"ended": "2019-05"
+			}
+		},
+		{
+			"id": "CR90 9SD",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-11-01",
+			"claims": {
+				"name": "CR90 9SD",
+				"kind": "postcode",
+				"began": "2018-10",
+				"ended": "2019-11"
+			}
+		},
+		{
+			"id": "CR90 9SE",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-05-01",
+			"claims": {
+				"name": "CR90 9SE",
+				"kind": "postcode",
+				"began": "2018-10",
+				"ended": "2020-05"
+			}
+		},
+		{
+			"id": "CR90 9SG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-11-01",
+			"claims": {
+				"name": "CR90 9SG",
+				"kind": "postcode",
+				"began": "2018-11",
+				"ended": "2020-11"
+			}
+		},
+		{
+			"id": "CR90 9HG",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CR90 9HG",
+				"kind": "postcode",
+				"began": "2011-03",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CR90 9SJ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-08-01",
+			"claims": {
+				"name": "CR90 9SJ",
+				"kind": "postcode",
+				"began": "2019-01",
+				"ended": "2019-08"
+			}
+		},
+		{
+			"id": "CR90 9SL",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "CR90 9SL",
+				"kind": "postcode",
+				"began": "2020-02",
+				"ended": "2024-05"
+			}
+		},
+		{
+			"id": "CR90 9SN",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-11-01",
+			"claims": {
+				"name": "CR90 9SN",
+				"kind": "postcode",
+				"began": "2019-04",
+				"ended": "2019-11"
+			}
+		},
+		{
+			"id": "CR90 9SP",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2023-08-01",
+			"claims": {
+				"name": "CR90 9SP",
+				"kind": "postcode",
+				"began": "2019-04",
+				"ended": "2023-08"
+			}
+		},
+		{
+			"id": "CR90 9SQ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2019-11-01",
+			"claims": {
+				"name": "CR90 9SQ",
+				"kind": "postcode",
+				"began": "2019-04",
+				"ended": "2019-11"
+			}
+		},
+		{
+			"id": "CR90 9SS",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2021-08-01",
+			"claims": {
+				"name": "CR90 9SS",
+				"kind": "postcode",
+				"began": "2019-07",
+				"ended": "2021-08"
+			}
+		},
+		{
+			"id": "CR90 9ST",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2022-09-01",
+			"claims": {
+				"name": "CR90 9ST",
+				"kind": "postcode",
+				"began": "2019-08",
+				"ended": "2022-09"
+			}
+		},
+		{
+			"id": "CR90 9SU",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-04-01",
+			"claims": {
+				"name": "CR90 9SU",
+				"kind": "postcode",
+				"began": "2019-08",
+				"ended": "2020-04"
+			}
+		},
+		{
+			"id": "CR90 9SW",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-09-01",
+			"claims": {
+				"name": "CR90 9SW",
+				"kind": "postcode",
+				"began": "2019-08",
+				"ended": "2020-09"
+			}
+		},
+		{
+			"id": "CR90 9SX",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-04-01",
+			"claims": {
+				"name": "CR90 9SX",
+				"kind": "postcode",
+				"began": "2019-09",
+				"ended": "2020-04"
+			}
+		},
+		{
+			"id": "CR90 9SZ",
+			"at": [
+				51.378068,
+				-0.113266
+			],
+			"observed": "2020-11-01",
+			"claims": {
+				"name": "CR90 9SZ",
+				"kind": "postcode",
+				"began": "2019-10",
+				"ended": "2020-11"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
