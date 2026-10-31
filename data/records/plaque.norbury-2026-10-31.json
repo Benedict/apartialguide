@@ -1,0 +1,43 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "55559",
+			"at": [
+				51.41207,
+				-0.11017
+			],
+			"claims": {
+				"name": "Dame Stephanie Shirley",
+				"description": "plaque",
+				"inscription": "Dame Stephanie Shirley"
+			}
+		},
+		{
+			"id": "9712",
+			"at": [
+				51.40886,
+				-0.11278
+			],
+			"claims": {
+				"name": "Sir Kingsley Amis novelist 1922–95 born at this address. Used Norbury as inspiration for his books.",
+				"description": "plaque",
+				"inscription": "Sir Kingsley Amis novelist 1922–95 born at this address. Used Norbury as inspiration for his books."
+			}
+		},
+		{
+			"id": "119",
+			"at": [
+				51.41652,
+				-0.11682
+			],
+			"claims": {
+				"name": "Will Hay 1888-1949 comic actor and astronomer lived here 1927-1934",
+				"description": "plaque",
+				"inscription": "Will Hay 1888-1949 comic actor and astronomer lived here 1927-1934"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

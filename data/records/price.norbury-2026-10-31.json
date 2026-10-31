@@ -1,0 +1,235 @@
+{
+	"source": "HM Land Registry",
+	"prefix": "price",
+	"records": [
+		{
+			"id": "10|GREEN LANE",
+			"address": {
+				"number": "10",
+				"street": "GREEN LANE"
+			},
+			"observed": "2017-03-31",
+			"claims": {
+				"sold": "2000",
+				"date": "2017-03-31"
+			}
+		},
+		{
+			"id": "42|GREEN LANE",
+			"address": {
+				"number": "42",
+				"street": "GREEN LANE"
+			},
+			"observed": "2022-07-11",
+			"claims": {
+				"sold": "100000",
+				"date": "2022-07-11"
+			}
+		},
+		{
+			"id": "23|NORTHWOOD ROAD",
+			"address": {
+				"number": "23",
+				"street": "NORTHWOOD ROAD"
+			},
+			"observed": "2000-10-25",
+			"claims": {
+				"sold": "95000",
+				"date": "2000-10-25"
+			}
+		},
+		{
+			"id": "419|BEULAH HILL",
+			"address": {
+				"number": "419",
+				"street": "BEULAH HILL"
+			},
+			"observed": "2007-04-26",
+			"claims": {
+				"sold": "196000",
+				"date": "2007-04-26"
+			}
+		},
+		{
+			"id": "262|BEULAH HILL",
+			"address": {
+				"number": "262",
+				"street": "BEULAH HILL"
+			},
+			"observed": "2026-01-16",
+			"claims": {
+				"sold": "600000",
+				"date": "2026-01-16"
+			}
+		},
+		{
+			"id": "1|BIGGIN WAY",
+			"address": {
+				"number": "1",
+				"street": "BIGGIN WAY"
+			},
+			"observed": "2008-06-02",
+			"claims": {
+				"sold": "200000",
+				"date": "2008-06-02"
+			}
+		},
+		{
+			"id": "463|STREATHAM HIGH ROAD",
+			"address": {
+				"number": "463",
+				"street": "STREATHAM HIGH ROAD"
+			},
+			"observed": "2021-08-27",
+			"claims": {
+				"sold": "250000",
+				"date": "2021-08-27"
+			}
+		},
+		{
+			"id": "1372|LONDON ROAD",
+			"address": {
+				"number": "1372",
+				"street": "LONDON ROAD"
+			},
+			"observed": "2017-09-14",
+			"claims": {
+				"sold": "1350000",
+				"date": "2017-09-14"
+			}
+		},
+		{
+			"id": "2|FORREST GARDENS",
+			"address": {
+				"number": "2",
+				"street": "FORREST GARDENS"
+			},
+			"observed": "2002-12-06",
+			"claims": {
+				"sold": "285000",
+				"date": "2002-12-06"
+			}
+		},
+		{
+			"id": "5|FORREST GARDENS",
+			"address": {
+				"number": "5",
+				"street": "FORREST GARDENS"
+			},
+			"observed": "2014-11-13",
+			"claims": {
+				"sold": "440000",
+				"date": "2014-11-13"
+			}
+		},
+		{
+			"id": "7|FORREST GARDENS",
+			"address": {
+				"number": "7",
+				"street": "FORREST GARDENS"
+			},
+			"observed": "2019-03-05",
+			"claims": {
+				"sold": "535000",
+				"date": "2019-03-05"
+			}
+		},
+		{
+			"id": "1|FORREST GARDENS",
+			"address": {
+				"number": "1",
+				"street": "FORREST GARDENS"
+			},
+			"observed": "2021-12-16",
+			"claims": {
+				"sold": "677500",
+				"date": "2021-12-16"
+			}
+		},
+		{
+			"id": "11|FORREST GARDENS",
+			"address": {
+				"number": "11",
+				"street": "FORREST GARDENS"
+			},
+			"observed": "2023-05-05",
+			"claims": {
+				"sold": "750000",
+				"date": "2023-05-05"
+			}
+		},
+		{
+			"id": "12|POLLARDS HILL NORTH",
+			"address": {
+				"number": "12",
+				"street": "POLLARDS HILL NORTH"
+			},
+			"observed": "2009-06-30",
+			"claims": {
+				"sold": "360000",
+				"date": "2009-06-30"
+			}
+		},
+		{
+			"id": "2|POLLARDS HILL NORTH",
+			"address": {
+				"number": "2",
+				"street": "POLLARDS HILL NORTH"
+			},
+			"observed": "1998-02-24",
+			"claims": {
+				"sold": "148000",
+				"date": "1998-02-24"
+			}
+		},
+		{
+			"id": "8|POLLARDS HILL NORTH",
+			"address": {
+				"number": "8",
+				"street": "POLLARDS HILL NORTH"
+			},
+			"observed": "2002-09-23",
+			"claims": {
+				"sold": "340000",
+				"date": "2002-09-23"
+			}
+		},
+		{
+			"id": "10|POLLARDS HILL NORTH",
+			"address": {
+				"number": "10",
+				"street": "POLLARDS HILL NORTH"
+			},
+			"observed": "2000-06-08",
+			"claims": {
+				"sold": "275000",
+				"date": "2000-06-08"
+			}
+		},
+		{
+			"id": "6|POLLARDS HILL NORTH",
+			"address": {
+				"number": "6",
+				"street": "POLLARDS HILL NORTH"
+			},
+			"observed": "2008-03-07",
+			"claims": {
+				"sold": "500000",
+				"date": "2008-03-07"
+			}
+		},
+		{
+			"id": "69|FAIRVIEW ROAD",
+			"address": {
+				"number": "69",
+				"street": "FAIRVIEW ROAD"
+			},
+			"observed": "2024-10-23",
+			"claims": {
+				"sold": "892000",
+				"date": "2024-10-23"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

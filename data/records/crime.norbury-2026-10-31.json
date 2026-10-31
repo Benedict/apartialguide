@@ -1,0 +1,457 @@
+{
+	"source": "police.uk",
+	"prefix": "crime",
+	"records": [
+		{
+			"id": "Pollards Crescent|2026-08",
+			"street": "Pollards Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "11",
+				"kinds": "anti-social behaviour (10), other theft (1)"
+			}
+		},
+		{
+			"id": "Tylecroft Road|2026-08",
+			"street": "Tylecroft Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Leafield Close|2026-08",
+			"street": "Leafield Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), theft from the person (1)"
+			}
+		},
+		{
+			"id": "Beech Road|2026-08",
+			"street": "Beech Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Craignish Avenue|2026-08",
+			"street": "Craignish Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Tisbury Road|2026-08",
+			"street": "Tisbury Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Palmers Road|2026-08",
+			"street": "Palmers Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "burglary (1), other theft (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Jerviston Gardens|2026-08",
+			"street": "Jerviston Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "burglary (1)"
+			}
+		},
+		{
+			"id": "Norbury Close|2026-08",
+			"street": "Norbury Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "burglary (1)"
+			}
+		},
+		{
+			"id": "Manor Farm Road|2026-08",
+			"street": "Manor Farm Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "drugs (1)"
+			}
+		},
+		{
+			"id": "Pollards Hill East|2026-08",
+			"street": "Pollards Hill East",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "drugs (1)"
+			}
+		},
+		{
+			"id": "Granville Gardens|2026-08",
+			"street": "Granville Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "drugs (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Crescent Way|2026-08",
+			"street": "Crescent Way",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "drugs (2), other theft (1)"
+			}
+		},
+		{
+			"id": "Hollman Gardens|2026-08",
+			"street": "Hollman Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "drugs (1), public order (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Benett Gardens|2026-08",
+			"street": "Benett Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "other theft (1)"
+			}
+		},
+		{
+			"id": "Norbury Hill|2026-08",
+			"street": "Norbury Hill",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "other theft (1), vehicle crime (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Croindene Road|2026-08",
+			"street": "Croindene Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "other theft (2)"
+			}
+		},
+		{
+			"id": "Hill Drive|2026-08",
+			"street": "Hill Drive",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "other theft (1)"
+			}
+		},
+		{
+			"id": "Buckingham Gardens|2026-08",
+			"street": "Buckingham Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "violent crime (3), other theft (1)"
+			}
+		},
+		{
+			"id": "Willowtree Way|2026-08",
+			"street": "Willowtree Way",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "possession of weapons (4)"
+			}
+		},
+		{
+			"id": "Hawthorn Avenue|2026-08",
+			"street": "Hawthorn Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "public order (2), violent crime (1)"
+			}
+		},
+		{
+			"id": "Ena Road|2026-08",
+			"street": "Ena Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "public order (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Links Gardens|2026-08",
+			"street": "Links Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "public order (2), violent crime (1)"
+			}
+		},
+		{
+			"id": "Norton Gardens|2026-08",
+			"street": "Norton Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "6",
+				"kinds": "violent crime (5), robbery (1)"
+			}
+		},
+		{
+			"id": "Kintyre Close|2026-08",
+			"street": "Kintyre Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "violent crime (2), robbery (1)"
+			}
+		},
+		{
+			"id": "Copgate Path|2026-08",
+			"street": "Copgate Path",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "robbery (1)"
+			}
+		},
+		{
+			"id": "Briar Road|2026-08",
+			"street": "Briar Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "5",
+				"kinds": "shoplifting (4), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Tall Trees|2026-08",
+			"street": "Tall Trees",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "shoplifting (1)"
+			}
+		},
+		{
+			"id": "Ardfern Avenue|2026-08",
+			"street": "Ardfern Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "violent crime (2), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Beatrice Avenue|2026-08",
+			"street": "Beatrice Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "violent crime (2), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Colebrook Road|2026-08",
+			"street": "Colebrook Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Upwood Road|2026-08",
+			"street": "Upwood Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Darcy Road|2026-08",
+			"street": "Darcy Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "other crime (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Hollies Close|2026-08",
+			"street": "Hollies Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "vehicle crime (2), violent crime (1)"
+			}
+		},
+		{
+			"id": "Buckingham Avenue|2026-08",
+			"street": "Buckingham Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Westminster Avenue|2026-08",
+			"street": "Westminster Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Newlands Road|2026-08",
+			"street": "Newlands Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Semley Road|2026-08",
+			"street": "Semley Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Somerset Gardens|2026-08",
+			"street": "Somerset Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Roche Road|2026-08",
+			"street": "Roche Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Hatch Road|2026-08",
+			"street": "Hatch Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Norbury Cross|2026-08",
+			"street": "Norbury Cross",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Semley Place|2026-08",
+			"street": "Semley Place",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Marston Way|2026-08",
+			"street": "Marston Way",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Harefield Road|2026-08",
+			"street": "Harefield Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
