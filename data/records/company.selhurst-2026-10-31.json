@@ -1,0 +1,307 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "314|WHITEHORSE ROAD",
+			"address": {
+				"number": "314",
+				"street": "WHITEHORSE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ADJOA'S KITCHEN LTD|PB LOUNGE LTD",
+				"since": "2020-06-11"
+			}
+		},
+		{
+			"id": "14|WILLIS ROAD",
+			"address": {
+				"number": "14",
+				"street": "WILLIS ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AFRICAN CENTRE FOR COMMUNITY ENGAGEMENT, POPULATION HEALTH & KNOWLEDGE TRANSLATION CIC",
+				"since": "2026-09-11"
+			}
+		},
+		{
+			"id": "53|THORNHILL ROAD",
+			"address": {
+				"number": "53",
+				"street": "THORNHILL ROAD"
+			},
+			"claims": {
+				"count": "4",
+				"names": "CONTROL CHAOS LTD|ALIEN MIND LTD|THE LONGHOUSE PRODUCTION LTD",
+				"since": "2021-07-22"
+			}
+		},
+		{
+			"id": "13|THORNHILL ROAD",
+			"address": {
+				"number": "13",
+				"street": "THORNHILL ROAD"
+			},
+			"claims": {
+				"count": "11",
+				"names": "EIDIZADA LTD|MADDY PROPERTIES LTD|MEGA WHOLESALE MCR LTD",
+				"since": "2019-06-26"
+			}
+		},
+		{
+			"id": "304|WHITEHORSE ROAD",
+			"address": {
+				"number": "304",
+				"street": "WHITEHORSE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "B M S FAST FOOD LTD",
+				"since": "2024-01-26"
+			}
+		},
+		{
+			"id": "302|WHITEHORSE ROAD",
+			"address": {
+				"number": "302",
+				"street": "WHITEHORSE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "BROADWAY ENTERTAINMENT LIMITED|BROADWAY LUXE LTD",
+				"since": "2017-05-04"
+			}
+		},
+		{
+			"id": "68|WINDMILL ROAD",
+			"address": {
+				"number": "68",
+				"street": "WINDMILL ROAD"
+			},
+			"claims": {
+				"count": "7",
+				"names": "HAKMAY CONSULTING LTD|GLOBAL CHRISTIAN MINISTRY FORUM - UK|CORNERSTONE INTERNATIONAL GROUP LIMITED",
+				"since": "2004-02-11"
+			}
+		},
+		{
+			"id": "70|WINDMILL ROAD",
+			"address": {
+				"number": "70",
+				"street": "WINDMILL ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "THANJAVUR FOOD LOUNGE LIMITED|CROYDON TYRE CENTRE LTD",
+				"since": "2025-04-29"
+			}
+		},
+		{
+			"id": "125|WHITEHORSE ROAD",
+			"address": {
+				"number": "125",
+				"street": "WHITEHORSE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CROYDON YOUTH ZONE",
+				"since": "2016-10-01"
+			}
+		},
+		{
+			"id": "35|THORNHILL ROAD",
+			"address": {
+				"number": "35",
+				"street": "THORNHILL ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EQUALITY PROPERTY LTD",
+				"since": "2025-11-25"
+			}
+		},
+		{
+			"id": "65|SAXON ROAD",
+			"address": {
+				"number": "65",
+				"street": "SAXON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HOLIX CARE AND HOMES LIMITED",
+				"since": "2022-09-07"
+			}
+		},
+		{
+			"id": "172|WHITEHORSE ROAD",
+			"address": {
+				"number": "172",
+				"street": "WHITEHORSE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HOTHI CONTRACTORS LIMITED",
+				"since": "2025-04-20"
+			}
+		},
+		{
+			"id": "22|SELHURST ROAD",
+			"address": {
+				"number": "22",
+				"street": "SELHURST ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "I&E FOOD & WINE LTD",
+				"since": "2021-03-01"
+			}
+		},
+		{
+			"id": "73|WINDMILL ROAD",
+			"address": {
+				"number": "73",
+				"street": "WINDMILL ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JAYA MINI MARKET LIMITED",
+				"since": "2016-10-21"
+			}
+		},
+		{
+			"id": "156|WHITEHORSE ROAD",
+			"address": {
+				"number": "156",
+				"street": "WHITEHORSE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "JLB CHILDCARE LIMITED|WHITEHORSE NURSERY LIMITED",
+				"since": "2010-03-30"
+			}
+		},
+		{
+			"id": "20|MAYO ROAD",
+			"address": {
+				"number": "20",
+				"street": "MAYO ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LALA OF LONDON LIMITED",
+				"since": "2011-05-27"
+			}
+		},
+		{
+			"id": "1|TAIT ROAD",
+			"address": {
+				"number": "1",
+				"street": "TAIT ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "SOUTH LONDON HARDWOODS LIMITED|LONDONR LIMITED",
+				"since": "1996-06-18"
+			}
+		},
+		{
+			"id": "1|THORNHILL ROAD",
+			"address": {
+				"number": "1",
+				"street": "THORNHILL ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "MAFULLERHEALTHCARE LTD|RAOBLISS LTD",
+				"since": "2017-11-06"
+			}
+		},
+		{
+			"id": "45|SAXON ROAD",
+			"address": {
+				"number": "45",
+				"street": "SAXON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MIRZA SS HOLDING LIMITED",
+				"since": "2026-02-26"
+			}
+		},
+		{
+			"id": "134|WHITEHORSE ROAD",
+			"address": {
+				"number": "134",
+				"street": "WHITEHORSE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NAM TRAVEL & TOURS LIMITED",
+				"since": "1998-09-08"
+			}
+		},
+		{
+			"id": "194|WHITEHORSE ROAD",
+			"address": {
+				"number": "194",
+				"street": "WHITEHORSE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "STOP AND SHOP GROUP LIMITED|PICXMA TRADE LTD",
+				"since": "2016-09-02"
+			}
+		},
+		{
+			"id": "60|THE CRESCENT",
+			"address": {
+				"number": "60",
+				"street": "THE CRESCENT"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE BRIT SCHOOL LIMITED",
+				"since": "1989-04-06"
+			}
+		},
+		{
+			"id": "59|WINDMILL ROAD",
+			"address": {
+				"number": "59",
+				"street": "WINDMILL ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THIRTY-THIRTY LTD",
+				"since": "2016-04-15"
+			}
+		},
+		{
+			"id": "306|WHITEHORSE ROAD",
+			"address": {
+				"number": "306",
+				"street": "WHITEHORSE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TITANAXE SOLUTIONS LIMITED",
+				"since": "2025-08-07"
+			}
+		},
+		{
+			"id": "128|WHITEHORSE ROAD",
+			"address": {
+				"number": "128",
+				"street": "WHITEHORSE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "UNICARE COMPLEX CARE SPECIALIST LTD",
+				"since": "2019-06-28"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
