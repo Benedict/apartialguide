@@ -23,6 +23,7 @@ import { closedAreaOf, type AreaList } from '../src/lib/core/release';
 import { landingPage } from '../src/lib/server/landing';
 import { llmsTxt, manifest, robotsTxt, sitemapXml } from '../src/lib/server/meta';
 import { notFoundPage } from '../src/lib/server/notfound';
+import { privacyPage } from '../src/lib/server/privacy';
 import { FONT_FILES } from '../src/lib/server/type';
 import { compileWorld } from '../src/lib/core/adventure/world';
 import { exportPage, wordsAmiss } from '../src/lib/server/export';
@@ -135,6 +136,16 @@ if (site) {
 	);
 	writeFileSync(join(site, 'index.html'), await microsite());
 	writeFileSync(join(site, '404.html'), notFoundPage());
+	mkdirSync(join(site, 'privacy'), { recursive: true });
+	writeFileSync(
+		join(site, 'privacy', 'index.html'),
+		privacyPage({
+			gaId: process.env.GA_MEASUREMENT_ID || undefined,
+			signupUrl: process.env.SIGNUP_URL || undefined,
+			contact: process.env.CONTACT_EMAIL || undefined,
+			siteUrl: process.env.SITE_URL || undefined
+		})
+	);
 	// What the site says of itself: robots.txt, the sitemap (once it knows its address), llms.txt for
 	// agents, and the manifest that lets the walk be added to a home screen.
 	const siteUrl = process.env.SITE_URL || undefined;

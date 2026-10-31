@@ -4,10 +4,8 @@ Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
 
 ## Keys and workflows
 
-- [ ] **A mailing list for areas to come.** At the edge of an area not open yet, the page can link to a sign-up. Choose a provider (Buttondown, a Netlify form, Mailchimp…), make a sign-up page, and add its address as the repository **variable** `SIGNUP_URL`. Collecting addresses needs the privacy policy below first.
+- [ ] **A mailing list for areas to come.** At the edge of an area not open yet, the page can link to a sign-up. Choose a provider (Buttondown, a Netlify form, Mailchimp…), make a sign-up page, and add its address as the repository **variable** `SIGNUP_URL`. The privacy page tells of the list once `SIGNUP_URL` is set.
 - [ ] **Sponsoring an area.** You want people to be able to sponsor an area's prose. Decide what a sponsor gets (a credit on the About page, or on the area's edge note?), how they pay, and whether a sponsor's name may appear in the walk at all. Guide never names sources, so a credit belongs to the page, not to Guide.
-
-- [ ] **Remove the `CROYDON_WALK` variable.** The walk at the root is now the whole borough, so `/croydon/` is no longer built.
 
 - [ ] **Re-narrate.** The walk now stops only at junctions and named places, so every stop is new and the prose written before no longer matches any of them: the walk shows the template until it is rewritten. There are 384 busier stops now (was 1,094). Either run the Narrate workflow with `NARRATE_ONLY=busier` (API, roughly $8–15), or ask Claude to narrate them in a session on your Max plan.
 - [ ] **Energy certificate keys.** Register at <https://epc.opendatacommunities.org/>. Then add two repository secrets (Settings → Secrets and variables → Actions):
@@ -29,7 +27,7 @@ Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
   3. In the repository, Settings → Secrets and variables → Actions: a **variable** `NETLIFY_SITE_ID` (the Project ID), and a **secret** `NETLIFY_AUTH_TOKEN` (the token).
   4. Run the Deploy workflow (Actions → Deploy → Run workflow), or merge anything. Its summary gives the URL.
   5. Once the Netlify site plays, Settings → Pages → turn GitHub Pages off, and give the Netlify URL to anyone who has the old one. `FLIGHTS_URL` and the Cloudflare worker are then no longer needed: flights answer from the site itself.
-- [ ] **Privacy policy.** The Website Specification requires one, linked from every page's footer, naming who is responsible for the site (the controller), a postal address and a contact for privacy questions. The About page already says what is counted and why; the rest only you can give. Say what name, address and contact to use, and whether a contact email may be public (also wanted for `/.well-known/security.txt`).
+- [ ] **Privacy contact.** The privacy page (`/privacy/`) is written from what the code does and names you as responsible. Read it on the site and correct anything you would put differently. It has no contact yet: set the repository **variable** `CONTACT_EMAIL` to an address you are happy to make public (it is also wanted for `/.well-known/security.txt`). The UK GDPR asks for the controller's identity and contact details; a postal address is not required of an individual, but add one if you want it.
 - [ ] **Site address.** Add the repository **variable** `SITE_URL` = `https://apartialguide.com` (no `www.`: Netlify redirects `www.` to it, so that is the address search engines and link previews should be given). With it, a shared link shows the logo, and the site names its canonical addresses and sitemap.
 - [ ] **Google Analytics.** Create a GA4 property for the site, then add its measurement ID (`G-…`) as a repository **variable** (not a secret) called `GA_MEASUREMENT_ID` (Settings → Secrets and variables → Actions → Variables), and run the Deploy workflow. Until then nothing is counted and no one is asked. In GA, under Admin → Data retention, consider the shortest retention, and leave Google signals off.
 
