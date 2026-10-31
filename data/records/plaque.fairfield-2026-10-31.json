@@ -1,0 +1,91 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "58862",
+			"at": [
+				51.36756,
+				-0.09687
+			],
+			"claims": {
+				"name": "YCL\r\nConquer Your Future",
+				"description": "plaque",
+				"inscription": "YCL\r\nConquer Your Future"
+			}
+		},
+		{
+			"id": "39094",
+			"at": [
+				51.37359,
+				-0.09963
+			],
+			"claims": {
+				"name": "The Hospital of the Holy Trinity founded by Archbishop Whitgift in 1596\r\n\"to be an hospitall and abiding-place for the finding, sustenation and relief of certain maymed, poore, peedie or impotent people, to have continuence for ever\"\r\nThe school included in the original foundation is now represented by the Whitgift School and the Trinity School of John Whitgift\r\n\r\nThe tomb of John Witgift is in Croydon parish church, founded in the year 960, adjoining the old palace of the archbishops, situated in Church Street at the foot of Crown Hill.",
+				"description": "plaque",
+				"inscription": "The Hospital of the Holy Trinity founded by Archbishop Whitgift in 1596\r\n\"to be an hospitall and abiding-place for the finding, sustenation and relief of certain maymed, poore, peedie or impotent people, to have continuence for ever\"\r\nThe school included in the original foundation is now represented by the Whitgift School and the Trinity School of John Whitgift\r\n\r\nThe tomb of John Witgift is in Croydon parish church, founded in the year 960, adjoining the old palace of the archbishops, situated in Church Street at the foot of Crown Hill."
+			}
+		},
+		{
+			"id": "30977",
+			"at": [
+				51.36772,
+				-0.0966
+			],
+			"claims": {
+				"name": "Admiral Sir George Somers Kt 1554-1610 Elizabethan seafarer, politician and military leader. As a merchant trader he flourished in Lyme Regis. Warring with the Spanish increased his wealth...",
+				"description": "plaque",
+				"inscription": "Admiral Sir George Somers Kt 1554-1610 Elizabethan seafarer, politician and military leader. As a merchant trader he flourished in Lyme Regis. Warring with the Spanish increased his wealth..."
+			}
+		},
+		{
+			"id": "30871",
+			"at": [
+				51.37332,
+				-0.10612
+			],
+			"claims": {
+				"name": "Elias Davy\r\nCitizen & Mercer of London\r\nfounded the original \r\nElis David Almshouse\r\non this site in \r\n1447\r\nresidents moved to Duppas Hill Terrace in\r\n1974\r\nCroydon Almshouse Charities",
+				"description": "plaque",
+				"inscription": "Elias Davy\r\nCitizen & Mercer of London\r\nfounded the original \r\nElis David Almshouse\r\non this site in \r\n1447\r\nresidents moved to Duppas Hill Terrace in\r\n1974\r\nCroydon Almshouse Charities"
+			}
+		},
+		{
+			"id": "10549",
+			"at": [
+				51.37113,
+				-0.09983
+			],
+			"claims": {
+				"name": "Davis' Theatre 1928-1959. This building is all that remains of the Davis' Theatre, a magnificent duel purpose cinema and theatre designed in contemporary French decorative style by the eminent architect Robert Cromie. It held an audience of more than 3,700, the largest cinema in England at the time. Amongst the many spectacular presentations was the Bolshoi Ballet, who performed here in 1957",
+				"description": "plaque",
+				"inscription": "Davis' Theatre 1928-1959. This building is all that remains of the Davis' Theatre, a magnificent duel purpose cinema and theatre designed in contemporary French decorative style by the eminent architect Robert Cromie. It held an audience of more than 3,700, the largest cinema in England at the time. Amongst the many spectacular presentations was the Bolshoi Ballet, who performed here in 1957"
+			}
+		},
+		{
+			"id": "10439",
+			"at": [
+				51.36977,
+				-0.09991
+			],
+			"claims": {
+				"name": "The Grand Theatre and Opera House stood on this site 1896-1959",
+				"description": "plaque",
+				"inscription": "The Grand Theatre and Opera House stood on this site 1896-1959"
+			}
+		},
+		{
+			"id": "10395",
+			"at": [
+				51.37198,
+				-0.09547
+			],
+			"claims": {
+				"name": "Albert Ashmore 1906-1985 lifelong member of Croydon Salvation Army & co-founder of the Fairfield Christmas Carol Services",
+				"description": "plaque",
+				"inscription": "Albert Ashmore 1906-1985 lifelong member of Croydon Salvation Army & co-founder of the Fairfield Christmas Carol Services"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

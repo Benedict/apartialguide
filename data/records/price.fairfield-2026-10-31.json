@@ -1,0 +1,2851 @@
+{
+	"source": "HM Land Registry",
+	"prefix": "price",
+	"records": [
+		{
+			"id": "42|LOWER COOMBE STREET",
+			"address": {
+				"number": "42",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2003-04-25",
+			"claims": {
+				"sold": "155000",
+				"date": "2003-04-25"
+			}
+		},
+		{
+			"id": "28|LOWER COOMBE STREET",
+			"address": {
+				"number": "28",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2025-09-01",
+			"claims": {
+				"sold": "400000",
+				"date": "2025-09-01"
+			}
+		},
+		{
+			"id": "24|LOWER COOMBE STREET",
+			"address": {
+				"number": "24",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2002-04-30",
+			"claims": {
+				"sold": "138000",
+				"date": "2002-04-30"
+			}
+		},
+		{
+			"id": "32|LOWER COOMBE STREET",
+			"address": {
+				"number": "32",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2023-05-05",
+			"claims": {
+				"sold": "367500",
+				"date": "2023-05-05"
+			}
+		},
+		{
+			"id": "8|LOWER COOMBE STREET",
+			"address": {
+				"number": "8",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2002-01-22",
+			"claims": {
+				"sold": "134000",
+				"date": "2002-01-22"
+			}
+		},
+		{
+			"id": "34|LOWER COOMBE STREET",
+			"address": {
+				"number": "34",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2025-02-27",
+			"claims": {
+				"sold": "370000",
+				"date": "2025-02-27"
+			}
+		},
+		{
+			"id": "30|LOWER COOMBE STREET",
+			"address": {
+				"number": "30",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2000-08-09",
+			"claims": {
+				"sold": "108000",
+				"date": "2000-08-09"
+			}
+		},
+		{
+			"id": "26|LOWER COOMBE STREET",
+			"address": {
+				"number": "26",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2021-07-23",
+			"claims": {
+				"sold": "335000",
+				"date": "2021-07-23"
+			}
+		},
+		{
+			"id": "5|LOWER COOMBE STREET",
+			"address": {
+				"number": "5",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2013-10-21",
+			"claims": {
+				"sold": "210000",
+				"date": "2013-10-21"
+			}
+		},
+		{
+			"id": "38|LOWER COOMBE STREET",
+			"address": {
+				"number": "38",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2005-05-06",
+			"claims": {
+				"sold": "150000",
+				"date": "2005-05-06"
+			}
+		},
+		{
+			"id": "22|LOWER COOMBE STREET",
+			"address": {
+				"number": "22",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2004-07-21",
+			"claims": {
+				"sold": "174000",
+				"date": "2004-07-21"
+			}
+		},
+		{
+			"id": "16|LOWER COOMBE STREET",
+			"address": {
+				"number": "16",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2012-08-31",
+			"claims": {
+				"sold": "207750",
+				"date": "2012-08-31"
+			}
+		},
+		{
+			"id": "4|LOWER COOMBE STREET",
+			"address": {
+				"number": "4",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2005-09-02",
+			"claims": {
+				"sold": "175000",
+				"date": "2005-09-02"
+			}
+		},
+		{
+			"id": "12|LOWER COOMBE STREET",
+			"address": {
+				"number": "12",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2005-10-18",
+			"claims": {
+				"sold": "158000",
+				"date": "2005-10-18"
+			}
+		},
+		{
+			"id": "40|LOWER COOMBE STREET",
+			"address": {
+				"number": "40",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2018-10-15",
+			"claims": {
+				"sold": "265000",
+				"date": "2018-10-15"
+			}
+		},
+		{
+			"id": "10|LOWER COOMBE STREET",
+			"address": {
+				"number": "10",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2026-05-20",
+			"claims": {
+				"sold": "395000",
+				"date": "2026-05-20"
+			}
+		},
+		{
+			"id": "6|LOWER COOMBE STREET",
+			"address": {
+				"number": "6",
+				"street": "LOWER COOMBE STREET"
+			},
+			"observed": "2020-11-20",
+			"claims": {
+				"sold": "374500",
+				"date": "2020-11-20"
+			}
+		},
+		{
+			"id": "124|SOUTHBRIDGE ROAD",
+			"address": {
+				"number": "124",
+				"street": "SOUTHBRIDGE ROAD"
+			},
+			"observed": "2017-11-17",
+			"claims": {
+				"sold": "240000",
+				"date": "2017-11-17"
+			}
+		},
+		{
+			"id": "109|SOUTHBRIDGE ROAD",
+			"address": {
+				"number": "109",
+				"street": "SOUTHBRIDGE ROAD"
+			},
+			"observed": "2004-01-16",
+			"claims": {
+				"sold": "172250",
+				"date": "2004-01-16"
+			}
+		},
+		{
+			"id": "1|HOWLEY ROAD",
+			"address": {
+				"number": "1",
+				"street": "HOWLEY ROAD"
+			},
+			"observed": "2000-02-09",
+			"claims": {
+				"sold": "95000",
+				"date": "2000-02-09"
+			}
+		},
+		{
+			"id": "31|HOWLEY ROAD",
+			"address": {
+				"number": "31",
+				"street": "HOWLEY ROAD"
+			},
+			"observed": "2022-08-12",
+			"claims": {
+				"sold": "377500",
+				"date": "2022-08-12"
+			}
+		},
+		{
+			"id": "47|HOWLEY ROAD",
+			"address": {
+				"number": "47",
+				"street": "HOWLEY ROAD"
+			},
+			"observed": "2018-11-16",
+			"claims": {
+				"sold": "348000",
+				"date": "2018-11-16"
+			}
+		},
+		{
+			"id": "28|HOWLEY ROAD",
+			"address": {
+				"number": "28",
+				"street": "HOWLEY ROAD"
+			},
+			"observed": "2022-06-15",
+			"claims": {
+				"sold": "420000",
+				"date": "2022-06-15"
+			}
+		},
+		{
+			"id": "30|HOWLEY ROAD",
+			"address": {
+				"number": "30",
+				"street": "HOWLEY ROAD"
+			},
+			"observed": "2008-08-14",
+			"claims": {
+				"sold": "225000",
+				"date": "2008-08-14"
+			}
+		},
+		{
+			"id": "2|HOWLEY ROAD",
+			"address": {
+				"number": "2",
+				"street": "HOWLEY ROAD"
+			},
+			"observed": "2022-07-22",
+			"claims": {
+				"sold": "466000",
+				"date": "2022-07-22"
+			}
+		},
+		{
+			"id": "36|EDEN ROAD",
+			"address": {
+				"number": "36",
+				"street": "EDEN ROAD"
+			},
+			"observed": "1998-06-18",
+			"claims": {
+				"sold": "190000",
+				"date": "1998-06-18"
+			}
+		},
+		{
+			"id": "40|EDEN ROAD",
+			"address": {
+				"number": "40",
+				"street": "EDEN ROAD"
+			},
+			"observed": "2003-04-02",
+			"claims": {
+				"sold": "293000",
+				"date": "2003-04-02"
+			}
+		},
+		{
+			"id": "42|EDEN ROAD",
+			"address": {
+				"number": "42",
+				"street": "EDEN ROAD"
+			},
+			"observed": "2003-10-10",
+			"claims": {
+				"sold": "350000",
+				"date": "2003-10-10"
+			}
+		},
+		{
+			"id": "38|EDEN ROAD",
+			"address": {
+				"number": "38",
+				"street": "EDEN ROAD"
+			},
+			"observed": "2023-09-07",
+			"claims": {
+				"sold": "770000",
+				"date": "2023-09-07"
+			}
+		},
+		{
+			"id": "21|EDEN ROAD",
+			"address": {
+				"number": "21",
+				"street": "EDEN ROAD"
+			},
+			"observed": "2025-02-20",
+			"claims": {
+				"sold": "560000",
+				"date": "2025-02-20"
+			}
+		},
+		{
+			"id": "27|EDEN ROAD",
+			"address": {
+				"number": "27",
+				"street": "EDEN ROAD"
+			},
+			"observed": "2015-09-21",
+			"claims": {
+				"sold": "475000",
+				"date": "2015-09-21"
+			}
+		},
+		{
+			"id": "23|EDEN ROAD",
+			"address": {
+				"number": "23",
+				"street": "EDEN ROAD"
+			},
+			"observed": "2002-07-12",
+			"claims": {
+				"sold": "285000",
+				"date": "2002-07-12"
+			}
+		},
+		{
+			"id": "7|EDEN ROAD",
+			"address": {
+				"number": "7",
+				"street": "EDEN ROAD"
+			},
+			"observed": "2002-05-20",
+			"claims": {
+				"sold": "335000",
+				"date": "2002-05-20"
+			}
+		},
+		{
+			"id": "13|EDEN ROAD",
+			"address": {
+				"number": "13",
+				"street": "EDEN ROAD"
+			},
+			"observed": "2012-10-25",
+			"claims": {
+				"sold": "320000",
+				"date": "2012-10-25"
+			}
+		},
+		{
+			"id": "5|EDEN ROAD",
+			"address": {
+				"number": "5",
+				"street": "EDEN ROAD"
+			},
+			"observed": "2005-04-15",
+			"claims": {
+				"sold": "240000",
+				"date": "2005-04-15"
+			}
+		},
+		{
+			"id": "25|EDEN ROAD",
+			"address": {
+				"number": "25",
+				"street": "EDEN ROAD"
+			},
+			"observed": "2011-09-01",
+			"claims": {
+				"sold": "350050",
+				"date": "2011-09-01"
+			}
+		},
+		{
+			"id": "29|EDEN ROAD",
+			"address": {
+				"number": "29",
+				"street": "EDEN ROAD"
+			},
+			"observed": "2012-07-27",
+			"claims": {
+				"sold": "330000",
+				"date": "2012-07-27"
+			}
+		},
+		{
+			"id": "17|EDEN ROAD",
+			"address": {
+				"number": "17",
+				"street": "EDEN ROAD"
+			},
+			"observed": "2014-02-28",
+			"claims": {
+				"sold": "385000",
+				"date": "2014-02-28"
+			}
+		},
+		{
+			"id": "3|EDEN ROAD",
+			"address": {
+				"number": "3",
+				"street": "EDEN ROAD"
+			},
+			"observed": "2016-08-08",
+			"claims": {
+				"sold": "580000",
+				"date": "2016-08-08"
+			}
+		},
+		{
+			"id": "11|EDEN ROAD",
+			"address": {
+				"number": "11",
+				"street": "EDEN ROAD"
+			},
+			"observed": "2018-08-15",
+			"claims": {
+				"sold": "616500",
+				"date": "2018-08-15"
+			}
+		},
+		{
+			"id": "23|MULGRAVE ROAD",
+			"address": {
+				"number": "23",
+				"street": "MULGRAVE ROAD"
+			},
+			"observed": "1996-08-05",
+			"claims": {
+				"sold": "158000",
+				"date": "1996-08-05"
+			}
+		},
+		{
+			"id": "5|MULGRAVE ROAD",
+			"address": {
+				"number": "5",
+				"street": "MULGRAVE ROAD"
+			},
+			"observed": "1997-12-19",
+			"claims": {
+				"sold": "175000",
+				"date": "1997-12-19"
+			}
+		},
+		{
+			"id": "9|MULGRAVE ROAD",
+			"address": {
+				"number": "9",
+				"street": "MULGRAVE ROAD"
+			},
+			"observed": "2021-06-11",
+			"claims": {
+				"sold": "355000",
+				"date": "2021-06-11"
+			}
+		},
+		{
+			"id": "13|MULGRAVE ROAD",
+			"address": {
+				"number": "13",
+				"street": "MULGRAVE ROAD"
+			},
+			"observed": "2017-11-20",
+			"claims": {
+				"sold": "18000",
+				"date": "2017-11-20"
+			}
+		},
+		{
+			"id": "21|MULGRAVE ROAD",
+			"address": {
+				"number": "21",
+				"street": "MULGRAVE ROAD"
+			},
+			"observed": "2005-08-24",
+			"claims": {
+				"sold": "212000",
+				"date": "2005-08-24"
+			}
+		},
+		{
+			"id": "3|MULGRAVE ROAD",
+			"address": {
+				"number": "3",
+				"street": "MULGRAVE ROAD"
+			},
+			"observed": "2020-01-24",
+			"claims": {
+				"sold": "750000",
+				"date": "2020-01-24"
+			}
+		},
+		{
+			"id": "17|MULGRAVE ROAD",
+			"address": {
+				"number": "17",
+				"street": "MULGRAVE ROAD"
+			},
+			"observed": "2023-02-14",
+			"claims": {
+				"sold": "140000",
+				"date": "2023-02-14"
+			}
+		},
+		{
+			"id": "16|WANDLE ROAD",
+			"address": {
+				"number": "16",
+				"street": "WANDLE ROAD"
+			},
+			"observed": "2011-03-24",
+			"claims": {
+				"sold": "289400",
+				"date": "2011-03-24"
+			}
+		},
+		{
+			"id": "23|WANDLE ROAD",
+			"address": {
+				"number": "23",
+				"street": "WANDLE ROAD"
+			},
+			"observed": "2016-03-31",
+			"claims": {
+				"sold": "385000",
+				"date": "2016-03-31"
+			}
+		},
+		{
+			"id": "34|WANDLE ROAD",
+			"address": {
+				"number": "34",
+				"street": "WANDLE ROAD"
+			},
+			"observed": "2021-06-29",
+			"claims": {
+				"sold": "382500",
+				"date": "2021-06-29"
+			}
+		},
+		{
+			"id": "24|WANDLE ROAD",
+			"address": {
+				"number": "24",
+				"street": "WANDLE ROAD"
+			},
+			"observed": "2010-03-26",
+			"claims": {
+				"sold": "200000",
+				"date": "2010-03-26"
+			}
+		},
+		{
+			"id": "35|WANDLE ROAD",
+			"address": {
+				"number": "35",
+				"street": "WANDLE ROAD"
+			},
+			"observed": "2007-04-18",
+			"claims": {
+				"sold": "214950",
+				"date": "2007-04-18"
+			}
+		},
+		{
+			"id": "44|WANDLE ROAD",
+			"address": {
+				"number": "44",
+				"street": "WANDLE ROAD"
+			},
+			"observed": "2023-04-28",
+			"claims": {
+				"sold": "335000",
+				"date": "2023-04-28"
+			}
+		},
+		{
+			"id": "45|WANDLE ROAD",
+			"address": {
+				"number": "45",
+				"street": "WANDLE ROAD"
+			},
+			"observed": "2015-05-26",
+			"claims": {
+				"sold": "385000",
+				"date": "2015-05-26"
+			}
+		},
+		{
+			"id": "49|WANDLE ROAD",
+			"address": {
+				"number": "49",
+				"street": "WANDLE ROAD"
+			},
+			"observed": "2025-05-29",
+			"claims": {
+				"sold": "450000",
+				"date": "2025-05-29"
+			}
+		},
+		{
+			"id": "2|WEST STREET",
+			"address": {
+				"number": "2",
+				"street": "WEST STREET"
+			},
+			"observed": "2023-03-30",
+			"claims": {
+				"sold": "610000",
+				"date": "2023-03-30"
+			}
+		},
+		{
+			"id": "1|WEST STREET",
+			"address": {
+				"number": "1",
+				"street": "WEST STREET"
+			},
+			"observed": "2013-12-12",
+			"claims": {
+				"sold": "115000",
+				"date": "2013-12-12"
+			}
+		},
+		{
+			"id": "26|WEST STREET",
+			"address": {
+				"number": "26",
+				"street": "WEST STREET"
+			},
+			"observed": "2021-03-11",
+			"claims": {
+				"sold": "307350",
+				"date": "2021-03-11"
+			}
+		},
+		{
+			"id": "23|WEST STREET",
+			"address": {
+				"number": "23",
+				"street": "WEST STREET"
+			},
+			"observed": "2025-12-16",
+			"claims": {
+				"sold": "22000",
+				"date": "2025-12-16"
+			}
+		},
+		{
+			"id": "10|SOUTH END",
+			"address": {
+				"number": "10",
+				"street": "SOUTH END"
+			},
+			"observed": "2007-03-30",
+			"claims": {
+				"sold": "37750",
+				"date": "2007-03-30"
+			}
+		},
+		{
+			"id": "14|SOUTH END",
+			"address": {
+				"number": "14",
+				"street": "SOUTH END"
+			},
+			"observed": "2010-01-14",
+			"claims": {
+				"sold": "500000",
+				"date": "2010-01-14"
+			}
+		},
+		{
+			"id": "22|SOUTH END",
+			"address": {
+				"number": "22",
+				"street": "SOUTH END"
+			},
+			"observed": "2003-08-14",
+			"claims": {
+				"sold": "445000",
+				"date": "2003-08-14"
+			}
+		},
+		{
+			"id": "44|SOUTH END",
+			"address": {
+				"number": "44",
+				"street": "SOUTH END"
+			},
+			"observed": "2020-02-17",
+			"claims": {
+				"sold": "300000",
+				"date": "2020-02-17"
+			}
+		},
+		{
+			"id": "2|PARKER ROAD",
+			"address": {
+				"number": "2",
+				"street": "PARKER ROAD"
+			},
+			"observed": "2013-12-12",
+			"claims": {
+				"sold": "195000",
+				"date": "2013-12-12"
+			}
+		},
+		{
+			"id": "3|PARKER ROAD",
+			"address": {
+				"number": "3",
+				"street": "PARKER ROAD"
+			},
+			"observed": "1998-02-13",
+			"claims": {
+				"sold": "60000",
+				"date": "1998-02-13"
+			}
+		},
+		{
+			"id": "59|WANDLE ROAD",
+			"address": {
+				"number": "59",
+				"street": "WANDLE ROAD"
+			},
+			"observed": "2025-03-28",
+			"claims": {
+				"sold": "355000",
+				"date": "2025-03-28"
+			}
+		},
+		{
+			"id": "52|WANDLE ROAD",
+			"address": {
+				"number": "52",
+				"street": "WANDLE ROAD"
+			},
+			"observed": "2015-12-21",
+			"claims": {
+				"sold": "335000",
+				"date": "2015-12-21"
+			}
+		},
+		{
+			"id": "92|EDRIDGE ROAD",
+			"address": {
+				"number": "92",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2011-12-19",
+			"claims": {
+				"sold": "232000",
+				"date": "2011-12-19"
+			}
+		},
+		{
+			"id": "76|EDRIDGE ROAD",
+			"address": {
+				"number": "76",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2008-01-18",
+			"claims": {
+				"sold": "235000",
+				"date": "2008-01-18"
+			}
+		},
+		{
+			"id": "68|EDRIDGE ROAD",
+			"address": {
+				"number": "68",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2019-04-23",
+			"claims": {
+				"sold": "378000",
+				"date": "2019-04-23"
+			}
+		},
+		{
+			"id": "90|EDRIDGE ROAD",
+			"address": {
+				"number": "90",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2013-11-21",
+			"claims": {
+				"sold": "275000",
+				"date": "2013-11-21"
+			}
+		},
+		{
+			"id": "66|EDRIDGE ROAD",
+			"address": {
+				"number": "66",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2008-04-18",
+			"claims": {
+				"sold": "265000",
+				"date": "2008-04-18"
+			}
+		},
+		{
+			"id": "74|EDRIDGE ROAD",
+			"address": {
+				"number": "74",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2026-03-31",
+			"claims": {
+				"sold": "431000",
+				"date": "2026-03-31"
+			}
+		},
+		{
+			"id": "70|EDRIDGE ROAD",
+			"address": {
+				"number": "70",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2006-06-14",
+			"claims": {
+				"sold": "218500",
+				"date": "2006-06-14"
+			}
+		},
+		{
+			"id": "78|EDRIDGE ROAD",
+			"address": {
+				"number": "78",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2016-10-14",
+			"claims": {
+				"sold": "463000",
+				"date": "2016-10-14"
+			}
+		},
+		{
+			"id": "86|EDRIDGE ROAD",
+			"address": {
+				"number": "86",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2014-04-07",
+			"claims": {
+				"sold": "160000",
+				"date": "2014-04-07"
+			}
+		},
+		{
+			"id": "82|EDRIDGE ROAD",
+			"address": {
+				"number": "82",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2020-03-31",
+			"claims": {
+				"sold": "280000",
+				"date": "2020-03-31"
+			}
+		},
+		{
+			"id": "88|EDRIDGE ROAD",
+			"address": {
+				"number": "88",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2006-09-15",
+			"claims": {
+				"sold": "230000",
+				"date": "2006-09-15"
+			}
+		},
+		{
+			"id": "80|EDRIDGE ROAD",
+			"address": {
+				"number": "80",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2008-10-21",
+			"claims": {
+				"sold": "249950",
+				"date": "2008-10-21"
+			}
+		},
+		{
+			"id": "84|EDRIDGE ROAD",
+			"address": {
+				"number": "84",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2009-11-03",
+			"claims": {
+				"sold": "182000",
+				"date": "2009-11-03"
+			}
+		},
+		{
+			"id": "64|EDRIDGE ROAD",
+			"address": {
+				"number": "64",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2011-03-24",
+			"claims": {
+				"sold": "200000",
+				"date": "2011-03-24"
+			}
+		},
+		{
+			"id": "71|EDRIDGE ROAD",
+			"address": {
+				"number": "71",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2022-03-14",
+			"claims": {
+				"sold": "454000",
+				"date": "2022-03-14"
+			}
+		},
+		{
+			"id": "55|EDRIDGE ROAD",
+			"address": {
+				"number": "55",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2018-03-12",
+			"claims": {
+				"sold": "327000",
+				"date": "2018-03-12"
+			}
+		},
+		{
+			"id": "53|EDRIDGE ROAD",
+			"address": {
+				"number": "53",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2003-11-03",
+			"claims": {
+				"sold": "221500",
+				"date": "2003-11-03"
+			}
+		},
+		{
+			"id": "33|EDRIDGE ROAD",
+			"address": {
+				"number": "33",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2003-10-29",
+			"claims": {
+				"sold": "117000",
+				"date": "2003-10-29"
+			}
+		},
+		{
+			"id": "51|EDRIDGE ROAD",
+			"address": {
+				"number": "51",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2012-03-05",
+			"claims": {
+				"sold": "240000",
+				"date": "2012-03-05"
+			}
+		},
+		{
+			"id": "69|EDRIDGE ROAD",
+			"address": {
+				"number": "69",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2006-12-15",
+			"claims": {
+				"sold": "205000",
+				"date": "2006-12-15"
+			}
+		},
+		{
+			"id": "39|EDRIDGE ROAD",
+			"address": {
+				"number": "39",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2016-03-31",
+			"claims": {
+				"sold": "425000",
+				"date": "2016-03-31"
+			}
+		},
+		{
+			"id": "35|EDRIDGE ROAD",
+			"address": {
+				"number": "35",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2012-03-23",
+			"claims": {
+				"sold": "250000",
+				"date": "2012-03-23"
+			}
+		},
+		{
+			"id": "63|EDRIDGE ROAD",
+			"address": {
+				"number": "63",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2019-04-25",
+			"claims": {
+				"sold": "365000",
+				"date": "2019-04-25"
+			}
+		},
+		{
+			"id": "67|EDRIDGE ROAD",
+			"address": {
+				"number": "67",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "1995-12-21",
+			"claims": {
+				"sold": "59700",
+				"date": "1995-12-21"
+			}
+		},
+		{
+			"id": "61|EDRIDGE ROAD",
+			"address": {
+				"number": "61",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2024-04-12",
+			"claims": {
+				"sold": "510000",
+				"date": "2024-04-12"
+			}
+		},
+		{
+			"id": "57|EDRIDGE ROAD",
+			"address": {
+				"number": "57",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2023-06-30",
+			"claims": {
+				"sold": "415000",
+				"date": "2023-06-30"
+			}
+		},
+		{
+			"id": "37|EDRIDGE ROAD",
+			"address": {
+				"number": "37",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2023-11-28",
+			"claims": {
+				"sold": "430000",
+				"date": "2023-11-28"
+			}
+		},
+		{
+			"id": "127|EDRIDGE ROAD",
+			"address": {
+				"number": "127",
+				"street": "EDRIDGE ROAD"
+			},
+			"observed": "2022-06-01",
+			"claims": {
+				"sold": "471000",
+				"date": "2022-06-01"
+			}
+		},
+		{
+			"id": "1|MATTHEWS YARD",
+			"address": {
+				"number": "1",
+				"street": "MATTHEWS YARD"
+			},
+			"observed": "2022-02-14",
+			"claims": {
+				"sold": "9225458",
+				"date": "2022-02-14"
+			}
+		},
+		{
+			"id": "22|CHATSWORTH ROAD",
+			"address": {
+				"number": "22",
+				"street": "CHATSWORTH ROAD"
+			},
+			"observed": "2021-05-14",
+			"claims": {
+				"sold": "6000",
+				"date": "2021-05-14"
+			}
+		},
+		{
+			"id": "24|CHATSWORTH ROAD",
+			"address": {
+				"number": "24",
+				"street": "CHATSWORTH ROAD"
+			},
+			"observed": "2024-12-05",
+			"claims": {
+				"sold": "730000",
+				"date": "2024-12-05"
+			}
+		},
+		{
+			"id": "94|CHATSWORTH ROAD",
+			"address": {
+				"number": "94",
+				"street": "CHATSWORTH ROAD"
+			},
+			"observed": "2003-03-28",
+			"claims": {
+				"sold": "500000",
+				"date": "2003-03-28"
+			}
+		},
+		{
+			"id": "27|CHATSWORTH ROAD",
+			"address": {
+				"number": "27",
+				"street": "CHATSWORTH ROAD"
+			},
+			"observed": "2001-07-06",
+			"claims": {
+				"sold": "355000",
+				"date": "2001-07-06"
+			}
+		},
+		{
+			"id": "35|CHATSWORTH ROAD",
+			"address": {
+				"number": "35",
+				"street": "CHATSWORTH ROAD"
+			},
+			"observed": "2001-08-08",
+			"claims": {
+				"sold": "295000",
+				"date": "2001-08-08"
+			}
+		},
+		{
+			"id": "3|CHATSWORTH ROAD",
+			"address": {
+				"number": "3",
+				"street": "CHATSWORTH ROAD"
+			},
+			"observed": "2022-08-02",
+			"claims": {
+				"sold": "900000",
+				"date": "2022-08-02"
+			}
+		},
+		{
+			"id": "39|CHATSWORTH ROAD",
+			"address": {
+				"number": "39",
+				"street": "CHATSWORTH ROAD"
+			},
+			"observed": "2015-03-12",
+			"claims": {
+				"sold": "1150000",
+				"date": "2015-03-12"
+			}
+		},
+		{
+			"id": "49|CHATSWORTH ROAD",
+			"address": {
+				"number": "49",
+				"street": "CHATSWORTH ROAD"
+			},
+			"observed": "2002-07-22",
+			"claims": {
+				"sold": "390000",
+				"date": "2002-07-22"
+			}
+		},
+		{
+			"id": "98|PARK LANE",
+			"address": {
+				"number": "98",
+				"street": "PARK LANE"
+			},
+			"observed": "2024-05-01",
+			"claims": {
+				"sold": "850000",
+				"date": "2024-05-01"
+			}
+		},
+		{
+			"id": "100|PARK LANE",
+			"address": {
+				"number": "100",
+				"street": "PARK LANE"
+			},
+			"observed": "2007-05-11",
+			"claims": {
+				"sold": "292000",
+				"date": "2007-05-11"
+			}
+		},
+		{
+			"id": "94|PARK LANE",
+			"address": {
+				"number": "94",
+				"street": "PARK LANE"
+			},
+			"observed": "2024-04-10",
+			"claims": {
+				"sold": "1475000",
+				"date": "2024-04-10"
+			}
+		},
+		{
+			"id": "92|PARK LANE",
+			"address": {
+				"number": "92",
+				"street": "PARK LANE"
+			},
+			"observed": "2005-02-02",
+			"claims": {
+				"sold": "400000",
+				"date": "2005-02-02"
+			}
+		},
+		{
+			"id": "86|PARK LANE",
+			"address": {
+				"number": "86",
+				"street": "PARK LANE"
+			},
+			"observed": "2009-12-31",
+			"claims": {
+				"sold": "165000",
+				"date": "2009-12-31"
+			}
+		},
+		{
+			"id": "77|PARK LANE",
+			"address": {
+				"number": "77",
+				"street": "PARK LANE"
+			},
+			"observed": "2015-08-28",
+			"claims": {
+				"sold": "715000",
+				"date": "2015-08-28"
+			}
+		},
+		{
+			"id": "79|PARK LANE",
+			"address": {
+				"number": "79",
+				"street": "PARK LANE"
+			},
+			"observed": "2021-06-30",
+			"claims": {
+				"sold": "750000",
+				"date": "2021-06-30"
+			}
+		},
+		{
+			"id": "20|BEECH HOUSE ROAD",
+			"address": {
+				"number": "20",
+				"street": "BEECH HOUSE ROAD"
+			},
+			"observed": "2015-05-08",
+			"claims": {
+				"sold": "620000",
+				"date": "2015-05-08"
+			}
+		},
+		{
+			"id": "14|BEECH HOUSE ROAD",
+			"address": {
+				"number": "14",
+				"street": "BEECH HOUSE ROAD"
+			},
+			"observed": "2020-11-23",
+			"claims": {
+				"sold": "890000",
+				"date": "2020-11-23"
+			}
+		},
+		{
+			"id": "12|BEECH HOUSE ROAD",
+			"address": {
+				"number": "12",
+				"street": "BEECH HOUSE ROAD"
+			},
+			"observed": "2022-07-08",
+			"claims": {
+				"sold": "320000",
+				"date": "2022-07-08"
+			}
+		},
+		{
+			"id": "22|BEECH HOUSE ROAD",
+			"address": {
+				"number": "22",
+				"street": "BEECH HOUSE ROAD"
+			},
+			"observed": "2026-07-22",
+			"claims": {
+				"sold": "700000",
+				"date": "2026-07-22"
+			}
+		},
+		{
+			"id": "15|BEECH HOUSE ROAD",
+			"address": {
+				"number": "15",
+				"street": "BEECH HOUSE ROAD"
+			},
+			"observed": "2018-02-05",
+			"claims": {
+				"sold": "1000000",
+				"date": "2018-02-05"
+			}
+		},
+		{
+			"id": "4|WOODSTOCK ROAD",
+			"address": {
+				"number": "4",
+				"street": "WOODSTOCK ROAD"
+			},
+			"observed": "2022-09-30",
+			"claims": {
+				"sold": "790000",
+				"date": "2022-09-30"
+			}
+		},
+		{
+			"id": "2|WOODSTOCK ROAD",
+			"address": {
+				"number": "2",
+				"street": "WOODSTOCK ROAD"
+			},
+			"observed": "2004-12-06",
+			"claims": {
+				"sold": "440000",
+				"date": "2004-12-06"
+			}
+		},
+		{
+			"id": "16|WOODSTOCK ROAD",
+			"address": {
+				"number": "16",
+				"street": "WOODSTOCK ROAD"
+			},
+			"observed": "2025-09-25",
+			"claims": {
+				"sold": "500",
+				"date": "2025-09-25"
+			}
+		},
+		{
+			"id": "8|WOODSTOCK ROAD",
+			"address": {
+				"number": "8",
+				"street": "WOODSTOCK ROAD"
+			},
+			"observed": "2026-03-25",
+			"claims": {
+				"sold": "200000",
+				"date": "2026-03-25"
+			}
+		},
+		{
+			"id": "12|WOODSTOCK ROAD",
+			"address": {
+				"number": "12",
+				"street": "WOODSTOCK ROAD"
+			},
+			"observed": "2007-02-01",
+			"claims": {
+				"sold": "421765",
+				"date": "2007-02-01"
+			}
+		},
+		{
+			"id": "10|WOODSTOCK ROAD",
+			"address": {
+				"number": "10",
+				"street": "WOODSTOCK ROAD"
+			},
+			"observed": "2021-09-30",
+			"claims": {
+				"sold": "715000",
+				"date": "2021-09-30"
+			}
+		},
+		{
+			"id": "13|WOODSTOCK ROAD",
+			"address": {
+				"number": "13",
+				"street": "WOODSTOCK ROAD"
+			},
+			"observed": "1996-05-28",
+			"claims": {
+				"sold": "117000",
+				"date": "1996-05-28"
+			}
+		},
+		{
+			"id": "1|WOODSTOCK ROAD",
+			"address": {
+				"number": "1",
+				"street": "WOODSTOCK ROAD"
+			},
+			"observed": "2005-11-04",
+			"claims": {
+				"sold": "350000",
+				"date": "2005-11-04"
+			}
+		},
+		{
+			"id": "27|WOODSTOCK ROAD",
+			"address": {
+				"number": "27",
+				"street": "WOODSTOCK ROAD"
+			},
+			"observed": "2024-07-12",
+			"claims": {
+				"sold": "800000",
+				"date": "2024-07-12"
+			}
+		},
+		{
+			"id": "7|WOODSTOCK ROAD",
+			"address": {
+				"number": "7",
+				"street": "WOODSTOCK ROAD"
+			},
+			"observed": "2018-07-30",
+			"claims": {
+				"sold": "1245000",
+				"date": "2018-07-30"
+			}
+		},
+		{
+			"id": "17|WOODSTOCK ROAD",
+			"address": {
+				"number": "17",
+				"street": "WOODSTOCK ROAD"
+			},
+			"observed": "2008-05-14",
+			"claims": {
+				"sold": "567000",
+				"date": "2008-05-14"
+			}
+		},
+		{
+			"id": "25|WOODSTOCK ROAD",
+			"address": {
+				"number": "25",
+				"street": "WOODSTOCK ROAD"
+			},
+			"observed": "2019-09-02",
+			"claims": {
+				"sold": "635000",
+				"date": "2019-09-02"
+			}
+		},
+		{
+			"id": "29|GEORGE STREET",
+			"address": {
+				"number": "29",
+				"street": "GEORGE STREET"
+			},
+			"observed": "2017-07-20",
+			"claims": {
+				"sold": "2300000",
+				"date": "2017-07-20"
+			}
+		},
+		{
+			"id": "33|GEORGE STREET",
+			"address": {
+				"number": "33",
+				"street": "GEORGE STREET"
+			},
+			"observed": "2017-07-21",
+			"claims": {
+				"sold": "1200000",
+				"date": "2017-07-21"
+			}
+		},
+		{
+			"id": "76|HIGH STREET",
+			"address": {
+				"number": "76",
+				"street": "HIGH STREET"
+			},
+			"observed": "2004-02-26",
+			"claims": {
+				"sold": "103000",
+				"date": "2004-02-26"
+			}
+		},
+		{
+			"id": "68|HIGH STREET",
+			"address": {
+				"number": "68",
+				"street": "HIGH STREET"
+			},
+			"observed": "2014-09-17",
+			"claims": {
+				"sold": "480000",
+				"date": "2014-09-17"
+			}
+		},
+		{
+			"id": "70|HIGH STREET",
+			"address": {
+				"number": "70",
+				"street": "HIGH STREET"
+			},
+			"observed": "2021-01-06",
+			"claims": {
+				"sold": "45000",
+				"date": "2021-01-06"
+			}
+		},
+		{
+			"id": "92|HIGH STREET",
+			"address": {
+				"number": "92",
+				"street": "HIGH STREET"
+			},
+			"observed": "2018-04-12",
+			"claims": {
+				"sold": "7000",
+				"date": "2018-04-12"
+			}
+		},
+		{
+			"id": "100|HIGH STREET",
+			"address": {
+				"number": "100",
+				"street": "HIGH STREET"
+			},
+			"observed": "2019-10-22",
+			"claims": {
+				"sold": "830000",
+				"date": "2019-10-22"
+			}
+		},
+		{
+			"id": "106|HIGH STREET",
+			"address": {
+				"number": "106",
+				"street": "HIGH STREET"
+			},
+			"observed": "2024-11-18",
+			"claims": {
+				"sold": "950000",
+				"date": "2024-11-18"
+			}
+		},
+		{
+			"id": "90|HIGH STREET",
+			"address": {
+				"number": "90",
+				"street": "HIGH STREET"
+			},
+			"observed": "2026-06-23",
+			"claims": {
+				"sold": "600000",
+				"date": "2026-06-23"
+			}
+		},
+		{
+			"id": "218|HIGH STREET",
+			"address": {
+				"number": "218",
+				"street": "HIGH STREET"
+			},
+			"observed": "2024-11-06",
+			"claims": {
+				"sold": "350000",
+				"date": "2024-11-06"
+			}
+		},
+		{
+			"id": "214|HIGH STREET",
+			"address": {
+				"number": "214",
+				"street": "HIGH STREET"
+			},
+			"observed": "2018-12-17",
+			"claims": {
+				"sold": "8000",
+				"date": "2018-12-17"
+			}
+		},
+		{
+			"id": "212|HIGH STREET",
+			"address": {
+				"number": "212",
+				"street": "HIGH STREET"
+			},
+			"observed": "2022-12-08",
+			"claims": {
+				"sold": "200000",
+				"date": "2022-12-08"
+			}
+		},
+		{
+			"id": "250|HIGH STREET",
+			"address": {
+				"number": "250",
+				"street": "HIGH STREET"
+			},
+			"observed": "2015-04-24",
+			"claims": {
+				"sold": "249000",
+				"date": "2015-04-24"
+			}
+		},
+		{
+			"id": "252|HIGH STREET",
+			"address": {
+				"number": "252",
+				"street": "HIGH STREET"
+			},
+			"observed": "2023-11-01",
+			"claims": {
+				"sold": "2800000",
+				"date": "2023-11-01"
+			}
+		},
+		{
+			"id": "256|HIGH STREET",
+			"address": {
+				"number": "256",
+				"street": "HIGH STREET"
+			},
+			"observed": "2002-12-19",
+			"claims": {
+				"sold": "800000",
+				"date": "2002-12-19"
+			}
+		},
+		{
+			"id": "244|HIGH STREET",
+			"address": {
+				"number": "244",
+				"street": "HIGH STREET"
+			},
+			"observed": "2023-08-04",
+			"claims": {
+				"sold": "1300000",
+				"date": "2023-08-04"
+			}
+		},
+		{
+			"id": "254|HIGH STREET",
+			"address": {
+				"number": "254",
+				"street": "HIGH STREET"
+			},
+			"observed": "2025-07-21",
+			"claims": {
+				"sold": "3160000",
+				"date": "2025-07-21"
+			}
+		},
+		{
+			"id": "298|HIGH STREET",
+			"address": {
+				"number": "298",
+				"street": "HIGH STREET"
+			},
+			"observed": "1998-07-15",
+			"claims": {
+				"sold": "120000",
+				"date": "1998-07-15"
+			}
+		},
+		{
+			"id": "300|HIGH STREET",
+			"address": {
+				"number": "300",
+				"street": "HIGH STREET"
+			},
+			"observed": "1999-08-17",
+			"claims": {
+				"sold": "100000",
+				"date": "1999-08-17"
+			}
+		},
+		{
+			"id": "296|HIGH STREET",
+			"address": {
+				"number": "296",
+				"street": "HIGH STREET"
+			},
+			"observed": "2002-01-08",
+			"claims": {
+				"sold": "240000",
+				"date": "2002-01-08"
+			}
+		},
+		{
+			"id": "282|HIGH STREET",
+			"address": {
+				"number": "282",
+				"street": "HIGH STREET"
+			},
+			"observed": "2022-08-02",
+			"claims": {
+				"sold": "575000",
+				"date": "2022-08-02"
+			}
+		},
+		{
+			"id": "20|GEORGE STREET",
+			"address": {
+				"number": "20",
+				"street": "GEORGE STREET"
+			},
+			"observed": "2018-01-05",
+			"claims": {
+				"sold": "2800000",
+				"date": "2018-01-05"
+			}
+		},
+		{
+			"id": "18|GEORGE STREET",
+			"address": {
+				"number": "18",
+				"street": "GEORGE STREET"
+			},
+			"observed": "2023-12-11",
+			"claims": {
+				"sold": "516000",
+				"date": "2023-12-11"
+			}
+		},
+		{
+			"id": "38|GEORGE STREET",
+			"address": {
+				"number": "38",
+				"street": "GEORGE STREET"
+			},
+			"observed": "2025-02-27",
+			"claims": {
+				"sold": "76087",
+				"date": "2025-02-27"
+			}
+		},
+		{
+			"id": "71|HIGH STREET",
+			"address": {
+				"number": "71",
+				"street": "HIGH STREET"
+			},
+			"observed": "2013-11-01",
+			"claims": {
+				"sold": "4000000",
+				"date": "2013-11-01"
+			}
+		},
+		{
+			"id": "81|HIGH STREET",
+			"address": {
+				"number": "81",
+				"street": "HIGH STREET"
+			},
+			"observed": "2017-03-01",
+			"claims": {
+				"sold": "7720",
+				"date": "2017-03-01"
+			}
+		},
+		{
+			"id": "283|HIGH STREET",
+			"address": {
+				"number": "283",
+				"street": "HIGH STREET"
+			},
+			"observed": "2023-07-27",
+			"claims": {
+				"sold": "300000",
+				"date": "2023-07-27"
+			}
+		},
+		{
+			"id": "299|HIGH STREET",
+			"address": {
+				"number": "299",
+				"street": "HIGH STREET"
+			},
+			"observed": "2021-04-23",
+			"claims": {
+				"sold": "24500",
+				"date": "2021-04-23"
+			}
+		},
+		{
+			"id": "295|HIGH STREET",
+			"address": {
+				"number": "295",
+				"street": "HIGH STREET"
+			},
+			"observed": "2025-10-31",
+			"claims": {
+				"sold": "130000",
+				"date": "2025-10-31"
+			}
+		},
+		{
+			"id": "46|CHURCH STREET",
+			"address": {
+				"number": "46",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2015-10-30",
+			"claims": {
+				"sold": "444500",
+				"date": "2015-10-30"
+			}
+		},
+		{
+			"id": "66|CHURCH STREET",
+			"address": {
+				"number": "66",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2025-06-12",
+			"claims": {
+				"sold": "700000",
+				"date": "2025-06-12"
+			}
+		},
+		{
+			"id": "92|CHURCH STREET",
+			"address": {
+				"number": "92",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2023-03-07",
+			"claims": {
+				"sold": "375000",
+				"date": "2023-03-07"
+			}
+		},
+		{
+			"id": "94|CHURCH STREET",
+			"address": {
+				"number": "94",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2023-03-07",
+			"claims": {
+				"sold": "375000",
+				"date": "2023-03-07"
+			}
+		},
+		{
+			"id": "96|CHURCH STREET",
+			"address": {
+				"number": "96",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2023-11-06",
+			"claims": {
+				"sold": "400000",
+				"date": "2023-11-06"
+			}
+		},
+		{
+			"id": "98|CHURCH STREET",
+			"address": {
+				"number": "98",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2024-02-23",
+			"claims": {
+				"sold": "300000",
+				"date": "2024-02-23"
+			}
+		},
+		{
+			"id": "126|CHURCH STREET",
+			"address": {
+				"number": "126",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2003-06-27",
+			"claims": {
+				"sold": "180000",
+				"date": "2003-06-27"
+			}
+		},
+		{
+			"id": "124|CHURCH STREET",
+			"address": {
+				"number": "124",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2015-04-24",
+			"claims": {
+				"sold": "50000",
+				"date": "2015-04-24"
+			}
+		},
+		{
+			"id": "28|SURREY STREET",
+			"address": {
+				"number": "28",
+				"street": "SURREY STREET"
+			},
+			"observed": "2006-05-10",
+			"claims": {
+				"sold": "410000",
+				"date": "2006-05-10"
+			}
+		},
+		{
+			"id": "23|SURREY STREET",
+			"address": {
+				"number": "23",
+				"street": "SURREY STREET"
+			},
+			"observed": "2010-01-29",
+			"claims": {
+				"sold": "280000",
+				"date": "2010-01-29"
+			}
+		},
+		{
+			"id": "31|SURREY STREET",
+			"address": {
+				"number": "31",
+				"street": "SURREY STREET"
+			},
+			"observed": "2016-06-24",
+			"claims": {
+				"sold": "350000",
+				"date": "2016-06-24"
+			}
+		},
+		{
+			"id": "81|CHURCH STREET",
+			"address": {
+				"number": "81",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2014-04-04",
+			"claims": {
+				"sold": "360000",
+				"date": "2014-04-04"
+			}
+		},
+		{
+			"id": "79|CHURCH STREET",
+			"address": {
+				"number": "79",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2022-06-28",
+			"claims": {
+				"sold": "360000",
+				"date": "2022-06-28"
+			}
+		},
+		{
+			"id": "19|CHURCH STREET",
+			"address": {
+				"number": "19",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2024-06-26",
+			"claims": {
+				"sold": "600000",
+				"date": "2024-06-26"
+			}
+		},
+		{
+			"id": "39|CHURCH STREET",
+			"address": {
+				"number": "39",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2025-07-15",
+			"claims": {
+				"sold": "300000",
+				"date": "2025-07-15"
+			}
+		},
+		{
+			"id": "37|SURREY STREET",
+			"address": {
+				"number": "37",
+				"street": "SURREY STREET"
+			},
+			"observed": "2017-08-17",
+			"claims": {
+				"sold": "215000",
+				"date": "2017-08-17"
+			}
+		},
+		{
+			"id": "49|SURREY STREET",
+			"address": {
+				"number": "49",
+				"street": "SURREY STREET"
+			},
+			"observed": "2013-12-23",
+			"claims": {
+				"sold": "1150000",
+				"date": "2013-12-23"
+			}
+		},
+		{
+			"id": "54|SURREY STREET",
+			"address": {
+				"number": "54",
+				"street": "SURREY STREET"
+			},
+			"observed": "2020-06-30",
+			"claims": {
+				"sold": "14000",
+				"date": "2020-06-30"
+			}
+		},
+		{
+			"id": "38|SURREY STREET",
+			"address": {
+				"number": "38",
+				"street": "SURREY STREET"
+			},
+			"observed": "1995-09-07",
+			"claims": {
+				"sold": "65000",
+				"date": "1995-09-07"
+			}
+		},
+		{
+			"id": "36|SURREY STREET",
+			"address": {
+				"number": "36",
+				"street": "SURREY STREET"
+			},
+			"observed": "2025-04-10",
+			"claims": {
+				"sold": "432000",
+				"date": "2025-04-10"
+			}
+		},
+		{
+			"id": "34|SURREY STREET",
+			"address": {
+				"number": "34",
+				"street": "SURREY STREET"
+			},
+			"observed": "2026-03-04",
+			"claims": {
+				"sold": "800000",
+				"date": "2026-03-04"
+			}
+		},
+		{
+			"id": "103|CHURCH STREET",
+			"address": {
+				"number": "103",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2023-09-28",
+			"claims": {
+				"sold": "485000",
+				"date": "2023-09-28"
+			}
+		},
+		{
+			"id": "89|CHURCH STREET",
+			"address": {
+				"number": "89",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2013-12-03",
+			"claims": {
+				"sold": "350000",
+				"date": "2013-12-03"
+			}
+		},
+		{
+			"id": "101|CHURCH STREET",
+			"address": {
+				"number": "101",
+				"street": "CHURCH STREET"
+			},
+			"observed": "2014-09-12",
+			"claims": {
+				"sold": "304000",
+				"date": "2014-09-12"
+			}
+		},
+		{
+			"id": "8|CROWN HILL",
+			"address": {
+				"number": "8",
+				"street": "CROWN HILL"
+			},
+			"observed": "2020-02-13",
+			"claims": {
+				"sold": "545000",
+				"date": "2020-02-13"
+			}
+		},
+		{
+			"id": "54|CHURCH ROAD",
+			"address": {
+				"number": "54",
+				"street": "CHURCH ROAD"
+			},
+			"observed": "2017-08-17",
+			"claims": {
+				"sold": "450000",
+				"date": "2017-08-17"
+			}
+		},
+		{
+			"id": "82|CHURCH ROAD",
+			"address": {
+				"number": "82",
+				"street": "CHURCH ROAD"
+			},
+			"observed": "1997-03-11",
+			"claims": {
+				"sold": "64500",
+				"date": "1997-03-11"
+			}
+		},
+		{
+			"id": "74|CHURCH ROAD",
+			"address": {
+				"number": "74",
+				"street": "CHURCH ROAD"
+			},
+			"observed": "2025-11-07",
+			"claims": {
+				"sold": "451967",
+				"date": "2025-11-07"
+			}
+		},
+		{
+			"id": "76|CHURCH ROAD",
+			"address": {
+				"number": "76",
+				"street": "CHURCH ROAD"
+			},
+			"observed": "2017-12-08",
+			"claims": {
+				"sold": "350000",
+				"date": "2017-12-08"
+			}
+		},
+		{
+			"id": "78|CHURCH ROAD",
+			"address": {
+				"number": "78",
+				"street": "CHURCH ROAD"
+			},
+			"observed": "2000-12-20",
+			"claims": {
+				"sold": "103000",
+				"date": "2000-12-20"
+			}
+		},
+		{
+			"id": "80|CHURCH ROAD",
+			"address": {
+				"number": "80",
+				"street": "CHURCH ROAD"
+			},
+			"observed": "2006-06-29",
+			"claims": {
+				"sold": "187000",
+				"date": "2006-06-29"
+			}
+		},
+		{
+			"id": "90|CHURCH ROAD",
+			"address": {
+				"number": "90",
+				"street": "CHURCH ROAD"
+			},
+			"observed": "2023-10-27",
+			"claims": {
+				"sold": "390000",
+				"date": "2023-10-27"
+			}
+		},
+		{
+			"id": "94|CHURCH ROAD",
+			"address": {
+				"number": "94",
+				"street": "CHURCH ROAD"
+			},
+			"observed": "2020-05-18",
+			"claims": {
+				"sold": "180000",
+				"date": "2020-05-18"
+			}
+		},
+		{
+			"id": "88|CHURCH ROAD",
+			"address": {
+				"number": "88",
+				"street": "CHURCH ROAD"
+			},
+			"observed": "2021-03-17",
+			"claims": {
+				"sold": "355000",
+				"date": "2021-03-17"
+			}
+		},
+		{
+			"id": "13|CHURCH ROAD",
+			"address": {
+				"number": "13",
+				"street": "CHURCH ROAD"
+			},
+			"observed": "2018-12-10",
+			"claims": {
+				"sold": "375000",
+				"date": "2018-12-10"
+			}
+		},
+		{
+			"id": "1|CRANMER ROAD",
+			"address": {
+				"number": "1",
+				"street": "CRANMER ROAD"
+			},
+			"observed": "2014-04-25",
+			"claims": {
+				"sold": "250000",
+				"date": "2014-04-25"
+			}
+		},
+		{
+			"id": "2|CRANMER ROAD",
+			"address": {
+				"number": "2",
+				"street": "CRANMER ROAD"
+			},
+			"observed": "2007-08-03",
+			"claims": {
+				"sold": "215500",
+				"date": "2007-08-03"
+			}
+		},
+		{
+			"id": "1|SHELDON STREET",
+			"address": {
+				"number": "1",
+				"street": "SHELDON STREET"
+			},
+			"observed": "2024-06-25",
+			"claims": {
+				"sold": "515000",
+				"date": "2024-06-25"
+			}
+		},
+		{
+			"id": "51|FRITH ROAD",
+			"address": {
+				"number": "51",
+				"street": "FRITH ROAD"
+			},
+			"observed": "2016-10-20",
+			"claims": {
+				"sold": "443000",
+				"date": "2016-10-20"
+			}
+		},
+		{
+			"id": "49|NORTH END",
+			"address": {
+				"number": "49",
+				"street": "NORTH END"
+			},
+			"observed": "2017-03-23",
+			"claims": {
+				"sold": "999999",
+				"date": "2017-03-23"
+			}
+		},
+		{
+			"id": "69|NORTH END",
+			"address": {
+				"number": "69",
+				"street": "NORTH END"
+			},
+			"observed": "2026-07-27",
+			"claims": {
+				"sold": "252000",
+				"date": "2026-07-27"
+			}
+		},
+		{
+			"id": "85|NORTH END",
+			"address": {
+				"number": "85",
+				"street": "NORTH END"
+			},
+			"observed": "2024-05-08",
+			"claims": {
+				"sold": "725000",
+				"date": "2024-05-08"
+			}
+		},
+		{
+			"id": "71|NORTH END",
+			"address": {
+				"number": "71",
+				"street": "NORTH END"
+			},
+			"observed": "2024-05-08",
+			"claims": {
+				"sold": "1450000",
+				"date": "2024-05-08"
+			}
+		},
+		{
+			"id": "75|NORTH END",
+			"address": {
+				"number": "75",
+				"street": "NORTH END"
+			},
+			"observed": "2024-05-08",
+			"claims": {
+				"sold": "950000",
+				"date": "2024-05-08"
+			}
+		},
+		{
+			"id": "73|NORTH END",
+			"address": {
+				"number": "73",
+				"street": "NORTH END"
+			},
+			"observed": "2020-05-27",
+			"claims": {
+				"sold": "425000",
+				"date": "2020-05-27"
+			}
+		},
+		{
+			"id": "83|NORTH END",
+			"address": {
+				"number": "83",
+				"street": "NORTH END"
+			},
+			"observed": "2024-05-08",
+			"claims": {
+				"sold": "725000",
+				"date": "2024-05-08"
+			}
+		},
+		{
+			"id": "139|NORTH END",
+			"address": {
+				"number": "139",
+				"street": "NORTH END"
+			},
+			"observed": "2024-09-11",
+			"claims": {
+				"sold": "2298000",
+				"date": "2024-09-11"
+			}
+		},
+		{
+			"id": "137|NORTH END",
+			"address": {
+				"number": "137",
+				"street": "NORTH END"
+			},
+			"observed": "2024-04-24",
+			"claims": {
+				"sold": "1825000",
+				"date": "2024-04-24"
+			}
+		},
+		{
+			"id": "30|NORTH END",
+			"address": {
+				"number": "30",
+				"street": "NORTH END"
+			},
+			"observed": "2016-07-27",
+			"claims": {
+				"sold": "430000",
+				"date": "2016-07-27"
+			}
+		},
+		{
+			"id": "112|NORTH END",
+			"address": {
+				"number": "112",
+				"street": "NORTH END"
+			},
+			"observed": "2024-11-28",
+			"claims": {
+				"sold": "960000",
+				"date": "2024-11-28"
+			}
+		},
+		{
+			"id": "136|NORTH END",
+			"address": {
+				"number": "136",
+				"street": "NORTH END"
+			},
+			"observed": "2011-10-05",
+			"claims": {
+				"sold": "128385",
+				"date": "2011-10-05"
+			}
+		},
+		{
+			"id": "58|NORTH END",
+			"address": {
+				"number": "58",
+				"street": "NORTH END"
+			},
+			"observed": "2025-02-04",
+			"claims": {
+				"sold": "600000",
+				"date": "2025-02-04"
+			}
+		},
+		{
+			"id": "80|NORTH END",
+			"address": {
+				"number": "80",
+				"street": "NORTH END"
+			},
+			"observed": "2023-01-19",
+			"claims": {
+				"sold": "4650000",
+				"date": "2023-01-19"
+			}
+		},
+		{
+			"id": "70|NORTH END",
+			"address": {
+				"number": "70",
+				"street": "NORTH END"
+			},
+			"observed": "2024-07-05",
+			"claims": {
+				"sold": "1950000",
+				"date": "2024-07-05"
+			}
+		},
+		{
+			"id": "38|TAMWORTH ROAD",
+			"address": {
+				"number": "38",
+				"street": "TAMWORTH ROAD"
+			},
+			"observed": "2000-10-20",
+			"claims": {
+				"sold": "110000",
+				"date": "2000-10-20"
+			}
+		},
+		{
+			"id": "42|TAMWORTH ROAD",
+			"address": {
+				"number": "42",
+				"street": "TAMWORTH ROAD"
+			},
+			"observed": "2025-09-16",
+			"claims": {
+				"sold": "214000",
+				"date": "2025-09-16"
+			}
+		},
+		{
+			"id": "52|TAMWORTH ROAD",
+			"address": {
+				"number": "52",
+				"street": "TAMWORTH ROAD"
+			},
+			"observed": "2010-03-25",
+			"claims": {
+				"sold": "300000",
+				"date": "2010-03-25"
+			}
+		},
+		{
+			"id": "62|TAMWORTH ROAD",
+			"address": {
+				"number": "62",
+				"street": "TAMWORTH ROAD"
+			},
+			"observed": "2018-04-03",
+			"claims": {
+				"sold": "1020000",
+				"date": "2018-04-03"
+			}
+		},
+		{
+			"id": "101|TAMWORTH ROAD",
+			"address": {
+				"number": "101",
+				"street": "TAMWORTH ROAD"
+			},
+			"observed": "2019-10-24",
+			"claims": {
+				"sold": "300000",
+				"date": "2019-10-24"
+			}
+		},
+		{
+			"id": "46|HIGH STREET",
+			"address": {
+				"number": "46",
+				"street": "HIGH STREET"
+			},
+			"observed": "2015-02-27",
+			"claims": {
+				"sold": "550000",
+				"date": "2015-02-27"
+			}
+		},
+		{
+			"id": "36|HIGH STREET",
+			"address": {
+				"number": "36",
+				"street": "HIGH STREET"
+			},
+			"observed": "2018-01-31",
+			"claims": {
+				"sold": "540000",
+				"date": "2018-01-31"
+			}
+		},
+		{
+			"id": "8|BEDFORD PARK",
+			"address": {
+				"number": "8",
+				"street": "BEDFORD PARK"
+			},
+			"observed": "2016-11-17",
+			"claims": {
+				"sold": "24368954",
+				"date": "2016-11-17"
+			}
+		},
+		{
+			"id": "5|BEDFORD PARK",
+			"address": {
+				"number": "5",
+				"street": "BEDFORD PARK"
+			},
+			"observed": "2022-12-14",
+			"claims": {
+				"sold": "8300000",
+				"date": "2022-12-14"
+			}
+		},
+		{
+			"id": "224|ST JAMES'S ROAD",
+			"address": {
+				"number": "224",
+				"street": "ST JAMES'S ROAD"
+			},
+			"observed": "2022-08-26",
+			"claims": {
+				"sold": "1350000",
+				"date": "2022-08-26"
+			}
+		},
+		{
+			"id": "18|SYDENHAM ROAD",
+			"address": {
+				"number": "18",
+				"street": "SYDENHAM ROAD"
+			},
+			"observed": "1999-07-23",
+			"claims": {
+				"sold": "55000",
+				"date": "1999-07-23"
+			}
+		},
+		{
+			"id": "64|SYDENHAM ROAD",
+			"address": {
+				"number": "64",
+				"street": "SYDENHAM ROAD"
+			},
+			"observed": "2008-03-28",
+			"claims": {
+				"sold": "380000",
+				"date": "2008-03-28"
+			}
+		},
+		{
+			"id": "50|SYDENHAM ROAD",
+			"address": {
+				"number": "50",
+				"street": "SYDENHAM ROAD"
+			},
+			"observed": "2018-01-05",
+			"claims": {
+				"sold": "200500",
+				"date": "2018-01-05"
+			}
+		},
+		{
+			"id": "48|SYDENHAM ROAD",
+			"address": {
+				"number": "48",
+				"street": "SYDENHAM ROAD"
+			},
+			"observed": "2019-12-03",
+			"claims": {
+				"sold": "1265000",
+				"date": "2019-12-03"
+			}
+		},
+		{
+			"id": "16|SYDENHAM ROAD",
+			"address": {
+				"number": "16",
+				"street": "SYDENHAM ROAD"
+			},
+			"observed": "2020-03-29",
+			"claims": {
+				"sold": "1285000",
+				"date": "2020-03-29"
+			}
+		},
+		{
+			"id": "70|SYDENHAM ROAD",
+			"address": {
+				"number": "70",
+				"street": "SYDENHAM ROAD"
+			},
+			"observed": "1995-04-13",
+			"claims": {
+				"sold": "75000",
+				"date": "1995-04-13"
+			}
+		},
+		{
+			"id": "19|LONDON ROAD",
+			"address": {
+				"number": "19",
+				"street": "LONDON ROAD"
+			},
+			"observed": "2001-04-12",
+			"claims": {
+				"sold": "250000",
+				"date": "2001-04-12"
+			}
+		},
+		{
+			"id": "1|LONDON ROAD",
+			"address": {
+				"number": "1",
+				"street": "LONDON ROAD"
+			},
+			"observed": "2016-12-16",
+			"claims": {
+				"sold": "950000",
+				"date": "2016-12-16"
+			}
+		},
+		{
+			"id": "17|LONDON ROAD",
+			"address": {
+				"number": "17",
+				"street": "LONDON ROAD"
+			},
+			"observed": "2019-06-03",
+			"claims": {
+				"sold": "120000",
+				"date": "2019-06-03"
+			}
+		},
+		{
+			"id": "2|RUSKIN SQUARE",
+			"address": {
+				"number": "2",
+				"street": "RUSKIN SQUARE"
+			},
+			"observed": "2023-03-20",
+			"claims": {
+				"sold": "201146664",
+				"date": "2023-03-20"
+			}
+		},
+		{
+			"id": "1|RUSKIN SQUARE",
+			"address": {
+				"number": "1",
+				"street": "RUSKIN SQUARE"
+			},
+			"observed": "2023-12-14",
+			"claims": {
+				"sold": "115000000",
+				"date": "2023-12-14"
+			}
+		},
+		{
+			"id": "44|PITLAKE",
+			"address": {
+				"number": "44",
+				"street": "PITLAKE"
+			},
+			"observed": "2025-08-06",
+			"claims": {
+				"sold": "2600000",
+				"date": "2025-08-06"
+			}
+		},
+		{
+			"id": "11|DERBY ROAD",
+			"address": {
+				"number": "11",
+				"street": "DERBY ROAD"
+			},
+			"observed": "2002-12-10",
+			"claims": {
+				"sold": "204000",
+				"date": "2002-12-10"
+			}
+		},
+		{
+			"id": "9|DERBY ROAD",
+			"address": {
+				"number": "9",
+				"street": "DERBY ROAD"
+			},
+			"observed": "2003-07-11",
+			"claims": {
+				"sold": "218000",
+				"date": "2003-07-11"
+			}
+		},
+		{
+			"id": "7|DERBY ROAD",
+			"address": {
+				"number": "7",
+				"street": "DERBY ROAD"
+			},
+			"observed": "2024-05-16",
+			"claims": {
+				"sold": "365000",
+				"date": "2024-05-16"
+			}
+		},
+		{
+			"id": "75|PARK LANE",
+			"address": {
+				"number": "75",
+				"street": "PARK LANE"
+			},
+			"observed": "2024-12-19",
+			"claims": {
+				"sold": "400000",
+				"date": "2024-12-19"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

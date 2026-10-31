@@ -1,0 +1,553 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536738",
+			"at": [
+				51.372134,
+				-0.102066
+			],
+			"observed": "1992-04-27",
+			"claims": {
+				"name": "SURREY STREET PUMPING STATION",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1992-04-27"
+			}
+		},
+		{
+			"id": "31536760",
+			"at": [
+				51.365791,
+				-0.099247
+			],
+			"observed": "1951-01-29",
+			"claims": {
+				"name": "46, SOUTH END",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1951-01-29"
+			}
+		},
+		{
+			"id": "31536763",
+			"at": [
+				51.373075,
+				-0.101583
+			],
+			"observed": "1951-01-29",
+			"claims": {
+				"name": "THE DOG AND BULL PUBLIC HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1951-01-29"
+			}
+		},
+		{
+			"id": "31536780",
+			"at": [
+				51.372047,
+				-0.100133
+			],
+			"observed": "1973-11-19",
+			"claims": {
+				"name": "THE SHIP PUBLIC HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1973-11-19"
+			}
+		},
+		{
+			"id": "31536781",
+			"at": [
+				51.369924,
+				-0.099593
+			],
+			"observed": "1951-01-29",
+			"claims": {
+				"name": "Wrencote",
+				"description": "listed building",
+				"grade": "II*",
+				"listed": "1951-01-29"
+			}
+		},
+		{
+			"id": "31536786",
+			"at": [
+				51.372253,
+				-0.105205
+			],
+			"observed": "1951-01-29",
+			"claims": {
+				"name": "Old Palace Croydon: Great Hall",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "1951-01-29"
+			}
+		},
+		{
+			"id": "31536787",
+			"at": [
+				51.378265,
+				-0.100943
+			],
+			"observed": "1954-05-20",
+			"claims": {
+				"name": "PARISH CHURCH OF ST MICHAEL AND ALL ANGELS",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "1954-05-20"
+			}
+		},
+		{
+			"id": "31536795",
+			"at": [
+				51.367967,
+				-0.102518
+			],
+			"observed": "1976-11-29",
+			"claims": {
+				"name": "CHURCH OF ST ANDREW",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1976-11-29"
+			}
+		},
+		{
+			"id": "31536805",
+			"at": [
+				51.373143,
+				-0.105077
+			],
+			"observed": "1974-03-22",
+			"claims": {
+				"name": "NUMBERS 2 TO 8 (EVEN) WITH BOUNDARY WALL AND ENTRY ARCHES AND PIERS",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1974-03-22"
+			}
+		},
+		{
+			"id": "31536808",
+			"at": [
+				51.373314,
+				-0.103406
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "61, 63, 65, CHURCH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536809",
+			"at": [
+				51.372701,
+				-0.105872
+			],
+			"observed": "1951-01-29",
+			"claims": {
+				"name": "PARISH CHURCH OF ST JOHN THE BAPTIST",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "1951-01-29"
+			}
+		},
+		{
+			"id": "31536810",
+			"at": [
+				51.373416,
+				-0.106097
+			],
+			"observed": "1974-03-22",
+			"claims": {
+				"name": "ELIS DAVID ALMSHOUSE INCLUDING RAILINGS AND GATES TO STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1974-03-22"
+			}
+		},
+		{
+			"id": "31536811",
+			"at": [
+				51.37317,
+				-0.106211
+			],
+			"observed": "1974-03-22",
+			"claims": {
+				"name": "ROSE AND CROWN PUBLIC HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1974-03-22"
+			}
+		},
+		{
+			"id": "31645364",
+			"at": [
+				51.373529,
+				-0.101185
+			],
+			"observed": "1973-08-01",
+			"claims": {
+				"name": "11, CROWN HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1973-08-01"
+			}
+		},
+		{
+			"id": "31645525",
+			"at": [
+				51.372174,
+				-0.100124
+			],
+			"observed": "1973-11-19",
+			"claims": {
+				"name": "NAT WEST BANK",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1973-11-19"
+			}
+		},
+		{
+			"id": "31645574",
+			"at": [
+				51.372135,
+				-0.099037
+			],
+			"observed": "1973-11-19",
+			"claims": {
+				"name": "Municipal Buildings, comprising the clock tower, public library, and Corn Exchange, and including the area balustrade which incorporates a war memorial and a statue of Queen Victoria",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1973-11-19"
+			}
+		},
+		{
+			"id": "31645621",
+			"at": [
+				51.373896,
+				-0.100228
+			],
+			"observed": "1951-01-29",
+			"claims": {
+				"name": "HOSPITAL OF THE HOLY TRINITY (WHITGIFT HOSPITAL)",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "1951-01-29"
+			}
+		},
+		{
+			"id": "31709419",
+			"at": [
+				51.373139,
+				-0.100466
+			],
+			"observed": "1994-09-16",
+			"claims": {
+				"name": "FORMER GRANT'S DEPARTMENT STORE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1994-09-16"
+			}
+		},
+		{
+			"id": "31718381",
+			"at": [
+				51.374744,
+				-0.097884
+			],
+			"observed": "1995-02-28",
+			"claims": {
+				"name": "ELECTRICITY SHOWROOMS AND OFFICES",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1995-02-28"
+			}
+		},
+		{
+			"id": "31718414",
+			"at": [
+				51.372665,
+				-0.097267
+			],
+			"observed": "1992-07-23",
+			"claims": {
+				"name": "Segas Offices",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1992-07-23"
+			}
+		},
+		{
+			"id": "31724771",
+			"at": [
+				51.372278,
+				-0.099332
+			],
+			"observed": "1973-11-19",
+			"claims": {
+				"name": "Croydon War Memorial",
+				"description": "listed building",
+				"grade": "II*",
+				"listed": "1973-11-19"
+			}
+		},
+		{
+			"id": "31750661",
+			"at": [
+				51.381613,
+				-0.094999
+			],
+			"observed": "1976-10-29",
+			"claims": {
+				"name": "CHURCH OF ST JAMES",
+				"description": "listed building",
+				"grade": "II*",
+				"listed": "1976-10-29"
+			}
+		},
+		{
+			"id": "31750850",
+			"at": [
+				51.367511,
+				-0.096618
+			],
+			"observed": "1951-01-29",
+			"claims": {
+				"name": "RUSKIN HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1951-01-29"
+			}
+		},
+		{
+			"id": "31750869",
+			"at": [
+				51.373478,
+				-0.105932
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "120, CHURCH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31750900",
+			"at": [
+				51.373677,
+				-0.104557
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "91 AND 93, CHURCH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31814579",
+			"at": [
+				51.373516,
+				-0.101301
+			],
+			"observed": "1973-08-01",
+			"claims": {
+				"name": "13 AND 13A, CROWN HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1973-08-01"
+			}
+		},
+		{
+			"id": "31814602",
+			"at": [
+				51.372159,
+				-0.099854
+			],
+			"observed": "1973-11-19",
+			"claims": {
+				"name": "UNION BANK CHAMBERS",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1973-11-19"
+			}
+		},
+		{
+			"id": "31847281",
+			"at": [
+				51.370203,
+				-0.097229
+			],
+			"observed": "2006-07-05",
+			"claims": {
+				"name": "THE ADULT SCHOOL HALL, CROYDON",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2006-07-05"
+			}
+		},
+		{
+			"id": "31855909",
+			"at": [
+				51.372466,
+				-0.106178
+			],
+			"observed": "2017-02-27",
+			"claims": {
+				"name": "War Memorial at Croydon Minster",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-27"
+			}
+		},
+		{
+			"id": "31855910",
+			"at": [
+				51.368067,
+				-0.102643
+			],
+			"observed": "2017-03-03",
+			"claims": {
+				"name": "War Memorial at the Church of St Andrew",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-03-03"
+			}
+		},
+		{
+			"id": "31857619",
+			"at": [
+				51.370523,
+				-0.097271
+			],
+			"observed": "2019-05-10",
+			"claims": {
+				"name": "Croydon Quaker Meeting House",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2019-05-10"
+			}
+		},
+		{
+			"id": "31863986",
+			"at": [
+				51.372448,
+				-0.105565
+			],
+			"observed": "2025-06-11",
+			"claims": {
+				"name": "Old Palace Croydon: Chapel",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "2025-06-11"
+			}
+		},
+		{
+			"id": "31863987",
+			"at": [
+				51.372292,
+				-0.105555
+			],
+			"observed": "2025-06-11",
+			"claims": {
+				"name": "Old Palace Croydon: great chamber and undercroft range",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "2025-06-11"
+			}
+		},
+		{
+			"id": "31863988",
+			"at": [
+				51.372154,
+				-0.105644
+			],
+			"observed": "2025-06-11",
+			"claims": {
+				"name": "Old Palace Croydon: southern range including long gallery",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "2025-06-11"
+			}
+		},
+		{
+			"id": "31863989",
+			"at": [
+				51.372315,
+				-0.105767
+			],
+			"observed": "2025-06-11",
+			"claims": {
+				"name": "Old Palace Croydon: western range",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "2025-06-11"
+			}
+		},
+		{
+			"id": "31863990",
+			"at": [
+				51.372364,
+				-0.105468
+			],
+			"observed": "2025-06-11",
+			"claims": {
+				"name": "Old Palace Croydon: east range of the north court",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "2025-06-11"
+			}
+		},
+		{
+			"id": "31863991",
+			"at": [
+				51.372212,
+				-0.105421
+			],
+			"observed": "2025-06-11",
+			"claims": {
+				"name": "Old Palace Croydon: east range of the south court",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "2025-06-11"
+			}
+		},
+		{
+			"id": "31863992",
+			"at": [
+				51.372223,
+				-0.10571
+			],
+			"observed": "2025-06-11",
+			"claims": {
+				"name": "Old Palace Croydon: west range of the south court",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "2025-06-11"
+			}
+		},
+		{
+			"id": "31866142",
+			"at": [
+				51.371936,
+				-0.100564
+			],
+			"observed": "2026-02-27",
+			"claims": {
+				"name": "Surrey Street Drinking Fountain and wall",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2026-02-27"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
