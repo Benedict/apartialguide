@@ -126,6 +126,12 @@ describe('landingPage', () => {
 		expect(html).toContain('href="privacy/"');
 	});
 
+	it('leads to the walk’s profile on Instagram', () => {
+		expect(html).toContain(
+			'<a rel="me" href="https://www.instagram.com/apartialguide">Instagram</a>'
+		);
+	});
+
 	it('asks nothing of Google without a measurement ID, and asks first with one', () => {
 		expect(html).not.toContain('id="consent"');
 		const counted = landingPage({ ...input, gaId: 'G-TEST123' });

@@ -1,6 +1,6 @@
 import { withCsp } from './csp';
 import { areaSlug } from '../core/release';
-import { COMMANDS, headMeta, homeDescription, jsonLd, PAGES } from './meta';
+import { COMMANDS, headMeta, homeDescription, jsonLd, PAGES, profileLinks } from './meta';
 import { themeBoot, themeCss } from '../site/themes';
 import { fontFaces, MONO } from './type';
 import type { Ledger } from '../core/adventure/world';
@@ -154,7 +154,7 @@ ${themeCss()}
 
 	<footer>
 		<p>${gaId ? PRIVACY.counted : PRIVACY.none}</p>
-		<p><a href="walk/#about">Sources and licences</a> · <a href="privacy/">Privacy</a> · <a href="https://github.com/Benedict/osm-text-adventure">Code</a> · Made by Benedict</p>
+		<p><a href="walk/#about">Sources and licences</a> · <a href="privacy/">Privacy</a> · ${profileLinks()} · <a href="https://github.com/Benedict/osm-text-adventure">Code</a> · Made by Benedict</p>
 	</footer>
 </main>
 ${gaId ? consentStrip('this site', 'privacy/') : ''}
