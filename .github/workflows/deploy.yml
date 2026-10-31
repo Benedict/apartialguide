@@ -45,6 +45,8 @@ jobs:
           RECORDS_DIR: data/records
           NARRATION_PATH: data/narration/addiscombe.json
           SITE_DIR: site
+          # Every open area must have a door inside it on the borough's map.
+          DOORS_REQUIRED: 1
           # On Netlify the flights function answers from the same site (netlify/edge-functions);
           # on Pages, from wherever it was deployed on its own, if anywhere.
           FLIGHTS_URL: ${{ vars.NETLIFY_SITE_ID != '' && '/api/flights' || vars.FLIGHTS_URL }}
