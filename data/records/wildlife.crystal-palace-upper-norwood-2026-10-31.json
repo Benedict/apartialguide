@@ -1,0 +1,307 @@
+{
+	"source": "NBN Atlas",
+	"prefix": "wildlife",
+	"records": [
+		{
+			"id": "7d7cbab2-c2f9-4d2d-81d1-5f0f75b87dd5",
+			"at": [
+				51.410295,
+				-0.089763
+			],
+			"observed": "1996-07-21",
+			"claims": {
+				"name": "Holly",
+				"seen": "1996-07"
+			}
+		},
+		{
+			"id": "b1c6cdaa-da92-4b35-88c0-947a37293af1",
+			"at": [
+				51.408642,
+				-0.074713
+			],
+			"observed": "2013-08-28",
+			"claims": {
+				"name": "Buff-tailed Bumblebee",
+				"seen": "2013-08"
+			}
+		},
+		{
+			"id": "4f7dfe9b-ae23-4628-9a01-7e450e033132",
+			"at": [
+				51.408642,
+				-0.074713
+			],
+			"observed": "2013-08-28",
+			"claims": {
+				"name": "Common Carder Bee",
+				"seen": "2013-08"
+			}
+		},
+		{
+			"id": "a503a612-24c3-4e6c-84aa-e97cb82da606",
+			"at": [
+				51.408642,
+				-0.074713
+			],
+			"observed": "2014-05-14",
+			"claims": {
+				"name": "Early Bumblebee",
+				"seen": "2014-05"
+			}
+		},
+		{
+			"id": "3858a034-f9e4-47bd-b7af-e1477b78336a",
+			"at": [
+				51.408642,
+				-0.074713
+			],
+			"observed": "2013-09-26",
+			"claims": {
+				"name": "Western Honey Bee",
+				"seen": "2013-09"
+			}
+		},
+		{
+			"id": "856ae17c-9d9f-4b29-bf72-3b36e8d136c7",
+			"at": [
+				51.408642,
+				-0.074713
+			],
+			"observed": "2013-08-28",
+			"claims": {
+				"name": "Red-tailed Bumblebee",
+				"seen": "2013-08"
+			}
+		},
+		{
+			"id": "356365f9-d262-4db4-a1fa-d24c94b4a1e5",
+			"at": [
+				51.408642,
+				-0.074713
+			],
+			"observed": "2013-07-10",
+			"claims": {
+				"name": "Vestal Cuckoo Bee",
+				"seen": "2013-07"
+			}
+		},
+		{
+			"id": "f6086150-f51e-4dd2-b7e4-3e8caf631459",
+			"at": [
+				51.407893,
+				-0.075824
+			],
+			"observed": "2025-02-05",
+			"claims": {
+				"name": "Brown Rat",
+				"seen": "2025-02"
+			}
+		},
+		{
+			"id": "34fa5948-2644-46eb-9360-d3a0a0213ab2",
+			"at": [
+				51.410157,
+				-0.088734
+			],
+			"observed": "2017-03-29",
+			"claims": {
+				"name": "Hairy-footed Flower Bee",
+				"seen": "2017-03"
+			}
+		},
+		{
+			"id": "7685f198-a79d-4b9e-8df6-afa75b5d6204",
+			"at": [
+				51.408642,
+				-0.074713
+			],
+			"observed": "2014-05-14",
+			"claims": {
+				"name": "Bombus lucorum",
+				"seen": "2014-05"
+			}
+		},
+		{
+			"id": "d1afbed8-b34a-4793-8891-d2cc2526dedf",
+			"at": [
+				51.41704,
+				-0.083764
+			],
+			"observed": "2023-04-23",
+			"claims": {
+				"name": "Goldfinch",
+				"seen": "2023-04"
+			}
+		},
+		{
+			"id": "acf26608-7ffd-4cab-be51-0495ac8e925f",
+			"at": [
+				51.41739,
+				-0.083714
+			],
+			"observed": "1996-09-12",
+			"claims": {
+				"name": "White Poplar",
+				"seen": "1996-09"
+			}
+		},
+		{
+			"id": "c4794dbc-c872-4904-a3bb-1efe2b1a3ef1",
+			"at": [
+				51.408639,
+				-0.079263
+			],
+			"observed": "2016-04-13",
+			"claims": {
+				"name": "Hairy-footed Flower Bee",
+				"seen": "2016-04"
+			}
+		},
+		{
+			"id": "8c66596c-37c8-4243-862c-f9cffc1df339",
+			"at": [
+				51.410439,
+				-0.074642
+			],
+			"observed": "2017-06-03",
+			"claims": {
+				"name": "Hairy-footed Flower Bee",
+				"seen": "2017-06"
+			}
+		},
+		{
+			"id": "22cfbfd8-2c76-41cc-980a-6385426229d7",
+			"at": [
+				51.417531,
+				-0.092337
+			],
+			"observed": "1996-09-12",
+			"claims": {
+				"name": "Caucasian Lime",
+				"seen": "1996-09"
+			}
+		},
+		{
+			"id": "af49a471-4472-4b16-ba57-9e501c9dddbc",
+			"at": [
+				51.407893,
+				-0.075824
+			],
+			"observed": "2025-08-01",
+			"claims": {
+				"name": "Grey Squirrel",
+				"seen": "2025-08"
+			}
+		},
+		{
+			"id": "e80aad66-b4ce-4f32-81c6-efee5c036255",
+			"at": [
+				51.41972,
+				-0.10615
+			],
+			"observed": "2024-05-26",
+			"claims": {
+				"name": "10-spot Ladybird",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "865d20e4-b860-4941-aa1c-799555193ebf",
+			"at": [
+				51.41739,
+				-0.083714
+			],
+			"observed": "1996-09-12",
+			"claims": {
+				"name": "Lime",
+				"seen": "1996-09"
+			}
+		},
+		{
+			"id": "e147943f-56cf-48c1-b270-7369d1c629d0",
+			"at": [
+				51.419258,
+				-0.087951
+			],
+			"observed": "2017-05-21",
+			"claims": {
+				"name": "Swift",
+				"seen": "2017-05"
+			}
+		},
+		{
+			"id": "fcffffa5-08b1-4382-acc0-f66b6b9dc76e",
+			"at": [
+				51.40972,
+				-0.07458
+			],
+			"observed": "2025-08-06",
+			"claims": {
+				"name": "Meadow Grasshopper",
+				"seen": "2025-08"
+			}
+		},
+		{
+			"id": "bc98efc0-7c4c-4715-a494-23ff5d882f8c",
+			"at": [
+				51.409463,
+				-0.074583
+			],
+			"observed": "2024-06-14",
+			"claims": {
+				"name": "14-spot Ladybird",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "8e5bcb6a-801f-474f-937d-6f3bf4f68b8c",
+			"at": [
+				51.409485,
+				-0.079299
+			],
+			"observed": "1996-06-24",
+			"claims": {
+				"name": "Wild Cherry",
+				"seen": "1996-06"
+			}
+		},
+		{
+			"id": "585b8307-5ee4-4889-a855-b73e8b449bf1",
+			"at": [
+				51.409485,
+				-0.079299
+			],
+			"observed": "1996-06-24",
+			"claims": {
+				"name": "Holly",
+				"seen": "1996-06"
+			}
+		},
+		{
+			"id": "75355bde-49a6-4862-b88c-19c3436dfe37",
+			"at": [
+				51.416179,
+				-0.08363
+			],
+			"observed": "2024-12-20",
+			"claims": {
+				"name": "Grey Squirrel",
+				"seen": "2024-12"
+			}
+		},
+		{
+			"id": "dcbf7665-a547-4545-9548-dccd64503038",
+			"at": [
+				51.415804,
+				-0.096724
+			],
+			"observed": "2018-05-30",
+			"claims": {
+				"name": "Swift",
+				"seen": "2018-05"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

@@ -1,0 +1,15 @@
+{
+	"source": "Greater London Authority, Public_Realm_tree_list_2025_November.csv",
+	"prefix": "trees",
+	"records": [
+		{
+			"id": "trees:Clovelly Gardens",
+			"street": "Clovelly Gardens",
+			"claims": {
+				"count": "1",
+				"kinds": "Ash (1)"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
