@@ -46,6 +46,25 @@ describe('tileWorld', () => {
 		expect(all).toContain(head.start);
 	});
 
+	it('names a stop the same in any map that holds it, so a saved walk finds its place again', () => {
+		const name = (w: AdventureWorld, title: string) =>
+			Object.values(tileWorld(w, 300).tiles)
+				.flatMap((t) => Object.entries(t.stops))
+				.find(([, s]) => s.title === title)![0];
+		// A larger map, reaching further south-west, and a smaller one without the lane.
+		const larger: AdventureWorld = {
+			...world,
+			stops: { ...world.stops, far: { ...world.stops.n3, title: 'Far Corner', at: at(-5000) } }
+		};
+		const smaller: AdventureWorld = {
+			...world,
+			stops: { 'w1.0.1': world.stops['w1.0.1'], n2: world.stops.n2 }
+		};
+		for (const title of ['Long Street', 'Long Street and Short Row'])
+			expect(new Set([world, larger, smaller].map((w) => name(w, title))).size).toBe(1);
+		expect(name(world, 'Long Street')).toMatch(/:w1\.0\.1$/);
+	});
+
 	it('carries the street network apart, under the names the tiles give', () => {
 		const { routes } = tileWorld(world, 300);
 		expect(Object.keys(routes.stops).sort()).toEqual([...all].sort());

@@ -30,24 +30,20 @@ export function tileWorld(
 	metres = 300
 ): { head: WorldHead; tiles: Record<string, Tile>; routes: RouteIndex } {
 	const placed = Object.entries(world.stops);
-	const lats = placed.flatMap(([, s]) => (s.at ? [s.at[0]] : []));
-	const lons = placed.flatMap(([, s]) => (s.at ? [s.at[1]] : []));
-	const [lat0, lon0] = [Math.min(...lats), Math.min(...lons)];
+	// A grid fixed to the earth, not to this map's box: rows of equal height from the equator, each
+	// cut into cells of equal width at its own latitude. A stop keeps its tile in any map that holds it.
 	const dLat = metres / METRES_PER_DEGREE;
-	const dLon = metres / (METRES_PER_DEGREE * Math.cos((lat0 * Math.PI) / 180));
-	const cell = (stop: CompiledStop) =>
-		stop.at
-			? `${Math.floor((stop.at[0] - lat0) / dLat)}-${Math.floor((stop.at[1] - lon0) / dLon)}`
-			: 'x';
+	const cell = (stop: CompiledStop) => {
+		if (!stop.at) return 'x';
+		const row = Math.floor(stop.at[0] / dLat);
+		const dLon = metres / (METRES_PER_DEGREE * Math.cos(((row + 0.5) * dLat * Math.PI) / 180));
+		return `${row}_${Math.floor(stop.at[1] / dLon)}`;
+	};
 
-	const names = new Map<StopId, StopId>();
-	const counts = new Map<string, number>();
-	for (const [id, stop] of placed) {
-		const key = cell(stop);
-		const n = counts.get(key) ?? 0;
-		counts.set(key, n + 1);
-		names.set(id, `${key}${SEP}${n}`);
-	}
+	// Named by the tile and the map's own name for the place, its way or node, which outlive a snapshot.
+	const names = new Map<StopId, StopId>(
+		placed.map(([id, stop]) => [id, `${cell(stop)}${SEP}${id}`])
+	);
 	const byTile = new Map<string, Record<StopId, CompiledStop>>();
 	for (const [id, stop] of placed) {
 		const name = names.get(id)!;
