@@ -4,7 +4,7 @@ import { keepsBrokenNames, namesNoSource, type NarrationStore } from './render/c
 import { unfounded } from './render/founded';
 import { buildPrompt, promptKey, type Prompt } from './render/prompt';
 import type { Scene } from './scene';
-import type { StopId } from './stops';
+import type { Stop, StopId } from './stops';
 
 /** Something that writes a stop's prose from its prompt. Undefined means it declined. */
 export interface ProseModel {
@@ -22,6 +22,11 @@ export interface NarrateOptions {
 	today?: string;
 	/** Which stops to narrate; the rest keep the template. All, if not given. */
 	only?: (scene: Scene) => boolean;
+	/**
+	 * The stops to look at at all, such as those in one area, decided before any is visited: on a
+	 * map the size of a borough, visiting every stop to find an area's costs minutes. All, if not given.
+	 */
+	within?: (stop: Stop) => boolean;
 }
 
 export interface NarrateResult {
@@ -55,7 +60,8 @@ export async function narrateWorld(
 		limit = Infinity,
 		from,
 		today = new Date().toISOString().slice(0, 10),
-		only
+		only,
+		within = () => true
 	}: NarrateOptions = {}
 ): Promise<NarrateResult> {
 	const result: NarrateResult = {
@@ -68,13 +74,20 @@ export async function narrateWorld(
 		repeated: [],
 		skipped: 0
 	};
-	// Only prose a reader can meet counts: pieces kept for stops the map no longer has do not.
+	// Only prose a reader can meet counts: pieces kept for stops the map no longer has do not. Within
+	// an area, the pieces of the stops it holds.
+	const inside = new Set(
+		narrator.graph
+			.all()
+			.filter(within)
+			.map((s) => s.id)
+	);
 	const current = new Set(
-		narrator.graph.all().map((s) => promptKey(buildPrompt(narrator.visit(s.id)!.scene)))
+		[...inside].map((id) => promptKey(buildPrompt(narrator.visit(id)!.scene)))
 	);
 	const used = phrasesIn(store, current);
 	let calls = 0;
-	for (const stop of order(narrator, from)) {
+	for (const stop of order(narrator, from).filter((id) => inside.has(id))) {
 		const { scene } = narrator.visit(stop)!;
 		if (only && !only(scene)) {
 			result.skipped++;
@@ -91,10 +104,13 @@ export async function narrateWorld(
 			continue;
 		}
 		calls++;
-		const text = await model.write(withNeighbours(prompt, neighboursSaid(narrator, stop, store)), {
-			stop,
-			key
-		});
+		const text = await model.write(
+			withNeighbours(prompt, neighboursSaid(narrator, stop, store, inside)),
+			{
+				stop,
+				key
+			}
+		);
 		if (text === undefined) {
 			result.declined.push(stop);
 			continue;
@@ -124,9 +140,14 @@ export async function narrateWorld(
 }
 
 /** The prose already written for the stops one step from this one, under their current facts. */
-function neighboursSaid(narrator: Narrator, id: StopId, store: NarrationStore): string[] {
+function neighboursSaid(
+	narrator: Narrator,
+	id: StopId,
+	store: NarrationStore,
+	inside: ReadonlySet<StopId>
+): string[] {
 	const stop = narrator.graph.get(id);
-	const next = [...new Set((stop?.exits ?? []).map((e) => e.to))];
+	const next = [...new Set((stop?.exits ?? []).map((e) => e.to))].filter((to) => inside.has(to));
 	return next.flatMap((to) => {
 		const visit = narrator.visit(to);
 		const said = visit && store[promptKey(buildPrompt(visit.scene))];
