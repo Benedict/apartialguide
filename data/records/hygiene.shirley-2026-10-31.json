@@ -1758,12 +1758,10 @@
 				51.3697891235352,
 				-0.0302859991788864
 			],
-			"observed": "1901-01-01",
 			"claims": {
 				"name": "Gordon Jerk Centre",
 				"kind": "Takeaway/sandwich shop",
-				"rating": "AwaitingInspection",
-				"date": "1901-01-01"
+				"rating": "AwaitingInspection"
 			}
 		},
 		{
@@ -1776,12 +1774,10 @@
 				51.3863076,
 				-0.0611001
 			],
-			"observed": "1901-01-01",
 			"claims": {
 				"name": "Kiddies Kottage Addiscombe",
 				"kind": "Caring Premises",
-				"rating": "AwaitingInspection",
-				"date": "1901-01-01"
+				"rating": "AwaitingInspection"
 			}
 		},
 		{
@@ -1794,12 +1790,10 @@
 				51.3757820129395,
 				-0.0614250004291534
 			],
-			"observed": "1901-01-01",
 			"claims": {
 				"name": "Shirley Park Golf Club Limited",
 				"kind": "Restaurant/Cafe/Canteen",
-				"rating": "AwaitingInspection",
-				"date": "1901-01-01"
+				"rating": "AwaitingInspection"
 			}
 		}
 	],
