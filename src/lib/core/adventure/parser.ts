@@ -21,6 +21,7 @@ export type Command =
 				| 'camera'
 				| 'news'
 				| 'beyond'
+				| 'areas'
 				| 'gps'
 				| 'wait'
 				| 'again'
@@ -201,6 +202,17 @@ export function parse(input: string): Command {
 		].includes(text)
 	)
 		return { verb: 'beyond' };
+	if (
+		[
+			'areas',
+			'choose an area',
+			'choose area',
+			'list areas',
+			'where can i start',
+			'where can we start'
+		].includes(text)
+	)
+		return { verb: 'areas' };
 	if (
 		[
 			'news',
