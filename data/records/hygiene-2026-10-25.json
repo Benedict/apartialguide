@@ -3270,12 +3270,10 @@
 				51.3821144104004,
 				-0.0685869976878166
 			],
-			"observed": "1901-01-01",
 			"claims": {
 				"name": "Comet Sports",
 				"kind": "Retailers - other",
-				"rating": "AwaitingInspection",
-				"date": "1901-01-01"
+				"rating": "AwaitingInspection"
 			}
 		},
 		{
@@ -3288,12 +3286,10 @@
 				51.3865203857422,
 				-0.082056000828743
 			],
-			"observed": "1901-01-01",
 			"claims": {
 				"name": "HCL At Robert Fitzroy Academy",
 				"kind": "School/college/university",
-				"rating": "AwaitingInspection",
-				"date": "1901-01-01"
+				"rating": "AwaitingInspection"
 			}
 		},
 		{
@@ -3306,12 +3302,10 @@
 				51.3863076,
 				-0.0611001
 			],
-			"observed": "1901-01-01",
 			"claims": {
 				"name": "Kiddies Kottage Addiscombe",
 				"kind": "Caring Premises",
-				"rating": "AwaitingInspection",
-				"date": "1901-01-01"
+				"rating": "AwaitingInspection"
 			}
 		},
 		{
@@ -3324,12 +3318,10 @@
 				51.3807742,
 				-0.0843992
 			],
-			"observed": "1901-01-01",
 			"claims": {
 				"name": "Legends Learning Centre",
 				"kind": "Caring Premises",
-				"rating": "AwaitingInspection",
-				"date": "1901-01-01"
+				"rating": "AwaitingInspection"
 			}
 		},
 		{
@@ -3342,12 +3334,10 @@
 				51.3787976,
 				-0.0740921
 			],
-			"observed": "1901-01-01",
 			"claims": {
 				"name": "Norbury Park Care Home Ltd",
 				"kind": "Caring Premises",
-				"rating": "AwaitingInspection",
-				"date": "1901-01-01"
+				"rating": "AwaitingInspection"
 			}
 		},
 		{
@@ -3360,12 +3350,10 @@
 				51.3757820129395,
 				-0.0614250004291534
 			],
-			"observed": "1901-01-01",
 			"claims": {
 				"name": "Shirley Park Golf Club Limited",
 				"kind": "Restaurant/Cafe/Canteen",
-				"rating": "AwaitingInspection",
-				"date": "1901-01-01"
+				"rating": "AwaitingInspection"
 			}
 		},
 		{
@@ -3378,12 +3366,10 @@
 				51.3871257,
 				-0.0812595
 			],
-			"observed": "1901-01-01",
 			"claims": {
 				"name": "The Robert Fitzroy Academy",
 				"kind": "School/college/university",
-				"rating": "AwaitingInspection",
-				"date": "1901-01-01"
+				"rating": "AwaitingInspection"
 			}
 		},
 		{
@@ -3396,12 +3382,10 @@
 				51.3742141723633,
 				-0.089538998901844
 			],
-			"observed": "1901-01-01",
 			"claims": {
 				"name": "East Croydon United Reformed Church",
 				"kind": "Other catering premises",
-				"rating": "Exempt",
-				"date": "1901-01-01"
+				"rating": "Exempt"
 			}
 		}
 	],

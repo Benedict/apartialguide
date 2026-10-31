@@ -12,6 +12,8 @@ export interface Establishment {
 }
 
 const DAY = /^\d{4}-\d{2}-\d{2}/;
+/** The date the FSA gives an establishment it has not yet rated: a placeholder, not a day. */
+const NO_DATE = '1901-01-01';
 
 /** The FSA's establishments in the box, as records linked by the FHRS id the map may carry. */
 export function hygieneRecords(
@@ -22,7 +24,8 @@ export function hygieneRecords(
 	for (const e of answer.establishments ?? []) {
 		const at = point(e.geocode?.latitude, e.geocode?.longitude);
 		if (at && !inBox(at, bbox)) continue;
-		const date = e.RatingDate && DAY.test(e.RatingDate) ? e.RatingDate.slice(0, 10) : undefined;
+		const day = e.RatingDate && DAY.test(e.RatingDate) ? e.RatingDate.slice(0, 10) : undefined;
+		const date = day === NO_DATE ? undefined : day;
 		records.push({
 			id: String(e.FHRSID),
 			link: { key: 'fhrs:id', value: String(e.FHRSID) },

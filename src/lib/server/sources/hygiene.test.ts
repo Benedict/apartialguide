@@ -36,6 +36,26 @@ describe('hygieneRecords', () => {
 		]);
 	});
 
+	it('reads the date the inspectors put where they have none, 1 January 1901, as no date', () => {
+		const [record] = hygieneRecords(
+			{
+				establishments: [
+					{
+						FHRSID: 222,
+						BusinessName: 'Invented Care Home',
+						RatingValue: 'AwaitingInspection',
+						RatingDate: '1901-01-01T00:00:00',
+						geocode: { longitude: '-0.07', latitude: '51.38' }
+					}
+				]
+			},
+			box
+		);
+		expect(record.observed).toBeUndefined();
+		expect(record.claims.date).toBeUndefined();
+		expect(record.claims.rating).toBe('AwaitingInspection');
+	});
+
 	it('leaves out what lies outside the box, and keeps an unrated or unplaced one as found', () => {
 		const records = hygieneRecords(
 			{
