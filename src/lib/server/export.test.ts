@@ -252,6 +252,7 @@ describe('exportPage', () => {
 	it('says on About that the code is free under the GNU AGPL, and where to find it', () => {
 		const about = page().match(/<section id="about"[^]*?<\/section>/)![0];
 		expect(about).toContain('GNU Affero General Public License');
+		expect(about).toContain('https://creativecommons.org/licenses/by-sa/4.0/');
 		expect(about).toContain('https://github.com/Benedict/osm-text-adventure');
 	});
 

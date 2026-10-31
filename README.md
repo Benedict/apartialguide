@@ -29,4 +29,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md): wrong data is best fixed at its source, 
 
 ## Licence
 
-The code is under the [GNU Affero General Public License, version 3 or later](LICENSE). The data keeps its sources' own licences, credited on the site's About page; Commit Mono is under the SIL Open Font License.
+The code is under the [GNU Affero General Public License, version 3 or later](LICENSE), and Guide's prose in `data/narration/` under [CC BY-SA 4.0](data/narration/LICENSE.md). The data keeps its sources' own licences, credited on the site's About page; Commit Mono is under the SIL Open Font License.

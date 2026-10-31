@@ -94,7 +94,7 @@ function aboutPage(snapshotDate: string, counted: boolean, place: Place, privacy
 			${sources}
 		</ul>
 		<h3>Who made it</h3>
-		<p>Made by Benedict. The code is free, under the GNU Affero General Public License, version 3 or later, and is on <a href="https://github.com/Benedict/osm-text-adventure">GitHub</a>, where you can help.</p>
+		<p>Made by Benedict. The code is free, under the GNU Affero General Public License, version 3 or later, and is on <a href="https://github.com/Benedict/osm-text-adventure">GitHub</a>, where you can help. Guide’s prose is under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
 		<p>Set in <a href="https://commitmono.com">Commit Mono</a>, by Eigil Nikolajsen, under the SIL Open Font License.</p>
 		<p><a href="#">Back to the walk</a></p>
 	</section>`;

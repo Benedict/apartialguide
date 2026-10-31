@@ -11,6 +11,16 @@ describe('contributions', () => {
 		expect(JSON.parse(read('package.json')).license).toBe('AGPL-3.0-or-later');
 	});
 
+	it('leave Guide’s prose under CC BY-SA 4.0, as its folder, the guide and About say', () => {
+		expect(read('data/narration/LICENSE.md')).toContain(
+			'Creative Commons Attribution-ShareAlike 4.0'
+		);
+		expect(read('data/narration/LICENSE.md')).toContain(
+			'https://creativecommons.org/licenses/by-sa/4.0/'
+		);
+		expect(read('CONTRIBUTING.md')).toContain('CC BY-SA 4.0');
+	});
+
 	it('are signed off under the Developer Certificate of Origin, which the repository carries', () => {
 		expect(read('DCO')).toContain('Developer Certificate of Origin\nVersion 1.1');
 		expect(read('CONTRIBUTING.md')).toContain('Signed-off-by:');

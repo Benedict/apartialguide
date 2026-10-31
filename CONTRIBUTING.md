@@ -52,7 +52,7 @@ Signed-off-by: Your Name <you@example.com>
 
 ## Licence
 
-The code is under the [GNU Affero General Public License, version 3 or later](LICENSE). If you run a changed copy as a website, you must offer its source to the people who use it. The data in `data/` keeps its sources' own licences (the map is © OpenStreetMap contributors, under the Open Database Licence), as the About page lists, and the type in `static/fonts` is under the SIL Open Font License.
+The code is under the [GNU Affero General Public License, version 3 or later](LICENSE). If you run a changed copy as a website, you must offer its source to the people who use it. Guide's prose, written ahead of time in `data/narration/`, is under [CC BY-SA 4.0](data/narration/LICENSE.md); prose you contribute is given under the same licence. The data in `data/` keeps its sources' own licences (the map is © OpenStreetMap contributors, under the Open Database Licence), as the About page lists, and the type in `static/fonts` is under the SIL Open Font License.
 
 ## Conduct
 
