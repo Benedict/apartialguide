@@ -15,7 +15,7 @@ import { AnthropicProse } from '../src/lib/server/anthropic';
 import { WrittenProse } from '../src/lib/server/written';
 import { OpenRouterProse } from '../src/lib/server/openrouter';
 import { loadNarration, loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
-import { narrationOnly } from '../src/lib/server/only';
+import { narrationOnly, narrationWithin } from '../src/lib/server/only';
 
 const config = readConfig();
 if (!config) {
@@ -36,6 +36,7 @@ const limit = Number(process.env.NARRATE_LIMIT ?? 25);
 
 // NARRATE_ONLY=busier, NARRATE_AREA=Shirley: which stops to write (src/lib/server/only.ts).
 const only = narrationOnly(process.env, config.recordsDir);
+const within = narrationWithin(process.env, config.recordsDir);
 if (process.env.NARRATE_AREA) console.log(`Only ${process.env.NARRATE_AREA}`);
 
 let result: NarrateResult | undefined;
@@ -43,7 +44,8 @@ try {
 	result = await narrateWorld(narrator, model, store, {
 		limit,
 		from: startStop(narrator, config).id,
-		...(only ? { only } : {})
+		...(only ? { only } : {}),
+		...(within ? { within } : {})
 	});
 } finally {
 	// Keep whatever was written, even if the run stopped part way.

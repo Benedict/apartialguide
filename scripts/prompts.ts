@@ -10,7 +10,7 @@ import { dirname } from 'node:path';
 import { narrateWorld } from '../src/lib/core/narration';
 import type { Prompt } from '../src/lib/core/render/prompt';
 import { loadNarration, loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
-import { narrationOnly } from '../src/lib/server/only';
+import { narrationOnly, narrationWithin } from '../src/lib/server/only';
 
 const config = readConfig();
 if (!config) {
@@ -20,6 +20,7 @@ if (!config) {
 const store = loadNarration(config.narrationPath ?? 'data/narration/addiscombe.json');
 const narrator = loadNarrator(config);
 const only = narrationOnly(process.env, config.recordsDir);
+const within = narrationWithin(process.env, config.recordsDir);
 const asked: { stop: string; key: string; prompt: Prompt }[] = [];
 await narrateWorld(
 	narrator,
@@ -35,7 +36,8 @@ await narrateWorld(
 		limit: Number(process.env.NARRATE_LIMIT ?? 25),
 		from: startStop(narrator, config).id,
 		// NARRATE_ONLY=busier, NARRATE_AREA=Shirley: which stops to write (src/lib/server/only.ts).
-		...(only ? { only } : {})
+		...(only ? { only } : {}),
+		...(within ? { within } : {})
 	}
 );
 
