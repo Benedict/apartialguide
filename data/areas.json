@@ -62,19 +62,27 @@
 		},
 		{
 			"name": "South Croydon",
-			"wards": ["South Croydon"]
+			"wards": ["South Croydon"],
+			"open": true,
+			"start": "South Croydon"
 		},
 		{
 			"name": "Waddon",
-			"wards": ["Waddon"]
+			"wards": ["Waddon"],
+			"open": true,
+			"start": "Waddon Ponds"
 		},
 		{
 			"name": "Crystal Palace & Upper Norwood",
-			"wards": ["Crystal Palace & Upper Norwood"]
+			"wards": ["Crystal Palace & Upper Norwood"],
+			"open": true,
+			"start": "Westow Park"
 		},
 		{
 			"name": "Norbury",
-			"wards": ["Norbury & Pollards Hill", "Norbury Park"]
+			"wards": ["Norbury & Pollards Hill", "Norbury Park"],
+			"open": true,
+			"start": "Norbury Library"
 		},
 		{
 			"name": "Selsdon",
