@@ -36,6 +36,7 @@ export const COMMANDS: [string[], string?][] = [
 	[['n', 'se', 'back']],
 	[['drift']],
 	[['start anywhere']],
+	[['place a glass']],
 	[['look', 'examine', 'explore']],
 	[['route to'], 'a street or a place'],
 	[['gps on']],
