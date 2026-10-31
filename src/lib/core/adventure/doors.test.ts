@@ -51,6 +51,37 @@ describe('starting in an area', () => {
 		expect(later.actions).toEqual(offer.actions);
 	});
 
+	it('offers the open areas behind one choice when there are more than two, and lists them as buttons when asked', () => {
+		const many: AdventureWorld = {
+			...world,
+			anywhere: ['b'],
+			doors: [
+				{ name: 'Inventa', stop: 'a' },
+				{ name: 'Outer Inventa', stop: 'c' },
+				{ name: 'Upper Inventa', stop: 'b' },
+				{ name: 'Lower Inventa', stop: 'c' },
+				{ name: 'Elsewhere' }
+			]
+		};
+		const [, offer] = new Adventure(many).begin();
+		expect(offer.actions).toEqual([
+			{ label: 'Take the tour', command: 'take the tour' },
+			{ label: 'Choose an area', command: 'areas' },
+			{ label: 'Start anywhere', command: 'start anywhere' }
+		]);
+		expect(parse('choose an area')).toEqual({ verb: 'areas' });
+		const game = new Adventure(many);
+		game.begin();
+		const areas = game.respond('areas');
+		expect(areas.actions).toEqual([
+			{ label: 'Inventa', command: 'start in Inventa' },
+			{ label: 'Outer Inventa', command: 'start in Outer Inventa' },
+			{ label: 'Upper Inventa', command: 'start in Upper Inventa' },
+			{ label: 'Lower Inventa', command: 'start in Lower Inventa' }
+		]);
+		expect(areas.hint).toBe('Not open yet: Elsewhere.');
+	});
+
 	it('begins a walk at the area’s door, instead of the tour', () => {
 		const reply = fresh().respond('start in Outer Inventa');
 		expect(reply.title).toBe('Mill Lane');

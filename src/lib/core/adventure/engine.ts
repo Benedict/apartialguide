@@ -57,7 +57,7 @@ export const HELP =
 	'Type a direction to walk: north, ne, go east, or the name of a street; back retraces your step. ' +
 	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name, or ask me to remember or mark down one, and drop it somewhere else; inventory (i) says what you carry. ' +
-	'Start in an area by its name begins a walk there, start at a place by its name, its postcode, or its latitude and longitude begins there, and start anywhere somewhere by chance. ' +
+	'Areas lists the areas you can begin in; start in an area by its name begins a walk there, start at a place by its name, its postcode, or its latitude and longitude begins there, and start anywhere somewhere by chance. ' +
 	'Place a glass sets a circle down to walk round, and keeps a record of it; glass off lifts it. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
 	'Drift, and I choose the way. Hint for a word about a command; hints off, or on, for one now and then. ' +
@@ -87,6 +87,8 @@ export const INTRO = [
 
 export const OFFER = 'Shall I show you round? Type take the tour, and we will begin.';
 /** The tour, offered as a button as well as to type. */
+/** How many other areas the start offers by name before it offers one choice of them all. */
+const FEW_DOORS = 2;
 const TAKE_TOUR = [{ label: 'Take the tour', command: 'take the tour' }];
 const TOUR = /^(take the tour|take tour|the tour|tour|yes|begin|start)$/;
 
@@ -265,9 +267,12 @@ export class Adventure {
 	 * tour's own, a walk begun by chance, and, as the page's word, what else may be typed.
 	 */
 	private offering(): Reply {
-		const doors = (this.world.doors ?? [])
-			.filter((d) => d.stop && d.stop !== this.world.start)
-			.map((d) => ({ label: `Start in ${d.name}`, command: `start in ${d.name}` }));
+		const others = (this.world.doors ?? []).filter((d) => d.stop && d.stop !== this.world.start);
+		// A few areas are offered by name; more, behind one choice, so the start stays short.
+		const doors =
+			others.length > FEW_DOORS
+				? [{ label: 'Choose an area', command: 'areas' }]
+				: others.map((d) => ({ label: `Start in ${d.name}`, command: `start in ${d.name}` }));
 		const chance = this.world.anywhere?.length
 			? [{ label: 'Start anywhere', command: 'start anywhere' }]
 			: [];
@@ -277,6 +282,19 @@ export class Adventure {
 			...(this.world.doors?.length
 				? { hint: 'Or type start at, then a postcode, a street or a place.' }
 				: {})
+		};
+	}
+
+	/** The areas open to walk, each a button that begins there; and those not open yet, named quietly. */
+	private areas(): Reply {
+		const doors = this.world.doors ?? [];
+		const open = doors.filter((d) => d.stop);
+		const shut = doors.filter((d) => !d.stop).map((d) => d.name);
+		if (!open.length) return { lines: ['The map I carry is all one place.'] };
+		return {
+			lines: ['Where shall we begin?'],
+			actions: open.map((d) => ({ label: d.name, command: `start in ${d.name}` })),
+			...(shut.length ? { hint: `Not open yet: ${shut.join(', ')}.` } : {})
 		};
 	}
 
@@ -412,7 +430,7 @@ export class Adventure {
 		if (!kept || kept.version !== 1) return [];
 		return [
 			{
-				label: `Continue the walk (${kept.place}, ${distanceWords(kept.walked)})`,
+				label: `Continue the walk (${kept.place}${kept.walked > 0 ? `, ${distanceWords(kept.walked)}` : ''})`,
 				command: `restore ${AUTO}`
 			}
 		];
@@ -444,6 +462,7 @@ export class Adventure {
 		const command = parse(input);
 		if (command.verb === 'restore') return this.restore(command.slot);
 		if (command.verb === 'start') return this.start(command.where, command.at);
+		if (command.verb === 'areas') return this.areas();
 		// The page's own settings answer before the walk begins as after it.
 		if (command.verb === 'colour') return this.colour(command.colour);
 		if (command.verb === 'hints') return this.hints(command.on);
@@ -545,6 +564,8 @@ export class Adventure {
 				return this.lookUp();
 			case 'camera':
 				return { lines: [], ask: 'camera' };
+			case 'areas':
+				return this.areas();
 			case 'beyond':
 				return { lines: [this.beyond()] };
 			case 'exits':

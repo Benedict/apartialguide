@@ -168,6 +168,18 @@ describe('the walk kept as it goes', () => {
 		expect(next.respond('restore auto').title).toBe('Blind Alley');
 	});
 
+	it('offers to continue a walk not yet walked by its place alone, with no distance of nothing', () => {
+		const saves = new MemorySaves();
+		const first = new Adventure(world);
+		first.saves = saves;
+		first.begin();
+		first.respond('take the tour');
+		const next = new Adventure(world);
+		next.saves = saves;
+		const [, offer] = next.begin();
+		expect(offer.actions?.[0].label).toMatch(/^Continue the walk \([^,]+\)$/);
+	});
+
 	it('offers to continue a walk kept on an earlier map, as the place may still be there', () => {
 		const { saves } = walked();
 		const next = new Adventure({ ...world, asOf: '2027-01-01' });
