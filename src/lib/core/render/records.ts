@@ -6,6 +6,17 @@ import { list as listOf, monthYear, numberWord } from './words';
 /** A quotation as found, closing the sentence itself when it ends with its own full stop. */
 export const quoted = (text: string) => (/[.!?]$/.test(text.trim()) ? `“${text}”` : `“${text}”.`);
 
+/**
+ * The inspectors' codes for a rating that is not a number (`AwaitingInspection`, `Exempt`), read
+ * as the words they are made of. A code is a value from a fixed list, not something someone wrote,
+ * so reading it is not repairing it.
+ */
+const codeWords = (code: string) =>
+	code
+		.replace(/([a-z])([A-Z])/g, '$1 $2')
+		.toLowerCase()
+		.trim();
+
 /** Each saying, and whether it is short enough to tell in a room rather than on a closer look. */
 const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 	[
@@ -16,7 +27,7 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 			const given = t['hygiene:date'] ? `, given in ${monthYear(t['hygiene:date'])}` : '';
 			return /^\d$/.test(rating)
 				? `Its food hygiene rating is ${rating}${given}.`
-				: `Its food hygiene rating: “${rating}”${given}.`;
+				: `Its food hygiene rating: ${codeWords(rating)}${given}.`;
 		}
 	],
 	[

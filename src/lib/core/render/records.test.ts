@@ -9,9 +9,12 @@ describe('recordSentences', () => {
 		]);
 	});
 
-	it('quotes a rating that is not a number exactly as found', () => {
+	it('gives a rating that is not a number in words, as the inspectors’ codes are read', () => {
 		expect(recordSentences({ 'hygiene:rating': 'AwaitingInspection' })).toEqual([
-			'Its food hygiene rating: “AwaitingInspection”.'
+			'Its food hygiene rating: awaiting inspection.'
+		]);
+		expect(recordSentences({ 'hygiene:rating': 'Exempt' })).toEqual([
+			'Its food hygiene rating: exempt.'
 		]);
 	});
 

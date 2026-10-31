@@ -257,10 +257,27 @@ export class Adventure {
 		this.choosing = true;
 		this.now = now;
 		const today = [weatherNow(now), airNow(now), skyLine(now)].filter(Boolean).join(' ');
-		return [
-			...(today ? [{ lines: [today] }] : []),
-			{ lines: [OFFER], actions: [...this.continuing(), ...TAKE_TOUR] }
-		];
+		return [...(today ? [{ lines: [today] }] : []), this.offering()];
+	}
+
+	/**
+	 * The tour, offered with the other ways in where the map has them: each open area but the
+	 * tour's own, a walk begun by chance, and, as the page's word, what else may be typed.
+	 */
+	private offering(): Reply {
+		const doors = (this.world.doors ?? [])
+			.filter((d) => d.stop && d.stop !== this.world.start)
+			.map((d) => ({ label: `Start in ${d.name}`, command: `start in ${d.name}` }));
+		const chance = this.world.anywhere?.length
+			? [{ label: 'Start anywhere', command: 'start anywhere' }]
+			: [];
+		return {
+			lines: [OFFER],
+			actions: [...this.continuing(), ...TAKE_TOUR, ...doors, ...chance],
+			...(this.world.doors?.length
+				? { hint: 'Or type start at, then a postcode, a street or a place.' }
+				: {})
+		};
 	}
 
 	/** The start of the walk: Guide introduces themselves and offers the tour. */
@@ -272,16 +289,13 @@ export class Adventure {
 		if (about && asOf)
 			return [
 				{ lines: [...INTRO, ...ledgerLines(asOf, about), ...(today ? [today] : [])] },
-				{ lines: [OFFER], actions: [...this.continuing(), ...TAKE_TOUR] }
+				this.offering()
 			];
 		const sky = today ? ` ${today}` : '';
 		const map = asOf
 			? `The map I carry is dated ${longDate(asOf)}.${sky} Beyond it there may be more. I could not say what.`
 			: 'Beyond my map there may be more. I could not say what.';
-		return [
-			{ lines: [...INTRO, map] },
-			{ lines: [OFFER], actions: [...this.continuing(), ...TAKE_TOUR] }
-		];
+		return [{ lines: [...INTRO, map] }, this.offering()];
 	}
 
 	/** The place nearest a latitude and longitude given as "51.38, -0.07", and how far it is. */
