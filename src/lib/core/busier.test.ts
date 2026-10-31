@@ -44,4 +44,37 @@ describe('isBusier: a stop whose data has something going on', () => {
 		expect(isBusier(scene([beat({ building: 'yes' }), beat({ natural: 'tree' })]))).toBe(false);
 		expect(isBusier(scene([]))).toBe(false);
 	});
+
+	it('passes over a park, golf course or wood the stop is in or beside, its other accounts too', () => {
+		const ground = (tags: Record<string, string>) =>
+			scene(
+				[beat(tags), beat({ description: 'park in Inventa' }, { elsewhere: true })].slice(0, 1)
+			);
+		expect(isBusier(ground({ leisure: 'park', name: 'Inventa Fields' }))).toBe(false);
+		expect(isBusier(ground({ leisure: 'golf_course', name: 'Inventa Golf Club' }))).toBe(false);
+		expect(isBusier(ground({ natural: 'wood', name: 'Inventa Wood' }))).toBe(false);
+		const described = {
+			subject: 'park',
+			facts: [
+				...facts('park', { leisure: 'park', name: 'Inventa Fields' }),
+				...facts('park', { description: 'park in Inventa' }).map((f) => ({
+					...f,
+					elsewhere: true as const
+				}))
+			],
+			effects: [] as never
+		};
+		expect(isBusier(scene([described]))).toBe(false);
+	});
+
+	it('still counts the stop for what else is there beside the park', () => {
+		expect(
+			isBusier(
+				scene([
+					beat({ leisure: 'park', name: 'Inventa Fields' }),
+					beat({ amenity: 'place_of_worship', name: 'Inventa Chapel' })
+				])
+			)
+		).toBe(true);
+	});
 });
