@@ -72,7 +72,11 @@ const world = areas.some((a) => a.open)
 			doors: doorsFor(
 				opened,
 				areas,
-				(ward) => areas.find((a) => ward !== undefined && a.wards.includes(ward))?.name
+				(ward) => areas.find((a) => ward !== undefined && a.wards.includes(ward))?.name,
+				(area) =>
+					console.warn(
+						`${area}: its start is not on this map, so it has no door. Check data/areas.json.`
+					)
 			)
 		}
 	: { ...opened, anywhere: anywhereIn(opened) };
