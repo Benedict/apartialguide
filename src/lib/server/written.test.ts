@@ -24,4 +24,12 @@ describe('WrittenProse (prose written in a session, read back by key)', () => {
 		).toBeUndefined();
 		expect(await new WrittenProse(file).write(prompt)).toBeUndefined();
 	});
+
+	it('is named for whoever wrote it, when they say, so the store keeps who wrote each piece', () => {
+		const dir = mkdtempSync(join(tmpdir(), 'written-'));
+		const file = join(dir, 'prose.json');
+		writeFileSync(file, '{}');
+		expect(new WrittenProse(file, 'Ada Inventa').name).toBe('written by Ada Inventa');
+		expect(new WrittenProse(file).name).toBe('written in a Claude Code session');
+	});
 });

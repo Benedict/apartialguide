@@ -26,8 +26,8 @@ import { notFoundPage } from '../src/lib/server/notfound';
 import { privacyPage } from '../src/lib/server/privacy';
 import { FONT_FILES } from '../src/lib/server/type';
 import { compileWorld } from '../src/lib/core/adventure/world';
-import { exportPage, wordsAmiss } from '../src/lib/server/export';
-import { loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
+import { exportPage, wordsAmiss, writersOf } from '../src/lib/server/export';
+import { loadNarration, loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
 
 const config = readConfig();
 if (!config) {
@@ -35,6 +35,8 @@ if (!config) {
 	process.exit(1);
 }
 const narrator = loadNarrator(config);
+// Everyone the stored prose names as its writer, credited on About as its licence asks.
+const writers = writersOf(loadNarration(config.narrationPath));
 // The place the map is of (PLACE_NAME, PLACE_WITHIN; Addiscombe, in Croydon, unless told), and
 // whether to keep it out of search engines (NOINDEX), as a walk behind a flag is.
 const shown = {
@@ -127,6 +129,7 @@ if (site) {
 			engine,
 			world: { ...head, stops: {} },
 			snapshotDate: config.snapshotDate,
+			writers,
 			flightsUrl: process.env.FLIGHTS_URL,
 			gaId: process.env.GA_MEASUREMENT_ID || undefined,
 			...shown,
@@ -179,6 +182,7 @@ if (site) {
 			engine,
 			world,
 			snapshotDate: config.snapshotDate,
+			writers,
 			flightsUrl: process.env.FLIGHTS_URL,
 			...shown
 		})

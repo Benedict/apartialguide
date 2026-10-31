@@ -1,0 +1,43 @@
+name: Write a place
+description: Write Guide's prose for a place, from what the walk knows there.
+labels: [prose, contribution]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. How to write a place, and the rules its prose must keep, are in [docs/writing-prose.md](https://github.com/Benedict/osm-text-adventure/blob/main/docs/writing-prose.md). In short: walk to the place, type `plainly` to hear everything Guide has there, and write your version from that alone.
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: The link `gps` gives at the place, and its title as the walk shows it.
+    validations:
+      required: true
+  - type: textarea
+    id: plainly
+    attributes:
+      label: What `plainly` said
+      description: Paste it as it appeared. Your prose may use these facts and no others.
+    validations:
+      required: true
+  - type: textarea
+    id: prose
+    attributes:
+      label: Your prose
+      description: 60 to 180 words, in two to four short paragraphs, separated by blank lines.
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Your name, as you'd like it credited
+      description: About lists everyone who has written a place.
+    validations:
+      required: true
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Your words
+      options:
+        - label: I wrote this myself, from what the place says, and give it under CC BY-SA 4.0, as the rest of Guide's prose is.
+          required: true

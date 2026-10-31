@@ -7,7 +7,7 @@ import { gzipSync } from 'node:zlib';
 import { packWorld } from '../core/adventure/packed';
 import { headOf } from '../core/adventure/tiles';
 import type { AdventureWorld } from '../core/adventure/world';
-import { longDate } from '../core/render/words';
+import { list as listOf, longDate } from '../core/render/words';
 import { LIVE, SOURCES } from '../site/sources';
 
 export interface ExportInput {
@@ -31,7 +31,15 @@ export interface ExportInput {
 	noindex?: boolean;
 	/** The site's own address (`SITE_URL`), for the image shown where it is shared. */
 	siteUrl?: string;
+	/** The people who wrote places' prose (`writersOf`), credited on About as its licence asks. */
+	writers?: string[];
 }
+
+/** Everyone a narration store names as having written a piece (`written by …`), each once, in order. */
+export const writersOf = (store: Record<string, { model?: string }>): string[] =>
+	[
+		...new Set(Object.values(store).flatMap((p) => p.model?.match(/^written by (.+)$/)?.[1] ?? []))
+	].sort((a, b) => a.localeCompare(b));
 
 /** A place, and the larger one it lies in, if any. */
 export interface Place {
@@ -76,7 +84,13 @@ const esc = (text: string) =>
 	text.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
 /** The About page: what the piece is, every source and its terms, and who made it. */
-function aboutPage(snapshotDate: string, counted: boolean, place: Place, privacy?: string): string {
+function aboutPage(
+	snapshotDate: string,
+	counted: boolean,
+	place: Place,
+	privacy?: string,
+	writers: string[] = []
+): string {
 	const sources = SOURCES.map(
 		(s) =>
 			`<li><a href="${esc(s.href)}">${esc(s.name)}</a>: ${esc(s.gives)}.${s.live ? ' <em>Asked from your browser as you read; you can turn it off in Settings.</em>' : ''} <span class="terms">${esc(s.terms)}.</span></li>`
@@ -88,7 +102,7 @@ function aboutPage(snapshotDate: string, counted: boolean, place: Place, privacy
 		<p>The map Guide carries is dated ${esc(longDate(snapshotDate))}. ${counted ? PRIVACY.counted : PRIVACY.none}${privacy ? ` <a href="${privacy}">Privacy</a>.` : ''}</p>
 		<h3>A word of warning</h3>
 		<p>Everything Guide says comes from open data, as it stood on the day the map was copied. That data is kept by many hands, and is often out of date, incomplete or wrong. Guide repeats it as found and never corrects it, so do not rely on it: not for directions, opening hours or safety, nor for whether a place is still there, open to the public, or safe to enter. Respect private property, and walk with care.</p>
-		<p>Guide is a character, not an authority. At the busier places, what Guide says was written ahead of time by an AI, Claude, made by Anthropic, from the facts there alone, and checked by rules that refuse any name, number, date or quotation the facts do not hold; elsewhere the code puts it together from the same facts. Even so, a sentence may read more into the facts than they say. Where Guide is confused, the confusion is the data’s, or Guide’s own: it is a partial guide.</p>
+		<p>Guide is a character, not an authority. At the busier places, what Guide says was written ahead of time by an AI, Claude, made by Anthropic, from the facts there alone, and checked by rules that refuse any name, number, date or quotation the facts do not hold; elsewhere the code puts it together from the same facts.${writers.length ? ` Some places were written by people who know them: ${esc(listOf(writers))}.` : ''} Even so, a sentence may read more into the facts than they say. Where Guide is confused, the confusion is the data’s, or Guide’s own: it is a partial guide.</p>
 		<h3>Where Guide’s words come from</h3>
 		<ul class="sources">
 			${sources}
@@ -159,7 +173,8 @@ export function exportPage({
 	gaId,
 	place = ADDISCOMBE,
 	noindex,
-	siteUrl
+	siteUrl,
+	writers
 }: ExportInput): string {
 	return withCsp(
 		`<!doctype html>
@@ -274,7 +289,7 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 <main class="scroll" id="scroll">
 	<h1 class="visually-hidden">A Partial Guide: the walk</h1>
 	<div id="game"><div id="transcript" aria-live="polite"></div></div>
-	${aboutPage(snapshotDate, !!gaId, place, tiles ? '/privacy/' : undefined)}
+	${aboutPage(snapshotDate, !!gaId, place, tiles ? '/privacy/' : undefined, writers)}
 	${settingsPage(!!gaId)}
 </main>
 <form id="prompt" autocomplete="off">

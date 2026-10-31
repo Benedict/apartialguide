@@ -39,10 +39,24 @@ describe('contributions', () => {
 		const guide = read('CONTRIBUTING.md');
 		expect(guide).toContain('openstreetmap.org');
 		expect(guide).toContain('Write the failing test');
-		for (const form of ['guide-says.yml', 'source.yml', 'area.yml'])
+		for (const form of ['guide-says.yml', 'source.yml', 'area.yml', 'write-a-place.yml'])
 			expect(existsSync(`.github/ISSUE_TEMPLATE/${form}`)).toBe(true);
 		expect(existsSync('.github/pull_request_template.md')).toBe(true);
 		expect(existsSync('CODE_OF_CONDUCT.md')).toBe(true);
 		expect(existsSync('SECURITY.md')).toBe(true);
+	});
+
+	it('show how to write a place’s prose, with git or without, and how it is credited', () => {
+		const writing = read('docs/writing-prose.md');
+		expect(read('CONTRIBUTING.md')).toContain('docs/writing-prose.md');
+		for (const step of [
+			'plainly',
+			'npm run narrate:prompts',
+			'PROSE_FROM=',
+			'PROSE_BY=',
+			'CC BY-SA 4.0'
+		])
+			expect(writing).toContain(step);
+		expect(read('.github/ISSUE_TEMPLATE/write-a-place.yml')).toContain('CC BY-SA 4.0');
 	});
 });

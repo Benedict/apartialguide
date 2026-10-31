@@ -256,6 +256,17 @@ describe('exportPage', () => {
 		expect(about).toContain('https://github.com/Benedict/osm-text-adventure');
 	});
 
+	it('credits on About the people who wrote places, as the prose’s licence asks, and says nothing of them without any', () => {
+		const about = (writers?: string[]) =>
+			exportPage({ engine: '', world, snapshotDate: '2026-10-24', writers }).match(
+				/<section id="about"[^]*?<\/section>/
+			)![0];
+		expect(about(['Ada Inventa', 'Bo <Invented>'])).toContain(
+			'Some places were written by people who know them: Ada Inventa and Bo &lt;Invented&gt;.'
+		);
+		expect(about()).not.toContain('people who know them');
+	});
+
 	it('has a Settings page with a choice for each source asked from the browser', () => {
 		expect(page()).toContain('id="settings"');
 		for (const live of LIVE) expect(page()).toContain(`name="${live.key}"`);
