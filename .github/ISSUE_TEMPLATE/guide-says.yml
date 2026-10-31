@@ -1,0 +1,29 @@
+name: Guide says something wrong
+description: Guide says something its facts don't hold, or reads too much into them.
+labels: [prose]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If the map itself is wrong (a name, a building, a shop that has gone), it is best fixed at its source: most of it is [OpenStreetMap](https://www.openstreetmap.org/), which anyone can edit. Guide repeats what it finds and never repairs it. Use this form when Guide says more than its facts, or says them wrongly.
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: The place's title as the walk shows it, or the link from `gps`.
+    validations:
+      required: true
+  - type: textarea
+    id: said
+    attributes:
+      label: What Guide said
+      description: Copy the words, as they appeared.
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong with it
+      description: What the facts there do say, if you know, and how you know.
+    validations:
+      required: true

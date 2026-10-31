@@ -1,0 +1,25 @@
+name: An area to open
+description: Ask for an area to be opened next, or offer to sponsor one.
+labels: [area]
+body:
+  - type: input
+    id: area
+    attributes:
+      label: The area
+      description: Its name, as the walk names it at its edge ("… is not open yet").
+    validations:
+      required: true
+  - type: dropdown
+    id: sponsor
+    attributes:
+      label: Would you sponsor it?
+      description: Sponsoring pays for its records to be gathered and its prose to be written.
+      options:
+        - No, just asking
+        - Yes, I'd like to talk about it
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why this one

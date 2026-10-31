@@ -1,0 +1,35 @@
+name: DCO
+
+# Every commit of a pull request from a fork must be signed off under the Developer Certificate of
+# Origin (DCO, CONTRIBUTING.md). The maintainer's own branches are his, and are not checked.
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  sign-off:
+    if: github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - name: Every commit signed off
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          missing=0
+          for commit in $(git rev-list --no-merges "$BASE..$HEAD"); do
+            if ! git show -s --format=%B "$commit" | grep -q '^Signed-off-by: '; then
+              echo "::error::$(git show -s --format='%h %s' "$commit") is not signed off"
+              missing=1
+            fi
+          done
+          if [ "$missing" = 1 ]; then
+            echo "Sign off each commit with git commit -s; for commits already made, git rebase --signoff and push again (CONTRIBUTING.md)."
+            exit 1
+          fi

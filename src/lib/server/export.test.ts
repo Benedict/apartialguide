@@ -249,6 +249,24 @@ describe('exportPage', () => {
 		expect(about).toContain('Claude');
 	});
 
+	it('says on About that the code is free under the GNU AGPL, and where to find it', () => {
+		const about = page().match(/<section id="about"[^]*?<\/section>/)![0];
+		expect(about).toContain('GNU Affero General Public License');
+		expect(about).toContain('https://creativecommons.org/licenses/by-sa/4.0/');
+		expect(about).toContain('https://github.com/Benedict/osm-text-adventure');
+	});
+
+	it('credits on About the people who wrote places, as the prose’s licence asks, and says nothing of them without any', () => {
+		const about = (writers?: string[]) =>
+			exportPage({ engine: '', world, snapshotDate: '2026-10-24', writers }).match(
+				/<section id="about"[^]*?<\/section>/
+			)![0];
+		expect(about(['Ada Inventa', 'Bo <Invented>'])).toContain(
+			'Some places were written by people who know them: Ada Inventa and Bo &lt;Invented&gt;.'
+		);
+		expect(about()).not.toContain('people who know them');
+	});
+
 	it('leads from About to the walk’s profile on Instagram', () => {
 		const about = page().match(/<section id="about"[^]*?<\/section>/)![0];
 		expect(about).toContain(

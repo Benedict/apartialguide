@@ -25,10 +25,10 @@ if (!config) {
 const path = config.narrationPath ?? 'data/narration/addiscombe.json';
 const store = loadNarration(path);
 const narrator = loadNarrator(config);
-// Prose written in a session (PROSE_FROM, a file of key to prose), another provider's model
+// Prose written in a session or by a person (PROSE_FROM, a file of key to prose; PROSE_BY, who), another provider's model
 // through OpenRouter (NARRATOR_PROVIDER=openrouter, NARRATOR_MODEL), or Claude.
 const model = process.env.PROSE_FROM
-	? new WrittenProse(process.env.PROSE_FROM)
+	? new WrittenProse(process.env.PROSE_FROM, process.env.PROSE_BY)
 	: process.env.NARRATOR_PROVIDER === 'openrouter'
 		? new OpenRouterProse(process.env.NARRATOR_MODEL ?? '')
 		: new AnthropicProse();

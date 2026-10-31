@@ -1,0 +1,25 @@
+name: A source to add
+description: Open data about places that Guide could draw on.
+labels: [source]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: The source
+      description: Its name and a link.
+    validations:
+      required: true
+  - type: input
+    id: licence
+    attributes:
+      label: Its licence
+      description: The walk can use only data under an open licence that allows it.
+    validations:
+      required: true
+  - type: textarea
+    id: gives
+    attributes:
+      label: What it would let Guide say
+      description: An example from a real place, as the source gives it.
+    validations:
+      required: true
