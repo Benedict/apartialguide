@@ -1,4 +1,5 @@
 import { areaAt, type AreaRecord } from './areas';
+import type { SourceRecord } from './adapters/records';
 import type { LatLon } from './geo';
 
 /**
@@ -40,3 +41,30 @@ export const areaSlug = (name: string) =>
 		.toLowerCase()
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/^-|-$/g, '');
+
+/** The places an area holds, as an area's fetch keeps records by them. */
+export interface AreaHolds {
+	inside: (p: LatLon) => boolean;
+	/** Mapped addresses inside the area, as `number|street`, the street lower-cased. */
+	addresses: ReadonlySet<string>;
+	/** Named streets that run inside the area alone. */
+	streets: ReadonlySet<string>;
+}
+
+/** An address as `AreaHolds.addresses` keeps it. */
+export const addressKey = (number: string, street: string) =>
+	`${number.trim()}|${street.trim().toLowerCase()}`;
+
+/**
+ * Whether an area's fetch keeps a record: placed inside the area, at an address the map has inside
+ * it, or about a street that runs inside it alone. Anything else might attach to another area's
+ * stops and change what is said there, so it is left for that area's own fetch.
+ */
+export function keptInArea(holds: AreaHolds): (record: SourceRecord) => boolean {
+	return (r) =>
+		r.at
+			? holds.inside(r.at)
+			: r.address
+				? holds.addresses.has(addressKey(r.address.number, r.address.street))
+				: r.street !== undefined && holds.streets.has(r.street);
+}

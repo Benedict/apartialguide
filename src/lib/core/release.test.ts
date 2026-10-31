@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { AreaRecord } from './areas';
-import { areaBox, areaSlug, areaWards, inArea, type AreaList } from './release';
+import { areaBox, areaSlug, areaWards, inArea, keptInArea, type AreaList } from './release';
 
 // Invented wards and areas, two squares side by side: not real boundaries.
 const square = (west: number): AreaRecord['rings'] => [
@@ -48,5 +48,38 @@ describe('areas made of wards', () => {
 
 	it('names an area’s files by a slug of its name', () => {
 		expect(areaSlug('Park Hill & Whitgift')).toBe('park-hill-whitgift');
+	});
+
+	describe('what an area’s fetch keeps, so no other area’s stops change', () => {
+		const keep = keptInArea({
+			inside: (p) => p[1] < 1,
+			addresses: new Set(['12|inventa road']),
+			streets: new Set(['Inventa Road'])
+		});
+
+		it('keeps a record placed inside, and drops one placed outside', () => {
+			expect(keep({ id: 'a', at: [51.5, 0.5], claims: {} })).toBe(true);
+			expect(keep({ id: 'b', at: [51.5, 1.5], claims: {} })).toBe(false);
+		});
+
+		it('keeps a record at an address the map has inside, whatever its case', () => {
+			expect(keep({ id: 'c', address: { number: '12', street: 'INVENTA ROAD' }, claims: {} })).toBe(
+				true
+			);
+			expect(keep({ id: 'd', address: { number: '14', street: 'Inventa Road' }, claims: {} })).toBe(
+				false
+			);
+		});
+
+		it('keeps a record about a street only when the street runs inside alone', () => {
+			expect(keep({ id: 'e', street: 'Inventa Road', claims: {} })).toBe(true);
+			expect(keep({ id: 'f', street: 'Border Road', claims: {} })).toBe(false);
+		});
+
+		it('keeps a record the map links by its tag, as the link names one thing', () => {
+			expect(keep({ id: 'g', link: { key: 'ref', value: '1' }, at: [51.5, 0.5], claims: {} })).toBe(
+				true
+			);
+		});
 	});
 });
