@@ -12,10 +12,28 @@ permissions:
   contents: write
 
 jobs:
+  # Whether the commit pushed itself edits the request. Asked of git, as a new branch's push event
+  # lists no files.
+  asked:
+    runs-on: ubuntu-latest
+    outputs:
+      edited: ${{ steps.diff.outputs.edited }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - id: diff
+        run: |
+          if [ -n "$(git diff --name-only HEAD~1 HEAD -- data/snapshots/request.env 2>/dev/null)" ]; then
+            echo edited=true >> "$GITHUB_OUTPUT"
+          else
+            echo edited=false >> "$GITHUB_OUTPUT"
+          fi
   snapshot:
-    # Only when the commit pushed edits the request: a new branch carries older commits that did,
-    # and a push of it would otherwise fetch again and change what prose was written from.
-    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'data/snapshots/request.env') || contains(github.event.head_commit.added, 'data/snapshots/request.env')
+    needs: asked
+    # Only when the commit pushed edits the request (or by hand): a branch that merely carries
+    # older commits that did, such as one joining several areas' fetches, fetches nothing again.
+    if: github.event_name == 'workflow_dispatch' || needs.asked.outputs.edited == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
