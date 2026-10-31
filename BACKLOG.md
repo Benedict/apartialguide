@@ -20,6 +20,13 @@ What is left, and ideas for later phases. Done items move to the changelog in th
   - Beyond the map's edge (the 289 runs to Purley and Elmers End): ride on, told only as stop names and hearsay, or step off at the last mapped stop?
   - Whether TfL lets a page follow one vehicle (`/Vehicle/{id}/Arrivals`) from the browser, as it does arrivals; check its CORS before building. Trams the same, by line.
   - Does riding count as distance walked? The goal is walking, so probably not: a separate `Ridden:` on the status line, or nothing.
+- **Record a memory here.** A reader leaves a few words at a stop, and later readers meet them there. To settle first:
+  - **Whose words.** Guide speaks only from the sources, so a memory would be read as found, as a bench's words are ("Someone left word here: “…”"), never in Guide's voice, and never feeding the prose written ahead of time.
+  - **Where they live.** The site is static, so memories need a store of their own (a database behind a function), not the repository.
+  - **Moderation.** Words anyone can leave, anyone can abuse: hold each until it is read and approved, or show it only to the one who left it until then.
+  - **Privacy.** A memory can name a person or a home. No names of private people, nothing kept about who left it beyond what moderation needs, and the privacy policy first.
+  - **Scale.** One per reader per stop, a few lines, shown at most one or two at a time.
+- **The glass.** A circle set down by chance in an open area, about a street map's glass across; the route kept as close to the curve as the streets allow, the next turn and the circle's progress told at each stop; on closing it, the record of the walk: the names met, the words read on plaques and benches, the rhymes found, in order, and how far the walk strayed from the curve. Every word the walk's own. Never named for what it is in the copy.
 - **More of the classic engine.** Ideas the distance goal opens: a walk's end (a "you have walked as far as Guide remembers" at the last mark), a map of where you have been.
 - **The inline map on the SvelteKit reader.** The exported page has it; the dev reader does not.
 

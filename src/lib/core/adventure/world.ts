@@ -112,6 +112,11 @@ export interface Ledger {
 }
 
 export interface AdventureWorld {
+	/**
+	 * The areas a walk may begin in, by the names people know: each open one with its first place, each
+	 * one not open yet without, so the edge can name it.
+	 */
+	doors?: { name: string; stop?: StopId }[];
 	/** Where a reader may ask to hear when an area not open yet opens (`SIGNUP_URL`), if anywhere. */
 	signup?: string;
 	start: StopId;

@@ -8,7 +8,7 @@ import type { LatLon } from './geo';
  * outline of its own.
  */
 /** An area may be marked `open`: only open areas are walked, once any is. */
-export type AreaList = { name: string; wards: string[]; open?: boolean }[];
+export type AreaList = { name: string; wards: string[]; open?: boolean; start?: string }[];
 
 /** The wards an area is made of; an area not on the list is refused, never taken as everywhere. */
 export function areaWards(areas: AreaList, name: string): string[] {

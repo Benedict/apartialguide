@@ -416,3 +416,13 @@ describe('the page for another place', () => {
 		expect(html).not.toContain('application/ld+json');
 	});
 });
+
+describe('entering the walk from a link', () => {
+	it('begins where the address says, once the walk is ready, and again when it changes', () => {
+		const html = page();
+		const offered = html.indexOf('game.offer(');
+		const entered = html.indexOf('entryFrom(location.hash');
+		expect(entered).toBeGreaterThan(offered);
+		expect(html).toMatch(/addEventListener\('hashchange', enter\)/);
+	});
+});
