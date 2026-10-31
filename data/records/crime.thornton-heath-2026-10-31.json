@@ -1,0 +1,857 @@
+{
+	"source": "police.uk",
+	"prefix": "crime",
+	"records": [
+		{
+			"id": "Silverleigh Road|2026-08",
+			"street": "Silverleigh Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Gillett Road|2026-08",
+			"street": "Gillett Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "5",
+				"kinds": "anti-social behaviour (2), violent crime (2), theft from the person (1)"
+			}
+		},
+		{
+			"id": "Thornton Road|2026-08",
+			"street": "Thornton Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "9",
+				"kinds": "anti-social behaviour (5), burglary (1), other theft (1), public order (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Keston Road|2026-08",
+			"street": "Keston Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Nursery Road|2026-08",
+			"street": "Nursery Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Thornton Row|2026-08",
+			"street": "Thornton Row",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "15",
+				"kinds": "shoplifting (6), violent crime (5), drugs (2), anti-social behaviour (1), other theft (1)"
+			}
+		},
+		{
+			"id": "Buller Road|2026-08",
+			"street": "Buller Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (1), drugs (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Colvin Road|2026-08",
+			"street": "Colvin Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "5",
+				"kinds": "other theft (2), violent crime (2), anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Mayday Road|2026-08",
+			"street": "Mayday Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "anti-social behaviour (4)"
+			}
+		},
+		{
+			"id": "Grange Park Road|2026-08",
+			"street": "Grange Park Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "violent crime (2), anti-social behaviour (1), theft from the person (1)"
+			}
+		},
+		{
+			"id": "Parchmore Road|2026-08",
+			"street": "Parchmore Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "6",
+				"kinds": "anti-social behaviour (5), drugs (1)"
+			}
+		},
+		{
+			"id": "Woodville Road|2026-08",
+			"street": "Woodville Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (3)"
+			}
+		},
+		{
+			"id": "Michael Road|2026-08",
+			"street": "Michael Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "anti-social behaviour (4)"
+			}
+		},
+		{
+			"id": "Headcorn Place|2026-08",
+			"street": "Headcorn Place",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "7",
+				"kinds": "anti-social behaviour (4), violent crime (2), other theft (1)"
+			}
+		},
+		{
+			"id": "Dunheved Road North|2026-08",
+			"street": "Dunheved Road North",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "8",
+				"kinds": "anti-social behaviour (3), violent crime (3), other theft (1), possession of weapons (1)"
+			}
+		},
+		{
+			"id": "Wrights Road|2026-08",
+			"street": "Wrights Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Burlington Road|2026-08",
+			"street": "Burlington Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (2)"
+			}
+		},
+		{
+			"id": "Cecil Road|2026-08",
+			"street": "Cecil Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "anti-social behaviour (1), other crime (1), vehicle crime (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Manchester Road|2026-08",
+			"street": "Manchester Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Crossland Road|2026-08",
+			"street": "Crossland Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "5",
+				"kinds": "anti-social behaviour (2), violent crime (2), other crime (1)"
+			}
+		},
+		{
+			"id": "Donald Road|2026-08",
+			"street": "Donald Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Parchmore Way|2026-08",
+			"street": "Parchmore Way",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (2)"
+			}
+		},
+		{
+			"id": "Wortley Road|2026-08",
+			"street": "Wortley Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "anti-social behaviour (3), violent crime (1)"
+			}
+		},
+		{
+			"id": "Cotford Road|2026-08",
+			"street": "Cotford Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "9",
+				"kinds": "drugs (6), anti-social behaviour (1), public order (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Hamilton Road|2026-08",
+			"street": "Hamilton Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Dunheved Road South|2026-08",
+			"street": "Dunheved Road South",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "8",
+				"kinds": "anti-social behaviour (4), drugs (2), violent crime (2)"
+			}
+		},
+		{
+			"id": "Beulah Crescent|2026-08",
+			"street": "Beulah Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "violent crime (3), anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Headcorn Road|2026-08",
+			"street": "Headcorn Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (2), violent crime (1)"
+			}
+		},
+		{
+			"id": "Wharncliffe Gardens|2026-08",
+			"street": "Wharncliffe Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Speke Road|2026-08",
+			"street": "Speke Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Frederick Gardens|2026-08",
+			"street": "Frederick Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Boston Road|2026-08",
+			"street": "Boston Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Furtherfield Close|2026-08",
+			"street": "Furtherfield Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "public order (2), anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Willett Road|2026-08",
+			"street": "Willett Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "6",
+				"kinds": "violent crime (3), anti-social behaviour (1), other theft (1), public order (1)"
+			}
+		},
+		{
+			"id": "Willett Place|2026-08",
+			"street": "Willett Place",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Trafford Road|2026-08",
+			"street": "Trafford Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Goulding Gardens|2026-08",
+			"street": "Goulding Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "violent crime (3), anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Aurelia Gardens|2026-08",
+			"street": "Aurelia Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Thornton Avenue|2026-08",
+			"street": "Thornton Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), burglary (1)"
+			}
+		},
+		{
+			"id": "Ashley Road|2026-08",
+			"street": "Ashley Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "burglary (1)"
+			}
+		},
+		{
+			"id": "Annsworthy Avenue|2026-08",
+			"street": "Annsworthy Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "burglary (1)"
+			}
+		},
+		{
+			"id": "Penrith Road|2026-08",
+			"street": "Penrith Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "burglary (1)"
+			}
+		},
+		{
+			"id": "Fountain Road|2026-08",
+			"street": "Fountain Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "drugs (1)"
+			}
+		},
+		{
+			"id": "Parry Road|2026-08",
+			"street": "Parry Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "drugs (1), possession of weapons (1)"
+			}
+		},
+		{
+			"id": "Hallowell Gardens|2026-08",
+			"street": "Hallowell Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "violent crime (2), drugs (1), public order (1)"
+			}
+		},
+		{
+			"id": "Beulah Road|2026-08",
+			"street": "Beulah Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "drugs (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Fiveacre Close|2026-08",
+			"street": "Fiveacre Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "8",
+				"kinds": "violent crime (3), shoplifting (2), drugs (1), possession of weapons (1), theft from the person (1)"
+			}
+		},
+		{
+			"id": "Lancing Road|2026-08",
+			"street": "Lancing Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "drugs (2)"
+			}
+		},
+		{
+			"id": "Foulsham Road|2026-08",
+			"street": "Foulsham Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "violent crime (2), drugs (1)"
+			}
+		},
+		{
+			"id": "Marden Crescent|2026-08",
+			"street": "Marden Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "other theft (1)"
+			}
+		},
+		{
+			"id": "Brading Road|2026-08",
+			"street": "Brading Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "other theft (2)"
+			}
+		},
+		{
+			"id": "Camden Gardens|2026-08",
+			"street": "Camden Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "other theft (1)"
+			}
+		},
+		{
+			"id": "Whitehall Road|2026-08",
+			"street": "Whitehall Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "other theft (1)"
+			}
+		},
+		{
+			"id": "Gilsland Road|2026-08",
+			"street": "Gilsland Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "other theft (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Garnet Road|2026-08",
+			"street": "Garnet Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "other theft (1), public order (1)"
+			}
+		},
+		{
+			"id": "Dairy Close|2026-08",
+			"street": "Dairy Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "possession of weapons (1)"
+			}
+		},
+		{
+			"id": "Songhurst Close|2026-08",
+			"street": "Songhurst Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "public order (1)"
+			}
+		},
+		{
+			"id": "Bensham Grove|2026-08",
+			"street": "Bensham Grove",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "theft from the person (1)"
+			}
+		},
+		{
+			"id": "Wharncliffe Road|2026-08",
+			"street": "Wharncliffe Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Heath Road|2026-08",
+			"street": "Heath Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Bedser Close|2026-08",
+			"street": "Bedser Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Kenmare Road|2026-08",
+			"street": "Kenmare Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Gonville Road|2026-08",
+			"street": "Gonville Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "vehicle crime (3)"
+			}
+		},
+		{
+			"id": "Rosecourt Road|2026-08",
+			"street": "Rosecourt Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "County Road|2026-08",
+			"street": "County Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Shamrock Road|2026-08",
+			"street": "Shamrock Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "vehicle crime (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Meadow View Road|2026-08",
+			"street": "Meadow View Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Egerton Road|2026-08",
+			"street": "Egerton Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "5",
+				"kinds": "violent crime (3), other crime (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Dunheved Close|2026-08",
+			"street": "Dunheved Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Ladbrook Road|2026-08",
+			"street": "Ladbrook Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Norwich Road|2026-08",
+			"street": "Norwich Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "violent crime (2)"
+			}
+		},
+		{
+			"id": "Norbury Road|2026-08",
+			"street": "Norbury Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "other crime (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Coates Close|2026-08",
+			"street": "Coates Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Sharland Close|2026-08",
+			"street": "Sharland Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "violent crime (3)"
+			}
+		},
+		{
+			"id": "Lynton Road|2026-08",
+			"street": "Lynton Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Jamaica Road|2026-08",
+			"street": "Jamaica Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Broughton Road|2026-08",
+			"street": "Broughton Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "violent crime (4)"
+			}
+		},
+		{
+			"id": "Fernham Road|2026-08",
+			"street": "Fernham Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Oakwood Place|2026-08",
+			"street": "Oakwood Place",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Blakemore Road|2026-08",
+			"street": "Blakemore Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Namton Drive|2026-08",
+			"street": "Namton Drive",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "violent crime (2)"
+			}
+		},
+		{
+			"id": "Camden Way|2026-08",
+			"street": "Camden Way",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "violent crime (2)"
+			}
+		},
+		{
+			"id": "Bulganak Road|2026-08",
+			"street": "Bulganak Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Wingate Crescent|2026-08",
+			"street": "Wingate Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Cassland Road|2026-08",
+			"street": "Cassland Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
