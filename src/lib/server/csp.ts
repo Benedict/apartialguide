@@ -33,10 +33,17 @@ const hash = (code: string) =>
 /** The page with its policy put straight after the charset, before anything it governs. */
 export function withCsp(
 	html: string,
-	{ flightsUrl, analytics }: { flightsUrl?: string; analytics?: boolean } = {}
+	{
+		flightsUrl,
+		newsUrl,
+		analytics
+	}: { flightsUrl?: string; newsUrl?: string; analytics?: boolean } = {}
 ): string {
 	const google = analytics ? GOOGLE.join(' ') : '';
-	const flights = flightsUrl && /^https?:\/\//.test(flightsUrl) ? [new URL(flightsUrl).origin] : [];
+	// The site's own functions, where one is served from another site (a URL rather than a path).
+	const flights = [flightsUrl, newsUrl]
+		.filter((u): u is string => !!u && /^https?:\/\//.test(u))
+		.map((u) => new URL(u).origin);
 	const policy = [
 		"default-src 'self'",
 		`script-src 'self' ${[...new Set(inlineScripts(html).map(hash))].join(' ')} ${CDN} ${analytics ? 'https://www.googletagmanager.com' : ''}`,
