@@ -11,10 +11,12 @@
  * counted only once a reader says yes.
  */
 import { build } from 'esbuild';
-import { copyFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { Adventure } from '../src/lib/core/adventure/engine';
+import { closeAreas } from '../src/lib/core/adventure/open';
 import { tileWorld } from '../src/lib/core/adventure/tiles';
+import { closedAreaOf, type AreaList } from '../src/lib/core/release';
 import { landingPage } from '../src/lib/server/landing';
 import { llmsTxt, manifest, robotsTxt, sitemapXml } from '../src/lib/server/meta';
 import { notFoundPage } from '../src/lib/server/notfound';
@@ -37,9 +39,29 @@ const shown = {
 		: {}),
 	noindex: !!process.env.NOINDEX
 };
-const world = compileWorld(narrator, startStop(narrator, config).id, {
-	asOf: config.snapshotDate
-});
+// Only the areas open to walk (data/areas.json, `open`), once any is marked: the rest are left
+// out, uncompiled, and the walk stops at their edge, the page naming the area to come.
+const areasPath = process.env.AREAS_PATH ?? 'data/areas.json';
+const closedOf = closedAreaOf(
+	existsSync(areasPath) ? (JSON.parse(readFileSync(areasPath, 'utf8')).areas as AreaList) : []
+);
+const closed = new Map<string, string>();
+for (const stop of narrator.graph.all()) {
+	const area = closedOf(narrator.areaAt(stop.position)?.name);
+	if (area !== undefined) closed.set(stop.id, area);
+}
+const world = {
+	...closeAreas(
+		compileWorld(narrator, startStop(narrator, config).id, {
+			asOf: config.snapshotDate,
+			include: (id) => !closed.has(id)
+		}),
+		(id) => closed.get(id)
+	),
+	// Where a reader may ask to hear when an area opens (SIGNUP_URL), if anywhere.
+	...(process.env.SIGNUP_URL ? { signup: process.env.SIGNUP_URL } : {})
+};
+if (closed.size) console.log(`${closed.size} stops in areas not open yet are left out`);
 
 const amiss = wordsAmiss(world);
 if (amiss.length) {

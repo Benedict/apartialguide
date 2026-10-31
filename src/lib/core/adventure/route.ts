@@ -38,9 +38,12 @@ export function routeIndex(world: Pick<AdventureWorld, 'stops'>): RouteIndex {
 	for (const [id, stop] of Object.entries(world.stops)) {
 		index.stops[id] = {
 			...(stop.at ? { at: stop.at } : {}),
-			exits: stop.exits.map((e) => (e.street ? [e.label, e.to, e.street] : [e.label, e.to]))
+			// No way is planned into an area not open to walk.
+			exits: stop.exits
+				.filter((e) => !e.closed)
+				.map((e) => (e.street ? [e.label, e.to, e.street] : [e.label, e.to]))
 		};
-		for (const e of stop.exits) if (e.street) add(e.street, id);
+		for (const e of stop.exits) if (e.street && !e.closed) add(e.street, id);
 		for (const t of stop.things)
 			if (!t.background && NAMED.test(t.name)) add(t.name, id, t.aliases);
 	}

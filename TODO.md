@@ -4,6 +4,9 @@ Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
 
 ## Keys and workflows
 
+- [ ] **A mailing list for areas to come.** At the edge of an area not open yet, the page can link to a sign-up. Choose a provider (Buttondown, a Netlify form, Mailchimp…), make a sign-up page, and add its address as the repository **variable** `SIGNUP_URL`. Collecting addresses needs the privacy policy below first.
+- [ ] **Sponsoring an area.** You want people to be able to sponsor an area's prose. Decide what a sponsor gets (a credit on the About page, or on the area's edge note?), how they pay, and whether a sponsor's name may appear in the walk at all. Guide never names sources, so a credit belongs to the page, not to Guide.
+
 - [ ] **Remove the `CROYDON_WALK` variable.** The walk at the root is now the whole borough, so `/croydon/` is no longer built.
 
 - [ ] **Re-narrate.** The walk now stops only at junctions and named places, so every stop is new and the prose written before no longer matches any of them: the walk shows the template until it is rewritten. There are 384 busier stops now (was 1,094). Either run the Narrate workflow with `NARRATE_ONLY=busier` (API, roughly $8–15), or ask Claude to narrate them in a session on your Max plan.
