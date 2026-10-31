@@ -1,0 +1,39 @@
+{
+	"source": "Greater London Authority, Public_Realm_tree_list_2025_November.csv",
+	"prefix": "trees",
+	"records": [
+		{
+			"id": "trees:Horton Way",
+			"street": "Horton Way",
+			"claims": {
+				"count": "1",
+				"kinds": "Hawthorn (1)"
+			}
+		},
+		{
+			"id": "trees:Oak Avenue",
+			"street": "Oak Avenue",
+			"claims": {
+				"count": "1",
+				"kinds": "Sweet Gum (1)"
+			}
+		},
+		{
+			"id": "trees:Upper Shirley Road",
+			"street": "Upper Shirley Road",
+			"claims": {
+				"count": "1",
+				"kinds": "Pedunculate Oak (1)"
+			}
+		},
+		{
+			"id": "trees:Hartland Way",
+			"street": "Hartland Way",
+			"claims": {
+				"count": "1",
+				"kinds": "Large-leaved Lime (1)"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

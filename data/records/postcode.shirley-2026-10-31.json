@@ -1,0 +1,371 @@
+{
+	"source": "Office for National Statistics",
+	"prefix": "postcode",
+	"records": [
+		{
+			"id": "CR0 7GZ",
+			"at": [
+				51.381589,
+				-0.058555
+			],
+			"observed": "2000-10-01",
+			"claims": {
+				"name": "CR0 7GZ",
+				"kind": "postcode",
+				"began": "2000-10",
+				"ended": "2000-10"
+			}
+		},
+		{
+			"id": "CR0 8UF",
+			"at": [
+				51.376723,
+				-0.044434
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CR0 8UF",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CR0 8UG",
+			"at": [
+				51.376723,
+				-0.044434
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CR0 8UG",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CR0 8XH",
+			"at": [
+				51.377717,
+				-0.05014
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CR0 8XH",
+				"kind": "postcode",
+				"began": "1985-04",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CR0 7ZX",
+			"at": [
+				51.388753,
+				-0.057806
+			],
+			"observed": "2000-10-01",
+			"claims": {
+				"name": "CR0 7ZX",
+				"kind": "postcode",
+				"began": "2000-10",
+				"ended": "2000-10"
+			}
+		},
+		{
+			"id": "CR9 8BY",
+			"at": [
+				51.374711,
+				-0.049995
+			],
+			"observed": "2006-08-01",
+			"claims": {
+				"name": "CR9 8BY",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2006-08"
+			}
+		},
+		{
+			"id": "CR9 8BZ",
+			"at": [
+				51.375021,
+				-0.050254
+			],
+			"observed": "1995-07-01",
+			"claims": {
+				"name": "CR9 8BZ",
+				"kind": "postcode",
+				"began": "1994-05",
+				"ended": "1995-07"
+			}
+		},
+		{
+			"id": "CR9 7AP",
+			"at": [
+				51.381787,
+				-0.062901
+			],
+			"observed": "2002-07-01",
+			"claims": {
+				"name": "CR9 7AP",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2002-07"
+			}
+		},
+		{
+			"id": "CR9 7BH",
+			"at": [
+				51.38765,
+				-0.052592
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "CR9 7BH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "CR9 7DJ",
+			"at": [
+				51.385829,
+				-0.051232
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 7DJ",
+				"kind": "postcode",
+				"began": "1990-07",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CR9 8ZP",
+			"at": [
+				51.374711,
+				-0.049995
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 8ZP",
+				"kind": "postcode",
+				"began": "1997-12",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 8ZQ",
+			"at": [
+				51.374711,
+				-0.049995
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 8ZQ",
+				"kind": "postcode",
+				"began": "1997-12",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 8ZR",
+			"at": [
+				51.374711,
+				-0.049995
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 8ZR",
+				"kind": "postcode",
+				"began": "1997-06",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 8ZS",
+			"at": [
+				51.374711,
+				-0.049995
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 8ZS",
+				"kind": "postcode",
+				"began": "1997-06",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 8ZU",
+			"at": [
+				51.374711,
+				-0.049995
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CR9 8ZU",
+				"kind": "postcode",
+				"began": "1996-12",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CR9 8ZX",
+			"at": [
+				51.374711,
+				-0.049995
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "CR9 8ZX",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "CR9 7DP",
+			"at": [
+				51.380604,
+				-0.061514
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "CR9 7DP",
+				"kind": "postcode",
+				"began": "1990-07",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "CR9 7DQ",
+			"at": [
+				51.391292,
+				-0.055312
+			],
+			"observed": "1991-12-01",
+			"claims": {
+				"name": "CR9 7DQ",
+				"kind": "postcode",
+				"began": "1990-07",
+				"ended": "1991-12"
+			}
+		},
+		{
+			"id": "CR9 8AG",
+			"at": [
+				51.373694,
+				-0.052653
+			],
+			"observed": "2022-07-01",
+			"claims": {
+				"name": "CR9 8AG",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2022-07"
+			}
+		},
+		{
+			"id": "CR9 8AN",
+			"at": [
+				51.376989,
+				-0.028602
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "CR9 8AN",
+				"kind": "postcode",
+				"began": "1993-01",
+				"ended": "2024-05"
+			}
+		},
+		{
+			"id": "CR9 8BA",
+			"at": [
+				51.374711,
+				-0.049995
+			],
+			"observed": "2001-01-01",
+			"claims": {
+				"name": "CR9 8BA",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2001-01"
+			}
+		},
+		{
+			"id": "CR9 8BD",
+			"at": [
+				51.374711,
+				-0.049995
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 8BD",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 8BF",
+			"at": [
+				51.374711,
+				-0.049995
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 8BF",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 8BH",
+			"at": [
+				51.374711,
+				-0.049995
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CR9 8BH",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CR9 8BL",
+			"at": [
+				51.372864,
+				-0.028793
+			],
+			"observed": "1991-12-01",
+			"claims": {
+				"name": "CR9 8BL",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "1991-12"
+			}
+		},
+		{
+			"id": "CR9 8BR",
+			"at": [
+				51.374123,
+				-0.050293
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CR9 8BR",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1990-12"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

@@ -1,0 +1,119 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536767",
+			"at": [
+				51.368884,
+				-0.054854
+			],
+			"observed": "1951-01-29",
+			"claims": {
+				"name": "SHIRLEY WINDMILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1951-01-29"
+			}
+		},
+		{
+			"id": "31536794",
+			"at": [
+				51.371313,
+				-0.050038
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "MONUMENT TO MEMBERS OF THE PRESTON FAMILY IN NORTH WEST CORNER OF CHURCHYARD OF ST JOHN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31645793",
+			"at": [
+				51.371197,
+				-0.049583
+			],
+			"observed": "1976-11-29",
+			"claims": {
+				"name": "CHURCH OF ST JOHN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1976-11-29"
+			}
+		},
+		{
+			"id": "31645804",
+			"at": [
+				51.370857,
+				-0.050718
+			],
+			"observed": "1981-10-09",
+			"claims": {
+				"name": "SHIRLEY VICARAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1981-10-09"
+			}
+		},
+		{
+			"id": "31645866",
+			"at": [
+				51.367821,
+				-0.053103
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "110 AND 112, UPPER SHIRLEY ROAD",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31750017",
+			"at": [
+				51.377491,
+				-0.026367
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "THE WHITE LODGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31814605",
+			"at": [
+				51.371164,
+				-0.049225
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "MONUMENT TO PARENTS OF JOHN RUSKIN IN SOUTH EAST CORNER OF CHURCHYARD OF ST JOHN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31831724",
+			"at": [
+				51.375162,
+				-0.031216
+			],
+			"observed": "1998-08-10",
+			"claims": {
+				"name": "CHURCH OF ALL SAINTS",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1998-08-10"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
