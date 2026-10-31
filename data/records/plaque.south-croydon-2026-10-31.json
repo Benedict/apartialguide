@@ -1,0 +1,55 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "60792",
+			"at": [
+				51.35497,
+				-0.1034
+			],
+			"claims": {
+				"name": "Dame PEGGY ASHCROFT 1907–1991 Actress was born here",
+				"description": "plaque",
+				"inscription": "Dame PEGGY ASHCROFT 1907–1991 Actress was born here"
+			}
+		},
+		{
+			"id": "10541",
+			"at": [
+				51.36144,
+				-0.09575
+			],
+			"claims": {
+				"name": "Croydon Cattle Market 1848-1935 site of the purpose-built cattle market, Croydon was an important agricultural centre.",
+				"description": "plaque",
+				"inscription": "Croydon Cattle Market 1848-1935 site of the purpose-built cattle market, Croydon was an important agricultural centre."
+			}
+		},
+		{
+			"id": "10041",
+			"at": [
+				51.35186,
+				-0.10359
+			],
+			"claims": {
+				"name": "David Lean 1908-1991 film director was born here",
+				"description": "plaque",
+				"inscription": "David Lean 1908-1991 film director was born here"
+			}
+		},
+		{
+			"id": "478",
+			"at": [
+				51.36465,
+				-0.09564
+			],
+			"claims": {
+				"name": "Alfred Russel Wallace 1823-1913 naturalist lived here",
+				"description": "plaque",
+				"inscription": "Alfred Russel Wallace 1823-1913 naturalist lived here"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

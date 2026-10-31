@@ -1,0 +1,119 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536759",
+			"at": [
+				51.366998,
+				-0.098581
+			],
+			"observed": "1954-05-20",
+			"claims": {
+				"name": "BOSWELL COTTAGES",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1954-05-20"
+			}
+		},
+		{
+			"id": "31536791",
+			"at": [
+				51.352786,
+				-0.099684
+			],
+			"observed": "1976-10-29",
+			"claims": {
+				"name": "CHURCH OF ST AUGUSTINE",
+				"description": "listed building",
+				"grade": "II*",
+				"listed": "1976-10-29"
+			}
+		},
+		{
+			"id": "31536792",
+			"at": [
+				51.363401,
+				-0.095481
+			],
+			"observed": "1976-10-29",
+			"claims": {
+				"name": "CHURCH OF ST PETER",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1976-10-29"
+			}
+		},
+		{
+			"id": "31536812",
+			"at": [
+				51.362532,
+				-0.071527
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "COOMBE LODGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536814",
+			"at": [
+				51.367292,
+				-0.096648
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "GATEPIERS TO GATES TO NUMBER 23",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536816",
+			"at": [
+				51.360401,
+				-0.083582
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "CHURCH HALL UNITED REFORMED CHURCH OF ST PAUL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31814601",
+			"at": [
+				51.353889,
+				-0.085721
+			],
+			"observed": "1973-12-11",
+			"claims": {
+				"name": "CROHAM HURST HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1973-12-11"
+			}
+		},
+		{
+			"id": "31814628",
+			"at": [
+				51.367056,
+				-0.098724
+			],
+			"observed": "1954-05-20",
+			"claims": {
+				"name": "BOSWELL HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1954-05-20"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

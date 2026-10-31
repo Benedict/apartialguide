@@ -1,0 +1,311 @@
+{
+	"source": "OpenBenches",
+	"prefix": "bench",
+	"records": [
+		{
+			"id": "19194",
+			"at": [
+				51.352116,
+				-0.079887
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "This seat was donated by the / Friends of Croham Hurst Woods"
+			}
+		},
+		{
+			"id": "19193",
+			"at": [
+				51.351727,
+				-0.079959
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "This seat was donated by the / Friends of Croham Hurst Woods"
+			}
+		},
+		{
+			"id": "19198",
+			"at": [
+				51.361763,
+				-0.069424
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / LAURENCE H. DRAKE / 1925 - 1997"
+			}
+		},
+		{
+			"id": "4379",
+			"at": [
+				51.361897,
+				-0.069447
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In loving memory of mum and dad Joan and Philip Cook"
+			}
+		},
+		{
+			"id": "26805",
+			"at": [
+				51.362419,
+				-0.069364
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In fond memory of Watson (Sonny) Humphrey-Gaskin"
+			}
+		},
+		{
+			"id": "23862",
+			"at": [
+				51.361237,
+				-0.068399
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "MAUREEN EUGENIE / 16-8-30 - 11-10-15 / MUM SINGS WITH ANGELS NOW"
+			}
+		},
+		{
+			"id": "19200",
+			"at": [
+				51.36153,
+				-0.068543
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "Iris Chase / 05.01.27 - 22.08.03 / A beautiful person / Loved and missed by so many / Till we meet again"
+			}
+		},
+		{
+			"id": "19199",
+			"at": [
+				51.361504,
+				-0.06837
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / ERNEST NEAL DEXTER"
+			}
+		},
+		{
+			"id": "19202",
+			"at": [
+				51.361893,
+				-0.06843
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF ERNIE GIBBONS / WHO LIVED AND WORKED HERE FOR OVER THIRTY YEARS / REST IN PEACE"
+			}
+		},
+		{
+			"id": "19196",
+			"at": [
+				51.362366,
+				-0.068655
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF JACK AND VERA SAMPSON / WHO BOTH ENJOYED THESE GARDENS"
+			}
+		},
+		{
+			"id": "19206",
+			"at": [
+				51.361839,
+				-0.068226
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF OUR BELOVED / ELIZABETH ELLEN CERUTTI / 1911-1980 / R.I·P / HER FAMILY"
+			}
+		},
+		{
+			"id": "19207",
+			"at": [
+				51.361839,
+				-0.068226
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF TERRY LITTLE / CHANGING SEASONS"
+			}
+		},
+		{
+			"id": "19201",
+			"at": [
+				51.361843,
+				-0.068227
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / RENEE AND LEN ALMOND / 1913 - 1983 AND 1907 -1997"
+			}
+		},
+		{
+			"id": "19195",
+			"at": [
+				51.362389,
+				-0.068583
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / FLORRIE AND FLICK GOGARTY / 1991"
+			}
+		},
+		{
+			"id": "19203",
+			"at": [
+				51.36187,
+				-0.068084
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF / GERTRUDE SUSAN WHITSEY / (1890 - 1978) / WHO LONG ENJOYED THIS GARDEN"
+			}
+		},
+		{
+			"id": "19204",
+			"at": [
+				51.36187,
+				-0.068084
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / CHARLES AND SARAH STABLEFORD / OF SANDERSTEAD"
+			}
+		},
+		{
+			"id": "19205",
+			"at": [
+				51.36187,
+				-0.068084
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / REGINALD MAYES / WHO SO ENJOYED THESE GARDENS / 1905 - 1983"
+			}
+		},
+		{
+			"id": "19208",
+			"at": [
+				51.362038,
+				-0.068188
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "TO THE MEMORY OF THOMAS H. WEST / A CROYDON HORTICULTURIST AND / FOUNDER MEMBER OF THE CROYDON / HORTICULTURAL MUTUAL IMPROVEMENT SOCIETY"
+			}
+		},
+		{
+			"id": "19209",
+			"at": [
+				51.362038,
+				-0.068188
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "FRED THE BUTCHER / A. TOWSE"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
