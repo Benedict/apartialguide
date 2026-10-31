@@ -65,6 +65,26 @@ const pictures: [name: string, width: number, height: number, html: string, styl
 				.replace(/#fff\b/g, t.bright)}</div>`
 		] as [string, number, number, string];
 	}),
+	// The logo in the green phosphor, for LinkedIn: the mark and name, landscape as a post shows
+	// a picture beside a link (1200×627), and square as it shows one alone.
+	...(
+		[
+			['linkedin-green', 1200, 627, 760],
+			['linkedin-green-square', 1200, 1200, 900]
+		] as const
+	).map(([name, width, height, logo]) => {
+		const t = THEMES.find((theme) => theme.key === 'green')!;
+		return [
+			name,
+			width,
+			height,
+			// The name and mark take the page's colours from its variables, as on the site.
+			`<div style="width:${width}px;height:${height}px;background:${t.paper};--ink:${t.ink};--bright:${t.bright};display:flex;align-items:center;justify-content:center">${LOCKUP.replace(
+				'<svg ',
+				`<svg width="${logo}" `
+			)}</div>`
+		] as [string, number, number, string];
+	}),
 	[
 		'post-1-hello',
 		1080,
