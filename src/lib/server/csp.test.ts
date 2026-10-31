@@ -74,4 +74,12 @@ describe('withCsp', () => {
 			'/api/flights'
 		);
 	});
+
+	it('lets the page ask the news function where it is served from another site, and asks nothing new for one of its own', () => {
+		const page = '<!doctype html><html><head><meta charset="utf-8"></head><body></body></html>';
+		expect(withCsp(page, { newsUrl: 'https://news.example.org/api/news' })).toContain(
+			'https://news.example.org'
+		);
+		expect(withCsp(page, { newsUrl: '/api/news' })).not.toContain('gdeltproject');
+	});
 });

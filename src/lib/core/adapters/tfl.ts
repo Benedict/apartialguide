@@ -1,4 +1,72 @@
 import type { Fact } from '../facts';
+import { distance, type LatLon } from '../geo';
+
+/** One disruption on the roads, as TfL's Road Disruption feed answers. */
+export interface TflDisruption {
+	id: string;
+	category?: string;
+	subCategory?: string;
+	/** What is happening, in TfL's words. */
+	comments?: string;
+	endDateTime?: string;
+	lastModifiedTime?: string;
+	geography?: { coordinates?: number[] };
+	streets?: { segments?: { lineString?: string }[] }[];
+}
+
+/** Every point TfL places a disruption at, as latitude and longitude. */
+function pointsOf(d: TflDisruption): LatLon[] {
+	const points: LatLon[] = [];
+	const at = d.geography?.coordinates;
+	if (at) points.push([at[1], at[0]]);
+	for (const street of d.streets ?? [])
+		for (const segment of street.segments ?? []) {
+			try {
+				for (const [lon, lat] of JSON.parse(segment.lineString ?? '[]') as [number, number][])
+					points.push([lat, lon]);
+			} catch {
+				// A line TfL gives that cannot be read is left out, not guessed at.
+			}
+		}
+	return points;
+}
+
+/**
+ * The disruptions on the roads within reach of a place and not yet over, as facts kept by TfL:
+ * what kind, its words as TfL gives them, when it ends, and how far off it lies.
+ */
+export function disruptionFacts(
+	disruptions: readonly TflDisruption[],
+	at: LatLon,
+	now: string,
+	withinMetres = 200
+): Fact[] {
+	return disruptions.flatMap((d) => {
+		if (!d.comments || !d.endDateTime || d.endDateTime <= now) return [];
+		const metres = Math.min(...pointsOf(d).map((p) => distance(at, p)));
+		if (!(metres <= withinMetres)) return [];
+		const subject = `tfl/${d.id}`;
+		const observed = (d.lastModifiedTime ?? now).slice(0, 10);
+		const claims: [string, string | undefined][] = [
+			['category', d.category],
+			['subcategory', d.subCategory],
+			['comments', d.comments],
+			['end', d.endDateTime],
+			['metres', String(Math.round(metres))]
+		];
+		return claims
+			.filter((c): c is [string, string] => !!c[1])
+			.map(([key, value]) => ({
+				id: `${subject}:${key}`,
+				subject,
+				claim: { key, value },
+				source: 'TfL',
+				observed,
+				reach: 0,
+				geometry: []
+			}));
+	});
+}
 
 /** One predicted arrival, as TfL's StopPoint Arrivals answers. */
 export interface TflArrival {

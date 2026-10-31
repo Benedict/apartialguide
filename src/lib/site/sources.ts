@@ -11,7 +11,15 @@ export interface Source {
 }
 
 export type LiveKey =
-	'weather' | 'departures' | 'maps' | 'air' | 'cameras' | 'satellites' | 'flights';
+	| 'weather'
+	| 'departures'
+	| 'roads'
+	| 'maps'
+	| 'air'
+	| 'cameras'
+	| 'satellites'
+	| 'flights'
+	| 'news';
 
 const OGL = 'Open Government Licence v3.0';
 
@@ -36,6 +44,13 @@ export const SOURCES: Source[] = [
 		gives: 'what is due next at the bus and tram stops on the map',
 		terms: 'Powered by TfL Open Data. Contains OS data © Crown copyright and database rights 2016',
 		live: 'departures'
+	},
+	{
+		name: 'TfL road disruptions',
+		href: 'https://api.tfl.gov.uk/',
+		gives: 'works and closures on the roads near the map’s place, as you arrive',
+		terms: 'Powered by TfL Open Data',
+		live: 'roads'
 	},
 	{
 		name: 'OpenFreeMap',
@@ -65,6 +80,14 @@ export const SOURCES: Source[] = [
 		gives: 'the aircraft overhead, as they broadcast themselves',
 		terms: 'Open Database License (ODbL)',
 		live: 'flights'
+	},
+	{
+		name: 'GDELT Project',
+		href: 'https://www.gdeltproject.org/',
+		gives:
+			'the day’s headlines that name the map’s place, when you ask for the news, through this site’s own function, without those that tell of death or crime',
+		terms: 'The GDELT Project, free for any use with citation',
+		live: 'news'
 	},
 	{
 		name: 'Astronomy Engine',
@@ -186,11 +209,13 @@ export const SOURCES: Source[] = [
 const LABELS: Record<LiveKey, string> = {
 	weather: 'Ask after today’s weather',
 	departures: 'Ask what is due at bus and tram stops',
+	roads: 'Ask after works and closures on the roads here',
 	maps: 'Show a map beside gps, on a wide screen',
 	air: 'Ask after the air today',
 	cameras: 'Show what the nearest traffic camera saw, when you use the camera',
 	satellites: 'Work out the satellites overhead, when you look up',
-	flights: 'Ask after the aircraft overhead, when you look up'
+	flights: 'Ask after the aircraft overhead, when you look up',
+	news: 'Ask after the day’s news of the place, when you ask for it'
 };
 
 /** The settings for the sources asked from the reader's browser. */

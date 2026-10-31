@@ -96,3 +96,16 @@ export function fetchFlights(url: string | undefined, get: Get = browserGet, tim
 		return (await res.json()) as { ac?: unknown[] };
 	}, timeoutMs);
 }
+
+/**
+ * The day's news of the map's place, from the site's own news function (`NEWS_URL`), which asks
+ * GDELT and keeps its answer a while. Nothing without the function, or without an answer in time.
+ */
+export function fetchNews(url: string | undefined, get: Get = browserGet, timeoutMs = 5000) {
+	if (!url) return Promise.resolve(undefined);
+	return answered(async () => {
+		const res = await get(url);
+		if (!res.ok) throw new Error(`news answered ${res.status}`);
+		return (await res.json()) as { place?: string; articles?: { title: string; seen?: string }[] };
+	}, timeoutMs);
+}

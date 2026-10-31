@@ -36,7 +36,7 @@ export function privacyPage({
 	contact,
 	siteUrl
 }: PrivacyOptions): string {
-	const live = SOURCES.filter((s) => s.live && s.live !== 'flights')
+	const live = SOURCES.filter((s) => s.live && s.live !== 'flights' && s.live !== 'news')
 		.map((s) => `<li><a href="${esc(s.href)}">${esc(s.name)}</a>: ${esc(s.gives)}.</li>`)
 		.join('\n\t\t\t');
 	const counting = gaId
@@ -97,7 +97,7 @@ ${themeCss()}
 	<ul>
 			${live}
 	</ul>
-	<p>The aircraft overhead are asked through this site’s own function, so the service that tracks them sees the site, not you. The map beside <code>gps</code> loads its code from jsDelivr. Each source can be turned off in <a href="/walk/#settings">Settings</a>, and then nothing is asked of it.</p>
+	<p>The aircraft overhead and the day’s news are asked through this site’s own functions, so the services that keep them (adsb.lol and the GDELT Project) see the site, not you. The map beside <code>gps</code> loads its code from jsDelivr. Each source can be turned off in <a href="/walk/#settings">Settings</a>, and then nothing is asked of it.</p>
 
 	<h2>Counting visits</h2>
 	${counting}

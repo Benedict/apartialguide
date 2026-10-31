@@ -52,6 +52,7 @@ export const COMMANDS: [string[], string?][] = [
 	[['route to'], 'a street or a place'],
 	[['gps on']],
 	[['look up', 'use the camera']],
+	[['news']],
 	[['colour green']],
 	[['save', 'restore', 'help']]
 ];

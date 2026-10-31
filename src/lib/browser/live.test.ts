@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { fetchCamera, fetchFlights, fetchSatellites } from './live';
+import { fetchCamera, fetchFlights, fetchNews, fetchSatellites } from './live';
 
 const at = { latitude: 51.5, longitude: -0.1 };
 const json = (body: unknown, headers: Record<string, string> = {}) =>
@@ -87,5 +87,21 @@ describe('fetchFlights', () => {
 		expect(asked).toEqual(['https://flights.example.org/']);
 		expect(answer).toEqual({ ac: [] });
 		expect(await fetchFlights(undefined)).toBeUndefined();
+	});
+});
+
+describe('fetchNews', () => {
+	it('asks the news function it is given, and nothing without one or without an answer', async () => {
+		const asked: string[] = [];
+		const answer = await fetchNews('/api/news', async (url) => {
+			asked.push(url);
+			return json({ place: 'Inventon', articles: [{ title: 'Invented headline' }] });
+		});
+		expect(asked).toEqual(['/api/news']);
+		expect(answer?.articles?.[0].title).toBe('Invented headline');
+		expect(await fetchNews(undefined)).toBeUndefined();
+		expect(
+			await fetchNews('/api/news', async () => new Response('', { status: 502 }))
+		).toBeUndefined();
 	});
 });
