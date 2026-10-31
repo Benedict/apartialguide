@@ -1,0 +1,317 @@
+{
+	"source": "police.uk",
+	"prefix": "crime",
+	"records": [
+		{
+			"id": "Ecclesbourne Road|2026-08",
+			"street": "Ecclesbourne Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (2)"
+			}
+		},
+		{
+			"id": "Lucerne Road|2026-08",
+			"street": "Lucerne Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Melfort Avenue|2026-08",
+			"street": "Melfort Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "anti-social behaviour (3), burglary (1)"
+			}
+		},
+		{
+			"id": "Warlingham Road|2026-08",
+			"street": "Warlingham Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (2)"
+			}
+		},
+		{
+			"id": "Quadrant Road|2026-08",
+			"street": "Quadrant Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Beverstone Road|2026-08",
+			"street": "Beverstone Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Langdale Road|2026-08",
+			"street": "Langdale Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Marion Road|2026-08",
+			"street": "Marion Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), possession of weapons (1)"
+			}
+		},
+		{
+			"id": "Nutfield Passage|2026-08",
+			"street": "Nutfield Passage",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Seneca Road|2026-08",
+			"street": "Seneca Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (1), robbery (1), theft from the person (1)"
+			}
+		},
+		{
+			"id": "Maplethorpe Road|2026-08",
+			"street": "Maplethorpe Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Kynaston Road|2026-08",
+			"street": "Kynaston Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "burglary (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Bensham Close|2026-08",
+			"street": "Bensham Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "drugs (1)"
+			}
+		},
+		{
+			"id": "Torridge Road|2026-08",
+			"street": "Torridge Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "5",
+				"kinds": "violent crime (3), drugs (1), other theft (1)"
+			}
+		},
+		{
+			"id": "Haslemere Road|2026-08",
+			"street": "Haslemere Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "drugs (1), vehicle crime (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Penshurst Road|2026-08",
+			"street": "Penshurst Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "other theft (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Kynaston Avenue|2026-08",
+			"street": "Kynaston Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "other theft (1)"
+			}
+		},
+		{
+			"id": "Turner Crescent|2026-08",
+			"street": "Turner Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "other theft (1), public order (1)"
+			}
+		},
+		{
+			"id": "Elliott Road|2026-08",
+			"street": "Elliott Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "violent crime (2), other theft (1), public order (1)"
+			}
+		},
+		{
+			"id": "Heathview Road|2026-08",
+			"street": "Heathview Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "7",
+				"kinds": "violent crime (5), public order (2)"
+			}
+		},
+		{
+			"id": "Melfort Road|2026-08",
+			"street": "Melfort Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "violent crime (3), public order (1)"
+			}
+		},
+		{
+			"id": "Berne Road|2026-08",
+			"street": "Berne Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Clarke Close|2026-08",
+			"street": "Clarke Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Kemsing Close|2026-08",
+			"street": "Kemsing Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "violent crime (2), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Bridport Road|2026-08",
+			"street": "Bridport Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Goodman Crescent|2026-08",
+			"street": "Goodman Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Boswell Road|2026-08",
+			"street": "Boswell Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Chessell Close|2026-08",
+			"street": "Chessell Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "violent crime (2)"
+			}
+		},
+		{
+			"id": "Stratford Road|2026-08",
+			"street": "Stratford Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Harry Close|2026-08",
+			"street": "Harry Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Totton Road|2026-08",
+			"street": "Totton Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
