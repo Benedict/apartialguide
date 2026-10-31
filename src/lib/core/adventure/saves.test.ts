@@ -116,15 +116,35 @@ describe('restoring a walk', () => {
 		expect(game.respond('restore 4').lines).toEqual(['Slot 4 is empty.']);
 	});
 
-	it('refuses a walk saved on another map', () => {
+	it('picks up a walk saved on an earlier map, where the place it stood is still on this one', () => {
 		const { game, saves } = walked();
 		game.respond('save 1');
-		const other = new Adventure({ ...world, asOf: '2027-01-01' });
-		other.saves = saves;
-		other.begin();
-		expect(other.respond('restore 1').lines).toEqual([
-			'That walk was on another map. I cannot pick it up on this one.'
+		const later = new Adventure({
+			...world,
+			asOf: '2027-01-01',
+			stops: { ...world.stops, c: stop('New Row', west, { exits: [] }) }
+		});
+		later.saves = saves;
+		later.begin();
+		expect(later.respond('restore 1').title).toBe('Blind Alley');
+		expect(later.respond('score').lines[0]).toMatch(/^You have walked 300 metres in 1 move\./);
+	});
+
+	it('says plainly when the place a walk stood is no longer on the map, and offers the tour', () => {
+		const { game, saves } = walked();
+		game.respond('save 1');
+		const smaller = new Adventure({
+			...world,
+			asOf: '2027-01-01',
+			stops: { a: { ...world.stops.a, exits: [] } }
+		});
+		smaller.saves = saves;
+		smaller.begin();
+		const reply = smaller.respond('restore 1');
+		expect(reply.lines).toEqual([
+			'The place that walk stood is no longer on my map. I cannot pick it up there.'
 		]);
+		expect(reply.actions?.map((a) => a.command)).toEqual(['take the tour']);
 	});
 });
 
@@ -146,5 +166,15 @@ describe('the walk kept as it goes', () => {
 			'Take the tour'
 		]);
 		expect(next.respond('restore auto').title).toBe('Blind Alley');
+	});
+
+	it('offers to continue a walk kept on an earlier map, as the place may still be there', () => {
+		const { saves } = walked();
+		const next = new Adventure({ ...world, asOf: '2027-01-01' });
+		next.saves = saves;
+		const [, offer] = next.begin();
+		expect(offer.actions?.map((a) => a.label)).toContain(
+			'Continue the walk (Blind Alley, 300 metres)'
+		);
 	});
 });

@@ -276,7 +276,7 @@ export class Adventure {
 	/** A button to pick up the walk kept from before, on this map, if there is one. */
 	private continuing(): { label: string; command: string }[] {
 		const kept = this.saves?.get(AUTO);
-		if (!kept || kept.map !== this.mapId()) return [];
+		if (!kept || kept.version !== 1) return [];
 		return [
 			{
 				label: `Continue the walk (${kept.place}, ${distanceWords(kept.walked)})`,
@@ -556,7 +556,7 @@ export class Adventure {
 		];
 	}
 
-	/** Which map this is, so a walk saved on another is never picked up here. */
+	/** Which map this is, kept with a saved walk for the record; a walk is picked up wherever its place still is. */
 	private mapId(): string {
 		// Counted by the account, not by what is open: a world opened as the walk goes has few stops at first.
 		const places = this.world.about?.places ?? Object.keys(this.world.stops).length;
@@ -637,9 +637,7 @@ export class Adventure {
 		if (!slot) {
 			const kept = [AUTO, ...SLOTS]
 				.map((s) => ({ s, walk: saves.get(s) }))
-				.filter(
-					(k): k is { s: string; walk: SavedWalk } => !!k.walk && k.walk.map === this.mapId()
-				);
+				.filter((k): k is { s: string; walk: SavedWalk } => k.walk?.version === 1);
 			if (!kept.length) return { lines: ['There is no walk kept to restore.'] };
 			return {
 				lines: ['Restore which walk?'],
@@ -656,12 +654,30 @@ export class Adventure {
 			return {
 				lines: [slot === AUTO ? 'There is no walk kept to continue.' : `Slot ${slot} is empty.`]
 			};
-		if (walk.version !== 1 || walk.map !== this.mapId() || !this.world.stops[walk.state.here])
+		if (walk.version !== 1)
 			return { lines: ['That walk was on another map. I cannot pick it up on this one.'] };
-		this.load(walk.state);
+		// Stops are named by the map's own ways and nodes, so a walk outlives a newer map wherever
+		// the place it stood is still on it.
+		if (!this.world.stops[walk.state.here])
+			return {
+				lines: ['The place that walk stood is no longer on my map. I cannot pick it up there.'],
+				actions: TAKE_TOUR
+			};
+		this.load(this.within(walk.state));
 		const place = this.look();
 		const said = slot === AUTO ? 'We go on from where we were.' : `Restored from slot ${slot}.`;
 		return this.followed({ ...place, lines: [said, ...place.lines] });
+	}
+
+	/** A kept walk, without the places this map no longer has: where it came from, and a way it asked for. */
+	private within(state: WalkState): WalkState {
+		const has = (id: string) => !!this.world.stops[id];
+		const goals = state.route?.goals.filter(([id]) => has(id));
+		return {
+			...state,
+			previous: state.previous && has(state.previous) ? state.previous : undefined,
+			route: state.route && goals?.length ? { ...state.route, goals } : undefined
+		};
 	}
 
 	private load(state: WalkState): void {
