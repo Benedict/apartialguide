@@ -186,6 +186,19 @@ describe('narrateWorld', () => {
 		expect(result.skipped).toBe(n.graph.all().length - 1);
 	});
 
+	it('looks only at the stops within the area asked for, never visiting the rest', async () => {
+		const { n, west } = narrator();
+		const visited = new Set<string>();
+		const visit = n.visit.bind(n);
+		n.visit = (id) => (visited.add(id), visit(id));
+		const store: NarrationStore = {};
+		const result = await narrateWorld(n, new RecordedModel(said('A street.')), store, {
+			within: (stop) => stop.id === west
+		});
+		expect(result.written).toBe(1);
+		expect([...visited]).toEqual([west]);
+	});
+
 	it('does not store a turn of phrase already used in several places', async () => {
 		const { n } = longStreet();
 		const phrase = 'and the dark sits quietly between them all';

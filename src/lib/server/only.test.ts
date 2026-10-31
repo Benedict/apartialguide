@@ -3,7 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import type { Scene } from '../core/scene';
-import { narrationOnly } from './only';
+import { narrationOnly, narrationWithin } from './only';
 
 // Invented wards and areas: a square ward, not a real boundary.
 const dir = mkdtempSync(join(tmpdir(), 'only-'));
@@ -54,5 +54,12 @@ describe('which stops a narration run writes', () => {
 
 	it('refuses an area it does not know', () => {
 		expect(() => narrationOnly({ NARRATE_AREA: 'Nowhere' }, records, areasPath)).toThrow(/Nowhere/);
+	});
+
+	it('tells by place alone whether a stop is in the area, before it is visited', () => {
+		const within = narrationWithin({ NARRATE_AREA: 'Inventa' }, records, areasPath)!;
+		expect(within({ position: [51.5, 0.5] } as never)).toBe(true);
+		expect(within({ position: [51.5, 1.5] } as never)).toBe(false);
+		expect(narrationWithin({}, records, areasPath)).toBeUndefined();
 	});
 });
