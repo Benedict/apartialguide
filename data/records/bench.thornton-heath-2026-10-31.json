@@ -1,0 +1,87 @@
+{
+	"source": "OpenBenches",
+	"prefix": "bench",
+	"records": [
+		{
+			"id": "26563",
+			"at": [
+				51.389511,
+				-0.111014
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "PRESENTED BY / THE LEAGUE OF FRIENDS"
+			}
+		},
+		{
+			"id": "26562",
+			"at": [
+				51.389629,
+				-0.112192
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "Donated by the / Friends of Croydon"
+			}
+		},
+		{
+			"id": "44675",
+			"at": [
+				51.389263,
+				-0.111172
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "PRESENTED BY / THE FRIENDS OF MAYDAY"
+			}
+		},
+		{
+			"id": "26560",
+			"at": [
+				51.389191,
+				-0.110978
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "Celebrating the life of Andy Jarvie-1939 to 2002 / An inspiration to all whose lives he touched"
+			}
+		},
+		{
+			"id": "26561",
+			"at": [
+				51.38921,
+				-0.111131
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In memory of / RON MEAD / 26.3.1936 - 16.6.2000 / From all his friends at / The Castle Tavern"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

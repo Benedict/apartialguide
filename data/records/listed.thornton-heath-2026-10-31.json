@@ -1,0 +1,77 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536778",
+			"at": [
+				51.397996,
+				-0.092736
+			],
+			"observed": "1976-11-29",
+			"claims": {
+				"name": "CHURCH OF ST ALBAN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1976-11-29"
+			}
+		},
+		{
+			"id": "31536784",
+			"at": [
+				51.386744,
+				-0.110351
+			],
+			"observed": "1972-12-13",
+			"claims": {
+				"name": "WEST CROYDON UNITED REFORMED CHURCH",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1972-12-13"
+			}
+		},
+		{
+			"id": "31750668",
+			"at": [
+				51.388186,
+				-0.104988
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "WALL ENCLOSING CHURCHYARD OF CHURCH OF ST SAVIOUR",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31814604",
+			"at": [
+				51.388322,
+				-0.105054
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "CHURCH OF ST SAVIOUR",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31855902",
+			"at": [
+				51.397743,
+				-0.092646
+			],
+			"observed": "2017-02-27",
+			"claims": {
+				"name": "War Memorial at the Church of St Alban the Martyr",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-27"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
