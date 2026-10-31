@@ -21,6 +21,20 @@ function worldEnv(file: string): Record<string, string> {
 }
 
 describe('the workflows', () => {
+	it('fetch only when the commit pushed edits their request, not for older commits a new branch carries', () => {
+		for (const [file, request] of [
+			['records.yml', 'data/records/request.env'],
+			['history.yml', 'data/history/request.env'],
+			['wikidata.yml', 'data/wikidata/request.env'],
+			['snapshot.yml', 'data/snapshots/request.env']
+		]) {
+			const text = readFileSync(`.github/workflows/${file}`, 'utf8');
+			expect(text, file).toContain(
+				`github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, '${request}') || contains(github.event.head_commit.added, '${request}')`
+			);
+		}
+	});
+
 	it('refuse to deploy a borough in which an open area has no door, as a door the map cannot find would send readers elsewhere', () => {
 		const deploy = readFileSync('.github/workflows/deploy.yml', 'utf8');
 		expect(deploy).toMatch(/^\s+DOORS_REQUIRED: 1$/m);
