@@ -56,7 +56,7 @@ export const HELP =
 	'Type a direction to walk: north, ne, go east, or the name of a street; back retraces your step. ' +
 	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name, or ask me to remember or mark down one, and drop it somewhere else; inventory (i) says what you carry. ' +
-	'Start in an area by its name begins a walk there, and start anywhere somewhere by chance. ' +
+	'Start in an area by its name begins a walk there, start at a place by its name begins there, and start anywhere somewhere by chance. ' +
 	'Place a glass sets a circle down to walk round, and keeps a record of it; glass off lifts it. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
 	'Drift, and I choose the way. Hint for a word about a command; hints off, or on, for one now and then. ' +
@@ -281,6 +281,13 @@ export class Adventure {
 		];
 	}
 
+	/** A place by a name found there, a thing's or a street's, as a way to it is found. */
+	private named(name: string): [StopId, string] | undefined {
+		const index = this.index();
+		if (!index) return undefined;
+		return [...goalsFor(index, name)][0];
+	}
+
 	private door(where: string) {
 		return this.world.doors?.find((d) => d.name.toLowerCase() === where.toLowerCase());
 	}
@@ -304,7 +311,12 @@ export class Adventure {
 		}
 		if (at && this.world.stops[where]) return this.afresh(where);
 		const door = this.door(where);
-		if (at && !door) return { lines: ['That place is not on my map.'] };
+		if (at && !door) {
+			const named = this.named(where);
+			if (!named || !this.world.stops[named[0]]) return { lines: ['That place is not on my map.'] };
+			const reply = this.afresh(named[0]);
+			return { ...reply, lines: [`We begin at ${quote(named[1])}.`, ...reply.lines] };
+		}
 		const open = (this.world.doors ?? []).filter((d) => d.stop);
 		if (!door) {
 			const names = open.map((d) => d.name);
@@ -638,7 +650,11 @@ export class Adventure {
 		if (command.verb === 'start') {
 			if (command.where === 'anywhere') return [(this.chosen = this.somewhere())];
 			const door = this.door(command.where);
-			return door?.stop ? [door.stop] : command.at ? [command.where] : [];
+			if (door?.stop) return [door.stop];
+			if (!command.at) return [];
+			if (this.world.stops[command.where] || /:/.test(command.where)) return [command.where];
+			const named = this.named(command.where);
+			return named ? [named[0]] : [];
 		}
 		if (command.verb === 'restore') {
 			const kept = command.slot ? this.saves?.get(command.slot)?.state : undefined;
@@ -912,6 +928,14 @@ export class Adventure {
 		if (this.index()) return false;
 		const command = parse(input);
 		if (command.verb === 'glass') return command.on;
+		// Beginning at a place by its name needs the names, which the street network carries.
+		if (command.verb === 'start')
+			return (
+				!!command.at &&
+				!this.world.stops[command.where] &&
+				!/:/.test(command.where) &&
+				!this.door(command.where)
+			);
 		if (command.verb === 'go' && this.circling) return true;
 		if (command.verb === 'route') return !!command.target;
 		if (command.verb === 'restore' && command.slot)

@@ -426,3 +426,18 @@ describe('entering the walk from a link', () => {
 		expect(html).toMatch(/addEventListener\('hashchange', enter\)/);
 	});
 });
+
+describe('the order a command is made ready in', () => {
+	it('fetches the street network before opening the places a command needs, as a name may say where', () => {
+		const html = exportPage({
+			engine: 'var Adventure = function () {};',
+			world,
+			snapshotDate: '2026-10-24',
+			tiles: 'tiles/'
+		});
+		const run = html.slice(html.indexOf('async function run(text)'));
+		expect(run.indexOf('game.needsRoutes(text)')).toBeLessThan(
+			run.indexOf('ensure(game.needs(text))')
+		);
+	});
+});
