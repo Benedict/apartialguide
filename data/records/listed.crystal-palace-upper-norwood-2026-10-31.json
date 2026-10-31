@@ -1,0 +1,259 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536736",
+			"at": [
+				51.415313,
+				-0.093094
+			],
+			"observed": "1989-01-26",
+			"claims": {
+				"name": "ST VALERY",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1989-01-26"
+			}
+		},
+		{
+			"id": "31536765",
+			"at": [
+				51.411532,
+				-0.080209
+			],
+			"observed": "1976-10-29",
+			"claims": {
+				"name": "CHURCH OF ST JOHN",
+				"description": "listed building",
+				"grade": "II*",
+				"listed": "1976-10-29"
+			}
+		},
+		{
+			"id": "31536769",
+			"at": [
+				51.417498,
+				-0.081541
+			],
+			"observed": "1975-07-11",
+			"claims": {
+				"name": "CHURCH OF ST ANDREW",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1975-07-11"
+			}
+		},
+		{
+			"id": "31536797",
+			"at": [
+				51.411111,
+				-0.086856
+			],
+			"observed": "1976-10-29",
+			"claims": {
+				"name": "Church of All Saints",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1976-10-29"
+			}
+		},
+		{
+			"id": "31536798",
+			"at": [
+				51.413272,
+				-0.092028
+			],
+			"observed": "1976-03-25",
+			"claims": {
+				"name": "TIVOLI LODGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1976-03-25"
+			}
+		},
+		{
+			"id": "31536799",
+			"at": [
+				51.41621,
+				-0.096825
+			],
+			"observed": "1983-01-13",
+			"claims": {
+				"name": "71, BEULAH HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-01-13"
+			}
+		},
+		{
+			"id": "31536800",
+			"at": [
+				51.416789,
+				-0.098167
+			],
+			"observed": "1976-03-23",
+			"claims": {
+				"name": "77, BEULAH HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1976-03-23"
+			}
+		},
+		{
+			"id": "31536806",
+			"at": [
+				51.414447,
+				-0.083889
+			],
+			"observed": "1951-01-29",
+			"claims": {
+				"name": "WESTOW LODGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1951-01-29"
+			}
+		},
+		{
+			"id": "31645258",
+			"at": [
+				51.414549,
+				-0.083809
+			],
+			"observed": "1951-01-29",
+			"claims": {
+				"name": "BEULAH VILLA",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1951-01-29"
+			}
+		},
+		{
+			"id": "31645266",
+			"at": [
+				51.414288,
+				-0.084003
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "ROCKMOUNT",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31709431",
+			"at": [
+				51.411277,
+				-0.087151
+			],
+			"observed": "1995-05-03",
+			"claims": {
+				"name": "Monument to Vice Admiral Robert Fitzroy in All Saints' Churchyard",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1995-05-03"
+			}
+		},
+		{
+			"id": "31709436",
+			"at": [
+				51.416435,
+				-0.081398
+			],
+			"observed": "1995-08-15",
+			"claims": {
+				"name": "ROSEBANK",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1995-08-15"
+			}
+		},
+		{
+			"id": "31814608",
+			"at": [
+				51.416741,
+				-0.097982
+			],
+			"observed": "1976-03-23",
+			"claims": {
+				"name": "75, BEULAH HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1976-03-23"
+			}
+		},
+		{
+			"id": "31814609",
+			"at": [
+				51.416598,
+				-0.098534
+			],
+			"observed": "1976-03-23",
+			"claims": {
+				"name": "INNISFAIL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1976-03-23"
+			}
+		},
+		{
+			"id": "31855896",
+			"at": [
+				51.417672,
+				-0.082101
+			],
+			"observed": "2017-02-27",
+			"claims": {
+				"name": "War Memorial at Westow Street",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-27"
+			}
+		},
+		{
+			"id": "31855899",
+			"at": [
+				51.410712,
+				-0.086656
+			],
+			"observed": "2017-02-24",
+			"claims": {
+				"name": "War Memorial at the Church of All Saints",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-24"
+			}
+		},
+		{
+			"id": "31855901",
+			"at": [
+				51.411764,
+				-0.080055
+			],
+			"observed": "2017-02-20",
+			"claims": {
+				"name": "War Memorial at St John the Evangelist Church, Upper Norwood",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-20"
+			}
+		},
+		{
+			"id": "31858598",
+			"at": [
+				51.419667,
+				-0.082058
+			],
+			"observed": "2022-02-15",
+			"claims": {
+				"name": "Former Kennedy Shop, 20 Westow Hill",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2022-02-15"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
