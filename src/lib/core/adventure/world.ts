@@ -10,6 +10,8 @@ export interface CompiledExit {
 	label: string;
 	to: StopId;
 	street?: string;
+	/** The area this way leads into, where it is not open to walk yet: the walk stops at its edge. */
+	closed?: string;
 }
 
 export interface CompiledStop {
@@ -110,6 +112,8 @@ export interface Ledger {
 }
 
 export interface AdventureWorld {
+	/** Where a reader may ask to hear when an area not open yet opens (`SIGNUP_URL`), if anywhere. */
+	signup?: string;
 	start: StopId;
 	stops: Record<StopId, CompiledStop>;
 	/** The date of the map Guide carries, YYYY-MM-DD. */
@@ -125,11 +129,13 @@ export interface AdventureWorld {
 export function compileWorld(
 	narrator: Narrator,
 	start: StopId,
-	options: { asOf?: string } = {}
+	/** `include`: the stops to compile, such as those in the areas open to walk; all, if not given. */
+	options: { asOf?: string; include?: (id: StopId) => boolean } = {}
 ): AdventureWorld {
 	const stops: Record<StopId, CompiledStop> = {};
 	const names = new Map<StopId, { said: string; street?: boolean }[]>();
 	for (const stop of narrator.graph.all()) {
+		if (options.include && !options.include(stop.id)) continue;
 		const { room, plan, scene, inView } = narrator.visit(stop.id)!;
 		const transit = transitIn(inView);
 		const area = narrator.areaAt(stop.position);

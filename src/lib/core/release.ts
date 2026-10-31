@@ -7,7 +7,8 @@ import type { LatLon } from './geo';
  * boundaries name them (`data/areas.json`), so what is enriched is exact though the area has no
  * outline of its own.
  */
-export type AreaList = { name: string; wards: string[] }[];
+/** An area may be marked `open`: only open areas are walked, once any is. */
+export type AreaList = { name: string; wards: string[]; open?: boolean }[];
 
 /** The wards an area is made of; an area not on the list is refused, never taken as everywhere. */
 export function areaWards(areas: AreaList, name: string): string[] {
@@ -67,4 +68,17 @@ export function keptInArea(holds: AreaHolds): (record: SourceRecord) => boolean 
 			: r.address
 				? holds.addresses.has(addressKey(r.address.number, r.address.street))
 				: r.street !== undefined && holds.streets.has(r.street);
+}
+
+/**
+ * The area a stop's ward belongs to, where that area is not open to walk; nothing where it is open,
+ * or where no area is marked open yet. A ward no area lists goes by its own name.
+ */
+export function closedAreaOf(areas: AreaList): (ward: string | undefined) => string | undefined {
+	if (!areas.some((a) => a.open)) return () => undefined;
+	return (ward) => {
+		if (ward === undefined) return 'This area';
+		const area = areas.find((a) => a.wards.includes(ward));
+		return area?.open ? undefined : (area?.name ?? ward);
+	};
 }

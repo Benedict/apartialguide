@@ -1,6 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import type { AreaRecord } from './areas';
-import { areaBox, areaSlug, areaWards, inArea, keptInArea, type AreaList } from './release';
+import {
+	areaBox,
+	areaSlug,
+	areaWards,
+	closedAreaOf,
+	inArea,
+	keptInArea,
+	type AreaList
+} from './release';
 
 // Invented wards and areas, two squares side by side: not real boundaries.
 const square = (west: number): AreaRecord['rings'] => [
@@ -80,6 +88,33 @@ describe('areas made of wards', () => {
 			expect(keep({ id: 'g', link: { key: 'ref', value: '1' }, at: [51.5, 0.5], claims: {} })).toBe(
 				true
 			);
+		});
+	});
+
+	describe('which areas are open to walk', () => {
+		const listed: AreaList = [
+			{ name: 'Inventa', wards: ['Inventa North', 'Inventa South'], open: true },
+			{ name: 'Elsewhere', wards: ['Elsewhere'] }
+		];
+		const closed = closedAreaOf(listed);
+
+		it('leaves a stop in an open area open', () => {
+			expect(closed('Inventa South')).toBeUndefined();
+		});
+
+		it('names the area a closed stop lies in, by the area people know', () => {
+			expect(closed('Elsewhere')).toBe('Elsewhere');
+		});
+
+		it('names a ward no area lists by its own name, and a stop in no ward plainly', () => {
+			expect(closed('Over The Border')).toBe('Over The Border');
+			expect(closed(undefined)).toBe('This area');
+		});
+
+		it('opens everything while no area is marked open', () => {
+			expect(
+				closedAreaOf([{ name: 'Inventa', wards: ['Inventa North'] }])('Elsewhere')
+			).toBeUndefined();
 		});
 	});
 });

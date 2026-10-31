@@ -471,7 +471,8 @@ export class Adventure {
 	private go(where: string): Reply {
 		const exits = this.world.stops[this.here].exits;
 		const matches = matchExits(exits, where);
-		if (matches.length === 1) return this.moveTo(matches[0].to);
+		if (matches.length === 1)
+			return matches[0].closed ? this.edge(matches[0].closed) : this.moveTo(matches[0].to);
 		if (matches.length > 1)
 			return { lines: [`Which way: ${matches.map((e) => e.label).join(' or ')}?`] };
 		return {
@@ -480,6 +481,17 @@ export class Adventure {
 					? `You can’t go ${where} from here.`
 					: `There’s no way to ${where} from here.`
 			]
+		};
+	}
+
+	/** The edge of what is open: Guide goes no further, and the page names the area to come. */
+	private edge(area: string): Reply {
+		return {
+			lines: ['The map I carry stops there.'],
+			hint: `${area} is not open yet.`,
+			...(this.world.signup
+				? { link: { href: this.world.signup, text: `Hear when ${area} opens` } }
+				: {})
 		};
 	}
 
@@ -551,7 +563,7 @@ export class Adventure {
 			...new Set([
 				this.here,
 				...(this.previous ? [this.previous] : []),
-				...(stop?.exits.map((e) => e.to) ?? [])
+				...(stop?.exits.filter((e) => !e.closed).map((e) => e.to) ?? [])
 			])
 		];
 	}
@@ -825,7 +837,7 @@ export class Adventure {
 	 * back while there is another way. Guide says which way, never why.
 	 */
 	private drift(): Reply {
-		const exits = this.world.stops[this.here].exits;
+		const exits = this.world.stops[this.here].exits.filter((e) => !e.closed);
 		const onward = exits.filter((e) => e.to !== this.previous);
 		const ways = onward.length ? onward : exits;
 		if (!ways.length) return { lines: ['There is nowhere to drift to.'] };
