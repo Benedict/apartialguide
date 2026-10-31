@@ -18,7 +18,9 @@ describe('settings', () => {
 			air: true,
 			cameras: true,
 			satellites: true,
-			flights: true
+			flights: true,
+			roads: true,
+			news: true
 		});
 	});
 
@@ -32,7 +34,9 @@ describe('settings', () => {
 				air: false,
 				cameras: false,
 				satellites: false,
-				flights: false
+				flights: false,
+				news: false,
+				roads: false
 			},
 			store
 		);
@@ -43,7 +47,9 @@ describe('settings', () => {
 			air: false,
 			cameras: false,
 			satellites: false,
-			flights: false
+			flights: false,
+			news: false,
+			roads: false
 		});
 	});
 
@@ -65,7 +71,9 @@ describe('settings', () => {
 					air: false,
 					cameras: false,
 					satellites: false,
-					flights: false
+					flights: false,
+					news: false,
+					roads: false
 				},
 				refusing
 			)
@@ -77,7 +85,9 @@ describe('settings', () => {
 			air: true,
 			cameras: true,
 			satellites: true,
-			flights: true
+			flights: true,
+			roads: true,
+			news: true
 		});
 		expect(loadSettings(undefined)).toEqual({
 			weather: true,
@@ -86,7 +96,9 @@ describe('settings', () => {
 			air: true,
 			cameras: true,
 			satellites: true,
-			flights: true
+			flights: true,
+			roads: true,
+			news: true
 		});
 		const garbled = memory();
 		garbled.setItem('a-partial-guide:settings', '{not json');
@@ -97,7 +109,9 @@ describe('settings', () => {
 			air: true,
 			cameras: true,
 			satellites: true,
-			flights: true
+			flights: true,
+			roads: true,
+			news: true
 		});
 	});
 });

@@ -12,7 +12,17 @@ describe('SOURCES', () => {
 	});
 
 	it('marks the sources asked from the reader’s browser, each with a setting', () => {
-		const live = ['weather', 'departures', 'maps', 'cameras', 'satellites', 'flights', 'air'];
+		const live = [
+			'weather',
+			'departures',
+			'roads',
+			'maps',
+			'cameras',
+			'satellites',
+			'flights',
+			'news',
+			'air'
+		];
 		expect(SOURCES.filter((s) => s.live).map((s) => s.live)).toEqual(live);
 		expect(LIVE.map((l) => l.key)).toEqual(live);
 	});

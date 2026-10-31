@@ -18,6 +18,8 @@ export interface ExportInput {
 	snapshotDate: string;
 	/** Where the flights function answers, if one is deployed (`FLIGHTS_URL`). */
 	flightsUrl?: string;
+	/** Where the news function answers, if one is deployed (`NEWS_URL`); without it no news is asked. */
+	newsUrl?: string;
 	/**
 	 * Where the world's tiles are served, relative to the page, when it is served in pieces
 	 * (`tileWorld`); the world passed is then the head alone. Without it the page carries the world.
@@ -170,6 +172,7 @@ export function exportPage({
 	world,
 	snapshotDate,
 	flightsUrl,
+	newsUrl,
 	tiles,
 	gaId,
 	place = ADDISCOMBE,
@@ -342,6 +345,7 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 	const settings = loadSettings();
 	// The flights function, if one was deployed when the page was built; without one, no aircraft are asked after.
 	const FLIGHTS = ${JSON.stringify(flightsUrl ?? '')};
+	const NEWS = ${JSON.stringify(newsUrl ?? '')};
 	// Where the world's tiles are served, when it comes in pieces; empty when the page carries it.
 	const TILES = ${JSON.stringify(tiles ?? '')};
 	// Google Analytics, only on the reader's yes: given before, or given now. Never what they type.
@@ -420,6 +424,10 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 				const seen = game.here === here && game.overhead(satellites, flights);
 				if (seen) show(seen);
 			});
+		if (ask === 'news')
+			(settings.news !== false ? fetchNews(NEWS) : Promise.resolve(undefined)).then((answer) => {
+				if (game.here === here) show(game.news(answer));
+			});
 		if (ask === 'camera') {
 			const at = game.position();
 			if (settings.cameras === false || !at) return show(game.camera(undefined));
@@ -480,6 +488,13 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 						const due = game.here === here && game.departures(stop, facts);
 						if (due) show(due);
 					});
+			// Works and closures on the roads here, from TfL, if they allow it; each told once a walk.
+			const at = game.position();
+			if (settings.roads !== false && at)
+				fetchDisruptions([at.latitude, at.longitude]).then((facts) => {
+					const works = game.here === here && game.disruptions(facts);
+					if (works) show(works);
+				});
 		}
 	}
 
@@ -660,6 +675,6 @@ ${tiles ? '' : `<script type="application/gzip" id="world">${packed(world)}</scr
 </body>
 </html>
 `,
-		{ flightsUrl, analytics: !!gaId }
+		{ flightsUrl, newsUrl, analytics: !!gaId }
 	);
 }

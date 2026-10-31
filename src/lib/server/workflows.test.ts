@@ -21,6 +21,15 @@ function worldEnv(file: string): Record<string, string> {
 }
 
 describe('the workflows', () => {
+	it('build the walk with the news function, as with flights, where Netlify serves it', () => {
+		const deploy = readFileSync('.github/workflows/deploy.yml', 'utf8');
+		expect(deploy).toContain("NEWS_URL: ${{ vars.NETLIFY_SITE_ID != '' && '/api/news' || '' }}");
+		const fn = readFileSync('netlify/edge-functions/news.ts', 'utf8');
+		expect(fn).toContain("path: '/api/news'");
+		expect(fn).toContain("cache: 'manual'");
+		expect(fn).toContain('newsHandler');
+	});
+
 	it('fetch only when the commit pushed edits their request, not for older commits a new branch carries', () => {
 		for (const [file, request] of [
 			['records.yml', 'data/records/request.env'],

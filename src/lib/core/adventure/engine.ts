@@ -5,6 +5,7 @@ import { skyLine } from '../render/sky';
 import { weatherNow } from '../render/weather';
 import { airNow } from '../render/air';
 import { departuresLine } from '../render/departures';
+import { disruptionLines } from '../render/disruptions';
 import { beyondLine } from '../render/beyond';
 import { lightingNow } from '../render/lighting';
 import { sunPosition } from '../astronomy';
@@ -48,7 +49,7 @@ export interface Reply {
 	/** Commands to offer as buttons, as well as to type. */
 	actions?: { label: string; command: string }[];
 	/** What the page should ask after, from the reader's browser, and hand back. */
-	ask?: 'overhead' | 'camera';
+	ask?: 'overhead' | 'camera' | 'news';
 	/** A picture to show, such as what a camera saw. */
 	image?: { src: string; alt: string };
 }
@@ -62,7 +63,7 @@ export const HELP =
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
 	'Drift, and I choose the way. Hint for a word about a command; hints off, or on, for one now and then. ' +
 	'Route to a street or a named place for the way there (route off to let it go). ' +
-	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, gps for this place on a map (gps on to keep the map beside you, gps off to put it away), score for how far you have walked, wait (z), again (g), and verbose or brief.';
+	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, news for what is said today of the place, gps for this place on a map (gps on to keep the map beside you, gps off to put it away), score for how far you have walked, wait (z), again (g), and verbose or brief.';
 
 /** What is not said again if heard at either of the last two places: framing lines among them. */
 const RATIONED = ['street', 'setting', 'thing', 'nearest', 'frame'];
@@ -123,7 +124,8 @@ const HINTS: [verb: string, hint: string][] = [
 	['examine', 'type examine, then a thing, to look closer.'],
 	['save', 'type save 1 to keep this walk.'],
 	['glass', 'type place a glass for a circle to walk round.'],
-	['start', 'type start anywhere to begin somewhere by chance.']
+	['start', 'type start anywhere to begin somewhere by chance.'],
+	['news', 'type news for what is said today of the place.']
 ];
 /** How far from the nearest place a latitude and longitude may lie, and still be on the map. */
 const NEAR_ENOUGH = 500;
@@ -214,6 +216,8 @@ export class Adventure {
 	private readonly connected = new Set<string>();
 	/** Today's weather and the sky, as the browser found them when the walk began. */
 	private now: Fact[] = [];
+	/** The disruptions on the roads already told this walk, so each is told once. */
+	private disruptionsTold = new Set<string>();
 	/** Places already told in full; told briefly on return unless verbose. */
 	private readonly visited = new Set<string>();
 	private verbose = false;
@@ -566,6 +570,8 @@ export class Adventure {
 				return { lines: [], ask: 'camera' };
 			case 'areas':
 				return this.areas();
+			case 'news':
+				return { lines: [], ask: 'news' };
 			case 'beyond':
 				return { lines: [this.beyond()] };
 			case 'exits':
@@ -1295,6 +1301,30 @@ export class Adventure {
 	/** The bus and tram stops here that TfL has live arrivals for. */
 	transitHere(): TransitStop[] {
 		return this.world.stops[this.here].transit ?? [];
+	}
+
+	/** Works and closures on the roads here, as the page found them; each told once a walk, nothing without an answer. */
+	disruptions(facts: readonly Fact[] | undefined): Reply | undefined {
+		if (!facts) return undefined;
+		const fresh = facts.filter((f) => !this.disruptionsTold.has(f.subject));
+		const lines = disruptionLines(fresh);
+		if (!lines.length) return undefined;
+		for (const f of fresh) this.disruptionsTold.add(f.subject);
+		return { lines };
+	}
+
+	/** The day's news of the map's place, as the page found it: up to three headlines, as hearsay. */
+	news(answer: { place?: string; articles?: { title: string }[] } | undefined): Reply {
+		const titles = (answer?.articles ?? [])
+			.map((a) => a.title)
+			.filter(Boolean)
+			.slice(0, 3);
+		if (!answer?.place || !titles.length) return { lines: ['No news reaches me.'] };
+		return {
+			lines: titles.map((t, i) =>
+				i === 0 ? `It is said today, of ${answer.place}: “${t}”.` : `And: “${t}”.`
+			)
+		};
 	}
 
 	/** What is due at a stop, as TfL answered; nothing at all without an answer. */

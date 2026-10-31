@@ -912,4 +912,55 @@ describe('Departures', () => {
 			expect(lines.join(' ')).not.toContain('Flood Zone 3');
 		});
 	});
+
+	describe('the roads and the news, as the page asks after them', () => {
+		const fact = (subject: string, key: string, value: string) => ({
+			id: `${subject}:${key}`,
+			subject,
+			claim: { key, value },
+			source: 'TfL',
+			observed: '2026-10-30',
+			reach: 0,
+			geometry: []
+		});
+		// An invented disruption on an invented road.
+		const works = [
+			fact('tfl/T1', 'comments', 'Invented Road - Lane closed.'),
+			fact('tfl/T1', 'end', '2026-11-03T18:00:00Z'),
+			fact('tfl/T1', 'metres', '40')
+		];
+
+		it('tells works on the road here once a walk, and nothing with no answer', () => {
+			const game = new Adventure(world);
+			game.begin();
+			game.respond('take the tour');
+			expect(game.disruptions(works)?.lines).toEqual([
+				'They say of the road here: “Invented Road - Lane closed.”, until 3 November.'
+			]);
+			expect(game.disruptions(works)).toBeUndefined();
+			expect(game.disruptions(undefined)).toBeUndefined();
+		});
+
+		it('asks the page for the news, and tells up to three headlines as hearsay of the place', () => {
+			const game = new Adventure(world);
+			game.begin();
+			game.respond('take the tour');
+			expect(game.respond('news').ask).toBe('news');
+			const titles = ['One invented headline', 'Two', 'Three', 'Four'].map((title) => ({
+				title,
+				seen: '2026-10-31'
+			}));
+			expect(game.news({ place: 'Inventon', articles: titles }).lines).toEqual([
+				'It is said today, of Inventon: “One invented headline”.',
+				'And: “Two”.',
+				'And: “Three”.'
+			]);
+		});
+
+		it('owns to no news without an answer, or with none to tell', () => {
+			const game = new Adventure(world);
+			expect(game.news(undefined).lines).toEqual(['No news reaches me.']);
+			expect(game.news({ place: 'Inventon', articles: [] }).lines).toEqual(['No news reaches me.']);
+		});
+	});
 });

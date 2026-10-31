@@ -10,7 +10,9 @@ const KEYS: LiveKey[] = [
 	'air',
 	'cameras',
 	'satellites',
-	'flights'
+	'flights',
+	'roads',
+	'news'
 ];
 const ASK_ALL = Object.fromEntries(KEYS.map((k) => [k, true])) as Settings;
 

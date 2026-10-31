@@ -141,4 +141,16 @@ describe('parse', () => {
 			expect(parse(t)).toEqual({ verb: 'restore', slot: '3' });
 		expect(parse('restore auto')).toEqual({ verb: 'restore', slot: 'auto' });
 	});
+
+	it('reads asking for the news', () => {
+		for (const text of [
+			'news',
+			'the news',
+			'read the news',
+			'headlines',
+			"what's the news",
+			'whats the news'
+		])
+			expect(parse(text)).toEqual({ verb: 'news' });
+	});
 });

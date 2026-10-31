@@ -143,6 +143,7 @@ if (site) {
 			snapshotDate: config.snapshotDate,
 			writers,
 			flightsUrl: process.env.FLIGHTS_URL,
+			newsUrl: process.env.NEWS_URL || undefined,
 			gaId: process.env.GA_MEASUREMENT_ID || undefined,
 			...shown,
 			siteUrl: process.env.SITE_URL || undefined,
@@ -196,6 +197,7 @@ if (site) {
 			snapshotDate: config.snapshotDate,
 			writers,
 			flightsUrl: process.env.FLIGHTS_URL,
+			newsUrl: process.env.NEWS_URL || undefined,
 			...shown
 		})
 	);

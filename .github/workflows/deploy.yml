@@ -50,6 +50,8 @@ jobs:
           # On Netlify the flights function answers from the same site (netlify/edge-functions);
           # on Pages, from wherever it was deployed on its own, if anywhere.
           FLIGHTS_URL: ${{ vars.NETLIFY_SITE_ID != '' && '/api/flights' || vars.FLIGHTS_URL }}
+          # The day's news of the place, from the site's own function on Netlify; elsewhere none.
+          NEWS_URL: ${{ vars.NETLIFY_SITE_ID != '' && '/api/news' || '' }}
           # Google Analytics, counted only once a reader says yes; without it nothing is asked.
           GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
           # The site's own address, for the image shown where it is shared; without it none is named.

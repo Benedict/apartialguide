@@ -19,6 +19,7 @@ export type Command =
 				| 'weather'
 				| 'overhead'
 				| 'camera'
+				| 'news'
 				| 'beyond'
 				| 'areas'
 				| 'gps'
@@ -212,6 +213,17 @@ export function parse(input: string): Command {
 		].includes(text)
 	)
 		return { verb: 'areas' };
+	if (
+		[
+			'news',
+			'the news',
+			'read the news',
+			'headlines',
+			"what's the news",
+			'whats the news'
+		].includes(text)
+	)
+		return { verb: 'news' };
 	if (['look up', 'lookup', 'look at the sky', 'look skyward', 'up'].includes(text))
 		return { verb: 'overhead' };
 	if (

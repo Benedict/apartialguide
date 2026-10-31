@@ -41,6 +41,14 @@ describe('privacyPage', () => {
 		expect(plain).toContain('href="/walk/#settings"');
 	});
 
+	it('says the aircraft and the news are asked through the site’s own functions, not the reader’s browser', () => {
+		expect(words(plain)).toContain(
+			'The aircraft overhead and the day’s news are asked through this site’s own functions'
+		);
+		expect(words(plain)).toContain('GDELT');
+		expect(words(plain)).toContain('works and closures on the roads');
+	});
+
 	it('without analytics, says nothing is counted; with it, what is counted and only after a yes', () => {
 		expect(words(plain)).toContain('Nothing is counted');
 		expect(words(plain)).not.toContain('Google Analytics');
