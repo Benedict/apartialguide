@@ -7,6 +7,7 @@
  */
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import type { RecordStore } from '../src/lib/core/adapters/records';
+import { readJson } from '../src/lib/server/json';
 import { hygieneRecords } from '../src/lib/server/sources/hygiene';
 import {
 	crimeRecords,
@@ -51,15 +52,17 @@ async function getJson(url: string, extra: Record<string, string> = {}) {
 const name = process.env.SNAPSHOT_NAME ?? 'addiscombe';
 const snapshots = 'data/snapshots';
 const newest = readdirSync(snapshots)
-	.filter((f) => f.startsWith(name) && f.endsWith('.json'))
+	.filter((f) => f.startsWith(name) && /\.json(\.gz)?$/.test(f))
 	.sort()
 	.at(-1)!;
-const bbox: string = JSON.parse(readFileSync(`${snapshots}/${newest}`, 'utf8')).bbox;
+// Gzipped or not, as the borough's is; its elements as varied as the map.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const snapshot = readJson<{ bbox: string; elements: any[] }>(`${snapshots}/${newest}`);
+const bbox: string = snapshot.bbox;
 const [w, s, e, n] = bbox.split(',').map(Number);
 const centre = { lat: (s + n) / 2, lon: (w + e) / 2 };
 console.log(`box ${bbox}, from ${newest}`);
 
-const snapshot = JSON.parse(readFileSync(`${snapshots}/${newest}`, 'utf8'));
 const postcodes = [
 	...new Set(
 		snapshot.elements
