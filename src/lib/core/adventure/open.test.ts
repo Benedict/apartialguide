@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { Adventure } from './engine';
-import { closeAreas, doorsFor } from './open';
+import { anywhereIn, closeAreas, doorsFor } from './open';
 import { routeIndex } from './route';
 import type { AdventureWorld, CompiledStop } from './world';
 
@@ -156,5 +156,19 @@ describe('doorsFor: where each area may be begun', () => {
 			)
 		).toEqual([]);
 		expect(missing).toEqual(['Inventa']);
+	});
+});
+
+describe('anywhereIn: the places worth beginning at by chance', () => {
+	it('holds the places with prose written ahead of time, or a name as found, and no others', () => {
+		const told: AdventureWorld = {
+			...world,
+			stops: {
+				a: { ...world.stops.a, plain: { paragraphs: ['Long Street, plainly.'] } },
+				b: { ...world.stops.b, fragments: ['est Bank'] },
+				c: world.stops.c
+			}
+		};
+		expect(anywhereIn(told)).toEqual(['a', 'b']);
 	});
 });

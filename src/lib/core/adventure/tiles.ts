@@ -57,6 +57,7 @@ export function tileWorld(
 	const head: WorldHead = {
 		...headOf(world),
 		start: names.get(world.start) ?? world.start,
+		...(world.anywhere ? { anywhere: world.anywhere.map((id) => names.get(id) ?? id) } : {}),
 		...(world.doors
 			? {
 					doors: world.doors.map((d) => (d.stop ? { ...d, stop: names.get(d.stop) ?? d.stop } : d))

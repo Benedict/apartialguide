@@ -55,7 +55,7 @@ export const HELP =
 	'Type a direction to walk: north, ne, go east, or the name of a street; back retraces your step. ' +
 	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name, or ask me to remember or mark down one, and drop it somewhere else; inventory (i) says what you carry. ' +
-	'Start in an area by its name begins a walk there. ' +
+	'Start in an area by its name begins a walk there, and start anywhere somewhere by chance. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
 	'Drift, and I choose the way. Hint for a word about a command; hints off, or on, for one now and then. ' +
 	'Route to a street or a named place for the way there (route off to let it go). ' +
@@ -272,7 +272,22 @@ export class Adventure {
 	}
 
 	/** A walk begun afresh: in an area, at its first place, or at a place a shared link names. */
+	/** Where `start anywhere` will begin, chosen when the page asks what to open, so it is open. */
+	private chosen?: StopId;
+
+	/** A place worth beginning at, by chance; the tour's start where the map holds none. */
+	private somewhere(): StopId {
+		const pool = this.world.anywhere ?? [];
+		return pool.length ? pool[Math.floor(this.chance() * pool.length)] : this.world.start;
+	}
+
 	private start(where: string, at?: boolean): Reply {
+		if (where === 'anywhere' && !at) {
+			const id = this.chosen ?? this.somewhere();
+			this.chosen = undefined;
+			const reply = this.afresh(id);
+			return { ...reply, lines: ['Somewhere, then.', ...reply.lines] };
+		}
 		if (at && this.world.stops[where]) return this.afresh(where);
 		const door = this.door(where);
 		if (at && !door) return { lines: ['That place is not on my map.'] };
@@ -603,6 +618,7 @@ export class Adventure {
 		const command = parse(input);
 		if (command.verb === 'again') return this.lastCommand ? this.needs(this.lastCommand) : [];
 		if (command.verb === 'start') {
+			if (command.where === 'anywhere') return [(this.chosen = this.somewhere())];
 			const door = this.door(command.where);
 			return door?.stop ? [door.stop] : command.at ? [command.where] : [];
 		}

@@ -111,9 +111,28 @@ const dropFiller = (words: string[]) => {
 	return words.slice(i);
 };
 
+/** Ways of asking to begin somewhere by chance. */
+const ANYWHERE = new Set([
+	'start anywhere',
+	'begin anywhere',
+	'anywhere',
+	'start somewhere',
+	'somewhere',
+	'surprise me'
+]);
+
 export function parse(input: string): Command {
 	// Beginning somewhere: in an area by its name, or at a place by the map's name for it, as a shared
 	// link gives it, read before punctuation is dropped.
+	if (
+		ANYWHERE.has(
+			input
+				.trim()
+				.toLowerCase()
+				.replace(/[.!?]+$/, '')
+		)
+	)
+		return { verb: 'start', where: 'anywhere' };
 	const at = input.trim().match(/^start at\s+(\S+)$/i);
 	if (at) return { verb: 'start', where: at[1], at: true };
 	const begin = input

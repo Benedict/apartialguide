@@ -86,3 +86,9 @@ export function doorsFor(
 		return inside(world.start) ? [{ name: area.name, stop: world.start }] : [];
 	});
 }
+
+/** The places worth beginning at by chance: those told in prose written ahead of time, or with a name as found. */
+export const anywhereIn = (world: AdventureWorld): StopId[] =>
+	Object.entries(world.stops)
+		.filter(([, stop]) => stop.plain || stop.fragments?.length)
+		.map(([id]) => id);

@@ -112,6 +112,8 @@ export interface Ledger {
 }
 
 export interface AdventureWorld {
+	/** Places worth beginning at, for `start anywhere`: those with something going on. */
+	anywhere?: StopId[];
 	/**
 	 * The areas a walk may begin in, by the names people know: each open one with its first place, each
 	 * one not open yet without, so the edge can name it.
