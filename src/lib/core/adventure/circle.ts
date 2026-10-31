@@ -5,7 +5,7 @@ import { planRoute, type RouteIndex } from './route';
 /** About the circle a glass's rim draws on a street map: 500 metres across. */
 export const GLASS_RADIUS = 250;
 /** A point further by the streets than this many arcs between points is passed over. */
-export const FAR = 5;
+export const FAR = 3;
 /** Points round the curve the way is kept to. */
 const POINTS = 12;
 

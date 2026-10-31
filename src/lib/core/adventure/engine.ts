@@ -23,7 +23,7 @@ import { alludedTo } from '../keepers';
 import { direction, parse } from './parser';
 import type { Telling, Thing } from '../render/renderer';
 import { distance, type LatLon } from '../geo';
-import { circleThrough, FAR, offCurve, walkable, type Circle } from './circle';
+import { arcOf, circleThrough, FAR, offCurve, walkable, type Circle } from './circle';
 import { AUTO, SLOTS, type SaveStore, type SavedWalk, type WalkState } from './saves';
 import type { StopId } from '../stops';
 import { MemoryHints, type HintKeeper, type HintMemory } from './hints';
@@ -1047,13 +1047,13 @@ export class Adventure {
 		if (!c || !index) return [];
 		// A point the streets reach only far round is passed over: the way is kept to the curve, not to
 		// every point on it.
-		const arc = (2 * Math.PI * c.radius) / c.points.length;
+		const arc = arcOf(c);
 		let plan = planRoute(
 			index,
 			this.here,
 			new Map([[c.points[c.next % c.points.length], 'the circle']])
 		);
-		while (c.next < c.points.length && (plan.kind !== 'way' || plan.metres > 3 * arc)) {
+		while (c.next < c.points.length && (plan.kind !== 'way' || plan.metres > FAR * arc)) {
 			c.next++;
 			plan = planRoute(
 				index,
