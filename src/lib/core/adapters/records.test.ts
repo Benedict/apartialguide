@@ -64,6 +64,28 @@ describe('RecordsAdapter', () => {
 		expect(found[0].observed).toBe('2026-10-25');
 	});
 
+	it('takes an address two places share for the one nearest where the record lies, and neither when it lies nowhere', () => {
+		// Two invented streets of one name, some 2 km apart, each with a number 9.
+		const far: OsmElement = {
+			type: 'node',
+			id: 3,
+			lat: 51.4,
+			lon: -0.07,
+			tags: { shop: 'bakery', 'addr:housenumber': '9', 'addr:street': 'Long Street' }
+		};
+		const twice = new OsmIndex({ elements: [cafe, far, shop] });
+		const found = (r: RecordStore['records'][number]) =>
+			new RecordsAdapter(twice, store([r])).facts().map((f) => f.subject);
+		const nine = { number: '9', street: 'Long Street' };
+		expect(
+			found({ id: 'a', address: nine, at: [51.39999, -0.07], claims: { price: '1' } })
+		).toEqual(['node/3']);
+		expect(
+			found({ id: 'b', address: nine, at: [51.38011, -0.0701], claims: { price: '1' } })
+		).toEqual(['node/2']);
+		expect(found({ id: 'c', address: nine, claims: { price: '1' } })).toEqual([]);
+	});
+
 	it('attaches a record by name to a thing of that name close by', () => {
 		const found = facts(
 			store([
