@@ -63,15 +63,15 @@
 			}
 		},
 		{
-			"id": "040823be-4d78-4653-816b-d9ecf6b1cc95",
+			"id": "6be38f53-9727-4073-98a5-c704f25a9ade",
 			"at": [
 				51.403322,
 				-0.072051
 			],
-			"observed": "2025-11-05",
+			"observed": "2025-09-25",
 			"claims": {
 				"name": "Common Pipistrelle",
-				"seen": "2025-11"
+				"seen": "2025-09"
 			}
 		},
 		{
@@ -183,15 +183,15 @@
 			}
 		},
 		{
-			"id": "c61badd8-ec9e-444a-8a7f-454cf4ca8a8c",
+			"id": "77bf8b37-2d51-4b5b-9a77-9fa7cf5778da",
 			"at": [
 				51.397479,
 				-0.075921
 			],
-			"observed": "2020-06-25",
+			"observed": "2021-05-18",
 			"claims": {
 				"name": "Swift",
-				"seen": "2020-06"
+				"seen": "2021-05"
 			}
 		},
 		{
@@ -267,15 +267,15 @@
 			}
 		},
 		{
-			"id": "2fa373f1-a6ed-4e73-beaf-018bddc01638",
+			"id": "ddb870db-23ad-49a5-be61-279a384f3370",
 			"at": [
-				51.391938,
-				-0.080825
+				51.395191,
+				-0.077748
 			],
-			"observed": "2026-09-12",
+			"observed": "2025-09-26",
 			"claims": {
-				"name": "Eupeodes luniger",
-				"seen": "2026-09"
+				"name": "Grey Squirrel",
+				"seen": "2025-09"
 			}
 		}
 	],
