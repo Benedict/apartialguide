@@ -18,7 +18,9 @@
 		},
 		{
 			"name": "Fairfield",
-			"wards": ["Fairfield"]
+			"wards": ["Fairfield"],
+			"open": true,
+			"start": "East Croydon"
 		},
 		{
 			"name": "Park Hill & Whitgift",
