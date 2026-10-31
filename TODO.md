@@ -53,3 +53,6 @@ Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
 
 - [ ] **Civilian war dead.** The CWGC's records need a written licence. Write to them if you want the dead of Addiscombe told.
 - [ ] **Check the live site** on your phone after each merge: <https://benedict.github.io/osm-text-adventure/>.
+
+- [ ] **Turn on private vulnerability reporting.** `SECURITY.md` and the Code of Conduct send reports through GitHub's private reporting: Settings → Code security → Private vulnerability reporting → Enable. Once `CONTACT_EMAIL` is set, it can be named in `SECURITY.md` too.
+- [ ] **The prose's licence.** The code is AGPL-3.0-or-later, and the stored prose in `data/narration/` falls under it for now, as part of the repository. A licence for text, such as CC BY-SA 4.0, may suit it better; say if so.

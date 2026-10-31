@@ -1,6 +1,6 @@
 # A Partial Guide
 
-A text "street view" of Addiscombe, Croydon, read in the browser. One narrator, Guide, walks the streets from OpenStreetMap data, and where the data disagrees, decays or falls silent, so does Guide.
+A text adventure of the real world, built from open data, starting with Croydon: [apartialguide.com](https://apartialguide.com). One narrator, Guide, walks the streets from OpenStreetMap data, and where the data disagrees, decays or falls silent, so does Guide.
 
 ## Run it
 
@@ -22,3 +22,11 @@ Unit tests cover the core. The Gherkin in `features/` holds the acceptance scena
 ## Data
 
 Map data © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), available under the Open Database Licence.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md): wrong data is best fixed at its source, misread prose has an issue form, and every commit is signed off under the [DCO](DCO).
+
+## Licence
+
+The code is under the [GNU Affero General Public License, version 3 or later](LICENSE). The data keeps its sources' own licences, credited on the site's About page; Commit Mono is under the SIL Open Font License.

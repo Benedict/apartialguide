@@ -249,6 +249,12 @@ describe('exportPage', () => {
 		expect(about).toContain('Claude');
 	});
 
+	it('says on About that the code is free under the GNU AGPL, and where to find it', () => {
+		const about = page().match(/<section id="about"[^]*?<\/section>/)![0];
+		expect(about).toContain('GNU Affero General Public License');
+		expect(about).toContain('https://github.com/Benedict/osm-text-adventure');
+	});
+
 	it('has a Settings page with a choice for each source asked from the browser', () => {
 		expect(page()).toContain('id="settings"');
 		for (const live of LIVE) expect(page()).toContain(`name="${live.key}"`);
