@@ -361,41 +361,50 @@ function bridge(
 	}
 	if (sizes.size < 2) return;
 	const main = [...sizes].sort((a, b) => b[1] - a[1])[0][0];
-	for (;;) {
-		// The nearest node of another part, along pavements and crossings from the largest.
-		const metres = new Map<number, number>();
-		const came = new Map<number, { from: number; way: OsmWay }>();
-		const heap = new Heap();
-		for (const [id, p] of part)
-			if (p === main && minor.has(id)) {
-				heap.push(id, 0);
-				metres.set(id, 0);
+	const members = new Map<number, number[]>();
+	for (const [id, p] of part) {
+		const list = members.get(p);
+		if (list) list.push(id);
+		else members.set(p, [id]);
+	}
+	// One search outward from the largest part, along pavements and crossings: each time it reaches
+	// another part, the way there is kept, that part joins the largest, and the search goes on from
+	// it too, rather than starting again, so joining many small parts costs one search, not many.
+	const metres = new Map<number, number>();
+	const came = new Map<number, { from: number; way: OsmWay }>();
+	const heap = new Heap();
+	const from = (id: number) => {
+		if (minor.has(id) && (metres.get(id) ?? Infinity) > 0) {
+			metres.set(id, 0);
+			came.delete(id);
+			heap.push(id, 0);
+		}
+	};
+	for (const id of members.get(main)!) from(id);
+	while (heap.size) {
+		const [id, m] = heap.pop();
+		if (m > metres.get(id)!) continue;
+		const p = part.get(id);
+		if (p !== undefined && p !== main) {
+			const path: number[] = [];
+			for (let at = id; came.has(at); at = came.get(at)!.from) {
+				link(came.get(at)!.from, at, came.get(at)!.way);
+				path.push(came.get(at)!.from);
 			}
-		let reached: number | undefined;
-		while (heap.size) {
-			const [id, m] = heap.pop();
-			if (m > metres.get(id)!) continue;
-			const p = part.get(id);
-			if (p !== undefined && p !== main) {
-				reached = id;
-				break;
-			}
-			for (const e of minor.get(id) ?? []) {
-				const next = m + e.metres;
-				if (next < (metres.get(e.to) ?? Infinity)) {
-					metres.set(e.to, next);
-					came.set(e.to, { from: id, way: e.way });
-					heap.push(e.to, next);
-				}
+			const joined = members.get(p)!;
+			for (const n of joined) part.set(n, main);
+			for (const n of path) part.set(n, main);
+			for (const n of [...joined, ...path]) from(n);
+			continue;
+		}
+		for (const e of minor.get(id) ?? []) {
+			const next = m + e.metres;
+			if (next < (metres.get(e.to) ?? Infinity)) {
+				metres.set(e.to, next);
+				came.set(e.to, { from: id, way: e.way });
+				heap.push(e.to, next);
 			}
 		}
-		if (reached === undefined) return;
-		for (let id = reached; came.has(id); id = came.get(id)!.from)
-			link(came.get(id)!.from, id, came.get(id)!.way);
-		const joined = part.get(reached)!;
-		for (const [id, p] of part) if (p === joined) part.set(id, main);
-		for (let id = reached; came.has(id); id = came.get(id)!.from)
-			part.set(came.get(id)!.from, main);
 	}
 }
 

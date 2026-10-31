@@ -37,6 +37,30 @@ describe('buildStopGraph', () => {
 		expect(labels.sort()).toEqual(['north-east', 'north-east (A Road)']);
 	});
 
+	it('joins parts that only pavements reach, one through another, so no street is cut off', () => {
+		// Three invented streets, none meeting: the first is reached from the second only by a
+		// pavement, and the third only from the second, never straight from the first.
+		const map = new SyntheticMap();
+		const a = [map.node(O), map.nodeFrom(O, 90, 200)];
+		const b = [map.nodeFrom(O, 0, 100), map.nodeFrom(destination(O, 0, 100), 90, 60)];
+		const c = [map.nodeFrom(O, 0, 400), map.nodeFrom(destination(O, 0, 400), 90, 60)];
+		for (const street of [a, b, c]) map.way(street);
+		map.way([a[0], b[0]], { highway: 'footway', footway: 'sidewalk' });
+		map.way([b[0], c[0]], { highway: 'footway', footway: 'sidewalk' });
+		const graph = buildStopGraph(new OsmIndex(map.toData()));
+		const all = graph.all().map((s) => s.id);
+		const seen = new Set([all[0]]);
+		const queue = [all[0]];
+		while (queue.length)
+			for (const e of graph.get(queue.pop()!)!.exits)
+				if (!seen.has(e.to)) {
+					seen.add(e.to);
+					queue.push(e.to);
+				}
+		expect([...seen].sort()).toEqual([...all].sort());
+		expect(all.length).toBeGreaterThanOrEqual(6);
+	});
+
 	it('splits a long street into stops no more than the spacing apart', () => {
 		const map = new SyntheticMap();
 		const a = map.node(O);
