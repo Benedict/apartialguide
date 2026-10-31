@@ -130,3 +130,37 @@ describe('starting anywhere', () => {
 		expect(game.respond('start anywhere').title).toBe('Long Street');
 	});
 });
+
+describe('starting at a place by its name', () => {
+	const named: AdventureWorld = {
+		...world,
+		stops: {
+			...world.stops,
+			c: {
+				...world.stops.c,
+				things: [{ id: 'node/9', name: 'The Sextant', aliases: [], description: 'A pub.' }]
+			}
+		}
+	};
+
+	it('begins at the place where a named thing is found, as a way to it would', () => {
+		const game = new Adventure(named);
+		game.begin();
+		expect(game.needs('start at the sextant')).toEqual(['c']);
+		const reply = game.respond('start at the sextant');
+		expect(reply.title).toBe('Mill Lane');
+		expect(reply.lines[0]).toBe('We begin at “The Sextant”.');
+	});
+
+	it('asks for the street network first, where the page has not given it', () => {
+		const tiled = new Adventure({ ...named, about: { streets: 2, places: 99, accounts: [] } });
+		expect(tiled.needsRoutes('start at the sextant')).toBe(true);
+		expect(tiled.needsRoutes('start in inventa')).toBe(false);
+	});
+
+	it('says plainly when no place by that name is on the map', () => {
+		const game = new Adventure(named);
+		game.begin();
+		expect(game.respond('start at the tabard').lines).toEqual(['That place is not on my map.']);
+	});
+});

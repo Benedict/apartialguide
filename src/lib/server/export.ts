@@ -582,8 +582,9 @@ ${consentStrip('this page')}`
 		recall = history.length;
 		anchor = transcript.appendChild(el('p', '> ' + text, 'command'));
 		try {
-			await ensure(game.needs(text));
+			// The street network first: a place given by its name is found in it before it is opened.
 			if (game.needsRoutes(text)) await loadRoutes();
+			await ensure(game.needs(text));
 		} catch {
 			return show({ lines: ['The way will not come clear. Try again in a moment.'] });
 		}
