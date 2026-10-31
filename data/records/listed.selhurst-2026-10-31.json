@@ -1,0 +1,63 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536764",
+			"at": [
+				51.383388,
+				-0.093057
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "226-228, SYDENHAM ROAD",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31709423",
+			"at": [
+				51.383568,
+				-0.093581
+			],
+			"observed": "1994-11-29",
+			"claims": {
+				"name": "237 AND 239, SYDENHAM ROAD",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1994-11-29"
+			}
+		},
+		{
+			"id": "31814595",
+			"at": [
+				51.383006,
+				-0.098864
+			],
+			"observed": "1974-03-22",
+			"claims": {
+				"name": "BAPTIST CHURCH OF WEST CROYDON",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1974-03-22"
+			}
+		},
+		{
+			"id": "31855904",
+			"at": [
+				51.389865,
+				-0.088436
+			],
+			"observed": "2017-02-21",
+			"claims": {
+				"name": "Selhurst War Memorial",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-21"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

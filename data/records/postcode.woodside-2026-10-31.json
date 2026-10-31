@@ -1,0 +1,833 @@
+{
+	"source": "Office for National Statistics",
+	"prefix": "postcode",
+	"records": [
+		{
+			"id": "CR0 6ZX",
+			"at": [
+				51.39042,
+				-0.074869
+			],
+			"observed": "2000-10-01",
+			"claims": {
+				"name": "CR0 6ZX",
+				"kind": "postcode",
+				"began": "2000-10",
+				"ended": "2000-10"
+			}
+		},
+		{
+			"id": "SE25 4UP",
+			"at": [
+				51.398169,
+				-0.068161
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "SE25 4UP",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "SE25 4UU",
+			"at": [
+				51.396618,
+				-0.069534
+			],
+			"observed": "2006-07-01",
+			"claims": {
+				"name": "SE25 4UU",
+				"kind": "postcode",
+				"began": "2005-06",
+				"ended": "2006-07"
+			}
+		},
+		{
+			"id": "SE25 4XF",
+			"at": [
+				51.393256,
+				-0.065292
+			],
+			"observed": "1995-07-01",
+			"claims": {
+				"name": "SE25 4XF",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1995-07"
+			}
+		},
+		{
+			"id": "SE25 4XJ",
+			"at": [
+				51.393299,
+				-0.064628
+			],
+			"observed": "2003-04-01",
+			"claims": {
+				"name": "SE25 4XJ",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2003-04"
+			}
+		},
+		{
+			"id": "SE25 4LD",
+			"at": [
+				51.395054,
+				-0.065216
+			],
+			"observed": "1986-12-01",
+			"claims": {
+				"name": "SE25 4LD",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1986-12"
+			}
+		},
+		{
+			"id": "SE25 4LE",
+			"at": [
+				51.395054,
+				-0.065216
+			],
+			"observed": "1986-12-01",
+			"claims": {
+				"name": "SE25 4LE",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1986-12"
+			}
+		},
+		{
+			"id": "SE25 4LF",
+			"at": [
+				51.394179,
+				-0.06669
+			],
+			"observed": "1988-12-01",
+			"claims": {
+				"name": "SE25 4LF",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1988-12"
+			}
+		},
+		{
+			"id": "SE25 4LJ",
+			"at": [
+				51.397797,
+				-0.067975
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "SE25 4LJ",
+				"kind": "postcode",
+				"began": "1992-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "SE25 4LQ",
+			"at": [
+				51.39758,
+				-0.06682
+			],
+			"observed": "2010-07-01",
+			"claims": {
+				"name": "SE25 4LQ",
+				"kind": "postcode",
+				"began": "1987-04",
+				"ended": "2010-07"
+			}
+		},
+		{
+			"id": "SE25 4RT",
+			"at": [
+				51.391878,
+				-0.060232
+			],
+			"observed": "2008-01-01",
+			"claims": {
+				"name": "SE25 4RT",
+				"kind": "postcode",
+				"began": "2007-07",
+				"ended": "2008-01"
+			}
+		},
+		{
+			"id": "SE25 4RU",
+			"at": [
+				51.39231,
+				-0.062457
+			],
+			"observed": "1986-12-01",
+			"claims": {
+				"name": "SE25 4RU",
+				"kind": "postcode",
+				"began": "1985-04",
+				"ended": "1986-12"
+			}
+		},
+		{
+			"id": "SE25 4NR",
+			"at": [
+				51.398169,
+				-0.068161
+			],
+			"observed": "1998-06-01",
+			"claims": {
+				"name": "SE25 4NR",
+				"kind": "postcode",
+				"began": "1994-12",
+				"ended": "1998-06"
+			}
+		},
+		{
+			"id": "SE25 4RW",
+			"at": [
+				51.391412,
+				-0.062494
+			],
+			"observed": "1994-12-01",
+			"claims": {
+				"name": "SE25 4RW",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1994-12"
+			}
+		},
+		{
+			"id": "SE25 4PG",
+			"at": [
+				51.397892,
+				-0.073722
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "SE25 4PG",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "SE25 4PH",
+			"at": [
+				51.396047,
+				-0.070924
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "SE25 4PH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "SE25 4PN",
+			"at": [
+				51.39582,
+				-0.069108
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "SE25 4PN",
+				"kind": "postcode",
+				"began": "1981-06",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "SE25 4SF",
+			"at": [
+				51.387871,
+				-0.064254
+			],
+			"observed": "2005-06-01",
+			"claims": {
+				"name": "SE25 4SF",
+				"kind": "postcode",
+				"began": "1995-07",
+				"ended": "2005-06"
+			}
+		},
+		{
+			"id": "SE25 4PS",
+			"at": [
+				51.395101,
+				-0.068089
+			],
+			"observed": "1994-05-01",
+			"claims": {
+				"name": "SE25 4PS",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1994-05"
+			}
+		},
+		{
+			"id": "SE25 4PU",
+			"at": [
+				51.393304,
+				-0.068165
+			],
+			"observed": "1994-05-01",
+			"claims": {
+				"name": "SE25 4PU",
+				"kind": "postcode",
+				"began": "1986-04",
+				"ended": "1994-05"
+			}
+		},
+		{
+			"id": "SE25 4PW",
+			"at": [
+				51.398169,
+				-0.068161
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "SE25 4PW",
+				"kind": "postcode",
+				"began": "1992-08",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "SE25 4EP",
+			"at": [
+				51.398169,
+				-0.068161
+			],
+			"observed": "1998-06-01",
+			"claims": {
+				"name": "SE25 4EP",
+				"kind": "postcode",
+				"began": "1993-01",
+				"ended": "1998-06"
+			}
+		},
+		{
+			"id": "SE25 4QA",
+			"at": [
+				51.391483,
+				-0.066804
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "SE25 4QA",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "SE25 4SN",
+			"at": [
+				51.389717,
+				-0.065498
+			],
+			"observed": "2000-10-01",
+			"claims": {
+				"name": "SE25 4SN",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "2000-10"
+			}
+		},
+		{
+			"id": "SE25 4QD",
+			"at": [
+				51.39328,
+				-0.066728
+			],
+			"observed": "1985-12-01",
+			"claims": {
+				"name": "SE25 4QD",
+				"kind": "postcode",
+				"began": "1984-10",
+				"ended": "1985-12"
+			}
+		},
+		{
+			"id": "SE25 4QE",
+			"at": [
+				51.394203,
+				-0.068127
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "SE25 4QE",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "SE25 4QH",
+			"at": [
+				51.391483,
+				-0.066804
+			],
+			"observed": "1983-12-01",
+			"claims": {
+				"name": "SE25 4QH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1983-12"
+			}
+		},
+		{
+			"id": "SE25 4SW",
+			"at": [
+				51.391483,
+				-0.066804
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "SE25 4SW",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "SE25 5JG",
+			"at": [
+				51.394274,
+				-0.072436
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "SE25 5JG",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "SE25 5JH",
+			"at": [
+				51.397971,
+				-0.073057
+			],
+			"observed": "2012-08-01",
+			"claims": {
+				"name": "SE25 5JH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2012-08"
+			}
+		},
+		{
+			"id": "SE25 5JL",
+			"at": [
+				51.39697,
+				-0.072323
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "SE25 5JL",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "SE25 5JW",
+			"at": [
+				51.39697,
+				-0.072323
+			],
+			"observed": "1994-05-01",
+			"claims": {
+				"name": "SE25 5JW",
+				"kind": "postcode",
+				"began": "1993-01",
+				"ended": "1994-05"
+			}
+		},
+		{
+			"id": "SE25 5LA",
+			"at": [
+				51.396024,
+				-0.069487
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "SE25 5LA",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "SE25 5LQ",
+			"at": [
+				51.396993,
+				-0.073759
+			],
+			"observed": "1984-12-01",
+			"claims": {
+				"name": "SE25 5LQ",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1984-12"
+			}
+		},
+		{
+			"id": "SE25 5LR",
+			"at": [
+				51.396993,
+				-0.073759
+			],
+			"observed": "1994-05-01",
+			"claims": {
+				"name": "SE25 5LR",
+				"kind": "postcode",
+				"began": "1991-09",
+				"ended": "1994-05"
+			}
+		},
+		{
+			"id": "SE25 5LY",
+			"at": [
+				51.394389,
+				-0.075623
+			],
+			"observed": "2004-02-01",
+			"claims": {
+				"name": "SE25 5LY",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2004-02"
+			}
+		},
+		{
+			"id": "SE25 5LZ",
+			"at": [
+				51.394321,
+				-0.075309
+			],
+			"observed": "1981-12-01",
+			"claims": {
+				"name": "SE25 5LZ",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1981-12"
+			}
+		},
+		{
+			"id": "SE25 5NZ",
+			"at": [
+				51.391584,
+				-0.066368
+			],
+			"observed": "2004-09-01",
+			"claims": {
+				"name": "SE25 5NZ",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2004-09"
+			}
+		},
+		{
+			"id": "SE25 5AT",
+			"at": [
+				51.392635,
+				-0.074489
+			],
+			"observed": "2001-02-01",
+			"claims": {
+				"name": "SE25 5AT",
+				"kind": "postcode",
+				"began": "1986-07",
+				"ended": "2001-02"
+			}
+		},
+		{
+			"id": "SE25 5EL",
+			"at": [
+				51.392632,
+				-0.074331
+			],
+			"observed": "1998-06-01",
+			"claims": {
+				"name": "SE25 5EL",
+				"kind": "postcode",
+				"began": "1987-04",
+				"ended": "1998-06"
+			}
+		},
+		{
+			"id": "SE25 5EP",
+			"at": [
+				51.387912,
+				-0.068392
+			],
+			"observed": "1994-12-01",
+			"claims": {
+				"name": "SE25 5EP",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1994-12"
+			}
+		},
+		{
+			"id": "SE25 5ZA",
+			"at": [
+				51.392635,
+				-0.074489
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "SE25 5ZA",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "SE25 5ZB",
+			"at": [
+				51.392632,
+				-0.074331
+			],
+			"observed": "1998-06-01",
+			"claims": {
+				"name": "SE25 5ZB",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "1998-06"
+			}
+		},
+		{
+			"id": "SE25 5ZD",
+			"at": [
+				51.392632,
+				-0.074331
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "SE25 5ZD",
+				"kind": "postcode",
+				"began": "1996-06",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "SE25 5WH",
+			"at": [
+				51.392635,
+				-0.074489
+			],
+			"observed": "2001-01-01",
+			"claims": {
+				"name": "SE25 5WH",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2001-01"
+			}
+		},
+		{
+			"id": "SE25 5WJ",
+			"at": [
+				51.392635,
+				-0.074489
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "SE25 5WJ",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "SE25 5ZG",
+			"at": [
+				51.392632,
+				-0.074331
+			],
+			"observed": "1998-06-01",
+			"claims": {
+				"name": "SE25 5ZG",
+				"kind": "postcode",
+				"began": "1996-12",
+				"ended": "1998-06"
+			}
+		},
+		{
+			"id": "SE25 5ZH",
+			"at": [
+				51.392632,
+				-0.074331
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "SE25 5ZH",
+				"kind": "postcode",
+				"began": "1997-06",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "SE25 5BP",
+			"at": [
+				51.388834,
+				-0.06979
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "SE25 5BP",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "SE25 5ZJ",
+			"at": [
+				51.392632,
+				-0.074331
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "SE25 5ZJ",
+				"kind": "postcode",
+				"began": "1997-06",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "SE25 5ZL",
+			"at": [
+				51.392632,
+				-0.074331
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "SE25 5ZL",
+				"kind": "postcode",
+				"began": "1997-06",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "SE25 5ZR",
+			"at": [
+				51.392632,
+				-0.074331
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "SE25 5ZR",
+				"kind": "postcode",
+				"began": "1997-12",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "SE25 5QL",
+			"at": [
+				51.396071,
+				-0.072361
+			],
+			"observed": "1995-12-01",
+			"claims": {
+				"name": "SE25 5QL",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1995-12"
+			}
+		},
+		{
+			"id": "SE25 5ZS",
+			"at": [
+				51.392632,
+				-0.074331
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "SE25 5ZS",
+				"kind": "postcode",
+				"began": "1997-12",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "SE25 5BX",
+			"at": [
+				51.390632,
+				-0.069714
+			],
+			"observed": "1994-12-01",
+			"claims": {
+				"name": "SE25 5BX",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1994-12"
+			}
+		},
+		{
+			"id": "SE25 5QX",
+			"at": [
+				51.394226,
+				-0.069563
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "SE25 5QX",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "SE25 5QZ",
+			"at": [
+				51.394226,
+				-0.069563
+			],
+			"observed": "1994-12-01",
+			"claims": {
+				"name": "SE25 5QZ",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1994-12"
+			}
+		},
+		{
+			"id": "SE25 4ZW",
+			"at": [
+				51.398169,
+				-0.068161
+			],
+			"observed": "1999-12-01",
+			"claims": {
+				"name": "SE25 4ZW",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "1999-12"
+			}
+		},
+		{
+			"id": "SE25 5DH",
+			"at": [
+				51.390632,
+				-0.069714
+			],
+			"observed": "1995-12-01",
+			"claims": {
+				"name": "SE25 5DH",
+				"kind": "postcode",
+				"began": "1992-01",
+				"ended": "1995-12"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

@@ -1,0 +1,71 @@
+{
+	"source": "OpenBenches",
+	"prefix": "bench",
+	"records": [
+		{
+			"id": "21926",
+			"at": [
+				51.390617,
+				-0.09894
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / BENTLEY ALLEYNE / WHO FELL ASLEEP 16-3-18 / HE OFTEN SAID \"I CAN'T COMPLAIN!\" / MISSED AND FOREVER IN OUR HEARTS"
+			}
+		},
+		{
+			"id": "21928",
+			"at": [
+				51.390656,
+				-0.099019
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / CHARMAINE MORAN / 19.08.1953 - 19.01.2018 / FOREVER LOVED & MISSED / R.I.P"
+			}
+		},
+		{
+			"id": "21927",
+			"at": [
+				51.390709,
+				-0.099044
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "KEN BARTLETT / 22.12.1944 TO 16.12.2017 / LOVING HUSBAND, FATHER / AND FRIEND. R.I.P"
+			}
+		},
+		{
+			"id": "14420",
+			"at": [
+				51.390293,
+				-0.09984
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / ROBERT JOHN FRENCH / HUSBAND FATHER AND GOOD FRILEND / 1936 2007"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

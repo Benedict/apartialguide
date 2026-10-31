@@ -1,0 +1,955 @@
+{
+	"source": "HM Land Registry",
+	"prefix": "price",
+	"records": [
+		{
+			"id": "91|BECKFORD ROAD",
+			"address": {
+				"number": "91",
+				"street": "BECKFORD ROAD"
+			},
+			"observed": "2019-01-18",
+			"claims": {
+				"sold": "510000",
+				"date": "2019-01-18"
+			}
+		},
+		{
+			"id": "92|HARRINGTON ROAD",
+			"address": {
+				"number": "92",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2007-04-18",
+			"claims": {
+				"sold": "236000",
+				"date": "2007-04-18"
+			}
+		},
+		{
+			"id": "130|HARRINGTON ROAD",
+			"address": {
+				"number": "130",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2004-01-23",
+			"claims": {
+				"sold": "177500",
+				"date": "2004-01-23"
+			}
+		},
+		{
+			"id": "98|HARRINGTON ROAD",
+			"address": {
+				"number": "98",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2003-02-07",
+			"claims": {
+				"sold": "170000",
+				"date": "2003-02-07"
+			}
+		},
+		{
+			"id": "100|HARRINGTON ROAD",
+			"address": {
+				"number": "100",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2025-12-04",
+			"claims": {
+				"sold": "565000",
+				"date": "2025-12-04"
+			}
+		},
+		{
+			"id": "94|HARRINGTON ROAD",
+			"address": {
+				"number": "94",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2020-11-11",
+			"claims": {
+				"sold": "540000",
+				"date": "2020-11-11"
+			}
+		},
+		{
+			"id": "138|HARRINGTON ROAD",
+			"address": {
+				"number": "138",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2005-05-31",
+			"claims": {
+				"sold": "191500",
+				"date": "2005-05-31"
+			}
+		},
+		{
+			"id": "136|HARRINGTON ROAD",
+			"address": {
+				"number": "136",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2002-08-16",
+			"claims": {
+				"sold": "157950",
+				"date": "2002-08-16"
+			}
+		},
+		{
+			"id": "120|HARRINGTON ROAD",
+			"address": {
+				"number": "120",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2011-08-01",
+			"claims": {
+				"sold": "249950",
+				"date": "2011-08-01"
+			}
+		},
+		{
+			"id": "128|HARRINGTON ROAD",
+			"address": {
+				"number": "128",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2008-04-29",
+			"claims": {
+				"sold": "232500",
+				"date": "2008-04-29"
+			}
+		},
+		{
+			"id": "126|HARRINGTON ROAD",
+			"address": {
+				"number": "126",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2009-03-27",
+			"claims": {
+				"sold": "207500",
+				"date": "2009-03-27"
+			}
+		},
+		{
+			"id": "132|HARRINGTON ROAD",
+			"address": {
+				"number": "132",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2013-03-04",
+			"claims": {
+				"sold": "260000",
+				"date": "2013-03-04"
+			}
+		},
+		{
+			"id": "180|HARRINGTON ROAD",
+			"address": {
+				"number": "180",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2020-08-21",
+			"claims": {
+				"sold": "420000",
+				"date": "2020-08-21"
+			}
+		},
+		{
+			"id": "212|HARRINGTON ROAD",
+			"address": {
+				"number": "212",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "1997-06-06",
+			"claims": {
+				"sold": "77000",
+				"date": "1997-06-06"
+			}
+		},
+		{
+			"id": "206|HARRINGTON ROAD",
+			"address": {
+				"number": "206",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2006-01-20",
+			"claims": {
+				"sold": "212500",
+				"date": "2006-01-20"
+			}
+		},
+		{
+			"id": "186|HARRINGTON ROAD",
+			"address": {
+				"number": "186",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "1999-07-12",
+			"claims": {
+				"sold": "97500",
+				"date": "1999-07-12"
+			}
+		},
+		{
+			"id": "210|HARRINGTON ROAD",
+			"address": {
+				"number": "210",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2019-02-07",
+			"claims": {
+				"sold": "420000",
+				"date": "2019-02-07"
+			}
+		},
+		{
+			"id": "200|HARRINGTON ROAD",
+			"address": {
+				"number": "200",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2002-11-29",
+			"claims": {
+				"sold": "182950",
+				"date": "2002-11-29"
+			}
+		},
+		{
+			"id": "198|HARRINGTON ROAD",
+			"address": {
+				"number": "198",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2024-10-31",
+			"claims": {
+				"sold": "1225000",
+				"date": "2024-10-31"
+			}
+		},
+		{
+			"id": "204|HARRINGTON ROAD",
+			"address": {
+				"number": "204",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2003-01-03",
+			"claims": {
+				"sold": "167000",
+				"date": "2003-01-03"
+			}
+		},
+		{
+			"id": "184|HARRINGTON ROAD",
+			"address": {
+				"number": "184",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2004-03-24",
+			"claims": {
+				"sold": "230000",
+				"date": "2004-03-24"
+			}
+		},
+		{
+			"id": "194|HARRINGTON ROAD",
+			"address": {
+				"number": "194",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2022-04-01",
+			"claims": {
+				"sold": "512500",
+				"date": "2022-04-01"
+			}
+		},
+		{
+			"id": "160|HARRINGTON ROAD",
+			"address": {
+				"number": "160",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2022-11-04",
+			"claims": {
+				"sold": "465000",
+				"date": "2022-11-04"
+			}
+		},
+		{
+			"id": "208|HARRINGTON ROAD",
+			"address": {
+				"number": "208",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2006-12-01",
+			"claims": {
+				"sold": "215000",
+				"date": "2006-12-01"
+			}
+		},
+		{
+			"id": "172|HARRINGTON ROAD",
+			"address": {
+				"number": "172",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2007-11-30",
+			"claims": {
+				"sold": "248000",
+				"date": "2007-11-30"
+			}
+		},
+		{
+			"id": "216|HARRINGTON ROAD",
+			"address": {
+				"number": "216",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2007-10-05",
+			"claims": {
+				"sold": "245000",
+				"date": "2007-10-05"
+			}
+		},
+		{
+			"id": "222|HARRINGTON ROAD",
+			"address": {
+				"number": "222",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2008-06-13",
+			"claims": {
+				"sold": "268000",
+				"date": "2008-06-13"
+			}
+		},
+		{
+			"id": "196|HARRINGTON ROAD",
+			"address": {
+				"number": "196",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2022-07-06",
+			"claims": {
+				"sold": "537000",
+				"date": "2022-07-06"
+			}
+		},
+		{
+			"id": "202|HARRINGTON ROAD",
+			"address": {
+				"number": "202",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2016-07-22",
+			"claims": {
+				"sold": "415000",
+				"date": "2016-07-22"
+			}
+		},
+		{
+			"id": "174|HARRINGTON ROAD",
+			"address": {
+				"number": "174",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2020-06-04",
+			"claims": {
+				"sold": "428000",
+				"date": "2020-06-04"
+			}
+		},
+		{
+			"id": "182|HARRINGTON ROAD",
+			"address": {
+				"number": "182",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2018-02-02",
+			"claims": {
+				"sold": "430000",
+				"date": "2018-02-02"
+			}
+		},
+		{
+			"id": "168|HARRINGTON ROAD",
+			"address": {
+				"number": "168",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2019-05-03",
+			"claims": {
+				"sold": "355000",
+				"date": "2019-05-03"
+			}
+		},
+		{
+			"id": "218|HARRINGTON ROAD",
+			"address": {
+				"number": "218",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2021-05-14",
+			"claims": {
+				"sold": "400000",
+				"date": "2021-05-14"
+			}
+		},
+		{
+			"id": "162|HARRINGTON ROAD",
+			"address": {
+				"number": "162",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2024-03-21",
+			"claims": {
+				"sold": "477500",
+				"date": "2024-03-21"
+			}
+		},
+		{
+			"id": "213|HARRINGTON ROAD",
+			"address": {
+				"number": "213",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2020-03-10",
+			"claims": {
+				"sold": "325000",
+				"date": "2020-03-10"
+			}
+		},
+		{
+			"id": "217|HARRINGTON ROAD",
+			"address": {
+				"number": "217",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2022-09-09",
+			"claims": {
+				"sold": "425000",
+				"date": "2022-09-09"
+			}
+		},
+		{
+			"id": "221|HARRINGTON ROAD",
+			"address": {
+				"number": "221",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2025-03-18",
+			"claims": {
+				"sold": "365000",
+				"date": "2025-03-18"
+			}
+		},
+		{
+			"id": "209|HARRINGTON ROAD",
+			"address": {
+				"number": "209",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2002-09-10",
+			"claims": {
+				"sold": "159000",
+				"date": "2002-09-10"
+			}
+		},
+		{
+			"id": "199|HARRINGTON ROAD",
+			"address": {
+				"number": "199",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2005-07-15",
+			"claims": {
+				"sold": "165000",
+				"date": "2005-07-15"
+			}
+		},
+		{
+			"id": "197|HARRINGTON ROAD",
+			"address": {
+				"number": "197",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2021-12-06",
+			"claims": {
+				"sold": "390000",
+				"date": "2021-12-06"
+			}
+		},
+		{
+			"id": "203|HARRINGTON ROAD",
+			"address": {
+				"number": "203",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2005-07-27",
+			"claims": {
+				"sold": "182000",
+				"date": "2005-07-27"
+			}
+		},
+		{
+			"id": "207|HARRINGTON ROAD",
+			"address": {
+				"number": "207",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2006-06-23",
+			"claims": {
+				"sold": "181000",
+				"date": "2006-06-23"
+			}
+		},
+		{
+			"id": "185|HARRINGTON ROAD",
+			"address": {
+				"number": "185",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2023-11-14",
+			"claims": {
+				"sold": "495500",
+				"date": "2023-11-14"
+			}
+		},
+		{
+			"id": "181|HARRINGTON ROAD",
+			"address": {
+				"number": "181",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "1996-11-29",
+			"claims": {
+				"sold": "64500",
+				"date": "1996-11-29"
+			}
+		},
+		{
+			"id": "153|HARRINGTON ROAD",
+			"address": {
+				"number": "153",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2005-01-07",
+			"claims": {
+				"sold": "207000",
+				"date": "2005-01-07"
+			}
+		},
+		{
+			"id": "141|HARRINGTON ROAD",
+			"address": {
+				"number": "141",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2001-05-29",
+			"claims": {
+				"sold": "125000",
+				"date": "2001-05-29"
+			}
+		},
+		{
+			"id": "193|HARRINGTON ROAD",
+			"address": {
+				"number": "193",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "1998-11-05",
+			"claims": {
+				"sold": "84000",
+				"date": "1998-11-05"
+			}
+		},
+		{
+			"id": "143|HARRINGTON ROAD",
+			"address": {
+				"number": "143",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2025-06-10",
+			"claims": {
+				"sold": "485000",
+				"date": "2025-06-10"
+			}
+		},
+		{
+			"id": "183|HARRINGTON ROAD",
+			"address": {
+				"number": "183",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "1998-08-25",
+			"claims": {
+				"sold": "75950",
+				"date": "1998-08-25"
+			}
+		},
+		{
+			"id": "173|HARRINGTON ROAD",
+			"address": {
+				"number": "173",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2014-06-20",
+			"claims": {
+				"sold": "330500",
+				"date": "2014-06-20"
+			}
+		},
+		{
+			"id": "139|HARRINGTON ROAD",
+			"address": {
+				"number": "139",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2012-08-15",
+			"claims": {
+				"sold": "235000",
+				"date": "2012-08-15"
+			}
+		},
+		{
+			"id": "189|HARRINGTON ROAD",
+			"address": {
+				"number": "189",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2000-12-21",
+			"claims": {
+				"sold": "128000",
+				"date": "2000-12-21"
+			}
+		},
+		{
+			"id": "151|HARRINGTON ROAD",
+			"address": {
+				"number": "151",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2013-11-21",
+			"claims": {
+				"sold": "222000",
+				"date": "2013-11-21"
+			}
+		},
+		{
+			"id": "133|HARRINGTON ROAD",
+			"address": {
+				"number": "133",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2022-03-31",
+			"claims": {
+				"sold": "282000",
+				"date": "2022-03-31"
+			}
+		},
+		{
+			"id": "175|HARRINGTON ROAD",
+			"address": {
+				"number": "175",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2003-04-07",
+			"claims": {
+				"sold": "181000",
+				"date": "2003-04-07"
+			}
+		},
+		{
+			"id": "149|HARRINGTON ROAD",
+			"address": {
+				"number": "149",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2006-08-11",
+			"claims": {
+				"sold": "180000",
+				"date": "2006-08-11"
+			}
+		},
+		{
+			"id": "159|HARRINGTON ROAD",
+			"address": {
+				"number": "159",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2025-11-25",
+			"claims": {
+				"sold": "475000",
+				"date": "2025-11-25"
+			}
+		},
+		{
+			"id": "135|HARRINGTON ROAD",
+			"address": {
+				"number": "135",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2025-11-14",
+			"claims": {
+				"sold": "565000",
+				"date": "2025-11-14"
+			}
+		},
+		{
+			"id": "171|HARRINGTON ROAD",
+			"address": {
+				"number": "171",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2017-03-22",
+			"claims": {
+				"sold": "550000",
+				"date": "2017-03-22"
+			}
+		},
+		{
+			"id": "191|HARRINGTON ROAD",
+			"address": {
+				"number": "191",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2019-05-10",
+			"claims": {
+				"sold": "490000",
+				"date": "2019-05-10"
+			}
+		},
+		{
+			"id": "137|HARRINGTON ROAD",
+			"address": {
+				"number": "137",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2019-07-03",
+			"claims": {
+				"sold": "367000",
+				"date": "2019-07-03"
+			}
+		},
+		{
+			"id": "147|HARRINGTON ROAD",
+			"address": {
+				"number": "147",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2025-10-03",
+			"claims": {
+				"sold": "490000",
+				"date": "2025-10-03"
+			}
+		},
+		{
+			"id": "163|HARRINGTON ROAD",
+			"address": {
+				"number": "163",
+				"street": "HARRINGTON ROAD"
+			},
+			"observed": "2026-06-08",
+			"claims": {
+				"sold": "430000",
+				"date": "2026-06-08"
+			}
+		},
+		{
+			"id": "112|PORTLAND ROAD",
+			"address": {
+				"number": "112",
+				"street": "PORTLAND ROAD"
+			},
+			"observed": "2022-06-22",
+			"claims": {
+				"sold": "1555840",
+				"date": "2022-06-22"
+			}
+		},
+		{
+			"id": "152|PORTLAND ROAD",
+			"address": {
+				"number": "152",
+				"street": "PORTLAND ROAD"
+			},
+			"observed": "2025-04-17",
+			"claims": {
+				"sold": "1410000",
+				"date": "2025-04-17"
+			}
+		},
+		{
+			"id": "184|PORTLAND ROAD",
+			"address": {
+				"number": "184",
+				"street": "PORTLAND ROAD"
+			},
+			"observed": "2020-08-17",
+			"claims": {
+				"sold": "1300000",
+				"date": "2020-08-17"
+			}
+		},
+		{
+			"id": "90|DUNDEE ROAD",
+			"address": {
+				"number": "90",
+				"street": "DUNDEE ROAD"
+			},
+			"observed": "2006-04-13",
+			"claims": {
+				"sold": "199000",
+				"date": "2006-04-13"
+			}
+		},
+		{
+			"id": "48|DUNDEE ROAD",
+			"address": {
+				"number": "48",
+				"street": "DUNDEE ROAD"
+			},
+			"observed": "2019-06-05",
+			"claims": {
+				"sold": "402000",
+				"date": "2019-06-05"
+			}
+		},
+		{
+			"id": "44|GRASMERE ROAD",
+			"address": {
+				"number": "44",
+				"street": "GRASMERE ROAD"
+			},
+			"observed": "1996-03-12",
+			"claims": {
+				"sold": "29500",
+				"date": "1996-03-12"
+			}
+		},
+		{
+			"id": "46|GRASMERE ROAD",
+			"address": {
+				"number": "46",
+				"street": "GRASMERE ROAD"
+			},
+			"observed": "1999-10-20",
+			"claims": {
+				"sold": "93750",
+				"date": "1999-10-20"
+			}
+		},
+		{
+			"id": "40|GRASMERE ROAD",
+			"address": {
+				"number": "40",
+				"street": "GRASMERE ROAD"
+			},
+			"observed": "2016-10-28",
+			"claims": {
+				"sold": "349500",
+				"date": "2016-10-28"
+			}
+		},
+		{
+			"id": "48|GRASMERE ROAD",
+			"address": {
+				"number": "48",
+				"street": "GRASMERE ROAD"
+			},
+			"observed": "2004-07-01",
+			"claims": {
+				"sold": "181500",
+				"date": "2004-07-01"
+			}
+		},
+		{
+			"id": "38|GRASMERE ROAD",
+			"address": {
+				"number": "38",
+				"street": "GRASMERE ROAD"
+			},
+			"observed": "2005-11-22",
+			"claims": {
+				"sold": "174000",
+				"date": "2005-11-22"
+			}
+		},
+		{
+			"id": "56|GRASMERE ROAD",
+			"address": {
+				"number": "56",
+				"street": "GRASMERE ROAD"
+			},
+			"observed": "2011-10-07",
+			"claims": {
+				"sold": "210000",
+				"date": "2011-10-07"
+			}
+		},
+		{
+			"id": "34|GRASMERE ROAD",
+			"address": {
+				"number": "34",
+				"street": "GRASMERE ROAD"
+			},
+			"observed": "2021-10-29",
+			"claims": {
+				"sold": "426500",
+				"date": "2021-10-29"
+			}
+		},
+		{
+			"id": "42|GRASMERE ROAD",
+			"address": {
+				"number": "42",
+				"street": "GRASMERE ROAD"
+			},
+			"observed": "2020-09-04",
+			"claims": {
+				"sold": "330000",
+				"date": "2020-09-04"
+			}
+		},
+		{
+			"id": "52|GRASMERE ROAD",
+			"address": {
+				"number": "52",
+				"street": "GRASMERE ROAD"
+			},
+			"observed": "2026-05-19",
+			"claims": {
+				"sold": "531000",
+				"date": "2026-05-19"
+			}
+		},
+		{
+			"id": "50|GRASMERE ROAD",
+			"address": {
+				"number": "50",
+				"street": "GRASMERE ROAD"
+			},
+			"observed": "2023-12-08",
+			"claims": {
+				"sold": "335000",
+				"date": "2023-12-08"
+			}
+		},
+		{
+			"id": "47|WOODSIDE GREEN",
+			"address": {
+				"number": "47",
+				"street": "WOODSIDE GREEN"
+			},
+			"observed": "2019-03-29",
+			"claims": {
+				"sold": "700000",
+				"date": "2019-03-29"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
