@@ -23,6 +23,7 @@ import { alludedTo } from '../keepers';
 import { direction, parse } from './parser';
 import type { Telling, Thing } from '../render/renderer';
 import { distance, type LatLon } from '../geo';
+import { postcodeOf } from './postcodes';
 import { arcOf, circleThrough, FAR, offCurve, walkable, type Circle } from './circle';
 import { AUTO, SLOTS, type SaveStore, type SavedWalk, type WalkState } from './saves';
 import type { StopId } from '../stops';
@@ -56,7 +57,7 @@ export const HELP =
 	'Type a direction to walk: north, ne, go east, or the name of a street; back retraces your step. ' +
 	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name, or ask me to remember or mark down one, and drop it somewhere else; inventory (i) says what you carry. ' +
-	'Start in an area by its name begins a walk there, start at a place by its name, or by its latitude and longitude, begins there, and start anywhere somewhere by chance. ' +
+	'Start in an area by its name begins a walk there, start at a place by its name, its postcode, or its latitude and longitude begins there, and start anywhere somewhere by chance. ' +
 	'Place a glass sets a circle down to walk round, and keeps a record of it; glass off lifts it. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
 	'Drift, and I choose the way. Hint for a word about a command; hints off, or on, for one now and then. ' +
@@ -328,6 +329,14 @@ export class Adventure {
 		}
 		if (at && this.world.stops[where]) return this.afresh(where);
 		const door = this.door(where);
+		const code = at && !door ? postcodeOf(where) : undefined;
+		if (code) {
+			const id = this.world.postcodes?.[code];
+			if (!id || !this.world.stops[id])
+				return { lines: [`I have no place for ${code} on my map.`] };
+			const reply = this.afresh(id);
+			return { ...reply, lines: [`We begin at ${code}.`, ...reply.lines] };
+		}
 		const near = at && !door ? this.nearestTo(where) : undefined;
 		if (near) {
 			if (near.metres > NEAR_ENOUGH || !this.world.stops[near.id])
@@ -677,6 +686,8 @@ export class Adventure {
 			if (door?.stop) return [door.stop];
 			if (!command.at) return [];
 			if (this.world.stops[command.where] || /:/.test(command.where)) return [command.where];
+			const code = postcodeOf(command.where);
+			if (code) return this.world.postcodes?.[code] ? [this.world.postcodes[code]] : [];
 			const near = this.nearestTo(command.where);
 			if (near) return near.metres <= NEAR_ENOUGH ? [near.id] : [];
 			const named = this.named(command.where);
@@ -960,6 +971,7 @@ export class Adventure {
 				!!command.at &&
 				!this.world.stops[command.where] &&
 				!/:/.test(command.where) &&
+				!postcodeOf(command.where) &&
 				!this.door(command.where)
 			);
 		if (command.verb === 'go' && this.circling) return true;

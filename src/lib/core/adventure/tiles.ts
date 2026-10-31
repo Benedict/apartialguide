@@ -58,6 +58,13 @@ export function tileWorld(
 		...headOf(world),
 		start: names.get(world.start) ?? world.start,
 		...(world.anywhere ? { anywhere: world.anywhere.map((id) => names.get(id) ?? id) } : {}),
+		...(world.postcodes
+			? {
+					postcodes: Object.fromEntries(
+						Object.entries(world.postcodes).map(([code, id]) => [code, names.get(id) ?? id])
+					)
+				}
+			: {}),
 		...(world.doors
 			? {
 					doors: world.doors.map((d) => (d.stop ? { ...d, stop: names.get(d.stop) ?? d.stop } : d))

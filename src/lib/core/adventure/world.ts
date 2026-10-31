@@ -112,6 +112,8 @@ export interface Ledger {
 }
 
 export interface AdventureWorld {
+	/** The postcodes the map's addresses carry, each with its nearest place, for `start at CR0 7HE`. */
+	postcodes?: Record<string, StopId>;
 	/** Places worth beginning at, for `start anywhere`: those with something going on. */
 	anywhere?: StopId[];
 	/**

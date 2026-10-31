@@ -16,6 +16,9 @@ import { dirname, join } from 'node:path';
 import { Adventure } from '../src/lib/core/adventure/engine';
 import { anywhereIn, closeAreas, doorsFor } from '../src/lib/core/adventure/open';
 import { tileWorld } from '../src/lib/core/adventure/tiles';
+import { postcodesFrom } from '../src/lib/core/adventure/postcodes';
+import type { OsmData } from '../src/lib/core/osm';
+import { readJson } from '../src/lib/server/json';
 import { closedAreaOf, type AreaList } from '../src/lib/core/release';
 import { landingPage } from '../src/lib/server/landing';
 import { llmsTxt, manifest, robotsTxt, sitemapXml } from '../src/lib/server/meta';
@@ -65,9 +68,14 @@ const opened = {
 if (closed.size) console.log(`${closed.size} stops in areas not open yet are left out`);
 // Where each area may be begun (`start in Shirley`): an open area at its first place, the rest named;
 // and the places worth beginning at by chance (`start anywhere`).
+// The postcodes the map's own addresses carry, each with its nearest open place (`start at CR0 7HE`),
+// so a reader may begin at one from the page alone.
+const postcodes = postcodesFrom(readJson<OsmData>(config.snapshotPath), opened.stops);
+console.log(`${Object.keys(postcodes).length} postcodes the map carries are given a place`);
 const world = areas.some((a) => a.open)
 	? {
 			...opened,
+			postcodes,
 			anywhere: anywhereIn(opened),
 			doors: doorsFor(
 				opened,
@@ -79,7 +87,7 @@ const world = areas.some((a) => a.open)
 					)
 			)
 		}
-	: { ...opened, anywhere: anywhereIn(opened) };
+	: { ...opened, postcodes, anywhere: anywhereIn(opened) };
 
 const amiss = wordsAmiss(world);
 if (amiss.length) {
