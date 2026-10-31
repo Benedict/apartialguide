@@ -8,6 +8,13 @@ import { SOURCES } from '../site/sources';
 
 const NAME = 'A Partial Guide';
 
+/** The walk's own profiles elsewhere, linked from About and the front page, and named to search engines. */
+export const PROFILES = [{ name: 'Instagram', href: 'https://www.instagram.com/apartialguide' }];
+
+/** The profiles as links that say they are the site's own (rel="me"). */
+export const profileLinks = () =>
+	PROFILES.map((p) => `<a rel="me" href="${p.href}">${p.name}</a>`).join(' · ');
+
 export interface Page {
 	/** Where it lives on the site, or nothing for a page that is served for no address of its own. */
 	path?: string;
@@ -150,7 +157,8 @@ export function jsonLd(page: 'home' | 'walk', siteUrl?: string): string {
 					name: NAME,
 					url: at(siteUrl, '/'),
 					description: PAGES.home.description,
-					inLanguage: 'en'
+					inLanguage: 'en',
+					sameAs: PROFILES.map((p) => p.href)
 				}
 			: {
 					'@context': 'https://schema.org',

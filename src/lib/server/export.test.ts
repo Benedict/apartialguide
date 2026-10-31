@@ -249,6 +249,13 @@ describe('exportPage', () => {
 		expect(about).toContain('Claude');
 	});
 
+	it('leads from About to the walk’s profile on Instagram', () => {
+		const about = page().match(/<section id="about"[^]*?<\/section>/)![0];
+		expect(about).toContain(
+			'<a rel="me" href="https://www.instagram.com/apartialguide">Instagram</a>'
+		);
+	});
+
 	it('has a Settings page with a choice for each source asked from the browser', () => {
 		expect(page()).toContain('id="settings"');
 		for (const live of LIVE) expect(page()).toContain(`name="${live.key}"`);

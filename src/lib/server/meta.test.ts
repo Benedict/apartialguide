@@ -78,7 +78,8 @@ describe('the site’s own files', () => {
 			'@context': 'https://schema.org',
 			'@type': 'WebSite',
 			name: 'A Partial Guide',
-			url: 'https://example.org/'
+			url: 'https://example.org/',
+			sameAs: ['https://www.instagram.com/apartialguide']
 		});
 		const game = JSON.parse(
 			jsonLd('walk', SITE).replace(/^<script type="application\/ld\+json">|<\/script>$/g, '')
