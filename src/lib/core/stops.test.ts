@@ -53,7 +53,10 @@ describe('buildStopGraph', () => {
 		const queue = [all[0]];
 		while (queue.length)
 			for (const e of graph.get(queue.pop()!)!.exits)
-				if (!seen.has(e.to)) (seen.add(e.to), queue.push(e.to));
+				if (!seen.has(e.to)) {
+					seen.add(e.to);
+					queue.push(e.to);
+				}
 		expect([...seen].sort()).toEqual([...all].sort());
 		expect(all.length).toBeGreaterThanOrEqual(6);
 	});
