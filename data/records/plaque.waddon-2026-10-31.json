@@ -1,0 +1,43 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "12018",
+			"at": [
+				51.37004,
+				-0.11147
+			],
+			"claims": {
+				"name": "Samuel Coleridge-Taylor 1875-1912 composer lived and died here",
+				"description": "plaque",
+				"inscription": "Samuel Coleridge-Taylor 1875-1912 composer lived and died here"
+			}
+		},
+		{
+			"id": "9804",
+			"at": [
+				51.3659,
+				-0.10565
+			],
+			"claims": {
+				"name": "Cicely Mary Barker 1895-1973 artist and creator of the Flower Fairy children's books lived and worked here from 1924 to 1961",
+				"description": "plaque",
+				"inscription": "Cicely Mary Barker 1895-1973 artist and creator of the Flower Fairy children's books lived and worked here from 1924 to 1961"
+			}
+		},
+		{
+			"id": "5862",
+			"at": [
+				51.3563,
+				-0.11721
+			],
+			"claims": {
+				"name": "Croydon Airport Terminal Building\r\n1928-1959\r\nOne of the first purpose-built terminal buildings in the world. Croydon was London's first international airport",
+				"description": "plaque",
+				"inscription": "Croydon Airport Terminal Building\r\n1928-1959\r\nOne of the first purpose-built terminal buildings in the world. Croydon was London's first international airport"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

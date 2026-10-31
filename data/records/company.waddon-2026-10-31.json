@@ -1,0 +1,343 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "544|PURLEY WAY",
+			"address": {
+				"number": "544",
+				"street": "PURLEY WAY"
+			},
+			"claims": {
+				"count": "3",
+				"names": "GLOBAL SEAFREIGHT SOLUTIONS LTD|SEN VN 2 LTD|102 NAILS SUPPLY LTD",
+				"since": "2023-12-11"
+			}
+		},
+		{
+			"id": "23|DUPPAS HILL ROAD",
+			"address": {
+				"number": "23",
+				"street": "DUPPAS HILL ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "23 DUPPERHILL ROAD RTM COMPANY  LIMITED",
+				"since": "2007-06-04"
+			}
+		},
+		{
+			"id": "23|WHITESTONE WAY",
+			"address": {
+				"number": "23",
+				"street": "WHITESTONE WAY"
+			},
+			"claims": {
+				"count": "83",
+				"names": "CROYDON BUSINESS VENTURE LTD|CBV (BUSINESS CENTRE) LIMITED|FIRST TECHNOLOGY TRANSFER LIMITED",
+				"since": "1983-06-13"
+			}
+		},
+		{
+			"id": "10|CENTRAL PARADE",
+			"address": {
+				"number": "10",
+				"street": "CENTRAL PARADE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "5 WAYS FRIED CHICKEN LTD",
+				"since": "2024-05-08"
+			}
+		},
+		{
+			"id": "265|PURLEY WAY",
+			"address": {
+				"number": "265",
+				"street": "PURLEY WAY"
+			},
+			"claims": {
+				"count": "36",
+				"names": "Y3K (EUROPE) LIMITED|SURGICAL DIRECT SUPPLIES LIMITED|GENERATIONS FINANCE LIMITED",
+				"since": "2000-02-14"
+			}
+		},
+		{
+			"id": "35|CORNWALL ROAD",
+			"address": {
+				"number": "35",
+				"street": "CORNWALL ROAD"
+			},
+			"claims": {
+				"count": "6",
+				"names": "AMOUR CLEANING LTD|HR MINUS KAREN LIMITED|PK EDITS LTD",
+				"since": "2017-11-14"
+			}
+		},
+		{
+			"id": "74|SOUTHBRIDGE ROAD",
+			"address": {
+				"number": "74",
+				"street": "SOUTHBRIDGE ROAD"
+			},
+			"claims": {
+				"count": "4",
+				"names": "APEX PRO CONSTRUCTION LTD|DHUKA BROTHERS LTD|REMAX LTD",
+				"since": "2021-05-16"
+			}
+		},
+		{
+			"id": "27|WADDON ROAD",
+			"address": {
+				"number": "27",
+				"street": "WADDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ATLANTIC FINE FOODS LTD",
+				"since": "2026-02-16"
+			}
+		},
+		{
+			"id": "41|WADDON ROAD",
+			"address": {
+				"number": "41",
+				"street": "WADDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BIAW CARE SERVICES LTD",
+				"since": "2023-02-15"
+			}
+		},
+		{
+			"id": "49|WADDON ROAD",
+			"address": {
+				"number": "49",
+				"street": "WADDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CHANG CHENG LONDON LIMITED",
+				"since": "2025-01-05"
+			}
+		},
+		{
+			"id": "62|SOUTHBRIDGE ROAD",
+			"address": {
+				"number": "62",
+				"street": "SOUTHBRIDGE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "SOUTHBRIDGE PIZZA LTD|DOUGHLICIOUS PIZZZA LTD",
+				"since": "2024-01-09"
+			}
+		},
+		{
+			"id": "16|DUPPAS HILL ROAD",
+			"address": {
+				"number": "16",
+				"street": "DUPPAS HILL ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DUPPAS HILL MANAGEMENT LIMITED",
+				"since": "1985-05-03"
+			}
+		},
+		{
+			"id": "9|CENTRAL PARADE",
+			"address": {
+				"number": "9",
+				"street": "CENTRAL PARADE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FIVE WAYS FISH & CHIPS LTD",
+				"since": "2024-12-05"
+			}
+		},
+		{
+			"id": "271|PURLEY WAY",
+			"address": {
+				"number": "271",
+				"street": "PURLEY WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "G1 EXPRESS LIMITED",
+				"since": "2025-01-22"
+			}
+		},
+		{
+			"id": "33|EPSOM ROAD",
+			"address": {
+				"number": "33",
+				"street": "EPSOM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "INSURGENT SECURITY LTD",
+				"since": "2018-04-28"
+			}
+		},
+		{
+			"id": "43|WADDON ROAD",
+			"address": {
+				"number": "43",
+				"street": "WADDON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "JA CHICKEN HUT LTD|JA FAMILY LIMITED",
+				"since": "2023-12-01"
+			}
+		},
+		{
+			"id": "447|PURLEY WAY",
+			"address": {
+				"number": "447",
+				"street": "PURLEY WAY"
+			},
+			"claims": {
+				"count": "2",
+				"names": "KEVIN NEWS LIMITED|KEVIN CONVENIENT STORE LIMITED",
+				"since": "2007-04-05"
+			}
+		},
+		{
+			"id": "352|PURLEY WAY",
+			"address": {
+				"number": "352",
+				"street": "PURLEY WAY"
+			},
+			"claims": {
+				"count": "2",
+				"names": "LA PIZZERIA CROYDON LTD|LA PIZZERIA PIZZA LIMITED",
+				"since": "2018-05-14"
+			}
+		},
+		{
+			"id": "72|SOUTHBRIDGE ROAD",
+			"address": {
+				"number": "72",
+				"street": "SOUTHBRIDGE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MORLEYS SOUTH CROYDON LTD",
+				"since": "2026-03-02"
+			}
+		},
+		{
+			"id": "22|WADDON ROAD",
+			"address": {
+				"number": "22",
+				"street": "WADDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NOVAPRINT LAB LTD",
+				"since": "2025-12-11"
+			}
+		},
+		{
+			"id": "55|ALTON ROAD",
+			"address": {
+				"number": "55",
+				"street": "ALTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ONYX CLOTHING LTD",
+				"since": "2026-04-09"
+			}
+		},
+		{
+			"id": "23|RECTORY GROVE",
+			"address": {
+				"number": "23",
+				"street": "RECTORY GROVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PK PARTNERSHIP (CONSULTANCY) LLP",
+				"since": "2019-12-03"
+			}
+		},
+		{
+			"id": "351|PURLEY WAY",
+			"address": {
+				"number": "351",
+				"street": "PURLEY WAY"
+			},
+			"claims": {
+				"count": "2",
+				"names": "SOFAS AND FRIENDS LIMITED|POLAKOWSKA HOLDINGS LIMITED",
+				"since": "2019-01-29"
+			}
+		},
+		{
+			"id": "31|WADDON ROAD",
+			"address": {
+				"number": "31",
+				"street": "WADDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RAMOS MOTOS LTD",
+				"since": "2017-04-11"
+			}
+		},
+		{
+			"id": "33|WADDON ROAD",
+			"address": {
+				"number": "33",
+				"street": "WADDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RAMOS MOTOS RENTAL LTD",
+				"since": "2023-04-24"
+			}
+		},
+		{
+			"id": "70|SOUTHBRIDGE ROAD",
+			"address": {
+				"number": "70",
+				"street": "SOUTHBRIDGE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SA&AJ LIMITED",
+				"since": "2025-10-31"
+			}
+		},
+		{
+			"id": "102|SOUTH END",
+			"address": {
+				"number": "102",
+				"street": "SOUTH END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SPECKLES DAY NURSERIES LTD",
+				"since": "2018-10-11"
+			}
+		},
+		{
+			"id": "63|EPSOM ROAD",
+			"address": {
+				"number": "63",
+				"street": "EPSOM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SPLITSIX POKER LTD",
+				"since": "2025-05-06"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
