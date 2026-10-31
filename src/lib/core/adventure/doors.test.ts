@@ -164,3 +164,22 @@ describe('starting at a place by its name', () => {
 		expect(game.respond('start at the tabard').lines).toEqual(['That place is not on my map.']);
 	});
 });
+
+describe('starting at a place by its coordinates', () => {
+	it('begins at the place nearest the latitude and longitude given', () => {
+		const game = new Adventure(world);
+		game.begin();
+		expect(game.needs('start at 51.3801, 0.0098')).toEqual(['c']);
+		const reply = game.respond('start at 51.3801, 0.0098');
+		expect(reply.title).toBe('Mill Lane');
+		expect(reply.lines[0]).toBe('We begin at the place nearest 51.3801, 0.0098.');
+	});
+
+	it('says so when the coordinates lie beyond the map', () => {
+		const game = new Adventure(world);
+		game.begin();
+		expect(game.respond('start at 48.8566, 2.3522').lines).toEqual([
+			'That is beyond my map. The nearest place I have is far from there.'
+		]);
+	});
+});
