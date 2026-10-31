@@ -21,6 +21,12 @@ function worldEnv(file: string): Record<string, string> {
 }
 
 describe('the workflows', () => {
+	it('refuse to deploy a borough in which an open area has no door, as a door the map cannot find would send readers elsewhere', () => {
+		const deploy = readFileSync('.github/workflows/deploy.yml', 'utf8');
+		expect(deploy).toMatch(/^\s+DOORS_REQUIRED: 1$/m);
+		expect(readFileSync('scripts/export.ts', 'utf8')).toContain('process.env.DOORS_REQUIRED');
+	});
+
 	it('publish the whole borough at the root, enriched area by area, with no walk of its own at /croydon/', () => {
 		const pages = readFileSync('.github/workflows/deploy.yml', 'utf8');
 		expect(worldEnv('deploy.yml').SNAPSHOT_PATH).toMatch(/^data\/snapshots\/croydon-.+\.json\.gz$/);

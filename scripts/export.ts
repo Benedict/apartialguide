@@ -75,6 +75,9 @@ if (closed.size) console.log(`${closed.size} stops in areas not open yet are lef
 // so a reader may begin at one from the page alone.
 const postcodes = postcodesFrom(readJson<OsmData>(config.snapshotPath), opened.stops);
 console.log(`${Object.keys(postcodes).length} postcodes the map carries are given a place`);
+// Open areas whose start the map does not hold inside them; the Deploy build refuses any
+// (DOORS_REQUIRED), as CI's smaller map rightly lacks the borough's other doors.
+const doorless: string[] = [];
 const world = areas.some((a) => a.open)
 	? {
 			...opened,
@@ -84,13 +87,22 @@ const world = areas.some((a) => a.open)
 				opened,
 				areas,
 				(ward) => areas.find((a) => ward !== undefined && a.wards.includes(ward))?.name,
-				(area) =>
+				(area) => {
 					console.warn(
 						`${area}: its start is not on this map, so it has no door. Check data/areas.json.`
-					)
+					);
+					doorless.push(area);
+				}
 			)
 		}
 	: { ...opened, postcodes, anywhere: anywhereIn(opened) };
+
+if (process.env.DOORS_REQUIRED && doorless.length) {
+	console.error(
+		`No door for ${doorless.join(', ')}: give each a start inside it in data/areas.json.`
+	);
+	process.exit(1);
+}
 
 const amiss = wordsAmiss(world);
 if (amiss.length) {
