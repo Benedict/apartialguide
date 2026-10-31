@@ -1,57 +1,36 @@
 # To do (Benedict)
 
-Steps only you can take. Ideas for later phases live in `BACKLOG.md`.
+Things only you can do. Claude can't change repository settings, sign up for services or make these decisions for you. Ideas for later are in `BACKLOG.md`.
 
-## Keys and workflows
+Repository settings are under **Settings → Secrets and variables → Actions** on GitHub. A **variable** can be public; a **secret** stays hidden.
 
-- [ ] **A mailing list for areas to come.** At the edge of an area not open yet, the page can link to a sign-up. Choose a provider (Buttondown, a Netlify form, Mailchimp…), make a sign-up page, and add its address as the repository **variable** `SIGNUP_URL`. The privacy page tells of the list once `SIGNUP_URL` is set.
-- [ ] **Sponsoring an area.** You want people to be able to sponsor an area's prose. Decide what a sponsor gets (a credit on the About page, or on the area's edge note?), how they pay, and whether a sponsor's name may appear in the walk at all. Guide never names sources, so a credit belongs to the page, not to Guide.
+## Soon: these finish the site
 
-- [ ] **Re-narrate.** The walk now stops only at junctions and named places, so every stop is new and the prose written before no longer matches any of them: the walk shows the template until it is rewritten. There are 384 busier stops now (was 1,094). Either run the Narrate workflow with `NARRATE_ONLY=busier` (API, roughly $8–15), or ask Claude to narrate them in a session on your Max plan.
-- [ ] **Energy certificate keys.** Register at <https://epc.opendatacommunities.org/>. Then add two repository secrets (Settings → Secrets and variables → Actions):
-  - `EPC_EMAIL`
-  - `EPC_API_KEY`
-- [ ] **Geograph key.** Register at <https://www.geograph.org.uk/>, ask for an API key, and add it as `GEOGRAPH_API_KEY`.
-- [ ] **Fetch them.** Set `SOURCES=epc,geograph` in `data/records/request.env` and push to a branch. The Records workflow commits what it finds. If the energy certificate register has moved to its new service, tell Claude what the fetch log says.
-
-- [ ] **Deploy the flights function**, so `look up` can tell the aircraft overhead. See `functions/flights/README.md`: `npx wrangler login`, then `npx wrangler deploy` in `functions/flights`. Then add the URL it prints as a repository **variable** (not a secret) called `FLIGHTS_URL`. Any FaaS that runs a standard `fetch` handler will do.
-
-- [ ] **Send the Bomb Sight letter.** It's drafted in `docs/letters/bomb-sight.md`. Check that Dr Kate Jones is still the right person: she directed the project at Portsmouth in 2011–13 and may have moved.
-- [ ] **Digital Britannia's licence and files.** Open <https://roadsofromanbritain.org/digital-britannia/downloads.html>; this session can't reach that site. Check whether the licence is CC BY-NC 4.0, as the viewer's author reports, or "under copyright", as the RRRA's press release says. If it's CC BY-NC, download the **GeoJSON** layers (roads, settlement, military, camps, milestones) in longitude and latitude, put them in a folder, and tell Claude where. `look beyond` then tells them. If they come only in British National Grid, say so; they need converting first.
-
-- [ ] **OpenRouter key, to compare models.** Create a key at <https://openrouter.ai/>, add some credit (a comparison of four models on 25 stops costs pennies), and add it as the repository secret `OPENROUTER_API_KEY`. Then Actions → Compare models → Run workflow; the report is attached to the run.
-
-- [ ] **Netlify.** The site moves from GitHub Pages to Netlify once two settings exist; until then it keeps publishing to Pages.
-  1. At app.netlify.com, "Let's create your new project": not "Import a Git repository" (Netlify would then build it itself, without the smoke check), but **Upload your project files**: drop any one HTML file. The workflow replaces it with the real site. Then Project configuration → General → copy the **Project ID** (the workflow calls it the site ID).
-  2. User settings → Applications → Personal access tokens → New access token. Copy it.
-  3. In the repository, Settings → Secrets and variables → Actions: a **variable** `NETLIFY_SITE_ID` (the Project ID), and a **secret** `NETLIFY_AUTH_TOKEN` (the token).
-  4. Run the Deploy workflow (Actions → Deploy → Run workflow), or merge anything. Its summary gives the URL.
-  5. Once the Netlify site plays, Settings → Pages → turn GitHub Pages off, and give the Netlify URL to anyone who has the old one. `FLIGHTS_URL` and the Cloudflare worker are then no longer needed: flights answer from the site itself.
-- [ ] **Privacy contact.** The privacy page (`/privacy/`) is written from what the code does and names you as responsible. Read it on the site and correct anything you would put differently. It has no contact yet: set the repository **variable** `CONTACT_EMAIL` to an address you are happy to make public (it is also wanted for `/.well-known/security.txt`). The UK GDPR asks for the controller's identity and contact details; a postal address is not required of an individual, but add one if you want it.
-- [ ] **Site address.** Add the repository **variable** `SITE_URL` = `https://apartialguide.com` (no `www.`: Netlify redirects `www.` to it, so that is the address search engines and link previews should be given). With it, a shared link shows the logo, and the site names its canonical addresses and sitemap.
-- [ ] **Google Analytics.** Create a GA4 property for the site, then add its measurement ID (`G-…`) as a repository **variable** (not a secret) called `GA_MEASUREMENT_ID` (Settings → Secrets and variables → Actions → Variables), and run the Deploy workflow. Until then nothing is counted and no one is asked. In GA, under Admin → Data retention, consider the shortest retention, and leave Google signals off.
+- [ ] **Mailing list.** At the edge of an area not open yet, the walk can link to a sign-up. Sign up with a provider (Buttondown is the suggestion: it gives you a sign-up page and can send without tracking), turn off open and click tracking, and add the sign-up page's address as the variable `SIGNUP_URL`. Tell Claude which provider, so the privacy page can name it.
+- [ ] **Contact email.** Add the variable `CONTACT_EMAIL`: an address you're happy to make public. The privacy page shows it, as the UK GDPR expects.
+- [ ] **Private security reports.** Settings → Code security → Private vulnerability reporting → Enable. `SECURITY.md` and the Code of Conduct send reports there.
+- [ ] **Rename the repository** to `apartialguide`: Settings → General → Repository name. Then tell Claude, who will update the links on the site.
+- [ ] **Delete the `CROYDON_WALK` variable**, if it's still there. Nothing uses it now.
+- [ ] **Read the site on your phone**: the privacy page and About in particular. Tell Claude anything you'd put differently.
 
 ## Decisions
 
-- [ ] **Is the piece non-commercial, for good?** Bomb Sight and Digital Britannia both forbid commercial use. An exhibition with a fee, or a sale or commission, would breach both.
+- [ ] **Sponsoring an area.** What does a sponsor get (a credit on About, or on the area's "not open yet" note)? How do they pay? Can a sponsor's name appear in the walk at all? (Guide itself never names anyone, so a credit would be the page's, not Guide's.)
+- [ ] **Non-commercial for good?** Bomb Sight and Digital Britannia both forbid commercial use. A paid exhibition, a sale or a commission would rule both out.
+- [ ] **Geograph photographs.** Their licence asks for each photographer's name. Name them where a photograph is mentioned, or leave Geograph out?
+- [ ] **Sources to leave out.** If any source shouldn't be used, list it on `LEAVE_OUT=` in `data/records/use.env`.
+- [ ] **The drawn route ("Auster step 3").** Answer the open questions in its brief so it can be built.
+- [ ] **A few lines about you** for the About page, and a link if you want one.
 
-- [ ] **Geograph's licence.** CC BY-SA asks for each photographer's name. Do you want each photographer named where the photograph is told, or Geograph left out (`LEAVE_OUT=geograph`)?
-- [ ] **Which sources the walk uses.** List any to leave out on `LEAVE_OUT=` in `data/records/use.env`, comma-separated: `bench`, `wildlife`, `postcode`, `company`, `hygiene`, `listed`, `tree`, `planning`, `plaque`, `price`, `crime`, `trees`, `ward`, `flood`, `floodzone`, `epc`, `geograph`.
-- [ ] **The edge of the map.** Crop to the Addiscombe East and West wards, or keep the wider walk and let Guide tell the boundaries as now?
-- [ ] **Auster step 3.** Answer the brief's open questions so the drawn route can be built.
+## Keys, for more sources (optional)
 
-## Words
+- [ ] **Energy certificates.** Register at <https://epc.opendatacommunities.org/>, then add the secrets `EPC_EMAIL` and `EPC_API_KEY`.
+- [ ] **Geograph photographs.** Register at <https://www.geograph.org.uk/>, ask for an API key, and add the secret `GEOGRAPH_API_KEY`.
+- [ ] Once either is in, tell Claude, who will fetch them.
+- [ ] **Comparing narrator models.** Create a key at <https://openrouter.ai/>, add a little credit, and add the secret `OPENROUTER_API_KEY`. Then Actions → Compare models → Run workflow.
 
-- [ ] **About page.** A few lines about you, and a link if wanted.
+## Letters and permissions (optional)
 
-## The Blitz bomb census
-
-- [ ] **Let Claude read the sources.** These sessions can't reach `blitzbombcensusmaps.wordpress.com` or `bombsight.org`. Add both under Allowed domains in the cloud environment's network settings (<https://code.claude.com/docs/en/cloud-environments#network-access>), then ask again. Claude can then say whether the data can be downloaded, and on what terms.
-- [ ] **Or ask for the data.** Bomb Sight is a University of Portsmouth project. Earlier research found no download, and a non-commercial licence. Write to the project for the Croydon points and the terms of reuse.
-
-## Optional
-
-- [ ] **Civilian war dead.** The CWGC's records need a written licence. Write to them if you want the dead of Addiscombe told.
-- [ ] **Check the live site** on your phone after each merge: <https://benedict.github.io/osm-text-adventure/>.
-
-- [ ] **Turn on private vulnerability reporting.** `SECURITY.md` and the Code of Conduct send reports through GitHub's private reporting: Settings → Code security → Private vulnerability reporting → Enable. Once `CONTACT_EMAIL` is set, it can be named in `SECURITY.md` too.
+- [ ] **Bomb Sight** (the Blitz bomb census). The letter is drafted in `docs/letters/bomb-sight.md`. Check that Dr Kate Jones is still the right person before sending. Or let Claude look first: add `blitzbombcensusmaps.wordpress.com` and `bombsight.org` to the cloud environment's allowed domains.
+- [ ] **Digital Britannia** (Roman roads and sites). Open <https://roadsofromanbritain.org/digital-britannia/downloads.html> and check the licence. If it's CC BY-NC, download the GeoJSON layers in longitude and latitude and tell Claude where they are.
+- [ ] **Civilian war dead.** The CWGC's records need a written licence. Write to them if you want them told.
