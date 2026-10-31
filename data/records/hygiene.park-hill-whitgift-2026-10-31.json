@@ -1,0 +1,239 @@
+{
+	"source": "Food Standards Agency",
+	"prefix": "hygiene",
+	"records": [
+		{
+			"id": "1797250",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1797250"
+			},
+			"at": [
+				51.3687782287598,
+				-0.089319996535778
+			],
+			"observed": "2025-04-15",
+			"claims": {
+				"name": "Cedar View Care Centre",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2025-04-15"
+			}
+		},
+		{
+			"id": "1808956",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1808956"
+			},
+			"at": [
+				51.3687782287598,
+				-0.089319996535778
+			],
+			"observed": "2025-03-06",
+			"claims": {
+				"name": "Greenshaw Learning Trust At Park Hill Junior School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2025-03-06"
+			}
+		},
+		{
+			"id": "1401807",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1401807"
+			},
+			"at": [
+				51.3691558837891,
+				-0.0838010013103485
+			],
+			"observed": "2026-10-08",
+			"claims": {
+				"name": "Independent Catering At Archbishop Tenisons C Of E School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2026-10-08"
+			}
+		},
+		{
+			"id": "1831395",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1831395"
+			},
+			"at": [
+				51.3687782287598,
+				-0.089319996535778
+			],
+			"observed": "2026-01-29",
+			"claims": {
+				"name": "Junior Adventures Group At Park Hill Junior School",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-01-29"
+			}
+		},
+		{
+			"id": "1159952",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1159952"
+			},
+			"at": [
+				51.3658616,
+				-0.0881098
+			],
+			"observed": "2026-02-17",
+			"claims": {
+				"name": "Learning World Montessori",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-02-17"
+			}
+		},
+		{
+			"id": "1624909",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1624909"
+			},
+			"at": [
+				51.3698283,
+				-0.0749854
+			],
+			"observed": "2026-06-27",
+			"claims": {
+				"name": "Mynd Spirit",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2026-06-27"
+			}
+		},
+		{
+			"id": "5650",
+			"link": {
+				"key": "fhrs:id",
+				"value": "5650"
+			},
+			"at": [
+				51.3687782287598,
+				-0.089319996535778
+			],
+			"observed": "2026-05-21",
+			"claims": {
+				"name": "Red Court Care Home",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-05-21"
+			}
+		},
+		{
+			"id": "1785801",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1785801"
+			},
+			"at": [
+				51.3733673095703,
+				-0.0818580016493797
+			],
+			"observed": "2026-02-10",
+			"claims": {
+				"name": "Wilhelmina House",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-02-10"
+			}
+		},
+		{
+			"id": "4879",
+			"link": {
+				"key": "fhrs:id",
+				"value": "4879"
+			},
+			"at": [
+				51.3710556030273,
+				-0.0668840035796165
+			],
+			"observed": "2026-04-27",
+			"claims": {
+				"name": "Shirley Park Bowling Club",
+				"kind": "Other catering premises",
+				"rating": "4",
+				"date": "2026-04-27"
+			}
+		},
+		{
+			"id": "1930521",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1930521"
+			},
+			"at": [
+				51.3703880310059,
+				-0.0839369967579842
+			],
+			"observed": "2026-06-20",
+			"claims": {
+				"name": "The Kiosks",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2026-06-20"
+			}
+		},
+		{
+			"id": "688",
+			"link": {
+				"key": "fhrs:id",
+				"value": "688"
+			},
+			"at": [
+				51.374813079834,
+				-0.0762659981846809
+			],
+			"observed": "2025-12-09",
+			"claims": {
+				"name": "Fennies Under 5s Day Nursery",
+				"kind": "Caring Premises",
+				"rating": "2",
+				"date": "2025-12-09"
+			}
+		},
+		{
+			"id": "1841",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1841"
+			},
+			"at": [
+				51.37009365,
+				-0.0862385
+			],
+			"observed": "2012-08-13",
+			"claims": {
+				"name": "St Matthews Church",
+				"kind": "Other catering premises",
+				"rating": "1",
+				"date": "2012-08-13"
+			}
+		},
+		{
+			"id": "1788762",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1788762"
+			},
+			"at": [
+				51.3687782287598,
+				-0.089319996535778
+			],
+			"claims": {
+				"name": "Our Parks",
+				"kind": "Caring Premises",
+				"rating": "AwaitingInspection"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

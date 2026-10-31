@@ -1,0 +1,327 @@
+{
+	"source": "OpenBenches",
+	"prefix": "bench",
+	"records": [
+		{
+			"id": "26763",
+			"at": [
+				51.370121,
+				-0.085444
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "Given by the residents of Park Hill / to mark / THE QUEEN'S GOLDEN JUBILEE / 2002"
+			}
+		},
+		{
+			"id": "26847",
+			"at": [
+				51.368717,
+				-0.090697
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF SUSAN ELIZABETH PEACE / 2nd OCTOBER 1963 10th JANUARY 2021 / IN LOVING MEMORY OF BARRY PEACH / 3rd MARCH 1975 11th AUGUST 1995"
+			}
+		},
+		{
+			"id": "26850",
+			"at": [
+				51.368717,
+				-0.090697
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In Loving Memory of Irina Savenko / Wonderful Mother. Wife and Daughter / 19.01.1966 - 13.02.2008 / You are forever in our hearts"
+			}
+		},
+		{
+			"id": "26854",
+			"at": [
+				51.368717,
+				-0.090697
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "19 [E II R] 53"
+			}
+		},
+		{
+			"id": "26855",
+			"at": [
+				51.368717,
+				-0.090697
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "TO THE DEAR MEMORY OF / DENNIS HARRY COULT / 28 AUGUST 1983"
+			}
+		},
+		{
+			"id": "26856",
+			"at": [
+				51.368717,
+				-0.090697
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "Presented by / The Rotary Club of Thornton Heath / 1983"
+			}
+		},
+		{
+			"id": "26857",
+			"at": [
+				51.368717,
+				-0.090697
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In loving memory of our precious Mother & Grandmother, / Chief Mrs Kehinde Oginni / 27/09/1953 23/08/2021. / Forever missed."
+			}
+		},
+		{
+			"id": "26858",
+			"at": [
+				51.368717,
+				-0.090697
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "FOR G.R VALKA / HE WILL ALWAYS REMEMBER / BY HIS FAMILY AN / IN LOVING MEMORY OF / THE BEST WIFE / MAGDALENA VALKA / 1921 - 1990"
+			}
+		},
+		{
+			"id": "26859",
+			"at": [
+				51.368717,
+				-0.090697
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF BILL PEARSON / 1919 - 1996"
+			}
+		},
+		{
+			"id": "26860",
+			"at": [
+				51.368717,
+				-0.090697
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / PETER WANLESS / 1926 1999 / DANNY WANLESS / 1949 1990 / LOVED AND MISSED BY ANNA PAULINE AND SEAN / ."
+			}
+		},
+		{
+			"id": "21217",
+			"at": [
+				51.367939,
+				-0.091087
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "EVA FRENCH OF POLLARDS HILL / (1915 -1993) / A GENEROUS & LOVING LADY / SADLY MISSED BY HER MANY FRIENDS"
+			}
+		},
+		{
+			"id": "21218",
+			"at": [
+				51.36795,
+				-0.091179
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF / JACK HAIG GOODALL / A LIFELONG CROYDON RESIDENT / 1918 - 1996"
+			}
+		},
+		{
+			"id": "21216",
+			"at": [
+				51.367935,
+				-0.091214
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "Richard Cowland / Forever in our hearts, / missed every day."
+			}
+		},
+		{
+			"id": "21213",
+			"at": [
+				51.367878,
+				-0.091268
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "Chris Sadler / 6th Nov 1949--24th Dec 2016 / Loved So Much and Missed Every Day"
+			}
+		},
+		{
+			"id": "21214",
+			"at": [
+				51.367966,
+				-0.091326
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF / MARTHA EMMERS / 1902 - 1996 / MUCH LOVED AND SADLY MISSED / MUTTER AND OMI"
+			}
+		},
+		{
+			"id": "21215",
+			"at": [
+				51.367962,
+				-0.091333
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In Loving Memery of Irina Saverro / Wonderful Mother, Wife and Daughter / 19.01.1966 / 13.02.2008 / You are forever in Our hearts"
+			}
+		},
+		{
+			"id": "26843",
+			"at": [
+				51.36882,
+				-0.091664
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF ALFRED SORKIN / WHO DIED 11TH AUGUST 1992 / A SMILE, A GLANCE, A TOUCH, A TEAR / A MOMENT ONLY WE ARE HERE / AFFECTIONATELY REMEMBERED BY HIS / FRIENDS AND COLLEAGUES"
+			}
+		},
+		{
+			"id": "26840",
+			"at": [
+				51.369839,
+				-0.091715
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / GLADYS 1903-1994 AND / ALBERT STIDARD 1897-1984"
+			}
+		},
+		{
+			"id": "26863",
+			"at": [
+				51.37162,
+				-0.091175
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "19 [E II R] 53"
+			}
+		},
+		{
+			"id": "26842",
+			"at": [
+				51.369049,
+				-0.091814
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF MY BELOVED WIFE / MARION BICKERDIKE. / 1936 - 1997 / WHO LOVED THIS GARDEN"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

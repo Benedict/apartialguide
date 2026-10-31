@@ -1,0 +1,5302 @@
+{
+	"source": "London Planning Datahub",
+	"prefix": "planning",
+	"records": [
+		{
+			"id": "19/02337/DISC",
+			"address": {
+				"number": "14",
+				"street": "Upfield"
+			},
+			"at": [
+				51.373088,
+				-0.064889
+			],
+			"observed": "2019-06-26",
+			"claims": {
+				"application": "Approval of details pursuant to condition 2 (Materials) of planning permission 19/00522/HSE (Erection of first floor side extension with front and rear velux windows, single storey rear extension and internal alterations).",
+				"decision": "Approved",
+				"date": "2019-06-26"
+			}
+		},
+		{
+			"id": "21/01771/HSE",
+			"address": {
+				"number": "4",
+				"street": "Digby Place"
+			},
+			"at": [
+				51.3726706,
+				-0.0772084
+			],
+			"observed": "2021-06-01",
+			"claims": {
+				"application": "Erection of boundary wall (retrospective)",
+				"decision": "Approved",
+				"date": "2021-06-01"
+			}
+		},
+		{
+			"id": "21/02751/DISC",
+			"address": {
+				"number": "5",
+				"street": "The Avenue"
+			},
+			"at": [
+				51.3720201,
+				-0.0880117
+			],
+			"observed": "2021-07-21",
+			"claims": {
+				"application": "Discharge of Condition 6 attached to Planning Permission 18/02653/FUL for Erection of four storey block comprising of 8 x one bed flats with associated refuse and cycle storage and landscaping.",
+				"decision": "Approved",
+				"date": "2021-07-21"
+			}
+		},
+		{
+			"id": "19/04661/FUL",
+			"address": {
+				"number": "34",
+				"street": "Brownlow Road"
+			},
+			"at": [
+				51.3673543,
+				-0.08260289999999999
+			],
+			"observed": "2022-02-02",
+			"claims": {
+				"application": "Demolition of existing dwelling and the erection of a 4 storey building comprising of 7 apartments with a single parking space and other external alterations (amended description)",
+				"decision": "Refused",
+				"date": "2022-02-02"
+			}
+		},
+		{
+			"id": "19/05776/HSE",
+			"address": {
+				"number": "45",
+				"street": "Fitzjames Avenue"
+			},
+			"at": [
+				51.3736648,
+				-0.0676835
+			],
+			"observed": "2020-02-20",
+			"claims": {
+				"application": "Extension and new brickwork to front bay, extension and new brickwork to front porch, demolition of existing rear verandah, erection of single-storey rear extension with raised terrace area, demolition of existing side conservatory, erection of single-storey side/rear extension, installation of windows in first floor rear elevation, alterations to existing balustrades, removal of chimney stack, removal of rear gable and erection of rear dormer.",
+				"decision": "Approved",
+				"date": "2020-02-20"
+			}
+		},
+		{
+			"id": "24/00158/HSE",
+			"address": {
+				"number": "93",
+				"street": "Park Hill Road"
+			},
+			"at": [
+				51.366123,
+				-0.088139
+			],
+			"observed": "2024-03-04",
+			"claims": {
+				"application": "Proposed single storey front extension with associated internal/external works including changing a door to window.",
+				"decision": "Approved",
+				"date": "2024-03-04"
+			}
+		},
+		{
+			"id": "24/00391/TRE",
+			"address": {
+				"number": "55",
+				"street": "Stanhope Road"
+			},
+			"at": [
+				51.371531,
+				-0.090026
+			],
+			"observed": "2024-03-06",
+			"claims": {
+				"application": "T1 London Plane - 3 metre height and lateral reduction, 5 metre crown lift measured from road height with a max cut size of 25mm.\rT2 Horse Chestnut - reduction of 1.5 metres and crown raise to 4 metres measured from ground level.\rYew - to reduce by 2 metres in height and 1.5 on the sides.\r(TPO 01, 1978)",
+				"decision": "Approved",
+				"date": "2024-03-06"
+			}
+		},
+		{
+			"id": "20/01375/HSE",
+			"address": {
+				"number": "3",
+				"street": "Brownlow Road"
+			},
+			"at": [
+				51.3670399,
+				-0.0853744
+			],
+			"observed": "2020-05-15",
+			"claims": {
+				"application": "Erection of porch to front elevation",
+				"decision": "Approved",
+				"date": "2020-05-15"
+			}
+		},
+		{
+			"id": "19/03543/TRE",
+			"address": {
+				"number": "37",
+				"street": "Tidenham Gardens"
+			},
+			"at": [
+				51.3708398,
+				-0.0840235
+			],
+			"observed": "2019-08-23",
+			"claims": {
+				"application": "T43 Chestnut - fell due to being in poor condition and dying back will be replanted by a tree to be agreed by the Tree officer, managing agent and directors of the site.",
+				"decision": "Approved",
+				"date": "2019-08-23"
+			}
+		},
+		{
+			"id": "19/01874/HSE",
+			"address": {
+				"number": "15",
+				"street": "Minster Drive"
+			},
+			"at": [
+				51.368655,
+				-0.08733
+			],
+			"observed": "2019-06-12",
+			"claims": {
+				"application": "Demolition and erection of rear extension and alteration of garage into habitable room.",
+				"decision": "Approved",
+				"date": "2019-06-12"
+			}
+		},
+		{
+			"id": "22/04901/HSE",
+			"address": {
+				"number": "141",
+				"street": "Coombe Road"
+			},
+			"at": [
+				51.3658798,
+				-0.0881236
+			],
+			"observed": "2023-02-13",
+			"claims": {
+				"application": "Erection of rear extension and alterations to fenestration.",
+				"decision": "Withdrawn",
+				"date": "2023-02-13"
+			}
+		},
+		{
+			"id": "26/02325/FUL",
+			"address": {
+				"number": "175",
+				"street": "Coombe Road"
+			},
+			"at": [
+				51.36506,
+				-0.085296
+			],
+			"observed": "2026-10-21",
+			"claims": {
+				"application": "Rear infill extension",
+				"decision": "Approved",
+				"date": "2026-10-21"
+			}
+		},
+		{
+			"id": "20/00821/HSE",
+			"address": {
+				"number": "104",
+				"street": "Cotelands"
+			},
+			"at": [
+				51.3703376,
+				-0.0874065
+			],
+			"observed": "2020-05-07",
+			"claims": {
+				"application": "Single storey side/front extension and two storey rear extensions, alterations to front porch, alterations to openings, new side windows",
+				"decision": "Approved",
+				"date": "2020-05-07"
+			}
+		},
+		{
+			"id": "20/01887/TRE",
+			"address": {
+				"number": "3",
+				"street": "Deepdene Avenue"
+			},
+			"at": [
+				51.3699747,
+				-0.0784276
+			],
+			"observed": "2020-06-11",
+			"claims": {
+				"application": "T1 Twin stemmed Ash Left hand stem of tree- Remove large low bough over garden back to the fork- Remove left side bough back to 2m above main v leaving a growing branch to the rearMain vertical stem -  Remove all major deadwood over 3cms in diameter\rT2 Ash  Remove left stem back to main fork and shorten branch over garden by 50%\rT3 Ash - Shorten long lateral boughs over your rear neighbours garden by 50%\rT4,T5,T6. Oak trees - Crown thin by 20% to increase light - Remove major deadwood over 3cms in diameter\rReasons: To increase available light to house and garden and reduce risk of branch failure during high winds\r(TPO no. 08, 1975)",
+				"decision": "Approved",
+				"date": "2020-06-11"
+			}
+		},
+		{
+			"id": "21/01763/HSE",
+			"address": {
+				"number": "52",
+				"street": "Fitzjames Avenue"
+			},
+			"at": [
+				51.3732048,
+				-0.0665103
+			],
+			"observed": "2021-06-01",
+			"claims": {
+				"application": "Alterations to roof including partial increase of ridge line, replacement and alterations to window apertures and doors in front, side and rear elevations. Construction of patio, erection of single front extension/porch. Single storey rear extension and first floor rear extension. Removal of chimney and new external wall finishes.",
+				"decision": "Approved",
+				"date": "2021-06-01"
+			}
+		},
+		{
+			"id": "25/00657/HSE",
+			"address": {
+				"number": "39",
+				"street": "Grimwade Avenue"
+			},
+			"at": [
+				51.369274,
+				-0.073512
+			],
+			"observed": "2025-05-27",
+			"claims": {
+				"application": "Installation of solar panels, to main pitch rear roof and single storey rear flat roof, with screening over.",
+				"decision": "Approved",
+				"date": "2025-05-27"
+			}
+		},
+		{
+			"id": "21/03931/HSE",
+			"address": {
+				"number": "12",
+				"street": "Crusader Gardens"
+			},
+			"at": [
+				51.3703712,
+				-0.0867154
+			],
+			"observed": "2021-10-25",
+			"claims": {
+				"application": "Alterations, erection of a infill side extension, front porch and conversion of garage into a habitable room",
+				"decision": "Approved",
+				"date": "2021-10-25"
+			}
+		},
+		{
+			"id": "25/00823/TRE",
+			"address": {
+				"number": "8",
+				"street": "Fairfield Road"
+			},
+			"at": [
+				51.372091,
+				-0.090146
+			],
+			"observed": "2025-04-10",
+			"claims": {
+				"application": "T1 - Holly Tree - Fell, As tree is becoming very overgrown and leaning/ pushing on the wall eventually will cause wall to break and fall over.\r(TPO 04, 1991)",
+				"decision": "Approved",
+				"date": "2025-04-10"
+			}
+		},
+		{
+			"id": "20/02548/HSE",
+			"address": {
+				"number": "21",
+				"street": "Grimwade Avenue"
+			},
+			"at": [
+				51.3698548,
+				-0.070588
+			],
+			"observed": "2020-08-21",
+			"claims": {
+				"application": "Alterations, erection of part single/two-storey side/rear extension and single-storey rear extension.",
+				"decision": "Approved",
+				"date": "2020-08-21"
+			}
+		},
+		{
+			"id": "19/03594/GPDO",
+			"address": {
+				"number": "11",
+				"street": "Delmey Close"
+			},
+			"at": [
+				51.3715406,
+				-0.0784914
+			],
+			"observed": "2019-09-11",
+			"claims": {
+				"application": "Erection of single storey rear extension projecting out 4 metres with a maximum height of 3.4 metres",
+				"decision": "Approved",
+				"date": "2019-09-11"
+			}
+		},
+		{
+			"id": "18/04874/HSE",
+			"address": {
+				"number": "20",
+				"street": "Hartley Road"
+			},
+			"at": [
+				51.371825,
+				-0.08817789999999999
+			],
+			"observed": "2019-03-14",
+			"claims": {
+				"application": "Demolition of the existing rear extension, and the erection of a single storey rear extension",
+				"decision": "Approved",
+				"date": "2019-03-14"
+			}
+		},
+		{
+			"id": "19/02656/HSE",
+			"address": {
+				"number": "173",
+				"street": "Coombe Road"
+			},
+			"at": [
+				51.365117,
+				-0.085437
+			],
+			"observed": "2019-09-05",
+			"claims": {
+				"application": "Erection of two storey rear extension",
+				"decision": "Approved",
+				"date": "2019-09-05"
+			}
+		},
+		{
+			"id": "21/06047/LP",
+			"address": {
+				"number": "15",
+				"street": "Selborne Road"
+			},
+			"at": [
+				51.3690696,
+				-0.0846577
+			],
+			"observed": "2022-04-12",
+			"claims": {
+				"application": "Conversion of garage to habitable room and installation of associated window and rooflight.",
+				"decision": "Approved",
+				"date": "2022-04-12"
+			}
+		},
+		{
+			"id": "20/01334/NMA",
+			"address": {
+				"number": "37",
+				"street": "Grimwade Avenue"
+			},
+			"at": [
+				51.3692144,
+				-0.073201
+			],
+			"observed": "2020-03-27",
+			"claims": {
+				"application": "Non material amendment to permission 19/02001/HSE - Construction of a detached single storey outbuilding in the rear garden",
+				"decision": "Approved",
+				"date": "2020-03-27"
+			}
+		},
+		{
+			"id": "22/03110/HSE",
+			"address": {
+				"number": "38",
+				"street": "Lloyd Park Avenue"
+			},
+			"at": [
+				51.3663859,
+				-0.0816808
+			],
+			"observed": "2022-10-05",
+			"claims": {
+				"application": "Conversion of garage into bedroom with en-suite, and single storey side/rear extension to create larger kitchen/dining area and an extended terrace area.",
+				"decision": "Approved",
+				"date": "2022-10-05"
+			}
+		},
+		{
+			"id": "22/01935/LE",
+			"address": {
+				"number": "22",
+				"street": "Fitzjames Avenue"
+			},
+			"at": [
+				51.3725643,
+				-0.0712932
+			],
+			"observed": "2022-07-05",
+			"claims": {
+				"application": "Garage conversion including the replacement of the existing garage door with a UPVC casement window",
+				"decision": "Approved",
+				"date": "2022-07-05"
+			}
+		},
+		{
+			"id": "14/03608/P",
+			"address": {
+				"number": "1 & 2",
+				"street": "Rutland Gardens"
+			},
+			"at": [
+				51.365258,
+				-0.084713
+			],
+			"observed": "2015-07-06",
+			"claims": {
+				"application": "Demolition of existing buildings; erection of 4 two storey  two bedroom terraced houses; formation of vehicular access and provision of associated parking",
+				"date": "2015-07-06"
+			}
+		},
+		{
+			"id": "23/00264/HSE",
+			"address": {
+				"number": "2A",
+				"street": "Upfield"
+			},
+			"at": [
+				51.3748031,
+				-0.06527909999999999
+			],
+			"observed": "2023-05-04",
+			"claims": {
+				"application": "Alterations; Erection of dormer in front roofslope",
+				"decision": "Approved",
+				"date": "2023-05-04"
+			}
+		},
+		{
+			"id": "25/00424/GPDO",
+			"address": {
+				"number": "18",
+				"street": "Upfield"
+			},
+			"at": [
+				51.372865,
+				-0.06497
+			],
+			"observed": "2025-03-19",
+			"claims": {
+				"application": "Erection of single storey rear extension projecting out a total of 8 metres from the original dwelling with a maximum height of 3 metres",
+				"decision": "Approved",
+				"date": "2025-03-19"
+			}
+		},
+		{
+			"id": "19/04965/LP",
+			"address": {
+				"number": "19",
+				"street": "Radcliffe Road"
+			},
+			"at": [
+				51.3727656,
+				-0.0780666
+			],
+			"observed": "2019-11-01",
+			"claims": {
+				"application": "Erection of  rear single storey extension",
+				"decision": "Approved",
+				"date": "2019-11-01"
+			}
+		},
+		{
+			"id": "22/03206/LP",
+			"address": {
+				"number": "15",
+				"street": "Paul Gardens"
+			},
+			"at": [
+				51.3729907,
+				-0.0791779
+			],
+			"observed": "2022-09-28",
+			"claims": {
+				"application": "Erection of single storey rear extension",
+				"decision": "Approved",
+				"date": "2022-09-28"
+			}
+		},
+		{
+			"id": "25/03433/FUL",
+			"address": {
+				"number": "46",
+				"street": "Selborne Road"
+			},
+			"at": [
+				51.369296,
+				-0.08035
+			],
+			"observed": "2025-10-22",
+			"claims": {
+				"application": "Demolition of the existing dwelling house and garage. Erection of 1 x 3-bedroom and 1 x 4-bedroom dwellings with associated amenity space, refuse and recycling storage, cycle store and car parking spaces.",
+				"date": "2025-10-22"
+			}
+		},
+		{
+			"id": "19/02699/HSE",
+			"address": {
+				"number": "7",
+				"street": "Harland Avenue"
+			},
+			"at": [
+				51.371611,
+				-0.07623
+			],
+			"observed": "2019-11-26",
+			"claims": {
+				"application": "Loft conversion with erection of three dormers in the rear roof slope",
+				"decision": "Approved",
+				"date": "2019-11-26"
+			}
+		},
+		{
+			"id": "21/04819/LP",
+			"address": {
+				"number": "8",
+				"street": "Delmey Close"
+			},
+			"at": [
+				51.3718955,
+				-0.0787495
+			],
+			"observed": "2022-01-20",
+			"claims": {
+				"application": "Conversion of garage to form a habitable room.",
+				"decision": "Approved",
+				"date": "2022-01-20"
+			}
+		},
+		{
+			"id": "22/00575/HSE",
+			"address": {
+				"number": "5A",
+				"street": "Stanhope Road"
+			},
+			"at": [
+				51.367956,
+				-0.0891578
+			],
+			"observed": "2022-04-08",
+			"claims": {
+				"application": "Erection of single storey rear extension",
+				"decision": "Refused",
+				"date": "2022-04-08"
+			}
+		},
+		{
+			"id": "21/02224/LP",
+			"address": {
+				"number": "23",
+				"street": "Grimwade Avenue"
+			},
+			"at": [
+				51.3697789,
+				-0.0708929
+			],
+			"observed": "2021-08-25",
+			"claims": {
+				"application": "Ereection of loft conversion with rear dormer and front roof lights.",
+				"decision": "Approved",
+				"date": "2021-08-25"
+			}
+		},
+		{
+			"id": "24/02513/GPDO",
+			"address": {
+				"number": "4",
+				"street": "Chiltern Close"
+			},
+			"at": [
+				51.369254,
+				-0.085509
+			],
+			"observed": "2024-09-19",
+			"claims": {
+				"application": "Erection of single storey rear extension extending 4.5metres with a  maximum height of 3500m.",
+				"decision": "Approved",
+				"date": "2024-09-19"
+			}
+		},
+		{
+			"id": "21/05302/HSE",
+			"address": {
+				"number": "3A",
+				"street": "Stanhope Road"
+			},
+			"at": [
+				51.3678283,
+				-0.0890482
+			],
+			"observed": "2021-12-14",
+			"claims": {
+				"application": "Erection of three storey side/rear extension",
+				"decision": "Approved",
+				"date": "2021-12-14"
+			}
+		},
+		{
+			"id": "26/00138/LP",
+			"address": {
+				"number": "12",
+				"street": "Weaver Close"
+			},
+			"at": [
+				51.367683,
+				-0.081782
+			],
+			"observed": "2026-01-28",
+			"claims": {
+				"application": "Conversion of garage to habitable room",
+				"decision": "Approved",
+				"date": "2026-01-28"
+			}
+		},
+		{
+			"id": "22/03212/DISC",
+			"address": {
+				"number": "53",
+				"street": "Upfield"
+			},
+			"at": [
+				51.3718369,
+				-0.0669989
+			],
+			"observed": "2022-08-24",
+			"claims": {
+				"application": "Discharge of condition 2 (Fire Safety) attached to planning permission for 21/03826/HSE for: Erection of two single storey outbuildings in the applicant's rear garden for uses ancillary to the existing detached family house (retrospective application) - approved on 27.05.2022.",
+				"decision": "Approved",
+				"date": "2022-08-24"
+			}
+		},
+		{
+			"id": "19/04832/GPDO",
+			"address": {
+				"number": "41",
+				"street": "Upfield"
+			},
+			"at": [
+				51.3721176,
+				-0.06547839999999999
+			],
+			"observed": "2019-12-12",
+			"claims": {
+				"application": "Erection of single storey rear extension projecting out 5 metres with a maximum height of 3.5 metres",
+				"decision": "Approved",
+				"date": "2019-12-12"
+			}
+		},
+		{
+			"id": "22/03678/DISC",
+			"at": [
+				51.3636858,
+				-0.0716946
+			],
+			"observed": "2022-12-23",
+			"claims": {
+				"application": "Details pursuant to Condition 4 ( Construction Environmental Management Plan) and Condition 6 (Biodiversity Report) of planning permission 21/06280/ful granted for Installation of a Multi Use Games Area (MUGA) on the northern part of the site, creation of footpath, replacement of timber gate in existing wood fence, and erection of 1.5 metres high fence around MUGA.",
+				"decision": "Approved",
+				"date": "2022-12-23"
+			}
+		},
+		{
+			"id": "26/02638/TRE",
+			"address": {
+				"number": "159",
+				"street": "Coombe Road"
+			},
+			"at": [
+				51.365521,
+				-0.086541
+			],
+			"observed": "2026-10-14",
+			"claims": {
+				"application": "T1 Common Beech. Reduce exterior of crown by 2m in all directions. Raise the crown over the neighbouring property to the left to 5m form ground level.\r(TPO 31, 1989)",
+				"decision": "Approved",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "19/00436/NMA",
+			"address": {
+				"number": "47",
+				"street": "Stanhope Road"
+			},
+			"at": [
+				51.3707838,
+				-0.0905057
+			],
+			"observed": "2019-02-01",
+			"claims": {
+				"application": "Non-material amendment to planning permission 18/05081/HSE for Erection of two rooflights in front elevation, single storey side/rear extension and part single/part two storey rear extension.",
+				"decision": "Approved",
+				"date": "2019-02-01"
+			}
+		},
+		{
+			"id": "22/00586/CONR",
+			"at": [
+				51.3700283,
+				-0.0888417
+			],
+			"observed": "2022-12-02",
+			"claims": {
+				"application": "Variation of condition 6 (hours of use) attached to 12/00198/P for Alterations; expansion by an additional form of entry to three forms of entry; erection of single and two storey extensions to provide additional classrooms and new entrance lobby; formation of new car parking area and multi use games area (amended description)",
+				"decision": "Approved",
+				"date": "2022-12-02"
+			}
+		},
+		{
+			"id": "19/05098/HSE",
+			"address": {
+				"number": "13",
+				"street": "Fitzjames Avenue"
+			},
+			"at": [
+				51.3733681,
+				-0.0725957
+			],
+			"observed": "2019-12-17",
+			"claims": {
+				"application": "Erection of first floor rear extension and dormer extension in rear roofslope.",
+				"decision": "Approved",
+				"date": "2019-12-17"
+			}
+		},
+		{
+			"id": "25/01084/HSE",
+			"address": {
+				"number": "25",
+				"street": "Upfield"
+			},
+			"at": [
+				51.373132,
+				-0.064241
+			],
+			"observed": "2025-06-24",
+			"claims": {
+				"application": "Alteration to roof form from hipped-and-flat roof to hipped roof, erection of rear dormer, removal of side chimneys, repositioning and enlargement of front and rear windows, conversion of garage to habitable room, and all associated works.",
+				"decision": "Approved",
+				"date": "2025-06-24"
+			}
+		},
+		{
+			"id": "22/04894/DISC",
+			"address": {
+				"number": "49",
+				"street": "Selborne Road"
+			},
+			"at": [
+				51.3700513,
+				-0.07980369999999999
+			],
+			"observed": "2023-01-13",
+			"claims": {
+				"application": "Discharge of condition 4 (landscaping) attached to planning permission 21/01889/CONR for the demolition of existing house, garage and outbuilding, and erection of a three storey building comprising 9 apartments, and provision of associated off-street parking, and associated refuse storage and cycle storage, and associated landscaping.)\r",
+				"decision": "Approved",
+				"date": "2023-01-13"
+			}
+		},
+		{
+			"id": "22/00186/HSE",
+			"address": {
+				"number": "17",
+				"street": "Upfield"
+			},
+			"at": [
+				51.373671,
+				-0.064232
+			],
+			"observed": "2022-03-10",
+			"claims": {
+				"application": "Erection of outbuilding in rear garden for use as a garden room with a garden store.",
+				"decision": "Approved",
+				"date": "2022-03-10"
+			}
+		},
+		{
+			"id": "19/00868/NMA",
+			"address": {
+				"number": "17",
+				"street": "Minster Drive"
+			},
+			"at": [
+				51.3687438,
+				-0.087286
+			],
+			"observed": "2019-03-01",
+			"claims": {
+				"application": "Non material amendment to 18/03556/HSE for Alterations, Erection of single storey side/rear extension",
+				"decision": "Approved",
+				"date": "2019-03-01"
+			}
+		},
+		{
+			"id": "23/00766/HSE",
+			"address": {
+				"number": "38",
+				"street": "Brownlow Road"
+			},
+			"at": [
+				51.3676215,
+				-0.0824481
+			],
+			"observed": "2023-07-12",
+			"claims": {
+				"application": "Extension and alterations to the existing garage, land level changes including erection of terrace at rear with retaining walls and steps down to rear garden\r",
+				"decision": "Approved",
+				"date": "2023-07-12"
+			}
+		},
+		{
+			"id": "19/03758/TRE",
+			"address": {
+				"number": "6",
+				"street": "Tidenham Gardens"
+			},
+			"at": [
+				51.3712566,
+				-0.0836613
+			],
+			"observed": "2019-09-20",
+			"claims": {
+				"application": "T16: Mature Chestnut re-pollard to keep tree at a manageable size.   T6: Mature Lime re-pollard to keep tree at a manageable size. \r(TPO no. 4, 2011)",
+				"decision": "Approved",
+				"date": "2019-09-20"
+			}
+		},
+		{
+			"id": "23/00610/HSE",
+			"address": {
+				"number": "1",
+				"street": "Paul Gardens"
+			},
+			"at": [
+				51.3733745,
+				-0.0800958
+			],
+			"observed": "2023-04-03",
+			"claims": {
+				"application": "Erection of single-storey front extension following garage conversion. Alterations to fenestration.",
+				"decision": "Approved",
+				"date": "2023-04-03"
+			}
+		},
+		{
+			"id": "22/02504/HSE",
+			"address": {
+				"number": "21",
+				"street": "Upfield"
+			},
+			"at": [
+				51.3733874,
+				-0.0639593
+			],
+			"observed": "2022-08-09",
+			"claims": {
+				"application": "Alterations, increase in ridge height, hipped to barn hipped roof extensions, dormer extension in the rear roof slope and replacement roof light in the front roof slope",
+				"decision": "Refused",
+				"date": "2022-08-09"
+			}
+		},
+		{
+			"id": "19/05594/HSE",
+			"address": {
+				"number": "1",
+				"street": "Ranmore Avenue"
+			},
+			"at": [
+				51.3692345,
+				-0.0788034
+			],
+			"observed": "2020-01-16",
+			"claims": {
+				"application": "Alterations to include new ridge height; Erection of first floor front extension and two storey rear extension to include a dormer extension in rear roofslope. Alterations to front and side boundary enclosure to include new railings on existing boundary walls and installation of security gates.",
+				"decision": "Approved",
+				"date": "2020-01-16"
+			}
+		},
+		{
+			"id": "21/02749/DISC",
+			"address": {
+				"number": "26",
+				"street": "Fairfield Road"
+			},
+			"at": [
+				51.3722635,
+				-0.08804469999999999
+			],
+			"observed": "2021-07-21",
+			"claims": {
+				"application": "Discharge of Condition 7 attached to Planning Permission 18/04056/FUL for Demolition of the existing building and construction of a block of nine flats comprising 4 x one bed, 4 x two bed and 1 x three bed flats,  with associated refuse and cycle storage areas, landscaping and car parking.",
+				"decision": "Approved",
+				"date": "2021-07-21"
+			}
+		},
+		{
+			"id": "23/02938/CONR",
+			"at": [
+				51.3673927,
+				-0.092112
+			],
+			"observed": "2023-12-01",
+			"claims": {
+				"application": "Removal of Condition 2 (temporary planning permission until 31/10/2017) attached to Planning Permission 14/02903/P for 'Siting of two single storey buildings to provide additional classroom and staff facilities' , thereby resolving existing breach of planning control from temporary planning permission expiring and allowing the permanent retention of the development thence forth. (Section 73A)",
+				"decision": "Approved",
+				"date": "2023-12-01"
+			}
+		},
+		{
+			"id": "21/01405/FUL",
+			"address": {
+				"number": "29",
+				"street": "Mapledale Avenue"
+			},
+			"at": [
+				51.3706303,
+				-0.06636
+			],
+			"observed": "2021-05-18",
+			"claims": {
+				"application": "Conversion of the house into a nursery, with minor external alterations to the building",
+				"decision": "Refused",
+				"date": "2021-05-18"
+			}
+		},
+		{
+			"id": "22/02034/CAT",
+			"at": [
+				51.3691053,
+				-0.08684
+			],
+			"observed": "2022-06-16",
+			"claims": {
+				"application": "T26, Pine - To reduce in height to 2nd Primary limb @8m high.\r\rReason - The tree is storm damaged and works are to make the tree safe.",
+				"decision": "No Objection to Proposal (OBS only)",
+				"date": "2022-06-16"
+			}
+		},
+		{
+			"id": "21/01802/HSE",
+			"address": {
+				"number": "43",
+				"street": "Fitzjames Avenue"
+			},
+			"at": [
+				51.3735965,
+				-0.0679019
+			],
+			"observed": "2021-06-03",
+			"claims": {
+				"application": "Erection of single storey rear extension and use of garage as a habitable space.",
+				"decision": "Approved",
+				"date": "2021-06-03"
+			}
+		},
+		{
+			"id": "23/02994/TRE",
+			"address": {
+				"number": "8",
+				"street": "Rushmead Close"
+			},
+			"at": [
+				51.3665812,
+				-0.0826208
+			],
+			"observed": "2023-08-30",
+			"claims": {
+				"application": "1. Corsican Pine - Shorten SW overextended lateral branch ends by between 1.5-2m in length, Shorten NE overextended lateral branch ends by between 1.5-2m in length, Remove dead wood.\r(TPO 3, 1968)",
+				"decision": "Approved",
+				"date": "2023-08-30"
+			}
+		},
+		{
+			"id": "24/02814/TRE",
+			"address": {
+				"number": "16",
+				"street": "Stanhope Road"
+			},
+			"at": [
+				51.368003,
+				-0.088176
+			],
+			"observed": "2024-09-19",
+			"claims": {
+				"application": "T1 10m Lime tree - Remove 2m of regrowth to previous pollard points  Reasons: To increase light and abate nuisance.\r(TPO NO.8,1972)",
+				"decision": "Approved",
+				"date": "2024-09-19"
+			}
+		},
+		{
+			"id": "23/02432/DISC",
+			"address": {
+				"number": "22A",
+				"street": "Brownlow Road"
+			},
+			"at": [
+				51.3681994,
+				-0.0831423
+			],
+			"observed": "2023-08-25",
+			"claims": {
+				"application": "Discharge of conditions 3 (materials), 4 (Boundaries, bikes, bins, balcony), and 5 part 5 (landscaping; child play space) attached to planning permission for 20/02301/FUL for the erection of three storey building to the side comprising two flats with provision of associated cycle and bin storage.",
+				"decision": "Refused",
+				"date": "2023-08-25"
+			}
+		},
+		{
+			"id": "19/04331/DISC",
+			"at": [
+				51.3721554,
+				-0.0880348
+			],
+			"observed": "2019-10-24",
+			"claims": {
+				"application": "Discharge of Condition 5 (Construction Logistics Plan) attached to permission 18/02653/FUL for 'Erection of four storey block comprising of 8 x one bed flats with associated refuse and cycle storage and landscaping.'",
+				"decision": "Approved",
+				"date": "2019-10-24"
+			}
+		},
+		{
+			"id": "19/05994/NMA",
+			"at": [
+				51.3742181,
+				-0.07944269999999999
+			],
+			"observed": "2020-01-09",
+			"claims": {
+				"application": "Non-material amendment to planning permission 11/01611/P to add additional condition requiring compliance with the approved plans.",
+				"decision": "Approved",
+				"date": "2020-01-09"
+			}
+		},
+		{
+			"id": "20/00827/DISC",
+			"at": [
+				51.3703216,
+				-0.07983549999999999
+			],
+			"observed": "2020-04-20",
+			"claims": {
+				"application": "Discharge of Conditions 8 and 9 of Planning Permission Ref 18/01994/FUL for Demolition of an existing house, erection of a three storey building comprising 6  two bedroom and 3 three bedroom flats: provision of driveway and associated parking to rear and provision of associated refuse and cycle storage.",
+				"decision": "Approved",
+				"date": "2020-04-20"
+			}
+		},
+		{
+			"id": "22/01981/TRE",
+			"at": [
+				51.37145,
+				-0.08394059999999999
+			],
+			"observed": "2022-06-16",
+			"claims": {
+				"application": "T4 , Box Elder , re-pollard, to previous pollard points\rT8 , Lime , re-pollard , to previous pollard points\rT9, London Plane , re-pollard , to previous pollard points \rT20, Copper Beach , 2.5m crown reduction \rT32, Sycamore , re-pollard , to previous pollard points\r(TPO 04, 2011)",
+				"decision": "Approved",
+				"date": "2022-06-16"
+			}
+		},
+		{
+			"id": "19/02402/DISC",
+			"at": [
+				51.363097,
+				-0.070323
+			],
+			"observed": "2019-07-12",
+			"claims": {
+				"application": "Discharge of condition 2 (materials) attached to listed building consent 18/02373/LBC for the demolition of existing extensions to Grade II Listed Building. Erection of single storey side/rear extension, re-configuration of internal layout and external alterations with associated landscaping, decking and erection of boundary walls/fencing",
+				"decision": "Approved",
+				"date": "2019-07-12"
+			}
+		},
+		{
+			"id": "20/02970/PA8",
+			"at": [
+				51.3702382,
+				-0.0857296
+			],
+			"observed": "2020-08-27",
+			"claims": {
+				"application": "Proposed 18m tall monopole with wrapround cabinet at base and associated ancillary works",
+				"decision": "Refused",
+				"date": "2020-08-27"
+			}
+		},
+		{
+			"id": "20/06315/TRE",
+			"at": [
+				51.366965,
+				-0.0884951
+			],
+			"observed": "2021-02-24",
+			"claims": {
+				"application": "All trees as per Appendix 3: Tree work schedule - Attached\r(TPO no.18, 1984)",
+				"decision": "Approved",
+				"date": "2021-02-24"
+			}
+		},
+		{
+			"id": "22/02180/FUL",
+			"at": [
+				51.3704866,
+				-0.0855181
+			],
+			"observed": "2022-07-22",
+			"claims": {
+				"application": "Replacement of aluminium roof with natural zinc and installation of solar PV panels",
+				"decision": "Withdrawn",
+				"date": "2022-07-22"
+			}
+		},
+		{
+			"id": "20/00553/DISC",
+			"at": [
+				51.3722484,
+				-0.08767169999999999
+			],
+			"observed": "2020-02-07",
+			"claims": {
+				"application": "Discharge of Condition 3 - External Facing Materials - of Planning Permission 17/02696/FUL for Demolition of existing buildings and the erection of part four/ part six storey building with basement comprising 11 one bedroom, 10 two bedroom 12 three bedroom and 1 studio flats, formation of vehicular access and provision of  basement parking, provision of associated refuse and cycle storage",
+				"decision": "Approved",
+				"date": "2020-02-07"
+			}
+		},
+		{
+			"id": "25/00284/TRE",
+			"address": {
+				"number": "118",
+				"street": "Chichester Road"
+			},
+			"at": [
+				51.370578,
+				-0.082839
+			],
+			"observed": "2025-03-03",
+			"claims": {
+				"application": "T1 Scots Pine & G4 Scots Pine - The proposal is to use a cherry picker and remove all overhanging limbs that are within 2-metres of the building, remove all dead / decaying limbs and thin out canopy to reduce weight.\r(TPO 18, 1970)",
+				"decision": "Approved",
+				"date": "2025-03-03"
+			}
+		},
+		{
+			"id": "19/05058/TRE",
+			"address": {
+				"number": "30",
+				"street": "Bracewood Gardens"
+			},
+			"at": [
+				51.3716377,
+				-0.0789327
+			],
+			"observed": "2019-12-02",
+			"claims": {
+				"application": "G1 comprising of 2 Oak trees (1 listed as a TPO) and 1 Sycamore tree\r- Tip back lateral branches over 8 Delmey Close - Reduce a 6m Crown spread to 4m, Crown thin by up to 20% \rT2 Yew tree in garage forecourt - Cut back lateral branches over garages by 2m reducing a 4m spread to 2m \rReasons: to reduce branches almost touching the house, increase available light and abate nuisance.",
+				"decision": "Approved",
+				"date": "2019-12-02"
+			}
+		},
+		{
+			"id": "26/01283/TRE",
+			"address": {
+				"number": "27",
+				"street": "Stanhope Road"
+			},
+			"at": [
+				51.369115,
+				-0.09017
+			],
+			"observed": "2026-06-05",
+			"claims": {
+				"application": "T34 Common Ash: Remove Broken/Hanging Branch\r(TPO 36, 1983)",
+				"decision": "Approved",
+				"date": "2026-06-05"
+			}
+		},
+		{
+			"id": "21/02169/LP",
+			"address": {
+				"number": "21",
+				"street": "Bracewood Gardens"
+			},
+			"at": [
+				51.3726193,
+				-0.08011299999999999
+			],
+			"observed": "2021-05-24",
+			"claims": {
+				"application": "Erection of single storey side extension",
+				"decision": "Approved",
+				"date": "2021-05-24"
+			}
+		},
+		{
+			"id": "24/02195/DISC",
+			"address": {
+				"number": "114",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.373909,
+				-0.072153
+			],
+			"observed": "2024-07-29",
+			"claims": {
+				"application": "Details pursuant to Condition 7 (Parking and EVC points) of planning permission 19/05965/FUL granted for demolition of existing building and erection of two dwelling houses with off street parking.",
+				"decision": "Approved",
+				"date": "2024-07-29"
+			}
+		},
+		{
+			"id": "21/05888/HSE",
+			"address": {
+				"number": "69",
+				"street": "Park Hill Road"
+			},
+			"at": [
+				51.3671093,
+				-0.0863197
+			],
+			"observed": "2022-01-13",
+			"claims": {
+				"application": "Erection of single-storey rear extension following demolition of existing conservatory (Retrospective).",
+				"decision": "Approved",
+				"date": "2022-01-13"
+			}
+		},
+		{
+			"id": "23/03557/TRE",
+			"address": {
+				"number": "14",
+				"street": "Mapledale Avenue"
+			},
+			"at": [
+				51.3722128,
+				-0.0696125
+			],
+			"observed": "2023-10-16",
+			"claims": {
+				"application": "T1 Oak Tree - Fell due to severe decline\rT2 Oak Tree - 2 metre crown reduction and 4 metre crown lift measured from ground level.\r(TPO 14, 1977)",
+				"decision": "Approved",
+				"date": "2023-10-16"
+			}
+		},
+		{
+			"id": "022641",
+			"address": {
+				"number": "15",
+				"street": "Woodbury Close"
+			},
+			"at": [
+				51.374672,
+				-0.076992
+			],
+			"observed": "2003-11-18",
+			"claims": {
+				"application": "Demolition of existing garage; erection of detached 4 bedroom house.",
+				"date": "2003-11-18"
+			}
+		},
+		{
+			"id": "19/03695/HSE",
+			"address": {
+				"number": "1",
+				"street": "Brownlow Road"
+			},
+			"at": [
+				51.3671633,
+				-0.0857715
+			],
+			"observed": "2019-10-04",
+			"claims": {
+				"application": "Erection of two storey front, rear and side extensions, alterations to rear patio, formation/alterations of garage, formation of new roof and erection of dormer in rear roof slope, alterations to front boundary wall and new vehicular cross-over.",
+				"decision": "Approved",
+				"date": "2019-10-04"
+			}
+		},
+		{
+			"id": "21/02450/FUL",
+			"address": {
+				"number": "98",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.3743598,
+				-0.0743789
+			],
+			"observed": "2022-01-21",
+			"claims": {
+				"application": "Proposed new metal electric sliding gate to front drive way",
+				"decision": "Approved",
+				"date": "2022-01-21"
+			}
+		},
+		{
+			"id": "23/02284/HSE",
+			"address": {
+				"number": "38",
+				"street": "Fitzjames Avenue"
+			},
+			"at": [
+				51.3727983,
+				-0.0680361
+			],
+			"observed": "2023-08-08",
+			"claims": {
+				"application": "Alterations including two storey side extensions and two storey front extension including front porch, dormer extension in rear roof slope, roof lights in front side and rear roof slopes and erection of single storey rear extension",
+				"decision": "Approved",
+				"date": "2023-08-08"
+			}
+		},
+		{
+			"id": "23/02653/TRE",
+			"address": {
+				"number": "39",
+				"street": "Tidenham Gardens"
+			},
+			"at": [
+				51.370823,
+				-0.0840961
+			],
+			"observed": "2023-08-07",
+			"claims": {
+				"application": "T1 - Pine: crown raise to a height of 3m , reduce closest branches to the building by 1m\r(TPO 04, 2011)",
+				"decision": "Approved",
+				"date": "2023-08-07"
+			}
+		},
+		{
+			"id": "20/05504/DISC",
+			"at": [
+				51.3703216,
+				-0.07983549999999999
+			],
+			"observed": "2020-12-16",
+			"claims": {
+				"application": "Discharge of Condition 14 - Contaminated Land - Attached to Planning Permission Ref 18/01994/FUL for Demolition of an existing house, erection of a three storey building comprising 6  two bedroom and 3 three bedroom flats: provision of driveway and associated parking to rear and provision of associated refuse and cycle storage.",
+				"decision": "Approved",
+				"date": "2020-12-16"
+			}
+		},
+		{
+			"id": "25/02011/TRE",
+			"address": {
+				"number": "4",
+				"street": "Fitzjames Avenue"
+			},
+			"at": [
+				51.372774,
+				-0.073667
+			],
+			"observed": "2025-08-01",
+			"claims": {
+				"application": "1 Very large Beech - Crown thin 15%\r- Tip back to clear neighbours house and my garage\r- Remove deadwood\rRepeat works of ref 17/01193/TRE\r(TPO no. 19, 2003)",
+				"decision": "Approved",
+				"date": "2025-08-01"
+			}
+		},
+		{
+			"id": "20/03012/LP",
+			"address": {
+				"number": "61",
+				"street": "Park Hill Road"
+			},
+			"at": [
+				51.3675542,
+				-0.0860282
+			],
+			"observed": "2020-07-17",
+			"claims": {
+				"application": "Erection of single storey rear extension",
+				"decision": "Approved",
+				"date": "2020-07-17"
+			}
+		},
+		{
+			"id": "19/04555/CAT",
+			"at": [
+				51.3695291,
+				-0.0869085
+			],
+			"observed": "2019-10-25",
+			"claims": {
+				"application": "T4, T5 & T6  - 3 x Hornbeam - To crown reduce by circa 2m\r",
+				"decision": "No Objection to Proposal (OBS only)",
+				"date": "2019-10-25"
+			}
+		},
+		{
+			"id": "20/00561/HSE",
+			"at": [
+				51.370903,
+				-0.06653529999999999
+			],
+			"observed": "2020-06-23",
+			"claims": {
+				"application": "Erection of 2 two-storey rear extensions, one two-storey side extension, a single-storey rear conservatory extension and alterations to the existing roof to accommodate a loft conversion.",
+				"decision": "Approved",
+				"date": "2020-06-23"
+			}
+		},
+		{
+			"id": "23/01292/FUL",
+			"at": [
+				51.3704866,
+				-0.0855181
+			],
+			"observed": "2023-05-30",
+			"claims": {
+				"application": "Alterations, replacement of aluminium roof with natural zinc and installation of solar PV panels",
+				"decision": "Approved",
+				"date": "2023-05-30"
+			}
+		},
+		{
+			"id": "21/00705/HSE",
+			"address": {
+				"number": "26",
+				"street": "Upfield"
+			},
+			"at": [
+				51.3727095,
+				-0.0659276
+			],
+			"observed": "2021-06-23",
+			"claims": {
+				"application": "Alterations, erection of single-storey rear/side extension and raised terrace area.",
+				"decision": "Approved",
+				"date": "2021-06-23"
+			}
+		},
+		{
+			"id": "20/03027/DISC",
+			"at": [
+				51.3722484,
+				-0.08767169999999999
+			],
+			"observed": "2020-09-14",
+			"claims": {
+				"application": "Discharge of Conditions 4, 8, 17 and 23 of Planning Permission Ref 17/02696/FUL - Demolition of existing buildings and the erection of part four/ part six storey building with basement comprising 11 one bedroom, 10 two bedroom 12 three bedroom and 1 studio flats: formation of vehicular access and provision of  basement parking, provision of associated refuse and cycle storage",
+				"decision": "Approved",
+				"date": "2020-09-14"
+			}
+		},
+		{
+			"id": "14/04467/P",
+			"address": {
+				"number": "17",
+				"street": "Thanescroft Gardens"
+			},
+			"at": [
+				51.3694691,
+				-0.0837933
+			],
+			"observed": "2015-11-27",
+			"claims": {
+				"application": "Erection of pair of 3 storey four bedroom semi-detached houses; formation of vehicular access and provision of associated parking",
+				"date": "2015-11-27"
+			}
+		},
+		{
+			"id": "21/04496/HSE",
+			"address": {
+				"number": "106",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.3739561,
+				-0.07334689999999999
+			],
+			"observed": "2022-01-20",
+			"claims": {
+				"application": "Alterations to front boundary to include erection of retaining wall and steps; formation of hardstanding area (Retrospective Application)",
+				"decision": "Approved",
+				"date": "2022-01-20"
+			}
+		},
+		{
+			"id": "19/00459/LP",
+			"address": {
+				"number": "42",
+				"street": "Sandilands"
+			},
+			"at": [
+				51.3698895,
+				-0.0743364
+			],
+			"observed": "2019-02-08",
+			"claims": {
+				"application": "Proposed demolition of existing detached garage and erection of new detached garage",
+				"decision": "Approved",
+				"date": "2019-02-08"
+			}
+		},
+		{
+			"id": "21/06069/HSE",
+			"address": {
+				"number": "4",
+				"street": "Grimwade Avenue"
+			},
+			"at": [
+				51.3711221,
+				-0.0683652
+			],
+			"observed": "2022-02-04",
+			"claims": {
+				"application": "Erection of part single/part two storey side/rear extensions, erection of part single/part two storey rear extension and two storey front projection",
+				"decision": "Approved",
+				"date": "2022-02-04"
+			}
+		},
+		{
+			"id": "21/05659/TRE",
+			"address": {
+				"number": "11",
+				"street": "Dittoncroft Close"
+			},
+			"at": [
+				51.3658477,
+				-0.08561089999999999
+			],
+			"observed": "2021-12-13",
+			"claims": {
+				"application": "T1 Mulberry Tree: 2 metre crown reduction up to a max cut size of 25mm.\r(TPO no. 31, 1989)",
+				"decision": "Approved",
+				"date": "2021-12-13"
+			}
+		},
+		{
+			"id": "24/00812/TRE",
+			"address": {
+				"number": "18",
+				"street": "Stanhope Road"
+			},
+			"at": [
+				51.368066,
+				-0.088188
+			],
+			"observed": "2024-04-05",
+			"claims": {
+				"application": "T1 Sycamore - Crown reduce in height by 3m and 2m laterally on all compass points.\r(TPO No.8, 1972)",
+				"decision": "Approved",
+				"date": "2024-04-05"
+			}
+		},
+		{
+			"id": "19/02406/FUL",
+			"at": [
+				51.363696,
+				-0.072324
+			],
+			"observed": "2019-11-22",
+			"claims": {
+				"application": "Demolition of three existing buildings and the erection of a new 2 storey teaching building to include general classrooms, specialist teaching, support accommodation and a sixth form (Class D1). Refurbishment works to the existing Grade II listed building to include provision of changing facilities and minor internal reorganisation. Associated landscaping works for the new building",
+				"decision": "Approved",
+				"date": "2019-11-22"
+			}
+		},
+		{
+			"id": "25/01386/TRE",
+			"address": {
+				"number": "5",
+				"street": "Rushmead Close"
+			},
+			"at": [
+				51.367176,
+				-0.082694
+			],
+			"observed": "2025-05-19",
+			"claims": {
+				"application": "1 x Hornbeam - Fell to ground level due to Decay at base and significant dead branches in crown suggesting the tree is diseased and in decline\r(TPO 3, 1968)",
+				"decision": "Approved",
+				"date": "2025-05-19"
+			}
+		},
+		{
+			"id": "22/00917/HSE",
+			"address": {
+				"number": "10",
+				"street": "Harland Avenue"
+			},
+			"at": [
+				51.3712891,
+				-0.075226
+			],
+			"observed": "2022-05-25",
+			"claims": {
+				"application": "Erection of single storey side extension to the existing garage (retrospective application)",
+				"decision": "Approved",
+				"date": "2022-05-25"
+			}
+		},
+		{
+			"id": "19/02181/TRE",
+			"address": {
+				"number": "36",
+				"street": "Tidenham Gardens"
+			},
+			"at": [
+				51.37143,
+				-0.084341
+			],
+			"observed": "2019-06-07",
+			"claims": {
+				"application": "T1: London Plane - Re-pollard.  Also root under a patio removed (under supervision of the LPA tree officer) in rear of no. 36. \r(TPO no. 4, 2011)",
+				"decision": "Approved",
+				"date": "2019-06-07"
+			}
+		},
+		{
+			"id": "22/03256/HSE",
+			"address": {
+				"number": "29",
+				"street": "Upfield"
+			},
+			"at": [
+				51.3727056,
+				-0.0640599
+			],
+			"observed": "2022-09-23",
+			"claims": {
+				"application": "Erection of single storey front extension.",
+				"decision": "Refused",
+				"date": "2022-09-23"
+			}
+		},
+		{
+			"id": "20/02358/TRE",
+			"address": {
+				"number": "50",
+				"street": "Chichester Road"
+			},
+			"at": [
+				51.3701151,
+				-0.0853468
+			],
+			"observed": "2022-07-06",
+			"claims": {
+				"application": "T1 Ash , crown reduce by 2m-3m maintaining good clearance from the building \rT2 & T3 , Sycamore , crown reduce by 3m off the height and reduce laterals by 1.5m-2m\r\r(No TPO, application to be withdrawn)",
+				"decision": "Withdrawn",
+				"date": "2022-07-06"
+			}
+		},
+		{
+			"id": "21/05424/HSE",
+			"address": {
+				"number": "29",
+				"street": "Fitzjames Avenue"
+			},
+			"at": [
+				51.373063,
+				-0.0704532
+			],
+			"observed": "2022-01-31",
+			"claims": {
+				"application": "Alterations, erection of single-storey front, single-storey side/rear and part-single/two-storey side extensions, erection of 2x rear dormer extensions and front roof extension and provision of 4 rooflights in front roofslope and 1 rooflight in side roofslope.",
+				"decision": "Approved",
+				"date": "2022-01-31"
+			}
+		},
+		{
+			"id": "21/02457/GPDO",
+			"address": {
+				"number": "156",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.3745128,
+				-0.0667569
+			],
+			"observed": "2021-06-24",
+			"claims": {
+				"application": "Erection of single storey rear extension to garage projecting out 4.4 metres with a maximum height of 2.66 metres",
+				"decision": "Approved",
+				"date": "2021-06-24"
+			}
+		},
+		{
+			"id": "21/00616/HSE",
+			"address": {
+				"number": "15",
+				"street": "Radcliffe Road"
+			},
+			"at": [
+				51.3731792,
+				-0.0786096
+			],
+			"observed": "2021-04-08",
+			"claims": {
+				"application": "Alterations to existing front porch and erection of single storey rear extension.",
+				"decision": "Approved",
+				"date": "2021-04-08"
+			}
+		},
+		{
+			"id": "25/00240/TRE",
+			"address": {
+				"number": "1",
+				"street": "Hunters Way"
+			},
+			"at": [
+				51.366511,
+				-0.083828
+			],
+			"observed": "2025-02-27",
+			"claims": {
+				"application": "T1 Twin stemmed Sycamore - Crown Lift to provide 5 metres clearance from ground level\rT2 Sycamore - Crown Lift to provide 5 metres clearance from ground level\r(TPO 22, 1977)",
+				"decision": "Approved",
+				"date": "2025-02-27"
+			}
+		},
+		{
+			"id": "24/01606/TRE",
+			"address": {
+				"number": "14A",
+				"street": "Mapledale Avenue"
+			},
+			"at": [
+				51.372048,
+				-0.06943
+			],
+			"observed": "2024-07-01",
+			"claims": {
+				"application": "T12 Oak: T12 Oak: reduce single elongated branch extending over rear of house by 2 metres.\r(TPO 14, 1977)",
+				"decision": "Approved",
+				"date": "2024-07-01"
+			}
+		},
+		{
+			"id": "21/03855/HSE",
+			"address": {
+				"number": "23",
+				"street": "Paul Gardens"
+			},
+			"at": [
+				51.3731475,
+				-0.0794156
+			],
+			"observed": "2021-09-23",
+			"claims": {
+				"application": "Single Storey Side Extension to 3 storey townhouse.",
+				"decision": "Approved",
+				"date": "2021-09-23"
+			}
+		},
+		{
+			"id": "21/01944/TRE",
+			"address": {
+				"number": "21",
+				"street": "Deans Close"
+			},
+			"at": [
+				51.3715664,
+				-0.0806168
+			],
+			"observed": "2021-06-04",
+			"claims": {
+				"application": "T1 Beech - Overall crown reduction of 2.5m up to a max cut size of 25mm.\r(TPO no.4, 1992)",
+				"decision": "Approved",
+				"date": "2021-06-04"
+			}
+		},
+		{
+			"id": "20/05117/GPDO",
+			"address": {
+				"number": "157",
+				"street": "Coombe Road"
+			},
+			"at": [
+				51.3656125,
+				-0.08662629999999999
+			],
+			"observed": "2021-01-06",
+			"claims": {
+				"application": "Erection of a single storey rear extension projecting out 7.7 metres from the rear wall of the original house with a height to the eaves of 3 metres and a maximum height of 3.95 metres",
+				"decision": "Approved",
+				"date": "2021-01-06"
+			}
+		},
+		{
+			"id": "21/05420/HSE",
+			"address": {
+				"number": "3",
+				"street": "Rowan Gardens"
+			},
+			"at": [
+				51.3721495,
+				-0.0788826
+			],
+			"observed": "2022-01-26",
+			"claims": {
+				"application": "Alterations, demolition of existing garage and erection of two-storey side extension, single-storey side/rear extension and front porch extension.",
+				"decision": "Withdrawn",
+				"date": "2022-01-26"
+			}
+		},
+		{
+			"id": "22/03554/DISC",
+			"at": [
+				51.3738652,
+				-0.0722012
+			],
+			"observed": "2022-11-29",
+			"claims": {
+				"application": "Details pursuant to Condition 3a: Schedule of external materials and associated elevations; 4a&c and 12: Hard Landscaping Materials incl boundary treatment and security lighting; Condition 6b Details of Cycle Storage;; Condition 9: Construction Logistic Plan; Condition 19a: Details of Vehicle Tracking of planning permission 19/05965/FUL granted for Demolition of existing building and erection of two dwelling houses with off street parking.",
+				"decision": "Split Decision",
+				"date": "2022-11-29"
+			}
+		},
+		{
+			"id": "21/05031/CAT",
+			"at": [
+				51.3693978,
+				-0.0865836
+			],
+			"observed": "2021-10-27",
+			"claims": {
+				"application": "T52 - Japanese Maple - To prune away from Building by 1m and raise to 2.5m over footpath.\rT53 - Yew - To reduce to 0.5m below roof height and shape\rT44 - Oak - To shorten westerly lateral branches by 2.5 - 3m in length, back to a point in line with the wooden boundary fence and remove major dead wood.",
+				"decision": "No Objection to Proposal (OBS only)",
+				"date": "2021-10-27"
+			}
+		},
+		{
+			"id": "22/00512/CAT",
+			"at": [
+				51.369489,
+				-0.0872119
+			],
+			"observed": "2022-03-04",
+			"claims": {
+				"application": "T18 Cedar: To reduce lower laterals approximately 12m high extending towards No.9 up to 2m back.",
+				"decision": "No Objection to Proposal (OBS only)",
+				"date": "2022-03-04"
+			}
+		},
+		{
+			"id": "25/01335/NMA",
+			"address": {
+				"number": "55",
+				"street": "Upfield"
+			},
+			"at": [
+				51.371489,
+				-0.068807
+			],
+			"observed": "2025-04-24",
+			"claims": {
+				"application": "Non-material amendment to planning permission ref. 23/00200/HSE (Demolition of detached garage. Erection of part single part two-storey side/rear wraparound extension. Loft conversion with erection of rear box dormer. Alterations to roof and facades to all sides including materials and fenestrations. Installation of 2no. front gates and alterations to front boundary) to amend the fenestration to the front elevation and rear dormer, remove the existing chimney, alter the cladding to the rear elevation and rear dormer, and to replace the 3 x roof lights on the flat roof with 1 x velux roof light on the rear elevation.",
+				"decision": "Approved",
+				"date": "2025-04-24"
+			}
+		},
+		{
+			"id": "23/01761/HSE",
+			"address": {
+				"number": "54",
+				"street": "Fitzjames Avenue"
+			},
+			"at": [
+				51.3732376,
+				-0.0663221
+			],
+			"observed": "2023-06-28",
+			"claims": {
+				"application": "Replacement of existing conservatory with new single storey rear extension",
+				"decision": "Approved",
+				"date": "2023-06-28"
+			}
+		},
+		{
+			"id": "19/02556/CAT",
+			"address": {
+				"number": "15",
+				"street": "St Bernard's"
+			},
+			"at": [
+				51.36938,
+				-0.086567
+			],
+			"observed": "2019-06-28",
+			"claims": {
+				"application": "T1 - Rowan To reduce regrown crown back by approximately 1m - to suitable secondary growth points plus shape and balance\r\rReason - Repeat pruning - overgrown crown",
+				"decision": "No Objection to Proposal (OBS only)",
+				"date": "2019-06-28"
+			}
+		},
+		{
+			"id": "20/01684/LP",
+			"address": {
+				"number": "9",
+				"street": "Ranmore Avenue"
+			},
+			"at": [
+				51.3693126,
+				-0.0775358
+			],
+			"observed": "2020-05-14",
+			"claims": {
+				"application": "Demolition and erection of a single storey rear extension",
+				"decision": "Approved",
+				"date": "2020-05-14"
+			}
+		},
+		{
+			"id": "19/05892/CONR",
+			"at": [
+				51.3742273,
+				-0.0794566
+			],
+			"observed": "2020-03-05",
+			"claims": {
+				"application": "Variation of Condition 1 (approved plans) of planning permission 11/01611/P for minor material amendments to 4 x townhouses. Removal of condition 12 (Code for Sustainable Homes) of planning permission 11/01611/P.",
+				"decision": "Approved",
+				"date": "2020-03-05"
+			}
+		},
+		{
+			"id": "26/00514/DISC",
+			"address": {
+				"number": "3",
+				"street": "Mapledale Avenue"
+			},
+			"at": [
+				51.373546,
+				-0.069166
+			],
+			"observed": "2026-08-19",
+			"claims": {
+				"application": "Discharge of Condition 5 (Screening) attached to permission 23/02022/HSE for Erection of a single storey side extension and first floor infill linking to garage space",
+				"decision": "Refused",
+				"date": "2026-08-19"
+			}
+		},
+		{
+			"id": "23/00093/LP",
+			"address": {
+				"number": "12",
+				"street": "Rochester Gardens"
+			},
+			"at": [
+				51.3715197,
+				-0.0849003
+			],
+			"observed": "2023-02-14",
+			"claims": {
+				"application": "Alterations to roof comprising extension of an existing dormer to southeast elevation and erection of 1no. dormer to northwest elevation",
+				"decision": "Approved",
+				"date": "2023-02-14"
+			}
+		},
+		{
+			"id": "23/03033/LP",
+			"address": {
+				"number": "142",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.3741494,
+				-0.06816599999999999
+			],
+			"observed": "2023-08-10",
+			"claims": {
+				"application": "Alterations and erection of a single storey side extension.",
+				"decision": "Approved",
+				"date": "2023-08-10"
+			}
+		},
+		{
+			"id": "22/02534/HSE",
+			"address": {
+				"number": "39",
+				"street": "Stanhope Road"
+			},
+			"at": [
+				51.3701365,
+				-0.0905182
+			],
+			"observed": "2022-08-10",
+			"claims": {
+				"application": "Extension to existing basement; conversion for use as a habitable space",
+				"decision": "Approved",
+				"date": "2022-08-10"
+			}
+		},
+		{
+			"id": "912120",
+			"address": {
+				"number": "139",
+				"street": "COOMBE ROAD"
+			},
+			"at": [
+				51.365986,
+				-0.088547
+			],
+			"observed": "1991-12-13",
+			"claims": {
+				"application": "No description provided by LDMS",
+				"decision": "Approved",
+				"date": "1991-12-13"
+			}
+		},
+		{
+			"id": "19/03109/DISC",
+			"address": {
+				"number": "3",
+				"street": "Ranmore Avenue"
+			},
+			"at": [
+				51.369139,
+				-0.078488
+			],
+			"observed": "2019-08-29",
+			"claims": {
+				"application": "Discharge of condition 01: (5 - 7) attached to planning permission 17/06343/FUL for - demolition of existing building: erection of two storey 5 bedroom detached house with accomodation in roofspace and garage : formation of vehicular access and provision of associated parking)",
+				"decision": "Approved",
+				"date": "2019-08-29"
+			}
+		},
+		{
+			"id": "22/03097/GPDO",
+			"address": {
+				"number": "31",
+				"street": "Danecourt Gardens"
+			},
+			"at": [
+				51.3713263,
+				-0.07858659999999999
+			],
+			"observed": "2022-09-13",
+			"claims": {
+				"application": "Erection of a single storey rear extension projecting out 4 metres from the rear wall of the original house with a height to the eaves of 2.7 metres and a maximum height of 2.95 metres",
+				"decision": "Approved",
+				"date": "2022-09-13"
+			}
+		},
+		{
+			"id": "22/01999/TRE",
+			"address": {
+				"number": "28",
+				"street": "Bracewood Gardens"
+			},
+			"at": [
+				51.3716926,
+				-0.0789879
+			],
+			"observed": "2022-06-16",
+			"claims": {
+				"application": "T1 Oak: Laterally shorten selective branches by 3 metres back to previous pruning points.\r(TPO 19, 2002)",
+				"decision": "Approved",
+				"date": "2022-06-16"
+			}
+		},
+		{
+			"id": "19/06056/HSE",
+			"address": {
+				"number": "39",
+				"street": "Park Hill Road"
+			},
+			"at": [
+				51.3708628,
+				-0.0859766
+			],
+			"observed": "2020-02-21",
+			"claims": {
+				"application": "Erection of single storey side/rear extension",
+				"decision": "Approved",
+				"date": "2020-02-21"
+			}
+		},
+		{
+			"id": "25/00528/DISC",
+			"address": {
+				"number": "2",
+				"street": "Selborne Road"
+			},
+			"at": [
+				51.368555,
+				-0.085653
+			],
+			"observed": "2025-03-24",
+			"claims": {
+				"application": "Discharge of condition 4 (Landscaping Details) of application 23/04095/FUL (Erection of 2 storey building comprising 2 flats attached to the end of the terrace, with external bike storage and landscaping works; erection of single storey rear extension plus alterations to the roof, fenestration and internal layout of the host dwelling (part retrospective)) approved on 12th July 2024.",
+				"decision": "Approved",
+				"date": "2025-03-24"
+			}
+		},
+		{
+			"id": "06/04974/P",
+			"address": {
+				"number": "72-74",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.374704,
+				-0.078385
+			],
+			"observed": "2007-06-12",
+			"claims": {
+				"application": "Erection of three/four storey building comprising 14 two bedroom flats; formation of vehicular access and provision of associated parking. Site vacant last known use was residential.",
+				"decision": "Approved",
+				"date": "2007-06-12"
+			}
+		},
+		{
+			"id": "23/03422/LP",
+			"address": {
+				"number": "32",
+				"street": "Grimwade Avenue"
+			},
+			"at": [
+				51.3701111,
+				-0.0725025
+			],
+			"observed": "2023-11-30",
+			"claims": {
+				"application": "Erection of single storey outbuilding",
+				"decision": "Approved",
+				"date": "2023-11-30"
+			}
+		},
+		{
+			"id": "19/05286/HSE",
+			"address": {
+				"number": "9",
+				"street": "Upfield"
+			},
+			"at": [
+				51.3743513,
+				-0.06406239999999999
+			],
+			"observed": "2020-01-13",
+			"claims": {
+				"application": "Demolition of existing storage area, erection of single-storey side/rear extension, internal alterations and installation of french doors in rear elevation.",
+				"decision": "Approved",
+				"date": "2020-01-13"
+			}
+		},
+		{
+			"id": "22/01488/HSE",
+			"address": {
+				"number": "74",
+				"street": "Chichester Road"
+			},
+			"at": [
+				51.3701518,
+				-0.0848424
+			],
+			"observed": "2022-05-31",
+			"claims": {
+				"application": "Erection of single storey side extension. Installation of rooflight to front slope.",
+				"decision": "Approved",
+				"date": "2022-05-31"
+			}
+		},
+		{
+			"id": "24/02294/DISC",
+			"address": {
+				"number": "27",
+				"street": "Mapledale Avenue"
+			},
+			"at": [
+				51.370888,
+				-0.066691
+			],
+			"observed": "2024-08-29",
+			"claims": {
+				"application": "Details pursuant to condition 4 (Fire Strategy) of planning application 24/00954/HSE 'Erection of a single storey side extension'.",
+				"decision": "Approved",
+				"date": "2024-08-29"
+			}
+		},
+		{
+			"id": "23/04326/HSE",
+			"address": {
+				"number": "11",
+				"street": "Fitzjames Avenue"
+			},
+			"at": [
+				51.373256,
+				-0.072871
+			],
+			"observed": "2024-01-03",
+			"claims": {
+				"application": "Erection of a first floor side extension on both sides of the property, roof alterations, rooflights and dormer in the rear roof slope",
+				"decision": "Approved",
+				"date": "2024-01-03"
+			}
+		},
+		{
+			"id": "23/00269/TRE",
+			"address": {
+				"number": "1",
+				"street": "Steep Hill"
+			},
+			"at": [
+				51.3667501,
+				-0.0880012
+			],
+			"observed": "2023-02-24",
+			"claims": {
+				"application": "Please see attached tree survey plan and schedule.\r(TPO no. 18, 1984)",
+				"decision": "Approved",
+				"date": "2023-02-24"
+			}
+		},
+		{
+			"id": "19/05578/NMA",
+			"address": {
+				"number": "5",
+				"street": "Radcliffe Road"
+			},
+			"at": [
+				51.3742183,
+				-0.079457
+			],
+			"observed": "2019-12-17",
+			"claims": {
+				"application": "Alterations to internal configuration, increase in the footprint, and alterations to external alterations of the 4 front facing townhouses approved in application 11/01611/P.",
+				"decision": "Withdrawn",
+				"date": "2019-12-17"
+			}
+		},
+		{
+			"id": "20/03047/DISC",
+			"at": [
+				51.3722484,
+				-0.08767169999999999
+			],
+			"observed": "2020-10-02",
+			"claims": {
+				"application": "Discharge of Condition 29 - Sustainable Water Surface Drainage - attached to Planning Permission 17/02696/FUL for Demolition of existing buildings and the erection of part four/ part six storey building with basement comprising 11 one bedroom, 10 two bedroom 12 three bedroom and 1 studio flats: formation of vehicular access and provision of  basement parking, provision of associated refuse and cycle storage.",
+				"decision": "Refused",
+				"date": "2020-10-02"
+			}
+		},
+		{
+			"id": "21/02492/HSE",
+			"address": {
+				"number": "21",
+				"street": "Sandilands"
+			},
+			"at": [
+				51.3718174,
+				-0.073997
+			],
+			"observed": "2021-08-05",
+			"claims": {
+				"application": "Erection of single storey rear extension.",
+				"decision": "Refused",
+				"date": "2021-08-05"
+			}
+		},
+		{
+			"id": "19/04475/HSE",
+			"address": {
+				"number": "41",
+				"street": "Sandilands"
+			},
+			"at": [
+				51.3698382,
+				-0.0734047
+			],
+			"observed": "2019-11-11",
+			"claims": {
+				"application": "Erection of two storey extension to the side and rear; single storey extension to existing garage at the front and a modified front entrance location.",
+				"decision": "Approved",
+				"date": "2019-11-11"
+			}
+		},
+		{
+			"id": "22/04829/TRE",
+			"at": [
+				51.3707229,
+				-0.0845744
+			],
+			"observed": "2023-01-04",
+			"claims": {
+				"application": "T3 Horse Chestnut: Fell due to subsidence\r(T16 on TPO 04, 2011)",
+				"decision": "Approved",
+				"date": "2023-01-04"
+			}
+		},
+		{
+			"id": "22/01459/HSE",
+			"address": {
+				"number": "22",
+				"street": "Stanhope Road"
+			},
+			"at": [
+				51.3682012,
+				-0.0881994
+			],
+			"observed": "2022-09-23",
+			"claims": {
+				"application": "Single storey infill extension to existing carport.",
+				"decision": "Approved",
+				"date": "2022-09-23"
+			}
+		},
+		{
+			"id": "22/00432/FUL",
+			"address": {
+				"number": "146",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.374278,
+				-0.067799
+			],
+			"observed": "2022-04-11",
+			"claims": {
+				"application": "Use of property as a small HMO (use Class C4) (Retrospective)",
+				"decision": "Approved",
+				"date": "2022-04-11"
+			}
+		},
+		{
+			"id": "19/05281/HSE",
+			"address": {
+				"number": "39",
+				"street": "Sandilands"
+			},
+			"at": [
+				51.3701005,
+				-0.0734943
+			],
+			"observed": "2019-12-18",
+			"claims": {
+				"application": "Erection of single storey side extension",
+				"decision": "Approved",
+				"date": "2019-12-18"
+			}
+		},
+		{
+			"id": "21/04161/HSE",
+			"address": {
+				"number": "14",
+				"street": "Radcliffe Road"
+			},
+			"at": [
+				51.373396,
+				-0.079761
+			],
+			"observed": "2021-10-04",
+			"claims": {
+				"application": "Removal of existing conservatory, erection of a single-storey side/rear extension (retrospective application).",
+				"decision": "Approved",
+				"date": "2021-10-04"
+			}
+		},
+		{
+			"id": "22/01573/DISC",
+			"at": [
+				51.3636866,
+				-0.0717377
+			],
+			"observed": "2022-07-06",
+			"claims": {
+				"application": "Details pursuant to conditions 3 (CLP), 4 (Biodiversity protection), 5 (external landscape), 6 (Bio-enhancement),  of planning permission ref 21/06280/ful granted for nstallation of a Multi Use Games Area (MUGA) on the northern part of the site, creation of footpath, replacement of timber gate in existing wood fence, and erection of 1.5 metres high fence around MUGA.",
+				"decision": "Split Decision",
+				"date": "2022-07-06"
+			}
+		},
+		{
+			"id": "25/03548/LP",
+			"address": {
+				"number": "26",
+				"street": "Mapledale Avenue"
+			},
+			"at": [
+				51.37081,
+				-0.067427
+			],
+			"observed": "2026-02-16",
+			"claims": {
+				"application": "Demolition of existing rear conservatory. Erection of a single storey rear extension. Conversion of existing garage to habitable accommodation.",
+				"decision": "Approved",
+				"date": "2026-02-16"
+			}
+		},
+		{
+			"id": "22/00113/TRE",
+			"address": {
+				"number": "3",
+				"street": "Digby Place"
+			},
+			"at": [
+				51.3728175,
+				-0.0773891
+			],
+			"observed": "2022-02-11",
+			"claims": {
+				"application": "T1 and T2 Chestnut - Crown lift to 6m the North East side of the tree\r- Reduce laterals on North East facing side of trees by up to 2m.\r(TPO 41, 1973)",
+				"decision": "Approved",
+				"date": "2022-02-11"
+			}
+		},
+		{
+			"id": "23/02838/HSE",
+			"address": {
+				"number": "40",
+				"street": "Selborne Road"
+			},
+			"at": [
+				51.3690827,
+				-0.08106529999999999
+			],
+			"observed": "2023-09-08",
+			"claims": {
+				"application": "Erection of a side porch, alterations to fenestration including enlargement of window to the south elevation, insertion of two windows to the west elevation, and windows to replace the existing door and windows to the east elevation, rooflight to the side roofslope and single garage door separated into two separate doors.",
+				"decision": "Approved",
+				"date": "2023-09-08"
+			}
+		},
+		{
+			"id": "19/02216/TRE",
+			"address": {
+				"number": "11",
+				"street": "Hunters Way"
+			},
+			"at": [
+				51.366249,
+				-0.083724
+			],
+			"observed": "2019-06-21",
+			"claims": {
+				"application": "T1 Sycamore tree in woodland area to the rear of 11 Hunters way - Fell to ground level, Tree is twin stemmed and has a stress fracture running down between the 2 stems.  Reasons: Removal on the grounds of safety.\rT2 Sycamore (3 hunters way) prune back overhang by 2m only. \r(TPO no. 22, 1977)",
+				"decision": "Approved",
+				"date": "2019-06-21"
+			}
+		},
+		{
+			"id": "21/04012/HSE",
+			"address": {
+				"number": "24",
+				"street": "Mapledale Avenue"
+			},
+			"at": [
+				51.3712552,
+				-0.067713
+			],
+			"observed": "2021-11-17",
+			"claims": {
+				"application": "Alterations, erecton of a single storey side extension",
+				"decision": "Approved",
+				"date": "2021-11-17"
+			}
+		},
+		{
+			"id": "19/00596/HSE",
+			"address": {
+				"number": "14",
+				"street": "Woodbury Close"
+			},
+			"at": [
+				51.3745091,
+				-0.0769016
+			],
+			"observed": "2019-03-27",
+			"claims": {
+				"application": "Erection of single/two storey front/side/rear extensions",
+				"decision": "Approved",
+				"date": "2019-03-27"
+			}
+		},
+		{
+			"id": "22/00734/HSE",
+			"address": {
+				"number": "11",
+				"street": "Mapledale Avenue"
+			},
+			"at": [
+				51.3724978,
+				-0.0688964
+			],
+			"observed": "2022-04-08",
+			"claims": {
+				"application": "Roof alteration to facilitate erection of 3 rear dormers and installation of front rooflights. Erection of single-storey rear extension.",
+				"decision": "Approved",
+				"date": "2022-04-08"
+			}
+		},
+		{
+			"id": "20/06283/DISC",
+			"at": [
+				51.3722574,
+				-0.0876714
+			],
+			"observed": "2021-02-09",
+			"claims": {
+				"application": "Discharge of Conditions 11, 12 and 15 attached to Planning Permission 17/02696/FUL for Demolition of existing buildings and the erection of part four/ part six storey building with basement comprising 11 one bedroom, 10 two bedroom 12 three bedroom and 1 studio flats, formation of vehicular access and provision of  basement parking, provision of associated refuse and cycle storage.",
+				"decision": "Approved",
+				"date": "2021-02-09"
+			}
+		},
+		{
+			"id": "20/05734/DISC",
+			"at": [
+				51.3722484,
+				-0.08767169999999999
+			],
+			"observed": "2021-01-28",
+			"claims": {
+				"application": "Discharge of Condition 29 - Drainage - of Planning Permission 17/02696/FUL for Demolition of existing buildings and the erection of part four/ part six storey building with basement comprising 11 one bedroom, 10 two bedroom 12 three bedroom and 1 studio flats: formation of vehicular access and provision of  basement parking, provision of associated refuse and cycle storage",
+				"decision": "Refused",
+				"date": "2021-01-28"
+			}
+		},
+		{
+			"id": "20/00563/HSE",
+			"address": {
+				"number": "34",
+				"street": "Upfield"
+			},
+			"at": [
+				51.3724833,
+				-0.06692859999999999
+			],
+			"observed": "2020-04-02",
+			"claims": {
+				"application": "Erection of single storey rear extension, alterations to the front bay windows, front porch, chimney and side extension, and alterations to the roof including raising the roof line of the side extension, constuction of roof lights in the front roof slope and front apex dormer, and dormers and roof lights in the rear roof slope.",
+				"decision": "Approved",
+				"date": "2020-04-02"
+			}
+		},
+		{
+			"id": "19/05607/DISC",
+			"at": [
+				51.3722484,
+				-0.08767169999999999
+			],
+			"observed": "2020-02-07",
+			"claims": {
+				"application": "Discharge of Conditions 5, 6, 11, 12, 13, 14, 15, 17, 20, 25, and 28 of Planning Permission 17/02696/FUL for Demolition of existing buildings and the erection of part four/ part six storey building with basement comprising 11 one bedroom, 10 two bedroom 12 three bedroom and 1 studio flats: formation of vehicular access and provision of  basement parking, provision of associated refuse and cycle storage",
+				"decision": "Split Decision",
+				"date": "2020-02-07"
+			}
+		},
+		{
+			"id": "21/05661/HSE",
+			"address": {
+				"number": "21",
+				"street": "Mapledale Avenue"
+			},
+			"at": [
+				51.3714942,
+				-0.0669415
+			],
+			"observed": "2021-12-21",
+			"claims": {
+				"application": "Demolition of existing conservatory and erection of a single storey rear extension",
+				"decision": "Approved",
+				"date": "2021-12-21"
+			}
+		},
+		{
+			"id": "21/00884/NMA",
+			"at": [
+				51.3722484,
+				-0.08767169999999999
+			],
+			"observed": "2021-03-01",
+			"claims": {
+				"application": "Non-Material Amendment to Planning Permission 17/02696/FUL for Demolition of existing buildings and the erection of part four/ part six storey building with basement comprising 11 one bedroom, 10 two bedroom 12 three bedroom and 1 studio flats, formation of vehicular access and provision of  basement parking, provision of associated refuse and cycle storage.",
+				"decision": "Approved",
+				"date": "2021-03-01"
+			}
+		},
+		{
+			"id": "20/01613/TRE",
+			"at": [
+				51.3707996,
+				-0.0782781
+			],
+			"observed": "2020-05-14",
+			"claims": {
+				"application": "T1 Oak  - Reduce laterals overhanging property back to fence line. T2 Holly - Fell. T3  Elder \u0016 selfsown Ash prune back to create a 1.5m clearance from the fence line. \r(TPO no. 24, 1986)",
+				"decision": "Approved",
+				"date": "2020-05-14"
+			}
+		},
+		{
+			"id": "20/00526/FUL",
+			"address": {
+				"number": "22",
+				"street": "Brownlow Road"
+			},
+			"at": [
+				51.368237,
+				-0.08324129999999999
+			],
+			"observed": "2020-03-31",
+			"claims": {
+				"application": "Erection of four storey building to the side comprising 1 x two bedroom flat and 1 x one bedroom flat and lower level car parking and cycle storage: formation of vehicular access and provision of associated bin storage.",
+				"decision": "Refused",
+				"date": "2020-03-31"
+			}
+		},
+		{
+			"id": "19/02080/HSE",
+			"address": {
+				"number": "14",
+				"street": "Rutland Gardens"
+			},
+			"at": [
+				51.365392,
+				-0.084133
+			],
+			"observed": "2019-06-21",
+			"claims": {
+				"application": "Demolition of existing and erection of a new single storey side and rear extension to the house",
+				"decision": "Approved",
+				"date": "2019-06-21"
+			}
+		},
+		{
+			"id": "23/03773/LE",
+			"at": [
+				51.3673927,
+				-0.092112
+			],
+			"observed": "2023-12-28",
+			"claims": {
+				"application": "Erection of a replacement single storey kitchen extension as permitted development (via the Town and Country Planning (General Permitted Development) Order (England) 2021 (as amended) Schedule 2 Part 7, Class M)",
+				"decision": "Approved",
+				"date": "2023-12-28"
+			}
+		},
+		{
+			"id": "24/03931/TRE",
+			"address": {
+				"number": "12",
+				"street": "Rutland Gardens"
+			},
+			"at": [
+				51.365326,
+				-0.083935
+			],
+			"observed": "2024-12-18",
+			"claims": {
+				"application": "T1 Lime Tree: Remove 10 of the lowest level branches beneath crown break (epicormic growth), none of which are above 20cm in circumference.\r(TPO 22, 1977)",
+				"decision": "Approved",
+				"date": "2024-12-18"
+			}
+		},
+		{
+			"id": "20/01199/HSE",
+			"address": {
+				"number": "4",
+				"street": "Selborne Road"
+			},
+			"at": [
+				51.3685352,
+				-0.0855276
+			],
+			"observed": "2020-05-05",
+			"claims": {
+				"application": "Replacement of existing conservatory with flat roof single storey rear extension",
+				"decision": "Approved",
+				"date": "2020-05-05"
+			}
+		},
+		{
+			"id": "21/05169/HSE",
+			"address": {
+				"number": "9",
+				"street": "Mapledale Avenue"
+			},
+			"at": [
+				51.3727182,
+				-0.0691745
+			],
+			"observed": "2022-03-03",
+			"claims": {
+				"application": "Alterations and erection of a single storey side/rear extension",
+				"decision": "Approved",
+				"date": "2022-03-03"
+			}
+		},
+		{
+			"id": "20/03773/TRE",
+			"at": [
+				51.3712566,
+				-0.0836613
+			],
+			"observed": "2020-11-13",
+			"claims": {
+				"application": "The works we are applying for are:\rT6 - Oak (TPO Ref T8). \rRemove & replace 1 x Oak\r\rReasons:\r1.\tThe tree is positively implicated in subsidence damage.\r2.\tLevel monitoring confirms seasonal movement in the orientation of this tree. \r3.\tSite investigations further show trespass of Quercus roots below the building and a clay soil in a state of desiccation.\r4.\tWe are advised that superstructure repairs in the event the influence of trees is removed is currently estimated at ?132,000. In the event the influence remains (i.e. permission to remove T6 Oak is refused) then the structural strengthening repair costs would be not less than ?510,000. \r5.\tThis gives a cost difference of not less than ?378,000 if the tree remains.\r6.\tIn the event of a refusal the client will seek compensation under s202(e) for the additional costs incurred.\r7.\tScope exists for a lower water demand replacement species further from the buildings within the estate and the council are invited to condition an appropriate replacement.",
+				"decision": "Approved",
+				"date": "2020-11-13"
+			}
+		},
+		{
+			"id": "22/02361/PA8",
+			"at": [
+				51.3688298,
+				-0.0793519
+			],
+			"observed": "2022-07-29",
+			"claims": {
+				"application": "Proposed installation of 17.5m High Orion Pole (new root foundation)\rProposed installation of 2No. (TEF) 300mm Microwave Dishes (on Monopole)\rProposed installation of 3No. (TEF) SUA-7 Antennas (on Monopole)\rProposed installation of 3No. (TEF) Future MIMO Antennas (on Monopole)\rProposed installation of 1No. (TEF) Shire Cabinet (new root foundation)\rProposed installation of 1No. (TEF) York Cabinet (new root foundation)\rAll other ancillary apparatus and development",
+				"decision": "Approved",
+				"date": "2022-07-29"
+			}
+		},
+		{
+			"id": "21/01021/TRE",
+			"address": {
+				"number": "51",
+				"street": "Engadine Close"
+			},
+			"at": [
+				51.3702751,
+				-0.08358729999999999
+			],
+			"observed": "2021-04-29",
+			"claims": {
+				"application": " The tree in question is an Acacia tree, situated in the back right corner of our rear garden. Remove deadwood and remove 2 meters from the crown for the benefit and welfare of the tree.\r(TPO NO. 8,1970)",
+				"decision": "Withdrawn",
+				"date": "2021-04-29"
+			}
+		},
+		{
+			"id": "21/01338/PA8",
+			"at": [
+				51.3693047,
+				-0.07924579999999999
+			],
+			"observed": "2021-05-07",
+			"claims": {
+				"application": "The proposed installation of a 20m tall monopole, supporting 6 no antennas within a shroud, together with 2 no ground based equipment cabinets and ancillary development thereto.",
+				"decision": "Refused",
+				"date": "2021-05-07"
+			}
+		},
+		{
+			"id": "19/02350/HSE",
+			"address": {
+				"number": "7",
+				"street": "Upfield"
+			},
+			"at": [
+				51.374437,
+				-0.064329
+			],
+			"observed": "2019-07-15",
+			"claims": {
+				"application": "Demolition of existing conservatory and erection of single storey side and rear extensions",
+				"decision": "Approved",
+				"date": "2019-07-15"
+			}
+		},
+		{
+			"id": "21/01010/HSE",
+			"address": {
+				"number": "22",
+				"street": "Sandilands"
+			},
+			"at": [
+				51.3722502,
+				-0.075157
+			],
+			"observed": "2021-05-27",
+			"claims": {
+				"application": "Alterations, erection of single-storey rear extension, erection of first-floor side extension, erection of canopy to existing front porch and raised patio area.",
+				"decision": "Approved",
+				"date": "2021-05-27"
+			}
+		},
+		{
+			"id": "21/02864/LE",
+			"address": {
+				"number": "5",
+				"street": "Coombe Avenue"
+			},
+			"at": [
+				51.3659911,
+				-0.0844843
+			],
+			"observed": "2021-07-22",
+			"claims": {
+				"application": "Use of Unit 5 as office space (Use Class E) (formerly B1a)",
+				"decision": "Approved",
+				"date": "2021-07-22"
+			}
+		},
+		{
+			"id": "19/05255/DISC",
+			"at": [
+				51.3703216,
+				-0.07983549999999999
+			],
+			"observed": "2020-01-22",
+			"claims": {
+				"application": "Discharge of Condition 5_a) Security lighting_b) Visibility splays_c) Electrical vehicle charging point, and Condition 10_SUDs of planning permission 18/01994/FUL for Demolition of an existing house: erection of a three storey building comprising 6  two bedroom and 3 three bedroom flats, provision of driveway and associated parking to rear and provision of associated refuse and cycle storage.",
+				"decision": "Approved",
+				"date": "2020-01-22"
+			}
+		},
+		{
+			"id": "20/05864/TRE",
+			"at": [
+				51.3716101,
+				-0.0810891
+			],
+			"observed": "2021-01-19",
+			"claims": {
+				"application": "T1, Common Beech - To crown raise over road to 5.2m high measured from ground level. \rT66, Weeping Willow - To re-pollard\r(TPO 23 of 2013)",
+				"decision": "Approved",
+				"date": "2021-01-19"
+			}
+		},
+		{
+			"id": "21/05255/HSE",
+			"address": {
+				"number": "20",
+				"street": "Dittoncroft Close"
+			},
+			"at": [
+				51.3659097,
+				-0.0850049
+			],
+			"observed": "2021-12-17",
+			"claims": {
+				"application": "Erection of two storey side and single storey rear extensions . Additional side extension to ground floor to provide workshop within garage.",
+				"decision": "Approved",
+				"date": "2021-12-17"
+			}
+		},
+		{
+			"id": "21/05086/DISC",
+			"at": [
+				51.3722484,
+				-0.08767169999999999
+			],
+			"observed": "2022-03-31",
+			"claims": {
+				"application": "Discharge of Conditions 7 - Tree Planting, 18 - Car Club, 19 - Refuse Management Plan, 21 - Travel Plan, 22 - Delivery and Servicing Plan, attached to planning permission 17/02696/FUL for Demolition of existing buildings and the erection of part four/ part six storey building with basement comprising 11 one bedroom, 10 two bedroom 12 three bedroom and 1 studio flats: formation of vehicular access and provision of  basement parking, provision of associated refuse and cycle storage.",
+				"decision": "Approved",
+				"date": "2022-03-31"
+			}
+		},
+		{
+			"id": "19/04001/LP",
+			"address": {
+				"number": "76",
+				"street": "Green Acres"
+			},
+			"at": [
+				51.3705063,
+				-0.08232769999999999
+			],
+			"observed": "2019-10-04",
+			"claims": {
+				"application": "Use of part of dwelling for private hire telephone/internet booking licensed service",
+				"decision": "Approved",
+				"date": "2019-10-04"
+			}
+		},
+		{
+			"id": "19/02921/HSE",
+			"address": {
+				"number": "10",
+				"street": "Mapledale Avenue"
+			},
+			"at": [
+				51.373076,
+				-0.070148
+			],
+			"observed": "2019-08-20",
+			"claims": {
+				"application": "Erection of boundary wall (Retospective)",
+				"decision": "Approved",
+				"date": "2019-08-20"
+			}
+		},
+		{
+			"id": "21/01756/DISC",
+			"at": [
+				51.3722484,
+				-0.08767169999999999
+			],
+			"observed": "2021-05-06",
+			"claims": {
+				"application": "Discharge of Condition 29 - Sustainable Water Surface Drainage - attached to Planning Permission 17/02696/FUL for Demolition of existing buildings and the erection of part four/ part six storey building with basement comprising 11 one bedroom, 10 two bedroom 12 three bedroom and 1 studio flats: formation of vehicular access and provision of  basement parking, provision of associated refuse and cycle storage.",
+				"decision": "Approved",
+				"date": "2021-05-06"
+			}
+		},
+		{
+			"id": "20/05532/TRE",
+			"address": {
+				"number": "2",
+				"street": "Lyndhurst Close"
+			},
+			"at": [
+				51.3696541,
+				-0.0808116
+			],
+			"observed": "2022-07-06",
+			"claims": {
+				"application": "Prunus  (T1) - To reduce mature Prunus located on the rear boundary to previous reduction points (approximately 1.5m crown reduction). (ivy will be severed at the base).\r(TPO 18 of 1970)",
+				"decision": "Approved",
+				"date": "2022-07-06"
+			}
+		},
+		{
+			"id": "23/01746/LE",
+			"address": {
+				"number": "3",
+				"street": "Grimwade Avenue"
+			},
+			"at": [
+				51.370559,
+				-0.0680297
+			],
+			"observed": "2023-05-26",
+			"claims": {
+				"application": "Erection of a detached outbuilding to the rear of the garden",
+				"decision": "Approved",
+				"date": "2023-05-26"
+			}
+		},
+		{
+			"id": "21/03408/TRE",
+			"at": [
+				51.3714844,
+				-0.0805483
+			],
+			"observed": "2021-08-12",
+			"claims": {
+				"application": "Beech (T1) - crown reduce by approximately 2m up to a max cut size of 25mm.\r(TPO 4, 1992)",
+				"decision": "Approved",
+				"date": "2021-08-12"
+			}
+		},
+		{
+			"id": "66/00100/CONR",
+			"address": {
+				"number": "5",
+				"street": "Spindlewood Gardens"
+			},
+			"at": [
+				51.366424,
+				-0.090615
+			],
+			"observed": "2022-10-07",
+			"claims": {
+				"application": "TEST APPLICATION",
+				"date": "2022-10-07"
+			}
+		},
+		{
+			"id": "26/02845/HSE",
+			"address": {
+				"number": "126",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.373981,
+				-0.070484
+			],
+			"observed": "2026-10-06",
+			"claims": {
+				"application": "Loft conversion with dormers",
+				"date": "2026-10-06"
+			}
+		},
+		{
+			"id": "19/05287/FUL",
+			"address": {
+				"number": "108",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.3739248,
+				-0.07308959999999999
+			],
+			"observed": "2020-01-02",
+			"claims": {
+				"application": "Alterations and conversion of dwellinghouse (C3) to children's home (C2)",
+				"decision": "Approved",
+				"date": "2020-01-02"
+			}
+		},
+		{
+			"id": "22/00193/FUL",
+			"at": [
+				51.3659739,
+				-0.0845281
+			],
+			"observed": "2022-07-04",
+			"claims": {
+				"application": "Demolition of the existing buildings and erection of 3 storey building comprising of 3 x Class E units and 9 flats with associated parking, landscaping, refuse and cycle stores",
+				"decision": "Refused",
+				"date": "2022-07-04"
+			}
+		},
+		{
+			"id": "19/04679/DISC",
+			"at": [
+				51.3721554,
+				-0.0880348
+			],
+			"observed": "2019-11-22",
+			"claims": {
+				"application": "Discharge of Condition 3 (external materials) and Condition 4 (hard and soft landscaping) attached to permission 18/02653/FUL for 'Erection of four storey block comprising of 8 x one bed flats with associated refuse and cycle storage and landscaping.'",
+				"decision": "Approved",
+				"date": "2019-11-22"
+			}
+		},
+		{
+			"id": "20/02919/TRE",
+			"address": {
+				"number": "1",
+				"street": "Rushmead Close"
+			},
+			"at": [
+				51.3670011,
+				-0.0830056
+			],
+			"observed": "2020-08-26",
+			"claims": {
+				"application": "Hornbeam 1(front garden) lift to clear house by 5 metres. Branches are currently in contact with roof and gutters.\rHornbeam 2 (back Garden) lift to clear 4 metres over garden and crown thin by 20%. \rHornbeam 3(rear of back garden) remove trunk growth only.\r(TPO 3, 1968)",
+				"decision": "Approved",
+				"date": "2020-08-26"
+			}
+		},
+		{
+			"id": "20/02753/PA8",
+			"at": [
+				51.3660004,
+				-0.0894546
+			],
+			"observed": "2020-08-14",
+			"claims": {
+				"application": "Proposed 20m tall monopole with cabinet at base and associated ancillary works",
+				"decision": "Refused",
+				"date": "2020-08-14"
+			}
+		},
+		{
+			"id": "23/01447/FUL",
+			"at": [
+				51.3673927,
+				-0.092112
+			],
+			"observed": "2023-06-07",
+			"claims": {
+				"application": "Replacement of timber fence with 3m high metal mesh fence to the car park boundary (retrospective).",
+				"decision": "Approved",
+				"date": "2023-06-07"
+			}
+		},
+		{
+			"id": "21/06136/HSE",
+			"address": {
+				"number": "62",
+				"street": "Fitzjames Avenue"
+			},
+			"at": [
+				51.373387,
+				-0.06556859999999999
+			],
+			"observed": "2022-02-02",
+			"claims": {
+				"application": "Erection of a single-storey side and rear extension following a demolition of garage. Construction of terrace area.",
+				"decision": "Approved",
+				"date": "2022-02-02"
+			}
+		},
+		{
+			"id": "19/00162/FUL",
+			"at": [
+				51.3714419,
+				-0.087849
+			],
+			"observed": "2019-03-20",
+			"claims": {
+				"application": "Removal of existing low level front garden brick posts and metal chain links with all-new replacement 1.5m high metal railings and matching access gates to curtilage of gardens.",
+				"decision": "Refused",
+				"date": "2019-03-20"
+			}
+		},
+		{
+			"id": "19/01225/FUL",
+			"at": [
+				51.369447,
+				-0.081909
+			],
+			"observed": "2019-07-11",
+			"claims": {
+				"application": "Proposed extension to existing classroom block",
+				"decision": "Approved",
+				"date": "2019-07-11"
+			}
+		},
+		{
+			"id": "21/01042/TRE",
+			"at": [
+				51.372068,
+				-0.090923
+			],
+			"observed": "2021-04-29",
+			"claims": {
+				"application": "T11 London plane, crown lift to 5m from public footpath level. \n(TPO NO.17,1987)",
+				"decision": "Approved",
+				"date": "2021-04-29"
+			}
+		},
+		{
+			"id": "20/00332/FUL",
+			"at": [
+				51.365143,
+				-0.085407
+			],
+			"observed": "2020-11-25",
+			"claims": {
+				"application": "Erection of two storey outbuilding",
+				"decision": "Refused",
+				"date": "2020-11-25"
+			}
+		},
+		{
+			"id": "21/00237/TRE",
+			"at": [
+				51.372068,
+				-0.090923
+			],
+			"observed": "2021-03-31",
+			"claims": {
+				"application": "T703 Oak - Reduce North And North East Side Of Crown By 1.5m. Reduce South And South\nWest Side Of Crown By 2-2.5m To Balance. Remove epicormic growth from ground level to crown break approx 5m) \n(TPO no.17, 1987)\n \n\n\n",
+				"decision": "Approved",
+				"date": "2021-03-31"
+			}
+		},
+		{
+			"id": "21/01664/TRE",
+			"at": [
+				51.372615,
+				-0.076561
+			],
+			"observed": "2021-06-02",
+			"claims": {
+				"application": "T637: Sycamore - Crown Reduction to previous pruning points\nT638: Ash - Crown Reduction to previous pruning points\nT639: Ash - Crown Reduction to previous pruning points\nT640: Sycamore - Crown Reduction to previous pruning points\nT641: Sycamore - Crown Reduction to previous pruning points\nT643: Sycamore - Crown Reduction to previous pruning points\nT648: Sycamore - Crown Reduction to previous pruning points\nT649: Sycamore - Crown Reduction to previous pruning points\nT650: Sycamore - Crown Reduction to previous pruning points\nT653: Pear - Fell\nT655: Oak - Reduce height and crown radius by 3m\nT656: Ash - Fell\n(TPO no. 41, 1973)",
+				"decision": "Approved",
+				"date": "2021-06-02"
+			}
+		},
+		{
+			"id": "21/03454/FUL",
+			"at": [
+				51.363732,
+				-0.071733
+			],
+			"observed": "2021-09-27",
+			"claims": {
+				"application": "Installation of a Multi Use Games Area (MUGA) with protective fence, reconfiguration of the southern car parking area and provision of ancillary soft and hard landscaping.",
+				"decision": "Refused",
+				"date": "2021-09-27"
+			}
+		},
+		{
+			"id": "21/00584/HSE",
+			"at": [
+				51.369994,
+				-0.079027
+			],
+			"observed": "2021-05-26",
+			"claims": {
+				"application": "Erection of single storey rear extension",
+				"decision": "Approved",
+				"date": "2021-05-26"
+			}
+		},
+		{
+			"id": "21/06280/FUL",
+			"at": [
+				51.363699,
+				-0.071404
+			],
+			"observed": "2022-04-11",
+			"claims": {
+				"application": "Installation of a Multi Use Games Area (MUGA) on the northern part of the site, creation of footpath, replacement of timber gate in existing wood fence, and erection of 1.5 metres high fence around MUGA.",
+				"decision": "Approved",
+				"date": "2022-04-11"
+			}
+		},
+		{
+			"id": "20/02217/FUL",
+			"at": [
+				51.370029,
+				-0.088882
+			],
+			"observed": "2020-08-13",
+			"claims": {
+				"application": "Replacement of windows and doors and installation of ventilation units",
+				"decision": "Approved",
+				"date": "2020-08-13"
+			}
+		},
+		{
+			"id": "19/04310/DISC",
+			"at": [
+				51.370322,
+				-0.079861
+			],
+			"observed": "2019-09-27",
+			"claims": {
+				"application": "Discharge of Condition 4 - Landscaping and Boundary Treatment - attached to planning permission 18/01994/FUL for demolition of an existing house, erection of a three storey building comprising 6  two bedroom and 3 three bedroom flats: provision of driveway and associated parking to rear and provision of associated refuse and cycle storage.",
+				"decision": "Approved",
+				"date": "2019-09-27"
+			}
+		},
+		{
+			"id": "20/05827/FUL",
+			"at": [
+				51.363888,
+				-0.070836
+			],
+			"observed": "2021-05-07",
+			"claims": {
+				"application": "Change of use from residential (C3) to educational facilities (F1), internal reconfiguration and alterations to the site layout",
+				"decision": "Approved",
+				"date": "2021-05-07"
+			}
+		},
+		{
+			"id": "19/04153/DISC",
+			"at": [
+				51.370322,
+				-0.079861
+			],
+			"observed": "2019-09-12",
+			"claims": {
+				"application": "Discharge of Condition 3 - External Facing Materials - of Planning Permission 18/01994/FUL for Demolition of an existing house, erection of a three storey building comprising 6  two bedroom and 3 three bedroom flats: provision of driveway and associated parking to rear and provision of associated refuse and cycle storage.",
+				"decision": "Approved",
+				"date": "2019-09-12"
+			}
+		},
+		{
+			"id": "20/02976/TRE",
+			"at": [
+				51.370009,
+				-0.085434
+			],
+			"observed": "2020-08-26",
+			"claims": {
+				"application": "T1, T2, T3, T4, T5, T6, T7, T8 Lime trees , re-pollard. The trees are getting to be quite over bearing and need to be re-pollarded to maintain a smaller size.\n(TPO 18,1970)",
+				"decision": "Approved",
+				"date": "2020-08-26"
+			}
+		},
+		{
+			"id": "21/06152/HSE",
+			"at": [
+				51.370372,
+				-0.086741
+			],
+			"observed": "2022-05-23",
+			"claims": {
+				"application": "Ground floor rear extensions and other minor alterations to the house\n",
+				"decision": "Approved",
+				"date": "2022-05-23"
+			}
+		},
+		{
+			"id": "20/02723/PA8",
+			"at": [
+				51.374449,
+				-0.074861
+			],
+			"observed": "2020-08-14",
+			"claims": {
+				"application": "Installation of a 20m tall monopole and equipment cabinets",
+				"decision": "Refused",
+				"date": "2020-08-14"
+			}
+		},
+		{
+			"id": "19/03975/TRE",
+			"at": [
+				51.373272,
+				-0.081519
+			],
+			"observed": "2019-10-31",
+			"claims": {
+				"application": "T2: Oak - Prune back lateral branches overhanging 'No 4C Paul Gardens' by up to 3m.\n(TPO no. 6, 2011)",
+				"decision": "Refused",
+				"date": "2019-10-31"
+			}
+		},
+		{
+			"id": "20/02182/TRE",
+			"at": [
+				51.366662,
+				-0.092527
+			],
+			"observed": "2020-10-23",
+			"claims": {
+				"application": "Beech Tree (T1) Trim Lower reaches of canopy where it overhangs the roof of property. The Tree lies within the boundary of Park Hill Park.\n(TPO 16, 2014)",
+				"decision": "Approved",
+				"date": "2020-10-23"
+			}
+		},
+		{
+			"id": "19/05889/FUL",
+			"at": [
+				51.370432,
+				-0.088807
+			],
+			"observed": "2020-02-12",
+			"claims": {
+				"application": "Erection of two-storey temporary building accommodating 6 classrooms as substitute classrooms during school refurbishments.",
+				"decision": "Approved",
+				"date": "2020-02-12"
+			}
+		},
+		{
+			"id": "21/01456/FUL",
+			"at": [
+				51.365134,
+				-0.085408
+			],
+			"observed": "2021-06-25",
+			"claims": {
+				"application": "Erection of single storey outbuilding",
+				"decision": "Approved",
+				"date": "2021-06-25"
+			}
+		},
+		{
+			"id": "21/01770/DISC",
+			"at": [
+				51.370061,
+				-0.079829
+			],
+			"observed": "2021-10-20",
+			"claims": {
+				"application": "Discharge of Condition 13 - Construction Logistics Plan - of Planning Permission 20/01954/FUL for Demolition of existing house, garage and outbuilding, and erection of a three storey building comprising 9 apartments, and provision of associated off-street parking, and associated refuse storage and cycle storage, and associated landscaping.",
+				"decision": "Split Decision",
+				"date": "2021-10-20"
+			}
+		},
+		{
+			"id": "20/04000/HSE",
+			"at": [
+				51.370002,
+				-0.079013
+			],
+			"observed": "2020-12-18",
+			"claims": {
+				"application": "Erection of single storey rear and side extension",
+				"decision": "Refused",
+				"date": "2020-12-18"
+			}
+		},
+		{
+			"id": "21/01916/TRE",
+			"at": [
+				51.372068,
+				-0.090923
+			],
+			"observed": "2021-06-04",
+			"claims": {
+				"application": "702 Willow: Reduce to previous pruning points. 685 Cedar: crown lift over footpath by 2.4m \n(TPO no.17, 1987)\n\n",
+				"decision": "Approved",
+				"date": "2021-06-04"
+			}
+		},
+		{
+			"id": "16/02076/P",
+			"address": {
+				"number": "Adj to 2",
+				"street": "Selborne Road"
+			},
+			"at": [
+				51.3685574,
+				-0.0857853
+			],
+			"observed": "2016-11-18",
+			"claims": {
+				"application": "Alterations to existing property; erection of three bedroom detached house at side",
+				"decision": "Approved",
+				"date": "2016-11-18"
+			}
+		},
+		{
+			"id": "26/02005/HSE",
+			"address": {
+				"number": "37",
+				"street": "Radcliffe Road"
+			},
+			"at": [
+				51.369614,
+				-0.076744
+			],
+			"observed": "2026-09-23",
+			"claims": {
+				"application": "Erection of single/two-storey side/rear extensions and all associated works.",
+				"decision": "Approved",
+				"date": "2026-09-23"
+			}
+		},
+		{
+			"id": "10/02634/P",
+			"address": {
+				"number": "Coombe House",
+				"street": "Coombe Road"
+			},
+			"at": [
+				51.3638237,
+				-0.0707838
+			],
+			"observed": "2011-05-19",
+			"claims": {
+				"application": "Alterations to the existing building containing four flats; erection of a rear first floor extension to provide a total of 3 one bedroom and 7 two bedroom flats; provision of eight parking spaces and associated cycle/refuse storage",
+				"decision": "Approved",
+				"date": "2011-05-19"
+			}
+		},
+		{
+			"id": "14/01160/P",
+			"address": {
+				"number": "60",
+				"street": "Park Hill Road"
+			},
+			"at": [
+				51.3674266,
+				-0.0870248
+			],
+			"observed": "2014-11-14",
+			"claims": {
+				"application": "Demolition of the existing house;  Erection of 5 two storey three bedroom houses with accommodation in roofspace; formation of vehicular accesses and provision of associated park",
+				"decision": "Approved",
+				"date": "2014-11-14"
+			}
+		},
+		{
+			"id": "10/03432/P",
+			"address": {
+				"number": "The Cottage, 17",
+				"street": "Thanescroft Gardens"
+			},
+			"at": [
+				51.3696037,
+				-0.0837734
+			],
+			"observed": "2011-03-24",
+			"claims": {
+				"application": "Conversion to form 4 two bedroom flats; erection of first floor side extension; formation of vehicular access and provision of associated parking, cycle and refuse storage",
+				"decision": "Approved",
+				"date": "2011-03-24"
+			}
+		},
+		{
+			"id": "023352",
+			"address": {
+				"number": "10",
+				"street": "Radcliffe Road"
+			},
+			"at": [
+				51.373836,
+				-0.080303
+			],
+			"observed": "2003-02-12",
+			"claims": {
+				"application": "Alterations; conversion to form 1 two-bedroom, 2 three-bedroom and 2 one-bedroom flats; erection of single storey side extensions; formation of vehicular access and provision of 5 parking spaces.",
+				"decision": "Approved",
+				"date": "2003-02-12"
+			}
+		},
+		{
+			"id": "14/03658/RES",
+			"address": {
+				"number": "Danecroft , 5",
+				"street": "Radcliffe Road"
+			},
+			"at": [
+				51.3741318,
+				-0.07966179999999999
+			],
+			"observed": "2014-11-27",
+			"claims": {
+				"application": "Discharge of conditions 2,3 , 4 & 8 and Part-discharge of conditions 11 & 12  attached to planning permission 11/01611/P for the Demolition of existing building; erection of 4 three bedroom townhouses with accommodation in the roof space; erection of a two storey building with accommodation in the roofspace comprising 7 two bedroom and 2 one bedroom flats; formation of vehicular access and provision of associated parking and cycle storage (renewal of planning permission 08/00849/P)",
+				"decision": "Approved",
+				"date": "2014-11-27"
+			}
+		},
+		{
+			"id": "09/00366/P",
+			"address": {
+				"number": "161",
+				"street": "Coombe Road"
+			},
+			"at": [
+				51.3654274,
+				-0.0863036
+			],
+			"observed": "2009-07-16",
+			"claims": {
+				"application": "Alterations; conversion to form  1 one bedroom, 3 studio  and 2 two bedroom flats; erection of single storey rear extension; alterations to existing vehicular access; retention of 3 parking spaces and provision of cycle/refuse storage areas",
+				"decision": "Approved",
+				"date": "2009-07-16"
+			}
+		},
+		{
+			"id": "871805",
+			"address": {
+				"number": "6-8A",
+				"street": "CHEPSTOW ROAD"
+			},
+			"at": [
+				51.3723306,
+				-0.0849958
+			],
+			"observed": "1987-12-08",
+			"claims": {
+				"application": "No description provided by LDMS",
+				"decision": "Approved",
+				"date": "1987-12-08"
+			}
+		},
+		{
+			"id": "07/01593/P",
+			"address": {
+				"number": "25",
+				"street": "Grimwade Avenue"
+			},
+			"at": [
+				51.369694,
+				-0.0711982
+			],
+			"observed": "2007-10-15",
+			"claims": {
+				"application": "Demolition of existing building; erection of a detached six bedroom house with integral double garage",
+				"decision": "Approved",
+				"date": "2007-10-15"
+			}
+		},
+		{
+			"id": "16/06450/FUL",
+			"address": {
+				"number": "9",
+				"street": "Grimwade Avenue"
+			},
+			"at": [
+				51.3703114,
+				-0.0688303
+			],
+			"observed": "2017-02-14",
+			"claims": {
+				"application": "Demolition of existing building; erection of 6 bedroom detached two storey house with accommodation in roofspace and basement and integral garage; formation of vehicular access and provision of associated parking",
+				"decision": "Approved",
+				"date": "2017-02-14"
+			}
+		},
+		{
+			"id": "06/02495/P",
+			"address": {
+				"number": "153",
+				"street": "Coombe Road"
+			},
+			"at": [
+				51.365575,
+				-0.087085
+			],
+			"observed": "2006-09-11",
+			"claims": {
+				"application": "Use of ground floor as 2 flats",
+				"decision": "Approved",
+				"date": "2006-09-11"
+			}
+		},
+		{
+			"id": "021085",
+			"address": {
+				"number": "86",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.3748622,
+				-0.07649879999999999
+			],
+			"observed": "2002-05-30",
+			"claims": {
+				"application": "Demolition of garage; alterations; conversion to form 4 two bedroom and 1 studio flats; erection of two storey side extension and dormer extensions in  rear roof slopes; installation of velux windows in front roof slope; erection of bin store and provision of 4 parking spaces",
+				"decision": "Approved",
+				"date": "2002-05-30"
+			}
+		},
+		{
+			"id": "020072",
+			"address": {
+				"number": "90",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.3747823,
+				-0.0760136
+			],
+			"observed": "2002-02-27",
+			"claims": {
+				"application": "Conversion to form 1 three bedroom, 1 one bedroom and 1 studio flats; provision of 3 parking spaces",
+				"decision": "Approved",
+				"date": "2002-02-27"
+			}
+		},
+		{
+			"id": "05/04704/P",
+			"address": {
+				"number": "Cleve Cross",
+				"street": "Selborne Road"
+			},
+			"at": [
+				51.3684781,
+				-0.0847829
+			],
+			"observed": "2006-01-31",
+			"claims": {
+				"application": "Demolition of existing building; erection of two/ three storey building comprising 6 two bedroom and 4 one bedroom flats; formation of vehicular accesses onto Langton Way; provision of associated car and cycle parking",
+				"decision": "Approved",
+				"date": "2006-01-31"
+			}
+		},
+		{
+			"id": "870206",
+			"address": {
+				"number": "2-6",
+				"street": "FAIRFIELD ROAD"
+			},
+			"at": [
+				51.372114,
+				-0.090993
+			],
+			"observed": "1987-05-05",
+			"claims": {
+				"application": "No description provided by LDMS",
+				"decision": "Approved",
+				"date": "1987-05-05"
+			}
+		},
+		{
+			"id": "922358",
+			"address": {
+				"number": "8-10",
+				"street": "FAIRFIELD ROAD"
+			},
+			"at": [
+				51.3719997,
+				-0.0900672
+			],
+			"observed": "1993-02-23",
+			"claims": {
+				"application": "No description provided by LDMS",
+				"decision": "Approved",
+				"date": "1993-02-23"
+			}
+		},
+		{
+			"id": "07/03361/P",
+			"address": {
+				"number": "57",
+				"street": "Park Hill Road"
+			},
+			"at": [
+				51.3677864,
+				-0.08593229999999999
+			],
+			"observed": "2007-12-07",
+			"claims": {
+				"application": "Demolition of existing building; erection of three storey building with basement comprising 8 two bedroom flats; formation of vehicular access and provision of associated parking",
+				"decision": "Approved",
+				"date": "2007-12-07"
+			}
+		},
+		{
+			"id": "991002",
+			"address": {
+				"number": "THANESCROFT",
+				"street": "SELBORNE ROAD"
+			},
+			"at": [
+				51.369145,
+				-0.083746
+			],
+			"observed": "1999-11-30",
+			"claims": {
+				"application": "Partial demolition with alterations/conversion/extension to provide 13 flats.",
+				"decision": "Approved",
+				"date": "1999-11-30"
+			}
+		},
+		{
+			"id": "22/01728/TRE",
+			"address": {
+				"number": "26",
+				"street": "Tidenham Gardens"
+			},
+			"at": [
+				51.3712146,
+				-0.08439579999999999
+			],
+			"observed": "2022-05-30",
+			"claims": {
+				"application": "T1 Cedar: removal of whole lowest limb , overhanging garages.\r(TPO 04, 2011)",
+				"decision": "Approved",
+				"date": "2022-05-30"
+			}
+		},
+		{
+			"id": "22/01677/TRE",
+			"address": {
+				"number": "60",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.374848,
+				-0.08056579999999999
+			],
+			"observed": "2022-05-20",
+			"claims": {
+				"application": "Ivy Clad Sycamore: Section fell to ground level and treat stump to prevent regrowth\r\rReasons: Unsuitable location for tree, located in raised bed unable to grow, restricted root, blatant damage to wall, ivy clad, poor form",
+				"decision": "Withdrawn",
+				"date": "2022-05-20"
+			}
+		},
+		{
+			"id": "23/03556/HSE",
+			"address": {
+				"number": "2",
+				"street": "Bracewood Gardens"
+			},
+			"at": [
+				51.372055,
+				-0.080263
+			],
+			"observed": "2024-01-08",
+			"claims": {
+				"application": "Erection of single storey front extension with associated works (retrospective)",
+				"decision": "Approved",
+				"date": "2024-01-08"
+			}
+		},
+		{
+			"id": "23/04480/TRE",
+			"address": {
+				"number": "3",
+				"street": "Radcliffe Road"
+			},
+			"at": [
+				51.374316,
+				-0.079938
+			],
+			"observed": "2024-01-03",
+			"claims": {
+				"application": "T1 Lime - To reduce Lime tree in front garden adjacent to garage to create a pollard framework, approximately 4m above the historic pollard points.\r(TPO No. 25, 2005)",
+				"decision": "Approved",
+				"date": "2024-01-03"
+			}
+		},
+		{
+			"id": "24/00270/TRE",
+			"at": [
+				51.371666,
+				-0.081199
+			],
+			"observed": "2024-02-22",
+			"claims": {
+				"application": "T66 - Weeping Willow - To re-pollard.\r(TPO 23, 2013)",
+				"decision": "Approved",
+				"date": "2024-02-22"
+			}
+		},
+		{
+			"id": "24/01217/TRE",
+			"address": {
+				"number": "1",
+				"street": "Fairfield Path"
+			},
+			"at": [
+				51.371966,
+				-0.090784
+			],
+			"observed": "2024-05-08",
+			"claims": {
+				"application": "Tree NO 689 - London Plane - Crown reduce 2m to suitable growth points, Crown Lift to 5m over highway and 4m over car park area, remove deadwood.\rTree NO 690 - Horse Chestnut - Crown lift to 5m over highway, remove deadwood and remove epicormic growth up to 4m.\rTree NO 691 - Horse Chestnut - Remove epicormic up to 4m in height \rTree NO 694 - London Plane  - Reduce secondary east side stem by 4m to suitable growth points, reduce remaining canopy by 1-1.5m to shape.\rTree NO 695 & 696 - Horse Chestnut - Crown reduce by 2m to suitable growth points, crown lift to 5m over highway and remove deadwood.\rTree NO 697 - Yew - Crown lift to 3m, remove failed limb within canopy and sever ivy from 1m to ground level.\rTree NO 702 - Willow - Repollard canopy to previous points\r(TPO 17, 1987)",
+				"decision": "Approved",
+				"date": "2024-05-08"
+			}
+		},
+		{
+			"id": "26/02136/TRE",
+			"address": {
+				"number": "4",
+				"street": "Upfield"
+			},
+			"at": [
+				51.37473,
+				-0.065193
+			],
+			"observed": "2026-09-15",
+			"claims": {
+				"application": "T1 - Cedar, Lift canopy/ lowest branches to an 8m ground clearance\rT2 - Cedar, Reduce height by 2m from 15m - 13m, and to reduce canopy spread by 1m from a 7m spread to 6m total remaining spread.\r(TPO 08, 2024)",
+				"decision": "Refused",
+				"date": "2026-09-15"
+			}
+		},
+		{
+			"id": "16/04872/FUL",
+			"address": {
+				"number": "Garage at 34",
+				"street": "Brownlow Road"
+			},
+			"at": [
+				51.3672963,
+				-0.08236109999999999
+			],
+			"observed": "2016-11-18",
+			"claims": {
+				"application": "Demolition of existing garage and erection of 4 bedroom detached single storey dwelling at rear with associated parking",
+				"decision": "Approved",
+				"date": "2016-11-18"
+			}
+		},
+		{
+			"id": "884098",
+			"address": {
+				"number": "ADJ, 187",
+				"street": "COOMBE ROAD"
+			},
+			"at": [
+				51.365379,
+				-0.083343
+			],
+			"observed": "1990-03-30",
+			"claims": {
+				"application": "Erection of 26 houses.",
+				"decision": "Approved",
+				"date": "1990-03-30"
+			}
+		},
+		{
+			"id": "11/00592/P",
+			"address": {
+				"number": "Land Adj. 14",
+				"street": "Woodbury Close"
+			},
+			"at": [
+				51.3746721,
+				-0.0769666
+			],
+			"observed": "2011-05-10",
+			"claims": {
+				"application": "Erection of two storey building with accommodation in roofspace comprising 3 one bedroom and 1 two bedroom flats; formation of vehicular access and provision of associated parking",
+				"decision": "Approved",
+				"date": "2011-05-10"
+			}
+		},
+		{
+			"id": "11/01983/P",
+			"address": {
+				"number": "11",
+				"street": "Radcliffe Road"
+			},
+			"at": [
+				51.3735907,
+				-0.0790235
+			],
+			"observed": "2011-09-07",
+			"claims": {
+				"application": "Alterations; use as 2 one bedroom and 5 two bedroom flats; erection of ground floor roof extension and first floor side extension; provision of associated parking and  refuse storage",
+				"decision": "Approved",
+				"date": "2011-09-07"
+			}
+		},
+		{
+			"id": "12/03039/P",
+			"address": {
+				"number": "The Lodge (Treetops)",
+				"street": "Coombe Road"
+			},
+			"at": [
+				51.3630785,
+				-0.0703123
+			],
+			"observed": "2013-02-15",
+			"claims": {
+				"application": "Use as two bedroom bungalow; formation of vehicular access and provision for car parking",
+				"decision": "Approved",
+				"date": "2013-02-15"
+			}
+		},
+		{
+			"id": "001036",
+			"address": {
+				"number": "Adjacent to, 24-25",
+				"street": "Larcombe Close"
+			},
+			"at": [
+				51.365379,
+				-0.083343
+			],
+			"observed": "2000-06-16",
+			"claims": {
+				"application": "Erection of 4 three bedroom chalet bungalows with attached or detached garages; formation of vehicular accesses and provision of associated parking spaces",
+				"decision": "Approved",
+				"date": "2000-06-16"
+			}
+		},
+		{
+			"id": "07/01239/P",
+			"address": {
+				"number": "76-78",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.3744736,
+				-0.07802379999999999
+			],
+			"observed": "2009-09-01",
+			"claims": {
+				"application": "Erection of 2 three storey buildings comprising 13 two and 1 one bedroom flats; new vehicular access and provision of associated parking; erection of bin enclosure and secure cycle storage",
+				"decision": "Approved",
+				"date": "2009-09-01"
+			}
+		},
+		{
+			"id": "12/00591/P",
+			"address": {
+				"number": "Adj to The Cottage, 17",
+				"street": "Thanecroft  Gardens"
+			},
+			"at": [
+				51.3694691,
+				-0.0837933
+			],
+			"observed": "2012-06-15",
+			"claims": {
+				"application": "Erection of a two storey four bedroom detached house at side; formation of vehicular access and provision of associated parking",
+				"decision": "Approved",
+				"date": "2012-06-15"
+			}
+		},
+		{
+			"id": "18/02907/FUL",
+			"address": {
+				"number": "The Cedars School",
+				"street": "Coombe Road"
+			},
+			"at": [
+				51.3636986,
+				-0.0713781
+			],
+			"observed": "2018-09-12",
+			"claims": {
+				"application": "Erection of a temporary classroom building and associated hardstanding for a period of 3 years.",
+				"decision": "Approved",
+				"date": "2018-09-12"
+			}
+		},
+		{
+			"id": "06/02057/P",
+			"address": {
+				"number": "82 - 84",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.374952,
+				-0.077067
+			],
+			"observed": "2007-03-12",
+			"claims": {
+				"application": "Erection of two storey building comprising 2 one bedroom and 1 two bedroom flats; formation of vehicular access and provision of turning area",
+				"decision": "Approved",
+				"date": "2007-03-12"
+			}
+		},
+		{
+			"id": "05/02748/P",
+			"address": {
+				"number": "Land adjacent 84",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.374952,
+				-0.077067
+			],
+			"observed": "2005-08-25",
+			"claims": {
+				"application": "Erection of two storey building comprising 3 residential units and formation of vehicular access",
+				"decision": "Approved",
+				"date": "2005-08-25"
+			}
+		},
+		{
+			"id": "10/03078/P",
+			"address": {
+				"number": "R/O 161",
+				"street": "Coombe Road"
+			},
+			"at": [
+				51.365702,
+				-0.0860479
+			],
+			"observed": "2011-05-23",
+			"claims": {
+				"application": "Erection of two-storey four bedroom detached house at rear with attached garage; formation of vehicular access onto Dittoncroft Close and provision of associated parking",
+				"decision": "Refused",
+				"date": "2011-05-23"
+			}
+		},
+		{
+			"id": "15/00098/P",
+			"address": {
+				"number": "Image House",
+				"street": "Coombe Avenue"
+			},
+			"at": [
+				51.3655945,
+				-0.08497489999999999
+			],
+			"observed": "2015-03-13",
+			"claims": {
+				"application": "Demolition of existing building; erection of two storey building comprising 2 two  bedroom  and 2 one bedroom flats; provision of  associated parking and landscaping (corrected site address)",
+				"decision": "Approved",
+				"date": "2015-03-13"
+			}
+		},
+		{
+			"id": "880785",
+			"address": {
+				"number": "169-171",
+				"street": "COOMBE ROAD"
+			},
+			"at": [
+				51.365128,
+				-0.085609
+			],
+			"observed": "1988-08-09",
+			"claims": {
+				"application": "No description provided by LDMS",
+				"decision": "Approved",
+				"date": "1988-08-09"
+			}
+		},
+		{
+			"id": "04/04860/P",
+			"address": {
+				"number": "12",
+				"street": "Deepdene Avenue"
+			},
+			"at": [
+				51.368777,
+				-0.079409
+			],
+			"observed": "2006-07-04",
+			"claims": {
+				"application": "Continued use of side extension as a one bedroom dwelling",
+				"decision": "Refused",
+				"date": "2006-07-04"
+			}
+		},
+		{
+			"id": "990837",
+			"address": {
+				"number": "ARCHBISHOP TENISONS C OF E HIGH SCHOOL",
+				"street": "SELBOURNE ROAD"
+			},
+			"at": [
+				51.3695258,
+				-0.0823112
+			],
+			"observed": "1999-07-13",
+			"claims": {
+				"application": "The erection of a 3 storey extension to provide additional classrooms.",
+				"decision": "Approved",
+				"date": "1999-07-13"
+			}
+		},
+		{
+			"id": "21/01889/CONR",
+			"at": [
+				51.3700513,
+				-0.07980369999999999
+			],
+			"observed": "2022-08-15",
+			"claims": {
+				"application": "A Variation of Conditions 2 and 12 attached to Planning Permission 20/01954/FUL for Demolition of existing house, garage and outbuilding, and erection of a three storey building comprising 9 apartments, and provision of associated off-street parking, and associated refuse storage and cycle storage, and associated landscaping.",
+				"decision": "Approved",
+				"date": "2022-08-15"
+			}
+		},
+		{
+			"id": "12/02567/P",
+			"address": {
+				"number": "The Lodge",
+				"street": "Coombe Road"
+			},
+			"at": [
+				51.3630676,
+				-0.0701979
+			],
+			"observed": "2012-12-20",
+			"claims": {
+				"application": "Use of premises as offices; formation of vehicular access and provision of one car parking space",
+				"decision": "Approved",
+				"date": "2012-12-20"
+			}
+		},
+		{
+			"id": "020847",
+			"address": {
+				"number": "92",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.37477,
+				-0.075824
+			],
+			"observed": "2002-06-26",
+			"claims": {
+				"application": "Alterations; use as a day nursery for a maximum of 40 children; formation of vehicular access and provision of 3 parking spaces",
+				"decision": "Approved",
+				"date": "2002-06-26"
+			}
+		},
+		{
+			"id": "10/02993/P",
+			"address": {
+				"number": "Cambridge Tutors College",
+				"street": "Water Tower Hill"
+			},
+			"at": [
+				51.3671394,
+				-0.0909157
+			],
+			"observed": "2011-02-22",
+			"claims": {
+				"application": "Demolition of existing building; erection of a replacement two/three storey building to provide a hall, classrooms, music room, medical room, boardroom, staff offices and glazed link bridge to the adjoining Osbourne Centre",
+				"decision": "Approved",
+				"date": "2011-02-22"
+			}
+		},
+		{
+			"id": "18/01994/FUL",
+			"address": {
+				"number": "Ridge Hanger",
+				"street": "Park Hill Rise"
+			},
+			"at": [
+				51.3703216,
+				-0.07983549999999999
+			],
+			"observed": "2019-01-04",
+			"claims": {
+				"application": "Demolition of an existing house: erection of a three storey building comprising 6  two bedroom and 3 three bedroom flats: provision of driveway and associated parking to rear and provision of associated refuse and cycle storage.",
+				"decision": "Approved",
+				"date": "2019-01-04"
+			}
+		},
+		{
+			"id": "034215",
+			"address": {
+				"number": "The Copse",
+				"street": "Water Tower Hill"
+			},
+			"at": [
+				51.3674466,
+				-0.0904576
+			],
+			"observed": "2004-01-08",
+			"claims": {
+				"application": "Use for educational purposes in connection with adjoining college.",
+				"decision": "Approved",
+				"date": "2004-01-08"
+			}
+		},
+		{
+			"id": "15/05542/P",
+			"address": {
+				"number": "30",
+				"street": "Fairfield Road"
+			},
+			"at": [
+				51.3723005,
+				-0.0875546
+			],
+			"observed": "2016-02-16",
+			"claims": {
+				"application": "Demolition of existing buildings and erection of three/four storey  building containing 8 two bedroom and 1 three bedroom flats; formation of access; provision of associated parking, cycle storage and refuse storage (amended description)",
+				"decision": "Approved",
+				"date": "2016-02-16"
+			}
+		},
+		{
+			"id": "12/00198/P",
+			"address": {
+				"number": "Park Hill Junior School",
+				"street": "Stanhope Road"
+			},
+			"at": [
+				51.3700098,
+				-0.0888138
+			],
+			"observed": "2012-06-15",
+			"claims": {
+				"application": "Alterations; expansion by an additional form of entry to three forms of entry; erection of single and two storey extensions to provide additional classrooms and new entrance lobby; formation of new car parking area and multi use games area (amended description)",
+				"decision": "Approved",
+				"date": "2012-06-15"
+			}
+		},
+		{
+			"id": "06/00010/P",
+			"address": {
+				"number": "Adj 14",
+				"street": "Woodbury Close"
+			},
+			"at": [
+				51.3745418,
+				-0.076699
+			],
+			"observed": "2006-02-28",
+			"claims": {
+				"application": "Redevelopment to form 4 flats (3x one bed and 1 two bed).",
+				"decision": "Approved",
+				"date": "2006-02-28"
+			}
+		},
+		{
+			"id": "18/01119/FUL",
+			"address": {
+				"number": "1",
+				"street": "Selborne Road"
+			},
+			"at": [
+				51.3689418,
+				-0.08564000000000001
+			],
+			"observed": "2018-04-26",
+			"claims": {
+				"application": "Erection of detached 5-bed dwelling; formation of vehicular access and associated parking with associated",
+				"decision": "Approved",
+				"date": "2018-04-26"
+			}
+		},
+		{
+			"id": "15/00548/P",
+			"address": {
+				"number": "24",
+				"street": "Fairfield Road"
+			},
+			"at": [
+				51.371961,
+				-0.088255
+			],
+			"observed": "2015-05-22",
+			"claims": {
+				"application": "Erection of a two/three storey building at rear (fronting The Avenue) to provide 5 x two bedroom and 1 x studio flats; construction of bin store/cycle store",
+				"decision": "Approved",
+				"date": "2015-05-22"
+			}
+		},
+		{
+			"id": "13/00191/P",
+			"address": {
+				"number": "Acacia Nursing Home",
+				"street": "Stanhope Road"
+			},
+			"at": [
+				51.367762,
+				-0.089967
+			],
+			"observed": "2013-08-15",
+			"claims": {
+				"application": "Demolition of existing nursing home; erection of three storey building with basement to provide a nursing home with 65 bedrooms;provision of associated refuse and cycle stores, 10 parking spaces and landscaped areas.",
+				"decision": "Approved",
+				"date": "2013-08-15"
+			}
+		},
+		{
+			"id": "24/01397/LP",
+			"address": {
+				"number": "2",
+				"street": "Alpine Close"
+			},
+			"at": [
+				51.369087,
+				-0.087944
+			],
+			"observed": "2024-05-22",
+			"claims": {
+				"application": "Erection of a dormer extension in the rear roof slope.",
+				"decision": "Approved",
+				"date": "2024-05-22"
+			}
+		},
+		{
+			"id": "20/04173/HSE",
+			"address": {
+				"number": "36",
+				"street": "Radcliffe Road"
+			},
+			"at": [
+				51.370409,
+				-0.077473
+			],
+			"observed": "2020-11-13",
+			"claims": {
+				"application": "Erection of two storey side extension, single storey rear extension, single storey side and alteration to the roof, including construction of a dormer and a roof light in the rear roof slope.",
+				"decision": "Approved",
+				"date": "2020-11-13"
+			}
+		},
+		{
+			"id": "952298",
+			"address": {
+				"number": "23",
+				"street": "PARK HILL RISE"
+			},
+			"at": [
+				51.3725956,
+				-0.08086109999999999
+			],
+			"observed": "1996-05-30",
+			"claims": {
+				"application": "Erection of 34 flats (including Wardens) for elderly sheltered housing.",
+				"decision": "Approved",
+				"date": "1996-05-30"
+			}
+		},
+		{
+			"id": "24/01160/HSE",
+			"address": {
+				"number": "1",
+				"street": "Deepdene Avenue"
+			},
+			"at": [
+				51.369947,
+				-0.0789
+			],
+			"observed": "2025-01-20",
+			"claims": {
+				"application": "Erection of detached garage on existing driveway.",
+				"decision": "Approved",
+				"date": "2025-01-20"
+			}
+		},
+		{
+			"id": "20/01954/FUL",
+			"at": [
+				51.3700513,
+				-0.07980369999999999
+			],
+			"observed": "2021-02-12",
+			"claims": {
+				"application": "Demolition of existing house, garage and outbuilding, and erection of a three storey building comprising 9 apartments, and provision of associated off-street parking, and associated refuse storage and cycle storage, and associated landscaping.",
+				"decision": "Approved",
+				"date": "2021-02-12"
+			}
+		},
+		{
+			"id": "17/01589/FUL",
+			"address": {
+				"number": "Archbishop Tennisons Church Of England School",
+				"street": "Selborne Road"
+			},
+			"at": [
+				51.3695345,
+				-0.08229639999999999
+			],
+			"observed": "2017-08-01",
+			"claims": {
+				"application": "Retention of  existing two storey classroom block",
+				"decision": "Approved",
+				"date": "2017-08-01"
+			}
+		},
+		{
+			"id": "09/00615/P",
+			"address": {
+				"number": "Adj to The Cottage 17",
+				"street": "Thanecroft  Gardens"
+			},
+			"at": [
+				51.3694691,
+				-0.0837933
+			],
+			"observed": "2009-05-18",
+			"claims": {
+				"application": "Erection of a two storey four bedroom detached house at side; formation of vehicular access and provision of associated parking",
+				"decision": "Approved",
+				"date": "2009-05-18"
+			}
+		},
+		{
+			"id": "14/02903/P",
+			"address": {
+				"number": "Coombe Cliff",
+				"street": "Coombe Road"
+			},
+			"at": [
+				51.3673837,
+				-0.0921124
+			],
+			"observed": "2014-10-30",
+			"claims": {
+				"application": "Siting of two single storey buildings to provide additional classroom and staff facilities",
+				"decision": "Approved",
+				"date": "2014-10-30"
+			}
+		},
+		{
+			"id": "17/02696/FUL",
+			"address": {
+				"number": "28-30",
+				"street": "Fairfield Road"
+			},
+			"at": [
+				51.3722484,
+				-0.08767169999999999
+			],
+			"observed": "2018-10-23",
+			"claims": {
+				"application": "Demolition of existing buildings and the erection of part four/ part six storey building with basement comprising 11 one bedroom, 10 two bedroom 12 three bedroom and 1 studio flats: formation of vehicular access and provision of  basement parking, provision of associated refuse and cycle storage (amended description)",
+				"decision": "Approved",
+				"date": "2018-10-23"
+			}
+		},
+		{
+			"id": "16/00346/P",
+			"address": {
+				"number": "1",
+				"street": "Stanhope Road"
+			},
+			"at": [
+				51.367762,
+				-0.089967
+			],
+			"observed": "2016-12-16",
+			"claims": {
+				"application": "Demolition of former out-building and retention of single storey staff bedsit accommodation",
+				"decision": "Refused",
+				"date": "2016-12-16"
+			}
+		},
+		{
+			"id": "17/05601/GPDO",
+			"address": {
+				"number": "52",
+				"street": "Chichester Road"
+			},
+			"at": [
+				51.3700519,
+				-0.0853351
+			],
+			"observed": "2018-01-10",
+			"claims": {
+				"application": "Use of estates agents as one bedroom flat",
+				"decision": "Approved",
+				"date": "2018-01-10"
+			}
+		},
+		{
+			"id": "12/03462/P",
+			"address": {
+				"number": "Deepdene/1",
+				"street": "Deepdene Avenue"
+			},
+			"at": [
+				51.3699929,
+				-0.07898709999999999
+			],
+			"observed": "2013-02-12",
+			"claims": {
+				"application": "Demolition of existing building; erection of four bedroom detached house",
+				"decision": "Approved",
+				"date": "2013-02-12"
+			}
+		},
+		{
+			"id": "08/02160/P",
+			"address": {
+				"number": "Acacia Nursing Home",
+				"street": "Stanhope Street"
+			},
+			"at": [
+				51.367762,
+				-0.0899417
+			],
+			"observed": "2009-02-17",
+			"claims": {
+				"application": "Demolition of existing nursing home; erection of three storey building with basement to provide a nursing home with 65 bedrooms;provision of associated refuse and cycle stores, 10 parking spaces and landscaped areas.",
+				"decision": "Approved",
+				"date": "2009-02-17"
+			}
+		},
+		{
+			"id": "09/03250/P",
+			"address": {
+				"number": "Coombe Cliffe",
+				"street": "Coombe road"
+			},
+			"at": [
+				51.3674457,
+				-0.09205229999999999
+			],
+			"observed": "2010-10-18",
+			"claims": {
+				"application": "Alterations and change of use to form a residential care home for use within Class C2 (residential institutions); erection of two storey side/rear extensions; formation of additional vehicle entrance from access road, and access ramp to front entrance.",
+				"decision": "Approved",
+				"date": "2010-10-18"
+			}
+		},
+		{
+			"id": "18/02653/FUL",
+			"address": {
+				"number": "Land To The Rear Of 26",
+				"street": "Fairfield Road"
+			},
+			"at": [
+				51.3721554,
+				-0.0880348
+			],
+			"observed": "2018-12-12",
+			"claims": {
+				"application": "Erection of four storey block comprising of 8 x one bed flats with associated refuse and cycle storage and landscaping.",
+				"decision": "Approved",
+				"date": "2018-12-12"
+			}
+		},
+		{
+			"id": "000942",
+			"address": {
+				"number": "38",
+				"street": "Selborne Road"
+			},
+			"at": [
+				51.3695258,
+				-0.0823112
+			],
+			"observed": "2000-07-28",
+			"claims": {
+				"application": "Demolition of detached garage and erection of 2 five bedroom detached houses",
+				"decision": "Approved",
+				"date": "2000-07-28"
+			}
+		},
+		{
+			"id": "21/06299/FUL",
+			"at": [
+				51.365306,
+				-0.086018
+			],
+			"observed": "2022-05-13",
+			"claims": {
+				"application": "Proposed single storey rear extension and conversion of 2 two bed residential units.",
+				"decision": "Approved",
+				"date": "2022-05-13"
+			}
+		},
+		{
+			"id": "04/02802/P",
+			"address": {
+				"number": "76 - 78",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.37459,
+				-0.0779902
+			],
+			"observed": "2004-10-08",
+			"claims": {
+				"application": "Erection of 2 buildings comprising a total of 13 two bedroom flats; formation of vehicular access and provision of associated parking",
+				"decision": "Approved",
+				"date": "2004-10-08"
+			}
+		},
+		{
+			"id": "862836",
+			"address": {
+				"number": "ADJACENT, 187",
+				"street": "COOMBE ROAD"
+			},
+			"at": [
+				51.365379,
+				-0.083343
+			],
+			"observed": "1987-07-07",
+			"claims": {
+				"application": "No description provided by LDMS",
+				"decision": "Approved",
+				"date": "1987-07-07"
+			}
+		},
+		{
+			"id": "25/02855/HSE",
+			"address": {
+				"number": "18",
+				"street": "Grimwade Avenue"
+			},
+			"at": [
+				51.370491,
+				-0.070415
+			],
+			"observed": "2025-10-28",
+			"claims": {
+				"application": "Erection of a single-storey ground-floor rear extension and associated extension to the existing patio in the rear garden",
+				"decision": "Approved",
+				"date": "2025-10-28"
+			}
+		},
+		{
+			"id": "25/02240/HSE",
+			"address": {
+				"number": "15",
+				"street": "Lyndhurst Close"
+			},
+			"at": [
+				51.369877,
+				-0.080167
+			],
+			"observed": "2025-09-17",
+			"claims": {
+				"application": "Conversion of existing garage to habitable accommodation and enclosure of existing front porch.",
+				"decision": "Approved",
+				"date": "2025-09-17"
+			}
+		},
+		{
+			"id": "25/02242/HSE",
+			"address": {
+				"number": "21",
+				"street": "Reynolds Way"
+			},
+			"at": [
+				51.367546,
+				-0.085551
+			],
+			"observed": "2025-10-16",
+			"claims": {
+				"application": "Erection of double-storey side extension (with minor excavation), rear conservatory, rear dormer, installation of rooflights in front roof slope, changes to fenestration, and all associated works (amended description)",
+				"decision": "Approved",
+				"date": "2025-10-16"
+			}
+		},
+		{
+			"id": "25/02356/HSE",
+			"address": {
+				"number": "39",
+				"street": "Radcliffe Road"
+			},
+			"at": [
+				51.369417,
+				-0.076781
+			],
+			"observed": "2025-09-15",
+			"claims": {
+				"application": "Erection of a two storey extension to the rear and modification of the existing roof over including a rear gable addition, ridge increase and two rooflights to the rear roofslope.",
+				"decision": "Approved",
+				"date": "2025-09-15"
+			}
+		},
+		{
+			"id": "25/01882/LP",
+			"address": {
+				"number": "6",
+				"street": "Savile Gardens"
+			},
+			"at": [
+				51.373053,
+				-0.078052
+			],
+			"observed": "2025-06-17",
+			"claims": {
+				"application": "Loft conversion with dormer, single-storey rear extension, and garage conversion to habitable accommodation.",
+				"decision": "Approved",
+				"date": "2025-06-17"
+			}
+		},
+		{
+			"id": "25/02004/TRE",
+			"at": [
+				51.364212,
+				-0.071426
+			],
+			"observed": "2025-08-29",
+			"claims": {
+				"application": "T3 - Lebanon Cedar - To shorten and raise Easterly lateral branches towards / overhanging main building to create a 2.5m separation from side elevation and roof line. Reason - To allow clearance from the main building.\r(TPO 02 1978)",
+				"decision": "Refused",
+				"date": "2025-08-29"
+			}
+		},
+		{
+			"id": "26/01080/FUL",
+			"address": {
+				"number": "88",
+				"street": "Addiscombe Road"
+			},
+			"at": [
+				51.374804,
+				-0.076254
+			],
+			"observed": "2026-08-06",
+			"claims": {
+				"application": "Erection of a part two, part single storey rear extension, double storey side extension and loft conversion including two rear dormers and roof lights, together with the subdivision of the property to create 2 x 3 bed flats and 3 x 2 bed flats with associated cycle and bin stores and landscaping.",
+				"decision": "Approved",
+				"date": "2026-08-06"
+			}
+		},
+		{
+			"id": "25/02846/TRE",
+			"at": [
+				51.364212,
+				-0.071426
+			],
+			"observed": "2025-10-06",
+			"claims": {
+				"application": "T3. Cedar Lebanon To shorten and raise easterly branches towards/overhanging the main building to create a 1 metre separation from the side elevation and roof line to erect scaffolding.\r(TPO 02, 1978)",
+				"decision": "Approved",
+				"date": "2025-10-06"
+			}
+		},
+		{
+			"id": "26/00856/NMA",
+			"address": {
+				"number": "37",
+				"street": "Stanhope Road"
+			},
+			"at": [
+				51.370024,
+				-0.090218
+			],
+			"observed": "2026-05-14",
+			"claims": {
+				"application": "Non-material amendment (change to the front porch design; alteration/adjustment to a ground-floor side window and a first-floor front window; removal of a ground-floor side window, a first-floor side window and a first-floor front window; and installation of a rooflight to the rear extension) linked to planning application 25/01580/HSE for 'Erection of ground-floor rear and side extension, first-floor side extension, front and rear dormers, conversion of garage to habitable rooms, installation of a new pitched porch roof, alteration to first-floor external materials, reconfiguration of existing fenestration to front elevation, formation of rear and side patios with planters, and all associated works (amended description)'.",
+				"decision": "Refused",
+				"date": "2026-05-14"
+			}
+		},
+		{
+			"id": "25/01749/TRE",
+			"at": [
+				51.371441,
+				-0.083967
+			],
+			"observed": "2025-06-23",
+			"claims": {
+				"application": "T1 , Sycamore , re-pollard\rT2, Copper Beech , crown raise to a height of 4m\rT3 , Acacia , 1.5-2m crown reduction\rT4 , Lime , re-pollard\rT17 , London Plane , re-pollard\rRegular maintenance.\r(TPO 04, 2011)",
+				"decision": "Approved",
+				"date": "2025-06-23"
+			}
+		},
+		{
+			"id": "25/03063/LP",
+			"address": {
+				"number": "179",
+				"street": "Coombe Road"
+			},
+			"at": [
+				51.36494,
+				-0.085071
+			],
+			"observed": "2025-10-15",
+			"claims": {
+				"application": "Loft conversion including a hip-to-gable roof extension, the erection of a rear dormer and 3 x rooflights to the front elevation",
+				"decision": "Approved",
+				"date": "2025-10-15"
+			}
+		},
+		{
+			"id": "25/03068/HSE",
+			"address": {
+				"number": "15",
+				"street": "Grimwade Avenue"
+			},
+			"at": [
+				51.370163,
+				-0.069653
+			],
+			"observed": "2025-12-19",
+			"claims": {
+				"application": "Loft conversion includes erection of rear dormer and installation of three rooflights and a balcony. (Amended description)",
+				"decision": "Approved",
+				"date": "2025-12-19"
+			}
+		},
+		{
+			"id": "25/03138/HSE",
+			"address": {
+				"number": "34",
+				"street": "Grimwade Avenue"
+			},
+			"at": [
+				51.369918,
+				-0.072752
+			],
+			"observed": "2025-11-13",
+			"claims": {
+				"application": "Demolition of existing rear conservatory, Erection of part single/part double storey rear extension. Erection of first floor side extension, Conversion of garage into gym and office,  Alterations include changes to rear patio. \r",
+				"decision": "Approved",
+				"date": "2025-11-13"
+			}
+		},
+		{
+			"id": "25/02639/TRE",
+			"address": {
+				"number": "8",
+				"street": "Digby Place"
+			},
+			"at": [
+				51.372344,
+				-0.077578
+			],
+			"observed": "2025-09-22",
+			"claims": {
+				"application": "T1 - Silver Birch - To Fell \r(TPO 41, 1973)\r\rReason - Roots have been severed on drive side (see photo) significant crown dieback, tree considered to be in decline and potentially structurally compromised.",
+				"decision": "Approved",
+				"date": "2025-09-22"
+			}
+		},
+		{
+			"id": "25/03935/FUL",
+			"address": {
+				"number": "11",
+				"street": "Rutland Gardens"
+			},
+			"at": [
+				51.365656,
+				-0.083791
+			],
+			"observed": "2025-12-08",
+			"claims": {
+				"application": "Subdivision of the site, demolition of existing garage and alterations to land levels, including excavation, to enable the erection of a detached, two storey dwelling house, with front parking, cycle and bin storage.",
+				"date": "2025-12-08"
+			}
+		},
+		{
+			"id": "25/04088/LP",
+			"at": [
+				51.369829,
+				-0.075011
+			],
+			"observed": "2026-02-24",
+			"claims": {
+				"application": "Installation of LED \"Tweener\" lighting to two existing tennis courts.",
+				"decision": "Approved",
+				"date": "2026-02-24"
+			}
+		},
+		{
+			"id": "26/00021/HSE",
+			"address": {
+				"number": "8",
+				"street": "Harland Avenue"
+			},
+			"at": [
+				51.37126,
+				-0.075612
+			],
+			"observed": "2026-03-10",
+			"claims": {
+				"application": "Erection of single-storey front extension, single/two-storey side and rear wraparound extension (in place of the existing side extension, detached garage and rear conservatory), rear dormers, extension/alteration to the existing patio, and all associated works.",
+				"decision": "Approved",
+				"date": "2026-03-10"
+			}
+		},
+		{
+			"id": "25/03490/TRE",
+			"at": [
+				51.364212,
+				-0.071426
+			],
+			"observed": "2025-12-04",
+			"claims": {
+				"application": "T2, Beech - Remove basal suckers.\rT6, Atlantic Cedar - To shorten over extended lower crown Northerly lateral branch ends by upto 2m in length, to a height of 8m. To crown lift to 2.5m.\rT20, Sycamore - To shorten SE lower branch ends nearing portacabin-type building corner by 2.5m in length.\rT24, Fig - To remove basal suckers & crown lift to 2.2m high.\rT25, Cedar of Lebanon - To fit 7 non invasive cable braces to large lateral limbs as shown in photographic guide.  Crown lift to 2.2m high.\rT26, Deodar - To crown lift to 2.2m high.\rT48, Hornbeam - To crown lift above driveway only to 4.5m high.\rT56, Sycamore - To crown lift above driveway to 4.5m high.\rT58, Common Lime -, Remove basal suckers & remove dense basal growth.\rT59, Sycamore - To  remove basal suckers\rT60, Sycamore - Remove basal suckers.\rT61, Sycamore - Remove basal suckers.\rT64, Wellingtonia - To crown lift to 2.2m high.\rT67, Sycamore - Remove basal suckers and shorten lateral branch ends to separate from the building by 2m.\rT69, Ash - To fell.\rT72, Horse Chestnut -Remove basal suckers.\rT73, Sessile Oak - Remove Ivy and crown lift to 5m.\rT76, Common Lime - To remove basal suckers and crown lift to 5m.\rT77, Common Lime - To remove basal suckers and crown lift to 5m.\r(TPO 02, 1978)",
+				"decision": "Approved",
+				"date": "2025-12-04"
+			}
+		},
+		{
+			"id": "25/03770/LP",
+			"address": {
+				"number": "12",
+				"street": "Alpine Close"
+			},
+			"at": [
+				51.369323,
+				-0.087532
+			],
+			"observed": "2026-01-13",
+			"claims": {
+				"application": "Erection of a rear dormer.",
+				"decision": "Approved",
+				"date": "2026-01-13"
+			}
+		},
+		{
+			"id": "24/04195/NMA",
+			"address": {
+				"number": "36",
+				"street": "Upfield"
+			},
+			"at": [
+				51.372298,
+				-0.067149
+			],
+			"observed": "2025-01-16",
+			"claims": {
+				"application": "Non-material amendment to planning application 24/01317/HSE to reduce overall depth of two-storey front extension by 1m (to be aligned with the building line of the existing porch). Photovoltaics added to roof.",
+				"decision": "Approved",
+				"date": "2025-01-16"
+			}
+		},
+		{
+			"id": "24/03442/HSE",
+			"address": {
+				"number": "6",
+				"street": "Delmey Close"
+			},
+			"at": [
+				51.371921,
+				-0.078645
+			],
+			"observed": "2025-02-24",
+			"claims": {
+				"application": "Erection of a single storey rear extension. Conversion of existing garage to habitable accommodation.",
+				"decision": "Approved",
+				"date": "2025-02-24"
+			}
+		},
+		{
+			"id": "24/03640/CAT",
+			"address": {
+				"number": "1",
+				"street": "St Bernard's"
+			},
+			"at": [
+				51.369498,
+				-0.087208
+			],
+			"observed": "2024-11-18",
+			"claims": {
+				"application": "Trees 4, 5 & 6 - Hornbeam Trees: Crown reduce by 2m",
+				"decision": "No Objection to Proposal (OBS only)",
+				"date": "2024-11-18"
+			}
+		},
+		{
+			"id": "25/01426/LP",
+			"address": {
+				"number": "32",
+				"street": "Paul Gardens"
+			},
+			"at": [
+				51.372687,
+				-0.079288
+			],
+			"observed": "2025-07-01",
+			"claims": {
+				"application": "Conversion of the garage into a habitable room.",
+				"decision": "Approved",
+				"date": "2025-07-01"
+			}
+		},
+		{
+			"id": "24/03945/TRE",
+			"address": {
+				"number": "1",
+				"street": "Engadine Close"
+			},
+			"at": [
+				51.370432,
+				-0.08273
+			],
+			"observed": "2024-12-18",
+			"claims": {
+				"application": "T1 Mulberry: Fell due to limb failure\r(TPO 18, 1970)",
+				"decision": "Approved",
+				"date": "2024-12-18"
+			}
+		},
+		{
+			"id": "25/00743/FUL",
+			"at": [
+				51.369447,
+				-0.081909
+			],
+			"observed": "2025-05-13",
+			"claims": {
+				"application": "Provision of externally clad and insulated converted shipping containers (4no. 40ft) to provide 2 classrooms together with a further 20ft shipping container for storage",
+				"decision": "Approved",
+				"date": "2025-05-13"
+			}
+		},
+		{
+			"id": "24/04348/LP",
+			"address": {
+				"number": "11A",
+				"street": "Radcliffe Road"
+			},
+			"at": [
+				51.373489,
+				-0.078838
+			],
+			"observed": "2025-01-24",
+			"claims": {
+				"application": "Conversion of garage to a habitable room",
+				"decision": "Approved",
+				"date": "2025-01-24"
+			}
+		},
+		{
+			"id": "24/03870/TRE",
+			"at": [
+				51.367344,
+				-0.089108
+			],
+			"observed": "2024-12-18",
+			"claims": {
+				"application": "T31 - Crab Apple: Lift and laterally reduce back crown to pavement to clear carriageway. (NON PROTECTED TREE)\rT32 - Crab Apple: Lift and laterally reduce back crown to pavement to clear carriageway. (NON PROTECTED TREE)\rT34 - Elder: Prune back crown to clear lamp by 1.00meter. (NON PROTECTED TREE)\rW1 - Mixed Broadleaf Species: Crown lift/cutback to give 6 meters clearance over road and 3 meter clearance over footpath.\rW2 - Mixed Broadleaf Species: Crown lift/cutback to give 6 meters clearance over road and 3 meter clearance over footpath\rW1 Elder Within Woodland W1 - Coppice to ground level.\rW2 Dead Elder with in woodland W2 - Fell to ground level\r(TPO 18, 1984)",
+				"decision": "Approved",
+				"date": "2024-12-18"
+			}
+		},
+		{
+			"id": "25/00144/TRE",
+			"at": [
+				51.370531,
+				-0.07833
+			],
+			"observed": "2025-02-20",
+			"claims": {
+				"application": "T40 Sycamore - dead, fell to ground level \rT41 Hawthorne - dead, fell to ground level\rT127 Oak - dead, fell to ground level\rT130 Sycamore - dead - fell to ground level\rT132 Sycamore - dead - coppice\rT133 Sycamore - dead - fell to ground level\rT134 Oak - dead - fell to ground level\rT136 Hawthorn - dead - fell to ground level\rT137 Sycamore - dead - fell to ground level\r(TPO 24, 1986)",
+				"decision": "Approved",
+				"date": "2025-02-20"
+			}
+		},
+		{
+			"id": "25/00415/TRE",
+			"address": {
+				"number": "44, 1",
+				"street": "Brownlow Road"
+			},
+			"at": [
+				51.368259,
+				-0.082375
+			],
+			"observed": "2025-03-11",
+			"claims": {
+				"application": "G1. Group of Bay trees that form a lapsed hedge. reduce height by 2-2.5m and laterally trim round to form a neat hedge.\rT2. Beech. To laterally reduce the lower three branches that protrude across the road by 2m. To prevent vehicle strike\r(TPO 23, 1977)",
+				"decision": "Approved",
+				"date": "2025-03-11"
+			}
+		},
+		{
+			"id": "25/00694/TRE",
+			"address": {
+				"number": "11",
+				"street": "Lyndhurst Close"
+			},
+			"at": [
+				51.370159,
+				-0.080357
+			],
+			"observed": "2025-03-27",
+			"claims": {
+				"application": "Sycamores (T1 & T2) - To crown by 3m (back to previous reduction points).  (TPO 18, 1970)",
+				"decision": "Approved",
+				"date": "2025-03-27"
+			}
+		},
+		{
+			"id": "26/02052/CONR",
+			"address": {
+				"number": "44",
+				"street": "Fitzjames Avenue"
+			},
+			"at": [
+				51.373095,
+				-0.067504
+			],
+			"observed": "2026-09-11",
+			"claims": {
+				"application": "Variation of Condition 2 (approved drawings) pursuant to planning permission reference 26/00117/HSE for 'Erection of ground-floor front extension, first-floor side extension, one/two-storey rear extension, installation of solar panels on rear roof slopes, extension to existing rear patio and all associated works.' Variations comprise alterations to the approved first-floor side extension, including removal of the front setback and a further partial rear projection.",
+				"decision": "Refused",
+				"date": "2026-09-11"
+			}
+		},
+		{
+			"id": "26/02360/NMA",
+			"address": {
+				"number": "8",
+				"street": "Grimwade Avenue"
+			},
+			"at": [
+				51.370899,
+				-0.068975
+			],
+			"observed": "2026-09-08",
+			"claims": {
+				"application": "NMA to approved application ref 26/01199/HSE to include a single-storey front porch, the retention of the existing garage roof form with two additional skylights, and the introduction of a Juliet balcony to the master bedroom.",
+				"decision": "Approved",
+				"date": "2026-09-08"
+			}
+		},
+		{
+			"id": "26/00125/FUL",
+			"address": {
+				"number": "6",
+				"street": "Woodbury Close"
+			},
+			"at": [
+				51.373401,
+				-0.077304
+			],
+			"observed": "2026-03-03",
+			"claims": {
+				"application": "Seeking planning permission for a change of use from Class C3 (dwellinghouse) to Class C2 (residential institution) to allow the property to operate as a small childrens home accommodating up to three children (ages 8-16) with Learning Disabilities (LD) and Autism Spectrum Condition (ASC).",
+				"decision": "Withdrawn",
+				"date": "2026-03-03"
+			}
+		},
+		{
+			"id": "26/00198/FUL",
+			"at": [
+				51.370523,
+				-0.085528
+			],
+			"observed": "2026-03-19",
+			"claims": {
+				"application": "Alterations, replacement of aluminium roof with natural zinc and installation of solar PV panels",
+				"decision": "Approved",
+				"date": "2026-03-19"
+			}
+		},
+		{
+			"id": "26/01436/HSE",
+			"address": {
+				"number": "3",
+				"street": "Larcombe Close"
+			},
+			"at": [
+				51.366204,
+				-0.082117
+			],
+			"observed": "2026-07-01",
+			"claims": {
+				"application": "Loft conversion including the erection of a rear dormer and insertion of three rooflights to the front roofslope.",
+				"decision": "Approved",
+				"date": "2026-07-01"
+			}
+		},
+		{
+			"id": "26/01063/HSE",
+			"address": {
+				"number": "12",
+				"street": "Sandilands"
+			},
+			"at": [
+				51.373156,
+				-0.075016
+			],
+			"observed": "2026-08-27",
+			"claims": {
+				"application": "Conversion of garage into habitable space, alteration to front fenestration, and two-storey rear extension.",
+				"decision": "Approved",
+				"date": "2026-08-27"
+			}
+		},
+		{
+			"id": "26/00763/DISC",
+			"at": [
+				51.370523,
+				-0.085528
+			],
+			"observed": "2026-08-19",
+			"claims": {
+				"application": "Discharge of Condition 4 (Materials and Detailed Design) attached to permission 26/00198/FUL for Alterations, replacement of aluminium roof with natural zinc and installation of solar PV panels",
+				"decision": "Approved",
+				"date": "2026-08-19"
+			}
+		},
+		{
+			"id": "26/00944/HSE",
+			"address": {
+				"number": "40",
+				"street": "Brownlow Road"
+			},
+			"at": [
+				51.367784,
+				-0.082467
+			],
+			"observed": "2026-06-04",
+			"claims": {
+				"application": "Demolition and erection of a replacement garage to the front of the site.",
+				"decision": "Approved",
+				"date": "2026-06-04"
+			}
+		},
+		{
+			"id": "26/01752/HSE",
+			"address": {
+				"number": "49",
+				"street": "Upfield"
+			},
+			"at": [
+				51.372018,
+				-0.066486
+			],
+			"observed": "2026-10-06",
+			"claims": {
+				"application": "Formation of new dropped kerb and crossover, demolition of existing low front boundary wall and erection of new low front boundary wall with gates and enlarged in-out driveway",
+				"date": "2026-10-06"
+			}
+		},
+		{
+			"id": "26/01842/TRE",
+			"address": {
+				"number": "16",
+				"street": "Mapledale Avenue"
+			},
+			"at": [
+				51.372001,
+				-0.069331
+			],
+			"observed": "2026-07-23",
+			"claims": {
+				"application": "T1 Oak - 1.5m Crown Reduction. The tree exhibits signs of dieback within the upper canopy.\r(TPO 14, 1977)",
+				"decision": "Approved",
+				"date": "2026-07-23"
+			}
+		},
+		{
+			"id": "26/01618/CAT",
+			"address": {
+				"number": "20",
+				"street": "St Bernard's"
+			},
+			"at": [
+				51.369091,
+				-0.086493
+			],
+			"observed": "2026-06-19",
+			"claims": {
+				"application": "G38 Conifers: Individually reduce each tree by 2.5-3m all over",
+				"decision": "No Objection to Proposal (OBS only)",
+				"date": "2026-06-19"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

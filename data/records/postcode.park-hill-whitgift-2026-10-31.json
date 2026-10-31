@@ -1,0 +1,77 @@
+{
+	"source": "Office for National Statistics",
+	"prefix": "postcode",
+	"records": [
+		{
+			"id": "CR0 5BT",
+			"at": [
+				51.364259,
+				-0.079744
+			],
+			"observed": "2011-05-01",
+			"claims": {
+				"name": "CR0 5BT",
+				"kind": "postcode",
+				"began": "2008-05",
+				"ended": "2011-05"
+			}
+		},
+		{
+			"id": "CR0 5ND",
+			"at": [
+				51.367409,
+				-0.087069
+			],
+			"observed": "2021-05-01",
+			"claims": {
+				"name": "CR0 5ND",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2021-05"
+			}
+		},
+		{
+			"id": "CR0 5NR",
+			"at": [
+				51.37105,
+				-0.082032
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CR0 5NR",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CR0 5WY",
+			"at": [
+				51.370199,
+				-0.081708
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CR0 5WY",
+				"kind": "postcode",
+				"began": "2004-09",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CR0 5LJ",
+			"at": [
+				51.37209,
+				-0.090609
+			],
+			"observed": "1985-12-01",
+			"claims": {
+				"name": "CR0 5LJ",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "1985-12"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
