@@ -1,0 +1,991 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "151|WICKHAM ROAD",
+			"address": {
+				"number": "151",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "11",
+				"names": "MITCHAM GARDEN VILLAGE|BORDER COUNTY PROPERTIES LIMITED|ALLEN HERITAGE LTD",
+				"since": "1930-03-27"
+			}
+		},
+		{
+			"id": "44|BRIDLE ROAD",
+			"address": {
+				"number": "44",
+				"street": "BRIDLE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "8TH STREAM LIMITED",
+				"since": "2018-11-16"
+			}
+		},
+		{
+			"id": "838|WICKHAM ROAD",
+			"address": {
+				"number": "838",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "112",
+				"names": "HUNTS(TEXTILES)& CO,LIMITED|J.PAR & COMPANY LIMITED|ICELINE TRADING LIMITED",
+				"since": "1952-11-07"
+			}
+		},
+		{
+			"id": "107|BRIDLE ROAD",
+			"address": {
+				"number": "107",
+				"street": "BRIDLE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "A S DRON LTD",
+				"since": "2015-12-21"
+			}
+		},
+		{
+			"id": "293|WICKHAM ROAD",
+			"address": {
+				"number": "293",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "7",
+				"names": "ONE4M LTD|FIVE STAR DEALS UK LIMITED|COREITECH LTD",
+				"since": "2011-03-18"
+			}
+		},
+		{
+			"id": "223|WICKHAM ROAD",
+			"address": {
+				"number": "223",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "37",
+				"names": "KASHMIR VALLEY COULSDON LIMITED|OMEGA ACCOUNTANTS LIMITED|ATIL NEWS LIMITED",
+				"since": "1991-10-16"
+			}
+		},
+		{
+			"id": "147|WICKHAM ROAD",
+			"address": {
+				"number": "147",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ALA147 LTD",
+				"since": "2025-02-10"
+			}
+		},
+		{
+			"id": "165|WICKHAM ROAD",
+			"address": {
+				"number": "165",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ALHASO MANAGEMENT (UK) LIMITED|SHIRLEY CONSULTANT LIMITED",
+				"since": "2015-02-19"
+			}
+		},
+		{
+			"id": "18|BYWOOD AVENUE",
+			"address": {
+				"number": "18",
+				"street": "BYWOOD AVENUE"
+			},
+			"claims": {
+				"count": "24",
+				"names": "BRASSWELL PROPERTIES LIMITED|AMC MARKET LTD|BEDIR & CO LIMITED",
+				"since": "1998-04-30"
+			}
+		},
+		{
+			"id": "141|WICKHAM ROAD",
+			"address": {
+				"number": "141",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "23",
+				"names": "DEEP KLEEN LIMITED|RICHMAL-AGAR LIMITED|COGPSYCH LIMITED",
+				"since": "1996-03-13"
+			}
+		},
+		{
+			"id": "5|BROOM ROAD",
+			"address": {
+				"number": "5",
+				"street": "BROOM ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "PENGEDIY LTD|ASHA MINI MART LTD",
+				"since": "2020-06-17"
+			}
+		},
+		{
+			"id": "576|WICKHAM ROAD",
+			"address": {
+				"number": "576",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "AWESOME INVESTMENTS LTD|COOL HEATING LTD|EVOLIS PROPERTIES LTD",
+				"since": "2014-11-27"
+			}
+		},
+		{
+			"id": "800|WICKHAM ROAD",
+			"address": {
+				"number": "800",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BAKICI FOODS LTD",
+				"since": "2024-01-19"
+			}
+		},
+		{
+			"id": "117|CHESTON AVENUE",
+			"address": {
+				"number": "117",
+				"street": "CHESTON AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BARTTECH ENGINEERING LTD",
+				"since": "2026-03-19"
+			}
+		},
+		{
+			"id": "250|WICKHAM ROAD",
+			"address": {
+				"number": "250",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "M.S. COBRA CONSTRUCTION LIMITED|BECKENHAM PROPERTY MANAGEMENT LIMITED|OCEANCREST INVESTMENT PARTNERS LTD",
+				"since": "2013-10-22"
+			}
+		},
+		{
+			"id": "114|ORCHARD WAY",
+			"address": {
+				"number": "114",
+				"street": "ORCHARD WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BETTER CALL GIBBZ LTD",
+				"since": "2023-10-26"
+			}
+		},
+		{
+			"id": "51|SHIRLEY ROAD",
+			"address": {
+				"number": "51",
+				"street": "SHIRLEY ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "PERI PERI CHICKEN BITES CROYDON LTD|BITE & GRILL LTD",
+				"since": "2023-08-04"
+			}
+		},
+		{
+			"id": "1|ORCHARD GROVE",
+			"address": {
+				"number": "1",
+				"street": "ORCHARD GROVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BMD PROJECTS LTD",
+				"since": "2026-04-28"
+			}
+		},
+		{
+			"id": "169|SHIRLEY ROAD",
+			"address": {
+				"number": "169",
+				"street": "SHIRLEY ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "LUMINA CLINICS LTD|BOARDROOM BITES CATERING CO LTD",
+				"since": "2024-03-24"
+			}
+		},
+		{
+			"id": "798|WICKHAM ROAD",
+			"address": {
+				"number": "798",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BONDS OF SHIRLEY LTD",
+				"since": "2022-12-12"
+			}
+		},
+		{
+			"id": "172|CHESTON AVENUE",
+			"address": {
+				"number": "172",
+				"street": "CHESTON AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BRIGHT LAB CREATIONS LTD",
+				"since": "2014-11-04"
+			}
+		},
+		{
+			"id": "155|SHIRLEY ROAD",
+			"address": {
+				"number": "155",
+				"street": "SHIRLEY ROAD"
+			},
+			"claims": {
+				"count": "5",
+				"names": "TARFS ACCOUNTANTS (TAX AUDITING RISKS AND FINANCIALS SOLUTIONS ACCOUNTANTS) LTD|PAYROLL & PENSION SERVICES (PPS UMBRELLA COMPANY) LTD|PAYROLL PENSION & STAFFING (PPS) LTD",
+				"since": "2014-04-11"
+			}
+		},
+		{
+			"id": "291|WICKHAM ROAD",
+			"address": {
+				"number": "291",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CARTEL BARBERS LIMITED",
+				"since": "2025-06-11"
+			}
+		},
+		{
+			"id": "332|WICKHAM ROAD",
+			"address": {
+				"number": "332",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CRANE & CONSTRUCTION SOLUTIONS LIMITED",
+				"since": "2014-08-14"
+			}
+		},
+		{
+			"id": "239|QUENTIN COURT",
+			"address": {
+				"number": "239",
+				"street": "QUENTIN COURT"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CROWN ACCOUNTANCY LTD|CROWN UK CARS LTD",
+				"since": "2026-04-24"
+			}
+		},
+		{
+			"id": "328|WICKHAM ROAD",
+			"address": {
+				"number": "328",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "D & M TOILETRIES LTD",
+				"since": "2005-04-13"
+			}
+		},
+		{
+			"id": "824|WICKHAM ROAD",
+			"address": {
+				"number": "824",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "WICKHAM CLEANING LTD|DESTINY NAILS AND BEAUTY LTD",
+				"since": "2012-03-28"
+			}
+		},
+		{
+			"id": "254|WICKHAM ROAD",
+			"address": {
+				"number": "254",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DT NAILS LTD",
+				"since": "2026-04-13"
+			}
+		},
+		{
+			"id": "574|WICKHAM ROAD",
+			"address": {
+				"number": "574",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EVOLIS TRADING LTD",
+				"since": "2021-06-01"
+			}
+		},
+		{
+			"id": "184|WICKHAM ROAD",
+			"address": {
+				"number": "184",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "RUPEES RESTAURANT LTD|FARUNISA COMPANY LIMITED",
+				"since": "2020-10-14"
+			}
+		},
+		{
+			"id": "172|BRIDLE ROAD",
+			"address": {
+				"number": "172",
+				"street": "BRIDLE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "INDRA ONE LIMITED|PROPERTY MANAGEMENT KENT LTD",
+				"since": "2025-08-10"
+			}
+		},
+		{
+			"id": "258|WICKHAM ROAD",
+			"address": {
+				"number": "258",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "IVY-ROSE HAIR LTD",
+				"since": "2021-04-19"
+			}
+		},
+		{
+			"id": "219|WICKHAM ROAD",
+			"address": {
+				"number": "219",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "J CAFE LIMITED",
+				"since": "2017-10-30"
+			}
+		},
+		{
+			"id": "99|BRIDLE ROAD",
+			"address": {
+				"number": "99",
+				"street": "BRIDLE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JS & K CONSULTANCY LTD",
+				"since": "2024-04-30"
+			}
+		},
+		{
+			"id": "7|KAINE PLACE",
+			"address": {
+				"number": "7",
+				"street": "KAINE PLACE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KAINE PLACE ESTATE MANAGEMENT CO LTD",
+				"since": "2007-10-17"
+			}
+		},
+		{
+			"id": "2|DOUGLAS DRIVE",
+			"address": {
+				"number": "2",
+				"street": "DOUGLAS DRIVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KAVT PROPERTY LTD",
+				"since": "2023-01-06"
+			}
+		},
+		{
+			"id": "24|BRIDLE ROAD",
+			"address": {
+				"number": "24",
+				"street": "BRIDLE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KINDLING FINANCE LIMITED",
+				"since": "2025-07-09"
+			}
+		},
+		{
+			"id": "11|BROOM ROAD",
+			"address": {
+				"number": "11",
+				"street": "BROOM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KPS FAST FOOD LIMITED",
+				"since": "2021-04-06"
+			}
+		},
+		{
+			"id": "159|SHIRLEY ROAD",
+			"address": {
+				"number": "159",
+				"street": "SHIRLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LL KITCHENS LIMITED",
+				"since": "2021-03-28"
+			}
+		},
+		{
+			"id": "167|SHIRLEY ROAD",
+			"address": {
+				"number": "167",
+				"street": "SHIRLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LMB GROUP LTD",
+				"since": "2017-11-21"
+			}
+		},
+		{
+			"id": "844|WICKHAM ROAD",
+			"address": {
+				"number": "844",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LONDON & SURREY ROOFING LTD",
+				"since": "2016-06-20"
+			}
+		},
+		{
+			"id": "18|LANGLAND GARDENS",
+			"address": {
+				"number": "18",
+				"street": "LANGLAND GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MADHEALTHUK LTD",
+				"since": "2026-01-19"
+			}
+		},
+		{
+			"id": "211|WICKHAM ROAD",
+			"address": {
+				"number": "211",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MAYA STORES LIMITED",
+				"since": "2025-04-01"
+			}
+		},
+		{
+			"id": "262|WICKHAM ROAD",
+			"address": {
+				"number": "262",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MCQ ENTERTAINMENTS LIMITED",
+				"since": "1975-10-02"
+			}
+		},
+		{
+			"id": "174|BRIDLE ROAD",
+			"address": {
+				"number": "174",
+				"street": "BRIDLE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MERGIC GROUP LTD",
+				"since": "2021-03-10"
+			}
+		},
+		{
+			"id": "163|WICKHAM ROAD",
+			"address": {
+				"number": "163",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MJS RAIL LTD",
+				"since": "2009-03-24"
+			}
+		},
+		{
+			"id": "111|CHESTON AVENUE",
+			"address": {
+				"number": "111",
+				"street": "CHESTON AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MK RENDORING & PLASTERING LTD",
+				"since": "2026-09-01"
+			}
+		},
+		{
+			"id": "187|WICKHAM ROAD",
+			"address": {
+				"number": "187",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NICHOLSON EMPIRE LTD",
+				"since": "2011-01-06"
+			}
+		},
+		{
+			"id": "2|BRIDLE PARADE",
+			"address": {
+				"number": "2",
+				"street": "BRIDLE PARADE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ONE ACADEMY LTD|THE NEST CROYDON LTD",
+				"since": "2021-03-24"
+			}
+		},
+		{
+			"id": "191|SHAFTESBURY COURT",
+			"address": {
+				"number": "191",
+				"street": "SHAFTESBURY COURT"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ORCHARD WAY (SHIRLEY) (COURTS Q,R,S) RESIDENTS ASSOCIATION LIMITED",
+				"since": "1967-12-06"
+			}
+		},
+		{
+			"id": "15|BYWOOD AVENUE",
+			"address": {
+				"number": "15",
+				"street": "BYWOOD AVENUE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "OZDEM CATERING LIMITED|TUMAN CATERING LTD",
+				"since": "2006-04-13"
+			}
+		},
+		{
+			"id": "30|ORCHARD RISE",
+			"address": {
+				"number": "30",
+				"street": "ORCHARD RISE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "PROMPT LETTINGS LIMITED|PROMPT LETTING PROPERTIES LTD",
+				"since": "2017-02-17"
+			}
+		},
+		{
+			"id": "7|TEMPLETON COURT",
+			"address": {
+				"number": "7",
+				"street": "TEMPLETON COURT"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PURPLE STRAWBERRY LTD",
+				"since": "2017-02-10"
+			}
+		},
+		{
+			"id": "802|WICKHAM ROAD",
+			"address": {
+				"number": "802",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "THE NEST LOUNGE LIMITED|QUALIA LOUNGE LIMITED",
+				"since": "2019-10-14"
+			}
+		},
+		{
+			"id": "2|ORCHARD WAY",
+			"address": {
+				"number": "2",
+				"street": "ORCHARD WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "R.J. LIFTS & ESCALATORS LTD",
+				"since": "2002-11-28"
+			}
+		},
+		{
+			"id": "15|BROOM ROAD",
+			"address": {
+				"number": "15",
+				"street": "BROOM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RAJKEL LIMITED",
+				"since": "2008-02-12"
+			}
+		},
+		{
+			"id": "455|WICKHAM ROAD",
+			"address": {
+				"number": "455",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RATHAGAWD LTD",
+				"since": "2024-10-10"
+			}
+		},
+		{
+			"id": "36|ORCHARD WAY",
+			"address": {
+				"number": "36",
+				"street": "ORCHARD WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "REALISE DIGITAL LTD",
+				"since": "2016-06-03"
+			}
+		},
+		{
+			"id": "91|GLADESIDE",
+			"address": {
+				"number": "91",
+				"street": "GLADESIDE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SAI CONSULTANCY SERVICES LIMITED",
+				"since": "2024-05-14"
+			}
+		},
+		{
+			"id": "810|WICKHAM ROAD",
+			"address": {
+				"number": "810",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SAM'S SUPERMARKET LIMITED",
+				"since": "2014-11-03"
+			}
+		},
+		{
+			"id": "15|LANGLAND GARDENS",
+			"address": {
+				"number": "15",
+				"street": "LANGLAND GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SAMA ENTERPRISES LIMITED",
+				"since": "2000-01-14"
+			}
+		},
+		{
+			"id": "17|BROOM ROAD",
+			"address": {
+				"number": "17",
+				"street": "BROOM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SAVORY SOLUTIONS LTD.",
+				"since": "2025-03-12"
+			}
+		},
+		{
+			"id": "161|SHIRLEY ROAD",
+			"address": {
+				"number": "161",
+				"street": "SHIRLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SENZMATE UK LTD",
+				"since": "2021-09-06"
+			}
+		},
+		{
+			"id": "189|WICKHAM ROAD",
+			"address": {
+				"number": "189",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SHIRLEY DENTAL PRACTICE LIMITED",
+				"since": "2010-05-05"
+			}
+		},
+		{
+			"id": "175|SHIRLEY ROAD",
+			"address": {
+				"number": "175",
+				"street": "SHIRLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SHIRLEY PHARMACY LTD",
+				"since": "2009-05-28"
+			}
+		},
+		{
+			"id": "334|WICKHAM ROAD",
+			"address": {
+				"number": "334",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SHIRLEY PROPERTY PARTNERS LTD",
+				"since": "2024-10-16"
+			}
+		},
+		{
+			"id": "264|WICKHAM ROAD",
+			"address": {
+				"number": "264",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SHUN LEE KITCHEN LIMITED",
+				"since": "2020-10-16"
+			}
+		},
+		{
+			"id": "157|SHIRLEY ROAD",
+			"address": {
+				"number": "157",
+				"street": "SHIRLEY ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "SHUTTERS FOR LESS LIMITED|SHUTTER STUDIO FRANCHISE LIMITED",
+				"since": "2024-11-25"
+			}
+		},
+		{
+			"id": "289|WICKHAM ROAD",
+			"address": {
+				"number": "289",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SILK BY SEEMA LTD",
+				"since": "2013-11-25"
+			}
+		},
+		{
+			"id": "152|WICKHAM ROAD",
+			"address": {
+				"number": "152",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SJM AND R PVT LTD",
+				"since": "2025-12-23"
+			}
+		},
+		{
+			"id": "280|WICKHAM ROAD",
+			"address": {
+				"number": "280",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "SPICES (SHIRLEY) SS LTD|SPICES CROYDON LTD|SPICES SURREY LTD",
+				"since": "2019-09-09"
+			}
+		},
+		{
+			"id": "235|QUENTIN COURT",
+			"address": {
+				"number": "235",
+				"street": "QUENTIN COURT"
+			},
+			"claims": {
+				"count": "1",
+				"names": "STUCCO STUDIO LONDON LTD",
+				"since": "2024-07-31"
+			}
+		},
+		{
+			"id": "516|WICKHAM ROAD",
+			"address": {
+				"number": "516",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SUMA PROPERTIES LTD",
+				"since": "2019-10-23"
+			}
+		},
+		{
+			"id": "270|WICKHAM ROAD",
+			"address": {
+				"number": "270",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TCG PROPERTY MANAGEMENT LTD",
+				"since": "2025-10-29"
+			}
+		},
+		{
+			"id": "7|BROOM ROAD",
+			"address": {
+				"number": "7",
+				"street": "BROOM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE SHRUBLANDS TRUST",
+				"since": "1997-10-06"
+			}
+		},
+		{
+			"id": "16|BYWOOD AVENUE",
+			"address": {
+				"number": "16",
+				"street": "BYWOOD AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TIYARAN CATERING LTD",
+				"since": "2023-09-13"
+			}
+		},
+		{
+			"id": "209|DEVONSHIRE WAY",
+			"address": {
+				"number": "209",
+				"street": "DEVONSHIRE WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TOP SERVICE (UK) LTD",
+				"since": "2014-10-13"
+			}
+		},
+		{
+			"id": "1|TEMPLETON COURT",
+			"address": {
+				"number": "1",
+				"street": "TEMPLETON COURT"
+			},
+			"claims": {
+				"count": "1",
+				"names": "V&G GARDEN INSPIRATION LTD",
+				"since": "2022-05-06"
+			}
+		},
+		{
+			"id": "19|WICKHAM ROAD",
+			"address": {
+				"number": "19",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "WBA PROPERTY INVESTMENTS LIMITED",
+				"since": "2023-12-12"
+			}
+		},
+		{
+			"id": "22|WOODMERE AVENUE",
+			"address": {
+				"number": "22",
+				"street": "WOODMERE AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "WOODMERE FOOD AND WINE LTD",
+				"since": "2022-08-22"
+			}
+		},
+		{
+			"id": "49|GLADESIDE",
+			"address": {
+				"number": "49",
+				"street": "GLADESIDE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ZAWIYA LTD",
+				"since": "2026-04-19"
+			}
+		},
+		{
+			"id": "826|WICKHAM ROAD",
+			"address": {
+				"number": "826",
+				"street": "WICKHAM ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ÉPICÉ STUDIOS LTD",
+				"since": "2026-02-19"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

@@ -1,0 +1,523 @@
+{
+	"source": "NBN Atlas",
+	"prefix": "wildlife",
+	"records": [
+		{
+			"id": "a875e8e0-af14-47f3-a940-93d11e265eba",
+			"at": [
+				51.374585,
+				-0.051018
+			],
+			"observed": "2022-07-05",
+			"claims": {
+				"name": "Swift",
+				"seen": "2022-07"
+			}
+		},
+		{
+			"id": "70935b0e-3e3f-4172-b880-bde160e6d439",
+			"at": [
+				51.381822,
+				-0.053584
+			],
+			"observed": "1998-08-12",
+			"claims": {
+				"name": "Red Oak",
+				"seen": "1998-08"
+			}
+		},
+		{
+			"id": "f6f75989-68fb-4534-a0d1-345f5c2ed08b",
+			"at": [
+				51.362926,
+				-0.052949
+			],
+			"observed": "2014-07-13",
+			"claims": {
+				"name": "Rutpela maculata",
+				"seen": "2014-07"
+			}
+		},
+		{
+			"id": "1f5a6210-e7e7-4555-ac16-626e8fc38fce",
+			"at": [
+				51.38991,
+				-0.053241
+			],
+			"observed": "2001-05-14",
+			"claims": {
+				"name": "Red-legged Shieldbug",
+				"seen": "2001-05"
+			}
+		},
+		{
+			"id": "7318393e-cf3b-4b96-bf4a-6855cb7f4442",
+			"at": [
+				51.380922,
+				-0.038462
+			],
+			"observed": "2015-06-19",
+			"claims": {
+				"name": "Tick",
+				"seen": "2015-06"
+			}
+		},
+		{
+			"id": "459752eb-18c8-4983-8c51-3ee58bcd1e90",
+			"at": [
+				51.372774,
+				-0.044902
+			],
+			"observed": "2015-07-17",
+			"claims": {
+				"name": "Castor Bean Tick",
+				"seen": "2015-07"
+			}
+		},
+		{
+			"id": "78be2915-06bf-4830-9a79-5029c894e25b",
+			"at": [
+				51.373495,
+				-0.039569
+			],
+			"observed": "2019-05-15",
+			"claims": {
+				"name": "Swift",
+				"seen": "2019-05"
+			}
+		},
+		{
+			"id": "ef58cba0-861c-4c9b-82bf-9e558c3aeb25",
+			"at": [
+				51.381822,
+				-0.053584
+			],
+			"observed": "1998-08-12",
+			"claims": {
+				"name": "Pedunculate Oak",
+				"seen": "1998-08"
+			}
+		},
+		{
+			"id": "6365dfae-c49e-4ead-a1d5-f2c9d1baf312",
+			"at": [
+				51.381822,
+				-0.053584
+			],
+			"observed": "1998-08-12",
+			"claims": {
+				"name": "Field Maple",
+				"seen": "1998-08"
+			}
+		},
+		{
+			"id": "4747203d-ef0c-434b-b91d-6520abde851f",
+			"at": [
+				51.381822,
+				-0.053584
+			],
+			"observed": "1998-08-12",
+			"claims": {
+				"name": "Aspen",
+				"seen": "1998-08"
+			}
+		},
+		{
+			"id": "7b27e88d-defd-4fe6-851a-953e2912ee4c",
+			"at": [
+				51.372528,
+				-0.037376
+			],
+			"observed": "2025-04-24",
+			"claims": {
+				"name": "Red Fox",
+				"seen": "2025-04"
+			}
+		},
+		{
+			"id": "c3c205ed-6cd8-43fb-a758-ecffe8f48800",
+			"at": [
+				51.3673,
+				-0.04558
+			],
+			"observed": "1979-09-22",
+			"claims": {
+				"name": "Brown Hawker",
+				"seen": "1979-09"
+			}
+		},
+		{
+			"id": "7dcf294c-af13-477a-b3d6-554b1ec6abea",
+			"at": [
+				51.368223,
+				-0.046978
+			],
+			"observed": "1996-10-06",
+			"claims": {
+				"name": "Silver Birch",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "f3286568-84af-438b-bf30-358632edb089",
+			"at": [
+				51.36714,
+				-0.04734
+			],
+			"observed": "2026-03-19",
+			"claims": {
+				"name": "Daisy",
+				"seen": "2026-03"
+			}
+		},
+		{
+			"id": "beaf84f5-8d84-49a0-b1b6-ffbcefa82bec",
+			"at": [
+				51.3673,
+				-0.04558
+			],
+			"observed": "1980-08-25",
+			"claims": {
+				"name": "Migrant Hawker",
+				"seen": "1980-08"
+			}
+		},
+		{
+			"id": "21b7b50d-4f74-4d2e-a3d4-41a55e132551",
+			"at": [
+				51.365503,
+				-0.045657
+			],
+			"observed": "2025-10-02",
+			"claims": {
+				"name": "Common Darter",
+				"seen": "2025-10"
+			}
+		},
+		{
+			"id": "04145ab2-d9ac-456d-80f6-559dcfcbb42b",
+			"at": [
+				51.36412,
+				-0.054953
+			],
+			"observed": "2026-02-22",
+			"claims": {
+				"name": "Heather Weevil",
+				"seen": "2026-02"
+			}
+		},
+		{
+			"id": "b13ecb25-56a2-4c58-b050-2be37fa228f6",
+			"at": [
+				51.38264,
+				-0.056
+			],
+			"observed": "2025-10-21",
+			"claims": {
+				"name": "Little Owl",
+				"seen": "2025-10"
+			}
+		},
+		{
+			"id": "6b63e2b7-e0b0-4ba0-aea4-2e956c86d358",
+			"at": [
+				51.366473,
+				-0.049925
+			],
+			"observed": "2013-06-14",
+			"claims": {
+				"name": "Tree Bumblebee",
+				"seen": "2013-06"
+			}
+		},
+		{
+			"id": "6fa64870-8e40-4a7a-b3bf-2bedfbf29f9f",
+			"at": [
+				51.373203,
+				-0.047427
+			],
+			"observed": "2015-05-21",
+			"claims": {
+				"name": "Castor Bean Tick",
+				"seen": "2015-05"
+			}
+		},
+		{
+			"id": "e3425fe1-46d2-42be-9507-0c70c7b7eb26",
+			"at": [
+				51.373135,
+				-0.03378
+			],
+			"observed": "2024-09-23",
+			"claims": {
+				"name": "Grey Squirrel",
+				"seen": "2024-09"
+			}
+		},
+		{
+			"id": "f2310303-7bad-4967-9804-591e163edb4e",
+			"at": [
+				51.372528,
+				-0.037376
+			],
+			"observed": "2024-09-23",
+			"claims": {
+				"name": "Soprano Pipistrelle",
+				"seen": "2024-09"
+			}
+		},
+		{
+			"id": "db817ac9-045a-4971-bafa-55fa84ff4b6d",
+			"at": [
+				51.36729,
+				-0.04739
+			],
+			"observed": "2026-05-22",
+			"claims": {
+				"name": "Bulbous Buttercup",
+				"seen": "2026-05"
+			}
+		},
+		{
+			"id": "41be9d2e-a78a-4536-a9a5-0df62c5da327",
+			"at": [
+				51.363062,
+				-0.05549
+			],
+			"observed": "2026-02-22",
+			"claims": {
+				"name": "Philorhizus melanocephalus",
+				"seen": "2026-02"
+			}
+		},
+		{
+			"id": "cc3bce4b-0dd4-4b18-b11a-620bf9500996",
+			"at": [
+				51.369336,
+				-0.059861
+			],
+			"observed": "2015-05-24",
+			"claims": {
+				"name": "Blackcap",
+				"seen": "2015-05"
+			}
+		},
+		{
+			"id": "e9ac8873-bb79-41a0-8d7b-c7fd6ff0e107",
+			"at": [
+				51.363484,
+				-0.057765
+			],
+			"observed": "2026-02-22",
+			"claims": {
+				"name": "Ulopa reticulata",
+				"seen": "2026-02"
+			}
+		},
+		{
+			"id": "757fdf47-a512-44f0-ab38-54566d2cf4b4",
+			"at": [
+				51.38707,
+				-0.044738
+			],
+			"observed": "2001-09-24",
+			"claims": {
+				"name": "Box Bug",
+				"seen": "2001-09"
+			}
+		},
+		{
+			"id": "647c3d56-41db-479c-918e-b9c420ff49f1",
+			"at": [
+				51.36504,
+				-0.02862
+			],
+			"observed": "2020-05-03",
+			"claims": {
+				"name": "Heath Bedstraw",
+				"seen": "2020-05"
+			}
+		},
+		{
+			"id": "d371a4df-47c1-4504-9a99-31ee6fd39f6c",
+			"at": [
+				51.362731,
+				-0.056107
+			],
+			"observed": "2026-02-22",
+			"claims": {
+				"name": "Andrion regensteinense",
+				"seen": "2026-02"
+			}
+		},
+		{
+			"id": "8c6e9e72-73b4-48d8-b956-4fa80345dc5c",
+			"at": [
+				51.36734,
+				-0.04584
+			],
+			"observed": "2026-07-09",
+			"claims": {
+				"name": "Batman Hoverfly",
+				"seen": "2026-07"
+			}
+		},
+		{
+			"id": "68aec0ce-b76c-4b54-b7bd-5971ef6b14cf",
+			"at": [
+				51.37334,
+				-0.03365
+			],
+			"observed": "2023-02-14",
+			"claims": {
+				"name": "Greylag Goose",
+				"seen": "2023-02"
+			}
+		},
+		{
+			"id": "3f13a2dc-4dfe-4c90-b692-4eeab4feeed5",
+			"at": [
+				51.381738,
+				-0.056678
+			],
+			"observed": "2017-06-07",
+			"claims": {
+				"name": "Erpobdella testacea",
+				"seen": "2017-06"
+			}
+		},
+		{
+			"id": "445f67b0-21a4-49bb-8a50-51988cee7fb1",
+			"at": [
+				51.390029,
+				-0.060423
+			],
+			"observed": "2019-05-02",
+			"claims": {
+				"name": "Large Red Damselfly",
+				"seen": "2019-05"
+			}
+		},
+		{
+			"id": "946272fe-323d-4980-99fc-d13bbc977d2f",
+			"at": [
+				51.375172,
+				-0.032313
+			],
+			"observed": "1984-08-02",
+			"claims": {
+				"name": "Alder",
+				"seen": "1984-08"
+			}
+		},
+		{
+			"id": "f208d983-98f1-4b7e-80e8-d3b51371f4c4",
+			"at": [
+				51.36732,
+				-0.04677
+			],
+			"observed": "2026-04-16",
+			"claims": {
+				"name": "Garlic Mustard",
+				"seen": "2026-04"
+			}
+		},
+		{
+			"id": "490d098f-690e-41de-b4ea-d45c6ab87d14",
+			"at": [
+				51.362895,
+				-0.058591
+			],
+			"observed": "2026-02-22",
+			"claims": {
+				"name": "Calathus melanocephalus",
+				"seen": "2026-02"
+			}
+		},
+		{
+			"id": "faf9c64e-70ec-482a-bfe8-1c39348a0398",
+			"at": [
+				51.372548,
+				-0.036736
+			],
+			"observed": "2022-07-04",
+			"claims": {
+				"name": "Swift",
+				"seen": "2022-07"
+			}
+		},
+		{
+			"id": "a161c3d5-3b22-4fca-a972-c862e77aac0c",
+			"at": [
+				51.37137,
+				-0.04975
+			],
+			"observed": "2022-05-21",
+			"claims": {
+				"name": "Meadow Saxifrage",
+				"seen": "2022-05"
+			}
+		},
+		{
+			"id": "afe4256e-42b8-4d78-ad41-09dee1f8a43c",
+			"at": [
+				51.367324,
+				-0.047016
+			],
+			"observed": "1984-07-12",
+			"claims": {
+				"name": "Sycamore",
+				"seen": "1984-07"
+			}
+		},
+		{
+			"id": "a0b72a1f-8825-4407-9d88-a6eeda1dd7c4",
+			"at": [
+				51.376334,
+				-0.048069
+			],
+			"observed": "1971-11-02",
+			"claims": {
+				"name": "Hedgehog Tick",
+				"seen": "1971-11"
+			}
+		},
+		{
+			"id": "998f5bf2-5fc7-4704-8c10-7a5eaa09892c",
+			"at": [
+				51.373135,
+				-0.03378
+			],
+			"observed": "2025-02-02",
+			"claims": {
+				"name": "Red Fox",
+				"seen": "2025-02"
+			}
+		},
+		{
+			"id": "59da2753-bf64-4ca7-b791-b0ef1406d792",
+			"at": [
+				51.38622,
+				-0.047649
+			],
+			"observed": "1984-08-08",
+			"claims": {
+				"name": "Silver Birch",
+				"seen": "1984-08"
+			}
+		},
+		{
+			"id": "38dd4150-67fb-4816-9baf-e988a77d4ab9",
+			"at": [
+				51.38979,
+				-0.04606
+			],
+			"observed": "2018-09-15",
+			"claims": {
+				"name": "Southern Green Shieldbug",
+				"seen": "2018-09"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

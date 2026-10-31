@@ -1,0 +1,19 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "10088",
+			"at": [
+				51.37116,
+				-0.05053
+			],
+			"claims": {
+				"name": "Reverend William Wilks 1843-1923 vicar of Shirley and horticulturalist lived here from 1879 to 1912, where he propagated the Shirley poppy",
+				"description": "plaque",
+				"inscription": "Reverend William Wilks 1843-1923 vicar of Shirley and horticulturalist lived here from 1879 to 1912, where he propagated the Shirley poppy"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}

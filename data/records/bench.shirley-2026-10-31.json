@@ -1,0 +1,103 @@
+{
+	"source": "OpenBenches",
+	"prefix": "bench",
+	"records": [
+		{
+			"id": "39357",
+			"at": [
+				51.371849,
+				-0.04928
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "AN EXTRAORDINARY YOUNG MAN / 1974 LLOYD EIST 2012"
+			}
+		},
+		{
+			"id": "39358",
+			"at": [
+				51.371761,
+				-0.04938
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "JADE OSBORNE / 1993 AGE 18 YEARS / CHERISHED MEMORIES"
+			}
+		},
+		{
+			"id": "39355",
+			"at": [
+				51.37183,
+				-0.04998
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "John Bowler Flautist, party animal and crossword lover / Our beloved Poppy, reunited at last with Gogio (Gloria)"
+			}
+		},
+		{
+			"id": "39374",
+			"at": [
+				51.371441,
+				-0.04918
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF PETER BENHAM"
+			}
+		},
+		{
+			"id": "39354",
+			"at": [
+				51.371639,
+				-0.05068
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN GODS SAFE KEEPING / IN LOVING MEMORY OF / BETH RILEY / A BEAUTIFUL DAUGHTER, SISTER, AND GRANDDAUGHTER. / 03.01.03 - 06.10.09 / Age 6"
+			}
+		},
+		{
+			"id": "25787",
+			"at": [
+				51.366974,
+				-0.053169
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF / REV M FARRER / FIRST VICAR OF SHIRLEY"
+			}
+		}
+	],
+	"retrieved": "2026-10-31"
+}
