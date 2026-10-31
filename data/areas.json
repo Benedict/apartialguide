@@ -26,7 +26,9 @@
 		},
 		{
 			"name": "Park Hill & Whitgift",
-			"wards": ["Park Hill & Whitgift"]
+			"wards": ["Park Hill & Whitgift"],
+			"open": true,
+			"start": "Park Hill Recreation Ground"
 		},
 		{
 			"name": "Selhurst",
@@ -42,15 +44,21 @@
 		},
 		{
 			"name": "Thornton Heath",
-			"wards": ["Thornton Heath", "West Thornton"]
+			"wards": ["Thornton Heath", "West Thornton"],
+			"open": true,
+			"start": "Thornton Heath Leisure Centre"
 		},
 		{
 			"name": "Bensham Manor",
-			"wards": ["Bensham Manor"]
+			"wards": ["Bensham Manor"],
+			"open": true,
+			"start": "Bensham Manor School"
 		},
 		{
 			"name": "Broad Green",
-			"wards": ["Broad Green"]
+			"wards": ["Broad Green"],
+			"open": true,
+			"start": "Broad Green"
 		},
 		{
 			"name": "South Croydon",
