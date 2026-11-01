@@ -86,7 +86,8 @@ export function readGpkgLayer(path: string, table: string, geometryColumn = 'geo
 		const rows = db.prepare(`SELECT * FROM "${table.replace(/"/g, '""')}"`).all();
 		return {
 			features: rows.map((row) => {
-				const { fid: _fid, [geometryColumn]: geom, ...properties } = row as Record<string, unknown>;
+				const { [geometryColumn]: geom, ...properties } = row as Record<string, unknown>;
+				delete properties.fid;
 				const g = geom instanceof Uint8Array ? gpkgGeometry(geom) : undefined;
 				return { properties, geometry: g ? reproject(g) : null };
 			})
