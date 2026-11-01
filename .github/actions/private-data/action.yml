@@ -1,0 +1,32 @@
+name: Private data
+description: >
+  Brings the snapshots kept in the private data repository (Benedict/apartialguide-data) into
+  data/snapshots, where every script looks for them, a private one taking the place of a public one
+  of the same name. Without the token, as on a pull request from a fork, it does nothing and the
+  public snapshots are used.
+inputs:
+  token:
+    description: The DATA_TOKEN secret, read access to the data repository at least.
+    required: false
+    default: ''
+  repository:
+    description: The private data repository.
+    required: false
+    default: Benedict/apartialguide-data
+runs:
+  using: composite
+  steps:
+    - if: inputs.token != ''
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ inputs.repository }}
+        token: ${{ inputs.token }}
+        path: .private-data
+    - if: inputs.token != ''
+      shell: bash
+      run: |
+        mkdir -p data/snapshots
+        if [ -d .private-data/snapshots ]; then
+          cp -f .private-data/snapshots/* data/snapshots/
+          ls -l .private-data/snapshots
+        fi

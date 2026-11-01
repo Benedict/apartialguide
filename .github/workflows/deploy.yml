@@ -33,6 +33,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # The borough's snapshots, kept in the private data repository.
+      - uses: ./.github/actions/private-data
+        with:
+          token: ${{ secrets.DATA_TOKEN }}
       - name: Export the site
         env:
           # The whole borough, enriched area by area (data/areas.json); the walk starts in Addiscombe.

@@ -1,6 +1,6 @@
 name: Snapshot
 
-# Takes a dated OSM snapshot and commits it to the branch. Runs when data/snapshots/request.env
+# Takes a dated OSM snapshot and commits it to the private data repository (Benedict/apartialguide-data). Runs when data/snapshots/request.env
 # (the area to fetch) changes, or by hand.
 on:
   push:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   # Whether the commit pushed itself edits the request. Asked of git, as a new branch's push event
@@ -42,6 +42,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # The borough's snapshots, kept in the private data repository.
+      - uses: ./.github/actions/private-data
+        with:
+          token: ${{ secrets.DATA_TOKEN }}
       - name: Take snapshot
         run: |
           set -a
@@ -58,11 +62,24 @@ jobs:
             export FROM_OPL=cut.opl
           fi
           npm run snapshot
-      - name: Commit snapshot
+      # Kept in the private data repository, never in this one's history: a borough's snapshot is
+      # large, and every refresh would add another for good.
+      - name: Commit snapshot to the data repository
+        env:
+          DATA_TOKEN: ${{ secrets.DATA_TOKEN }}
         run: |
+          if [ -z "$DATA_TOKEN" ]; then echo "No DATA_TOKEN: the snapshot is not kept"; exit 1; fi
+          mkdir -p .private-data/snapshots
+          for f in data/snapshots/*.json data/snapshots/*.json.gz; do
+            [ -e "$f" ] || continue
+            if ! git ls-files --error-unmatch "$f" >/dev/null 2>&1 || ! git diff --quiet -- "$f"; then
+              cp -f "$f" .private-data/snapshots/
+            fi
+          done
+          cd .private-data
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/snapshots/
+          git add snapshots/
           git diff --cached --quiet && { echo "No new snapshot"; exit 0; }
-          git commit -m "Add OSM snapshot $(date -u +%F)"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          git commit -m "Add OSM snapshot $(date -u +%F), from ${GITHUB_REPOSITORY}@${GITHUB_SHA::7}"
+          git push

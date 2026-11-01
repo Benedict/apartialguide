@@ -109,6 +109,7 @@ function aboutPage(
 		<ul class="sources">
 			${sources}
 		</ul>
+		<p>The map is © OpenStreetMap contributors, under the Open Database License. The snapshot of the map the walk is built from is available on request: ask on <a href="${REPO}/issues">GitHub</a>.</p>
 		<h3>Who made it</h3>
 		<p>Made by Benedict. The code is free, under the GNU Affero General Public License, version 3 or later, and is on <a href="${REPO}">GitHub</a>, where you can help. Guide’s prose is under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
 		<p>Follow the walk on ${profileLinks()}.</p>

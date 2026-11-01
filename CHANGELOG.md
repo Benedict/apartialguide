@@ -21,7 +21,8 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 - An ended postcode alone no longer makes a stop busier; 465 pieces of prose for such stops removed (#119).
 - Areas drawn in OpenStreetMap as multipolygons (large parks, woods, lakes, big buildings) are read, joined and told; the Snapshot workflow can cut a downloaded extract itself. Not yet in the walk: the snapshot that holds them waits on a private repository (#122).
 - The roadmap is `BACKLOG.md`; what only Benedict can do is `TODO.md` (#120, #121, #123).
-- The repository is renamed `apartialguide`; every link to it follows (`REPO`). A private repository, `apartialguide-data`, is ready to take the snapshots and letters.
+- The repository is renamed `apartialguide`; every link to it follows (`REPO`).
+- Snapshots and letters move to a private repository, `apartialguide-data`, which the workflows read with `DATA_TOKEN`; About says the map’s snapshot is available on request, as OpenStreetMap’s licence asks.
 
 ## 2026-10-31
 
