@@ -1,6 +1,5 @@
 import { distance, type LatLon } from '../core/geo';
 import type { AdventureWorld, CompiledExit, CompiledStop } from '../core/adventure/world';
-import type { Drawing } from '../core/adventure/drawing';
 
 /**
  * A spike: Digital Britannia's Roman roads and sites as a walk of their own, site to site. Each place
@@ -30,15 +29,7 @@ const text = (v: unknown) => (v == null ? undefined : String(v).trim() || undefi
 
 type Site = { layer: keyof RomanLayers; name: string; props: Props; at: LatLon };
 type Node = { at: LatLon; sites: Site[] };
-type Road = {
-	name: string;
-	also?: string;
-	confidence?: string;
-	/** The segment's confidence as kept, a number: 3 certain to 0 no evidence. */
-	sure?: number;
-	wall?: boolean;
-	points: LatLon[];
-};
+type Road = { name: string; also?: string; confidence?: string; points: LatLon[] };
 
 const POINTS = [
 	'north',
@@ -152,10 +143,6 @@ export function romanWorld(
 					text(f.properties.Feature) ??
 					'A road',
 				also: text(f.properties['Road name (if any)']),
-				sure: Number.isFinite(Number(f.properties['Segment Confidence'] ?? NaN))
-					? Number(f.properties['Segment Confidence'])
-					: undefined,
-				wall: f.properties.Feature !== undefined,
 				confidence: confidence[String(f.properties['Segment Confidence'] ?? '')],
 				points
 			}))
@@ -311,21 +298,5 @@ export function romanWorld(
 		};
 	}
 	const first = sites.find((i) => nodes[i].sites.some((x) => x.name === start)) ?? sites[0];
-	// The walk's own map: its lines thinned to a point every hundred metres or so, and its sites.
-	const thinned = (points: LatLon[]) => {
-		const kept: LatLon[] = [];
-		points.forEach((p, k) => {
-			if (k === 0 || k === points.length - 1 || distance(kept.at(-1)!, p) > 100) kept.push(p);
-		});
-		return kept.map(([la, lo]) => [+la.toFixed(4), +lo.toFixed(4)] as LatLon);
-	};
-	const drawing: Drawing = {
-		lines: roads.map((r) =>
-			r.wall
-				? { kind: 'wall', points: thinned(r.points) }
-				: { kind: 'road', sure: r.sure, points: thinned(r.points) }
-		),
-		sites: sites.map((i) => ({ name: nodes[i].sites[0].name, at: nodes[i].at }))
-	};
-	return { start: id(first), stops, ways: 'Ways', drawing };
+	return { start: id(first), stops, ways: 'Ways' };
 }

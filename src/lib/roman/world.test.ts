@@ -237,20 +237,4 @@ describe('romanWorld (Roman sites as a walk, stage by stage)', () => {
 		expect(next).not.toContain('Status: Assumed');
 		expect(next).toContain('Ways:');
 	});
-
-	it('carries its own drawing: each road as sure as it is kept, the wall, and every site', () => {
-		const lines = world.drawing!.lines;
-		expect(
-			lines
-				.filter((l) => l.kind === 'road')
-				.map((l) => l.sure)
-				.sort()
-		).toEqual([1, 2, 3]);
-		expect(lines.filter((l) => l.kind === 'wall')).toHaveLength(1);
-		expect(world.drawing!.sites.map((x) => x.name).sort()).toEqual(
-			Object.values(world.stops)
-				.map((x) => x.title)
-				.sort()
-		);
-	});
 });

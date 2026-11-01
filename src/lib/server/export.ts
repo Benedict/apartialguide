@@ -532,14 +532,6 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 		return maplibre;
 	}
 	function drawMap(section, place) {
-		// A world that draws its own map shows it on any screen, asking no one for anything.
-		if (place.drawn) {
-			const box = el('div', '', 'map drawn');
-			box.innerHTML = place.drawn;
-			section.append(box);
-			reveal();
-			return;
-		}
 		if (settings.maps === false || !window.matchMedia('(min-width: 700px)').matches) return;
 		loadMaplibre()
 			.then((gl) => {
@@ -570,13 +562,6 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 	const followBox = document.getElementById('follow');
 	let followed;
 	function follow(place) {
-		if (place.drawn) {
-			followBox.hidden = false;
-			followBox.style.visibility = '';
-			followBox.innerHTML = place.drawn;
-			fit();
-			return;
-		}
 		if (settings.maps === false) return;
 		loadMaplibre()
 			.then((gl) => {

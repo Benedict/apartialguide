@@ -1,7 +1,6 @@
 import { groupBySubject, type Fact } from '../facts';
 import type { LatLon } from '../geo';
 import type { Beyond } from '../render/beyond';
-import type { Drawing } from './drawing';
 import type { Narrator } from '../narrator';
 import type { Part, Telling, Thing } from '../render/renderer';
 import type { StopId } from '../stops';
@@ -136,8 +135,6 @@ export interface AdventureWorld {
 	beyond?: Beyond[];
 	/** The world's own word for the ways out of a place ("Ways" for roads); "Exits" unless told. */
 	ways?: string;
-	/** The world's own lines and sites, for a map drawn by the page where there are no tiles to show. */
-	drawing?: Drawing;
 }
 
 export function compileWorld(
