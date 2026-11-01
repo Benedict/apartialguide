@@ -1,5 +1,5 @@
 import { withCsp } from './csp';
-import { headMeta, jsonLd, PAGES, profileLinks, walkDescription } from './meta';
+import { headMeta, jsonLd, PAGES, profileLinks, REPO, walkDescription } from './meta';
 import { THEMES, themeBoot, themeCss } from '../site/themes';
 import { fontFaces, MONO } from './type';
 import { faviconLinks, LOCKUP, ogMeta } from '../site/brand';
@@ -110,7 +110,7 @@ function aboutPage(
 			${sources}
 		</ul>
 		<h3>Who made it</h3>
-		<p>Made by Benedict. The code is free, under the GNU Affero General Public License, version 3 or later, and is on <a href="https://github.com/Benedict/osm-text-adventure">GitHub</a>, where you can help. Guide’s prose is under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+		<p>Made by Benedict. The code is free, under the GNU Affero General Public License, version 3 or later, and is on <a href="${REPO}">GitHub</a>, where you can help. Guide’s prose is under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
 		<p>Follow the walk on ${profileLinks()}.</p>
 		<p>Set in <a href="https://commitmono.com">Commit Mono</a>, by Eigil Nikolajsen, under the SIL Open Font License.</p>
 		<p><a href="#">Back to the walk</a></p>

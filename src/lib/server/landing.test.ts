@@ -166,4 +166,29 @@ describe('landingPage', () => {
 		expect(doored.replace(/<[^>]+>/g, '')).toContain('Not open yet: Elsewhere.');
 		expect(html).not.toContain('class="doors"');
 	});
+
+	it('says what is new, newest first, in the walkers’ words, with a way to every change', () => {
+		const page = landingPage({
+			...input,
+			news: [
+				{
+					date: '2026-12-02',
+					items: ['You can now walk the whole of Inventa.', 'Guide reads <words>.']
+				},
+				{ date: '2026-11-14', items: ['A new way in, with `code`.'] }
+			]
+		});
+		expect(page).toContain('<h2>What’s new</h2>');
+		expect(page).toContain('2 December 2026');
+		expect(page).toContain('<li>You can now walk the whole of Inventa.</li>');
+		expect(page).toContain('Guide reads &lt;words&gt;.');
+		expect(page).toContain('with <code>code</code>.');
+		expect(page).toContain('CHANGELOG.md">all the changes</a> are in the changelog.');
+		expect(page.indexOf('2 December 2026')).toBeLessThan(page.indexOf('14 November 2026'));
+		expect(structureFaults(page)).toEqual([]);
+	});
+
+	it('leaves out what is new when there is nothing to tell', () => {
+		expect(landingPage(input)).not.toContain('What’s new');
+	});
 });

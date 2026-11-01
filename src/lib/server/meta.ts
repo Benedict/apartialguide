@@ -1,4 +1,5 @@
 import { SOURCES } from '../site/sources';
+export { REPO } from '../site/repo';
 
 /**
  * What the site says of itself, beyond the page: its pages' descriptions and addresses, robots.txt,

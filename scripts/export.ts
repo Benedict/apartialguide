@@ -27,6 +27,7 @@ import { privacyPage } from '../src/lib/server/privacy';
 import { FONT_FILES } from '../src/lib/server/type';
 import { compileWorld } from '../src/lib/core/adventure/world';
 import { exportPage, wordsAmiss, writersOf } from '../src/lib/server/export';
+import { whatsNew } from '../src/lib/server/changes';
 import { loadNarration, loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
 
 const config = readConfig();
@@ -233,6 +234,8 @@ async function microsite(): Promise<string> {
 		gaId: process.env.GA_MEASUREMENT_ID || undefined,
 		...shown,
 		siteUrl: process.env.SITE_URL || undefined,
-		...(world.doors ? { doors: world.doors } : {})
+		...(world.doors ? { doors: world.doors } : {}),
+		// What is new, from the changelog's lines for walkers.
+		news: existsSync('CHANGELOG.md') ? whatsNew(readFileSync('CHANGELOG.md', 'utf8')) : []
 	});
 }
