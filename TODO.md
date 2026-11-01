@@ -6,6 +6,14 @@ Repository settings are under **Settings → Secrets and variables → Actions**
 
 ## Soon: these finish the site
 
+- [ ] **A private repository for snapshots and letters.** The map snapshots (about 17 MB each, and every refresh adds another to the public repository's history for good) and the letters to organisations move to a private repository that the workflows read. What is already public stays in the public history. Three steps:
+  1. Create a **private** repository, `benedict/apartialguide-data` (or tell Claude to try creating it).
+  2. Create a **fine-grained personal access token**: GitHub Settings → Developer settings → Personal access tokens → Fine-grained tokens. Repository access: only `apartialguide-data`. Permission: **Contents, read and write** (the Snapshot workflow writes there; the rest only read). Expiry: a year; note the date here, as the workflows stop reading the map when it lapses.
+  3. Add the token to **this** repository as the secret `DATA_TOKEN`: Settings → Secrets and variables → Actions → New repository secret.
+
+  Then tell Claude, who will point the Snapshot, Deploy, CI, Narrate, Records and History workflows at it, move the letters and snapshots across, and add to About that the map's snapshot is available on request, as OpenStreetMap's licence asks of a derivative database used in public.
+
+- [ ] **Keep the map up to date: cadence and key.** A scheduled refresh (Geofabrik's latest London and Surrey extracts, cut to the borough, the records fetched again) would arrive as a pull request with a report of what changed and which stops lose their prose, never straight onto the site. Say how often: quarterly is the suggestion, as each refresh means writing prose again where the map changed. With the secret `ANTHROPIC_API_KEY` (a paid Anthropic API key), the Narrate workflow can write that prose unattended; without it, it is written in a session.
 - [ ] **Mailing list.** At the edge of an area not open yet, the walk can link to a sign-up. Sign up with a provider (Buttondown is the suggestion: it gives you a sign-up page and can send without tracking), turn off open and click tracking, and add the sign-up page's address as the variable `SIGNUP_URL`. Tell Claude which provider, so the privacy page can name it.
 - [ ] **Contact email.** Add the variable `CONTACT_EMAIL`: an address you're happy to make public. The privacy page shows it, as the UK GDPR expects.
 - [ ] **Private security reports.** Settings → Code security → Private vulnerability reporting → Enable. `SECURITY.md` and the Code of Conduct send reports there.
