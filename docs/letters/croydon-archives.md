@@ -7,7 +7,7 @@
 
 Dear Archivist,
 
-I am making _A Partial Guide_, a free, non-commercial walk of Croydon told as a text adventure: https://apartialguide.com. A narrator called Guide describes each place only from public records (the map, food hygiene ratings, listed buildings, plaques, planning applications and others), credits every source, and never adds a fact of its own. Its code and words are open: https://github.com/Benedict/osm-text-adventure.
+I am making _A Partial Guide_, a free, non-commercial walk of Croydon told as a text adventure: https://apartialguide.com. A narrator called Guide describes each place only from public records (the map, food hygiene ratings, listed buildings, plaques, planning applications and others), credits every source, and never adds a fact of its own. Its code and words are open: https://github.com/Benedict/apartialguide.
 
 I would like Guide to be able to say, where it happened, that a bomb fell there. I can find no open record of where bombs fell in Croydon. The one well-known map of the Blitz, Bomb Sight, covers only October 1940 to June 1941, and its terms don't allow its data to be shown in a public piece like this. Croydon's own records would be far better: the whole war, the 1944 flying bombs included, kept by the borough itself.
 

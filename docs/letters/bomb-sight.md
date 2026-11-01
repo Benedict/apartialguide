@@ -7,7 +7,7 @@
 
 Dear Dr Jones,
 
-I am making _A Partial Guide_, a non-commercial art piece: a walk of Croydon told as a text adventure, where a narrator called Guide describes each place only from open data, with every fact credited to where it came from. It is free to use at https://apartialguide.com, and its source is public at https://github.com/Benedict/osm-text-adventure.
+I am making _A Partial Guide_, a non-commercial art piece: a walk of Croydon told as a text adventure, where a narrator called Guide describes each place only from open data, with every fact credited to where it came from. It is free to use at https://apartialguide.com, and its source is public at https://github.com/Benedict/apartialguide.
 
 Bomb Sight's terms allow its material for non-commercial individual, academic and research use. A public walk goes beyond that, so I would like to ask your permission. It would be for a small part of it:
 

@@ -253,7 +253,7 @@ describe('exportPage', () => {
 		const about = page().match(/<section id="about"[^]*?<\/section>/)![0];
 		expect(about).toContain('GNU Affero General Public License');
 		expect(about).toContain('https://creativecommons.org/licenses/by-sa/4.0/');
-		expect(about).toContain('https://github.com/Benedict/osm-text-adventure');
+		expect(about).toContain('https://github.com/Benedict/apartialguide');
 	});
 
 	it('credits on About the people who wrote places, as the prose’s licence asks, and says nothing of them without any', () => {
