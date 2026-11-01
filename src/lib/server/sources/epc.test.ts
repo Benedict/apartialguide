@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { epcRecords } from './epc';
+import { epcFromSearch, epcRecords } from './epc';
 
 const cert = (o: Record<string, string>) => ({
 	address1: '9 Long Street',
@@ -43,5 +43,34 @@ describe('epcRecords (energy performance certificates)', () => {
 		const [r] = epcRecords([cert({ 'construction-age-band': 'NO DATA!' })]);
 		expect(r.claims.built).toBeUndefined();
 		expect(r.claims.rating).toBe('D');
+	});
+
+	it('reads the new register’s search, which gives the rating and when lodged, but not when built', () => {
+		const rows = epcFromSearch({
+			data: [
+				{
+					certificateNumber: '1111-2222-3333-4444-5555',
+					addressLine1: '9 Long Street',
+					addressLine2: null,
+					postcode: 'CR0 9ZZ',
+					currentEnergyEfficiencyBand: 'C',
+					registrationDate: '2021-08-11'
+				}
+			],
+			pagination: { totalRecords: 1, currentPage: 1, totalPages: 1, nextPage: null }
+		});
+		expect(epcRecords(rows)).toEqual([
+			{
+				id: '9|Long Street',
+				address: { number: '9', street: 'Long Street' },
+				observed: '2021-08-11',
+				claims: { rating: 'C', lodged: '2021-08-11' }
+			}
+		]);
+	});
+
+	it('reads nothing from an answer with no certificates', () => {
+		expect(epcFromSearch({})).toEqual([]);
+		expect(epcFromSearch({ data: [] })).toEqual([]);
 	});
 });

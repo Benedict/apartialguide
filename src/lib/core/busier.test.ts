@@ -31,6 +31,22 @@ const beat = (
 });
 
 describe('isBusier: a stop whose data has something going on', () => {
+	it('passes over a stop whose only other accounts are kept out of prose: certificates, photographs', () => {
+		const kept = (source: string, tags: Record<string, string>) => ({
+			...beat(tags, { elsewhere: true }),
+			facts: beat(tags, { elsewhere: true }).facts.map((f) => ({ ...f, source }))
+		});
+		expect(
+			isBusier(
+				scene([
+					kept('Energy Performance of Buildings Register', { 'epc:rating': 'D' }),
+					kept('Geograph', { 'geograph:title': 'Invented Lane' })
+				])
+			)
+		).toBe(false);
+		expect(isBusier(scene([kept('Food Standards Agency', { 'hygiene:rating': '5' })]))).toBe(true);
+	});
+
 	it('counts a named thing, another account, something gone, or a broken name', () => {
 		expect(isBusier(scene([beat({ shop: 'bakery', name: 'Inventa Bakes' })]))).toBe(true);
 		expect(isBusier(scene([beat({ 'hygiene:rating': '5' }, { elsewhere: true })]))).toBe(true);

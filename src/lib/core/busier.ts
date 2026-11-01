@@ -1,6 +1,7 @@
 import type { Scene } from './scene';
 import { isBackground, type Beat } from './slippage';
 import { isElsewhere, isHistory } from './tensions';
+import { keptOutOfProse } from './keepers';
 
 /** Tensions in a thing's telling that make a stop worth prose of its own. */
 const TELLING = new Set(['spoken-as-found', 'self-correction', 'remembered', 'was-here']);
@@ -36,11 +37,13 @@ const isEndedPostcode = (b: Beat) =>
  * Whether a stop's data has something going on: a named thing, another account, something gone or
  * renamed, a broken name. Prose is written for these; the template carries the rest. The park, golf
  * course or wood a stop lies in or beside does not count on its own: every path through it would
- * otherwise be told the same thing again and again. Nor does an ended postcode on its own.
+ * otherwise be told the same thing again and again. Nor does an ended postcode on its own, nor a
+ * source kept out of prose (energy certificates, photographs).
  */
 export function isBusier(scene: Scene): boolean {
 	return scene.beats
-		.filter((b) => !isBackground(b) && !isGround(b) && !isEndedPostcode(b))
+		.map((b) => ({ ...b, facts: b.facts.filter((f) => !keptOutOfProse(f.source)) }))
+		.filter((b) => b.facts.length && !isBackground(b) && !isGround(b) && !isEndedPostcode(b))
 		.some(
 			(b) =>
 				b.effects.some((e) => TELLING.has(e)) ||

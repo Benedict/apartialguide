@@ -182,8 +182,8 @@ export const SOURCES: Source[] = [
 	},
 	{
 		name: 'Energy Performance of Buildings Register',
-		href: 'https://epc.opendatacommunities.org/',
-		gives: 'when houses were built, and how they are rated for energy',
+		href: 'https://get-energy-performance-data.communities.gov.uk/',
+		gives: 'how houses are rated for energy, and when, told when you look closer',
 		terms: `Contains public sector information licensed under the ${OGL}; Royal Mail and Ordnance Survey data © Crown copyright and database right`
 	},
 	{
