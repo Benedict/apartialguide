@@ -1,0 +1,577 @@
+{
+	"source": "police.uk",
+	"prefix": "crime",
+	"records": [
+		{
+			"id": "Aragon Close|2026-08",
+			"street": "Aragon Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (2)"
+			}
+		},
+		{
+			"id": "Stowell Avenue|2026-08",
+			"street": "Stowell Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (1), burglary (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Homestead Way|2026-08",
+			"street": "Homestead Way",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (2), burglary (1)"
+			}
+		},
+		{
+			"id": "Westcott Close|2026-08",
+			"street": "Westcott Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (2), drugs (1)"
+			}
+		},
+		{
+			"id": "Ivers Way|2026-08",
+			"street": "Ivers Way",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "7",
+				"kinds": "anti-social behaviour (3), public order (2), possession of weapons (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "North Downs Road|2026-08",
+			"street": "North Downs Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (1), vehicle crime (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Uvedale Close|2026-08",
+			"street": "Uvedale Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (2), other theft (1)"
+			}
+		},
+		{
+			"id": "Alwyn Close|2026-08",
+			"street": "Alwyn Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Cudham Drive|2026-08",
+			"street": "Cudham Drive",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Dunley Drive|2026-08",
+			"street": "Dunley Drive",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "North Downs Crescent|2026-08",
+			"street": "North Downs Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (2)"
+			}
+		},
+		{
+			"id": "Arnhem Drive|2026-08",
+			"street": "Arnhem Drive",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "5",
+				"kinds": "anti-social behaviour (4), violent crime (1)"
+			}
+		},
+		{
+			"id": "Dunsfold Way|2026-08",
+			"street": "Dunsfold Way",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (2)"
+			}
+		},
+		{
+			"id": "Redstart Close|2026-08",
+			"street": "Redstart Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Leigh Crescent|2026-08",
+			"street": "Leigh Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "5",
+				"kinds": "violent crime (4), anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Comport Green|2026-08",
+			"street": "Comport Green",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Rowdown Crescent|2026-08",
+			"street": "Rowdown Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (2), drugs (1)"
+			}
+		},
+		{
+			"id": "Calley Down Crescent|2026-08",
+			"street": "Calley Down Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Heneage Crescent|2026-08",
+			"street": "Heneage Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (1), vehicle crime (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Valentyne Close|2026-08",
+			"street": "Valentyne Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (3)"
+			}
+		},
+		{
+			"id": "Grenville Road|2026-08",
+			"street": "Grenville Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "The Coppins|2026-08",
+			"street": "The Coppins",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "6",
+				"kinds": "violent crime (2), anti-social behaviour (1), other crime (1), other theft (1), public order (1)"
+			}
+		},
+		{
+			"id": "Salcot Crescent|2026-08",
+			"street": "Salcot Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Corbett Close|2026-08",
+			"street": "Corbett Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "St Edwards Close|2026-08",
+			"street": "St Edwards Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Walton Green|2026-08",
+			"street": "Walton Green",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "violent crime (2), anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Kestrel Way|2026-08",
+			"street": "Kestrel Way",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Mickleham Way|2026-08",
+			"street": "Mickleham Way",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Ashwood Gardens|2026-08",
+			"street": "Ashwood Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Thursley Crescent|2026-08",
+			"street": "Thursley Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "bicycle theft (1)"
+			}
+		},
+		{
+			"id": "Witley Crescent|2026-08",
+			"street": "Witley Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "burglary (1)"
+			}
+		},
+		{
+			"id": "Windham Avenue|2026-08",
+			"street": "Windham Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "drugs (1)"
+			}
+		},
+		{
+			"id": "Danebury|2026-08",
+			"street": "Danebury",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "violent crime (3), other theft (1)"
+			}
+		},
+		{
+			"id": "Alford Green|2026-08",
+			"street": "Alford Green",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "other theft (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Eddinton Close|2026-08",
+			"street": "Eddinton Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "other theft (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Cator Close|2026-08",
+			"street": "Cator Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "other theft (1)"
+			}
+		},
+		{
+			"id": "Hutchingson's Road|2026-08",
+			"street": "Hutchingson's Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "other crime (1), public order (1)"
+			}
+		},
+		{
+			"id": "Overbury Crescent|2026-08",
+			"street": "Overbury Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "public order (1)"
+			}
+		},
+		{
+			"id": "Milne Park East|2026-08",
+			"street": "Milne Park East",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "public order (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Wolsey Crescent|2026-08",
+			"street": "Wolsey Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "robbery (1)"
+			}
+		},
+		{
+			"id": "Frimley Crescent|2026-08",
+			"street": "Frimley Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "robbery (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Castle Hill Avenue|2026-08",
+			"street": "Castle Hill Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "robbery (1)"
+			}
+		},
+		{
+			"id": "Tilford Avenue|2026-08",
+			"street": "Tilford Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "5",
+				"kinds": "violent crime (4), theft from the person (1)"
+			}
+		},
+		{
+			"id": "Claygate Crescent|2026-08",
+			"street": "Claygate Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Chertsey Crescent|2026-08",
+			"street": "Chertsey Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "vehicle crime (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Matthew's Gardens|2026-08",
+			"street": "Matthew's Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "violent crime (4)"
+			}
+		},
+		{
+			"id": "Walsh Crescent|2026-08",
+			"street": "Walsh Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "violent crime (2)"
+			}
+		},
+		{
+			"id": "Brabiner Gardens|2026-08",
+			"street": "Brabiner Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Aldrich Crescent|2026-08",
+			"street": "Aldrich Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "violent crime (2)"
+			}
+		},
+		{
+			"id": "Frimley Close|2026-08",
+			"street": "Frimley Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "violent crime (2)"
+			}
+		},
+		{
+			"id": "Pirbright Crescent|2026-08",
+			"street": "Pirbright Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Merrow Way|2026-08",
+			"street": "Merrow Way",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Montacute Road|2026-08",
+			"street": "Montacute Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Thorpe Close|2026-08",
+			"street": "Thorpe Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Warbank Crescent|2026-08",
+			"street": "Warbank Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Bygrove|2026-08",
+			"street": "Bygrove",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "violent crime (2)"
+			}
+		},
+		{
+			"id": "Godric Crescent|2026-08",
+			"street": "Godric Crescent",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}
