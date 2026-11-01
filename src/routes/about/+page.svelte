@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { SOURCES } from '#lib/site/sources.ts';
+	import { REPO } from '#lib/server/meta.ts';
 </script>
 
 <svelte:head>
@@ -28,9 +29,7 @@
 </ul>
 <h3>Who made it</h3>
 <p>
-	Made by Benedict. The code is on <a href="https://github.com/Benedict/osm-text-adventure"
-		>GitHub</a
-	>.
+	Made by Benedict. The code is on <a href={REPO}>GitHub</a>.
 </p>
 <p><a href={resolve('/')}>Back to the walk</a></p>
 

@@ -6,12 +6,13 @@
  * Wikidata places in the box. Writes data/wikidata/<SNAPSHOT_NAME>-<today>.json.
  */
 import { readJson } from '../src/lib/server/json';
+import { REPO } from '../src/lib/server/meta';
 import { mkdirSync, readdirSync, writeFileSync } from 'node:fs';
 import type { WikidataStore } from '../src/lib/core/adapters/wikidata';
 import { itemFromEntity, qidsInSnapshot, type WikidataEntity } from '../src/lib/server/wikidata';
 
 const headers = {
-	'User-Agent': 'a-partial-guide/0.1 (art project; https://github.com/Benedict/osm-text-adventure)',
+	'User-Agent': `a-partial-guide/0.1 (art project; ${REPO})`,
 	Accept: 'application/json'
 };
 

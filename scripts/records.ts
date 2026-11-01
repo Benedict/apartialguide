@@ -10,6 +10,7 @@
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import type { RecordStore } from '../src/lib/core/adapters/records';
 import { readJson } from '../src/lib/server/json';
+import { REPO } from '../src/lib/server/meta';
 import { distance, type LatLon } from '../src/lib/core/geo';
 import { loadRecords } from '../src/lib/server/narrator';
 import {
@@ -53,7 +54,7 @@ import { pipeline } from 'node:stream/promises';
 import type { ReadableStream as WebStream } from 'node:stream/web';
 
 const headers = {
-	'User-Agent': 'a-partial-guide/0.1 (art project; https://github.com/Benedict/osm-text-adventure)'
+	'User-Agent': `a-partial-guide/0.1 (art project; ${REPO})`
 };
 
 async function getJson(url: string, extra: Record<string, string> = {}) {

@@ -1,6 +1,7 @@
 import { withCsp } from './csp';
 import { areaSlug } from '../core/release';
-import { COMMANDS, headMeta, homeDescription, jsonLd, PAGES, profileLinks } from './meta';
+import { COMMANDS, headMeta, homeDescription, jsonLd, PAGES, profileLinks, REPO } from './meta';
+import type { News } from './changes';
 import { themeBoot, themeCss } from '../site/themes';
 import { fontFaces, MONO } from './type';
 import type { Ledger } from '../core/adventure/world';
@@ -27,6 +28,8 @@ export interface LandingInput {
 	siteUrl?: string;
 	/** The areas a walk may begin in: those open with their first place, those not open yet without. */
 	doors?: { name: string; stop?: string }[];
+	/** What is new, from the changelog, newest first. */
+	news?: News[];
 }
 
 const esc = (text: string) =>
@@ -48,7 +51,8 @@ export function landingPage({
 	place = ADDISCOMBE,
 	noindex,
 	siteUrl,
-	doors = []
+	doors = [],
+	news = []
 }: LandingInput): string {
 	const open = doors.filter((d) => d.stop && d.name !== place.name);
 	const shut = doors.filter((d) => !d.stop);
@@ -106,6 +110,8 @@ ${fontFaces('/')}
 	h2 { color: var(--bright); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 3rem 0 1rem; }
 	.played { border: 1px solid var(--rule); padding: 1rem 1.25rem; margin-top: 1rem; }
 	.played h2.place { color: var(--bright); font-size: 1rem; margin: 1rem 0 0.5rem; }
+	/* What is new: each day a quieter heading under the section's own. */
+	h3 { color: var(--ink); font-size: 1rem; font-weight: 700; margin: 1.5rem 0 0.5rem; }
 	.played p { margin: 0 0 0.75rem; }
 	.played .command { color: var(--bright); }
 	.commands { list-style: none; padding: 0; margin: 0; }
@@ -140,6 +146,7 @@ ${themeCss()}
 			${played}
 	</div>
 
+${whatsNewSection(news)}
 	<h2>How it works</h2>
 	<p>The places are built from OpenStreetMap and public records: food hygiene ratings, planning applications, house sales, listed buildings, bus stops.</p>
 	<p>Nothing is made up. Where the data is wrong or missing, the game says so as it stands. A bank whose sign was recorded as “est Bank” is called “est Bank”.</p>
@@ -154,7 +161,7 @@ ${themeCss()}
 
 	<footer>
 		<p>${gaId ? PRIVACY.counted : PRIVACY.none}</p>
-		<p><a href="walk/#about">Sources and licences</a> · <a href="privacy/">Privacy</a> · ${profileLinks()} · <a href="https://github.com/Benedict/osm-text-adventure">Code</a> · Made by Benedict</p>
+		<p><a href="walk/#about">Sources and licences</a> · <a href="privacy/">Privacy</a> · ${profileLinks()} · <a href="${REPO}">Code</a> · Made by Benedict</p>
 	</footer>
 </main>
 ${gaId ? consentStrip('this site', 'privacy/') : ''}
@@ -165,4 +172,19 @@ ${gaId ? consentStrip('this site', 'privacy/') : ''}
 `,
 		{ analytics: !!gaId }
 	);
+}
+
+/** A changelog line for the page: escaped, with its `code` kept as code. */
+const line = (text: string) => esc(text).replace(/`([^`]+)`/g, '<code>$1</code>');
+
+/** What is new, newest first, with a way to every change; nothing when there is nothing to tell. */
+function whatsNewSection(news: readonly News[]): string {
+	if (!news.length) return '';
+	const days = news
+		.map(
+			(d) =>
+				`<h3>${esc(longDate(d.date))}</h3>\n\t<ul>\n\t\t${d.items.map((i) => `<li>${line(i)}</li>`).join('\n\t\t')}\n\t</ul>`
+		)
+		.join('\n\t');
+	return `	<h2>What’s new</h2>\n\t${days}\n\t<p>That is the latest; <a href="${REPO}/blob/main/CHANGELOG.md">all the changes</a> are in the changelog.</p>\n`;
 }

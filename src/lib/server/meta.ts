@@ -175,3 +175,6 @@ export function jsonLd(page: 'home' | 'walk', siteUrl?: string): string {
 				};
 	return `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;
 }
+
+/** Where the code is kept, in the open. */
+export const REPO = 'https://github.com/Benedict/osm-text-adventure';
