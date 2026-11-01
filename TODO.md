@@ -6,23 +6,17 @@ Repository settings are under **Settings → Secrets and variables → Actions**
 
 ## Soon: these finish the site
 
-- [ ] **A private repository for snapshots and letters.** The map snapshots (about 17 MB each, and every refresh adds another to the public repository's history for good) and the letters to organisations move to a private repository that the workflows read. What is already public stays in the public history. Three steps:
-  1. Create a **private** repository, `benedict/apartialguide-data` (or tell Claude to try creating it).
-  2. Create a **fine-grained personal access token**: GitHub Settings → Developer settings → Personal access tokens → Fine-grained tokens. Repository access: only `apartialguide-data`. Permission: **Contents, read and write** (the Snapshot workflow writes there; the rest only read). Expiry: a year; note the date here, as the workflows stop reading the map when it lapses.
-  3. Add the token to **this** repository as the secret `DATA_TOKEN`: Settings → Secrets and variables → Actions → New repository secret.
-
-  Then tell Claude, who will point the Snapshot, Deploy, CI, Narrate, Records and History workflows at it, move the letters and snapshots across, and add to About that the map's snapshot is available on request, as OpenStreetMap's licence asks of a derivative database used in public.
-
 - [ ] **Keep the map up to date: cadence and key.** A scheduled refresh (Geofabrik's latest London and Surrey extracts, cut to the borough, the records fetched again) would arrive as a pull request with a report of what changed and which stops lose their prose, never straight onto the site. Say how often: quarterly is the suggestion, as each refresh means writing prose again where the map changed. With the secret `ANTHROPIC_API_KEY` (a paid Anthropic API key), the Narrate workflow can write that prose unattended; without it, it is written in a session.
 - [ ] **Mailing list.** At the edge of an area not open yet, the walk can link to a sign-up. Sign up with a provider (Buttondown is the suggestion: it gives you a sign-up page and can send without tracking), turn off open and click tracking, and add the sign-up page's address as the variable `SIGNUP_URL`. Tell Claude which provider, so the privacy page can name it.
 - [ ] **Contact email.** Add the variable `CONTACT_EMAIL`: an address you're happy to make public. The privacy page shows it, as the UK GDPR expects.
-- [ ] **Private security reports.** Settings → Code security → Private vulnerability reporting → Enable. `SECURITY.md` and the Code of Conduct send reports there.
-- [ ] **Rename the repository** to `apartialguide`: Settings → General → Repository name. Then tell Claude, who will update the links on the site.
+- [ ] **Make the repository public again**, or tell Claude it should stay private. Since the rename, `Benedict/apartialguide` is private. While it is, the site's links to its code lead nowhere for anyone else, the code's licence (the AGPL) is not met (it asks that people using the site can get its source), and contributions and security reports cannot reach it. To make it public: Settings → General → Danger Zone, at the bottom → Change repository visibility → Public. If it should stay private, Claude will change the site to say how to get the source instead.
+- [ ] **Private security reports**, once the repository is public (GitHub offers them only on public repositories): Settings → Advanced Security → Private vulnerability reporting → Enable, or directly `https://github.com/Benedict/apartialguide/settings/security_analysis`. `SECURITY.md` and the Code of Conduct send reports there.
 - [ ] **Delete the `CROYDON_WALK` variable**, if it's still there. Nothing uses it now.
 - [ ] **Read the site on your phone**: the privacy page and About in particular. Tell Claude anything you'd put differently.
 
 ## Decisions
 
+- [ ] **How much prose to write again for the new map.** The areas drawn as multipolygons (parks, woods, lakes, large buildings) and the tags newly spoken (the words on things, other names, post box cyphers, tree species, footpaths) change what is known at 1,008 stops; the areas alone touch 310 of them. Write all 1,008 again in one round (the suggestion), or only the 310, leaving the rest told plainly until a later round?
 - [ ] **Sponsoring an area.** What does a sponsor get (a credit on About, or on the area's "not open yet" note)? How do they pay? Can a sponsor's name appear in the walk at all? (Guide itself never names anyone, so a credit would be the page's, not Guide's.)
 - [ ] **Keep the site free to use.** Digital Britannia's terms (below) forbid its use in any site that charges a fee. Asking for voluntary support doesn't charge a fee. If you offer sponsorship with a credit in return, ask Mike Haken first. Bomb Sight isn't used; writing to Croydon Archives for the borough's air raid records is the better route.
 - [ ] **Geograph photographs.** Their licence asks for each photographer's name. Name them where a photograph is mentioned, or leave Geograph out?
