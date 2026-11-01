@@ -147,6 +147,15 @@ function historyOf(s: Site, accounts: Record<number, Account>): Thing[] {
 	];
 }
 
+/** A milecastle's kept line (status, condition, type, gate), and the same said as the last. */
+const KEPT = /^(Status|Condition|Type|Gate Type): /;
+const asTheLast = (line: string) =>
+	`As the last: ${line
+		.replace(/\.$/, '')
+		.split('; ')
+		.map((kv) => kv.replace(/^[^:]+: /, ''))
+		.join('; ')}.`;
+
 /** Guide's pointer to a milecastle's history: said wherever there is one, as it tells what to type. */
 const POINTER = 'More is written of it: examine the milecastle.';
 
@@ -312,6 +321,7 @@ export function romanWorld(
 			// was heard at the last two places, as on the borough's walk.
 			parts: [
 				lines.map((text) => ({
+					...(KEPT.test(text) ? { again: asTheLast(text) } : {}),
 					// A site's name, and the pointer to its history, are always said; what is kept of
 					// it is not said again if it was heard at the last two places.
 					kind:

@@ -146,6 +146,8 @@ Guide now tells:
 - **arriving,** a milecastle's account whole (79 of 81);
 - **on `examine milecastle`,** its history, as written, references and all (“(Simpson, 1975)”), with “More is written of it: examine the milecastle.” said at every milecastle that has one, never left out as recently heard: it tells what to type.
 
+A milecastle kept exactly as the one before is said as the last (“As the last: Assumed; Destroyed; Short Axis.”), its values as found, rather than left out: a part's `again`, said where the line was heard at the last place, and in full where it was heard only before it.
+
 Benedict's call: the whole text over the cut, so this Guide can teach. The references inside the words are read as found, as an inscription is.
 
 ## Overlays worth trying

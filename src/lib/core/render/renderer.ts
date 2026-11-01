@@ -19,6 +19,12 @@ export interface Part {
 	key: string;
 	/** For where the reader stands part way along one street: that street. */
 	street?: string;
+	/**
+	 * What to say instead where it was heard at the last place, rather than leave it out: a world's own
+	 * way to say a thing again, such as "As the last: …". Heard only before the last place, it is said
+	 * in full.
+	 */
+	again?: string;
 	/** For framing lines: the ways Guide may put it, to turn between. */
 	options?: string[];
 	/** For the street's lighting: what the map says, so the engine can say it for the hour. */

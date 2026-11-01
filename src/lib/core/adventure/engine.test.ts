@@ -1005,3 +1005,60 @@ describe('A world whose ways are roads, not exits', () => {
 		expect(lines.join(' ')).not.toContain('Exits');
 	});
 });
+
+describe('a line said again as the last, where a world gives it a way to be', () => {
+	const part = (kind: 'prose' | 'setting', text: string, again?: string) => ({
+		kind,
+		text,
+		key: text,
+		...(again ? { again } : {})
+	});
+	const place = (name: string, kept: string, next?: string, back?: string) => ({
+		title: name,
+		paragraphs: [`${name}.`, kept],
+		parts: [
+			[
+				part('prose', `${name}.`),
+				part('setting', kept, `As the last: ${kept.replace(/^Kept: /, '')}`)
+			]
+		],
+		exits: [
+			...(next ? [{ label: 'east', to: next }] : []),
+			...(back ? [{ label: 'west', to: back }] : [])
+		],
+		things: []
+	});
+	const world: AdventureWorld = {
+		start: 'a',
+		stops: {
+			a: place('Inventhaugh', 'Kept: Assumed.', 'b'),
+			b: place('Farhaugh', 'Kept: Assumed.', 'c', 'a'),
+			c: place('Nearhaugh', 'Kept: Known.', 'd', 'b'),
+			d: place('Lasthaugh', 'Kept: Assumed.', undefined, 'c')
+		}
+	};
+	const walk = () => {
+		const game = new Adventure(world);
+		game.begin();
+		return [
+			game.respond('take the tour'),
+			game.respond('east'),
+			game.respond('east'),
+			game.respond('east')
+		].map((r) => r.lines.join(' '));
+	};
+
+	it('says it as the last where it was heard at the last place', () => {
+		const [first, second] = walk();
+		expect(first).toContain('Kept: Assumed.');
+		expect(second).toContain('As the last: Assumed.');
+		expect(second).not.toContain('Kept: Assumed.');
+	});
+
+	it('says it in full where it was heard only before the last place, or not at all', () => {
+		const [, , third, fourth] = walk();
+		expect(third).toContain('Kept: Known.');
+		expect(fourth).toContain('Kept: Assumed.');
+		expect(fourth).not.toContain('As the last');
+	});
+});

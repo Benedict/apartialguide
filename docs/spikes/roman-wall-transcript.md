@@ -33,7 +33,7 @@ You have walked 1 km.
 
 **Milecastle 2, Walker**
 
-Milecastle 2, Walker: a milecastle. Someone wrote: “Although the Milecastle was obseved in the 19th century, subsequent excavations have failed to reveal any further remains apart from occuaption debris (Simpson, 1975; Burnham et al, 2005). Although it is possible some elements remain in situ, it is probable that the Milecastle was destroyed by modern development of this area.”. More is written of it: examine the milecastle.
+Milecastle 2, Walker: a milecastle. As the last: Assumed; Destroyed; Short Axis. Someone wrote: “Although the Milecastle was obseved in the 19th century, subsequent excavations have failed to reveal any further remains apart from occuaption debris (Simpson, 1975; Burnham et al, 2005). Although it is possible some elements remain in situ, it is probable that the Milecastle was destroyed by modern development of this area.”. More is written of it: examine the milecastle.
 
 Ways: west, 1.1 km to Milecastle 3, Ouseburn: “Hadrians Wall” · north-east, 1.6 km to Milecastle 1, Stott's Pow: “Hadrians Wall”.
 
@@ -61,7 +61,7 @@ You have walked 5 km.
 
 **Milecastle 5, Quarry House**
 
-Milecastle 5, Quarry House: a milecastle. Someone wrote: “The supposed position of the Milecastle has never been confirmed. It is likely that the structure was destroyed by modern development, however, some remains could remain in situ.”. More is written of it: examine the milecastle.
+Milecastle 5, Quarry House: a milecastle. Status: Assumed; Condition: Destroyed. Someone wrote: “The supposed position of the Milecastle has never been confirmed. It is likely that the structure was destroyed by modern development, however, some remains could remain in situ.”. More is written of it: examine the milecastle.
 
 Ways: east, 0.9 km to Newcastle military vicus: “Hadrians Wall” · west, 1.6 km to Benwell extra-mural settlement: “Hadrians Wall”.
 
@@ -95,7 +95,7 @@ Ways: west, 1.2 km to Milecastle 10, Walbottle Dene: “Wallsend to Portgate” 
 
 **Milecastle 10, Walbottle Dene**
 
-Milecastle 10, Walbottle Dene: a milecastle. Someone wrote: “Entire wall removed to renew bridge, gateway in the garden of Dean House is better preserved. Central portion of the milecastle is under the B6318. Southern portion visible as a low platform.”. More is written of it: examine the milecastle. Found there: Carved stone;Ceramics.
+Milecastle 10, Walbottle Dene: a milecastle. As the last: Confirmed; Damaged; Long Axis; IV. Someone wrote: “Entire wall removed to renew bridge, gateway in the garden of Dean House is better preserved. Central portion of the milecastle is under the B6318. Southern portion visible as a low platform.”. More is written of it: examine the milecastle. Found there: Carved stone;Ceramics.
 
 Ways: east, 1.2 km to Milecastle 9, Chapel House: “Wallsend to Portgate” (“Military Way”), Certain - +/- 30m for 1.2 km · west, 1.3 km to Milecastle 11, Throckley Bank Top: “Hadrians Wall”.
 

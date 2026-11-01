@@ -1289,6 +1289,7 @@ export class Adventure {
 		const stop = this.world.stops[this.walk.here];
 		if (!stop.parts) return this.look();
 		const recent = new Set(this.walk.heard.flat());
+		const last = new Set(this.walk.heard.at(-1) ?? []);
 		// Prose cannot be cut; where it would say again most of what was just heard, the template can.
 		const things = (stop.plain?.parts ?? [])
 			.flat()
@@ -1305,13 +1306,16 @@ export class Adventure {
 		let street: string | undefined;
 		const lines = told
 			.map((parts) => {
-				const fresh = parts.filter((p) => !RATIONED.includes(p.kind) || !recent.has(p.key));
+				const fresh = parts.filter(
+					(p) => !RATIONED.includes(p.kind) || !recent.has(p.key) || p.again !== undefined
+				);
 				const framesNothing =
 					parts.some((p) => p.kind === 'thing') && !fresh.some((p) => p.kind === 'thing');
 				return fresh
 					.filter((p) => !(framesNothing && p.kind === 'frame'))
 					.map((p) => {
 						if (RATIONED.includes(p.kind)) heard.push(p.key);
+						if (p.again !== undefined && last.has(p.key)) return p.again;
 						if (p.kind === 'where') {
 							street = p.street;
 							if (p.street && p.street === this.walk.lastStreet) return this.goOn(p.text);

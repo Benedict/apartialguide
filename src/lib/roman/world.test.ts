@@ -235,6 +235,7 @@ describe('romanWorld (Roman sites as a walk, stage by stage)', () => {
 		const next = game.respond('west').lines.join(' ');
 		expect(next).toContain('Milecastle 2, Farhaugh: a milecastle.');
 		expect(next).not.toContain('Status: Assumed');
+		expect(next).toContain('As the last: Assumed; Destroyed.');
 		expect(next).toContain('Ways:');
 	});
 
