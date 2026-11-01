@@ -1,0 +1,67 @@
+{
+	"source": "NBN Atlas",
+	"prefix": "wildlife",
+	"records": [
+		{
+			"id": "b7c086bf-9b43-45fe-8a0e-979693351cf9",
+			"at": [
+				51.349524,
+				-0.004691
+			],
+			"observed": "1996-09-09",
+			"claims": {
+				"name": "Sycamore",
+				"seen": "1996-09"
+			}
+		},
+		{
+			"id": "65d20170-d0cb-4edb-957b-db2c5cf0bd32",
+			"at": [
+				51.347873,
+				-0.013379
+			],
+			"observed": "2014-05-29",
+			"claims": {
+				"name": "Harlequin Ladybird",
+				"seen": "2014-05"
+			}
+		},
+		{
+			"id": "addf3b41-9d84-4dcb-85ae-1e6cc07faaf9",
+			"at": [
+				51.344303,
+				-0.014969
+			],
+			"observed": "2021-05-28",
+			"claims": {
+				"name": "Swift",
+				"seen": "2021-05"
+			}
+		},
+		{
+			"id": "16d7ca47-b7ad-454a-ba16-7f3d3a537c9f",
+			"at": [
+				51.342255,
+				-0.01991
+			],
+			"observed": "2023-06-07",
+			"claims": {
+				"name": "Grey Squirrel",
+				"seen": "2023-06"
+			}
+		},
+		{
+			"id": "4e306d0f-d36b-4d95-b7ce-ef54db3c923e",
+			"at": [
+				51.353192,
+				-0.00884
+			],
+			"observed": "2001-05-07",
+			"claims": {
+				"name": "Dock Bug",
+				"seen": "2001-05"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}
