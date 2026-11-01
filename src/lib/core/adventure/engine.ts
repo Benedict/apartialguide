@@ -26,14 +26,8 @@ import type { Telling, Thing } from '../render/renderer';
 import { distance, type LatLon } from '../geo';
 import { postcodeOf } from './postcodes';
 import { arcOf, circleThrough, FAR, offCurve, walkable, type Circle } from './circle';
-import {
-	AUTO,
-	SLOTS,
-	type Circling,
-	type SaveStore,
-	type SavedWalk,
-	type WalkState
-} from './saves';
+import { AUTO, SLOTS, type SaveStore, type SavedWalk, type WalkState } from './saves';
+import { freshWalk, keepWalk, pickUpWalk, type Walk } from './walk';
 import type { StopId } from '../stops';
 import { MemoryHints, type HintKeeper, type HintMemory } from './hints';
 import { goalsFor, planRoute, routeIndex, routeWords, type RouteIndex } from './route';
@@ -196,63 +190,43 @@ export interface Status {
 
 /** A reader's walk through a compiled world. */
 export class Adventure {
-	private previous?: string;
-	/** Stops where the reader has found what was hidden. */
-	private readonly explored = new Set<string>();
 	/** True between the introduction and the tour. */
 	private choosing = false;
 	/** Chance, for what comes back: Math.random unless a test fixes it. */
 	chance: () => number = Math.random;
-	/** Broken names Guide has spoken on this walk, with the move they were collected on. */
-	private readonly carried = new Map<string, { at: string; move: number }>();
-	private readonly recalled = new Set<string>();
-	private moves = 0;
-	/** What the reader heard at the last two places, by key: not said again so soon. */
-	private heard: string[][] = [];
-	/** The one street the reader was part way along at the last place, if any. */
-	private lastStreet?: string;
 	/** Which form of the opening was said last, so the next place opens another way. */
 	private whereForm = -1;
-	/** The last way each framing line was put, so the next place puts it another way. */
-	private readonly framed = new Map<string, string>();
-	/** Distinctive words met on this walk, with where and in what name. */
-	private readonly met = new Map<
-		string,
-		{ said: string; at: string; move: number; street?: boolean }[]
-	>();
-	private readonly connected = new Set<string>();
 	/** Today's weather and the sky, as the browser found them when the walk began. */
 	private now: Fact[] = [];
 	/** The disruptions on the roads already told this walk, so each is told once. */
 	private disruptionsTold = new Set<string>();
-	/** Places already told in full; told briefly on return unless verbose. */
-	private readonly visited = new Set<string>();
-	private verbose = false;
-	/** The way the reader asked for, kept until they arrive or let it go. */
-	private routing?: { to: string; goals: [StopId, string][] };
-	/** The circle being walked: its points, the next to reach, what was met, how far the walk strayed. */
-	private circling?: Circling;
 	/** What the hints remember across walks: the browser's, given by the page, or memory. */
 	hintKeeper: HintKeeper = new MemoryHints();
 	/** The move at which a hint last came of its own, this walk; and which hint comes next when asked. */
 	private hintedAt?: number;
 	private hintTurn = 0;
-	/** Whether the reader keeps the map beside the walk (gps on). */
-	private following = false;
-	private walked = 0;
-	private lastCommand?: string;
-	/** The names the reader carries, in the order taken. */
-	private readonly pocket: string[] = [];
-	/** Names the reader has left, by the stop they were left at. */
-	private readonly left = new Map<string, string[]>();
 	/** Where walks are kept, if anywhere; the walk keeps itself in its own slot after each command. */
 	saves?: SaveStore;
 	clock: () => Date = () => new Date();
 
+	/** Everything the walk remembers, kept with it when it is saved (`walk.ts`). */
+	private walk: Walk;
+
 	constructor(
 		private readonly world: AdventureWorld,
-		public here = world.start
-	) {}
+		here = world.start
+	) {
+		this.walk = freshWalk(here);
+	}
+
+	/** Where the walk stands. */
+	get here(): string {
+		return this.walk.here;
+	}
+
+	set here(id: string) {
+		this.walk.here = id;
+	}
 
 	/**
 	 * The rest of the start, once the map is open: today, when there is word of it, and the tour.
@@ -413,17 +387,17 @@ export class Adventure {
 
 	/** A new walk from here: nothing walked, no way asked for, no step to go back on. */
 	private afresh(id: string): Reply {
-		this.moves = 0;
-		this.walked = 0;
-		this.routing = undefined;
-		this.lastStreet = undefined;
+		this.walk.moves = 0;
+		this.walk.walked = 0;
+		this.walk.route = undefined;
+		this.walk.lastStreet = undefined;
 		return this.beginAt(id);
 	}
 
 	private beginAt(id: string): Reply {
 		this.choosing = false;
-		this.here = id;
-		this.previous = undefined;
+		this.walk.here = id;
+		this.walk.previous = undefined;
 		return this.arrive();
 	}
 
@@ -480,13 +454,13 @@ export class Adventure {
 	}
 
 	look(): Reply {
-		const stop = this.world.stops[this.here];
+		const stop = this.world.stops[this.walk.here];
 		return { title: stop.title, lines: this.inFull(stop) };
 	}
 
 	/** The place again from the template alone, where prose was told instead. */
 	private plainly(): Reply {
-		const stop = this.world.stops[this.here];
+		const stop = this.world.stops[this.walk.here];
 		return stop.plain
 			? { title: stop.title, lines: this.inFull(stop.plain) }
 			: { lines: ['I have told it plainly already.'] };
@@ -505,12 +479,16 @@ export class Adventure {
 		const at = this.position();
 		if (!p.lit || !at) return p.text;
 		const sun = sunPosition(this.clock(), at.latitude, at.longitude).altitude;
-		return lightingNow(p.lit, p.pavement, sun, this.moves);
+		return lightingNow(p.lit, p.pavement, sun, this.walk.moves);
 	}
 
 	/** Where the walk stands, for a status line. */
 	status(): Status {
-		return { place: this.world.stops[this.here].title, moves: this.moves, walked: this.walked };
+		return {
+			place: this.world.stops[this.walk.here].title,
+			moves: this.walk.moves,
+			walked: this.walk.walked
+		};
 	}
 
 	respond(input: string): Reply {
@@ -523,10 +501,10 @@ export class Adventure {
 		if (this.choosing) return this.choose(input);
 		const command = parse(input);
 		if (command.verb === 'again')
-			return this.lastCommand === undefined
+			return this.walk.lastCommand === undefined
 				? { lines: ['You have done nothing yet to do again.'] }
-				: this.answer(this.lastCommand);
-		if (command.verb !== 'empty') this.lastCommand = input;
+				: this.answer(this.walk.lastCommand);
+		if (command.verb !== 'empty') this.walk.lastCommand = input;
 		this.remember((m) => {
 			if (!m.used.includes(command.verb)) m.used.push(command.verb);
 		});
@@ -576,8 +554,8 @@ export class Adventure {
 			case 'exits':
 				return { lines: [this.exits()] };
 			case 'back':
-				return this.previous
-					? this.moveTo(this.previous)
+				return this.walk.previous
+					? this.moveTo(this.walk.previous)
 					: { lines: ['You haven’t come from anywhere yet.'] };
 			case 'go':
 				return this.go(command.direction);
@@ -586,10 +564,10 @@ export class Adventure {
 			case 'wait':
 				return { lines: ['Time passes. Not much else does.'] };
 			case 'verbose':
-				this.verbose = true;
+				this.walk.verbose = true;
 				return { lines: ['I will tell every place in full, however often you come back to it.'] };
 			case 'brief':
-				this.verbose = false;
+				this.walk.verbose = false;
 				return { lines: ['Brief, then: a place in full the first time, and briefly after.'] };
 			case 'score':
 				return { lines: [this.score()] };
@@ -625,7 +603,7 @@ export class Adventure {
 	}
 
 	private exits(): string {
-		const stop = this.world.stops[this.here];
+		const stop = this.world.stops[this.walk.here];
 		return (
 			stop.paragraphs.find((p) => p.startsWith('Exits:')) ??
 			`Exits: ${stop.exits.map((e) => e.label).join(', ')}.`
@@ -633,7 +611,7 @@ export class Adventure {
 	}
 
 	private go(where: string): Reply {
-		const exits = this.world.stops[this.here].exits;
+		const exits = this.world.stops[this.walk.here].exits;
 		const matches = matchExits(exits, where);
 		if (matches.length === 1)
 			return matches[0].closed ? this.edge(matches[0].closed) : this.moveTo(matches[0].to);
@@ -660,17 +638,17 @@ export class Adventure {
 	}
 
 	private moveTo(to: string): Reply {
-		const from = this.world.stops[this.here].at;
+		const from = this.world.stops[this.walk.here].at;
 		const at = this.world.stops[to].at;
-		const before = this.walked;
-		if (from && at) this.walked += distance(from, at);
-		this.previous = this.here;
-		this.here = to;
-		this.moves++;
+		const before = this.walk.walked;
+		if (from && at) this.walk.walked += distance(from, at);
+		this.walk.previous = this.walk.here;
+		this.walk.here = to;
+		this.walk.moves++;
 		const arrived = this.arrive();
 		const round = this.roundOn();
 		const reply = round.length ? { ...arrived, lines: [...arrived.lines, ...round] } : arrived;
-		const passed = MARKS.filter((m) => m > before && m <= this.walked).at(-1);
+		const passed = MARKS.filter((m) => m > before && m <= this.walk.walked).at(-1);
 		const hint = this.hint();
 		return {
 			...reply,
@@ -683,11 +661,12 @@ export class Adventure {
 	private hint(): string | undefined {
 		const memory = this.hintKeeper.load();
 		if (memory.off) return undefined;
-		if (this.hintedAt !== undefined && this.moves - this.hintedAt < HINT_EVERY) return undefined;
+		if (this.hintedAt !== undefined && this.walk.moves - this.hintedAt < HINT_EVERY)
+			return undefined;
 		const next = this.unhinted(memory);
 		if (!next) return undefined;
 		this.remember((m) => m.given.push(next[0]));
-		this.hintedAt = this.moves;
+		this.hintedAt = this.walk.moves;
 		return `Hint: ${next[1]}`;
 	}
 
@@ -719,7 +698,8 @@ export class Adventure {
 	 */
 	needs(input: string): StopId[] {
 		const command = parse(input);
-		if (command.verb === 'again') return this.lastCommand ? this.needs(this.lastCommand) : [];
+		if (command.verb === 'again')
+			return this.walk.lastCommand ? this.needs(this.walk.lastCommand) : [];
 		if (command.verb === 'start') {
 			if (command.where === 'anywhere') return [(this.chosen = this.somewhere())];
 			const door = this.door(command.where);
@@ -737,11 +717,11 @@ export class Adventure {
 			const kept = command.slot ? this.saves?.get(command.slot)?.state : undefined;
 			return kept ? [kept.here, ...(kept.previous ? [kept.previous] : [])] : [];
 		}
-		const stop = this.world.stops[this.here];
+		const stop = this.world.stops[this.walk.here];
 		return [
 			...new Set([
-				this.here,
-				...(this.previous ? [this.previous] : []),
+				this.walk.here,
+				...(this.walk.previous ? [this.walk.previous] : []),
 				...(stop?.exits.filter((e) => !e.closed).map((e) => e.to) ?? [])
 			])
 		];
@@ -756,36 +736,14 @@ export class Adventure {
 
 	/** The walk as plain data, to keep. */
 	snapshot(): SavedWalk {
-		const state: WalkState = {
-			here: this.here,
-			...(this.previous ? { previous: this.previous } : {}),
-			moves: this.moves,
-			walked: this.walked,
-			verbose: this.verbose,
-			...(this.following ? { following: true } : {}),
-			...(this.routing ? { route: this.routing } : {}),
-			...(this.circling ? { circle: copyCircle(this.circling) } : {}),
-
-			...(this.lastCommand ? { lastCommand: this.lastCommand } : {}),
-			...(this.lastStreet ? { lastStreet: this.lastStreet } : {}),
-			visited: [...this.visited],
-			explored: [...this.explored],
-			pocket: [...this.pocket],
-			left: [...this.left],
-			carried: [...this.carried],
-			recalled: [...this.recalled],
-			heard: this.heard,
-			framed: [...this.framed],
-			met: [...this.met],
-			connected: [...this.connected]
-		};
+		const state = keepWalk(this.walk);
 		return {
 			version: 1,
 			map: this.mapId(),
 			savedAt: this.clock().toISOString(),
-			place: this.world.stops[this.here].title,
-			walked: this.walked,
-			moves: this.moves,
+			place: this.world.stops[this.walk.here].title,
+			walked: this.walk.walked,
+			moves: this.walk.moves,
 			state
 		};
 	}
@@ -876,64 +834,45 @@ export class Adventure {
 
 	private load(state: WalkState): void {
 		this.choosing = false;
-		this.here = state.here;
-		this.previous = state.previous;
-		this.moves = state.moves;
-		this.walked = state.walked;
-		this.verbose = state.verbose;
-		this.following = state.following ?? false;
-		this.routing = state.route;
-		this.circling = state.circle && copyCircle(state.circle);
-
-		this.lastCommand = state.lastCommand;
-		this.lastStreet = state.lastStreet;
-		this.heard = state.heard;
-		refill(this.visited, state.visited);
-		refill(this.explored, state.explored);
-		refill(this.recalled, state.recalled);
-		refill(this.connected, state.connected);
-		this.pocket.splice(0, this.pocket.length, ...state.pocket);
-		refillMap(this.left, state.left);
-		refillMap(this.carried, state.carried);
-		refillMap(this.framed, state.framed);
-		refillMap(this.met, state.met);
+		this.walk = pickUpWalk(state);
 	}
 
 	private score(): string {
-		const moves = `${this.moves} move${this.moves === 1 ? '' : 's'}`;
-		const next = MARKS.find((m) => m > this.walked);
+		const moves = `${this.walk.moves} move${this.walk.moves === 1 ? '' : 's'}`;
+		const next = MARKS.find((m) => m > this.walk.walked);
 		const mark = next
 			? ` The next mark is ${distanceWords(next)}.`
 			: ' You have passed every mark I know.';
-		return `You have walked ${distanceWords(this.walked)} in ${moves}.${mark}`;
+		return `You have walked ${distanceWords(this.walk.walked)} in ${moves}.${mark}`;
 	}
 
 	private inventory(): string {
-		const yours = this.pocket.length
-			? `You are carrying ${listed(this.pocket.map(quote))}.`
+		const yours = this.walk.pocket.length
+			? `You are carrying ${listed(this.walk.pocket.map(quote))}.`
 			: 'You are carrying nothing. Names, perhaps, if you take them.';
 		// What Guide carries is told once it has come back, never where it was found.
-		const mine = [...this.recalled].filter((n) => !this.pocket.includes(n));
+		const mine = [...this.walk.recalled].filter((n) => !this.walk.pocket.includes(n));
 		return mine.length ? `${yours} I am still carrying ${listed(mine.map(quote))}.` : yours;
 	}
 
 	/** Takes a name: of something left here, a broken name spoken here, or a thing here. Never the thing. */
 	private take(target: string, said: Said = TAKEN): string {
-		const stop = this.world.stops[this.here];
+		const stop = this.world.stops[this.walk.here];
 		const words = target.toLowerCase().split(/\s+/);
 		const means = (name: string) => words.every((w) => name.toLowerCase().includes(w));
-		const left = this.left.get(this.here) ?? [];
+		const left = this.walk.left.get(this.walk.here) ?? [];
 		const name =
 			left.find(means) ??
 			(stop.fragments ?? []).find(means) ??
 			this.visibleThings().find((t) => words.every((w) => t.aliases.includes(w)))?.name;
 		if (!name) return `You see no ${target} here.`;
-		if (this.pocket.includes(name)) return said.already(name);
-		this.pocket.push(name);
-		if (!this.carried.has(name)) this.carried.set(name, { at: this.here, move: this.moves });
+		if (this.walk.pocket.includes(name)) return said.already(name);
+		this.walk.pocket.push(name);
+		if (!this.walk.carried.has(name))
+			this.walk.carried.set(name, { at: this.walk.here, move: this.walk.moves });
 		if (left.includes(name)) {
-			this.left.set(
-				this.here,
+			this.walk.left.set(
+				this.walk.here,
 				left.filter((n) => n !== name)
 			);
 			return said.taken(name);
@@ -943,17 +882,17 @@ export class Adventure {
 
 	private drop(target: string): string {
 		const words = target.toLowerCase().split(/\s+/);
-		const name = this.pocket.find((n) => words.every((w) => n.toLowerCase().includes(w)));
+		const name = this.walk.pocket.find((n) => words.every((w) => n.toLowerCase().includes(w)));
 		if (!name) return 'You are not carrying that.';
-		this.pocket.splice(this.pocket.indexOf(name), 1);
-		this.left.set(this.here, [...(this.left.get(this.here) ?? []), name]);
+		this.walk.pocket.splice(this.walk.pocket.indexOf(name), 1);
+		this.walk.left.set(this.walk.here, [...(this.walk.left.get(this.walk.here) ?? []), name]);
 		return `You leave ${quote(name)} here.`;
 	}
 
 	/** The things here a reader can see: told, or found by exploring; not the land they stand on. */
 	private visibleThings(): Thing[] {
-		const stop = this.world.stops[this.here];
-		const found = this.explored.has(this.here) ? (stop.hidden?.things ?? []) : [];
+		const stop = this.world.stops[this.walk.here];
+		const found = this.walk.explored.has(this.walk.here) ? (stop.hidden?.things ?? []) : [];
 		return [...stop.things, ...found].filter(
 			(t, i, all) => !t.background && all.findIndex((o) => o.name === t.name) === i
 		);
@@ -961,10 +900,10 @@ export class Adventure {
 
 	/** A place returned to: its name, what can be seen, and the ways on. */
 	private brief(): Reply {
-		const stop = this.world.stops[this.here];
+		const stop = this.world.stops[this.walk.here];
 		const names = this.visibleThings().map((t) => withArticle(t.name));
-		this.heard = [...this.heard, []].slice(-2);
-		this.lastStreet = undefined;
+		this.walk.heard = [...this.walk.heard, []].slice(-2);
+		this.walk.lastStreet = undefined;
 		return {
 			title: stop.title,
 			lines: [...(names.length ? [`You can see ${listed(names)} here.`] : []), this.exits()]
@@ -973,19 +912,20 @@ export class Adventure {
 
 	/** A place reached: told, and now and then a name the reader asked to be kept comes back. */
 	private arrive(): Reply {
-		const told = this.visited.has(this.here) && !this.verbose ? this.brief() : this.told();
-		this.visited.add(this.here);
-		const left = (this.left.get(this.here) ?? []).map(
+		const told =
+			this.walk.visited.has(this.walk.here) && !this.walk.verbose ? this.brief() : this.told();
+		this.walk.visited.add(this.walk.here);
+		const left = (this.walk.left.get(this.walk.here) ?? []).map(
 			(n) => `${quote(n)} lies here, where you left it.`
 		);
 		const crossed = [this.crossing(), ...this.zoning()].filter((l): l is string => !!l);
 		const reply = crossed.length ? { ...told, lines: [...crossed, ...told.lines] } : told;
-		const stop = this.world.stops[this.here];
+		const stop = this.world.stops[this.walk.here];
 		const back = this.recall(stop.fragments ?? []) ?? this.connect(stop.terms ?? []);
 		for (const t of stop.terms ?? [])
-			this.met.set(t.term, [
-				...(this.met.get(t.term) ?? []),
-				{ said: t.said, at: this.here, move: this.moves, street: t.street }
+			this.walk.met.set(t.term, [
+				...(this.walk.met.get(t.term) ?? []),
+				{ said: t.said, at: this.walk.here, move: this.walk.moves, street: t.street }
 			]);
 		const lines = [...reply.lines];
 		const exits =
@@ -1018,11 +958,11 @@ export class Adventure {
 				!postcodeOf(command.where) &&
 				!this.door(command.where)
 			);
-		if (command.verb === 'go' && this.circling) return true;
+		if (command.verb === 'go' && this.walk.circle) return true;
 		if (command.verb === 'route') return !!command.target;
 		if (command.verb === 'restore' && command.slot)
 			return !!this.saves?.get(command.slot)?.state.route;
-		return command.verb === 'go' && !!this.routing;
+		return command.verb === 'go' && !!this.walk.route;
 	}
 
 	/**
@@ -1031,8 +971,8 @@ export class Adventure {
 	 * back while there is another way. Guide says which way, never why.
 	 */
 	private drift(): Reply {
-		const exits = this.world.stops[this.here].exits.filter((e) => !e.closed);
-		const onward = exits.filter((e) => e.to !== this.previous);
+		const exits = this.world.stops[this.walk.here].exits.filter((e) => !e.closed);
+		const onward = exits.filter((e) => e.to !== this.walk.previous);
 		const ways = onward.length ? onward : exits;
 		if (!ways.length) return { lines: ['There is nowhere to drift to.'] };
 		const pull = (to: StopId) => {
@@ -1041,9 +981,9 @@ export class Adventure {
 			return (
 				1 +
 				3 * (there.fragments?.length ?? 0) +
-				((there.terms ?? []).some((t) => this.met.has(t.term)) ? 2 : 0) +
+				((there.terms ?? []).some((t) => this.walk.met.has(t.term)) ? 2 : 0) +
 				(there.plain ? 1 : 0) +
-				(this.visited.has(to) ? 0 : 1)
+				(this.walk.visited.has(to) ? 0 : 1)
 			);
 		};
 		const weights = ways.map((e) => pull(e.to));
@@ -1058,7 +998,7 @@ export class Adventure {
 		const index = this.index();
 		if (!index) return ['I cannot find the way just now.'];
 		const goals = goalsFor(index, target);
-		const plan = planRoute(index, this.here, goals);
+		const plan = planRoute(index, this.walk.here, goals);
 		switch (plan.kind) {
 			case 'unknown':
 				return ['I know of nowhere by that name on my map.'];
@@ -1067,29 +1007,29 @@ export class Adventure {
 			case 'unreachable':
 				return [`I know of no way from here to ${quote(plan.to)}.`];
 			case 'way':
-				this.routing = { to: plan.to, goals: [...goals] };
+				this.walk.route = { to: plan.to, goals: [...goals] };
 				return [routeWords(plan), 'I will say the way at each turn.'];
 		}
 	}
 
 	private unroute(): string[] {
-		const had = !!this.routing;
-		this.routing = undefined;
+		const had = !!this.walk.route;
+		this.walk.route = undefined;
 		return [had ? 'I let the way go.' : 'There is no way I am keeping.'];
 	}
 
 	/** The way on from here, while one is kept: the next turn, or arrival, when it lets the way go. */
 	private wayOn(): string | undefined {
-		const index = this.routing && this.index();
-		if (!this.routing || !index) return undefined;
-		const plan = planRoute(index, this.here, new Map(this.routing.goals));
+		const index = this.walk.route && this.index();
+		if (!this.walk.route || !index) return undefined;
+		const plan = planRoute(index, this.walk.here, new Map(this.walk.route.goals));
 		if (plan.kind === 'here') {
-			this.routing = undefined;
+			this.walk.route = undefined;
 			return `You are at ${quote(plan.to)}. That was the way.`;
 		}
 		if (plan.kind !== 'way') return undefined;
 		const [next] = plan.legs;
-		return `Your way to ${quote(this.routing.to)}: ${next.label}${next.street ? ` (${next.street})` : ''}.`;
+		return `Your way to ${quote(this.walk.route.to)}: ${next.label}${next.street ? ` (${next.street})` : ''}.`;
 	}
 
 	/** A glass set down on the map, its edge through here, the centre off by chance: the circle to walk. */
@@ -1099,7 +1039,7 @@ export class Adventure {
 		// Chance turns the glass; of twelve turns from there, it is set where the streets go round best.
 		const first = this.chance() * 360;
 		const circle = Array.from({ length: 12 }, (_, i) =>
-			circleThrough(index, this.here, (first + i * 30) % 360)
+			circleThrough(index, this.walk.here, (first + i * 30) % 360)
 		)
 			.filter((c) => c !== undefined)
 			.map((c) => ({ c, walked: walkable(index, c) }))
@@ -1108,9 +1048,9 @@ export class Adventure {
 				undefined
 			)?.c;
 		if (!circle) return { lines: ['The glass will not sit here: the streets do not go round.'] };
-		this.routing = undefined;
-		this.circling = { ...circle, next: 1, record: [], seen: [], strayed: 0 };
-		this.note(this.here);
+		this.walk.route = undefined;
+		this.walk.circle = { ...circle, next: 1, record: [], seen: [], strayed: 0 };
+		this.note(this.walk.here);
 		const across = Math.round((circle.radius * 2) / 10) * 10;
 		return {
 			lines: [
@@ -1121,14 +1061,14 @@ export class Adventure {
 	}
 
 	private lift(): Reply {
-		const had = !!this.circling;
-		this.circling = undefined;
+		const had = !!this.walk.circle;
+		this.walk.circle = undefined;
 		return { lines: [had ? 'I lift the glass.' : 'There is no glass set down.'] };
 	}
 
 	/** What a place gives the record: its names as found, and the named things in it. Nothing new. */
 	private note(id: StopId): void {
-		const c = this.circling;
+		const c = this.walk.circle;
 		const stop = this.world.stops[id];
 		if (!c || !stop) return;
 		if (stop.at) c.strayed = Math.max(c.strayed, offCurve(c, stop.at));
@@ -1148,7 +1088,7 @@ export class Adventure {
 
 	/** The next turn round the circle. */
 	private turn(): string[] {
-		const c = this.circling;
+		const c = this.walk.circle;
 		const index = this.index();
 		if (!c || !index) return [];
 		// A point the streets reach only far round is passed over: the way is kept to the curve, not to
@@ -1156,14 +1096,14 @@ export class Adventure {
 		const arc = arcOf(c);
 		let plan = planRoute(
 			index,
-			this.here,
+			this.walk.here,
 			new Map([[c.points[c.next % c.points.length], 'the circle']])
 		);
 		while (c.next < c.points.length && (plan.kind !== 'way' || plan.metres > FAR * arc)) {
 			c.next++;
 			plan = planRoute(
 				index,
-				this.here,
+				this.walk.here,
 				new Map([[c.points[c.next % c.points.length], 'the circle']])
 			);
 		}
@@ -1175,12 +1115,12 @@ export class Adventure {
 
 	/** On arriving while a circle is walked: the record kept, the next turn, or the circle closed. */
 	private roundOn(): string[] {
-		const c = this.circling;
+		const c = this.walk.circle;
 		if (!c) return [];
-		this.note(this.here);
+		this.note(this.walk.here);
 		const closing = c.next >= c.points.length;
-		if (closing && this.here === c.points[0]) {
-			this.circling = undefined;
+		if (closing && this.walk.here === c.points[0]) {
+			this.walk.circle = undefined;
 			const strayed = Math.max(1, Math.round(c.strayed));
 			return [
 				'The circle is closed.',
@@ -1190,14 +1130,14 @@ export class Adventure {
 			];
 		}
 		// A point reached, or one further round, passed on the way.
-		const reached = c.points.indexOf(this.here, c.next);
+		const reached = c.points.indexOf(this.walk.here, c.next);
 		if (!closing && reached >= 0) c.next = reached + 1;
 		return this.turn();
 	}
 
 	/** gps on keeps the map beside the walk, stop after stop; gps off puts it away. */
 	private follow(on: boolean): Reply {
-		this.following = on;
+		this.walk.following = on;
 		return on
 			? this.followed({ lines: ['I will keep the map beside you as we go.'] })
 			: { lines: ['I put the map away.'], follow: false };
@@ -1205,8 +1145,8 @@ export class Adventure {
 
 	/** A reply about a place, with the map moved to it while the reader keeps the map on. */
 	private followed(reply: Reply): Reply {
-		const stop = this.world.stops[this.here];
-		if (!this.following || !stop.at) return reply;
+		const stop = this.world.stops[this.walk.here];
+		if (!this.walk.following || !stop.at) return reply;
 		return {
 			...reply,
 			map: { latitude: stop.at[0], longitude: stop.at[1], label: stop.title },
@@ -1216,7 +1156,7 @@ export class Adventure {
 
 	/** Where the map puts this stop, and a link to it on Google Maps: never where the reader is. */
 	private gps(): Reply {
-		const stop = this.world.stops[this.here];
+		const stop = this.world.stops[this.walk.here];
 		const at = stop.at;
 		if (!at) return { lines: ['I cannot say where this is on any map.'] };
 		const [lat, lon] = at.map((n) => n.toFixed(5));
@@ -1232,8 +1172,9 @@ export class Adventure {
 
 	/** A step into or out of the zones another account draws over the map, each told once. */
 	private zoning(): string[] {
-		const before = this.previous === undefined ? [] : (this.world.stops[this.previous].zones ?? []);
-		const now = this.world.stops[this.here].zones ?? [];
+		const before =
+			this.walk.previous === undefined ? [] : (this.world.stops[this.walk.previous].zones ?? []);
+		const now = this.world.stops[this.walk.here].zones ?? [];
 		const names = (zones: { name: string }[]) => new Set(zones.map((z) => z.name));
 		const was = names(before);
 		const is = names(now);
@@ -1247,8 +1188,9 @@ export class Adventure {
 
 	/** A step into, out of or between the areas another account draws, such as wards. */
 	private crossing(): string | undefined {
-		const from = this.previous === undefined ? undefined : this.world.stops[this.previous].area;
-		const to = this.world.stops[this.here].area;
+		const from =
+			this.walk.previous === undefined ? undefined : this.world.stops[this.walk.previous].area;
+		const to = this.world.stops[this.walk.here].area;
 		if (from?.name === to?.name) return undefined;
 		if (!from) return hearsay(`you are in ${to!.name}, a ${to!.kind}`);
 		return to
@@ -1258,7 +1200,7 @@ export class Adventure {
 
 	/** Where the map puts this place, for what is asked of it: never where the reader is. */
 	position(): { latitude: number; longitude: number } | undefined {
-		const at = this.world.stops[this.here].at;
+		const at = this.world.stops[this.walk.here].at;
 		return at ? { latitude: at[0], longitude: at[1] } : this.world.weatherAt;
 	}
 
@@ -1287,7 +1229,7 @@ export class Adventure {
 
 	/** What others keep beyond the map, from where the map puts this place; or owning to not knowing. */
 	private beyond(): string {
-		const at = this.world.stops[this.here].at;
+		const at = this.world.stops[this.walk.here].at;
 		return (
 			(at && beyondLine(this.world.beyond ?? [], at)) ??
 			'Beyond the map there may be more. I could not say what.'
@@ -1296,14 +1238,14 @@ export class Adventure {
 
 	/** What the nearest camera saw, as the page found it; nothing happens without an answer. */
 	camera(facts: readonly Fact[] | undefined): Reply {
-		const at = this.world.stops[this.here].at;
+		const at = this.world.stops[this.walk.here].at;
 		if (!facts || !at) return { lines: ['Nothing happens.'] };
 		return cameraLines(facts, at);
 	}
 
 	/** The bus and tram stops here that TfL has live arrivals for. */
 	transitHere(): TransitStop[] {
-		return this.world.stops[this.here].transit ?? [];
+		return this.world.stops[this.walk.here].transit ?? [];
 	}
 
 	/** Works and closures on the roads here, as the page found them; each told once a walk, nothing without an answer. */
@@ -1339,9 +1281,9 @@ export class Adventure {
 
 	/** A place as the reader arrives: what they heard at the last two places is not said again. */
 	private told(): Reply {
-		const stop = this.world.stops[this.here];
+		const stop = this.world.stops[this.walk.here];
 		if (!stop.parts) return this.look();
-		const recent = new Set(this.heard.flat());
+		const recent = new Set(this.walk.heard.flat());
 		// Prose cannot be cut; where it would say again most of what was just heard, the template can.
 		const things = (stop.plain?.parts ?? [])
 			.flat()
@@ -1367,7 +1309,7 @@ export class Adventure {
 						if (RATIONED.includes(p.kind)) heard.push(p.key);
 						if (p.kind === 'where') {
 							street = p.street;
-							if (p.street && p.street === this.lastStreet) return this.goOn(p.text);
+							if (p.street && p.street === this.walk.lastStreet) return this.goOn(p.text);
 							if (p.options) {
 								this.whereForm = (this.whereForm + 1) % p.options.length;
 								return p.options[this.whereForm];
@@ -1379,8 +1321,8 @@ export class Adventure {
 					.join(' ');
 			})
 			.filter(Boolean);
-		this.heard = [...this.heard, heard].slice(-2);
-		this.lastStreet = street;
+		this.walk.heard = [...this.walk.heard, heard].slice(-2);
+		this.walk.lastStreet = street;
 		return { title: stop.title, lines };
 	}
 
@@ -1393,28 +1335,28 @@ export class Adventure {
 	/** A framing line put another way than last time. */
 	private frame(options: readonly string[]): string {
 		const key = options.join('|');
-		const last = this.framed.get(key);
+		const last = this.walk.framed.get(key);
 		const next = options[(options.indexOf(last ?? '') + 1) % options.length];
-		this.framed.set(key, next);
+		this.walk.framed.set(key, next);
 		return next;
 	}
 
 	/** Two names that share a word, met in different places, set side by side if chance allows. */
 	private connect(here: readonly Term[]): string | undefined {
-		if (this.connected.size >= CONNECTIONS) return undefined;
+		if (this.walk.connected.size >= CONNECTIONS) return undefined;
 		for (const t of here) {
-			if (this.connected.has(t.term)) continue;
-			const earlier = (this.met.get(t.term) ?? []).find(
+			if (this.walk.connected.has(t.term)) continue;
+			const earlier = (this.walk.met.get(t.term) ?? []).find(
 				(e) =>
 					!e.said.toLowerCase().includes(t.said.toLowerCase()) &&
 					!t.said.toLowerCase().includes(e.said.toLowerCase()) &&
-					e.at !== this.here &&
-					this.moves - e.move >= CONNECT_AFTER &&
+					e.at !== this.walk.here &&
+					this.walk.moves - e.move >= CONNECT_AFTER &&
 					!(e.street && t.street)
 			);
 			if (!earlier) continue;
 			if (this.chance() >= CONNECT_CHANCE) return undefined;
-			this.connected.add(t.term);
+			this.walk.connected.add(t.term);
 			return `“${t.said}”. Earlier, “${earlier.said}”.`;
 		}
 		return undefined;
@@ -1422,32 +1364,35 @@ export class Adventure {
 
 	/** A fragment carried long enough to come back here, out of place, if chance allows. */
 	private recall(here: readonly string[]): string | undefined {
-		if (this.recalled.size >= RECALLS || here.length) return undefined;
-		const ready = [...this.carried].filter(
-			([f, c]) => !this.recalled.has(f) && c.at !== this.here && this.moves - c.move >= RECALL_AFTER
+		if (this.walk.recalled.size >= RECALLS || here.length) return undefined;
+		const ready = [...this.walk.carried].filter(
+			([f, c]) =>
+				!this.walk.recalled.has(f) &&
+				c.at !== this.walk.here &&
+				this.walk.moves - c.move >= RECALL_AFTER
 		);
 		if (!ready.length || this.chance() >= RECALL_CHANCE) return undefined;
 		const [fragment] = ready[Math.floor(this.chance() * ready.length)];
-		this.recalled.add(fragment);
+		this.walk.recalled.add(fragment);
 		return RECALLED[Math.floor(this.chance() * RECALLED.length)](fragment);
 	}
 
 	/** Whether Guide carries a name the words mean, one that has already come back. */
 	private carrying(target: string): boolean {
 		const words = target.toLowerCase().split(/\s+/);
-		return [...this.recalled].some((n) => words.every((w) => n.toLowerCase().includes(w)));
+		return [...this.walk.recalled].some((n) => words.every((w) => n.toLowerCase().includes(w)));
 	}
 
 	private explore(): Reply {
-		const hidden = this.world.stops[this.here].hidden;
-		if (!hidden || this.explored.has(this.here))
+		const hidden = this.world.stops[this.walk.here].hidden;
+		if (!hidden || this.walk.explored.has(this.walk.here))
 			return { lines: ['You look around, and find nothing more than I have told you.'] };
-		this.explored.add(this.here);
+		this.walk.explored.add(this.walk.here);
 		return { lines: hidden.lines };
 	}
 
 	private examine(target: string): Reply {
-		const stop = this.world.stops[this.here];
+		const stop = this.world.stops[this.walk.here];
 		if (EVERYTHING.has(target)) return { lines: [this.whatToExamine()] };
 		const words = target.split(/\s+/);
 		const named = (among: Thing[]) =>
@@ -1465,8 +1410,8 @@ export class Adventure {
 
 	/** What there is to examine here, by name: the street, and each thing told or found. */
 	private whatToExamine(): string {
-		const stop = this.world.stops[this.here];
-		const found = this.explored.has(this.here) ? (stop.hidden?.things ?? []) : [];
+		const stop = this.world.stops[this.walk.here];
+		const found = this.walk.explored.has(this.walk.here) ? (stop.hidden?.things ?? []) : [];
 		const things = [...stop.things, ...found].filter(
 			(t, i, all) => !t.background && all.findIndex((o) => o.name === t.name) === i
 		);
@@ -1504,21 +1449,4 @@ function matchExits(exits: readonly CompiledExit[], where: string): CompiledExit
 	const qualified = exits.filter((e) => e.label.startsWith(`${where} (`));
 	if (qualified.length) return qualified;
 	return exits.filter((e) => e.street?.toLowerCase() === where);
-}
-
-/** A set holding just these items. */
-function refill<T>(set: Set<T>, items: readonly T[]): void {
-	set.clear();
-	for (const item of items) set.add(item);
-}
-
-/** A map holding just these entries. */
-function refillMap<K, V>(map: Map<K, V>, entries: readonly [K, V][]): void {
-	map.clear();
-	for (const [k, v] of entries) map.set(k, v);
-}
-
-/** A circle apart from the one walked, so a kept walk does not change as the walk goes on. */
-function copyCircle(c: Circling): Circling {
-	return { ...c, points: [...c.points], record: [...c.record], seen: [...c.seen] };
 }
