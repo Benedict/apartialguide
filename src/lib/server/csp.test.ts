@@ -83,3 +83,12 @@ describe('withCsp', () => {
 		expect(withCsp(page, { newsUrl: '/api/news' })).not.toContain('gdeltproject');
 	});
 });
+
+describe('withCsp, with a sign-up form', () => {
+	const page = '<!doctype html><html><head><meta charset="utf-8"></head><body></body></html>';
+	it('lets the page frame the list’s own form, and nothing else', () => {
+		const html = withCsp(page, { frames: ['https://inventa.substack.com/embed'] });
+		expect(html).toContain('frame-src https://inventa.substack.com;');
+		expect(withCsp(page)).not.toContain('frame-src');
+	});
+});

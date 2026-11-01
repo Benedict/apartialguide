@@ -36,8 +36,15 @@ export function withCsp(
 	{
 		flightsUrl,
 		newsUrl,
-		analytics
-	}: { flightsUrl?: string; newsUrl?: string; analytics?: boolean } = {}
+		analytics,
+		frames = []
+	}: {
+		flightsUrl?: string;
+		newsUrl?: string;
+		analytics?: boolean;
+		/** Forms the page may open in a frame, once the reader presses for one. */
+		frames?: string[];
+	} = {}
 ): string {
 	const google = analytics ? GOOGLE.join(' ') : '';
 	// The site's own functions, where one is served from another site (a URL rather than a path).
@@ -53,6 +60,9 @@ export function withCsp(
 		`connect-src 'self' https://api.open-meteo.com https://air-quality-api.open-meteo.com https://api.tfl.gov.uk ${CAMERAS} https://celestrak.org ${TILES} ${google}${flights.map((f) => ` ${f}`).join('')}`,
 		'worker-src blob:',
 		"manifest-src 'self'",
+		...(frames.length
+			? [`frame-src ${[...new Set(frames.map((f) => new URL(f).origin))].join(' ')}`]
+			: []),
 		"object-src 'none'",
 		"base-uri 'none'",
 		"form-action 'self'"

@@ -236,6 +236,8 @@ async function microsite(): Promise<string> {
 		siteUrl: process.env.SITE_URL || undefined,
 		...(world.doors ? { doors: world.doors } : {}),
 		// What is new, from the changelog's lines for walkers.
-		news: existsSync('CHANGELOG.md') ? whatsNew(readFileSync('CHANGELOG.md', 'utf8')) : []
+		news: existsSync('CHANGELOG.md') ? whatsNew(readFileSync('CHANGELOG.md', 'utf8')) : [],
+		// The mailing list (SIGNUP_URL): a Substack form opens in place once pressed, any other is linked.
+		signup: process.env.SIGNUP_URL || undefined
 	});
 }

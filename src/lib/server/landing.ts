@@ -1,4 +1,5 @@
 import { withCsp } from './csp';
+import { signupFrame } from './signup';
 import { areaSlug } from '../core/release';
 import { COMMANDS, headMeta, homeDescription, jsonLd, PAGES, profileLinks, REPO } from './meta';
 import type { News } from './changes';
@@ -30,6 +31,8 @@ export interface LandingInput {
 	doors?: { name: string; stop?: string }[];
 	/** What is new, from the changelog, newest first. */
 	news?: News[];
+	/** The mailing list's own page (`SIGNUP_URL`), if there is one. */
+	signup?: string;
 }
 
 const esc = (text: string) =>
@@ -52,8 +55,10 @@ export function landingPage({
 	noindex,
 	siteUrl,
 	doors = [],
-	news = []
+	news = [],
+	signup
 }: LandingInput): string {
+	const frame = signupFrame(signup);
 	const open = doors.filter((d) => d.stop && d.name !== place.name);
 	const shut = doors.filter((d) => !d.stop);
 	const ways = open.length
@@ -128,6 +133,7 @@ ${themeCss()}
 	/* A link first in the page, seen only when a keyboard reaches it, to skip to what matters. */
 	.skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; background: var(--bright); color: var(--paper); padding: 0.6rem 1rem; font-weight: 700; }
 	.skip:focus { top: 0.5rem; }
+	.signup-form { width: 100%; max-width: 30rem; height: 320px; border: 1px solid var(--muted); background: #fff; }
 </style>
 </head>
 <body>
@@ -146,7 +152,7 @@ ${themeCss()}
 			${played}
 	</div>
 
-${whatsNewSection(news)}
+${whatsNewSection(news)}${signupSection(signup, frame)}
 	<h2>How it works</h2>
 	<p>The places are built from OpenStreetMap and public records: food hygiene ratings, planning applications, house sales, listed buildings, bus stops.</p>
 	<p>Nothing is made up. Where the data is wrong or missing, the game says so as it stands. A bank whose sign was recorded as “est Bank” is called “est Bank”.</p>
@@ -170,7 +176,7 @@ ${gaId ? consentStrip('this site', 'privacy/') : ''}
 </body>
 </html>
 `,
-		{ analytics: !!gaId }
+		{ analytics: !!gaId, frames: frame ? [frame] : [] }
 	);
 }
 
@@ -187,4 +193,20 @@ function whatsNewSection(news: readonly News[]): string {
 		)
 		.join('\n\t');
 	return `	<h2>What’s new</h2>\n\t${days}\n\t<p>That is the latest; <a href="${REPO}/blob/main/CHANGELOG.md">all the changes</a> are in the changelog.</p>\n`;
+}
+
+/**
+ * The mailing list, where there is one: a link to its own page, or, for a form that may open here,
+ * a link that opens it in place once pressed, so nothing is asked of the list's provider before.
+ */
+function signupSection(signup: string | undefined, frame: string | undefined): string {
+	if (!signup) return '';
+	const opens = frame ? ` data-frame="${esc(frame)}"` : '';
+	const said = frame
+		? 'The form opens here when you press; nothing is sent to the list before you do.'
+		: 'You sign up on the list’s own page.';
+	return `	<h2>Hear what’s new</h2>
+	<p>Now and then, a letter when the walk grows. ${said}</p>
+	<p class="signup"><a class="begin" href="${esc(signup)}"${opens}>Sign up</a></p>
+`;
 }
