@@ -1,6 +1,6 @@
 # To do (Benedict)
 
-Things only you can do. Claude can't change repository settings, sign up for services or make these decisions for you. Ideas for later are in `BACKLOG.md`.
+Things only you can do. Claude can't change repository settings, sign up for services or make these decisions for you. Features and ideas for later are in `BACKLOG.md`, the roadmap.
 
 Repository settings are under **Settings → Secrets and variables → Actions** on GitHub. A **variable** can be public; a **secret** stays hidden.
 
@@ -21,6 +21,8 @@ Repository settings are under **Settings → Secrets and variables → Actions**
 - [ ] **Sources to leave out.** If any source shouldn't be used, list it on `LEAVE_OUT=` in `data/records/use.env`.
 - [ ] **The drawn route ("Auster step 3").** Answer the open questions in its brief so it can be built.
 - [ ] **A few lines about you** for the About page, and a link if you want one.
+- [ ] **Count visits, or not.** With the variable `GA_MEASUREMENT_ID` (a Google Analytics measurement ID), the site counts visits once a reader says yes, and never what they type; without it nothing is counted. The roadmap's next phase is chosen by what readers do, so without counting it is chosen blind.
+- [ ] **"lived" or "loved"** in Guide's introduction: say which.
 
 ## Keys, for more sources (optional)
 
