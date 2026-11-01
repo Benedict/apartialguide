@@ -20,6 +20,11 @@ Where things stand: the whole of Croydon is walked (all twenty areas, about 14,4
   - The walk as the reader took it, doubling back and all, or tidied into a route; only the first is honest to the drift.
   - Safety, as the game walks on paper: main roads it leaves out, crossings it keeps. The directions should name the crossings, and say plainly they are no substitute for looking.
   - Made in the reader's browser from their own walk, sent nowhere, like the saves.
+- **Walk a named way.** The long-distance walks that cross the borough: the Vanguard Way (from East Croydon towards the coast), the London Loop, the Wandle Trail and others. `follow the Vanguard Way` would give its next turn at each stop, as `route to` does, and a stop on it would say so ("This is the Vanguard Way, so the map says."), with how far along it the reader has come. The groundwork comes first: the map holds these ways as relations, and the snapshot keeps none (`server/opl.ts` passes over every relation), so only a few signposts and path pieces carrying the name come through today. To settle first:
+  - Which relations to keep: walking and hiking routes only (`route=hiking|foot`), with their members' order, so a way can be followed end to end.
+  - Where a way runs beyond the map's edge, as the Vanguard Way does: say where it goes next by name only, and that the map stops there.
+  - Whether it is a third way of going beside routes and drift, or a route the reader asks for by the way's name.
+  - The same relations give cycle routes, bus routes and tram lines, if wanted later.
 - **The glass, further.** Offer its record as a picture to keep or share (the social script's type and colours); quote a plaque's words in the record as a plaque's.
 - **More of the classic engine.** A walk's end ("you have walked as far as Guide remembers" at the last mark); a map of where you have been.
 - **The drawn route ("Auster step 3")**, once its brief's questions are answered (`TODO.md`).
