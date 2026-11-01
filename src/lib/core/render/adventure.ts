@@ -698,7 +698,79 @@ function details(tags: Tags): string[] {
 	if (tags.operator) sentences.push(`Run by ${tags.operator}.`);
 	const namesake = tags['etymology:label'];
 	if (namesake) sentences.push(`Named for ${namesake}.`);
+	sentences.push(...beyondKind(tags));
 	return sentences;
+}
+
+const quoteEach = (value: string) =>
+	value
+		.split(/\n|\s*\/\s*(?=\S)/)
+		.map((line) => line.trim())
+		.filter(Boolean)
+		.map((line) => `“${line}”`)
+		.join(', ');
+
+const LEAVES: Record<string, string> = { needleleaved: 'needle-leaved' };
+const WAY_ON: Record<string, string> = { yes: 'on a bridge', viaduct: 'on a viaduct' };
+const WAY_IN: Record<string, string> = {
+	yes: 'in a tunnel',
+	culvert: 'in a culvert',
+	building_passage: 'through a building'
+};
+
+/**
+ * What the map says of a thing beyond its kind and name, each as found: the words on it, a mapper's
+ * note, its other names, the cypher on a post box (never the reign it stands for), its date and
+ * listing, a tree's species, what a ground is for, a footpath's designation, a bridge or tunnel,
+ * steps counted, a board's subject, a work of art's kind, the counties either side of a marker.
+ * No technical value: a generator's output, a voltage, a roof's shape.
+ */
+function beyondKind(tags: Tags): string[] {
+	const s: string[] = [];
+	if (tags.inscription) s.push(`On it: ${quoteEach(tags.inscription)}.`);
+	const note = tags.description;
+	// A note is spoken whole or not at all: never one that carries a technical value or runs long.
+	if (note && note.length <= 150 && !/\d\s?[kMG]?[VW]\b/.test(note))
+		s.push(`The map notes: “${note}”${/[.!?]$/.test(note) ? '' : '.'}`);
+	if (tags.alt_name) s.push(`Also called “${tags.alt_name}”.`);
+	if (tags.official_name) s.push(`Officially “${tags.official_name}”.`);
+	if (tags.short_name) s.push(`“${tags.short_name}” for short.`);
+	if (tags['name:fa']) s.push(`In Persian, “${tags['name:fa']}”.`);
+	if (tags['tunnel:name']) s.push(`The tunnel is “${tags['tunnel:name']}”.`);
+	if (tags.royal_cypher) s.push(`It bears the cypher “${tags.royal_cypher}”.`);
+	const date = tags.start_date;
+	if (date && /^\d{4}(-\d{2}(-\d{2})?)?$/.test(date))
+		s.push(
+			`Its date is given as ${date.length === 10 ? longDate(date) : date.length === 7 ? monthYear(date) : date}.`
+		);
+	if (tags.listed_status) s.push(`It is listed, ${tags.listed_status}.`);
+	const species = tags['species:en'];
+	if (species || tags.species)
+		s.push(
+			`Its species is given as ${[species, tags.species && `“${tags.species}”`].filter(Boolean).join(', ')}.`
+		);
+	else if (tags['genus:en'] || tags.genus)
+		s.push(
+			`Its genus is given as ${[tags['genus:en'], tags.genus && `“${tags.genus}”`].filter(Boolean).join(', ')}.`
+		);
+	const leaves = [tags.leaf_type, tags.leaf_cycle]
+		.filter((v): v is string => !!v && v !== 'mixed')
+		.map((v) => LEAVES[v] ?? humanise(v));
+	if (leaves.length) s.push(`${capitalise(leaves.join(', '))}.`);
+	if (tags.sport) s.push(`For ${list(tags.sport.split(';').map((v) => humanise(v.trim())))}.`);
+	if (tags.designation)
+		s.push(
+			`${capitalise(article(humanise(tags.designation)))}${tags.prow_ref ? `, “${tags.prow_ref}”` : ''}.`
+		);
+	if (tags.bridge && WAY_ON[tags.bridge]) s.push(`It runs ${WAY_ON[tags.bridge]}.`);
+	if (tags.tunnel && WAY_IN[tags.tunnel]) s.push(`It runs ${WAY_IN[tags.tunnel]}.`);
+	if (tags.step_count && /^\d+$/.test(tags.step_count))
+		s.push(`It has ${tags.step_count} step${tags.step_count === '1' ? '' : 's'}.`);
+	if (tags.board_type) s.push(`Its subject is given as ${humanise(tags.board_type)}.`);
+	if (tags.artwork_type) s.push(`It is ${article(humanise(tags.artwork_type))}.`);
+	if (tags['left:county'] && tags['right:county'] && tags['left:county'] !== tags['right:county'])
+		s.push(`${tags['left:county']} on one side, ${tags['right:county']} on the other.`);
+	return s;
 }
 
 /** "in 1868", "in May 1868", "on 1 May 1868": a date as precise as it was given. */
