@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you. How to write a place, and the rules its prose must keep, are in [docs/writing-prose.md](https://github.com/Benedict/osm-text-adventure/blob/main/docs/writing-prose.md). In short: walk to the place, type `plainly` to hear everything Guide has there, and write your version from that alone.
+        Thank you. How to write a place, and the rules its prose must keep, are in [docs/writing-prose.md](https://github.com/Benedict/apartialguide/blob/main/docs/writing-prose.md). In short: walk to the place, type `plainly` to hear everything Guide has there, and write your version from that alone.
   - type: input
     id: where
     attributes:

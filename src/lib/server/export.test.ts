@@ -253,7 +253,7 @@ describe('exportPage', () => {
 		const about = page().match(/<section id="about"[^]*?<\/section>/)![0];
 		expect(about).toContain('GNU Affero General Public License');
 		expect(about).toContain('https://creativecommons.org/licenses/by-sa/4.0/');
-		expect(about).toContain('https://github.com/Benedict/osm-text-adventure');
+		expect(about).toContain('https://github.com/Benedict/apartialguide');
 	});
 
 	it('says on About that the map’s snapshot is available on request, as OpenStreetMap’s licence asks', () => {
