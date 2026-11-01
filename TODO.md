@@ -1,6 +1,6 @@
 # To do (Benedict)
 
-Things only you can do. Claude can't change repository settings, sign up for services or make these decisions for you. Ideas for later are in `BACKLOG.md`.
+Things only you can do. Claude can't change repository settings, sign up for services or make these decisions for you. Features and ideas for later are in `BACKLOG.md`, the roadmap.
 
 Repository settings are under **Settings → Secrets and variables → Actions** on GitHub. A **variable** can be public; a **secret** stays hidden.
 
@@ -21,6 +21,8 @@ Repository settings are under **Settings → Secrets and variables → Actions**
 - [ ] **Sources to leave out.** If any source shouldn't be used, list it on `LEAVE_OUT=` in `data/records/use.env`.
 - [ ] **The drawn route ("Auster step 3").** Answer the open questions in its brief so it can be built.
 - [ ] **A few lines about you** for the About page, and a link if you want one.
+- [ ] **Count visits, or not.** With the variable `GA_MEASUREMENT_ID` (a Google Analytics measurement ID), the site counts visits once a reader says yes, and never what they type; without it nothing is counted. The roadmap's next phase is chosen by what readers do, so without counting it is chosen blind.
+- [ ] **"lived" or "loved"** in Guide's introduction: say which.
 
 ## Keys, for more sources (optional)
 
@@ -33,4 +35,5 @@ Repository settings are under **Settings → Secrets and variables → Actions**
 
 - [ ] **The Blitz bomb census.** Bomb Sight's terms allow only non-commercial _individual, academic and research_ use, and forbid commercial exploitation. Showing its bombs to everyone in a public walk isn't clearly any of those, so it needs their written permission. Two routes: send the drafted letter (`docs/letters/bomb-sight.md`; check Dr Kate Jones is still the right person), or write to Croydon Archives for the borough's own air raid records (`docs/letters/croydon-archives.md`; check their current enquiries address). Also look at Surrey History Centre's Surrey WW2 Bomb Map, launched in June 2026, which is said to include Croydon: check its terms, and whether it covers Croydon as published. If its terms allow reuse, it may be the best source of all.
 - [ ] **Digital Britannia** (Roman roads and sites). The licence is confirmed: © Mike Haken 2026, CC BY-NC 4.0, always credited, and never in a site, app or print publication that charges a fee without his written consent. This site is free, so it can be used. Download the GeoJSON layers (roads, settlements, military sites, camps, milestones) in longitude and latitude from <https://roadsofromanbritain.org/digital-britannia/downloads.html>, put them in a folder, and tell Claude where they are. If they come only in British National Grid, say so; they need converting first.
+- [ ] **Slow Ways** (walking routes between towns and villages). Their terms allow the routes only for personal, non-commercial use (© Crown Copyright / Ordnance Survey); use elsewhere needs Slow Ways CIC's permission. Ask whether the free walk may show Croydon's eight Slow Ways, credited on About, or whether their planned open licence (CC BY-SA 4.0) is out yet. Claude can draft the email.
 - [ ] **Civilian war dead.** The CWGC's records need a written licence. Write to them if you want them told.
