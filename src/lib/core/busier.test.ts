@@ -40,6 +40,19 @@ describe('isBusier: a stop whose data has something going on', () => {
 		);
 	});
 
+	it('passes over a stop whose only other account is an ended postcode, and counts it with anything more', () => {
+		const ended = beat(
+			{ 'postcode:name': 'ZZ9 9ZZ', 'postcode:kind': 'postcode', 'postcode:ended': '1990-12' },
+			{ elsewhere: true }
+		);
+		expect(isBusier(scene([ended]))).toBe(false);
+		expect(isBusier(scene([ended, beat({ building: 'yes' })]))).toBe(false);
+		expect(isBusier(scene([ended, beat({ shop: 'bakery', name: 'Inventa Bakes' })]))).toBe(true);
+		expect(isBusier(scene([ended, beat({ 'hygiene:rating': '5' }, { elsewhere: true })]))).toBe(
+			true
+		);
+	});
+
 	it('passes over a stop of plain things only', () => {
 		expect(isBusier(scene([beat({ building: 'yes' }), beat({ natural: 'tree' })]))).toBe(false);
 		expect(isBusier(scene([]))).toBe(false);

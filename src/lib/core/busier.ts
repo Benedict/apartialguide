@@ -24,14 +24,23 @@ const isGround = (b: Beat) =>
 	b.facts.some((f) => !isElsewhere(f) && GROUND[f.claim.key]?.has(f.claim.value));
 
 /**
+ * An ended postcode, standing alone by its code: it alone would have a quiet street's every stop told
+ * at length for one line of hearsay, so it is told, but by the template.
+ */
+const isEndedPostcode = (b: Beat) =>
+	b.facts.some(
+		(f) => isElsewhere(f) && f.claim.key === 'postcode:kind' && f.claim.value === 'postcode'
+	);
+
+/**
  * Whether a stop's data has something going on: a named thing, another account, something gone or
  * renamed, a broken name. Prose is written for these; the template carries the rest. The park, golf
  * course or wood a stop lies in or beside does not count on its own: every path through it would
- * otherwise be told the same thing again and again.
+ * otherwise be told the same thing again and again. Nor does an ended postcode on its own.
  */
 export function isBusier(scene: Scene): boolean {
 	return scene.beats
-		.filter((b) => !isBackground(b) && !isGround(b))
+		.filter((b) => !isBackground(b) && !isGround(b) && !isEndedPostcode(b))
 		.some(
 			(b) =>
 				b.effects.some((e) => TELLING.has(e)) ||
