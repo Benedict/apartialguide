@@ -1,0 +1,547 @@
+{
+	"source": "police.uk",
+	"prefix": "crime",
+	"records": [
+		{
+			"id": "Derrick Avenue|2026-08",
+			"street": "Derrick Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (1), vehicle crime (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Downs Court Road|2026-08",
+			"street": "Downs Court Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "anti-social behaviour (2), other theft (1)"
+			}
+		},
+		{
+			"id": "Dale Road|2026-08",
+			"street": "Dale Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Haling Down Passage|2026-08",
+			"street": "Haling Down Passage",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "anti-social behaviour (1), other crime (1), other theft (1), possession of weapons (1)"
+			}
+		},
+		{
+			"id": "Kimberley Place|2026-08",
+			"street": "Kimberley Place",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "anti-social behaviour (3), shoplifting (1)"
+			}
+		},
+		{
+			"id": "Roke Lodge Road|2026-08",
+			"street": "Roke Lodge Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "6",
+				"kinds": "violent crime (3), anti-social behaviour (1), other crime (1), other theft (1)"
+			}
+		},
+		{
+			"id": "Greyfields Close|2026-08",
+			"street": "Greyfields Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "violent crime (2), anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Partridge Knoll|2026-08",
+			"street": "Partridge Knoll",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Sydney Avenue|2026-08",
+			"street": "Sydney Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "10",
+				"kinds": "violent crime (4), anti-social behaviour (3), burglary (1), other theft (1), public order (1)"
+			}
+		},
+		{
+			"id": "Olden Lane|2026-08",
+			"street": "Olden Lane",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Purley Park Road|2026-08",
+			"street": "Purley Park Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), burglary (1)"
+			}
+		},
+		{
+			"id": "Russell Hill Place|2026-08",
+			"street": "Russell Hill Place",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "7",
+				"kinds": "anti-social behaviour (2), drugs (2), violent crime (2), robbery (1)"
+			}
+		},
+		{
+			"id": "Hill View Close|2026-08",
+			"street": "Hill View Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), public order (1)"
+			}
+		},
+		{
+			"id": "Hartley Farm|2026-08",
+			"street": "Hartley Farm",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Privet Mews|2026-08",
+			"street": "Privet Mews",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Furze Hill|2026-08",
+			"street": "Furze Hill",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Biddulph Road|2026-08",
+			"street": "Biddulph Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "anti-social behaviour (1), theft from the person (1), vehicle crime (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Riddlesdown Avenue|2026-08",
+			"street": "Riddlesdown Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Purley Knoll|2026-08",
+			"street": "Purley Knoll",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "burglary (1)"
+			}
+		},
+		{
+			"id": "Hillground Gardens|2026-08",
+			"street": "Hillground Gardens",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "burglary (1)"
+			}
+		},
+		{
+			"id": "Hartley Down|2026-08",
+			"street": "Hartley Down",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "burglary (1)"
+			}
+		},
+		{
+			"id": "Hillthorpe Close|2026-08",
+			"street": "Hillthorpe Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "burglary (1)"
+			}
+		},
+		{
+			"id": "Wilmot Road|2026-08",
+			"street": "Wilmot Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "vehicle crime (2), burglary (1)"
+			}
+		},
+		{
+			"id": "Kendra Hall Road|2026-08",
+			"street": "Kendra Hall Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "burglary (1), other theft (1)"
+			}
+		},
+		{
+			"id": "Approach Road|2026-08",
+			"street": "Approach Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "drugs (1)"
+			}
+		},
+		{
+			"id": "Watney Close|2026-08",
+			"street": "Watney Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "drugs (1)"
+			}
+		},
+		{
+			"id": "The South Border|2026-08",
+			"street": "The South Border",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "other theft (1)"
+			}
+		},
+		{
+			"id": "Allenby Avenue|2026-08",
+			"street": "Allenby Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "other theft (1)"
+			}
+		},
+		{
+			"id": "Knighton Close|2026-08",
+			"street": "Knighton Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "other theft (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Woburn Avenue|2026-08",
+			"street": "Woburn Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "public order (1)"
+			}
+		},
+		{
+			"id": "The Bridle Road|2026-08",
+			"street": "The Bridle Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "public order (2), violent crime (1)"
+			}
+		},
+		{
+			"id": "Famet Close|2026-08",
+			"street": "Famet Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "public order (1)"
+			}
+		},
+		{
+			"id": "Sunnydene Road|2026-08",
+			"street": "Sunnydene Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "public order (1)"
+			}
+		},
+		{
+			"id": "Hill Close|2026-08",
+			"street": "Hill Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Weall Close|2026-08",
+			"street": "Weall Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "vehicle crime (3)"
+			}
+		},
+		{
+			"id": "Joshua Close|2026-08",
+			"street": "Joshua Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Purley Bury Avenue|2026-08",
+			"street": "Purley Bury Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "St Denys Close|2026-08",
+			"street": "St Denys Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "vehicle crime (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Barnards Place|2026-08",
+			"street": "Barnards Place",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "Redbarn Close|2026-08",
+			"street": "Redbarn Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "vehicle crime (1)"
+			}
+		},
+		{
+			"id": "More Close|2026-08",
+			"street": "More Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Copperfield Close|2026-08",
+			"street": "Copperfield Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "3",
+				"kinds": "violent crime (3)"
+			}
+		},
+		{
+			"id": "Westdene Close|2026-08",
+			"street": "Westdene Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Lower Barn Road|2026-08",
+			"street": "Lower Barn Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "2",
+				"kinds": "violent crime (2)"
+			}
+		},
+		{
+			"id": "Copse Hill|2026-08",
+			"street": "Copse Hill",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Montpelier Road|2026-08",
+			"street": "Montpelier Road",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Netherheys Drive|2026-08",
+			"street": "Netherheys Drive",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Coxley Rise|2026-08",
+			"street": "Coxley Rise",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "4",
+				"kinds": "violent crime (4)"
+			}
+		},
+		{
+			"id": "Parrs Close|2026-08",
+			"street": "Parrs Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Hillside Avenue|2026-08",
+			"street": "Hillside Avenue",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Whytecliffe Road South|2026-08",
+			"street": "Whytecliffe Road South",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Coldharbour Lane|2026-08",
+			"street": "Coldharbour Lane",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Cliff End|2026-08",
+			"street": "Cliff End",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Oscar Close|2026-08",
+			"street": "Oscar Close",
+			"observed": "2026-08-01",
+			"claims": {
+				"month": "2026-08",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}
