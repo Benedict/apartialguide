@@ -1,0 +1,71 @@
+{
+	"source": "OpenBenches",
+	"prefix": "bench",
+	"records": [
+		{
+			"id": "31290",
+			"at": [
+				51.299122,
+				-0.134266
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In loving memory of Mrs Win Evenden / Who spent many happy years on these downs with her great danes"
+			}
+		},
+		{
+			"id": "32787",
+			"at": [
+				51.29771,
+				-0.129465
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORIAM / MALCOLM GUILLE / 1931-2013"
+			}
+		},
+		{
+			"id": "17449",
+			"at": [
+				51.297409,
+				-0.125014
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / EDWARD (TED) HUBERT / 1900-1984 / WHO LOVED THIS PLACE"
+			}
+		},
+		{
+			"id": "17448",
+			"at": [
+				51.294128,
+				-0.120617
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "LDG (Laurie) Reed OLY 1936 - 2018 - Loved Forever"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

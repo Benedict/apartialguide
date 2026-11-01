@@ -1,0 +1,3331 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "76|REDDOWN ROAD",
+			"address": {
+				"number": "76",
+				"street": "REDDOWN ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "76 REDDOWN ROAD RTM COMPANY LIMITED|(S)THETICS VM LIMITED",
+				"since": "2022-07-08"
+			}
+		},
+		{
+			"id": "2|WOODPLACE LANE",
+			"address": {
+				"number": "2",
+				"street": "WOODPLACE LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "11PCS EXAMSUCCESS LIMITED",
+				"since": "2026-05-18"
+			}
+		},
+		{
+			"id": "34|FAIRDENE ROAD",
+			"address": {
+				"number": "34",
+				"street": "FAIRDENE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "41, ST. AUGUSTINES AVENUE (MANAGEMENT) LIMITED|15 ST. AUGUSTINES AVENUE MANAGEMENT LIMITED",
+				"since": "1981-07-14"
+			}
+		},
+		{
+			"id": "4|MARLPIT LANE",
+			"address": {
+				"number": "4",
+				"street": "MARLPIT LANE"
+			},
+			"claims": {
+				"count": "38",
+				"names": "TAX DATA LIMITED|FORMULA 11 LIMITED|CARPETSFOURYOU LIMITED",
+				"since": "1996-08-13"
+			}
+		},
+		{
+			"id": "14|SIR JAMES MOODY WAY",
+			"address": {
+				"number": "14",
+				"street": "SIR JAMES MOODY WAY"
+			},
+			"claims": {
+				"count": "3",
+				"names": "BLOSSOM MEDICAL SERVICES LTD|ROCK RISE PRIVATE LIMITED|2911 MEDICAL SERVICES LTD",
+				"since": "2013-10-18"
+			}
+		},
+		{
+			"id": "31|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "31",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "31 CHIPSTEAD VALLEY LTD",
+				"since": "2019-07-15"
+			}
+		},
+		{
+			"id": "328|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "328",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "328 CATERING LIMITED",
+				"since": "2022-03-21"
+			}
+		},
+		{
+			"id": "40|WOODCOTE GROVE ROAD",
+			"address": {
+				"number": "40",
+				"street": "WOODCOTE GROVE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "40 WOODCOTE (COULSDON) LIMITED|SASSW LIMITED",
+				"since": "2021-11-12"
+			}
+		},
+		{
+			"id": "153|BRIGHTON ROAD",
+			"address": {
+				"number": "153",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "A 1 BARBERS(UK) LTD",
+				"since": "2018-01-08"
+			}
+		},
+		{
+			"id": "253|CATERHAM DRIVE",
+			"address": {
+				"number": "253",
+				"street": "CATERHAM DRIVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "A RAMSIER SERVICES LTD",
+				"since": "2012-02-02"
+			}
+		},
+		{
+			"id": "36|CORDREY GARDENS",
+			"address": {
+				"number": "36",
+				"street": "CORDREY GARDENS"
+			},
+			"claims": {
+				"count": "4",
+				"names": "A TO Z PHONE CONNECTIONS LIMITED|ALL IN ONE STOP TIRES LIMITED|SOUTHLDN CARS LTD",
+				"since": "2018-04-13"
+			}
+		},
+		{
+			"id": "306|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "306",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ARNOLD SCAFFOLDING LTD|A.S.L. (SURREY) LTD",
+				"since": "2017-06-01"
+			}
+		},
+		{
+			"id": "42|BRIGHTON ROAD",
+			"address": {
+				"number": "42",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AA ONTIME LTD",
+				"since": "2020-06-29"
+			}
+		},
+		{
+			"id": "55|BRIGHTON ROAD",
+			"address": {
+				"number": "55",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AB&I CLEARBOOKS LTD",
+				"since": "2025-11-30"
+			}
+		},
+		{
+			"id": "187|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "187",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ABIDEX FOODS UK LTD",
+				"since": "2026-07-30"
+			}
+		},
+		{
+			"id": "4|WADDINGTON CLOSE",
+			"address": {
+				"number": "4",
+				"street": "WADDINGTON CLOSE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ABSOLUTE BUILDING & CONSTRUCTION LTD|WADDINGTON CLOSE RESIDENTS MANAGEMENT COMPANY LIMITED",
+				"since": "2015-07-15"
+			}
+		},
+		{
+			"id": "47|COULSDON ROAD",
+			"address": {
+				"number": "47",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "4",
+				"names": "ACUITY UNIFIED COMMUNICATIONS LIMITED|LINEBROKER LIMITED|LIZARD IT SOLUTIONS LTD",
+				"since": "2010-01-28"
+			}
+		},
+		{
+			"id": "15|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "15",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "11",
+				"names": "EXTREME POP FASHION LIMITED|EL BETHEL (UK) COMPANY LIMITED|SUHE GROUP LTD",
+				"since": "2016-09-09"
+			}
+		},
+		{
+			"id": "176|BRIGHTON ROAD",
+			"address": {
+				"number": "176",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "MAINE BUSINESS SYSTEMS LIMITED|SHERIDAN BROOKS LIMITED|ADMOTUS MARKETING LIMITED",
+				"since": "1987-07-17"
+			}
+		},
+		{
+			"id": "11|BIRCHFIELD CLOSE",
+			"address": {
+				"number": "11",
+				"street": "BIRCHFIELD CLOSE"
+			},
+			"claims": {
+				"count": "3",
+				"names": "AETHERVIEW UAV LIMITED|LITTLE MINDS CONSULTANCY LIMITED|ROMASHER LTD",
+				"since": "2024-06-23"
+			}
+		},
+		{
+			"id": "228|COULSDON ROAD",
+			"address": {
+				"number": "228",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "RAAMS PROPERTIES LTD|AIMS STAR LTD",
+				"since": "2018-02-09"
+			}
+		},
+		{
+			"id": "8|LEADEN HILL",
+			"address": {
+				"number": "8",
+				"street": "LEADEN HILL"
+			},
+			"claims": {
+				"count": "2",
+				"names": "JRB INTERNATIONAL LTD|ALDER IN MIND LTD.",
+				"since": "2020-07-30"
+			}
+		},
+		{
+			"id": "125|WADDINGTON AVENUE",
+			"address": {
+				"number": "125",
+				"street": "WADDINGTON AVENUE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ALDINE INVESTMENTS LIMITED|CUPPA HAVEN TRADING LTD",
+				"since": "2012-09-26"
+			}
+		},
+		{
+			"id": "48|CHALDON WAY",
+			"address": {
+				"number": "48",
+				"street": "CHALDON WAY"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ALIGN PHYSIOTHERAPY & PILATES LTD|R&R PHYSIO PILATES LTD",
+				"since": "2022-11-15"
+			}
+		},
+		{
+			"id": "1|HOLLYMEOAK ROAD",
+			"address": {
+				"number": "1",
+				"street": "HOLLYMEOAK ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ST PHILOPATIR LIMITED|ALION VEG LTD",
+				"since": "2009-10-29"
+			}
+		},
+		{
+			"id": "29|ULLSWATER CRESCENT",
+			"address": {
+				"number": "29",
+				"street": "ULLSWATER CRESCENT"
+			},
+			"claims": {
+				"count": "4",
+				"names": "UNICORN SERVICES LIMITED|ALL EAT APP NETWORK TECHNOLOGY INCORPORATED LTD|LATIN AMERICAN PROJECT LIMITED",
+				"since": "2008-03-08"
+			}
+		},
+		{
+			"id": "2|WILHELMINA AVENUE",
+			"address": {
+				"number": "2",
+				"street": "WILHELMINA AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ANDSHELL LV LTD",
+				"since": "2026-01-15"
+			}
+		},
+		{
+			"id": "27|SOUTHWOOD AVENUE",
+			"address": {
+				"number": "27",
+				"street": "SOUTHWOOD AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ANIMUM ASSOCIATES LTD",
+				"since": "2023-01-20"
+			}
+		},
+		{
+			"id": "23|ULLSWATER CRESCENT",
+			"address": {
+				"number": "23",
+				"street": "ULLSWATER CRESCENT"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CROYLEK LIMITED|APEX GLOBAL SERVICES LIMITED",
+				"since": "1964-10-23"
+			}
+		},
+		{
+			"id": "38|CAREW CLOSE",
+			"address": {
+				"number": "38",
+				"street": "CAREW CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ARA - ALTERNATIVE ROPE ACCESS LTD",
+				"since": "2017-01-30"
+			}
+		},
+		{
+			"id": "2|LACEY GREEN PARADE",
+			"address": {
+				"number": "2",
+				"street": "LACEY GREEN PARADE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ARKIRA LABS LIMITED",
+				"since": "2024-02-10"
+			}
+		},
+		{
+			"id": "74|BRIGHTON ROAD",
+			"address": {
+				"number": "74",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ARWA TRAVELS LTD",
+				"since": "2026-09-28"
+			}
+		},
+		{
+			"id": "22|ULLSWATER CRESCENT",
+			"address": {
+				"number": "22",
+				"street": "ULLSWATER CRESCENT"
+			},
+			"claims": {
+				"count": "18",
+				"names": "JK GROUP (UK) LIMITED|K VEG WHOLESALE LIMITED|VAANI FREIGHT SERVICES LIMITED",
+				"since": "2004-04-02"
+			}
+		},
+		{
+			"id": "184|BRIGHTON ROAD",
+			"address": {
+				"number": "184",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "COULSDON BARBER LTD|ASAD ALI LOGISTICS LIMITED",
+				"since": "2015-12-10"
+			}
+		},
+		{
+			"id": "9|STATION APPROACH ROAD",
+			"address": {
+				"number": "9",
+				"street": "STATION APPROACH ROAD"
+			},
+			"claims": {
+				"count": "8",
+				"names": "COMPLETE ACCOUNTING PROFESSIONAL LTD|COMPLETE RESIDENTIAL LTD|EASY MINICAB LIMITED",
+				"since": "2014-05-19"
+			}
+		},
+		{
+			"id": "28|MELROSE ROAD",
+			"address": {
+				"number": "28",
+				"street": "MELROSE ROAD"
+			},
+			"claims": {
+				"count": "14",
+				"names": "IFA TRADING LTD|FAAZ ESTATE & BUILDERS LTD|F & A PROPERTIES LTD",
+				"since": "2012-04-02"
+			}
+		},
+		{
+			"id": "49|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "49",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "SMILING BEAUTY LIMITED|AUTOBASIL LTD",
+				"since": "2019-07-30"
+			}
+		},
+		{
+			"id": "35|CHARLTON GARDENS",
+			"address": {
+				"number": "35",
+				"street": "CHARLTON GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AXYS BUSINESS SOLUTIONS LIMITED",
+				"since": "2013-03-11"
+			}
+		},
+		{
+			"id": "4|LEADEN HILL",
+			"address": {
+				"number": "4",
+				"street": "LEADEN HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BAATPAKKI LIMITED",
+				"since": "2024-02-11"
+			}
+		},
+		{
+			"id": "100|REDDOWN ROAD",
+			"address": {
+				"number": "100",
+				"street": "REDDOWN ROAD"
+			},
+			"claims": {
+				"count": "5",
+				"names": "BECOMING GROUP LIMITED|LEGACY LINE GROUP LIMITED|RESI CONSULTING LTD",
+				"since": "2023-02-10"
+			}
+		},
+		{
+			"id": "19|OLAVE CLOSE",
+			"address": {
+				"number": "19",
+				"street": "OLAVE CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BEING HUMAN IN HEALTHCARE LTD",
+				"since": "2017-12-13"
+			}
+		},
+		{
+			"id": "25|PAXTON GROVE",
+			"address": {
+				"number": "25",
+				"street": "PAXTON GROVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BENZ DOCTOR LTD",
+				"since": "2025-03-05"
+			}
+		},
+		{
+			"id": "48|STOATS NEST VILLAGE",
+			"address": {
+				"number": "48",
+				"street": "STOATS NEST VILLAGE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BESPOKE WINDOWS/DOORS LTD",
+				"since": "2019-08-30"
+			}
+		},
+		{
+			"id": "109|BRIGHTON ROAD",
+			"address": {
+				"number": "109",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BEST KITCHEN & BURGER LTD",
+				"since": "2023-03-29"
+			}
+		},
+		{
+			"id": "16|WESTON CLOSE",
+			"address": {
+				"number": "16",
+				"street": "WESTON CLOSE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "BEULAH SUPPORT SERVICES LTD|ESSENCE SUPPORT SERVICES LTD",
+				"since": "2025-08-20"
+			}
+		},
+		{
+			"id": "17|BLUEBERRY GARDENS",
+			"address": {
+				"number": "17",
+				"street": "BLUEBERRY GARDENS"
+			},
+			"claims": {
+				"count": "2",
+				"names": "BHULE HEALTH LIMITED|TAURAI FILMS LIMITED",
+				"since": "2014-07-08"
+			}
+		},
+		{
+			"id": "62|BRADMORE WAY",
+			"address": {
+				"number": "62",
+				"street": "BRADMORE WAY"
+			},
+			"claims": {
+				"count": "2",
+				"names": "MACAW PROPERTY HOLDINGS LTD|BISON FINCH LTD",
+				"since": "2017-02-02"
+			}
+		},
+		{
+			"id": "27|BREAKFIELD",
+			"address": {
+				"number": "27",
+				"street": "BREAKFIELD"
+			},
+			"claims": {
+				"count": "7",
+				"names": "DMT ELECTRICAL LTD|SYNERGY PAYMENT SOLUTIONS LTD|WOODCOTE ESTATE AGENTS LTD",
+				"since": "2007-07-05"
+			}
+		},
+		{
+			"id": "18|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "18",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BLISS DESSERTS LTD",
+				"since": "2021-06-03"
+			}
+		},
+		{
+			"id": "1|MCKENZIE CLOSE",
+			"address": {
+				"number": "1",
+				"street": "MCKENZIE CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BLOCK NARRATIVE LTD",
+				"since": "2024-04-06"
+			}
+		},
+		{
+			"id": "1|SIR JAMES MOODY WAY",
+			"address": {
+				"number": "1",
+				"street": "SIR JAMES MOODY WAY"
+			},
+			"claims": {
+				"count": "3",
+				"names": "BLUE GLOBE CONSULTING LTD|SMART ACCOUNTING LONDON LTD|EMC GLOBAL CAPITAL LTD",
+				"since": "2019-10-31"
+			}
+		},
+		{
+			"id": "8|CATTLEY PLACE",
+			"address": {
+				"number": "8",
+				"street": "CATTLEY PLACE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BLUE LEAVES ACCOUNTING LTD",
+				"since": "2014-09-01"
+			}
+		},
+		{
+			"id": "146|CHALDON WAY",
+			"address": {
+				"number": "146",
+				"street": "CHALDON WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BODHI CONSULTING LIMITED",
+				"since": "2015-10-28"
+			}
+		},
+		{
+			"id": "145|BRIGHTON ROAD",
+			"address": {
+				"number": "145",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "OFFIE DELIVERY LIMITED|BOMBAYLICIOUS LIMITED",
+				"since": "2016-03-01"
+			}
+		},
+		{
+			"id": "134|BRIGHTON ROAD",
+			"address": {
+				"number": "134",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BOND & SHERWILL LIMITED",
+				"since": "2015-11-25"
+			}
+		},
+		{
+			"id": "32|CHARLTON GARDENS",
+			"address": {
+				"number": "32",
+				"street": "CHARLTON GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BRANDHEART LTD",
+				"since": "2025-07-31"
+			}
+		},
+		{
+			"id": "73|RUTHERWICK RISE",
+			"address": {
+				"number": "73",
+				"street": "RUTHERWICK RISE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BROWNE PROPERTY IMPROVEMENTS LTD",
+				"since": "2026-03-26"
+			}
+		},
+		{
+			"id": "158|BRIGHTON ROAD",
+			"address": {
+				"number": "158",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "4",
+				"names": "BURGERSHAK INVESTMENT LIMITED|J&R SPENCER LTD|CHOCOCHARM LIMITED",
+				"since": "2019-07-09"
+			}
+		},
+		{
+			"id": "131|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "131",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "SUPERGUARDIAN LTD|BUSINESS INSTRUCTION ASSOCIATES LTD|COOLNEIL LTD",
+				"since": "2023-07-10"
+			}
+		},
+		{
+			"id": "2|GIBBONS PLACE",
+			"address": {
+				"number": "2",
+				"street": "GIBBONS PLACE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CADD CRAFT LIMITED|HAWKEYE PANACEA LIMITED",
+				"since": "2008-07-30"
+			}
+		},
+		{
+			"id": "225|COULSDON ROAD",
+			"address": {
+				"number": "225",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "CAFE SHACK LTD|DEMIR'S CAFE LTD|VEEMA CAFE LTD",
+				"since": "2018-04-05"
+			}
+		},
+		{
+			"id": "58|WOODCOTE GROVE ROAD",
+			"address": {
+				"number": "58",
+				"street": "WOODCOTE GROVE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CATHERINE B WRIGHT LTD",
+				"since": "2020-02-10"
+			}
+		},
+		{
+			"id": "16|LYNDHURST ROAD",
+			"address": {
+				"number": "16",
+				"street": "LYNDHURST ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CERTIFIED CUSTOMS LTD",
+				"since": "2025-01-07"
+			}
+		},
+		{
+			"id": "17|SIR JAMES MOODY WAY",
+			"address": {
+				"number": "17",
+				"street": "SIR JAMES MOODY WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CHIHUAHUA LTD",
+				"since": "2022-08-19"
+			}
+		},
+		{
+			"id": "221|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "221",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CHIPSTEAD DRY CLEANERS LTD",
+				"since": "2013-02-15"
+			}
+		},
+		{
+			"id": "322|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "322",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CHIPSTEAD NAILS LIMITED",
+				"since": "2026-04-07"
+			}
+		},
+		{
+			"id": "34|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "34",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CR5 PIZZA LTD|CHIPSTEAD PIZZA LTD",
+				"since": "2025-06-06"
+			}
+		},
+		{
+			"id": "330|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "330",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "TOPCLASS DRIVES  PATIOS LIMITED|CHRYSTAL’S BEAUTY BOUTIQUE LTD",
+				"since": "2019-08-12"
+			}
+		},
+		{
+			"id": "115|GOODENOUGH WAY",
+			"address": {
+				"number": "115",
+				"street": "GOODENOUGH WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CJR RESOURCE LIMITED",
+				"since": "2016-04-22"
+			}
+		},
+		{
+			"id": "8|MARGARET WAY",
+			"address": {
+				"number": "8",
+				"street": "MARGARET WAY"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CLEAR-CUT CAPITAL LTD|CLEAR-CUT CARPENTRY LTD",
+				"since": "2025-07-07"
+			}
+		},
+		{
+			"id": "40|WOODPLACE LANE",
+			"address": {
+				"number": "40",
+				"street": "WOODPLACE LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "COHORT HEALTHCARE RESEARCH LTD",
+				"since": "2024-08-09"
+			}
+		},
+		{
+			"id": "1|OLAVE CLOSE",
+			"address": {
+				"number": "1",
+				"street": "OLAVE CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "COMCARE LTD",
+				"since": "2015-07-23"
+			}
+		},
+		{
+			"id": "20|ALDERCROFT",
+			"address": {
+				"number": "20",
+				"street": "ALDERCROFT"
+			},
+			"claims": {
+				"count": "1",
+				"names": "COMMON ROOM PR LIMITED",
+				"since": "2013-09-10"
+			}
+		},
+		{
+			"id": "16|BIRCHFIELD CLOSE",
+			"address": {
+				"number": "16",
+				"street": "BIRCHFIELD CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CONERSTONE ASSESSMENTS SERVICES LTD",
+				"since": "2023-08-22"
+			}
+		},
+		{
+			"id": "100|COULSDON ROAD",
+			"address": {
+				"number": "100",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "COPPER BOX VINTAGE LTD",
+				"since": "2023-03-16"
+			}
+		},
+		{
+			"id": "121|BRIGHTON ROAD",
+			"address": {
+				"number": "121",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CORE 6 STUDIOS LTD",
+				"since": "2025-06-03"
+			}
+		},
+		{
+			"id": "1|CORDREY GARDENS",
+			"address": {
+				"number": "1",
+				"street": "CORDREY GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CORVAGLIA'S LTD",
+				"since": "2025-07-28"
+			}
+		},
+		{
+			"id": "320|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "320",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "COULSDON DEVELOPMENTS LIMITED",
+				"since": "2015-11-03"
+			}
+		},
+		{
+			"id": "3|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "3",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "COULSDON RST LIMITED",
+				"since": "2018-11-20"
+			}
+		},
+		{
+			"id": "37|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "37",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "COULSDON SANDWICHES LTD",
+				"since": "2023-11-22"
+			}
+		},
+		{
+			"id": "160|BRIGHTON ROAD",
+			"address": {
+				"number": "160",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "COZY GLOW LTD.",
+				"since": "2015-07-24"
+			}
+		},
+		{
+			"id": "15|BROWNING PLACE",
+			"address": {
+				"number": "15",
+				"street": "BROWNING PLACE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "NEOMARS LIMITED|CRAZON LIMITED",
+				"since": "2016-12-28"
+			}
+		},
+		{
+			"id": "2|WOODHATCH SPINNEY",
+			"address": {
+				"number": "2",
+				"street": "WOODHATCH SPINNEY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CRYSTAL CLEAN VENTURES LTD",
+				"since": "2024-07-22"
+			}
+		},
+		{
+			"id": "186|CHALDON WAY",
+			"address": {
+				"number": "186",
+				"street": "CHALDON WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CRYSTAL CLOUD CONSULTING LTD",
+				"since": "2012-10-23"
+			}
+		},
+		{
+			"id": "49|RUTHERWICK RISE",
+			"address": {
+				"number": "49",
+				"street": "RUTHERWICK RISE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CS VAPORIZERS LIMITED",
+				"since": "2016-09-15"
+			}
+		},
+		{
+			"id": "40|BRAMLEY AVENUE",
+			"address": {
+				"number": "40",
+				"street": "BRAMLEY AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CUPID SOLDIERS LTD",
+				"since": "2026-08-24"
+			}
+		},
+		{
+			"id": "2|ALEXANDER ROAD",
+			"address": {
+				"number": "2",
+				"street": "ALEXANDER ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CUSTOM CURVE DECKING LIMITED",
+				"since": "2021-08-04"
+			}
+		},
+		{
+			"id": "26|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "26",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "D & F HOME IMPROVEMENT LTD",
+				"since": "2019-06-20"
+			}
+		},
+		{
+			"id": "1|SANDOWN ROAD",
+			"address": {
+				"number": "1",
+				"street": "SANDOWN ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "SOUTHERN GARDEN MAINTENANCE LTD|D&P HOME IMPROVEMENTS LTD",
+				"since": "2022-03-21"
+			}
+		},
+		{
+			"id": "25|MELROSE ROAD",
+			"address": {
+				"number": "25",
+				"street": "MELROSE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "D.D. ROCK LIMITED",
+				"since": "2001-08-07"
+			}
+		},
+		{
+			"id": "163|BRIGHTON ROAD",
+			"address": {
+				"number": "163",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "14",
+				"names": "NORTHERN RECRUITMENT GROUP LIMITED|GOLDEN LEAVES LIMITED|GOLDEN LEAVES INTERNATIONAL LTD",
+				"since": "1983-09-26"
+			}
+		},
+		{
+			"id": "21|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "21",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DAN INVESTMENTS HOLDINGS LTD",
+				"since": "2024-05-30"
+			}
+		},
+		{
+			"id": "11|SMITHAM DOWNS ROAD",
+			"address": {
+				"number": "11",
+				"street": "SMITHAM DOWNS ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "DARNEL INVESTMENTS LIMITED|MONEYANDMECLAIMS LIMITED|POLISHED MANNERS LIMITED",
+				"since": "1989-08-16"
+			}
+		},
+		{
+			"id": "71|CORDREY GARDENS",
+			"address": {
+				"number": "71",
+				"street": "CORDREY GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DATA DIVIDENDS LTD",
+				"since": "2023-05-04"
+			}
+		},
+		{
+			"id": "11|ASHCROFT RISE",
+			"address": {
+				"number": "11",
+				"street": "ASHCROFT RISE"
+			},
+			"claims": {
+				"count": "3",
+				"names": "DEKO CONSTRUCTION AND DECORATION LTD|DEKO SERVICES LTD|LAVID WORKS LTD",
+				"since": "2021-04-08"
+			}
+		},
+		{
+			"id": "3|CUTHERED MEWS",
+			"address": {
+				"number": "3",
+				"street": "CUTHERED MEWS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DIGRIGHT LTD",
+				"since": "2022-11-14"
+			}
+		},
+		{
+			"id": "13|BRIGHTON ROAD",
+			"address": {
+				"number": "13",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "GK TRADE & PHOTO LIMITED|DIRECT TRADE LIMITED",
+				"since": "2017-04-21"
+			}
+		},
+		{
+			"id": "28|CANE HILL DRIVE",
+			"address": {
+				"number": "28",
+				"street": "CANE HILL DRIVE"
+			},
+			"claims": {
+				"count": "3",
+				"names": "HEARTY HOMES LTD|DIVINE CONSTRUCTION LIMITED|DIVINE CARE HOMES LTD",
+				"since": "2019-04-23"
+			}
+		},
+		{
+			"id": "12|TULLICK WAY",
+			"address": {
+				"number": "12",
+				"street": "TULLICK WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DNACADEMY LTD",
+				"since": "2025-10-31"
+			}
+		},
+		{
+			"id": "10|THE AVENUE",
+			"address": {
+				"number": "10",
+				"street": "THE AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DODMAN ROOFING LIMITED",
+				"since": "2016-02-12"
+			}
+		},
+		{
+			"id": "52|FORGE AVENUE",
+			"address": {
+				"number": "52",
+				"street": "FORGE AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DOLCE'S DOG HOUSE LTD",
+				"since": "2023-04-10"
+			}
+		},
+		{
+			"id": "83|TOLLERS LANE",
+			"address": {
+				"number": "83",
+				"street": "TOLLERS LANE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "MPAULAPOP LIMITED|DP LIVING LTD",
+				"since": "2024-01-30"
+			}
+		},
+		{
+			"id": "36|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "36",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "DRAGON'S GROUP TRADER LTD|LIA NAILS LTD",
+				"since": "2023-07-24"
+			}
+		},
+		{
+			"id": "2|BLUEBERRY GARDENS",
+			"address": {
+				"number": "2",
+				"street": "BLUEBERRY GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "E A AUDIOVISUAL LIMITED",
+				"since": "2022-12-21"
+			}
+		},
+		{
+			"id": "43|THE GLADE",
+			"address": {
+				"number": "43",
+				"street": "THE GLADE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EAGLE ELECTRICAL (SOUTHERN) LIMITED",
+				"since": "2015-03-27"
+			}
+		},
+		{
+			"id": "1|ELLIS ROAD",
+			"address": {
+				"number": "1",
+				"street": "ELLIS ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ELEVE ASTHETIC AND BEAUTY LTD",
+				"since": "2026-04-08"
+			}
+		},
+		{
+			"id": "131|RUTHERWICK RISE",
+			"address": {
+				"number": "131",
+				"street": "RUTHERWICK RISE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ELLIS MAINTENANCE OPERATIONS LTD",
+				"since": "2023-01-09"
+			}
+		},
+		{
+			"id": "1|DEEPFIELD WAY",
+			"address": {
+				"number": "1",
+				"street": "DEEPFIELD WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EMERGENCY PLUMBER IN LONDON LTD",
+				"since": "2026-04-14"
+			}
+		},
+		{
+			"id": "1|CUTHERED MEWS",
+			"address": {
+				"number": "1",
+				"street": "CUTHERED MEWS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ENRY’S PROPERTY & FACILITY MANAGEMENT LTD",
+				"since": "2024-12-16"
+			}
+		},
+		{
+			"id": "117|BRIGHTON ROAD",
+			"address": {
+				"number": "117",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ERCOLANO'S LIMITED|ZAFFERANO LTD",
+				"since": "2006-10-05"
+			}
+		},
+		{
+			"id": "6|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "6",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ERIC'S CATERING LTD",
+				"since": "2024-03-04"
+			}
+		},
+		{
+			"id": "4|REDDOWN ROAD",
+			"address": {
+				"number": "4",
+				"street": "REDDOWN ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EVOCATION PHOTOGRAPHY LTD",
+				"since": "2023-08-29"
+			}
+		},
+		{
+			"id": "13|VICTORIA ROAD",
+			"address": {
+				"number": "13",
+				"street": "VICTORIA ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FAGUNDES CONSTRUCTION LTD",
+				"since": "2025-10-06"
+			}
+		},
+		{
+			"id": "126|BRIGHTON ROAD",
+			"address": {
+				"number": "126",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FAVORITE CHICKEN COULSDON LIMITED",
+				"since": "2024-12-20"
+			}
+		},
+		{
+			"id": "6|HILLSIDE ROAD",
+			"address": {
+				"number": "6",
+				"street": "HILLSIDE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FERNS ASSET MANAGEMENT LIMITED",
+				"since": "2021-03-03"
+			}
+		},
+		{
+			"id": "109|FAIRDENE ROAD",
+			"address": {
+				"number": "109",
+				"street": "FAIRDENE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FIGUREWEAVE ACCOUNTANCY LTD",
+				"since": "2011-08-02"
+			}
+		},
+		{
+			"id": "66|REDDOWN ROAD",
+			"address": {
+				"number": "66",
+				"street": "REDDOWN ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FLORIAN ENSEMBLE COMMUNITY INTEREST COMPANY",
+				"since": "2025-06-03"
+			}
+		},
+		{
+			"id": "178|BRIGHTON ROAD",
+			"address": {
+				"number": "178",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FOOT DOC LTD",
+				"since": "2004-08-03"
+			}
+		},
+		{
+			"id": "23|LEADEN HILL",
+			"address": {
+				"number": "23",
+				"street": "LEADEN HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FORTYTWENTYFOUR XXIV LTD",
+				"since": "2024-09-03"
+			}
+		},
+		{
+			"id": "22|CHARLES HOWELL DRIVE",
+			"address": {
+				"number": "22",
+				"street": "CHARLES HOWELL DRIVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FREE U'S TRAINING CIC",
+				"since": "2022-07-07"
+			}
+		},
+		{
+			"id": "27|SMITHAM DOWNS ROAD",
+			"address": {
+				"number": "27",
+				"street": "SMITHAM DOWNS ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FRESHLY HOMEMADE LTD",
+				"since": "2019-11-21"
+			}
+		},
+		{
+			"id": "3|CEDAR VIEW CLOSE",
+			"address": {
+				"number": "3",
+				"street": "CEDAR VIEW CLOSE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "KALAI TECH LIMITED|GBM ASSETS LTD",
+				"since": "2017-12-14"
+			}
+		},
+		{
+			"id": "53|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "53",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GLITZ WINDOWS AND CONSERVATORIES LTD",
+				"since": "2022-12-04"
+			}
+		},
+		{
+			"id": "30|WOODFIELD HILL",
+			"address": {
+				"number": "30",
+				"street": "WOODFIELD HILL"
+			},
+			"claims": {
+				"count": "4",
+				"names": "GRANTLEY PROPERTIES LTD|GRANTLEY (CATFORD) LIMITED|GRANTLEY PROPERTIES (MANCHESTER) LIMITED",
+				"since": "1997-12-17"
+			}
+		},
+		{
+			"id": "279|COULSDON ROAD",
+			"address": {
+				"number": "279",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GREENE ENTERPRISES LTD",
+				"since": "2024-05-24"
+			}
+		},
+		{
+			"id": "202|COULSDON ROAD",
+			"address": {
+				"number": "202",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HAMBLE MARINE LIMITED",
+				"since": "2001-08-28"
+			}
+		},
+		{
+			"id": "39|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "39",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HAPPY SWAN EXPRESS LIMITED",
+				"since": "2026-03-10"
+			}
+		},
+		{
+			"id": "227|COULSDON ROAD",
+			"address": {
+				"number": "227",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "HARTY HOMECARE SERVICES LTD|HARTY INVESTMENT GROUP LTD",
+				"since": "2018-04-23"
+			}
+		},
+		{
+			"id": "123|DOWNS ROAD",
+			"address": {
+				"number": "123",
+				"street": "DOWNS ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "HEATHERVFX LTD|REIMAGINE VFX LTD",
+				"since": "2019-03-11"
+			}
+		},
+		{
+			"id": "1|RICKMAN HILL",
+			"address": {
+				"number": "1",
+				"street": "RICKMAN HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HEXLINE LIMITED",
+				"since": "1998-07-17"
+			}
+		},
+		{
+			"id": "4|CATTLEY PLACE",
+			"address": {
+				"number": "4",
+				"street": "CATTLEY PLACE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HIGHGROVE TENANTS ASSOCIATION LIMITED",
+				"since": "2000-07-07"
+			}
+		},
+		{
+			"id": "30|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "30",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HOPTEK CATERING LIMITED",
+				"since": "2026-02-10"
+			}
+		},
+		{
+			"id": "2|LEADEN HILL",
+			"address": {
+				"number": "2",
+				"street": "LEADEN HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HR CONSULTANCY BY HER LTD",
+				"since": "2026-06-05"
+			}
+		},
+		{
+			"id": "9|SHAFTESBURY LANE",
+			"address": {
+				"number": "9",
+				"street": "SHAFTESBURY LANE"
+			},
+			"claims": {
+				"count": "5",
+				"names": "ORDEX HOSPITALITY LIMITED|ORDEX ACCOUNTING LIMITED|ORDEX CONSULTANCY LIMITED",
+				"since": "2014-08-22"
+			}
+		},
+		{
+			"id": "229|COULSDON ROAD",
+			"address": {
+				"number": "229",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "KM BARBERS LTD|HW CAPITAL BUILDERS LIMITED",
+				"since": "2022-12-01"
+			}
+		},
+		{
+			"id": "227|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "227",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "I CALABRESI LTD.",
+				"since": "2011-01-26"
+			}
+		},
+		{
+			"id": "32|FAIRDENE ROAD",
+			"address": {
+				"number": "32",
+				"street": "FAIRDENE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "IMA MEDIA LIMITED",
+				"since": "2014-01-22"
+			}
+		},
+		{
+			"id": "7|STATION APPROACH ROAD",
+			"address": {
+				"number": "7",
+				"street": "STATION APPROACH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "IN HOUSE CASTING LTD",
+				"since": "2009-08-24"
+			}
+		},
+		{
+			"id": "7|STARROCK ROAD",
+			"address": {
+				"number": "7",
+				"street": "STARROCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "INCA DATA SERVICES LIMITED",
+				"since": "1996-06-26"
+			}
+		},
+		{
+			"id": "41|THE CHASE",
+			"address": {
+				"number": "41",
+				"street": "THE CHASE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "INDM LIMITED",
+				"since": "2023-09-11"
+			}
+		},
+		{
+			"id": "66|CORDREY GARDENS",
+			"address": {
+				"number": "66",
+				"street": "CORDREY GARDENS"
+			},
+			"claims": {
+				"count": "2",
+				"names": "INDUSTRIAL VACUUMS DIRECT LTD|ZEPHYR INDUSTRIES LTD",
+				"since": "2021-10-14"
+			}
+		},
+		{
+			"id": "5|MARLPIT LANE",
+			"address": {
+				"number": "5",
+				"street": "MARLPIT LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "INFO ASPECT LTD.",
+				"since": "2012-12-03"
+			}
+		},
+		{
+			"id": "442|COULSDON ROAD",
+			"address": {
+				"number": "442",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "INTERIOR FITOUT SOLUTIONS LTD",
+				"since": "2020-10-16"
+			}
+		},
+		{
+			"id": "49|CANE HILL DRIVE",
+			"address": {
+				"number": "49",
+				"street": "CANE HILL DRIVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "IVALLEY PROPERTIES LIMITED",
+				"since": "2021-05-11"
+			}
+		},
+		{
+			"id": "3|KEATS WAY",
+			"address": {
+				"number": "3",
+				"street": "KEATS WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "IVAN LEON CONSULTING SERVICES LTD",
+				"since": "2014-02-06"
+			}
+		},
+		{
+			"id": "96|REDDOWN ROAD",
+			"address": {
+				"number": "96",
+				"street": "REDDOWN ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "I’LL TAKE THE WINDOW SEAT LIMITED",
+				"since": "2025-12-15"
+			}
+		},
+		{
+			"id": "16|WOODMANSTERNE ROAD",
+			"address": {
+				"number": "16",
+				"street": "WOODMANSTERNE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "J K SAFETY LTD",
+				"since": "2012-01-06"
+			}
+		},
+		{
+			"id": "26|BREAKFIELD",
+			"address": {
+				"number": "26",
+				"street": "BREAKFIELD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "SBS IT LTD|J-TECH SYSTEMS LIMITED",
+				"since": "2010-03-18"
+			}
+		},
+		{
+			"id": "350|COULSDON ROAD",
+			"address": {
+				"number": "350",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JACELET PROPERTY LTD",
+				"since": "2023-02-27"
+			}
+		},
+		{
+			"id": "138|BRIGHTON ROAD",
+			"address": {
+				"number": "138",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JAGDISH LTD",
+				"since": "2023-10-23"
+			}
+		},
+		{
+			"id": "57|SOUTHLANDS CLOSE",
+			"address": {
+				"number": "57",
+				"street": "SOUTHLANDS CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JCPAYNE SOLUTIONS LTD",
+				"since": "2026-03-20"
+			}
+		},
+		{
+			"id": "58|BRIGHTON ROAD",
+			"address": {
+				"number": "58",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JD ELECTRICAL SURREY LTD",
+				"since": "2022-07-08"
+			}
+		},
+		{
+			"id": "35|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "35",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "PUZZLE KITCHENS LTD|JIGSAW BUILDS LTD",
+				"since": "2020-09-10"
+			}
+		},
+		{
+			"id": "102|TOLLERS LANE",
+			"address": {
+				"number": "102",
+				"street": "TOLLERS LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JK SCAFFOLDING SERVICES LTD",
+				"since": "2020-11-15"
+			}
+		},
+		{
+			"id": "4|HAYCROFT CLOSE",
+			"address": {
+				"number": "4",
+				"street": "HAYCROFT CLOSE"
+			},
+			"claims": {
+				"count": "3",
+				"names": "JMP PLUMBING & ELECTRICAL SERVICES LTD|JMP PLUMBING SERVICES LTD|JMP PROPERTY VENTURES LTD",
+				"since": "2015-06-26"
+			}
+		},
+		{
+			"id": "103|BRIGHTON ROAD",
+			"address": {
+				"number": "103",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JOLT CONSULTING LIMITED",
+				"since": "2010-09-06"
+			}
+		},
+		{
+			"id": "61|STONEYFIELD ROAD",
+			"address": {
+				"number": "61",
+				"street": "STONEYFIELD ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JPA PLUMBING & HEATING SERVICES LTD",
+				"since": "2008-07-09"
+			}
+		},
+		{
+			"id": "70|DOWNS ROAD",
+			"address": {
+				"number": "70",
+				"street": "DOWNS ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JPL WESTWOOD CONSULTING LTD",
+				"since": "2020-11-13"
+			}
+		},
+		{
+			"id": "23|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "23",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JPR ELECTRICAL - PLUMBING & GAS LTD",
+				"since": "2021-07-29"
+			}
+		},
+		{
+			"id": "30|BREAKFIELD",
+			"address": {
+				"number": "30",
+				"street": "BREAKFIELD"
+			},
+			"claims": {
+				"count": "6",
+				"names": "JUNCTION 7 ELECTRICAL LIMITED|JUNCTION 7 INVESTMENTS LIMITED|JUNCTION 7 DEVELOPMENTS LIMITED",
+				"since": "2005-01-24"
+			}
+		},
+		{
+			"id": "39|THE VALE",
+			"address": {
+				"number": "39",
+				"street": "THE VALE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JUNG PERSONAL MASTERY LTD",
+				"since": "2022-01-11"
+			}
+		},
+		{
+			"id": "17|STATION APPROACH ROAD",
+			"address": {
+				"number": "17",
+				"street": "STATION APPROACH ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "K.E BROADCAST LTD",
+				"since": "2018-07-30"
+			}
+		},
+		{
+			"id": "1|BROWNING PLACE",
+			"address": {
+				"number": "1",
+				"street": "BROWNING PLACE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KCH ELECTRICAL LIMITED",
+				"since": "2017-02-13"
+			}
+		},
+		{
+			"id": "8|SKINNER GROVE",
+			"address": {
+				"number": "8",
+				"street": "SKINNER GROVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KENDORA HEALTHCARE LIMITED",
+				"since": "2020-07-01"
+			}
+		},
+		{
+			"id": "151|BRIGHTON ROAD",
+			"address": {
+				"number": "151",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KENITOS COULSDON LTD",
+				"since": "2024-10-11"
+			}
+		},
+		{
+			"id": "122|BRIGHTON ROAD",
+			"address": {
+				"number": "122",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "PRETTY CORP LIMITED|KIMMY BEAUTY LIMITED",
+				"since": "2022-05-09"
+			}
+		},
+		{
+			"id": "91|MARLPIT LANE",
+			"address": {
+				"number": "91",
+				"street": "MARLPIT LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KONDJO CONSULTING LTD",
+				"since": "2020-03-12"
+			}
+		},
+		{
+			"id": "401|BRIGHTON ROAD",
+			"address": {
+				"number": "401",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KYEMBAS LTD",
+				"since": "2022-03-17"
+			}
+		},
+		{
+			"id": "35|WOODFIELD HILL",
+			"address": {
+				"number": "35",
+				"street": "WOODFIELD HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "L.A. BUILDING SERVICES LTD",
+				"since": "2018-08-23"
+			}
+		},
+		{
+			"id": "250|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "250",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LAHF ENTERPRISES LTD",
+				"since": "2023-09-12"
+			}
+		},
+		{
+			"id": "168|BRIGHTON ROAD",
+			"address": {
+				"number": "168",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "LAILA ENTERPRISE LTD|PIRI PIRI COULSDON LTD",
+				"since": "2016-01-13"
+			}
+		},
+		{
+			"id": "124|BRIGHTON ROAD",
+			"address": {
+				"number": "124",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LALAJI LTD",
+				"since": "2024-01-31"
+			}
+		},
+		{
+			"id": "54|ULLSWATER CRESCENT",
+			"address": {
+				"number": "54",
+				"street": "ULLSWATER CRESCENT"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LASERDIE LIMITED",
+				"since": "2007-04-23"
+			}
+		},
+		{
+			"id": "82|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "82",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LAUNCH AND LEAD TALENT LTD",
+				"since": "2026-02-23"
+			}
+		},
+		{
+			"id": "5|STARROCK ROAD",
+			"address": {
+				"number": "5",
+				"street": "STARROCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LINGBITES LTD",
+				"since": "2025-05-19"
+			}
+		},
+		{
+			"id": "42|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "42",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LINWOOD RESIDENTIAL CARE SERVICES LIMITED",
+				"since": "2018-06-06"
+			}
+		},
+		{
+			"id": "20|ULLSWATER CRESCENT",
+			"address": {
+				"number": "20",
+				"street": "ULLSWATER CRESCENT"
+			},
+			"claims": {
+				"count": "7",
+				"names": "LLORET FIRE SOLUTIONS LIMITED|LLORET CONTROL SYSTEMS LIMITED|LLORET MAINTENANCE LIMITED",
+				"since": "1977-01-13"
+			}
+		},
+		{
+			"id": "79|CANE HILL DRIVE",
+			"address": {
+				"number": "79",
+				"street": "CANE HILL DRIVE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "VAYA PROPERTIES LTD|LNL PRIVATE LTD",
+				"since": "2020-11-12"
+			}
+		},
+		{
+			"id": "229|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "229",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LONDIS COULSDON LIMITED",
+				"since": "2024-02-10"
+			}
+		},
+		{
+			"id": "51|WOODLANDS GROVE",
+			"address": {
+				"number": "51",
+				"street": "WOODLANDS GROVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LORETTAS CAFE & CAKES LTD",
+				"since": "2025-10-23"
+			}
+		},
+		{
+			"id": "4|FIELD END",
+			"address": {
+				"number": "4",
+				"street": "FIELD END"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LUMORABEAUTY LTD",
+				"since": "2026-02-19"
+			}
+		},
+		{
+			"id": "25|COULSDON COURT ROAD",
+			"address": {
+				"number": "25",
+				"street": "COULSDON COURT ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LUXURY CANDLE MAKERS LTD",
+				"since": "2026-03-16"
+			}
+		},
+		{
+			"id": "136|BRIGHTON ROAD",
+			"address": {
+				"number": "136",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LV HOSPITALITY GROUP LTD.",
+				"since": "2018-02-12"
+			}
+		},
+		{
+			"id": "90|CHALDON WAY",
+			"address": {
+				"number": "90",
+				"street": "CHALDON WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LYNN ROBERTS LTD",
+				"since": "2026-04-27"
+			}
+		},
+		{
+			"id": "263|COULSDON ROAD",
+			"address": {
+				"number": "263",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MAHONEY'S PIPEWORK SERVICES LTD",
+				"since": "2014-08-19"
+			}
+		},
+		{
+			"id": "16|TAUNTON LANE",
+			"address": {
+				"number": "16",
+				"street": "TAUNTON LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MAKAGROUP LTD",
+				"since": "2021-10-12"
+			}
+		},
+		{
+			"id": "19|TAUNTON LANE",
+			"address": {
+				"number": "19",
+				"street": "TAUNTON LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MAN LEE COULSDON LIMITED",
+				"since": "2022-04-14"
+			}
+		},
+		{
+			"id": "13|TAUNTON LANE",
+			"address": {
+				"number": "13",
+				"street": "TAUNTON LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MARY CONVENIENCE STORES LTD",
+				"since": "2019-01-09"
+			}
+		},
+		{
+			"id": "54|WESTLEIGH AVENUE",
+			"address": {
+				"number": "54",
+				"street": "WESTLEIGH AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MELISSA.ASSESS LTD",
+				"since": "2020-07-23"
+			}
+		},
+		{
+			"id": "43|THE CROSSWAYS",
+			"address": {
+				"number": "43",
+				"street": "THE CROSSWAYS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "METAMORPHOSIS CONSULTING LTD",
+				"since": "2019-08-12"
+			}
+		},
+		{
+			"id": "216|BRIGHTON ROAD",
+			"address": {
+				"number": "216",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MONIKA HOFMANN AESTHETIC LTD",
+				"since": "2025-01-06"
+			}
+		},
+		{
+			"id": "215|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "215",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MR CHIPS (UK) LLP",
+				"since": "2014-07-21"
+			}
+		},
+		{
+			"id": "9|MAGPIE CLOSE",
+			"address": {
+				"number": "9",
+				"street": "MAGPIE CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MUGALU123 LIMITED",
+				"since": "2019-07-01"
+			}
+		},
+		{
+			"id": "399|BRIGHTON ROAD",
+			"address": {
+				"number": "399",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MYKEY AV LIMITED",
+				"since": "2024-07-16"
+			}
+		},
+		{
+			"id": "20|MEAD WAY",
+			"address": {
+				"number": "20",
+				"street": "MEAD WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NAMACARE SERVICE PROVIDERS LTD",
+				"since": "2020-10-19"
+			}
+		},
+		{
+			"id": "7|SHAFTESBURY LANE",
+			"address": {
+				"number": "7",
+				"street": "SHAFTESBURY LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NEESON ENTERPRISE LTD",
+				"since": "2018-11-02"
+			}
+		},
+		{
+			"id": "206|BRIGHTON ROAD",
+			"address": {
+				"number": "206",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "NOORZ WOOD PIZZERIA LIMITED|SHAREWOOD PEZZERIA LTD|URBAN MEALS LTD",
+				"since": "2018-04-05"
+			}
+		},
+		{
+			"id": "48|SHERWOOD ROAD",
+			"address": {
+				"number": "48",
+				"street": "SHERWOOD ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "NT SECURITY SYSTEMS LIMITED|SUNEETA COSMETICS LONDON LIMITED",
+				"since": "2013-06-28"
+			}
+		},
+		{
+			"id": "19|RICKMAN HILL",
+			"address": {
+				"number": "19",
+				"street": "RICKMAN HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NUSA INVESTMENTS LTD",
+				"since": "2021-07-22"
+			}
+		},
+		{
+			"id": "81|COULSDON ROAD",
+			"address": {
+				"number": "81",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "OLD COULSDON BOWLING CLUB LIMITED",
+				"since": "1936-01-08"
+			}
+		},
+		{
+			"id": "105|BRIGHTON ROAD",
+			"address": {
+				"number": "105",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "OLEA KITCHEN LTD",
+				"since": "2026-06-18"
+			}
+		},
+		{
+			"id": "2|HAYCROFT CLOSE",
+			"address": {
+				"number": "2",
+				"street": "HAYCROFT CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ONE SEVEN DIGITAL LTD",
+				"since": "2023-09-07"
+			}
+		},
+		{
+			"id": "26|THE DRIVE",
+			"address": {
+				"number": "26",
+				"street": "THE DRIVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "OREGON CARE LIMITED",
+				"since": "1998-11-11"
+			}
+		},
+		{
+			"id": "14|THE AVENUE",
+			"address": {
+				"number": "14",
+				"street": "THE AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "OUDJAT LTD",
+				"since": "2020-11-20"
+			}
+		},
+		{
+			"id": "8|TULLICK WAY",
+			"address": {
+				"number": "8",
+				"street": "TULLICK WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "OWN SWEET HOME LTD",
+				"since": "2018-05-30"
+			}
+		},
+		{
+			"id": "13|KESTON AVENUE",
+			"address": {
+				"number": "13",
+				"street": "KESTON AVENUE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "VINMORE LIMITED|PETEMORE LTD",
+				"since": "2024-02-26"
+			}
+		},
+		{
+			"id": "38|STOATS NEST VILLAGE",
+			"address": {
+				"number": "38",
+				"street": "STOATS NEST VILLAGE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PINNAL LIMITED",
+				"since": "2025-07-22"
+			}
+		},
+		{
+			"id": "1|BENNETT CLOSE",
+			"address": {
+				"number": "1",
+				"street": "BENNETT CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PINTO GARCIA LIMITED",
+				"since": "2025-09-05"
+			}
+		},
+		{
+			"id": "11|CHARLES HOWELL DRIVE",
+			"address": {
+				"number": "11",
+				"street": "CHARLES HOWELL DRIVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PIXELDESK STUDIOS LTD",
+				"since": "2020-02-10"
+			}
+		},
+		{
+			"id": "43|THE DRIVE",
+			"address": {
+				"number": "43",
+				"street": "THE DRIVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "POLI ENGINEERING LIMITED",
+				"since": "2008-03-29"
+			}
+		},
+		{
+			"id": "3|THE DRIVE",
+			"address": {
+				"number": "3",
+				"street": "THE DRIVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PRIME LAUNDRY OP LTD",
+				"since": "2026-01-12"
+			}
+		},
+		{
+			"id": "143|TOLLERS LANE",
+			"address": {
+				"number": "143",
+				"street": "TOLLERS LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PRINT AND SIGN SERVICES LTD",
+				"since": "2026-01-20"
+			}
+		},
+		{
+			"id": "62|RICKMAN HILL",
+			"address": {
+				"number": "62",
+				"street": "RICKMAN HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PRO BIKE CUSTOM CYCLES LTD.",
+				"since": "2018-11-23"
+			}
+		},
+		{
+			"id": "26|COULSDON RISE",
+			"address": {
+				"number": "26",
+				"street": "COULSDON RISE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "QA & QC LIMITED",
+				"since": "2022-02-23"
+			}
+		},
+		{
+			"id": "115|FAIRDENE ROAD",
+			"address": {
+				"number": "115",
+				"street": "FAIRDENE ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "QUIPACRE LTD|SR SQUARED CONSULTING LTD",
+				"since": "2025-04-24"
+			}
+		},
+		{
+			"id": "10|SALTER CLOSE",
+			"address": {
+				"number": "10",
+				"street": "SALTER CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "R W PROPERTY CONSULTANTS LTD",
+				"since": "2020-01-21"
+			}
+		},
+		{
+			"id": "2|VAN BRUGH AVENUE",
+			"address": {
+				"number": "2",
+				"street": "VAN BRUGH AVENUE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "RACKETPASS LTD|SELFIFY LTD",
+				"since": "2024-10-23"
+			}
+		},
+		{
+			"id": "50|MARLPIT LANE",
+			"address": {
+				"number": "50",
+				"street": "MARLPIT LANE"
+			},
+			"claims": {
+				"count": "3",
+				"names": "RAI INFORMATION TECHNOLOGY LIMITED|RIAAN RAI MOTION PICTURES LTD|RIAANNAIRA PROPERTIES LTD",
+				"since": "2013-03-14"
+			}
+		},
+		{
+			"id": "2|SHAFTESBURY LANE",
+			"address": {
+				"number": "2",
+				"street": "SHAFTESBURY LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "REALFLEX APPLICATIONS LTD",
+				"since": "2011-09-23"
+			}
+		},
+		{
+			"id": "1|WOODMAN ROAD",
+			"address": {
+				"number": "1",
+				"street": "WOODMAN ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "REHOBOTH ENTERPRISES INTERNATIONAL LIMITED",
+				"since": "2015-08-05"
+			}
+		},
+		{
+			"id": "24|LEADEN HILL",
+			"address": {
+				"number": "24",
+				"street": "LEADEN HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "REYADA GROUP LTD",
+				"since": "2025-04-07"
+			}
+		},
+		{
+			"id": "218|BRIGHTON ROAD",
+			"address": {
+				"number": "218",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RICARDO ABRANTES CHIROPRACTIC LIMITED",
+				"since": "2021-11-10"
+			}
+		},
+		{
+			"id": "107|BRIGHTON ROAD",
+			"address": {
+				"number": "107",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RIZGAR LIMITED",
+				"since": "2024-02-10"
+			}
+		},
+		{
+			"id": "8|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "8",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RJD CORPORATION LTD",
+				"since": "2020-10-12"
+			}
+		},
+		{
+			"id": "23|WOODMAN ROAD",
+			"address": {
+				"number": "23",
+				"street": "WOODMAN ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RMK BUILDING CONSTRUCTION LTD",
+				"since": "2025-01-08"
+			}
+		},
+		{
+			"id": "10|TURNER PLACE",
+			"address": {
+				"number": "10",
+				"street": "TURNER PLACE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ROBERTS ESTATE HOLDINGS LTD",
+				"since": "2019-10-31"
+			}
+		},
+		{
+			"id": "44|CANE HILL DRIVE",
+			"address": {
+				"number": "44",
+				"street": "CANE HILL DRIVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ROEJ LIMITED",
+				"since": "2021-10-11"
+			}
+		},
+		{
+			"id": "324|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "324",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ROLLING ON CYCLES LTD",
+				"since": "2009-06-17"
+			}
+		},
+		{
+			"id": "33|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "33",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RUBY ENTERPRISES LONDON LIMITED",
+				"since": "2022-12-12"
+			}
+		},
+		{
+			"id": "33|THE NETHERLANDS",
+			"address": {
+				"number": "33",
+				"street": "THE NETHERLANDS"
+			},
+			"claims": {
+				"count": "2",
+				"names": "XAVR LTD|RÉSIDENCE ASPIRA LTD",
+				"since": "2015-02-13"
+			}
+		},
+		{
+			"id": "9|SMITHAM DOWNS ROAD",
+			"address": {
+				"number": "9",
+				"street": "SMITHAM DOWNS ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "S&K MOBILE WELDING LTD",
+				"since": "2026-05-06"
+			}
+		},
+		{
+			"id": "35|THE DRIVE",
+			"address": {
+				"number": "35",
+				"street": "THE DRIVE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "SAXON LODGE RESIDENTIAL HOME LIMITED|SAXON LODGE CARE LIMITED",
+				"since": "1999-06-02"
+			}
+		},
+		{
+			"id": "13|CORDREY GARDENS",
+			"address": {
+				"number": "13",
+				"street": "CORDREY GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SELF-DETERMINATION LIMITED",
+				"since": "2012-06-06"
+			}
+		},
+		{
+			"id": "15|PHILAND LANE",
+			"address": {
+				"number": "15",
+				"street": "PHILAND LANE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "VIRTUE CONSULTING PRIVATE LTD|SERENITY HOUSES LIMITED",
+				"since": "2018-05-15"
+			}
+		},
+		{
+			"id": "19|ELLIS ROAD",
+			"address": {
+				"number": "19",
+				"street": "ELLIS ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SHAKURAN LIMITED",
+				"since": "2025-03-20"
+			}
+		},
+		{
+			"id": "1|KERRILL AVENUE",
+			"address": {
+				"number": "1",
+				"street": "KERRILL AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SHANE DOOHAN SERVICES LIMITED",
+				"since": "2018-09-24"
+			}
+		},
+		{
+			"id": "94|BRIGHTON ROAD",
+			"address": {
+				"number": "94",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SHIMMER NAIL & BEAUTY LTD",
+				"since": "2026-04-07"
+			}
+		},
+		{
+			"id": "9|STANLEY CLOSE",
+			"address": {
+				"number": "9",
+				"street": "STANLEY CLOSE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "XPERIMENTAL WAVE LTD|SILVER SKY ESTATES LIMITED",
+				"since": "2016-03-07"
+			}
+		},
+		{
+			"id": "17|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "17",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "SINGAPORE CATERING LTD|SINGAPORE ORCHID LTD",
+				"since": "2012-02-06"
+			}
+		},
+		{
+			"id": "143|BRIGHTON ROAD",
+			"address": {
+				"number": "143",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SNOW BRIGHT LTD",
+				"since": "2011-12-19"
+			}
+		},
+		{
+			"id": "120|WINDERMERE ROAD",
+			"address": {
+				"number": "120",
+				"street": "WINDERMERE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SOGGEE CLEANING SERVICES LTD",
+				"since": "2025-10-17"
+			}
+		},
+		{
+			"id": "1|REED GARDENS",
+			"address": {
+				"number": "1",
+				"street": "REED GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SORC LIMITED",
+				"since": "2022-07-25"
+			}
+		},
+		{
+			"id": "9|STARROCK ROAD",
+			"address": {
+				"number": "9",
+				"street": "STARROCK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SQUARE FOOT DESIGN LTD",
+				"since": "2001-10-26"
+			}
+		},
+		{
+			"id": "24|MEAD WAY",
+			"address": {
+				"number": "24",
+				"street": "MEAD WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SRIS ENTERPRISES LIMITED",
+				"since": "2026-09-03"
+			}
+		},
+		{
+			"id": "51|KESTON AVENUE",
+			"address": {
+				"number": "51",
+				"street": "KESTON AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ST ANDRE SERVICES LTD",
+				"since": "2021-11-29"
+			}
+		},
+		{
+			"id": "22|THE DRIVE",
+			"address": {
+				"number": "22",
+				"street": "THE DRIVE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "THE DIVERSITY PRACTICE LIMITED|STAYWITHCRE LTD",
+				"since": "2003-03-05"
+			}
+		},
+		{
+			"id": "48|WOODMANSTERNE ROAD",
+			"address": {
+				"number": "48",
+				"street": "WOODMANSTERNE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SUMMERFIELD EDUCATION LIMITED",
+				"since": "2020-03-06"
+			}
+		},
+		{
+			"id": "22|WOODFIELD HILL",
+			"address": {
+				"number": "22",
+				"street": "WOODFIELD HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SUPREME HOMES LIMITED",
+				"since": "2013-11-15"
+			}
+		},
+		{
+			"id": "2|BRIGHTON ROAD",
+			"address": {
+				"number": "2",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SZULSTER TRANSPORT LTD",
+				"since": "2015-09-14"
+			}
+		},
+		{
+			"id": "372|COULSDON ROAD",
+			"address": {
+				"number": "372",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "T2FIT FUEL BAR LTD",
+				"since": "2026-04-03"
+			}
+		},
+		{
+			"id": "31|LEADEN HILL",
+			"address": {
+				"number": "31",
+				"street": "LEADEN HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TACTA LTD",
+				"since": "2025-03-10"
+			}
+		},
+		{
+			"id": "123|RICKMAN HILL",
+			"address": {
+				"number": "123",
+				"street": "RICKMAN HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TENNIG LIMITED",
+				"since": "2003-07-04"
+			}
+		},
+		{
+			"id": "14|CEARN WAY",
+			"address": {
+				"number": "14",
+				"street": "CEARN WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TEPAO LTD",
+				"since": "2019-09-04"
+			}
+		},
+		{
+			"id": "21|HOWARD ROAD",
+			"address": {
+				"number": "21",
+				"street": "HOWARD ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TH & DR PROPERTIES LIMITED",
+				"since": "2021-12-02"
+			}
+		},
+		{
+			"id": "155A|BRIGHTON ROAD",
+			"address": {
+				"number": "155A",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE LIFTING CORNER LTD",
+				"since": "2024-02-14"
+			}
+		},
+		{
+			"id": "15|CHALDON WAY",
+			"address": {
+				"number": "15",
+				"street": "CHALDON WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE RUGBY COACH LTD",
+				"since": "2017-05-08"
+			}
+		},
+		{
+			"id": "10|LEADEN HILL",
+			"address": {
+				"number": "10",
+				"street": "LEADEN HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THINKDOODL LIMITED",
+				"since": "2025-02-18"
+			}
+		},
+		{
+			"id": "175|BRIGHTON ROAD",
+			"address": {
+				"number": "175",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "THIRSTY WORK FOOD AND WINE LIMITED|THIRSTY POINT LIMITED",
+				"since": "2021-06-09"
+			}
+		},
+		{
+			"id": "4|COULSDON RISE",
+			"address": {
+				"number": "4",
+				"street": "COULSDON RISE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TOM SMITH CONSULTING LTD",
+				"since": "2025-10-06"
+			}
+		},
+		{
+			"id": "29|CHIPSTEAD VALLEY ROAD",
+			"address": {
+				"number": "29",
+				"street": "CHIPSTEAD VALLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TOP TO TAIL COULSDON LTD",
+				"since": "2018-10-16"
+			}
+		},
+		{
+			"id": "106|BRIGHTON ROAD",
+			"address": {
+				"number": "106",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TOWN BARBER BRIGHTON RD LTD",
+				"since": "2025-07-01"
+			}
+		},
+		{
+			"id": "21|RICKMAN HILL",
+			"address": {
+				"number": "21",
+				"street": "RICKMAN HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TVS CONSULTANCY LIMITED",
+				"since": "2025-06-22"
+			}
+		},
+		{
+			"id": "208|COULSDON ROAD",
+			"address": {
+				"number": "208",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TWO ORANGE DOGS THERAPY LTD",
+				"since": "2025-09-27"
+			}
+		},
+		{
+			"id": "16|RUXTON CLOSE",
+			"address": {
+				"number": "16",
+				"street": "RUXTON CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "UZO TRAVEL GROUP LTD",
+				"since": "2024-08-24"
+			}
+		},
+		{
+			"id": "107|COULSDON ROAD",
+			"address": {
+				"number": "107",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "VARA OSTEOPATHIC SERVICES LTD",
+				"since": "2014-11-10"
+			}
+		},
+		{
+			"id": "2|CATTLEY PLACE",
+			"address": {
+				"number": "2",
+				"street": "CATTLEY PLACE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "VENUS REALTY LTD",
+				"since": "2022-12-19"
+			}
+		},
+		{
+			"id": "2|CHURCH PATH",
+			"address": {
+				"number": "2",
+				"street": "CHURCH PATH"
+			},
+			"claims": {
+				"count": "1",
+				"names": "VERSACARE LIMITED",
+				"since": "2015-02-25"
+			}
+		},
+		{
+			"id": "164|COULSDON ROAD",
+			"address": {
+				"number": "164",
+				"street": "COULSDON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "W. KENNY LTD",
+				"since": "1999-07-21"
+			}
+		},
+		{
+			"id": "142|BRIGHTON ROAD",
+			"address": {
+				"number": "142",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "WALTER AND MAIR LIMITED",
+				"since": "2009-02-26"
+			}
+		},
+		{
+			"id": "34|THE VALE",
+			"address": {
+				"number": "34",
+				"street": "THE VALE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "WELCOME SHOES LIMITED",
+				"since": "2005-03-16"
+			}
+		},
+		{
+			"id": "27|COULSDON RISE",
+			"address": {
+				"number": "27",
+				"street": "COULSDON RISE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "WILSON AUDIO VISUAL ENGINEERING LIMITED",
+				"since": "2004-08-09"
+			}
+		},
+		{
+			"id": "75|WOODMANSTERNE ROAD",
+			"address": {
+				"number": "75",
+				"street": "WOODMANSTERNE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "WRL CONSULTING LIMITED",
+				"since": "2020-09-07"
+			}
+		},
+		{
+			"id": "131|DOWNS ROAD",
+			"address": {
+				"number": "131",
+				"street": "DOWNS ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "XL RIGGING LIMITED",
+				"since": "2014-09-23"
+			}
+		},
+		{
+			"id": "3|WESTWOOD ROAD",
+			"address": {
+				"number": "3",
+				"street": "WESTWOOD ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "Y. PHILLIPS LLP",
+				"since": "2015-06-10"
+			}
+		},
+		{
+			"id": "20|EDWARD ROAD",
+			"address": {
+				"number": "20",
+				"street": "EDWARD ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "YOTTEX LIMITED",
+				"since": "2018-09-19"
+			}
+		},
+		{
+			"id": "2|RUTHERWICK RISE",
+			"address": {
+				"number": "2",
+				"street": "RUTHERWICK RISE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ZEEL PROPERTIES LTD",
+				"since": "2022-03-03"
+			}
+		},
+		{
+			"id": "39|SMITHAM DOWNS ROAD",
+			"address": {
+				"number": "39",
+				"street": "SMITHAM DOWNS ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ZUBERI PROPERTIES LTD",
+				"since": "2021-05-14"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

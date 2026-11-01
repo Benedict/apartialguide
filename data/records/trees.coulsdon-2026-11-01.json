@@ -1,0 +1,47 @@
+{
+	"source": "Greater London Authority, Public_Realm_tree_list_2025_November.csv",
+	"prefix": "trees",
+	"records": [
+		{
+			"id": "trees:Cuthered Mews",
+			"street": "Cuthered Mews",
+			"claims": {
+				"count": "1",
+				"kinds": "Maple (1)"
+			}
+		},
+		{
+			"id": "trees:Farthing Way",
+			"street": "Farthing Way",
+			"claims": {
+				"count": "21",
+				"kinds": "Wild Cherry (8), Oak (3), Birch (2), Hawthorn (2), Bird Cherry (1), Cherry (1), Horse-chestnut (1), Italian Alder (1), Sycamore (1), Walnut (1)"
+			}
+		},
+		{
+			"id": "trees:Grassfield Close",
+			"street": "Grassfield Close",
+			"claims": {
+				"count": "2",
+				"kinds": "A Conifer (2)"
+			}
+		},
+		{
+			"id": "trees:Cane Hill Drive",
+			"street": "Cane Hill Drive",
+			"claims": {
+				"count": "1",
+				"kinds": "Wild Cherry (1)"
+			}
+		},
+		{
+			"id": "trees:Dobles Close",
+			"street": "Dobles Close",
+			"claims": {
+				"count": "1",
+				"kinds": "Wild Cherry (1)"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}
