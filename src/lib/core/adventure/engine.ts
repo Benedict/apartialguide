@@ -602,11 +602,16 @@ export class Adventure {
 		}
 	}
 
+	/** The world's word for the ways out of a place, as a place's last line begins. */
+	private get waysWord(): string {
+		return `${this.world.ways ?? 'Exits'}:`;
+	}
+
 	private exits(): string {
 		const stop = this.world.stops[this.walk.here];
 		return (
-			stop.paragraphs.find((p) => p.startsWith('Exits:')) ??
-			`Exits: ${stop.exits.map((e) => e.label).join(', ')}.`
+			stop.paragraphs.find((p) => p.startsWith(this.waysWord)) ??
+			`${this.waysWord} ${stop.exits.map((e) => e.label).join(', ')}.`
 		);
 	}
 
@@ -929,7 +934,7 @@ export class Adventure {
 			]);
 		const lines = [...reply.lines];
 		const exits =
-			lines.length && lines.at(-1)!.startsWith('Exits:') ? lines.length - 1 : lines.length;
+			lines.length && lines.at(-1)!.startsWith(this.waysWord) ? lines.length - 1 : lines.length;
 		const way = this.wayOn();
 		lines.splice(exits, 0, ...left, ...(back ? [back] : []), ...(way ? [way] : []));
 		return this.followed({ ...reply, lines });

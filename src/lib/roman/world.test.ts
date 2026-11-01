@@ -107,6 +107,11 @@ describe('romanWorld (Roman roads and sites as a walk)', () => {
 		expect(at('Inventon').paragraphs.at(-1)).toMatch(/north, 11 km along “Inventa to Nowhere\?”/);
 	});
 
+	it('calls the ways out of a place its ways, as roads are', () => {
+		expect(world.ways).toBe('Ways');
+		expect(at('Inventon').paragraphs.at(-1)).toMatch(/^Ways: /);
+	});
+
 	it('puts every stop where the data puts it', () => {
 		expect(at('Inventon').at).toEqual([51.1, 0]);
 	});

@@ -133,6 +133,8 @@ export interface AdventureWorld {
 	weatherAt?: { latitude: number; longitude: number };
 	/** What others keep beyond the map's edge, told only when the reader looks beyond. */
 	beyond?: Beyond[];
+	/** The world's own word for the ways out of a place ("Ways" for roads); "Exits" unless told. */
+	ways?: string;
 }
 
 export function compileWorld(

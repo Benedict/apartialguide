@@ -12,7 +12,7 @@ London: Colonia. It is said it was called “Londinium”. London: Fort. Kept by
 
 “Rochester to London” runs here: Certain - +/- 30m. “London Bridge to the South Island” runs here: Certain - +/- 30m. “Ermine Street, London to York” runs here: Certain - +/- 30m. “London to Chelmsford” runs here: Certain - +/- 30m. “Oxford Street to Old Ford” runs here: Probable +/- 200m. “London to Stevenage” runs here: Certain - +/- 30m. “Aldgate to Shadwell” runs here: Probable +/- 200m. “London to Belgravia” runs here: Certain - +/- 30m. “London to Silchester” runs here: Certain - +/- 30m. “Verulamium to Shenley Mill Hill??” runs here: No evidence - Requires invetsigation.
 
-Exits: south-west, 0 km along “Rochester to London”; south, 0 km along “London Bridge to the South Island”; east, 1 km along “Ermine Street, London to York”; south-east, 1 km along “London to Chelmsford”; west, 1 km along “Oxford Street to Old Ford”; north-west, 2 km along “London to Stevenage”; north, 2 km along “London to Stevenage”; north-east, 2 km along “Aldgate to Shadwell”.
+Ways: south-west, 0 km along “Rochester to London”; south, 0 km along “London Bridge to the South Island”; east, 1 km along “Ermine Street, London to York”; south-east, 1 km along “London to Chelmsford”; west, 1 km along “Oxford Street to Old Ford”; north-west, 2 km along “London to Stevenage”; north, 2 km along “London to Stevenage”; north-east, 2 km along “Aldgate to Shadwell”.
 
 > south-west
 
@@ -20,7 +20,7 @@ Exits: south-west, 0 km along “Rochester to London”; south, 0 km along “Lo
 
 “Rochester to London” runs here: Certain - +/- 30m. “London Bridge to the South Island” runs here: Certain - +/- 30m. “Southwark to Lambeth” runs here: Conjectured. “Stane Street, London to Chichester” runs here: Probable +/- 200m. “Canterbury to Rochester / Rochester to London” runs here: Certain - +/- 30m.
 
-Exits: north-east, 0 km along “Rochester to London”; north, 0 km along “London Bridge to the South Island”; south-west, 1 km along “Southwark to Lambeth”; south, 1 km along “Stane Street, London to Chichester”; south-east, 2 km along “Canterbury to Rochester / Rochester to London”.
+Ways: north-east, 0 km along “Rochester to London”; north, 0 km along “London Bridge to the South Island”; south-west, 1 km along “Southwark to Lambeth”; south, 1 km along “Stane Street, London to Chichester”; south-east, 2 km along “Canterbury to Rochester / Rochester to London”.
 
 You have walked 1 km.
 
@@ -30,7 +30,7 @@ You have walked 1 km.
 
 “Southwark to Lambeth” runs here: Conjectured. “Watling Street, Glengall Road to Marble Arch” runs here: Probable +/- 200m.
 
-Exits: north-east, 1 km along “Southwark to Lambeth”; west, 1 km along “Watling Street, Glengall Road to Marble Arch”; east, 3 km along “Watling Street, Glengall Road to Marble Arch”.
+Ways: north-east, 1 km along “Southwark to Lambeth”; west, 1 km along “Watling Street, Glengall Road to Marble Arch”; east, 3 km along “Watling Street, Glengall Road to Marble Arch”.
 
 You have walked 2 km.
 
@@ -40,7 +40,7 @@ You have walked 2 km.
 
 “London to Belgravia” runs here: No evidence - Requires invetsigation. “Watling Street, Glengall Road to Marble Arch” runs here: Probable +/- 200m.
 
-Exits: south-west, 1 km along “London to Belgravia”; east, 1 km along “Watling Street, Glengall Road to Marble Arch”; north-west, 2 km along “Watling Street, Glengall Road to Marble Arch”; north-east, 4 km along “London to Belgravia”; west, 9 km along “London to Belgravia”.
+Ways: south-west, 1 km along “London to Belgravia”; east, 1 km along “Watling Street, Glengall Road to Marble Arch”; north-west, 2 km along “Watling Street, Glengall Road to Marble Arch”; north-east, 4 km along “London to Belgravia”; west, 9 km along “London to Belgravia”.
 
 > south-west
 
@@ -48,7 +48,7 @@ Exits: south-west, 1 km along “London to Belgravia”; east, 1 km along “Wat
 
 “London to Belgravia” runs here: Certain - +/- 30m.
 
-Exits: north-east, 1 km along “London to Belgravia”.
+Ways: north-east, 1 km along “London to Belgravia”.
 
 You have walked 5 km.
 
@@ -56,7 +56,7 @@ You have walked 5 km.
 
 **London to Belgravia**
 
-Exits: south-west, 1 km along “London to Belgravia”; east, 1 km along “Watling Street, Glengall Road to Marble Arch”; north-west, 2 km along “Watling Street, Glengall Road to Marble Arch”; north-east, 4 km along “London to Belgravia”; west, 9 km along “London to Belgravia”.
+Ways: south-west, 1 km along “London to Belgravia”; east, 1 km along “Watling Street, Glengall Road to Marble Arch”; north-west, 2 km along “Watling Street, Glengall Road to Marble Arch”; north-east, 4 km along “London to Belgravia”; west, 9 km along “London to Belgravia”.
 
 > north-west
 
@@ -64,7 +64,7 @@ Exits: south-west, 1 km along “London to Belgravia”; east, 1 km along “Wat
 
 “Watling Street, Glengall Road to Marble Arch” runs here: Probable +/- 200m. “London to Silchester” runs here: Certain - +/- 30m. “London to” runs here: Certain - +/- 30m.
 
-Exits: south-east, 2 km along “Watling Street, Glengall Road to Marble Arch”; east, 5 km along “London to Silchester”; west, 9 km along “London to Silchester”; north-west, 16 km along “London to”.
+Ways: south-east, 2 km along “Watling Street, Glengall Road to Marble Arch”; east, 5 km along “London to Silchester”; west, 9 km along “London to Silchester”; north-west, 16 km along “London to”.
 
 > west
 
@@ -74,7 +74,7 @@ Brentford, Gasworks: Vicus - defence & size uncertain.
 
 “London to Silchester” runs here: Certain - +/- 30m.
 
-Exits: south-west, 2 km along “London to Silchester”; east, 9 km along “London to Silchester”.
+Ways: south-west, 2 km along “London to Silchester”; east, 9 km along “London to Silchester”.
 
 You have walked 10 km.
 
@@ -86,7 +86,7 @@ Brentford, London Road: Vicus - large >9Ha.
 
 “London to Silchester” runs here: Certain - +/- 30m.
 
-Exits: north-east, 2 km along “London to Silchester”; west, 14 km along “London to Silchester”.
+Ways: north-east, 2 km along “London to Silchester”; west, 14 km along “London to Silchester”.
 
 > west
 
@@ -96,7 +96,7 @@ Staines: Vicus - large >9Ha. It is said it was called “PONTES”.
 
 “London to Silchester” runs here: Certain - +/- 30m.
 
-Exits: west, 3 km along “London to Silchester”; east, 14 km along “London to Silchester”.
+Ways: west, 3 km along “London to Silchester”; east, 14 km along “London to Silchester”.
 
 You have walked 20 km.
 
@@ -106,4 +106,4 @@ You have walked 20 km.
 
 “London to Silchester” runs here: Conjectured.
 
-Exits: south-west, 1 km along “London to Silchester”; east, 3 km along “London to Silchester”.
+Ways: south-west, 1 km along “London to Silchester”; east, 3 km along “London to Silchester”.

@@ -199,7 +199,7 @@ export function romanWorld(
 			paragraphs: [
 				...(n.sites.length ? [n.sites.flatMap(siteLines).join(' ')] : []),
 				...(roadLines.length ? [roadLines.join(' ')] : []),
-				...(told.length ? [`Exits: ${told.join('; ')}.`] : [])
+				...(told.length ? [`Ways: ${told.join('; ')}.`] : [])
 			],
 			exits,
 			things: [],
@@ -207,5 +207,5 @@ export function romanWorld(
 		};
 	});
 	const first = nodes.findIndex((n) => n.sites.some((s) => s.name === start));
-	return { start: id(first < 0 ? 0 : first), stops };
+	return { start: id(first < 0 ? 0 : first), stops, ways: 'Ways' };
 }

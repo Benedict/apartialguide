@@ -17,7 +17,7 @@
 
 **First, one road alone is too thin.** Stane Street is one segment of 90 km, “Certain - +/- 30m” throughout, with no one named as identifying it. Along it lie 5 settlements and 4 military sites, and no camps or milestones. That gives about six places, 15–20 km apart.
 
-**The network is playable, but mostly an index.** The South-East has 303 stops, of which 85 have a site, with 2.2 ways per stop on average. The other 218 stops are only where roads meet or end. Those rooms say a road's name and its confidence, then the exits. Steps run 1–16 km.
+**The network is playable, but mostly an index.** The South-East has 303 stops, of which 85 have a site, with 2.2 ways per stop on average. The other 218 stops are only where roads meet or end. Those rooms say a road’s name and its confidence, then the ways. Steps run 1–16 km.
 
 **What is worth reading:**
 

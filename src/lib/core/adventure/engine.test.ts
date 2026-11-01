@@ -964,3 +964,44 @@ describe('Departures', () => {
 		});
 	});
 });
+
+describe('A world whose ways are roads, not exits', () => {
+	const roads = (own: boolean): AdventureWorld => ({
+		start: 'a',
+		ways: 'Ways',
+		stops: {
+			a: {
+				title: 'Inventon',
+				paragraphs: [
+					'Inventon: a settlement.',
+					...(own ? ['Ways: east, 9 km along “Inventa Way”.'] : [])
+				],
+				exits: [{ label: 'east', to: 'b' }],
+				things: []
+			},
+			b: {
+				title: 'Fortham',
+				paragraphs: ['Fortham: a fort.', 'Ways: west, 9 km along “Inventa Way”.'],
+				exits: [{ label: 'west', to: 'a' }],
+				things: []
+			}
+		}
+	});
+	const back = (world: AdventureWorld) => {
+		const game = new Adventure(world);
+		game.begin();
+		game.respond('take the tour');
+		game.respond('east');
+		return game.respond('west');
+	};
+
+	it('tells its own ways again, briefly, on a return', () => {
+		expect(back(roads(true)).lines.at(-1)).toBe('Ways: east, 9 km along “Inventa Way”.');
+	});
+
+	it('names the ways in its own word where a place does not spell them out', () => {
+		const lines = back(roads(false)).lines;
+		expect(lines.at(-1)).toBe('Ways: east.');
+		expect(lines.join(' ')).not.toContain('Exits');
+	});
+});
