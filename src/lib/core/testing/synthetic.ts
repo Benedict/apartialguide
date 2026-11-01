@@ -35,6 +35,18 @@ export class SyntheticMap {
 		return this.way([...corners, corners[0]], tags);
 	}
 
+	/** An area drawn as a multipolygon relation, of member ways and their roles. */
+	relation(members: { way: number; role: 'outer' | 'inner' }[], tags: Tags): number {
+		const id = this.nextId++;
+		this.elements.push({
+			type: 'relation',
+			id,
+			tags: { type: 'multipolygon', ...tags },
+			members: members.map((m) => ({ type: 'way' as const, ref: m.way, role: m.role }))
+		});
+		return id;
+	}
+
 	/** Adds tags to an element already drawn. */
 	tag(id: number, tags: Tags): void {
 		const e = this.elements.find((e) => e.id === id);

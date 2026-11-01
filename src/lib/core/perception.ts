@@ -34,9 +34,17 @@ export class Perception {
 	}
 
 	static fromOsm(osm: OsmIndex, facts: readonly Fact[]): Perception {
-		const occluders = osm.ways
-			.filter((w) => w.tags?.building && w.nodes.length > 3 && w.nodes[0] === w.nodes.at(-1))
-			.map((w) => ({ subject: elementRef(w), ring: osm.wayGeometry(w) }));
+		const occluders = [
+			...osm.ways
+				.filter((w) => w.tags?.building && w.nodes.length > 3 && w.nodes[0] === w.nodes.at(-1))
+				.map((w) => ({ subject: elementRef(w), ring: osm.wayGeometry(w) })),
+			// A building drawn as a multipolygon blocks the view at each of its outer rings.
+			...osm.relations
+				.filter((r) => r.tags?.building)
+				.flatMap((r) =>
+					osm.relationRings(r).outer.map((ring) => ({ subject: elementRef(r), ring }))
+				)
+		];
 		return new Perception(facts, occluders);
 	}
 

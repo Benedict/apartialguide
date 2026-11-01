@@ -44,6 +44,15 @@ describe('Perception', () => {
 		expect(seen).toHaveLength(1);
 	});
 
+	it('cannot see through a building drawn as a multipolygon', () => {
+		const { seen, shop } = perceive((m) => {
+			const outline = m.building(destination(O, 0, 12), 8, {});
+			m.relation([{ way: outline, role: 'outer' }], { building: 'yes' });
+			return m.nodeFrom(O, 0, 22, { shop: 'bakery' });
+		});
+		expect(seen).not.toContain(shop);
+	});
+
 	it('sees a shop inside the building that holds it', () => {
 		const { seen, shop } = perceive((m) => {
 			m.building(destination(O, 0, 20), 16);

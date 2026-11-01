@@ -44,7 +44,26 @@ describe('oplElement', () => {
 		});
 	});
 
-	it('skips relations, deleted things and blank lines, as the snapshot keeps nodes and ways only', () => {
+	it('reads an area drawn as a multipolygon: its tags and its member ways, each with its role', () => {
+		expect(
+			oplElement(
+				'r9 v2 dV c0 t2022-03-01T00:00:00Z i0 u Ttype=multipolygon,leisure=park,name=Inventa%20%Fields Mw7@outer,w8@outer,w11@inner'
+			)
+		).toEqual({
+			type: 'relation',
+			id: 9,
+			version: 2,
+			timestamp: '2022-03-01T00:00:00Z',
+			tags: { type: 'multipolygon', leisure: 'park', name: 'Inventa Fields' },
+			members: [
+				{ type: 'way', ref: 7, role: 'outer' },
+				{ type: 'way', ref: 8, role: 'outer' },
+				{ type: 'way', ref: 11, role: 'inner' }
+			]
+		});
+	});
+
+	it('skips other relations, deleted things and blank lines', () => {
 		expect(oplElement('r9 v1 dV t2020-01-01T00:00:00Z Ttype=route Mw7@')).toBeUndefined();
 		expect(oplElement('n8 v2 dD t2020-01-01T00:00:00Z T x y')).toBeUndefined();
 		expect(oplElement('')).toBeUndefined();

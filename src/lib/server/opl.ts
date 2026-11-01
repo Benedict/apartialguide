@@ -1,8 +1,8 @@
-import type { OsmElement } from '../core/osm';
+import type { OsmElement, OsmMember } from '../core/osm';
 
 /**
  * Reads OSM's plain text format, OPL, one element a line (`osmium cat -f opl`), into the snapshot's
- * own elements: nodes and ways, with their tags, version and time. A downloaded extract carries no
+ * own elements: nodes, ways and areas drawn as multipolygons, with their tags, version and time. A downloaded extract carries no
  * one's name, and the snapshot needs none.
  */
 
@@ -20,10 +20,30 @@ function tagsOf(field: string): Record<string, string> | undefined {
 	return tags;
 }
 
-/** One OPL line as a snapshot element, or nothing for a relation, a deleted thing or a blank. */
+const MEMBER_TYPES = { n: 'node', w: 'way', r: 'relation' } as const;
+
+/** A relation's members as OPL writes them: `w7@outer,w11@inner`. */
+function membersOf(field: string): OsmMember[] {
+	return field
+		.split(',')
+		.filter(Boolean)
+		.map((m) => {
+			const at = m.indexOf('@');
+			return {
+				type: MEMBER_TYPES[m[0] as keyof typeof MEMBER_TYPES],
+				ref: Number(m.slice(1, at)),
+				role: unescape(m.slice(at + 1))
+			};
+		});
+}
+
+/**
+ * One OPL line as a snapshot element: a node, a way, or an area drawn as a multipolygon relation;
+ * nothing for any other relation, a deleted thing or a blank.
+ */
 export function oplElement(line: string): OsmElement | undefined {
 	const [head, ...rest] = line.trim().split(' ');
-	if (!head || (head[0] !== 'n' && head[0] !== 'w')) return undefined;
+	if (!head || !'nwr'.includes(head[0])) return undefined;
 	const field = (key: string) => rest.find((f) => f[0] === key)?.slice(1) ?? '';
 	if (field('d') === 'D') return undefined;
 	const tags = tagsOf(field('T'));
@@ -33,6 +53,10 @@ export function oplElement(line: string): OsmElement | undefined {
 		...(field('t') ? { timestamp: field('t') } : {}),
 		...(tags ? { tags } : {})
 	};
+	if (head[0] === 'r')
+		return tags?.type === 'multipolygon'
+			? { type: 'relation', ...base, members: membersOf(field('M')) }
+			: undefined;
 	if (head[0] === 'w')
 		return {
 			type: 'way',

@@ -88,6 +88,23 @@ describe('buildStopGraph', () => {
 		expect(distance(graph.get(path[1])!.position, plaque)).toBeLessThan(15);
 	});
 
+	it('stops beside a named place drawn as a multipolygon, as beside one drawn as a way', () => {
+		const map = new SyntheticMap();
+		const a = map.node(O);
+		const b = map.nodeFrom(O, 90, 200);
+		map.way([a, b]);
+		const outline = map.building(destination(destination(O, 90, 100), 0, 20), 10, {});
+		map.relation([{ way: outline, role: 'outer' }], {
+			amenity: 'library',
+			name: 'Inventa Library'
+		});
+		const path = buildStopGraph(new OsmIndex(map.toData()), { spacing: 500 }).walk(
+			junctionId(a),
+			'east'
+		);
+		expect(path).toHaveLength(3);
+	});
+
 	it('ignores ways that are not walkable streets', () => {
 		const map = new SyntheticMap();
 		const a = map.node(O);

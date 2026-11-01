@@ -189,7 +189,8 @@ async function inTiles(box: string) {
 	return mergeElements(lists);
 }
 const [w, south, e, north] = bbox.split(',');
-// Nodes and ways only, as for past maps: relations would pull in far-off members.
+// From a shared server, nodes and ways only, as for past maps: relations would pull in far-off
+// members. A downloaded extract also keeps the areas drawn as multipolygons (server/opl.ts).
 /** A downloaded extract, cut to the box and written as OPL by osmium (FROM_OPL), read a line at a time. */
 async function fromOpl(path: string) {
 	const elements = [];
