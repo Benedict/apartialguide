@@ -1,4 +1,5 @@
 import { SOURCES } from '../site/sources';
+export { REPO } from '../site/repo';
 
 /**
  * What the site says of itself, beyond the page: its pages' descriptions and addresses, robots.txt,
@@ -175,6 +176,3 @@ export function jsonLd(page: 'home' | 'walk', siteUrl?: string): string {
 				};
 	return `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;
 }
-
-/** Where the code is kept, in the open. */
-export const REPO = 'https://github.com/Benedict/osm-text-adventure';

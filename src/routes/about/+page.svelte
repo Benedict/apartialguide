@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { SOURCES } from '#lib/site/sources.ts';
-	import { REPO } from '#lib/server/meta.ts';
+	import { REPO } from '#lib/site/repo.ts';
 </script>
 
 <svelte:head>
