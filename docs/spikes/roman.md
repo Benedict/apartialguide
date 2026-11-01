@@ -144,7 +144,7 @@ Digital Britannia's milecastle accounts are cut at 254 characters: they are Wall
 Guide now tells:
 
 - **arriving,** a milecastle's account whole (79 of 81);
-- **on `examine milecastle`,** its history, as written, references and all (“(Simpson, 1975)”), with “More is written of it, for a closer look.” said on arrival.
+- **on `examine milecastle`,** its history, as written, references and all (“(Simpson, 1975)”), with “More is written of it: examine the milecastle.” said at every milecastle that has one, never left out as recently heard: it tells what to type.
 
 Benedict's call: the whole text over the cut, so this Guide can teach. The references inside the words are read as found, as an inscription is.
 

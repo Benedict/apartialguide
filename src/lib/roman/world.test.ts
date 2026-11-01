@@ -255,7 +255,7 @@ describe('romanWorld (Roman sites as a walk, stage by stage)', () => {
 			'Someone wrote: “Stones were taken in the 18th century (Simpson, 1975), and it is probable nothing remains.”'
 		);
 		expect(mc.paragraphs[0]).not.toContain('(Simp”');
-		expect(mc.paragraphs[0]).toContain('More is written of it, for a closer look.');
+		expect(mc.paragraphs[0]).toContain('More is written of it: examine the milecastle.');
 		const game = new Adventure({
 			...whole,
 			start: Object.keys(whole.stops).find((k) => whole.stops[k] === mc)!
@@ -265,5 +265,29 @@ describe('romanWorld (Roman sites as a walk, stage by stage)', () => {
 		const looked = game.respond('examine milecastle').lines.join(' ');
 		expect(looked).toContain('Surveyed by an antiquary.');
 		expect(looked).toContain('A kiln was built over it in 1885.');
+	});
+
+	it('says at every milecastle that more is written of it, however recently it was said', () => {
+		const told = { account: 'An account.', history: ['A history.'] };
+		const twins = romanWorld(
+			{
+				walls: layers.walls,
+				milecastles: {
+					features: [
+						point({ 'MC_No.': 1, Site_name: 'Inventhaugh' }, -0.03, 51),
+						point({ 'MC_No.': 2, Site_name: 'Farhaugh' }, -0.06, 51)
+					]
+				}
+			},
+			{ confidence, start: 'Milecastle 1, Inventhaugh', accounts: { 1: told, 2: told } }
+		);
+		const game = new Adventure(twins);
+		game.begin();
+		expect(game.respond('take the tour').lines.join(' ')).toContain(
+			'More is written of it: examine the milecastle.'
+		);
+		expect(game.respond('west').lines.join(' ')).toContain(
+			'More is written of it: examine the milecastle.'
+		);
 	});
 });
