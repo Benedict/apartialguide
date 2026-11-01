@@ -38,7 +38,8 @@ import { wildlifeRecords } from '../src/lib/server/sources/wildlife';
 import { postcodeRecords } from '../src/lib/server/sources/postcodes';
 import { companyRecords } from '../src/lib/server/sources/companies';
 import { epcRecords } from '../src/lib/server/sources/epc';
-import { britanniaBeyond } from '../src/lib/server/sources/britannia';
+import { britanniaBeyond, BRITANNIA_TABLES } from '../src/lib/server/sources/britannia';
+import { readGpkgLayer } from '../src/lib/server/gpkg';
 import { geographRecords } from '../src/lib/server/sources/geograph';
 import {
 	floodZoneName,
@@ -460,13 +461,16 @@ SELECT ?paon ?street ?amount ?date WHERE {
 		return { source: 'Geograph', prefix: 'geograph', records };
 	},
 	/**
-	 * Digital Britannia's Roman roads and sites near the map, beyond its edge: read from its GeoJSON
-	 * layers in BRITANNIA_DIR (roads, settlement, military, camps, milestones .geojson), downloaded by
-	 * hand from the RRRA, whose site does not answer scripts. Longitude and latitude only.
+	 * Digital Britannia's Roman roads and sites near the map, beyond its edge: read from its
+	 * GeoPackage (BRITANNIA_GPKG, in British National Grid, converted here), or from its GeoJSON
+	 * layers in BRITANNIA_DIR (roads, settlement, military, camps, milestones .geojson, in longitude
+	 * and latitude), downloaded by hand from the RRRA, whose site does not answer scripts.
 	 */
 	britannia: async () => {
+		const gpkg = process.env.BRITANNIA_GPKG;
 		const dir = process.env.BRITANNIA_DIR;
-		if (!dir) throw new Error('britannia needs BRITANNIA_DIR, a folder of its GeoJSON layers');
+		if (!gpkg && !dir)
+			throw new Error('britannia needs BRITANNIA_GPKG, its GeoPackage, or BRITANNIA_DIR');
 		const layer = (name: string) => {
 			try {
 				return JSON.parse(readFileSync(`${dir}/${name}.geojson`, 'utf8'));
@@ -475,9 +479,13 @@ SELECT ?paon ?street ?amount ?date WHERE {
 				return undefined;
 			}
 		};
-		const layers = Object.fromEntries(
-			['roads', 'settlement', 'military', 'camps', 'milestones'].map((n) => [n, layer(n)])
-		);
+		const layers = gpkg
+			? Object.fromEntries(
+					Object.entries(BRITANNIA_TABLES).map(([n, table]) => [n, readGpkgLayer(gpkg, table)])
+				)
+			: Object.fromEntries(
+					['roads', 'settlement', 'military', 'camps', 'milestones'].map((n) => [n, layer(n)])
+				);
 		const first = layers.roads?.features?.[0]?.geometry?.coordinates?.flat(3)?.[0];
 		if (typeof first === 'number' && Math.abs(first) > 180)
 			throw new Error(

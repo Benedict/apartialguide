@@ -9,6 +9,15 @@ interface Layer {
 	}[];
 }
 
+/** Digital Britannia's GeoPackage tables, by the layer each is read as. */
+export const BRITANNIA_TABLES = {
+	roads: 'Engineered Roman roads',
+	settlement: 'Settlement',
+	military: 'Military Installations',
+	camps: 'Temporary Camps',
+	milestones: 'milestones'
+} as const;
+
 type Kept = { name: string; also?: string; kind: string; points: LatLon[] };
 
 /** How far from the map's edge a Roman thing may lie and still be kept, in metres. */

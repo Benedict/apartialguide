@@ -199,6 +199,14 @@ export const SOURCES: Source[] = [
 		terms: `© Environment Agency copyright and/or database right. ${OGL}`
 	},
 	{
+		name: 'Digital Britannia',
+		href: 'https://roadsofromanbritain.org/digital-britannia/',
+		gives:
+			'the Roman roads, settlements, forts and camps near the map, told when you look beyond it',
+		terms:
+			'Roman Roads Research Association, Digital Britannia v1, © Mike Haken 2026, CC BY-NC 4.0. Its settlements are in part from the Rural Settlement of Roman Britain project (2015), archived with the Archaeology Data Service'
+	},
+	{
 		name: 'London Datastore',
 		href: 'https://data.london.gov.uk/dataset/london-public-realm-trees-2r45m',
 		gives: 'the trees listed along streets',

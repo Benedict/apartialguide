@@ -34,4 +34,12 @@ describe('SOURCES', () => {
 		expect(terms).toContain('Powered by TfL Open Data');
 		expect(terms).toContain('Open Government Licence v3.0');
 	});
+
+	it('credits Digital Britannia as its licence asks, with the project its settlements came from', () => {
+		const roman = SOURCES.find((s) => s.name === 'Digital Britannia');
+		expect(roman?.terms).toContain('© Mike Haken 2026');
+		expect(roman?.terms).toContain('CC BY-NC 4.0');
+		expect(roman?.terms).toContain('Rural Settlement of Roman Britain');
+		expect(roman?.terms).toContain('Archaeology Data Service');
+	});
 });
