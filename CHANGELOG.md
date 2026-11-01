@@ -25,6 +25,9 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 - The roadmap is `BACKLOG.md`; what only Benedict can do is `TODO.md` (#120, #121, #123).
 - The repository is renamed `apartialguide`; every link to it follows (`REPO`).
 - Snapshots and letters move to a private repository, `apartialguide-data`, which the workflows read with `DATA_TOKEN`; About says the map’s snapshot is available on request, as OpenStreetMap’s licence asks.
+- Digital Britannia read from its GeoPackage, in British National Grid, converted with proj4; 40 Roman roads and sites within reach of the borough; credited on About with the Rural Settlement of Roman Britain project (#128).
+- `SIGNUP_URL` on the front page: a Substack form opens in place once pressed, allowed by the policy's `frame-src` alone; any other list is linked; the privacy page says what is sent, and when (#129).
+- The brand kit in `brand/`: the logo in six colourways (the page's four, black and white) as SVG and PNG, and headers for Substack, LinkedIn, X and Bluesky, drawn by `npm run brand:kit`; the dev server's leftover Svelte favicon is the mark (#130).
 
 ## 2026-10-31
 

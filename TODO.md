@@ -10,7 +10,6 @@ Repository settings are under **Settings → Secrets and variables → Actions**
 - [ ] **Mailing list.** Create the Substack publication and add its address (for example `https://apartialguide.substack.com`) as the variable `SIGNUP_URL`. The front page then offers “Hear what’s new”: pressed, Substack’s sign-up form opens in place, and nothing is sent to Substack before. The privacy page names Substack. Any other provider's address works too, as a plain link.
 - [ ] **Contact email.** Add the variable `CONTACT_EMAIL`: an address you're happy to make public. The privacy page shows it, as the UK GDPR expects.
 - [ ] **Private security reports** (GitHub offers them only on public repositories, as this one is again): Settings → Advanced Security → Private vulnerability reporting → Enable, or directly `https://github.com/Benedict/apartialguide/settings/security_analysis`. `SECURITY.md` and the Code of Conduct send reports there.
-- [ ] **Delete the `CROYDON_WALK` variable**, if it's still there. Nothing uses it now.
 - [ ] **Read the site on your phone**: the privacy page and About in particular. Tell Claude anything you'd put differently.
 
 ## Decisions
