@@ -1,0 +1,523 @@
+{
+	"source": "NBN Atlas",
+	"prefix": "wildlife",
+	"records": [
+		{
+			"id": "cb0c09c9-ef45-4804-9da8-6fb784a7caab",
+			"at": [
+				51.336842,
+				-0.017804
+			],
+			"observed": "2025-05-17",
+			"claims": {
+				"name": "Batman Hoverfly",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "a1080072-1f72-4b70-88aa-1318465a082d",
+			"at": [
+				51.337304,
+				-0.018502
+			],
+			"observed": "2022-08-01",
+			"claims": {
+				"name": "Brown Hawker",
+				"seen": "2022-08"
+			}
+		},
+		{
+			"id": "5f1f5bdd-9680-44d4-8210-ad24a99e936b",
+			"at": [
+				51.3349,
+				-0.01611
+			],
+			"observed": "2026-09-14",
+			"claims": {
+				"name": "Wild Privet",
+				"seen": "2026-09"
+			}
+		},
+		{
+			"id": "7dff5c99-615a-4d96-80e1-c8808bf0e995",
+			"at": [
+				51.340389,
+				-0.049597
+			],
+			"observed": "1984-07-17",
+			"claims": {
+				"name": "Blackthorn",
+				"seen": "1984-07"
+			}
+		},
+		{
+			"id": "af8e1b48-450d-4a83-8e50-e0f8ecfc4c84",
+			"at": [
+				51.337163,
+				-0.018149
+			],
+			"observed": "2013-08-14",
+			"claims": {
+				"name": "Dogwood",
+				"seen": "2013-08"
+			}
+		},
+		{
+			"id": "a13e1827-6297-4781-b623-6db82b7ccf4f",
+			"at": [
+				51.336842,
+				-0.052619
+			],
+			"observed": "1989-07-21",
+			"claims": {
+				"name": "Common Red Soldier Beetle",
+				"seen": "1989-07"
+			}
+		},
+		{
+			"id": "5e0bddd5-6b5e-4392-9854-ecf80b6134ae",
+			"at": [
+				51.337214,
+				-0.018505
+			],
+			"observed": "2017-05-28",
+			"claims": {
+				"name": "Rhyzobius litura",
+				"seen": "2017-05"
+			}
+		},
+		{
+			"id": "dc1bc6b4-70a7-4894-bbc0-899c004d4689",
+			"at": [
+				51.337187,
+				-0.019583
+			],
+			"observed": "2013-08-14",
+			"claims": {
+				"name": "Black Medick",
+				"seen": "2013-08"
+			}
+		},
+		{
+			"id": "b56a4344-1066-402b-a78c-cf87b17723e5",
+			"at": [
+				51.35004,
+				-0.059455
+			],
+			"observed": "2026-08-01",
+			"claims": {
+				"name": "Birch Catkin Bug",
+				"seen": "2026-08"
+			}
+		},
+		{
+			"id": "81efd0a3-7baa-4684-9dfa-e889d1c332cb",
+			"at": [
+				51.34031,
+				-0.05924
+			],
+			"observed": "2023-10-02",
+			"claims": {
+				"name": "Great Green Bush-cricket",
+				"seen": "2023-10"
+			}
+		},
+		{
+			"id": "a4bb3cab-cf61-4ce9-8c2d-b5f49618ee36",
+			"at": [
+				51.335341,
+				-0.016792
+			],
+			"observed": "2010-05-24",
+			"claims": {
+				"name": "Tortoise Bug",
+				"seen": "2010-05"
+			}
+		},
+		{
+			"id": "d107b700-08e1-4ad3-b7a0-e1dc3e6dd1d9",
+			"at": [
+				51.357582,
+				-0.056048
+			],
+			"observed": "1996-08-06",
+			"claims": {
+				"name": "Hawthorn",
+				"seen": "1996-08"
+			}
+		},
+		{
+			"id": "3620e377-0e4d-4729-8ebc-a296654c5002",
+			"at": [
+				51.357582,
+				-0.056048
+			],
+			"observed": "1996-08-06",
+			"claims": {
+				"name": "Norway Maple",
+				"seen": "1996-08"
+			}
+		},
+		{
+			"id": "dd7fce10-9f2c-4824-aee2-a481dcedfd50",
+			"at": [
+				51.350678,
+				-0.073574
+			],
+			"observed": "1996-10-10",
+			"claims": {
+				"name": "Sessile Oak",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "c0b81653-f7dd-4c89-8a5c-9d6e1bbe2a56",
+			"at": [
+				51.336622,
+				-0.017802
+			],
+			"observed": "2022-08-27",
+			"claims": {
+				"name": "Buzzard",
+				"seen": "2022-08"
+			}
+		},
+		{
+			"id": "f8f2b047-232f-412a-9c86-7a12914ca172",
+			"at": [
+				51.35281,
+				-0.056707
+			],
+			"observed": "2024-02-24",
+			"claims": {
+				"name": "7-spot Ladybird",
+				"seen": "2024-02"
+			}
+		},
+		{
+			"id": "ce877016-5745-4323-a3da-9d40f2f9e018",
+			"at": [
+				51.339432,
+				-0.019447
+			],
+			"observed": "2025-03-24",
+			"claims": {
+				"name": "Hawthorn Shieldbug",
+				"seen": "2025-03"
+			}
+		},
+		{
+			"id": "77044b93-9c74-4a14-beb5-a5dfbc02e835",
+			"at": [
+				51.339064,
+				-0.019139
+			],
+			"observed": "2022-06-17",
+			"claims": {
+				"name": "Robin",
+				"seen": "2022-06"
+			}
+		},
+		{
+			"id": "65fe73a8-fb5a-4e60-8d6a-c832ace6db16",
+			"at": [
+				51.363296,
+				-0.02133
+			],
+			"observed": "2011-05-12",
+			"claims": {
+				"name": "Bishop's Mitre",
+				"seen": "2011-05"
+			}
+		},
+		{
+			"id": "25953554-c5ab-4e2c-9d2c-bb7086bd27ba",
+			"at": [
+				51.350678,
+				-0.073574
+			],
+			"observed": "1996-10-10",
+			"claims": {
+				"name": "Wild Privet",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "14766de1-0709-45da-840f-296bcc082c64",
+			"at": [
+				51.340456,
+				-0.059444
+			],
+			"observed": "2025-04-29",
+			"claims": {
+				"name": "Trioza centranthi",
+				"seen": "2025-04"
+			}
+		},
+		{
+			"id": "4310ebec-0ce0-420a-a073-20f16552bb20",
+			"at": [
+				51.33759,
+				-0.019494
+			],
+			"observed": "2022-06-01",
+			"claims": {
+				"name": "Roman Snail",
+				"seen": "2022-06"
+			}
+		},
+		{
+			"id": "270b2caf-84e7-4900-ac3a-f4620df601a9",
+			"at": [
+				51.353113,
+				-0.057674
+			],
+			"observed": "1996-10-31",
+			"claims": {
+				"name": "Clear Glass Snail",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "6560b5a4-9086-4ad0-9fcc-e392d3320c4f",
+			"at": [
+				51.353113,
+				-0.057674
+			],
+			"observed": "1996-10-31",
+			"claims": {
+				"name": "Cellar Snail",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "be09d9de-c006-4f65-bca9-76c6ded10d02",
+			"at": [
+				51.33656,
+				-0.017098
+			],
+			"observed": "2016-06-11",
+			"claims": {
+				"name": "Common Lizard",
+				"seen": "2016-06"
+			}
+		},
+		{
+			"id": "56c1bc45-fdc3-4da9-9583-2927e9d927b0",
+			"at": [
+				51.341462,
+				-0.020608
+			],
+			"observed": "2024-06-08",
+			"claims": {
+				"name": "Swollen-thighed Beetle",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "305f3e18-0ded-413b-a1a1-b8ff2a0c4b96",
+			"at": [
+				51.360009,
+				-0.026854
+			],
+			"observed": "2022-08-27",
+			"claims": {
+				"name": "Goldfinch",
+				"seen": "2022-08"
+			}
+		},
+		{
+			"id": "2e84f6f5-1c17-423c-8260-fd87f98d6d3f",
+			"at": [
+				51.339621,
+				-0.022565
+			],
+			"observed": "2026-06-13",
+			"claims": {
+				"name": "Welsh Chafer",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "f8476de6-2f85-49f7-9839-900d9c3033d5",
+			"at": [
+				51.35131,
+				-0.06905
+			],
+			"observed": "2026-04-02",
+			"claims": {
+				"name": "Dark-edged Bee-fly",
+				"seen": "2026-04"
+			}
+		},
+		{
+			"id": "0d2dea21-192e-4457-a61a-b3ddad5b5b02",
+			"at": [
+				51.340647,
+				-0.021009
+			],
+			"observed": "2021-05-29",
+			"claims": {
+				"name": "Magpie",
+				"seen": "2021-05"
+			}
+		},
+		{
+			"id": "ed3f845b-db2a-40aa-ba4f-e0a62d70b0cf",
+			"at": [
+				51.348549,
+				-0.077052
+			],
+			"observed": "1996-10-08",
+			"claims": {
+				"name": "Spindle",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "7e171406-d70e-44ea-9453-7f9095bd129d",
+			"at": [
+				51.339506,
+				-0.021134
+			],
+			"observed": "2020-05-25",
+			"claims": {
+				"name": "Yellow Archangel",
+				"seen": "2020-05"
+			}
+		},
+		{
+			"id": "901c8a99-3876-429a-a412-706afd767c5e",
+			"at": [
+				51.337163,
+				-0.018149
+			],
+			"observed": "1994-06-23",
+			"claims": {
+				"name": "Violet Black-legged Robberfly",
+				"seen": "1994-06"
+			}
+		},
+		{
+			"id": "3627380c-7caf-40d0-8aeb-ace832468eed",
+			"at": [
+				51.33915,
+				-0.02028
+			],
+			"observed": "2022-07-29",
+			"claims": {
+				"name": "Kestrel",
+				"seen": "2022-07"
+			}
+		},
+		{
+			"id": "a053d75d-f7e2-4cf6-b208-40fa6e478f66",
+			"at": [
+				51.354934,
+				-0.059033
+			],
+			"observed": "2010-08-08",
+			"claims": {
+				"name": "Bishop's Mitre",
+				"seen": "2010-08"
+			}
+		},
+		{
+			"id": "6f95fdc0-6a61-4f94-a0c9-77aa88e357d7",
+			"at": [
+				51.335871,
+				-0.048353
+			],
+			"observed": "2002-08-24",
+			"claims": {
+				"name": "Red-legged Shieldbug",
+				"seen": "2002-08"
+			}
+		},
+		{
+			"id": "81e65186-deef-474e-9e06-1911860a5511",
+			"at": [
+				51.353417,
+				-0.057964
+			],
+			"observed": "2025-09-16",
+			"claims": {
+				"name": "Robin",
+				"seen": "2025-09"
+			}
+		},
+		{
+			"id": "d1e16ad0-4c23-4ccf-8945-871b4cf9a523",
+			"at": [
+				51.35333,
+				-0.040035
+			],
+			"observed": "2022-06-23",
+			"claims": {
+				"name": "Collared Dove",
+				"seen": "2022-06"
+			}
+		},
+		{
+			"id": "bbd06d97-6ae9-4894-ab4d-8088b6111f69",
+			"at": [
+				51.337163,
+				-0.018149
+			],
+			"observed": "2013-08-14",
+			"claims": {
+				"name": "Feverfew",
+				"seen": "2013-08"
+			}
+		},
+		{
+			"id": "dfca22be-893f-4dc5-929f-7abd87546e77",
+			"at": [
+				51.340667,
+				-0.021039
+			],
+			"observed": "2024-06-08",
+			"claims": {
+				"name": "Malachite Beetle",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "9b1e7f8a-8f29-43d4-82e9-e509b4a502d7",
+			"at": [
+				51.344497,
+				-0.026448
+			],
+			"observed": "1984-07-12",
+			"claims": {
+				"name": "Hazel",
+				"seen": "1984-07"
+			}
+		},
+		{
+			"id": "c3c91eaa-7381-4f2f-bfa4-bde1f54eb499",
+			"at": [
+				51.338745,
+				-0.020722
+			],
+			"observed": "2024-06-08",
+			"claims": {
+				"name": "Helophilus",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "9fd555ba-25da-47e8-9c89-92d84639d5a0",
+			"at": [
+				51.359798,
+				-0.027227
+			],
+			"observed": "2021-04-05",
+			"claims": {
+				"name": "Dark-edged Bee-fly",
+				"seen": "2021-04"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

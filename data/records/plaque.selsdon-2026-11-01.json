@@ -1,0 +1,19 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "10276",
+			"at": [
+				51.35868,
+				-0.03033
+			],
+			"claims": {
+				"name": "The Old Forge built around 1740. The last surviving working forge in the area",
+				"description": "plaque",
+				"inscription": "The Old Forge built around 1740. The last surviving working forge in the area"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

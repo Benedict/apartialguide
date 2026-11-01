@@ -1,0 +1,185 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536773",
+			"at": [
+				51.331574,
+				-0.013624
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "BOUNDARY MARKER",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536801",
+			"at": [
+				51.36039,
+				-0.030349
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "ADDINGTON HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536833",
+			"at": [
+				51.358452,
+				-0.032228
+			],
+			"observed": "1951-01-29",
+			"claims": {
+				"name": "CHURCH OF ST MARY ADDINGTON",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "1951-01-29"
+			}
+		},
+		{
+			"id": "31536834",
+			"at": [
+				51.358305,
+				-0.032073
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "WALLS ALONG SOUTH BOUNDARY OF CHURCHYARD OF CHURCH OF ST MARY",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536835",
+			"at": [
+				51.358555,
+				-0.031376
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "FLINT COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31645084",
+			"at": [
+				51.331564,
+				-0.0136
+			],
+			"observed": "1984-11-19",
+			"claims": {
+				"name": "POST 1/2 MILE NORTH OF FICKLESHOLE AT NGR TQ 385610",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1984-11-19"
+			}
+		},
+		{
+			"id": "31645311",
+			"at": [
+				51.357068,
+				-0.056
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "HEATHFIELD",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31645542",
+			"at": [
+				51.356389,
+				-0.063843
+			],
+			"observed": "1971-08-25",
+			"claims": {
+				"name": "OLD BALLARDS COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-08-25"
+			}
+		},
+		{
+			"id": "31814593",
+			"at": [
+				51.360334,
+				-0.031802
+			],
+			"observed": "1951-01-29",
+			"claims": {
+				"name": "LION LODGE, INCLUDING GATE PIERS (ADDINGTON PALACE LODGES)",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1951-01-29"
+			}
+		},
+		{
+			"id": "31814600",
+			"at": [
+				51.357409,
+				-0.04081
+			],
+			"observed": "1951-01-29",
+			"claims": {
+				"name": "Addington Palace",
+				"description": "listed building",
+				"grade": "II*",
+				"listed": "1951-01-29"
+			}
+		},
+		{
+			"id": "31814603",
+			"at": [
+				51.322788,
+				-0.054953
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "KINGSWOOD LODGE (KINGSWOOD COUNTRY CLUB)",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31855918",
+			"at": [
+				51.358123,
+				-0.032429
+			],
+			"observed": "2017-02-23",
+			"claims": {
+				"name": "Addington War Memorial",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-23"
+			}
+		},
+		{
+			"id": "31865047",
+			"at": [
+				51.347566,
+				-0.032996
+			],
+			"claims": {
+				"description": "listed building"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

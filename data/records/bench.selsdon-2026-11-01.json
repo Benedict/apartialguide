@@ -1,0 +1,327 @@
+{
+	"source": "OpenBenches",
+	"prefix": "bench",
+	"records": [
+		{
+			"id": "27509",
+			"at": [
+				51.338768,
+				-0.04361
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "ERIC SAINES 1901-1987 / A LOVER OF SELSDON WOODS"
+			}
+		},
+		{
+			"id": "27511",
+			"at": [
+				51.338654,
+				-0.044483
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "MICHAEL J BOYD / 18.09.36 - 09.12.14 / RIP MY DARLING"
+			}
+		},
+		{
+			"id": "27512",
+			"at": [
+				51.3381,
+				-0.044807
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY. / TOGETHER AGAIN / CLIVE LITTLE / 10.7.1935 - 7.11.1989 / FRANCES LITTLE / 8.12.1942 - 26.12.2018"
+			}
+		},
+		{
+			"id": "17539",
+			"at": [
+				51.338539,
+				-0.049
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / MARJORIE HOWARD / ALWAYS IN OUR HEARTS / 1921 - 1990"
+			}
+		},
+		{
+			"id": "27550",
+			"at": [
+				51.337807,
+				-0.045863
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / SARAH PURVIS / 1970 - 1992"
+			}
+		},
+		{
+			"id": "17538",
+			"at": [
+				51.338531,
+				-0.049169
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF / MURRAY SILVERSTONE / AND TO / \"THE GIFT OF LIFE'"
+			}
+		},
+		{
+			"id": "27549",
+			"at": [
+				51.33744,
+				-0.045816
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "NICOLA JANE BAILEY"
+			}
+		},
+		{
+			"id": "27546",
+			"at": [
+				51.337376,
+				-0.047225
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "PRESENTED IN 2018 by / THE CROYDON CENTRE NATIONAL TRUST"
+			}
+		},
+		{
+			"id": "17155",
+			"at": [
+				51.334961,
+				-0.046603
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In memory of Ronald Smith 1929 to 2017. Ron used and loved these words for over 50 years."
+			}
+		},
+		{
+			"id": "27552",
+			"at": [
+				51.334187,
+				-0.047633
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "TO NICKI / WE WHO SHARED YOUR LIFE ARE RICH, / FOR YOUR BEAUTY, PEACE AND LOVE ARE OURS FOREVER"
+			}
+		},
+		{
+			"id": "23860",
+			"at": [
+				51.345528,
+				-0.06499
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In loving memory / of / Dr John and Dr Josephine Boyle / (1926 - 2009) (1925 - 2000)"
+			}
+		},
+		{
+			"id": "19174",
+			"at": [
+				51.355679,
+				-0.055678
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / JOHN WILLIAM BYLETT / AND HIS DAUGHTER / CATHERINE ROSE / AS IN AUTUMN THE LEAVES DO GENTLY FALL, / SO THE LORD OUR DEAR MUM DID CALL. / TO GO TO BE WITH HIM AT REST / TO DWELL FOREVER AMONG THE BLEST"
+			}
+		},
+		{
+			"id": "19175",
+			"at": [
+				51.355633,
+				-0.055929
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In Loving memory of Guy and Shirley Mauchant. Always in our thoughts. love / Patrick, Sarah, Neal, Alin, Matthew, Philip, Guy and Giselle."
+			}
+		},
+		{
+			"id": "19176",
+			"at": [
+				51.355633,
+				-0.055929
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In Memoriam to Lesley Janet Ellis / 8-1-1950 to 16-10-2005 / Beloved wife and mother / Much missed by her friends & her family"
+			}
+		},
+		{
+			"id": "34963",
+			"at": [
+				51.355736,
+				-0.055819
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF / JOHN WILLIAM BYLETT / AND HIS DAUGHTER / CATHERINE ROSE"
+			}
+		},
+		{
+			"id": "34964",
+			"at": [
+				51.355736,
+				-0.055819
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "AS IN AUTUMN THE LEAVES DO GENTLY FALL. / SO THE LORD OUR DEAR MUM DID CALL. / TO GO TO BE WITH HIM AT REST / TO DWELL FOREVER AMONG THE BLEST"
+			}
+		},
+		{
+			"id": "19173",
+			"at": [
+				51.35582,
+				-0.055678
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In loving memory of Maggie Newman 27.01.1949 - 01.12.2009 / Devoted wife, mother and grandmother and loved by all who knew her"
+			}
+		},
+		{
+			"id": "34965",
+			"at": [
+				51.355671,
+				-0.056303
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In Loving memory of Guy and Shirley Mauchant. Always in our thoughts. love / Patrick. Sarah. Neal Afin. Matthew. Phillip. Guy and Giselle."
+			}
+		},
+		{
+			"id": "34968",
+			"at": [
+				51.355671,
+				-0.056303
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In Loving Memory of / Lilian Gertrude Dring / Beloved / Mother & Nan / 1911-2002"
+			}
+		},
+		{
+			"id": "19179",
+			"at": [
+				51.355705,
+				-0.056367
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF / HAROLD AND ALICE HIGGINSON / 1984"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}
