@@ -191,4 +191,22 @@ describe('landingPage', () => {
 	it('leaves out what is new when there is nothing to tell', () => {
 		expect(landingPage(input)).not.toContain('What’s new');
 	});
+
+	it('offers the mailing list, its form opened only when the reader presses for it', () => {
+		const html = landingPage({ ...input, signup: 'https://inventa.substack.com' });
+		expect(html).toContain('Hear what’s new');
+		expect(html).toContain('href="https://inventa.substack.com"');
+		expect(html).toContain('data-frame="https://inventa.substack.com/embed"');
+		// Nothing of the list's provider is asked before the press: no frame, no script, no picture.
+		expect(html).not.toMatch(/<iframe|src="https:\/\/inventa/);
+		expect(html).toContain('frame-src https://inventa.substack.com');
+	});
+
+	it('links any other list, and offers none without one', () => {
+		const linked = landingPage({ ...input, signup: 'https://buttondown.com/inventa' });
+		expect(linked).toContain('href="https://buttondown.com/inventa"');
+		expect(linked).not.toContain('data-frame');
+		expect(linked).not.toContain('frame-src');
+		expect(landingPage(input)).not.toContain('Hear what’s new');
+	});
 });

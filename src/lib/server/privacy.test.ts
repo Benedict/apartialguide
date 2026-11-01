@@ -84,4 +84,11 @@ describe('privacyPage', () => {
 			'<link rel="canonical" href="https://x.test/privacy/">'
 		);
 	});
+
+	it('says a Substack form opens only when pressed, and nothing reaches Substack before', () => {
+		const page = words(privacyPage({ signupUrl: 'https://inventa.substack.com' }));
+		expect(page).toContain('Substack');
+		expect(page).toContain('nothing is sent to Substack until you press');
+		expect(page).not.toContain('area not open yet');
+	});
 });

@@ -3,6 +3,7 @@ import { faviconLinks, LOCKUP } from '../site/brand';
 import { SOURCES } from '../site/sources';
 import { themeBoot, themeCss } from '../site/themes';
 import { withCsp } from './csp';
+import { signupFrame } from './signup';
 import { headMeta, PAGES } from './meta';
 import { fontFaces, MONO } from './type';
 
@@ -27,7 +28,7 @@ const esc = (text: string) =>
  * What is counted and the mailing list are told only where the site has them.
  */
 /** The day the page's words last changed: change it with them. */
-export const PRIVACY_CHANGED = '2026-10-31';
+export const PRIVACY_CHANGED = '2026-11-01';
 
 export function privacyPage({
 	date = PRIVACY_CHANGED,
@@ -42,9 +43,15 @@ export function privacyPage({
 	const counting = gaId
 		? `<p>If you agree, the site counts your visit with Google Analytics, and only after you say yes: a strip asks once, and Settings can change your answer at any time. It is told which page you opened, on the walk the kind of each command (a step, a look, a route), never what you type, and when you pass a distance mark. Google sets its own cookies to tell one visit from another, and keeps what it is sent under <a href="https://policies.google.com/privacy">its own policy</a>. Without your yes, nothing of Google’s is loaded at all.</p>`
 		: `<p>Nothing is counted. The site has no analytics, no advertising and no cookies of its own.</p>`;
+	const substack = signupFrame(signupUrl);
 	const list = signupUrl
 		? `<h2>The mailing list</h2>
-		<p>Where the walk stops at an area not open yet, you may <a href="${esc(signupUrl)}">sign up to hear when it opens</a>. You give your email address on the mailing list’s own page, not here, and its provider keeps it under its own policy. It is used only to tell you when new areas open, and every message lets you leave the list.</p>`
+		<p>You may <a href="${esc(signupUrl)}">sign up to hear what’s new</a>. You give your email address to the mailing list, not to this site, and ${substack ? 'Substack, which keeps the list, holds it under <a href="https://substack.com/privacy">its own policy</a>' : 'its provider keeps it under its own policy'}. It is used only to tell you what’s new, and every message lets you leave the list.</p>${
+			substack
+				? `
+		<p>On the front page, the sign-up form opens in place when you press “Sign up”: nothing is sent to Substack until you press it. Once it opens, Substack’s own page is loaded inside ours, and Substack may set its own cookies, as on its own site.</p>`
+				: ''
+		}`
 		: '';
 	const write = contact ? ` Write to <a href="mailto:${esc(contact)}">${esc(contact)}</a>.` : '';
 	return withCsp(
