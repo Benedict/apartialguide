@@ -25,3 +25,29 @@ export function epcRecords(rows: Record<string, string>[]): SourceRecord[] {
 	}
 	return [...latest.values()];
 }
+
+/**
+ * The rows of one answer from the register's new search (get-energy-performance-data), in the names
+ * `epcRecords` reads: its address lines, its energy band, and when it was registered. The search gives
+ * no construction age band, so a house's age is not said.
+ */
+export function epcFromSearch(answer: {
+	data?: unknown;
+	pagination?: unknown;
+}): Record<string, string>[] {
+	const data = answer.data as unknown;
+	const rows = (
+		Array.isArray(data)
+			? data
+			: ((data as { certificates?: unknown[] } | undefined)?.certificates ?? [])
+	) as Record<string, unknown>[];
+	const s = (v: unknown) => (v == null ? '' : String(v));
+	return rows.map((r) => ({
+		address1: s(r.addressLine1),
+		address2: s(r.addressLine2),
+		address3: s(r.addressLine3),
+		postcode: s(r.postcode),
+		'current-energy-rating': s(r.currentEnergyEfficiencyBand),
+		'lodgement-date': s(r.registrationDate)
+	}));
+}

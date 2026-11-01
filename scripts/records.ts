@@ -37,7 +37,7 @@ import { benchRecords } from '../src/lib/server/sources/benches';
 import { wildlifeRecords } from '../src/lib/server/sources/wildlife';
 import { postcodeRecords } from '../src/lib/server/sources/postcodes';
 import { companyRecords } from '../src/lib/server/sources/companies';
-import { epcRecords } from '../src/lib/server/sources/epc';
+import { epcFromSearch, epcRecords } from '../src/lib/server/sources/epc';
 import { britanniaBeyond, BRITANNIA_TABLES } from '../src/lib/server/sources/britannia';
 import { readGpkgLayer } from '../src/lib/server/gpkg';
 import { geographRecords } from '../src/lib/server/sources/geograph';
@@ -413,24 +413,29 @@ SELECT ?paon ?street ?amount ?date WHERE {
 		return { source: 'Companies House', prefix: 'company', records };
 	},
 	/**
-	 * Energy performance certificates at the snapshot's postcodes, asked of the register one postcode
-	 * at a time. Needs EPC_EMAIL and EPC_API_KEY, given on registering with the register.
+	 * Energy performance certificates at the snapshot's postcodes, asked of the register's search one
+	 * postcode at a time, page by page. Needs EPC_API_KEY, the bearer token on the register's account
+	 * page (get-energy-performance-data.communities.gov.uk); a postcode with none answers 404.
 	 */
 	epc: async () => {
-		const email = process.env.EPC_EMAIL;
 		const key = process.env.EPC_API_KEY;
-		if (!email || !key) throw new Error('epc needs EPC_EMAIL and EPC_API_KEY');
-		const auth = `Basic ${Buffer.from(`${email}:${key}`).toString('base64')}`;
+		if (!key) throw new Error('epc needs EPC_API_KEY');
+		const headers = { Authorization: `Bearer ${key}`, Accept: 'application/json' };
 		const rows: Record<string, string>[] = [];
 		for (const postcode of postcodes) {
-			const page = await getJson(
-				`https://epc.opendatacommunities.org/api/v1/domestic/search?postcode=${encodeURIComponent(postcode)}&size=5000`,
-				{ Authorization: auth }
-			).catch((err) => {
-				console.log(`epc: ${postcode}: ${(err as Error).message.slice(0, 200)}`);
-				return { rows: [] };
-			});
-			rows.push(...(page.rows ?? []));
+			for (let page = 1; page;) {
+				const answer = await getJson(
+					`https://api.get-energy-performance-data.communities.gov.uk/api/domestic/search?postcode=${encodeURIComponent(postcode)}&page_size=5000&current_page=${page}`,
+					headers
+				).catch((err) => {
+					if (!/answered 404/.test((err as Error).message))
+						console.log(`epc: ${postcode}: ${(err as Error).message.slice(0, 200)}`);
+					return {};
+				});
+				rows.push(...epcFromSearch(answer));
+				const next = (answer as { pagination?: { nextPage?: number | null } }).pagination?.nextPage;
+				page = next ?? 0;
+			}
 		}
 		const records = epcRecords(rows);
 		console.log(

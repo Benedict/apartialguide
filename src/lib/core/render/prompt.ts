@@ -17,7 +17,7 @@ import {
 	whereYouStand
 } from './adventure';
 import { monthYear, tagsOf } from './words';
-import { allusion } from '../keepers';
+import { allusion, keptOutOfProse } from '../keepers';
 
 /** Bump when the prompt changes, so cached narration written under the old one is redone. */
 export const PROMPT_VERSION = 16;
@@ -145,7 +145,14 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 	return lines.join('\n');
 }
 
-export function buildPrompt(scene: Scene): Prompt {
+export function buildPrompt(whole: Scene): Prompt {
+	// What is kept out of prose is not in the prompt, so it changes no prose and no key.
+	const scene = {
+		...whole,
+		beats: whole.beats
+			.map((b) => ({ ...b, facts: b.facts.filter((f) => !keptOutOfProse(f.source)) }))
+			.filter((b) => b.facts.length)
+	};
 	const street = streetTags(scene);
 	const noticed = scene.beats.filter((b) => !isBackground(b) && !isHalf(b));
 	const moods = MOODS[scene.mood];

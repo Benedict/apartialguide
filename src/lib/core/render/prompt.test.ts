@@ -62,6 +62,33 @@ describe('buildPrompt', () => {
 		expect(buildPrompt(scene()).system).not.toMatch(/asphalt/i);
 	});
 
+	it('leaves out what is kept out of prose: energy certificates and photographs, told only on a closer look', () => {
+		const rated = {
+			...bank,
+			facts: [
+				...bank.facts,
+				...facts('way/2', { 'epc:rating': 'D', 'epc:lodged': '2021-03-01' }, near).map((f) => ({
+					...f,
+					source: 'Energy Performance of Buildings Register',
+					elsewhere: true as const
+				}))
+			]
+		};
+		const photo = {
+			subject: 'geograph/9',
+			facts: facts(
+				'geograph/9',
+				{ 'geograph:title': 'Invented Lane', 'geograph:taken': '2010-05' },
+				near
+			).map((f) => ({ ...f, source: 'Geograph', elsewhere: true as const })),
+			effects: []
+		};
+		const plain = buildPrompt(scene({ beats: [bank, shop] }));
+		const kept = buildPrompt(scene({ beats: [rated, photo, shop] }));
+		expect(kept).toEqual(plain);
+		expect(promptKey(kept)).toBe(promptKey(plain));
+	});
+
 	it('has a plaque read as it reads, not given as hearsay', () => {
 		const words = 'A. Inventa 1900-1950 wrote here';
 		const plaque = {

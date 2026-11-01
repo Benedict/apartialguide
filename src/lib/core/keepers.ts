@@ -33,3 +33,11 @@ export function alludedTo(names: readonly string[]): string {
 	const list = known.length < 2 ? known[0] : `${known.slice(0, -1).join(', ')} and ${known.at(-1)}`;
 	return others ? `${known.join(', ')}, and others` : list;
 }
+
+/**
+ * Sources kept out of prose written ahead of time: told only when the reader looks closer (a house's
+ * energy certificate) or asks, so that fetching them changes no place's prose, nor which places have
+ * prose. Their records still reach the template, which tells them on examining.
+ */
+const OUT_OF_PROSE = new Set(['Energy Performance of Buildings Register', 'Geograph']);
+export const keptOutOfProse = (source: string): boolean => OUT_OF_PROSE.has(keeper(source));
