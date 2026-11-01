@@ -1,0 +1,31 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "8298",
+			"at": [
+				51.34515,
+				-0.09319
+			],
+			"claims": {
+				"name": "Commemorating the Convent of the Ladies of Mary, St Anne's College, on this site 1909-1980 Veritas omnia vincit",
+				"description": "plaque",
+				"inscription": "Commemorating the Convent of the Ladies of Mary, St Anne's College, on this site 1909-1980 Veritas omnia vincit"
+			}
+		},
+		{
+			"id": "8294",
+			"at": [
+				51.33067,
+				-0.075
+			],
+			"claims": {
+				"name": "Sanderstead Old Forge built early 1700s and a smithy for two centuries latterly 'The Skep' a private school until the early 1940s. This plaque commemorates the 50th anniversary of the first mass Nov. 8 1942",
+				"description": "plaque",
+				"inscription": "Sanderstead Old Forge built early 1700s and a smithy for two centuries latterly 'The Skep' a private school until the early 1940s. This plaque commemorates the 50th anniversary of the first mass Nov. 8 1942"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}
