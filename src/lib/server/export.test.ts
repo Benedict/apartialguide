@@ -496,4 +496,24 @@ describe('the order a command is made ready in', () => {
 			run.indexOf('ensure(game.needs(text))')
 		);
 	});
+
+	it('credits the sources it is given, and speaks of the map only where the map is among them', () => {
+		const own = exportPage({
+			engine: 'var Adventure = function () {};',
+			world,
+			snapshotDate: '2026-10-24',
+			sources: [
+				{
+					name: 'Inventa Archive',
+					href: 'https://example.org/',
+					gives: 'invented things',
+					terms: 'CC BY 4.0'
+				}
+			]
+		});
+		expect(own).toContain('Inventa Archive');
+		expect(own).not.toContain('Open Database License');
+		expect(own).not.toContain('>OpenStreetMap<');
+		expect(page()).toContain('Open Database License');
+	});
 });

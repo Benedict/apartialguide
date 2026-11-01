@@ -8,7 +8,7 @@ import { packWorld } from '../core/adventure/packed';
 import { headOf } from '../core/adventure/tiles';
 import type { AdventureWorld } from '../core/adventure/world';
 import { list as listOf, longDate } from '../core/render/words';
-import { LIVE, SOURCES } from '../site/sources';
+import { LIVE, SOURCES, type Source } from '../site/sources';
 
 export interface ExportInput {
 	/** The game engine bundled for the browser, defining a global `Adventure`. */
@@ -35,6 +35,8 @@ export interface ExportInput {
 	siteUrl?: string;
 	/** The people who wrote places' prose (`writersOf`), credited on About as its licence asks. */
 	writers?: string[];
+	/** The sources About credits: every source of the borough's walk, unless a walk of its own says. */
+	sources?: Source[];
 }
 
 /** Everyone a narration store names as having written a piece (`written by …`), each once, in order. */
@@ -91,12 +93,15 @@ function aboutPage(
 	counted: boolean,
 	place: Place,
 	privacy?: string,
-	writers: string[] = []
+	writers: string[] = [],
+	credited: Source[] = SOURCES
 ): string {
-	const sources = SOURCES.map(
-		(s) =>
-			`<li><a href="${esc(s.href)}">${esc(s.name)}</a>: ${esc(s.gives)}.${s.live ? ' <em>Asked from your browser as you read; you can turn it off in Settings.</em>' : ''} <span class="terms">${esc(s.terms)}.</span></li>`
-	).join('\n\t\t\t');
+	const sources = credited
+		.map(
+			(s) =>
+				`<li><a href="${esc(s.href)}">${esc(s.name)}</a>: ${esc(s.gives)}.${s.live ? ' <em>Asked from your browser as you read; you can turn it off in Settings.</em>' : ''} <span class="terms">${esc(s.terms)}.</span></li>`
+		)
+		.join('\n\t\t\t');
 	return `<section id="about" class="view" hidden>
 		<div class="brand">${LOCKUP}</div>
 		<h2>About</h2>
@@ -109,7 +114,7 @@ function aboutPage(
 		<ul class="sources">
 			${sources}
 		</ul>
-		<p>The map is © OpenStreetMap contributors, under the Open Database License. The snapshot of the map the walk is built from is available on request: ask on <a href="${REPO}/issues">GitHub</a>.</p>
+		${credited.some((s) => s.name === 'OpenStreetMap') ? `<p>The map is © OpenStreetMap contributors, under the Open Database License. The snapshot of the map the walk is built from is available on request: ask on <a href="${REPO}/issues">GitHub</a>.</p>` : ''}
 		<h3>Who made it</h3>
 		<p>Made by Benedict. The code is free, under the GNU Affero General Public License, version 3 or later, and is on <a href="${REPO}">GitHub</a>, where you can help. Guide’s prose is under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
 		<p>Follow the walk on ${profileLinks()}.</p>
@@ -179,7 +184,8 @@ export function exportPage({
 	place = ADDISCOMBE,
 	noindex,
 	siteUrl,
-	writers
+	writers,
+	sources
 }: ExportInput): string {
 	return withCsp(
 		`<!doctype html>
@@ -294,7 +300,7 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 <main class="scroll" id="scroll">
 	<h1 class="visually-hidden">A Partial Guide: the walk</h1>
 	<div id="game"><div id="transcript" aria-live="polite"></div></div>
-	${aboutPage(snapshotDate, !!gaId, place, tiles ? '/privacy/' : undefined, writers)}
+	${aboutPage(snapshotDate, !!gaId, place, tiles ? '/privacy/' : undefined, writers, sources)}
 	${settingsPage(!!gaId)}
 </main>
 <form id="prompt" autocomplete="off">

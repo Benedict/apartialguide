@@ -100,6 +100,39 @@ Whether it holds attention past ten milecastles is the real test. That is Benedi
 - WallCAP credited (CC BY 4.0).
 - The road network north and south of the Wall (the Stanegate, Dere Street) for ways off it.
 
+## Round three: a measure for the Wall, WallCAP credited, the roads off it
+
+**What changed:**
+
+- **A measure fitted to the Wall.** A move counts when the place reached is kept differently from the last (its kind, status, condition, ages or finds), or when its stage changes.
+- **WallCAP credited.** The page's About credits only the Roman walk's own sources (`ROMAN_SOURCES`):
+  - Digital Britannia, with the Rural Settlement of Roman Britain project;
+  - WallCAP (CC BY 4.0: the Wall and the Vallum from files by Kathryn Murphy and Nicky Garland, with minor tweaks by Mike Haken; the milecastles from data by Kathryn Murphy; the GIS archive at doi.org/10.5284/1100071);
+  - the borough's sources that work anywhere.
+
+  The OpenStreetMap line goes where the map is not among the sources (`exportPage`'s `sources`).
+
+- **The roads off the Wall.** The box now runs from Binchester to High Rochester, so Dere Street crosses the Wall, with the Stanegate and the Military Way beside it. A road's own name is told beside its start and end where they don't already say it:
+  - “Binchester to Corbridge” (“Dere Street (post 1950, previously Watling Street)”);
+  - “Carvoran to Carlisle” (“The Stanegate”).
+
+**Results:**
+
+| Measure                                                   | Wanted  | The Wall         | The South-East |
+| --------------------------------------------------------- | ------- | ---------------- | -------------- |
+| Places with two or more facts beyond a name               | 80%     | 74% (109 of 147) | 25% (21 of 85) |
+| Sentences said again at the next place                    | 0       | 0                | 0              |
+| Moves with a change on the stage (round one's, for roads) | 7 of 10 | 0 of 10          | 4 of 10        |
+| Moves to a place kept differently, or on a changing stage | 7 of 10 | 9 of 10          | 9 of 10        |
+
+**Reading them honestly:**
+
+- **The new measure does not discriminate.** It scores the thin South-East as well as the Wall, since two different sites nearly always differ in kind. It is no test, and I would drop it.
+- **The measure that separates them is still the first:** how much is known of each place. The Wall's share fell from 79% to 74% as the box took in Dere Street and the Stanegate, whose forts and settlements are told more thinly than the milecastles.
+- **The Wall proper (milecastles and forts) carries a walk. The roads off it thin it out.**
+
+**What that suggests:** a Wall walk keeps to the Wall, Bowness to Wallsend, about 118 places. The roads off it are offered as ways out, the walk's edge, not walked far.
+
 ## Overlays worth trying
 
 Each source below is a record someone keeps of the past, given as hearsay or, worked out, as now. Each needs its licence confirmed before use.

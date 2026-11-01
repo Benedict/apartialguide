@@ -25,10 +25,17 @@ const layers: RomanLayers = {
 				[0, 51.05],
 				[0, 51.1]
 			]),
-			line({ 'Road - Start and End': 'Eastward Lane?', 'Segment Confidence': 2 }, [
-				[0, 51.05],
-				[0.1, 51.05]
-			])
+			line(
+				{
+					'Road - Start and End': 'Eastward Lane?',
+					'Road name (if any)': 'The Lane',
+					'Segment Confidence': 2
+				},
+				[
+					[0, 51.05],
+					[0.1, 51.05]
+				]
+			)
 		]
 	},
 	walls: {
@@ -142,7 +149,7 @@ describe('romanWorld (Roman sites as a walk, stage by stage)', () => {
 			'north, 11 km to Fortham, into Otherland: “Inventa Way”, Certain - +/- 30m for 3.3 km, then Conjectured for 7.8 km'
 		);
 		expect(ways('Inventon')).toContain(
-			'“Inventa Way”, Certain - +/- 30m for 3.3 km, then Conjectured for 2.2 km; then “Eastward Lane?”, Probable +/- 200m for 7.0 km'
+			'“Inventa Way”, Certain - +/- 30m for 3.3 km, then Conjectured for 2.2 km; then “Eastward Lane?” (“The Lane”), Probable +/- 200m for 7.0 km'
 		);
 	});
 

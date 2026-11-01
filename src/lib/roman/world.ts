@@ -29,7 +29,7 @@ const text = (v: unknown) => (v == null ? undefined : String(v).trim() || undefi
 
 type Site = { layer: keyof RomanLayers; name: string; props: Props; at: LatLon };
 type Node = { at: LatLon; sites: Site[] };
-type Road = { name: string; confidence?: string; points: LatLon[] };
+type Road = { name: string; also?: string; confidence?: string; points: LatLon[] };
 
 const POINTS = [
 	'north',
@@ -142,6 +142,7 @@ export function romanWorld(
 					text(f.properties['Road name (if any)']) ??
 					text(f.properties.Feature) ??
 					'A road',
+				also: text(f.properties['Road name (if any)']),
 				confidence: confidence[String(f.properties['Segment Confidence'] ?? '')],
 				points
 			}))
@@ -228,18 +229,20 @@ export function romanWorld(
 
 	/** A stage's legs, one road and confidence at a time, as they change on the way. */
 	const told = (legs: Leg[]): string => {
-		const runs: { name: string; confidence?: string; metres: number }[] = [];
+		const runs: { name: string; also?: string; confidence?: string; metres: number }[] = [];
 		for (const { road, metres } of legs) {
 			const last = runs.at(-1);
 			if (last && last.name === road.name && last.confidence === road.confidence)
 				last.metres += metres;
-			else runs.push({ name: road.name, confidence: road.confidence, metres });
+			else runs.push({ name: road.name, also: road.also, confidence: road.confidence, metres });
 		}
 		return runs
 			.map((r, k) => {
 				const sure = r.confidence ? `${r.confidence} for ${km(r.metres)}` : '';
 				const named = k === 0 || runs[k - 1].name !== r.name;
-				const said = named ? `“${r.name}”${sure ? `, ${sure}` : ''}` : sure;
+				// The road's own name too, where it keeps one its start and end do not already say.
+				const also = r.also && !r.name.includes(r.also) ? ` (“${r.also}”)` : '';
+				const said = named ? `“${r.name}”${also}${sure ? `, ${sure}` : ''}` : sure;
 				return k === 0 ? said : named ? `; then ${said}` : `, then ${said}`;
 			})
 			.join('');

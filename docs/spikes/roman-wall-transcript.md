@@ -1,8 +1,9 @@
 # wall: ten moves from Wallsend
 
-- Places with two or more facts beyond a name (three or more sentences): 93 of 118 (79%; wanted 80%)
+- Places with two or more facts beyond a name (three or more sentences): 109 of 147 (74%; wanted 80%)
 - Sentences said again at the next place on the walk: 0 (wanted 0)
-- Moves whose stage carries a change (certainty, road, county): 0 of 10 (wanted 7 of 10)
+- Moves whose stage carries a change (certainty, road, county): 0 of 10 (wanted 7 of 10; the first round's measure, for roads)
+- Moves to a place kept differently from the last (kind, status, condition, ages, finds), or along a stage that changes: 9 of 10 (wanted 7 of 10; fitted to the Wall)
 
 I am Guide. I lived here long ago. I lived here yesterday. I will have lived here tomorrow.
 
@@ -52,7 +53,7 @@ Ways: east, 1.1 km to Milecastle 2, Walker: “Hadrians Wall” · south-west, 1
 
 Newcastle military vicus: Military vicus - size uncertain. It is said it was called “PONS AELIUS”. Newcastle upon Tyne: Fort. Kept by age: Nerva-Hadrianic AD96-138: Fort; Late 2nd - Severus AD161-211: Fort; 3rd Century: Fort; 4th Century: Fort. It is said it was called “PONS AELIVS”. Milecastle 4, Westgate Road: a milecastle. Status: Confirmed; Condition: By Record; Type: Long Axis. Someone wrote: “Although much of the foundations of the milecastle have been removed, the remaining sections uncovered in 1985 have been preserved by record and published (Harbottle et al 1988). Some further elements of the foundations of the Milecastle may survive unde”. Found there: Ceramics;Coins;Plant material (incl macrofossils).
 
-Ways: west, 0.9 km to Milecastle 5, Quarry House: “Hadrians Wall” · north-east, 1.5 km to Milecastle 3, Ouseburn: “Hadrians Wall” · south, 13 km to Park View School , Chester-le-Street, into Durham: “Bowburn to Newcastle”, Probable +/- 200m for 4.9 km, then Certain - +/- 30m for 7.9 km · east, 19 km to South Shields, into Durham: “Bowburn to Newcastle”, Probable +/- 200m for 4.9 km; then “Wrekenton (possibly from Lanchester) - South Shields”, Certain - +/- 30m for 6.7 km, then Probable +/- 200m for 1.4 km, then Certain - +/- 30m for 2.0 km, then Probable +/- 200m for 3.7 km.
+Ways: west, 0.9 km to Milecastle 5, Quarry House: “Hadrians Wall” · north-east, 1.5 km to Milecastle 3, Ouseburn: “Hadrians Wall” · south, 13 km to Park View School , Chester-le-Street, into Durham: “Bowburn to Newcastle” (“Cade's Road”), Probable +/- 200m for 4.9 km, then Certain - +/- 30m for 7.9 km · east, 19 km to South Shields, into Durham: “Bowburn to Newcastle” (“Cade's Road”), Probable +/- 200m for 4.9 km; then “Wrekenton (possibly from Lanchester) - South Shields” (“Wrekendike”), Certain - +/- 30m for 6.7 km, then Probable +/- 200m for 1.4 km, then Certain - +/- 30m for 2.0 km, then Probable +/- 200m for 3.7 km.
 
 You have walked 5 km.
 
@@ -88,7 +89,7 @@ You have walked 10 km.
 
 Milecastle 9, Chapel House: a milecastle. Status: Confirmed; Condition: Damaged; Type: Long Axis; Gate Type: IV. Someone wrote: “West and south-west walls destroyed by ploughing. South-east angle stones robbed out. Central road ploughed, but drain within south gate remains. North and south walls have some visible remains.”. Found there: Bone/bone objects;Brooches/dress accessories;Carved stone;Ceramics;Coins;Copper-alloy objects;Glass;Inscriptions.
 
-Ways: west, 1.2 km to Milecastle 10, Walbottle Dene: “Wallsend to Portgate”, Certain - +/- 30m for 1.2 km · east, 1.4 km to Milecastle 8, West Denton: “Hadrians Wall”.
+Ways: west, 1.2 km to Milecastle 10, Walbottle Dene: “Wallsend to Portgate” (“Military Way”), Certain - +/- 30m for 1.2 km · east, 1.4 km to Milecastle 8, West Denton: “Hadrians Wall”.
 
 > west
 
@@ -96,7 +97,7 @@ Ways: west, 1.2 km to Milecastle 10, Walbottle Dene: “Wallsend to Portgate”,
 
 Milecastle 10, Walbottle Dene: a milecastle. Someone wrote: “Entire wall removed to renew bridge, gateway in the garden of Dean House is better preserved. Central portion of the milecastle is under the B6318. Southern portion visible as a low platform.”. Found there: Carved stone;Ceramics.
 
-Ways: east, 1.2 km to Milecastle 9, Chapel House: “Wallsend to Portgate”, Certain - +/- 30m for 1.2 km · west, 1.3 km to Milecastle 11, Throckley Bank Top: “Hadrians Wall”.
+Ways: east, 1.2 km to Milecastle 9, Chapel House: “Wallsend to Portgate” (“Military Way”), Certain - +/- 30m for 1.2 km · west, 1.3 km to Milecastle 11, Throckley Bank Top: “Hadrians Wall”.
 
 > west
 
@@ -104,4 +105,4 @@ Ways: east, 1.2 km to Milecastle 9, Chapel House: “Wallsend to Portgate”, Ce
 
 Milecastle 11, Throckley Bank Top: a milecastle. Status: Assumed; Condition: Destroyed. Someone wrote: “Despite three different interventions at the site of milecastle 11 no remains of Roman date have been uncovered. Either this is not the location of the milecastle or it is likely that the site has been completely destroyed.”.
 
-Ways: west, 0.3 km to Milecastle 12, Heddon: “Wallsend to Portgate”, Probable +/- 200m for 0.3 km · east, 1.3 km to Milecastle 10, Walbottle Dene: “Hadrians Wall”.
+Ways: west, 0.3 km to Milecastle 12, Heddon: “Wallsend to Portgate” (“Military Way”), Probable +/- 200m for 0.3 km · east, 1.3 km to Milecastle 10, Walbottle Dene: “Hadrians Wall”.
