@@ -1,0 +1,67 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "8314",
+			"at": [
+				51.31968,
+				-0.13904
+			],
+			"claims": {
+				"name": "Gordon Pirie 1931-1991 South London Harriers and Coulsdon resident held 5 world records including the 4 x 1500m relay with local athlete Ralph Dunkley. Gordon also won 5000m Olympic silver Melbourne 1956",
+				"description": "plaque",
+				"inscription": "Gordon Pirie 1931-1991 South London Harriers and Coulsdon resident held 5 world records including the 4 x 1500m relay with local athlete Ralph Dunkley. Gordon also won 5000m Olympic silver Melbourne 1956"
+			}
+		},
+		{
+			"id": "8312",
+			"at": [
+				51.31827,
+				-0.14426
+			],
+			"claims": {
+				"name": "Edmund Byron donated this land for Smitham Bottom Infants School 1893-1932 later part of Smitham Primary School 1932-1991",
+				"description": "plaque",
+				"inscription": "Edmund Byron donated this land for Smitham Bottom Infants School 1893-1932 later part of Smitham Primary School 1932-1991"
+			}
+		},
+		{
+			"id": "8305",
+			"at": [
+				51.30812,
+				-0.12368
+			],
+			"claims": {
+				"name": "Coulsdon Church of England School on this site since 1845",
+				"description": "plaque",
+				"inscription": "Coulsdon Church of England School on this site since 1845"
+			}
+		},
+		{
+			"id": "8302",
+			"at": [
+				51.31711,
+				-0.12337
+			],
+			"claims": {
+				"name": "Coulsdon Court. Manor house of the squires Byron 1851-1921",
+				"description": "plaque",
+				"inscription": "Coulsdon Court. Manor house of the squires Byron 1851-1921"
+			}
+		},
+		{
+			"id": "7578",
+			"at": [
+				51.31579,
+				-0.13803
+			],
+			"claims": {
+				"name": "Erected to commemorate one hundred years of Coulsdon Station, opened October 1 1889 renamed Coulsdon & Cane Hill (Mar. 1896) then Coulsdon East (July 1923) and Coulsdon South (1 Aug. 1923)",
+				"description": "plaque",
+				"inscription": "Erected to commemorate one hundred years of Coulsdon Station, opened October 1 1889 renamed Coulsdon & Cane Hill (Mar. 1896) then Coulsdon East (July 1923) and Coulsdon South (1 Aug. 1923)"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}
