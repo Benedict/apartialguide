@@ -25,7 +25,7 @@ export function unfounded(facts: string, paragraphs: readonly string[]): string[
 		for (const sentence of unquoted.split(/(?<=[.!?:;][”’"')]?)\s+|\n/)) {
 			const words = sentence.trim().split(/\s+/).slice(1);
 			for (const raw of words) {
-				const word = raw.replace(/^[^\p{L}]+|[^\p{L}’'-]+$/gu, '').replace(/[’']s$/, '');
+				const word = raw.replace(/^[^\p{L}]+|[^\p{L}’'-]+$/gu, '').replace(/[’']s?$/, '');
 				if (!/^\p{Lu}/u.test(word) || word === 'I') continue;
 				if (
 					!new RegExp(

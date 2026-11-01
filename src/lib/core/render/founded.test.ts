@@ -33,6 +33,13 @@ describe('unfounded', () => {
 		).toEqual(['“Old Inventa Grill”', 'Victorian']);
 	});
 
+	it('reads a plural possessive as the name it belongs to, and still finds one the facts lack', () => {
+		const run = facts + '\n2. To the south: a substation. Run by Inventa Networks.';
+		expect(unfounded(run, ['The cable is one of Inventa Networks’ lines.'])).toEqual([]);
+		expect(unfounded(run, ["The cable is one of Inventa Networks' lines."])).toEqual([]);
+		expect(unfounded(run, ['The cable is one of Other Networks’ lines.'])).toEqual(['Other']);
+	});
+
 	it('lets a sentence begin with a capital, and lets Guide say I', () => {
 		expect(
 			unfounded(facts, ['Nearest is the kebab place. I could not say more. Beyond it, a lane.'])
