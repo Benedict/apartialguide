@@ -1,3 +1,4 @@
+import { drawnAround } from './drawing';
 import { COLOURS, isColour, type Colour } from './colours';
 import type { Fact } from '../facts';
 import { hearsay } from '../render/hearsay';
@@ -31,7 +32,14 @@ import { freshWalk, keepWalk, pickUpWalk, type Walk } from './walk';
 import type { StopId } from '../stops';
 import { MemoryHints, type HintKeeper, type HintMemory } from './hints';
 import { goalsFor, planRoute, routeIndex, routeWords, type RouteIndex } from './route';
-import type { AdventureWorld, CompiledExit, Ledger, Term, TransitStop } from './world';
+import type {
+	AdventureWorld,
+	CompiledExit,
+	CompiledStop,
+	Ledger,
+	Term,
+	TransitStop
+} from './world';
 
 export interface Reply {
 	/** Set when the reply describes a place. */
@@ -40,7 +48,13 @@ export interface Reply {
 	/** Somewhere to go beyond the page, such as this place on a map. */
 	link?: { href: string; text: string };
 	/** A place to show on a map, where the page can. */
-	map?: { latitude: number; longitude: number; label: string };
+	map?: {
+		latitude: number;
+		longitude: number;
+		label: string;
+		/** The place drawn from the world's own lines, where the world draws its own map. */
+		drawn?: string;
+	};
 	/** A word about a command the reader has not used yet: the page's, not Guide's. */
 	hint?: string;
 	/** The colours the page should take, and keep, as the reader asked. */
@@ -1152,10 +1166,17 @@ export class Adventure {
 	private followed(reply: Reply): Reply {
 		const stop = this.world.stops[this.walk.here];
 		if (!this.walk.following || !stop.at) return reply;
+		return { ...reply, map: this.onMap(stop), follow: true };
+	}
+
+	/** Where the map puts a stop, drawn too where the world draws its own map. */
+	private onMap(stop: CompiledStop): NonNullable<Reply['map']> {
+		const at = stop.at!;
 		return {
-			...reply,
-			map: { latitude: stop.at[0], longitude: stop.at[1], label: stop.title },
-			follow: true
+			latitude: at[0],
+			longitude: at[1],
+			label: stop.title,
+			...(this.world.drawing ? { drawn: drawnAround(this.world.drawing, at, stop.title) } : {})
 		};
 	}
 
@@ -1167,7 +1188,7 @@ export class Adventure {
 		const [lat, lon] = at.map((n) => n.toFixed(5));
 		return {
 			lines: [`By the map, you are at ${lat}, ${lon}.`],
-			map: { latitude: at[0], longitude: at[1], label: stop.title },
+			map: this.onMap(stop),
 			link: {
 				href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${lat},${lon}`)}`,
 				text: 'See it on Google Maps'

@@ -133,6 +133,16 @@ Whether it holds attention past ten milecastles is the real test. That is Benedi
 
 **What that suggests:** a Wall walk keeps to the Wall, Bowness to Wallsend, about 118 places. The roads off it are offered as ways out, the walk's edge, not walked far.
 
+## The map
+
+Digital Britannia has no online map to link to: it is published as GIS files, and its own “How to use” page still says the content is coming soon. So `gps` draws the map itself, from the walk's own data (`core/adventure/drawing.ts`, `drawnAround`; a world's `drawing`):
+
+- roads as sure as each is kept: solid for certain, dashed for probable, dotted for conjectured, barely there for no evidence;
+- the Wall, drawn thick;
+- the sites as dots, and the place ringed at the middle, 6 km to each edge, in the page's colours.
+
+It is an image the page draws, asking no one for anything, so it shows on any screen and in the claude.ai preview, where the tiled map cannot. `gps on` keeps it above the walk, moved with each step. The Google Maps link stays beside it. The lines are thinned to a point every 100 m or so.
+
 ## Overlays worth trying
 
 Each source below is a record someone keeps of the past, given as hearsay or, worked out, as now. Each needs its licence confirmed before use.
