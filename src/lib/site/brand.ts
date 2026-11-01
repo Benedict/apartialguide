@@ -5,6 +5,8 @@
  * they are shapes, the same on every device, with no font to load.
  */
 
+import { THEMES } from './themes';
+
 const INK = '#d4d4cc';
 const BRIGHT = '#fff';
 
@@ -23,10 +25,11 @@ export const MARK = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 10
 export const ICON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100"><rect x="-50" y="-50" width="100" height="100" fill="#000"/>${streets(INK, BRIGHT)}</svg>`;
 
 /** "A PARTIAL" over "GUIDE", traced. */
-const NAME = `<path style="fill:${PAGE_INK}" d="M2.9 34L4.0 30.0L9.1 30.0L10.2 34L12.6 34L8.3 18.6L4.9 18.6L0.5 34ZM4.7 27.8L6.5 21.1L6.6 21.1L8.5 27.8ZM32.4 34L34.9 34L34.9 27.9L37.9 27.9C40.8 27.9 42.7 25.9 42.7 23.2C42.7 20.5 40.8 18.6 37.9 18.6L32.4 18.6ZM34.9 25.7L34.9 20.8L38.1 20.8C39.4 20.8 40.3 21.8 40.3 23.2C40.3 24.7 39.4 25.7 38.1 25.7ZM48.5 34L49.6 30.0L54.7 30.0L55.8 34L58.2 34L53.9 18.6L50.5 18.6L46.1 34ZM50.3 27.8L52.1 21.1L52.2 21.1L54.1 27.8ZM65.2 25.3L65.2 20.8L68.3 20.8C69.6 20.8 70.5 21.7 70.5 23.0C70.5 24.4 69.6 25.3 68.3 25.3ZM62.7 34L65.2 34L65.2 27.5L67.4 27.5L70.7 34L73.4 34L70.0 27.2C71.8 26.6 72.9 25.0 72.9 23.0C72.9 20.4 71.0 18.6 68.2 18.6L62.7 18.6ZM81.4 34L83.9 34L83.9 20.8L88.3 20.8L88.3 18.6L76.9 18.6L76.9 20.8L81.4 20.8ZM93.3 34L102.3 34L102.3 31.8L99.1 31.8L99.1 20.8L102.3 20.8L102.3 18.6L93.3 18.6L93.3 20.8L96.6 20.8L96.6 31.8L93.3 31.8ZM109.3 34L110.4 30.0L115.5 30.0L116.6 34L119.1 34L114.7 18.6L111.3 18.6L107.0 34ZM111.1 27.8L112.9 21.1L113.0 21.1L114.9 27.8ZM124.2 34L133.2 34L133.2 31.8L126.7 31.8L126.7 18.6L124.2 18.6Z"/><path style="fill:${PAGE_BRIGHT}" d="M15.1 69.2L21.8 69.2C21.8 74.8 19.2 78.8 15.5 78.8C11.3 78.8 8.4 73.6 8.4 65.9C8.4 58.1 11.4 53.1 16.1 53.1C18.7 53.1 20.9 54.6 21.5 57.0L27.8 57.0C26.9 51.2 21.9 47.1 15.9 47.1C7.6 47.1 1.9 54.8 1.9 66.1C1.9 76.8 7.1 84.5 14.1 84.5C17.5 84.5 20.3 82.8 22.2 79.8L22.4 79.8L22.4 84L28.1 84L28.1 63.5L15.1 63.5ZM63.3 47.6L56.8 47.6L56.8 72.6C56.8 76.0 54.3 78.5 50.8 78.5C47.3 78.5 44.8 76.0 44.8 72.6L44.8 47.6L38.3 47.6L38.3 72.6C38.3 79.5 43.6 84.5 50.8 84.5C58.0 84.5 63.3 79.5 63.3 72.6ZM75.2 84L96.8 84L96.8 78.3L89.3 78.3L89.3 53.3L96.7 53.3L96.7 47.6L75.3 47.6L75.3 53.3L82.8 53.3L82.8 78.3L75.2 78.3ZM109.4 84L120.1 84C129 84 135.1 76.6 135.1 65.8C135.1 55.0 129 47.6 120.1 47.6L109.4 47.6ZM115.9 78.3L115.9 53.3L120.1 53.3C125.3 53.3 128.6 58.2 128.6 65.8C128.6 73.4 125.3 78.3 120.1 78.3ZM146.3 84L168.2 84L168.2 78.3L152.8 78.3L152.8 68.0L166.3 68.0L166.3 62.3L152.8 62.3L152.8 53.3L168.2 53.3L168.2 47.6L146.3 47.6Z"/>`;
+const name = (ink: string, bright: string) =>
+	`<path style="fill:${ink}" d="M2.9 34L4.0 30.0L9.1 30.0L10.2 34L12.6 34L8.3 18.6L4.9 18.6L0.5 34ZM4.7 27.8L6.5 21.1L6.6 21.1L8.5 27.8ZM32.4 34L34.9 34L34.9 27.9L37.9 27.9C40.8 27.9 42.7 25.9 42.7 23.2C42.7 20.5 40.8 18.6 37.9 18.6L32.4 18.6ZM34.9 25.7L34.9 20.8L38.1 20.8C39.4 20.8 40.3 21.8 40.3 23.2C40.3 24.7 39.4 25.7 38.1 25.7ZM48.5 34L49.6 30.0L54.7 30.0L55.8 34L58.2 34L53.9 18.6L50.5 18.6L46.1 34ZM50.3 27.8L52.1 21.1L52.2 21.1L54.1 27.8ZM65.2 25.3L65.2 20.8L68.3 20.8C69.6 20.8 70.5 21.7 70.5 23.0C70.5 24.4 69.6 25.3 68.3 25.3ZM62.7 34L65.2 34L65.2 27.5L67.4 27.5L70.7 34L73.4 34L70.0 27.2C71.8 26.6 72.9 25.0 72.9 23.0C72.9 20.4 71.0 18.6 68.2 18.6L62.7 18.6ZM81.4 34L83.9 34L83.9 20.8L88.3 20.8L88.3 18.6L76.9 18.6L76.9 20.8L81.4 20.8ZM93.3 34L102.3 34L102.3 31.8L99.1 31.8L99.1 20.8L102.3 20.8L102.3 18.6L93.3 18.6L93.3 20.8L96.6 20.8L96.6 31.8L93.3 31.8ZM109.3 34L110.4 30.0L115.5 30.0L116.6 34L119.1 34L114.7 18.6L111.3 18.6L107.0 34ZM111.1 27.8L112.9 21.1L113.0 21.1L114.9 27.8ZM124.2 34L133.2 34L133.2 31.8L126.7 31.8L126.7 18.6L124.2 18.6Z"/><path style="fill:${bright}" d="M15.1 69.2L21.8 69.2C21.8 74.8 19.2 78.8 15.5 78.8C11.3 78.8 8.4 73.6 8.4 65.9C8.4 58.1 11.4 53.1 16.1 53.1C18.7 53.1 20.9 54.6 21.5 57.0L27.8 57.0C26.9 51.2 21.9 47.1 15.9 47.1C7.6 47.1 1.9 54.8 1.9 66.1C1.9 76.8 7.1 84.5 14.1 84.5C17.5 84.5 20.3 82.8 22.2 79.8L22.4 79.8L22.4 84L28.1 84L28.1 63.5L15.1 63.5ZM63.3 47.6L56.8 47.6L56.8 72.6C56.8 76.0 54.3 78.5 50.8 78.5C47.3 78.5 44.8 76.0 44.8 72.6L44.8 47.6L38.3 47.6L38.3 72.6C38.3 79.5 43.6 84.5 50.8 84.5C58.0 84.5 63.3 79.5 63.3 72.6ZM75.2 84L96.8 84L96.8 78.3L89.3 78.3L89.3 53.3L96.7 53.3L96.7 47.6L75.3 47.6L75.3 53.3L82.8 53.3L82.8 78.3L75.2 78.3ZM109.4 84L120.1 84C129 84 135.1 76.6 135.1 65.8C135.1 55.0 129 47.6 120.1 47.6L109.4 47.6ZM115.9 78.3L115.9 53.3L120.1 53.3C125.3 53.3 128.6 58.2 128.6 65.8C128.6 73.4 125.3 78.3 120.1 78.3ZM146.3 84L168.2 84L168.2 78.3L152.8 78.3L152.8 68.0L166.3 68.0L166.3 62.3L152.8 62.3L152.8 53.3L168.2 53.3L168.2 47.6L146.3 47.6Z"/>`;
 
 /** The mark and the name together, for the front page and the About page. */
-export const LOCKUP = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 304 112" role="img" aria-label="A Partial Guide"><svg x="0" y="0" width="112" height="112" viewBox="-50 -50 100 100">${streets(PAGE_INK, PAGE_BRIGHT)}</svg><g transform="translate(128 8)">${NAME}</g></svg>`;
+export const LOCKUP = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 304 112" role="img" aria-label="A Partial Guide"><svg x="0" y="0" width="112" height="112" viewBox="-50 -50 100 100">${streets(PAGE_INK, PAGE_BRIGHT)}</svg><g transform="translate(128 8)">${name(PAGE_INK, PAGE_BRIGHT)}</g></svg>`;
 
 /**
  * The page's icon, carried in the page (it plays from a single file too), and, where the site serves
@@ -43,3 +46,26 @@ export function ogMeta(siteUrl?: string): string {
 	const url = `${siteUrl.replace(/\/$/, '')}/og.png`;
 	return `<meta property="og:image" content="${url}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n<meta name="twitter:card" content="summary_large_image">`;
 }
+
+/** A set of colours the brand is drawn in, as a file standing alone: no page to take colours from. */
+export interface Colourway {
+	key: string;
+	paper: string;
+	ink: string;
+	bright: string;
+}
+
+/** The page's four colours, then black on white and white on black, for print and for others' pages. */
+export const COLOURWAYS: Colourway[] = [
+	...THEMES.map(({ key, paper, ink, bright }) => ({ key, paper, ink, bright })),
+	{ key: 'black', paper: '#ffffff', ink: '#3a3a36', bright: '#000000' },
+	{ key: 'white', paper: '#000000', ink: '#ffffff', bright: '#ffffff' }
+];
+
+/** The mark in a colourway: on nothing, or on its paper, square. */
+export const markIn = (c: Colourway, onPaper = false): string =>
+	`<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100">${onPaper ? `<rect x="-50" y="-50" width="100" height="100" fill="${c.paper}"/>` : ''}${streets(c.ink, c.bright)}</svg>`;
+
+/** The mark and the name together in a colourway: on nothing, or on its paper. */
+export const lockupIn = (c: Colourway, onPaper = false): string =>
+	`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 304 112" role="img" aria-label="A Partial Guide">${onPaper ? `<rect width="304" height="112" fill="${c.paper}"/>` : ''}<svg x="0" y="0" width="112" height="112" viewBox="-50 -50 100 100">${streets(c.ink, c.bright)}</svg><g transform="translate(128 8)">${name(c.ink, c.bright)}</g></svg>`;
