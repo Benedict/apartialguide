@@ -1,0 +1,163 @@
+{
+	"source": "NBN Atlas",
+	"prefix": "wildlife",
+	"records": [
+		{
+			"id": "439c7971-235e-40cc-9aaa-5186dc3ed3b4",
+			"at": [
+				51.34343,
+				-0.104579
+			],
+			"observed": "2023-03-12",
+			"claims": {
+				"name": "Wren",
+				"seen": "2023-03"
+			}
+		},
+		{
+			"id": "40f94f7a-6377-41b7-96f3-86977dcf4e44",
+			"at": [
+				51.32482,
+				-0.088587
+			],
+			"observed": "2023-02-12",
+			"claims": {
+				"name": "Carrion Crow",
+				"seen": "2023-02"
+			}
+		},
+		{
+			"id": "76d0c5b4-7bd3-4187-8f10-599b468bc1d1",
+			"at": [
+				51.344073,
+				-0.109748
+			],
+			"observed": "2012-07-26",
+			"claims": {
+				"name": "Swift",
+				"seen": "2012-07"
+			}
+		},
+		{
+			"id": "49676431-f9c1-433f-954b-fad798c7c5b1",
+			"at": [
+				51.32653,
+				-0.09451
+			],
+			"observed": "2022-08-01",
+			"claims": {
+				"name": "Ring-necked Parakeet",
+				"seen": "2022-08"
+			}
+		},
+		{
+			"id": "5ee5c7e3-fc2b-4bf8-8310-0282a21a6d73",
+			"at": [
+				51.34336,
+				-0.104634
+			],
+			"observed": "2022-07-19",
+			"claims": {
+				"name": "Blackbird",
+				"seen": "2022-07"
+			}
+		},
+		{
+			"id": "f3cfb466-3f38-408d-abf3-7e995706db9c",
+			"at": [
+				51.349527,
+				-0.110601
+			],
+			"observed": "2016-07-26",
+			"claims": {
+				"name": "Slow-worm",
+				"seen": "2016-07"
+			}
+		},
+		{
+			"id": "da83abf3-ffa4-4116-b964-cb3b4d3df631",
+			"at": [
+				51.336475,
+				-0.118032
+			],
+			"observed": "2025-03-05",
+			"claims": {
+				"name": "Pied Wagtail",
+				"seen": "2025-03"
+			}
+		},
+		{
+			"id": "ee1270e0-1cf5-4ab7-8a9f-7a5049289148",
+			"at": [
+				51.341676,
+				-0.128512
+			],
+			"observed": "2019-07-19",
+			"claims": {
+				"name": "Swift",
+				"seen": "2019-07"
+			}
+		},
+		{
+			"id": "56908c27-fce3-4fc1-a5f8-b376c8cae691",
+			"at": [
+				51.331685,
+				-0.113918
+			],
+			"observed": "2013-05-06",
+			"claims": {
+				"name": "Bryony Ladybird",
+				"seen": "2013-05"
+			}
+		},
+		{
+			"id": "f3c15df8-cf47-4d3b-be29-4886d8aaaf71",
+			"at": [
+				51.34344,
+				-0.104654
+			],
+			"observed": "2023-03-08",
+			"claims": {
+				"name": "Robin",
+				"seen": "2023-03"
+			}
+		},
+		{
+			"id": "aa0b3ab2-1cec-4cb8-ade2-7a3092db88c0",
+			"at": [
+				51.329763,
+				-0.114643
+			],
+			"observed": "1984-07-17",
+			"claims": {
+				"name": "Ash",
+				"seen": "1984-07"
+			}
+		},
+		{
+			"id": "7f5d9ada-824c-40e9-9b04-861be0dd36f4",
+			"at": [
+				51.34337,
+				-0.104645
+			],
+			"observed": "2023-04-02",
+			"claims": {
+				"name": "Great Tit",
+				"seen": "2023-04"
+			}
+		},
+		{
+			"id": "b5bce39a-d370-4357-8ec1-bacb020b0131",
+			"at": [
+				51.34335,
+				-0.104712
+			],
+			"observed": "2022-08-19",
+			"claims": {
+				"name": "Blue Tit",
+				"seen": "2022-08"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

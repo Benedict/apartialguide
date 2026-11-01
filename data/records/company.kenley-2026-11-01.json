@@ -1,0 +1,259 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "11|OAKLANDS GARDENS",
+			"address": {
+				"number": "11",
+				"street": "OAKLANDS GARDENS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "11 PLUS SUCCESS CLUB LIMITED",
+				"since": "2022-10-19"
+			}
+		},
+		{
+			"id": "35|CUMBERLANDS",
+			"address": {
+				"number": "35",
+				"street": "CUMBERLANDS"
+			},
+			"claims": {
+				"count": "2",
+				"names": "DYPP SOLUTIONS LIMITED|AYAS INVESTMENTS LTD",
+				"since": "2015-03-02"
+			}
+		},
+		{
+			"id": "47|LITTLE ROKE ROAD",
+			"address": {
+				"number": "47",
+				"street": "LITTLE ROKE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BRYANT'S WASTE MANAGEMENT LTD",
+				"since": "2020-05-04"
+			}
+		},
+		{
+			"id": "33|CUMBERLANDS",
+			"address": {
+				"number": "33",
+				"street": "CUMBERLANDS"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CANINI TECHNOLOGIES LTD",
+				"since": "2009-07-30"
+			}
+		},
+		{
+			"id": "75|LOWER ROAD",
+			"address": {
+				"number": "75",
+				"street": "LOWER ROAD"
+			},
+			"claims": {
+				"count": "14",
+				"names": "CLEANKILL (ENVIRONMENTAL SERVICES) LIMITED|THE MONTY BOJANGLES RETAIL CO LTD|SILVERSPRAY LIMITED",
+				"since": "1995-01-25"
+			}
+		},
+		{
+			"id": "310|OLD LODGE LANE",
+			"address": {
+				"number": "310",
+				"street": "OLD LODGE LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CURRY HOUSE PURLEY LIMITED",
+				"since": "2019-08-07"
+			}
+		},
+		{
+			"id": "19|CUMBERLANDS",
+			"address": {
+				"number": "19",
+				"street": "CUMBERLANDS"
+			},
+			"claims": {
+				"count": "2",
+				"names": "GARSTON DEVELOPMENTS LIMITED|MABELHALL LIMITED",
+				"since": "1987-11-11"
+			}
+		},
+		{
+			"id": "306|OLD LODGE LANE",
+			"address": {
+				"number": "306",
+				"street": "OLD LODGE LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GLAM & CHIC LTD",
+				"since": "2023-02-28"
+			}
+		},
+		{
+			"id": "30|GODSTONE ROAD",
+			"address": {
+				"number": "30",
+				"street": "GODSTONE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HAIRTOPIA LIMITED",
+				"since": "2020-03-16"
+			}
+		},
+		{
+			"id": "33|OLD LODGE LANE",
+			"address": {
+				"number": "33",
+				"street": "OLD LODGE LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HOLLY TREE GLOBAL LTD",
+				"since": "2022-09-21"
+			}
+		},
+		{
+			"id": "80|GODSTONE ROAD",
+			"address": {
+				"number": "80",
+				"street": "GODSTONE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KENLEY WINE MERCHANT LTD",
+				"since": "2014-10-09"
+			}
+		},
+		{
+			"id": "84|GODSTONE ROAD",
+			"address": {
+				"number": "84",
+				"street": "GODSTONE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LUXE LOUNGE HQ LTD",
+				"since": "2022-04-10"
+			}
+		},
+		{
+			"id": "1|BURCOTT ROAD",
+			"address": {
+				"number": "1",
+				"street": "BURCOTT ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "PRO CARE (G.B.) LIMITED|PEMBURY PROPERTIES LIMITED|MABEA INVESTMENTS LIMITED",
+				"since": "2004-06-03"
+			}
+		},
+		{
+			"id": "2|STATION APPROACH",
+			"address": {
+				"number": "2",
+				"street": "STATION APPROACH"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ORDRLY LIMITED",
+				"since": "2026-06-24"
+			}
+		},
+		{
+			"id": "16|BURCOTT ROAD",
+			"address": {
+				"number": "16",
+				"street": "BURCOTT ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PURLEY DAY NURSERY LIMITED",
+				"since": "2001-02-23"
+			}
+		},
+		{
+			"id": "2|ROKE ROAD",
+			"address": {
+				"number": "2",
+				"street": "ROKE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ROKE INVESTMENTS LTD",
+				"since": "2020-07-09"
+			}
+		},
+		{
+			"id": "52|GODSTONE ROAD",
+			"address": {
+				"number": "52",
+				"street": "GODSTONE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SECOM PLC",
+				"since": "1991-02-26"
+			}
+		},
+		{
+			"id": "28|GODSTONE ROAD",
+			"address": {
+				"number": "28",
+				"street": "GODSTONE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE BEAUTY BOXX LTD",
+				"since": "2025-07-31"
+			}
+		},
+		{
+			"id": "45|OLD LODGE LANE",
+			"address": {
+				"number": "45",
+				"street": "OLD LODGE LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE FIFTH DIMENSION CONSULTANCY LTD",
+				"since": "2025-01-10"
+			}
+		},
+		{
+			"id": "10|GODSTONE ROAD",
+			"address": {
+				"number": "10",
+				"street": "GODSTONE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TMV SHEEBA LTD",
+				"since": "2023-08-25"
+			}
+		},
+		{
+			"id": "40|GODSTONE ROAD",
+			"address": {
+				"number": "40",
+				"street": "GODSTONE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ZAINOR LTD",
+				"since": "2026-04-27"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

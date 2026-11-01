@@ -1,0 +1,23 @@
+{
+	"source": "Greater London Authority, Public_Realm_tree_list_2025_November.csv",
+	"prefix": "trees",
+	"records": [
+		{
+			"id": "trees:Hereward Avenue",
+			"street": "Hereward Avenue",
+			"claims": {
+				"count": "1",
+				"kinds": "Sycamore (1)"
+			}
+		},
+		{
+			"id": "trees:Russell Hill Road",
+			"street": "Russell Hill Road",
+			"claims": {
+				"count": "3",
+				"kinds": "Common Whitebeam (1), Hornbeam (1), Lime (1)"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

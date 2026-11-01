@@ -86,27 +86,39 @@
 		},
 		{
 			"name": "Selsdon",
-			"wards": ["Selsdon & Addington Village", "Selsdon Vale & Forestdale"]
+			"wards": ["Selsdon & Addington Village", "Selsdon Vale & Forestdale"],
+			"open": true,
+			"start": "Selsdon Library"
 		},
 		{
 			"name": "Sanderstead",
-			"wards": ["Sanderstead"]
+			"wards": ["Sanderstead"],
+			"open": true,
+			"start": "Sanderstead Pond"
 		},
 		{
 			"name": "New Addington",
-			"wards": ["New Addington North", "New Addington South"]
+			"wards": ["New Addington North", "New Addington South"],
+			"open": true,
+			"start": "New Addington"
 		},
 		{
 			"name": "Purley",
-			"wards": ["Purley & Woodcote", "Purley Oaks & Riddlesdown"]
+			"wards": ["Purley & Woodcote", "Purley Oaks & Riddlesdown"],
+			"open": true,
+			"start": "Purley"
 		},
 		{
 			"name": "Kenley",
-			"wards": ["Kenley"]
+			"wards": ["Kenley"],
+			"open": true,
+			"start": "Kenley"
 		},
 		{
 			"name": "Coulsdon",
-			"wards": ["Coulsdon Town", "Old Coulsdon"]
+			"wards": ["Coulsdon Town", "Old Coulsdon"],
+			"open": true,
+			"start": "Coulsdon Library"
 		}
 	]
 }

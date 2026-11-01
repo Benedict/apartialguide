@@ -1,0 +1,255 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536762",
+			"at": [
+				51.296434,
+				-0.100719
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "COAL TAX POST (WEST SIDE OF STITES HILL ROAD, NORTH OF NUMBER 122 NINEHAMS ROAD, CATERHAM)",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536802",
+			"at": [
+				51.309222,
+				-0.123608
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "BRADMORE FARMHOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536803",
+			"at": [
+				51.300706,
+				-0.150753
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "COAL TAX POST, EAST SIDE OF BRIGHTON ROAD, 150 YARDS SOUTH OF WOODFIELD HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536804",
+			"at": [
+				51.308147,
+				-0.117669
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "THE GRANGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536817",
+			"at": [
+				51.295645,
+				-0.131003
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "COAL TAX POST, EAST SIDE OF DITCHES LANE NEAR DEVILSDEN WOOD",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31645207",
+			"at": [
+				51.323346,
+				-0.134027
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "COULSDON METHODIST CHURCH",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31645242",
+			"at": [
+				51.307668,
+				-0.118062
+			],
+			"observed": "1954-05-20",
+			"claims": {
+				"name": "CHURCH OF ST JOHN THE EVANGELIST",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "1954-05-20"
+			}
+		},
+		{
+			"id": "31750622",
+			"at": [
+				51.303929,
+				-0.111515
+			],
+			"observed": "1969-07-07",
+			"claims": {
+				"name": "TAUNTON FARMHOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1969-07-07"
+			}
+		},
+		{
+			"id": "31750857",
+			"at": [
+				51.296813,
+				-0.106283
+			],
+			"observed": "1982-03-19",
+			"claims": {
+				"name": "YEW TREE COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1982-03-19"
+			}
+		},
+		{
+			"id": "31750861",
+			"at": [
+				51.294854,
+				-0.105272
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "COAL TAX POST, EAST SIDE OF COULSDON ROAD AT JUNCTION WITH THE GROVE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31750941",
+			"at": [
+				51.309336,
+				-0.123389
+			],
+			"observed": "1954-05-20",
+			"claims": {
+				"name": "BARN COTTAGE THE BARN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1954-05-20"
+			}
+		},
+		{
+			"id": "31814578",
+			"at": [
+				51.310566,
+				-0.122707
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "CHERRY TREE COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31814594",
+			"at": [
+				51.298257,
+				-0.10773
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "WINDMILL COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31814618",
+			"at": [
+				51.310338,
+				-0.14058
+			],
+			"observed": "1988-01-13",
+			"claims": {
+				"name": "75, FAIRDENE ROAD",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1988-01-13"
+			}
+		},
+		{
+			"id": "31855684",
+			"at": [
+				51.315516,
+				-0.133669
+			],
+			"observed": "2016-12-06",
+			"claims": {
+				"name": "Coulsdon War Memorial, Memorial Recreation Ground",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2016-12-06"
+			}
+		},
+		{
+			"id": "31855915",
+			"at": [
+				51.307366,
+				-0.119965
+			],
+			"observed": "2017-02-27",
+			"claims": {
+				"name": "Old Coulsdon War Memorial",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-27"
+			}
+		},
+		{
+			"id": "31864020",
+			"at": [
+				51.316346,
+				-0.138329
+			],
+			"observed": "2025-10-21",
+			"claims": {
+				"name": "Milestone 14, on the west side of Brighton Road (A237), opposite Coulsdon South Station northern entrance",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2025-10-21"
+			}
+		},
+		{
+			"id": "31865493",
+			"at": [
+				51.294849,
+				-0.105264
+			],
+			"claims": {
+				"description": "listed building"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

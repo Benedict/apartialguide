@@ -1,0 +1,147 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31521528",
+			"at": [
+				51.331536,
+				-0.125275
+			],
+			"observed": "2002-03-21",
+			"claims": {
+				"name": "PURLEY COUNCIL OFFICES INCLUDING ATTACHED RAILINGS",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2002-03-21"
+			}
+		},
+		{
+			"id": "31536807",
+			"at": [
+				51.345276,
+				-0.130394
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "CHURCH OF ST MARK",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31645585",
+			"at": [
+				51.341574,
+				-0.101497
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "PURLEY BURY",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31750653",
+			"at": [
+				51.343496,
+				-0.119294
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "RUSSELL HILL SCHOOLS (THOMAS MORE SCHOOL FOR BOYS), MAIN BUILDING",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31844915",
+			"at": [
+				51.339194,
+				-0.118718
+			],
+			"observed": "2001-08-01",
+			"claims": {
+				"name": "PURLEY LIBRARY INCLUDING FORECOURT WALL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2001-08-01"
+			}
+		},
+		{
+			"id": "31849373",
+			"at": [
+				51.340176,
+				-0.11527
+			],
+			"observed": "2010-05-20",
+			"claims": {
+				"name": "PURLEY UNITED REFORMED CHURCH, FORMERLY PURLEY CONGREGATIONAL CHURCH",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2010-05-20"
+			}
+		},
+		{
+			"id": "31854641",
+			"at": [
+				51.336679,
+				-0.135937
+			],
+			"observed": "2016-02-18",
+			"claims": {
+				"name": "Promenade de Verdun War Memorial",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2016-02-18"
+			}
+		},
+		{
+			"id": "31855912",
+			"at": [
+				51.333691,
+				-0.137813
+			],
+			"observed": "2017-02-23",
+			"claims": {
+				"name": "Woodcote War Memorial",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-23"
+			}
+		},
+		{
+			"id": "31855914",
+			"at": [
+				51.330306,
+				-0.107604
+			],
+			"observed": "2017-02-27",
+			"claims": {
+				"name": "Riddlesdown War Memorial",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-27"
+			}
+		},
+		{
+			"id": "31864035",
+			"at": [
+				51.328172,
+				-0.127659
+			],
+			"observed": "2025-10-21",
+			"claims": {
+				"name": "Milestone 13, on the southeast side of Brighton Road (A23) by Milestone Drive",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2025-10-21"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

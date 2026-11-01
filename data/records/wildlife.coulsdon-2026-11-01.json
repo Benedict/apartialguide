@@ -1,0 +1,499 @@
+{
+	"source": "NBN Atlas",
+	"prefix": "wildlife",
+	"records": [
+		{
+			"id": "7a7297b6-490f-4e3a-83d3-312bb9b93d12",
+			"at": [
+				51.305639,
+				-0.145022
+			],
+			"observed": "2023-04-28",
+			"claims": {
+				"name": "Collared Dove",
+				"seen": "2023-04"
+			}
+		},
+		{
+			"id": "8aecb491-f742-4092-8cb4-f5bc63c14da5",
+			"at": [
+				51.309437,
+				-0.136998
+			],
+			"observed": "2017-10-22",
+			"claims": {
+				"name": "Common Knapweed",
+				"seen": "2017-10"
+			}
+		},
+		{
+			"id": "0b463656-a156-4d41-8353-daa4e86c67a8",
+			"at": [
+				51.294022,
+				-0.129017
+			],
+			"observed": "1999-08-19",
+			"claims": {
+				"name": "Eriothrix rufomaculata",
+				"seen": "1999-08"
+			}
+		},
+		{
+			"id": "48c8e708-08f3-4def-b1c0-d24105469802",
+			"at": [
+				51.298823,
+				-0.128922
+			],
+			"observed": "1996-09-13",
+			"claims": {
+				"name": "Dogwood",
+				"seen": "1996-09"
+			}
+		},
+		{
+			"id": "aa744f28-869d-469c-95ce-c08eac8ff325",
+			"at": [
+				51.303009,
+				-0.128651
+			],
+			"observed": "2003-07-15",
+			"claims": {
+				"name": "Eriothrix rufomaculata",
+				"seen": "2003-07"
+			}
+		},
+		{
+			"id": "a4e76893-29e6-41c6-8d26-efb342927998",
+			"at": [
+				51.310868,
+				-0.113983
+			],
+			"observed": "2001-07-20",
+			"claims": {
+				"name": "Dark-winged Black",
+				"seen": "2001-07"
+			}
+		},
+		{
+			"id": "99d800f3-ce08-47ae-bec1-a6508cde350f",
+			"at": [
+				51.315811,
+				-0.150445
+			],
+			"observed": "2013-06-02",
+			"claims": {
+				"name": "Greater Bulb-Fly",
+				"seen": "2013-06"
+			}
+		},
+		{
+			"id": "44b69ec3-6d89-4d5f-bb45-499bea54b68c",
+			"at": [
+				51.315797,
+				-0.141046
+			],
+			"observed": "2022-04-16",
+			"claims": {
+				"name": "Clover-root Weevil",
+				"seen": "2022-04"
+			}
+		},
+		{
+			"id": "648c2c79-6bcf-4f3f-9bb7-c6cff9b5b97a",
+			"at": [
+				51.301304,
+				-0.134459
+			],
+			"observed": "1996-09-10",
+			"claims": {
+				"name": "Hawthorn",
+				"seen": "1996-09"
+			}
+		},
+		{
+			"id": "2e1827f2-2209-4969-bdf8-efacae1438b3",
+			"at": [
+				51.29602,
+				-0.125508
+			],
+			"observed": "2022-07-24",
+			"claims": {
+				"name": "Green Woodpecker",
+				"seen": "2022-07"
+			}
+		},
+		{
+			"id": "53cac3af-5d32-48b6-91cd-a4d10c49c589",
+			"at": [
+				51.313573,
+				-0.137753
+			],
+			"observed": "2024-05-20",
+			"claims": {
+				"name": "Robin",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "c5bf3452-807a-4c3c-97f8-e2cf1e5a28f7",
+			"at": [
+				51.304492,
+				-0.128017
+			],
+			"observed": "1996-09-12",
+			"claims": {
+				"name": "Ash",
+				"seen": "1996-09"
+			}
+		},
+		{
+			"id": "cb2fe52b-4057-4c98-b645-ec21877239c3",
+			"at": [
+				51.298539,
+				-0.130267
+			],
+			"observed": "1999-06-09",
+			"claims": {
+				"name": "Clear Glass Snail",
+				"seen": "1999-06"
+			}
+		},
+		{
+			"id": "fb83a029-442b-43e7-abab-6f7301ce37de",
+			"at": [
+				51.298539,
+				-0.130267
+			],
+			"observed": "1999-06-09",
+			"claims": {
+				"name": "Long-toothed Herald Snail",
+				"seen": "1999-06"
+			}
+		},
+		{
+			"id": "b748e42f-94ad-482e-855c-aa6ed1524c7d",
+			"at": [
+				51.304492,
+				-0.128017
+			],
+			"observed": "1996-09-12",
+			"claims": {
+				"name": "Apple",
+				"seen": "1996-09"
+			}
+		},
+		{
+			"id": "7b57493d-8dfd-496c-8cdb-3b7b360ff42d",
+			"at": [
+				51.307442,
+				-0.118036
+			],
+			"observed": "2019-08-20",
+			"claims": {
+				"name": "Magpie",
+				"seen": "2019-08"
+			}
+		},
+		{
+			"id": "a610d63d-b801-4cc2-8e19-e09e4bbc25b7",
+			"at": [
+				51.30249,
+				-0.14122
+			],
+			"observed": "2021-06-06",
+			"claims": {
+				"name": "Jackdaw",
+				"seen": "2021-06"
+			}
+		},
+		{
+			"id": "1fb06b39-71d7-4c04-8c80-991ad5c2f943",
+			"at": [
+				51.312665,
+				-0.113909
+			],
+			"observed": "1989-05-20",
+			"claims": {
+				"name": "Cantharis pellucida",
+				"seen": "1989-05"
+			}
+		},
+		{
+			"id": "19008a9c-f10d-45c4-be90-a73f28e1e1ce",
+			"at": [
+				51.299208,
+				-0.115895
+			],
+			"observed": "1996-09-24",
+			"claims": {
+				"name": "Sycamore",
+				"seen": "1996-09"
+			}
+		},
+		{
+			"id": "7602ec23-d313-43cc-b1b1-d418d785bb0a",
+			"at": [
+				51.29847,
+				-0.125967
+			],
+			"observed": "1996-09-16",
+			"claims": {
+				"name": "Field Maple",
+				"seen": "1996-09"
+			}
+		},
+		{
+			"id": "6d9343e8-ce45-4aa5-8e1e-86289a57258a",
+			"at": [
+				51.300405,
+				-0.134495
+			],
+			"observed": "1999-05-27",
+			"claims": {
+				"name": "Common Red-legged Robberfly",
+				"seen": "1999-05"
+			}
+		},
+		{
+			"id": "667ab513-c2d1-44da-b2f5-5cafe78853bb",
+			"at": [
+				51.329368,
+				-0.146239
+			],
+			"observed": "2019-07-07",
+			"claims": {
+				"name": "Little Owl",
+				"seen": "2019-07"
+			}
+		},
+		{
+			"id": "f8b2dfa8-3296-4346-ae35-eb63884f6631",
+			"at": [
+				51.307549,
+				-0.140904
+			],
+			"observed": "2024-08-24",
+			"claims": {
+				"name": "Robin",
+				"seen": "2024-08"
+			}
+		},
+		{
+			"id": "09697126-b6cd-49aa-a0ea-fa9e8fb49485",
+			"at": [
+				51.320336,
+				-0.143733
+			],
+			"observed": "1998-05-04",
+			"claims": {
+				"name": "Common Garden Snail",
+				"seen": "1998-05"
+			}
+		},
+		{
+			"id": "b451a586-b775-442f-b9dc-fb29bb1343d0",
+			"at": [
+				51.308607,
+				-0.141336
+			],
+			"observed": "2016-06-10",
+			"claims": {
+				"name": "White-tailed Bumblebee",
+				"seen": "2016-06"
+			}
+		},
+		{
+			"id": "5de26843-f7a8-4236-9a93-e060aacdefa4",
+			"at": [
+				51.309483,
+				-0.139866
+			],
+			"observed": "2017-08-27",
+			"claims": {
+				"name": "Small Scabious",
+				"seen": "2017-08"
+			}
+		},
+		{
+			"id": "20bc987b-238d-443d-bdc5-8a2c6adbbfe0",
+			"at": [
+				51.305205,
+				-0.132353
+			],
+			"observed": "2022-11-22",
+			"claims": {
+				"name": "Ploughman's-spikenard",
+				"seen": "2022-11"
+			}
+		},
+		{
+			"id": "4e29ff3b-3fb0-4c01-afc6-dee6d5fb4530",
+			"at": [
+				51.309415,
+				-0.135565
+			],
+			"observed": "1999-10-06",
+			"claims": {
+				"name": "Twin-spot Centurion",
+				"seen": "1999-10"
+			}
+		},
+		{
+			"id": "3606fdd2-0e76-401d-887a-03d1a5c81f52",
+			"at": [
+				51.298008,
+				-0.097297
+			],
+			"observed": "2013-08-08",
+			"claims": {
+				"name": "Roesel's Bush-cricket",
+				"seen": "2013-08"
+			}
+		},
+		{
+			"id": "8e937cd4-95a0-415a-b6a7-bbf6e7237707",
+			"at": [
+				51.296373,
+				-0.107405
+			],
+			"observed": "2019-05-26",
+			"claims": {
+				"name": "Cuckoo-Spit Insect",
+				"seen": "2019-05"
+			}
+		},
+		{
+			"id": "3946b280-8e06-48e3-807b-11e158494ca2",
+			"at": [
+				51.309392,
+				-0.134131
+			],
+			"observed": "1999-09-28",
+			"claims": {
+				"name": "Rhopalus (Rhopalus) subrufus",
+				"seen": "1999-09"
+			}
+		},
+		{
+			"id": "1be12337-7737-4f30-bd57-11ebfcaffcc0",
+			"at": [
+				51.302316,
+				-0.141591
+			],
+			"observed": "2014-03-09",
+			"claims": {
+				"name": "Aphodius fimetarius",
+				"seen": "2014-03"
+			}
+		},
+		{
+			"id": "eb6cb2b3-1d2e-4990-80b3-95ad793f9bec",
+			"at": [
+				51.302316,
+				-0.141591
+			],
+			"observed": "2018-09-29",
+			"claims": {
+				"name": "Bodilopsis rufa",
+				"seen": "2018-09"
+			}
+		},
+		{
+			"id": "9870c999-066c-4fe5-912c-ce25391ab5e5",
+			"at": [
+				51.305843,
+				-0.137144
+			],
+			"observed": "2016-06-07",
+			"claims": {
+				"name": "Early Bumblebee",
+				"seen": "2016-06"
+			}
+		},
+		{
+			"id": "cd356560-f081-4983-b5c3-2d6e03939021",
+			"at": [
+				51.303328,
+				-0.148723
+			],
+			"observed": "1984-08-15",
+			"claims": {
+				"name": "Dogwood",
+				"seen": "1984-08"
+			}
+		},
+		{
+			"id": "3aebaf7f-1885-4fb0-a73a-58fc17141ecd",
+			"at": [
+				51.294898,
+				-0.127547
+			],
+			"observed": "1996-10-01",
+			"claims": {
+				"name": "Yew",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "d60bfad5-fad5-44b3-b263-26a6a30628be",
+			"at": [
+				51.294898,
+				-0.127547
+			],
+			"observed": "1996-10-01",
+			"claims": {
+				"name": "Common Whitebeam",
+				"seen": "1996-10"
+			}
+		},
+		{
+			"id": "3af12e35-1658-49e6-9097-11d62e40e1f1",
+			"at": [
+				51.302134,
+				-0.130121
+			],
+			"observed": "2015-09-10",
+			"claims": {
+				"name": "Roesel's Bush-cricket",
+				"seen": "2015-09"
+			}
+		},
+		{
+			"id": "fac07fd2-e894-4aab-8892-911f6efe8e53",
+			"at": [
+				51.30094,
+				-0.09966
+			],
+			"observed": "2013-08-03",
+			"claims": {
+				"name": "Roesel's Bush-cricket",
+				"seen": "2013-08"
+			}
+		},
+		{
+			"id": "4e185ab5-d2c1-4255-aa4b-f46f9b1246c9",
+			"at": [
+				51.315147,
+				-0.156857
+			],
+			"observed": "2025-06-20",
+			"claims": {
+				"name": "Closterotomus trivialis",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "ca9b2096-7e5b-47c1-8b73-ac4699f0c800",
+			"at": [
+				51.308607,
+				-0.141336
+			],
+			"observed": "2014-05-31",
+			"claims": {
+				"name": "Tree Bumblebee",
+				"seen": "2014-05"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

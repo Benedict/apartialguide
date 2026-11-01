@@ -1,0 +1,23 @@
+{
+	"source": "OpenBenches",
+	"prefix": "bench",
+	"records": [
+		{
+			"id": "31481",
+			"at": [
+				51.341465,
+				-0.111654
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In loving memory of our beautiful daughter and friend / Abigail Durcan Smith / 1999 - 2016"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

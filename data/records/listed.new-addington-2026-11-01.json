@@ -1,0 +1,35 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536782",
+			"at": [
+				51.333841,
+				0.000658
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "COAL TAX POST ON THE JUNCTION BETWEEN KING HENRY'S DRIVE AND BOUNDARY LINE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31643601",
+			"at": [
+				51.331313,
+				0.002802
+			],
+			"observed": "1985-09-20",
+			"claims": {
+				"name": "COAL TAXPOST 100 YARDS SOUTH OF JUNCTION WITH SHEEPBARN LANE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1985-09-20"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

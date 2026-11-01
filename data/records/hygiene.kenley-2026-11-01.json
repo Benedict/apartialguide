@@ -1,0 +1,685 @@
+{
+	"source": "Food Standards Agency",
+	"prefix": "hygiene",
+	"records": [
+		{
+			"id": "2045",
+			"link": {
+				"key": "fhrs:id",
+				"value": "2045"
+			},
+			"at": [
+				51.3224542,
+				-0.0997893
+			],
+			"observed": "2026-03-26",
+			"claims": {
+				"name": "Abbey Wood Grange Day Nursery",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-03-26"
+			}
+		},
+		{
+			"id": "779343",
+			"link": {
+				"key": "fhrs:id",
+				"value": "779343"
+			},
+			"at": [
+				51.3266792297363,
+				-0.105696000158787
+			],
+			"observed": "2026-09-23",
+			"claims": {
+				"name": "Chartwells At Harris Primary Academy Kenley",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2026-09-23"
+			}
+		},
+		{
+			"id": "2472",
+			"link": {
+				"key": "fhrs:id",
+				"value": "2472"
+			},
+			"at": [
+				51.3257953,
+				-0.1011871
+			],
+			"observed": "2023-11-04",
+			"claims": {
+				"name": "Co-op Food",
+				"kind": "Retailers - supermarkets/hypermarkets",
+				"rating": "5",
+				"date": "2023-11-04"
+			}
+		},
+		{
+			"id": "1883494",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1883494"
+			},
+			"at": [
+				51.3292575,
+				-0.1078481
+			],
+			"observed": "2026-04-07",
+			"claims": {
+				"name": "Drinks Paradise Off Licence",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2026-04-07"
+			}
+		},
+		{
+			"id": "712797",
+			"link": {
+				"key": "fhrs:id",
+				"value": "712797"
+			},
+			"at": [
+				51.3267440795898,
+				-0.115927003324032
+			],
+			"observed": "2025-09-02",
+			"claims": {
+				"name": "Highfield House",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2025-09-02"
+			}
+		},
+		{
+			"id": "5221",
+			"link": {
+				"key": "fhrs:id",
+				"value": "5221"
+			},
+			"at": [
+				51.3217887878418,
+				-0.107936002314091
+			],
+			"observed": "2025-12-11",
+			"claims": {
+				"name": "Hill House Nursing Home",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2025-12-11"
+			}
+		},
+		{
+			"id": "1752507",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1752507"
+			},
+			"at": [
+				51.3150329589844,
+				-0.0863299965858459
+			],
+			"observed": "2024-10-09",
+			"claims": {
+				"name": "Holiplay Kenley Primary School",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2024-10-09"
+			}
+		},
+		{
+			"id": "1883482",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1883482"
+			},
+			"at": [
+				51.3289833068848,
+				-0.1075100004673
+			],
+			"observed": "2026-06-06",
+			"claims": {
+				"name": "Kenley Grill",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2026-06-06"
+			}
+		},
+		{
+			"id": "293581",
+			"link": {
+				"key": "fhrs:id",
+				"value": "293581"
+			},
+			"at": [
+				51.3257789611816,
+				-0.120273001492023
+			],
+			"observed": "2026-05-21",
+			"claims": {
+				"name": "Little Learners Day Nursery",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-05-21"
+			}
+		},
+		{
+			"id": "1048117",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1048117"
+			},
+			"at": [
+				51.3285140991211,
+				-0.107299998402596
+			],
+			"observed": "2024-03-16",
+			"claims": {
+				"name": "Lovegrass",
+				"kind": "Manufacturers/packers",
+				"rating": "5",
+				"date": "2024-03-16"
+			}
+		},
+		{
+			"id": "946630",
+			"link": {
+				"key": "fhrs:id",
+				"value": "946630"
+			},
+			"at": [
+				51.3161163330078,
+				-0.11540099978447
+			],
+			"observed": "2023-10-19",
+			"claims": {
+				"name": "New Valley Primary School Breakfast Club & Afterschool",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2023-10-19"
+			}
+		},
+		{
+			"id": "1658964",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1658964"
+			},
+			"at": [
+				51.3170038,
+				-0.1144256
+			],
+			"observed": "2026-08-28",
+			"claims": {
+				"name": "Old Lodge Lane Baptist Church Food Stop",
+				"kind": "Distributors/Transporters",
+				"rating": "5",
+				"date": "2026-08-28"
+			}
+		},
+		{
+			"id": "1815611",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1815611"
+			},
+			"at": [
+				51.3257789611816,
+				-0.120273001492023
+			],
+			"observed": "2025-07-08",
+			"claims": {
+				"name": "Olive Dining Ltd At Beaumont Primary School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2025-07-08"
+			}
+		},
+		{
+			"id": "1045687",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1045687"
+			},
+			"at": [
+				51.3265419006348,
+				-0.11846199631691
+			],
+			"observed": "2026-01-29",
+			"claims": {
+				"name": "Purley Day Nursery & Montessori Centre",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-01-29"
+			}
+		},
+		{
+			"id": "1212694",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1212694"
+			},
+			"at": [
+				51.3243525,
+				-0.1070597
+			],
+			"observed": "2026-02-19",
+			"claims": {
+				"name": "Rokewood Court Care Home",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-02-19"
+			}
+		},
+		{
+			"id": "1416420",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1416420"
+			},
+			"at": [
+				51.3150329589844,
+				-0.0863299965858459
+			],
+			"observed": "2026-03-26",
+			"claims": {
+				"name": "The Collegiate Trading Company At Kenley Primary School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2026-03-26"
+			}
+		},
+		{
+			"id": "2468",
+			"link": {
+				"key": "fhrs:id",
+				"value": "2468"
+			},
+			"at": [
+				51.3289833068848,
+				-0.1075100004673
+			],
+			"observed": "2024-07-22",
+			"claims": {
+				"name": "Top Cafe",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2024-07-22"
+			}
+		},
+		{
+			"id": "1969327",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1969327"
+			},
+			"at": [
+				51.3161163330078,
+				-0.11540099978447
+			],
+			"observed": "2026-08-03",
+			"claims": {
+				"name": "4Every Child Ltd",
+				"kind": "Caring Premises",
+				"rating": "4",
+				"date": "2026-08-03"
+			}
+		},
+		{
+			"id": "593",
+			"link": {
+				"key": "fhrs:id",
+				"value": "593"
+			},
+			"at": [
+				51.3178672790527,
+				-0.107394002377987
+			],
+			"observed": "2026-05-15",
+			"claims": {
+				"name": "Acorn Lodge Residential Care Home",
+				"kind": "Caring Premises",
+				"rating": "4",
+				"date": "2026-05-15"
+			}
+		},
+		{
+			"id": "1583907",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1583907"
+			},
+			"at": [
+				51.3173484802246,
+				-0.108764000236988
+			],
+			"observed": "2026-07-16",
+			"claims": {
+				"name": "Aspens Services At The Hayes Primary School",
+				"kind": "School/college/university",
+				"rating": "4",
+				"date": "2026-07-16"
+			}
+		},
+		{
+			"id": "26061",
+			"link": {
+				"key": "fhrs:id",
+				"value": "26061"
+			},
+			"at": [
+				51.3159334,
+				-0.1159017
+			],
+			"observed": "2021-11-15",
+			"claims": {
+				"name": "Costcutter",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2021-11-15"
+			}
+		},
+		{
+			"id": "7079",
+			"link": {
+				"key": "fhrs:id",
+				"value": "7079"
+			},
+			"at": [
+				51.3266563415527,
+				-0.121054999530315
+			],
+			"observed": "2025-05-16",
+			"claims": {
+				"name": "Ferncroft",
+				"kind": "Caring Premises",
+				"rating": "4",
+				"date": "2025-05-16"
+			}
+		},
+		{
+			"id": "1200193",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1200193"
+			},
+			"at": [
+				51.3257789611816,
+				-0.120273001492023
+			],
+			"observed": "2025-06-11",
+			"claims": {
+				"name": "Griffins Breakfast/Afterschool Club At Beaumont Primary",
+				"kind": "Caring Premises",
+				"rating": "4",
+				"date": "2025-06-11"
+			}
+		},
+		{
+			"id": "1755626",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1755626"
+			},
+			"at": [
+				51.3289833068848,
+				-0.1075100004673
+			],
+			"observed": "2024-10-04",
+			"claims": {
+				"name": "Indian Dhaba",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "4",
+				"date": "2024-10-04"
+			}
+		},
+		{
+			"id": "1824708",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1824708"
+			},
+			"at": [
+				51.3291473,
+				-0.1077091
+			],
+			"observed": "2025-09-12",
+			"claims": {
+				"name": "Kenley News",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2025-09-12"
+			}
+		},
+		{
+			"id": "4773",
+			"link": {
+				"key": "fhrs:id",
+				"value": "4773"
+			},
+			"at": [
+				51.32725234,
+				-0.10618682
+			],
+			"observed": "2024-11-08",
+			"claims": {
+				"name": "Kenley Sports Club And Cricket Ground",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2024-11-08"
+			}
+		},
+		{
+			"id": "1001661",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1001661"
+			},
+			"at": [
+				51.3256683349609,
+				-0.100556001067162
+			],
+			"observed": "2022-03-23",
+			"claims": {
+				"name": "Kenley Wine Merchant",
+				"kind": "Retailers - other",
+				"rating": "4",
+				"date": "2022-03-23"
+			}
+		},
+		{
+			"id": "1742167",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1742167"
+			},
+			"at": [
+				51.3256683349609,
+				-0.100556001067162
+			],
+			"observed": "2024-09-26",
+			"claims": {
+				"name": "Mama Jane's Pizza",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "4",
+				"date": "2024-09-26"
+			}
+		},
+		{
+			"id": "1777198",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1777198"
+			},
+			"at": [
+				51.3256683349609,
+				-0.100556001067162
+			],
+			"observed": "2025-02-19",
+			"claims": {
+				"name": "Morley's Fried Chicken",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "4",
+				"date": "2025-02-19"
+			}
+		},
+		{
+			"id": "1610451",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1610451"
+			},
+			"at": [
+				51.3161163330078,
+				-0.11540099978447
+			],
+			"observed": "2026-07-10",
+			"claims": {
+				"name": "Olive Dining At New Valley Primary School",
+				"kind": "School/college/university",
+				"rating": "4",
+				"date": "2026-07-10"
+			}
+		},
+		{
+			"id": "4780",
+			"link": {
+				"key": "fhrs:id",
+				"value": "4780"
+			},
+			"at": [
+				51.3229731,
+				-0.1175441
+			],
+			"observed": "2024-03-20",
+			"claims": {
+				"name": "Reedham Park Tennis Club",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2024-03-20"
+			}
+		},
+		{
+			"id": "1919565",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1919565"
+			},
+			"at": [
+				51.3256187438965,
+				-0.101332999765873
+			],
+			"observed": "2026-05-23",
+			"claims": {
+				"name": "Kenley House/China Town/Halal/Flying/Wood/Famous/BestChinese",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "3",
+				"date": "2026-05-23"
+			}
+		},
+		{
+			"id": "1734676",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1734676"
+			},
+			"at": [
+				51.30778485,
+				-0.10249135
+			],
+			"observed": "2026-02-26",
+			"claims": {
+				"name": "Wattenden Arms",
+				"kind": "Pub/bar/nightclub",
+				"rating": "3",
+				"date": "2026-02-26"
+			}
+		},
+		{
+			"id": "1425926",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1425926"
+			},
+			"at": [
+				51.3256763,
+				-0.100503
+			],
+			"observed": "2026-06-10",
+			"claims": {
+				"name": "Smokin' Grill Steakhouse",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "2",
+				"date": "2026-06-10"
+			}
+		},
+		{
+			"id": "5031",
+			"link": {
+				"key": "fhrs:id",
+				"value": "5031"
+			},
+			"at": [
+				51.3150329589844,
+				-0.0863299965858459
+			],
+			"observed": "2026-09-23",
+			"claims": {
+				"name": "Kenley Kindergarten",
+				"kind": "Caring Premises",
+				"rating": "1",
+				"date": "2026-09-23"
+			}
+		},
+		{
+			"id": "592",
+			"link": {
+				"key": "fhrs:id",
+				"value": "592"
+			},
+			"at": [
+				51.3186187744141,
+				-0.104420997202396
+			],
+			"claims": {
+				"name": "Hollybank Residential Home",
+				"kind": "Caring Premises",
+				"rating": "AwaitingInspection"
+			}
+		},
+		{
+			"id": "1971633",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1971633"
+			},
+			"at": [
+				51.3150329589844,
+				-0.0863299965858459
+			],
+			"claims": {
+				"name": "Mini Sports Stars",
+				"kind": "Caring Premises",
+				"rating": "AwaitingInspection"
+			}
+		},
+		{
+			"id": "1930503",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1930503"
+			},
+			"at": [
+				51.3200689,
+				-0.1018828
+			],
+			"claims": {
+				"name": "Welcomes Road",
+				"kind": "Caring Premises",
+				"rating": "AwaitingInspection"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

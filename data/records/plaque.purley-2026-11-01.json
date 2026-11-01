@@ -1,0 +1,115 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "49746",
+			"at": [
+				51.33064,
+				-0.10438
+			],
+			"claims": {
+				"name": "Peter Cushing 1913-1994 Actor lived here",
+				"description": "plaque",
+				"inscription": "Peter Cushing 1913-1994 Actor lived here"
+			}
+		},
+		{
+			"id": "49476",
+			"at": [
+				51.3305,
+				-0.10439
+			],
+			"claims": {
+				"name": "In this chapel the armed forces of the united states of america held divine service during the great war of 1939 to 1945 and gave thanks to god for the victory of the allies",
+				"description": "plaque",
+				"inscription": "In this chapel the armed forces of the united states of america held divine service during the great war of 1939 to 1945 and gave thanks to god for the victory of the allies"
+			}
+		},
+		{
+			"id": "9579",
+			"at": [
+				51.34372,
+				-0.1274
+			],
+			"claims": {
+				"name": "Jacqueline du Pré 1945 – 1987",
+				"description": "plaque",
+				"inscription": "Jacqueline du Pré 1945 – 1987"
+			}
+		},
+		{
+			"id": "8310",
+			"at": [
+				51.33807,
+				-0.11641
+			],
+			"claims": {
+				"name": "Near this site runs the subterranean Bourne or Woe Water which floods part of the Purley, Caterham & Coulsdon valleys traditionally every seven years and foretells national disaster!",
+				"description": "plaque",
+				"inscription": "Near this site runs the subterranean Bourne or Woe Water which floods part of the Purley, Caterham & Coulsdon valleys traditionally every seven years and foretells national disaster!"
+			}
+		},
+		{
+			"id": "8309",
+			"at": [
+				51.33807,
+				-0.11641
+			],
+			"claims": {
+				"name": "1907-2007 Jolly Farmers. This building replaced the earlier wooden beer house built at least forty years before. Sometime called Hammer & Clink after a blacksmiths behind it",
+				"description": "plaque",
+				"inscription": "1907-2007 Jolly Farmers. This building replaced the earlier wooden beer house built at least forty years before. Sometime called Hammer & Clink after a blacksmiths behind it"
+			}
+		},
+		{
+			"id": "8304",
+			"at": [
+				51.33864,
+				-0.13946
+			],
+			"claims": {
+				"name": "Commonweal Lodge founded in 1916 by Miss Margery Bray and Miss Elsie Bourne at the request of William Webb",
+				"description": "plaque",
+				"inscription": "Commonweal Lodge founded in 1916 by Miss Margery Bray and Miss Elsie Bourne at the request of William Webb"
+			}
+		},
+		{
+			"id": "8303",
+			"at": [
+				51.33372,
+				-0.13808
+			],
+			"claims": {
+				"name": "This building was named by William Webb and opened as a temperance inn 1907",
+				"description": "plaque",
+				"inscription": "This building was named by William Webb and opened as a temperance inn 1907"
+			}
+		},
+		{
+			"id": "8295",
+			"at": [
+				51.33922,
+				-0.11883
+			],
+			"claims": {
+				"name": "Southern England's first public railway. The Croydon, Merstham & Godstone Railway. A horse drawn service carrying stone to Wandsworth ran across this site. Opened July 1805",
+				"description": "plaque",
+				"inscription": "Southern England's first public railway. The Croydon, Merstham & Godstone Railway. A horse drawn service carrying stone to Wandsworth ran across this site. Opened July 1805"
+			}
+		},
+		{
+			"id": "7576",
+			"at": [
+				51.33771,
+				-0.11426
+			],
+			"claims": {
+				"name": "This plaque erected to commemorate the re-naming of this station - Purley - on 1st October 1888 from its former name of Caterham Junction itself renamed in 1856 from Godstone Road",
+				"description": "plaque",
+				"inscription": "This plaque erected to commemorate the re-naming of this station - Purley - on 1st October 1888 from its former name of Caterham Junction itself renamed in 1856 from Godstone Road"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

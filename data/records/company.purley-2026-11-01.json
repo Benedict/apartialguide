@@ -1,0 +1,1627 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "50|GODSTONE ROAD",
+			"address": {
+				"number": "50",
+				"street": "GODSTONE ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "WANDERLUST MEDIA LTD|S.M.A.K CONSULTANCY LIMITED|14 SPENCER ROAD RTM COMPANY LIMITED",
+				"since": "2014-12-08"
+			}
+		},
+		{
+			"id": "57|GODSTONE ROAD",
+			"address": {
+				"number": "57",
+				"street": "GODSTONE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "57 GODSTONE ROAD MANAGEMENT COMPANY LIMITED",
+				"since": "1991-09-09"
+			}
+		},
+		{
+			"id": "26|DOWNS COURT ROAD",
+			"address": {
+				"number": "26",
+				"street": "DOWNS COURT ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "6TH GEAR COACHING AND CONSULTANCY LTD|PROJECT:ASM CIC",
+				"since": "2021-04-06"
+			}
+		},
+		{
+			"id": "2|HIGH TREE CLOSE",
+			"address": {
+				"number": "2",
+				"street": "HIGH TREE CLOSE"
+			},
+			"claims": {
+				"count": "9",
+				"names": "ALIMIN PROPERTIES LIMITED|ROOKWOOD AVANUE LIMITED|80 CROHAM ROAD LIMITED",
+				"since": "2019-06-12"
+			}
+		},
+		{
+			"id": "93|BRIGHTON ROAD",
+			"address": {
+				"number": "93",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "A&A CHICKEN LTD",
+				"since": "2026-07-27"
+			}
+		},
+		{
+			"id": "935|BRIGHTON ROAD",
+			"address": {
+				"number": "935",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "SIRIUS ASPIRATIONS LTD|NOVA SALOONS LTD|ABI'S HAIR & BEAUTY LTD",
+				"since": "2013-03-01"
+			}
+		},
+		{
+			"id": "191|BRIGHTON ROAD",
+			"address": {
+				"number": "191",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ACCIDENT CLAIM HELP LIMITED",
+				"since": "2013-09-02"
+			}
+		},
+		{
+			"id": "5|WHYTECLIFFE ROAD SOUTH",
+			"address": {
+				"number": "5",
+				"street": "WHYTECLIFFE ROAD SOUTH"
+			},
+			"claims": {
+				"count": "3",
+				"names": "UZIMELE CONSULTING LTD|ACORN BESPOKE CATERING LTD|ACORN BESPOKE CHILLED LTD",
+				"since": "2008-07-24"
+			}
+		},
+		{
+			"id": "2|PURLEY PARADE",
+			"address": {
+				"number": "2",
+				"street": "PURLEY PARADE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "AKGUN RESTAURANT LIMITED|EGE RESTAURANT LIMITED",
+				"since": "2019-12-05"
+			}
+		},
+		{
+			"id": "10|STATION APPROACH",
+			"address": {
+				"number": "10",
+				"street": "STATION APPROACH"
+			},
+			"claims": {
+				"count": "5",
+				"names": "SAFI UK INVESTMENT LIMITED|KARWAZE LIMITED|ALFA INVESTMENS LIMITED",
+				"since": "2017-05-04"
+			}
+		},
+		{
+			"id": "17|PURLEY ROAD",
+			"address": {
+				"number": "17",
+				"street": "PURLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ALI DEVELOPMENTS (UK) LIMITED",
+				"since": "2020-02-06"
+			}
+		},
+		{
+			"id": "4|GODSTONE ROAD",
+			"address": {
+				"number": "4",
+				"street": "GODSTONE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ALLBIKES (SURREY) LIMITED",
+				"since": "2012-03-05"
+			}
+		},
+		{
+			"id": "99|DOWNLANDS ROAD",
+			"address": {
+				"number": "99",
+				"street": "DOWNLANDS ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AMANDEEP KALRA ARCHITECTS LTD",
+				"since": "2018-05-01"
+			}
+		},
+		{
+			"id": "56|HARTLEY OLD ROAD",
+			"address": {
+				"number": "56",
+				"street": "HARTLEY OLD ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AYCORN SHOPPE LIMITED",
+				"since": "2023-05-23"
+			}
+		},
+		{
+			"id": "2|STATION APPROACH",
+			"address": {
+				"number": "2",
+				"street": "STATION APPROACH"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BAILEY-CONSULTING (CBS) LLP",
+				"since": "2004-03-30"
+			}
+		},
+		{
+			"id": "114|BRIGHTON ROAD",
+			"address": {
+				"number": "114",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "BEAUTY AND THE FEAST LTD|LOUNGE HIRE EVENTS LTD|BATF THE PINK PALACE CIC",
+				"since": "2022-02-12"
+			}
+		},
+		{
+			"id": "1|CROSS ROAD",
+			"address": {
+				"number": "1",
+				"street": "CROSS ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "BELLAMY'S (SOUTH EAST) LIMITED|COOL ICE (SOUTH EAST) LIMITED",
+				"since": "2019-05-21"
+			}
+		},
+		{
+			"id": "110|BRIGHTON ROAD",
+			"address": {
+				"number": "110",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "BERLIN FLAME GRILL LTD|BERLIN GRILL LIMITED",
+				"since": "2025-09-11"
+			}
+		},
+		{
+			"id": "931|BRIGHTON ROAD",
+			"address": {
+				"number": "931",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "BEST PURLEY BARBERS LTD|HAMA PURLEY BARBER LTD",
+				"since": "2018-09-13"
+			}
+		},
+		{
+			"id": "52|SMITHAM BOTTOM LANE",
+			"address": {
+				"number": "52",
+				"street": "SMITHAM BOTTOM LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BETH-EZRA TRUST",
+				"since": "1981-11-25"
+			}
+		},
+		{
+			"id": "12|RUSSELL PARADE",
+			"address": {
+				"number": "12",
+				"street": "RUSSELL PARADE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BHU-DEV PARTNERS LTD",
+				"since": "2024-08-27"
+			}
+		},
+		{
+			"id": "43|STOATS NEST ROAD",
+			"address": {
+				"number": "43",
+				"street": "STOATS NEST ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BITETECH INFRASTRUCTURE LTD",
+				"since": "2026-05-05"
+			}
+		},
+		{
+			"id": "856|BRIGHTON ROAD",
+			"address": {
+				"number": "856",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BOURNE MEDICAL LIMITED",
+				"since": "2021-01-26"
+			}
+		},
+		{
+			"id": "69|BRIGHTON ROAD",
+			"address": {
+				"number": "69",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BRIGHT LITTLE STARS DAY NURSERY LTD",
+				"since": "2022-06-01"
+			}
+		},
+		{
+			"id": "3|PURLEY ROAD",
+			"address": {
+				"number": "3",
+				"street": "PURLEY ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "SK CREATIVE SOLUTIONS LIMITED|BROADWAY SECURETECH LTD",
+				"since": "2022-08-26"
+			}
+		},
+		{
+			"id": "8|THE PARADE",
+			"address": {
+				"number": "8",
+				"street": "THE PARADE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CAPTURED SOLUTIONS LIMITED",
+				"since": "2020-05-15"
+			}
+		},
+		{
+			"id": "85|STOATS NEST ROAD",
+			"address": {
+				"number": "85",
+				"street": "STOATS NEST ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CATCH STAR CHIPPY LTD|KANIYAMIRAN LTD",
+				"since": "2024-11-07"
+			}
+		},
+		{
+			"id": "725|BRIGHTON ROAD",
+			"address": {
+				"number": "725",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CHERRY BLOSSOM PURLEY LIMITED TA ZEN LOUNGE LTD|THE LOUNGE PURLEY LIMITED TA ZEN LOUNGE LTD",
+				"since": "2019-07-17"
+			}
+		},
+		{
+			"id": "26|HIGH STREET",
+			"address": {
+				"number": "26",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CHINA CITY (PURLEY) LTD",
+				"since": "2019-03-05"
+			}
+		},
+		{
+			"id": "17|ELM ROAD",
+			"address": {
+				"number": "17",
+				"street": "ELM ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "CHRISTIANSBORG HERITAGE INITIATIVE LIMITED|ILLUMMERSE LIMITED|EMYLANTO TENDERHANDS LIMITED",
+				"since": "2018-12-03"
+			}
+		},
+		{
+			"id": "49|HARTLEY HILL",
+			"address": {
+				"number": "49",
+				"street": "HARTLEY HILL"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CITY ROOFING CONTRACTORS LIMITED|D MAY ROOFING LTD",
+				"since": "2020-10-15"
+			}
+		},
+		{
+			"id": "66|HARTLEY OLD ROAD",
+			"address": {
+				"number": "66",
+				"street": "HARTLEY OLD ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CKS UNITED LTD",
+				"since": "2025-05-20"
+			}
+		},
+		{
+			"id": "104|LOWER BARN ROAD",
+			"address": {
+				"number": "104",
+				"street": "LOWER BARN ROAD"
+			},
+			"claims": {
+				"count": "4",
+				"names": "CLARSHIRE LIMITED|RIDDLESDOWN PHARMACY LIMITED|CLARSHIRE HOLDINGS LTD",
+				"since": "1971-04-29"
+			}
+		},
+		{
+			"id": "16|DALE ROAD",
+			"address": {
+				"number": "16",
+				"street": "DALE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CLINNOVATE LTD",
+				"since": "2015-07-27"
+			}
+		},
+		{
+			"id": "6|STATION PARADE",
+			"address": {
+				"number": "6",
+				"street": "STATION PARADE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "COCO AND NUT COFFEE LONDON LTD",
+				"since": "2022-05-17"
+			}
+		},
+		{
+			"id": "24|HIGH STREET",
+			"address": {
+				"number": "24",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "COCONELLA HAIR & BEAUTY LTD",
+				"since": "2022-07-21"
+			}
+		},
+		{
+			"id": "12|HIGH STREET",
+			"address": {
+				"number": "12",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "MAGIC GLASS LTD|CONSTANTINE & CO JEWELLERS LTD",
+				"since": "2017-06-30"
+			}
+		},
+		{
+			"id": "1|PURLEY VALE",
+			"address": {
+				"number": "1",
+				"street": "PURLEY VALE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CRENTSIL PROPERTY GROUP LTD",
+				"since": "2025-09-19"
+			}
+		},
+		{
+			"id": "4|SMITHAM DOWNS ROAD",
+			"address": {
+				"number": "4",
+				"street": "SMITHAM DOWNS ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "SYNERGY TAX LIMITED|SYNERGY BOOK SALES UK LIMITED|CRT EVENTS LTD",
+				"since": "2017-01-13"
+			}
+		},
+		{
+			"id": "11|HIGH STREET",
+			"address": {
+				"number": "11",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CRYSTAL ROCKS PROPERTIES LIMITED",
+				"since": "2016-12-29"
+			}
+		},
+		{
+			"id": "73|LANSDOWNE ROAD",
+			"address": {
+				"number": "73",
+				"street": "LANSDOWNE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "D.M. RENOVATIONS LTD",
+				"since": "2015-09-18"
+			}
+		},
+		{
+			"id": "74|BRIGHTON ROAD",
+			"address": {
+				"number": "74",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "DARKWA CLEANING LTD|DARKWA CLEAN LTD",
+				"since": "2026-06-05"
+			}
+		},
+		{
+			"id": "951|BRIGHTON ROAD",
+			"address": {
+				"number": "951",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DAVID BRIGHT ESTATES (PURLEY) LIMITED",
+				"since": "2016-07-18"
+			}
+		},
+		{
+			"id": "939|BRIGHTON ROAD",
+			"address": {
+				"number": "939",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DISMED LIMITED",
+				"since": "2014-05-27"
+			}
+		},
+		{
+			"id": "84|BRIGHTON ROAD",
+			"address": {
+				"number": "84",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "DRAGON PURLEY LTD",
+				"since": "2022-12-19"
+			}
+		},
+		{
+			"id": "82|BRIGHTON ROAD",
+			"address": {
+				"number": "82",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EAT PIZZA LTD",
+				"since": "2024-02-20"
+			}
+		},
+		{
+			"id": "941|BRIGHTON ROAD",
+			"address": {
+				"number": "941",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EGO NAILS & SPA PURLEY LIMITED",
+				"since": "2025-10-28"
+			}
+		},
+		{
+			"id": "86|PARTRIDGE KNOLL",
+			"address": {
+				"number": "86",
+				"street": "PARTRIDGE KNOLL"
+			},
+			"claims": {
+				"count": "4",
+				"names": "SERENITY UK CARE LIMITED|EVERYTHING AVAILABLE LIMITED|SERENITY UK CARE PROPERTY LIMITED",
+				"since": "2012-05-30"
+			}
+		},
+		{
+			"id": "48|GODSTONE ROAD",
+			"address": {
+				"number": "48",
+				"street": "GODSTONE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EXTRA MILE PLUMBING LIMITED",
+				"since": "2011-09-19"
+			}
+		},
+		{
+			"id": "43|SMITHAM BOTTOM LANE",
+			"address": {
+				"number": "43",
+				"street": "SMITHAM BOTTOM LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FAN CONSULTANTS LTD",
+				"since": "2010-11-08"
+			}
+		},
+		{
+			"id": "21|FOXLEY LANE",
+			"address": {
+				"number": "21",
+				"street": "FOXLEY LANE"
+			},
+			"claims": {
+				"count": "3",
+				"names": "PURLEY DENTAL PRACTICE LIMITED|FELICITY MURRAY LTD|PEPA TRADING CO. LIMITED",
+				"since": "2006-12-18"
+			}
+		},
+		{
+			"id": "28|DOWNS COURT ROAD",
+			"address": {
+				"number": "28",
+				"street": "DOWNS COURT ROAD"
+			},
+			"claims": {
+				"count": "4",
+				"names": "YUDEL TRADING LIMITED|INYURA ENTERPRISE LTD|LMK TRADING LIMITED",
+				"since": "2013-06-10"
+			}
+		},
+		{
+			"id": "51|WOODSIDE ROAD",
+			"address": {
+				"number": "51",
+				"street": "WOODSIDE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FITZROVIA LETTINGS LIMITED",
+				"since": "2017-06-19"
+			}
+		},
+		{
+			"id": "49|FOXLEY LANE",
+			"address": {
+				"number": "49",
+				"street": "FOXLEY LANE"
+			},
+			"claims": {
+				"count": "3",
+				"names": "FOXLEY LANE LIMITED|ORANGE ASSETS LTD|ORANGE HOLDCO LTD",
+				"since": "2006-12-19"
+			}
+		},
+		{
+			"id": "10|PURLEY VALE",
+			"address": {
+				"number": "10",
+				"street": "PURLEY VALE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FRANTRONICS LIMITED",
+				"since": "1988-10-17"
+			}
+		},
+		{
+			"id": "4|HIGH STREET",
+			"address": {
+				"number": "4",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FRESH SUSHI LTD",
+				"since": "2025-02-17"
+			}
+		},
+		{
+			"id": "22|WHYTECLIFFE ROAD SOUTH",
+			"address": {
+				"number": "22",
+				"street": "WHYTECLIFFE ROAD SOUTH"
+			},
+			"claims": {
+				"count": "1",
+				"names": "G1UK LIMITED",
+				"since": "2016-09-06"
+			}
+		},
+		{
+			"id": "60|HARTLEY DOWN",
+			"address": {
+				"number": "60",
+				"street": "HARTLEY DOWN"
+			},
+			"claims": {
+				"count": "3",
+				"names": "MILLPIT FURLONG MANAGEMENT COMPANY LIMITED|GILLETT & JOHNSTON (LONDON) LIMITED|RENDLESHAM PARK ESTATE (FREEHOLD) LIMITED",
+				"since": "1988-06-21"
+			}
+		},
+		{
+			"id": "116|BRIGHTON ROAD",
+			"address": {
+				"number": "116",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "ICON KITCHEN DESIGNS LTD|GO TO BUILD LTD|IGO HOLDING GROUP LTD",
+				"since": "2019-07-03"
+			}
+		},
+		{
+			"id": "53|MANOR WOOD ROAD",
+			"address": {
+				"number": "53",
+				"street": "MANOR WOOD ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "TRS WINDMILL LIMITED|H & B SERVICES LONDON LTD|P & B LONDON LTD",
+				"since": "2004-07-12"
+			}
+		},
+		{
+			"id": "30|BRIGHTON ROAD",
+			"address": {
+				"number": "30",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HAZEL RESIDENCES LTD",
+				"since": "2014-03-13"
+			}
+		},
+		{
+			"id": "3|PURLEY VALE",
+			"address": {
+				"number": "3",
+				"street": "PURLEY VALE"
+			},
+			"claims": {
+				"count": "5",
+				"names": "SONIC HEARING LIMITED|SRIS GROUP LIMITED|SRIS INNOVATION LIMITED",
+				"since": "2010-11-04"
+			}
+		},
+		{
+			"id": "933|BRIGHTON ROAD",
+			"address": {
+				"number": "933",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "4",
+				"names": "TECHVAPE LTD|HK PHONES LTD|SHS DISTRIBUTIONS LTD",
+				"since": "2022-09-23"
+			}
+		},
+		{
+			"id": "83|STOATS NEST ROAD",
+			"address": {
+				"number": "83",
+				"street": "STOATS NEST ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "HEMAL LIMITED",
+				"since": "2017-02-28"
+			}
+		},
+		{
+			"id": "920|BRIGHTON ROAD",
+			"address": {
+				"number": "920",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "4",
+				"names": "PAKISTAN FOODS LIMITED|INFUSION VILLAGE LIMITED|TAMEER ESTATES LTD",
+				"since": "2021-04-06"
+			}
+		},
+		{
+			"id": "1|PURLEY ROAD",
+			"address": {
+				"number": "1",
+				"street": "PURLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "INGOT PROPERTIES LIMITED",
+				"since": "2009-01-22"
+			}
+		},
+		{
+			"id": "1|HARTLEY WAY",
+			"address": {
+				"number": "1",
+				"street": "HARTLEY WAY"
+			},
+			"claims": {
+				"count": "1",
+				"names": "INNOVATION ENGINE LIMITED",
+				"since": "2015-05-12"
+			}
+		},
+		{
+			"id": "7|MILESTONE DRIVE",
+			"address": {
+				"number": "7",
+				"street": "MILESTONE DRIVE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "INOSA HEALTH LTD",
+				"since": "2026-03-09"
+			}
+		},
+		{
+			"id": "16|RUSSELL HILL ROAD",
+			"address": {
+				"number": "16",
+				"street": "RUSSELL HILL ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ISABELLA BEAUTY LTD",
+				"since": "2023-10-05"
+			}
+		},
+		{
+			"id": "14|RUSSELL HILL ROAD",
+			"address": {
+				"number": "14",
+				"street": "RUSSELL HILL ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "JBK INVESTMENTS LIMITED|LEX STERLING LIMITED|RAAD ENTERPRISE LTD",
+				"since": "2011-05-19"
+			}
+		},
+		{
+			"id": "57|BRIGHTON ROAD",
+			"address": {
+				"number": "57",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JJM64 HEALTHCARE LIMITED",
+				"since": "2024-08-12"
+			}
+		},
+		{
+			"id": "9|HIGH STREET",
+			"address": {
+				"number": "9",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JULY NAILS LTD",
+				"since": "2026-04-17"
+			}
+		},
+		{
+			"id": "175|BRIGHTON ROAD",
+			"address": {
+				"number": "175",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "JUNIOR BUILDER LTD",
+				"since": "2023-05-02"
+			}
+		},
+		{
+			"id": "923B|BRIGHTON ROAD",
+			"address": {
+				"number": "923B",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "K&Q ENTERPRISES LTD",
+				"since": "2012-03-05"
+			}
+		},
+		{
+			"id": "2|HARTLEY DOWN",
+			"address": {
+				"number": "2",
+				"street": "HARTLEY DOWN"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KALAM HOLDINGS LTD",
+				"since": "2025-02-05"
+			}
+		},
+		{
+			"id": "5|STATION PARADE",
+			"address": {
+				"number": "5",
+				"street": "STATION PARADE"
+			},
+			"claims": {
+				"count": "3",
+				"names": "SANDERSTEAD TANDOORI LIMITED|KHANA ENTERPRISE LTD|SANDERSTEAD TANDOORI RESTAURANT LIMITED",
+				"since": "2023-01-10"
+			}
+		},
+		{
+			"id": "66|SMITHAM DOWNS ROAD",
+			"address": {
+				"number": "66",
+				"street": "SMITHAM DOWNS ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "KHINE X CYBER LTD",
+				"since": "2024-01-30"
+			}
+		},
+		{
+			"id": "29|PEAKS HILL",
+			"address": {
+				"number": "29",
+				"street": "PEAKS HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LALEHAM LEA SCHOOL",
+				"since": "2007-01-25"
+			}
+		},
+		{
+			"id": "1|STATION APPROACH",
+			"address": {
+				"number": "1",
+				"street": "STATION APPROACH"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LOCAL TRADERS LTD",
+				"since": "2025-11-13"
+			}
+		},
+		{
+			"id": "102|BRIGHTON ROAD",
+			"address": {
+				"number": "102",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "3",
+				"names": "NXT GEN BOXING ACADEMY COMMUNITY INTEREST COMPANY|NEXT GENERATION BOXING ACADEMY LTD|LONDON RECYCLE SYSTEMS LTD",
+				"since": "2024-09-05"
+			}
+		},
+		{
+			"id": "924|BRIGHTON ROAD",
+			"address": {
+				"number": "924",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LUCAS DINH LTD",
+				"since": "2021-12-24"
+			}
+		},
+		{
+			"id": "67|WOODCREST ROAD",
+			"address": {
+				"number": "67",
+				"street": "WOODCREST ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LUZAR DISTRIBUTION LTD",
+				"since": "2026-05-31"
+			}
+		},
+		{
+			"id": "15|LANSDOWNE ROAD",
+			"address": {
+				"number": "15",
+				"street": "LANSDOWNE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MARGARET’S ACCOUNTING LTD",
+				"since": "2018-11-28"
+			}
+		},
+		{
+			"id": "3|STATION PARADE",
+			"address": {
+				"number": "3",
+				"street": "STATION PARADE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "MASTER CHEF 2023 LTD|MASTER CHEF FOR YOU LTD",
+				"since": "2023-04-15"
+			}
+		},
+		{
+			"id": "11|COPPERFIELD CLOSE",
+			"address": {
+				"number": "11",
+				"street": "COPPERFIELD CLOSE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "TECFLOCK LIMITED|MINDSCONNECT TECHNOLOGIES LIMITED",
+				"since": "2019-07-19"
+			}
+		},
+		{
+			"id": "949|BRIGHTON ROAD",
+			"address": {
+				"number": "949",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MOB 1 UK LTD",
+				"since": "2023-06-29"
+			}
+		},
+		{
+			"id": "45|FOXLEY LANE",
+			"address": {
+				"number": "45",
+				"street": "FOXLEY LANE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MORETHAN-HR LTD",
+				"since": "2014-04-11"
+			}
+		},
+		{
+			"id": "919|BRIGHTON ROAD",
+			"address": {
+				"number": "919",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "MR PHONE AND VAPE LTD|VIBES PROPER LTD",
+				"since": "2023-06-05"
+			}
+		},
+		{
+			"id": "456|BRIGHTON ROAD",
+			"address": {
+				"number": "456",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MRLT BABAN LIMITED",
+				"since": "2020-01-21"
+			}
+		},
+		{
+			"id": "8|WHYTECLIFFE ROAD SOUTH",
+			"address": {
+				"number": "8",
+				"street": "WHYTECLIFFE ROAD SOUTH"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NANTA LTD",
+				"since": "2018-02-14"
+			}
+		},
+		{
+			"id": "429|BRIGHTON ROAD",
+			"address": {
+				"number": "429",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "NAYIM'S EMBROIDERIES LIMITED|SRI VENKATESWARA BALAJI TEMPLE",
+				"since": "2001-10-05"
+			}
+		},
+		{
+			"id": "107|PURLEY VALE",
+			"address": {
+				"number": "107",
+				"street": "PURLEY VALE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NILAVAN DEVELOPMENT LTD",
+				"since": "2025-03-01"
+			}
+		},
+		{
+			"id": "5|HIGH STREET",
+			"address": {
+				"number": "5",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "2",
+				"names": "NO.5 (SURREY) LIMITED|WHISPERS BAR AND GRILL LTD",
+				"since": "2019-12-02"
+			}
+		},
+		{
+			"id": "77|STOATS NEST ROAD",
+			"address": {
+				"number": "77",
+				"street": "STOATS NEST ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NO.77 LTD",
+				"since": "2022-06-24"
+			}
+		},
+		{
+			"id": "35|DOWNS COURT ROAD",
+			"address": {
+				"number": "35",
+				"street": "DOWNS COURT ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "PAVEPRIME LIMITED|NORTHBOURNE PROPERTY SERVICES LTD.",
+				"since": "1989-04-20"
+			}
+		},
+		{
+			"id": "945|BRIGHTON ROAD",
+			"address": {
+				"number": "945",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PEROLA DO ATLANTICO LTD",
+				"since": "2019-08-08"
+			}
+		},
+		{
+			"id": "12|RUSSELL HILL ROAD",
+			"address": {
+				"number": "12",
+				"street": "RUSSELL HILL ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "PLANET PIZZA PURLEY LTD|PURLEY TOPS LTD",
+				"since": "2019-10-08"
+			}
+		},
+		{
+			"id": "2|DOWNLANDS ROAD",
+			"address": {
+				"number": "2",
+				"street": "DOWNLANDS ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PLANN ACCOMMODATION LIMITED",
+				"since": "2010-03-02"
+			}
+		},
+		{
+			"id": "31|OAKWOOD AVENUE",
+			"address": {
+				"number": "31",
+				"street": "OAKWOOD AVENUE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "SULLIVAN COURT PROPERTY COMPANY LIMITED|PROACTIVE ACCOUNTING (SOUTH EAST) LIMITED",
+				"since": "1986-09-17"
+			}
+		},
+		{
+			"id": "1|STEVENS PLACE",
+			"address": {
+				"number": "1",
+				"street": "STEVENS PLACE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PURLEY 1967 LIMITED",
+				"since": "2014-10-08"
+			}
+		},
+		{
+			"id": "34|BRIGHTON ROAD",
+			"address": {
+				"number": "34",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PURLEY LANGUAGE COLLEGE LIMITED",
+				"since": "2001-02-09"
+			}
+		},
+		{
+			"id": "79|STOATS NEST ROAD",
+			"address": {
+				"number": "79",
+				"street": "STOATS NEST ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PWJ PLUMBING LTD",
+				"since": "2005-08-30"
+			}
+		},
+		{
+			"id": "946|BRIGHTON ROAD",
+			"address": {
+				"number": "946",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RAWLING & SONS (OPTICIANS) LIMITED",
+				"since": "1993-10-14"
+			}
+		},
+		{
+			"id": "922|BRIGHTON ROAD",
+			"address": {
+				"number": "922",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RAYAN DRY CLEANERS LTD",
+				"since": "2024-02-19"
+			}
+		},
+		{
+			"id": "7|PURLEY ROAD",
+			"address": {
+				"number": "7",
+				"street": "PURLEY ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RED CHILLY INDIAN FOOD LTD",
+				"since": "2025-12-11"
+			}
+		},
+		{
+			"id": "185|BRIGHTON ROAD",
+			"address": {
+				"number": "185",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "REDBREAST STUDIO LTD",
+				"since": "2012-01-11"
+			}
+		},
+		{
+			"id": "7|HIGH STREET",
+			"address": {
+				"number": "7",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RIO TRADING LIMITED",
+				"since": "2018-01-22"
+			}
+		},
+		{
+			"id": "30|HARTLEY HILL",
+			"address": {
+				"number": "30",
+				"street": "HARTLEY HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "RJL CONSTRUCTION LTD",
+				"since": "2016-09-29"
+			}
+		},
+		{
+			"id": "58|HARTLEY DOWN",
+			"address": {
+				"number": "58",
+				"street": "HARTLEY DOWN"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ROLLING STONE IT LIMITED",
+				"since": "2010-07-13"
+			}
+		},
+		{
+			"id": "926|BRIGHTON ROAD",
+			"address": {
+				"number": "926",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ROOSTER CHICKEN AND FISH LTD",
+				"since": "2023-03-22"
+			}
+		},
+		{
+			"id": "17|LANSDOWNE ROAD",
+			"address": {
+				"number": "17",
+				"street": "LANSDOWNE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "S.H DEEFHOLTS LTD",
+				"since": "2026-07-20"
+			}
+		},
+		{
+			"id": "38|COPSE HILL",
+			"address": {
+				"number": "38",
+				"street": "COPSE HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SAI ENGINEERING CONSULTANTS LIMITED",
+				"since": "1988-12-01"
+			}
+		},
+		{
+			"id": "75|HARTLEY HILL",
+			"address": {
+				"number": "75",
+				"street": "HARTLEY HILL"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SAMO'S RECORDS LTD",
+				"since": "2024-10-17"
+			}
+		},
+		{
+			"id": "3|WHYTECLIFFE ROAD SOUTH",
+			"address": {
+				"number": "3",
+				"street": "WHYTECLIFFE ROAD SOUTH"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SANTORINI KABAB HOUSE LTD",
+				"since": "2025-12-18"
+			}
+		},
+		{
+			"id": "4|RUSSELL PARADE",
+			"address": {
+				"number": "4",
+				"street": "RUSSELL PARADE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SHINEROCKS LTD",
+				"since": "2009-12-03"
+			}
+		},
+		{
+			"id": "2|SMITHAM DOWNS ROAD",
+			"address": {
+				"number": "2",
+				"street": "SMITHAM DOWNS ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SJ PROPERTY PARTNERS LTD",
+				"since": "2021-10-25"
+			}
+		},
+		{
+			"id": "10|DELVES CLOSE",
+			"address": {
+				"number": "10",
+				"street": "DELVES CLOSE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SOMAN CONSULTING LIMITED",
+				"since": "2011-03-23"
+			}
+		},
+		{
+			"id": "46|HIGH STREET",
+			"address": {
+				"number": "46",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SONIA BEAUTY (UK) LTD",
+				"since": "2013-05-02"
+			}
+		},
+		{
+			"id": "1|STATION PARADE",
+			"address": {
+				"number": "1",
+				"street": "STATION PARADE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "VILLAGE SPICE (SANDERSTEAD) LTD|SPICE FOOD VILLAGE LTD",
+				"since": "2018-03-26"
+			}
+		},
+		{
+			"id": "68|HARTLEY OLD ROAD",
+			"address": {
+				"number": "68",
+				"street": "HARTLEY OLD ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "Z GANI CONSULTANCY LTD|STERLING DEVELOPMENT AND CONSTRUCTION LIMITED",
+				"since": "2024-09-16"
+			}
+		},
+		{
+			"id": "21|GODSTONE ROAD",
+			"address": {
+				"number": "21",
+				"street": "GODSTONE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "STOVKA LTD",
+				"since": "2025-07-07"
+			}
+		},
+		{
+			"id": "86|BRIGHTON ROAD",
+			"address": {
+				"number": "86",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "TAYA ORIENTAL LTD|TAYA PURLEY ORIENTAL LTD",
+				"since": "2023-12-01"
+			}
+		},
+		{
+			"id": "4|THE PARADE",
+			"address": {
+				"number": "4",
+				"street": "THE PARADE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TEN PIN RECORDS LTD",
+				"since": "2022-05-19"
+			}
+		},
+		{
+			"id": "104|BRIGHTON ROAD",
+			"address": {
+				"number": "104",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE KURTAIN KOMPANY LTD",
+				"since": "2025-11-09"
+			}
+		},
+		{
+			"id": "7|WHYTECLIFFE ROAD SOUTH",
+			"address": {
+				"number": "7",
+				"street": "WHYTECLIFFE ROAD SOUTH"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE LONDON CAR EXCHANGE LIMITED",
+				"since": "2026-07-31"
+			}
+		},
+		{
+			"id": "22|DOWNS COURT ROAD",
+			"address": {
+				"number": "22",
+				"street": "DOWNS COURT ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE SENORA CO LIMITED",
+				"since": "2025-10-05"
+			}
+		},
+		{
+			"id": "915|BRIGHTON ROAD",
+			"address": {
+				"number": "915",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THU XUAN LIMITED",
+				"since": "2023-08-29"
+			}
+		},
+		{
+			"id": "1|HIGH STREET",
+			"address": {
+				"number": "1",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "3",
+				"names": "TJARKS AND TJARKS DESIGN LIMITED|TJARCORP LIMITED|TJARKS HOLDINGS LIMITED",
+				"since": "2005-05-11"
+			}
+		},
+		{
+			"id": "43|OAKWOOD AVENUE",
+			"address": {
+				"number": "43",
+				"street": "OAKWOOD AVENUE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TOOLKIT LTD",
+				"since": "2024-01-15"
+			}
+		},
+		{
+			"id": "2|HIGH STREET",
+			"address": {
+				"number": "2",
+				"street": "HIGH STREET"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TOUCHE PURLEY LTD",
+				"since": "2025-11-11"
+			}
+		},
+		{
+			"id": "40|HARTLEY DOWN",
+			"address": {
+				"number": "40",
+				"street": "HARTLEY DOWN"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TS-AW LTD",
+				"since": "2020-09-29"
+			}
+		},
+		{
+			"id": "932|BRIGHTON ROAD",
+			"address": {
+				"number": "932",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "VIKING PURLEY BARBERS LIMITED",
+				"since": "2026-05-08"
+			}
+		},
+		{
+			"id": "1|GODSTONE ROAD",
+			"address": {
+				"number": "1",
+				"street": "GODSTONE ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "W&H HEALTHCARE LTD",
+				"since": "2024-06-01"
+			}
+		},
+		{
+			"id": "102|LOWER BARN ROAD",
+			"address": {
+				"number": "102",
+				"street": "LOWER BARN ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "WESSONS NEWS LIMITED",
+				"since": "2026-02-26"
+			}
+		},
+		{
+			"id": "120|BRIGHTON ROAD",
+			"address": {
+				"number": "120",
+				"street": "BRIGHTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ZENRENE PROPERTIES LTD",
+				"since": "2024-09-03"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}
