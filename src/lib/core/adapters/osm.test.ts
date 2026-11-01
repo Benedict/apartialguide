@@ -86,4 +86,42 @@ describe('OsmAdapter', () => {
 	it('carries the element geometry', () => {
 		expect(facts.find((f) => f.subject === 'way/11')!.geometry).toHaveLength(2);
 	});
+
+	it('tells an area drawn as a multipolygon by its tags, at its outer edge, as a closed way is told', () => {
+		const drawn = new OsmIndex({
+			elements: [
+				{ type: 'node', id: 1, lat: 51.38, lon: -0.07 },
+				{ type: 'node', id: 2, lat: 51.381, lon: -0.07 },
+				{ type: 'node', id: 3, lat: 51.381, lon: -0.069 },
+				{ type: 'node', id: 6, lat: 51.37, lon: -0.07 },
+				{ type: 'way', id: 12, nodes: [1, 2, 3] },
+				{ type: 'way', id: 13, nodes: [3, 1] },
+				{ type: 'way', id: 14, nodes: [6, 1] },
+				{
+					type: 'relation',
+					id: 20,
+					timestamp: '2023-06-01T00:00:00Z',
+					tags: { type: 'multipolygon', leisure: 'park', name: 'Inventa Fields' },
+					members: [
+						{ type: 'way', ref: 12, role: 'outer' },
+						{ type: 'way', ref: 13, role: 'outer' }
+					]
+				},
+				{
+					type: 'relation',
+					id: 21,
+					tags: { type: 'multipolygon', natural: 'wood' },
+					members: [{ type: 'way', ref: 14, role: 'outer' }]
+				}
+			]
+		});
+		const told = new OsmAdapter(drawn).facts().filter((f) => f.subject === 'relation/20');
+		expect(told.map((f) => f.claim)).toEqual([
+			{ key: 'leisure', value: 'park' },
+			{ key: 'name', value: 'Inventa Fields' }
+		]);
+		expect(told[0].geometry).toHaveLength(4);
+		expect(told[0].observed).toBe('2023-06-01');
+		expect(new OsmAdapter(drawn).facts().some((f) => f.subject === 'relation/21')).toBe(false);
+	});
 });

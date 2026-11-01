@@ -47,6 +47,16 @@ jobs:
           set -a
           . data/snapshots/request.env
           set +a
+          # A downloaded extract (EXTRACT, a .osm.pbf, such as one of Geofabrik's dated files), cut
+          # to the box by osmium, keeping each area drawn as a multipolygon whole, and read as OPL:
+          # the way to take a whole borough without asking a shared server for it.
+          if [ -n "${EXTRACT:-}" ]; then
+            sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
+            curl -fsSL -o extract.osm.pbf "$EXTRACT"
+            osmium extract -b "$BBOX" --strategy smart -o cut.osm.pbf extract.osm.pbf
+            osmium cat -f opl -o cut.opl cut.osm.pbf
+            export FROM_OPL=cut.opl
+          fi
           npm run snapshot
       - name: Commit snapshot
         run: |

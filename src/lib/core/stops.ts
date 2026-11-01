@@ -452,8 +452,13 @@ function namedPlaces(osm: OsmIndex): LatLon[] {
 		if (!t?.name || t.highway || t.boundary || t.place || t.landuse || t.route || t.waterway)
 			continue;
 		if (e.type === 'node') places.push([e.lat, e.lon]);
-		else if (e.type === 'way') {
-			const g = osm.wayGeometry(e);
+		else {
+			const g =
+				e.type === 'way'
+					? osm.wayGeometry(e)
+					: osm
+							.relationRings(e)
+							.outer.reduce<LatLon[]>((a, b) => (b.length > a.length ? b : a), []);
 			if (g.length)
 				places.push([
 					g.reduce((s, p) => s + p[0], 0) / g.length,

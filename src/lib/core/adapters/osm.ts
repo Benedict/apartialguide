@@ -12,7 +12,10 @@ export interface OsmAdapterOptions {
 	featureReach?: number;
 }
 
-/** Every tag on every tagged node and way becomes one fact, its value kept exactly as found. */
+/**
+ * Every tag on every tagged node, way and area drawn as a multipolygon becomes one fact, its value
+ * kept exactly as found. A multipolygon is told at its outer edge, as a closed way is.
+ */
 export class OsmAdapter implements SourceAdapter {
 	readonly name = 'osm';
 
@@ -25,15 +28,19 @@ export class OsmAdapter implements SourceAdapter {
 		const { streetReach = 15, featureReach = 30 } = this.options;
 		const facts: Fact[] = [];
 		for (const e of this.osm.data.elements) {
-			if (!e.tags || e.type === 'relation') continue;
+			if (!e.tags) continue;
 			const geometry =
-				e.type === 'node' ? [[e.lat, e.lon] as [number, number]] : this.osm.wayGeometry(e);
+				e.type === 'node'
+					? [[e.lat, e.lon] as [number, number]]
+					: e.type === 'way'
+						? this.osm.wayGeometry(e)
+						: outerEdge(this.osm.relationRings(e).outer);
 			if (geometry.length === 0) continue;
 			const subject = elementRef(e);
 			const { observed, observedBy } = observation(e);
 			const reach = e.type === 'way' && e.tags.highway ? streetReach : featureReach;
 			for (const [key, value] of Object.entries(e.tags)) {
-				if (isProvenance(key)) continue;
+				if (isProvenance(key) || (e.type === 'relation' && key === 'type')) continue;
 				facts.push({
 					id: `osm:${subject}:${key}`,
 					subject,
@@ -55,4 +62,9 @@ function observation(e: OsmElement): Pick<Fact, 'observed' | 'observedBy'> {
 	if (survey) return { observed: survey.slice(0, 10), observedBy: 'survey' };
 	if (e.timestamp) return { observed: e.timestamp.slice(0, 10), observedBy: 'edit' };
 	return {};
+}
+
+/** A multipolygon's outer edge: the outer ring with most points, or none when no ring closes. */
+function outerEdge(rings: [number, number][][]): [number, number][] {
+	return rings.reduce<[number, number][]>((a, b) => (b.length > a.length ? b : a), []);
 }
