@@ -25,6 +25,10 @@ Where things stand: the whole of Croydon is walked (all twenty areas, about 14,4
   - Where a way runs beyond the map's edge, as the Vanguard Way does: say where it goes next by name only, and that the map stops there.
   - Whether it is a third way of going beside routes and drift, or a route the reader asks for by the way's name.
   - The same relations give cycle routes, bus routes and tram lines, if wanted later.
+- **Slow Ways.** The national network of walking routes between neighbouring towns and villages, made and checked by walkers: eight touch Croydon (to Crystal Palace, Elmers End, Mitcham, New Addington, Norbury, Purley, Selsdon and Wallington, each some 5 to 8 km). `follow the Slow Way to Purley` would work as a named way does, the route's own line drawn over the map's stops, and a walk could end where a Slow Way leaves the borough, naming the place it goes on to. Waiting on permission (`TODO.md`): its routes are for personal, non-commercial use, © Crown Copyright / Ordnance Survey, so a public walk needs a written yes from Slow Ways CIC, unless it publishes them under an open licence first, as it has said it means to (CC BY-SA 4.0 for routes, ODbL for the network). To settle first:
+  - Its routes are drawn lines, not the map's ways: each needs matching to the street network (the nearest stops along it), and a stretch that leaves the map's paths told plainly as such.
+  - Which version: verified routes only (three good reviews), or every route with its status said.
+  - Credited on About as its licence asks, and never named by Guide.
 - **The glass, further.** Offer its record as a picture to keep or share (the social script's type and colours); quote a plaque's words in the record as a plaque's.
 - **More of the classic engine.** A walk's end ("you have walked as far as Guide remembers" at the last mark); a map of where you have been.
 - **The drawn route ("Auster step 3")**, once its brief's questions are answered (`TODO.md`).
