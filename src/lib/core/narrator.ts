@@ -14,6 +14,7 @@ import {
 	nearestOnPolyline,
 	type LatLon
 } from './geo';
+import { boxOf, Grid } from './grid';
 import { OsmIndex, type OsmData, type Tags } from './osm';
 import { Perception } from './perception';
 import { AdventureRenderer } from './render/adventure';
@@ -107,6 +108,8 @@ export class Narrator {
 	/** What others keep beyond the map's edge, by whom. */
 	readonly beyond: Beyond[];
 	private readonly zones: AreaRecord[];
+	/** The named things, filed by where they lie, so the nearest is sought only among those near. */
+	private readonly namedGrid = new Grid<number>(NEAREST_NAME_REACH);
 
 	constructor(
 		readonly graph: StopGraph,
@@ -118,6 +121,9 @@ export class Narrator {
 		private readonly named: Named[] = []
 	) {
 		this.renderer = options.renderer ?? new AdventureRenderer();
+		named.forEach((thing, i) => {
+			if (thing.geometry.length) this.namedGrid.add(i, boxOf(thing.geometry));
+		});
 		const stores = options.records ?? [];
 		this.areas = stores.filter((s) => !s.overlay).flatMap((store) => store.areas ?? []);
 		this.zones = stores.filter((s) => s.overlay).flatMap((store) => store.areas ?? []);
@@ -160,7 +166,14 @@ export class Narrator {
 		// Nothing in view either, told or left for the reader to find by exploring.
 		const inView = new Set(seen.map((f) => f.subject));
 		let best: Scene['nearest'];
-		for (const thing of this.named) {
+		// Only those filed near enough to be measured, taken in the map's own order, so a tie
+		// goes the same way as it would through them all. The reach is widened a little, as
+		// the grid's degrees and the measure's metres differ by a fraction.
+		const near = [...this.namedGrid.near(boxOf([at], NEAREST_NAME_REACH * 1.05))].sort(
+			(a, b) => a - b
+		);
+		for (const i of near) {
+			const thing = this.named[i];
 			if (inView.has(thing.subject)) continue;
 			const { point, metres } = nearestOnPolyline(at, thing.geometry);
 			if (metres <= NEAREST_NAME_REACH && (!best || metres < best.metres))
