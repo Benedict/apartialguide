@@ -1,0 +1,451 @@
+{
+	"source": "Companies House",
+	"prefix": "company",
+	"records": [
+		{
+			"id": "1|FARLEIGH DEAN CRESCENT",
+			"address": {
+				"number": "1",
+				"street": "FARLEIGH DEAN CRESCENT"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ABMB PROPERTIES LIMITED",
+				"since": "2025-09-07"
+			}
+		},
+		{
+			"id": "261|MARKFIELD",
+			"address": {
+				"number": "261",
+				"street": "MARKFIELD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "AKWABA IVOIRE LTD",
+				"since": "2026-08-20"
+			}
+		},
+		{
+			"id": "143|ADDINGTON ROAD",
+			"address": {
+				"number": "143",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ANDRADE (RESTAURANTS) LIMITED|JCA TAPAS LTD",
+				"since": "2015-07-16"
+			}
+		},
+		{
+			"id": "54|CHAPEL VIEW",
+			"address": {
+				"number": "54",
+				"street": "CHAPEL VIEW"
+			},
+			"claims": {
+				"count": "1",
+				"names": "APEX MECHANICAL SOLUTIONS LIMITED",
+				"since": "2017-11-24"
+			}
+		},
+		{
+			"id": "124|COOMBE LANE",
+			"address": {
+				"number": "124",
+				"street": "COOMBE LANE"
+			},
+			"claims": {
+				"count": "2",
+				"names": "ASJ RISK CONSULTING LTD|TRUTH AND LUCKY LIMITED",
+				"since": "2020-12-03"
+			}
+		},
+		{
+			"id": "166|ADDINGTON ROAD",
+			"address": {
+				"number": "166",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "BEAUTIFUL COLOURS LTD",
+				"since": "2019-02-26"
+			}
+		},
+		{
+			"id": "235|MARKFIELD",
+			"address": {
+				"number": "235",
+				"street": "MARKFIELD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "LA PERSONAL TRAINING LONDON LIMITED|BOON CAFÉ CIC",
+				"since": "2014-02-21"
+			}
+		},
+		{
+			"id": "206B|ADDINGTON ROAD",
+			"address": {
+				"number": "206B",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "CHICAGO TAKEAWAY LTD|CHICAGO GRILL LTD",
+				"since": "2024-06-21"
+			}
+		},
+		{
+			"id": "8|FARLEIGH DEAN CRESCENT",
+			"address": {
+				"number": "8",
+				"street": "FARLEIGH DEAN CRESCENT"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CLINKS CUFFLINKS LIMITED",
+				"since": "2008-04-23"
+			}
+		},
+		{
+			"id": "184|ADDINGTON ROAD",
+			"address": {
+				"number": "184",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "CROYDON SPORTS INJURY CLINIC LIMITED",
+				"since": "2011-03-21"
+			}
+		},
+		{
+			"id": "180|ADDINGTON ROAD",
+			"address": {
+				"number": "180",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "EKC FOOD LTD",
+				"since": "2021-09-23"
+			}
+		},
+		{
+			"id": "158|ADDINGTON ROAD",
+			"address": {
+				"number": "158",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ELLA & IRAD LTD",
+				"since": "2022-03-22"
+			}
+		},
+		{
+			"id": "222|ADDINGTON ROAD",
+			"address": {
+				"number": "222",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FADE CULTURE LTD",
+				"since": "2025-09-01"
+			}
+		},
+		{
+			"id": "195|MARKFIELD",
+			"address": {
+				"number": "195",
+				"street": "MARKFIELD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FOIL ECOLOGY RESEARCH AND DEVELOPMENT LTD",
+				"since": "2025-01-14"
+			}
+		},
+		{
+			"id": "52|CHAPEL VIEW",
+			"address": {
+				"number": "52",
+				"street": "CHAPEL VIEW"
+			},
+			"claims": {
+				"count": "1",
+				"names": "FORTNUM CONSULTING LIMITED",
+				"since": "2012-01-10"
+			}
+		},
+		{
+			"id": "127|ADDINGTON ROAD",
+			"address": {
+				"number": "127",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GEEK MEET CLUB LIMITED",
+				"since": "2024-07-24"
+			}
+		},
+		{
+			"id": "145|ADDINGTON ROAD",
+			"address": {
+				"number": "145",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GEM NAILS & SPA SELSDON LIMITED",
+				"since": "2022-03-23"
+			}
+		},
+		{
+			"id": "186|ADDINGTON ROAD",
+			"address": {
+				"number": "186",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GOLDEN BEER ARK LTD.",
+				"since": "2017-07-19"
+			}
+		},
+		{
+			"id": "214|ADDINGTON ROAD",
+			"address": {
+				"number": "214",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "GOLDN DRY CLEANERS LIMITED",
+				"since": "2019-01-29"
+			}
+		},
+		{
+			"id": "254|MARKFIELD",
+			"address": {
+				"number": "254",
+				"street": "MARKFIELD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "IAB INSTALLATION LTD",
+				"since": "2026-02-17"
+			}
+		},
+		{
+			"id": "176|ADDINGTON ROAD",
+			"address": {
+				"number": "176",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "J K CHICKEN LTD",
+				"since": "2022-11-16"
+			}
+		},
+		{
+			"id": "147|ADDINGTON ROAD",
+			"address": {
+				"number": "147",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "LOAD OF WAFFLE LTD",
+				"since": "2026-02-11"
+			}
+		},
+		{
+			"id": "44|CHAPEL VIEW",
+			"address": {
+				"number": "44",
+				"street": "CHAPEL VIEW"
+			},
+			"claims": {
+				"count": "1",
+				"names": "MY HOME SERVICES (CROYDON) LTD",
+				"since": "2022-09-01"
+			}
+		},
+		{
+			"id": "178|OSWARD",
+			"address": {
+				"number": "178",
+				"street": "OSWARD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "NIBRUS LTD",
+				"since": "2025-12-02"
+			}
+		},
+		{
+			"id": "262|MARKFIELD",
+			"address": {
+				"number": "262",
+				"street": "MARKFIELD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "ONESEC INCORPORATION LIMITED",
+				"since": "2023-06-30"
+			}
+		},
+		{
+			"id": "169|SELSDON PARK ROAD",
+			"address": {
+				"number": "169",
+				"street": "SELSDON PARK ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "P C TECH CENTRE LIMITED",
+				"since": "2002-10-23"
+			}
+		},
+		{
+			"id": "131|ADDINGTON ROAD",
+			"address": {
+				"number": "131",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "PHONETASTIC UK LTD",
+				"since": "2020-08-20"
+			}
+		},
+		{
+			"id": "149|ADDINGTON ROAD",
+			"address": {
+				"number": "149",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "PRIORITY RISK LIMITED|PR CORPORATE TRUSTEES LIMITED",
+				"since": "2003-08-29"
+			}
+		},
+		{
+			"id": "7|SELSDON PARADE",
+			"address": {
+				"number": "7",
+				"street": "SELSDON PARADE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SALON SEVEN HAIRDRESSERS LTD",
+				"since": "2023-02-08"
+			}
+		},
+		{
+			"id": "2|SELSDON PARADE",
+			"address": {
+				"number": "2",
+				"street": "SELSDON PARADE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SELSDON ALL IN ONE UK LTD",
+				"since": "2025-06-09"
+			}
+		},
+		{
+			"id": "168|ADDINGTON ROAD",
+			"address": {
+				"number": "168",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SELSDON ENTERPRISES LTD",
+				"since": "2024-12-09"
+			}
+		},
+		{
+			"id": "125|ADDINGTON ROAD",
+			"address": {
+				"number": "125",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SELSDON NAIL SALON LTD",
+				"since": "2026-03-18"
+			}
+		},
+		{
+			"id": "4|SELSDON PARADE",
+			"address": {
+				"number": "4",
+				"street": "SELSDON PARADE"
+			},
+			"claims": {
+				"count": "1",
+				"names": "SELSDON SPICE LIMITED",
+				"since": "2017-11-08"
+			}
+		},
+		{
+			"id": "177|SELSDON PARK ROAD",
+			"address": {
+				"number": "177",
+				"street": "SELSDON PARK ROAD"
+			},
+			"claims": {
+				"count": "2",
+				"names": "TACTICAL AIRSOFT UK LIMITED|TACTICAL WARFARE AIRSOFT LTD",
+				"since": "2008-09-17"
+			}
+		},
+		{
+			"id": "121|ADDINGTON ROAD",
+			"address": {
+				"number": "121",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "THE FAMILY PRACTICE LONDON LIMITED",
+				"since": "2012-09-20"
+			}
+		},
+		{
+			"id": "218|ADDINGTON ROAD",
+			"address": {
+				"number": "218",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "TSL BEAUTY LTD",
+				"since": "2026-07-09"
+			}
+		},
+		{
+			"id": "210|ADDINGTON ROAD",
+			"address": {
+				"number": "210",
+				"street": "ADDINGTON ROAD"
+			},
+			"claims": {
+				"count": "1",
+				"names": "UK FOOD AND WINE (LONDON) LIMITED",
+				"since": "2020-02-10"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}
