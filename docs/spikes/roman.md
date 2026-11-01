@@ -11,7 +11,7 @@
   - a fort's kind in each age kept;
   - a milestone's words as they are;
   - each road's confidence in the layer's own words, read from the GeoPackage's style: “Certain - +/- 30m”, “Probable +/- 200m”, “Conjectured”, “No evidence - Requires invetsigation”.
-- `npm run roman:spike` (`BRITANNIA_GPKG=…`). It builds the South-East (`ROMAN_BOX`, default -1.6,50.6,1.6,51.9), plays ten moves from London into `build/roman/transcript.md`, and writes one playable page, `build/roman/roman.html`, which `npm run smoke` passes. The ten moves are in `roman-transcript.md`.
+- `npm run roman:spike` (`BRITANNIA_GPKG=…`). It builds the South-East (`ROMAN_BOX`, default -1.6,50.6,1.6,51.9), plays ten moves from London into `build/roman/transcript.md`, and writes one playable page, `build/roman/roman.html`, which `npm run smoke` passes. The ten moves are in `roman-transcript.md` (the South-East) and `roman-wall-transcript.md` (the Wall).
 
 ## What it found
 
@@ -52,3 +52,63 @@ The data is too thin for a walk built the way Croydon's is, stop by stop. It may
 The cheaper way to use it stays the backlog's “Roman road in a room”: told within the Croydon walk, where the modern place gives it company.
 
 Licence: Digital Britannia © Mike Haken 2026, CC BY-NC 4.0, and the Rural Settlement of Roman Britain project. A standalone piece taking the Wall would also credit WallCAP (CC BY 4.0).
+
+## Round two: site to site, and the Wall
+
+**What changed:**
+
+- **Places are sites only.** A fork or a road's end is passed, never stopped at.
+- **Each way is a stage to the next site.** It is told by where it goes, how far, and what changes on it: the road, its confidence (“Certain - +/- 30m for 3.3 km, then Conjectured for 7.8 km”), and the county (“into Durham”), said only where both ends have a county and they differ.
+- **Milecastles are places.** Each is told by its number and name, with status, condition, type, gate and finds, and its account as found. The data cuts accounts at 254 characters, so some end mid-word (“…rockeries (Simp”).
+- **The Wall itself is a way.** The Ditch and Vallum are kept out as ways.
+- **The ways out of a place are “Ways”, not “Exits”.** The engine takes each world's own word (`AdventureWorld.ways`).
+- **Nothing is said twice at one place.** On the walk, a kept line heard at either of the last two places is left out, as on the borough's walk: each place now comes as labelled parts.
+- `ROMAN_AREA=wall` (the default, from Wallsend) or `south-east` (from London). The script scores each walk against the measures set before the build.
+
+**Results:**
+
+| Measure (set before the build)              | Wanted  | The Wall        | The South-East |
+| ------------------------------------------- | ------- | --------------- | -------------- |
+| Places with two or more facts beyond a name | 80%     | 79% (93 of 118) | 25% (21 of 85) |
+| Sentences said again at the next place      | 0       | 0               | 0              |
+| Moves whose stage carries a change          | 7 of 10 | 0 of 10         | 4 of 10        |
+
+**By the measures, neither passes.**
+
+The South-East fails clearly. It is thin, as round one found.
+
+The Wall misses the first measure by one place in a hundred. It fails the third entirely, and that is a fault in the measure, not the walk. A stage along the Wall has nothing to change: the same line runs the whole way, with no confidence recorded. The third measure was written for roads.
+
+The Wall's events are of another kind. Each milecastle's condition and account changes from one to the next:
+
+- “Destroyed”;
+- “By Record”;
+- “Damaged; Gate Type: IV”, with coins, brooches and inscriptions found;
+- a site now under a road;
+- remains carted off for rockeries.
+
+Read the transcript, and the Wall reads as a walk. Its texture is the accounts' own: what was found, lost, built over or never confirmed. That is close to the borough's walk in kind. It is the record of a place, with its gaps showing.
+
+**The fair conclusion.** A standalone walk could work along the Wall, and not across the South. It would be a different measure of success: told by the state of what is kept, not by changes on the road.
+
+Whether it holds attention past ten milecastles is the real test. That is Benedict's reading, not a number.
+
+**If it goes on:**
+
+- A third measure fitted to the Wall: moves where the condition, status or finds differ from the place before.
+- The forts along the Wall (64), told with the milecastles.
+- WallCAP credited (CC BY 4.0).
+- The road network north and south of the Wall (the Stanegate, Dere Street) for ways off it.
+
+## Overlays worth trying
+
+Each source below is a record someone keeps of the past, given as hearsay or, worked out, as now. Each needs its licence confirmed before use.
+
+- **The Old World Drought Atlas** (Cook et al. 2015, NOAA). It reconstructs, from tree rings, how dry or wet each summer was, on a half-degree grid over Europe, for about two thousand years. It is the one source that gives a place a year's weather in Roman times: “The summer of AD 122 here, it is reckoned, was dry.” It is data, with provenance and its own uncertainty. It fits a time axis.
+- **The Antonine Itinerary.** The Romans' own road book: the stations of Britain on fifteen routes, with the distances between them in Roman miles. It would let Guide set the Itinerary's distance beside the map's (“The road book gives XII miles; the line here runs 19 km.”). The two disagree, which suits Guide. Its text is ancient; a modern edition's figures would need checking for reuse.
+- **Pleiades** (ancient places, CC BY). Roman names and when each place is attested, across the Roman world. A second account to set beside Digital Britannia's, and the two sometimes spell a name differently.
+- **Roman Inscriptions of Britain** (RIB Online; an aggregator lists CC BY 4.0, to be confirmed on its own terms page). The full words and translations of the milestones and other stones near a site.
+- **The sky then.** Astronomy Engine, which the walk already uses, can work out the sky for any date: the eclipses seen in Britain under Hadrian, where the planets stood in AD 122. It is worked out, not invented, and needs no data.
+- **Today's weather.** It already works anywhere: the Wall in today's rain.
+
+**A rule to decide first.** The borough's walk says no past day's weather is ever spoken, as weather is only ever for now. A reconstructed summer is not a day's weather, and it is said as hearsay with its source's uncertainty. But a Roman walk that speaks of the past is a choice about what the walk is. That is Benedict's choice, before it is code.

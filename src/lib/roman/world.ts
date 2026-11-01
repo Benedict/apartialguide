@@ -2,22 +2,28 @@ import { distance, type LatLon } from '../core/geo';
 import type { AdventureWorld, CompiledExit, CompiledStop } from '../core/adventure/world';
 
 /**
- * A spike: Digital Britannia's Roman roads and sites as a walk of their own. A stop where a road
- * ends, where roads meet, and at each site within reach of a road; each way along a road to the next
- * stop. Every word of a place is the data's, as found: names, kinds, ages, inscriptions, and each
- * road's confidence in the layer's own words.
+ * A spike: Digital Britannia's Roman roads and sites as a walk of their own, site to site. Each place
+ * is a site within reach of a road or the Wall (a fork on the road is passed, never stopped at); each
+ * way is a stage to the next site, told by where it goes, how far, and what changes on it: the road,
+ * its confidence in the layer's own words, the county. Every word of a place is the data's, as found:
+ * names, kinds, ages, inscriptions, a milecastle's account, cut short where the data cuts it.
  */
 
 type Props = Record<string, unknown>;
 type Feature = { properties: Props; geometry: { type: string; coordinates: unknown } | null };
 export type RomanLayers = Partial<
-	Record<'roads' | 'settlement' | 'military' | 'camps' | 'milestones', { features: Feature[] }>
+	Record<
+		'roads' | 'walls' | 'settlement' | 'military' | 'camps' | 'milestones' | 'milecastles',
+		{ features: Feature[] }
+	>
 >;
 
 /** How near a site must lie to a road to be stopped at, and how near two stops are one. */
 const SITE_REACH = 2000;
 const SAME_STOP = 1000;
 const JUNCTION = 300;
+/** The longest stage told, past forks and road ends, before the way is given up. */
+const STAGE_MAX = 60_000;
 
 const text = (v: unknown) => (v == null ? undefined : String(v).trim() || undefined);
 
@@ -68,6 +74,21 @@ const NAME_KEY: Record<string, string> = {
 	milestones: 'Site name'
 };
 
+/** A site's name as kept; a milecastle by its number and its name. */
+function nameOf(layer: string, p: Props): string | undefined {
+	if (layer !== 'milecastles') return text(p[NAME_KEY[layer]]);
+	const n = text(p['MC_No.']);
+	const name = text(p.Site_name);
+	return n ? `Milecastle ${n}${name ? `, ${name}` : ''}` : name;
+}
+
+/** A length as a walker would say it: to a tenth of a kilometre under ten, whole above. */
+const km = (metres: number) =>
+	metres >= 10_000 ? `${Math.round(metres / 1000)} km` : `${(metres / 1000).toFixed(1)} km`;
+
+const county = (n: { sites: Site[] }) =>
+	n.sites.map((x) => text(x.props['Historic County'])).find(Boolean);
+
 /** What a site is, as kept: its kind, the ages it is kept for, its Roman name, its words. */
 function siteLines(s: Site): string[] {
 	const p = s.props;
@@ -89,6 +110,18 @@ function siteLines(s: Site): string[] {
 		const meant = text(p['Inscription Translation']);
 		if (meant) said.push(`Someone wrote down that it means “${meant}”.`);
 	}
+	if (s.layer === 'milecastles') {
+		said.push(`${s.name}: a milecastle.`);
+		const kept = (['Status', 'Condition', 'Type', 'Gate_Type'] as const)
+			.map((k) => [k.replace('_', ' '), text(p[k])])
+			.filter(([, v]) => v)
+			.map(([k, v]) => `${k}: ${v}`);
+		if (kept.length) said.push(`${kept.join('; ')}.`);
+		const account = text(p.Account);
+		if (account) said.push(`Someone wrote: “${account}”.`);
+		const found = text(p.Artefacts);
+		if (found) said.push(`Found there: ${found}.`);
+	}
 	if (roman) said.push(`It is said it was called “${roman}”.`);
 	return said;
 }
@@ -97,13 +130,17 @@ export function romanWorld(
 	layers: RomanLayers,
 	{ confidence, start }: { confidence: Record<string, string>; start: string }
 ): AdventureWorld {
-	const roads: Road[] = (layers.roads?.features ?? []).flatMap((f) =>
+	const wallLines = (layers.walls?.features ?? []).filter(
+		(f) => !/ditch|vallum/i.test(String(f.properties.Feature ?? ''))
+	);
+	const roads: Road[] = [...(layers.roads?.features ?? []), ...wallLines].flatMap((f) =>
 		lines(f.geometry)
 			.filter((l) => l.length > 1)
 			.map((points) => ({
 				name:
 					text(f.properties['Road - Start and End']) ??
 					text(f.properties['Road name (if any)']) ??
+					text(f.properties.Feature) ??
 					'A road',
 				confidence: confidence[String(f.properties['Segment Confidence'] ?? '')],
 				points
@@ -128,10 +165,10 @@ export function romanWorld(
 	const marks = roads.map(() => new Map<number, number>());
 
 	// The sites within reach of a road, first, so a road's end beside one is that site's stop.
-	for (const layer of ['settlement', 'military', 'camps', 'milestones'] as const)
+	for (const layer of ['settlement', 'military', 'camps', 'milestones', 'milecastles'] as const)
 		for (const f of layers[layer]?.features ?? []) {
 			const at = pointOf(f.geometry);
-			const name = text(f.properties[NAME_KEY[layer]]);
+			const name = nameOf(layer, f.properties);
 			if (!at || !name) continue;
 			const reach = roads.map((r) => nearest(r, at));
 			if (!reach.some((r) => r.d <= SITE_REACH)) continue;
@@ -169,43 +206,94 @@ export function romanWorld(
 		}
 	});
 
+	// The stages: from each site along the ways, past forks and road ends, to the next sites.
+	type Leg = { road: Road; metres: number };
+	type Stage = { to: number; legs: Leg[]; metres: number };
+	const stagesFrom = (from: number): Stage[] => {
+		const best = new Map<number, Stage>();
+		const go = (here: number, legs: Leg[], metres: number, seen: Set<number>) => {
+			for (const w of ways[here]) {
+				if (seen.has(w.to) || metres + w.metres > STAGE_MAX) continue;
+				const next = [...legs, { road: w.road, metres: w.metres }];
+				if (nodes[w.to].sites.length) {
+					const had = best.get(w.to);
+					if (!had || had.metres > metres + w.metres)
+						best.set(w.to, { to: w.to, legs: next, metres: metres + w.metres });
+				} else go(w.to, next, metres + w.metres, new Set([...seen, w.to]));
+			}
+		};
+		go(from, [], 0, new Set([from]));
+		return [...best.values()];
+	};
+
+	/** A stage's legs, one road and confidence at a time, as they change on the way. */
+	const told = (legs: Leg[]): string => {
+		const runs: { name: string; confidence?: string; metres: number }[] = [];
+		for (const { road, metres } of legs) {
+			const last = runs.at(-1);
+			if (last && last.name === road.name && last.confidence === road.confidence)
+				last.metres += metres;
+			else runs.push({ name: road.name, confidence: road.confidence, metres });
+		}
+		return runs
+			.map((r, k) => {
+				const sure = r.confidence ? `${r.confidence} for ${km(r.metres)}` : '';
+				const named = k === 0 || runs[k - 1].name !== r.name;
+				const said = named ? `“${r.name}”${sure ? `, ${sure}` : ''}` : sure;
+				return k === 0 ? said : named ? `; then ${said}` : `, then ${said}`;
+			})
+			.join('');
+	};
+
+	const sites = nodes.map((n, i) => (n.sites.length ? i : -1)).filter((i) => i >= 0);
 	const id = (i: number) => `r${i}`;
 	const stops: Record<string, CompiledStop> = {};
-	nodes.forEach((n, i) => {
+	for (const i of sites) {
+		const n = nodes[i];
 		const exits: CompiledExit[] = [];
-		const told: string[] = [];
+		const said: string[] = [];
 		const taken = new Set<string>();
-		for (const w of ways[i].sort((x, y) => x.metres - y.metres)) {
-			const b = bearing(n.at, nodes[w.to].at);
-			const order = POINTS.map((p, k) => ({
+		for (const st of stagesFrom(i).sort((x, y) => x.metres - y.metres)) {
+			const to = nodes[st.to];
+			const b = bearing(n.at, to.at);
+			const label = POINTS.map((p, k) => ({
 				p,
 				off: Math.abs(((((b - k * 45) % 360) + 540) % 360) - 180)
 			}))
 				.sort((x, y) => x.off - y.off)
-				.map((x) => x.p);
-			const label = order.find((p) => !taken.has(p));
+				.map((x) => x.p)
+				.find((p) => !taken.has(p));
 			if (!label) continue;
 			taken.add(label);
-			exits.push({ label, to: id(w.to), street: w.road.name });
-			told.push(`${label}, ${Math.round(w.metres / 1000)} km along “${w.road.name}”`);
+			exits.push({ label, to: id(st.to), street: st.legs[0].road.name });
+			const into =
+				county(to) && county(n) && county(to) !== county(n) ? `, into ${county(to)}` : '';
+			said.push(`${label}, ${km(st.metres)} to ${to.sites[0].name}${into}: ${told(st.legs)}`);
 		}
-		const here = [...new Map(ways[i].map((w) => [w.road.name, w.road])).values()];
-		const roadLines = here.map(
-			(r) => `“${r.name}” runs here${r.confidence ? `: ${r.confidence}` : ''}.`
-		);
-		const title = n.sites[0]?.name ?? here[0]?.name ?? 'A road';
+		// Each thing said once, though two sites here keep it: a name, as found, once.
+		const lines = [...new Set(n.sites.flatMap(siteLines))];
+		const names = new Set(n.sites.map((x) => x.name));
+		const waysLine = said.length ? `Ways: ${said.join(' · ')}.` : undefined;
 		stops[id(i)] = {
-			title,
-			paragraphs: [
-				...(n.sites.length ? [n.sites.flatMap(siteLines).join(' ')] : []),
-				...(roadLines.length ? [roadLines.join(' ')] : []),
-				...(told.length ? [`Ways: ${told.join('; ')}.`] : [])
+			title: n.sites[0].name,
+			paragraphs: [lines.join(' '), ...(waysLine ? [waysLine] : [])],
+			// A site's name is always said; what is kept of it, by its words, is not said again if it
+			// was heard at the last two places, as on the borough's walk.
+			parts: [
+				lines.map((text) => ({
+					kind: [...names].some((name) => text.startsWith(`${name}: `))
+						? ('prose' as const)
+						: ('setting' as const),
+					text,
+					key: text
+				})),
+				...(waysLine ? [[{ kind: 'exits' as const, text: waysLine, key: 'exits' }]] : [])
 			],
 			exits,
 			things: [],
 			at: [+n.at[0].toFixed(5), +n.at[1].toFixed(5)]
 		};
-	});
-	const first = nodes.findIndex((n) => n.sites.some((s) => s.name === start));
-	return { start: id(first < 0 ? 0 : first), stops, ways: 'Ways' };
+	}
+	const first = sites.find((i) => nodes[i].sites.some((x) => x.name === start)) ?? sites[0];
+	return { start: id(first), stops, ways: 'Ways' };
 }

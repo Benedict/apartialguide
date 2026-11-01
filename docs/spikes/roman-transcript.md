@@ -1,3 +1,9 @@
+# south-east: ten moves from London
+
+- Places with two or more facts beyond a name (three or more sentences): 21 of 85 (25%; wanted 80%)
+- Sentences said again at the next place on the walk: 0 (wanted 0)
+- Moves whose stage carries a change (certainty, road, county): 4 of 10 (wanted 7 of 10)
+
 I am Guide. I lived here long ago. I lived here yesterday. I will have lived here tomorrow.
 
 The map I carry is dated 20 July 2026. Beyond it there may be more. I could not say what.
@@ -8,102 +14,90 @@ Shall I show you round? Type take the tour, and we will begin.
 
 **London**
 
-London: Colonia. It is said it was called “Londinium”. London: Fort. Kept by age: Claudio-Neronian AD43-69: Fort; Flavian AD69-96: Fort; Nerva-Hadrianic AD96-138: Fort. It is said it was called “LONDINIVM”. London (Cripplegate): Fort. Kept by age: Nerva-Hadrianic AD96-138: Fort; Antoninus Pius AD138-161: Fort; Late 2nd - Severus AD161-211: Fort. It is said it was called “LONDINIVM”.
+London: Colonia. It is said it was called “Londinium”. London: Fort. Kept by age: Claudio-Neronian AD43-69: Fort; Flavian AD69-96: Fort; Nerva-Hadrianic AD96-138: Fort. It is said it was called “LONDINIVM”. London (Cripplegate): Fort. Kept by age: Nerva-Hadrianic AD96-138: Fort; Antoninus Pius AD138-161: Fort; Late 2nd - Severus AD161-211: Fort.
 
-“Rochester to London” runs here: Certain - +/- 30m. “London Bridge to the South Island” runs here: Certain - +/- 30m. “Ermine Street, London to York” runs here: Certain - +/- 30m. “London to Chelmsford” runs here: Certain - +/- 30m. “Oxford Street to Old Ford” runs here: Probable +/- 200m. “London to Stevenage” runs here: Certain - +/- 30m. “Aldgate to Shadwell” runs here: Probable +/- 200m. “London to Belgravia” runs here: Certain - +/- 30m. “London to Silchester” runs here: Certain - +/- 30m. “Verulamium to Shenley Mill Hill??” runs here: No evidence - Requires invetsigation.
+Ways: east, 0.5 km to Shadwell: “Ermine Street, London to York”, Certain - +/- 30m for 0.5 km · north-east, 7.0 km to Old Ford, Tower Hamlets: “Oxford Street to Old Ford”, Probable +/- 200m for 7.0 km · west, 14 km to Brentford, Gasworks: “Rochester to London”, Certain - +/- 30m for 0.4 km; then “Southwark to Lambeth”, Conjectured for 0.9 km; then “Watling Street, Glengall Road to Marble Arch”, Probable +/- 200m for 3.1 km; then “London to Silchester”, Certain - +/- 30m for 9.1 km · south, 15 km to Croydon, into Surrey: “Rochester to London”, Certain - +/- 30m for 0.4 km; then “Stane Street, London to Chichester”, Probable +/- 200m for 1.2 km, then Certain - +/- 30m for 1.1 km; then “London to Hassocks then Brighton?”, Probable +/- 200m for 6.8 km; then “London to Hassocks and then Brighton?”, Certain - +/- 30m for 4.5 km; then “London to Hassocks then Brighton?”, Probable +/- 200m for 1.4 km · south-east, 16 km to West Wickham, into Kent: “Rochester to London”, Certain - +/- 30m for 0.4 km; then “Canterbury to Rochester / Rochester to London”, Certain - +/- 30m for 3.0 km; then “London to Barcombe Mills”, Probable +/- 200m for 13 km · north-west, 20 km to Brockley Hill: “Rochester to London”, Certain - +/- 30m for 0.4 km; then “Southwark to Lambeth”, Conjectured for 0.9 km; then “Watling Street, Glengall Road to Marble Arch”, Probable +/- 200m for 3.1 km; then “London to”, Certain - +/- 30m for 16 km · south-west, 20 km to Ewell, into Surrey: “Rochester to London”, Certain - +/- 30m for 0.4 km; then “Stane Street, London to Chichester”, Probable +/- 200m for 1.2 km, then Certain - +/- 30m for 19 km · north, 25 km to Dartford, Spital Street, into Kent: “Rochester to London”, Certain - +/- 30m for 0.4 km; then “Canterbury to Rochester / Rochester to London”, Certain - +/- 30m for 24 km.
 
-Ways: south-west, 0 km along “Rochester to London”; south, 0 km along “London Bridge to the South Island”; east, 1 km along “Ermine Street, London to York”; south-east, 1 km along “London to Chelmsford”; west, 1 km along “Oxford Street to Old Ford”; north-west, 2 km along “London to Stevenage”; north, 2 km along “London to Stevenage”; north-east, 2 km along “Aldgate to Shadwell”.
+> east
 
-> south-west
+**Shadwell**
 
-**Rochester to London**
+Shadwell: Vicus - medium 4-8Ha.
 
-“Rochester to London” runs here: Certain - +/- 30m. “London Bridge to the South Island” runs here: Certain - +/- 30m. “Southwark to Lambeth” runs here: Conjectured. “Stane Street, London to Chichester” runs here: Probable +/- 200m. “Canterbury to Rochester / Rochester to London” runs here: Certain - +/- 30m.
-
-Ways: north-east, 0 km along “Rochester to London”; north, 0 km along “London Bridge to the South Island”; south-west, 1 km along “Southwark to Lambeth”; south, 1 km along “Stane Street, London to Chichester”; south-east, 2 km along “Canterbury to Rochester / Rochester to London”.
-
-You have walked 1 km.
-
-> south-west
-
-**Southwark to Lambeth**
-
-“Southwark to Lambeth” runs here: Conjectured. “Watling Street, Glengall Road to Marble Arch” runs here: Probable +/- 200m.
-
-Ways: north-east, 1 km along “Southwark to Lambeth”; west, 1 km along “Watling Street, Glengall Road to Marble Arch”; east, 3 km along “Watling Street, Glengall Road to Marble Arch”.
+Ways: west, 0.5 km to London: “Ermine Street, London to York”, Certain - +/- 30m for 0.5 km · north-east, 3.2 km to Old Ford, Tower Hamlets: “London to Chelmsford”, Certain - +/- 30m for 3.2 km · north, 14 km to Lincoln Road, Enfield: “Ermine Street, London to York”, Certain - +/- 30m for 14 km.
 
 You have walked 2 km.
 
-> west
+> north-east
 
-**London to Belgravia**
+**Old Ford, Tower Hamlets**
 
-“London to Belgravia” runs here: No evidence - Requires invetsigation. “Watling Street, Glengall Road to Marble Arch” runs here: Probable +/- 200m.
+Old Ford, Tower Hamlets: Vicus - defence & size uncertain. Old Ford, Wick Lane: Vicus - defence & size uncertain.
 
-Ways: south-west, 1 km along “London to Belgravia”; east, 1 km along “Watling Street, Glengall Road to Marble Arch”; north-west, 2 km along “Watling Street, Glengall Road to Marble Arch”; north-east, 4 km along “London to Belgravia”; west, 9 km along “London to Belgravia”.
-
-> south-west
-
-**London to Belgravia**
-
-“London to Belgravia” runs here: Certain - +/- 30m.
-
-Ways: north-east, 1 km along “London to Belgravia”.
+Ways: south-west, 3.2 km to Shadwell: “London to Chelmsford”, Certain - +/- 30m for 3.2 km · west, 7.0 km to London: “Oxford Street to Old Ford”, Probable +/- 200m for 7.0 km.
 
 You have walked 5 km.
 
-> north-east
-
-**London to Belgravia**
-
-Ways: south-west, 1 km along “London to Belgravia”; east, 1 km along “Watling Street, Glengall Road to Marble Arch”; north-west, 2 km along “Watling Street, Glengall Road to Marble Arch”; north-east, 4 km along “London to Belgravia”; west, 9 km along “London to Belgravia”.
-
-> north-west
-
-**Watling Street, Glengall Road to Marble Arch**
-
-“Watling Street, Glengall Road to Marble Arch” runs here: Probable +/- 200m. “London to Silchester” runs here: Certain - +/- 30m. “London to” runs here: Certain - +/- 30m.
-
-Ways: south-east, 2 km along “Watling Street, Glengall Road to Marble Arch”; east, 5 km along “London to Silchester”; west, 9 km along “London to Silchester”; north-west, 16 km along “London to”.
-
-> west
-
-**Brentford, Gasworks**
-
-Brentford, Gasworks: Vicus - defence & size uncertain.
-
-“London to Silchester” runs here: Certain - +/- 30m.
-
-Ways: south-west, 2 km along “London to Silchester”; east, 9 km along “London to Silchester”.
-
-You have walked 10 km.
-
 > south-west
 
-**Brentford, London Road**
+**Shadwell**
 
-Brentford, London Road: Vicus - large >9Ha.
+Ways: west, 0.5 km to London: “Ermine Street, London to York”, Certain - +/- 30m for 0.5 km · north-east, 3.2 km to Old Ford, Tower Hamlets: “London to Chelmsford”, Certain - +/- 30m for 3.2 km · north, 14 km to Lincoln Road, Enfield: “Ermine Street, London to York”, Certain - +/- 30m for 14 km.
 
-“London to Silchester” runs here: Certain - +/- 30m.
+> north
 
-Ways: north-east, 2 km along “London to Silchester”; west, 14 km along “London to Silchester”.
+**Lincoln Road, Enfield**
 
-> west
+Lincoln Road, Enfield: Vicus - small <3Ha.
 
-**Staines**
-
-Staines: Vicus - large >9Ha. It is said it was called “PONTES”.
-
-“London to Silchester” runs here: Certain - +/- 30m.
-
-Ways: west, 3 km along “London to Silchester”; east, 14 km along “London to Silchester”.
+Ways: south, 14 km to Shadwell: “Ermine Street, London to York”, Certain - +/- 30m for 14 km · north, 19 km to Ware (Ware Lock, Ware Library, White Swan Yard), into Hertfordshire: “Ermine Street, London to York”, Certain - +/- 30m for 19 km.
 
 You have walked 20 km.
 
-> west
+> north
 
-**London to Silchester**
+**Ware (Ware Lock, Ware Library, White Swan Yard)**
 
-“London to Silchester” runs here: Conjectured.
+Ware (Ware Lock, Ware Library, White Swan Yard): Vicus - large >9Ha.
 
-Ways: south-west, 1 km along “London to Silchester”; east, 3 km along “London to Silchester”.
+Ways: north, 9.9 km to Wickham, or Braughing: “Ermine Street, London to York”, Certain - +/- 30m for 9.9 km · south, 19 km to Lincoln Road, Enfield, into Middlesex: “Ermine Street, London to York”, Certain - +/- 30m for 19 km · west, 23 km to Welwyn, West Manor, Ellesfield: “Ermine Street, London to York”, Certain - +/- 30m for 7.3 km; then “St Albans to Braughing”, Certain - +/- 30m for 15 km.
+
+> north
+
+**Wickham, or Braughing**
+
+Wickham, or Braughing: Vicus - large >9Ha.
+
+Ways: east, 9.4 km to Bishop's Stortford, Grange Paddocks: “Braughing/Puckeridge to Colchester”, Certain - +/- 30m for 9.4 km · south, 9.9 km to Ware (Ware Lock, Ware Library, White Swan Yard): “Ermine Street, London to York”, Certain - +/- 30m for 9.9 km · south-east, 12 km to Harlow, into Essex: “Braughing/Puckeridge to Colchester”, Certain - +/- 30m for 1.6 km; then “Harlow Mill to Stane Street (for Braughing)”, Certain - +/- 30m for 4.0 km, then Conjectured for 1.7 km, then Certain - +/- 30m for 4.3 km, then Probable +/- 200m for 0.0 km · south-west, 18 km to Welwyn, West Manor, Ellesfield: “Ermine Street, London to York”, Certain - +/- 30m for 2.6 km; then “St Albans to Braughing”, Certain - +/- 30m for 15 km.
+
+You have walked 50 km.
+
+> east
+
+**Bishop's Stortford, Grange Paddocks**
+
+Bishop's Stortford, Grange Paddocks: Vicus - medium 4-8Ha.
+
+Ways: south, 9.0 km to Harlow, into Essex: “Harlow Mill to Bishop's Stortford”, Conjectured for 9.0 km · west, 9.4 km to Wickham, or Braughing: “Braughing/Puckeridge to Colchester”, Certain - +/- 30m for 9.4 km · east, 26 km to Braintree, into Essex: “Braughing/Puckeridge to Colchester”, Conjectured for 2.7 km, then Probable +/- 200m for 12 km, then Certain - +/- 30m for 12 km.
+
+> south
+
+**Harlow**
+
+Harlow: Vicus - medium 4-8Ha. Harlow: Possible fort. Kept by age: Claudio-Neronian AD43-69: Possible fort.
+
+Ways: north, 9.0 km to Bishop's Stortford, Grange Paddocks, into Hertfordshire: “Harlow Mill to Bishop's Stortford”, Conjectured for 9.0 km · north-west, 12 km to Wickham, or Braughing, into Hertfordshire: “Harlow Mill to Stane Street (for Braughing)”, Probable +/- 200m for 0.0 km, then Certain - +/- 30m for 4.3 km, then Conjectured for 1.7 km, then Certain - +/- 30m for 4.0 km; then “Braughing/Puckeridge to Colchester”, Certain - +/- 30m for 1.6 km.
+
+> north
+
+**Bishop's Stortford, Grange Paddocks**
+
+Ways: south, 9.0 km to Harlow, into Essex: “Harlow Mill to Bishop's Stortford”, Conjectured for 9.0 km · west, 9.4 km to Wickham, or Braughing: “Braughing/Puckeridge to Colchester”, Certain - +/- 30m for 9.4 km · east, 26 km to Braintree, into Essex: “Braughing/Puckeridge to Colchester”, Conjectured for 2.7 km, then Probable +/- 200m for 12 km, then Certain - +/- 30m for 12 km.
+
+> east
+
+**Braintree**
+
+Braintree: Vicus - large >9Ha.
+
+Ways: east, 11 km to Coggeshall: “Braughing/Puckeridge to Colchester”, Certain - +/- 30m for 11 km · south-west, 12 km to Little Waltham: “Chelmsford to Ixworth”, Probable +/- 200m for 1.7 km, then Certain - +/- 30m for 9.9 km · west, 26 km to Bishop's Stortford, Grange Paddocks, into Hertfordshire: “Braughing/Puckeridge to Colchester”, Certain - +/- 30m for 12 km, then Probable +/- 200m for 12 km, then Conjectured for 2.7 km.
