@@ -29,7 +29,9 @@
 </ul>
 <h3>Who made it</h3>
 <p>
-	Made by Benedict. The code is on <a href={REPO}>GitHub</a>.
+	Made by Benedict. The code is on
+	<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- an outside address, not a route -->
+	<a href={REPO}>GitHub</a>.
 </p>
 <p><a href={resolve('/')}>Back to the walk</a></p>
 
