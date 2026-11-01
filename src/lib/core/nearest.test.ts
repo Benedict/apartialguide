@@ -43,4 +43,36 @@ describe('the nearest name, at a stop where nothing named is in view', () => {
 		const far = narrator(900);
 		expect(far.n.visit(far.west)!.scene.nearest).toBeUndefined();
 	});
+
+	it('finds a long named thing that passes within reach though its every point lies far beyond it', () => {
+		const m = new SyntheticMap();
+		const west = m.node(O);
+		m.way([west, m.nodeFrom(O, 90, 120)], { highway: 'residential', name: 'Long Street' });
+		m.nodeFrom(O, 180, 6, { natural: 'tree' });
+		// An invented brook 300 m to the north, drawn from one point 3 km west to one 3 km east.
+		const north = m.nodeFrom(O, 0, 300);
+		const lat = m.toData().elements.find((e) => e.type === 'node' && e.id === north)!;
+		const at = [(lat as { lat: number }).lat, O[1]] as const;
+		m.way([m.nodeFrom([at[0], at[1]], 270, 3000), m.nodeFrom([at[0], at[1]], 90, 3000)], {
+			waterway: 'stream',
+			name: 'Inventa Brook'
+		});
+		const n = Narrator.fromOsm(m.toData(), { clock: fixedClock('2026-10-24') });
+		const nearest = n.visit(junctionId(west))!.scene.nearest;
+		expect(nearest?.tags.name).toBe('Inventa Brook');
+		expect(Math.round(nearest!.metres / 10) * 10).toBe(300);
+	});
+
+	it('of two named things, gives the nearer, however many lie beyond reach', () => {
+		const m = new SyntheticMap();
+		const west = m.node(O);
+		m.way([west, m.nodeFrom(O, 90, 120)], { highway: 'residential', name: 'Long Street' });
+		m.nodeFrom(O, 180, 6, { natural: 'tree' });
+		for (let i = 0; i < 40; i++)
+			m.nodeFrom(O, i * 9, 1000 + i * 50, { amenity: 'cafe', name: `Far Cafe ${i}` });
+		m.nodeFrom(O, 200, 350, { shop: 'bakery', name: 'Inventa Bakes' });
+		m.nodeFrom(O, 20, 250, { amenity: 'cafe', name: 'Inventa Cafe' });
+		const n = Narrator.fromOsm(m.toData(), { clock: fixedClock('2026-10-24') });
+		expect(n.visit(junctionId(west))!.scene.nearest?.tags.name).toBe('Inventa Cafe');
+	});
 });

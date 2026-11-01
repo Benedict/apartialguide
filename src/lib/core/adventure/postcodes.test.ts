@@ -43,6 +43,23 @@ describe('postcodes the map carries', () => {
 		expect(postcodesFrom(data, stops)).toEqual({ 'ZZ1 1AA': 'a', 'ZZ1 2BB': 'b' });
 	});
 
+	it('gives a place just within reach, none just beyond, and of two near places the nearer', () => {
+		const at = (bearing: number, metres: number) => destination(here, bearing, metres);
+		const node = (id: number, p: readonly number[], code: string) => ({
+			type: 'node' as const,
+			id,
+			lat: p[0],
+			lon: p[1],
+			tags: { 'addr:postcode': code }
+		});
+		const edge = {
+			elements: [node(1, at(0, 290), 'ZZ3 3AA'), node(2, at(180, 310), 'ZZ3 3BB')]
+		} as OsmData;
+		expect(postcodesFrom(edge, { a: stop('Long Street', here) })).toEqual({ 'ZZ3 3AA': 'a' });
+		const between = { elements: [node(1, at(90, 150), 'ZZ4 4AA')] } as OsmData;
+		expect(postcodesFrom(between, stops)).toEqual({ 'ZZ4 4AA': 'a' });
+	});
+
 	it('begins a walk at a postcode’s place, from the page alone', () => {
 		const world: AdventureWorld = { start: 'a', stops, postcodes: { 'ZZ1 2BB': 'b' } };
 		const game = new Adventure(world);

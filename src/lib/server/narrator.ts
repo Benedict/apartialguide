@@ -148,8 +148,11 @@ function leftOut(dir: string): Set<string> {
 }
 
 /** The narrator for the configured snapshot, using any prose written ahead of time. */
-export function loadNarrator(config: Config): Narrator {
-	const data = readJson<OsmData>(config.snapshotPath);
+/** The narrator of a snapshot, read from `SNAPSHOT_PATH` unless it has been read already. */
+export function loadNarrator(
+	config: Config,
+	data: OsmData = readJson<OsmData>(config.snapshotPath)
+): Narrator {
 	return Narrator.fromOsm(data, {
 		clock: fixedClock(config.snapshotDate),
 		spacing: config.spacing,

@@ -1,4 +1,5 @@
 import { distance, type LatLon } from '../geo';
+import { boxOf, Grid } from '../grid';
 import type { OsmData } from '../osm';
 import type { StopId } from '../stops';
 
@@ -44,12 +45,17 @@ export function postcodesFrom(
 		sums.set(code, sum);
 	}
 	const placed = Object.entries(stops).flatMap(([id, s]) => (s.at ? [[id, s.at] as const] : []));
+	// The places filed by where they lie, so each postcode is measured only against those near it,
+	// in the world's own order, so a tie goes as it would through them all.
+	const grid = new Grid<number>(NEAR_ENOUGH);
+	placed.forEach(([, at], i) => grid.add(i, boxOf([at])));
 	const found: Record<string, StopId> = {};
 	for (const [code, { lat, lon, n }] of [...sums].sort(([a], [b]) => a.localeCompare(b))) {
 		if (!n) continue;
 		const middle: LatLon = [lat / n, lon / n];
 		let best: [StopId, number] | undefined;
-		for (const [id, at] of placed) {
+		const near = [...grid.near(boxOf([middle], NEAR_ENOUGH * 1.05))].sort((a, b) => a - b);
+		for (const [id, at] of near.map((i) => placed[i])) {
 			const m = distance(middle, at);
 			if (!best || m < best[1]) best = [id, m];
 		}

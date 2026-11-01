@@ -34,7 +34,9 @@ if (!config) {
 	console.error('Set SNAPSHOT_PATH to the snapshot to export');
 	process.exit(1);
 }
-const narrator = loadNarrator(config);
+// The snapshot, read once: for the narrator, and for the postcodes its addresses carry.
+const data = readJson<OsmData>(config.snapshotPath);
+const narrator = loadNarrator(config, data);
 // Everyone the stored prose names as its writer, credited on About as its licence asks.
 const writers = writersOf(loadNarration(config.narrationPath));
 // The place the map is of (PLACE_NAME, PLACE_WITHIN; Addiscombe, in Croydon, unless told), and
@@ -73,7 +75,7 @@ if (closed.size) console.log(`${closed.size} stops in areas not open yet are lef
 // and the places worth beginning at by chance (`start anywhere`).
 // The postcodes the map's own addresses carry, each with its nearest open place (`start at CR0 7HE`),
 // so a reader may begin at one from the page alone.
-const postcodes = postcodesFrom(readJson<OsmData>(config.snapshotPath), opened.stops);
+const postcodes = postcodesFrom(data, opened.stops);
 console.log(`${Object.keys(postcodes).length} postcodes the map carries are given a place`);
 // Open areas whose start the map does not hold inside them; the Deploy build refuses any
 // (DOORS_REQUIRED), as CI's smaller map rightly lacks the borough's other doors.
