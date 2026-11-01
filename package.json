@@ -17,6 +17,7 @@
 		"test": "npm run test:unit -- --run && npm run test:acceptance",
 		"brand": "tsx scripts/brand.ts",
 		"brand:kit": "tsx scripts/brand-kit.ts",
+		"roman:spike": "tsx scripts/roman-spike.ts",
 		"social": "tsx scripts/social.ts",
 		"test:count": "tsx scripts/test-count.ts",
 		"test:acceptance": "NODE_OPTIONS=\"--import tsx\" cucumber-js",
