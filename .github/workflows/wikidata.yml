@@ -42,6 +42,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # The borough's snapshots, kept in the private data repository.
+      - uses: ./.github/actions/private-data
+        with:
+          token: ${{ secrets.DATA_TOKEN }}
       - name: Fetch wikidata
         run: |
           set -a

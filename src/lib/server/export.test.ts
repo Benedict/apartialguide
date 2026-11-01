@@ -256,6 +256,13 @@ describe('exportPage', () => {
 		expect(about).toContain('https://github.com/Benedict/osm-text-adventure');
 	});
 
+	it('says on About that the map’s snapshot is available on request, as OpenStreetMap’s licence asks', () => {
+		const about = page().match(/<section id="about"[^]*?<\/section>/)![0];
+		expect(about).toContain(
+			'The snapshot of the map the walk is built from is available on request'
+		);
+	});
+
 	it('credits on About the people who wrote places, as the prose’s licence asks, and says nothing of them without any', () => {
 		const about = (writers?: string[]) =>
 			exportPage({ engine: '', world, snapshotDate: '2026-10-24', writers }).match(
