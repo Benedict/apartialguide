@@ -11,6 +11,7 @@ describe('the Roman walk’s sources', () => {
 		expect(wall.terms).toContain('Kathryn Murphy');
 		expect(wall.terms).toContain('Nicky Garland');
 		expect(wall.href).toBe('https://doi.org/10.5284/1100071');
+		expect(wall.terms).toContain('Kathryn Murphy, Alex Turner and Rob Collins');
 	});
 	it('keeps the sources that work anywhere, and none that know only London', () => {
 		const names = ROMAN_SOURCES.map((s) => s.name);

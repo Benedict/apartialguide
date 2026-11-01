@@ -27,9 +27,10 @@ export const ROMAN_SOURCES: Source[] = [
 	{
 		name: 'WallCAP',
 		href: 'https://doi.org/10.5284/1100071',
-		gives: 'Hadrian’s Wall, the Vallum and the milecastles, with what is known of each',
+		gives:
+			'Hadrian’s Wall, the Vallum and the milecastles, and each milecastle’s account and history, whole',
 		terms:
-			'Hadrian’s Wall and the Vallum based on the files prepared for WallCAP by Kathryn Murphy and Nicky Garland, with minor tweaks by Mike Haken; the milecastles derived from WallCAP data created by Kathryn Murphy; CC BY 4.0. All WallCAP GIS files are with the Archaeology Data Service'
+			'Hadrian’s Wall and the Vallum based on the files prepared for WallCAP by Kathryn Murphy and Nicky Garland, with minor tweaks by Mike Haken; the milecastles derived from WallCAP data created by Kathryn Murphy; the accounts and histories from the WallGIS database by Kathryn Murphy, Alex Turner and Rob Collins (2022); CC BY 4.0. All WallCAP GIS files are with the Archaeology Data Service'
 	},
 	...SOURCES.filter((s) => ANYWHERE.has(s.name))
 ];

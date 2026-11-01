@@ -133,6 +133,21 @@ Whether it holds attention past ten milecastles is the real test. That is Benedi
 
 **What that suggests:** a Wall walk keeps to the Wall, Bowness to Wallsend, about 118 places. The roads off it are offered as ways out, the walk's edge, not walked far.
 
+## The whole accounts
+
+Digital Britannia's milecastle accounts are cut at 254 characters: they are WallCAP's condition descriptions, copied into a field too short for them. WallCAP's own database holds them whole, with a longer history of each milecastle and its references:
+
+- the WallGIS database, by Kathryn Murphy, Alex Turner and Rob Collins (2022), CC BY 4.0, at the Archaeology Data Service (doi.org/10.5284/1100071);
+- downloaded as CSV tables and kept in the private data repository's `wallcap/`;
+- read with `WALLCAP_DB=…` (`roman/wallcap.ts`, `wallcapAccounts`), joining each milecastle to its account by its record.
+
+Guide now tells:
+
+- **arriving,** a milecastle's account whole (79 of 81);
+- **on `examine milecastle`,** its history, as written, references and all (“(Simpson, 1975)”), with “More is written of it, for a closer look.” said on arrival.
+
+Benedict's call: the whole text over the cut, so this Guide can teach. The references inside the words are read as found, as an inscription is.
+
 ## Overlays worth trying
 
 Each source below is a record someone keeps of the past, given as hearsay or, worked out, as now. Each needs its licence confirmed before use.

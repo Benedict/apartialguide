@@ -1,5 +1,7 @@
 import { distance, type LatLon } from '../core/geo';
 import type { AdventureWorld, CompiledExit, CompiledStop } from '../core/adventure/world';
+import type { Thing } from '../core/render/renderer';
+import type { Account } from './wallcap';
 
 /**
  * A spike: Digital Britannia's Roman roads and sites as a walk of their own, site to site. Each place
@@ -90,7 +92,7 @@ const county = (n: { sites: Site[] }) =>
 	n.sites.map((x) => text(x.props['Historic County'])).find(Boolean);
 
 /** What a site is, as kept: its kind, the ages it is kept for, its Roman name, its words. */
-function siteLines(s: Site): string[] {
+function siteLines(s: Site, accounts: Record<number, Account> = {}): string[] {
 	const p = s.props;
 	const said: string[] = [];
 	const roman = text(p['ROMAN NAME']) ?? text(p['Roman name (if known)']) ?? text(p['Roman Name']);
@@ -117,8 +119,11 @@ function siteLines(s: Site): string[] {
 			.filter(([, v]) => v)
 			.map(([k, v]) => `${k}: ${v}`);
 		if (kept.length) said.push(`${kept.join('; ')}.`);
-		const account = text(p.Account);
+		// WallCAP's account whole, where it keeps one; else Digital Britannia's copy, as found.
+		const account = accounts[Number(p['MC_No.'])]?.account ?? text(p.Account);
 		if (account) said.push(`Someone wrote: “${account}”.`);
+		if (accounts[Number(p['MC_No.'])]?.history?.length)
+			said.push('More is written of it, for a closer look.');
 		const found = text(p.Artefacts);
 		if (found) said.push(`Found there: ${found}.`);
 	}
@@ -126,9 +131,30 @@ function siteLines(s: Site): string[] {
 	return said;
 }
 
+/** A milecastle's longer history, to examine: WallCAP's words, whole. */
+function historyOf(s: Site, accounts: Record<number, Account>): Thing[] {
+	if (s.layer !== 'milecastles') return [];
+	const n = Number(s.props['MC_No.']);
+	const history = accounts[n]?.history;
+	if (!history?.length) return [];
+	const name = text(s.props.Site_name)?.toLowerCase();
+	return [
+		{
+			id: `milecastle-${n}`,
+			name: s.name,
+			aliases: ['milecastle', `milecastle ${n}`, 'history', 'account', ...(name ? [name] : [])],
+			description: `Someone wrote: “${history.join(' ')}”`
+		}
+	];
+}
+
 export function romanWorld(
 	layers: RomanLayers,
-	{ confidence, start }: { confidence: Record<string, string>; start: string }
+	{
+		confidence,
+		start,
+		accounts = {}
+	}: { confidence: Record<string, string>; start: string; accounts?: Record<number, Account> }
 ): AdventureWorld {
 	const wallLines = (layers.walls?.features ?? []).filter(
 		(f) => !/ditch|vallum/i.test(String(f.properties.Feature ?? ''))
@@ -274,7 +300,7 @@ export function romanWorld(
 			said.push(`${label}, ${km(st.metres)} to ${to.sites[0].name}${into}: ${told(st.legs)}`);
 		}
 		// Each thing said once, though two sites here keep it: a name, as found, once.
-		const lines = [...new Set(n.sites.flatMap(siteLines))];
+		const lines = [...new Set(n.sites.flatMap((x) => siteLines(x, accounts)))];
 		const names = new Set(n.sites.map((x) => x.name));
 		const waysLine = said.length ? `Ways: ${said.join(' · ')}.` : undefined;
 		stops[id(i)] = {
@@ -293,7 +319,7 @@ export function romanWorld(
 				...(waysLine ? [[{ kind: 'exits' as const, text: waysLine, key: 'exits' }]] : [])
 			],
 			exits,
-			things: [],
+			things: n.sites.flatMap((x) => historyOf(x, accounts)),
 			at: [+n.at[0].toFixed(5), +n.at[1].toFixed(5)]
 		};
 	}

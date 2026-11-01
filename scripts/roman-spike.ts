@@ -2,7 +2,7 @@
  * The Roman spike: Digital Britannia's roads, the Wall and its sites in a box as a walk of their own,
  * site to site, played ten moves from a start into build/roman/<name>-transcript.md, scored against
  * the spike's measures, and written as one page, build/roman/<name>.html. Not linked from anywhere.
- *   BRITANNIA_GPKG=… npm run roman:spike            (the Wall, from Wallsend)
+ *   BRITANNIA_GPKG=… WALLCAP_DB=… npm run roman:spike   (the Wall, from Wallsend)
  *   ROMAN_AREA=south-east BRITANNIA_GPKG=… npm run roman:spike
  */
 import { build } from 'esbuild';
@@ -14,6 +14,9 @@ import { readGpkgLayer } from '../src/lib/server/gpkg';
 import { BRITANNIA_TABLES } from '../src/lib/server/sources/britannia';
 import { romanWorld, type RomanLayers } from '../src/lib/roman/world';
 import { ROMAN_SOURCES } from '../src/lib/roman/sources';
+import { wallcapAccounts } from '../src/lib/roman/wallcap';
+import { parseCsv } from '../src/lib/server/sources/trees';
+import { execFileSync } from 'node:child_process';
 
 const gpkg = process.env.BRITANNIA_GPKG;
 if (!gpkg) throw new Error('roman:spike needs BRITANNIA_GPKG');
@@ -71,7 +74,18 @@ const confidence = Object.fromEntries(
 	])
 );
 
-const built = romanWorld(layers, { confidence, start });
+// WallCAP's own tables, where given (WALLCAP_DB, its database as downloaded from the ADS): each
+// milecastle's account whole, and its history.
+const wallcap = process.env.WALLCAP_DB;
+const table = (name: string) =>
+	parseCsv(
+		execFileSync('unzip', ['-p', wallcap!, `WallCAP_database_18_09_2022-${name}.csv`], {
+			maxBuffer: 1 << 26
+		}).toString('utf8')
+	);
+const accounts = wallcap ? wallcapAccounts(table('Milecastle'), table('Core_Data')) : {};
+if (wallcap) console.log(`wallcap: ${Object.keys(accounts).length} milecastles' accounts`);
+const built = romanWorld(layers, { confidence, start, accounts });
 const [latitude, longitude] = built.stops[built.start].at!;
 // Today's weather, asked where the walk begins, as the borough's walk does.
 const world = { ...built, asOf: dated, weatherAt: { latitude, longitude } };

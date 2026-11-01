@@ -237,4 +237,33 @@ describe('romanWorld (Roman sites as a walk, stage by stage)', () => {
 		expect(next).not.toContain('Status: Assumed');
 		expect(next).toContain('Ways:');
 	});
+
+	it('tells a milecastle’s whole account where WallCAP keeps it, and its history on a closer look', () => {
+		const whole = romanWorld(layers, {
+			confidence,
+			start: 'Inventon',
+			accounts: {
+				1: {
+					account:
+						'Stones were taken in the 18th century (Simpson, 1975), and it is probable nothing remains.',
+					history: ['Surveyed by an antiquary.', 'A kiln was built over it in 1885.']
+				}
+			}
+		});
+		const mc = Object.values(whole.stops).find((x) => x.title === 'Milecastle 1, Inventhaugh')!;
+		expect(mc.paragraphs[0]).toContain(
+			'Someone wrote: “Stones were taken in the 18th century (Simpson, 1975), and it is probable nothing remains.”'
+		);
+		expect(mc.paragraphs[0]).not.toContain('(Simp”');
+		expect(mc.paragraphs[0]).toContain('More is written of it, for a closer look.');
+		const game = new Adventure({
+			...whole,
+			start: Object.keys(whole.stops).find((k) => whole.stops[k] === mc)!
+		});
+		game.begin();
+		game.respond('take the tour');
+		const looked = game.respond('examine milecastle').lines.join(' ');
+		expect(looked).toContain('Surveyed by an antiquary.');
+		expect(looked).toContain('A kiln was built over it in 1885.');
+	});
 });
