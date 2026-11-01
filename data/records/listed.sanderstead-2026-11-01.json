@@ -1,0 +1,91 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536766",
+			"at": [
+				51.349181,
+				-0.080503
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "FOX FARM HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536783",
+			"at": [
+				51.33481,
+				-0.077716
+			],
+			"observed": "1954-05-20",
+			"claims": {
+				"name": "THE WHITE HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1954-05-20"
+			}
+		},
+		{
+			"id": "31536831",
+			"at": [
+				51.336637,
+				-0.075743
+			],
+			"observed": "1954-05-20",
+			"claims": {
+				"name": "CHURCH OF ALL SAINTS",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "1954-05-20"
+			}
+		},
+		{
+			"id": "31536832",
+			"at": [
+				51.336902,
+				-0.074255
+			],
+			"observed": "1975-06-04",
+			"claims": {
+				"name": "9-12 Doble Court",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1975-06-04"
+			}
+		},
+		{
+			"id": "31846428",
+			"at": [
+				51.343508,
+				-0.087364
+			],
+			"observed": "2004-03-16",
+			"claims": {
+				"name": "14, HOOK HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2004-03-16"
+			}
+		},
+		{
+			"id": "31855916",
+			"at": [
+				51.33674,
+				-0.075883
+			],
+			"observed": "2017-02-17",
+			"claims": {
+				"name": "Sanderstead War Memorial",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2017-02-17"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

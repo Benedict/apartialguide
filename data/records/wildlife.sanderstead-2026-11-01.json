@@ -1,0 +1,139 @@
+{
+	"source": "NBN Atlas",
+	"prefix": "wildlife",
+	"records": [
+		{
+			"id": "9332cc69-fab3-4a02-8d03-0dfa9aef03dc",
+			"at": [
+				51.318443,
+				-0.0821
+			],
+			"observed": "1997-04-15",
+			"claims": {
+				"name": "Rusty False-keeled Slug",
+				"seen": "1997-04"
+			}
+		},
+		{
+			"id": "a9ed9716-9e60-4862-a7fb-069d426f27f7",
+			"at": [
+				51.340745,
+				-0.071119
+			],
+			"observed": "1984-07-17",
+			"claims": {
+				"name": "Beech",
+				"seen": "1984-07"
+			}
+		},
+		{
+			"id": "9acc12ef-3cc1-475d-9b57-5ca6d1ebe353",
+			"at": [
+				51.319033,
+				-0.082434
+			],
+			"observed": "2016-09-08",
+			"claims": {
+				"name": "Roesel's Bush-cricket",
+				"seen": "2016-09"
+			}
+		},
+		{
+			"id": "bec40b1a-5878-46fb-93c5-09898f5aabe4",
+			"at": [
+				51.320586,
+				-0.080953
+			],
+			"observed": "2025-03-18",
+			"claims": {
+				"name": "Robin",
+				"seen": "2025-03"
+			}
+		},
+		{
+			"id": "0ae51f3e-1868-4381-9197-432348f9ab97",
+			"at": [
+				51.34701,
+				-0.07945
+			],
+			"observed": "2024-04-19",
+			"claims": {
+				"name": "Early Bumblebee",
+				"seen": "2024-04"
+			}
+		},
+		{
+			"id": "b0bf60c8-f2e7-49f8-8cdc-163fa6c5d0b7",
+			"at": [
+				51.344716,
+				-0.093927
+			],
+			"observed": "2017-05-16",
+			"claims": {
+				"name": "Common Garden Snail",
+				"seen": "2017-05"
+			}
+		},
+		{
+			"id": "8d7d459a-aecc-47b9-a9a4-741dc05894e1",
+			"at": [
+				51.322791,
+				-0.070815
+			],
+			"observed": "2017-04-09",
+			"claims": {
+				"name": "House Sparrow",
+				"seen": "2017-04"
+			}
+		},
+		{
+			"id": "cbb8dd8b-71b7-4276-8b6f-e8b93fed91b5",
+			"at": [
+				51.347758,
+				-0.078119
+			],
+			"observed": "2014-05-13",
+			"claims": {
+				"name": "Netted Field Slug",
+				"seen": "2014-05"
+			}
+		},
+		{
+			"id": "5c218c53-1048-472a-9f6d-266ff1e0a6bf",
+			"at": [
+				51.34707,
+				-0.07946
+			],
+			"observed": "2023-05-03",
+			"claims": {
+				"name": "Long-horned Nomad Bee",
+				"seen": "2023-05"
+			}
+		},
+		{
+			"id": "a6f6dbbb-639d-4bc6-af05-4b22d1fe5d79",
+			"at": [
+				51.32349,
+				-0.084617
+			],
+			"observed": "2023-04-22",
+			"claims": {
+				"name": "Blackcap",
+				"seen": "2023-04"
+			}
+		},
+		{
+			"id": "c9950cf6-353b-4fe9-98e5-20c1f20aaaee",
+			"at": [
+				51.34703,
+				-0.07943
+			],
+			"observed": "2024-07-11",
+			"claims": {
+				"name": "Small Scissor Bee",
+				"seen": "2024-07"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}
