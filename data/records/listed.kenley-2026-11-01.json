@@ -1,0 +1,91 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31536777",
+			"at": [
+				51.318337,
+				-0.086067
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "MILESTONE OUTSIDE NUMBER 362",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536779",
+			"at": [
+				51.31693,
+				-0.107954
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "THE OLD FORGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31536785",
+			"at": [
+				51.307521,
+				-0.102879
+			],
+			"observed": "1982-11-02",
+			"claims": {
+				"name": "THE THATCHED COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1982-11-02"
+			}
+		},
+		{
+			"id": "31645634",
+			"at": [
+				51.307181,
+				-0.101826
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "ELM GROVE FARMHOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31814577",
+			"at": [
+				51.322046,
+				-0.099591
+			],
+			"observed": "1983-02-15",
+			"claims": {
+				"name": "CHURCH OF ALL SAINTS",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-02-15"
+			}
+		},
+		{
+			"id": "31843950",
+			"at": [
+				51.325005,
+				-0.101348
+			],
+			"observed": "1999-08-10",
+			"claims": {
+				"name": "KENLEY STATION HOUSE (ORIGINAL 1856 BUILDING)",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1999-08-10"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

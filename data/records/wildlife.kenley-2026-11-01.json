@@ -1,0 +1,163 @@
+{
+	"source": "NBN Atlas",
+	"prefix": "wildlife",
+	"records": [
+		{
+			"id": "ee4c495a-ff36-4158-905e-a15407340afb",
+			"at": [
+				51.32758,
+				-0.121577
+			],
+			"observed": "2023-01-04",
+			"claims": {
+				"name": "Great Tit",
+				"seen": "2023-01"
+			}
+		},
+		{
+			"id": "8b13b773-a68e-4d57-9a2b-6b441a658c27",
+			"at": [
+				51.32737,
+				-0.121435
+			],
+			"observed": "2023-01-22",
+			"claims": {
+				"name": "Redwing",
+				"seen": "2023-01"
+			}
+		},
+		{
+			"id": "628ac5ea-dbcb-468a-b2c6-7a7a6e7bb621",
+			"at": [
+				51.315958,
+				-0.095119
+			],
+			"observed": "1996-07-01",
+			"claims": {
+				"name": "Yew",
+				"seen": "1996-07"
+			}
+		},
+		{
+			"id": "15d0fc0a-4f5f-4793-b64c-7157b50e1774",
+			"at": [
+				51.314339,
+				-0.098429
+			],
+			"observed": "1996-07-01",
+			"claims": {
+				"name": "Rowan",
+				"seen": "1996-07"
+			}
+		},
+		{
+			"id": "13cf6dae-d133-44ae-ae16-277015da99f6",
+			"at": [
+				51.31849,
+				-0.084968
+			],
+			"observed": "1995-06-16",
+			"claims": {
+				"name": "Drilus flavescens",
+				"seen": "1995-06"
+			}
+		},
+		{
+			"id": "08859541-f9e0-428b-8017-9ebbc51d926a",
+			"at": [
+				51.328167,
+				-0.109133
+			],
+			"observed": "2017-01-29",
+			"claims": {
+				"name": "Blackcap",
+				"seen": "2017-01"
+			}
+		},
+		{
+			"id": "1304d260-b130-47fa-975b-aae160359119",
+			"at": [
+				51.315315,
+				-0.110931
+			],
+			"observed": "1996-08-09",
+			"claims": {
+				"name": "Hawthorn",
+				"seen": "1996-08"
+			}
+		},
+		{
+			"id": "2a0fdcd5-603d-4aca-b6db-2a0ae668147f",
+			"at": [
+				51.315315,
+				-0.110931
+			],
+			"observed": "1996-08-09",
+			"claims": {
+				"name": "Sycamore",
+				"seen": "1996-08"
+			}
+		},
+		{
+			"id": "8e036701-acb4-42b0-9a25-d2c67e7c0517",
+			"at": [
+				51.315315,
+				-0.110931
+			],
+			"observed": "1996-08-09",
+			"claims": {
+				"name": "Wild Cherry",
+				"seen": "1996-08"
+			}
+		},
+		{
+			"id": "32691b1e-f02a-4e73-a57a-9f3b277181cc",
+			"at": [
+				51.32753,
+				-0.121444
+			],
+			"observed": "2023-01-15",
+			"claims": {
+				"name": "Great Spotted Woodpecker",
+				"seen": "2023-01"
+			}
+		},
+		{
+			"id": "edfd251a-e1e3-4594-97e9-50845d1af06e",
+			"at": [
+				51.328167,
+				-0.108951
+			],
+			"observed": "2017-01-29",
+			"claims": {
+				"name": "Redwing",
+				"seen": "2017-01"
+			}
+		},
+		{
+			"id": "6eb94f80-1c2a-46d4-ab27-c82344ee002f",
+			"at": [
+				51.324945,
+				-0.094747
+			],
+			"observed": "1996-05-28",
+			"claims": {
+				"name": "Silky Snail",
+				"seen": "1996-05"
+			}
+		},
+		{
+			"id": "ca9a6cec-f843-4980-ac81-d72564e3e27b",
+			"at": [
+				51.327757,
+				-0.101807
+			],
+			"observed": "1984-01-01",
+			"claims": {
+				"name": "Orellia falcata",
+				"seen": "1984-01"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}

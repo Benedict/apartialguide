@@ -1,0 +1,43 @@
+{
+	"source": "Open Plaques",
+	"prefix": "plaque",
+	"records": [
+		{
+			"id": "8301",
+			"at": [
+				51.32505,
+				-0.10144
+			],
+			"claims": {
+				"name": "This building was the Kenley stationmaster's house erected 1856",
+				"description": "plaque",
+				"inscription": "This building was the Kenley stationmaster's house erected 1856"
+			}
+		},
+		{
+			"id": "8292",
+			"at": [
+				51.31647,
+				-0.0838
+			],
+			"claims": {
+				"name": "Site of The Rose and Crown public house",
+				"description": "plaque",
+				"inscription": "Site of The Rose and Crown public house"
+			}
+		},
+		{
+			"id": "8290",
+			"at": [
+				51.32791,
+				-0.10581
+			],
+			"claims": {
+				"name": "From this house Gardner's Pleasure Resort operated c 1893-1931",
+				"description": "plaque",
+				"inscription": "From this house Gardner's Pleasure Resort operated c 1893-1931"
+			}
+		}
+	],
+	"retrieved": "2026-11-01"
+}
