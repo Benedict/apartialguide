@@ -1,3 +1,4 @@
+import type { LatLon } from '../geo';
 /** A walk as it was saved: where, how far, and everything the walk remembers. */
 export interface SavedWalk {
 	version: 1;
@@ -11,6 +12,17 @@ export interface SavedWalk {
 }
 
 /** The engine's memory of a walk, as plain data. */
+/** A circle being walked: its points, the next to reach, what was met, how far the walk strayed. */
+export interface Circling {
+	centre: LatLon;
+	radius: number;
+	points: string[];
+	next: number;
+	record: string[];
+	seen: string[];
+	strayed: number;
+}
+
 export interface WalkState {
 	here: string;
 	previous?: string;
@@ -21,6 +33,8 @@ export interface WalkState {
 	following?: boolean;
 	/** The way the reader asked for: the name, and the stops it is found at. */
 	route?: { to: string; goals: [string, string][] };
+	/** The circle being walked (place a glass), if one is. */
+	circle?: Circling;
 
 	lastCommand?: string;
 	lastStreet?: string;

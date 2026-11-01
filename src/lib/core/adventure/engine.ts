@@ -26,7 +26,14 @@ import type { Telling, Thing } from '../render/renderer';
 import { distance, type LatLon } from '../geo';
 import { postcodeOf } from './postcodes';
 import { arcOf, circleThrough, FAR, offCurve, walkable, type Circle } from './circle';
-import { AUTO, SLOTS, type SaveStore, type SavedWalk, type WalkState } from './saves';
+import {
+	AUTO,
+	SLOTS,
+	type Circling,
+	type SaveStore,
+	type SavedWalk,
+	type WalkState
+} from './saves';
 import type { StopId } from '../stops';
 import { MemoryHints, type HintKeeper, type HintMemory } from './hints';
 import { goalsFor, planRoute, routeIndex, routeWords, type RouteIndex } from './route';
@@ -224,15 +231,7 @@ export class Adventure {
 	/** The way the reader asked for, kept until they arrive or let it go. */
 	private routing?: { to: string; goals: [StopId, string][] };
 	/** The circle being walked: its points, the next to reach, what was met, how far the walk strayed. */
-	private circling?: {
-		centre: LatLon;
-		radius: number;
-		points: StopId[];
-		next: number;
-		record: string[];
-		seen: StopId[];
-		strayed: number;
-	};
+	private circling?: Circling;
 	/** What the hints remember across walks: the browser's, given by the page, or memory. */
 	hintKeeper: HintKeeper = new MemoryHints();
 	/** The move at which a hint last came of its own, this walk; and which hint comes next when asked. */
@@ -765,6 +764,7 @@ export class Adventure {
 			verbose: this.verbose,
 			...(this.following ? { following: true } : {}),
 			...(this.routing ? { route: this.routing } : {}),
+			...(this.circling ? { circle: copyCircle(this.circling) } : {}),
 
 			...(this.lastCommand ? { lastCommand: this.lastCommand } : {}),
 			...(this.lastStreet ? { lastStreet: this.lastStreet } : {}),
@@ -868,7 +868,9 @@ export class Adventure {
 		return {
 			...state,
 			previous: state.previous && has(state.previous) ? state.previous : undefined,
-			route: state.route && goals?.length ? { ...state.route, goals } : undefined
+			route: state.route && goals?.length ? { ...state.route, goals } : undefined,
+			// A circle goes on only if the map still has every point of it.
+			circle: state.circle?.points.every(has) ? state.circle : undefined
 		};
 	}
 
@@ -881,6 +883,7 @@ export class Adventure {
 		this.verbose = state.verbose;
 		this.following = state.following ?? false;
 		this.routing = state.route;
+		this.circling = state.circle && copyCircle(state.circle);
 
 		this.lastCommand = state.lastCommand;
 		this.lastStreet = state.lastStreet;
@@ -1513,4 +1516,9 @@ function refill<T>(set: Set<T>, items: readonly T[]): void {
 function refillMap<K, V>(map: Map<K, V>, entries: readonly [K, V][]): void {
 	map.clear();
 	for (const [k, v] of entries) map.set(k, v);
+}
+
+/** A circle apart from the one walked, so a kept walk does not change as the walk goes on. */
+function copyCircle(c: Circling): Circling {
+	return { ...c, points: [...c.points], record: [...c.record], seen: [...c.seen] };
 }

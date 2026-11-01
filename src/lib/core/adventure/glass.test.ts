@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { destination } from '../geo';
 import { Adventure } from './engine';
 import { parse } from './parser';
+import { MemorySaves } from './saves';
 import type { AdventureWorld, CompiledStop } from './world';
 
 // An invented ring of twelve stops, 250 metres from a centre, each joined to the next: no real place.
@@ -125,5 +126,45 @@ describe('the glass', () => {
 			last = game.respond('go onward');
 		expect(last.lines).toContain('The circle is closed.');
 		expect(game.respond('score').lines[0]).toMatch(/in 12 moves/);
+	});
+
+	it('is kept with the walk: a walk picked up again goes on round the same circle, its record kept', () => {
+		const saves = new MemorySaves();
+		const game = new Adventure(world);
+		game.saves = saves;
+		game.chance = () => 0.5;
+		game.begin();
+		game.respond('take the tour');
+		game.respond('place a glass');
+		for (let i = 0; i < 5; i++) game.respond('go onward');
+		const later = new Adventure(world);
+		later.saves = saves;
+		later.chance = () => 0.5;
+		later.begin();
+		later.respond('restore auto');
+		expect(later.respond('go onward').lines.at(-1)).toBe(
+			'Your way round: onward (Ring Road). 6 of 12.'
+		);
+		let last = later.respond('go onward');
+		for (let i = 7; i < 12; i++) last = later.respond('go onward');
+		expect(last.lines).toContain('The circle is closed.');
+		expect(last.lines).toContain('Ring Road 4: The Sextant.');
+	});
+
+	it('is lifted from a walk picked up on a map that has lost a point of it', () => {
+		const saves = new MemorySaves();
+		const game = new Adventure(world);
+		game.saves = saves;
+		game.chance = () => 0.5;
+		game.begin();
+		game.respond('take the tour');
+		game.respond('place a glass');
+		game.respond('go onward');
+		const lesser = Object.fromEntries(Object.entries(ring).filter(([id]) => id !== 's9'));
+		const later = new Adventure({ start: 's0', stops: lesser });
+		later.saves = saves;
+		later.begin();
+		expect(later.respond('restore auto').title).toBe('Ring Road 1');
+		expect(later.respond('go onward').lines.join(' ')).not.toContain('Your way round');
 	});
 });
