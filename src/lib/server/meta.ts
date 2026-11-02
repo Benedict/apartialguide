@@ -10,6 +10,9 @@ export { REPO } from '../site/repo';
 const NAME = 'A Partial Guide';
 
 /** The walk's own profiles elsewhere, linked from About and the front page, and named to search engines. */
+/** Where readers may support the walk, if they wish: a plain link, so nothing of Ko-fi's loads here. */
+export const SUPPORT = { name: 'Ko-fi', href: 'https://ko-fi.com/benedictsteele' };
+
 export const PROFILES = [{ name: 'Instagram', href: 'https://www.instagram.com/apartialguide' }];
 
 /** The profiles as links that say they are the site's own (rel="me"). */

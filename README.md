@@ -27,6 +27,10 @@ Map data © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright
 
 See [CONTRIBUTING.md](CONTRIBUTING.md): wrong data is best fixed at its source, misread prose has an issue form, and every commit is signed off under the [DCO](DCO).
 
+## Support
+
+The walk is free, and stays free. If you would like to help keep it going, you can support it on [Ko-fi](https://ko-fi.com/benedictsteele).
+
 ## Licence
 
 The code is under the [GNU Affero General Public License, version 3 or later](LICENSE), and Guide's prose in `data/narration/` under [CC BY-SA 4.0](data/narration/LICENSE.md). The data keeps its sources' own licences, credited on the site's About page; Commit Mono is under the SIL Open Font License.
