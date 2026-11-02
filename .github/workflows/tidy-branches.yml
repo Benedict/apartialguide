@@ -1,0 +1,31 @@
+name: Tidy branches
+
+# Deletes branches already in main that GitHub left behind: those merged other than by their own pull
+# request, such as a Records workflow's branch. Run by hand from the Actions tab. Without "delete" it
+# only lists what it would delete. Never main, never a branch an open pull request is from, never one
+# with a commit main does not have.
+on:
+  workflow_dispatch:
+    inputs:
+      delete:
+        description: Delete them (otherwise only list them)
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  tidy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Branches already in main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          export OPEN_BRANCHES="$(gh pr list --state open --limit 200 --json headRefName -q '.[].headRefName')"
+          scripts/tidy-branches.sh ${{ inputs.delete && '--delete' || '' }}
