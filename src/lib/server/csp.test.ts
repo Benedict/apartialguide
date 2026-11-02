@@ -91,4 +91,11 @@ describe('withCsp, with a sign-up form', () => {
 		expect(html).toContain('frame-src https://inventa.substack.com;');
 		expect(withCsp(page)).not.toContain('frame-src');
 	});
+
+	it('lets the page send feedback to a function served from another site', () => {
+		const page = '<!doctype html><html><head><meta charset="utf-8"></head><body></body></html>';
+		expect(withCsp(page, { feedbackUrl: 'https://feedback.example.org/api/feedback' })).toContain(
+			'https://feedback.example.org'
+		);
+	});
 });

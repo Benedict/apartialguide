@@ -20,6 +20,7 @@ export type Command =
 				| 'overhead'
 				| 'camera'
 				| 'news'
+				| 'feedback'
 				| 'beyond'
 				| 'areas'
 				| 'gps'
@@ -224,6 +225,10 @@ export function parse(input: string): Command {
 		].includes(text)
 	)
 		return { verb: 'news' };
+	if (
+		['feedback', 'give feedback', 'send feedback', 'leave feedback', 'report a bug'].includes(text)
+	)
+		return { verb: 'feedback' };
 	if (['look up', 'lookup', 'look at the sky', 'look skyward', 'up'].includes(text))
 		return { verb: 'overhead' };
 	if (

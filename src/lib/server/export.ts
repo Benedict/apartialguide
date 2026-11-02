@@ -20,6 +20,8 @@ export interface ExportInput {
 	flightsUrl?: string;
 	/** Where the news function answers, if one is deployed (`NEWS_URL`); without it no news is asked. */
 	newsUrl?: string;
+	/** Where the feedback function answers (`FEEDBACK_URL`); without it, feedback is not open. */
+	feedbackUrl?: string;
 	/**
 	 * Where the world's tiles are served, relative to the page, when it is served in pieces
 	 * (`tileWorld`); the world passed is then the head alone. Without it the page carries the world.
@@ -174,6 +176,7 @@ export function exportPage({
 	snapshotDate,
 	flightsUrl,
 	newsUrl,
+	feedbackUrl,
 	tiles,
 	gaId,
 	place = ADDISCOMBE,
@@ -347,6 +350,7 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 	// The flights function, if one was deployed when the page was built; without one, no aircraft are asked after.
 	const FLIGHTS = ${JSON.stringify(flightsUrl ?? '')};
 	const NEWS = ${JSON.stringify(newsUrl ?? '')};
+	const FEEDBACK = ${JSON.stringify(feedbackUrl ?? '')};
 	// Where the world's tiles are served, when it comes in pieces; empty when the page carries it.
 	const TILES = ${JSON.stringify(tiles ?? '')};
 	// Google Analytics, only on the reader's yes: given before, or given now. Never what they type.
@@ -439,6 +443,8 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 	}
 	function show(reply) {
 		if (reply.ask) askFor(reply.ask);
+		// Feedback the reader has seen and said yes to; then whether it went.
+		if (reply.send) sendFeedback(FEEDBACK, reply.send).then((ok) => show(game.sent(ok)));
 		if (!reply.lines.length && !reply.hint) return;
 		const section = document.createElement('section');
 		if (reply.title) section.append(el('h2', reply.title));
@@ -616,7 +622,9 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 		history.push(text);
 		recall = history.length;
 		anchor = transcript.appendChild(el('p', '> ' + text, 'command'));
-		try {
+		// While feedback is asked, what is typed is the reader's answer: never a command, never counted.
+		const asking = game.asking;
+		if (!asking) try {
 			// The street network first: a place given by its name is found in it before it is opened.
 			if (game.needsRoutes(text)) await loadRoutes();
 			await ensure(game.needs(text));
@@ -625,6 +633,7 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 		}
 		const reply = game.respond(text);
 		show(reply);
+		if (asking) return;
 		ahead();
 		count('command', { verb: parse(text).verb });
 		if (reply.lines.some((line) => line.startsWith('You have walked ')))
@@ -660,6 +669,9 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 	game.saves = browserSaves();
 	// What the hints have said, kept in this browser across walks.
 	game.hintKeeper = browserHints();
+	// Feedback, where the site can take it: with the kind of device and browser, nothing finer.
+	game.feedbackOpen = !!FEEDBACK;
+	game.context = { device: deviceOf(innerWidth, matchMedia('(pointer: coarse)').matches), browser: browserOf(navigator.userAgent) };
 	game.offer(await today).forEach(show);
 	input.disabled = false;
 	// A link may begin the walk somewhere: an area (#shirley), or a place someone shared (#at=…).
@@ -676,6 +688,6 @@ ${tiles ? '' : `<script type="application/gzip" id="world">${packed(world)}</scr
 </body>
 </html>
 `,
-		{ flightsUrl, newsUrl, analytics: !!gaId }
+		{ flightsUrl, newsUrl, feedbackUrl, analytics: !!gaId }
 	);
 }

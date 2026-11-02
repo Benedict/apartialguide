@@ -30,6 +30,18 @@ describe('the workflows', () => {
 		expect(fn).toContain('newsHandler');
 	});
 
+	it('build the walk with the feedback function where Netlify serves it, its token Netlify’s alone', () => {
+		const deploy = readFileSync('.github/workflows/deploy.yml', 'utf8');
+		expect(deploy).toContain(
+			"FEEDBACK_URL: ${{ vars.NETLIFY_SITE_ID != '' && '/api/feedback' || '' }}"
+		);
+		expect(deploy).not.toContain('FEEDBACK_TOKEN');
+		const fn = readFileSync('netlify/edge-functions/feedback.ts', 'utf8');
+		expect(fn).toContain("path: '/api/feedback'");
+		expect(fn).toContain("Netlify.env.get('FEEDBACK_TOKEN')");
+		expect(fn).toContain('feedbackHandler');
+	});
+
 	it('fetch only when the commit pushed edits their request, asking git, as a new branch’s push lists no files', () => {
 		for (const [file, request] of [
 			['records.yml', 'data/records/request.env'],
