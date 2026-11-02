@@ -12,6 +12,7 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### Under the hood
 
+- The Tidy branches workflow also runs when `data/tidy/request.env` changes on main, as the fetching workflows run from their requests; this one asks it to delete.
 - The borough re-cut from Geofabrik's London and Surrey extracts, keeping the areas drawn as multipolygons; the newly spoken tags (`beyondKind`, #122's follow-on); prose written again for the 1,008 busier stops they change (1,000 pieces, all through the guards: 8 refused and rewritten). The snapshot moves into place in the private data repository as this merges.
 
 ## 2026-11-01
