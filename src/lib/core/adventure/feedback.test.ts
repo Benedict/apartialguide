@@ -67,7 +67,8 @@ describe('feedback', () => {
 		game.respond('feedback');
 		game.respond('bug');
 		game.respond('yes');
-		const shown = game.respond('The map stops at the lane.');
+		game.respond('The map stops at the lane.');
+		const shown = game.respond('skip');
 		expect(shown.send).toBeUndefined();
 		expect(shown.lines).toEqual([
 			'Kind: a bug.',
@@ -75,7 +76,8 @@ describe('feedback', () => {
 			'Your words: “The map stops at the lane.”',
 			'Where: Invented Lane, east, after 1 move.',
 			'The map: dated 29 October 2026.',
-			'Your device: a phone, Safari.'
+			'Your device: a phone, Safari.',
+			'Reply to: no one, as you gave no address.'
 		]);
 		expect(shown.hint).toBe('Send it?');
 		expect(shown.actions?.map((a) => a.command)).toEqual(['yes', 'no']);
@@ -105,7 +107,8 @@ describe('feedback', () => {
 		game.respond('comment');
 		game.respond('no');
 		expect(game.asking).toBe(true);
-		const shown = game.respond('west');
+		game.respond('west');
+		const shown = game.respond('skip');
 		expect(shown.lines).toContain('Your words: “west”');
 		expect(game.here).toBe('b');
 		game.respond('yes');
@@ -114,6 +117,40 @@ describe('feedback', () => {
 		game.respond('again');
 		expect(game.here).toBe('b');
 		expect(game.respond('west').title).toBe('Invented Lane');
+	});
+
+	it('asks, after the words, for an address to reply to, which the reader may skip', () => {
+		const game = walker();
+		game.respond('feedback');
+		game.respond('idea');
+		game.respond('yes');
+		const ask = game.respond('A bigger font.');
+		expect(ask.hint).toBe('If you would like a reply, an email address; or skip.');
+		expect(ask.actions?.map((a) => a.command)).toEqual(['skip', 'cancel']);
+		const shown = game.respond('Ada@Example.org');
+		expect(shown.lines).toContain('Reply to: ada@example.org.');
+		expect(game.respond('yes').send).toMatchObject({ reply: 'ada@example.org' });
+	});
+
+	it('sends no address where the reader skips, and says none will be given', () => {
+		const game = walker();
+		game.respond('feedback');
+		game.respond('idea');
+		game.respond('yes');
+		game.respond('A bigger font.');
+		const shown = game.respond('skip');
+		expect(shown.lines).toContain('Reply to: no one, as you gave no address.');
+		expect(game.respond('yes').send).not.toHaveProperty('reply');
+	});
+
+	it('asks again for an address that is not one, rather than send it', () => {
+		const game = walker();
+		game.respond('feedback');
+		game.respond('idea');
+		game.respond('yes');
+		game.respond('A bigger font.');
+		for (const bad of ['not an address', 'a@b', `${'x'.repeat(250)}@example.org`])
+			expect(game.respond(bad).hint).toBe('That is not an email address. Write one, or skip.');
 	});
 
 	it('asks for the words again when none are written, or too many', () => {
@@ -136,6 +173,7 @@ describe('feedback', () => {
 		game.respond('bug');
 		game.respond('no');
 		game.respond('Something.');
+		game.respond('skip');
 		const no = game.respond('no');
 		expect(no.send).toBeUndefined();
 		expect(no.hint).toBe('Nothing was sent.');
@@ -148,7 +186,8 @@ describe('feedback', () => {
 		game.respond('feedback');
 		game.respond('comment');
 		game.respond('yes');
-		const shown = game.respond('Hello.');
+		game.respond('Hello.');
+		const shown = game.respond('skip');
 		expect(shown.lines).toContain('Where: before the walk began.');
 		expect(game.respond('yes').send).toMatchObject({ moves: 0, place: '' });
 	});

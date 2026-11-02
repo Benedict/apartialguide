@@ -12,6 +12,8 @@ export const BROWSERS = [
 	'Other'
 ] as const;
 export const MOST_WORDS = 2000;
+export const ADDRESS = /^[^\s@`|<>]+@[^\s@`|<>]+\.[^\s@`|<>]+$/;
+export const MOST_ADDRESS = 254;
 
 /** Feedback as the page sends it. */
 export interface Feedback {
@@ -23,6 +25,8 @@ export interface Feedback {
 	map?: string;
 	device?: (typeof DEVICES)[number];
 	browser?: (typeof BROWSERS)[number];
+	/** An email address to reply to, if the reader gave one. */
+	reply?: string;
 }
 
 /**
@@ -81,6 +85,11 @@ export function validFeedback(body: unknown): Feedback | undefined {
 		return undefined;
 	if (b.device !== undefined && !isOneOf(DEVICES, b.device)) return undefined;
 	if (b.browser !== undefined && !isOneOf(BROWSERS, b.browser)) return undefined;
+	if (
+		b.reply !== undefined &&
+		!(typeof b.reply === 'string' && b.reply.length <= MOST_ADDRESS && ADDRESS.test(b.reply))
+	)
+		return undefined;
 	return {
 		kind: b.kind,
 		again: b.again,
@@ -89,7 +98,8 @@ export function validFeedback(body: unknown): Feedback | undefined {
 		moves: b.moves as number,
 		...(b.map ? { map: b.map as string } : {}),
 		...(b.device ? { device: b.device } : {}),
-		...(b.browser ? { browser: b.browser } : {})
+		...(b.browser ? { browser: b.browser } : {}),
+		...(b.reply ? { reply: b.reply as string } : {})
 	};
 }
 
@@ -120,6 +130,8 @@ export function issueOf(f: Feedback): { title: string; body: string; labels: str
 		'| | |',
 		'| --- | --- |',
 		...rows.map(([k, v]) => `| ${k} | ${cell(v)} |`),
+		// In code, so the address is copied as written and its @ reaches no one.
+		...(f.reply ? [`| Reply to | \`${f.reply}\` |`] : []),
 		'',
 		'Sent with `feedback` on the walk.'
 	].join('\n');

@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import * as page from '../core/adventure/feedback';
 import {
+	ADDRESS,
 	AGAIN,
 	BROWSERS,
 	DEVICES,
@@ -44,6 +45,7 @@ describe('the feedback function', () => {
 		expect(DEVICES).toEqual(page.DEVICES);
 		expect(BROWSERS).toEqual(page.BROWSERS);
 		expect(MOST_WORDS).toBe(page.MOST_WORDS);
+		expect(ADDRESS.source).toBe(page.ADDRESS.source);
 		const sent: page.Feedback = { kind: 'idea', again: 'no', words: 'x', place: '', moves: 0 };
 		const taken: Feedback = sent;
 		expect(taken).toBe(sent);
@@ -62,6 +64,12 @@ describe('the feedback function', () => {
 		expect(issue.body).toContain('> The map stops at the lane.');
 		expect(issue.body).toContain('| Would walk again | maybe |');
 		expect(issue.body).toContain('| Device | phone, Safari |');
+	});
+
+	it('gives a reply address as written, where one was given, and mentions no one by it', () => {
+		const { body } = issueOf({ ...valid, reply: 'ada@example.org' });
+		expect(body).toContain('| Reply to | `ada@example.org` |');
+		expect(issueOf(valid).body).not.toContain('Reply to');
 	});
 
 	it('mentions no one, whatever the words say', () => {
@@ -89,7 +97,9 @@ describe('the feedback function', () => {
 			{ ...valid, browser: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0)' },
 			{ ...valid, map: 'yesterday' },
 			{ ...valid, moves: -1 },
-			{ ...valid, place: 'x'.repeat(201) }
+			{ ...valid, place: 'x'.repeat(201) },
+			{ ...valid, reply: 'not an address' },
+			{ ...valid, reply: 'a`b@example.org' }
 		]) {
 			const send = github();
 			expect((await feedbackHandler(post(bad), config, { send })).status).toBe(400);

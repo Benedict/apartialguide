@@ -73,6 +73,7 @@ describe('privacyPage', () => {
 		expect(open).toContain('never your full browser string');
 		expect(open).toContain('private GitHub repository');
 		expect(open).toContain('your IP address is used only to count how often');
+		expect(open).toContain('an email address, if you give one');
 		expect(open).not.toContain('The site itself holds nothing about you');
 	});
 

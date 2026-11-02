@@ -8,6 +8,7 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### For walkers
 
+- `feedback` now asks, after your words, for an email address if you would like a reply. You can skip it, and the address is shown with everything else before anything is sent.
 - Type `draw my walk` to see the line you have walked, drawn plainly, north up, and save it as a picture. Your walks are kept in your browser, so `draw all my walks` draws every one together.
 - About now says where you can support the walk, on Ko-fi, if you would like to. The walk stays free.
 - Type `feedback` to tell us what you found: a bug, an idea or a comment, in your own words. You see everything that would be sent before you say yes, and nothing is sent unless you do.
@@ -15,6 +16,7 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### Under the hood
 
+- Feedback's optional reply address (`ADDRESS`, at most 254 characters, held the same on the page and in the function by a test), written into the issue as code so it is copied as written and mentions no one; the privacy page says it is kept only to reply, until the issue is dealt with.
 - `draw my walk` (`adventure/drawing.ts`, `trails.ts`; `browser/trails.ts`): the walk keeps its line (`trail`, and an `id`, both kept in saves), where the map puts each stop come to; every walk's line is kept in the browser, the newest fifty. The drawing is plain SVG polylines in the page's colour, no street or word, and Guide says nothing of it, as the Auster brief asks. Its open questions settled: the reader's own route, kept between visits, drawn on asking; Guide is Guide, not the author; and "lived" stays.
 - The feedback function imported the page's choices by a path without its extension, which Netlify's Deno bundler cannot find, so every deploy since #136 failed and the site stayed as it was. The handler now imports nothing (its choices held the same as the page's by a test), a test walks each edge function's imports, and the Deploy step prints Netlify's answer when it refuses.
 - `feedback` (`adventure/feedback.ts`): asked in the page's voice, the words taken as typed and never counted; the site's own function (`server/feedback.ts`, `netlify/edge-functions/feedback.ts` at `/api/feedback`) checks it holds only the offered choices and files it as an issue in the private data repository with `FEEDBACK_TOKEN`, Netlify's alone. Built with `FEEDBACK_URL`; the privacy page tells of it only then.
