@@ -1,6 +1,16 @@
 import { describe, expect, it, vi } from 'vitest';
-import type { Feedback } from '../core/adventure/feedback';
-import { feedbackHandler, issueOf, Limiter } from './feedback';
+import * as page from '../core/adventure/feedback';
+import {
+	AGAIN,
+	BROWSERS,
+	DEVICES,
+	feedbackHandler,
+	issueOf,
+	KINDS,
+	Limiter,
+	MOST_WORDS
+} from './feedback';
+import type { Feedback } from './feedback';
 
 const ORIGIN = 'https://site.example.org';
 const valid: Feedback = {
@@ -28,6 +38,17 @@ const config = {
 const github = () => vi.fn(async () => new Response('{"number":7}', { status: 201 }));
 
 describe('the feedback function', () => {
+	it('takes exactly the choices the page offers', () => {
+		expect(KINDS).toEqual(page.KINDS);
+		expect(AGAIN).toEqual(page.AGAIN);
+		expect(DEVICES).toEqual(page.DEVICES);
+		expect(BROWSERS).toEqual(page.BROWSERS);
+		expect(MOST_WORDS).toBe(page.MOST_WORDS);
+		const sent: page.Feedback = { kind: 'idea', again: 'no', words: 'x', place: '', moves: 0 };
+		const taken: Feedback = sent;
+		expect(taken).toBe(sent);
+	});
+
 	it('files the feedback as an issue, labelled by its kind, with the token', async () => {
 		const send = github();
 		const res = await feedbackHandler(post(valid), config, { send });

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
 
 /** The env a workflow sets for the world it builds, as KEY → value, from every step. */
 function worldEnv(file: string): Record<string, string> {
@@ -40,6 +41,25 @@ describe('the workflows', () => {
 		expect(fn).toContain("path: '/api/feedback'");
 		expect(fn).toContain("Netlify.env.get('FEEDBACK_TOKEN')");
 		expect(fn).toContain('feedbackHandler');
+	});
+
+	it('give Netlify edge functions handlers it can bundle: every import a file with its extension', () => {
+		// Netlify bundles edge functions with Deno, which finds no file by a path without its extension.
+		const seen = new Set<string>();
+		const visit = (file: string) => {
+			if (seen.has(file)) return;
+			seen.add(file);
+			for (const [, spec] of readFileSync(file, 'utf8').matchAll(
+				/^import[^'"]*['"]([^'"]+)['"]/gm
+			)) {
+				if (!spec.startsWith('.')) continue;
+				expect(spec, `${file} imports ${spec}`).toMatch(/\.ts$/);
+				visit(join(dirname(file), spec));
+			}
+		};
+		for (const fn of readdirSync('netlify/edge-functions'))
+			visit(join('netlify/edge-functions', fn));
+		expect(seen.size).toBeGreaterThan(3);
 	});
 
 	it('fetch only when the commit pushed edits their request, asking git, as a new branch’s push lists no files', () => {
