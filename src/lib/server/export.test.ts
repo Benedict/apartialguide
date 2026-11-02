@@ -281,6 +281,12 @@ describe('exportPage', () => {
 		);
 	});
 
+	it('asks on About for support on Ko-fi, as a plain link that loads nothing of Ko-fi’s', () => {
+		const about = page().match(/<section id="about"[^]*?<\/section>/)![0];
+		expect(about).toContain('<a href="https://ko-fi.com/benedictsteele">Ko-fi</a>');
+		expect(page()).not.toMatch(/<(script|iframe)[^>]+ko-fi/);
+	});
+
 	it('has a Settings page with a choice for each source asked from the browser', () => {
 		expect(page()).toContain('id="settings"');
 		for (const live of LIVE) expect(page()).toContain(`name="${live.key}"`);

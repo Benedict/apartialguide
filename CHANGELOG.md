@@ -8,6 +8,7 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### For walkers
 
+- About now says where you can support the walk, on Ko-fi, if you would like to. The walk stays free.
 - Type `feedback` to tell us what you found: a bug, an idea or a comment, in your own words. You see everything that would be sent before you say yes, and nothing is sent unless you do.
 - Parks, woods, lakes and large buildings mapped as areas are now passed and named on the walk, and Guide tells more of what the map says of things: the words on them, their other names, a post box's cypher, a tree's species, a public footpath, the counties either side of a boundary stone. Over a thousand places are told afresh.
 
