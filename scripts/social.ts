@@ -1,5 +1,5 @@
 /**
- * Draws pictures for the site's social profiles into build/social/: a profile picture (the mark,
+ * Draws pictures for the site's social profiles into brand/social/, kept in the repository: a profile picture (the mark,
  * centred to survive a circle, in red, and in paper beside it) and portrait posts at 1080×1350, in the site's own type and colours.
  * Every word Guide says in them is the walk's own, as it played; nothing is written for the post.
  *   npm run social
@@ -10,7 +10,7 @@ import { LOCKUP, MARK } from '../src/lib/site/brand';
 import { SOURCES } from '../src/lib/site/sources';
 import { THEMES } from '../src/lib/site/themes';
 
-const out = 'build/social';
+const out = 'brand/social';
 /** Sources that need a key the site has not been given yet, so the walk does not speak from them. */
 const UNKEYED = new Set(['Energy Performance of Buildings Register', 'Geograph']);
 mkdirSync(out, { recursive: true });

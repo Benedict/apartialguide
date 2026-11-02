@@ -23,15 +23,16 @@ Use the SVGs wherever a vector is taken. Use the transparent PNGs only on a back
 
 In each of the page's four colours (`headers/<colour>/`), with the mark and name in the middle, where a profile picture laid over a corner doesn't reach:
 
-| File                               | For                                                                     |
-| ---------------------------------- | ----------------------------------------------------------------------- |
-| `substack-header-1500x500.png`     | The mailing list's header image                                         |
-| `substack-cover-1200x630.png`      | The mailing list's social preview, and anywhere a 1.91:1 image is shown |
-| `substack-logo-1024.png`           | The mailing list's square logo                                          |
-| `linkedin-banner-1584x396.png`     | A LinkedIn profile's background                                         |
-| `linkedin-page-cover-1128x191.png` | A LinkedIn page's cover                                                 |
-| `x-header-1500x500.png`            | An X header                                                             |
-| `bluesky-banner-3000x1000.png`     | A Bluesky banner                                                        |
+| File                               | For                                                                            |
+| ---------------------------------- | ------------------------------------------------------------------------------ |
+| `substack-header-1500x500.png`     | The mailing list's header image                                                |
+| `substack-cover-1200x630.png`      | The mailing list's social preview, and anywhere a 1.91:1 image is shown        |
+| `substack-logo-1024.png`           | The mailing list's square logo                                                 |
+| `linkedin-banner-1584x396.png`     | A LinkedIn profile's background                                                |
+| `linkedin-page-cover-1128x191.png` | A LinkedIn page's cover                                                        |
+| `linkedin-square-1200x1200.png`    | A square LinkedIn image: the logo, the line beneath it in two, and the address |
+| `x-header-1500x500.png`            | An X header                                                                    |
+| `bluesky-banner-3000x1000.png`     | A Bluesky banner                                                               |
 
 `headers/substack-wordmark-black-1200x300.png` and `-white-` are the name for the mailing list's header bar, on nothing: black for its usual white bar, white for a dark one.
 
@@ -40,3 +41,14 @@ The sizes are the ones each place asked for when these were drawn. Check them ag
 ## Licence
 
 The mark and these pictures are part of A Partial Guide (GNU AGPL, version 3 or later). The letters are traced from Commit Mono by Eigil Nikolajsen, under the SIL Open Font License (`static/fonts/OFL.txt`).
+
+## Social pictures (`social/`)
+
+Drawn by `npm run social`: every word Guide says in them is the walk's own, as it played.
+
+| File                                       | For                                                      |
+| ------------------------------------------ | -------------------------------------------------------- |
+| `profile.png`, `profile-paper.png`         | A profile picture: the mark, centred to survive a circle |
+| `linkedin-green.png`                       | The logo in green, 1200×627                              |
+| `linkedin-green-square.png`                | The logo in green, 1200×1200                             |
+| `post-1-hello.png` to `post-6-sources.png` | Portrait posts at 1080×1350, for Instagram               |

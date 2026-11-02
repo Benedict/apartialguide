@@ -21,6 +21,7 @@ const HEADERS: [name: string, width: number, height: number][] = [
 	['substack-cover', 1200, 630],
 	['linkedin-banner', 1584, 396],
 	['linkedin-page-cover', 1128, 191],
+	['linkedin-square', 1200, 1200],
 	['x-header', 1500, 500],
 	['bluesky-banner', 3000, 1000]
 ];
@@ -30,12 +31,17 @@ const HEADERS: [name: string, width: number, height: number][] = [
  * laid over a corner never reaches.
  */
 function header(c: Colourway & { muted: string }, width: number, height: number): string {
-	const lockup = Math.round(Math.min(width * 0.42, height * 1.5));
-	const line = Math.max(14, Math.round(lockup / 30));
+	// A square has room for a larger lockup, and the line beneath it in two, one under the other.
+	const square = width === height;
+	const lockup = Math.round(square ? width * 0.72 : Math.min(width * 0.42, height * 1.5));
+	const line = Math.max(14, Math.round(lockup / (square ? 26 : 30)));
 	const tall = height >= lockup * 0.6;
-	return `<style>${font(400)}</style><div style="width:${width}px;height:${height}px;background:${c.paper};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:${Math.round(line * 1.2)}px;font-family:'Commit Mono',monospace">${sized(lockupIn(c), lockup)}${
+	const words = square
+		? 'The world as a text adventure,<br>built from open data<br><br>apartialguide.com'
+		: 'The world as a text adventure, built from open data · apartialguide.com';
+	return `<style>${font(400)}</style><div style="width:${width}px;height:${height}px;background:${c.paper};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:${Math.round(line * (square ? 2 : 1.2))}px;font-family:'Commit Mono',monospace">${sized(lockupIn(c), lockup)}${
 		tall
-			? `<div style="color:${c.muted};font-size:${line}px;letter-spacing:0.02em">The world as a text adventure, built from open data · apartialguide.com</div>`
+			? `<div style="color:${c.muted};font-size:${line}px;letter-spacing:0.02em;text-align:center;line-height:1.5">${words}</div>`
 			: ''
 	}</div>`;
 }
