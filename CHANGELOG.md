@@ -39,6 +39,7 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 - `SIGNUP_URL` on the front page: a Substack form opens in place once pressed, allowed by the policy's `frame-src` alone; any other list is linked; the privacy page says what is sent, and when (#129).
 - The brand kit in `brand/`: the logo in six colourways (the page's four, black and white) as SVG and PNG, and headers for Substack, LinkedIn, X and Bluesky, drawn by `npm run brand:kit`; the dev server's leftover Svelte favicon is the mark (#130).
 - Energy certificates and Geograph photographs are kept out of prose written ahead of time (`keptOutOfProse`): their records reach neither the prompt nor its key, nor make a stop busier, so fetching them changes no place's prose. Energy certificates come from the register's new search, with only `EPC_API_KEY`; it gives a house's rating and when, not its age.
+- A Tidy branches workflow, run by hand, deletes branches already in main that GitHub leaves behind (those merged other than by their own pull request), listing them first unless told to delete; never main, an open pull request's branch, or one with a commit main lacks (`scripts/tidy-branches.sh`).
 - The Snapshot workflow takes several extracts in `EXTRACT`, merged before the cut, as Croydon's box crosses into Surrey (the London extract alone left out 46,123 nodes beyond the borough's edge).
 
 ## 2026-10-31
