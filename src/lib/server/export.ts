@@ -233,6 +233,8 @@ ${fontFaces(tiles ? '/' : undefined)}
 	.actions button:hover:not(:disabled), .actions button:focus-visible { background: var(--ink); color: var(--paper); outline: none; }
 	.actions button:disabled { opacity: 0.4; cursor: default; }
 	.picture { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+	.drawing { color: var(--bright); margin: 0.5rem 0; }
+	.drawing svg { display: block; width: 100%; height: auto; max-height: 70vh; }
 	/* A word about a command: the page's, not Guide's, so quieter. */
 	.hint { color: var(--muted); font-size: 0.85rem; }
 	.map { height: 0; overflow: hidden; visibility: hidden; }
@@ -446,7 +448,7 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 		if (reply.ask) askFor(reply.ask);
 		// Feedback the reader has seen and said yes to; then whether it went.
 		if (reply.send) sendFeedback(FEEDBACK, reply.send).then((ok) => show(game.sent(ok)));
-		if (!reply.lines.length && !reply.hint) return;
+		if (!reply.lines.length && !reply.hint && !reply.drawing) return;
 		const section = document.createElement('section');
 		if (reply.title) section.append(el('h2', reply.title));
 		for (const line of reply.lines) section.append(el('p', line));
@@ -472,6 +474,24 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 				actions.append(button);
 			}
 			section.append(actions);
+		}
+		if (reply.drawing) {
+			// The walk drawn: plain lines, built from numbers alone, and a way to keep it.
+			const figure = el('div', '', 'drawing');
+			figure.innerHTML = reply.drawing;
+			section.append(figure);
+			const keep = el('p', '', 'actions');
+			const save = el('button', 'Save the drawing');
+			save.type = 'button';
+			save.addEventListener('click', () => {
+				const a = document.createElement('a');
+				a.href = URL.createObjectURL(new Blob([reply.drawing], { type: 'image/svg+xml' }));
+				a.download = 'my-walk.svg';
+				a.click();
+				setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+			});
+			keep.append(save);
+			section.append(keep);
 		}
 		if (reply.image) {
 			const img = el('img', '', 'picture');
@@ -670,6 +690,8 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 	game.saves = browserSaves();
 	// What the hints have said, kept in this browser across walks.
 	game.hintKeeper = browserHints();
+	// Every walk's line, kept in this browser so all of them can be drawn.
+	game.trails = browserTrails();
 	// Feedback, where the site can take it: with the kind of device and browser, nothing finer.
 	game.feedbackOpen = !!FEEDBACK;
 	game.context = { device: deviceOf(innerWidth, matchMedia('(pointer: coarse)').matches), browser: browserOf(navigator.userAgent) };

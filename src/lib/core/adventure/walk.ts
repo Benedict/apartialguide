@@ -48,6 +48,10 @@ export interface Walk {
 	met: Map<string, Meeting[]>;
 	/** Words already set side by side. */
 	connected: Set<string>;
+	/** Which walk this is, so its line is kept as one between visits. */
+	id?: string;
+	/** Where the map puts each stop come to, in order. */
+	trail: [number, number][];
 }
 
 /** Walk and WalkState have the same parts, or this does not compile. */
@@ -90,7 +94,9 @@ const KEEP: { [K in keyof WalkState]-?: (w: Walk) => WalkState[K] } = {
 	heard: (w) => w.heard.map((h) => [...h]),
 	framed: (w) => [...w.framed],
 	met: (w) => [...w.met].map(([word, list]) => [word, copyMeetings(list)]),
-	connected: (w) => [...w.connected]
+	connected: (w) => [...w.connected],
+	id: (w) => w.id,
+	trail: (w) => (w.trail.length ? w.trail.map((p) => [...p] as [number, number]) : undefined)
 };
 
 /** How each part is picked up again, a part an older walk lacks given as a fresh walk has it. */
@@ -114,7 +120,9 @@ const PICK_UP: { [K in keyof Walk]-?: (s: WalkState) => Walk[K] } = {
 	heard: (s) => s.heard.map((h) => [...h]),
 	framed: (s) => new Map(s.framed),
 	met: (s) => new Map(s.met.map(([word, list]) => [word, copyMeetings(list)])),
-	connected: (s) => new Set(s.connected)
+	connected: (s) => new Set(s.connected),
+	id: (s) => s.id,
+	trail: (s) => (s.trail ?? []).map((p) => [...p] as [number, number])
 };
 
 /** The walk as plain data to keep, apart from the walk going on; a part with nothing in it left out. */

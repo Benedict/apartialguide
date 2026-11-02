@@ -124,7 +124,7 @@ describe('exportPage', () => {
 		const html = page();
 		expect(html).toContain("if (reply.hint) section.append(el('p', reply.hint, 'hint'));");
 		// A hint asked for comes alone, and is still shown; what was hinted is kept across walks.
-		expect(html).toContain('if (!reply.lines.length && !reply.hint) return;');
+		expect(html).toContain('if (!reply.lines.length && !reply.hint && !reply.drawing) return;');
 		expect(html).toContain('game.hintKeeper = browserHints();');
 		expect(html).toMatch(/\.hint \{[^}]*color: var\(--muted\)/);
 	});
@@ -279,6 +279,13 @@ describe('exportPage', () => {
 		expect(about).toContain(
 			'<a rel="me" href="https://www.instagram.com/apartialguide">Instagram</a>'
 		);
+	});
+
+	it('shows a walk drawn, in the page’s colour, and offers to save it as a picture', () => {
+		expect(page()).toContain('if (reply.drawing)');
+		expect(page()).toContain('Save the drawing');
+		expect(page()).toContain("a.download = 'my-walk.svg'");
+		expect(page()).toContain('game.trails = browserTrails()');
 	});
 
 	it('asks on About for support on Ko-fi, as a plain link that loads nothing of Ko-fi’s', () => {

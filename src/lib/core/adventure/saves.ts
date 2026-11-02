@@ -48,6 +48,10 @@ export interface WalkState {
 	framed: [string, string][];
 	met: [string, { said: string; at: string; move: number; street?: boolean }[]][];
 	connected: string[];
+	/** Which walk this is, so its line is kept as one between visits. */
+	id?: string;
+	/** Where the map puts each stop come to, in order: the line `draw my walk` draws. */
+	trail?: [number, number][];
 }
 
 /** Where walks are kept: the reader's browser, or memory in tests. */

@@ -8,6 +8,7 @@ export type Command =
 	| { verb: 'route'; target?: string }
 	| { verb: 'start'; where: string; at?: boolean }
 	| { verb: 'glass'; on: boolean }
+	| { verb: 'draw'; all: boolean }
 	| {
 			verb:
 				| 'look'
@@ -225,6 +226,10 @@ export function parse(input: string): Command {
 		].includes(text)
 	)
 		return { verb: 'news' };
+	if (['draw', 'draw my walk', 'draw the walk', 'draw my route', 'draw the route'].includes(text))
+		return { verb: 'draw', all: false };
+	if (['draw my walks', 'draw all my walks', 'draw every walk', 'draw all walks'].includes(text))
+		return { verb: 'draw', all: true };
 	if (
 		['feedback', 'give feedback', 'send feedback', 'leave feedback', 'report a bug'].includes(text)
 	)

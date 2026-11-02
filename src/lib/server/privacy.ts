@@ -103,7 +103,7 @@ ${themeCss()}
 	<p>In short: you need no account, nothing is asked of you, and Guide never asks where you are. The walk is played in your browser.</p>
 
 	<h2>What stays in your browser</h2>
-	<p>The page keeps a few things in your browser’s own storage, so the walk is as you left it: your saved walks, the colours you chose, your Settings, which hints you have been given and whether hints are on, and your answer about counting visits. They are never sent to us, and clearing your browser’s data for this site removes them.</p>
+	<p>The page keeps a few things in your browser’s own storage, so the walk is as you left it: your saved walks, the line of each walk (where the map puts the places you came to, for <code>draw my walk</code>), the colours you chose, your Settings, which hints you have been given and whether hints are on, and your answer about counting visits. They are never sent to us, and clearing your browser’s data for this site removes them.</p>
 
 	<h2>What you type</h2>
 	<p>Commands are read in the page. A postcode, a place or a latitude and longitude you type to begin a walk is looked up in the page itself, from the map it carries, and sent to no one.</p>

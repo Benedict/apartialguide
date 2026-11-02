@@ -14,3 +14,4 @@ export { browserHints } from './hints';
 export { applyTheme, loadTheme, saveTheme } from './theme';
 export { fetchCamera, fetchFlights, fetchNews, fetchSatellites } from './live';
 export { browserOf, deviceOf, sendFeedback } from './feedback';
+export { browserTrails } from './trails';

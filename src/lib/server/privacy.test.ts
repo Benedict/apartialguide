@@ -25,7 +25,7 @@ describe('privacyPage', () => {
 	});
 
 	it('names what the page keeps in the reader’s browser, and that it never leaves it', () => {
-		for (const kept of ['saved walks', 'colours', 'Settings', 'hints'])
+		for (const kept of ['saved walks', 'the line of each walk', 'colours', 'Settings', 'hints'])
 			expect(words(plain)).toContain(kept);
 		expect(words(plain)).toContain('never sent to us');
 	});
