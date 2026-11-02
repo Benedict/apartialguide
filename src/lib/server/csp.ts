@@ -36,11 +36,13 @@ export function withCsp(
 	{
 		flightsUrl,
 		newsUrl,
+		feedbackUrl,
 		analytics,
 		frames = []
 	}: {
 		flightsUrl?: string;
 		newsUrl?: string;
+		feedbackUrl?: string;
 		analytics?: boolean;
 		/** Forms the page may open in a frame, once the reader presses for one. */
 		frames?: string[];
@@ -48,7 +50,7 @@ export function withCsp(
 ): string {
 	const google = analytics ? GOOGLE.join(' ') : '';
 	// The site's own functions, where one is served from another site (a URL rather than a path).
-	const flights = [flightsUrl, newsUrl]
+	const flights = [flightsUrl, newsUrl, feedbackUrl]
 		.filter((u): u is string => !!u && /^https?:\/\//.test(u))
 		.map((u) => new URL(u).origin);
 	const policy = [

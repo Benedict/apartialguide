@@ -8,10 +8,12 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### For walkers
 
+- Type `feedback` to tell us what you found: a bug, an idea or a comment, in your own words. You see everything that would be sent before you say yes, and nothing is sent unless you do.
 - Parks, woods, lakes and large buildings mapped as areas are now passed and named on the walk, and Guide tells more of what the map says of things: the words on them, their other names, a post box's cypher, a tree's species, a public footpath, the counties either side of a boundary stone. Over a thousand places are told afresh.
 
 ### Under the hood
 
+- `feedback` (`adventure/feedback.ts`): asked in the page's voice, the words taken as typed and never counted; the site's own function (`server/feedback.ts`, `netlify/edge-functions/feedback.ts` at `/api/feedback`) checks it holds only the offered choices and files it as an issue in the private data repository with `FEEDBACK_TOKEN`, Netlify's alone. Built with `FEEDBACK_URL`; the privacy page tells of it only then.
 - The Tidy branches workflow also runs when `data/tidy/request.env` changes on main, as the fetching workflows run from their requests; this one asks it to delete.
 - The borough re-cut from Geofabrik's London and Surrey extracts, keeping the areas drawn as multipolygons; the newly spoken tags (`beyondKind`, #122's follow-on); prose written again for the 1,008 busier stops they change (1,000 pieces, all through the guards: 8 refused and rewritten). The snapshot moves into place in the private data repository as this merges.
 

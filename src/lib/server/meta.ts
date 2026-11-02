@@ -55,7 +55,8 @@ export const COMMANDS: [string[], string?][] = [
 	[['look up', 'use the camera']],
 	[['news']],
 	[['colour green']],
-	[['save', 'restore', 'help']]
+	[['save', 'restore', 'help']],
+	[['feedback']]
 ];
 
 const esc = (text: string) =>

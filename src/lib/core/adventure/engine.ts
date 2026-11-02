@@ -27,6 +27,7 @@ import { distance, type LatLon } from '../geo';
 import { postcodeOf } from './postcodes';
 import { arcOf, circleThrough, FAR, offCurve, walkable, type Circle } from './circle';
 import { AUTO, SLOTS, type SaveStore, type SavedWalk, type WalkState } from './saves';
+import { FeedbackForm, NOT_OPEN, sentReply, type Feedback, type FeedbackContext } from './feedback';
 import { freshWalk, keepWalk, pickUpWalk, type Walk } from './walk';
 import type { StopId } from '../stops';
 import { MemoryHints, type HintKeeper, type HintMemory } from './hints';
@@ -53,6 +54,8 @@ export interface Reply {
 	ask?: 'overhead' | 'camera' | 'news';
 	/** A picture to show, such as what a camera saw. */
 	image?: { src: string; alt: string };
+	/** Feedback the reader has seen and said yes to: the page sends it, then tells `sent`. */
+	send?: Feedback;
 }
 
 export const HELP =
@@ -64,7 +67,7 @@ export const HELP =
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
 	'Drift, and I choose the way. Hint for a word about a command; hints off, or on, for one now and then. ' +
 	'Route to a street or a named place for the way there (route off to let it go). ' +
-	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, news for what is said today of the place, gps for this place on a map (gps on to keep the map beside you, gps off to put it away), score for how far you have walked, wait (z), again (g), and verbose or brief.';
+	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, news for what is said today of the place, gps for this place on a map (gps on to keep the map beside you, gps off to put it away), score for how far you have walked, wait (z), again (g), verbose or brief, and feedback to send word to those who made me.';
 
 /** What is not said again if heard at either of the last two places: framing lines among them. */
 const RATIONED = ['street', 'setting', 'thing', 'nearest', 'frame'];
@@ -208,6 +211,12 @@ export class Adventure {
 	/** Where walks are kept, if anywhere; the walk keeps itself in its own slot after each command. */
 	saves?: SaveStore;
 	clock: () => Date = () => new Date();
+	/** Whether the page has somewhere to send feedback (`FEEDBACK_URL`). */
+	feedbackOpen = false;
+	/** The kind of device and browser, as the page found them: shown with feedback, and sent only with it. */
+	context: FeedbackContext = {};
+	/** Feedback being asked, while it is. */
+	private form?: FeedbackForm;
 
 	/** Everything the walk remembers, kept with it when it is saved (`walk.ts`). */
 	private walk: Walk;
@@ -492,9 +501,39 @@ export class Adventure {
 	}
 
 	respond(input: string): Reply {
+		if (this.form) return this.asked(input);
+		if (parse(input).verb === 'feedback') return this.feedback();
 		const reply = this.answer(input);
 		if (!this.choosing && this.saves) this.keep(AUTO);
 		return reply;
+	}
+
+	/** True while feedback is being asked: what is typed is the reader's answer, not a command. */
+	get asking(): boolean {
+		return !!this.form;
+	}
+
+	private feedback(): Reply {
+		if (!this.feedbackOpen) return NOT_OPEN;
+		const begun = !this.choosing || this.walk.moves > 0;
+		this.form = new FeedbackForm({
+			place: begun ? (this.world.stops[this.walk.here]?.title ?? '') : '',
+			moves: this.walk.moves,
+			...(this.world.asOf ? { map: this.world.asOf } : {}),
+			...this.context
+		});
+		return this.form.first();
+	}
+
+	private asked(input: string): Reply {
+		const reply = this.form!.answer(input);
+		if (this.form!.done) this.form = undefined;
+		return reply;
+	}
+
+	/** What the page says once feedback has gone, or has not. */
+	sent(ok: boolean): Reply {
+		return sentReply(ok);
 	}
 
 	private answer(input: string): Reply {
@@ -547,6 +586,8 @@ export class Adventure {
 				return { lines: [], ask: 'camera' };
 			case 'areas':
 				return this.areas();
+			case 'feedback':
+				return this.feedback();
 			case 'news':
 				return { lines: [], ask: 'news' };
 			case 'beyond':

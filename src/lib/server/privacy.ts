@@ -17,6 +17,8 @@ export interface PrivacyOptions {
 	/** `CONTACT_EMAIL`: where the reader may write about their data. */
 	contact?: string;
 	siteUrl?: string;
+	/** Whether the walk takes feedback (`FEEDBACK_URL`). */
+	feedback?: boolean;
 }
 
 const esc = (text: string) =>
@@ -28,14 +30,15 @@ const esc = (text: string) =>
  * What is counted and the mailing list are told only where the site has them.
  */
 /** The day the page's words last changed: change it with them. */
-export const PRIVACY_CHANGED = '2026-11-01';
+export const PRIVACY_CHANGED = '2026-11-02';
 
 export function privacyPage({
 	date = PRIVACY_CHANGED,
 	gaId,
 	signupUrl,
 	contact,
-	siteUrl
+	siteUrl,
+	feedback
 }: PrivacyOptions): string {
 	const live = SOURCES.filter((s) => s.live && s.live !== 'flights' && s.live !== 'news')
 		.map((s) => `<li><a href="${esc(s.href)}">${esc(s.name)}</a>: ${esc(s.gives)}.</li>`)
@@ -52,6 +55,12 @@ export function privacyPage({
 		<p>On the front page, the sign-up form opens in place when you press “Sign up”: nothing is sent to Substack until you press it. Once it opens, Substack’s own page is loaded inside ours, and Substack may set its own cookies, as on its own site.</p>`
 				: ''
 		}`
+		: '';
+	const feedbackSection = feedback
+		? `
+	<h2>Feedback</h2>
+	<p>If you type <code>feedback</code> on the walk, the page asks what kind it is, whether you would walk again, and for your own words. Everything that would be sent is shown to you before it is sent, and nothing is sent unless you say yes: your answers and words, the place you had reached and how many moves you had made, the date of the map, and the kind of device (a phone, a tablet or a desktop) and the family of your browser, never your full browser string and never where you are. This site’s own function files it as an issue in a private GitHub repository, read only by those who make the walk, and GitHub keeps it under <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">its own policy</a>. Your words are kept there until the issue is dealt with, and may be quoted in fixing what they tell of; your IP address is used only to count how often feedback is sent, and is never stored or passed on. Your words are never counted with your visit.</p>
+`
 		: '';
 	const write = contact ? ` Write to <a href="mailto:${esc(contact)}">${esc(contact)}</a>.` : '';
 	return withCsp(
@@ -108,12 +117,12 @@ ${themeCss()}
 
 	<h2>Counting visits</h2>
 	${counting}
-${list}
+${list}${feedbackSection}
 	<h2>The site’s host</h2>
 	<p>The site is served by Netlify, which, like any host, sees each request’s IP address and keeps records of requests for a short time to run and protect the service, under <a href="https://www.netlify.com/privacy/">its own policy</a>.</p>
 
 	<h2>Your rights</h2>
-	<p>Under the UK GDPR you may ask what is held about you, and ask for it to be corrected or erased. The site itself holds nothing about you; what the services above hold, you may ask of them.${write}</p>
+	<p>Under the UK GDPR you may ask what is held about you, and ask for it to be corrected or erased. ${feedback ? 'The site itself holds only the feedback you choose to send' : 'The site itself holds nothing about you'}; what the services above hold, you may ask of them.${write}</p>
 
 	<footer>
 		<p>Benedict is responsible for this site. This page was last changed on ${esc(longDate(date))}.</p>

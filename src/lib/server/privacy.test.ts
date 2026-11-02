@@ -63,6 +63,19 @@ describe('privacyPage', () => {
 		expect(counted).toContain('href="https://example.org/signup"');
 	});
 
+	it('speaks of feedback only where the site takes it: what is sent, to whom, and that it is kept', () => {
+		expect(words(plain)).not.toContain('feedback');
+		expect(words(plain)).toContain('The site itself holds nothing about you');
+		const open = words(privacyPage({ date: '2026-10-31', feedback: true }));
+		expect(open).toContain('If you type feedback');
+		expect(open).toContain('shown to you before it is sent');
+		expect(open).toContain('kind of device');
+		expect(open).toContain('never your full browser string');
+		expect(open).toContain('private GitHub repository');
+		expect(open).toContain('your IP address is used only to count how often');
+		expect(open).not.toContain('The site itself holds nothing about you');
+	});
+
 	it('gives the reader their rights, and an address to write to where one is set', () => {
 		expect(words(plain)).toContain('UK GDPR');
 		expect(counted).toContain('href="mailto:someone@example.org"');

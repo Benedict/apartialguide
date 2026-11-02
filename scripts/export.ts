@@ -147,6 +147,7 @@ if (site) {
 			writers,
 			flightsUrl: process.env.FLIGHTS_URL,
 			newsUrl: process.env.NEWS_URL || undefined,
+			feedbackUrl: process.env.FEEDBACK_URL || undefined,
 			gaId: process.env.GA_MEASUREMENT_ID || undefined,
 			...shown,
 			siteUrl: process.env.SITE_URL || undefined,
@@ -162,7 +163,8 @@ if (site) {
 			gaId: process.env.GA_MEASUREMENT_ID || undefined,
 			signupUrl: process.env.SIGNUP_URL || undefined,
 			contact: process.env.CONTACT_EMAIL || undefined,
-			siteUrl: process.env.SITE_URL || undefined
+			siteUrl: process.env.SITE_URL || undefined,
+			feedback: !!process.env.FEEDBACK_URL
 		})
 	);
 	// What the site says of itself: robots.txt, the sitemap (once it knows its address), llms.txt for
@@ -201,6 +203,7 @@ if (site) {
 			writers,
 			flightsUrl: process.env.FLIGHTS_URL,
 			newsUrl: process.env.NEWS_URL || undefined,
+			feedbackUrl: process.env.FEEDBACK_URL || undefined,
 			...shown
 		})
 	);

@@ -56,6 +56,8 @@ jobs:
           FLIGHTS_URL: ${{ vars.NETLIFY_SITE_ID != '' && '/api/flights' || vars.FLIGHTS_URL }}
           # The day's news of the place, from the site's own function on Netlify; elsewhere none.
           NEWS_URL: ${{ vars.NETLIFY_SITE_ID != '' && '/api/news' || '' }}
+          # Feedback, filed by the site's own function on Netlify (its token Netlify's alone); elsewhere none.
+          FEEDBACK_URL: ${{ vars.NETLIFY_SITE_ID != '' && '/api/feedback' || '' }}
           # Google Analytics, counted only once a reader says yes; without it nothing is asked.
           GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
           # The site's own address, for the image shown where it is shared; without it none is named.
