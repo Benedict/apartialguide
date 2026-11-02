@@ -33,8 +33,7 @@ Where things stand: the whole of Croydon is walked (all twenty areas, about 14,4
   - Which version: verified routes only (three good reviews), or every route with its status said.
   - Credited on About as its licence asks, and never named by Guide.
 - **The glass, further.** Offer its record as a picture to keep or share (the social script's type and colours); quote a plaque's words in the record as a plaque's.
-- **More of the classic engine.** A walk's end ("you have walked as far as Guide remembers" at the last mark); a map of where you have been.
-- **The drawn route ("Auster step 3")**, once its brief's questions are answered (`TODO.md`).
+- **More of the classic engine.** A walk's end ("you have walked as far as Guide remembers" at the last mark).
 - **A Roman road in a room.** Once Digital Britannia's layers are in (`TODO.md`), Guide could tell its conjectured London–Brighton road, as hearsay, at stops within a few metres of its line, not only when the reader looks beyond.
 - **The Blitz in the walk**, if a source allows it (`TODO.md`: Croydon Archives, Surrey History Centre, Bomb Sight): where bombs fell, as hearsay, at the stops nearest.
 - **When houses were built, and photographs**, once their keys are in (`TODO.md`): energy certificates on examining a house, Geograph titles standing alone.

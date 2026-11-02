@@ -27,6 +27,8 @@ import { distance, type LatLon } from '../geo';
 import { postcodeOf } from './postcodes';
 import { arcOf, circleThrough, FAR, offCurve, walkable, type Circle } from './circle';
 import { AUTO, SLOTS, type SaveStore, type SavedWalk, type WalkState } from './saves';
+import { drawWalks } from './drawing';
+import { MemoryTrails, type TrailKeeper } from './trails';
 import { FeedbackForm, NOT_OPEN, sentReply, type Feedback, type FeedbackContext } from './feedback';
 import { freshWalk, keepWalk, pickUpWalk, type Walk } from './walk';
 import type { StopId } from '../stops';
@@ -54,6 +56,8 @@ export interface Reply {
 	ask?: 'overhead' | 'camera' | 'news';
 	/** A picture to show, such as what a camera saw. */
 	image?: { src: string; alt: string };
+	/** The walk drawn (`draw my walk`): an SVG of plain lines, for the page to show as it is. */
+	drawing?: string;
 	/** Feedback the reader has seen and said yes to: the page sends it, then tells `sent`. */
 	send?: Feedback;
 }
@@ -63,7 +67,7 @@ export const HELP =
 	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
 	'Take a name, or ask me to remember or mark down one, and drop it somewhere else; inventory (i) says what you carry. ' +
 	'Areas lists the areas you can begin in; start in an area by its name begins a walk there, start at a place by its name, its postcode, or its latitude and longitude begins there, and start anywhere somewhere by chance. ' +
-	'Place a glass sets a circle down to walk round, and keeps a record of it; glass off lifts it. ' +
+	'Place a glass sets a circle down to walk round, and keeps a record of it; glass off lifts it. Draw my walk draws the line you have walked, and draw all my walks every one. ' +
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
 	'Drift, and I choose the way. Hint for a word about a command; hints off, or on, for one now and then. ' +
 	'Route to a street or a named place for the way there (route off to let it go). ' +
@@ -129,7 +133,8 @@ const HINTS: [verb: string, hint: string][] = [
 	['save', 'type save 1 to keep this walk.'],
 	['glass', 'type place a glass for a circle to walk round.'],
 	['start', 'type start anywhere to begin somewhere by chance.'],
-	['news', 'type news for what is said today of the place.']
+	['news', 'type news for what is said today of the place.'],
+	['draw', 'type draw my walk to see the line you have walked.']
 ];
 /** How far from the nearest place a latitude and longitude may lie, and still be on the map. */
 const NEAR_ENOUGH = 500;
@@ -211,6 +216,8 @@ export class Adventure {
 	/** Where walks are kept, if anywhere; the walk keeps itself in its own slot after each command. */
 	saves?: SaveStore;
 	clock: () => Date = () => new Date();
+	/** Where every walk's line is kept between visits: the browser's, given by the page, or memory. */
+	trails: TrailKeeper = new MemoryTrails();
 	/** Whether the page has somewhere to send feedback (`FEEDBACK_URL`). */
 	feedbackOpen = false;
 	/** The kind of device and browser, as the page found them: shown with feedback, and sent only with it. */
@@ -407,6 +414,12 @@ export class Adventure {
 		this.choosing = false;
 		this.walk.here = id;
 		this.walk.previous = undefined;
+		// A walk begun afresh is a new line; one picked up goes on with its own.
+		if (!this.walk.moves) {
+			this.walk.id = undefined;
+			this.walk.trail = [];
+		}
+		this.mark();
 		return this.arrive();
 	}
 
@@ -588,6 +601,8 @@ export class Adventure {
 				return this.areas();
 			case 'feedback':
 				return this.feedback();
+			case 'draw':
+				return this.draw(command.all);
 			case 'news':
 				return { lines: [], ask: 'news' };
 			case 'beyond':
@@ -686,6 +701,7 @@ export class Adventure {
 		this.walk.previous = this.walk.here;
 		this.walk.here = to;
 		this.walk.moves++;
+		this.mark();
 		const arrived = this.arrive();
 		const round = this.roundOn();
 		const reply = round.length ? { ...arrived, lines: [...arrived.lines, ...round] } : arrived;
@@ -696,6 +712,28 @@ export class Adventure {
 			...(passed ? { lines: [...reply.lines, `You have walked ${distanceWords(passed)}.`] } : {}),
 			...(hint ? { hint } : {})
 		};
+	}
+
+	/** Where the map puts the stop come to, added to the walk's line and kept with every walk's. */
+	private mark(): void {
+		const at = this.world.stops[this.walk.here]?.at;
+		if (!at) return;
+		const last = this.walk.trail.at(-1);
+		if (last && last[0] === at[0] && last[1] === at[1]) return;
+		this.walk.trail.push([at[0], at[1]]);
+		this.walk.id ??= `${this.clock().getTime().toString(36)}-${Math.floor(this.chance() * 1e9).toString(36)}`;
+		this.trails.put(this.walk.id, this.walk.trail);
+	}
+
+	/** The reader's walk drawn, or all their walks kept: plain lines, and no word from Guide. */
+	private draw(all: boolean): Reply {
+		const kept = all
+			? [...this.trails.load()].filter(([id]) => id !== this.walk.id).map(([, t]) => t)
+			: [];
+		const drawing = drawWalks([...kept, this.walk.trail]);
+		return drawing
+			? { lines: [], drawing }
+			: { lines: [], hint: 'Walk a little first: there is no line to draw yet.' };
 	}
 
 	/** Now and then, a command the reader has not used yet, once each, on any walk. */
