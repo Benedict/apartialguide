@@ -14,6 +14,7 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### Under the hood
 
+- The feedback function imported the page's choices by a path without its extension, which Netlify's Deno bundler cannot find, so every deploy since #136 failed and the site stayed as it was. The handler now imports nothing (its choices held the same as the page's by a test), a test walks each edge function's imports, and the Deploy step prints Netlify's answer when it refuses.
 - `feedback` (`adventure/feedback.ts`): asked in the page's voice, the words taken as typed and never counted; the site's own function (`server/feedback.ts`, `netlify/edge-functions/feedback.ts` at `/api/feedback`) checks it holds only the offered choices and files it as an issue in the private data repository with `FEEDBACK_TOKEN`, Netlify's alone. Built with `FEEDBACK_URL`; the privacy page tells of it only then.
 - The Tidy branches workflow also runs when `data/tidy/request.env` changes on main, as the fetching workflows run from their requests; this one asks it to delete.
 - The borough re-cut from Geofabrik's London and Surrey extracts, keeping the areas drawn as multipolygons; the newly spoken tags (`beyondKind`, #122's follow-on); prose written again for the 1,008 busier stops they change (1,000 pieces, all through the guards: 8 refused and rewritten). The snapshot moves into place in the private data repository as this merges.

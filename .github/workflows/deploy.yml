@@ -97,7 +97,8 @@ jobs:
         run: |
           npx --yes netlify-cli@27.12.1 deploy --no-build --dir=site --site "$NETLIFY_SITE_ID" \
             ${{ github.ref == 'refs/heads/main' && '--prod' || format('--alias=pr-{0}', github.event.number) }} \
-            --message "${{ github.sha }}" --json > deploy.json
+            --message "${{ github.sha }}" --json > deploy.json \
+            || { echo "::error::Netlify refused the deploy:"; cat deploy.json; exit 1; }
           echo "Deployed: $(jq -r '.deploy_url' deploy.json)" >> "$GITHUB_STEP_SUMMARY"
 
   pages:

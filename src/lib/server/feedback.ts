@@ -1,11 +1,29 @@
-import {
-	AGAIN,
-	BROWSERS,
-	DEVICES,
-	KINDS,
-	MOST_WORDS,
-	type Feedback
-} from '../core/adventure/feedback';
+// It imports nothing: Netlify bundles it with Deno, which needs every import's file extension.
+// Its choices are the page's own (`core/adventure/feedback.ts`), held the same by a test.
+export const KINDS = ['bug', 'idea', 'comment'] as const;
+export const AGAIN = ['yes', 'maybe', 'no'] as const;
+export const DEVICES = ['phone', 'tablet', 'desktop'] as const;
+export const BROWSERS = [
+	'Chrome',
+	'Edge',
+	'Firefox',
+	'Safari',
+	'Samsung Internet',
+	'Other'
+] as const;
+export const MOST_WORDS = 2000;
+
+/** Feedback as the page sends it. */
+export interface Feedback {
+	kind: (typeof KINDS)[number];
+	again: (typeof AGAIN)[number];
+	words: string;
+	place: string;
+	moves: number;
+	map?: string;
+	device?: (typeof DEVICES)[number];
+	browser?: (typeof BROWSERS)[number];
+}
 
 /**
  * The feedback function: takes the feedback a reader has seen and said yes to on the walk, checks
