@@ -20,6 +20,10 @@ export const BROWSERS = [
 ] as const;
 /** The most the reader's words may run to. */
 export const MOST_WORDS = 2000;
+/** An email address, plainly: something, an @, somewhere with a dot; no space, backtick or bar. */
+export const ADDRESS = /^[^\s@`|<>]+@[^\s@`|<>]+\.[^\s@`|<>]+$/;
+/** The longest an email address may be. */
+export const MOST_ADDRESS = 254;
 
 export type Kind = (typeof KINDS)[number];
 export type Again = (typeof AGAIN)[number];
@@ -40,6 +44,8 @@ export interface Feedback extends FeedbackContext {
 	moves: number;
 	/** The map's date. */
 	map?: string;
+	/** An email address to reply to, if the reader gave one. */
+	reply?: string;
 }
 
 /** Where the walk stands as the reader gives feedback, from the engine. */
@@ -62,6 +68,8 @@ const A_KIND: Record<Kind, string> = { bug: 'a bug', idea: 'an idea', comment: '
 const ASK_KIND = 'Is it a bug, an idea or a comment?';
 const ASK_AGAIN = 'Would you walk here again?';
 const ASK_WORDS = 'Write it in your own words, then press return.';
+const ASK_REPLY = 'If you would like a reply, an email address; or skip.';
+const NOT_ADDRESS = 'That is not an email address. Write one, or skip.';
 const NOTHING: FormReply = { lines: [], hint: 'Nothing was sent.' };
 const button = (command: string, label = command[0].toUpperCase() + command.slice(1)) => ({
 	label,
@@ -81,6 +89,8 @@ export class FeedbackForm {
 	private kind?: Kind;
 	private again?: Again;
 	private words?: string;
+	/** The address to reply to; null once the reader skips it. */
+	private reply?: string | null;
 	/** True once the form has been sent or put aside. */
 	done = false;
 
@@ -101,7 +111,8 @@ export class FeedbackForm {
 
 	answer(input: string): FormReply {
 		const words = wordsOf(input);
-		if (this.words === undefined && CANCEL.test(words)) return this.close(NOTHING);
+		if ((this.words === undefined || this.reply === undefined) && CANCEL.test(words))
+			return this.close(NOTHING);
 		if (!this.kind) {
 			const kind = KINDS.find((k) => k === words || (k === 'idea' && words === 'feature'));
 			if (!kind) return this.first();
@@ -125,12 +136,27 @@ export class FeedbackForm {
 					hint: `That is more than ${MOST_WORDS.toLocaleString('en-GB')} characters. Write it shorter, then press return.`
 				};
 			this.words = written;
+			return this.askReply();
+		}
+		if (this.reply === undefined) {
+			if (words === 'skip' || words === 'no') {
+				this.reply = null;
+				return this.shown();
+			}
+			const address = input.trim().toLowerCase();
+			if (address.length > MOST_ADDRESS || !ADDRESS.test(address))
+				return { ...this.askReply(), hint: NOT_ADDRESS };
+			this.reply = address;
 			return this.shown();
 		}
 		if (words === 'yes' || words === 'y' || words === 'send' || words === 'send it')
 			return this.close({ lines: [], hint: 'Sending…', send: this.feedback() });
 		if (words === 'no' || words === 'n' || CANCEL.test(words)) return this.close(NOTHING);
 		return this.shown();
+	}
+
+	private askReply(): FormReply {
+		return { lines: [], hint: ASK_REPLY, actions: [button('skip'), cancel] };
 	}
 
 	private askAgain(): FormReply {
@@ -151,7 +177,8 @@ export class FeedbackForm {
 			moves,
 			...(map ? { map } : {}),
 			...(device ? { device } : {}),
-			...(browser ? { browser } : {})
+			...(browser ? { browser } : {}),
+			...(this.reply ? { reply: this.reply } : {})
 		};
 	}
 
@@ -168,7 +195,8 @@ export class FeedbackForm {
 					? `Where: ${f.place}, after ${f.moves} ${f.moves === 1 ? 'move' : 'moves'}.`
 					: 'Where: before the walk began.',
 				...(f.map ? [`The map: dated ${longDate(f.map)}.`] : []),
-				...(device ? [`Your device: ${device}.`] : [])
+				...(device ? [`Your device: ${device}.`] : []),
+				f.reply ? `Reply to: ${f.reply}.` : 'Reply to: no one, as you gave no address.'
 			],
 			hint: 'Send it?',
 			actions: [button('yes'), button('no')]
