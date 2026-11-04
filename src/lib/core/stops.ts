@@ -40,8 +40,6 @@ export interface StopGraphOptions {
 const UNWALKABLE = new Set([
 	'motorway',
 	'motorway_link',
-	'trunk',
-	'trunk_link',
 	'construction',
 	'proposed',
 	'raceway',
@@ -50,8 +48,15 @@ const UNWALKABLE = new Set([
 	'elevator'
 ]);
 
+/**
+ * A trunk road is walked as its pavements are, as a London A-road is; only a way the map closes to
+ * those on foot (`foot=no`) is not.
+ */
 export const isWalkable = (way: OsmWay) =>
-	!!way.tags?.highway && !UNWALKABLE.has(way.tags.highway) && way.tags.area !== 'yes';
+	!!way.tags?.highway &&
+	!UNWALKABLE.has(way.tags.highway) &&
+	way.tags.area !== 'yes' &&
+	way.tags.foot !== 'no';
 
 /** Ways the map draws that no one would call a way to go: they make no place to stop. */
 const MINOR_SERVICE = new Set(['driveway', 'parking_aisle', 'drive-through', 'emergency_access']);
@@ -239,7 +244,6 @@ export function buildStopGraph(
 
 	const places = [...namedPlaces(osm), ...landmarks];
 	const walked = new Set<string>();
-	let chains = 0;
 	for (const id of keys)
 		for (const e of edges.get(id) ?? []) {
 			const key = `${id}>${e.to}`;
@@ -251,10 +255,15 @@ export function buildStopGraph(
 			}
 			const [from, to] = [keyStop(nodes[0]), keyStop(nodes.at(-1)!)];
 			if (from === to && lengthOf(nodes) < MERGE_M) continue;
-			linkAlong(chains++, nodes.map(at), steps, from, to);
+			linkAlong(`${nodes[0]}-${nodes.at(-1)}`, nodes.map(at), steps, from, to);
 		}
 
-	function linkAlong(n: number, line: LatLon[], steps: Edge[], from: Stop, to: Stop) {
+	/**
+	 * A place along a street is named by the street's way and the nodes its stretch runs between,
+	 * never by how many stretches came before it, so a street added elsewhere renames no place, and a
+	 * kept walk finds it again.
+	 */
+	function linkAlong(ends: string, line: LatLon[], steps: Edge[], from: Stop, to: Stop) {
 		const length = polylineLength(line);
 		if (length === 0) return;
 		// Where along the line each step's way begins, to know which way a stop leaves by.
@@ -269,8 +278,11 @@ export function buildStopGraph(
 		const marks = stopsAlong(line, length, places, spacing);
 		const chain: { stop: Stop; at: number }[] = [{ stop: from, at: 0 }];
 		marks.forEach((metres, k) => {
+			let id = `w${wayAt(metres).id}.${ends}.${k + 1}`;
+			// Two stretches between the same ends along the same way: the later is told apart.
+			while (stops.has(id)) id += "'";
 			const stop: Stop = {
-				id: `w${wayAt(metres).id}.${n}.${k + 1}`,
+				id,
 				position: pointAlong(line, metres),
 				kind: 'corridor',
 				exits: [],

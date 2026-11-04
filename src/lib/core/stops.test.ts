@@ -117,6 +117,49 @@ describe('buildStopGraph', () => {
 		expect(labels).toEqual(['north']);
 	});
 
+	it('walks along a trunk road, as its pavements allow, unless the map says no one may', () => {
+		const map = new SyntheticMap();
+		const a = map.node(O);
+		map.way([a, map.nodeFrom(O, 0, 40)]);
+		map.way([a, map.nodeFrom(O, 90, 40)], { highway: 'trunk', name: 'An Invented Way' });
+		map.way([a, map.nodeFrom(O, 180, 40)], { highway: 'trunk_link' });
+		map.way([a, map.nodeFrom(O, 270, 40)], { highway: 'trunk', foot: 'no' });
+		const labels = buildStopGraph(new OsmIndex(map.toData()))
+			.get(junctionId(a))!
+			.exits.map((e) => e.label);
+		expect(labels.sort()).toEqual(['east', 'north', 'south']);
+	});
+
+	it('takes no way the map says no one may walk', () => {
+		const map = new SyntheticMap();
+		const a = map.node(O);
+		map.way([a, map.nodeFrom(O, 0, 40)]);
+		map.way([a, map.nodeFrom(O, 90, 40)], { highway: 'residential', foot: 'no' });
+		const labels = buildStopGraph(new OsmIndex(map.toData()))
+			.get(junctionId(a))!
+			.exits.map((e) => e.label);
+		expect(labels).toEqual(['north']);
+	});
+
+	it('names a place along a street by that street alone, so a street added elsewhere renames none', () => {
+		const long = (extra: boolean) => {
+			const map = new SyntheticMap();
+			// An invented line far off, numbered first so it is worked through first: a stream in the
+			// first map, a street in the second, so every other point and way keeps its number.
+			const far = [map.nodeFrom(O, 180, 2000), map.nodeFrom(O, 180, 2400)];
+			map.way(far, extra ? { highway: 'residential', name: 'Far Lane' } : { waterway: 'stream' });
+			const a = map.node(O);
+			map.way([a, map.nodeFrom(O, 90, 600)], { highway: 'residential', name: 'Long Lane' });
+			return buildStopGraph(new OsmIndex(map.toData()))
+				.all()
+				.map((stop) => stop.id)
+				.filter((id) => id.startsWith('w'));
+		};
+		const alone = long(false);
+		expect(alone.length).toBeGreaterThan(1);
+		for (const id of alone) expect(long(true)).toContain(id);
+	});
+
 	it('treats a node shared mid-way as a junction', () => {
 		const map = new SyntheticMap();
 		const w = map.node(destinationWest());

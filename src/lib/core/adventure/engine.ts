@@ -671,6 +671,15 @@ export class Adventure {
 		const matches = matchExits(exits, where);
 		if (matches.length === 1)
 			return matches[0].closed ? this.edge(matches[0].closed) : this.moveTo(matches[0].to);
+		// No way lies exactly there: the one way a compass point off, if only one does.
+		const near = matches.length ? [] : nearExits(exits, where);
+		if (near.length === 1) {
+			const went = near[0].closed ? this.edge(near[0].closed) : this.moveTo(near[0].to);
+			return near[0].closed
+				? went
+				: { ...went, lines: [`You go ${near[0].label.split(' (')[0]}.`, ...went.lines] };
+		}
+		if (near.length > 1) return { lines: [`Which way: ${near.map((e) => e.label).join(' or ')}?`] };
 		if (matches.length > 1)
 			return { lines: [`Which way: ${matches.map((e) => e.label).join(' or ')}?`] };
 		return {
@@ -1522,6 +1531,42 @@ const EVERYTHING = new Set([
 ]);
 
 /** Exits the reader could mean: an exact compass label, a label with a street after it, or a street name. */
+const POINTS16 = [
+	'north',
+	'north-north-east',
+	'north-east',
+	'east-north-east',
+	'east',
+	'east-south-east',
+	'south-east',
+	'south-south-east',
+	'south',
+	'south-south-west',
+	'south-west',
+	'west-south-west',
+	'west',
+	'west-north-west',
+	'north-west',
+	'north-north-west'
+];
+/** A compass point's bearing in degrees, or undefined for anything else. */
+const bearingOf = (label: string) => {
+	const i = POINTS16.indexOf(label.split(' (')[0]);
+	return i < 0 ? undefined : i * 22.5;
+};
+
+/** The ways within a compass point (45°) of the direction asked, where none lies exactly on it. */
+function nearExits(exits: readonly CompiledExit[], where: string): CompiledExit[] {
+	const asked = bearingOf(where);
+	if (asked === undefined) return [];
+	return exits.filter((e) => {
+		const b = bearingOf(e.label);
+		if (b === undefined) return false;
+		const off = Math.abs(((b - asked + 540) % 360) - 180);
+		return off > 0 && off <= 45;
+	});
+}
+
 function matchExits(exits: readonly CompiledExit[], where: string): CompiledExit[] {
 	const exact = exits.filter((e) => e.label === where);
 	if (exact.length) return exact;
