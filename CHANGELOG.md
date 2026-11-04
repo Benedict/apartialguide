@@ -9,6 +9,7 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 ### For walkers
 
 - Streets that met a main road no longer end in a dead end there: Ashburton Road, for one, now reaches Addiscombe Road, and the A-roads themselves can be walked, as their pavements can.
+- The places along and beside the main roads are told afresh: 369 of them, written again now that the roads they meet can be walked.
 - Typing a direction a little off now takes you the one way that lies near it: `south` where the only way is south-east goes south-east, and says so.
 
 ### Under the hood
