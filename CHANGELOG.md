@@ -13,7 +13,7 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### Under the hood
 
-- Trunk roads were left out of the street network since the first walk, as motorways are, so every street meeting one stopped short of it (reported on the walk, at Ashburton Road). They are walkable now unless the map says `foot=no`, which is now honoured on any way. A direction within a compass point (45°) of the only way there takes it (`nearExits`).
+- Trunk roads were left out of the street network since the first walk, as motorways are, so every street meeting one stopped short of it (reported on the walk, at Ashburton Road). They are walkable now unless the map says `foot=no`, which is now honoured on any way. A direction within a compass point (45°) of the only way there takes it (`nearExits`). A place along a street was named by a running count of every stretch built before it, so any change to the map renamed thousands (2,768 when trunk roads came in) and a walk kept at one was lost; it is now named by its way and the nodes its stretch runs between, which renames every such place once, and then no more. 354 places lose prose written for them, as what they see has changed, until it is written again.
 
 ## 2026-11-02
 
