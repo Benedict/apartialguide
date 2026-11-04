@@ -117,6 +117,30 @@ describe('buildStopGraph', () => {
 		expect(labels).toEqual(['north']);
 	});
 
+	it('walks along a trunk road, as its pavements allow, unless the map says no one may', () => {
+		const map = new SyntheticMap();
+		const a = map.node(O);
+		map.way([a, map.nodeFrom(O, 0, 40)]);
+		map.way([a, map.nodeFrom(O, 90, 40)], { highway: 'trunk', name: 'An Invented Way' });
+		map.way([a, map.nodeFrom(O, 180, 40)], { highway: 'trunk_link' });
+		map.way([a, map.nodeFrom(O, 270, 40)], { highway: 'trunk', foot: 'no' });
+		const labels = buildStopGraph(new OsmIndex(map.toData()))
+			.get(junctionId(a))!
+			.exits.map((e) => e.label);
+		expect(labels.sort()).toEqual(['east', 'north', 'south']);
+	});
+
+	it('takes no way the map says no one may walk', () => {
+		const map = new SyntheticMap();
+		const a = map.node(O);
+		map.way([a, map.nodeFrom(O, 0, 40)]);
+		map.way([a, map.nodeFrom(O, 90, 40)], { highway: 'residential', foot: 'no' });
+		const labels = buildStopGraph(new OsmIndex(map.toData()))
+			.get(junctionId(a))!
+			.exits.map((e) => e.label);
+		expect(labels).toEqual(['north']);
+	});
+
 	it('treats a node shared mid-way as a junction', () => {
 		const map = new SyntheticMap();
 		const w = map.node(destinationWest());

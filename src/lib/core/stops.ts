@@ -40,8 +40,6 @@ export interface StopGraphOptions {
 const UNWALKABLE = new Set([
 	'motorway',
 	'motorway_link',
-	'trunk',
-	'trunk_link',
 	'construction',
 	'proposed',
 	'raceway',
@@ -50,8 +48,15 @@ const UNWALKABLE = new Set([
 	'elevator'
 ]);
 
+/**
+ * A trunk road is walked as its pavements are, as a London A-road is; only a way the map closes to
+ * those on foot (`foot=no`) is not.
+ */
 export const isWalkable = (way: OsmWay) =>
-	!!way.tags?.highway && !UNWALKABLE.has(way.tags.highway) && way.tags.area !== 'yes';
+	!!way.tags?.highway &&
+	!UNWALKABLE.has(way.tags.highway) &&
+	way.tags.area !== 'yes' &&
+	way.tags.foot !== 'no';
 
 /** Ways the map draws that no one would call a way to go: they make no place to stop. */
 const MINOR_SERVICE = new Set(['driveway', 'parking_aisle', 'drive-through', 'emergency_access']);

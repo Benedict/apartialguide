@@ -4,6 +4,17 @@ What has changed in A Partial Guide, newest first. Each day has lines **for walk
 
 Add to it with each change worth telling: a line for walkers where a walker would notice, a line under the hood where only the code changed. The front page shows the latest three days that have lines for walkers.
 
+## 2026-11-04
+
+### For walkers
+
+- Streets that met a main road no longer end in a dead end there: Ashburton Road, for one, now reaches Addiscombe Road, and the A-roads themselves can be walked, as their pavements can.
+- Typing a direction a little off now takes you the one way that lies near it: `south` where the only way is south-east goes south-east, and says so.
+
+### Under the hood
+
+- Trunk roads were left out of the street network since the first walk, as motorways are, so every street meeting one stopped short of it (reported on the walk, at Ashburton Road). They are walkable now unless the map says `foot=no`, which is now honoured on any way. A direction within a compass point (45°) of the only way there takes it (`nearExits`).
+
 ## 2026-11-02
 
 ### For walkers
