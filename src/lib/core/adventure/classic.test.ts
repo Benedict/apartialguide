@@ -612,8 +612,8 @@ describe('colours', () => {
 	});
 });
 
-describe('a direction near enough', () => {
-	// An invented crossing: one way south-east, one north. No real place.
+describe('a direction means what it says', () => {
+	// An invented crossing: ways south-east, south-west and south. No real place.
 	const here: [number, number] = [51.38, -0.07];
 	const near = (bearing: number) => destination(here, bearing, 100) as [number, number];
 	const place = (title: string, at: [number, number], exits: CompiledStop['exits']) =>
@@ -638,25 +638,24 @@ describe('a direction near enough', () => {
 		return game;
 	};
 
-	it('goes the one way a compass point off, and says which', () => {
+	it('goes no way but the one asked for, though a way lies a compass point off', () => {
 		const game = walker(crossing([{ label: 'south-east', to: 'se', street: 'Invented Lane' }]));
-		const reply = game.respond('s');
-		expect(game.here).toBe('se');
-		expect(reply.lines[0]).toBe('You go south-east.');
+		expect(game.respond('s').lines).toEqual(['You can’t go south from here.']);
+		expect(game.here).toBe('x');
 	});
 
-	it('asks which, where two ways lie a compass point off', () => {
+	it('asks nothing where two ways lie a compass point off: there is no way south', () => {
 		const game = walker(
 			crossing([
 				{ label: 'south-east', to: 'se', street: 'Invented Lane' },
 				{ label: 'south-west', to: 'sw', street: 'Invented Row' }
 			])
 		);
-		expect(game.respond('south').lines).toEqual(['Which way: south-east or south-west?']);
+		expect(game.respond('south').lines).toEqual(['You can’t go south from here.']);
 		expect(game.here).toBe('x');
 	});
 
-	it('goes exactly where asked, where a way lies exactly there', () => {
+	it('goes south for s', () => {
 		const game = walker(
 			crossing([
 				{ label: 'south', to: 's', street: 'Invented Way' },
@@ -667,8 +666,14 @@ describe('a direction near enough', () => {
 		expect(game.here).toBe('s');
 	});
 
-	it('goes no way further off than a compass point', () => {
-		const game = walker(crossing([{ label: 'east', to: 'se', street: 'Invented Lane' }]));
-		expect(game.respond('s').lines).toEqual(['You can’t go south from here.']);
+	it('goes south-east for se', () => {
+		const game = walker(
+			crossing([
+				{ label: 'south', to: 's', street: 'Invented Way' },
+				{ label: 'south-east', to: 'se', street: 'Invented Lane' }
+			])
+		);
+		game.respond('se');
+		expect(game.here).toBe('se');
 	});
 });

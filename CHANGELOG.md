@@ -10,11 +10,11 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 - Streets that met a main road no longer end in a dead end there: Ashburton Road, for one, now reaches Addiscombe Road, and the A-roads themselves can be walked, as their pavements can.
 - The places along and beside the main roads are told afresh: 369 of them, written again now that the roads they meet can be walked.
-- Typing a direction a little off now takes you the one way that lies near it: `south` where the only way is south-east goes south-east, and says so.
 
 ### Under the hood
 
-- Trunk roads were left out of the street network since the first walk, as motorways are, so every street meeting one stopped short of it (reported on the walk, at Ashburton Road). They are walkable now unless the map says `foot=no`, which is now honoured on any way. A direction within a compass point (45°) of the only way there takes it (`nearExits`). A place along a street was named by a running count of every stretch built before it, so any change to the map renamed thousands (2,768 when trunk roads came in) and a walk kept at one was lost; it is now named by its way and the nodes its stretch runs between, which renames every such place once, and then no more. 354 places lose prose written for them, as what they see has changed, until it is written again.
+- A direction goes only the way it names again: taking the one way a compass point off (`nearExits`, from earlier today) is taken out, as a step the reader did not ask for.
+- Trunk roads were left out of the street network since the first walk, as motorways are, so every street meeting one stopped short of it (reported on the walk, at Ashburton Road). They are walkable now unless the map says `foot=no`, which is now honoured on any way. A place along a street was named by a running count of every stretch built before it, so any change to the map renamed thousands (2,768 when trunk roads came in) and a walk kept at one was lost; it is now named by its way and the nodes its stretch runs between, which renames every such place once, and then no more. 354 places lose prose written for them, as what they see has changed, until it is written again.
 
 ## 2026-11-02
 
