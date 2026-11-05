@@ -4,6 +4,17 @@ What has changed in A Partial Guide, newest first. Each day has lines **for walk
 
 Add to it with each change worth telling: a line for walkers where a walker would notice, a line under the hood where only the code changed. The front page shows the latest three days that have lines for walkers.
 
+## 2026-11-05
+
+### For walkers
+
+- The walk no longer tells planning applications whose words name a person, nor companies registered at people's homes: only those at shops, offices and other premises.
+- If something the walk tells of your home, or of you, concerns you, you can ask for it to be taken out; the privacy page says how.
+
+### Under the hood
+
+- `adapters/personal.ts` (`concernsAPerson`): planning applications naming someone (2 of 24,422) and companies not at premises the map has are left out; `data/records/withheld.json` withholds a record a resident asks about, by source and id or address, in `loadRecords`. The privacy page gains "Something about you in the walk", naming legitimate interests as the basis. Sale prices stay. No sponsorship (decided 5 November), so the non-commercial terms of Price Paid addresses and Digital Britannia stay met.
+
 ## 2026-11-04
 
 ### For walkers

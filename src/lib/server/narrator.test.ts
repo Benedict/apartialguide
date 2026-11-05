@@ -118,6 +118,38 @@ describe('loadRecords', () => {
 		expect(loadRecords(dir).map((s) => s.prefix)).toEqual(['bench']);
 	});
 
+	it('leaves out each record withheld.json names, by its id or its address, in that source alone', () => {
+		const dir = mkdtempSync(join(tmpdir(), 'records-'));
+		const records = (prefix: string) =>
+			JSON.stringify({
+				source: 'Invented',
+				prefix,
+				retrieved: '2026-10-25',
+				records: [
+					{ id: 'r1', address: { number: '12', street: 'INVENTED ROAD' }, claims: {} },
+					{ id: 'r2', address: { number: '14', street: 'Invented Road' }, claims: {} },
+					{ id: 'r3', claims: {} }
+				]
+			});
+		writeFileSync(join(dir, 'price-2026-10-25.json'), records('price'));
+		writeFileSync(join(dir, 'bench-2026-10-25.json'), records('bench'));
+		writeFileSync(
+			join(dir, 'withheld.json'),
+			JSON.stringify({
+				withheld: [
+					{ source: 'price', number: '12', street: 'Invented Road', asked: '2026-11-05' },
+					{ source: 'price', id: 'r3', asked: '2026-11-05' }
+				]
+			})
+		);
+		const ids = (prefix: string) =>
+			loadRecords(dir)
+				.find((s) => s.prefix === prefix)!
+				.records.map((r) => r.id);
+		expect(ids('price')).toEqual(['r2']);
+		expect(ids('bench')).toEqual(['r1', 'r2', 'r3']);
+	});
+
 	it('uses every source when use.env leaves none out, or is missing', () => {
 		const dir = mkdtempSync(join(tmpdir(), 'records-'));
 		writeFileSync(join(dir, 'bench-2026-10-25.json'), store('bench'));

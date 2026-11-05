@@ -2,6 +2,7 @@ import type { Fact, SourceAdapter } from '../facts';
 import type { AreaRecord } from '../areas';
 import { distance, type LatLon } from '../geo';
 import { elementRef, type OsmElement, type OsmIndex } from '../osm';
+import { concernsAPerson } from './personal';
 
 /** One record from another source, as its fetch script took it. */
 export interface SourceRecord {
@@ -98,6 +99,8 @@ export class RecordsAdapter implements SourceAdapter {
 					this.atAddress(r, byAddress.get(addressKey(r.address.number, r.address.street)))) ||
 				nearby ||
 				this.nearest(r);
+			// What concerns a person more than a place is not told (`personal.ts`).
+			if (concernsAPerson(this.store.prefix, r, thing)) continue;
 			if (thing) {
 				const geometry = this.geometry(thing);
 				if (!geometry.length) continue;
