@@ -4,7 +4,7 @@ import { SOURCES } from '../site/sources';
 import { themeBoot, themeCss } from '../site/themes';
 import { withCsp } from './csp';
 import { signupFrame } from './signup';
-import { headMeta, PAGES } from './meta';
+import { headMeta, PAGES, REPO } from './meta';
 import { fontFaces, MONO } from './type';
 
 export interface PrivacyOptions {
@@ -30,7 +30,7 @@ const esc = (text: string) =>
  * What is counted and the mailing list are told only where the site has them.
  */
 /** The day the page's words last changed: change it with them. */
-export const PRIVACY_CHANGED = '2026-11-02';
+export const PRIVACY_CHANGED = '2026-11-05';
 
 export function privacyPage({
 	date = PRIVACY_CHANGED,
@@ -62,6 +62,11 @@ export function privacyPage({
 	<p>If you type <code>feedback</code> on the walk, the page asks what kind it is, whether you would walk again, for your own words, and, if you would like a reply, for an email address. Everything that would be sent is shown to you before it is sent, and nothing is sent unless you say yes: your answers and words, the place you had reached and how many moves you had made, the date of the map, an email address, if you give one so that we may reply, and the kind of device (a phone, a tablet or a desktop) and the family of your browser, never your full browser string and never where you are. This site’s own function files it as an issue in a private GitHub repository, read only by those who make the walk, and GitHub keeps it under <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">its own policy</a>. Your words, and any address you give, are kept there until the issue is dealt with; the address is used only to reply to you, and the words may be quoted in fixing what they tell of; your IP address is used only to count how often feedback is sent, and is never stored or passed on. Your words are never counted with your visit.</p>
 `
 		: '';
+	const ways = [
+		...(feedback ? ['type <code>feedback</code> on the walk'] : []),
+		...(contact ? [`write to <a href="mailto:${esc(contact)}">${esc(contact)}</a>`] : [])
+	];
+	const askWays = ways.length ? ways.join(', or ') : `ask on <a href="${REPO}/issues">GitHub</a>`;
 	const write = contact ? ` Write to <a href="mailto:${esc(contact)}">${esc(contact)}</a>.` : '';
 	return withCsp(
 		`<!doctype html>
@@ -120,6 +125,9 @@ ${themeCss()}
 ${list}${feedbackSection}
 	<h2>The site’s host</h2>
 	<p>The site is served by Netlify, which, like any host, sees each request’s IP address and keeps records of requests for a short time to run and protect the service, under <a href="https://www.netlify.com/privacy/">its own policy</a>.</p>
+
+	<h2>Something about you in the walk</h2>
+	<p>The walk tells what open records say of a place: food hygiene ratings, listed buildings, planning applications, house sales, companies registered at an address. They are public already, and the walk tells them under legitimate interests, so it leaves out what concerns a person more than a place: planning applications whose words name someone, and companies registered anywhere but at a shop, office or other premises. If something it tells of your home, or of you, concerns you, ask for it to be taken out: ${askWays}. It is taken out within 14 days, and stays out when the records are fetched again.</p>
 
 	<h2>Your rights</h2>
 	<p>Under the UK GDPR you may ask what is held about you, and ask for it to be corrected or erased. ${feedback ? 'The site itself holds only the feedback you choose to send' : 'The site itself holds nothing about you'}; what the services above hold, you may ask of them.${write}</p>

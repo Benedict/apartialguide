@@ -192,3 +192,48 @@ describe('RecordsAdapter', () => {
 		});
 	});
 });
+
+describe('what concerns a person is left out', () => {
+	// An invented house and an invented shop on the same invented street. No real place.
+	const house: OsmElement = {
+		type: 'way',
+		id: 10,
+		nodes: [11, 12, 13, 11],
+		tags: { building: 'house', 'addr:housenumber': '4', 'addr:street': 'Long Street' }
+	};
+	const corners: OsmElement[] = [
+		{ type: 'node', id: 11, lat: 51.381, lon: -0.07 },
+		{ type: 'node', id: 12, lat: 51.3811, lon: -0.07 },
+		{ type: 'node', id: 13, lat: 51.3811, lon: -0.0701 }
+	];
+	const street = new OsmIndex({ elements: [shop, cafe, house, ...corners] });
+	const told = (s: RecordStore) => new RecordsAdapter(street, s).facts();
+	const at = (number: string) => ({ number, street: 'Long Street' });
+
+	it('tells no planning application whose words name a person', () => {
+		const planning = (application: string): RecordStore => ({
+			source: 'Invented planning',
+			prefix: 'planning',
+			retrieved: '2026-10-25',
+			records: [{ id: 'p1', address: at('9'), claims: { application } }]
+		});
+		expect(told(planning('Alterations to outbuilding. NOTE:- Applicant Mr Inventa'))).toEqual([]);
+		expect(told(planning('Works on behalf of Mrs Example to the front wall'))).toEqual([]);
+		expect(told(planning('Single storey rear extension'))).toHaveLength(1);
+		expect(told(planning('Reduce the oak overhanging the applicants boundary'))).toHaveLength(1);
+		expect(told(planning('Applicant Inventa Holdings to vary condition 2'))).toEqual([]);
+	});
+
+	it('tells a company registered at a shop or office, never one at a home', () => {
+		const companies = (number: string): RecordStore => ({
+			source: 'Invented register',
+			prefix: 'company',
+			retrieved: '2026-10-25',
+			records: [
+				{ id: `c${number}`, address: at(number), claims: { count: '1', names: 'INVENTED LTD' } }
+			]
+		});
+		expect(told(companies('9')).length).toBeGreaterThan(0);
+		expect(told(companies('4'))).toEqual([]);
+	});
+});

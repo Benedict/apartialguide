@@ -77,6 +77,13 @@ describe('privacyPage', () => {
 		expect(open).not.toContain('The site itself holds nothing about you');
 	});
 
+	it('says how to have something about you taken out of the walk, and on what basis it is there', () => {
+		const text = words(plain);
+		expect(text).toContain('ask for it to be taken out');
+		expect(text).toContain('within 14 days');
+		expect(text).toContain('legitimate interests');
+	});
+
 	it('gives the reader their rights, and an address to write to where one is set', () => {
 		expect(words(plain)).toContain('UK GDPR');
 		expect(counted).toContain('href="mailto:someone@example.org"');

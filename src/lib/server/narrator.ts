@@ -111,7 +111,39 @@ export function loadRecords(dir?: string): RecordStore[] {
 			JSON.parse(readFileSync(join(dir, f), 'utf8')) as RecordStore
 		]);
 	}
-	return [...bySource.values()].map(joined);
+	const withheld = withheldIn(dir);
+	return [...bySource.values()].map(joined).map((store) => {
+		const out = withheld.filter((w) => w.source === store.prefix);
+		if (!out.length) return store;
+		const key = (n: string, s: string) => `${n.trim().toLowerCase()}|${s.trim().toLowerCase()}`;
+		const ids = new Set(out.flatMap((w) => (w.id ? [w.id] : [])));
+		const places = new Set(
+			out.flatMap((w) => (w.number && w.street ? [key(w.number, w.street)] : []))
+		);
+		return {
+			...store,
+			records: store.records.filter(
+				(r) => !ids.has(r.id) && !(r.address && places.has(key(r.address.number, r.address.street)))
+			)
+		};
+	});
+}
+
+/** A record a resident asked to have taken out: by its source, and its id or its address. */
+interface Withheld {
+	source: string;
+	id?: string;
+	number?: string;
+	street?: string;
+	/** When it was asked for, YYYY-MM-DD. */
+	asked: string;
+}
+
+/** The records withheld at residents' asking (data/records/withheld.json), if any. */
+function withheldIn(dir: string): Withheld[] {
+	const path = join(dir, 'withheld.json');
+	if (!existsSync(path)) return [];
+	return (JSON.parse(readFileSync(path, 'utf8')) as { withheld: Withheld[] }).withheld ?? [];
 }
 
 /** One source's stores, from several areas, as one: oldest first, so a newer copy replaces it. */
