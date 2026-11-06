@@ -10,6 +10,7 @@ import { compileWorld, type AdventureWorld } from '../core/adventure/world';
 import type { LatLon } from '../core/geo';
 import { CachedRenderer, type NarrationStore } from '../core/render/cached';
 import type { Stop } from '../core/stops';
+import { suppressElements, suppressRecords, type Suppression } from '../core/suppression';
 
 /** Configuration comes from the environment only. */
 export interface Config {
@@ -25,6 +26,8 @@ export interface Config {
 	wikidataDir?: string;
 	/** Where other sources' records are kept, one file per source and date. The newest of each is used. */
 	recordsDir?: string;
+	/** What residents asked to have taken out (`core/suppression.ts`), applied to every build. */
+	suppressionPath?: string;
 }
 
 export function readConfig(
@@ -43,7 +46,9 @@ export function readConfig(
 		narrationPath: source.NARRATION_PATH,
 		historyDir: source.HISTORY_DIR,
 		wikidataDir: source.WIKIDATA_DIR,
-		recordsDir: source.RECORDS_DIR
+		recordsDir: source.RECORDS_DIR,
+		// The repository's own list unless told otherwise, so no build can leave it out by omission.
+		suppressionPath: source.SUPPRESSION_PATH ?? 'data/suppressed.json'
 	};
 }
 
@@ -94,7 +99,7 @@ export function loadLatest<T>(dir?: string): T | undefined {
  * area's, <prefix>.<area>-<date>.json. A source's areas are joined into one store, each record
  * (and each area it draws) once, the newest copy kept.
  */
-export function loadRecords(dir?: string): RecordStore[] {
+export function loadRecords(dir?: string, suppressed: readonly Suppression[] = []): RecordStore[] {
 	if (!dir || !existsSync(dir)) return [];
 	const left = leftOut(dir);
 	const newest = new Map<string, string>();
@@ -111,39 +116,15 @@ export function loadRecords(dir?: string): RecordStore[] {
 			JSON.parse(readFileSync(join(dir, f), 'utf8')) as RecordStore
 		]);
 	}
-	const withheld = withheldIn(dir);
-	return [...bySource.values()].map(joined).map((store) => {
-		const out = withheld.filter((w) => w.source === store.prefix);
-		if (!out.length) return store;
-		const key = (n: string, s: string) => `${n.trim().toLowerCase()}|${s.trim().toLowerCase()}`;
-		const ids = new Set(out.flatMap((w) => (w.id ? [w.id] : [])));
-		const places = new Set(
-			out.flatMap((w) => (w.number && w.street ? [key(w.number, w.street)] : []))
-		);
-		return {
-			...store,
-			records: store.records.filter(
-				(r) => !ids.has(r.id) && !(r.address && places.has(key(r.address.number, r.address.street)))
-			)
-		};
-	});
+	return suppressRecords([...bySource.values()].map(joined), suppressed);
 }
 
-/** A record a resident asked to have taken out: by its source, and its id or its address. */
-interface Withheld {
-	source: string;
-	id?: string;
-	number?: string;
-	street?: string;
-	/** When it was asked for, YYYY-MM-DD. */
-	asked: string;
-}
-
-/** The records withheld at residents' asking (data/records/withheld.json), if any. */
-function withheldIn(dir: string): Withheld[] {
-	const path = join(dir, 'withheld.json');
-	if (!existsSync(path)) return [];
-	return (JSON.parse(readFileSync(path, 'utf8')) as { withheld: Withheld[] }).withheld ?? [];
+/** What residents asked to have taken out (`data/suppressed.json`), or nothing where there is no list. */
+export function loadSuppressions(path?: string): Suppression[] {
+	if (!path || !existsSync(path)) return [];
+	return (
+		(JSON.parse(readFileSync(path, 'utf8')) as { suppressed?: Suppression[] }).suppressed ?? []
+	);
 }
 
 /** One source's stores, from several areas, as one: oldest first, so a newer copy replaces it. */
@@ -185,13 +166,18 @@ export function loadNarrator(
 	config: Config,
 	data: OsmData = readJson<OsmData>(config.snapshotPath)
 ): Narrator {
-	return Narrator.fromOsm(data, {
+	// What residents asked to have taken out stays out of the map, its past and the records alike.
+	const suppressed = loadSuppressions(config.suppressionPath);
+	return Narrator.fromOsm(suppressElements(data, suppressed), {
 		clock: fixedClock(config.snapshotDate),
 		spacing: config.spacing,
 		renderer: new CachedRenderer(loadNarration(config.narrationPath)),
-		history: loadHistory(config.historyDir),
+		history: loadHistory(config.historyDir).map((past) => ({
+			...past,
+			data: suppressElements(past.data, suppressed)
+		})),
 		wikidata: loadLatest<WikidataStore>(config.wikidataDir),
-		records: loadRecords(config.recordsDir)
+		records: loadRecords(config.recordsDir, suppressed)
 	});
 }
 

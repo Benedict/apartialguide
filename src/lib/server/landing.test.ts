@@ -22,6 +22,10 @@ const input = {
 describe('landingPage', () => {
 	const html = landingPage(input);
 
+	it('links to Remove something from its footer', () => {
+		expect(html.match(/<footer>[^]*?<\/footer>/)![0]).toContain('href="remove/"');
+	});
+
 	it('is called A Partial Guide, and says what it is', () => {
 		expect(html).toContain('<title>A Partial Guide</title>');
 		expect(html).toMatch(/<meta name="description" content="[^"]*Addiscombe[^"]*">/);

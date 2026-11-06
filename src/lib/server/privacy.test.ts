@@ -80,7 +80,10 @@ describe('privacyPage', () => {
 	it('says how to have something about you taken out of the walk, and on what basis it is there', () => {
 		const text = words(plain);
 		expect(text).toContain('ask for it to be taken out');
-		expect(text).toContain('within 14 days');
+		expect(text).toContain('within 7 days');
+		expect(plain).toContain('href="/remove/"');
+		expect(plain.match(/<footer>[^]*?<\/footer>/)![0]).toContain('href="/remove/"');
+		expect(text).toMatch(/street’s range/);
 		expect(text).toContain('legitimate interests');
 	});
 

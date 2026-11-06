@@ -261,7 +261,11 @@ SELECT ?paon ?street ?amount ?date WHERE {
 		if (!res.ok)
 			throw new Error(`Land Registry answered ${res.status}: ${(await res.text()).slice(0, 500)}`);
 		console.log(`prices: asked about ${postcodes.length} postcodes`);
-		return { source: 'HM Land Registry', prefix: 'price', records: priceRecords(await res.json()) };
+		return {
+			source: 'HM Land Registry',
+			prefix: 'price',
+			records: priceRecords(await res.json(), new Date().toISOString().slice(0, 10))
+		};
 	},
 	/** The latest month of street-level crime in the box, from police.uk. */
 	crime: async () => ({

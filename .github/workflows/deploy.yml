@@ -66,6 +66,8 @@ jobs:
           SIGNUP_URL: ${{ vars.SIGNUP_URL }}
           # Where a reader may write about their data, on the privacy page.
           CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+          # Where a resident asks for something to be taken out (Remove something); else CONTACT_EMAIL.
+          REMOVAL_EMAIL: ${{ vars.REMOVAL_EMAIL }}
         run: npm run export
       # Publish only a site that plays.
       - run: npx playwright install --with-deps chromium

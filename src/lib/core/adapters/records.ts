@@ -2,7 +2,7 @@ import type { Fact, SourceAdapter } from '../facts';
 import type { AreaRecord } from '../areas';
 import { distance, type LatLon } from '../geo';
 import { elementRef, type OsmElement, type OsmIndex } from '../osm';
-import { concernsAPerson } from './personal';
+import { allowedClaims, concernsAPerson } from './personal';
 
 /** One record from another source, as its fetch script took it. */
 export interface SourceRecord {
@@ -153,7 +153,8 @@ export class RecordsAdapter implements SourceAdapter {
 	}
 
 	private claims(r: SourceRecord, subject: string, geometry: LatLon[], reach: number): Fact[] {
-		return Object.entries(r.claims)
+		// Only the claims the source is allowed reach the prose and the page (`personal.ts`).
+		return Object.entries(allowedClaims(this.store.prefix, r.claims))
 			.filter(([, value]) => value !== '')
 			.map(([key, value]) => ({
 				id: `${this.store.prefix}:${r.id}:${key}:${subject}`,

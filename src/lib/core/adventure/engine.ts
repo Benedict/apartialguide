@@ -62,6 +62,10 @@ export interface Reply {
 	send?: Feedback;
 }
 
+/** What `help` adds in the page's voice: what the walk uses, and where to ask for something to be taken out. */
+export const removalHint = ({ email, page }: { email: string; page?: string }) =>
+	`Everything here comes from open data: the map and public records of places. To have something about you or your home taken out, write to ${email}${page ? `, as ${page} says` : ''}.`;
+
 export const HELP =
 	'Type a direction to walk: north, ne, go east, or the name of a street; back retraces your step. ' +
 	'Look (l) tells the place again in full, and plainly tells it from the map alone; explore finds what I have not mentioned; examine (x) a thing or a street to look closer. ' +
@@ -220,6 +224,8 @@ export class Adventure {
 	trails: TrailKeeper = new MemoryTrails();
 	/** Whether the page has somewhere to send feedback (`FEEDBACK_URL`). */
 	feedbackOpen = false;
+	/** Where a resident asks for something to be taken out (`REMOVAL_EMAIL`), and the page saying how. */
+	removal?: { email: string; page?: string };
 	/** The kind of device and browser, as the page found them: shown with feedback, and sent only with it. */
 	context: FeedbackContext = {};
 	/** Feedback being asked, while it is. */
@@ -574,7 +580,7 @@ export class Adventure {
 			case 'explore':
 				return this.explore();
 			case 'help':
-				return { lines: [HELP] };
+				return { lines: [HELP], ...(this.removal ? { hint: removalHint(this.removal) } : {}) };
 			case 'weather':
 				return {
 					lines: [

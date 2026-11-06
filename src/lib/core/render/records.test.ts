@@ -38,9 +38,24 @@ describe('recordSentences, other sources', () => {
 		expect(recordSentences({ 'plaque:inscription': 'Ada Inventa lived here' })).toEqual([
 			'A plaque: “Ada Inventa lived here”.'
 		]);
-		expect(recordSentences({ 'price:sold': '412000', 'price:date': '2019-03-08' })).toEqual([
-			'Sold for £412,000 in March 2019.'
-		]);
+		expect(
+			recordSentences({
+				'price:since': '2020',
+				'price:sales': '8',
+				'price:low': '400000',
+				'price:high': '550000'
+			})
+		).toEqual(['Most houses here have sold for between £400,000 and £550,000 since 2020.']);
+		expect(
+			recordSentences({
+				'price:since': '2020',
+				'price:sales': '5',
+				'price:low': '400000',
+				'price:high': '400000'
+			})
+		).toEqual(['Most houses here have sold for around £400,000 since 2020.']);
+		// A sale at an address, as kept before, is no longer told.
+		expect(recordSentences({ 'price:sold': '412000', 'price:date': '2019-03-08' })).toEqual([]);
 	});
 
 	it('says what was reported on or near a street', () => {
@@ -126,7 +141,10 @@ describe('recordSentences, in a room', () => {
 		const tags = {
 			'hygiene:rating': '5',
 			'planning:application': 'Invented extension',
-			'price:sold': '412000'
+			'price:since': '2020',
+			'price:sales': '5',
+			'price:low': '400000',
+			'price:high': '450000'
 		};
 		expect(recordSentences(tags, 'room')).toEqual(['Its food hygiene rating is 5.']);
 		expect(recordSentences(tags)).toHaveLength(3);

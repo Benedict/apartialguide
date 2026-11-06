@@ -113,6 +113,53 @@ describe('planningRecords (London Planning Datahub)', () => {
 	});
 });
 
+describe('planningRecords and people', () => {
+	const hit = (source: Record<string, unknown>) => ({
+		hits: {
+			hits: [
+				{
+					_id: 'x',
+					_source: {
+						lpa_app_no: '24/9',
+						site_number: '12',
+						street_name: 'Example Road',
+						decision_date: '2024-05-01',
+						centroid: { lat: 51.38, lon: -0.07 },
+						...source
+					}
+				}
+			]
+		}
+	});
+
+	it('keeps only the reference, address, description, decision and dates: never an applicant or agent', () => {
+		const [record] = planningRecords(
+			hit({
+				description: 'Rear extension',
+				applicant_name: 'Mr J Smith',
+				agent_name: 'Invented Agents',
+				applicant_address: '12 Example Road'
+			}),
+			box
+		);
+		expect(Object.keys(record.claims).sort()).toEqual(['application', 'date']);
+		expect(JSON.stringify(record)).not.toMatch(/Smith|Invented Agents/);
+	});
+
+	it('takes a name out of the description, and logs that it did, never the name itself', () => {
+		const logged: string[] = [];
+		const [record] = planningRecords(
+			hit({ description: 'Rear extension for Mrs A Jones' }),
+			box,
+			(line) => logged.push(line)
+		);
+		expect(record.claims.application).toBe('Rear extension');
+		expect(logged).toHaveLength(1);
+		expect(logged[0]).toContain('24/9');
+		expect(logged[0]).not.toContain('Jones');
+	});
+});
+
 describe('plaqueRecords (Open Plaques)', () => {
 	it('takes each plaque in the box by its inscription', () => {
 		expect(
@@ -145,27 +192,93 @@ describe('plaqueRecords (Open Plaques)', () => {
 });
 
 describe('priceRecords (Land Registry)', () => {
-	it('keeps the latest sale at each address', () => {
-		const binding = (paon: string, amount: string, date: string) => ({
-			paon: { value: paon },
-			street: { value: 'LONG STREET' },
-			amount: { value: amount },
-			date: { value: date }
-		});
-		expect(
-			priceRecords({
-				results: {
-					bindings: [binding('9', '250000', '2011-02-01'), binding('9', '412000', '2019-03-08')]
-				}
-			})
-		).toEqual([
+	const binding = (paon: string, amount: string, date: string, street = 'LONG STREET') => ({
+		paon: { value: paon },
+		street: { value: street },
+		amount: { value: amount },
+		date: { value: date }
+	});
+	const sales = (...bindings: ReturnType<typeof binding>[]) => ({ results: { bindings } });
+
+	it('keeps no sale at an address: only each street’s middle 80% of sales, as a range since a year', () => {
+		const records = priceRecords(
+			sales(
+				binding('2', '401000', '2020-02-01'),
+				binding('4', '430000', '2021-05-01'),
+				binding('6', '482500', '2022-07-01'),
+				binding('8', '511000', '2023-01-01'),
+				binding('10', '538000', '2024-03-01'),
+				binding('12', '250000', '2011-03-01')
+			),
+			'2026-10-25'
+		);
+		expect(records).toEqual([
 			{
-				id: '9|LONG STREET',
-				address: { number: '9', street: 'LONG STREET' },
-				observed: '2019-03-08',
-				claims: { sold: '412000', date: '2019-03-08' }
+				id: 'LONG STREET',
+				street: 'LONG STREET',
+				observed: '2024-03-01',
+				// The 10th and 90th percentiles, 412,600 and 527,200, each to the nearest £25,000.
+				claims: { since: '2020', sales: '5', low: '425000', high: '525000' }
 			}
 		]);
+		expect(JSON.stringify(records)).not.toMatch(/482500|"address"|"number"/);
+	});
+
+	it('rounds each end of the range to the nearest £25,000, never down to nothing', () => {
+		const range = (amount: string) =>
+			priceRecords(
+				sales(...[1, 2, 3, 4, 5].map((i) => binding(String(i), amount, '2023-01-01'))),
+				'2026-10-25'
+			)[0].claims;
+		expect(range('412499')).toMatchObject({ low: '400000', high: '400000' });
+		expect(range('412500')).toMatchObject({ low: '425000', high: '425000' });
+		expect(range('5000')).toMatchObject({ low: '25000', high: '25000' });
+	});
+
+	it('leaves a block sold whole, or a garage, out of the range, as neither end is one sale', () => {
+		const amounts = [
+			'8000',
+			'400000',
+			'410000',
+			'420000',
+			'430000',
+			'440000',
+			'450000',
+			'460000',
+			'470000',
+			'39000000'
+		];
+		const [street] = priceRecords(
+			sales(...amounts.map((a, i) => binding(String(i), a, '2023-01-01'))),
+			'2026-10-25'
+		);
+		expect(street.claims).toMatchObject({ low: '400000', high: '475000' });
+	});
+
+	it('says nothing of a street with fewer than five sales in the period', () => {
+		expect(
+			priceRecords(
+				sales(
+					binding('1', '300000', '2021-01-01', 'QUIET CLOSE'),
+					binding('3', '310000', '2022-01-01', 'QUIET CLOSE'),
+					binding('5', '320000', '2023-01-01', 'QUIET CLOSE'),
+					binding('7', '330000', '2019-12-31', 'QUIET CLOSE')
+				),
+				'2026-10-25'
+			)
+		).toEqual([]);
+	});
+
+	it('counts the period from six years before the records were taken', () => {
+		const [street] = priceRecords(
+			sales(
+				...['2021-01-01', '2021-06-01', '2022-01-01', '2023-01-01', '2024-01-01'].map((d, i) =>
+					binding(String(i), '400000', d)
+				)
+			),
+			'2027-03-01'
+		);
+		expect(street.claims.since).toBe('2021');
 	});
 });
 

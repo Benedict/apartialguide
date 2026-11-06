@@ -24,6 +24,7 @@ import { landingPage } from '../src/lib/server/landing';
 import { llmsTxt, manifest, robotsTxt, sitemapXml } from '../src/lib/server/meta';
 import { notFoundPage } from '../src/lib/server/notfound';
 import { privacyPage } from '../src/lib/server/privacy';
+import { removalPage } from '../src/lib/server/remove';
 import { FONT_FILES } from '../src/lib/server/type';
 import { compileWorld } from '../src/lib/core/adventure/world';
 import { exportPage, wordsAmiss, writersOf } from '../src/lib/server/export';
@@ -148,6 +149,7 @@ if (site) {
 			flightsUrl: process.env.FLIGHTS_URL,
 			newsUrl: process.env.NEWS_URL || undefined,
 			feedbackUrl: process.env.FEEDBACK_URL || undefined,
+			removalEmail: process.env.REMOVAL_EMAIL || process.env.CONTACT_EMAIL || undefined,
 			gaId: process.env.GA_MEASUREMENT_ID || undefined,
 			...shown,
 			siteUrl: process.env.SITE_URL || undefined,
@@ -163,8 +165,18 @@ if (site) {
 			gaId: process.env.GA_MEASUREMENT_ID || undefined,
 			signupUrl: process.env.SIGNUP_URL || undefined,
 			contact: process.env.CONTACT_EMAIL || undefined,
+			removal: process.env.REMOVAL_EMAIL || undefined,
 			siteUrl: process.env.SITE_URL || undefined,
 			feedback: !!process.env.FEEDBACK_URL
+		})
+	);
+	// Remove something: where a resident asks for something to be taken out, by email alone.
+	mkdirSync(join(site, 'remove'), { recursive: true });
+	writeFileSync(
+		join(site, 'remove', 'index.html'),
+		removalPage({
+			email: process.env.REMOVAL_EMAIL || process.env.CONTACT_EMAIL || undefined,
+			siteUrl: process.env.SITE_URL || undefined
 		})
 	);
 	// What the site says of itself: robots.txt, the sitemap (once it knows its address), llms.txt for
@@ -204,6 +216,7 @@ if (site) {
 			flightsUrl: process.env.FLIGHTS_URL,
 			newsUrl: process.env.NEWS_URL || undefined,
 			feedbackUrl: process.env.FEEDBACK_URL || undefined,
+			removalEmail: process.env.REMOVAL_EMAIL || process.env.CONTACT_EMAIL || undefined,
 			...shown
 		})
 	);

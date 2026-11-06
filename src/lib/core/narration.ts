@@ -247,3 +247,17 @@ function repeatedPhrase(
 	}
 	return undefined;
 }
+
+/**
+ * Drops from `store` every piece kept for facts no stop of the map has now, and gives their keys:
+ * prose kept for what was taken out (a name, a sale, a suppressed record) or what has since changed
+ * is not left in the repository. Runs over the whole map, so never from one area's run.
+ */
+export function pruneNarration(narrator: Narrator, store: NarrationStore): string[] {
+	const current = new Set(
+		narrator.graph.all().map((s) => promptKey(buildPrompt(narrator.visit(s.id)!.scene)))
+	);
+	const gone = Object.keys(store).filter((key) => !current.has(key));
+	for (const key of gone) delete store[key];
+	return gone;
+}

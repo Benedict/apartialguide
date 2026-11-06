@@ -1,6 +1,7 @@
 import type { SourceRecord } from '../../core/adapters/records';
 import type { LatLon } from '../../core/geo';
 import { inBox, point, said } from './box';
+import { stripNames } from '../../core/adapters/personal';
 
 const DAY = /^(\d{4})-(\d{2})-(\d{2})/;
 const UK_DAY = /^(\d{2})\/(\d{2})\/(\d{4})/;
@@ -55,10 +56,15 @@ export function protectedRecords(
 	return records;
 }
 
-/** Planning applications from the London Planning Datahub: the latest at each address. */
+/**
+ * Planning applications from the London Planning Datahub: the latest at each address. Only the
+ * reference, address, description, decision and dates are kept, never an applicant or agent, and a
+ * name in the description is taken out (`stripNames`), each time logged by reference alone.
+ */
 export function planningRecords(
 	answer: { hits?: { hits?: { _id: string; _source: Record<string, unknown> }[] } },
-	bbox: string
+	bbox: string,
+	log: (line: string) => void = console.warn
 ): SourceRecord[] {
 	const latest = new Map<string, SourceRecord>();
 	for (const { _id, _source: a } of answer.hits?.hits ?? []) {
@@ -67,12 +73,18 @@ export function planningRecords(
 		const date = day(a.decision_date) ?? day(a.valid_date);
 		const number = a.site_number ? String(a.site_number) : undefined;
 		const street = a.street_name ? String(a.street_name) : undefined;
+		const id = String(a.lpa_app_no ?? a.id ?? _id);
+		const description = typeof a.description === 'string' ? a.description : undefined;
+		const stripped = description ? stripNames(description) : undefined;
+		// The reference alone is logged, so a public log names no one; look it up to check the cut.
+		if (stripped?.removed)
+			log(`planning ${id}: took ${stripped.removed} name(s) out of the description`);
 		const record: SourceRecord = {
-			id: String(a.lpa_app_no ?? a.id ?? _id),
+			id,
 			...(number && street ? { address: { number, street } } : {}),
 			...(at ? { at } : {}),
 			...(date ? { observed: date } : {}),
-			claims: said({ application: a.description, decision: a.decision, date })
+			claims: said({ application: stripped?.text, decision: a.decision, date })
 		};
 		const key = number && street ? `${number}|${street}`.toLowerCase() : record.id;
 		const before = latest.get(key);
@@ -106,27 +118,73 @@ export function plaqueRecords(answer: unknown, bbox: string): SourceRecord[] {
 	return records;
 }
 
-/** Sales from the Land Registry's Price Paid data: the latest at each address. */
-export function priceRecords(answer: {
-	results?: { bindings?: Record<string, { value: string } | undefined>[] };
-}): SourceRecord[] {
-	const latest = new Map<string, SourceRecord>();
+/** The fewest sales in the period for a street's range to be told: fewer, and one might be known. */
+export const FEWEST_SALES = 5;
+/** Each end of a street's range is rounded to the nearest this many pounds. */
+export const ROUND_TO = 25_000;
+/** How many years before the records were taken the period begins. */
+export const SALES_YEARS = 6;
+/** A sale beyond this many times the street's median either way (a block sold whole, a garage) is no house's price. */
+export const FAR_FROM_MEDIAN = 10;
+
+/** The value a fraction `p` of the way through sorted values, between the two either side. */
+const percentile = (sorted: number[], p: number) => {
+	const at = (sorted.length - 1) * p;
+	const below = Math.floor(at);
+	return sorted[below] + (sorted[Math.ceil(at)] - sorted[below]) * (at - below);
+};
+
+/** A street's sales without those too far from its median to be a house's price. */
+const housePrices = (amounts: number[]) => {
+	const median = percentile(
+		[...amounts].sort((a, b) => a - b),
+		0.5
+	);
+	return amounts
+		.filter((a) => a * FAR_FROM_MEDIAN >= median && a <= median * FAR_FROM_MEDIAN)
+		.sort((a, b) => a - b);
+};
+
+/**
+ * Sales from the Land Registry's Price Paid data, kept only as each street's range: no sale at an
+ * address, no house number and no price as paid. A street is told only where it had at least five
+ * sales since the period began (six years before the records were taken, from 1 January), leaving
+ * out any sale beyond ten times its median either way; the range is its middle 80% (the 10th and
+ * 90th percentiles, so neither end is any one sale), each end rounded to the nearest £25,000 and
+ * never to nothing.
+ */
+export function priceRecords(
+	answer: { results?: { bindings?: Record<string, { value: string } | undefined>[] } },
+	retrieved: string
+): SourceRecord[] {
+	const since = String(Number(retrieved.slice(0, 4)) - SALES_YEARS);
+	const byStreet = new Map<string, { amounts: number[]; latest: string }>();
 	for (const b of answer.results?.bindings ?? []) {
-		const number = b.paon?.value;
 		const street = b.street?.value;
 		const date = day(b.date?.value);
-		if (!number || !street || !b.amount?.value) continue;
-		const id = `${number}|${street}`;
-		const record: SourceRecord = {
-			id,
-			address: { number, street },
-			...(date ? { observed: date } : {}),
-			claims: said({ sold: b.amount.value, date })
-		};
-		const before = latest.get(id);
-		if (!before || (record.observed ?? '') > (before.observed ?? '')) latest.set(id, record);
+		const amount = Number(b.amount?.value);
+		if (!street || !date || !Number.isFinite(amount) || amount <= 0 || date < `${since}-01-01`)
+			continue;
+		const entry = byStreet.get(street) ?? { amounts: [], latest: '' };
+		entry.amounts.push(amount);
+		if (date > entry.latest) entry.latest = date;
+		byStreet.set(street, entry);
 	}
-	return [...latest.values()];
+	const rounded = (n: number) => String(Math.max(ROUND_TO, Math.round(n / ROUND_TO) * ROUND_TO));
+	return [...byStreet]
+		.map(([street, { amounts, latest }]) => ({ street, latest, prices: housePrices(amounts) }))
+		.filter(({ prices }) => prices.length >= FEWEST_SALES)
+		.map(({ street, latest, prices }) => ({
+			id: street,
+			street,
+			observed: latest,
+			claims: {
+				since,
+				sales: String(prices.length),
+				low: rounded(percentile(prices, 0.1)),
+				high: rounded(percentile(prices, 0.9))
+			}
+		}));
 }
 
 /** Street-level crime from police.uk: each month's reports on or near each street, counted by kind. */

@@ -22,6 +22,8 @@ export interface ExportInput {
 	newsUrl?: string;
 	/** Where the feedback function answers (`FEEDBACK_URL`); without it, feedback is not open. */
 	feedbackUrl?: string;
+	/** `REMOVAL_EMAIL`, else `CONTACT_EMAIL`: where `help` says to ask for something to be taken out. */
+	removalEmail?: string;
 	/**
 	 * Where the world's tiles are served, relative to the page, when it is served in pieces
 	 * (`tileWorld`); the world passed is then the head alone. Without it the page carries the world.
@@ -103,7 +105,7 @@ function aboutPage(
 		<div class="brand">${LOCKUP}</div>
 		<h2>About</h2>
 		<p>A Partial Guide is a text adventure of the real world, built from open data, and nothing in it is made up. It starts with ${esc(placeWords(place))}, told by Guide, who says only what the sources say, as they say it: where the data is broken, Guide is too.</p>
-		<p>The map Guide carries is dated ${esc(longDate(snapshotDate))}. ${counted ? PRIVACY.counted : PRIVACY.none}${privacy ? ` <a href="${privacy}">Privacy</a>.` : ''}</p>
+		<p>The map Guide carries is dated ${esc(longDate(snapshotDate))}. ${counted ? PRIVACY.counted : PRIVACY.none}${privacy ? ` <a href="${privacy}">Privacy</a>. To have something about you taken out of the walk, see <a href="${privacy.replace(/privacy\/$/, 'remove/')}">Remove something</a>.` : ''}</p>
 		<h3>A word of warning</h3>
 		<p>Everything Guide says comes from open data, as it stood on the day the map was copied. That data is kept by many hands, and is often out of date, incomplete or wrong. Guide repeats it as found and never corrects it, so do not rely on it: not for directions, opening hours or safety, nor for whether a place is still there, open to the public, or safe to enter. Respect private property, and walk with care.</p>
 		<p>Guide is a character, not an authority. At the busier places, what Guide says was written ahead of time by an AI, Claude, made by Anthropic, from the facts there alone, and checked by rules that refuse any name, number, date or quotation the facts do not hold; elsewhere the code puts it together from the same facts.${writers.length ? ` Some places were written by people who know them: ${esc(listOf(writers))}.` : ''} Even so, a sentence may read more into the facts than they say. Where Guide is confused, the confusion is the data’s, or Guide’s own: it is a partial guide.</p>
@@ -178,6 +180,7 @@ export function exportPage({
 	flightsUrl,
 	newsUrl,
 	feedbackUrl,
+	removalEmail,
 	tiles,
 	gaId,
 	place = ADDISCOMBE,
@@ -354,6 +357,7 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 	const FLIGHTS = ${JSON.stringify(flightsUrl ?? '')};
 	const NEWS = ${JSON.stringify(newsUrl ?? '')};
 	const FEEDBACK = ${JSON.stringify(feedbackUrl ?? '')};
+	const REMOVAL = ${JSON.stringify(removalEmail ?? '')};
 	// Where the world's tiles are served, when it comes in pieces; empty when the page carries it.
 	const TILES = ${JSON.stringify(tiles ?? '')};
 	// Google Analytics, only on the reader's yes: given before, or given now. Never what they type.
@@ -694,6 +698,7 @@ ${consentStrip('this page', tiles ? '/privacy/' : undefined)}`
 	game.trails = browserTrails();
 	// Feedback, where the site can take it: with the kind of device and browser, nothing finer.
 	game.feedbackOpen = !!FEEDBACK;
+	if (REMOVAL) game.removal = { email: REMOVAL, ...(TILES ? { page: '/remove/' } : {}) };
 	game.context = { device: deviceOf(innerWidth, matchMedia('(pointer: coarse)').matches), browser: browserOf(navigator.userAgent) };
 	game.offer(await today).forEach(show);
 	input.disabled = false;

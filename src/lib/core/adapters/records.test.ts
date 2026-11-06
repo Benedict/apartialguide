@@ -210,18 +210,30 @@ describe('what concerns a person is left out', () => {
 	const told = (s: RecordStore) => new RecordsAdapter(street, s).facts();
 	const at = (number: string) => ({ number, street: 'Long Street' });
 
-	it('tells no planning application whose words name a person', () => {
-		const planning = (application: string): RecordStore => ({
+	it('gives the prose and the page only the fields a planning record is allowed', () => {
+		const facts = told({
 			source: 'Invented planning',
 			prefix: 'planning',
 			retrieved: '2026-10-25',
-			records: [{ id: 'p1', address: at('9'), claims: { application } }]
+			records: [
+				{
+					id: 'p1',
+					address: at('9'),
+					claims: {
+						application: 'Single storey rear extension',
+						decision: 'Approved',
+						date: '2024-01-01',
+						applicant: 'Invented Person',
+						agent: 'Invented Agents'
+					}
+				}
+			]
 		});
-		expect(told(planning('Alterations to outbuilding. NOTE:- Applicant Mr Inventa'))).toEqual([]);
-		expect(told(planning('Works on behalf of Mrs Example to the front wall'))).toEqual([]);
-		expect(told(planning('Single storey rear extension'))).toHaveLength(1);
-		expect(told(planning('Reduce the oak overhanging the applicants boundary'))).toHaveLength(1);
-		expect(told(planning('Applicant Inventa Holdings to vary condition 2'))).toEqual([]);
+		expect(facts.map((f) => f.claim.key).sort()).toEqual([
+			'planning:application',
+			'planning:date',
+			'planning:decision'
+		]);
 	});
 
 	it('tells a company registered at a shop or office, never one at a home', () => {
