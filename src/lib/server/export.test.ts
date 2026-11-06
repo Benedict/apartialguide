@@ -79,6 +79,7 @@ describe('exportPage', () => {
 			gaId: 'G-TEST'
 		});
 		expect(site).toContain('href="/privacy/"');
+		expect(site.match(/<section id="about"[^]*?<\/section>/)![0]).toContain('href="/remove/"');
 		expect(site.match(/id="consent"[^]*?<\/div>/)![0]).toContain('href="/privacy/"');
 		expect(exportPage({ engine: '', world, snapshotDate: '2026-10-24' })).not.toContain(
 			'/privacy/'

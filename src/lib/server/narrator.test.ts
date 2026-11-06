@@ -4,7 +4,14 @@ import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { SyntheticMap } from '../core/testing/synthetic';
 import { writeJson } from './json';
-import { loadHistory, loadLatest, loadNarrator, loadRecords, readConfig } from './narrator';
+import {
+	loadHistory,
+	loadLatest,
+	loadNarrator,
+	loadRecords,
+	loadSuppressions,
+	readConfig
+} from './narrator';
 
 describe('loadNarrator', () => {
 	it('reads a snapshot kept gzipped, as a whole borough is', () => {
@@ -18,6 +25,40 @@ describe('loadNarrator', () => {
 		writeJson(path, { bbox: '0,0,1,1', ...map.toData() });
 		const narrator = loadNarrator(readConfig({ SNAPSHOT_PATH: path })!);
 		expect(narrator.graph.all().length).toBeGreaterThan(1);
+	});
+
+	it('builds the map without what the suppression list names', () => {
+		const map = new SyntheticMap();
+		const a = map.node(SyntheticMap.ORIGIN);
+		map.way([a, map.nodeFrom(SyntheticMap.ORIGIN, 90, 200)], {
+			highway: 'residential',
+			name: 'Inventa Road'
+		});
+		const house = map.node(map.position(map.nodeFrom(SyntheticMap.ORIGIN, 90, 100)), {
+			building: 'house',
+			name: 'Invented Villa'
+		});
+		const dir = mkdtempSync(join(tmpdir(), 'snap-'));
+		const path = join(dir, 'testtown-2026-01-01.json.gz');
+		writeJson(path, { bbox: '0,0,1,1', ...map.toData() });
+		const list = join(dir, 'suppressed.json');
+		writeFileSync(
+			list,
+			JSON.stringify({ suppressed: [{ osm: `node/${house}`, asked: '2026-11-06' }] })
+		);
+		const told = (config: ReturnType<typeof readConfig>) => {
+			const narrator = loadNarrator(config!);
+			return narrator.graph
+				.all()
+				.map((s) => narrator.visit(s.id)!.room.paragraphs.join(' '))
+				.join(' ');
+		};
+		expect(
+			told(readConfig({ SNAPSHOT_PATH: path, SUPPRESSION_PATH: join(dir, 'none.json') }))
+		).toContain('Invented Villa');
+		expect(told(readConfig({ SNAPSHOT_PATH: path, SUPPRESSION_PATH: list }))).not.toContain(
+			'Invented Villa'
+		);
 	});
 });
 
@@ -34,7 +75,9 @@ describe('readConfig', () => {
 			start: undefined,
 			narrationPath: undefined,
 			historyDir: undefined,
-			wikidataDir: undefined
+			wikidataDir: undefined,
+			recordsDir: undefined,
+			suppressionPath: 'data/suppressed.json'
 		});
 	});
 
@@ -118,7 +161,7 @@ describe('loadRecords', () => {
 		expect(loadRecords(dir).map((s) => s.prefix)).toEqual(['bench']);
 	});
 
-	it('leaves out each record withheld.json names, by its id or its address, in that source alone', () => {
+	it('leaves out each record the suppression list names, by its id or its address', () => {
 		const dir = mkdtempSync(join(tmpdir(), 'records-'));
 		const records = (prefix: string) =>
 			JSON.stringify({
@@ -131,23 +174,43 @@ describe('loadRecords', () => {
 					{ id: 'r3', claims: {} }
 				]
 			});
-		writeFileSync(join(dir, 'price-2026-10-25.json'), records('price'));
+		writeFileSync(join(dir, 'planning-2026-10-25.json'), records('planning'));
 		writeFileSync(join(dir, 'bench-2026-10-25.json'), records('bench'));
+		const path = join(dir, 'suppressed.json');
 		writeFileSync(
-			join(dir, 'withheld.json'),
+			path,
 			JSON.stringify({
-				withheld: [
-					{ source: 'price', number: '12', street: 'Invented Road', asked: '2026-11-05' },
-					{ source: 'price', id: 'r3', asked: '2026-11-05' }
+				suppressed: [
+					{
+						source: 'planning',
+						address: { number: '12', street: 'Invented Road' },
+						asked: '2026-11-06'
+					},
+					{ source: 'planning', id: 'r3', asked: '2026-11-06' }
 				]
 			})
 		);
 		const ids = (prefix: string) =>
-			loadRecords(dir)
+			loadRecords(dir, loadSuppressions(path))
 				.find((s) => s.prefix === prefix)!
 				.records.map((r) => r.id);
-		expect(ids('price')).toEqual(['r2']);
+		expect(ids('planning')).toEqual(['r2']);
 		expect(ids('bench')).toEqual(['r1', 'r2', 'r3']);
+	});
+
+	it('reads no suppression list where there is none', () => {
+		expect(loadSuppressions(join(tmpdir(), 'no-such-list.json'))).toEqual([]);
+		expect(loadSuppressions(undefined)).toEqual([]);
+	});
+
+	it('reads the suppression list from SUPPRESSION_PATH, or the repository’s own', () => {
+		expect(readConfig({ SNAPSHOT_PATH: 'x-2026-10-24.json' })?.suppressionPath).toBe(
+			'data/suppressed.json'
+		);
+		expect(
+			readConfig({ SNAPSHOT_PATH: 'x-2026-10-24.json', SUPPRESSION_PATH: 'elsewhere.json' })
+				?.suppressionPath
+		).toBe('elsewhere.json');
 	});
 
 	it('uses every source when use.env leaves none out, or is missing', () => {

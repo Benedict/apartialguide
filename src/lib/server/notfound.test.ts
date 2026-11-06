@@ -5,6 +5,10 @@ import { notFoundPage } from './notfound';
 
 describe('notFoundPage', () => {
 	const html = notFoundPage();
+
+	it('links to Remove something', () => {
+		expect(html).toContain('href="/remove/"');
+	});
 	const text = html.replace(/<style>[^]*?<\/style>/, '').replace(/<[^>]+>/g, ' ');
 
 	it('says, as a text adventure would, that there is no way there', () => {

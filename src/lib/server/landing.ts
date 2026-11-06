@@ -167,7 +167,7 @@ ${whatsNewSection(news)}${signupSection(signup, frame)}
 
 	<footer>
 		<p>${gaId ? PRIVACY.counted : PRIVACY.none}</p>
-		<p><a href="walk/#about">Sources and licences</a> · <a href="privacy/">Privacy</a> · ${profileLinks()} · <a href="${REPO}">Code</a> · Made by Benedict</p>
+		<p><a href="walk/#about">Sources and licences</a> · <a href="privacy/">Privacy</a> · <a href="remove/">Remove something</a> · ${profileLinks()} · <a href="${REPO}">Code</a> · Made by Benedict</p>
 	</footer>
 </main>
 ${gaId ? consentStrip('this site', 'privacy/') : ''}

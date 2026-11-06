@@ -43,6 +43,11 @@ export const PAGES = {
 		path: '/privacy/',
 		description: 'What A Partial Guide keeps, what it sends and to whom: very little.'
 	},
+	remove: {
+		path: '/remove/',
+		description:
+			'What A Partial Guide uses, where it comes from, and how to ask for something to be taken out.'
+	},
 	missing: { description: 'There is no page here.' }
 } satisfies Record<string, Page>;
 
@@ -94,7 +99,7 @@ export const robotsTxt = (siteUrl?: string): string =>
 
 /** The pages worth finding, dated by the map they are built from. */
 export function sitemapXml(siteUrl: string, lastmod: string): string {
-	const urls = [PAGES.home, PAGES.walk, PAGES.privacy]
+	const urls = [PAGES.home, PAGES.walk, PAGES.privacy, PAGES.remove]
 		.map((p) => `  <url><loc>${at(siteUrl, p.path)}</loc><lastmod>${lastmod}</lastmod></url>`)
 		.join('\n');
 	return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;

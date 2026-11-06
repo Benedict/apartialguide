@@ -24,6 +24,7 @@
 		"compare": "tsx scripts/compare.ts",
 		"narrate:prompts": "tsx scripts/prompts.ts",
 		"narrate": "tsx scripts/narrate.ts",
+		"narrate:prune": "tsx scripts/prune.ts",
 		"export": "tsx scripts/export.ts",
 		"smoke": "tsx scripts/smoke.ts",
 		"map-check": "tsx scripts/map-check.ts",

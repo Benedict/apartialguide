@@ -19,6 +19,8 @@ export interface PrivacyOptions {
 	siteUrl?: string;
 	/** Whether the walk takes feedback (`FEEDBACK_URL`). */
 	feedback?: boolean;
+	/** `REMOVAL_EMAIL`: where to ask for something to be taken out, if not the contact address. */
+	removal?: string;
 }
 
 const esc = (text: string) =>
@@ -30,7 +32,7 @@ const esc = (text: string) =>
  * What is counted and the mailing list are told only where the site has them.
  */
 /** The day the page's words last changed: change it with them. */
-export const PRIVACY_CHANGED = '2026-11-05';
+export const PRIVACY_CHANGED = '2026-11-06';
 
 export function privacyPage({
 	date = PRIVACY_CHANGED,
@@ -38,7 +40,8 @@ export function privacyPage({
 	signupUrl,
 	contact,
 	siteUrl,
-	feedback
+	feedback,
+	removal
 }: PrivacyOptions): string {
 	const live = SOURCES.filter((s) => s.live && s.live !== 'flights' && s.live !== 'news')
 		.map((s) => `<li><a href="${esc(s.href)}">${esc(s.name)}</a>: ${esc(s.gives)}.</li>`)
@@ -64,7 +67,9 @@ export function privacyPage({
 		: '';
 	const ways = [
 		...(feedback ? ['type <code>feedback</code> on the walk'] : []),
-		...(contact ? [`write to <a href="mailto:${esc(contact)}">${esc(contact)}</a>`] : [])
+		...((removal ?? contact)
+			? [`write to <a href="mailto:${esc(removal ?? contact!)}">${esc(removal ?? contact!)}</a>`]
+			: [])
 	];
 	const askWays = ways.length ? ways.join(', or ') : `ask on <a href="${REPO}/issues">GitHub</a>`;
 	const write = contact ? ` Write to <a href="mailto:${esc(contact)}">${esc(contact)}</a>.` : '';
@@ -127,14 +132,14 @@ ${list}${feedbackSection}
 	<p>The site is served by Netlify, which, like any host, sees each request’s IP address and keeps records of requests for a short time to run and protect the service, under <a href="https://www.netlify.com/privacy/">its own policy</a>.</p>
 
 	<h2>Something about you in the walk</h2>
-	<p>The walk tells what open records say of a place: food hygiene ratings, listed buildings, planning applications, house sales, companies registered at an address. They are public already, and the walk tells them under legitimate interests, so it leaves out what concerns a person more than a place: planning applications whose words name someone, and companies registered anywhere but at a shop, office or other premises. If something it tells of your home, or of you, concerns you, ask for it to be taken out: ${askWays}. It is taken out within 14 days, and stays out when the records are fetched again.</p>
+	<p>The walk tells what open records say of a place: food hygiene ratings, listed buildings, planning applications, house sales, companies registered at an address. They are public already, and the walk tells them under legitimate interests, so it leaves out what concerns a person more than a place: a planning application is told without who applied, and a name in its description is taken out; house sales are told only as a street’s range since a year, rounded, where a street had at least five; and a company is told only where it is registered at a shop, office or other premises. If something it tells of your home, or of you, concerns you, ask for it to be taken out: ${askWays}, as <a href="/remove/">Remove something</a> says. It is taken out within 7 days, and stays out when the records are fetched again.</p>
 
 	<h2>Your rights</h2>
 	<p>Under the UK GDPR you may ask what is held about you, and ask for it to be corrected or erased. ${feedback ? 'The site itself holds only the feedback you choose to send' : 'The site itself holds nothing about you'}; what the services above hold, you may ask of them.${write}</p>
 
 	<footer>
 		<p>Benedict is responsible for this site. This page was last changed on ${esc(longDate(date))}.</p>
-		<p><a href="/">The start</a> · <a href="/walk/">The walk</a></p>
+		<p><a href="/">The start</a> · <a href="/walk/">The walk</a> · <a href="/remove/">Remove something</a></p>
 	</footer>
 </main>
 </body>

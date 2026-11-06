@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { fixedClock } from './facts';
 import { destination } from './geo';
-import { narrateWorld } from './narration';
+import { narrateWorld, pruneNarration } from './narration';
 import { buildPrompt, promptKey } from './render/prompt';
 import { Narrator } from './narrator';
 import type { NarrationStore } from './render/cached';
@@ -267,5 +267,16 @@ describe('narrateWorld', () => {
 			{ limit: 1, from: west }
 		);
 		expect(echoed.repeated.map((r) => r.stop)).toEqual([west]);
+	});
+});
+
+describe('pruneNarration', () => {
+	it('drops every piece kept for facts no stop has now, and keeps the rest', () => {
+		const { n, west } = narrator();
+		const key = promptKey(buildPrompt(n.visit(west)!.scene));
+		const entry = { paragraphs: ['Invented.'], model: 'test', written: '2026-10-24' };
+		const store: NarrationStore = { [key]: entry, 'v1-gone': entry, 'v16-gone': entry };
+		expect(pruneNarration(n, store).sort()).toEqual(['v1-gone', 'v16-gone']);
+		expect(Object.keys(store)).toEqual([key]);
 	});
 });

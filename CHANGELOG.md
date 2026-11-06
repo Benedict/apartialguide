@@ -4,6 +4,19 @@ What has changed in A Partial Guide, newest first. Each day has lines **for walk
 
 Add to it with each change worth telling: a line for walkers where a walker would notice, a line under the hood where only the code changed. The front page shows the latest three days that have lines for walkers.
 
+## 2026-11-06
+
+### For walkers
+
+- House sales are now told only as a street's range, never as what one house sold for: "Houses here have sold for between £400,000 and £550,000 since 2020.", rounded to the nearest £25,000, and only where a street had at least five sales.
+- A planning application is told without anyone's name: names are taken out of its description.
+- A new page, Remove something, says what the walk uses, where it comes from, and how to ask for something about you or your home to be taken out; `help` says the same. Requests are acted on within 7 days.
+
+### Under the hood
+
+- Personal detail is taken out where it is fetched, not where it is shown: planning records keep only reference, address, description, decision and dates (an allow-list, applied again by the records adapter), and `stripNames` takes a titled name, or a name after "Applicant", out of the description, logging each cut by reference alone; `priceRecords` keeps each street's range since 1 January six years before the fetch (five sales or nothing, ends rounded to £25,000), never a row per address, and the sales stay out of every prompt. The planning and sales records kept in the repository were rewritten the same way (2 descriptions; 5,837 sales to 118 streets), and a test holds them to it.
+- `data/suppressed.json` (`core/suppression.ts`, `SUPPRESSION_PATH`) replaces `withheld.json`: OSM elements, records by source and id, or addresses, applied by `loadNarrator` to the map, its past maps and every source in every build. `npm run narrate:prune` (`pruneNarration`) drops prose kept for facts no stop has now. "Remove something" (`remove/`, `REMOVAL_EMAIL`, else `CONTACT_EMAIL`) is linked from every page's footer and the privacy page, which now promises 7 days.
+
 ## 2026-11-05
 
 ### For walkers
