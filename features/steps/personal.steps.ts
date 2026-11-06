@@ -262,7 +262,8 @@ Then('the narration gives a range rounded to the nearest £25,000', function (th
 	const [low, high] = [match[1], match[2]].map((n) => Number(n.replace(/,/g, '')));
 	assert.equal(low % 25_000, 0);
 	assert.equal(high % 25_000, 0);
-	assert.deepEqual([low, high], [400_000, 550_000]);
+	// The 10th and 90th percentiles of the eight, 423,400 and 519,800, rounded.
+	assert.deepEqual([low, high], [425_000, 525_000]);
 });
 
 Then('the narration does not mention sale prices', function (this: NarratorWorld) {

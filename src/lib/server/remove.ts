@@ -80,7 +80,7 @@ ${themeCss()}
 	<ul>
 			${kept}
 	</ul>
-	<p>Some of it is said with care already. A planning application is told by its description, decision and date, never by who applied, and a name in the description is taken out. House sales are told only as a street’s range since a year, rounded to the nearest £25,000, and only where a street had at least five sales, never as what one house sold for. A company is told only where it is registered at a shop, office or other premises, never at a home.</p>
+	<p>Some of it is said with care already. A planning application is told by its description, decision and date, never by who applied, and a name in the description is taken out. House sales are told only as a street’s range since a year: the middle 80% of its sales, so neither end is any one house, rounded to the nearest £25,000, and only where a street had at least five sales, never as what one house sold for. A company is told only where it is registered at a shop, office or other premises, never at a home.</p>
 
 	<h2>How to ask</h2>
 	<p>To have something taken out, ${write}, and say:</p>

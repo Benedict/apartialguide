@@ -104,7 +104,7 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 	[
 		false,
 		(t) => {
-			// A street's sales, as a range since a year: never a sale at an address (`priceRecords`).
+			// A street's sales, its middle 80% since a year: never a sale at an address (`priceRecords`).
 			const low = Number(t['price:low']);
 			const high = Number(t['price:high']);
 			if (!t['price:since'] || !t['price:low'] || !Number.isFinite(low) || !Number.isFinite(high))
@@ -112,7 +112,7 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 			const pounds = (n: number) => `£${n.toLocaleString('en-GB')}`;
 			const range =
 				low === high ? `around ${pounds(low)}` : `between ${pounds(low)} and ${pounds(high)}`;
-			return `Houses here have sold for ${range} since ${t['price:since']}.`;
+			return `Most houses here have sold for ${range} since ${t['price:since']}.`;
 		}
 	],
 	[

@@ -45,7 +45,7 @@ describe('recordSentences, other sources', () => {
 				'price:low': '400000',
 				'price:high': '550000'
 			})
-		).toEqual(['Houses here have sold for between £400,000 and £550,000 since 2020.']);
+		).toEqual(['Most houses here have sold for between £400,000 and £550,000 since 2020.']);
 		expect(
 			recordSentences({
 				'price:since': '2020',
@@ -53,7 +53,7 @@ describe('recordSentences, other sources', () => {
 				'price:low': '400000',
 				'price:high': '400000'
 			})
-		).toEqual(['Houses here have sold for around £400,000 since 2020.']);
+		).toEqual(['Most houses here have sold for around £400,000 since 2020.']);
 		// A sale at an address, as kept before, is no longer told.
 		expect(recordSentences({ 'price:sold': '412000', 'price:date': '2019-03-08' })).toEqual([]);
 	});

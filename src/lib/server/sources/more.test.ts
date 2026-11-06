@@ -200,7 +200,7 @@ describe('priceRecords (Land Registry)', () => {
 	});
 	const sales = (...bindings: ReturnType<typeof binding>[]) => ({ results: { bindings } });
 
-	it('keeps no sale at an address: only each street’s sales, as a range since a year', () => {
+	it('keeps no sale at an address: only each street’s middle 80% of sales, as a range since a year', () => {
 		const records = priceRecords(
 			sales(
 				binding('2', '401000', '2020-02-01'),
@@ -217,22 +217,42 @@ describe('priceRecords (Land Registry)', () => {
 				id: 'LONG STREET',
 				street: 'LONG STREET',
 				observed: '2024-03-01',
-				claims: { since: '2020', sales: '5', low: '400000', high: '550000' }
+				// The 10th and 90th percentiles, 412,600 and 527,200, each to the nearest £25,000.
+				claims: { since: '2020', sales: '5', low: '425000', high: '525000' }
 			}
 		]);
 		expect(JSON.stringify(records)).not.toMatch(/482500|"address"|"number"/);
 	});
 
-	it('rounds each end of the range to the nearest £25,000', () => {
+	it('rounds each end of the range to the nearest £25,000, never down to nothing', () => {
+		const range = (amount: string) =>
+			priceRecords(
+				sales(...[1, 2, 3, 4, 5].map((i) => binding(String(i), amount, '2023-01-01'))),
+				'2026-10-25'
+			)[0].claims;
+		expect(range('412499')).toMatchObject({ low: '400000', high: '400000' });
+		expect(range('412500')).toMatchObject({ low: '425000', high: '425000' });
+		expect(range('5000')).toMatchObject({ low: '25000', high: '25000' });
+	});
+
+	it('leaves a block sold whole, or a garage, out of the range, as neither end is one sale', () => {
+		const amounts = [
+			'8000',
+			'400000',
+			'410000',
+			'420000',
+			'430000',
+			'440000',
+			'450000',
+			'460000',
+			'470000',
+			'39000000'
+		];
 		const [street] = priceRecords(
-			sales(
-				...['412499', '420000', '430000', '440000', '562500'].map((a, i) =>
-					binding(String(i), a, '2023-01-01')
-				)
-			),
+			sales(...amounts.map((a, i) => binding(String(i), a, '2023-01-01'))),
 			'2026-10-25'
 		);
-		expect(street.claims).toMatchObject({ low: '400000', high: '575000' });
+		expect(street.claims).toMatchObject({ low: '400000', high: '475000' });
 	});
 
 	it('says nothing of a street with fewer than five sales in the period', () => {

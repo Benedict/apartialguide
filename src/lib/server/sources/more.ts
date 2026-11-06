@@ -124,12 +124,34 @@ export const FEWEST_SALES = 5;
 export const ROUND_TO = 25_000;
 /** How many years before the records were taken the period begins. */
 export const SALES_YEARS = 6;
+/** A sale beyond this many times the street's median either way (a block sold whole, a garage) is no house's price. */
+export const FAR_FROM_MEDIAN = 10;
+
+/** The value a fraction `p` of the way through sorted values, between the two either side. */
+const percentile = (sorted: number[], p: number) => {
+	const at = (sorted.length - 1) * p;
+	const below = Math.floor(at);
+	return sorted[below] + (sorted[Math.ceil(at)] - sorted[below]) * (at - below);
+};
+
+/** A street's sales without those too far from its median to be a house's price. */
+const housePrices = (amounts: number[]) => {
+	const median = percentile(
+		[...amounts].sort((a, b) => a - b),
+		0.5
+	);
+	return amounts
+		.filter((a) => a * FAR_FROM_MEDIAN >= median && a <= median * FAR_FROM_MEDIAN)
+		.sort((a, b) => a - b);
+};
 
 /**
  * Sales from the Land Registry's Price Paid data, kept only as each street's range: no sale at an
  * address, no house number and no price as paid. A street is told only where it had at least five
- * sales since the period began (six years before the records were taken, from 1 January), the
- * lowest and highest each rounded to the nearest £25,000.
+ * sales since the period began (six years before the records were taken, from 1 January), leaving
+ * out any sale beyond ten times its median either way; the range is its middle 80% (the 10th and
+ * 90th percentiles, so neither end is any one sale), each end rounded to the nearest £25,000 and
+ * never to nothing.
  */
 export function priceRecords(
 	answer: { results?: { bindings?: Record<string, { value: string } | undefined>[] } },
@@ -148,18 +170,19 @@ export function priceRecords(
 		if (date > entry.latest) entry.latest = date;
 		byStreet.set(street, entry);
 	}
-	const rounded = (n: number) => String(Math.round(n / ROUND_TO) * ROUND_TO);
+	const rounded = (n: number) => String(Math.max(ROUND_TO, Math.round(n / ROUND_TO) * ROUND_TO));
 	return [...byStreet]
-		.filter(([, { amounts }]) => amounts.length >= FEWEST_SALES)
-		.map(([street, { amounts, latest }]) => ({
+		.map(([street, { amounts, latest }]) => ({ street, latest, prices: housePrices(amounts) }))
+		.filter(({ prices }) => prices.length >= FEWEST_SALES)
+		.map(({ street, latest, prices }) => ({
 			id: street,
 			street,
 			observed: latest,
 			claims: {
 				since,
-				sales: String(amounts.length),
-				low: rounded(Math.min(...amounts)),
-				high: rounded(Math.max(...amounts))
+				sales: String(prices.length),
+				low: rounded(percentile(prices, 0.1)),
+				high: rounded(percentile(prices, 0.9))
 			}
 		}));
 }
