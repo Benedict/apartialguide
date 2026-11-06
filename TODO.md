@@ -6,7 +6,7 @@ Repository settings are under **Settings → Secrets and variables → Actions**
 
 ## Soon: these finish the site
 
-- [ ] **The removal address.** "Remove something" and `help` give an address to write to. Until you set one, it is your contact address (`CONTACT_EMAIL`). For a dedicated one, create the mailbox (e.g. `remove@apartialguide.com`) and add the repository variable `REMOVAL_EMAIL`. Each request goes on `data/suppressed.json` (the page promises within 7 days); then run `npm run narrate:prune` and write the places again, or ask Claude to.
+- [ ] **The ICO data protection fee.** The site is your personal project, and you are its controller. The site holds feedback and reply addresses, and counts visits for those who say yes, so check at ico.org.uk ("Do I need to pay?") whether you owe the fee (tier 1, the smallest) or are exempt.
 - [ ] **Fetch the house sales again**, area by area (`SOURCES=prices` with each `AREA=` in `data/records/request.env`). The sales kept now were the latest at each house, so each street's count is low and only 114 streets reach five sales; a fresh fetch counts every sale since 2020.
 
 - [ ] **Keep the map up to date: cadence and key.** A scheduled refresh (Geofabrik's latest London and Surrey extracts, cut to the borough, the records fetched again) would arrive as a pull request with a report of what changed and which stops lose their prose, never straight onto the site. Say how often: quarterly is the suggestion, as each refresh means writing prose again where the map changed. With the secret `ANTHROPIC_API_KEY` (a paid Anthropic API key), the Narrate workflow can write that prose unattended; without it, it is written in a session.
