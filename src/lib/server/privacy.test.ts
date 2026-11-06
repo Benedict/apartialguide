@@ -87,6 +87,19 @@ describe('privacyPage', () => {
 		expect(text).toContain('legitimate interests');
 	});
 
+	it('keeps to one line on who is responsible, in its footer', () => {
+		expect(words(plain)).toContain('Benedict is responsible for this site');
+		expect(words(plain)).not.toMatch(/Who is responsible|controller|not by a company/);
+	});
+
+	it('gives the address to write to as it is, with nothing said of its domain', () => {
+		const page = words(
+			privacyPage({ contact: 'privacy@example.net', siteUrl: 'https://example.org' })
+		);
+		expect(page).toMatch(/Write to privacy@example\.net \./);
+		expect(page).not.toMatch(/own address|another domain/);
+	});
+
 	it('gives the reader their rights, and an address to write to where one is set', () => {
 		expect(words(plain)).toContain('UK GDPR');
 		expect(counted).toContain('href="mailto:someone@example.org"');

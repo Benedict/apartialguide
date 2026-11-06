@@ -43,6 +43,14 @@ describe('removalPage', () => {
 		expect(words(page)).toContain('within 7 days');
 	});
 
+	it('gives the address as it is, with nothing said of its domain', () => {
+		const page = words(
+			removalPage({ email: 'privacy@example.net', siteUrl: 'https://example.org' })
+		);
+		expect(page).toMatch(/write to privacy@example\.net , and say/);
+		expect(page).not.toMatch(/own address|another domain/);
+	});
+
 	it('says how to ask where no address is set', () => {
 		expect(removalPage({})).toMatch(/github\.com\/[^"]+\/issues/);
 	});
