@@ -4,7 +4,7 @@ import { SOURCES } from '../site/sources';
 import { themeBoot, themeCss } from '../site/themes';
 import { withCsp } from './csp';
 import { signupFrame } from './signup';
-import { addressNote, headMeta, PAGES, REPO } from './meta';
+import { headMeta, PAGES, REPO } from './meta';
 import { fontFaces, MONO } from './type';
 
 export interface PrivacyOptions {
@@ -72,9 +72,7 @@ export function privacyPage({
 			: [])
 	];
 	const askWays = ways.length ? ways.join(', or ') : `ask on <a href="${REPO}/issues">GitHub</a>`;
-	const write = contact
-		? ` Write to <a href="mailto:${esc(contact)}">${esc(contact)}</a>${addressNote(contact, siteUrl)}.`
-		: '';
+	const write = contact ? ` Write to <a href="mailto:${esc(contact)}">${esc(contact)}</a>.` : '';
 	return withCsp(
 		`<!doctype html>
 <html lang="en">
@@ -136,8 +134,6 @@ ${list}${feedbackSection}
 	<h2>Something about you in the walk</h2>
 	<p>The walk tells what open records say of a place: food hygiene ratings, listed buildings, planning applications, house sales, companies registered at an address. They are public already, and the walk tells them under legitimate interests, so it leaves out what concerns a person more than a place: a planning application is told without who applied, and a name in its description is taken out; house sales are told only as a street’s range since a year, the middle 80% of its sales, rounded, where a street had at least five; and a company is told only where it is registered at a shop, office or other premises. If something it tells of your home, or of you, concerns you, ask for it to be taken out: ${askWays}, as <a href="/remove/">Remove something</a> says. It is taken out within 7 days, and stays out when the records are fetched again.</p>
 
-	<h2>Who is responsible</h2>
-	<p>A Partial Guide is Benedict’s own project, made and run by Benedict alone, not by a company. Benedict is responsible for the site and for anything it holds about you: the controller, in the law’s word.</p>
 
 	<h2>Your rights</h2>
 	<p>Under the UK GDPR you may ask what is held about you, and ask for it to be corrected or erased. ${feedback ? 'The site itself holds only the feedback you choose to send' : 'The site itself holds nothing about you'}; what the services above hold, you may ask of them.${write}</p>

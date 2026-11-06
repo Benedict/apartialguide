@@ -3,7 +3,7 @@ import { faviconLinks, LOCKUP } from '../site/brand';
 import { SOURCES } from '../site/sources';
 import { themeBoot, themeCss } from '../site/themes';
 import { withCsp } from './csp';
-import { addressNote, headMeta, PAGES, REPO } from './meta';
+import { headMeta, PAGES, REPO } from './meta';
 import { fontFaces, MONO } from './type';
 
 export interface RemovalOptions {
@@ -34,7 +34,7 @@ export function removalPage({ email, date = REMOVAL_CHANGED, siteUrl }: RemovalO
 		.map((s) => `<li><a href="${esc(s.href)}">${esc(s.name)}</a>: ${esc(s.gives)}.</li>`)
 		.join('\n\t\t\t');
 	const write = email
-		? `write to <a href="mailto:${esc(email)}">${esc(email)}</a>${addressNote(email, siteUrl)}`
+		? `write to <a href="mailto:${esc(email)}">${esc(email)}</a>`
 		: `ask on <a href="${REPO}/issues">GitHub</a>`;
 	return withCsp(
 		`<!doctype html>

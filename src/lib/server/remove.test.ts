@@ -43,10 +43,12 @@ describe('removalPage', () => {
 		expect(words(page)).toContain('within 7 days');
 	});
 
-	it('says why the address is on another domain than the site’s', () => {
-		expect(
-			words(removalPage({ email: 'privacy@example.net', siteUrl: 'https://example.org' }))
-		).toContain('Benedict’s own address, on another domain');
+	it('gives the address as it is, with nothing said of its domain', () => {
+		const page = words(
+			removalPage({ email: 'privacy@example.net', siteUrl: 'https://example.org' })
+		);
+		expect(page).toMatch(/write to privacy@example\.net , and say/);
+		expect(page).not.toMatch(/own address|another domain/);
 	});
 
 	it('says how to ask where no address is set', () => {

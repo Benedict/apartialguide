@@ -87,22 +87,17 @@ describe('privacyPage', () => {
 		expect(text).toContain('legitimate interests');
 	});
 
-	it('says the site is Benedict’s own and Benedict is responsible for what it holds, not a company', () => {
-		const text = words(plain);
-		expect(text).toContain('Benedict’s own project');
-		expect(text).toContain('the controller');
-		expect(text).not.toMatch(/Limited|company registered/);
+	it('keeps to one line on who is responsible, in its footer', () => {
+		expect(words(plain)).toContain('Benedict is responsible for this site');
+		expect(words(plain)).not.toMatch(/Who is responsible|controller|not by a company/);
 	});
 
-	it('says why the address to write to is on another domain than the site’s', () => {
-		const other = words(
+	it('gives the address to write to as it is, with nothing said of its domain', () => {
+		const page = words(
 			privacyPage({ contact: 'privacy@example.net', siteUrl: 'https://example.org' })
 		);
-		expect(other).toContain('Benedict’s own address, on another domain');
-		const same = words(
-			privacyPage({ contact: 'privacy@example.org', siteUrl: 'https://example.org' })
-		);
-		expect(same).not.toContain('another domain');
+		expect(page).toMatch(/Write to privacy@example\.net \./);
+		expect(page).not.toMatch(/own address|another domain/);
 	});
 
 	it('gives the reader their rights, and an address to write to where one is set', () => {
