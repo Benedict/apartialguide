@@ -186,3 +186,16 @@ export function jsonLd(page: 'home' | 'walk', siteUrl?: string): string {
 				};
 	return `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;
 }
+
+/**
+ * Why an address to write to is on another domain than the site's: the walk is Benedict's own
+ * project, and the address is Benedict's own. Nothing to say where it is the site's, or unknown.
+ */
+export function addressNote(email: string, siteUrl?: string): string {
+	const domain = email.split('@')[1]?.toLowerCase();
+	if (!domain || !siteUrl) return '';
+	const host = new URL(siteUrl).hostname.toLowerCase().replace(/^www\./, '');
+	return domain === host || domain.endsWith(`.${host}`)
+		? ''
+		: ', Benedict’s own address, on another domain';
+}

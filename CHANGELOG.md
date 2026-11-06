@@ -8,6 +8,7 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### For walkers
 
+- The privacy page says who is responsible for the site: Benedict, as a personal project, not a company, and why the address to write to is on another domain.
 - House sales are now told only as a street's range, never as what one house sold for: "Most houses here have sold for between £400,000 and £550,000 since 2020.", the middle 80% of its sales, rounded to the nearest £25,000, and only where a street had at least five sales.
 - A planning application is told without anyone's name: names are taken out of its description.
 - A new page, Remove something, says what the walk uses, where it comes from, and how to ask for something about you or your home to be taken out; `help` says the same. Requests are acted on within 7 days.
