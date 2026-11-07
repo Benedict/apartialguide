@@ -28,6 +28,7 @@
 		"export": "tsx scripts/export.ts",
 		"smoke": "tsx scripts/smoke.ts",
 		"map-check": "tsx scripts/map-check.ts",
+		"gaps": "tsx scripts/gaps.ts",
 		"wikidata": "tsx scripts/wikidata.ts",
 		"records": "tsx scripts/records.ts"
 	},

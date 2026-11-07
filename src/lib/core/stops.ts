@@ -145,7 +145,11 @@ export function buildStopGraph(
 	{ spacing = 150, landmarks = [] }: StopGraphOptions = {}
 ): StopGraph {
 	const ways = osm.ways.filter((w) => isWalkable(w) && !isMinor(w));
+	// The middle of each square crossed: a point the map does not draw, by the square's own number.
+	const middles = new Map<number, LatLon>();
 	const at = (id: number): LatLon => {
+		const middle = middles.get(id);
+		if (middle) return middle;
 		const n = osm.nodes.get(id)!;
 		return [n.lat, n.lon];
 	};
@@ -161,6 +165,7 @@ export function buildStopGraph(
 		for (let i = 1; i < present.length; i++)
 			if (present[i] !== present[i - 1]) link(present[i - 1], present[i], way);
 	}
+	cross(osm, edges, link, middles);
 	bridge(osm, edges, link);
 	const degree = (id: number) => edges.get(id)?.length ?? 0;
 	const unlink = (a: number, b: number) => {
@@ -192,7 +197,7 @@ export function buildStopGraph(
 	// A place to stop: anything but the middle of one street.
 	function isKey(id: number): boolean {
 		const d = degree(id);
-		if (d !== 2) return d > 0;
+		if (d !== 2 || middles.has(id)) return d > 0;
 		const [a, b] = edges.get(id)!;
 		// Where a street changes its name, or a path comes onto a tram platform.
 		return nameOf(a.way) !== nameOf(b.way) || isTramPlatform(a.way) !== isTramPlatform(b.way);
@@ -338,6 +343,61 @@ export function buildStopGraph(
 
 	for (const stop of stops.values()) labelExits(stop.exits);
 	return new StopGraph(stops);
+}
+
+/** An area people cross on foot: a square, or a tram stop's platform, drawn as an area. */
+export const isCrossable = (way: OsmWay) => {
+	const t = way.tags ?? {};
+	if (t.foot === 'no' || way.nodes.length < 4 || way.nodes[0] !== way.nodes.at(-1)) return false;
+	const square = (t.highway === 'pedestrian' || t.highway === 'footway') && t.area === 'yes';
+	const platform =
+		(t.railway === 'platform' || t.public_transport === 'platform') &&
+		t.tram === 'yes' &&
+		!t.highway;
+	return square || platform;
+};
+
+/**
+ * A square drawn as an area is crossed, as people cross it: each path that meets its edge (one or more) is joined
+ * to a point in its middle, the centre of its outline, by a way named as the square is.
+ * The point is numbered as the square negated, so it is the same on every build.
+ */
+function cross(
+	osm: OsmIndex,
+	edges: Map<number, Edge[]>,
+	link: (a: number, b: number, way: OsmWay) => void,
+	middles: Map<number, LatLon>
+) {
+	for (const area of osm.ways.filter(isCrossable)) {
+		const ring = area.nodes.slice(0, -1).filter((id) => osm.nodes.has(id));
+		const meets = [...new Set(ring.filter((id) => edges.has(id)))];
+		if (!meets.length || ring.length < 3) continue;
+		middles.set(-area.id, centroid(ring.map((id) => osm.nodes.get(id)!)));
+		const tags = { ...area.tags };
+		delete tags.area;
+		for (const id of meets) link(id, -area.id, { ...area, nodes: [id, -area.id], tags });
+	}
+}
+
+/** The centre of an outline, weighted by the ground it encloses, not by how many corners it has. */
+function centroid(ring: { lat: number; lon: number }[]): LatLon {
+	let twice = 0;
+	let lat = 0;
+	let lon = 0;
+	for (let i = 0; i < ring.length; i++) {
+		const a = ring[i];
+		const b = ring[(i + 1) % ring.length];
+		const cross = a.lon * b.lat - b.lon * a.lat;
+		twice += cross;
+		lat += (a.lat + b.lat) * cross;
+		lon += (a.lon + b.lon) * cross;
+	}
+	if (Math.abs(twice) < 1e-14)
+		return [
+			ring.reduce((s, n) => s + n.lat, 0) / ring.length,
+			ring.reduce((s, n) => s + n.lon, 0) / ring.length
+		];
+	return [lat / (3 * twice), lon / (3 * twice)];
 }
 
 /**

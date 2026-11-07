@@ -97,6 +97,13 @@ describe('AdventureRenderer', () => {
 			expect(renderer.render(s).title).toBe('A tram platform');
 		});
 
+		it('calls a square drawn as an area, with no name, an unnamed square', () => {
+			const square = facts('way/9', { highway: 'pedestrian', area: 'yes' });
+			const s = scene({ street: square, here: [], kind: 'junction' });
+			expect(renderer.render(s).title).toBe('An unnamed square');
+			expect(text(s)).toContain('an unnamed square');
+		});
+
 		it('keeps an unnamed way in lower case at its end, as in the middle of a sentence', () => {
 			const s = scene({
 				kind: 'junction',
