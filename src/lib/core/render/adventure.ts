@@ -114,9 +114,39 @@ const LOST_COUNT = [
 export const streetTags = (scene: Scene): Tags =>
 	tagsOf([...groupBySubject(scene.street).values()][0] ?? []);
 
+/** How near a named tram stop must be for a platform underfoot to be called by its name. */
+const TRAM_STOP_WITHIN_M = 30;
+/** How near a tram platform must pass for a footway's end to be on it. */
+const PLATFORM_HERE_M = 3;
+
+/** The tram platform underfoot, if one is, called by the tram stop the map names beside it. */
+function platformName(scene: Scene): string | undefined {
+	const isPlatform = (t: Tags) => t.railway === 'platform' || t.public_transport === 'platform';
+	const underfoot = [...groupBySubject(scene.street).values()].map(tagsOf).some(isPlatform);
+	// Or a tram platform right here, where a footway comes onto it.
+	const here = [...scene.beats, ...scene.hidden].some((b) => {
+		const t = tagsOf(b.facts);
+		const line = b.facts.find((f) => f.geometry?.length)?.geometry;
+		return (
+			isPlatform(t) &&
+			t.tram === 'yes' &&
+			!!line &&
+			distanceToPolyline(scene.position, line) <= PLATFORM_HERE_M
+		);
+	});
+	if (!underfoot && !here) return undefined;
+	for (const b of [...scene.beats, ...scene.hidden]) {
+		const t = tagsOf(b.facts);
+		if (t.railway !== 'tram_stop' || !t.name) continue;
+		const at = b.facts.find((f) => f.geometry?.length)?.geometry?.[0];
+		if (at && distance(scene.position, at) <= TRAM_STOP_WITHIN_M)
+			return `the platform of ${t.name} tram stop`;
+	}
+	return 'a tram platform';
+}
+
 const streetName = (scene: Scene, street: Tags) =>
-	scene.here[0] ??
-	`an unnamed ${humanise(street.highway ?? (street.railway === 'platform' ? 'platform' : 'way'))}`;
+	scene.here[0] ?? platformName(scene) ?? `an unnamed ${humanise(street.highway ?? 'way')}`;
 
 const isDeadEnd = (scene: Scene) => scene.kind === 'junction' && scene.exits.length === 1;
 

@@ -137,6 +137,8 @@ describe('buildStopGraph', () => {
 		};
 		walk(junctionId(south));
 		expect(reached.has(junctionId(north))).toBe(true);
+		// Where the footway meets the platform is a place to stop, as where a street changes its name.
+		expect(graph.get(junctionId(a))).toBeDefined();
 
 		const station = new SyntheticMap();
 		const s = station.node(O);

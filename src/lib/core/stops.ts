@@ -53,7 +53,7 @@ const UNWALKABLE = new Set([
  * that meet it from either side are one way through, not two dead ends. A station's platforms,
  * behind its barriers, are not walked, nor a platform drawn only as an area.
  */
-const isTramPlatform = (way: OsmWay) =>
+export const isTramPlatform = (way: OsmWay) =>
 	(way.tags?.railway === 'platform' || way.tags?.public_transport === 'platform') &&
 	way.tags.tram === 'yes' &&
 	!way.tags.highway &&
@@ -194,7 +194,8 @@ export function buildStopGraph(
 		const d = degree(id);
 		if (d !== 2) return d > 0;
 		const [a, b] = edges.get(id)!;
-		return nameOf(a.way) !== nameOf(b.way);
+		// Where a street changes its name, or a path comes onto a tram platform.
+		return nameOf(a.way) !== nameOf(b.way) || isTramPlatform(a.way) !== isTramPlatform(b.way);
 	}
 
 	// Unnamed ways that lead nowhere are pruned, until none are left: a few metres of anything,
