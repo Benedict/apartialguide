@@ -1,3 +1,4 @@
+import { isMineEntry } from './entries';
 import { HistoryAdapter } from './adapters/history';
 import { OsmAdapter } from './adapters/osm';
 import { WikidataAdapter, type WikidataStore } from './adapters/wikidata';
@@ -94,7 +95,10 @@ function namedThings(facts: readonly Fact[]): Named[] {
 	return [...bySubject].flatMap(([subject, fs]) => {
 		const tags = Object.fromEntries(fs.map((f) => [f.claim.key, f.claim.value]));
 		const geometry = fs.find((f) => f.geometry.length)?.geometry;
-		return tags.name && !tags.highway && geometry ? [{ subject, tags, geometry }] : [];
+		// A way into a mine is never the nearest name: that would say which way it lies.
+		return tags.name && !tags.highway && !isMineEntry(tags) && geometry
+			? [{ subject, tags, geometry }]
+			: [];
 	});
 }
 
