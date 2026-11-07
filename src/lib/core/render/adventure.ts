@@ -1,3 +1,4 @@
+import { isMineEntry } from '../entries';
 import { groupBySubject, type Fact } from '../facts';
 import {
 	bearing,
@@ -476,6 +477,8 @@ export function setting(scene: Scene): string {
 
 /** "To the north, a few steps away" */
 export function placement(from: LatLon, beat: Beat): string {
+	// A way into a mine is never pointed to: near, and no more.
+	if (isMineEntry(tagsFor(beat))) return 'Near here';
 	const geometry = beat.facts[0].geometry;
 	if (isInside(from, geometry)) return 'All around';
 	const { point, metres } = nearestOnPolyline(from, geometry);
@@ -887,7 +890,8 @@ function thing(beat: Beat): Thing {
 		name,
 		aliases: [...new Set(words)],
 		description: description.filter(Boolean).join(' '),
-		...(isBackground(beat) ? { background: true as const } : {})
+		...(isBackground(beat) ? { background: true as const } : {}),
+		...(isMineEntry(tagsFor(beat)) ? { entry: true as const } : {})
 	};
 }
 

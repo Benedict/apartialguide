@@ -45,7 +45,8 @@ export function routeIndex(world: Pick<AdventureWorld, 'stops'>): RouteIndex {
 		};
 		for (const e of stop.exits) if (e.street && !e.closed) add(e.street, id);
 		for (const t of stop.things)
-			if (!t.background && NAMED.test(t.name)) add(t.name, id, t.aliases);
+			// No way is planned to a way into a mine.
+			if (!t.background && !t.entry && NAMED.test(t.name)) add(t.name, id, t.aliases);
 	}
 	return index;
 }

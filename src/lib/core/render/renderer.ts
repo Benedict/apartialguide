@@ -9,6 +9,8 @@ export interface Thing {
 	description: string;
 	/** Land and place: the setting, examinable but not offered as a thing. */
 	background?: true;
+	/** A way into a mine: told by kind and name alone, never a place to go (`isMineEntry`). */
+	entry?: true;
 }
 
 /** One sentence or more of a room, labelled so the game can leave out what the reader just heard. */

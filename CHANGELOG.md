@@ -8,6 +8,8 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### For walkers
 
+- An old mine shaft or adit on the map is told by its kind and name alone, never which way it lies or how far: they are dangerous, and the walk will never point the way to one.
+
 - A tram stop's platform is now a way through, and a place: from Bingham Road you can walk onto "the platform of Addiscombe tram stop" and off the other side, where the footways to it used to end.
 - The end of an unnamed way reads "End of an unnamed footway", not "End of An unnamed footway".
 - Squares drawn as open paved areas, such as Ruskin Square, can be crossed: paths that used to stop at their edge now lead to a place in the middle and on out the other side.
@@ -15,7 +17,8 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 ### Under the hood
 
 - `isWalkable` takes a tram stop's platform drawn as a line (`railway=platform` or `public_transport=platform` with `tram=yes`, no `highway`, not an area), so footways meeting it from either side join; a station's platforms stay out, behind their barriers. Reported on the walk: north from Bingham Road ended at the platform. Where a path comes onto a tram platform is a place to stop, as where a street changes its name, and a platform underfoot (or right here, where a footway meets it) is called by the tram stop the map names within 30 m ("the platform of Addiscombe tram stop"), else "a tram platform". The dead end's title keeps the way's own case.
-- A square drawn as an area (`highway=pedestrian` or `footway` with `area=yes`), or a tram stop's platform drawn as one, is crossed (`isCrossable`, `cross` in `stops.ts`): each path that meets its edge is joined to a point at its centre, numbered as the square negated (`n-613129906`), a place named as the square is, else "an unnamed square". `npm run gaps` lists every place the walk ends by what the map has there (`core/gaps.ts`, `deadEnds`), and fails if a path still ends at a square or tram platform drawn as an area.
+- A square drawn as an area (`highway=pedestrian` or `footway` with `area=yes`), or a tram stop's platform drawn as one, is crossed (`isCrossable`, `cross` in `stops.ts`): each path that meets its edge is joined to a point at its centre, numbered as the square negated (`n-613129906`), a place named as the square is, else "an unnamed square". A shaft, adit or mine the map marks (`isMineEntry`, `core/entries.ts`) is placed only "Near here" (`placement`), is never the nearest name (`namedThings`), and is no goal for `route to` or `start at` (a room's thing carries `entry`; `routeIndex` leaves it out): the rule Underground keeps, needed before the walk goes to Weardale.
+- `npm run gaps` lists every place the walk ends by what the map has there (`core/gaps.ts`, `deadEnds`), and fails if a path still ends at a square or tram platform drawn as an area.
 
 ## 2026-11-06
 
