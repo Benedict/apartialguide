@@ -49,14 +49,26 @@ const UNWALKABLE = new Set([
 ]);
 
 /**
- * A trunk road is walked as its pavements are, as a London A-road is; only a way the map closes to
- * those on foot (`foot=no`) is not.
+ * A tram stop's platform, drawn as a line: open to the street, as Croydon's are, so the footways
+ * that meet it from either side are one way through, not two dead ends. A station's platforms,
+ * behind its barriers, are not walked, nor a platform drawn only as an area.
+ */
+const isTramPlatform = (way: OsmWay) =>
+	(way.tags?.railway === 'platform' || way.tags?.public_transport === 'platform') &&
+	way.tags.tram === 'yes' &&
+	!way.tags.highway &&
+	way.tags.area !== 'yes' &&
+	way.nodes[0] !== way.nodes.at(-1);
+
+/**
+ * A trunk road is walked as its pavements are, as a London A-road is, and a tram stop's platform as
+ * the way from one side of the stop to the other; only a way the map closes to those on foot
+ * (`foot=no`) is not.
  */
 export const isWalkable = (way: OsmWay) =>
-	!!way.tags?.highway &&
-	!UNWALKABLE.has(way.tags.highway) &&
-	way.tags.area !== 'yes' &&
-	way.tags.foot !== 'no';
+	((!!way.tags?.highway && !UNWALKABLE.has(way.tags.highway)) || isTramPlatform(way)) &&
+	way.tags!.area !== 'yes' &&
+	way.tags!.foot !== 'no';
 
 /** Ways the map draws that no one would call a way to go: they make no place to stop. */
 const MINOR_SERVICE = new Set(['driveway', 'parking_aisle', 'drive-through', 'emergency_access']);

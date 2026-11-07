@@ -4,6 +4,17 @@ What has changed in A Partial Guide, newest first. Each day has lines **for walk
 
 Add to it with each change worth telling: a line for walkers where a walker would notice, a line under the hood where only the code changed. The front page shows the latest three days that have lines for walkers.
 
+## 2026-11-07
+
+### For walkers
+
+- A tram stop's platform is now a way through: from Bingham Road you can walk onto the Addiscombe platform and off the other side, where the footways to it used to end.
+- The end of an unnamed way reads "End of an unnamed footway", not "End of An unnamed footway".
+
+### Under the hood
+
+- `isWalkable` takes a tram stop's platform drawn as a line (`railway=platform` or `public_transport=platform` with `tram=yes`, no `highway`, not an area), so footways meeting it from either side join; a station's platforms stay out, behind their barriers. Reported on the walk: north from Bingham Road ended at the platform. The dead end's title keeps the way's own case.
+
 ## 2026-11-06
 
 ### For walkers

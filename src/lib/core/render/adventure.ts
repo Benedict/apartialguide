@@ -115,14 +115,16 @@ export const streetTags = (scene: Scene): Tags =>
 	tagsOf([...groupBySubject(scene.street).values()][0] ?? []);
 
 const streetName = (scene: Scene, street: Tags) =>
-	scene.here[0] ?? `an unnamed ${humanise(street.highway)}`;
+	scene.here[0] ??
+	`an unnamed ${humanise(street.highway ?? (street.railway === 'platform' ? 'platform' : 'way'))}`;
 
 const isDeadEnd = (scene: Scene) => scene.kind === 'junction' && scene.exits.length === 1;
 
 function title(scene: Scene, street: Tags): string {
 	if (scene.here.length >= 2) return list(scene.here);
-	const name = capitalise(streetName(scene, street));
-	return isDeadEnd(scene) ? `End of ${name}` : name;
+	const name = streetName(scene, street);
+	// "End of an unnamed footway": the way's own name keeps its case after "End of".
+	return isDeadEnd(scene) ? `End of ${name}` : capitalise(name);
 }
 
 export function whereYouStand(scene: Scene, street: Tags): string {

@@ -63,6 +63,16 @@ describe('AdventureRenderer', () => {
 				exits: [{ label: 'west', to: 'x', street: 'Everton Road' }]
 			});
 			expect(text(s)).toContain('You are at the end of Everton Road.');
+			expect(renderer.render(s).title).toBe('End of Everton Road');
+		});
+
+		it('keeps an unnamed way in lower case at its end, as in the middle of a sentence', () => {
+			const s = scene({
+				kind: 'junction',
+				here: [],
+				exits: [{ label: 'south', to: 'x' }]
+			});
+			expect(renderer.render(s).title).toMatch(/^End of an unnamed /);
 		});
 
 		it('describes the street underfoot', () => {
