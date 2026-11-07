@@ -91,6 +91,46 @@ describe('easyRead', () => {
 		expect(texts(s)).toContain('You can only go back: south.');
 	});
 
+	it('says trams run here for a tram line, not that a tram is here', () => {
+		const s = scene({
+			beats: [thing('way/7', { railway: 'tram', name: 'Invented Trams (Line)' })]
+		});
+		expect(texts(s)).toContain('Trams run here.');
+		expect(texts(s).join(' ')).not.toContain('Invented Trams');
+	});
+
+	it('reads the words on a plaque as they are', () => {
+		const s = scene({
+			beats: [
+				{
+					subject: 'plaque/1',
+					facts: facts(
+						'plaque/1',
+						{ 'plaque:inscription': 'Ada Inventa lived here' },
+						{
+							geometry: [destination(O, 0, 10)],
+							elsewhere: true
+						}
+					),
+					effects: []
+				}
+			]
+		});
+		expect(texts(s)).toContain('There is a plaque here. It says: “Ada Inventa lived here”.');
+		expect(easyRead(s).find((l) => l.text.includes('plaque'))?.picture).toBe(PICTURES.plaque);
+	});
+
+	it('uses everyday words for a kind of place', () => {
+		const s = scene({
+			beats: [
+				thing('way/1', { landuse: 'retail', name: 'Inventa Parade' }),
+				thing('node/2', { shop: 'bookmaker', name: 'Invented Bets' }, 12)
+			]
+		});
+		expect(texts(s)).toContain('There is a shopping area here. It is called Inventa Parade.');
+		expect(texts(s)).toContain('There is a betting shop here. It is called Invented Bets.');
+	});
+
 	it('calls a tram platform by its tram stop', () => {
 		const platform = facts('way/9', {
 			railway: 'platform',
@@ -101,11 +141,16 @@ describe('easyRead', () => {
 			street: platform,
 			here: [],
 			kind: 'junction',
-			beats: [thing('node/8', { railway: 'tram_stop', name: 'Inventa', tram: 'yes' }, 8)]
+			beats: [
+				thing('node/8', { railway: 'tram_stop', name: 'Inventa', tram: 'yes' }, 8),
+				thing('way/10', { railway: 'platform', tram: 'yes' }, 2)
+			]
 		});
 		expect(easyRead(s)[0]).toEqual({
 			text: 'You are at Inventa tram stop.',
 			picture: PICTURES.tram
 		});
+		// At the tram stop, its platform and its own name are not told again as things here.
+		expect(texts(s).join(' ')).not.toMatch(/platform|called Inventa/);
 	});
 });

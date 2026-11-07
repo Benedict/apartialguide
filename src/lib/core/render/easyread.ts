@@ -84,6 +84,16 @@ function pictureOf(t: Tags): string | undefined {
 	return undefined;
 }
 
+/** Everyday words for the map's kinds where they are not everyday: a reworded kind, never a name. */
+const EVERYDAY: Record<string, string> = {
+	'retail area': 'shopping area',
+	bookmaker: 'betting shop',
+	'residential area': 'housing area',
+	'commercial area': 'business area',
+	'convenience shop': 'corner shop'
+};
+const everyday = (kind: string) => EVERYDAY[kind] ?? kind;
+
 const article = (word: string) => (/^[aeiou]/i.test(word) ? `an ${word}` : `a ${word}`);
 const plural = (word: string) => (/(s|x|ch|sh)$/.test(word) ? `${word}es` : `${word}s`);
 const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -127,13 +137,36 @@ function where(scene: Scene): EasyLine {
 }
 
 /** What is here: named things by name, the unnamed counted by kind, nearest first, four at most. */
-function things(scene: Scene): EasyLine[] {
+function things(scene: Scene, stop?: string): EasyLine[] {
 	const lines: EasyLine[] = [];
 	const counted = new Map<string, { n: number; picture: string; at: number }>();
+	let trams = false;
 	for (const b of scene.beats) {
 		const t = tagsOf(b.facts);
 		const picture = pictureOf(t);
-		const kind = noun(t);
+		// A tram line: trams run here, whatever the line's name on the map.
+		if (t.railway === 'tram') {
+			if (!trams) lines.push({ text: 'Trams run here.', picture: PICTURES.tram });
+			trams = true;
+			continue;
+		}
+		// At a tram stop, its platform and the stop itself are where you are, not things here.
+		if (
+			stop &&
+			(t.railway === 'platform' ||
+				t.public_transport === 'platform' ||
+				((t.railway === 'tram_stop' || t.public_transport === 'stop_position') && t.name === stop))
+		)
+			continue;
+		const words = t['plaque:inscription'];
+		if (words) {
+			lines.push({
+				text: `There is a plaque here. It says: “${words}”.`,
+				picture: PICTURES.plaque
+			});
+			continue;
+		}
+		const kind = everyday(noun(t));
 		if (kind === 'something' || kind === 'address') continue;
 		if (t.name && !looksBroken(t.name)) {
 			lines.push({
@@ -178,5 +211,5 @@ function ways(scene: Scene): EasyLine[] {
 
 /** A place told in Easy Read. */
 export function easyRead(scene: Scene): EasyLine[] {
-	return [where(scene), ...things(scene), ...ways(scene)];
+	return [where(scene), ...things(scene, tramStop(scene)), ...ways(scene)];
 }
