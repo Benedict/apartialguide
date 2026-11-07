@@ -15,6 +15,15 @@ export interface EasyLine {
 	text: string;
 	/** An OpenMoji picture (CC BY-SA 4.0), by its Unicode code point. */
 	picture: string;
+	/** A way on, as a button: the place it leads to, and its arrow in degrees from north. */
+	go?: { to: string; arrow: number };
+}
+
+/** What a place is to someone coming to it: what to call it, and whether the way ends there. */
+export interface Ahead {
+	/** What it could be called, most use first: its tram stop, its streets, its named things. */
+	names: string[];
+	end?: boolean;
 }
 
 /** The pictures, by what they show: OpenMoji code points. */
@@ -141,6 +150,7 @@ function things(scene: Scene, stop?: string): EasyLine[] {
 	const lines: EasyLine[] = [];
 	const counted = new Map<string, { n: number; picture: string; at: number }>();
 	let trams = false;
+	let within: EasyLine | undefined;
 	for (const b of scene.beats) {
 		const t = tagsOf(b.facts);
 		const picture = pictureOf(t);
@@ -158,6 +168,10 @@ function things(scene: Scene, stop?: string): EasyLine[] {
 				((t.railway === 'tram_stop' || t.public_transport === 'stop_position') && t.name === stop))
 		)
 			continue;
+		if (SETTLEMENTS.has(t.place ?? '') && t.name && !looksBroken(t.name)) {
+			within ??= { text: `You are in ${t.name}.`, picture: PICTURES.where };
+			continue;
+		}
 		const words = t['plaque:inscription'];
 		if (words) {
 			lines.push({
@@ -189,27 +203,118 @@ function things(scene: Scene, stop?: string): EasyLine[] {
 			},
 			at: at - 0.5
 		});
-	return all
+	const told = all
 		.sort((a, b) => a.at - b.at)
 		.slice(0, MOST_THINGS)
 		.map(({ l }) => l);
+	// The place you are in is said first, after where you stand.
+	return within ? [within, ...told] : told;
 }
 
 /** The ways on, one to a line. */
-function ways(scene: Scene): EasyLine[] {
+const POINTS = [
+	'north',
+	'north-north-east',
+	'north-east',
+	'east-north-east',
+	'east',
+	'east-south-east',
+	'south-east',
+	'south-south-east',
+	'south',
+	'south-south-west',
+	'south-west',
+	'west-south-west',
+	'west',
+	'west-north-west',
+	'north-west',
+	'north-north-west'
+];
+
+/** An exit's arrow, in degrees from north, from the compass point it is named by. */
+export const arrowOf = (label: string) => POINTS.indexOf(label.replace(/\s*\(.*$/, '')) * 22.5;
+
+/** Places the map names that a walker is in, not beside. */
+const SETTLEMENTS = new Set(['suburb', 'neighbourhood', 'quarter', 'village', 'town']);
+
+const ofTramStop = (name: string) => (/tram stop$/i.test(name) ? name : `${name} tram stop`);
+
+/**
+ * What a place is to someone coming to it, from its own data: the tram stop it is at, else the
+ * first named thing it tells, else its street; and whether the way ends there.
+ */
+export function comingTo(scene: Scene): Ahead {
+	const stop = tramStop(scene) ?? nearTramStop(scene);
+	const named = scene.beats
+		.map((b) => tagsOf(b.facts))
+		.filter(
+			(t) => t.name && !looksBroken(t.name) && t.railway !== 'tram' && !t.highway && !!pictureOf(t)
+		)
+		.map((t) => t.name);
+	const names = [
+		...(stop ? [ofTramStop(stop)] : []),
+		...scene.here.filter((h) => !looksBroken(h)),
+		...named
+	];
+	return {
+		names: [...new Set(names)],
+		...(scene.kind === 'junction' && scene.exits.length === 1 ? { end: true } : {})
+	};
+}
+
+/** Every name a place already tells, so a way on is not said to come to one of them. */
+const toldAt = (scene: Scene) =>
+	new Set([...comingTo(scene).names, ...scene.beats.map((b) => tagsOf(b.facts).name ?? '')]);
+
+/** A tram stop the map names close by, though the place is not on its platform. */
+function nearTramStop(scene: Scene): string | undefined {
+	for (const b of scene.beats) {
+		const t = tagsOf(b.facts);
+		const at = b.facts.find((f) => f.geometry?.length)?.geometry?.[0];
+		if (
+			t.railway === 'tram_stop' &&
+			t.name &&
+			at &&
+			distance(scene.position, at) <= TRAM_STOP_WITHIN_M
+		)
+			return t.name;
+	}
+	return undefined;
+}
+
+function ways(scene: Scene, ahead?: (to: string) => Ahead | undefined): EasyLine[] {
 	const along = (street?: string) => (street && !looksBroken(street) ? street : 'a path');
+	const told = toldAt(scene);
 	if (scene.kind === 'junction' && scene.exits.length === 1)
-		return [{ text: `You can only go back: ${scene.exits[0].label}.`, picture: PICTURES.end }];
+		return [
+			{
+				text: `You can only go back: ${scene.exits[0].label}.`,
+				picture: PICTURES.end,
+				go: { to: scene.exits[0].to, arrow: arrowOf(scene.exits[0].label) }
+			}
+		];
 	return [
 		{ text: 'You can go:', picture: PICTURES.ways },
-		...scene.exits.map((e) => ({
-			text: `${capitalise(e.label)}, along ${along(e.street)}.`,
-			picture: PICTURES.ways
-		}))
+		...scene.exits.map((e) => {
+			const way = along(e.street);
+			const next = ahead?.(e.to);
+			const said = [`${capitalise(e.label)}.`, `Along ${way}.`];
+			if (next?.end)
+				said.push(`The ${e.street && way === e.street ? 'street' : 'path'} ends there.`);
+			else {
+				const name = next?.names.find((n) => n !== e.street && !told.has(n));
+				if (name) said.push(`You will come to ${name}.`);
+			}
+			return {
+				text: said.join(' '),
+				picture: PICTURES.ways,
+				go: { to: e.to, arrow: arrowOf(e.label) }
+			};
+		})
 	];
 }
 
 /** A place told in Easy Read. */
-export function easyRead(scene: Scene): EasyLine[] {
-	return [where(scene), ...things(scene, tramStop(scene)), ...ways(scene)];
+export function easyRead(scene: Scene, ahead?: (to: string) => Ahead | undefined): EasyLine[] {
+	return [where(scene), ...things(scene, tramStop(scene)), ...ways(scene, ahead)];
 }

@@ -3,7 +3,7 @@ import { destination } from '../geo';
 import type { Scene } from '../scene';
 import { facts } from '../testing/facts';
 import { SyntheticMap } from '../testing/synthetic';
-import { easyRead, PICTURES } from './easyread';
+import { arrowOf, comingTo, easyRead, PICTURES } from './easyread';
 
 // Invented places and things: no real place.
 const O = SyntheticMap.ORIGIN;
@@ -72,14 +72,71 @@ describe('easyRead', () => {
 		expect(texts(s).join(' ')).not.toContain('The Invented E');
 	});
 
-	it('says which ways you can go, one to a line', () => {
+	it('says which ways you can go, one to a line, each a button with its arrow', () => {
 		const lines = easyRead(scene());
 		expect(lines.slice(-3).map((l) => l.text)).toEqual([
 			'You can go:',
-			'North, along Inventa Road.',
-			'South, along a path.'
+			'North. Along Inventa Road.',
+			'South. Along a path.'
 		]);
 		expect(lines.at(-3)?.picture).toBe(PICTURES.ways);
+		expect(lines.at(-2)?.go).toEqual({ to: 'a', arrow: 0 });
+		expect(lines.at(-1)?.go).toEqual({ to: 'b', arrow: 180 });
+	});
+
+	it('says what each way comes to, from the next place itself', () => {
+		const ahead = { a: { names: ['Inventa tram stop'] }, b: { names: [], end: true } };
+		const lines = easyRead(scene(), (to) => ahead[to as 'a' | 'b']);
+		expect(lines.slice(-2).map((l) => l.text)).toEqual([
+			'North. Along Inventa Road. You will come to Inventa tram stop.',
+			'South. Along a path. The path ends there.'
+		]);
+	});
+
+	it('says nothing more of a way that comes only to more of the same street', () => {
+		const lines = easyRead(scene(), () => ({ names: ['Inventa Road'] }));
+		expect(lines.at(-2)?.text).toBe('North. Along Inventa Road.');
+	});
+
+	it('turns each arrow to the way it names, of sixteen points', () => {
+		expect(arrowOf('north-east')).toBe(45);
+		expect(arrowOf('west-south-west')).toBe(247.5);
+		expect(arrowOf('north-east (Inventa Road)')).toBe(45);
+	});
+
+	it('tells what a place is to someone coming to it: its tram stop, its streets, then its named things', () => {
+		const stop = thing('node/8', { railway: 'tram_stop', name: 'Inventa' });
+		const pub = thing('node/1', { amenity: 'pub', name: 'The Invented Arms' });
+		expect(comingTo(scene({ beats: [stop] })).names[0]).toBe('Inventa tram stop');
+		expect(comingTo(scene({ beats: [pub], here: ['Inventa Road', 'Other Lane'] })).names).toEqual([
+			'Inventa Road',
+			'Other Lane',
+			'The Invented Arms'
+		]);
+		expect(comingTo(scene({ here: [] })).names).toEqual([]);
+		expect(comingTo(scene({ kind: 'junction', exits: [{ label: 'south', to: 'b' }] })).end).toBe(
+			true
+		);
+	});
+
+	it('names only what is new on a way, never a thing already here', () => {
+		const pub = thing('node/1', { amenity: 'pub', name: 'The Invented Arms' });
+		const s = scene({ beats: [pub] });
+		const lines = easyRead(s, () => ({
+			names: ['Inventa Road', 'The Invented Arms', 'Other Lane']
+		}));
+		expect(lines.at(-2)?.text).toBe('North. Along Inventa Road. You will come to Other Lane.');
+	});
+
+	it('says you are in a suburb the map names, rather than that one is here', () => {
+		const s = scene({
+			beats: [
+				thing('node/1', { amenity: 'pub', name: 'The Invented Arms' }),
+				thing('node/9', { place: 'suburb', name: 'Inventon' })
+			]
+		});
+		expect(texts(s)[1]).toBe('You are in Inventon.');
+		expect(texts(s).join(' ')).not.toContain('suburb');
 	});
 
 	it('says plainly when a way ends', () => {
