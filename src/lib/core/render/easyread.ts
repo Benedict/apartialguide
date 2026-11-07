@@ -1,0 +1,182 @@
+import { distance, distanceToPolyline } from '../geo';
+import { groupBySubject, type Fact } from '../facts';
+import type { Tags } from '../osm';
+import type { Scene } from '../scene';
+import { looksBroken } from '../tensions';
+import { noun } from './adventure';
+
+/**
+ * An Easy Read telling of a place, after Mencap's guidance: one short sentence to a line, everyday
+ * words, a picture beside each, the ways on as a list. A spike, beside the template and Guide:
+ * it says less than they do, never more, and every name in it is the map's, as found. A name that
+ * reads as broken, or a thing it cannot say plainly, is left out rather than mended.
+ */
+export interface EasyLine {
+	text: string;
+	/** An OpenMoji picture (CC BY-SA 4.0), by its Unicode code point. */
+	picture: string;
+}
+
+/** The pictures, by what they show: OpenMoji code points. */
+export const PICTURES = {
+	where: '1F4CD',
+	ways: '1F9ED',
+	end: '1F6A7',
+	tram: '1F68A',
+	bus: '1F68F',
+	pub: '1F37A',
+	cafe: '2615',
+	restaurant: '1F37D',
+	fastfood: '1F35F',
+	shop: '1F3EA',
+	house: '1F3E0',
+	building: '1F3E2',
+	church: '26EA',
+	school: '1F3EB',
+	library: '1F4DA',
+	health: '1F3E5',
+	pharmacy: '1F48A',
+	park: '1F333',
+	bench: '1FA91',
+	postbox: '1F4EE',
+	plaque: '1FAA7'
+} as const;
+
+/** The most things told at a place. */
+const MOST_THINGS = 4;
+/** How near a named tram stop is told as the place a tram platform is. */
+const TRAM_STOP_WITHIN_M = 30;
+
+const HOUSES = new Set([
+	'house',
+	'residential',
+	'terrace',
+	'detached',
+	'semidetached_house',
+	'bungalow'
+]);
+
+/** The picture for a thing, if it has one; a thing without one is not told unless named. */
+function pictureOf(t: Tags): string | undefined {
+	if (t.railway === 'tram' || t.railway === 'tram_stop' || (t.railway === 'platform' && t.tram))
+		return PICTURES.tram;
+	if (t.highway === 'bus_stop') return PICTURES.bus;
+	const a = t.amenity;
+	if (a === 'pub' || a === 'bar') return PICTURES.pub;
+	if (a === 'cafe') return PICTURES.cafe;
+	if (a === 'restaurant') return PICTURES.restaurant;
+	if (a === 'fast_food') return PICTURES.fastfood;
+	if (a === 'place_of_worship') return PICTURES.church;
+	if (a === 'school' || a === 'college' || a === 'kindergarten') return PICTURES.school;
+	if (a === 'library') return PICTURES.library;
+	if (a === 'doctors' || a === 'dentist' || a === 'clinic' || a === 'hospital')
+		return PICTURES.health;
+	if (a === 'pharmacy') return PICTURES.pharmacy;
+	if (a === 'bench') return PICTURES.bench;
+	if (a === 'post_box') return PICTURES.postbox;
+	if (t.shop) return PICTURES.shop;
+	if (t.leisure === 'park' || t.leisure === 'garden' || t.leisure === 'playground')
+		return PICTURES.park;
+	if (t.natural === 'tree') return PICTURES.park;
+	if (t.historic === 'memorial' || t.memorial === 'plaque') return PICTURES.plaque;
+	if (t.building && HOUSES.has(t.building)) return PICTURES.house;
+	if (t.building) return PICTURES.building;
+	return undefined;
+}
+
+const article = (word: string) => (/^[aeiou]/i.test(word) ? `an ${word}` : `a ${word}`);
+const plural = (word: string) => (/(s|x|ch|sh)$/.test(word) ? `${word}es` : `${word}s`);
+const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const tagsOf = (facts: readonly Fact[]): Tags =>
+	Object.fromEntries(facts.map((f) => [f.claim.key, f.claim.value]));
+
+/** The named tram stop a tram platform here belongs to, if the map names one near. */
+function tramStop(scene: Scene): string | undefined {
+	const isPlatform = (t: Tags) => t.railway === 'platform' || t.public_transport === 'platform';
+	const underfoot = [...groupBySubject(scene.street).values()].map(tagsOf).some(isPlatform);
+	const here = [...scene.beats, ...scene.hidden].some((b) => {
+		const line = b.facts.find((f) => f.geometry?.length)?.geometry;
+		return isPlatform(tagsOf(b.facts)) && !!line && distanceToPolyline(scene.position, line) <= 3;
+	});
+	if (!underfoot && !here) return undefined;
+	for (const b of [...scene.beats, ...scene.hidden]) {
+		const t = tagsOf(b.facts);
+		const at = b.facts.find((f) => f.geometry?.length)?.geometry?.[0];
+		if (
+			t.railway === 'tram_stop' &&
+			t.name &&
+			at &&
+			distance(scene.position, at) <= TRAM_STOP_WITHIN_M
+		)
+			return t.name;
+	}
+	return undefined;
+}
+
+/** Where you are: on a street, at its end, where two meet, or at a tram stop. */
+function where(scene: Scene): EasyLine {
+	const stop = tramStop(scene);
+	if (stop) return { text: `You are at ${stop} tram stop.`, picture: PICTURES.tram };
+	const names = scene.here.filter((n) => !looksBroken(n));
+	const name = names[0] ?? 'a path';
+	if (scene.kind === 'junction' && scene.exits.length === 1)
+		return { text: `You are at the end of ${name}.`, picture: PICTURES.where };
+	if (names.length >= 2)
+		return { text: `You are where ${names[0]} and ${names[1]} meet.`, picture: PICTURES.where };
+	return { text: `You are on ${name}.`, picture: PICTURES.where };
+}
+
+/** What is here: named things by name, the unnamed counted by kind, nearest first, four at most. */
+function things(scene: Scene): EasyLine[] {
+	const lines: EasyLine[] = [];
+	const counted = new Map<string, { n: number; picture: string; at: number }>();
+	for (const b of scene.beats) {
+		const t = tagsOf(b.facts);
+		const picture = pictureOf(t);
+		const kind = noun(t);
+		if (kind === 'something' || kind === 'address') continue;
+		if (t.name && !looksBroken(t.name)) {
+			lines.push({
+				text: `There is ${article(kind)} here. It is called ${t.name}.`,
+				picture: picture ?? PICTURES.where
+			});
+		} else if (!t.name && picture) {
+			const c = counted.get(kind);
+			if (c) c.n++;
+			else counted.set(kind, { n: 1, picture, at: lines.length });
+		}
+	}
+	// Each count stands where the first of its kind did.
+	const all = [...lines.map((l, i) => ({ l, at: i }))];
+	for (const [kind, { n, picture, at }] of counted)
+		all.push({
+			l: {
+				text: n === 1 ? `There is ${article(kind)} here.` : `There are ${n} ${plural(kind)} here.`,
+				picture
+			},
+			at: at - 0.5
+		});
+	return all
+		.sort((a, b) => a.at - b.at)
+		.slice(0, MOST_THINGS)
+		.map(({ l }) => l);
+}
+
+/** The ways on, one to a line. */
+function ways(scene: Scene): EasyLine[] {
+	const along = (street?: string) => (street && !looksBroken(street) ? street : 'a path');
+	if (scene.kind === 'junction' && scene.exits.length === 1)
+		return [{ text: `You can only go back: ${scene.exits[0].label}.`, picture: PICTURES.end }];
+	return [
+		{ text: 'You can go:', picture: PICTURES.ways },
+		...scene.exits.map((e) => ({
+			text: `${capitalise(e.label)}, along ${along(e.street)}.`,
+			picture: PICTURES.ways
+		}))
+	];
+}
+
+/** A place told in Easy Read. */
+export function easyRead(scene: Scene): EasyLine[] {
+	return [where(scene), ...things(scene), ...ways(scene)];
+}

@@ -471,7 +471,7 @@ const BUILDING_NOUNS = new Set([
 ]);
 
 /** What a thing is now, or failing that what it is built as. */
-function noun(tags: Tags): string {
+export function noun(tags: Tags): string {
 	const use = currentUse(tags) ?? kind(tags);
 	if (use) return use;
 	const built = tags.building;
