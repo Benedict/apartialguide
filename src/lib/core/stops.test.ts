@@ -151,6 +151,59 @@ describe('buildStopGraph', () => {
 		).toEqual(['north']);
 	});
 
+	it('crosses a square drawn as an area, from each path that meets its edge, by a place in its middle', () => {
+		// An invented square, 40 m across, drawn as an area; a footway meets its west edge and one its east.
+		const crossing = (tags: Record<string, string>) => {
+			const map = new SyntheticMap();
+			const corners = [45, 135, 225, 315].map((b) => map.nodeFrom(O, b, 20 * Math.SQRT2));
+			const west = map.nodeFrom(O, 270, 20);
+			const east = map.nodeFrom(O, 90, 20);
+			// The ring runs through the middle of each side, where the footways meet it.
+			map.way([corners[0], east, corners[1], corners[2], west, corners[3], corners[0]], tags);
+			const far = { w: map.nodeFrom(O, 270, 80), e: map.nodeFrom(O, 90, 80) };
+			map.way([far.w, west], { highway: 'footway' });
+			map.way([east, far.e], { highway: 'footway' });
+			const graph = buildStopGraph(new OsmIndex(map.toData()));
+			const reached = new Set<string>();
+			const go = (id: string) => {
+				if (reached.has(id)) return;
+				reached.add(id);
+				for (const e of graph.get(id)!.exits) go(e.to);
+			};
+			go(junctionId(far.w));
+			const middle = graph.all().find((s) => distance(s.position, O) < 1);
+			return { across: reached.has(junctionId(far.e)), middle };
+		};
+		const square = crossing({ highway: 'pedestrian', area: 'yes', name: 'Inventa Square' });
+		expect(square.across).toBe(true);
+		// The middle of the square is a place, its ways on named by the square.
+		expect(square.middle?.exits.map((e) => e.street)).toEqual(['Inventa Square', 'Inventa Square']);
+
+		// A tram stop's platform drawn as an area is crossed too; a station's, or a square closed
+		// to those on foot, is not.
+		expect(
+			crossing({ railway: 'platform', public_transport: 'platform', tram: 'yes', area: 'yes' })
+				.across
+		).toBe(true);
+		expect(crossing({ railway: 'platform', train: 'yes', area: 'yes' }).across).toBe(false);
+		expect(crossing({ highway: 'pedestrian', area: 'yes', foot: 'no' }).across).toBe(false);
+	});
+
+	it('takes you into the middle of a square that only one path reaches, rather than ending at its edge', () => {
+		const map = new SyntheticMap();
+		const corners = [45, 135, 225, 315].map((b) => map.nodeFrom(O, b, 20 * Math.SQRT2));
+		const west = map.nodeFrom(O, 270, 20);
+		map.way([corners[0], corners[1], corners[2], west, corners[3], corners[0]], {
+			highway: 'pedestrian',
+			area: 'yes'
+		});
+		const far = map.nodeFrom(O, 270, 80);
+		map.way([far, west], { highway: 'footway' });
+		const graph = buildStopGraph(new OsmIndex(map.toData()));
+		const middle = graph.all().find((s) => distance(s.position, O) < 1);
+		expect(middle?.exits).toHaveLength(1);
+	});
+
 	it('walks along a trunk road, as its pavements allow, unless the map says no one may', () => {
 		const map = new SyntheticMap();
 		const a = map.node(O);

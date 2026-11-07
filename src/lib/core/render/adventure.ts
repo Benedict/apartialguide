@@ -145,8 +145,14 @@ function platformName(scene: Scene): string | undefined {
 	return 'a tram platform';
 }
 
+/** A square drawn as an area, which the walk crosses by a place in its middle. */
+const isSquare = (street: Tags) =>
+	street.area === 'yes' && (street.highway === 'pedestrian' || street.highway === 'footway');
+
 const streetName = (scene: Scene, street: Tags) =>
-	scene.here[0] ?? platformName(scene) ?? `an unnamed ${humanise(street.highway ?? 'way')}`;
+	scene.here[0] ??
+	platformName(scene) ??
+	`an unnamed ${isSquare(street) ? 'square' : humanise(street.highway ?? 'way')}`;
 
 const isDeadEnd = (scene: Scene) => scene.kind === 'junction' && scene.exits.length === 1;
 
