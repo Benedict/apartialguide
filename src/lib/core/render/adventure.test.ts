@@ -63,6 +63,47 @@ describe('AdventureRenderer', () => {
 				exits: [{ label: 'west', to: 'x', street: 'Everton Road' }]
 			});
 			expect(text(s)).toContain('You are at the end of Everton Road.');
+			expect(renderer.render(s).title).toBe('End of Everton Road');
+		});
+
+		it('calls a tram platform underfoot by the tram stop the map names beside it', () => {
+			const platform = facts('way/9', {
+				railway: 'platform',
+				public_transport: 'platform',
+				tram: 'yes',
+				lit: 'yes'
+			});
+			const stop = beat('node/8', { railway: 'tram_stop', name: 'Inventa', tram: 'yes' }, north(8));
+			const s = scene({ street: platform, here: [], kind: 'junction', beats: [stop], exits: [] });
+			expect(renderer.render(s).title).toBe('The platform of Inventa tram stop');
+			expect(text(s)).toContain('the platform of Inventa tram stop');
+		});
+
+		it('calls a footway’s end by the platform it comes onto, the platform right here', () => {
+			const footway = facts('way/7', { highway: 'footway', lit: 'yes' });
+			const platform = beat(
+				'way/9',
+				{ railway: 'platform', public_transport: 'platform', tram: 'yes' },
+				{ geometry: [O, destination(O, 90, 30)] }
+			);
+			const stop = beat('node/8', { railway: 'tram_stop', name: 'Inventa', tram: 'yes' }, north(8));
+			const s = scene({ street: footway, here: [], kind: 'junction', beats: [platform, stop] });
+			expect(renderer.render(s).title).toBe('The platform of Inventa tram stop');
+		});
+
+		it('calls a tram platform with no named stop near simply a tram platform', () => {
+			const platform = facts('way/9', { railway: 'platform', tram: 'yes' });
+			const s = scene({ street: platform, here: [], kind: 'junction', exits: [] });
+			expect(renderer.render(s).title).toBe('A tram platform');
+		});
+
+		it('keeps an unnamed way in lower case at its end, as in the middle of a sentence', () => {
+			const s = scene({
+				kind: 'junction',
+				here: [],
+				exits: [{ label: 'south', to: 'x' }]
+			});
+			expect(renderer.render(s).title).toMatch(/^End of an unnamed /);
 		});
 
 		it('describes the street underfoot', () => {

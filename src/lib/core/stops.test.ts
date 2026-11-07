@@ -117,6 +117,40 @@ describe('buildStopGraph', () => {
 		expect(labels).toEqual(['north']);
 	});
 
+	it('walks along a tram stop’s platform, as one walks from the street to the tram, but not a station’s', () => {
+		// An invented tram stop: a footway from each side meets the platform, which runs between them.
+		const map = new SyntheticMap();
+		const south = map.node(O);
+		const a = map.nodeFrom(O, 0, 30);
+		const north = map.nodeFrom(map.position(a), 0, 40);
+		map.way([south, map.nodeFrom(O, 90, 60)], { highway: 'residential', name: 'Invented Road' });
+		map.way([south, a], { highway: 'footway' });
+		const c = map.nodeFrom(map.position(a), 90, 25);
+		map.way([a, c], { railway: 'platform', public_transport: 'platform', tram: 'yes' });
+		map.way([c, north], { highway: 'footway' });
+		const graph = buildStopGraph(new OsmIndex(map.toData()));
+		const reached = new Set<string>();
+		const walk = (id: string) => {
+			if (reached.has(id)) return;
+			reached.add(id);
+			for (const e of graph.get(id)!.exits) walk(e.to);
+		};
+		walk(junctionId(south));
+		expect(reached.has(junctionId(north))).toBe(true);
+		// Where the footway meets the platform is a place to stop, as where a street changes its name.
+		expect(graph.get(junctionId(a))).toBeDefined();
+
+		const station = new SyntheticMap();
+		const s = station.node(O);
+		station.way([s, station.nodeFrom(O, 0, 40)]);
+		station.way([s, station.nodeFrom(O, 90, 40)], { railway: 'platform', train: 'yes' });
+		expect(
+			buildStopGraph(new OsmIndex(station.toData()))
+				.get(junctionId(s))!
+				.exits.map((e) => e.label)
+		).toEqual(['north']);
+	});
+
 	it('walks along a trunk road, as its pavements allow, unless the map says no one may', () => {
 		const map = new SyntheticMap();
 		const a = map.node(O);
