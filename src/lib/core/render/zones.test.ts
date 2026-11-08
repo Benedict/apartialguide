@@ -110,6 +110,22 @@ describe('zoneLines', () => {
 		);
 	});
 
+	it('names single mines before a title that runs several together, which goes to the count', () => {
+		const [line] = zoneLines(
+			[
+				plans('INVENTED NORTH INVENTED SOUTH INVENTED EAST INVENTED WEST'),
+				plans('INVENTED A'),
+				plans('INVENTED B'),
+				plans('INVENTED C')
+			],
+			[]
+		);
+		expect(line).toContain('“Invented A”');
+		expect(line).toContain('“Invented C”');
+		expect(line).not.toContain('Invented North');
+		expect(line).toContain('Plans of one more mine cover it too.');
+	});
+
 	it('joins two mines with and', () => {
 		const [line] = zoneLines([plans('INVENTED A'), plans('INVENTED B')], []);
 		expect(line).toMatch(/“Invented A”.*; and .*“Invented B”.*\.$/);

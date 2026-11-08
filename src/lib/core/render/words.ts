@@ -35,9 +35,41 @@ const SHOP_NOUNS = new Set([
 	'pawnbroker'
 ]);
 
-export function currentUse(tags: Tags): string | undefined {
+/** What `historic` says when it says only that a thing is old, in a walker's word. */
+const HISTORIC_ONLY: Record<string, string> = {
+	yes: 'historic site',
+	industrial: 'industrial site',
+	ruins: 'ruin'
+};
+/** Keys that say what a thing is, which say more than that it is historic. */
+const WHAT_IT_IS = ['man_made', 'railway', 'power', 'barrier', 'natural'];
+
+/** What the map's information point is, by the kind it gives. */
+const INFORMATION: Record<string, string> = {
+	board: 'information board',
+	map: 'information map',
+	office: 'information office'
+};
+
+/**
+ * What a thing is used for. In a walker's words (`walker`) a value that is an adjective or the map's
+ * shorthand is made a noun; as mapped, for the prompt, it stays as it was, so stored prose keeps its key.
+ */
+export function currentUse(tags: Tags, walker = true): string | undefined {
 	const key = USE_KEYS.find((k) => tags[k]);
-	return key ? useNoun(key, tags[key]) : undefined;
+	if (!key) return undefined;
+	const value = tags[key];
+	if (!walker) return useNoun(key, value);
+	if (key === 'historic' && HISTORIC_ONLY[value]) {
+		// A chimney that is historic is told as a chimney.
+		if (WHAT_IT_IS.some((k) => tags[k])) return undefined;
+		return HISTORIC_ONLY[value];
+	}
+	if (key === 'tourism' && value === 'information')
+		return tags.information
+			? (INFORMATION[tags.information] ?? humanise(tags.information))
+			: 'information point';
+	return useNoun(key, value);
 }
 
 export function pastUse(tags: Tags): string | undefined {
@@ -79,8 +111,22 @@ const UNCOUNTABLE = new Set([
 	'motorcycle parking',
 	'something'
 ]);
-export const article = (noun: string) =>
-	UNCOUNTABLE.has(noun) ? noun : `${/^[aeiou]/i.test(noun) ? 'an' : 'a'} ${noun}`;
+/** Uncountable in a walker's words only: the prompt keeps the article it always had. */
+const UNCOUNTABLE_TO_WALKERS = new Set([
+	'water',
+	'scrub',
+	'grassland',
+	'bare rock',
+	'scree',
+	'shingle',
+	'sand',
+	'mud',
+	'outdoor seating'
+]);
+export const article = (noun: string, walker = true) =>
+	UNCOUNTABLE.has(noun) || (walker && UNCOUNTABLE_TO_WALKERS.has(noun))
+		? noun
+		: `${/^[aeiou]/i.test(noun) ? 'an' : 'a'} ${noun}`;
 export const list = (items: string[]) =>
 	items.length < 2 ? items.join('') : `${items.slice(0, -1).join(', ')} and ${items.at(-1)}`;
 

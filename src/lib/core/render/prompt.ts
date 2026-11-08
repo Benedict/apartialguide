@@ -104,7 +104,9 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 	const others = (facts: readonly Fact[]) => otherWords(tagsOf(facts)).join(' ');
 	const gone = (facts: readonly Fact[]) =>
 		nounPhrase(
-			Object.fromEntries(facts.map((f) => [f.claim.key.replace(/^was:/, ''), f.claim.value]))
+			Object.fromEntries(facts.map((f) => [f.claim.key.replace(/^was:/, ''), f.claim.value])),
+			undefined,
+			false
 		);
 	const folded = beat.facts.filter((f) => f.subject !== beat.subject && !isElsewhere(f));
 	const map = beat.facts.filter((f) => !isElsewhere(f) && !folded.includes(f));
@@ -112,7 +114,7 @@ function beatLine(scene: Scene, beat: Beat, n: number): string {
 	const plaque = !map.length && !!tags['plaque:inscription'];
 	const inscribed = !map.length && !!(tags['plaque:inscription'] || tags['bench:inscription']);
 	const what = map.length
-		? plainKind(tags)
+		? plainKind(tags, false)
 		: `${plaque ? 'a plaque' : calledElsewhere(tags)}, which the map does not have`;
 	const lines = [`${n}. ${placement(scene.position, beat)}: ${what}.`];
 	if (map.length) lines.push(`   The map: ${words(map)}`);
@@ -161,7 +163,7 @@ export function buildPrompt(whole: Scene): Prompt {
 		: '';
 	const user = [
 		'Where the reader stands:',
-		[whereYouStand(scene, street), ...streetCharacter(street, true), setting(scene)]
+		[whereYouStand(scene, street), ...streetCharacter(street, true), setting(scene, false)]
 			.filter(Boolean)
 			.join(' '),
 		'',
