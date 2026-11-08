@@ -1,3 +1,4 @@
+import { zoneLines } from '../render/zones';
 import { COLOURS, isColour, type Colour } from './colours';
 import type { Fact } from '../facts';
 import { hearsay } from '../render/hearsay';
@@ -1260,15 +1261,14 @@ export class Adventure {
 		const before =
 			this.walk.previous === undefined ? [] : (this.world.stops[this.walk.previous].zones ?? []);
 		const now = this.world.stops[this.walk.here].zones ?? [];
-		const names = (zones: { name: string }[]) => new Set(zones.map((z) => z.name));
-		const was = names(before);
-		const is = names(now);
-		return [
-			...now
-				.filter((z) => !was.has(z.name))
-				.map((z) => hearsay(`you are within ${z.name}, ${withArticle(z.kind)}`)),
-			...before.filter((z) => !is.has(z.name)).map((z) => hearsay(`you have come out of ${z.name}`))
-		];
+		// A zone is its kind and its name: a mine's plans and its returns share a name.
+		const key = (z: { name: string; kind: string }) => `${z.kind}|${z.name}`;
+		const was = new Set(before.map(key));
+		const is = new Set(now.map(key));
+		return zoneLines(
+			now.filter((z) => !was.has(key(z))),
+			before.filter((z) => !is.has(key(z)))
+		);
 	}
 
 	/** A step into, out of or between the areas another account draws, such as wards. */

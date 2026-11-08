@@ -4,6 +4,16 @@ What has changed in A Partial Guide, newest first. Each day has lines **for walk
 
 Add to it with each change worth telling: a line for walkers where a walker would notice, a line under the hood where only the code changed. The front page shows the latest three days that have lines for walkers.
 
+## 2026-11-08
+
+### For walkers
+
+- More old mine workings are told by kind and name alone, never which way or how far: mine levels, air and ventilation shafts, and old mineral workings, as the map marks them.
+
+### Under the hood
+
+- Underland's records: `npm run underland` writes the mines' plans of the ground itself and Hunt's returns as zones over that ground (or, where no plans' ground has a mine, its returns on the map's mark of its name), the rocks beneath as zones, and boreholes standing alone, from Underground's dated files (`server/sources/underland.ts`), kept in the private data repository. Zones carry their claims; a mine's ground, its returns and the rock beneath are told on coming onto them (`render/zones.ts`, `zoneLines`), three mines at most a step, and holes in a zone are kept. Records of one thing from two sources join (`thing`). `isMineEntry` knows levels, air and ventilation shafts, mineral workings and another account's mine, and `npm run export` refuses a world that points the way to one (`pointsToMine`).
+
 ## 2026-11-07
 
 ### For walkers

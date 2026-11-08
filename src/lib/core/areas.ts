@@ -7,6 +7,10 @@ export interface AreaRecord {
 	kind: string;
 	/** Its outer rings, one per part. */
 	rings: LatLon[][];
+	/** Holes in it, where another area lies instead (a rock's outcrop of another rock). */
+	holes?: LatLon[][];
+	/** What the account says of it, every value as found. */
+	claims?: Record<string, string>;
 }
 
 /** The first of the areas that the point lies in, if any. */

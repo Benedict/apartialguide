@@ -172,6 +172,30 @@ export function wordsAmiss(world: AdventureWorld): string[] {
 	return amiss;
 }
 
+/** Words that say which way something lies, or how far. */
+const POINTING = /\b(north|south|east|west|metres|steps away|beside you|right here)\b/i;
+
+/**
+ * Sentences that point the way to a way into a mine: a shaft, adit or level the world marks
+ * (`entry` on a thing), named with a direction or a distance, at any place. Old shafts are
+ * dangerous, and the walk tells one by kind and name alone (`isMineEntry`): a world with any such
+ * sentence is not fit to publish, whatever let it slip.
+ */
+export function pointsToMine(world: AdventureWorld): string[] {
+	const names = new Set<string>();
+	for (const stop of Object.values(world.stops))
+		for (const t of [...stop.things, ...(stop.hidden?.things ?? [])])
+			if (t.entry) for (const [, name] of t.name.matchAll(/“([^”]+)”/g)) names.add(name);
+	const pointed: string[] = [];
+	if (!names.size) return pointed;
+	for (const [id, stop] of Object.entries(world.stops))
+		for (const text of [...stop.paragraphs, ...(stop.hidden?.lines ?? [])])
+			for (const sentence of text.match(/[^.!?]+[.!?]?/g) ?? [])
+				if (POINTING.test(sentence) && [...names].some((n) => sentence.includes(`“${n}”`)))
+					pointed.push(`${id}: ${sentence.trim()}`);
+	return pointed;
+}
+
 /** The whole game as one self-contained page: engine, world, styles and prompt. */
 export function exportPage({
 	engine,

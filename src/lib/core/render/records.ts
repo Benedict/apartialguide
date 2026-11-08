@@ -1,3 +1,4 @@
+import { returnsSaid } from './zones';
 import type { Tags } from '../osm';
 import { aside, hearsay } from './hearsay';
 import { list as listOf, monthYear, numberWord } from './words';
@@ -68,6 +69,29 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 	[
 		true,
 		(t) => (t['geograph:taken'] ? `Taken in ${monthYear(`${t['geograph:taken']}-01`)}.` : undefined)
+	],
+	[
+		true,
+		(t) => {
+			// What a mine raised, on the map's mark of its name (`underland.ts`, `returnZones`).
+			const mine = t['returns:mine'];
+			if (!mine) return undefined;
+			const claims = Object.fromEntries(
+				Object.entries(t)
+					.filter(([k]) => k.startsWith('returns:'))
+					.map(([k, v]) => [k.slice('returns:'.length), v])
+			);
+			return returnsSaid(mine, claims).join(' ');
+		}
+	],
+	[
+		true,
+		(t) => {
+			const depth = t['borehole:depth'];
+			if (!depth) return undefined;
+			const year = t['borehole:year'] ? `, on record from ${t['borehole:year']}` : '';
+			return `${depth} metres deep${year}.`;
+		}
 	],
 	[
 		true,

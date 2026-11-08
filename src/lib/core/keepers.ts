@@ -19,7 +19,9 @@ const DOINGS: Record<string, string> = {
 	'Environment Agency': 'those who map where the water goes',
 	'Energy Performance of Buildings Register': 'those who rate houses for the heat they lose',
 	Geograph: 'those who photograph every square of the country',
-	'Roman Roads Research Association': 'those who trace the Roman roads'
+	'Roman Roads Research Association': 'those who trace the Roman roads',
+	'British Geological Survey': 'those who keep the plans of old mines and the rocks beneath',
+	'Robert Hunt': 'those who counted what the mines raised'
 };
 
 /** A keeper by what they do, if Guide knows; never their name. */

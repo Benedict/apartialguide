@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import type { AdventureWorld } from '../core/adventure/world';
 import { gunzipSync } from 'node:zlib';
 import { unpackWorld } from '../core/adventure/packed';
-import { exportPage, wordsAmiss } from './export';
+import { exportPage, pointsToMine, wordsAmiss } from './export';
 import { LIVE, SOURCES } from '../site/sources';
 
 /** The world as the page carries it: gzip, base64, in a script element of its own. */
@@ -359,6 +359,44 @@ describe('exportPage', () => {
 			stops: { a: { ...world.stops.a, paragraphs: ['There is “undefined”, by another account.'] } }
 		};
 		expect(wordsAmiss(slipped)).toEqual(['a: There is “undefined”, by another account.']);
+	});
+});
+
+describe('a world that points the way to a mine', () => {
+	const stop = (paragraphs: string[], things: { name: string; entry?: true }[] = []) => ({
+		title: 'Inventa Track',
+		paragraphs,
+		exits: [],
+		things: things.map((t, i) => ({ id: `node/${i}`, aliases: [], description: '', ...t }))
+	});
+	const shaft = { name: 'mine shaft, “Inventa Shaft”', entry: true as const };
+
+	it('is refused: a way into a mine given a direction or a distance, anywhere in the world', () => {
+		const pointed = {
+			start: 'a',
+			stops: {
+				a: stop(['Near here is a mine shaft, “Inventa Shaft”.'], [shaft]),
+				b: stop(['The nearest name is “Inventa Shaft”, a mine shaft, 150 metres to the east.']),
+				c: stop(
+					['To the north, about 30 metres off, is a mine shaft, “Inventa Shaft”. A wall.'],
+					[shaft]
+				)
+			}
+		} as unknown as AdventureWorld;
+		expect(pointsToMine(pointed)).toEqual([
+			'b: The nearest name is “Inventa Shaft”, a mine shaft, 150 metres to the east.',
+			'c: To the north, about 30 metres off, is a mine shaft, “Inventa Shaft”.'
+		]);
+	});
+
+	it('lets a way into a mine be told near here, by kind and name alone', () => {
+		const told = {
+			start: 'a',
+			stops: {
+				a: stop(['Near here is a mine shaft, “Inventa Shaft”. To the north is a wall.'], [shaft])
+			}
+		} as unknown as AdventureWorld;
+		expect(pointsToMine(told)).toEqual([]);
 	});
 });
 

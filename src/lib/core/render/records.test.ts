@@ -89,6 +89,30 @@ describe('recordSentences, newer accounts', () => {
 		]);
 	});
 
+	it('gives what a mine raised, year by year, on the thing the returns go with', () => {
+		expect(
+			recordSentences(
+				{
+					'returns:mine': 'Invented Law',
+					'returns:1872.ore': '7 tons',
+					'returns:1872.lead': '5 tons 1 cwts'
+				},
+				'room'
+			)
+		).toEqual([
+			hearsay(
+				'of Invented Law, the returns for 1872 give 7 tons of lead ore and 5 tons 1 cwts of lead'
+			)
+		]);
+	});
+
+	it('says how deep a borehole goes and the year it is on record from', () => {
+		expect(
+			recordSentences({ 'borehole:depth': '117.35', 'borehole:year': '1956' }, 'room')
+		).toEqual(['117.35 metres deep, on record from 1956.']);
+		expect(recordSentences({ 'borehole:depth': '30' }, 'room')).toEqual(['30 metres deep.']);
+	});
+
 	it('says when a postcode was in use', () => {
 		expect(
 			recordSentences({ 'postcode:began': '1980-01', 'postcode:ended': '1998-06' }, 'room')

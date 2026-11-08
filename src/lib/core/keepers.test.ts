@@ -16,6 +16,12 @@ describe('keeper', () => {
 describe('allusion', () => {
 	it('names what a keeper does, never the keeper', () => {
 		expect(allusion('Food Standards Agency')).toBe('those who inspect kitchens');
+		expect(allusion('British Geological Survey, index of mine plans')).toBe(
+			'those who keep the plans of old mines and the rocks beneath'
+		);
+		expect(allusion('Robert Hunt, Mineral Statistics')).toBe(
+			'those who counted what the mines raised'
+		);
 		expect(allusion('OpenBenches')).toBe('those who read the benches');
 		expect(allusion('Invented Registry')).toBeUndefined();
 	});

@@ -32,12 +32,31 @@ describe('ways into a mine', () => {
 			{ historic: 'mine' },
 			{ 'disused:man_made': 'mineshaft' },
 			{ 'abandoned:man_made': 'adit' },
-			{ landuse: 'quarry', 'disused:man_made': 'mineshaft' }
+			{ landuse: 'quarry', 'disused:man_made': 'mineshaft' },
+			// As Weardale's map marks them: levels, air and ventilation shafts, old workings.
+			{ historic: 'mine_level', name: 'Invented Level' },
+			{ man_made: 'ventilation_shaft' },
+			{ man_made: 'air_shaft' },
+			{ 'disused:industrial': 'mine' },
+			{ industrial: 'mine' },
+			{ archaeological_site: 'mineral_extraction' },
+			{ mineral: 'lead', name: 'Invented Old Mine' }
+		])
+			expect(isMineEntry(tags)).toBe(true);
+		// Another account's mine, and a borehole named for a way into one, are ways in too.
+		for (const tags of <Record<string, string>[]>[
+			{ 'mine:kind': 'mine', 'mine:name': 'INVENTED GILL' },
+			{ 'borehole:kind': 'borehole', 'borehole:name': 'INVENTED SHAFT' },
+			{ 'borehole:kind': 'borehole', 'borehole:name': 'INVENTED HIGH LEVEL' }
 		])
 			expect(isMineEntry(tags)).toBe(true);
 		for (const tags of <Record<string, string>[]>[
+			{ 'borehole:kind': 'borehole', 'borehole:name': 'INVENTED MOOR NO 2' },
 			{ man_made: 'tower' },
 			{ landuse: 'quarry' },
+			{ landuse: 'quarry', mineral: 'ganister' },
+			{ man_made: 'spoil_heap' },
+			{ railway: 'level_crossing' },
 			{ historic: 'monument' }
 		])
 			expect(isMineEntry(tags)).toBe(false);

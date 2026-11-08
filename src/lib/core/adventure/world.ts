@@ -34,7 +34,7 @@ export interface CompiledStop {
 	/** The area another account puts this stop in, such as a ward. */
 	area?: { name: string; kind: string };
 	/** Other areas another account draws over this stop, such as flood zones: any number at once. */
-	zones?: { name: string; kind: string }[];
+	zones?: { name: string; kind: string; claims?: Record<string, string> }[];
 	/** What a closer look finds, if anything is hidden here. */
 	hidden?: { lines: string[]; things: Thing[] };
 	/** The template's telling, where prose written ahead of time is told instead: for plainly. */
@@ -148,7 +148,9 @@ export function compileWorld(
 		const { room, plan, scene, inView } = narrator.visit(stop.id)!;
 		const transit = transitIn(inView);
 		const area = narrator.areaAt(stop.position);
-		const zones = narrator.zonesAt(stop.position).map(({ name, kind }) => ({ name, kind }));
+		const zones = narrator
+			.zonesAt(stop.position)
+			.map(({ name, kind, claims }) => ({ name, kind, ...(claims ? { claims } : {}) }));
 		const things = plan.beats.flatMap((b) =>
 			b.facts
 				.filter((f) => ['name', 'wikidata:label', 'etymology:label'].includes(f.claim.key))
