@@ -187,6 +187,17 @@ describe('AdventureRenderer', () => {
 				);
 			});
 
+			it('tells a mine’s ground beside you as near, never which way it lies', () => {
+				const mine = area(
+					'way/11',
+					{ landuse: 'industrial', name: 'Inventa Mine' },
+					square(destination(O, 0, 40), 8)
+				);
+				const told = text(scene({ beats: [mine] }));
+				expect(told).toContain('Here you are near an industrial area, “Inventa Mine”.');
+				expect(told).not.toMatch(/Inventa Mine”, to the/);
+			});
+
 			it('is not told piece by piece', () => {
 				expect(t).not.toContain('is a residential area');
 				expect(t).not.toContain('is a suburb');

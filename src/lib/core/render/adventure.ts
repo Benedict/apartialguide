@@ -466,6 +466,11 @@ export function setting(scene: Scene): string {
 		if (isInside(scene.position, geometry)) say(key(tags), `in ${phrase(tags).replace(/,$/, '')}`);
 	for (const { tags, geometry } of areas) {
 		if (isInside(scene.position, geometry)) continue;
+		// A mine's ground is never pointed to: near, and no more.
+		if (isMineEntry(tags)) {
+			say(key(tags), `near ${phrase(tags).replace(/,$/, '')}`);
+			continue;
+		}
 		const { point } = nearestOnPolyline(scene.position, geometry);
 		say(key(tags), `beside ${phrase(tags)} to the ${compassLabel(bearing(scene.position, point))}`);
 	}

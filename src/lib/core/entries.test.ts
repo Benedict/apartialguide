@@ -40,14 +40,24 @@ describe('ways into a mine', () => {
 			{ 'disused:industrial': 'mine' },
 			{ industrial: 'mine' },
 			{ archaeological_site: 'mineral_extraction' },
-			{ mineral: 'lead', name: 'Invented Old Mine' }
+			{ mineral: 'lead', name: 'Invented Old Mine' },
+			// As Cornwall's map marks them: by name, or as ruins of a mine working.
+			{ historic: 'yes', name: 'New Invented Mine' },
+			{ building: 'yes', name: 'Former Inventa Mine' },
+			{ historic: 'ruins', ruins: 'mine_working', name: 'Engine house (disused)' },
+			{ building: 'ruins', historic: 'ruins', name: 'Inventa Shaft Engine House' },
+			{ building: 'ruins', name: 'Pump Engine House' },
+			{ disused: 'yes', man_made: 'adit', name: 'Invented Manway' },
+			// A name on the land for a mine, not a place people live.
+			{ place: 'locality', name: 'Inventa Mine (Iron)' }
 		])
 			expect(isMineEntry(tags)).toBe(true);
 		// Another account's mine, and a borehole named for a way into one, are ways in too.
 		for (const tags of <Record<string, string>[]>[
 			{ 'mine:kind': 'mine', 'mine:name': 'INVENTED GILL' },
 			{ 'borehole:kind': 'borehole', 'borehole:name': 'INVENTED SHAFT' },
-			{ 'borehole:kind': 'borehole', 'borehole:name': 'INVENTED HIGH LEVEL' }
+			{ 'borehole:kind': 'borehole', 'borehole:name': 'INVENTED HIGH LEVEL' },
+			{ 'borehole:kind': 'borehole', 'borehole:name': 'INVENTED GILL MINE' }
 		])
 			expect(isMineEntry(tags)).toBe(true);
 		for (const tags of <Record<string, string>[]>[
@@ -57,6 +67,12 @@ describe('ways into a mine', () => {
 			{ landuse: 'quarry', mineral: 'ganister' },
 			{ man_made: 'spoil_heap' },
 			{ railway: 'level_crossing' },
+			// A street, a shop or a place named for a mine is not a way into one.
+			{ highway: 'residential', name: 'Inventa Mine Road' },
+			{ amenity: 'pub', name: 'The Invented Mine' },
+			{ place: 'hamlet', name: 'Inventa Mine' },
+			{ landuse: 'industrial', name: 'Mine Water Treatment Plant' },
+			{ building: 'yes', name: "Miners' Dry" },
 			{ historic: 'monument' }
 		])
 			expect(isMineEntry(tags)).toBe(false);

@@ -3,7 +3,7 @@
  * fetchers wrote (UNDERGROUND_DATA, default ../apartialguide-underground/data): the mines' plans of
  * the ground itself and their returns as zones over that ground, the rocks beneath as zones, and
  * boreholes standing alone. Kept private, in the data repository, until BGS confirms its licence:
- *   RECORDS_DIR=../apartialguide-data/records/underland npm run underland
+ *   UNDERLAND_PLACE=cornwall RECORDS_DIR=../apartialguide-data/records/underland-cornwall npm run underland
  */
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -22,9 +22,12 @@ const from = process.env.UNDERGROUND_DATA ?? '../apartialguide-underground/data'
 const to = process.env.RECORDS_DIR;
 if (!to) throw new Error('Set RECORDS_DIR to where the walk should read these records from.');
 
-function newest<T>(dir: string): T {
+/** The place whose files to read (UNDERLAND_PLACE, as each fetch named them); the ledger is shared. */
+const place = process.env.UNDERLAND_PLACE ?? 'weardale';
+
+function newest<T>(dir: string, named = place): T {
 	const file = readdirSync(join(from, dir))
-		.filter((f) => f.endsWith('.json'))
+		.filter((f) => f.endsWith('.json') && (!named || f.startsWith(`${named}-`)))
 		.sort()
 		.at(-1);
 	if (!file) throw new Error(`Nothing in ${join(from, dir)} yet.`);
@@ -33,7 +36,7 @@ function newest<T>(dir: string): T {
 
 const plans = newest<PlanStore>('plans');
 const beneath = newest<BeneathStore>('beneath');
-const ledger = newest<LedgerStore>('ledger');
+const ledger = newest<LedgerStore>('ledger', 'hunt');
 const marks = newest<MarkStore>('marks');
 // The two BGS sources, named apart so each is credited for what it gave.
 const sources = {
