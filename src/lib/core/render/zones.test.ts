@@ -98,12 +98,20 @@ describe('zoneLines', () => {
 		]);
 	});
 
-	it('tells three mines at most in one step, and how many more the plans cover', () => {
+	it('tells three mines at most in one step, in one sentence, and how many more the plans cover', () => {
 		const lines = zoneLines(
 			['A', 'B', 'C', 'D', 'E'].map((n) => plans(`INVENTED ${n}`)),
 			[]
 		);
-		expect(lines).toHaveLength(4);
-		expect(lines[3]).toBe('Plans of two more mines cover it too.');
+		expect(lines).toHaveLength(1);
+		expect(lines[0].match(/The plans of old mines/g)).toHaveLength(1);
+		expect(lines[0]).toMatch(
+			/^The plans of old mines cover this ground: .*“Invented A”.*; .*“Invented B”.*; and .*“Invented C”.*\. Plans of two more mines cover it too\.$/
+		);
+	});
+
+	it('joins two mines with and', () => {
+		const [line] = zoneLines([plans('INVENTED A'), plans('INVENTED B')], []);
+		expect(line).toMatch(/“Invented A”.*; and .*“Invented B”.*\.$/);
 	});
 });
