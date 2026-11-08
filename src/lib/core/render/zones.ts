@@ -41,12 +41,16 @@ function planOf(z: Zone): string {
 }
 
 /** The mines whose plans cover the ground, in one sentence, and how many more. */
-function plansOf(mines: readonly Zone[]): string {
+const wordsIn = (z: Zone) => z.name.split(/\s+/).length;
+
+function plansOf(found: readonly Zone[]): string {
+	// Single mines first: a title that runs several mines together goes to the count.
+	const mines = [...found].sort((a, b) => wordsIn(a) - wordsIn(b));
 	const told = mines.slice(0, MOST_MINES).map(planOf);
 	const list = told.length > 1 ? `${told.slice(0, -1).join('; ')}; and ${told.at(-1)}` : told[0];
 	const more =
 		mines.length > MOST_MINES
-			? ` Plans of ${numberWord(mines.length - MOST_MINES)} more mines cover it too.`
+			? ` Plans of ${numberWord(mines.length - MOST_MINES)} more ${mines.length - MOST_MINES === 1 ? 'mine' : 'mines'} cover it too.`
 			: '';
 	return `The plans of old mines cover this ground: ${list}.${more}`;
 }

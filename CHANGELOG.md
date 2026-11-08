@@ -8,6 +8,7 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### For walkers
 
+- Things are named as a walker would name them: a narrow-gauge railway, an abandoned railway, a tramway, a power line, a ruin, a guidepost, an information board, a pond, scrub. A chimney the map marks as historic is a chimney. Where a place has more old mines than it names, single mines are named first.
 - Several old mines under one place are told in one sentence, not one each. Something the map marks only as made is “a structure”, and plain things of one kind are counted together even where the map last recorded them long ago (“Two structures, both right here.”).
 - The walk opens with a welcome: Guide says hello, says what the walk is and where, and that the map may be out of date, wrong or missing things. The map's figures are there for anyone who asks what Guide carries (`i`).
 - The mines' records read plainly: “The plans of old mines cover this ground: one of “Greenhurth Mine”, worked for lead.”; what a mine raised, year by year; the rock under your feet in everyday words, with when it was laid down.
@@ -19,6 +20,7 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### Under the hood
 
+- The template names things in a walker's words (`AS_SAID`, `HISTORIC_ONLY`, `INFORMATION`, a pond by its `water`, more uncountable nouns), while the prompt keeps the map's words as before (`walker` false through `nounPhrase`, `plainKind`, `setting` and `mapWords`), so every stored piece of prose keeps its key: 2,554 of the 3,547 still found across Croydon, as before. `plansOf` names single mines first.
 - `zoneLines` tells the mines of a step in one sentence (`plansOf`, each by `planOf`), the rest counted after it. `kind` reads a key the map marks only `yes` by a walker's word (`ONLY_KEY`: `man_made` a structure), never the key itself, and `plainKindOf` counts a thing with a past tense when it has no use for the tense to change.
 - `introduction` is Guide's welcome alone, naming the world's `place` (the larger place where the walk opens several areas, as Croydon, else `PLACE_NAME`); the ledger (`ledgerLines`) moves to `inventory`, and the offer asks "Shall we begin?".
 - `render/zones.ts` tells a mine's ground, its returns and the rock beneath plainly, not as hearsay: they are records alluded to by what they are ("the plans of old mines", "the returns", "the map of the rocks"), never by who keeps them. A name the index sets all in capitals is said as it would be written (`asWritten`). `render/rocks.ts` reads a rock's lithology by a small glossary and its age as the period it falls in, with that period's dates from the International Commission on Stratigraphy's chart (v2023/09). The template calls an unnamed way by a walker's word (`WAY_WORDS`), so Croydon's places read so too.

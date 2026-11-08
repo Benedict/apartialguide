@@ -465,7 +465,7 @@ function isInside(at: LatLon, geometry: readonly LatLon[]): boolean {
  * The land underfoot in one sentence: the place by name, the areas you are in, and those beside you.
  * "Here you are in Addiscombe, in a residential area, and beside a retail area to the north-west."
  */
-export function setting(scene: Scene): string {
+export function setting(scene: Scene, walker = true): string {
 	const phrases: string[] = [];
 	const said = new Set<string>();
 	const say = (key: string, phrase: string) => {
@@ -479,8 +479,9 @@ export function setting(scene: Scene): string {
 	for (const { tags } of land)
 		if (tags.place && tags.name) say(`place ${tags.name}`, `in ${tags.name}`);
 	const areas = land.filter(({ tags }) => !tags.place);
-	const phrase = (tags: Tags) => `${article(noun(tags))}${tags.name ? `, “${tags.name}”,` : ''}`;
-	const key = (tags: Tags) => `${noun(tags)} ${tags.name ?? ''}`;
+	const phrase = (tags: Tags) =>
+		`${article(noun(tags, walker), walker)}${tags.name ? `, “${tags.name}”,` : ''}`;
+	const key = (tags: Tags) => `${noun(tags, walker)} ${tags.name ?? ''}`;
 	for (const { tags, geometry } of areas)
 		if (isInside(scene.position, geometry)) say(key(tags), `in ${phrase(tags).replace(/,$/, '')}`);
 	for (const { tags, geometry } of areas) {
@@ -536,8 +537,8 @@ const BUILDING_NOUNS = new Set([
 ]);
 
 /** What a thing is now, or failing that what it is built as. */
-function noun(tags: Tags): string {
-	const use = currentUse(tags) ?? kind(tags);
+function noun(tags: Tags, walker = true): string {
+	const use = currentUse(tags, walker) ?? kind(tags, walker);
 	if (use) return use;
 	const built = tags.building;
 	if (built)
@@ -566,10 +567,34 @@ const KIND_KEYS = [
 /** What a thing the map marks only by its key (`man_made=yes`) is, in a walker's word. */
 const ONLY_KEY: Record<string, string> = { man_made: 'structure', natural: 'natural feature' };
 
-function kind(tags: Tags): string | undefined {
+/** Values the map gives as adjectives or in its own shorthand, as a walker would name the thing. */
+const AS_SAID: Record<string, string> = {
+	'railway=narrow_gauge': 'narrow-gauge railway',
+	'railway=abandoned': 'abandoned railway',
+	'railway=disused': 'disused railway',
+	'railway=razed': 'razed railway',
+	'railway=rail': 'railway line',
+	'railway=tram': 'tramway',
+	'railway=switch': 'railway switch',
+	'railway=miniature': 'miniature railway',
+	'power=line': 'power line',
+	'power=minor_line': 'minor power line',
+	'power=cable': 'power cable',
+	'power=plant': 'power plant',
+	'man_made=mineshaft': 'mine shaft',
+	'man_made=surveillance': 'surveillance camera',
+	'man_made=reservoir_covered': 'covered reservoir'
+};
+
+function kind(tags: Tags, walker = true): string | undefined {
 	const key = KIND_KEYS.find((k) => tags[k]);
 	if (!key) return undefined;
-	const value = tags[key] === 'yes' ? (ONLY_KEY[key] ?? humanise(key)) : humanise(tags[key]);
+	// Water the map says is a pond is a pond.
+	if (walker && key === 'natural' && tags.natural === 'water' && tags.water)
+		return humanise(tags.water);
+	const said = walker ? AS_SAID[`${key}=${tags[key]}`] : undefined;
+	const value =
+		tags[key] === 'yes' ? (ONLY_KEY[key] ?? humanise(key)) : (said ?? humanise(tags[key]));
 	if (key === 'landuse') return `${value} area`;
 	if (key === 'traffic_calming') return tags[key] === 'yes' ? 'speed bump' : `speed ${value}`;
 	return value;
@@ -590,11 +615,12 @@ function addressIn(tags: Tags, said?: Said): string | undefined {
 	return tags['addr:housenumber'] ?? tags['addr:housename'] ?? address(tags);
 }
 
-export function nounPhrase(tags: Tags, said?: Said): string {
+/** A thing in a phrase: in a walker's words, or as mapped (`walker` false) for the prompt's key. */
+export function nounPhrase(tags: Tags, said?: Said, walker = true): string {
 	const where = addressIn(tags, said);
 	const at = where ? ` at ${where}` : '';
 	const name = namedInline(tags) ? `, “${tags.name}”` : '';
-	return `${article(houseKind(tags, noun(tags)))}${storeys(tags)}${at}${name}`;
+	return `${article(houseKind(tags, noun(tags, walker)), walker)}${storeys(tags)}${at}${name}`;
 }
 
 /** A house as the map gives its kind: "terraced house". Other nouns as they are. */
@@ -926,8 +952,8 @@ function thing(beat: Beat): Thing {
  * What a thing is, for the model: its noun phrase, or for a point the map gives no kind, what the
  * map does say of it. Never “something”, which is the template's word, not the map's.
  */
-export function plainKind(tags: Tags): string {
-	const phrase = nounPhrase(tags);
+export function plainKind(tags: Tags, walker = true): string {
+	const phrase = nounPhrase(tags, undefined, walker);
 	if (!/^something\b/.test(phrase)) return phrase;
 	if (tags.noexit === 'yes') return 'the way ends here';
 	if (tags.entrance) return 'an entrance';
@@ -947,11 +973,12 @@ const WHEELCHAIR: Record<string, string> = {
  * reference if it carries one. Never its raw record, and none of its technical values.
  */
 export function mapWords(tags: Tags): string[] {
-	const sentences = [`${capitalise(plainKind(tags))}.`];
+	// The prompt's words, as mapped: a walker's words would move every stored piece's key.
+	const sentences = [`${capitalise(plainKind(tags, false))}.`];
 	if (tags.name && !namedInline(tags)) sentences.push(`“${tags.name}”, it says.`);
 	if (tags.old_name) sentences.push(`Once “${tags.old_name}”.`);
 	const past = pastUse(tags);
-	if (past) sentences.push(`It was ${article(past)}.`);
+	if (past) sentences.push(`It was ${article(past, false)}.`);
 	const kit = KIT.filter((k) => tags[k] === 'yes').map((k) => `a ${k}`);
 	if (kit.length) sentences.push(`${capitalise(list(kit))}.`);
 	if (tags.lit === 'yes') sentences.push('Lit at night.');

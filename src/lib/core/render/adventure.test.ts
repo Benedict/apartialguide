@@ -3,7 +3,7 @@ import { destination, type LatLon } from '../geo';
 import type { Scene } from '../scene';
 import { facts } from '../testing/facts';
 import { SyntheticMap } from '../testing/synthetic';
-import { AdventureRenderer, nounPhrase } from './adventure';
+import { AdventureRenderer, mapWords, nounPhrase, plainKind } from './adventure';
 import { aside } from './hearsay';
 
 const O = SyntheticMap.ORIGIN;
@@ -966,6 +966,54 @@ describe('a thing the map marks only as made', () => {
 			'emergency'
 		])
 			expect(nounPhrase({ [key]: 'yes' })).not.toMatch(/_/);
+	});
+});
+
+describe('a thing named as a walker would say it', () => {
+	it('makes a noun of a value the map gives as an adjective', () => {
+		const said: [Record<string, string>, string][] = [
+			[{ railway: 'narrow_gauge' }, 'a narrow-gauge railway'],
+			[{ railway: 'abandoned' }, 'an abandoned railway'],
+			[{ railway: 'disused' }, 'a disused railway'],
+			[{ railway: 'razed' }, 'a razed railway'],
+			[{ railway: 'rail' }, 'a railway line'],
+			[{ railway: 'tram' }, 'a tramway'],
+			[{ railway: 'switch' }, 'a railway switch'],
+			[{ power: 'line' }, 'a power line'],
+			[{ power: 'minor_line' }, 'a minor power line'],
+			[{ man_made: 'mineshaft' }, 'a mine shaft'],
+			[{ man_made: 'surveillance' }, 'a surveillance camera'],
+			[{ historic: 'ruins' }, 'a ruin'],
+			[{ historic: 'yes' }, 'a historic site'],
+			[{ historic: 'industrial' }, 'an industrial site'],
+			[{ tourism: 'information', information: 'guidepost' }, 'a guidepost'],
+			[{ tourism: 'information', information: 'board' }, 'an information board'],
+			[{ tourism: 'information' }, 'an information point'],
+			[{ natural: 'water', water: 'pond' }, 'a pond'],
+			[{ natural: 'water' }, 'water'],
+			[{ natural: 'scrub' }, 'scrub']
+		];
+		for (const [tags, phrase] of said) expect(nounPhrase(tags)).toBe(phrase);
+	});
+
+	it('keeps the map’s words in the prompt, so prose written ahead of time keeps its key', () => {
+		expect(plainKind({ railway: 'tram' }, false)).toBe('a tram');
+		expect(plainKind({ historic: 'ruins' }, false)).toBe('a ruins');
+		expect(plainKind({ tourism: 'information', information: 'board' }, false)).toBe(
+			'an information'
+		);
+		expect(plainKind({ natural: 'water', water: 'pond' }, false)).toBe('a water');
+		expect(plainKind({ historic: 'yes', man_made: 'chimney' }, false)).toBe('a historic');
+		expect(mapWords({ natural: 'scrub' })[0]).toBe('A scrub.');
+		expect(mapWords({ railway: 'tram' })[0]).toBe('A tram.');
+	});
+
+	it('lets what a historic thing is say more than that it is historic', () => {
+		expect(nounPhrase({ historic: 'yes', man_made: 'chimney' })).toBe('a chimney');
+		expect(nounPhrase({ historic: 'industrial', man_made: 'ventilation_shaft' })).toBe(
+			'a ventilation shaft'
+		);
+		expect(nounPhrase({ historic: 'memorial' })).toBe('a memorial');
 	});
 });
 
