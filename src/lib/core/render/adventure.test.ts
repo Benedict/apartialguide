@@ -3,7 +3,7 @@ import { destination, type LatLon } from '../geo';
 import type { Scene } from '../scene';
 import { facts } from '../testing/facts';
 import { SyntheticMap } from '../testing/synthetic';
-import { AdventureRenderer, nounPhrase, plainKind } from './adventure';
+import { AdventureRenderer, mapWords, nounPhrase, plainKind } from './adventure';
 import { aside } from './hearsay';
 
 const O = SyntheticMap.ORIGIN;
@@ -1004,6 +1004,8 @@ describe('a thing named as a walker would say it', () => {
 		);
 		expect(plainKind({ natural: 'water', water: 'pond' }, false)).toBe('a water');
 		expect(plainKind({ historic: 'yes', man_made: 'chimney' }, false)).toBe('a historic');
+		expect(mapWords({ natural: 'scrub' })[0]).toBe('A scrub.');
+		expect(mapWords({ railway: 'tram' })[0]).toBe('A tram.');
 	});
 
 	it('lets what a historic thing is say more than that it is historic', () => {
