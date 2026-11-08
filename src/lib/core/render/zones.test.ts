@@ -11,18 +11,18 @@ const plans = (name: string, claims: Record<string, string> = {}): Zone => ({
 const flood: Zone = { name: 'Invented Zone 3', kind: 'flood zone' };
 
 describe('zoneLines', () => {
-	it('tells a step onto ground a mine was drawn on: how many plans, of which mine, for what', () => {
+	it('tells a step onto ground old mine plans cover: how many, of which mine, worked for what', () => {
 		expect(zoneLines([plans('INVENTED GILL')], [])).toEqual([
-			hearsay('this ground was drawn on three mine plans of INVENTED GILL, for lead and zinc')
+			'The plans of old mines cover this ground: three of “Invented Gill”, worked for lead and zinc.'
 		]);
-		expect(zoneLines([plans('INVENTED GILL', { plans: '1', abandoned: '1901' })], [])).toEqual([
-			hearsay(
-				'this ground was drawn on a mine plan of INVENTED GILL, for lead and zinc, abandoned in 1901'
-			)
+		expect(
+			zoneLines([plans('INVENTED GILL, OTHER PARK', { plans: '1', abandoned: '1901' })], [])
+		).toEqual([
+			'The plans of old mines cover this ground: one of “Invented Gill, Other Park”, worked for lead and zinc, abandoned in 1901.'
 		]);
 	});
 
-	it('gives what a mine raised, year by year, as the returns give it', () => {
+	it('gives what a mine raised, year by year, as the returns give it, the name as the returns spell it', () => {
 		const returns: Zone = {
 			name: 'Invented Gill',
 			kind: 'mine returns',
@@ -34,14 +34,12 @@ describe('zoneLines', () => {
 			}
 		};
 		expect(zoneLines([returns], [])).toEqual([
-			hearsay(
-				'of Invented Gill, the returns for 1871 give 2 tons 3 cwts of lead ore, 1 ton 10 cwts of lead and 40 ounces of silver'
-			),
-			hearsay('of Invented Gill, the returns for 1872 give 5 tons of lead ore')
+			'What “Invented Gill” raised in 1871, by the returns: 2 tons 3 cwts of lead ore, 1 ton 10 cwts of lead and 40 ounces of silver.',
+			'What “Invented Gill” raised in 1872, by the returns: 5 tons of lead ore.'
 		]);
 	});
 
-	it('gives copper sold at the ticketings as the returns give it: ore, fine copper, what it sold for', () => {
+	it('gives copper sold at the ticketings: ore, fine copper, what it sold for', () => {
 		const returns: Zone = {
 			name: 'South Huel Inventa',
 			kind: 'mine returns',
@@ -52,31 +50,39 @@ describe('zoneLines', () => {
 			}
 		};
 		expect(zoneLines([returns], [])).toEqual([
-			hearsay(
-				'of South Huel Inventa, the returns for 1872 give 2,654 tons of copper ore, 219 tons 3 cwts 2 qrs 27 lbs of copper, sold for £17,428'
-			)
+			'What “South Huel Inventa” raised in 1872, by the returns: 2,654 tons of copper ore, holding 219 tons 3 cwts 2 qrs 27 lbs of copper, sold for £17,428.'
 		]);
 	});
 
-	it('tells the rock beneath on coming onto it, its name as found, its words read as words', () => {
+	it('tells the rock beneath in plain words, and when it was laid down by the geological time scale', () => {
 		const rock: Zone = {
 			name: 'INVENTED GROUP',
 			kind: 'bedrock',
-			claims: { rock: 'LIMESTONE WITH SUBORDINATE SANDSTONE', age: 'ASBIAN to YEADONIAN' }
+			claims: {
+				rock: 'LIMESTONE WITH SUBORDINATE SANDSTONE AND ARGILLACEOUS ROCKS',
+				age: 'ASBIAN to YEADONIAN'
+			}
 		};
 		expect(zoneLines([rock], [])).toEqual([
-			hearsay(
-				'beneath you lies INVENTED GROUP: limestone with subordinate sandstone, of the Asbian to Yeadonian'
-			)
+			'Under your feet, the map of the rocks shows the Invented Group: limestone, with some sandstone and mudstone, laid down in the Carboniferous, between 359 and 299 million years ago.'
 		]);
 	});
 
-	it('reads a mineral as a word, and says a rock once when its name is what it is', () => {
-		expect(zoneLines([plans('INVENTED GILL', { minerals: 'LEAD and ZINC' })], [])).toEqual([
-			hearsay('this ground was drawn on three mine plans of INVENTED GILL, for lead and zinc')
+	it('says a rock once when its name is what it is, and an age it cannot place not at all', () => {
+		const peat: Zone = {
+			name: 'PEAT',
+			kind: 'superficial deposits',
+			claims: { rock: 'PEAT', age: 'UNKNOWN AGE' }
+		};
+		expect(zoneLines([peat], [])).toEqual(['Under your feet, the map of the rocks shows peat.']);
+		const till: Zone = {
+			name: 'TILL',
+			kind: 'superficial deposits',
+			claims: { rock: 'DIAMICTON', age: 'DEVENSIAN' }
+		};
+		expect(zoneLines([till], [])).toEqual([
+			'Under your feet, the map of the rocks shows till: boulder clay, laid down in the Quaternary, in the last 2.6 million years.'
 		]);
-		const peat: Zone = { name: 'PEAT', kind: 'superficial deposits', claims: { rock: 'PEAT' } };
-		expect(zoneLines([peat], [])).toEqual([hearsay('beneath you lies PEAT')]);
 	});
 
 	it('says nothing of coming off a mine’s ground or a rock, and still says leaving a flood zone', () => {
@@ -92,12 +98,12 @@ describe('zoneLines', () => {
 		]);
 	});
 
-	it('tells three mines at most in one step, and how many more the ground was drawn for', () => {
+	it('tells three mines at most in one step, and how many more the plans cover', () => {
 		const lines = zoneLines(
 			['A', 'B', 'C', 'D', 'E'].map((n) => plans(`INVENTED ${n}`)),
 			[]
 		);
 		expect(lines).toHaveLength(4);
-		expect(lines[3]).toBe(hearsay('the ground was drawn for two mines more'));
+		expect(lines[3]).toBe('Plans of two more mines cover it too.');
 	});
 });

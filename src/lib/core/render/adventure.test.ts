@@ -113,6 +113,18 @@ describe('AdventureRenderer', () => {
 			expect(renderer.render(s).title).toMatch(/^End of an unnamed /);
 		});
 
+		it('calls an unnamed way by the word a walker would use for it, not the map’s tag', () => {
+			const way = (highway: string) =>
+				renderer.render(scene({ street: facts('way/1', { highway }), here: [], kind: 'junction' }))
+					.title;
+			expect(way('service')).toBe('An unnamed service road');
+			expect(way('unclassified')).toBe('An unnamed minor road');
+			expect(way('residential')).toBe('An unnamed street');
+			expect(way('footway')).toBe('An unnamed footpath');
+			expect(way('cycleway')).toBe('An unnamed cycle path');
+			expect(way('track')).toBe('An unnamed track');
+		});
+
 		it('describes the street underfoot', () => {
 			const t = text(scene());
 			expect(t).toContain('Lit at night, with pavement on both sides.');

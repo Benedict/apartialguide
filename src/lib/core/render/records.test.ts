@@ -100,9 +100,7 @@ describe('recordSentences, newer accounts', () => {
 				'room'
 			)
 		).toEqual([
-			hearsay(
-				'of Invented Law, the returns for 1872 give 7 tons of lead ore and 5 tons 1 cwts of lead'
-			)
+			'What “Invented Law” raised in 1872, by the returns: 7 tons of lead ore and 5 tons 1 cwts of lead.'
 		]);
 	});
 

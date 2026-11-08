@@ -8,12 +8,16 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### For walkers
 
+- The mines' records read plainly: “The plans of old mines cover this ground: one of “Greenhurth Mine”, worked for lead.”; what a mine raised, year by year; the rock under your feet in everyday words, with when it was laid down.
+- An unnamed way is called what a walker would call it: a service road, a minor road, a street, a footpath, a cycle path.
+
 - Old mines named as mines, shafts or engine houses, a mine's ground beside you, and boreholes named for mines are told without which way they lie or how far.
 - Where the map marks old mine shafts, the walk opens with a caution: they are dangerous, and the walk reads the records, not the ground.
 - More old mine workings are told by kind and name alone, never which way or how far: mine levels, air and ventilation shafts, and old mineral workings, as the map marks them.
 
 ### Under the hood
 
+- `render/zones.ts` tells a mine's ground, its returns and the rock beneath plainly, not as hearsay: they are records alluded to by what they are ("the plans of old mines", "the returns", "the map of the rocks"), never by who keeps them. A name the index sets all in capitals is said as it would be written (`asWritten`). `render/rocks.ts` reads a rock's lithology by a small glossary and its age as the period it falls in, with that period's dates from the International Commission on Stratigraphy's chart (v2023/09). The template calls an unnamed way by a walker's word (`WAY_WORDS`), so Croydon's places read so too.
 - Underland's records: `npm run underland` writes the mines' plans of the ground itself and Hunt's returns as zones over that ground (or, where no plans' ground has a mine, its returns on the map's mark of its name), the rocks beneath as zones, and boreholes standing alone, from Underground's dated files (`server/sources/underland.ts`), kept in the private data repository. Zones carry their claims; a mine's ground, its returns and the rock beneath are told on coming onto them (`render/zones.ts`, `zoneLines`), three mines at most a step, and holes in a zone are kept. Records of one thing from two sources join (`thing`). `isMineEntry` knows levels, air and ventilation shafts, mineral workings and another account's mine, and `npm run export` refuses a world that points the way to one (`pointsToMine`). Underland reads Cornwall too: Hunt's copper ticketing returns (ore, fine copper, what it sold for) are told over a mine's ground or on its mark, Hunt's Huel read as Wheal for matching alone, and a plan with no mine named is a mine by its title. The rule reads names as well as tags (`NAMED_WAY_IN`: a name ending in mine, shaft, adit, level, engine house, whim or manway, save a street, shop, pub, museum or place people live), a mine's ground beside you is told as near (`setting`), and the backstop reads the three ways Guide gives a way (`givesTheWay`), so a direction in the same sentence that belongs to something else is not counted. A world whose map marks any carries how many (`Ledger.mines`), and the introduction then carries the page's caution as its hint (`MINES_CAUTION`).
 
 ## 2026-11-07

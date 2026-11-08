@@ -1,4 +1,5 @@
 import { hearsay } from './hearsay';
+import { laidDown, rockName, rockWords } from './rocks';
 import { article, numberWord } from './words';
 
 /** A zone another account draws over the map, and what it says of it. */
@@ -13,19 +14,29 @@ const ONTO = new Set(['mine plans', 'mine returns', 'bedrock', 'superficial depo
 /** The most mines told in one step; the rest are counted. */
 const MOST_MINES = 3;
 
-/** A code from a fixed list, or a word set in capitals, read as a word: "Asbian to Yeadonian". */
+/** A code from a fixed list, or a word set in capitals, read as a word: lead, zinc. */
 const asWords = (text: string) => text.toLowerCase();
-const asAges = (text: string) =>
-	text.toLowerCase().replace(/\b(?!to\b|and\b|of\b)([a-z])/g, (c) => c.toUpperCase());
+
+const SMALL = new Set(['and', 'of', 'the', 'or', 'in', 'at', 'on']);
+/**
+ * A name the index sets all in capitals, as it sets every name, in the case it would be written:
+ * "KILLHOPEHEAD, KILLHOPE PARK" is “Killhopehead, Killhope Park”. A name in mixed case is as found.
+ */
+const asWritten = (name: string) =>
+	name === name.toUpperCase()
+		? name
+				.toLowerCase()
+				.replace(/[\p{L}'’]+/gu, (w, at: number) =>
+					at > 0 && SMALL.has(w) ? w : w.charAt(0).toUpperCase() + w.slice(1)
+				)
+		: name;
 
 function plansOf(z: Zone): string {
 	const c = z.claims ?? {};
 	const n = Number(c.plans) || 1;
-	const kind = c.kinds ?? 'plan';
-	const drawn = n === 1 ? article(kind) : `${numberWord(n)} ${kind}s`;
-	const what = c.minerals ? `, for ${asWords(c.minerals)}` : '';
+	const worked = c.minerals ? `, worked for ${asWords(c.minerals)}` : '';
 	const ended = c.abandoned ? `, abandoned in ${c.abandoned}` : '';
-	return hearsay(`this ground was drawn on ${drawn} of ${z.name}${what}${ended}`);
+	return `The plans of old mines cover this ground: ${numberWord(n)} of “${asWritten(z.name)}”${worked}${ended}.`;
 }
 
 const returnsOf = (z: Zone): string[] => returnsSaid(z.name, z.claims ?? {});
@@ -51,23 +62,24 @@ export function returnsSaid(name: string, c: Record<string, string>): string[] {
 		const copper = c[`${y}.copper ore`]
 			? [
 					`${c[`${y}.copper ore`]} of copper ore`,
-					c[`${y}.copper`] && `${c[`${y}.copper`]} of copper`,
+					c[`${y}.copper`] && `holding ${c[`${y}.copper`]} of copper`,
 					c[`${y}.pounds`] && `sold for £${c[`${y}.pounds`]}`
 				]
 					.filter(Boolean)
 					.join(', ')
 			: undefined;
 		const given = [lead, copper].filter(Boolean).join('; and ');
-		return hearsay(`of ${name}, the returns for ${y} give ${given}`);
+		return `What “${asWritten(name)}” raised in ${y}, by the returns: ${given}.`;
 	});
 }
 
 function rockOf(z: Zone): string {
 	const c = z.claims ?? {};
+	const name = rockName(z.name);
 	// A rock named for what it is (PEAT: peat) is said once.
-	const rock = c.rock && asWords(c.rock) !== asWords(z.name) ? `: ${asWords(c.rock)}` : '';
-	const age = c.age ? `, of the ${asAges(c.age)}` : '';
-	return hearsay(`beneath you lies ${z.name}${rock}${age}`);
+	const what = c.rock && rockWords(c.rock) !== z.name.toLowerCase() ? `: ${rockWords(c.rock)}` : '';
+	const when = c.age ? laidDown(c.age) : undefined;
+	return `Under your feet, the map of the rocks shows ${name}${what}${when ? `, laid down ${when}` : ''}.`;
 }
 
 /**
@@ -80,9 +92,7 @@ export function zoneLines(entered: readonly Zone[], left: readonly Zone[]): stri
 	const mines = entered.filter((z) => z.kind === 'mine plans');
 	for (const z of mines.slice(0, MOST_MINES)) lines.push(plansOf(z));
 	if (mines.length > MOST_MINES)
-		lines.push(
-			hearsay(`the ground was drawn for ${numberWord(mines.length - MOST_MINES)} mines more`)
-		);
+		lines.push(`Plans of ${numberWord(mines.length - MOST_MINES)} more mines cover it too.`);
 	for (const z of entered) {
 		if (z.kind === 'mine returns') lines.push(...returnsOf(z));
 		else if (z.kind === 'bedrock' || z.kind === 'superficial deposits') lines.push(rockOf(z));
