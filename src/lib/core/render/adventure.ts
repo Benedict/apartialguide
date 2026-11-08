@@ -306,8 +306,10 @@ function nearestLine({ tags, metres, bearing: towards }: NonNullable<Scene['near
 
 /** The kind of a plain thing (no name, no address, no record, no past): "building". */
 function plainKindOf(beat: Beat): string | undefined {
-	if (beat.effects.length || beat.facts.some((f) => isElsewhere(f) || isHistory(f))) return;
 	const tags = tagsFor(beat);
+	// A past tense is told only of what a thing is used for; of a plain thing it changes nothing.
+	const telling = beat.effects.filter((e) => e !== 'tense-slip' || currentUse(tags));
+	if (telling.length || beat.facts.some((f) => isElsewhere(f) || isHistory(f))) return;
 	// A name sets a thing apart; an address does too, and shows in its noun phrase below.
 	if (Object.keys(tags).some((k) => /name/.test(k))) return;
 	const phrase = nounPhrase(tags);
@@ -561,10 +563,13 @@ const KIND_KEYS = [
 	'emergency'
 ];
 
+/** What a thing the map marks only by its key (`man_made=yes`) is, in a walker's word. */
+const ONLY_KEY: Record<string, string> = { man_made: 'structure', natural: 'natural feature' };
+
 function kind(tags: Tags): string | undefined {
 	const key = KIND_KEYS.find((k) => tags[k]);
 	if (!key) return undefined;
-	const value = tags[key] === 'yes' ? key : humanise(tags[key]);
+	const value = tags[key] === 'yes' ? (ONLY_KEY[key] ?? humanise(key)) : humanise(tags[key]);
 	if (key === 'landuse') return `${value} area`;
 	if (key === 'traffic_calming') return tags[key] === 'yes' ? 'speed bump' : `speed ${value}`;
 	return value;

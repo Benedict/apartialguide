@@ -953,6 +953,22 @@ describe('AdventureRenderer', () => {
 	});
 });
 
+describe('a thing the map marks only as made', () => {
+	it('is a structure, never the map’s own key', () => {
+		expect(nounPhrase({ man_made: 'yes' })).toBe('a structure');
+		for (const key of [
+			'place',
+			'natural',
+			'railway',
+			'barrier',
+			'public_transport',
+			'power',
+			'emergency'
+		])
+			expect(nounPhrase({ [key]: 'yes' })).not.toMatch(/_/);
+	});
+});
+
 describe('a building as the map describes it', () => {
 	it('gives a house its kind, and a building its storeys, where the map gives them', () => {
 		expect(nounPhrase({ building: 'house', house: 'terraced', 'building:levels': '2' })).toBe(
@@ -1008,6 +1024,12 @@ describe('plain things counted, not listed', () => {
 		);
 		expect(t).toContain('Three buildings, the nearest to the north, a few steps away.');
 		expect(t).toContain('The map names none of them.');
+	});
+
+	it('counts things long unrecorded too, as a past tense changes nothing in a plain thing', () => {
+		const old = (id: string, at = {}) => beat(id, { man_made: 'yes' }, at, ['tense-slip']);
+		const t = text(scene({ beats: [old('way/1', north(15)), old('way/2', north(16))] }));
+		expect(t).toContain('Two structures, both to the north, a few steps away.');
 	});
 
 	it('leaves a single plain thing as it is, and never counts what has a name or a past', () => {

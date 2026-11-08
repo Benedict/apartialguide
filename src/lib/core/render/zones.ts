@@ -31,12 +31,24 @@ const asWritten = (name: string) =>
 				)
 		: name;
 
-function plansOf(z: Zone): string {
+/** One mine's plans: how many, of which mine, worked for what, when last abandoned. */
+function planOf(z: Zone): string {
 	const c = z.claims ?? {};
 	const n = Number(c.plans) || 1;
 	const worked = c.minerals ? `, worked for ${asWords(c.minerals)}` : '';
 	const ended = c.abandoned ? `, abandoned in ${c.abandoned}` : '';
-	return `The plans of old mines cover this ground: ${numberWord(n)} of “${asWritten(z.name)}”${worked}${ended}.`;
+	return `${numberWord(n)} of “${asWritten(z.name)}”${worked}${ended}`;
+}
+
+/** The mines whose plans cover the ground, in one sentence, and how many more. */
+function plansOf(mines: readonly Zone[]): string {
+	const told = mines.slice(0, MOST_MINES).map(planOf);
+	const list = told.length > 1 ? `${told.slice(0, -1).join('; ')}; and ${told.at(-1)}` : told[0];
+	const more =
+		mines.length > MOST_MINES
+			? ` Plans of ${numberWord(mines.length - MOST_MINES)} more mines cover it too.`
+			: '';
+	return `The plans of old mines cover this ground: ${list}.${more}`;
 }
 
 const returnsOf = (z: Zone): string[] => returnsSaid(z.name, z.claims ?? {});
@@ -90,9 +102,7 @@ function rockOf(z: Zone): string {
 export function zoneLines(entered: readonly Zone[], left: readonly Zone[]): string[] {
 	const lines: string[] = [];
 	const mines = entered.filter((z) => z.kind === 'mine plans');
-	for (const z of mines.slice(0, MOST_MINES)) lines.push(plansOf(z));
-	if (mines.length > MOST_MINES)
-		lines.push(`Plans of ${numberWord(mines.length - MOST_MINES)} more mines cover it too.`);
+	if (mines.length) lines.push(plansOf(mines));
 	for (const z of entered) {
 		if (z.kind === 'mine returns') lines.push(...returnsOf(z));
 		else if (z.kind === 'bedrock' || z.kind === 'superficial deposits') lines.push(rockOf(z));
