@@ -88,25 +88,27 @@ export const MINES_CAUTION =
 /** The caution, on a world whose map marks ways into mines. */
 const cautioned = (about?: Ledger) => (about?.mines ? { hint: MINES_CAUTION } : {});
 
-/** Guide's introduction and the account of what they carry, from the head of the world alone. */
-export function introduction({ asOf, about }: Pick<AdventureWorld, 'asOf' | 'about'>): Reply {
-	if (about && asOf) return { lines: [...INTRO, ...ledgerLines(asOf, about)], ...cautioned(about) };
+/**
+ * Guide's welcome, from the head of the world alone: who Guide is, what the walk is, and that the
+ * map may be wrong. The figures wait for anyone who asks what Guide carries (`i`).
+ */
+export function introduction({
+	asOf,
+	about,
+	place
+}: Pick<AdventureWorld, 'asOf' | 'about' | 'place'>): Reply {
+	const told = about?.accounts.length ? 'the map and the records others keep say' : 'the map says';
+	const through = place ? `through ${place}` : 'round';
 	return {
 		lines: [
-			...INTRO,
-			asOf
-				? `The map I carry is dated ${longDate(asOf)}. Beyond it there may be more. I could not say what.`
-				: 'Beyond my map there may be more. I could not say what.'
-		]
+			`Hello. I’m Guide. I’ll walk you ${through}, telling you what ${told} of each place we stand.`,
+			`${asOf ? `The map I carry is dated ${longDate(asOf)}. Some of it` : 'Some of what I tell'} will be out of date, or wrong, or missing. I tell it as I find it.`
+		],
+		...cautioned(about)
 	};
 }
 
-/** Guide's words about themselves, said once, before the first place. */
-export const INTRO = [
-	'I am Guide. I lived here long ago. I lived here yesterday. I will have lived here tomorrow.'
-];
-
-export const OFFER = 'Shall I show you round? Type take the tour, and we will begin.';
+export const OFFER = 'Shall we begin? Type take the tour.';
 /** The tour, offered as a button as well as to type. */
 /** How many other areas the start offers by name before it offers one choice of them all. */
 const FEW_DOORS = 2;
@@ -179,7 +181,7 @@ function ledgerLines(asOf: string, about: Ledger): string[] {
 		? `, the oldest of them last recorded in ${monthYear(about.oldest)}`
 		: '';
 	const lines = [
-		`I walk by a map. Mine is dated ${longDate(asOf)}: ${n(about.streets)} named streets and ${n(about.places)} places to stand${oldest}. Beyond it there may be more. I could not say what.`
+		`I carry a map dated ${longDate(asOf)}: ${n(about.streets)} named streets and ${n(about.places)} places to stand${oldest}. Beyond it there may be more. I could not say what.`
 	];
 	if (about.accounts.length)
 		lines.push(
@@ -309,21 +311,9 @@ export class Adventure {
 	begin(now: Fact[] = []): Reply[] {
 		this.choosing = true;
 		this.now = now;
-		const { asOf, about } = this.world;
 		const today = [weatherNow(now), airNow(now), skyLine(now)].filter(Boolean).join(' ');
-		if (about && asOf)
-			return [
-				{
-					lines: [...INTRO, ...ledgerLines(asOf, about), ...(today ? [today] : [])],
-					...cautioned(about)
-				},
-				this.offering()
-			];
-		const sky = today ? ` ${today}` : '';
-		const map = asOf
-			? `The map I carry is dated ${longDate(asOf)}.${sky} Beyond it there may be more. I could not say what.`
-			: 'Beyond my map there may be more. I could not say what.';
-		return [{ lines: [...INTRO, map] }, this.offering()];
+		const welcome = introduction(this.world);
+		return [{ ...welcome, lines: [...welcome.lines, ...(today ? [today] : [])] }, this.offering()];
 	}
 
 	/** The place nearest a latitude and longitude given as "51.38, -0.07", and how far it is. */
@@ -655,7 +645,7 @@ export class Adventure {
 			case 'magic':
 				return { lines: ['Nothing happens. Nothing has happened here for some time.'] };
 			case 'inventory':
-				return { lines: [this.inventory()] };
+				return { lines: this.inventory() };
 			case 'save':
 				return this.save(command.slot);
 			case 'restore':
@@ -942,7 +932,13 @@ export class Adventure {
 		return `You have walked ${distanceWords(this.walk.walked)} in ${moves}.${mark}`;
 	}
 
-	private inventory(): string {
+	/** What the reader carries, what Guide still carries, and the map and accounts Guide walks by. */
+	private inventory(): string[] {
+		const { asOf, about } = this.world;
+		return [this.carried(), ...(asOf && about ? ledgerLines(asOf, about) : [])];
+	}
+
+	private carried(): string {
 		const yours = this.walk.pocket.length
 			? `You are carrying ${listed(this.walk.pocket.map(quote))}.`
 			: 'You are carrying nothing. Names, perhaps, if you take them.';

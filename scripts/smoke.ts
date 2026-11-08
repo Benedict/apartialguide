@@ -95,7 +95,7 @@ try {
 		!asked.some((u) => u.includes('googletagmanager')),
 		'Google Analytics was asked for without a yes'
 	);
-	await says(page, 'I am Guide');
+	await says(page, 'I’m Guide');
 	check(
 		asked.some((u) => u.includes('api.open-meteo.com/v1/forecast')),
 		'the weather was not asked after'
@@ -204,7 +204,7 @@ try {
 	asked.length = 0;
 	await page.goto('about:blank');
 	await page.goto(url);
-	await says(page, 'I am Guide');
+	await says(page, 'I’m Guide');
 	check(
 		!asked.some((u) => u.includes('api.open-meteo.com/v1/forecast')),
 		'the weather was asked after when off'
@@ -240,7 +240,7 @@ try {
 	};
 	await targets('the walk’s settings');
 	await page.goto(url);
-	await says(page, 'I am Guide');
+	await says(page, 'I’m Guide');
 	await targets('the walk');
 	if (root) {
 		await page.goto(root);

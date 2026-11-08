@@ -9,13 +9,19 @@ Feature: Taking the tour
     And the reader opens the game
 
   Scenario: Guide introduces themselves and offers the tour
-    Then it says "I am Guide. I lived here long ago. I lived here yesterday. I will have lived here tomorrow."
+    Then it says "Hello. I’m Guide. I’ll walk you"
     And it says "take the tour"
     And it does not say "You are standing"
     And it does not say "postcode"
 
-  Scenario: Guide gives an account of the map they carry
-    Then it says "I walk by a map. Mine is dated 24 October 2026: 3 named streets and"
+  Scenario: Guide is honest about the map they carry
+    Then it says "The map I carry is dated 24 October 2026. Some of it will be out of date, or wrong, or missing."
+    And it does not say "named streets"
+
+  Scenario: Asking what Guide carries
+    When the reader types "take the tour"
+    And the reader types "i"
+    Then it says "I carry a map dated 24 October 2026: 3 named streets and"
     And it says "places to stand"
 
   Scenario: Taking the tour
@@ -30,4 +36,4 @@ Feature: Taking the tour
   Scenario: Once begun, the introduction is not repeated
     When the reader types "take the tour"
     And the reader types "look"
-    Then it does not say "I am Guide"
+    Then it does not say "I’m Guide"

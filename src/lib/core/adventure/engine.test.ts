@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Adventure, INTRO, MINES_CAUTION, OFFER, introduction } from './engine';
+import { Adventure, MINES_CAUTION, OFFER, introduction } from './engine';
 import { hearsay } from '../render/hearsay';
 import type { AdventureWorld } from './world';
 import { MemorySaves } from './saves';
@@ -42,8 +42,32 @@ describe('Adventure', () => {
 			expect(offer.actions).toEqual([{ label: 'Take the tour', command: 'take the tour' }]);
 		});
 
-		it('gives an account of what Guide carries, from the map and the other accounts', () => {
+		it('welcomes the reader, says what the walk is, and is honest about the map', () => {
 			const [intro] = new Adventure({
+				...world,
+				place: 'Inventa',
+				asOf: '2026-10-24',
+				about: { streets: 412, places: 5688, accounts: ['Invented Registry'] }
+			}).begin();
+			expect(intro.lines).toEqual([
+				'Hello. I’m Guide. I’ll walk you through Inventa, telling you what the map and the records others keep say of each place we stand.',
+				'The map I carry is dated 24 October 2026. Some of it will be out of date, or wrong, or missing. I tell it as I find it.'
+			]);
+		});
+
+		it('says only the map, where there are no other accounts, and no place where none is named', () => {
+			const [intro] = new Adventure({
+				...world,
+				asOf: '2026-10-24',
+				about: { streets: 1, places: 1, accounts: [] }
+			}).begin();
+			expect(intro.lines[0]).toBe(
+				'Hello. I’m Guide. I’ll walk you round, telling you what the map says of each place we stand.'
+			);
+		});
+
+		it('keeps the figures out of the welcome, and gives them to anyone who asks what Guide carries', () => {
+			const game = new Adventure({
 				...world,
 				asOf: '2026-10-24',
 				about: {
@@ -53,22 +77,27 @@ describe('Adventure', () => {
 					accounts: ['Food Standards Agency', 'HM Land Registry', 'Wikidata'],
 					areas: { kind: 'ward', count: 9, most: ['Inventa East', 'Inventa West'] }
 				}
-			}).begin();
-			expect(intro.lines).toEqual([
-				INTRO[0],
-				'I walk by a map. Mine is dated 24 October 2026: 412 named streets and 5,688 places to stand, the oldest of them last recorded in March 2009. Beyond it there may be more. I could not say what.',
+			});
+			const [intro] = game.begin();
+			expect(intro.lines.join(' ')).not.toMatch(/412|5,688|named streets|Inventa East/);
+			game.respond('take the tour');
+			expect(game.respond('i').lines).toEqual([
+				'You are carrying nothing. Names, perhaps, if you take them.',
+				'I carry a map dated 24 October 2026: 412 named streets and 5,688 places to stand, the oldest of them last recorded in March 2009. Beyond it there may be more. I could not say what.',
 				'The map is not the only account. Others have been kept: by those who inspect kitchens, those who write down what houses sell for and those who keep an encyclopaedia of everything. Where they disagree with the map, I leave them disagreeing.',
 				`${hearsay('the map runs into 9 wards, most of it in Inventa East and Inventa West')} I will say when we cross from one to another.`
 			]);
 		});
 
 		it('never names who kept the other accounts', () => {
-			const [intro] = new Adventure({
+			const game = new Adventure({
 				...world,
 				asOf: '2026-10-24',
 				about: { streets: 1, places: 1, accounts: ['Wikidata', 'Invented Registry'] }
-			}).begin();
-			const text = intro.lines.join(' ');
+			});
+			const [intro] = game.begin();
+			game.respond('take the tour');
+			const text = [...intro.lines, ...game.respond('i').lines].join(' ');
 			expect(text).toContain(
 				'Others have been kept: by those who keep an encyclopaedia of everything, and others.'
 			);
@@ -150,7 +179,7 @@ describe('Adventure', () => {
 
 		it('opens with Guide introducing themselves, then offers the tour', () => {
 			const [intro, offer] = new Adventure(world).begin();
-			expect(intro.lines[0]).toBe(INTRO[0]);
+			expect(intro.lines[0]).toMatch(/^Hello. I’m Guide./);
 			expect(intro.title).toBeUndefined();
 			expect(offer.lines.join(' ')).toContain('take the tour');
 		});
@@ -171,7 +200,7 @@ describe('Adventure', () => {
 				current: { time: '2026-10-25T16:45', weather_code: 61, temperature_2m: 11 }
 			});
 			const [intro] = new Adventure({ ...world, asOf: '2026-10-24' }).begin(now);
-			expect(intro.lines.join(' ')).toContain('dated 24 October 2026. Today: light rain, 11 °C.');
+			expect(intro.lines).toContain('Today: light rain, 11 °C.');
 		});
 
 		it('tells the weather when asked, and only what it has word of', () => {

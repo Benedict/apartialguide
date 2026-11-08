@@ -27,7 +27,13 @@ import { privacyPage } from '../src/lib/server/privacy';
 import { removalPage } from '../src/lib/server/remove';
 import { FONT_FILES } from '../src/lib/server/type';
 import { compileWorld } from '../src/lib/core/adventure/world';
-import { exportPage, pointsToMine, wordsAmiss, writersOf } from '../src/lib/server/export';
+import {
+	ADDISCOMBE,
+	exportPage,
+	pointsToMine,
+	wordsAmiss,
+	writersOf
+} from '../src/lib/server/export';
 import { whatsNew } from '../src/lib/server/changes';
 import { loadNarration, loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
 
@@ -100,6 +106,13 @@ const world = areas.some((a) => a.open)
 			)
 		}
 	: { ...opened, postcodes, anywhere: anywhereIn(opened) };
+
+// The place Guide's welcome names: the larger place where the walk opens several of its areas
+// (Croydon), else the place itself (Weardale).
+const named = shown.place ?? ADDISCOMBE;
+Object.assign(world, {
+	place: 'doors' in world && world.doors?.length ? (named.within ?? named.name) : named.name
+});
 
 if (process.env.DOORS_REQUIRED && doorless.length) {
 	console.error(
