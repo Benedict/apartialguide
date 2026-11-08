@@ -973,11 +973,12 @@ const WHEELCHAIR: Record<string, string> = {
  * reference if it carries one. Never its raw record, and none of its technical values.
  */
 export function mapWords(tags: Tags): string[] {
-	const sentences = [`${capitalise(plainKind(tags))}.`];
+	// The prompt's words, as mapped: a walker's words would move every stored piece's key.
+	const sentences = [`${capitalise(plainKind(tags, false))}.`];
 	if (tags.name && !namedInline(tags)) sentences.push(`“${tags.name}”, it says.`);
 	if (tags.old_name) sentences.push(`Once “${tags.old_name}”.`);
 	const past = pastUse(tags);
-	if (past) sentences.push(`It was ${article(past)}.`);
+	if (past) sentences.push(`It was ${article(past, false)}.`);
 	const kit = KIT.filter((k) => tags[k] === 'yes').map((k) => `a ${k}`);
 	if (kit.length) sentences.push(`${capitalise(list(kit))}.`);
 	if (tags.lit === 'yes') sentences.push('Lit at night.');
