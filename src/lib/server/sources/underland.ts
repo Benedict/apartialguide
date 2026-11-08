@@ -33,6 +33,13 @@ export interface LedgerStore extends Dated {
 		lead: { tons: number; cwts: number };
 		silver?: number;
 	}[];
+	copper?: {
+		mine: string;
+		year: string;
+		ore: number;
+		copper: { tons: number; cwts: number; qrs: number; lbs: number };
+		pounds?: number;
+	}[];
 }
 export interface MarkStore extends Dated {
 	marks: { ref: string; kind: string; name?: string; at: LatLon }[];
@@ -68,6 +75,8 @@ const GENERIC = /\b(lead|mines?|co|company)\b/g;
 export const nameKey = (name: string) =>
 	name
 		.toLowerCase()
+		// Hunt's Huel is the plans' and the map's Wheal: for the match alone, never in what is said.
+		.replace(/\bhuel\b/g, 'wheal')
 		.replace(GENERIC, '')
 		.replace(/[^\p{L}\p{N}]+/gu, '');
 
@@ -130,16 +139,36 @@ export function returnZones(
 		if (m.name && !named.has(nameKey(m.name))) named.set(nameKey(m.name), m);
 	const records: SourceRecord[] = [];
 	const ground = new Map((mines.areas ?? []).map((a) => [nameKey(a.name), a.rings]));
-	const byMine = new Map<string, LedgerStore['returns']>();
-	for (const r of ledger.returns) byMine.set(r.mine, [...(byMine.get(r.mine) ?? []), r]);
+	const byMine = new Map<string, Record<string, string>>();
+	const claimsOf = (mine: string) => {
+		const c = byMine.get(mine) ?? {};
+		byMine.set(mine, c);
+		return c;
+	};
+	for (const r of ledger.returns) {
+		const claims = claimsOf(r.mine);
+		claims[`${r.year}.ore`] = weight(r.ore);
+		claims[`${r.year}.lead`] = weight(r.lead);
+		if (r.silver !== undefined) claims[`${r.year}.silver`] = String(r.silver);
+	}
+	const n = (x: number) => x.toLocaleString('en-GB');
+	for (const r of ledger.copper ?? []) {
+		const claims = claimsOf(r.mine);
+		const { tons, cwts, qrs, lbs } = r.copper;
+		claims[`${r.year}.copper ore`] = `${n(r.ore)} ton${r.ore === 1 ? '' : 's'}`;
+		claims[`${r.year}.copper`] =
+			[
+				tons ? `${n(tons)} ton${tons === 1 ? '' : 's'}` : '',
+				cwts ? `${cwts} cwts` : '',
+				qrs ? `${qrs} qrs` : '',
+				lbs ? `${lbs} lbs` : ''
+			]
+				.filter(Boolean)
+				.join(' ') || 'none';
+		if (r.pounds !== undefined) claims[`${r.year}.pounds`] = n(r.pounds);
+	}
 	const areas: AreaRecord[] = [];
-	for (const [mine, rs] of byMine) {
-		const claims: Record<string, string> = {};
-		for (const r of rs) {
-			claims[`${r.year}.ore`] = weight(r.ore);
-			claims[`${r.year}.lead`] = weight(r.lead);
-			if (r.silver !== undefined) claims[`${r.year}.silver`] = String(r.silver);
-		}
+	for (const [mine, claims] of byMine) {
 		const rings = ground.get(nameKey(mine));
 		const mark = named.get(nameKey(mine));
 		if (rings)

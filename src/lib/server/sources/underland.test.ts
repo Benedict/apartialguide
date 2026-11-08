@@ -142,6 +142,44 @@ describe('the mines’ records, for the walk', () => {
 		]);
 	});
 
+	it('gives copper returns to a mine’s ground too, its Huel read as Wheal for the match alone', () => {
+		const cornish = {
+			...plans,
+			plans: [
+				{
+					id: '9',
+					title: 'Z',
+					mine: 'SOUTH WHEAL INVENTA',
+					kind: 'mine plan',
+					ring: ring(50.2, -5.2)
+				}
+			]
+		};
+		const ledger = {
+			source: 'Robert Hunt, Mineral Statistics',
+			licence: 'Public domain',
+			retrieved: '2026-11-08',
+			returns: [],
+			copper: [
+				{
+					mine: 'South Huel Inventa',
+					year: '1872',
+					ore: 2654,
+					copper: { tons: 219, cwts: 3, qrs: 2, lbs: 27 },
+					pounds: 17428
+				}
+			]
+		};
+		const store = returnZones(ledger, mineZones(cornish));
+		expect(store.areas).toHaveLength(1);
+		expect(store.areas![0]).toMatchObject({ name: 'South Huel Inventa', kind: 'mine returns' });
+		expect(store.areas![0].claims).toEqual({
+			'1872.copper ore': '2,654 tons',
+			'1872.copper': '219 tons 3 cwts 2 qrs 27 lbs',
+			'1872.pounds': '17,428'
+		});
+	});
+
 	it('gives boreholes as things standing alone, by name, with their depth and year', () => {
 		const store = boreholeRecords({
 			source: 'British Geological Survey, Single Onshore Borehole Index',

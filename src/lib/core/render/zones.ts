@@ -45,8 +45,19 @@ export function returnsSaid(name: string, c: Record<string, string>): string[] {
 			c[`${y}.lead`] && `${c[`${y}.lead`]} of lead`,
 			c[`${y}.silver`] && `${c[`${y}.silver`]} ounces of silver`
 		].filter((p): p is string => !!p);
-		const given =
+		const lead =
 			parts.length > 1 ? `${parts.slice(0, -1).join(', ')} and ${parts.at(-1)}` : parts[0];
+		// Copper sold at the ticketings: its ore, the fine copper in it, what it sold for.
+		const copper = c[`${y}.copper ore`]
+			? [
+					`${c[`${y}.copper ore`]} of copper ore`,
+					c[`${y}.copper`] && `${c[`${y}.copper`]} of copper`,
+					c[`${y}.pounds`] && `sold for £${c[`${y}.pounds`]}`
+				]
+					.filter(Boolean)
+					.join(', ')
+			: undefined;
+		const given = [lead, copper].filter(Boolean).join('; and ');
 		return hearsay(`of ${name}, the returns for ${y} give ${given}`);
 	});
 }

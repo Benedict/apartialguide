@@ -41,6 +41,23 @@ describe('zoneLines', () => {
 		]);
 	});
 
+	it('gives copper sold at the ticketings as the returns give it: ore, fine copper, what it sold for', () => {
+		const returns: Zone = {
+			name: 'South Huel Inventa',
+			kind: 'mine returns',
+			claims: {
+				'1872.copper ore': '2,654 tons',
+				'1872.copper': '219 tons 3 cwts 2 qrs 27 lbs',
+				'1872.pounds': '17,428'
+			}
+		};
+		expect(zoneLines([returns], [])).toEqual([
+			hearsay(
+				'of South Huel Inventa, the returns for 1872 give 2,654 tons of copper ore, 219 tons 3 cwts 2 qrs 27 lbs of copper, sold for £17,428'
+			)
+		]);
+	});
+
 	it('tells the rock beneath on coming onto it, its name as found, its words read as words', () => {
 		const rock: Zone = {
 			name: 'INVENTED GROUP',
