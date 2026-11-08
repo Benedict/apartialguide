@@ -150,10 +150,27 @@ function platformName(scene: Scene): string | undefined {
 const isSquare = (street: Tags) =>
 	street.area === 'yes' && (street.highway === 'pedestrian' || street.highway === 'footway');
 
+/** What a walker calls a way the map tags so, where the tag is not a walker's word for it. */
+const WAY_WORDS: Record<string, string> = {
+	service: 'service road',
+	unclassified: 'minor road',
+	residential: 'street',
+	living_street: 'street',
+	tertiary: 'road',
+	secondary: 'road',
+	primary: 'road',
+	trunk: 'road',
+	footway: 'footpath',
+	cycleway: 'cycle path',
+	pedestrian: 'pedestrian street'
+};
+
+const wayWord = (highway = 'way') => WAY_WORDS[highway] ?? humanise(highway);
+
 const streetName = (scene: Scene, street: Tags) =>
 	scene.here[0] ??
 	platformName(scene) ??
-	`an unnamed ${isSquare(street) ? 'square' : humanise(street.highway ?? 'way')}`;
+	`an unnamed ${isSquare(street) ? 'square' : wayWord(street.highway)}`;
 
 const isDeadEnd = (scene: Scene) => scene.kind === 'junction' && scene.exits.length === 1;
 
