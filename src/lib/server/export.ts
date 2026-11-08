@@ -80,8 +80,8 @@ const packed = (world: AdventureWorld) =>
 
 /** What Guide needs to speak before the map is opened, as JSON nothing in a script element can break out of. */
 const head = (world: AdventureWorld, tiled: boolean) => {
-	const { asOf, about, weatherAt } = world;
-	return JSON.stringify(tiled ? headOf(world) : { asOf, about, weatherAt }).replace(
+	const { asOf, about, weatherAt, place } = world;
+	return JSON.stringify(tiled ? headOf(world) : { asOf, about, weatherAt, place }).replace(
 		/</g,
 		'\\u003c'
 	);

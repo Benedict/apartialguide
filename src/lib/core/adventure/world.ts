@@ -129,8 +129,10 @@ export interface AdventureWorld {
 	stops: Record<StopId, CompiledStop>;
 	/** The date of the map Guide carries, YYYY-MM-DD. */
 	asOf?: string;
-	/** What Guide carries, for the introduction. */
+	/** What Guide carries, told to anyone who asks (`i`). */
 	about?: Ledger;
+	/** The place the walk is of, as Guide's welcome names it (`PLACE_NAME`). */
+	place?: string;
 	/** Where to ask about today's weather: where the tour begins. */
 	weatherAt?: { latitude: number; longitude: number };
 	/** What others keep beyond the map's edge, told only when the reader looks beyond. */
