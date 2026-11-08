@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Adventure, INTRO, OFFER, introduction } from './engine';
+import { Adventure, INTRO, MINES_CAUTION, OFFER, introduction } from './engine';
 import { hearsay } from '../render/hearsay';
 import type { AdventureWorld } from './world';
 import { MemorySaves } from './saves';
@@ -106,6 +106,23 @@ describe('Adventure', () => {
 			}).begin(now);
 			expect(intro.lines.at(-1)).toBe('Today: light rain, 11 °C.');
 			expect(intro.lines.join(' ')).not.toContain('The map is not the only account');
+		});
+
+		it('cautions, in the page’s voice, where the map marks ways into mines, and nowhere else', () => {
+			const mined = {
+				asOf: '2026-11-08',
+				about: { streets: 2, places: 3, accounts: [], mines: 40 }
+			};
+			const [intro] = new Adventure({ ...world, ...mined }).begin();
+			expect(intro.hint).toBe(MINES_CAUTION);
+			expect(introduction(mined).hint).toBe(MINES_CAUTION);
+			expect(MINES_CAUTION).toMatch(/dangerous/);
+			const [plain] = new Adventure({
+				...world,
+				asOf: '2026-11-08',
+				about: { streets: 2, places: 3, accounts: [] }
+			}).begin();
+			expect(plain.hint).toBeUndefined();
 		});
 
 		it('introduces Guide from the head of the world alone, before the map is opened', () => {

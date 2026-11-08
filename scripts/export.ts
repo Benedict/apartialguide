@@ -27,7 +27,7 @@ import { privacyPage } from '../src/lib/server/privacy';
 import { removalPage } from '../src/lib/server/remove';
 import { FONT_FILES } from '../src/lib/server/type';
 import { compileWorld } from '../src/lib/core/adventure/world';
-import { exportPage, wordsAmiss, writersOf } from '../src/lib/server/export';
+import { exportPage, pointsToMine, wordsAmiss, writersOf } from '../src/lib/server/export';
 import { whatsNew } from '../src/lib/server/changes';
 import { loadNarration, loadNarrator, readConfig, startStop } from '../src/lib/server/narrator';
 
@@ -112,6 +112,13 @@ const amiss = wordsAmiss(world);
 if (amiss.length) {
 	console.error(`Guide would say what the code let slip, at ${amiss.length} places:`);
 	for (const line of amiss.slice(0, 10)) console.error(`  ${line.slice(0, 200)}`);
+	process.exit(1);
+}
+
+const pointed = pointsToMine(world);
+if (pointed.length) {
+	console.error(`Guide would point the way to a mine at ${pointed.length} places:`);
+	for (const line of pointed.slice(0, 10)) console.error(`  ${line.slice(0, 200)}`);
 	process.exit(1);
 }
 

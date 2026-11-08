@@ -104,6 +104,47 @@ describe('RecordsAdapter', () => {
 		expect(found[0]).toMatchObject({ subject: 'hygiene/r4', geometry: [[51.381, -0.071]] });
 	});
 
+	it('joins records two sources keep of one thing standing alone, each fact with its own source', () => {
+		const at: [number, number] = [51.381, -0.071];
+		const plans = facts(
+			store(
+				[
+					{
+						id: 'p1',
+						at,
+						thing: 'mine/invented-gill',
+						claims: { name: 'INVENTED GILL', plans: '3' }
+					}
+				],
+				{
+					source: 'Invented index',
+					prefix: 'mine'
+				}
+			)
+		);
+		const returns = facts(
+			store(
+				[
+					{
+						id: 'r1',
+						at,
+						thing: 'mine/invented-gill',
+						claims: { returns: '1871: 2 tons of lead ore' }
+					}
+				],
+				{
+					source: 'Invented returns',
+					prefix: 'returns'
+				}
+			)
+		);
+		expect(new Set([...plans, ...returns].map((f) => f.subject))).toEqual(
+			new Set(['mine/invented-gill'])
+		);
+		expect(returns[0].source).toBe('Invented returns');
+		expect(plans[0].source).toBe('Invented index');
+	});
+
 	it('attaches a record about a street to every stretch of that street', () => {
 		const stretches: OsmElement[] = [
 			{ type: 'node', id: 10, lat: 51.38, lon: -0.072 },

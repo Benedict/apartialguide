@@ -17,6 +17,11 @@ export interface SourceRecord {
 	near?: { key: string; value: string; within: number };
 	/** A street the record is about, by name: it goes with every stretch of that street. */
 	street?: string;
+	/**
+	 * The thing it is about, standing alone, when another source's records are about it too (a mine's
+	 * plans in one, its returns in another): they join as one thing, each fact keeping its own source.
+	 */
+	thing?: string;
 	/** When the source last had word of it, YYYY-MM-DD. */
 	observed?: string;
 	/** What the source says, every value as found. `name` also finds a thing of that name nearby. */
@@ -109,11 +114,14 @@ export class RecordsAdapter implements SourceAdapter {
 				facts.push(...this.claims(r, elementRef(thing), geometry, reach));
 			} else if (
 				r.at &&
-				(r.claims.name || r.claims.inscription) &&
+				(r.claims.name || r.claims.inscription || r.thing) &&
 				this.store.standalone !== false
 			) {
-				// Standing alone, a record needs a name, or words of its own, to be called by.
-				facts.push(...this.claims(r, `${this.store.prefix}/${r.id}`, [r.at], this.reach.feature));
+				// Standing alone, a record needs a name, or words of its own, to be called by, or to join a
+				// thing another source names.
+				facts.push(
+					...this.claims(r, r.thing ?? `${this.store.prefix}/${r.id}`, [r.at], this.reach.feature)
+				);
 			}
 		}
 		return facts;

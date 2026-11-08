@@ -34,7 +34,7 @@ export interface CompiledStop {
 	/** The area another account puts this stop in, such as a ward. */
 	area?: { name: string; kind: string };
 	/** Other areas another account draws over this stop, such as flood zones: any number at once. */
-	zones?: { name: string; kind: string }[];
+	zones?: { name: string; kind: string; claims?: Record<string, string> }[];
 	/** What a closer look finds, if anything is hidden here. */
 	hidden?: { lines: string[]; things: Thing[] };
 	/** The template's telling, where prose written ahead of time is told instead: for plainly. */
@@ -109,6 +109,8 @@ export interface Ledger {
 	accounts: string[];
 	/** The areas another account draws: how many the map runs into, and those most of it lies in. */
 	areas?: { kind: string; count: number; most: string[] };
+	/** How many ways into mines the map marks (`isMineEntry`): where any, the page cautions. */
+	mines?: number;
 }
 
 export interface AdventureWorld {
@@ -148,7 +150,9 @@ export function compileWorld(
 		const { room, plan, scene, inView } = narrator.visit(stop.id)!;
 		const transit = transitIn(inView);
 		const area = narrator.areaAt(stop.position);
-		const zones = narrator.zonesAt(stop.position).map(({ name, kind }) => ({ name, kind }));
+		const zones = narrator
+			.zonesAt(stop.position)
+			.map(({ name, kind, claims }) => ({ name, kind, ...(claims ? { claims } : {}) }));
 		const things = plan.beats.flatMap((b) =>
 			b.facts
 				.filter((f) => ['name', 'wikidata:label', 'etymology:label'].includes(f.claim.key))
@@ -229,9 +233,14 @@ function ledger(narrator: Narrator, stops: Record<StopId, CompiledStop>): Ledger
 		.sort((a, b) => b[1] - a[1])
 		.slice(0, 2)
 		.map(([name]) => name);
+	const entries = new Set<string>();
+	for (const stop of Object.values(stops))
+		for (const t of [...stop.things, ...(stop.hidden?.things ?? [])])
+			if (t.entry) entries.add(t.id);
 	return {
 		streets,
 		places: Object.keys(stops).length,
+		...(entries.size ? { mines: entries.size } : {}),
 		...(oldest ? { oldest } : {}),
 		accounts,
 		...(kind ? { areas: { kind, count: inArea.size, most } } : {})

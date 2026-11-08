@@ -188,7 +188,11 @@ export class Narrator {
 
 	/** Every zone another account draws over a point, such as flood zones. */
 	zonesAt(p: LatLon): AreaRecord[] {
-		return this.zones.filter((z) => z.rings.some((ring) => insideRing(p, ring)));
+		return this.zones.filter(
+			(z) =>
+				z.rings.some((ring) => insideRing(p, ring)) &&
+				!(z.holes ?? []).some((hole) => insideRing(p, hole))
+		);
 	}
 
 	/** The area another account puts a point in, such as a ward, if any. */
