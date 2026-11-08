@@ -389,7 +389,19 @@ describe('a world that points the way to a mine', () => {
 		]);
 	});
 
-	it('lets a way into a mine be told near here, by kind and name alone', () => {
+	it('is refused too where a name says it is a mine, though nothing marked it as a way in', () => {
+		const unmarked = {
+			start: 'a',
+			stops: {
+				a: stop(['The nearest name is “Inventa Park Mine”, a historic, 160 metres to the north.'])
+			}
+		} as unknown as AdventureWorld;
+		expect(pointsToMine(unmarked)).toEqual([
+			'a: The nearest name is “Inventa Park Mine”, a historic, 160 metres to the north.'
+		]);
+	});
+
+	it('lets a way into a mine be told near here, and the way be given to a museum named for one', () => {
 		const told = {
 			start: 'a',
 			stops: {

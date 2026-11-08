@@ -64,6 +64,22 @@ describe('the mines’ records, for the walk', () => {
 		expect(store.areas!.map((a) => a.name)).not.toContain('INVENTED SHEET');
 	});
 
+	it('takes a plan’s title for its mine, as found, where the index names no mine', () => {
+		const untitled = {
+			...plans,
+			plans: [
+				{
+					id: '7',
+					title: 'INVENTED BAL',
+					kind: 'mine plan',
+					mineral: 'COPPER',
+					ring: ring(50.2, -5.2)
+				}
+			]
+		};
+		expect(mineZones(untitled).areas!.map((a) => a.name)).toEqual(['INVENTED BAL']);
+	});
+
 	it('lays a mine’s returns over its ground, by its name read as a key, its figures as the returns give them', () => {
 		const ledger = {
 			source: 'Robert Hunt, Mineral Statistics',

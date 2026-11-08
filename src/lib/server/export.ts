@@ -1,3 +1,4 @@
+import { NAMED_WAY_IN } from '../core/entries';
 import { withCsp } from './csp';
 import { headMeta, jsonLd, PAGES, profileLinks, REPO, SUPPORT, walkDescription } from './meta';
 import { THEMES, themeBoot, themeCss } from '../site/themes';
@@ -172,14 +173,36 @@ export function wordsAmiss(world: AdventureWorld): string[] {
 	return amiss;
 }
 
-/** Words that say which way something lies, or how far. */
-const POINTING = /\b(north|south|east|west|metres|steps away|beside you|right here)\b/i;
+/** The kinds of place people go to, as the walk calls them. */
+const GONE_TO_WORDS =
+	/\b(museum|attraction|information|gallery|visitor centre|pub|bar|restaurant|cafe|hotel|shop)\b/;
+
+const escaped = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 /**
- * Sentences that point the way to a way into a mine: a shaft, adit or level the world marks
- * (`entry` on a thing), named with a direction or a distance, at any place. Old shafts are
- * dangerous, and the walk tells one by kind and name alone (`isMineEntry`): a world with any such
- * sentence is not fit to publish, whatever let it slip.
+ * Whether a sentence gives the way to a name, in any of the ways Guide gives a way: “X”, to the
+ * north; “X”, a mine, 150 metres to the east; To the north, 30 metres off, is a mine, “X”; Right
+ * here is a mine, “X”. A direction in the same sentence that belongs to something else is not.
+ */
+function givesTheWay(sentence: string, name: string): boolean {
+	const n = `“${escaped(name)}”`;
+	// A place people go to, named for the mine it was (East Pool Mine, a museum): its way is given.
+	const kind = sentence.match(new RegExp(`${n}, (an? [^,“]+),`))?.[1] ?? '';
+	if (GONE_TO_WORDS.test(kind)) return false;
+	return [
+		new RegExp(`${n},? to the [a-z-]+`),
+		new RegExp(`${n}, [^,“]+, [^,“]*\\bmetres to the [a-z-]+`),
+		new RegExp(
+			`(To the [a-z-]+, [^“.]*|Right here |Beside you )(is|are|there is|there was)[^“.]*${n}`
+		)
+	].some((pattern) => pattern.test(sentence));
+}
+
+/**
+ * Sentences that give the way to a way into a mine: a shaft, adit or level the world marks
+ * (`entry` on a thing), or anything named as one, given a direction or a distance at any place.
+ * Old shafts are dangerous, and the walk tells one by kind and name alone (`isMineEntry`): a world
+ * with any such sentence is not fit to publish, whatever let it slip.
  */
 export function pointsToMine(world: AdventureWorld): string[] {
 	const names = new Set<string>();
@@ -187,12 +210,14 @@ export function pointsToMine(world: AdventureWorld): string[] {
 		for (const t of [...stop.things, ...(stop.hidden?.things ?? [])])
 			if (t.entry) for (const [, name] of t.name.matchAll(/“([^”]+)”/g)) names.add(name);
 	const pointed: string[] = [];
-	if (!names.size) return pointed;
 	for (const [id, stop] of Object.entries(world.stops))
 		for (const text of [...stop.paragraphs, ...(stop.hidden?.lines ?? [])])
-			for (const sentence of text.match(/[^.!?]+[.!?]?/g) ?? [])
-				if (POINTING.test(sentence) && [...names].some((n) => sentence.includes(`“${n}”`)))
-					pointed.push(`${id}: ${sentence.trim()}`);
+			for (const sentence of text.match(/[^.!?]+[.!?]?/g) ?? []) {
+				// Every name in the sentence that is a way in, by its mark or by its own words.
+				const quoted = [...sentence.matchAll(/“([^”]+)”/g)].map(([, n]) => n);
+				const ways = quoted.filter((n) => names.has(n) || NAMED_WAY_IN.test(n));
+				if (ways.some((n) => givesTheWay(sentence, n))) pointed.push(`${id}: ${sentence.trim()}`);
+			}
 	return pointed;
 }
 

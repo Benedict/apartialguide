@@ -86,9 +86,12 @@ const listOf = (words: string[]) =>
 /** Each mine's plans of the ground itself, as one zone over all that ground. */
 export function mineZones(store: PlanStore): RecordStore {
 	const byMine = new Map<string, PlanStore['plans']>();
-	for (const p of store.plans)
-		if (p.mine && p.ring.length > 3 && areaKm2(p.ring) < GROUND_KM2)
-			byMine.set(p.mine, [...(byMine.get(p.mine) ?? []), p]);
+	for (const p of store.plans) {
+		// The mine, as the index's description names it; else the plan's title, as found.
+		const mine = p.mine ?? p.title;
+		if (mine && p.ring.length > 3 && areaKm2(p.ring) < GROUND_KM2)
+			byMine.set(mine, [...(byMine.get(mine) ?? []), p]);
+	}
 	const areas: AreaRecord[] = [...byMine].map(([mine, ps], i) => {
 		const kinds = [...new Set(ps.map((p) => p.kind ?? 'plan'))];
 		const minerals = [...new Set(ps.map((p) => p.mineral).filter((m): m is string => !!m))];
