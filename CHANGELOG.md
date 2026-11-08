@@ -8,11 +8,12 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### For walkers
 
+- Where the map marks old mine shafts, the walk opens with a caution: they are dangerous, and the walk reads the records, not the ground.
 - More old mine workings are told by kind and name alone, never which way or how far: mine levels, air and ventilation shafts, and old mineral workings, as the map marks them.
 
 ### Under the hood
 
-- Underland's records: `npm run underland` writes the mines' plans of the ground itself and Hunt's returns as zones over that ground (or, where no plans' ground has a mine, its returns on the map's mark of its name), the rocks beneath as zones, and boreholes standing alone, from Underground's dated files (`server/sources/underland.ts`), kept in the private data repository. Zones carry their claims; a mine's ground, its returns and the rock beneath are told on coming onto them (`render/zones.ts`, `zoneLines`), three mines at most a step, and holes in a zone are kept. Records of one thing from two sources join (`thing`). `isMineEntry` knows levels, air and ventilation shafts, mineral workings and another account's mine, and `npm run export` refuses a world that points the way to one (`pointsToMine`).
+- Underland's records: `npm run underland` writes the mines' plans of the ground itself and Hunt's returns as zones over that ground (or, where no plans' ground has a mine, its returns on the map's mark of its name), the rocks beneath as zones, and boreholes standing alone, from Underground's dated files (`server/sources/underland.ts`), kept in the private data repository. Zones carry their claims; a mine's ground, its returns and the rock beneath are told on coming onto them (`render/zones.ts`, `zoneLines`), three mines at most a step, and holes in a zone are kept. Records of one thing from two sources join (`thing`). `isMineEntry` knows levels, air and ventilation shafts, mineral workings and another account's mine, and `npm run export` refuses a world that points the way to one (`pointsToMine`). A world whose map marks any carries how many (`Ledger.mines`), and the introduction then carries the page's caution as its hint (`MINES_CAUTION`).
 
 ## 2026-11-07
 

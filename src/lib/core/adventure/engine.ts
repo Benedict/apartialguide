@@ -81,9 +81,16 @@ export const HELP =
 /** What is not said again if heard at either of the last two places: framing lines among them. */
 const RATIONED = ['street', 'setting', 'thing', 'nearest', 'frame'];
 
+/** The page's caution, where the map marks ways into mines: said once, before the walk begins. */
+export const MINES_CAUTION =
+	'Old mine shafts, adits and levels are dangerous. This walk reads the records of the mines; it is not a guide to the ground. Keep away from them.';
+
+/** The caution, on a world whose map marks ways into mines. */
+const cautioned = (about?: Ledger) => (about?.mines ? { hint: MINES_CAUTION } : {});
+
 /** Guide's introduction and the account of what they carry, from the head of the world alone. */
 export function introduction({ asOf, about }: Pick<AdventureWorld, 'asOf' | 'about'>): Reply {
-	if (about && asOf) return { lines: [...INTRO, ...ledgerLines(asOf, about)] };
+	if (about && asOf) return { lines: [...INTRO, ...ledgerLines(asOf, about)], ...cautioned(about) };
 	return {
 		lines: [
 			...INTRO,
@@ -306,7 +313,10 @@ export class Adventure {
 		const today = [weatherNow(now), airNow(now), skyLine(now)].filter(Boolean).join(' ');
 		if (about && asOf)
 			return [
-				{ lines: [...INTRO, ...ledgerLines(asOf, about), ...(today ? [today] : [])] },
+				{
+					lines: [...INTRO, ...ledgerLines(asOf, about), ...(today ? [today] : [])],
+					...cautioned(about)
+				},
 				this.offering()
 			];
 		const sky = today ? ` ${today}` : '';

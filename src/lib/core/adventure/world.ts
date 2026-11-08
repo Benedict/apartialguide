@@ -109,6 +109,8 @@ export interface Ledger {
 	accounts: string[];
 	/** The areas another account draws: how many the map runs into, and those most of it lies in. */
 	areas?: { kind: string; count: number; most: string[] };
+	/** How many ways into mines the map marks (`isMineEntry`): where any, the page cautions. */
+	mines?: number;
 }
 
 export interface AdventureWorld {
@@ -231,9 +233,14 @@ function ledger(narrator: Narrator, stops: Record<StopId, CompiledStop>): Ledger
 		.sort((a, b) => b[1] - a[1])
 		.slice(0, 2)
 		.map(([name]) => name);
+	const entries = new Set<string>();
+	for (const stop of Object.values(stops))
+		for (const t of [...stop.things, ...(stop.hidden?.things ?? [])])
+			if (t.entry) entries.add(t.id);
 	return {
 		streets,
 		places: Object.keys(stops).length,
+		...(entries.size ? { mines: entries.size } : {}),
 		...(oldest ? { oldest } : {}),
 		accounts,
 		...(kind ? { areas: { kind, count: inArea.size, most } } : {})
