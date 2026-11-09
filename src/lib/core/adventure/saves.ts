@@ -23,6 +23,16 @@ export interface Circling {
 	strayed: number;
 }
 
+/** A river being followed: its course, the next place on it, and where it showed and hid. */
+export interface Following {
+	name: string;
+	points: { stop: string; hidden: boolean }[];
+	next: number;
+	shown: number;
+	hid: number;
+	seen: string[];
+}
+
 export interface WalkState {
 	here: string;
 	previous?: string;
@@ -35,6 +45,8 @@ export interface WalkState {
 	route?: { to: string; goals: [string, string][] };
 	/** The circle being walked (place a glass), if one is. */
 	circle?: Circling;
+	/** The river being followed, if one is. */
+	river?: Following;
 
 	lastCommand?: string;
 	lastStreet?: string;

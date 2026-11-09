@@ -3,6 +3,7 @@ export type Command =
 	| { verb: 'examine' | 'take' | 'drop' | 'remember'; target: string }
 	| { verb: 'save' | 'restore'; slot?: string }
 	| { verb: 'follow'; on: boolean }
+	| { verb: 'river'; target?: string; off?: boolean }
 	| { verb: 'hints'; on: boolean }
 	| { verb: 'colour'; colour?: string }
 	| { verb: 'route'; target?: string }
@@ -171,6 +172,13 @@ export function parse(input: string): Command {
 	const words = text.split(/\s+/);
 	const [first, ...rest] = words;
 
+	// A river followed, before walking: "walk the river" is not a street.
+	if (['river off', 'leave the river', 'stop following'].includes(text))
+		return { verb: 'river', off: true };
+	if (['follow', 'follow the river', 'follow a river', 'walk the river', 'rivers'].includes(text))
+		return { verb: 'river', target: '' };
+	const river = text.match(/^follow (?:the )?(.+)$/);
+	if (river && !['gps', 'map'].includes(river[1])) return { verb: 'river', target: river[1] };
 	if (['back', 'b', 'return', 'go back'].includes(text)) return { verb: 'back' };
 	// Asking the way somewhere, or letting it go.
 	if (['route off', 'no route', 'forget the way'].includes(text)) return { verb: 'route' };

@@ -8,11 +8,13 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### For walkers
 
+- Follow a river: type follow, then its name (“follow Norbury Brook”), and the walk takes you along its course as the map draws it, saying at each place whether it shows or runs hidden, and at the end where it showed and where it hid. River off lets it go.
 - Where the map runs a river under the ground, the walk says so as you come onto it: “Under your feet, in a culvert, runs “Norbury Brook”.” Croydon has nine, under 98 places.
 - Streams, rivers and drains are called what they are, not “something”; so are a golf course's bunkers, tees and greens, entrances (a main entrance), and fords.
 
 ### Under the hood
 
+- `Narrator.courses`: each named river's courses, from each source down to where the map's line ends (two arms are two courses; a gap under 50 m bridged, a longer one left as found), the places within 40 m of its line in the order it flows, each marked hidden where the way has a `tunnel`; the world carries them (`rivers`, renamed by `tileWorld`). The walk keeps the river followed (`river`, `Following` in `saves.ts`, kept and picked up like the circle); `follow X` takes the course with a place nearest here and goes the way it flows (back up it from its last place), passing over a place the streets reach only far round (more than three times straight across, past 200 m), so the way keeps to one bank; `river off`; help, a hint and the front page's commands name it.
 - `Narrator.beneathAt`: the named rivers, streams and drains the map runs under the ground (`waterway` with `tunnel`, as `WAY_IN` says it) within 20 m of a place; each compiled place keeps them (`beneath`), and the engine tells one on coming onto it (`underfoot`), not again while it runs on beneath.
 - `kind` names a waterway, a golf course's parts, an entrance and a ford for walkers alone (`WALKERS_ONLY`, last of `KIND_KEYS`); the prompt keeps them as it always had them, and `namedInline` takes the same `walker`, so stored prose keeps its key (2,554 of 3,547 found across Croydon, as before).
 

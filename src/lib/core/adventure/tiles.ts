@@ -65,6 +65,14 @@ export function tileWorld(
 					)
 				}
 			: {}),
+		...(world.rivers
+			? {
+					rivers: world.rivers.map((r) => ({
+						...r,
+						points: r.points.map((p) => ({ ...p, stop: names.get(p.stop) ?? p.stop }))
+					}))
+				}
+			: {}),
 		...(world.doors
 			? {
 					doors: world.doors.map((d) => (d.stop ? { ...d, stop: names.get(d.stop) ?? d.stop } : d))

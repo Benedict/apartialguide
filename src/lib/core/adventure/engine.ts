@@ -18,7 +18,7 @@ import {
 	type Aircraft,
 	type Omm
 } from '../adapters/overhead';
-import { distanceWords, longDate, monthYear } from '../render/words';
+import { distanceWords, longDate, monthYear, numberWord } from '../render/words';
 
 export { distanceWords };
 import { alludedTo } from '../keepers';
@@ -76,6 +76,7 @@ export const HELP =
 	'Save 1 to save 5 keeps the walk; restore picks one up. ' +
 	'Drift, and I choose the way. Hint for a word about a command; hints off, or on, for one now and then. ' +
 	'Route to a street or a named place for the way there (route off to let it go). ' +
+	'Follow, then a river’s name, walks its course as the map draws it, saying where it shows and where it runs hidden (river off to let it go). ' +
 	'Exits, weather, look up at what passes overhead, use the camera nearest here, look beyond the map, news for what is said today of the place, gps for this place on a map (gps on to keep the map beside you, gps off to put it away), score for how far you have walked, wait (z), again (g), verbose or brief, and feedback to send word to those who made me.';
 
 /** What is not said again if heard at either of the last two places: framing lines among them. */
@@ -146,6 +147,7 @@ const HINTS: [verb: string, hint: string][] = [
 	['examine', 'type examine, then a thing, to look closer.'],
 	['save', 'type save 1 to keep this walk.'],
 	['glass', 'type place a glass for a circle to walk round.'],
+	['river', 'type follow, then a river’s name, to walk its course.'],
 	['start', 'type start anywhere to begin somewhere by chance.'],
 	['news', 'type news for what is said today of the place.'],
 	['draw', 'type draw my walk to see the line you have walked.']
@@ -170,6 +172,13 @@ const RECALLED = [
 const CONNECT_AFTER = 3;
 const CONNECTIONS = 2;
 const CONNECT_CHANCE = 1 / 3;
+
+/** How many rivers are named when asked which; past that, the nearest so many. */
+const FEW_RIVERS = 5;
+/** How much further than straight across the way to a river's next place may be, before it is passed over. */
+const RIVER_DETOUR = 3;
+/** Below this many metres, any way to a river's next place is near enough. */
+const RIVER_DETOUR_MIN = 200;
 
 /** The distances that mark a walk, in metres: the goal is to walk, and each is told once passed. */
 const MARKS = [250, 500, 1000, 2000, 5000, 10_000, 20_000, 50_000];
@@ -574,6 +583,8 @@ export class Adventure {
 				return this.start(command.where, command.at);
 			case 'glass':
 				return command.on ? this.glass() : this.lift();
+			case 'river':
+				return command.off ? this.leaveRiver() : this.takeRiver(command.target ?? '');
 			case 'look':
 				return this.look();
 			case 'plainly':
@@ -710,7 +721,7 @@ export class Adventure {
 		this.walk.moves++;
 		this.mark();
 		const arrived = this.arrive();
-		const round = this.roundOn();
+		const round = [...this.roundOn(), ...this.riverOn()];
 		const reply = round.length ? { ...arrived, lines: [...arrived.lines, ...round] } : arrived;
 		const passed = MARKS.filter((m) => m > before && m <= this.walk.walked).at(-1);
 		const hint = this.hint();
@@ -914,7 +925,9 @@ export class Adventure {
 			previous: state.previous && has(state.previous) ? state.previous : undefined,
 			route: state.route && goals?.length ? { ...state.route, goals } : undefined,
 			// A circle goes on only if the map still has every point of it.
-			circle: state.circle?.points.every(has) ? state.circle : undefined
+			circle: state.circle?.points.every(has) ? state.circle : undefined,
+			// So does a river, followed on a map that still has every place along it.
+			river: state.river?.points.every((p) => has(p.stop)) ? state.river : undefined
 		};
 	}
 
@@ -1053,6 +1066,8 @@ export class Adventure {
 				!this.door(command.where)
 			);
 		if (command.verb === 'go' && this.walk.circle) return true;
+		if (command.verb === 'river') return !command.off;
+		if (command.verb === 'go' && this.walk.river) return true;
 		if (command.verb === 'route') return !!command.target;
 		if (command.verb === 'restore' && command.slot)
 			return !!this.saves?.get(command.slot)?.state.route;
@@ -1229,6 +1244,130 @@ export class Adventure {
 		return this.turn();
 	}
 
+	/** A river taken up by its name: its course from the place on it nearest here, the way it flows. */
+	private takeRiver(target: string): Reply {
+		const rivers = this.world.rivers ?? [];
+		if (!rivers.length) return { lines: ['The map I carry has no river on it.'] };
+		const here = this.world.stops[this.walk.here]?.at ?? this.index()?.stops[this.walk.here]?.at;
+		const far = (stop: StopId) => {
+			const at = this.world.stops[stop]?.at ?? this.index()?.stops[stop]?.at;
+			return here && at ? distance(here, at) : Infinity;
+		};
+		// A few rivers are all named; more, the nearest few, so the answer stays short.
+		const byNear = [...new Set(rivers.map((r) => r.name))]
+			.map((name) => ({
+				name,
+				metres: Math.min(
+					...rivers.filter((r) => r.name === name).flatMap((r) => r.points.map((p) => far(p.stop)))
+				)
+			}))
+			.sort((a, b) => a.metres - b.metres)
+			.map((r) => quote(r.name));
+		const has =
+			byNear.length > FEW_RIVERS
+				? `Nearest here: ${listed(byNear.slice(0, FEW_RIVERS))}.`
+				: `The map has ${listed(byNear)}.`;
+		if (!target) return { lines: [`Which river? ${has}`] };
+		const words = target.split(/\s+/).filter(Boolean);
+		const matching = rivers.filter((r) => words.every((w) => r.name.toLowerCase().includes(w)));
+		// Of its courses (two arms are two), the one with a place nearest here; and on it, that place.
+		const nearest = matching
+			.map((r) => {
+				const at = r.points.reduce((a, p, i) => (far(p.stop) < far(r.points[a].stop) ? i : a), 0);
+				return { r, at, metres: far(r.points[at].stop) };
+			})
+			.sort((a, b) => a.metres - b.metres)[0];
+		if (!nearest) return { lines: [`I know of no river by that name. ${has}`] };
+		const { r, at } = nearest;
+		// From its last place, the only way along it is back up it.
+		const upstream = at === r.points.length - 1 && r.points.length > 1;
+		const points = upstream ? [...r.points].reverse() : r.points.map((p) => ({ ...p }));
+		this.walk.route = undefined;
+		this.walk.circle = undefined;
+		this.walk.river = {
+			name: r.name,
+			points,
+			next: upstream ? 0 : at,
+			shown: 0,
+			hid: 0,
+			seen: []
+		};
+		const n = points.length;
+		const lines = [
+			`${quote(r.name)}, as the map draws it: ${numberWord(n)} ${n === 1 ? 'place' : 'places'} along it.`
+		];
+		return { lines: [...lines, ...this.riverOn()] };
+	}
+
+	private leaveRiver(): Reply {
+		const r = this.walk.river;
+		this.walk.river = undefined;
+		return { lines: [r ? `I leave ${quote(r.name)} to itself.` : 'We are not following a river.'] };
+	}
+
+	/** At a place while a river is followed: whether it shows or runs hidden here, and the way on. */
+	private riverOn(): string[] {
+		const r = this.walk.river;
+		if (!r) return [];
+		const lines: string[] = [];
+		const at = r.points.findIndex((p, i) => i >= r.next && p.stop === this.walk.here);
+		if (at >= 0) {
+			const p = r.points[at];
+			if (!r.seen.includes(p.stop)) {
+				r.seen.push(p.stop);
+				if (p.hidden) r.hid++;
+				else r.shown++;
+			}
+			const how = this.world.stops[this.walk.here].beneath?.find((b) => b.name === r.name)?.how;
+			lines.push(
+				p.hidden
+					? `${quote(r.name)} runs hidden here${how ? `, ${how}` : ''}.`
+					: `${quote(r.name)} shows here.`
+			);
+			r.next = at + 1;
+		}
+		const turn = r.next < r.points.length ? this.riverTurn() : [];
+		if (turn.length) return [...lines, ...turn];
+		// The end of the line the map draws, or none of what is left can be reached.
+		this.walk.river = undefined;
+		const places = (n: number) => `${numberWord(n)} ${n === 1 ? 'place' : 'places'}`;
+		return [
+			...lines,
+			`As far as the map draws ${quote(r.name)}.`,
+			!r.hid
+				? `Along your way it showed at ${places(r.shown)}, and never ran hidden.`
+				: !r.shown
+					? `Along your way it never showed: it ran hidden under ${places(r.hid)}.`
+					: `Along your way it showed at ${places(r.shown)}, and ran hidden under ${numberWord(r.hid)}.`
+		];
+	}
+
+	/** The next turn along the river: to the next place on it the streets reach. */
+	private riverTurn(): string[] {
+		const r = this.walk.river;
+		const index = this.index();
+		if (!r || !index) return [];
+		const here = index.stops[this.walk.here]?.at;
+		while (r.next < r.points.length) {
+			const target = r.points[r.next].stop;
+			const plan = planRoute(index, this.walk.here, new Map([[target, r.name]]));
+			// A place across the river the streets reach only far round is passed over, so the way
+			// keeps to the river rather than crossing and recrossing it.
+			const there = index.stops[target]?.at;
+			const straight = here && there ? distance(here, there) : 0;
+			const roundabout =
+				plan.kind === 'way' && plan.metres > Math.max(RIVER_DETOUR_MIN, RIVER_DETOUR * straight);
+			if (plan.kind === 'way' && !roundabout) {
+				const [leg] = plan.legs;
+				return [
+					`Your way along ${quote(r.name)}: ${leg.label}${leg.street ? ` (${leg.street})` : ''}.`
+				];
+			}
+			r.next++;
+		}
+		return [];
+	}
+
 	/** gps on keeps the map beside the walk, stop after stop; gps off puts it away. */
 	private follow(on: boolean): Reply {
 		this.walk.following = on;
@@ -1285,8 +1424,9 @@ export class Adventure {
 			this.walk.previous === undefined
 				? []
 				: (this.world.stops[this.walk.previous].beneath ?? []).map((b) => b.name);
+		// A river being followed says for itself where it runs hidden.
 		return (this.world.stops[this.walk.here].beneath ?? [])
-			.filter((b) => !before.includes(b.name))
+			.filter((b) => !before.includes(b.name) && b.name !== this.walk.river?.name)
 			.map((b) => `Under your feet, ${b.how}, runs “${b.name}”.`);
 	}
 

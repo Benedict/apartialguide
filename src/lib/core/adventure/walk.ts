@@ -1,4 +1,4 @@
-import type { Circling, WalkState } from './saves';
+import type { Circling, Following, WalkState } from './saves';
 
 /** A distinctive word met on a walk: in what name, where and when. */
 export interface Meeting {
@@ -27,6 +27,8 @@ export interface Walk {
 	route?: { to: string; goals: [string, string][] };
 	/** The circle being walked (place a glass), if one is. */
 	circle?: Circling;
+	/** The river being followed, if one is. */
+	river?: Following;
 	lastCommand?: string;
 	lastStreet?: string;
 	visited: Set<string>;
@@ -67,6 +69,11 @@ const copyCircle = (c: Circling): Circling => ({
 	record: [...c.record],
 	seen: [...c.seen]
 });
+const copyRiver = (r: Following): Following => ({
+	...r,
+	points: r.points.map((p) => ({ ...p })),
+	seen: [...r.seen]
+});
 const copyRoute = (r: { to: string; goals: [string, string][] }) => ({
 	to: r.to,
 	goals: r.goals.map(([id, name]) => [id, name] as [string, string])
@@ -83,6 +90,7 @@ const KEEP: { [K in keyof WalkState]-?: (w: Walk) => WalkState[K] } = {
 	following: (w) => (w.following ? true : undefined),
 	route: (w) => w.route && copyRoute(w.route),
 	circle: (w) => w.circle && copyCircle(w.circle),
+	river: (w) => w.river && copyRiver(w.river),
 	lastCommand: (w) => w.lastCommand,
 	lastStreet: (w) => w.lastStreet,
 	visited: (w) => [...w.visited],
@@ -109,6 +117,7 @@ const PICK_UP: { [K in keyof Walk]-?: (s: WalkState) => Walk[K] } = {
 	following: (s) => s.following ?? false,
 	route: (s) => s.route && copyRoute(s.route),
 	circle: (s) => s.circle && copyCircle(s.circle),
+	river: (s) => s.river && copyRiver(s.river),
 	lastCommand: (s) => s.lastCommand,
 	lastStreet: (s) => s.lastStreet,
 	visited: (s) => new Set(s.visited),
