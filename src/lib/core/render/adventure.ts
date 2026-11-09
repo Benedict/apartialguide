@@ -819,7 +819,8 @@ const quoteEach = (value: string) =>
 
 const LEAVES: Record<string, string> = { needleleaved: 'needle-leaved' };
 const WAY_ON: Record<string, string> = { yes: 'on a bridge', viaduct: 'on a viaduct' };
-const WAY_IN: Record<string, string> = {
+/** How a way runs under or through, by its `tunnel`: also how a buried river runs (`beneathAt`). */
+export const WAY_IN: Record<string, string> = {
 	yes: 'in a tunnel',
 	culvert: 'in a culvert',
 	building_passage: 'through a building'

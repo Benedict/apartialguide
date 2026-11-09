@@ -1010,3 +1010,44 @@ describe('Departures', () => {
 		});
 	});
 });
+
+describe('A river under the ground', () => {
+	// An invented brook in a culvert under two places in a row: no real river.
+	const brook = { name: 'Inventa Brook', how: 'in a culvert' };
+	const rivered: AdventureWorld = {
+		start: 'a',
+		stops: {
+			a: room('Mill Parade', [{ label: 'east', to: 'b', street: 'Mill Parade' }]),
+			b: {
+				...room('Mill Parade east', [
+					{ label: 'east', to: 'c', street: 'Mill Parade' },
+					{ label: 'west', to: 'a', street: 'Mill Parade' }
+				]),
+				beneath: [brook]
+			},
+			c: {
+				...room('Mill Parade end', [{ label: 'west', to: 'b', street: 'Mill Parade' }]),
+				beneath: [brook]
+			}
+		}
+	};
+	const said = (game: Adventure, command: string) => game.respond(command).lines.join(' ');
+
+	it('tells a buried river on coming onto it, and not again while it runs beneath', () => {
+		const game = new Adventure(rivered);
+		game.begin();
+		game.respond('take the tour');
+		expect(said(game, 'east')).toContain('Under your feet, in a culvert, runs “Inventa Brook”.');
+		expect(said(game, 'east')).not.toContain('Inventa Brook');
+	});
+
+	it('tells it again on coming back onto it', () => {
+		const game = new Adventure(rivered);
+		game.begin();
+		game.respond('take the tour');
+		game.respond('east');
+		game.respond('west');
+		game.respond('west');
+		expect(said(game, 'east')).toContain('runs “Inventa Brook”');
+	});
+});

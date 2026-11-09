@@ -18,7 +18,7 @@ import {
 import { boxOf, Grid } from './grid';
 import { OsmIndex, type OsmData, type Tags } from './osm';
 import { Perception } from './perception';
-import { AdventureRenderer } from './render/adventure';
+import { AdventureRenderer, WAY_IN } from './render/adventure';
 import type { Renderer, Room } from './render/renderer';
 import { buildScene, type Scene } from './scene';
 import { chooseSlippage, isBackground, type NarrationPlan } from './slippage';
@@ -100,6 +100,15 @@ function namedThings(facts: readonly Fact[]): Named[] {
 			? [{ subject, tags, geometry }]
 			: [];
 	});
+}
+
+/** How near a buried river's line must pass to run under where you stand, in metres. */
+const BENEATH_REACH = 20;
+
+/** A named river, stream or drain the map runs under the ground, and how: in a culvert, a tunnel. */
+export interface Beneath {
+	name: string;
+	how: string;
 }
 
 /** How near something addressed to another street must be to be told here, in metres. */
@@ -184,6 +193,22 @@ export class Narrator {
 				best = { tags: thing.tags, metres, bearing: bearing(at, point) };
 		}
 		return best;
+	}
+
+	/**
+	 * The named rivers, streams and drains the map runs under the ground beneath a point, each once,
+	 * in the map's own order: an open stretch, an unnamed culvert, and one further off are not.
+	 */
+	beneathAt(at: LatLon): Beneath[] {
+		const found = new Map<string, string>();
+		const near = [...this.namedGrid.near(boxOf([at], BENEATH_REACH * 1.05))].sort((a, b) => a - b);
+		for (const i of near) {
+			const { tags, geometry } = this.named[i];
+			const how = tags.waterway && tags.tunnel ? WAY_IN[tags.tunnel] : undefined;
+			if (!how || found.has(tags.name)) continue;
+			if (nearestOnPolyline(at, geometry).metres <= BENEATH_REACH) found.set(tags.name, how);
+		}
+		return [...found].map(([name, how]) => ({ name, how }));
 	}
 
 	/** Every zone another account draws over a point, such as flood zones. */

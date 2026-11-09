@@ -1010,7 +1010,9 @@ export class Adventure {
 		const left = (this.walk.left.get(this.walk.here) ?? []).map(
 			(n) => `${quote(n)} lies here, where you left it.`
 		);
-		const crossed = [this.crossing(), ...this.zoning()].filter((l): l is string => !!l);
+		const crossed = [this.crossing(), ...this.zoning(), ...this.underfoot()].filter(
+			(l): l is string => !!l
+		);
 		const reply = crossed.length ? { ...told, lines: [...crossed, ...told.lines] } : told;
 		const stop = this.world.stops[this.walk.here];
 		const back = this.recall(stop.fragments ?? []) ?? this.connect(stop.terms ?? []);
@@ -1275,6 +1277,17 @@ export class Adventure {
 			now.filter((z) => !was.has(key(z))),
 			before.filter((z) => !is.has(key(z)))
 		);
+	}
+
+	/** A step onto a river the map runs under the ground: told on coming onto it, not while it runs on. */
+	private underfoot(): string[] {
+		const before =
+			this.walk.previous === undefined
+				? []
+				: (this.world.stops[this.walk.previous].beneath ?? []).map((b) => b.name);
+		return (this.world.stops[this.walk.here].beneath ?? [])
+			.filter((b) => !before.includes(b.name))
+			.map((b) => `Under your feet, ${b.how}, runs “${b.name}”.`);
 	}
 
 	/** A step into, out of or between the areas another account draws, such as wards. */
