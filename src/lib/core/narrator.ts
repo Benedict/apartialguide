@@ -111,6 +111,74 @@ export interface Beneath {
 	how: string;
 }
 
+/** How near a place must lie to a river's line to be on its course, in metres. */
+const COURSE_REACH = 40;
+
+/** A named river's course: its places in the order it flows, each where it shows or runs hidden. */
+export interface Course {
+	name: string;
+	points: { stop: StopId; hidden: boolean }[];
+}
+
+/** Metres between two points, flat enough over a river's few kilometres. */
+const flat = (a: LatLon, b: LatLon): [number, number] => [
+	(b[1] - a[1]) * 111_320 * Math.cos((a[0] * Math.PI) / 180),
+	(b[0] - a[0]) * 110_540
+];
+
+/** Where along a line a point comes nearest: how far along it, and how far off. */
+function along(p: LatLon, line: readonly LatLon[]): { offset: number; metres: number } {
+	let best = { offset: 0, metres: Infinity };
+	let walked = 0;
+	for (let i = 1; i < line.length; i++) {
+		const [dx, dy] = flat(line[i - 1], line[i]);
+		const [px, py] = flat(line[i - 1], p);
+		const length = Math.hypot(dx, dy);
+		const t = length ? Math.max(0, Math.min(1, (px * dx + py * dy) / (length * length))) : 0;
+		const metres = Math.hypot(px - t * dx, py - t * dy);
+		if (metres < best.metres) best = { offset: walked + t * length, metres };
+		walked += length;
+	}
+	return best;
+}
+
+const lengthOf = (line: readonly LatLon[]) =>
+	line.slice(1).reduce((m, p, i) => m + Math.hypot(...flat(line[i], p)), 0);
+const same = (a: LatLon, b: LatLon) => a[0] === b[0] && a[1] === b[1];
+
+/** How far apart two of a river's ways may end and begin and still be one course, in metres. */
+const COURSE_GAP = 50;
+
+/**
+ * A river's ways as courses, each from a source (a way nothing flows into) down to where the map's
+ * line ends, as the map draws a river downstream: on to the way beginning where one ends, else to the
+ * nearest beginning within a short gap. Two arms that meet are two courses, sharing what lies below.
+ */
+function coursesOf(ways: readonly Named[]): Named[][] {
+	const flowsInto = (w: Named) =>
+		ways.some((v) => v !== w && same(v.geometry.at(-1)!, w.geometry[0]));
+	const sources = ways.filter((w) => !flowsInto(w));
+	const paths = (sources.length ? sources : [ways[0]]).map((source) => {
+		const path = [source];
+		for (;;) {
+			const end = path.at(-1)!.geometry.at(-1)!;
+			const free = ways.filter((w) => !path.includes(w));
+			const next =
+				free.find((w) => same(w.geometry[0], end)) ??
+				free
+					.map((w) => ({ w, metres: Math.hypot(...flat(end, w.geometry[0])) }))
+					.filter((c) => c.metres <= COURSE_GAP)
+					.sort((a, b) => a.metres - b.metres)[0]?.w;
+			if (!next) return path;
+			path.push(next);
+		}
+	});
+	// A course wholly within another, as the stretch below a gap is, adds nothing.
+	return paths.filter(
+		(p, i) => !paths.some((q, j) => j !== i && q.length > p.length && p.every((w) => q.includes(w)))
+	);
+}
+
 /** How near something addressed to another street must be to be told here, in metres. */
 const OFF_STREET_REACH = 12;
 
@@ -209,6 +277,52 @@ export class Narrator {
 			if (nearestOnPolyline(at, geometry).metres <= BENEATH_REACH) found.set(tags.name, how);
 		}
 		return [...found].map(([name, how]) => ({ name, how }));
+	}
+
+	/**
+	 * Every named river, stream or drain the map draws, as a course: the places within reach of its
+	 * line, in the order it flows, each marked where it runs hidden (in a culvert or a tunnel).
+	 */
+	courses(): Course[] {
+		const rivers = new Map<string, Named[]>();
+		for (const thing of this.named)
+			if (thing.tags.waterway && thing.geometry.length > 1)
+				rivers.set(thing.tags.name, [...(rivers.get(thing.tags.name) ?? []), thing]);
+		const stops = this.graph.all();
+		return [...rivers].flatMap(([name, ways]) =>
+			coursesOf(ways).flatMap((order) => this.courseAlong(name, order, stops))
+		);
+	}
+
+	/** The places within reach of one course's line, in the order it flows. */
+	private courseAlong(name: string, order: readonly Named[], stops: readonly Stop[]): Course[] {
+		const [south, west, north, east] = boxOf(
+			order.flatMap((w) => w.geometry),
+			COURSE_REACH
+		);
+		let start = 0;
+		const lines = order.map((w) => {
+			const at = start;
+			start += lengthOf(w.geometry);
+			return { at, way: w };
+		});
+		const points = stops.flatMap((stop) => {
+			const [lat, lon] = stop.position;
+			if (lat < south || lat > north || lon < west || lon > east) return [];
+			let best: { offset: number; metres: number; hidden: boolean } | undefined;
+			for (const { at, way } of lines) {
+				const { offset, metres } = along(stop.position, way.geometry);
+				if (!best || metres < best.metres)
+					best = { offset: at + offset, metres, hidden: !!way.tags.tunnel };
+			}
+			return best && best.metres <= COURSE_REACH
+				? [{ stop: stop.id, hidden: best.hidden, offset: best.offset }]
+				: [];
+		});
+		points.sort((a, b) => a.offset - b.offset);
+		return points.length
+			? [{ name, points: points.map(({ stop, hidden }) => ({ stop, hidden })) }]
+			: [];
 	}
 
 	/** Every zone another account draws over a point, such as flood zones. */

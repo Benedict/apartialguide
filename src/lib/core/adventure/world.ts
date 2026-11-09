@@ -137,6 +137,8 @@ export interface AdventureWorld {
 	place?: string;
 	/** Where to ask about today's weather: where the tour begins. */
 	weatherAt?: { latitude: number; longitude: number };
+	/** The map's named rivers as courses, each place in the order it flows, to follow (`follow X`). */
+	rivers?: { name: string; points: { stop: StopId; hidden: boolean }[] }[];
 	/** What others keep beyond the map's edge, told only when the reader looks beyond. */
 	beyond?: Beyond[];
 }
@@ -205,6 +207,11 @@ export function compileWorld(
 	}
 	const about = ledger(narrator, stops);
 	const begins = narrator.graph.get(start)?.position;
+	// Each river's course within what is walked: a course of fewer than two places is no walk.
+	const rivers = narrator
+		.courses()
+		.map(({ name, points }) => ({ name, points: points.filter((p) => stops[p.stop]) }))
+		.filter((r) => r.points.length >= 2);
 	return {
 		start,
 		stops,
@@ -213,6 +220,7 @@ export function compileWorld(
 		...(begins
 			? { weatherAt: { latitude: +begins[0].toFixed(4), longitude: +begins[1].toFixed(4) } }
 			: {}),
+		...(rivers.length ? { rivers } : {}),
 		...(narrator.beyond.length
 			? {
 					beyond: narrator.beyond.map((b) => ({
