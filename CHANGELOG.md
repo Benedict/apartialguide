@@ -8,10 +8,12 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### For walkers
 
+- Where the map runs a river under the ground, the walk says so as you come onto it: “Under your feet, in a culvert, runs “Norbury Brook”.” Croydon has nine, under 98 places.
 - Streams, rivers and drains are called what they are, not “something”; so are a golf course's bunkers, tees and greens, entrances (a main entrance), and fords.
 
 ### Under the hood
 
+- `Narrator.beneathAt`: the named rivers, streams and drains the map runs under the ground (`waterway` with `tunnel`, as `WAY_IN` says it) within 20 m of a place; each compiled place keeps them (`beneath`), and the engine tells one on coming onto it (`underfoot`), not again while it runs on beneath.
 - `kind` names a waterway, a golf course's parts, an entrance and a ford for walkers alone (`WALKERS_ONLY`, last of `KIND_KEYS`); the prompt keeps them as it always had them, and `namedInline` takes the same `walker`, so stored prose keeps its key (2,554 of 3,547 found across Croydon, as before).
 
 ## 2026-11-08
