@@ -4,6 +4,16 @@ What has changed in A Partial Guide, newest first. Each day has lines **for walk
 
 Add to it with each change worth telling: a line for walkers where a walker would notice, a line under the hood where only the code changed. The front page shows the latest three days that have lines for walkers.
 
+## 2026-11-09
+
+### For walkers
+
+- Streams, rivers and drains are called what they are, not “something”; so are a golf course's bunkers, tees and greens, entrances (a main entrance), and fords.
+
+### Under the hood
+
+- `kind` names a waterway, a golf course's parts, an entrance and a ford for walkers alone (`WALKERS_ONLY`, last of `KIND_KEYS`); the prompt keeps them as it always had them, and `namedInline` takes the same `walker`, so stored prose keeps its key (2,554 of 3,547 found across Croydon, as before).
+
 ## 2026-11-08
 
 ### For walkers
