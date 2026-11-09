@@ -684,7 +684,10 @@ const wanted = (process.env.SOURCES ?? Object.keys(SOURCES).join(','))
 	.split(',')
 	.map((x) => x.trim());
 const retrieved = new Date().toISOString().slice(0, 10);
-mkdirSync('data/records', { recursive: true });
+// Where the records go: data/records for Croydon, or a place's own folder (RECORDS_OUT), which
+// Croydon's build never reads, as it reads only the files directly in data/records.
+const out = process.env.RECORDS_OUT ?? 'data/records';
+mkdirSync(out, { recursive: true });
 let failed = 0;
 for (const key of wanted) {
 	const take = SOURCES[key];
@@ -696,7 +699,7 @@ for (const key of wanted) {
 	try {
 		const got = await take();
 		for (const taken of Array.isArray(got) ? got : [got]) {
-			const path = `data/records/${taken.prefix}${area ? `.${areaSlug(area)}` : ''}-${retrieved}.json`;
+			const path = `${out}/${taken.prefix}${area ? `.${areaSlug(area)}` : ''}-${retrieved}.json`;
 			taken.records = taken.records.filter(kept);
 			writeFileSync(path, JSON.stringify({ ...taken, retrieved }, null, '\t') + '\n');
 			console.log(
