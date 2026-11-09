@@ -1,0 +1,1710 @@
+{
+	"retrieved": "2026-11-09",
+	"bbox": [
+		-1.625,
+		52.322,
+		-1.54,
+		52.368
+	],
+	"snapshot": "data/snapshots/kenilworth-2026-11-09.json.gz",
+	"items": {
+		"Q1738764": {
+			"label": "Kenilworth Castle",
+			"description": "castle ruin in the town of Kenilworth, Warwickshire, England, UK",
+			"inception": "1122",
+			"coordinates": [
+				52.347,
+				-1.59111
+			]
+		},
+		"Q1779783": {
+			"label": "Ashow",
+			"description": "village in Warwickshire, England, UK",
+			"coordinates": [
+				52.32,
+				-1.54
+			]
+		},
+		"Q2281103": {
+			"label": "Kenilworth",
+			"description": "town in Warwickshire, England, UK",
+			"coordinates": [
+				52.341,
+				-1.566
+			]
+		},
+		"Q6389300": {
+			"label": "Kenilworth School and Sixth Form",
+			"description": "school in Warwickshire, UK",
+			"inception": "2019-01-01",
+			"coordinates": [
+				52.3461,
+				-1.55991
+			]
+		},
+		"Q6389304": {
+			"label": "Kenilworth railway station",
+			"description": "railway station in Warwickshire, England, UK",
+			"coordinates": [
+				52.3422,
+				-1.5724
+			]
+		},
+		"Q7594926": {
+			"label": "St Nicholas' Church, Kenilworth",
+			"description": "Grade I listed church in Kenilworth, Warwickshire, England, UK",
+			"coordinates": [
+				52.3493,
+				-1.58211
+			]
+		},
+		"Q16897622": {
+			"label": "The Water Tower, Kenilworth",
+			"description": "former water tower in Kenilworth, Warwickshire, UK",
+			"coordinates": [
+				52.3524,
+				-1.5761
+			]
+		},
+		"Q17528502": {
+			"label": "Church of the Assumption of Our Lady",
+			"description": "church in Ashow, Warwickshire, England, UK",
+			"coordinates": [
+				52.3291,
+				-1.54313
+			]
+		},
+		"Q17552144": {
+			"label": "New Bridge",
+			"description": "road bridge in Ashow, Warwickshire, England, UK",
+			"coordinates": [
+				52.3409,
+				-1.53988
+			]
+		},
+		"Q17552326": {
+			"label": "Church of St John Evangelist",
+			"description": "church in Warwick, UK",
+			"coordinates": [
+				52.3371,
+				-1.57267
+			]
+		},
+		"Q17649992": {
+			"label": "The Pleasance moated site",
+			"description": "archaeological site in Kenilworth",
+			"coordinates": [
+				52.3498,
+				-1.60858
+			]
+		},
+		"Q17985380": {
+			"label": "Abbey Fields",
+			"description": "park in Kenilworth, England",
+			"coordinates": [
+				52.347,
+				-1.583
+			]
+		},
+		"Q24677073": {
+			"label": "Oxpen Meadow Lake",
+			"description": "lake in the United Kingdom",
+			"coordinates": [
+				52.348,
+				-1.58557
+			]
+		},
+		"Q26286871": {
+			"label": "The Bear And Ragged Staff Inn",
+			"description": "inn in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34062863,
+				-1.577323014
+			]
+		},
+		"Q26286877": {
+			"label": "13 Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34876127,
+				-1.589078026
+			]
+		},
+		"Q26286906": {
+			"label": "Roman Catholic Church of St Augustine",
+			"description": "church building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.35522637,
+				-1.584260912
+			]
+		},
+		"Q26286917": {
+			"label": "8, Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34915544,
+				-1.588677994
+			]
+		},
+		"Q26286920": {
+			"label": "34, Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34890587,
+				-1.589296895
+			]
+		},
+		"Q26286921": {
+			"label": "40, Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.3488528,
+				-1.589546956
+			]
+		},
+		"Q26478922": {
+			"label": "Queen And Castle Hotel",
+			"description": "hotel in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.348929,
+				-1.590691
+			]
+		},
+		"Q26478994": {
+			"label": "42, Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.348844,
+				-1.58965
+			]
+		},
+		"Q26538200": {
+			"label": "Wantage Including Outhouse Immediately North North East",
+			"description": "architectural structure in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349179,
+				-1.587724
+			]
+		},
+		"Q26646598": {
+			"label": "Virgins And Castle Public House",
+			"description": "pub in Kenilworth, UK",
+			"coordinates": [
+				52.349795,
+				-1.581449
+			]
+		},
+		"Q26646606": {
+			"label": "Redfern Manor",
+			"description": "manor house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.365317,
+				-1.611805
+			]
+		},
+		"Q26646609": {
+			"label": "38, Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.348852,
+				-1.589459
+			]
+		},
+		"Q26646624": {
+			"label": "Royal Oak Inn",
+			"description": "pub in Kenilworth, UK",
+			"coordinates": [
+				52.351026,
+				-1.578619
+			]
+		},
+		"Q26646628": {
+			"label": "Clarendon Arms",
+			"description": "pub in Kenilworth, UK",
+			"coordinates": [
+				52.348844,
+				-1.589738
+			]
+		},
+		"Q26678076": {
+			"label": "Kenilworth War Memorial",
+			"description": "war memorial in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.344997,
+				-1.581548
+			]
+		},
+		"Q55113080": {
+			"label": "Kenilworth Library and One Stop Shop",
+			"description": "public library in Warwickshire, UK",
+			"coordinates": [
+				52.343233,
+				-1.580659
+			]
+		},
+		"Q55885947": {
+			"label": "Priory Theatre",
+			"description": "amateur theatre building and company in Kenilworth, UK",
+			"coordinates": [
+				52.347731,
+				-1.578209
+			]
+		},
+		"Q66164323": {
+			"label": "Kenilworth Nursery School & Early Years Training Centre",
+			"description": "school in Warwickshire, UK",
+			"coordinates": [
+				52.3424978,
+				-1.5755175
+			]
+		},
+		"Q66164362": {
+			"label": "Thorns Community Infant School",
+			"description": "school in Warwickshire, UK",
+			"coordinates": [
+				52.3414088,
+				-1.5679947
+			]
+		},
+		"Q66164364": {
+			"label": "Clinton Primary School",
+			"description": "school in Warwickshire, UK",
+			"coordinates": [
+				52.3388177,
+				-1.5868466
+			]
+		},
+		"Q66164408": {
+			"label": "Priors Field Primary School",
+			"description": "school in Warwickshire, UK",
+			"coordinates": [
+				52.355064,
+				-1.594771
+			]
+		},
+		"Q66164502": {
+			"label": "Crackley Hall School",
+			"description": "school in Warwickshire, UK",
+			"inception": "1950-01-01",
+			"coordinates": [
+				52.355236,
+				-1.5681207
+			]
+		},
+		"Q67149205": {
+			"label": "St Nicholas CofE Primary School",
+			"description": "school in Warwickshire, UK",
+			"coordinates": [
+				52.3464063,
+				-1.5755724
+			]
+		},
+		"Q67149209": {
+			"label": "St Augustine's Catholic Primary School",
+			"description": "school in Warwickshire, UK",
+			"coordinates": [
+				52.356153,
+				-1.584735
+			]
+		},
+		"Q67149284": {
+			"label": "St John's Primary School",
+			"description": "school in Warwickshire, UK",
+			"inception": "1996-09-01",
+			"coordinates": [
+				52.3360397,
+				-1.5797446
+			]
+		},
+		"Q105086273": {
+			"label": "St. Barnabas Church",
+			"description": "church in Kenilworth, Warwickshire",
+			"coordinates": [
+				52.35004406,
+				-1.57154886
+			]
+		},
+		"Q106094069": {
+			"label": "Cherry Orchard Recycling Centre",
+			"description": "household waste recycling centre",
+			"coordinates": [
+				52.345419,
+				-1.570246
+			]
+		},
+		"Q120629764": {
+			"label": "Talisman Theatre and Arts Centre",
+			"description": "community Theatre and Arts Centre in Kenilworth, UK",
+			"coordinates": [
+				52.34076,
+				-1.58221
+			]
+		},
+		"Q26286880": {
+			"label": "23 And 25, Clinton Lane",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34985245,
+				-1.592650056
+			]
+		},
+		"Q26286828": {
+			"label": "K6 Telephone Kiosk Outside The Post Office",
+			"description": "K6 telephone box in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34923729,
+				-1.591539973
+			]
+		},
+		"Q26478936": {
+			"label": "10 and 11, Castle Green",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349265,
+				-1.591701
+			]
+		},
+		"Q26286914": {
+			"label": "3-6, Castle Green",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34922728,
+				-1.591246451
+			]
+		},
+		"Q26478925": {
+			"label": "Tudor Cottage",
+			"description": "cottage in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.3492,
+				-1.591056
+			]
+		},
+		"Q26286913": {
+			"label": "Leicester House",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34919026,
+				-1.590938498
+			]
+		},
+		"Q26479035": {
+			"label": "Chase Cottage",
+			"description": "cottage in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.351615,
+				-1.592693
+			]
+		},
+		"Q26587734": {
+			"label": "2A,4A And 6, Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349209,
+				-1.588619
+			]
+		},
+		"Q26286850": {
+			"label": "81-85, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34941992,
+				-1.587178103
+			]
+		},
+		"Q26286895": {
+			"label": "Clinton House",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34973725,
+				-1.586451
+			]
+		},
+		"Q26646597": {
+			"label": "Montford Cottage",
+			"description": "cottage in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349804,
+				-1.585873
+			]
+		},
+		"Q26286894": {
+			"label": "68 And 70, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.3498105,
+				-1.585750419
+			]
+		},
+		"Q26587720": {
+			"label": "66, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349821,
+				-1.585619
+			]
+		},
+		"Q26286893": {
+			"label": "Stables To Number 64",
+			"description": "stable in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.3499521,
+				-1.585537015
+			]
+		},
+		"Q17676861": {
+			"label": "Kenilworth Abbey",
+			"description": "abbey in Kenilworth, Warwick, England, UK",
+			"coordinates": [
+				52.3473,
+				-1.58349
+			]
+		},
+		"Q7594236": {
+			"label": "St Mary's Abbey, Kenilworth",
+			"description": "Grade I listed priory in Kenilworth, Warwickshire, England, UK",
+			"inception": "1125",
+			"coordinates": [
+				52.3486,
+				-1.58343
+			]
+		},
+		"Q26646604": {
+			"label": "The Abbey",
+			"description": "architectural structure in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.345242,
+				-1.580376
+			]
+		},
+		"Q26286903": {
+			"label": "Dudley House  Lancaster House",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34554498,
+				-1.579478082
+			]
+		},
+		"Q26286902": {
+			"label": "Abbey House",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.3459375,
+				-1.578622942
+			]
+		},
+		"Q26646603": {
+			"label": "8, Abbey Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.346009,
+				-1.578608
+			]
+		},
+		"Q26286901": {
+			"label": "3, Abbey Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34636677,
+				-1.577987634
+			]
+		},
+		"Q26479216": {
+			"label": "2, Upper Rosemary Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.346733,
+				-1.577426
+			]
+		},
+		"Q26286870": {
+			"label": "4, Upper Rosemary Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34677821,
+				-1.577396523
+			]
+		},
+		"Q26587697": {
+			"label": "1-3, Upper Rosemary Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.346995,
+				-1.577556
+			]
+		},
+		"Q26646626": {
+			"label": "8, Upper Rosemary Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.346885,
+				-1.577073
+			]
+		},
+		"Q26587779": {
+			"label": "Stone Bridge",
+			"description": "bridge in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.348395,
+				-1.579466
+			]
+		},
+		"Q113369768": {
+			"label": "Kenilworth Abbey Barn Museum",
+			"description": "museum in Kenilworth, England, UK",
+			"inception": "1938",
+			"coordinates": [
+				52.348885,
+				-1.57964
+			]
+		},
+		"Q26286907": {
+			"label": "4, Bridge Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34796086,
+				-1.57877988
+			]
+		},
+		"Q26538199": {
+			"label": "Former National School",
+			"description": "school building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.348042,
+				-1.57875
+			]
+		},
+		"Q26286861": {
+			"label": "The Cottage",
+			"description": "cottage in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34768107,
+				-1.578474253
+			]
+		},
+		"Q26286868": {
+			"label": "Garden Wall Of Numbers 1 To 3",
+			"description": "wall in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34705836,
+				-1.577804893
+			]
+		},
+		"Q26286869": {
+			"label": "Rosemary",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34711883,
+				-1.577114356
+			]
+		},
+		"Q26478910": {
+			"label": "8-12, Bridge Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.348114,
+				-1.578852
+			]
+		},
+		"Q26286909": {
+			"label": "14-20, Bridge Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34835731,
+				-1.579025681
+			]
+		},
+		"Q26481019": {
+			"label": "16 And 17, School Lane",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.348658,
+				-1.57776
+			]
+		},
+		"Q26587718": {
+			"label": "Coachhouse To Number 64",
+			"description": "carriage house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.350124,
+				-1.585379
+			]
+		},
+		"Q26286891": {
+			"label": "The Stone House",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34989689,
+				-1.585088383
+			]
+		},
+		"Q26286890": {
+			"label": "56-62, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.3498744,
+				-1.584487997
+			]
+		},
+		"Q26479067": {
+			"label": "52 And 54, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349861,
+				-1.584271
+			]
+		},
+		"Q26286889": {
+			"label": "46-50, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34986425,
+				-1.583910427
+			]
+		},
+		"Q26286888": {
+			"label": "44, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34986223,
+				-1.583752993
+			]
+		},
+		"Q26479062": {
+			"label": "40 And 42, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34986,
+				-1.583628
+			]
+		},
+		"Q26646618": {
+			"label": "37, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349649,
+				-1.583388
+			]
+		},
+		"Q26286887": {
+			"label": "38, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34984996,
+				-1.58346799
+			]
+		},
+		"Q26647359": {
+			"label": "Marton House",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349844,
+				-1.583375
+			]
+		},
+		"Q26286885": {
+			"label": "36, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34984697,
+				-1.583220513
+			]
+		},
+		"Q26286849": {
+			"label": "21-31, High Street",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34971559,
+				-1.582734563
+			]
+		},
+		"Q26646617": {
+			"label": "15-19, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349735,
+				-1.582458
+			]
+		},
+		"Q26646596": {
+			"label": "18-24, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349908,
+				-1.582518
+			]
+		},
+		"Q26479080": {
+			"label": "Bank House",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349666,
+				-1.581969
+			]
+		},
+		"Q26286898": {
+			"label": "Premises Occupied By Midland Bank",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.3497269,
+				-1.581989093
+			]
+		},
+		"Q26479052": {
+			"label": "16, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34996,
+				-1.582138
+			]
+		},
+		"Q26286884": {
+			"label": "12 And 14, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34999052,
+				-1.58192699
+			]
+		},
+		"Q111874034": {
+			"label": "The Old Bakery Hotel",
+			"description": "hotel in Kenilworth, United Kingdom",
+			"coordinates": [
+				52.34997,
+				-1.581811
+			]
+		},
+		"Q26286896": {
+			"label": "Sion House",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34977748,
+				-1.581636041
+			]
+		},
+		"Q26286883": {
+			"label": "10, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.35002244,
+				-1.581763715
+			]
+		},
+		"Q26479047": {
+			"label": "Clarendon House Hotel",
+			"description": "hotel in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.350066,
+				-1.581593
+			]
+		},
+		"Q26646595": {
+			"label": "2, High Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.350144,
+				-1.581318
+			]
+		},
+		"Q26646594": {
+			"label": "Fieldgate Lodge",
+			"description": "gatehouse in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.350721,
+				-1.581382
+			]
+		},
+		"Q26286882": {
+			"label": "Barn At Fieldgate Close",
+			"description": "barn in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.35210066,
+				-1.582528421
+			]
+		},
+		"Q26478918": {
+			"label": "33, Bridge Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349758,
+				-1.580997
+			]
+		},
+		"Q26286911": {
+			"label": "31, Bridge Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34970114,
+				-1.580917179
+			]
+		},
+		"Q103164744": {
+			"label": "Kenilworth (Samian Ware Discovery Site)",
+			"description": "Kenilworth as Samian Ware discovery site",
+			"coordinates": [
+				52.349964,
+				-1.581131
+			]
+		},
+		"Q26647350": {
+			"label": "Fieldgate",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.350117,
+				-1.580976
+			]
+		},
+		"Q26646607": {
+			"label": "Kenilworth Hall",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349692,
+				-1.580305
+			]
+		},
+		"Q26286910": {
+			"label": "Garages At Kenilworth Hall",
+			"description": "garage in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34985094,
+				-1.580340359
+			]
+		},
+		"Q17552441": {
+			"label": "Abbotsford School",
+			"description": "school building in Kenilworth, Warwickshire, England, UK",
+			"coordinates": [
+				52.35,
+				-1.5806
+			]
+		},
+		"Q26286857": {
+			"label": "4 And 6, New Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.35031125,
+				-1.579887995
+			]
+		},
+		"Q26479091": {
+			"label": "8.8A And 10, New Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.350356,
+				-1.579799
+			]
+		},
+		"Q26646620": {
+			"label": "5, New Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.350447,
+				-1.580078
+			]
+		},
+		"Q26286853": {
+			"label": "7, New Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.35047328,
+				-1.579945184
+			]
+		},
+		"Q26286854": {
+			"label": "Burnt Cottage",
+			"description": "cottage in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.35055387,
+				-1.579856334
+			]
+		},
+		"Q26646623": {
+			"label": "12, New Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.350418,
+				-1.579667
+			]
+		},
+		"Q26646621": {
+			"label": "15 And 17, New Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.350652,
+				-1.579665
+			]
+		},
+		"Q26286855": {
+			"label": "19A And 19, New Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.35075061,
+				-1.579560846
+			]
+		},
+		"Q26286858": {
+			"label": "The Coventry Cross Inn (The North East Section)",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.3507135,
+				-1.579238211
+			]
+		},
+		"Q26479096": {
+			"label": "18-24, New Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.350749,
+				-1.579179
+			]
+		},
+		"Q26646622": {
+			"label": "23 And 25, New Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.350974,
+				-1.579206
+			]
+		},
+		"Q26479089": {
+			"label": "33-39, New Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.351117,
+				-1.578911
+			]
+		},
+		"Q26286859": {
+			"label": "40 And 42, New Street",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.35112369,
+				-1.578294713
+			]
+		},
+		"Q26479103": {
+			"label": "Summer Lodge",
+			"description": "gatehouse in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.351204,
+				-1.578162
+			]
+		},
+		"Q26286860": {
+			"label": "48, New Streer",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.3514365,
+				-1.577777887
+			]
+		},
+		"Q26479114": {
+			"label": "Gazebo In Garden Of Number 48",
+			"description": "gazebo in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.351454,
+				-1.577734
+			]
+		},
+		"Q26286881": {
+			"label": "Ivy Cottages",
+			"description": "cottage in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.35209235,
+				-1.577654189
+			]
+		},
+		"Q26587778": {
+			"label": "Fieldgate House  Thirlwall",
+			"description": "architectural structure in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.354721,
+				-1.583796
+			]
+		},
+		"Q26286852": {
+			"label": "The Old Manor",
+			"description": "manor house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.35133425,
+				-1.576839251
+			]
+		},
+		"Q26286863": {
+			"label": "The Old Forge",
+			"description": "smithy in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.35202301,
+				-1.575863689
+			]
+		},
+		"Q26646647": {
+			"label": "Bannerhill Farmhouse",
+			"description": "farmhouse in Beausale, Haseley, Honiley and Wroxall, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.323896,
+				-1.616305
+			]
+		},
+		"Q26286878": {
+			"label": "North Chase",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.36188668,
+				-1.62412667
+			]
+		},
+		"Q26646632": {
+			"label": "Barn At North Chase",
+			"description": "barn in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.362046,
+				-1.623406
+			]
+		},
+		"Q26286829": {
+			"label": "Oaks Farmhouse",
+			"description": "farmhouse in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.3368034,
+				-1.59403207
+			]
+		},
+		"Q60576075": {
+			"label": "Warwickshire",
+			"description": "Constituency of the Parliament of England (to 1707)",
+			"inception": "1293",
+			"coordinates": [
+				52.333500566,
+				-1.58600847
+			]
+		},
+		"Q67575123": {
+			"label": "Warwickshire",
+			"description": "historic county of England",
+			"coordinates": [
+				52.3335005665,
+				-1.58600847016
+			]
+		},
+		"Q23140": {
+			"label": "Warwickshire",
+			"description": "ceremonial and non-metropolitan county in England, UK",
+			"coordinates": [
+				52.333333333333,
+				-1.5833333333333
+			]
+		},
+		"Q17649976": {
+			"label": "Fishpond complex, 260m east of Castle Farm",
+			"description": "floatplane model",
+			"coordinates": [
+				52.3439,
+				-1.58621
+			]
+		},
+		"Q26646605": {
+			"label": "Old School House",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.343766,
+				-1.582401
+			]
+		},
+		"Q26646602": {
+			"label": "Hillcroft  Portland House  Richmond House",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.344716,
+				-1.581482
+			]
+		},
+		"Q26646648": {
+			"label": "59-63, Warwick Road",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.340952,
+				-1.577158
+			]
+		},
+		"Q26553557": {
+			"label": "The Lion",
+			"description": "pub in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.341521,
+				-1.577843
+			]
+		},
+		"Q26286862": {
+			"label": "King's Arms And Castle Hotel",
+			"description": "hotel in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34272042,
+				-1.579020471
+			]
+		},
+		"Q135826773": {
+			"label": "Dictum of Kenilworth",
+			"description": "pub in Kenilworth, Warwickshire, England, UK",
+			"coordinates": [
+				52.342897,
+				-1.579882
+			]
+		},
+		"Q41557714": {
+			"label": "Royal Electric Theatre",
+			"description": "former cinema in Kenilworth, England",
+			"coordinates": [
+				52.3429068,
+				-1.5794148
+			]
+		},
+		"Q135826972": {
+			"label": "Kenilworth Clock Tower",
+			"description": "clock tower in Kenilworth, Warwickshire, England, UK",
+			"inception": "1906-01",
+			"coordinates": [
+				52.3434455,
+				-1.5799708
+			]
+		},
+		"Q26286904": {
+			"label": "17-19, Abbey Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34487672,
+				-1.581172535
+			]
+		},
+		"Q131525123": {
+			"label": "Abbey Medical Centre",
+			"description": "doctors surgery in Kenilworth, Warwickshire, United Kingdom",
+			"coordinates": [
+				52.343252,
+				-1.577349
+			]
+		},
+		"Q137924672": {
+			"label": "Chesford Grange Hotel",
+			"description": "hotel in Leek Wootton and Guy's Cliffe, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.323662,
+				-1.559002
+			]
+		},
+		"Q26286793": {
+			"label": "Chesford Bridge",
+			"description": "bridge in Leek Wootton and Guy's Cliffe, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.32599855,
+				-1.556876109
+			]
+		},
+		"Q26544823": {
+			"label": "Blackdown Manor",
+			"description": "manor house in Blackdown, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.323111,
+				-1.547031
+			]
+		},
+		"Q26286832": {
+			"label": "Barn 33 Yards South West Of Bericote Farmhouse",
+			"description": "barn in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.32755852,
+				-1.54391846
+			]
+		},
+		"Q26286741": {
+			"label": "Wootton Grange Farmhouse",
+			"description": "farmhouse in Leek Wootton and Guy's Cliffe, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.32950691,
+				-1.574596841
+			]
+		},
+		"Q26286872": {
+			"label": "Forge Cottage  Windworth Forge",
+			"description": "smithy in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.336496,
+				-1.573120881
+			]
+		},
+		"Q30283397": {
+			"label": "Society of British Water and Wastewater Industries",
+			"description": "nonprofit organization in Royal Leamington Spa, United Kingdom",
+			"coordinates": [
+				52.33626,
+				-1.572094
+			]
+		},
+		"Q26286851": {
+			"label": "Thickthorn Manor",
+			"description": "manor house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.3346308,
+				-1.564568113
+			]
+		},
+		"Q26646619": {
+			"label": "Stables At Thickthorn",
+			"description": "stable in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.334781,
+				-1.563803
+			]
+		},
+		"Q136069067": {
+			"label": "The Green Man",
+			"description": "pub in Kenilworth, Warwickshire, England, UK",
+			"coordinates": [
+				52.337554,
+				-1.574177
+			]
+		},
+		"Q26646627": {
+			"label": "St John's View  St Ninian",
+			"description": "architectural structure in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.336695,
+				-1.573383
+			]
+		},
+		"Q111791052": {
+			"label": "Milestone, Warwick Road; opp. Moorlands Ave in front of Milestone Cottage",
+			"description": "milestone in Kenilworth, Warwick, UK",
+			"coordinates": [
+				52.338477,
+				-1.57476
+			]
+		},
+		"Q137884935": {
+			"label": "St Francis of Assisi",
+			"description": "Catholic church building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.338948,
+				-1.575902
+			]
+		},
+		"Q26479221": {
+			"label": "86-90, Warwick Road",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.339934,
+				-1.576505
+			]
+		},
+		"Q131525124": {
+			"label": "Castle Medical Centre",
+			"description": "doctors surgery in Kenilworth, Warwickshire, United Kingdom",
+			"coordinates": [
+				52.342166,
+				-1.575666
+			]
+		},
+		"Q41557710": {
+			"label": "Alexandra Theatre",
+			"description": "former cinema in Kenilworth, England",
+			"coordinates": [
+				52.3431634,
+				-1.5751373
+			]
+		},
+		"Q123850975": {
+			"label": "Friends of the Holy Land",
+			"description": "British ecumenical and non-political Christian charity established in 2009",
+			"inception": "2009",
+			"coordinates": [
+				52.342563,
+				-1.571833
+			]
+		},
+		"Q6389298": {
+			"label": "Kenilworth Rugby Football Club",
+			"description": "English rugby team",
+			"inception": "1924",
+			"coordinates": [
+				52.3365733,
+				-1.56057
+			]
+		},
+		"Q26286834": {
+			"label": "Avon Cottage",
+			"description": "cottage in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.32908226,
+				-1.543942243
+			]
+		},
+		"Q26646653": {
+			"label": "Ashow Village Club And Cottage (Number 10)",
+			"description": "cottage in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.329663,
+				-1.544014
+			]
+		},
+		"Q26286835": {
+			"label": "Grove View Cottage",
+			"description": "cottage in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.33036902,
+				-1.54535702
+			]
+		},
+		"Q26481508": {
+			"label": "Trinity Cottage",
+			"description": "cottage in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.330531,
+				-1.545429
+			]
+		},
+		"Q26646613": {
+			"label": "Fir Tree Cottage",
+			"description": "cottage in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.330711,
+				-1.545486
+			]
+		},
+		"Q26286833": {
+			"label": "Tudor Cottage (At North) And Rock Cottage (At South)",
+			"description": "building in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.33059213,
+				-1.544929172
+			]
+		},
+		"Q26586708": {
+			"label": "Dial House Farmhouse",
+			"description": "farmhouse in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.330774,
+				-1.545353
+			]
+		},
+		"Q26646652": {
+			"label": "Roseland",
+			"description": "building in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.331708,
+				-1.545197
+			]
+		},
+		"Q26586704": {
+			"label": "Abbey Farmhouse And Abbey House",
+			"description": "farmhouse in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.331997,
+				-1.545428
+			]
+		},
+		"Q26646614": {
+			"label": "Bridge Over Rocky Lane",
+			"description": "bridge in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.336583,
+				-1.552749
+			]
+		},
+		"Q24677072": {
+			"label": "Kenilworth Wardens",
+			"description": "park in the United Kingdom",
+			"coordinates": [
+				52.34079,
+				-1.55282
+			]
+		},
+		"Q104857292": {
+			"label": "Woodside Hotel, Kenilworth",
+			"description": "building in Warwickshire, England",
+			"coordinates": [
+				52.344606,
+				-1.550044
+			]
+		},
+		"Q17643659": {
+			"label": "Roman settlement at Glasshouse Wood",
+			"description": "archaeological site in Ashow, Warwick, England, UK",
+			"coordinates": [
+				52.3427,
+				-1.54625
+			]
+		},
+		"Q26646651": {
+			"label": "Grecian Lodges",
+			"description": "architectural structure in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.341594,
+				-1.544376
+			]
+		},
+		"Q26286831": {
+			"label": "Bericote Farmhouse",
+			"description": "farmhouse in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.32753873,
+				-1.54344911
+			]
+		},
+		"Q26586702": {
+			"label": "Cross In Churchyard 18 Yards To South Of Chancel",
+			"description": "monumental cross in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.329029,
+				-1.54295
+			]
+		},
+		"Q26646649": {
+			"label": "Grovewood",
+			"description": "building in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.330629,
+				-1.542445
+			]
+		},
+		"Q26286830": {
+			"label": "Grove Farmhouse",
+			"description": "farmhouse in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.33064447,
+				-1.54218449
+			]
+		},
+		"Q26646650": {
+			"label": "Barn 49 Yards To East Of Grove Farmhouse",
+			"description": "barn in Ashow, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.330695,
+				-1.541406
+			]
+		},
+		"Q26646631": {
+			"label": "Harvest House  Tyroes",
+			"description": "architectural structure in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.355525,
+				-1.597781
+			]
+		},
+		"Q3625487": {
+			"label": "Siege of Kenilworth",
+			"description": "1266 siege during the Second Barons' War",
+			"coordinates": [
+				52.3479,
+				-1.5925
+			]
+		},
+		"Q26646625": {
+			"label": "Purlieu Gate Cottage",
+			"description": "cottage in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.348984,
+				-1.593715
+			]
+		},
+		"Q141298924": {
+			"label": "25 Castle Hill",
+			"description": "house in Kenilworth, Warwickshire, England, UK",
+			"coordinates": [
+				52.348382,
+				-1.589477
+			]
+		},
+		"Q26286875": {
+			"label": "15 and 17 Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34855394,
+				-1.588918461
+			]
+		},
+		"Q26646630": {
+			"label": "19 Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.348645,
+				-1.589314
+			]
+		},
+		"Q26478991": {
+			"label": "36 And 36A, Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.348879,
+				-1.589371
+			]
+		},
+		"Q26478986": {
+			"label": "30 And 32, Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.348924,
+				-1.589209
+			]
+		},
+		"Q26286918": {
+			"label": "26 And 28, Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34895021,
+				-1.589120317
+			]
+		},
+		"Q26646629": {
+			"label": "11 Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.348713,
+				-1.588646
+			]
+		},
+		"Q26286874": {
+			"label": "9 Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34882302,
+				-1.5887398
+			]
+		},
+		"Q26478979": {
+			"label": "22 And 24, Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.348977,
+				-1.589047
+			]
+		},
+		"Q26646608": {
+			"label": "16-20, Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349048,
+				-1.58887
+			]
+		},
+		"Q26587735": {
+			"label": "10-14, Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349066,
+				-1.588826
+			]
+		},
+		"Q26286873": {
+			"label": "7 Castle Hill",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34897519,
+				-1.588547541
+			]
+		},
+		"Q26479030": {
+			"label": "19, Clinton Lane",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349565,
+				-1.592711
+			]
+		},
+		"Q26647351": {
+			"label": "Holly Cottage",
+			"description": "cottage in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349592,
+				-1.592741
+			]
+		},
+		"Q26646593": {
+			"label": "21, Clinton Lane",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.349619,
+				-1.592726
+			]
+		},
+		"Q26286916": {
+			"label": "14,14A,17,18 And 19, Castle Green",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34928447,
+				-1.592185491
+			]
+		},
+		"Q26286915": {
+			"label": "12 And 13, Castle Green",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.34927467,
+				-1.591950689
+			]
+		},
+		"Q26286865": {
+			"label": "Dell House  The Pleasannce",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.3530091,
+				-1.575076112
+			]
+		},
+		"Q26286864": {
+			"label": "High House",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.35326447,
+				-1.573590777
+			]
+		},
+		"Q26543526": {
+			"label": "Hollycote",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.352784,
+				-1.569925
+			]
+		},
+		"Q26479209": {
+			"label": "Rosebank  Southbank",
+			"description": "architectural structure in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.353333,
+				-1.575117
+			]
+		},
+		"Q26286867": {
+			"label": "Caversham House  Hazelwood",
+			"description": "building in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.35362026,
+				-1.575026208
+			]
+		},
+		"Q26479207": {
+			"label": "St Andrews  Stanford House",
+			"description": "house in Kenilworth, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.353889,
+				-1.574686
+			]
+		},
+		"Q66164366": {
+			"label": "Park Hill Junior School",
+			"description": "school in Warwickshire, UK",
+			"coordinates": [
+				52.3489853,
+				-1.5601248
+			]
+		},
+		"Q26611504": {
+			"label": "Dale House Farmhouse",
+			"description": "farmhouse in Stoneleigh, Warwick, Warwickshire, England, UK",
+			"coordinates": [
+				52.356628,
+				-1.547437
+			]
+		}
+	}
+}
