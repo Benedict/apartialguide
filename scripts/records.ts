@@ -43,6 +43,10 @@ import { readGpkgLayer } from '../src/lib/server/gpkg';
 import { geographRecords } from '../src/lib/server/sources/geograph';
 import {
 	floodZoneName,
+	HERITAGE,
+	heritageAreas,
+	featuresInBox,
+	entitiesOf,
 	recordedFloodName,
 	zoneAreas,
 	type ZoneFeature
@@ -106,8 +110,29 @@ const postcodes = [
 	)
 ].sort();
 
-/** Every page of a planning.data.gov.uk dataset within the box. */
+/** A planning.data.gov.uk dataset's whole file, as its bulk download gives it. */
+async function datasetFile(dataset: string): Promise<ZoneFeature[]> {
+	const file = await getJson(`https://files.planning.data.gov.uk/dataset/${dataset}.geojson`);
+	return file.features ?? [];
+}
+
+/**
+ * Every entity of a planning.data.gov.uk dataset within the box: from its search, or, when the
+ * search does not answer (it has been down for days at a time), from the dataset's whole file.
+ */
 async function entities(dataset: string) {
+	try {
+		return await searched(dataset);
+	} catch (err) {
+		console.log(
+			`${dataset}: the search did not answer (${(err as Error).message.slice(0, 120)}); reading the whole file`
+		);
+		return { entities: entitiesOf(featuresInBox(await datasetFile(dataset), bbox)) };
+	}
+}
+
+/** Every page of a planning.data.gov.uk dataset's search within the box. */
+async function searched(dataset: string) {
 	const polygon = `POLYGON((${w} ${s}, ${e} ${s}, ${e} ${n}, ${w} ${n}, ${w} ${s}))`;
 	let url: string | undefined =
 		`https://www.planning.data.gov.uk/entity.json?dataset=${dataset}&geometry=${encodeURIComponent(polygon)}&geometry_relation=intersects&limit=500`;
@@ -507,6 +532,25 @@ SELECT ?paon ?street ?amount ?date WHERE {
 			prefix: 'roman',
 			records: [],
 			beyond
+		};
+	},
+	/**
+	 * Conservation areas, scheduled monuments and registered parks and gardens over the box, from
+	 * planning.data.gov.uk's files: areas told on coming in and out.
+	 */
+	heritage: async () => {
+		const areas = [];
+		for (const dataset of Object.keys(HERITAGE)) {
+			const found = heritageAreas(featuresInBox(await datasetFile(dataset), bbox), dataset);
+			console.log(`${dataset}: ${found.length} in the box`);
+			areas.push(...found);
+		}
+		return {
+			source: 'planning.data.gov.uk',
+			prefix: 'heritage',
+			records: [],
+			overlay: true,
+			areas
 		};
 	},
 	/** The Environment Agency's flood zones over the box, from the Flood Map for Planning. */

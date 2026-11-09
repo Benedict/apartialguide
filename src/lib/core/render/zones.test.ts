@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { hearsay } from './hearsay';
 import { zoneLines, type Zone } from './zones';
+import { HEARSAY } from './hearsay';
 
 // Invented mines and rocks: no real place.
 const plans = (name: string, claims: Record<string, string> = {}): Zone => ({
@@ -129,5 +130,42 @@ describe('zoneLines', () => {
 	it('joins two mines with and', () => {
 		const [line] = zoneLines([plans('INVENTED A'), plans('INVENTED B')], []);
 		expect(line).toMatch(/“Invented A”.*; and .*“Invented B”.*\.$/);
+	});
+});
+
+describe('heritage zones', () => {
+	// Invented places: no real conservation area, monument or park.
+	// What is said, without the lead that varies with the words.
+	const said = (line: string) => line.replace(HEARSAY, '');
+	const zone = (name: string, kind: string, claims?: Record<string, string>): Zone => ({
+		name,
+		kind,
+		...(claims ? { claims } : {})
+	});
+
+	it('tells coming into and out of a conservation area, a monument and a park, by name and kind', () => {
+		expect(zoneLines([zone('Inventon Green', 'conservation area')], []).map(said)).toEqual([
+			'you are within “Inventon Green”, a conservation area.'
+		]);
+		expect(zoneLines([], [zone('Inventon Green', 'conservation area')]).map(said)).toEqual([
+			'you have come out of “Inventon Green”, a conservation area.'
+		]);
+		expect(zoneLines([zone('Inventon Mound', 'scheduled monument')], []).map(said)).toEqual([
+			'you are within “Inventon Mound”, a scheduled monument.'
+		]);
+	});
+
+	it('gives a registered park its grade, and a name set all in capitals as it would be written', () => {
+		expect(
+			zoneLines([zone('INVENTON HALL', 'registered park and garden', { grade: 'II*' })], []).map(
+				said
+			)
+		).toEqual(['you are within “Inventon Hall”, a registered park and garden, grade II*.']);
+	});
+
+	it('does not say the kind twice where the name already says it', () => {
+		expect(
+			zoneLines([zone('Inventon Road Conservation Area', 'conservation area')], []).map(said)
+		).toEqual(['you are within “Inventon Road Conservation Area”.']);
 	});
 });

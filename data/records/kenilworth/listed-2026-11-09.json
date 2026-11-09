@@ -1,0 +1,2275 @@
+{
+	"source": "Historic England, via planning.data.gov.uk",
+	"prefix": "listed",
+	"records": [
+		{
+			"id": "31492962",
+			"at": [
+				52.329519,
+				-1.574585
+			],
+			"observed": "1983-07-11",
+			"claims": {
+				"name": "WOOTTON GRANGE FARMHOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1983-07-11"
+			}
+		},
+		{
+			"id": "31493005",
+			"at": [
+				52.326011,
+				-1.556865
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "CHESFORD BRIDGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31493036",
+			"at": [
+				52.34925,
+				-1.591528
+			],
+			"observed": "1987-09-07",
+			"claims": {
+				"name": "K6 TELEPHONE KIOSK OUTSIDE THE POST OFFICE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-09-07"
+			}
+		},
+		{
+			"id": "31493037",
+			"at": [
+				52.336816,
+				-1.59402
+			],
+			"observed": "1994-08-05",
+			"claims": {
+				"name": "OAKS FARMHOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1994-08-05"
+			}
+		},
+		{
+			"id": "31493038",
+			"at": [
+				52.330657,
+				-1.542173
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "GROVE FARMHOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31493039",
+			"at": [
+				52.327753,
+				-1.543368
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "BERICOTE FARMHOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31493040",
+			"at": [
+				52.327571,
+				-1.543907
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "BARN 33 YARDS SOUTH WEST OF BERICOTE FARMHOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31493042",
+			"at": [
+				52.330589,
+				-1.544979
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "TUDOR COTTAGE (AT NORTH) AND ROCK COTTAGE (AT SOUTH)",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31493043",
+			"at": [
+				52.329123,
+				-1.543123
+			],
+			"observed": "1967-04-11",
+			"claims": {
+				"name": "CHURCH OF THE ASSUMPTION OF OUR LADY",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "1967-04-11"
+			}
+		},
+		{
+			"id": "31493044",
+			"at": [
+				52.329095,
+				-1.543931
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "AVON COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31493045",
+			"at": [
+				52.330381,
+				-1.545346
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "GROVE VIEW COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31493057",
+			"at": [
+				52.349728,
+				-1.582723
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "21-31, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493058",
+			"at": [
+				52.349432,
+				-1.587167
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "81-85, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493059",
+			"at": [
+				52.334643,
+				-1.564556
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "THICKTHORN MANOR",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493060",
+			"at": [
+				52.351347,
+				-1.576828
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "THE OLD MANOR",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493061",
+			"at": [
+				52.350486,
+				-1.579934
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "7, NEW STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493062",
+			"at": [
+				52.350566,
+				-1.579845
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "BURNT COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493063",
+			"at": [
+				52.350763,
+				-1.579549
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "19A AND 19, NEW STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493064",
+			"at": [
+				52.350324,
+				-1.579876
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "4 AND 6, NEW STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493065",
+			"at": [
+				52.350726,
+				-1.579227
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "THE COVENTRY CROSS INN (THE NORTH EAST SECTION)",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493066",
+			"at": [
+				52.351136,
+				-1.578283
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "40 AND 42, NEW STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493067",
+			"at": [
+				52.351449,
+				-1.577766
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "48, NEW STREER",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493068",
+			"at": [
+				52.347694,
+				-1.578463
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "THE COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493069",
+			"at": [
+				52.342733,
+				-1.579009
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "KING'S ARMS AND CASTLE HOTEL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493070",
+			"at": [
+				52.352036,
+				-1.575852
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "THE OLD FORGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493071",
+			"at": [
+				52.353277,
+				-1.573579
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "HIGH HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493072",
+			"at": [
+				52.353022,
+				-1.575065
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "DELL HOUSE THE PLEASANNCE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493073",
+			"at": [
+				52.353633,
+				-1.575015
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "CAVERSHAM HOUSE HAZELWOOD",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493074",
+			"at": [
+				52.347071,
+				-1.577793
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "GARDEN WALL OF NUMBERS 1 TO 3",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493075",
+			"at": [
+				52.347131,
+				-1.577103
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "ROSEMARY",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493076",
+			"at": [
+				52.346791,
+				-1.577385
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "4, UPPER ROSEMARY HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493077",
+			"at": [
+				52.340641,
+				-1.577311
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "THE BEAR AND RAGGED STAFF INN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493078",
+			"at": [
+				52.336508,
+				-1.573109
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "FORGE COTTAGE WINDWORTH FORGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493079",
+			"at": [
+				52.348988,
+				-1.588536
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "7, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493080",
+			"at": [
+				52.348836,
+				-1.588728
+			],
+			"observed": "1970-11-24",
+			"claims": {
+				"name": "9, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1970-11-24"
+			}
+		},
+		{
+			"id": "31493081",
+			"at": [
+				52.348566,
+				-1.588907
+			],
+			"observed": "1970-11-24",
+			"claims": {
+				"name": "15 AND 17, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1970-11-24"
+			}
+		},
+		{
+			"id": "31493082",
+			"at": [
+				52.348774,
+				-1.589066
+			],
+			"observed": "1968-06-24",
+			"claims": {
+				"name": "13, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-06-24"
+			}
+		},
+		{
+			"id": "31493083",
+			"at": [
+				52.361899,
+				-1.624116
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "NORTH CHASE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31493085",
+			"at": [
+				52.349865,
+				-1.592639
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "23 AND 25, CLINTON LANE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31493086",
+			"at": [
+				52.352105,
+				-1.577643
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "IVY COTTAGES",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493087",
+			"at": [
+				52.352113,
+				-1.582517
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "BARN AT FIELDGATE CLOSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493088",
+			"at": [
+				52.350035,
+				-1.581752
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "10, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31493089",
+			"at": [
+				52.350003,
+				-1.581915
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "12 AND 14, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493090",
+			"at": [
+				52.34986,
+				-1.583209
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "36, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31493091",
+			"at": [
+				52.349863,
+				-1.583456
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "38, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31493092",
+			"at": [
+				52.349875,
+				-1.583741
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "44, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31493093",
+			"at": [
+				52.349877,
+				-1.583899
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "46-50, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31493094",
+			"at": [
+				52.349887,
+				-1.584476
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "56-62, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31493095",
+			"at": [
+				52.34991,
+				-1.585077
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "THE STONE HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493096",
+			"at": [
+				52.349965,
+				-1.585525
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "STABLES TO NUMBER 64",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493097",
+			"at": [
+				52.349823,
+				-1.585739
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "68 AND 70, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31493098",
+			"at": [
+				52.34975,
+				-1.58644
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "CLINTON HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31493099",
+			"at": [
+				52.34979,
+				-1.581624
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "SION HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493100",
+			"at": [
+				52.349739,
+				-1.581978
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "PREMISES OCCUPIED BY MIDLAND BANK",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493103",
+			"at": [
+				52.347305,
+				-1.592885
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "KENILWORTH CASTLE",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493104",
+			"at": [
+				52.348662,
+				-1.583415
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "ABBEY RUINS",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493105",
+			"at": [
+				52.346379,
+				-1.577976
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "3, ABBEY HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493106",
+			"at": [
+				52.34595,
+				-1.578611
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "ABBEY HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493107",
+			"at": [
+				52.345557,
+				-1.579466
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "DUDLEY HOUSE LANCASTER HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493108",
+			"at": [
+				52.344889,
+				-1.581161
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "17-19, ABBEY HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493109",
+			"at": [
+				52.355239,
+				-1.58425
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "ROMAN CATHOLIC CHURCH OF ST AUGUSTINE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493110",
+			"at": [
+				52.347974,
+				-1.578768
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "4, BRIDGE STREET (See details for further address information)",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493111",
+			"at": [
+				52.34837,
+				-1.579014
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "14-20, BRIDGE STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493112",
+			"at": [
+				52.349864,
+				-1.580329
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "GARAGES AT KENILWORTH HALL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493113",
+			"at": [
+				52.349714,
+				-1.580906
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "31, BRIDGE STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493115",
+			"at": [
+				52.349203,
+				-1.590927
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "LEICESTER HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493116",
+			"at": [
+				52.34924,
+				-1.591235
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "3-6, CASTLE GREEN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493117",
+			"at": [
+				52.349287,
+				-1.591939
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "12 AND 13, CASTLE GREEN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493118",
+			"at": [
+				52.349297,
+				-1.592174
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "14,14A,17,18 AND 19, CASTLE GREEN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31493119",
+			"at": [
+				52.349168,
+				-1.588666
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "8, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493120",
+			"at": [
+				52.348963,
+				-1.589109
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "26 AND 28, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493121",
+			"at": [
+				52.348919,
+				-1.589285
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "34, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31493122",
+			"at": [
+				52.348865,
+				-1.589535
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "40, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640471",
+			"at": [
+				52.348127,
+				-1.57884
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "8-12, BRIDGE STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640477",
+			"at": [
+				52.34977,
+				-1.580985
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "33, BRIDGE STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640480",
+			"at": [
+				52.348941,
+				-1.59068
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "QUEEN AND CASTLE HOTEL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31640483",
+			"at": [
+				52.349212,
+				-1.591044
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "TUDOR COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31640493",
+			"at": [
+				52.349277,
+				-1.59169
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "10 AND 11, CASTLE GREEN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31640527",
+			"at": [
+				52.34899,
+				-1.589035
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "22 AND 24, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640534",
+			"at": [
+				52.348936,
+				-1.589197
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "30 AND 32, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640540",
+			"at": [
+				52.348892,
+				-1.589359
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "36 AND 36A, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640543",
+			"at": [
+				52.348857,
+				-1.589638
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "42, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640572",
+			"at": [
+				52.349578,
+				-1.5927
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "19, CLINTON LANE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31640576",
+			"at": [
+				52.351627,
+				-1.592681
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "CHASE COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640585",
+			"at": [
+				52.350078,
+				-1.581582
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "CLARENDON HOUSE HOTEL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640591",
+			"at": [
+				52.349972,
+				-1.582126
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "16, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640597",
+			"at": [
+				52.349872,
+				-1.583617
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "40 AND 42, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31640602",
+			"at": [
+				52.349874,
+				-1.584259
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "52 AND 54, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31640611",
+			"at": [
+				52.349678,
+				-1.581957
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "BANK HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31640622",
+			"at": [
+				52.351129,
+				-1.5789
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "33-39, NEW STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640623",
+			"at": [
+				52.350369,
+				-1.579788
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "8.8A AND 10, NEW STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640626",
+			"at": [
+				52.350762,
+				-1.579168
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "18-24, NEW STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640631",
+			"at": [
+				52.351217,
+				-1.57815
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "SUMMER LODGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640640",
+			"at": [
+				52.351467,
+				-1.577722
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "GAZEBO IN GARDEN OF NUMBER 48",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640715",
+			"at": [
+				52.353901,
+				-1.574674
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "ST ANDREWS STANFORD HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640717",
+			"at": [
+				52.353346,
+				-1.575106
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "ROSEBANK SOUTHBANK",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640722",
+			"at": [
+				52.346746,
+				-1.577415
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "2, UPPER ROSEMARY HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640723",
+			"at": [
+				52.3371,
+				-1.572663
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "CHURCH OF ST JOHN EVANGELIST",
+				"description": "listed building",
+				"grade": "II*",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31640727",
+			"at": [
+				52.339947,
+				-1.576493
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "86-90, WARWICK ROAD",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31642508",
+			"at": [
+				52.348671,
+				-1.577749
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "16 AND 17, SCHOOL LANE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31643037",
+			"at": [
+				52.330543,
+				-1.545418
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "TRINITY COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31702163",
+			"at": [
+				52.348054,
+				-1.578738
+			],
+			"observed": "1998-11-06",
+			"claims": {
+				"name": "FORMER NATIONAL SCHOOL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1998-11-06"
+			}
+		},
+		{
+			"id": "31702164",
+			"at": [
+				52.349221,
+				-1.58767
+			],
+			"observed": "1998-11-06",
+			"claims": {
+				"name": "1 Castle Hill, formerly known as Wantage, outbuilding to the north-north-east, and sundial to south",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1998-11-06"
+			}
+		},
+		{
+			"id": "31708018",
+			"at": [
+				52.352796,
+				-1.569913
+			],
+			"observed": "1984-03-08",
+			"claims": {
+				"name": "HOLLYCOTE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1984-03-08"
+			}
+		},
+		{
+			"id": "31709439",
+			"at": [
+				52.323124,
+				-1.547019
+			],
+			"observed": "1995-05-15",
+			"claims": {
+				"name": "BLACKDOWN MANOR",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1995-05-15"
+			}
+		},
+		{
+			"id": "31719062",
+			"at": [
+				52.341533,
+				-1.577831
+			],
+			"observed": "1991-06-19",
+			"claims": {
+				"name": "WHITE LION PUBLIC HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1991-06-19"
+			}
+		},
+		{
+			"id": "31755452",
+			"at": [
+				52.329006,
+				-1.543018
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "CROSS IN CHURCHYARD 18 YARDS TO SOUTH OF CHANCEL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31755454",
+			"at": [
+				52.331967,
+				-1.545471
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "ABBEY FARMHOUSE AND ABBEY HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31755458",
+			"at": [
+				52.327953,
+				-1.557547
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "DIAL HOUSE FARMHOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31756541",
+			"at": [
+				52.347007,
+				-1.577544
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "1-3, UPPER ROSEMARY HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31756563",
+			"at": [
+				52.350136,
+				-1.585368
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "COACHHOUSE TO NUMBER 64",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31756565",
+			"at": [
+				52.349833,
+				-1.585607
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "66, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31756567",
+			"at": [
+				52.349363,
+				-1.582097
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "CHURCH OF ST NICHOLAS",
+				"description": "listed building",
+				"grade": "I",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31756582",
+			"at": [
+				52.349222,
+				-1.588607
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "2A,4A AND 6, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31756583",
+			"at": [
+				52.349079,
+				-1.588814
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "10-14, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31756631",
+			"at": [
+				52.354734,
+				-1.583784
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "FIELDGATE HOUSE THIRLWALL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31756632",
+			"at": [
+				52.348407,
+				-1.579454
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "STONE BRIDGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31756635",
+			"at": [
+				52.35004,
+				-1.580593
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "Abbotsford House",
+				"description": "listed building",
+				"grade": "II*",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31781970",
+			"at": [
+				52.356641,
+				-1.547426
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "DALE HOUSE FARMHOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31820598",
+			"at": [
+				52.349632,
+				-1.592714
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "21, CLINTON LANE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820599",
+			"at": [
+				52.350734,
+				-1.58137
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "FIELDGATE LODGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820600",
+			"at": [
+				52.350157,
+				-1.581306
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "2, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820601",
+			"at": [
+				52.349921,
+				-1.582506
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "18-24, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820602",
+			"at": [
+				52.349817,
+				-1.585861
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "MONTFORD COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31820603",
+			"at": [
+				52.349808,
+				-1.581438
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "VIRGINS AND CASTLE PUBLIC HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31820607",
+			"at": [
+				52.344729,
+				-1.581471
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "HILLCROFT PORTLAND HOUSE RICHMOND HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820608",
+			"at": [
+				52.346022,
+				-1.578596
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "8, ABBEY HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820609",
+			"at": [
+				52.345255,
+				-1.580365
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "THE ABBEY",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820610",
+			"at": [
+				52.343779,
+				-1.58239
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "OLD SCHOOL HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31820611",
+			"at": [
+				52.36533,
+				-1.611795
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "REDFERN MANOR",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820612",
+			"at": [
+				52.349705,
+				-1.580293
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "KENILWORTH HALL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820613",
+			"at": [
+				52.349061,
+				-1.588858
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "16-20, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820614",
+			"at": [
+				52.348865,
+				-1.589447
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "38, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820618",
+			"at": [
+				52.330724,
+				-1.545474
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "FIR TREE COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31820619",
+			"at": [
+				52.336595,
+				-1.552738
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "BRIDGE OVER ROCKY LANE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31820622",
+			"at": [
+				52.349748,
+				-1.582447
+			],
+			"observed": "1968-04-26",
+			"claims": {
+				"name": "15-19, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1968-04-26"
+			}
+		},
+		{
+			"id": "31820623",
+			"at": [
+				52.349662,
+				-1.583377
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "37, HIGH STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820624",
+			"at": [
+				52.334793,
+				-1.563792
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "STABLES AT THICKTHORN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820625",
+			"at": [
+				52.350459,
+				-1.580066
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "5, NEW STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820626",
+			"at": [
+				52.350665,
+				-1.579653
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "15 AND 17, NEW STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820627",
+			"at": [
+				52.350987,
+				-1.579195
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "23 AND 25, NEW STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820628",
+			"at": [
+				52.350431,
+				-1.579655
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "12, NEW STREET",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820629",
+			"at": [
+				52.351039,
+				-1.578607
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "ROYAL OAK INN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820630",
+			"at": [
+				52.348997,
+				-1.593704
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "PURLIEU GATE COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820631",
+			"at": [
+				52.346897,
+				-1.577061
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "8 Upper Rosemary Hall and 1A Richards Close",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820632",
+			"at": [
+				52.336707,
+				-1.573371
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "ST JOHN'S VIEW ST NINIAN",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820633",
+			"at": [
+				52.348857,
+				-1.589726
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "CLARENDON ARMS",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820634",
+			"at": [
+				52.348726,
+				-1.588634
+			],
+			"observed": "1970-11-24",
+			"claims": {
+				"name": "11, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1970-11-24"
+			}
+		},
+		{
+			"id": "31820635",
+			"at": [
+				52.348658,
+				-1.589303
+			],
+			"observed": "1970-11-24",
+			"claims": {
+				"name": "19, CASTLE HILL",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1970-11-24"
+			}
+		},
+		{
+			"id": "31820636",
+			"at": [
+				52.355537,
+				-1.59777
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "HARVEST HOUSE TYROES",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820637",
+			"at": [
+				52.362059,
+				-1.623395
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "BARN AT NORTH CHASE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31820651",
+			"at": [
+				52.323908,
+				-1.616294
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "BANNERHILL FARMHOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31820652",
+			"at": [
+				52.340964,
+				-1.577147
+			],
+			"observed": "1992-07-24",
+			"claims": {
+				"name": "59-63, WARWICK ROAD",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1992-07-24"
+			}
+		},
+		{
+			"id": "31820653",
+			"at": [
+				52.330641,
+				-1.542434
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "GROVEWOOD",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31820654",
+			"at": [
+				52.330708,
+				-1.541395
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "BARN 49 YARDS TO EAST OF GROVE FARMHOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31820655",
+			"at": [
+				52.341607,
+				-1.544365
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "GRECIAN LODGES",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31820656",
+			"at": [
+				52.331725,
+				-1.54524
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "ROSELAND",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31820657",
+			"at": [
+				52.329676,
+				-1.544065
+			],
+			"observed": "1987-01-23",
+			"claims": {
+				"name": "ASHOW VILLAGE CLUB AND ADJOINING COTTAGE (NUMBER 10)",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1987-01-23"
+			}
+		},
+		{
+			"id": "31821418",
+			"at": [
+				52.35013,
+				-1.580965
+			],
+			"observed": "1949-06-01",
+			"claims": {
+				"name": "FIELDGATE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1949-06-01"
+			}
+		},
+		{
+			"id": "31821420",
+			"at": [
+				52.349605,
+				-1.592729
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "HOLLY COTTAGE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31821428",
+			"at": [
+				52.349856,
+				-1.583363
+			],
+			"observed": "1971-11-10",
+			"claims": {
+				"name": "MARTON HOUSE",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "1971-11-10"
+			}
+		},
+		{
+			"id": "31855047",
+			"at": [
+				52.345013,
+				-1.581536
+			],
+			"observed": "2016-05-18",
+			"claims": {
+				"name": "Kenilworth War Memorial",
+				"description": "listed building",
+				"grade": "II",
+				"listed": "2016-05-18"
+			}
+		}
+	],
+	"retrieved": "2026-11-09"
+}
