@@ -30,7 +30,7 @@ const snapshots = 'data/snapshots';
 const snapshotPath =
 	process.env.SNAPSHOT_PATH ??
 	`${snapshots}/${readdirSync(snapshots)
-		.filter((f) => f.startsWith(name) && f.endsWith('.json'))
+		.filter((f) => f.startsWith(name) && /\.json(\.gz)?$/.test(f))
 		.sort()
 		.at(-1)}`;
 const bbox = process.env.BBOX?.split(',').map(Number);
@@ -74,7 +74,10 @@ const store: WikidataStore & { bbox: number[]; snapshot: string } = {
 	snapshot: snapshotPath,
 	items
 };
-mkdirSync('data/wikidata', { recursive: true });
-const path = `data/wikidata/${name}-${retrieved}.json`;
+// A place's own folder (WIKIDATA_OUT), as the build takes the newest file in its folder: another
+// place's in data/wikidata would take the place of Croydon's.
+const out = process.env.WIKIDATA_OUT ?? 'data/wikidata';
+mkdirSync(out, { recursive: true });
+const path = `${out}/${name}-${retrieved}.json`;
 writeFileSync(path, JSON.stringify(store, null, '\t') + '\n');
 console.log(`${Object.keys(items).length} items written to ${path}`);
