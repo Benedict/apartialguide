@@ -1,0 +1,2761 @@
+{
+	"source": "Food Standards Agency",
+	"prefix": "hygiene",
+	"records": [
+		{
+			"id": "241977",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241977"
+			},
+			"at": [
+				52.322299,
+				-1.542372
+			],
+			"observed": "2025-09-02",
+			"claims": {
+				"name": "abm Catering at Helen Ley House",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2025-09-02"
+			}
+		},
+		{
+			"id": "351751",
+			"link": {
+				"key": "fhrs:id",
+				"value": "351751"
+			},
+			"at": [
+				52.349202,
+				-1.572396
+			],
+			"observed": "2024-05-14",
+			"claims": {
+				"name": "Albion General Store & Off Licence",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2024-05-14"
+			}
+		},
+		{
+			"id": "242590",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242590"
+			},
+			"at": [
+				52.349202,
+				-1.572396
+			],
+			"observed": "2025-09-10",
+			"claims": {
+				"name": "Albion Street Kitchen",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-09-10"
+			}
+		},
+		{
+			"id": "699009",
+			"link": {
+				"key": "fhrs:id",
+				"value": "699009"
+			},
+			"at": [
+				52.34329,
+				-1.580702
+			],
+			"observed": "2025-06-19",
+			"claims": {
+				"name": "Ale Rooms",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2025-06-19"
+			}
+		},
+		{
+			"id": "242433",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242433"
+			},
+			"at": [
+				52.343364,
+				-1.57392
+			],
+			"observed": "2024-12-05",
+			"claims": {
+				"name": "Alfie Grimshaw",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2024-12-05"
+			}
+		},
+		{
+			"id": "1229925",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1229925"
+			},
+			"at": [
+				52.345275,
+				-1.567883
+			],
+			"observed": "2024-12-12",
+			"claims": {
+				"name": "Amante Del Cibo",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2024-12-12"
+			}
+		},
+		{
+			"id": "241409",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241409"
+			},
+			"at": [
+				52.341418,
+				-1.577608
+			],
+			"observed": "2026-09-16",
+			"claims": {
+				"name": "Andrew Davies Bakeries Ltd",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2026-09-16"
+			}
+		},
+		{
+			"id": "241945",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241945"
+			},
+			"at": [
+				52.34229,
+				-1.577644
+			],
+			"observed": "2024-12-03",
+			"claims": {
+				"name": "Arden's Coffee",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2024-12-03"
+			}
+		},
+		{
+			"id": "241597",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241597"
+			},
+			"at": [
+				52.330607,
+				-1.545001
+			],
+			"observed": "2024-01-31",
+			"claims": {
+				"name": "Ashow Village Club",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2024-01-31"
+			}
+		},
+		{
+			"id": "1684964",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1684964"
+			},
+			"at": [
+				52.3430604,
+				-1.5784321
+			],
+			"observed": "2024-03-14",
+			"claims": {
+				"name": "B&M Retail",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2024-03-14"
+			}
+		},
+		{
+			"id": "241696",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241696"
+			},
+			"at": [
+				52.347297,
+				-1.557969
+			],
+			"observed": "2024-12-05",
+			"claims": {
+				"name": "Bakers Dozen",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2024-12-05"
+			}
+		},
+		{
+			"id": "1582557",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1582557"
+			},
+			"at": [
+				52.341418,
+				-1.577608
+			],
+			"observed": "2026-09-01",
+			"claims": {
+				"name": "Brewquest Coffee",
+				"kind": "Other catering premises",
+				"rating": "5",
+				"date": "2026-09-01"
+			}
+		},
+		{
+			"id": "241582",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241582"
+			},
+			"at": [
+				52.35537,
+				-1.58511
+			],
+			"observed": "2026-05-27",
+			"claims": {
+				"name": "Bright Horizons Kenilworth",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-05-27"
+			}
+		},
+		{
+			"id": "945194",
+			"link": {
+				"key": "fhrs:id",
+				"value": "945194"
+			},
+			"at": [
+				52.345275,
+				-1.567882
+			],
+			"observed": "2025-04-23",
+			"claims": {
+				"name": "Captains Chippy",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2025-04-23"
+			}
+		},
+		{
+			"id": "926490",
+			"link": {
+				"key": "fhrs:id",
+				"value": "926490"
+			},
+			"at": [
+				52.353789,
+				-1.560693
+			],
+			"observed": "2026-02-10",
+			"claims": {
+				"name": "Castle Brook",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-02-10"
+			}
+		},
+		{
+			"id": "241581",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241581"
+			},
+			"at": [
+				52.345268,
+				-1.575751
+			],
+			"observed": "2026-08-05",
+			"claims": {
+				"name": "Castle Nursery",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-08-05"
+			}
+		},
+		{
+			"id": "241570",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241570"
+			},
+			"at": [
+				52.347254,
+				-1.575732
+			],
+			"observed": "2026-04-20",
+			"claims": {
+				"name": "Caterlink at St Nicholas C E Primary School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2026-04-20"
+			}
+		},
+		{
+			"id": "577153",
+			"link": {
+				"key": "fhrs:id",
+				"value": "577153"
+			},
+			"at": [
+				52.3444421,
+				-1.5788539
+			],
+			"observed": "2026-05-26",
+			"claims": {
+				"name": "Caterplus @ Wilton Court",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2026-05-26"
+			}
+		},
+		{
+			"id": "242563",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242563"
+			},
+			"at": [
+				52.326286315918,
+				-1.55805099010468
+			],
+			"observed": "2026-10-08",
+			"claims": {
+				"name": "Chesford Grange Hotel",
+				"kind": "Hotel/bed & breakfast/guest house",
+				"rating": "5",
+				"date": "2026-10-08"
+			}
+		},
+		{
+			"id": "241611",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241611"
+			},
+			"at": [
+				52.336854,
+				-1.578503
+			],
+			"observed": "2026-08-20",
+			"claims": {
+				"name": "Chips and Fishes",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2026-08-20"
+			}
+		},
+		{
+			"id": "241829",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241829"
+			},
+			"at": [
+				52.3378,
+				-1.586654
+			],
+			"observed": "2022-11-29",
+			"claims": {
+				"name": "Clinton Kids Club",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2022-11-29"
+			}
+		},
+		{
+			"id": "1220418",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1220418"
+			},
+			"at": [
+				52.3420551,
+				-1.5788077
+			],
+			"observed": "2025-06-10",
+			"claims": {
+				"name": "Coffee on the Corner",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-06-10"
+			}
+		},
+		{
+			"id": "680845",
+			"link": {
+				"key": "fhrs:id",
+				"value": "680845"
+			},
+			"at": [
+				52.349707,
+				-1.572655
+			],
+			"observed": "2026-08-25",
+			"claims": {
+				"name": "Copper House Club Ltd",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2026-08-25"
+			}
+		},
+		{
+			"id": "241762",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241762"
+			},
+			"at": [
+				52.341418,
+				-1.577608
+			],
+			"observed": "2026-03-04",
+			"claims": {
+				"name": "Costa Coffee",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2026-03-04"
+			}
+		},
+		{
+			"id": "241499",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241499"
+			},
+			"at": [
+				52.355062,
+				-1.571825
+			],
+			"observed": "2026-06-18",
+			"claims": {
+				"name": "Crackley Hall School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2026-06-18"
+			}
+		},
+		{
+			"id": "241683",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241683"
+			},
+			"at": [
+				52.355352,
+				-1.592789
+			],
+			"observed": "2026-02-26",
+			"claims": {
+				"name": "Creative Flair Childcare",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-02-26"
+			}
+		},
+		{
+			"id": "243880",
+			"link": {
+				"key": "fhrs:id",
+				"value": "243880"
+			},
+			"at": [
+				52.345268,
+				-1.575751
+			],
+			"observed": "2025-11-26",
+			"claims": {
+				"name": "Crustum",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2025-11-26"
+			}
+		},
+		{
+			"id": "351776",
+			"link": {
+				"key": "fhrs:id",
+				"value": "351776"
+			},
+			"at": [
+				52.347297,
+				-1.557968
+			],
+			"observed": "2024-11-07",
+			"claims": {
+				"name": "Domino's Pizza",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2024-11-07"
+			}
+		},
+		{
+			"id": "1569594",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1569594"
+			},
+			"at": [
+				52.355031,
+				-1.609721
+			],
+			"observed": "2026-02-10",
+			"claims": {
+				"name": "East Chase Distillers Ltd",
+				"kind": "Manufacturers/packers",
+				"rating": "5",
+				"date": "2026-02-10"
+			}
+		},
+		{
+			"id": "242327",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242327"
+			},
+			"at": [
+				52.3378,
+				-1.586654
+			],
+			"observed": "2025-10-15",
+			"claims": {
+				"name": "Educaterers Ltd at Clinton Primary School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2025-10-15"
+			}
+		},
+		{
+			"id": "242461",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242461"
+			},
+			"at": [
+				52.348352,
+				-1.563449
+			],
+			"observed": "2026-09-16",
+			"claims": {
+				"name": "Educaterers Ltd at Park Hill Junior School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2026-09-16"
+			}
+		},
+		{
+			"id": "241331",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241331"
+			},
+			"at": [
+				52.355571,
+				-1.593668
+			],
+			"observed": "2025-10-15",
+			"claims": {
+				"name": "Educaterers Ltd at Priorsfield Primary School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2025-10-15"
+			}
+		},
+		{
+			"id": "242001",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242001"
+			},
+			"at": [
+				52.363796,
+				-1.585663
+			],
+			"observed": "2025-07-11",
+			"claims": {
+				"name": "Educaterers Ltd at St Augustine's  Catholic Primary School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2025-07-11"
+			}
+		},
+		{
+			"id": "241477",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241477"
+			},
+			"at": [
+				52.335381,
+				-1.57884
+			],
+			"observed": "2025-07-11",
+			"claims": {
+				"name": "Educaterers Ltd at St Johns Primary School & Nursery",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2025-07-11"
+			}
+		},
+		{
+			"id": "241769",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241769"
+			},
+			"at": [
+				52.340463,
+				-1.569603
+			],
+			"observed": "2026-04-30",
+			"claims": {
+				"name": "Educaterers Ltd at Thorns Community Infant School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2026-04-30"
+			}
+		},
+		{
+			"id": "241625",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241625"
+			},
+			"at": [
+				52.34324,
+				-1.579279
+			],
+			"observed": "2025-01-14",
+			"claims": {
+				"name": "Ego@Kenilworth",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-01-14"
+			}
+		},
+		{
+			"id": "241622",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241622"
+			},
+			"at": [
+				52.340367,
+				-1.585705
+			],
+			"observed": "2025-01-14",
+			"claims": {
+				"name": "Field House Day Nursery",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2025-01-14"
+			}
+		},
+		{
+			"id": "1229924",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1229924"
+			},
+			"at": [
+				52.3434536,
+				-1.5794275
+			],
+			"observed": "2025-04-15",
+			"claims": {
+				"name": "Forrest Coffee House",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-04-15"
+			}
+		},
+		{
+			"id": "1617820",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1617820"
+			},
+			"at": [
+				52.355031,
+				-1.609721
+			],
+			"observed": "2026-07-31",
+			"claims": {
+				"name": "Forrest in the Field",
+				"kind": "Mobile caterer",
+				"rating": "5",
+				"date": "2026-07-31"
+			}
+		},
+		{
+			"id": "1734650",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1734650"
+			},
+			"at": [
+				52.3434536,
+				-1.5794275
+			],
+			"observed": "2026-07-02",
+			"claims": {
+				"name": "Fossato Lounge",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2026-07-02"
+			}
+		},
+		{
+			"id": "242650",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242650"
+			},
+			"at": [
+				52.33966,
+				-1.576333
+			],
+			"observed": "2026-06-17",
+			"claims": {
+				"name": "Full House Chinese Restaurant",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2026-06-17"
+			}
+		},
+		{
+			"id": "1125208",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1125208"
+			},
+			"at": [
+				52.3555717468262,
+				-1.59366798400879
+			],
+			"observed": "2026-03-31",
+			"claims": {
+				"name": "Go Go Makers at Priorsfield Primary School",
+				"kind": "Other catering premises",
+				"rating": "5",
+				"date": "2026-03-31"
+			}
+		},
+		{
+			"id": "242683",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242683"
+			},
+			"at": [
+				52.337892,
+				-1.574603
+			],
+			"observed": "2026-04-20",
+			"claims": {
+				"name": "Green Man",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2026-04-20"
+			}
+		},
+		{
+			"id": "242438",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242438"
+			},
+			"at": [
+				52.344185,
+				-1.579768
+			],
+			"observed": "2025-08-21",
+			"claims": {
+				"name": "Greens of Kenilworth",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-08-21"
+			}
+		},
+		{
+			"id": "241931",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241931"
+			},
+			"at": [
+				52.341418,
+				-1.577608
+			],
+			"observed": "2025-03-06",
+			"claims": {
+				"name": "Greggs",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2025-03-06"
+			}
+		},
+		{
+			"id": "241399",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241399"
+			},
+			"at": [
+				52.348956,
+				-1.589119
+			],
+			"observed": "2025-10-02",
+			"claims": {
+				"name": "Harringtons on the Hill",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-10-02"
+			}
+		},
+		{
+			"id": "1909163",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1909163"
+			},
+			"at": [
+				52.3387922,
+				-1.5786427
+			],
+			"observed": "2025-11-26",
+			"claims": {
+				"name": "HK TEAHOLIC COMPANY LIMITED",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2025-11-26"
+			}
+		},
+		{
+			"id": "242177",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242177"
+			},
+			"at": [
+				52.341418,
+				-1.577608
+			],
+			"observed": "2026-04-09",
+			"claims": {
+				"name": "Holland & Barrett",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2026-04-09"
+			}
+		},
+		{
+			"id": "242597",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242597"
+			},
+			"at": [
+				52.336806,
+				-1.585342
+			],
+			"observed": "2025-06-19",
+			"claims": {
+				"name": "Hong Kong Garden",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2025-06-19"
+			}
+		},
+		{
+			"id": "1640446",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1640446"
+			},
+			"at": [
+				52.33869985,
+				-1.55931405
+			],
+			"observed": "2025-09-09",
+			"claims": {
+				"name": "Impact Food @ Kenilworth School",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2025-09-09"
+			}
+		},
+		{
+			"id": "241659",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241659"
+			},
+			"at": [
+				52.340833,
+				-1.577643
+			],
+			"observed": "2024-11-26",
+			"claims": {
+				"name": "Indian Edge",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2024-11-26"
+			}
+		},
+		{
+			"id": "241944",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241944"
+			},
+			"at": [
+				52.3503981,
+				-1.5717154
+			],
+			"observed": "2026-04-21",
+			"claims": {
+				"name": "Jack Chamberlain t/a The Wyandotte Inn",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2026-04-21"
+			}
+		},
+		{
+			"id": "1377675",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1377675"
+			},
+			"at": [
+				52.359201,
+				-1.5665211
+			],
+			"observed": "2025-05-07",
+			"claims": {
+				"name": "Jimmy's Food",
+				"kind": "Mobile caterer",
+				"rating": "5",
+				"date": "2025-05-07"
+			}
+		},
+		{
+			"id": "242271",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242271"
+			},
+			"at": [
+				52.34229,
+				-1.577644
+			],
+			"observed": "2024-02-15",
+			"claims": {
+				"name": "Joe Richards",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2024-02-15"
+			}
+		},
+		{
+			"id": "242213",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242213"
+			},
+			"at": [
+				52.34596,
+				-1.57824
+			],
+			"observed": "2025-01-09",
+			"claims": {
+				"name": "Kenilworth Abbey Club",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2025-01-09"
+			}
+		},
+		{
+			"id": "1915512",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1915512"
+			},
+			"at": [
+				52.3439176,
+				-1.57130792
+			],
+			"observed": "2026-04-27",
+			"claims": {
+				"name": "Kenilworth Baptist Church",
+				"kind": "Other catering premises",
+				"rating": "5",
+				"date": "2026-04-27"
+			}
+		},
+		{
+			"id": "242366",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242366"
+			},
+			"at": [
+				52.349881,
+				-1.583664
+			],
+			"observed": "2026-03-18",
+			"claims": {
+				"name": "Kenilworth Cantonese",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2026-03-18"
+			}
+		},
+		{
+			"id": "241660",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241660"
+			},
+			"at": [
+				52.3492889404297,
+				-1.59167063236237
+			],
+			"observed": "2026-05-05",
+			"claims": {
+				"name": "Kenilworth Castle ( English Heritage)",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2026-05-05"
+			}
+		},
+		{
+			"id": "242527",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242527"
+			},
+			"at": [
+				52.329612,
+				-1.574683
+			],
+			"observed": "2026-09-18",
+			"claims": {
+				"name": "Kenilworth Cricket Club",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2026-09-18"
+			}
+		},
+		{
+			"id": "241598",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241598"
+			},
+			"at": [
+				52.350758,
+				-1.548333
+			],
+			"observed": "2025-03-06",
+			"claims": {
+				"name": "Kenilworth Golf Club",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-03-06"
+			}
+		},
+		{
+			"id": "242211",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242211"
+			},
+			"at": [
+				52.347239,
+				-1.573985
+			],
+			"observed": "2026-07-06",
+			"claims": {
+				"name": "Kenilworth Grange Nursing Home",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-07-06"
+			}
+		},
+		{
+			"id": "241322",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241322"
+			},
+			"at": [
+				52.358273,
+				-1.572308
+			],
+			"observed": "2025-09-22",
+			"claims": {
+				"name": "Kenilworth Lawn Tennis and Squash Club",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2025-09-22"
+			}
+		},
+		{
+			"id": "241473",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241473"
+			},
+			"at": [
+				52.335934,
+				-1.565229
+			],
+			"observed": "2026-06-25",
+			"claims": {
+				"name": "Kenilworth Manor Nursing Home",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-06-25"
+			}
+		},
+		{
+			"id": "242583",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242583"
+			},
+			"at": [
+				52.348878,
+				-1.579666
+			],
+			"observed": "2026-09-16",
+			"claims": {
+				"name": "Kenilworth News",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2026-09-16"
+			}
+		},
+		{
+			"id": "241853",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241853"
+			},
+			"at": [
+				52.33278688,
+				-1.57728531
+			],
+			"observed": "2024-11-19",
+			"claims": {
+				"name": "Kenilworth Sporting",
+				"kind": "Mobile caterer",
+				"rating": "5",
+				"date": "2024-11-19"
+			}
+		},
+		{
+			"id": "241959",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241959"
+			},
+			"at": [
+				52.347259,
+				-1.577083
+			],
+			"observed": "2024-01-22",
+			"claims": {
+				"name": "Kenilworth Sports & Social Club Ltd.",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2024-01-22"
+			}
+		},
+		{
+			"id": "242095",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242095"
+			},
+			"at": [
+				52.338261,
+				-1.559938
+			],
+			"observed": "2023-09-27",
+			"claims": {
+				"name": "Kenilworth Wardens Sports Club",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2023-09-27"
+			}
+		},
+		{
+			"id": "1414852",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1414852"
+			},
+			"at": [
+				52.3423896,
+				-1.5791317
+			],
+			"observed": "2025-11-28",
+			"claims": {
+				"name": "La ARI",
+				"kind": "Other catering premises",
+				"rating": "5",
+				"date": "2025-11-28"
+			}
+		},
+		{
+			"id": "623680",
+			"link": {
+				"key": "fhrs:id",
+				"value": "623680"
+			},
+			"at": [
+				52.344185,
+				-1.579769
+			],
+			"observed": "2025-03-06",
+			"claims": {
+				"name": "Le Raj Spice",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-03-06"
+			}
+		},
+		{
+			"id": "1030353",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1030353"
+			},
+			"at": [
+				52.3434358,
+				-1.5734044
+			],
+			"observed": "2026-08-05",
+			"claims": {
+				"name": "Little Cubs Nursery",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-08-05"
+			}
+		},
+		{
+			"id": "241535",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241535"
+			},
+			"at": [
+				52.339784,
+				-1.575965
+			],
+			"observed": "2025-06-05",
+			"claims": {
+				"name": "Mavi",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-06-05"
+			}
+		},
+		{
+			"id": "242530",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242530"
+			},
+			"at": [
+				52.338394,
+				-1.574437
+			],
+			"observed": "2025-11-20",
+			"claims": {
+				"name": "MFG Esso Kenilworth",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2025-11-20"
+			}
+		},
+		{
+			"id": "1770339",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1770339"
+			},
+			"at": [
+				52.3425546,
+				-1.5793713
+			],
+			"observed": "2024-11-14",
+			"claims": {
+				"name": "Morning Sunshine Coffee Ltd",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2024-11-14"
+			}
+		},
+		{
+			"id": "242204",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242204"
+			},
+			"at": [
+				52.343364,
+				-1.57392
+			],
+			"observed": "2026-06-29",
+			"claims": {
+				"name": "Mulan Chinese Takeaway",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2026-06-29"
+			}
+		},
+		{
+			"id": "242418",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242418"
+			},
+			"at": [
+				52.336337,
+				-1.574897
+			],
+			"observed": "2025-08-14",
+			"claims": {
+				"name": "Newlands Residential Home",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2025-08-14"
+			}
+		},
+		{
+			"id": "241662",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241662"
+			},
+			"at": [
+				52.349881,
+				-1.583664
+			],
+			"observed": "2024-07-24",
+			"claims": {
+				"name": "Old Bakery Hotel",
+				"kind": "Hotel/bed & breakfast/guest house",
+				"rating": "5",
+				"date": "2024-07-24"
+			}
+		},
+		{
+			"id": "242110",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242110"
+			},
+			"at": [
+				52.322481,
+				-1.543045
+			],
+			"observed": "2026-09-01",
+			"claims": {
+				"name": "Old Leamingtonians RFC",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2026-09-01"
+			}
+		},
+		{
+			"id": "241620",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241620"
+			},
+			"at": [
+				52.336806,
+				-1.585342
+			],
+			"observed": "2025-11-20",
+			"claims": {
+				"name": "One Stop",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2025-11-20"
+			}
+		},
+		{
+			"id": "241813",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241813"
+			},
+			"at": [
+				52.344185,
+				-1.579769
+			],
+			"observed": "2024-10-24",
+			"claims": {
+				"name": "Papa Johns Pizza",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2024-10-24"
+			}
+		},
+		{
+			"id": "699038",
+			"link": {
+				"key": "fhrs:id",
+				"value": "699038"
+			},
+			"at": [
+				52.34263505,
+				-1.5789373
+			],
+			"observed": "2025-07-09",
+			"claims": {
+				"name": "Pitt Stop",
+				"kind": "Mobile caterer",
+				"rating": "5",
+				"date": "2025-07-09"
+			}
+		},
+		{
+			"id": "241467",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241467"
+			},
+			"at": [
+				52.355031,
+				-1.609721
+			],
+			"observed": "2025-07-24",
+			"claims": {
+				"name": "Pleasance Farm B&B",
+				"kind": "Hotel/bed & breakfast/guest house",
+				"rating": "5",
+				"date": "2025-07-24"
+			}
+		},
+		{
+			"id": "242558",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242558"
+			},
+			"at": [
+				52.348988,
+				-1.590704
+			],
+			"observed": "2024-12-05",
+			"claims": {
+				"name": "Queen and Castle",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2024-12-05"
+			}
+		},
+		{
+			"id": "241839",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241839"
+			},
+			"at": [
+				52.355571,
+				-1.593668
+			],
+			"observed": "2025-09-25",
+			"claims": {
+				"name": "Rainbow Club",
+				"kind": "School/college/university",
+				"rating": "5",
+				"date": "2025-09-25"
+			}
+		},
+		{
+			"id": "242249",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242249"
+			},
+			"at": [
+				52.341418,
+				-1.577608
+			],
+			"observed": "2026-09-23",
+			"claims": {
+				"name": "Raku 57",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2026-09-23"
+			}
+		},
+		{
+			"id": "241874",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241874"
+			},
+			"at": [
+				52.324966,
+				-1.555565
+			],
+			"observed": "2024-09-27",
+			"claims": {
+				"name": "Riverside Hotel",
+				"kind": "Hotel/bed & breakfast/guest house",
+				"rating": "5",
+				"date": "2024-09-27"
+			}
+		},
+		{
+			"id": "241407",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241407"
+			},
+			"at": [
+				52.34229,
+				-1.577644
+			],
+			"observed": "2024-11-07",
+			"claims": {
+				"name": "Rocking Horse Coffee Shop",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2024-11-07"
+			}
+		},
+		{
+			"id": "1760951",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1760951"
+			},
+			"at": [
+				52.3415641784668,
+				-1.57829701900482
+			],
+			"observed": "2026-10-23",
+			"claims": {
+				"name": "Rosti Haus",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2026-10-23"
+			}
+		},
+		{
+			"id": "241357",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241357"
+			},
+			"at": [
+				52.350889,
+				-1.578957
+			],
+			"observed": "2024-01-31",
+			"claims": {
+				"name": "Royal Oak",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2024-01-31"
+			}
+		},
+		{
+			"id": "242613",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242613"
+			},
+			"at": [
+				52.341418,
+				-1.577608
+			],
+			"observed": "2026-04-21",
+			"claims": {
+				"name": "Sainsbury's  Supermarket",
+				"kind": "Retailers - supermarkets/hypermarkets",
+				"rating": "5",
+				"date": "2026-04-21"
+			}
+		},
+		{
+			"id": "242745",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242745"
+			},
+			"at": [
+				52.349834,
+				-1.575414
+			],
+			"observed": "2026-01-14",
+			"claims": {
+				"name": "School Lane Fish Bar",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2026-01-14"
+			}
+		},
+		{
+			"id": "577151",
+			"link": {
+				"key": "fhrs:id",
+				"value": "577151"
+			},
+			"at": [
+				52.345275,
+				-1.567883
+			],
+			"observed": "2023-09-05",
+			"claims": {
+				"name": "Simply Fresh",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2023-09-05"
+			}
+		},
+		{
+			"id": "241927",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241927"
+			},
+			"at": [
+				52.341418,
+				-1.577608
+			],
+			"observed": "2026-04-29",
+			"claims": {
+				"name": "Sonali",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2026-04-29"
+			}
+		},
+		{
+			"id": "242482",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242482"
+			},
+			"at": [
+				52.338394,
+				-1.574437
+			],
+			"observed": "2025-07-22",
+			"claims": {
+				"name": "St Johns Church Kitchen & Church Hall Kitchen",
+				"kind": "Other catering premises",
+				"rating": "5",
+				"date": "2025-07-22"
+			}
+		},
+		{
+			"id": "242553",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242553"
+			},
+			"at": [
+				52.3408317565918,
+				-1.57764303684235
+			],
+			"observed": "2026-02-25",
+			"claims": {
+				"name": "Starlight Kebab & Pizza Rio",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2026-02-25"
+			}
+		},
+		{
+			"id": "242622",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242622"
+			},
+			"at": [
+				52.345275,
+				-1.567883
+			],
+			"observed": "2025-08-01",
+			"claims": {
+				"name": "Steve Crowe & Son Butchers",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2025-08-01"
+			}
+		},
+		{
+			"id": "242258",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242258"
+			},
+			"at": [
+				52.344185,
+				-1.579769
+			],
+			"observed": "2026-01-15",
+			"claims": {
+				"name": "Subway",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "5",
+				"date": "2026-01-15"
+			}
+		},
+		{
+			"id": "242456",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242456"
+			},
+			"at": [
+				52.344185,
+				-1.579768
+			],
+			"observed": "2024-12-10",
+			"claims": {
+				"name": "Sunam",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2024-12-10"
+			}
+		},
+		{
+			"id": "997333",
+			"link": {
+				"key": "fhrs:id",
+				"value": "997333"
+			},
+			"at": [
+				52.341519,
+				-1.575831
+			],
+			"observed": "2025-11-28",
+			"claims": {
+				"name": "Sushi Daily",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2025-11-28"
+			}
+		},
+		{
+			"id": "242016",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242016"
+			},
+			"at": [
+				52.341275,
+				-1.580574
+			],
+			"observed": "2024-05-03",
+			"claims": {
+				"name": "Talisman Theatre Company",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2024-05-03"
+			}
+		},
+		{
+			"id": "242077",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242077"
+			},
+			"at": [
+				52.347297,
+				-1.557969
+			],
+			"observed": "2026-07-28",
+			"claims": {
+				"name": "Tesco Express",
+				"kind": "Retailers - supermarkets/hypermarkets",
+				"rating": "5",
+				"date": "2026-07-28"
+			}
+		},
+		{
+			"id": "242307",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242307"
+			},
+			"at": [
+				52.3359449,
+				-1.5727096
+			],
+			"observed": "2026-04-20",
+			"claims": {
+				"name": "Texaco",
+				"kind": "Retailers - other",
+				"rating": "5",
+				"date": "2026-04-20"
+			}
+		},
+		{
+			"id": "241650",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241650"
+			},
+			"at": [
+				52.343008,
+				-1.577314
+			],
+			"observed": "2026-08-20",
+			"claims": {
+				"name": "Thai Kitchen",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2026-08-20"
+			}
+		},
+		{
+			"id": "241850",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241850"
+			},
+			"at": [
+				52.3502028,
+				-1.5815456
+			],
+			"observed": "2026-07-27",
+			"claims": {
+				"name": "The Abbey Field",
+				"kind": "Hotel/bed & breakfast/guest house",
+				"rating": "5",
+				"date": "2026-07-27"
+			}
+		},
+		{
+			"id": "241367",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241367"
+			},
+			"at": [
+				52.34324,
+				-1.579279
+			],
+			"observed": "2025-03-06",
+			"claims": {
+				"name": "The Ark",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-03-06"
+			}
+		},
+		{
+			"id": "1132752",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1132752"
+			},
+			"at": [
+				52.3559927,
+				-1.584681
+			],
+			"observed": "2025-09-22",
+			"claims": {
+				"name": "The Burrow Nursery",
+				"kind": "Other catering premises",
+				"rating": "5",
+				"date": "2025-09-22"
+			}
+		},
+		{
+			"id": "632071",
+			"link": {
+				"key": "fhrs:id",
+				"value": "632071"
+			},
+			"at": [
+				52.338261,
+				-1.559938
+			],
+			"observed": "2025-09-16",
+			"claims": {
+				"name": "The Cow Patch Cafe",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-09-16"
+			}
+		},
+		{
+			"id": "1532929",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1532929"
+			},
+			"at": [
+				52.3497035,
+				-1.5824074
+			],
+			"observed": "2025-10-17",
+			"claims": {
+				"name": "The Creative Cafe",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-10-17"
+			}
+		},
+		{
+			"id": "241446",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241446"
+			},
+			"at": [
+				52.350889,
+				-1.578957
+			],
+			"observed": "2025-10-02",
+			"claims": {
+				"name": "The Cross at Kenilworth",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-10-02"
+			}
+		},
+		{
+			"id": "241843",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241843"
+			},
+			"at": [
+				52.342855,
+				-1.579752
+			],
+			"observed": "2025-08-08",
+			"claims": {
+				"name": "The Dictum of Kenilworth",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2025-08-08"
+			}
+		},
+		{
+			"id": "351761",
+			"link": {
+				"key": "fhrs:id",
+				"value": "351761"
+			},
+			"at": [
+				52.336725,
+				-1.585299
+			],
+			"observed": "2026-09-18",
+			"claims": {
+				"name": "The Gauntlet",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2026-09-18"
+			}
+		},
+		{
+			"id": "241358",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241358"
+			},
+			"at": [
+				52.344185,
+				-1.579769
+			],
+			"observed": "2026-04-16",
+			"claims": {
+				"name": "The Kenilworth Centre - Community Dinner",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2026-04-16"
+			}
+		},
+		{
+			"id": "351814",
+			"link": {
+				"key": "fhrs:id",
+				"value": "351814"
+			},
+			"at": [
+				52.343008,
+				-1.577314
+			],
+			"observed": "2024-10-17",
+			"claims": {
+				"name": "The Station House@Poms",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2024-10-17"
+			}
+		},
+		{
+			"id": "241732",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241732"
+			},
+			"at": [
+				52.349655,
+				-1.583402
+			],
+			"observed": "2026-01-08",
+			"claims": {
+				"name": "The Virgins and Castle",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2026-01-08"
+			}
+		},
+		{
+			"id": "1132748",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1132748"
+			},
+			"at": [
+				52.3410472,
+				-1.5742446
+			],
+			"observed": "2024-01-31",
+			"claims": {
+				"name": "The Wellbourne Clinic",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2024-01-31"
+			}
+		},
+		{
+			"id": "242637",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242637"
+			},
+			"at": [
+				52.347297,
+				-1.557969
+			],
+			"observed": "2024-09-10",
+			"claims": {
+				"name": "Tiltyard Public House",
+				"kind": "Pub/bar/nightclub",
+				"rating": "5",
+				"date": "2024-09-10"
+			}
+		},
+		{
+			"id": "241400",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241400"
+			},
+			"at": [
+				52.348956,
+				-1.589119
+			],
+			"observed": "2024-11-22",
+			"claims": {
+				"name": "Time for Tea Prossers",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2024-11-22"
+			}
+		},
+		{
+			"id": "242689",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242689"
+			},
+			"at": [
+				52.349881,
+				-1.583664
+			],
+			"observed": "2025-09-03",
+			"claims": {
+				"name": "Vynes of Kenilworth",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-09-03"
+			}
+		},
+		{
+			"id": "241899",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241899"
+			},
+			"at": [
+				52.341519,
+				-1.575831
+			],
+			"observed": "2024-05-24",
+			"claims": {
+				"name": "Waitrose",
+				"kind": "Retailers - supermarkets/hypermarkets",
+				"rating": "5",
+				"date": "2024-05-24"
+			}
+		},
+		{
+			"id": "242214",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242214"
+			},
+			"at": [
+				52.341127,
+				-1.574235
+			],
+			"observed": "2026-10-16",
+			"claims": {
+				"name": "Waverley Day Centre",
+				"kind": "Caring Premises",
+				"rating": "5",
+				"date": "2026-10-16"
+			}
+		},
+		{
+			"id": "1627734",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1627734"
+			},
+			"at": [
+				52.3423699,
+				-1.577528
+			],
+			"observed": "2025-09-18",
+			"claims": {
+				"name": "Wedge",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-09-18"
+			}
+		},
+		{
+			"id": "1424809",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1424809"
+			},
+			"at": [
+				52.3454049,
+				-1.5675914
+			],
+			"observed": "2025-05-23",
+			"claims": {
+				"name": "Whitemoor's",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "5",
+				"date": "2025-05-23"
+			}
+		},
+		{
+			"id": "1616134",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1616134"
+			},
+			"at": [
+				52.355031,
+				-1.609721
+			],
+			"observed": "2026-05-05",
+			"claims": {
+				"name": "Wildflower Bar",
+				"kind": "Mobile caterer",
+				"rating": "5",
+				"date": "2026-05-05"
+			}
+		},
+		{
+			"id": "242331",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242331"
+			},
+			"at": [
+				52.348956,
+				-1.589119
+			],
+			"observed": "2025-05-15",
+			"claims": {
+				"name": "Clarendon Arms",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2025-05-15"
+			}
+		},
+		{
+			"id": "242149",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242149"
+			},
+			"at": [
+				52.351642,
+				-1.568481
+			],
+			"observed": "2025-02-20",
+			"claims": {
+				"name": "Engine Inn",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2025-02-20"
+			}
+		},
+		{
+			"id": "1086608",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1086608"
+			},
+			"at": [
+				52.3489,
+				-1.5893777
+			],
+			"observed": "2025-01-27",
+			"claims": {
+				"name": "Morning Sunshine Coffee",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2025-01-27"
+			}
+		},
+		{
+			"id": "242151",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242151"
+			},
+			"at": [
+				52.342456,
+				-1.578758
+			],
+			"observed": "2026-02-03",
+			"claims": {
+				"name": "Nur Nur Paradise",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2026-02-03"
+			}
+		},
+		{
+			"id": "1260860",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1260860"
+			},
+			"at": [
+				52.3434245,
+				-1.5792879
+			],
+			"observed": "2025-09-05",
+			"claims": {
+				"name": "Tambayan",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "4",
+				"date": "2025-09-05"
+			}
+		},
+		{
+			"id": "1093335",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1093335"
+			},
+			"at": [
+				52.3224830627441,
+				-1.54304504394531
+			],
+			"observed": "2024-10-01",
+			"claims": {
+				"name": "Babe Ke Gurdwara",
+				"kind": "Other catering premises",
+				"rating": "3",
+				"date": "2024-10-01"
+			}
+		},
+		{
+			"id": "242046",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242046"
+			},
+			"at": [
+				52.341418,
+				-1.577608
+			],
+			"observed": "2025-12-11",
+			"claims": {
+				"name": "L'Aurent",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "3",
+				"date": "2025-12-11"
+			}
+		},
+		{
+			"id": "242388",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242388"
+			},
+			"at": [
+				52.33966,
+				-1.576333
+			],
+			"observed": "2026-02-21",
+			"claims": {
+				"name": "Tai Pan",
+				"kind": "Takeaway/sandwich shop",
+				"rating": "3",
+				"date": "2026-02-21"
+			}
+		},
+		{
+			"id": "241845",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241845"
+			},
+			"at": [
+				52.344185,
+				-1.579769
+			],
+			"observed": "2026-07-23",
+			"claims": {
+				"name": "The Almanack Kenilworth Ltd",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "3",
+				"date": "2026-07-23"
+			}
+		},
+		{
+			"id": "241766",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241766"
+			},
+			"at": [
+				52.338394,
+				-1.574437
+			],
+			"observed": "2026-05-06",
+			"claims": {
+				"name": "Townhouse Hotels The Peacock/Hot Chick",
+				"kind": "Hotel/bed & breakfast/guest house",
+				"rating": "3",
+				"date": "2026-05-06"
+			}
+		},
+		{
+			"id": "242012",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242012"
+			},
+			"at": [
+				52.343884,
+				-1.581005
+			],
+			"observed": "2026-01-14",
+			"claims": {
+				"name": "212 @ Holiday Inn",
+				"kind": "Hotel/bed & breakfast/guest house",
+				"rating": "2",
+				"date": "2026-01-14"
+			}
+		},
+		{
+			"id": "1093347",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1093347"
+			},
+			"at": [
+				52.3439846,
+				-1.5795693
+			],
+			"observed": "2025-08-21",
+			"claims": {
+				"name": "Hot Tava",
+				"kind": "Other catering premises",
+				"rating": "2",
+				"date": "2025-08-21"
+			}
+		},
+		{
+			"id": "241420",
+			"link": {
+				"key": "fhrs:id",
+				"value": "241420"
+			},
+			"at": [
+				52.338261,
+				-1.559938
+			],
+			"observed": "2025-05-01",
+			"claims": {
+				"name": "Kenilworth Rugby Football Club",
+				"kind": "Pub/bar/nightclub",
+				"rating": "2",
+				"date": "2025-05-01"
+			}
+		},
+		{
+			"id": "242315",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242315"
+			},
+			"at": [
+				52.336485,
+				-1.578506
+			],
+			"observed": "2026-06-18",
+			"claims": {
+				"name": "St Johns Budgens",
+				"kind": "Retailers - other",
+				"rating": "2",
+				"date": "2026-06-18"
+			}
+		},
+		{
+			"id": "351752",
+			"link": {
+				"key": "fhrs:id",
+				"value": "351752"
+			},
+			"at": [
+				52.353789,
+				-1.560694
+			],
+			"observed": "2025-09-02",
+			"claims": {
+				"name": "Woodland Convenience Store",
+				"kind": "Retailers - other",
+				"rating": "2",
+				"date": "2025-09-02"
+			}
+		},
+		{
+			"id": "351779",
+			"link": {
+				"key": "fhrs:id",
+				"value": "351779"
+			},
+			"at": [
+				52.341418,
+				-1.577608
+			],
+			"claims": {
+				"name": "Lion",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "AwaitingInspection"
+			}
+		},
+		{
+			"id": "699029",
+			"link": {
+				"key": "fhrs:id",
+				"value": "699029"
+			},
+			"at": [
+				52.343008,
+				-1.577314
+			],
+			"claims": {
+				"name": "My Greek Station",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "AwaitingInspection"
+			}
+		},
+		{
+			"id": "2011025",
+			"link": {
+				"key": "fhrs:id",
+				"value": "2011025"
+			},
+			"at": [
+				52.343283,
+				-1.579519
+			],
+			"claims": {
+				"name": "Sabins Sandwich Shop",
+				"kind": "Restaurant/Cafe/Canteen",
+				"rating": "AwaitingInspection"
+			}
+		},
+		{
+			"id": "242408",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242408"
+			},
+			"at": [
+				52.349707,
+				-1.572655
+			],
+			"claims": {
+				"name": "Tesco Express",
+				"kind": "Retailers - other",
+				"rating": "AwaitingInspection"
+			}
+		},
+		{
+			"id": "1694783",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1694783"
+			},
+			"at": [
+				52.3442822,
+				-1.5798307
+			],
+			"claims": {
+				"name": "Abbey End Post Office",
+				"kind": "Retailers - other",
+				"rating": "Exempt"
+			}
+		},
+		{
+			"id": "1915511",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1915511"
+			},
+			"at": [
+				52.3554885,
+				-1.5695003
+			],
+			"claims": {
+				"name": "Blue",
+				"kind": "Retailers - other",
+				"rating": "Exempt"
+			}
+		},
+		{
+			"id": "242803",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242803"
+			},
+			"at": [
+				52.342331,
+				-1.57917
+			],
+			"claims": {
+				"name": "Card Factory",
+				"kind": "Retailers - other",
+				"rating": "Exempt"
+			}
+		},
+		{
+			"id": "1823531",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1823531"
+			},
+			"at": [
+				52.3336496,
+				-1.5761029
+			],
+			"claims": {
+				"name": "GloVitality",
+				"kind": "Retailers - other",
+				"rating": "Exempt"
+			}
+		},
+		{
+			"id": "1209127",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1209127"
+			},
+			"at": [
+				52.355037689209,
+				-1.60969698429108
+			],
+			"claims": {
+				"name": "Honiley Shoot",
+				"kind": "Retailers - other",
+				"rating": "Exempt"
+			}
+		},
+		{
+			"id": "1980994",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1980994"
+			},
+			"at": [
+				52.34274,
+				-1.5784802
+			],
+			"claims": {
+				"name": "House of Beauty",
+				"kind": "Retailers - other",
+				"rating": "Exempt"
+			}
+		},
+		{
+			"id": "242191",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242191"
+			},
+			"at": [
+				52.347297668457,
+				-1.55796897411346
+			],
+			"claims": {
+				"name": "Leyes Lane Pharmacy Ltd",
+				"kind": "Retailers - other",
+				"rating": "Exempt"
+			}
+		},
+		{
+			"id": "1406840",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1406840"
+			},
+			"at": [
+				52.3418628,
+				-1.5838163
+			],
+			"claims": {
+				"name": "MASALACURRY LTD",
+				"kind": "Manufacturers/packers",
+				"rating": "Exempt"
+			}
+		},
+		{
+			"id": "242593",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242593"
+			},
+			"at": [
+				52.347785,
+				-1.578311
+			],
+			"claims": {
+				"name": "Priory Theatre",
+				"kind": "Retailers - other",
+				"rating": "Exempt"
+			}
+		},
+		{
+			"id": "1886521",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1886521"
+			},
+			"at": [
+				52.3420582,
+				-1.5781649
+			],
+			"claims": {
+				"name": "Robert Dyas",
+				"kind": "Retailers - other",
+				"rating": "Exempt"
+			}
+		},
+		{
+			"id": "590527",
+			"link": {
+				"key": "fhrs:id",
+				"value": "590527"
+			},
+			"at": [
+				52.342855,
+				-1.579752
+			],
+			"claims": {
+				"name": "Savers Health and Beauty",
+				"kind": "Retailers - other",
+				"rating": "Exempt"
+			}
+		},
+		{
+			"id": "242732",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242732"
+			},
+			"at": [
+				52.34596,
+				-1.57824
+			],
+			"claims": {
+				"name": "St Nicholas Church Parochial Hall",
+				"kind": "Other catering premises",
+				"rating": "Exempt"
+			}
+		},
+		{
+			"id": "1971308",
+			"link": {
+				"key": "fhrs:id",
+				"value": "1971308"
+			},
+			"at": [
+				52.322434,
+				-1.5434228
+			],
+			"claims": {
+				"name": "Virtue Pizza",
+				"kind": "Distributors/Transporters",
+				"rating": "Exempt"
+			}
+		},
+		{
+			"id": "242522",
+			"link": {
+				"key": "fhrs:id",
+				"value": "242522"
+			},
+			"at": [
+				52.338732,
+				-1.56576
+			],
+			"claims": {
+				"name": "Windy Arbour News",
+				"kind": "Retailers - other",
+				"rating": "Exempt"
+			}
+		}
+	],
+	"retrieved": "2026-11-09"
+}

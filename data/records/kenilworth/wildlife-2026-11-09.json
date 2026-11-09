@@ -1,0 +1,5839 @@
+{
+	"source": "NBN Atlas",
+	"prefix": "wildlife",
+	"records": [
+		{
+			"id": "5149e790-8ab4-4652-ab1a-f6ad1488ebbc",
+			"at": [
+				52.35209,
+				-1.572941
+			],
+			"observed": "2023-07-21",
+			"claims": {
+				"name": "Sarcophaga",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "17e82a7f-872b-4c09-ba86-065737edbc05",
+			"at": [
+				52.33926,
+				-1.555452
+			],
+			"observed": "2021-07-23",
+			"claims": {
+				"name": "Small Fleck-winged Snipefly",
+				"seen": "2021-07"
+			}
+		},
+		{
+			"id": "080fc39c-4464-46dc-823f-4ebcb4864557",
+			"at": [
+				52.348,
+				-1.611
+			],
+			"observed": "2025-05-26",
+			"claims": {
+				"name": "Blackbird",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "31d97ae3-a276-48b3-96d0-06b2eca881f7",
+			"at": [
+				52.344,
+				-1.611
+			],
+			"observed": "2025-05-27",
+			"claims": {
+				"name": "Pheasant",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "f8c32940-34a6-4a9f-83ef-c87c51d3ffc4",
+			"at": [
+				52.352089,
+				-1.572501
+			],
+			"observed": "2025-07-02",
+			"claims": {
+				"name": "Dock Bug",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "5ec229a2-a13a-41a9-9853-06dffdda9a97",
+			"at": [
+				52.346,
+				-1.611
+			],
+			"observed": "2025-05-25",
+			"claims": {
+				"name": "Muntjac",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "1b5d1b84-4d9b-46e8-988d-00755650b0ca",
+			"at": [
+				52.344,
+				-1.611
+			],
+			"observed": "2025-05-27",
+			"claims": {
+				"name": "Blackbird",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "3b857ff9-d12d-484a-99bd-1b0b3b07f5f2",
+			"at": [
+				52.346,
+				-1.599
+			],
+			"observed": "2026-06-19",
+			"claims": {
+				"name": "Muntjac",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "31082b63-4129-4e4b-8c16-122aa8c40f54",
+			"at": [
+				52.348,
+				-1.613
+			],
+			"observed": "2026-06-05",
+			"claims": {
+				"name": "Rabbit",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "acafb7c3-8a7b-495b-bd18-18c88e6fdf8e",
+			"at": [
+				52.341,
+				-1.602
+			],
+			"observed": "2025-05-30",
+			"claims": {
+				"name": "Red Fox",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "2629e7d9-1544-4ded-ae4a-44ecba108204",
+			"at": [
+				52.341,
+				-1.601
+			],
+			"observed": "2026-06-12",
+			"claims": {
+				"name": "Robin",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "925174e0-3efe-4dac-8dfe-9eaa5a520bbf",
+			"at": [
+				52.346,
+				-1.611
+			],
+			"observed": "2026-05-25",
+			"claims": {
+				"name": "Roe Deer",
+				"seen": "2026-05"
+			}
+		},
+		{
+			"id": "5e2bb4f8-f7d2-4999-88ad-d84a286e717c",
+			"at": [
+				52.341,
+				-1.601
+			],
+			"observed": "2026-05-24",
+			"claims": {
+				"name": "Brown Hare",
+				"seen": "2026-05"
+			}
+		},
+		{
+			"id": "a0b8a083-11e3-492e-b1a6-adb88ccc4dc8",
+			"at": [
+				52.341,
+				-1.601
+			],
+			"observed": "2026-06-17",
+			"claims": {
+				"name": "Weasel",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "383fe91e-ce71-4e03-aed2-f689c74cf34e",
+			"at": [
+				52.348,
+				-1.611
+			],
+			"observed": "2026-06-21",
+			"claims": {
+				"name": "Robin",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "d9ea421a-2fb5-4ee4-9169-fed8861d6419",
+			"at": [
+				52.346,
+				-1.599
+			],
+			"observed": "2026-05-28",
+			"claims": {
+				"name": "Grey Squirrel",
+				"seen": "2026-05"
+			}
+		},
+		{
+			"id": "a2843239-0e9c-4a49-943f-68ba8b29b8bd",
+			"at": [
+				52.348,
+				-1.611
+			],
+			"observed": "2026-06-16",
+			"claims": {
+				"name": "Brown Hare",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "a153cd87-bb6d-4f56-b137-6356ce589eb4",
+			"at": [
+				52.346,
+				-1.599
+			],
+			"observed": "2025-05-21",
+			"claims": {
+				"name": "Woodpigeon",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "3365f5be-5f6c-4e51-996b-89244cfda670",
+			"at": [
+				52.348,
+				-1.611
+			],
+			"observed": "2026-06-06",
+			"claims": {
+				"name": "Woodpigeon",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "ed92352a-ee3e-48cc-a446-6fc072ea5447",
+			"at": [
+				52.34783,
+				-1.587
+			],
+			"observed": "2025-06-09",
+			"claims": {
+				"name": "Wren",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "1660ddc1-0231-4350-9cc3-3fd2b6088ed3",
+			"at": [
+				52.347,
+				-1.605
+			],
+			"observed": "2025-05-30",
+			"claims": {
+				"name": "Rabbit",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "cfdebe32-8825-4e3a-9d50-535818403ef8",
+			"at": [
+				52.33926,
+				-1.555452
+			],
+			"observed": "2025-04-20",
+			"claims": {
+				"name": "Eudasyphora cyanella",
+				"seen": "2025-04"
+			}
+		},
+		{
+			"id": "c95248ec-603a-4ed0-8b72-a4c673d4ae10",
+			"at": [
+				52.348,
+				-1.608
+			],
+			"observed": "2025-06-08",
+			"claims": {
+				"name": "Rabbit",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "d02efdc4-3ffc-4adc-916b-c25a3b016532",
+			"at": [
+				52.344,
+				-1.614
+			],
+			"observed": "2024-05-28",
+			"claims": {
+				"name": "Blackbird",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "8bee8acf-6063-4d11-a0fe-7f624e7e4648",
+			"at": [
+				52.343,
+				-1.615
+			],
+			"observed": "2025-05-19",
+			"claims": {
+				"name": "Rabbit",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "4cc08f5b-cc6f-41f2-a2c8-8c50888d13f5",
+			"at": [
+				52.343,
+				-1.615
+			],
+			"observed": "2026-06-16",
+			"claims": {
+				"name": "Roe Deer",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "15319bd1-dde8-48ff-b341-7acd3783ee30",
+			"at": [
+				52.344,
+				-1.614
+			],
+			"observed": "2025-05-19",
+			"claims": {
+				"name": "Pheasant",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "3bb2d209-e168-43e5-a363-2225f27482e0",
+			"at": [
+				52.344,
+				-1.614
+			],
+			"observed": "2024-05-30",
+			"claims": {
+				"name": "Brown Rat",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "3c8e603f-1eaa-4b7a-8120-33ba7126c21b",
+			"at": [
+				52.348,
+				-1.611
+			],
+			"observed": "2026-06-11",
+			"claims": {
+				"name": "Roe Deer",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "992f9250-5b0a-4a8e-ae93-50541b049bcc",
+			"at": [
+				52.348,
+				-1.611
+			],
+			"observed": "2025-05-23",
+			"claims": {
+				"name": "Song Thrush",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "56436498-43d8-4223-a9d8-c7b3e0fbae1c",
+			"at": [
+				52.341,
+				-1.601
+			],
+			"observed": "2026-06-07",
+			"claims": {
+				"name": "Brown Rat",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "5ff52d39-0d6e-49c7-8c25-62ebe1627435",
+			"at": [
+				52.346909,
+				-1.58224
+			],
+			"observed": "2020-05-26",
+			"claims": {
+				"name": "Macrophya",
+				"seen": "2020-05"
+			}
+		},
+		{
+			"id": "4615d499-746d-463f-94bc-3b94fd388545",
+			"at": [
+				52.347087,
+				-1.581798
+			],
+			"observed": "2025-06-08",
+			"claims": {
+				"name": "Harmonia axyridis form succinea",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "95018f85-b5ba-4cc1-ac57-8a881173bfdd",
+			"at": [
+				52.347267,
+				-1.581649
+			],
+			"observed": "2024-05-27",
+			"claims": {
+				"name": "Common Blue Damselfly",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "dac0c3d3-fdc7-4ff4-a043-a0a1a9626b75",
+			"at": [
+				52.350374,
+				-1.563213
+			],
+			"observed": "2024-05-04",
+			"claims": {
+				"name": "Cramp-Ball Fungus Weevil",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "5ade3cfc-258e-497b-9f26-e4c433528f04",
+			"at": [
+				52.351955,
+				-1.560463
+			],
+			"observed": "2026-05-24",
+			"claims": {
+				"name": "Harlequin Ladybird",
+				"seen": "2026-05"
+			}
+		},
+		{
+			"id": "40a83ca6-3e41-49bf-996c-6e4ce5acb50b",
+			"at": [
+				52.347177,
+				-1.58165
+			],
+			"observed": "2025-06-11",
+			"claims": {
+				"name": "Oedemera lurida",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "5084fc45-098a-4d3a-804e-dab2580ab138",
+			"at": [
+				52.346998,
+				-1.582092
+			],
+			"observed": "2023-07-17",
+			"claims": {
+				"name": "Pouting Woodlouse-fly",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "941933b1-2a4c-439e-9d55-37a3d5a9f63a",
+			"at": [
+				52.345974,
+				-1.57212
+			],
+			"observed": "2023-09-29",
+			"claims": {
+				"name": "7-spot Ladybird",
+				"seen": "2023-09"
+			}
+		},
+		{
+			"id": "05531c71-ed71-4351-926e-b22be1be469c",
+			"at": [
+				52.347177,
+				-1.58165
+			],
+			"observed": "2025-06-11",
+			"claims": {
+				"name": "Swollen-thighed Beetle",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "35096c36-49ff-43f5-82ca-c0eaaa0c5b34",
+			"at": [
+				52.347712,
+				-1.588119
+			],
+			"observed": "2023-05-27",
+			"claims": {
+				"name": "Cantharis rustica",
+				"seen": "2023-05"
+			}
+		},
+		{
+			"id": "06f91166-cc43-4bd8-aaf1-54e16f7cb06f",
+			"at": [
+				52.341,
+				-1.602
+			],
+			"observed": "2024-05-27",
+			"claims": {
+				"name": "Jackdaw",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "45cfc189-65cd-41aa-9455-fd8bef5fe3e6",
+			"at": [
+				52.346909,
+				-1.58224
+			],
+			"observed": "2020-05-26",
+			"claims": {
+				"name": "2-spot Ladybird",
+				"seen": "2020-05"
+			}
+		},
+		{
+			"id": "de134ed2-34a1-4c57-bb7a-02abafc69f7c",
+			"at": [
+				52.34767,
+				-1.578738
+			],
+			"observed": "2023-03-23",
+			"claims": {
+				"name": "Rock Dove",
+				"seen": "2023-03"
+			}
+		},
+		{
+			"id": "188daac9-ba38-446f-8aab-a545e601f93f",
+			"at": [
+				52.351021,
+				-1.575741
+			],
+			"observed": "2025-05-16",
+			"claims": {
+				"name": "Swollen-thighed Beetle",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "7212e3c0-d9c4-4dcc-a413-0b4a3afe3525",
+			"at": [
+				52.351021,
+				-1.575741
+			],
+			"observed": "2024-03-24",
+			"claims": {
+				"name": "Anthomyiidae",
+				"seen": "2024-03"
+			}
+		},
+		{
+			"id": "007bdd60-41aa-47f2-9e81-88be7aca5a52",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-07-17",
+			"claims": {
+				"name": "Turnip Tigress",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "6e473fcc-35d7-4901-a33f-b2048a135a81",
+			"at": [
+				52.350932,
+				-1.575742
+			],
+			"observed": "2021-03-06",
+			"claims": {
+				"name": "Long-tailed Tit",
+				"seen": "2021-03"
+			}
+		},
+		{
+			"id": "dd6df115-ebdb-4c38-87ce-329adfbf9cd6",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-03-08",
+			"claims": {
+				"name": "Buff-tailed Bumblebee",
+				"seen": "2025-03"
+			}
+		},
+		{
+			"id": "00e4d463-c9fd-48b2-8124-aca9aaa6ef01",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2024-06-06",
+			"claims": {
+				"name": "Early Bumblebee",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "0c92795f-3e11-4c36-8dce-13a0699acdfd",
+			"at": [
+				52.347358,
+				-1.581942
+			],
+			"observed": "2020-06-15",
+			"claims": {
+				"name": "Eupeodes",
+				"seen": "2020-06"
+			}
+		},
+		{
+			"id": "77c7acb3-5a04-40f9-9e15-8aab7dd8849b",
+			"at": [
+				52.349309,
+				-1.550213
+			],
+			"observed": "2026-03-18",
+			"claims": {
+				"name": "Smooth Newt",
+				"seen": "2026-03"
+			}
+		},
+		{
+			"id": "4b0289fc-5240-4473-b5b7-876391bc81bb",
+			"at": [
+				52.347358,
+				-1.581942
+			],
+			"observed": "2022-08-26",
+			"claims": {
+				"name": "Ptychoptera contaminata",
+				"seen": "2022-08"
+			}
+		},
+		{
+			"id": "b85dbb12-b5c4-424f-875c-d37d3e447c61",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2024-04-02",
+			"claims": {
+				"name": "Dark-edged Bee-fly",
+				"seen": "2024-04"
+			}
+		},
+		{
+			"id": "b846b71a-706e-4bc2-b477-627f935c12c2",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2024-10-27",
+			"claims": {
+				"name": "Long-tailed Tit",
+				"seen": "2024-10"
+			}
+		},
+		{
+			"id": "28c10c06-3dc6-4ba2-91c5-c2a5523405bc",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2025-03-27",
+			"claims": {
+				"name": "Magpie",
+				"seen": "2025-03"
+			}
+		},
+		{
+			"id": "3548a891-8d92-4ce3-b531-6525144d83a0",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2024-04-12",
+			"claims": {
+				"name": "Red Kite",
+				"seen": "2024-04"
+			}
+		},
+		{
+			"id": "7290f83f-cc9e-4c77-998d-9fc8fd114597",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2025-07-19",
+			"claims": {
+				"name": "Blackbird",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "9fbe80f1-cd30-4e1b-a65e-d39358ddedb3",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-10-03",
+			"claims": {
+				"name": "Tree Bumblebee",
+				"seen": "2021-10"
+			}
+		},
+		{
+			"id": "be11dd33-53f4-4028-b065-3abce2a59e56",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2022-10-09",
+			"claims": {
+				"name": "Face Fly",
+				"seen": "2022-10"
+			}
+		},
+		{
+			"id": "077ab75e-49d5-4840-b7df-381eabe7d0c7",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-06-24",
+			"claims": {
+				"name": "Lesser Earwig",
+				"seen": "2023-06"
+			}
+		},
+		{
+			"id": "92bfbcd3-8586-4399-8978-151f9007786f",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2026-07-28",
+			"claims": {
+				"name": "7-spot Ladybird",
+				"seen": "2026-07"
+			}
+		},
+		{
+			"id": "6361a1ca-5aba-419b-aec3-15f986617b60",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-09-17",
+			"claims": {
+				"name": "Limnephilus lunatus",
+				"seen": "2023-09"
+			}
+		},
+		{
+			"id": "00ba6fdc-2464-4d6d-89bc-c78bc346a370",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-07-02",
+			"claims": {
+				"name": "14-spot Ladybird",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "7d24349f-81be-441f-810f-daea07dc4a1c",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-09-18",
+			"claims": {
+				"name": "Common Carder Bee",
+				"seen": "2023-09"
+			}
+		},
+		{
+			"id": "a974f39b-bc3e-49f9-9d11-43080b6353e9",
+			"at": [
+				52.360994,
+				-1.561622
+			],
+			"observed": "2016-10-03",
+			"claims": {
+				"name": "Polycentropus flavomaculatus",
+				"seen": "2016-10"
+			}
+		},
+		{
+			"id": "cd75b206-7feb-4ef0-bd9c-1b0b63ff5112",
+			"at": [
+				52.348,
+				-1.611
+			],
+			"observed": "2025-06-08",
+			"claims": {
+				"name": "Red Fox",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "c5d2e244-9d2f-4472-a89e-92a3094152ab",
+			"at": [
+				52.344,
+				-1.611
+			],
+			"observed": "2025-05-25",
+			"claims": {
+				"name": "Brown Hare",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "87843e60-0034-4178-8b09-c72c16a6cd42",
+			"at": [
+				52.352562,
+				-1.579103
+			],
+			"observed": "2023-07-27",
+			"claims": {
+				"name": "Potato Capsid",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "52d2243b-a7cf-4d8f-80a5-a33c812e51fe",
+			"at": [
+				52.346998,
+				-1.582092
+			],
+			"observed": "2023-07-17",
+			"claims": {
+				"name": "Eriothrix rufomaculata",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "63112ef9-bfb8-4007-b068-0d170b810c5f",
+			"at": [
+				52.345185,
+				-1.572626
+			],
+			"observed": "2013-10-06",
+			"claims": {
+				"name": "Harlequin Ladybird",
+				"seen": "2013-10"
+			}
+		},
+		{
+			"id": "1b26c117-bfef-4d42-9dd2-96cb8c9cd425",
+			"at": [
+				52.349183,
+				-1.593109
+			],
+			"observed": "2022-04-01",
+			"claims": {
+				"name": "House Sparrow",
+				"seen": "2022-04"
+			}
+		},
+		{
+			"id": "7979dce5-8259-462f-81a0-aaf8564c8183",
+			"at": [
+				52.351021,
+				-1.575741
+			],
+			"observed": "2023-12-16",
+			"claims": {
+				"name": "Juniper Shieldbug",
+				"seen": "2023-12"
+			}
+		},
+		{
+			"id": "092dcda4-b5e8-4cf4-bee0-9ab86e29f865",
+			"at": [
+				52.322332,
+				-1.560537
+			],
+			"observed": "1993-02-02",
+			"claims": {
+				"name": "Jenkins' Spire Snail",
+				"seen": "1993-02"
+			}
+		},
+		{
+			"id": "f22f02cf-c553-4a2d-bb58-96fef9cce818",
+			"at": [
+				52.351021,
+				-1.575741
+			],
+			"observed": "2024-09-14",
+			"claims": {
+				"name": "Tigress Sawflies",
+				"seen": "2024-09"
+			}
+		},
+		{
+			"id": "d365a8e9-224e-4f4f-83f1-8959d0abe4ae",
+			"at": [
+				52.322332,
+				-1.560537
+			],
+			"observed": "1997-03-18",
+			"claims": {
+				"name": "Hydropsyche siltalai",
+				"seen": "1997-03"
+			}
+		},
+		{
+			"id": "4f1e67e4-27f5-4f61-b4b9-e5d2d54b2a96",
+			"at": [
+				52.353012,
+				-1.579393
+			],
+			"observed": "2022-07-23",
+			"claims": {
+				"name": "Sarcophaga",
+				"seen": "2022-07"
+			}
+		},
+		{
+			"id": "2c6f1082-b597-4f0a-87be-6bcdbf23f946",
+			"at": [
+				52.352089,
+				-1.572501
+			],
+			"observed": "2026-07-18",
+			"claims": {
+				"name": "7-spot Ladybird",
+				"seen": "2026-07"
+			}
+		},
+		{
+			"id": "881f0e54-79ba-4b9f-8af8-d31113f0ef03",
+			"at": [
+				52.352089,
+				-1.572501
+			],
+			"observed": "2024-07-16",
+			"claims": {
+				"name": "Pouting Woodlouse-fly",
+				"seen": "2024-07"
+			}
+		},
+		{
+			"id": "54041110-f9be-4bad-8963-e66f3617ac4c",
+			"at": [
+				52.351105,
+				-1.573979
+			],
+			"observed": "2018-06-06",
+			"claims": {
+				"name": "Eristalis pertinax",
+				"seen": "2018-06"
+			}
+		},
+		{
+			"id": "854ec741-b967-48a8-a243-97b05e48f368",
+			"at": [
+				52.352089,
+				-1.572501
+			],
+			"observed": "2025-06-26",
+			"claims": {
+				"name": "Swollen-thighed Beetle",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "9850064a-f987-4e97-8f4d-f4c1ee38d73a",
+			"at": [
+				52.352089,
+				-1.572501
+			],
+			"observed": "2023-09-15",
+			"claims": {
+				"name": "Common Carder Bee",
+				"seen": "2023-09"
+			}
+		},
+		{
+			"id": "3540ac75-7d38-4b98-b86e-dc6c8421fe22",
+			"at": [
+				52.352089,
+				-1.572501
+			],
+			"observed": "2023-09-03",
+			"claims": {
+				"name": "Tree Bumblebee",
+				"seen": "2023-09"
+			}
+		},
+		{
+			"id": "40dc8217-eebd-42c1-a139-f29ec7ee93f5",
+			"at": [
+				52.346998,
+				-1.582092
+			],
+			"observed": "2023-09-06",
+			"claims": {
+				"name": "Chironomus",
+				"seen": "2023-09"
+			}
+		},
+		{
+			"id": "25a03cdc-b1c7-464e-bd88-d8aaba432b3a",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2024-04-13",
+			"claims": {
+				"name": "Chocolate Mining Bee",
+				"seen": "2024-04"
+			}
+		},
+		{
+			"id": "7a029ee8-01fe-4b1a-a553-6e89625622a6",
+			"at": [
+				52.351105,
+				-1.573979
+			],
+			"observed": "2018-05-11",
+			"claims": {
+				"name": "Common Bluebottle",
+				"seen": "2018-05"
+			}
+		},
+		{
+			"id": "3ef83d1b-ac8d-4ca0-ad50-5e2e24b69dba",
+			"at": [
+				52.347177,
+				-1.581797
+			],
+			"observed": "2024-06-01",
+			"claims": {
+				"name": "Phaonia signata",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "bc3f22e9-c19b-4a9f-b2da-f11c7d7babe9",
+			"at": [
+				52.339873,
+				-1.575554
+			],
+			"observed": "2024-09-06",
+			"claims": {
+				"name": "Biscuit Beetle",
+				"seen": "2024-09"
+			}
+		},
+		{
+			"id": "d613a331-60d6-4bfc-9e8b-f6bc584e88f3",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2025-11-16",
+			"claims": {
+				"name": "Great Tit",
+				"seen": "2025-11"
+			}
+		},
+		{
+			"id": "1474b77a-587d-436b-803f-a4b12a750db6",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-04-22",
+			"claims": {
+				"name": "Hairy-footed Flower Bee",
+				"seen": "2023-04"
+			}
+		},
+		{
+			"id": "a54badd5-1fd6-426c-9210-f89f1cefc4b5",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2024-05-27",
+			"claims": {
+				"name": "Volucella inflata",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "36f2a512-158a-41ec-99b5-765fe84593d2",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2025-04-19",
+			"claims": {
+				"name": "Buzzard",
+				"seen": "2025-04"
+			}
+		},
+		{
+			"id": "6af95131-e109-486b-8014-f2374eda2c94",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-07-03",
+			"claims": {
+				"name": "Stictopleurus punctatonervosus",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "8225796f-b8ee-4e62-9fa1-1fcfecbebaf7",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-08-09",
+			"claims": {
+				"name": "Corizus hyoscyami",
+				"seen": "2025-08"
+			}
+		},
+		{
+			"id": "cba71f0f-183b-40ff-aa75-ea0614a9d4ca",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2026-04-06",
+			"claims": {
+				"name": "Dark-edged Bee-fly",
+				"seen": "2026-04"
+			}
+		},
+		{
+			"id": "544080d9-afd4-4e80-b600-926e379d3044",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-04-18",
+			"claims": {
+				"name": "Greenfinch",
+				"seen": "2021-04"
+			}
+		},
+		{
+			"id": "2c1938ef-7fc2-4799-a24b-dc0836598a7d",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-03-02",
+			"claims": {
+				"name": "Pine Ladybird",
+				"seen": "2025-03"
+			}
+		},
+		{
+			"id": "0b7dc212-615a-4b94-960a-a62cbc308862",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2025-12-12",
+			"claims": {
+				"name": "Robin",
+				"seen": "2025-12"
+			}
+		},
+		{
+			"id": "1459c9fe-b99f-431b-b3bd-7ecf97bb533f",
+			"at": [
+				52.347267,
+				-1.581649
+			],
+			"observed": "2024-05-27",
+			"claims": {
+				"name": "Dolichopus ungulatus",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "02d36f59-9406-42c9-9eb8-6ff96f77a6f1",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2023-04-03",
+			"claims": {
+				"name": "Tawny Mining Bee",
+				"seen": "2023-04"
+			}
+		},
+		{
+			"id": "1ba89007-929b-4eed-b00d-5f33d5c6be66",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-01-03",
+			"claims": {
+				"name": "Great Tit",
+				"seen": "2021-01"
+			}
+		},
+		{
+			"id": "50b3c4f2-146a-46be-acec-10a468ae2830",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2025-08-20",
+			"claims": {
+				"name": "Volucella inanis",
+				"seen": "2025-08"
+			}
+		},
+		{
+			"id": "d04ef47f-3738-4384-9a83-b7deef9284da",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-07-27",
+			"claims": {
+				"name": "Tachina fera",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "8835ac21-ac85-4e9b-8a28-08fbba42a0c7",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-06-16",
+			"claims": {
+				"name": "Small Garden Bumblebee",
+				"seen": "2021-06"
+			}
+		},
+		{
+			"id": "cae814c5-3eb1-4b85-9ee0-cf826eee8fc8",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-06-03",
+			"claims": {
+				"name": "Hairy Shieldbug",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "04a4d95c-91ab-4519-8668-8e26e9c4f8e8",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-06-22",
+			"claims": {
+				"name": "Pouting Woodlouse-fly",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "b8adcef3-c21c-462f-aba7-7c95755dfd10",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2023-05-21",
+			"claims": {
+				"name": "Large Red Damselfly",
+				"seen": "2023-05"
+			}
+		},
+		{
+			"id": "42e74d28-6fb3-404c-8973-d9de40d558e9",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2024-01-09",
+			"claims": {
+				"name": "Blackcap",
+				"seen": "2024-01"
+			}
+		},
+		{
+			"id": "1dee1f87-2eb3-4577-94e8-ff6c0111363c",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2024-04-02",
+			"claims": {
+				"name": "Common Bluebottle",
+				"seen": "2024-04"
+			}
+		},
+		{
+			"id": "4914ef15-232a-46fa-a583-7a9aebb9688e",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-06-15",
+			"claims": {
+				"name": "Vestal Cuckoo Bee",
+				"seen": "2021-06"
+			}
+		},
+		{
+			"id": "40628d49-ae36-4926-8c4d-856c94ab1a64",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2025-11-12",
+			"claims": {
+				"name": "Blue Tit",
+				"seen": "2025-11"
+			}
+		},
+		{
+			"id": "d07e6b50-262a-4c9e-9a84-809adc3fe821",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2025-06-05",
+			"claims": {
+				"name": "Drepanosiphum platanoidis",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "de57d5d4-602b-4d7b-9b2b-08c0be71142b",
+			"at": [
+				52.347267,
+				-1.581649
+			],
+			"observed": "2024-05-27",
+			"claims": {
+				"name": "Cantharis rustica",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "10416a70-9a86-4a31-8b9e-1d7bde2e3435",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-09-04",
+			"claims": {
+				"name": "Ivy Bee",
+				"seen": "2025-09"
+			}
+		},
+		{
+			"id": "a881afe3-18bf-46da-bbae-17f8078c2142",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-06-29",
+			"claims": {
+				"name": "Hydrotaea",
+				"seen": "2021-06"
+			}
+		},
+		{
+			"id": "348238b1-cf62-45ac-9c53-5c865fc416a2",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-09-28",
+			"claims": {
+				"name": "Muscidae",
+				"seen": "2025-09"
+			}
+		},
+		{
+			"id": "242168c3-f17a-4efc-82c1-a0044e98f9d9",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-10-30",
+			"claims": {
+				"name": "Common Earwig",
+				"seen": "2023-10"
+			}
+		},
+		{
+			"id": "f6123488-afef-4f65-91f0-4ad5f6efc4ed",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-06-17",
+			"claims": {
+				"name": "Brown Chafer",
+				"seen": "2023-06"
+			}
+		},
+		{
+			"id": "0bc2a176-861e-4d2c-9924-5b88e1dfe31f",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-06-29",
+			"claims": {
+				"name": "Sarcophaga",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "6d6c6594-3c7a-4cc4-9e5b-01536b284f63",
+			"at": [
+				52.360947,
+				-1.561108
+			],
+			"observed": "2016-08-18",
+			"claims": {
+				"name": "Nuttall's Waterweed",
+				"seen": "2016-08"
+			}
+		},
+		{
+			"id": "266b3d53-3bc8-4ab3-9a96-e3bf737c5cd7",
+			"at": [
+				52.367367,
+				-1.583589
+			],
+			"observed": "2020-04-24",
+			"claims": {
+				"name": "Red-girdled Mining Bee",
+				"seen": "2020-04"
+			}
+		},
+		{
+			"id": "89e3a681-a5ff-468b-aadc-a1bbb934385e",
+			"at": [
+				52.352089,
+				-1.572501
+			],
+			"observed": "2023-08-15",
+			"claims": {
+				"name": "Graphomya maculata",
+				"seen": "2023-08"
+			}
+		},
+		{
+			"id": "a1dab1ce-6e40-4e9d-8bae-76c3e8d606fa",
+			"at": [
+				52.352089,
+				-1.572501
+			],
+			"observed": "2025-07-02",
+			"claims": {
+				"name": "Oedemera lurida",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "bc2ec84e-04be-4d83-bc02-caac81b63473",
+			"at": [
+				52.352089,
+				-1.572501
+			],
+			"observed": "2025-10-06",
+			"claims": {
+				"name": "Common Darter",
+				"seen": "2025-10"
+			}
+		},
+		{
+			"id": "2a8a6c22-1e8a-4897-b4bb-f835e6b43965",
+			"at": [
+				52.352089,
+				-1.572501
+			],
+			"observed": "2025-08-09",
+			"claims": {
+				"name": "Field Grasshopper",
+				"seen": "2025-08"
+			}
+		},
+		{
+			"id": "5dd15124-cb35-4bc9-a4a1-a2e450ad6bc6",
+			"at": [
+				52.347177,
+				-1.581797
+			],
+			"observed": "2025-05-07",
+			"claims": {
+				"name": "Muscidae",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "cd044a77-f626-4770-b1ff-42052f49423b",
+			"at": [
+				52.339169,
+				-1.555306
+			],
+			"observed": "2021-07-01",
+			"claims": {
+				"name": "Common Carder Bee",
+				"seen": "2021-07"
+			}
+		},
+		{
+			"id": "91d04f65-defe-41ec-be7b-26657d7d3d94",
+			"at": [
+				52.348,
+				-1.608
+			],
+			"observed": "2025-05-27",
+			"claims": {
+				"name": "Stoat",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "f273b998-72e8-4242-9080-35306a746237",
+			"at": [
+				52.348,
+				-1.608
+			],
+			"observed": "2025-06-13",
+			"claims": {
+				"name": "Brown Hare",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "cb28856e-cbbc-4f81-aee1-91e344fbe6dd",
+			"at": [
+				52.353279,
+				-1.578656
+			],
+			"observed": "2022-05-15",
+			"claims": {
+				"name": "Cantharis rustica",
+				"seen": "2022-05"
+			}
+		},
+		{
+			"id": "2392f4ea-0abe-46ed-9e80-6155ea7ff3ac",
+			"at": [
+				52.353279,
+				-1.578656
+			],
+			"observed": "2022-05-15",
+			"claims": {
+				"name": "Byturus ochraceus",
+				"seen": "2022-05"
+			}
+		},
+		{
+			"id": "8e7e9d03-f5d5-42e7-8192-85ae010aa25c",
+			"at": [
+				52.346062,
+				-1.571678
+			],
+			"observed": "2024-07-27",
+			"claims": {
+				"name": "Pouting Woodlouse-fly",
+				"seen": "2024-07"
+			}
+		},
+		{
+			"id": "ff0418e6-b52d-44d5-82b0-f8319b4e4068",
+			"at": [
+				52.347266,
+				-1.581502
+			],
+			"observed": "2024-05-15",
+			"claims": {
+				"name": "Empis tessellata",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "2478cf96-c375-46d6-b945-f9938a2bbe06",
+			"at": [
+				52.361521,
+				-1.570501
+			],
+			"observed": "2016-02-14",
+			"claims": {
+				"name": "Goldcrest",
+				"seen": "2016-02"
+			}
+		},
+		{
+			"id": "93b8f57c-966d-42b6-b2c2-f142310ed8da",
+			"at": [
+				52.350483,
+				-1.57604
+			],
+			"observed": "2017-04-22",
+			"claims": {
+				"name": "Leucophora",
+				"seen": "2017-04"
+			}
+		},
+		{
+			"id": "d84e596f-4d29-4b90-b0d7-759fda2644f3",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-07-17",
+			"claims": {
+				"name": "Lispe tentaculata",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "f71988d9-d02d-42d4-ac98-38e68df0f86f",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2024-06-06",
+			"claims": {
+				"name": "Scathophaga stercoraria",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "1d44b3a2-5b05-4de9-8c23-ada8b97178e3",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-05-17",
+			"claims": {
+				"name": "Red Mason Bee",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "366eb556-087e-4bcb-a1a5-72913f8102b1",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-07-25",
+			"claims": {
+				"name": "Orius",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "55da0024-81b2-418a-9a5b-7c80b5a00da3",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2023-06-28",
+			"claims": {
+				"name": "Hydropsyche",
+				"seen": "2023-06"
+			}
+		},
+		{
+			"id": "956c4b62-be5d-4213-889f-8dd9af32c2bb",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-06-15",
+			"claims": {
+				"name": "Patchwork Leafcutter Bee",
+				"seen": "2020-06"
+			}
+		},
+		{
+			"id": "35b09c7b-427c-448c-a6cc-a07cefc05eab",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-06-24",
+			"claims": {
+				"name": "Small Scissor Bee",
+				"seen": "2021-06"
+			}
+		},
+		{
+			"id": "9a4c568b-018c-4655-a12f-01978e5f1816",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2017-08-12",
+			"claims": {
+				"name": "Eristalis tenax",
+				"seen": "2017-08"
+			}
+		},
+		{
+			"id": "4fcb5a55-03ea-493f-9c93-60a293e6e967",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2017-08-06",
+			"claims": {
+				"name": "Helina depuncta",
+				"seen": "2017-08"
+			}
+		},
+		{
+			"id": "c354fcbd-bde7-4282-9d45-1ecb92aec9e6",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-09-05",
+			"claims": {
+				"name": "Lygus",
+				"seen": "2020-09"
+			}
+		},
+		{
+			"id": "123a6587-574f-426c-ba4f-25a505afab76",
+			"at": [
+				52.33926,
+				-1.555452
+			],
+			"observed": "2021-05-27",
+			"claims": {
+				"name": "Red Mason Bee",
+				"seen": "2021-05"
+			}
+		},
+		{
+			"id": "1a822f51-2dad-4fdc-82c2-ea32f83f827c",
+			"at": [
+				52.33926,
+				-1.555452
+			],
+			"observed": "2021-07-23",
+			"claims": {
+				"name": "Phaonia",
+				"seen": "2021-07"
+			}
+		},
+		{
+			"id": "83f3f58d-1087-43d2-918b-2c7879441edd",
+			"at": [
+				52.353,
+				-1.576016
+			],
+			"observed": "2022-04-20",
+			"claims": {
+				"name": "Bibio lanigerus",
+				"seen": "2022-04"
+			}
+		},
+		{
+			"id": "4b4e22fa-0d0c-4d4e-ac3e-65c7d05b935b",
+			"at": [
+				52.35422,
+				-1.583407
+			],
+			"observed": "2023-04-09",
+			"claims": {
+				"name": "Goldfinch",
+				"seen": "2023-04"
+			}
+		},
+		{
+			"id": "894723db-0a9a-47c5-a6ad-f4f83bad493e",
+			"at": [
+				52.353,
+				-1.576016
+			],
+			"observed": "2025-06-06",
+			"claims": {
+				"name": "Rutpela maculata",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "1ec16e93-19bf-4d13-9fb8-c44ec24232fa",
+			"at": [
+				52.353,
+				-1.576016
+			],
+			"observed": "2024-07-07",
+			"claims": {
+				"name": "Fannia",
+				"seen": "2024-07"
+			}
+		},
+		{
+			"id": "21b4206e-f7b1-4947-984f-28b280ddedbd",
+			"at": [
+				52.342,
+				-1.605
+			],
+			"observed": "2025-06-10",
+			"claims": {
+				"name": "Blackbird",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "12b38fa7-152c-4e79-ac8d-25dd906468a0",
+			"at": [
+				52.342,
+				-1.605
+			],
+			"observed": "2025-05-24",
+			"claims": {
+				"name": "Roe Deer",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "fb6ec862-f190-4362-b9b7-37965b1c3cf1",
+			"at": [
+				52.342,
+				-1.605
+			],
+			"observed": "2024-06-15",
+			"claims": {
+				"name": "Woodpigeon",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "4a8fd14f-822e-413d-987c-3a2031ce27fd",
+			"at": [
+				52.342,
+				-1.605
+			],
+			"observed": "2025-06-07",
+			"claims": {
+				"name": "House Sparrow",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "fafadfa8-6757-4938-a213-f664a7f36977",
+			"at": [
+				52.342,
+				-1.605
+			],
+			"observed": "2025-05-31",
+			"claims": {
+				"name": "Dunnock",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "35575298-981d-4234-a49e-0603a819e0a4",
+			"at": [
+				52.342,
+				-1.605
+			],
+			"observed": "2025-06-07",
+			"claims": {
+				"name": "Pheasant",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "6c5b340a-66ee-4fbf-ad41-3c9869fc6fa6",
+			"at": [
+				52.342,
+				-1.605
+			],
+			"observed": "2025-06-10",
+			"claims": {
+				"name": "Rabbit",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "db2a26f0-0e6a-4495-92d2-1223798d16da",
+			"at": [
+				52.342,
+				-1.598
+			],
+			"observed": "2026-06-10",
+			"claims": {
+				"name": "Dunnock",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "5efc8b8f-8a61-4734-8e55-f9f227345d55",
+			"at": [
+				52.361521,
+				-1.570501
+			],
+			"observed": "2016-02-14",
+			"claims": {
+				"name": "Mallard",
+				"seen": "2016-02"
+			}
+		},
+		{
+			"id": "69af6650-5fed-4e14-93f6-09c9dab896ad",
+			"at": [
+				52.328558,
+				-1.542866
+			],
+			"observed": "2016-10-07",
+			"claims": {
+				"name": "Hydropsyche siltalai",
+				"seen": "2016-10"
+			}
+		},
+		{
+			"id": "149f883b-2363-4d1e-bbc1-e46568fd17ae",
+			"at": [
+				52.328558,
+				-1.542866
+			],
+			"observed": "2016-04-04",
+			"claims": {
+				"name": "Crangonyx pseudogracilis/floridanus",
+				"seen": "2016-04"
+			}
+		},
+		{
+			"id": "811001a3-c0d2-4968-b116-31aeca59def3",
+			"at": [
+				52.347267,
+				-1.581649
+			],
+			"observed": "2024-05-27",
+			"claims": {
+				"name": "Phylus (Phylus) melanocephalus",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "7a3b285a-09c5-496f-89d9-203171aa2508",
+			"at": [
+				52.350838,
+				-1.574715
+			],
+			"observed": "2019-08-20",
+			"claims": {
+				"name": "Nettle Groundbug",
+				"seen": "2019-08"
+			}
+		},
+		{
+			"id": "1d75fde9-9942-40ef-9f3d-1f6d6347f93d",
+			"at": [
+				52.347,
+				-1.613
+			],
+			"observed": "2026-06-01",
+			"claims": {
+				"name": "Roe Deer",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "c54faba8-2323-40a2-a72f-924bc7a49a06",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-09-09",
+			"claims": {
+				"name": "Sphaerophoria scripta",
+				"seen": "2018-09"
+			}
+		},
+		{
+			"id": "e50bef2e-0fdd-424f-8895-f454d0d0d489",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-06-03",
+			"claims": {
+				"name": "Graphomya maculata",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "d2c20931-d7bf-42e4-bc15-86416edfb985",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-06-17",
+			"claims": {
+				"name": "Mystacides longicornis",
+				"seen": "2023-06"
+			}
+		},
+		{
+			"id": "ac51f27d-2e26-4cb5-a934-56d6ff166cc4",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2022-07-04",
+			"claims": {
+				"name": "Harlequin Ladybird",
+				"seen": "2022-07"
+			}
+		},
+		{
+			"id": "f4a46b00-bc6b-44a3-9e52-56384a4595a8",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-07-04",
+			"claims": {
+				"name": "Gwynne's Mining Bee",
+				"seen": "2020-07"
+			}
+		},
+		{
+			"id": "b2e1ddec-a6e2-4e19-be16-944153bc4f1d",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-08-11",
+			"claims": {
+				"name": "Eristalis pertinax",
+				"seen": "2018-08"
+			}
+		},
+		{
+			"id": "647790d8-9433-4448-81d4-7d9ae95f044f",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-04-17",
+			"claims": {
+				"name": "Marsham's Nomad Bee",
+				"seen": "2019-04"
+			}
+		},
+		{
+			"id": "fd587bfa-fa9b-48ac-b177-c8a338ace934",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2017-08-31",
+			"claims": {
+				"name": "Syritta pipiens",
+				"seen": "2017-08"
+			}
+		},
+		{
+			"id": "db1124c6-8dad-477b-abdb-7a85b8baeb54",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-08-24",
+			"claims": {
+				"name": "Eristalis arbustorum",
+				"seen": "2018-08"
+			}
+		},
+		{
+			"id": "c90d438e-f879-4463-b79f-089bcbaa7462",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-07-18",
+			"claims": {
+				"name": "Harmonia axyridis form succinea",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "ec6f8c8c-cf3b-421d-b9c1-15abd346d02e",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2024-09-04",
+			"claims": {
+				"name": "Anoecia",
+				"seen": "2024-09"
+			}
+		},
+		{
+			"id": "e0856603-7ec1-4a80-b26d-a2c3cafc9c97",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-06-27",
+			"claims": {
+				"name": "Timothy Grassbug",
+				"seen": "2018-06"
+			}
+		},
+		{
+			"id": "c8b4d557-27c5-421f-aa0e-125aa00ae5bd",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-07-04",
+			"claims": {
+				"name": "Broad Centurion",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "263ec455-d194-411d-ac0c-137325361558",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-04-01",
+			"claims": {
+				"name": "Syrphus",
+				"seen": "2019-04"
+			}
+		},
+		{
+			"id": "fc1e0505-97f3-4e3e-afbc-3d2b4ad0d762",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2022-08-07",
+			"claims": {
+				"name": "Batman Hoverfly",
+				"seen": "2022-08"
+			}
+		},
+		{
+			"id": "923a7ec0-77fd-49fc-8c2e-8354a7ad8b9e",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-02-07",
+			"claims": {
+				"name": "Goldcrest",
+				"seen": "2019-02"
+			}
+		},
+		{
+			"id": "3263dc69-83c9-41ee-9aec-37390f99838b",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-03-27",
+			"claims": {
+				"name": "Eudasyphora cyanella",
+				"seen": "2025-03"
+			}
+		},
+		{
+			"id": "494324c5-23f7-4c26-880c-84a1dd084790",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-05-07",
+			"claims": {
+				"name": "Fannia lustrator",
+				"seen": "2018-05"
+			}
+		},
+		{
+			"id": "e17a883a-8d0e-42f3-b403-b5289f1196df",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-06-15",
+			"claims": {
+				"name": "Buffish Mining Bee",
+				"seen": "2021-06"
+			}
+		},
+		{
+			"id": "a1830428-63f3-4631-b96a-1d61ee42e192",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-12-03",
+			"claims": {
+				"name": "Polietes",
+				"seen": "2025-12"
+			}
+		},
+		{
+			"id": "4bcf396c-324c-4832-af26-8d182b6ac505",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-11-07",
+			"claims": {
+				"name": "Mesembrina meridiana",
+				"seen": "2020-11"
+			}
+		},
+		{
+			"id": "e8422075-f04a-4d66-a54e-81562b0eedd9",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2022-05-24",
+			"claims": {
+				"name": "Opaque Oak Nematine",
+				"seen": "2022-05"
+			}
+		},
+		{
+			"id": "e8bf70b7-6e2c-4c7e-96d8-8008f564bc1d",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-09-25",
+			"claims": {
+				"name": "Sphaerophoria",
+				"seen": "2018-09"
+			}
+		},
+		{
+			"id": "d0925a1d-2e21-49af-bff5-70d3e6c34076",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-09-07",
+			"claims": {
+				"name": "Norellia",
+				"seen": "2019-09"
+			}
+		},
+		{
+			"id": "91cdb141-ba0f-4115-bac0-0fef909ab3bc",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-06-05",
+			"claims": {
+				"name": "Grey-patched Mining Bee",
+				"seen": "2018-06"
+			}
+		},
+		{
+			"id": "b723a70a-174c-4f17-ae1e-bbd42d24f1f5",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2017-05-12",
+			"claims": {
+				"name": "Brevicoryne brassicae",
+				"seen": "2017-05"
+			}
+		},
+		{
+			"id": "27d189a5-b155-43a2-9744-4e9b032a9dd0",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-08-20",
+			"claims": {
+				"name": "Melanostoma scalare",
+				"seen": "2018-08"
+			}
+		},
+		{
+			"id": "58538ff0-ae1a-47c2-acb2-5abc9b63fa46",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-05-23",
+			"claims": {
+				"name": "Nephrotoma flavipalpis",
+				"seen": "2020-05"
+			}
+		},
+		{
+			"id": "8b6c4561-82f5-42de-8a75-1661394d4189",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-08-16",
+			"claims": {
+				"name": "Anthomyia",
+				"seen": "2020-08"
+			}
+		},
+		{
+			"id": "1d82bfd8-a3c0-4e11-8905-ff76c2053a14",
+			"at": [
+				52.351021,
+				-1.575741
+			],
+			"observed": "2024-03-09",
+			"claims": {
+				"name": "Neomyia cornicina",
+				"seen": "2024-03"
+			}
+		},
+		{
+			"id": "66ac8d9e-d6af-4a58-8511-8c518dc85bdc",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-05-29",
+			"claims": {
+				"name": "Wasp Beetle",
+				"seen": "2018-05"
+			}
+		},
+		{
+			"id": "5e4eaf58-6179-4760-8823-e84e8723bb02",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-07-09",
+			"claims": {
+				"name": "Heterotoma planicornis",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "5b06aaee-ea66-4739-aa13-d3b0b44c3b34",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-10-22",
+			"claims": {
+				"name": "Helina",
+				"seen": "2019-10"
+			}
+		},
+		{
+			"id": "85a9dba5-df35-4e2c-b069-2e291aedce38",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-04-11",
+			"claims": {
+				"name": "Gooden's Nomad Bee",
+				"seen": "2020-04"
+			}
+		},
+		{
+			"id": "d709f19d-f650-4f23-8da5-b4ac1fac1207",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-08-16",
+			"claims": {
+				"name": "Cheilosia",
+				"seen": "2018-08"
+			}
+		},
+		{
+			"id": "7702b360-2b6f-44be-92bf-1b84a3c9f8e1",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2024-06-05",
+			"claims": {
+				"name": "Closterotomus trivialis",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "393bfb7e-339f-4097-85e3-778a74e83180",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-08-09",
+			"claims": {
+				"name": "Common Flower Bug",
+				"seen": "2025-08"
+			}
+		},
+		{
+			"id": "e1cf78f2-499f-4b4e-8440-56c1f0f95627",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-08-25",
+			"claims": {
+				"name": "Pterostichus",
+				"seen": "2018-08"
+			}
+		},
+		{
+			"id": "11e12299-4605-4591-89e2-78986d1e4f2a",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-06-09",
+			"claims": {
+				"name": "Green Shieldbug",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "21fed19c-89c8-4f66-891b-54aea2737763",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-07-04",
+			"claims": {
+				"name": "Wool Carder Bee",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "269bcc63-c472-4eb4-a6a5-1597016d0284",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-07-03",
+			"claims": {
+				"name": "Greater Bulb-Fly",
+				"seen": "2018-07"
+			}
+		},
+		{
+			"id": "ab0b1258-b71a-4bb1-915a-85d9e36b0886",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-06-05",
+			"claims": {
+				"name": "Cantharis pallida",
+				"seen": "2018-06"
+			}
+		},
+		{
+			"id": "39b6447f-e4ba-44b5-b63d-6e522abbc5e2",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2023-04-29",
+			"claims": {
+				"name": "Cabbage Seed Weevil",
+				"seen": "2023-04"
+			}
+		},
+		{
+			"id": "638c9a9f-88c8-48ec-a8bb-c9dc2ca1fd3e",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2024-08-15",
+			"claims": {
+				"name": "Plagiognathus (Plagiognathus) arbustorum",
+				"seen": "2024-08"
+			}
+		},
+		{
+			"id": "d53f455d-bb56-4236-be6b-b5cfb3924859",
+			"at": [
+				52.347305,
+				-1.575442
+			],
+			"observed": "2024-09-06",
+			"claims": {
+				"name": "Bright Four-spined Legionnaire",
+				"seen": "2024-09"
+			}
+		},
+		{
+			"id": "74e16259-a190-4619-a27c-ed3e7e21ddc9",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2022-11-08",
+			"claims": {
+				"name": "Macquartia",
+				"seen": "2022-11"
+			}
+		},
+		{
+			"id": "99a48f12-3db2-44f4-8a55-5a6b9dc3a7b5",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-07-16",
+			"claims": {
+				"name": "Oak Bush-cricket",
+				"seen": "2018-07"
+			}
+		},
+		{
+			"id": "872338d9-4da5-4799-9131-06a45573a7c1",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-07-25",
+			"claims": {
+				"name": "Eupeodes",
+				"seen": "2018-07"
+			}
+		},
+		{
+			"id": "c25574da-e4b7-41e4-9828-a75c623f3e80",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-06-09",
+			"claims": {
+				"name": "Empis",
+				"seen": "2020-06"
+			}
+		},
+		{
+			"id": "b0d80cc6-02c6-4863-a4f4-d065af0d9ff7",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-09-09",
+			"claims": {
+				"name": "Amobia signata",
+				"seen": "2025-09"
+			}
+		},
+		{
+			"id": "f6cd451e-1680-4fe1-b006-79d8f8091ff2",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-09-12",
+			"claims": {
+				"name": "Dock Bug",
+				"seen": "2018-09"
+			}
+		},
+		{
+			"id": "faa751d9-2c4e-4290-8731-d70e06d29d5b",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-06-22",
+			"claims": {
+				"name": "Miltogramma punctata",
+				"seen": "2019-06"
+			}
+		},
+		{
+			"id": "42ea60c6-ded3-4672-af1e-8c5f5c892815",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-05-20",
+			"claims": {
+				"name": "Voria ruralis",
+				"seen": "2019-05"
+			}
+		},
+		{
+			"id": "024857ab-6830-40bd-a70a-b87e5bd46661",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-04-12",
+			"claims": {
+				"name": "Ashy Mining Bee",
+				"seen": "2021-04"
+			}
+		},
+		{
+			"id": "705646a3-bddc-4135-b284-7b72fae21d6f",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-06-20",
+			"claims": {
+				"name": "Common Frog",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "3c0fb38d-b1ab-43e3-89ed-dfa9e34568cc",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-10-07",
+			"claims": {
+				"name": "Marmalade Hoverfly",
+				"seen": "2018-10"
+			}
+		},
+		{
+			"id": "f9ed9dfb-a5e8-4533-a3f3-eb6e6f678a8c",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-10-11",
+			"claims": {
+				"name": "Lucilia",
+				"seen": "2020-10"
+			}
+		},
+		{
+			"id": "322729be-8410-493d-805d-88d3e2a685b7",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-07-09",
+			"claims": {
+				"name": "Sericomyia silentis",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "a244c8ab-3a61-4145-8153-561724e65519",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-03-09",
+			"claims": {
+				"name": "Pollenia",
+				"seen": "2025-03"
+			}
+		},
+		{
+			"id": "a68b7062-597e-4bd0-9c70-8b46f80bf5a9",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-11-01",
+			"claims": {
+				"name": "Phaonia",
+				"seen": "2020-11"
+			}
+		},
+		{
+			"id": "993039c2-bfb1-481e-be9e-908f1f6016d8",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2024-03-03",
+			"claims": {
+				"name": "2-spot Ladybird",
+				"seen": "2024-03"
+			}
+		},
+		{
+			"id": "d46963e2-0519-41fb-85b6-0055a5f568bf",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-07-11",
+			"claims": {
+				"name": "Lonchaeidae",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "6bd50f09-cfff-4927-b5e8-6ea221ffca69",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-10-14",
+			"claims": {
+				"name": "Phryxe",
+				"seen": "2020-10"
+			}
+		},
+		{
+			"id": "1cb8a19f-0c04-48d7-8de2-91e1778b1938",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-03-27",
+			"claims": {
+				"name": "Common Wasp",
+				"seen": "2020-03"
+			}
+		},
+		{
+			"id": "7388d6c9-58b3-42f4-a666-80abf234530a",
+			"at": [
+				52.341,
+				-1.615
+			],
+			"observed": "2025-06-16",
+			"claims": {
+				"name": "Roe Deer",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "28c37f76-60e3-4fa6-8bf8-68723fe4866e",
+			"at": [
+				52.341,
+				-1.615
+			],
+			"observed": "2026-06-03",
+			"claims": {
+				"name": "Blackbird",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "1d8e9874-e624-49b3-8d72-83fc36635186",
+			"at": [
+				52.341,
+				-1.615
+			],
+			"observed": "2025-05-23",
+			"claims": {
+				"name": "Song Thrush",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "4a871856-3293-409c-a7e0-69df07e241ef",
+			"at": [
+				52.344,
+				-1.599
+			],
+			"observed": "2024-05-28",
+			"claims": {
+				"name": "Red Fox",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "23d4d164-29f0-4006-9d01-9b1252c6278b",
+			"at": [
+				52.348,
+				-1.611
+			],
+			"observed": "2025-05-19",
+			"claims": {
+				"name": "Brown Rat",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "5f0e74ad-dedf-4518-951c-39d4de7a1078",
+			"at": [
+				52.342,
+				-1.598
+			],
+			"observed": "2026-06-11",
+			"claims": {
+				"name": "Rabbit",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "ad499539-9042-49b2-b8ce-8dcc8c7c0c30",
+			"at": [
+				52.353,
+				-1.576016
+			],
+			"observed": "2025-06-06",
+			"claims": {
+				"name": "Harmonia axyridis form succinea",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "698d22f2-e68e-4b9e-94bb-f1bc04eea406",
+			"at": [
+				52.353,
+				-1.576016
+			],
+			"observed": "2024-07-07",
+			"claims": {
+				"name": "Amblytylus",
+				"seen": "2024-07"
+			}
+		},
+		{
+			"id": "82b65560-0806-424c-996b-fdb720f912b4",
+			"at": [
+				52.353,
+				-1.576016
+			],
+			"observed": "2024-05-05",
+			"claims": {
+				"name": "Tigress Sawflies",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "923a28fa-8878-48b9-97af-dbea8c698686",
+			"at": [
+				52.342,
+				-1.598
+			],
+			"observed": "2026-06-19",
+			"claims": {
+				"name": "Wood Mouse",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "64124b58-bafb-4672-b741-bd38ec7d6f3a",
+			"at": [
+				52.342,
+				-1.598
+			],
+			"observed": "2026-05-28",
+			"claims": {
+				"name": "Brown Hare",
+				"seen": "2026-05"
+			}
+		},
+		{
+			"id": "ab027bc0-e66a-4d2b-b24d-3726993dabb7",
+			"at": [
+				52.347177,
+				-1.581797
+			],
+			"observed": "2023-05-11",
+			"claims": {
+				"name": "Sarcophaga",
+				"seen": "2023-05"
+			}
+		},
+		{
+			"id": "b6ea4b42-11e6-4343-b6c6-b51e47046ce9",
+			"at": [
+				52.347177,
+				-1.58165
+			],
+			"observed": "2024-06-12",
+			"claims": {
+				"name": "Harlequin Ladybird",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "85652a0b-23ad-4954-8f09-da1bd1f224ca",
+			"at": [
+				52.347177,
+				-1.58165
+			],
+			"observed": "2025-06-11",
+			"claims": {
+				"name": "Pine Ladybird",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "5914a749-1205-4deb-9d00-9dd390d150c4",
+			"at": [
+				52.347177,
+				-1.58165
+			],
+			"observed": "2024-07-17",
+			"claims": {
+				"name": "Athripsodes bilineatus",
+				"seen": "2024-07"
+			}
+		},
+		{
+			"id": "6294ffe5-8391-419d-bdaa-1d2a06755a3e",
+			"at": [
+				52.341,
+				-1.602
+			],
+			"observed": "2025-05-27",
+			"claims": {
+				"name": "Pheasant",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "a3fb228b-4df9-425f-9ecb-e33746f16b29",
+			"at": [
+				52.346909,
+				-1.58224
+			],
+			"observed": "2020-05-26",
+			"claims": {
+				"name": "Stripe-legged Robberfly",
+				"seen": "2020-05"
+			}
+		},
+		{
+			"id": "0f108751-3450-423c-954b-78fdb7649b9b",
+			"at": [
+				52.347177,
+				-1.58165
+			],
+			"observed": "2023-05-21",
+			"claims": {
+				"name": "White-lipped Snail",
+				"seen": "2023-05"
+			}
+		},
+		{
+			"id": "4197aa73-8640-49c0-98f8-891db59ec015",
+			"at": [
+				52.347177,
+				-1.58165
+			],
+			"observed": "2024-07-29",
+			"claims": {
+				"name": "Cepaea",
+				"seen": "2024-07"
+			}
+		},
+		{
+			"id": "5155447b-b866-4c39-8617-c891417e3aa5",
+			"at": [
+				52.341,
+				-1.609
+			],
+			"observed": "2025-05-20",
+			"claims": {
+				"name": "Yellowhammer",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "fe4ec5d4-b7ff-41fb-8b90-ed6cdf9a3d42",
+			"at": [
+				52.33917,
+				-1.5556
+			],
+			"observed": "2020-05-28",
+			"claims": {
+				"name": "Norellia spinipes",
+				"seen": "2020-05"
+			}
+		},
+		{
+			"id": "d8e6d6f6-3981-46a3-92f6-f774ba9d69df",
+			"at": [
+				52.342,
+				-1.609
+			],
+			"observed": "2024-06-11",
+			"claims": {
+				"name": "Dunnock",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "eab2e554-484f-4322-b384-5b89d4235ab6",
+			"at": [
+				52.342,
+				-1.598
+			],
+			"observed": "2026-06-22",
+			"claims": {
+				"name": "Grey Squirrel",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "c6436b97-ab3a-4287-951d-7e15db322d36",
+			"at": [
+				52.342,
+				-1.598
+			],
+			"observed": "2026-06-11",
+			"claims": {
+				"name": "Red Fox",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "3110d05c-efd9-4c3c-90b8-6797e1d9e533",
+			"at": [
+				52.353813,
+				-1.564629
+			],
+			"observed": "1995-09-21",
+			"claims": {
+				"name": "Jenkins' Spire Snail",
+				"seen": "1995-09"
+			}
+		},
+		{
+			"id": "12e1ca69-410f-46ae-917e-13ac15a5577d",
+			"at": [
+				52.342,
+				-1.598
+			],
+			"observed": "2024-05-28",
+			"claims": {
+				"name": "Great Tit",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "2075c611-1dc2-4139-ad76-3186b0051b57",
+			"at": [
+				52.342,
+				-1.598
+			],
+			"observed": "2025-05-21",
+			"claims": {
+				"name": "Pheasant",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "c9f87fef-bb37-4d4b-b01d-7c43edc7f163",
+			"at": [
+				52.359958,
+				-1.585935
+			],
+			"observed": "2025-07-13",
+			"claims": {
+				"name": "Scathophaga stercoraria",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "081822ca-946e-4604-b46f-20f61e745581",
+			"at": [
+				52.347177,
+				-1.58165
+			],
+			"observed": "2024-06-01",
+			"claims": {
+				"name": "Azure Damselfly",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "4c66768e-bcff-42d5-800b-2f059df2153a",
+			"at": [
+				52.341,
+				-1.615
+			],
+			"observed": "2025-06-02",
+			"claims": {
+				"name": "Pheasant",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "68d3cd17-1967-40e3-afab-a613f5f01ead",
+			"at": [
+				52.344,
+				-1.599
+			],
+			"observed": "2025-06-17",
+			"claims": {
+				"name": "Pheasant",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "252a5353-aa22-4507-a900-af4a03241e8f",
+			"at": [
+				52.348,
+				-1.611
+			],
+			"observed": "2025-06-09",
+			"claims": {
+				"name": "Muntjac",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "c1432952-e96c-4086-9e48-5f8835398632",
+			"at": [
+				52.348,
+				-1.611
+			],
+			"observed": "2025-06-20",
+			"claims": {
+				"name": "Grey Squirrel",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "fd3d6c04-dba4-495a-bccb-d4094dfe8ee2",
+			"at": [
+				52.344,
+				-1.599
+			],
+			"observed": "2025-06-15",
+			"claims": {
+				"name": "Robin",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "3fc43bc6-f5c7-4969-9139-93ef264d6fb8",
+			"at": [
+				52.344,
+				-1.599
+			],
+			"observed": "2024-06-15",
+			"claims": {
+				"name": "Brown Hare",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "d6a0082a-171b-481d-9d3e-041abf34ed8e",
+			"at": [
+				52.348,
+				-1.613
+			],
+			"observed": "2025-06-06",
+			"claims": {
+				"name": "Muntjac",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "9c09620c-7086-4647-a4c6-93978a3084ca",
+			"at": [
+				52.348,
+				-1.613
+			],
+			"observed": "2024-06-09",
+			"claims": {
+				"name": "Brown Rat",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "c4459816-9de9-4d99-a937-b055801b3960",
+			"at": [
+				52.348,
+				-1.613
+			],
+			"observed": "2024-06-03",
+			"claims": {
+				"name": "Blackbird",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "004322e6-22f7-4a32-bd27-735123fddaa5",
+			"at": [
+				52.348,
+				-1.613
+			],
+			"observed": "2026-05-24",
+			"claims": {
+				"name": "Grey Squirrel",
+				"seen": "2026-05"
+			}
+		},
+		{
+			"id": "7b5709be-2320-4111-a46d-dcb0fe8383e8",
+			"at": [
+				52.353181,
+				-1.576161
+			],
+			"observed": "2020-05-06",
+			"claims": {
+				"name": "Deuterosminthurus pallipes",
+				"seen": "2020-05"
+			}
+		},
+		{
+			"id": "557bf695-2608-4f84-87b5-7134993da673",
+			"at": [
+				52.353,
+				-1.575869
+			],
+			"observed": "2020-05-12",
+			"claims": {
+				"name": "Tipula vernalis",
+				"seen": "2020-05"
+			}
+		},
+		{
+			"id": "d1c56bc4-7dcf-4655-96c9-510ac13e4cb9",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-09-18",
+			"claims": {
+				"name": "Rhingia campestris",
+				"seen": "2021-09"
+			}
+		},
+		{
+			"id": "24bc2f44-127f-48bb-907e-105af818f622",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-07-10",
+			"claims": {
+				"name": "Green Furrow Bee",
+				"seen": "2021-07"
+			}
+		},
+		{
+			"id": "15b14dfe-2e41-4d26-a362-1f9acc42fddc",
+			"at": [
+				52.345883,
+				-1.571827
+			],
+			"observed": "2025-05-25",
+			"claims": {
+				"name": "Oedemera lurida",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "fa32c2d5-6a79-4056-96bc-4ded72ead400",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-07-04",
+			"claims": {
+				"name": "White-zoned Furrow Bee",
+				"seen": "2021-07"
+			}
+		},
+		{
+			"id": "c073050d-b944-43f7-83e8-6b9cc9cebfce",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-07-04",
+			"claims": {
+				"name": "Pouting Woodlouse-fly",
+				"seen": "2021-07"
+			}
+		},
+		{
+			"id": "e26ace33-e8e5-41a1-bc41-1183e7defa40",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-08-11",
+			"claims": {
+				"name": "Eupeodes corollae",
+				"seen": "2021-08"
+			}
+		},
+		{
+			"id": "855b73e9-f72f-4302-b4b4-868f17673482",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-05-16",
+			"claims": {
+				"name": "Eudasyphora cyanella",
+				"seen": "2021-05"
+			}
+		},
+		{
+			"id": "79d91f31-a27a-482c-938a-b549776d70ab",
+			"at": [
+				52.353001,
+				-1.576309
+			],
+			"observed": "2020-05-08",
+			"claims": {
+				"name": "Hairy-footed Flower Bee",
+				"seen": "2020-05"
+			}
+		},
+		{
+			"id": "349d39f4-d5b9-4c27-8fbc-32cd902f2e7d",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-05-30",
+			"claims": {
+				"name": "Green Dock Beetle",
+				"seen": "2021-05"
+			}
+		},
+		{
+			"id": "b98099ec-f53d-4c5f-a140-e06a18d78410",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-04-13",
+			"claims": {
+				"name": "Bibio lanigerus",
+				"seen": "2021-04"
+			}
+		},
+		{
+			"id": "a5404d26-5575-446e-9a23-46ef15c5a868",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-07-25",
+			"claims": {
+				"name": "Eristalis tenax",
+				"seen": "2021-07"
+			}
+		},
+		{
+			"id": "94a3160c-8cff-4e0e-80a8-04763b41a015",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-09-18",
+			"claims": {
+				"name": "Hylemya variata",
+				"seen": "2021-09"
+			}
+		},
+		{
+			"id": "4db4abfd-eff3-4b51-96b9-3bd0caf89b94",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-06-09",
+			"claims": {
+				"name": "Tipula oleracea",
+				"seen": "2021-06"
+			}
+		},
+		{
+			"id": "01f3ec0a-af71-45ac-a415-e1dd66cec9ab",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-07-04",
+			"claims": {
+				"name": "Pipizella viduata",
+				"seen": "2021-07"
+			}
+		},
+		{
+			"id": "ff26913b-21d0-4774-b704-89cd2d01990e",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-04-22",
+			"claims": {
+				"name": "Phaonia atriceps",
+				"seen": "2021-04"
+			}
+		},
+		{
+			"id": "a0339fa2-ed7c-4f49-9d57-f8ead869b9c4",
+			"at": [
+				52.348477,
+				-1.58083
+			],
+			"observed": "1992-08-04",
+			"claims": {
+				"name": "Bullhead",
+				"seen": "1992-08"
+			}
+		},
+		{
+			"id": "d612d9b2-5eb5-4b38-91d4-4e467bbf3c8a",
+			"at": [
+				52.33594,
+				-1.577152
+			],
+			"observed": "2023-02-06",
+			"claims": {
+				"name": "Blackbird",
+				"seen": "2023-02"
+			}
+		},
+		{
+			"id": "7fd525c5-3853-4d88-a9fe-714cc568fd49",
+			"at": [
+				52.346859,
+				-1.568294
+			],
+			"observed": "2024-04-11",
+			"claims": {
+				"name": "Blackcap",
+				"seen": "2024-04"
+			}
+		},
+		{
+			"id": "4b84f637-4314-4f7f-ba01-17da077331ec",
+			"at": [
+				52.346859,
+				-1.568294
+			],
+			"observed": "2024-04-11",
+			"claims": {
+				"name": "Woodpigeon",
+				"seen": "2024-04"
+			}
+		},
+		{
+			"id": "79c02c6b-f1fd-4685-87c3-bb70a42cdcca",
+			"at": [
+				52.353012,
+				-1.579393
+			],
+			"observed": "2022-07-23",
+			"claims": {
+				"name": "Eriothrix rufomaculata",
+				"seen": "2022-07"
+			}
+		},
+		{
+			"id": "79260bb1-5041-40c1-85fe-984737bb0444",
+			"at": [
+				52.342976,
+				-1.551525
+			],
+			"observed": "2012-07-05",
+			"claims": {
+				"name": "Southern Hawker",
+				"seen": "2012-07"
+			}
+		},
+		{
+			"id": "d4679ee5-8e5a-4eb0-b061-d872799e2333",
+			"at": [
+				52.351908,
+				-1.572209
+			],
+			"observed": "2023-05-03",
+			"claims": {
+				"name": "Sarcophaga",
+				"seen": "2023-05"
+			}
+		},
+		{
+			"id": "7decdda6-44f6-4aba-bd9f-cdfd934816e4",
+			"at": [
+				52.351908,
+				-1.572209
+			],
+			"observed": "2023-05-03",
+			"claims": {
+				"name": "Chocolate Mining Bee",
+				"seen": "2023-05"
+			}
+		},
+		{
+			"id": "8da63379-fb2c-44ad-90c4-5cb6e46b7636",
+			"at": [
+				52.352042,
+				-1.571988
+			],
+			"observed": "2026-06-12",
+			"claims": {
+				"name": "Harlequin Ladybird",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "19de9b80-7ccc-483f-b78c-6c45d9bcf912",
+			"at": [
+				52.345,
+				-1.599
+			],
+			"observed": "2024-06-09",
+			"claims": {
+				"name": "Brown Hare",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "2e08d470-146b-4369-9b79-33b8ad814ee3",
+			"at": [
+				52.345,
+				-1.594
+			],
+			"observed": "2025-06-15",
+			"claims": {
+				"name": "Magpie",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "dd999060-8947-4aca-9121-37ab9508dccc",
+			"at": [
+				52.34,
+				-1.611
+			],
+			"observed": "2026-06-05",
+			"claims": {
+				"name": "Brown Hare",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "4a93e83a-939d-4be1-9015-1491ac80d06e",
+			"at": [
+				52.34,
+				-1.611
+			],
+			"observed": "2026-05-24",
+			"claims": {
+				"name": "Woodpigeon",
+				"seen": "2026-05"
+			}
+		},
+		{
+			"id": "f62bace0-4714-48de-9637-d7848560867f",
+			"at": [
+				52.345,
+				-1.594
+			],
+			"observed": "2025-05-19",
+			"claims": {
+				"name": "Jackdaw",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "72ed1978-7d14-4403-b51e-4191dccc50fa",
+			"at": [
+				52.346062,
+				-1.571678
+			],
+			"observed": "2024-07-27",
+			"claims": {
+				"name": "Coenosia tigrina",
+				"seen": "2024-07"
+			}
+		},
+		{
+			"id": "833fee52-8690-45b0-ab9e-818c30067397",
+			"at": [
+				52.342,
+				-1.611
+			],
+			"observed": "2026-06-14",
+			"claims": {
+				"name": "Rabbit",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "ecea9902-0feb-4cb0-a0cd-a6b8b58a4d6b",
+			"at": [
+				52.347088,
+				-1.581944
+			],
+			"observed": "2024-06-08",
+			"claims": {
+				"name": "Red-tailed Bumblebee",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "8b437695-9ecd-4503-8eda-12b3d9fe9141",
+			"at": [
+				52.345,
+				-1.594
+			],
+			"observed": "2026-06-17",
+			"claims": {
+				"name": "Rabbit",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "ed5311c3-ca87-4b71-9ed8-f695a3bd21f2",
+			"at": [
+				52.345,
+				-1.594
+			],
+			"observed": "2026-05-31",
+			"claims": {
+				"name": "Pheasant",
+				"seen": "2026-05"
+			}
+		},
+		{
+			"id": "370aafa7-5658-4714-a12f-7f56efe65287",
+			"at": [
+				52.342,
+				-1.611
+			],
+			"observed": "2026-06-14",
+			"claims": {
+				"name": "Blackbird",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "a4fa9af7-41a0-444f-818e-99ca285f0bc1",
+			"at": [
+				52.345,
+				-1.599
+			],
+			"observed": "2026-06-04",
+			"claims": {
+				"name": "Dunnock",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "f9e3c176-8e4b-41df-9e44-d2720040d8c5",
+			"at": [
+				52.342,
+				-1.605
+			],
+			"observed": "2024-06-14",
+			"claims": {
+				"name": "Muntjac",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "ea50fa3c-7a7e-484a-9d72-ebbafe770b3c",
+			"at": [
+				52.345,
+				-1.599
+			],
+			"observed": "2026-06-01",
+			"claims": {
+				"name": "Robin",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "756b10a5-d63c-4abd-b829-9243e5c0f536",
+			"at": [
+				52.345,
+				-1.599
+			],
+			"observed": "2026-06-16",
+			"claims": {
+				"name": "Blackbird",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "db2f0281-3ab0-4ce4-85c9-ec746d82ddbc",
+			"at": [
+				52.34,
+				-1.611
+			],
+			"observed": "2025-05-27",
+			"claims": {
+				"name": "Grey Squirrel",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "1af6d0cd-0f23-46b3-a530-a541b97aa783",
+			"at": [
+				52.350928,
+				-1.574861
+			],
+			"observed": "2025-06-17",
+			"claims": {
+				"name": "2-spot Ladybird",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "6f1f86ce-f629-44c9-b6bf-5d419f8e825f",
+			"at": [
+				52.350928,
+				-1.574861
+			],
+			"observed": "2017-07-19",
+			"claims": {
+				"name": "Broad Centurion",
+				"seen": "2017-07"
+			}
+		},
+		{
+			"id": "61357040-a79e-4e3c-b79f-67440fbc1e9e",
+			"at": [
+				52.351105,
+				-1.573979
+			],
+			"observed": "2019-04-30",
+			"claims": {
+				"name": "Chocolate Mining Bee",
+				"seen": "2019-04"
+			}
+		},
+		{
+			"id": "50a1e8a0-4201-4b9f-bb15-14a2cd8d462d",
+			"at": [
+				52.344,
+				-1.599
+			],
+			"observed": "2025-06-16",
+			"claims": {
+				"name": "Blackbird",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "a2740543-9e6e-458c-9da4-c272a4259753",
+			"at": [
+				52.344,
+				-1.599
+			],
+			"observed": "2024-05-24",
+			"claims": {
+				"name": "Brown Rat",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "1d19ce4f-db6a-46d6-8289-17d9693a57b9",
+			"at": [
+				52.35309,
+				-1.576015
+			],
+			"observed": "2025-04-28",
+			"claims": {
+				"name": "24-spot Ladybird",
+				"seen": "2025-04"
+			}
+		},
+		{
+			"id": "08bfa609-73b6-400c-ae09-fbe660b4e30f",
+			"at": [
+				52.35309,
+				-1.576015
+			],
+			"observed": "2024-06-19",
+			"claims": {
+				"name": "Rhogogaster",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "da06f68c-d160-457f-a8f8-d7f391b04286",
+			"at": [
+				52.344,
+				-1.599
+			],
+			"observed": "2025-06-20",
+			"claims": {
+				"name": "Rabbit",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "c54da5ed-0405-45e0-b3a5-76e751f443c3",
+			"at": [
+				52.344,
+				-1.599
+			],
+			"observed": "2025-05-21",
+			"claims": {
+				"name": "Dunnock",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "2b8401b9-cbb0-4e13-b386-0837057c705f",
+			"at": [
+				52.345298,
+				-1.585087
+			],
+			"observed": "2024-04-05",
+			"claims": {
+				"name": "Blackcap",
+				"seen": "2024-04"
+			}
+		},
+		{
+			"id": "3f8acc56-e3cf-4d25-930c-89a5c38bfee2",
+			"at": [
+				52.345,
+				-1.594
+			],
+			"observed": "2025-05-28",
+			"claims": {
+				"name": "Woodpigeon",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "0864cba6-924f-4f38-95e9-a23067e4b231",
+			"at": [
+				52.345,
+				-1.594
+			],
+			"observed": "2025-06-02",
+			"claims": {
+				"name": "Starling",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "020bca3b-2ffa-4d5a-9457-e79b6aba0d07",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2024-12-29",
+			"claims": {
+				"name": "Coal Tit",
+				"seen": "2024-12"
+			}
+		},
+		{
+			"id": "5e6a979c-eb18-41d9-a1ec-75ab27a4690e",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2024-04-12",
+			"claims": {
+				"name": "Helophilus pendulus",
+				"seen": "2024-04"
+			}
+		},
+		{
+			"id": "5187bbf5-c45b-4d9b-a0d5-bc7163e65edf",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2025-01-31",
+			"claims": {
+				"name": "Dunnock",
+				"seen": "2025-01"
+			}
+		},
+		{
+			"id": "ade70b69-d01b-4d71-91ad-0301eb87fbbd",
+			"at": [
+				52.351105,
+				-1.573979
+			],
+			"observed": "2018-05-28",
+			"claims": {
+				"name": "Melanostoma",
+				"seen": "2018-05"
+			}
+		},
+		{
+			"id": "de7c7544-34ff-4f05-a50a-bebffb4fed1a",
+			"at": [
+				52.351626,
+				-1.568982
+			],
+			"observed": "2020-05-28",
+			"claims": {
+				"name": "Ctenophora pectinicornis",
+				"seen": "2020-05"
+			}
+		},
+		{
+			"id": "b2c2e25d-b7af-4f01-a721-c37da3e3b827",
+			"at": [
+				52.349427,
+				-1.582363
+			],
+			"observed": "2017-06-20",
+			"claims": {
+				"name": "Harmonia axyridis form spectabilis",
+				"seen": "2017-06"
+			}
+		},
+		{
+			"id": "a5317ffb-76ae-4e13-8008-bf89bc256b00",
+			"at": [
+				52.351112,
+				-1.575887
+			],
+			"observed": "2025-07-11",
+			"claims": {
+				"name": "Anthomyia pluvialis",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "65836e16-9404-4a43-8adf-feb5f079b6fc",
+			"at": [
+				52.342976,
+				-1.551525
+			],
+			"observed": "2020-06-28",
+			"claims": {
+				"name": "Rutpela maculata",
+				"seen": "2020-06"
+			}
+		},
+		{
+			"id": "5fbc8dce-9b43-4577-bc7d-fccf3aa6b83b",
+			"at": [
+				52.352042,
+				-1.571988
+			],
+			"observed": "2023-06-17",
+			"claims": {
+				"name": "Oedemera lurida",
+				"seen": "2023-06"
+			}
+		},
+		{
+			"id": "91305777-3989-4a27-b127-937c04bf2e1f",
+			"at": [
+				52.35209,
+				-1.572941
+			],
+			"observed": "2023-07-21",
+			"claims": {
+				"name": "Macropsis",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "f25fc463-31d3-434f-8ca3-24347aa7e9a6",
+			"at": [
+				52.363062,
+				-1.57511
+			],
+			"observed": "2023-05-01",
+			"claims": {
+				"name": "Scathophaga stercoraria",
+				"seen": "2023-05"
+			}
+		},
+		{
+			"id": "0acd54f2-1366-453a-ab1d-d0423a2c9638",
+			"at": [
+				52.351293,
+				-1.576326
+			],
+			"observed": "2021-08-13",
+			"claims": {
+				"name": "Sarcophagidae",
+				"seen": "2021-08"
+			}
+		},
+		{
+			"id": "51468491-0993-4136-adf1-9699e0461513",
+			"at": [
+				52.342,
+				-1.611
+			],
+			"observed": "2026-06-04",
+			"claims": {
+				"name": "Pheasant",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "fe3de1f5-b8bf-429f-a61c-03122dc48f73",
+			"at": [
+				52.342,
+				-1.611
+			],
+			"observed": "2026-06-16",
+			"claims": {
+				"name": "Dunnock",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "8461052d-55c4-4607-bec0-eb68ffd91add",
+			"at": [
+				52.340952,
+				-1.575544
+			],
+			"observed": "2013-08-20",
+			"claims": {
+				"name": "Harlequin Ladybird",
+				"seen": "2013-08"
+			}
+		},
+		{
+			"id": "81178271-abc5-421a-80f0-5d98d3c1516a",
+			"at": [
+				52.343,
+				-1.608
+			],
+			"observed": "2026-05-25",
+			"claims": {
+				"name": "Blackbird",
+				"seen": "2026-05"
+			}
+		},
+		{
+			"id": "75a49f76-9c52-4aa0-b836-3c0e405c4d87",
+			"at": [
+				52.343,
+				-1.608
+			],
+			"observed": "2026-06-15",
+			"claims": {
+				"name": "Red Fox",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "55af1855-71b3-4cea-88f4-d8b967d8955e",
+			"at": [
+				52.347446,
+				-1.581647
+			],
+			"observed": "2022-07-01",
+			"claims": {
+				"name": "Potato Capsid",
+				"seen": "2022-07"
+			}
+		},
+		{
+			"id": "ea64c008-6ddf-403b-8666-d48c45254323",
+			"at": [
+				52.354084,
+				-1.577327
+			],
+			"observed": "2020-05-30",
+			"claims": {
+				"name": "Common Earwig",
+				"seen": "2020-05"
+			}
+		},
+		{
+			"id": "699bfc31-4024-4ea7-8e04-26f9168949e1",
+			"at": [
+				52.351998,
+				-1.572355
+			],
+			"observed": "2023-10-22",
+			"claims": {
+				"name": "Common Carder Bee",
+				"seen": "2023-10"
+			}
+		},
+		{
+			"id": "79306a6f-4dde-451e-9c18-bca05a9360ab",
+			"at": [
+				52.331014,
+				-1.562138
+			],
+			"observed": "2016-08-03",
+			"claims": {
+				"name": "Pegoplata aestiva",
+				"seen": "2016-08"
+			}
+		},
+		{
+			"id": "635ae743-0cb2-4802-a14e-249a1501bcc6",
+			"at": [
+				52.346,
+				-1.601
+			],
+			"observed": "2025-06-08",
+			"claims": {
+				"name": "Woodpigeon",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "1c7dede3-78de-4a96-a2ac-338b97c9d7af",
+			"at": [
+				52.343062,
+				-1.57501
+			],
+			"observed": "2022-07-09",
+			"claims": {
+				"name": "Swift",
+				"seen": "2022-07"
+			}
+		},
+		{
+			"id": "0fe6317b-2321-41a6-b720-ace530fca57d",
+			"at": [
+				52.346,
+				-1.601
+			],
+			"observed": "2026-06-14",
+			"claims": {
+				"name": "Brown Hare",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "540b13dc-8c7a-43a4-aedc-4765dd575301",
+			"at": [
+				52.351021,
+				-1.575741
+			],
+			"observed": "2024-05-07",
+			"claims": {
+				"name": "Common Cockchafer",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "9ee156d0-cf68-478e-80a5-3a898f19285a",
+			"at": [
+				52.344,
+				-1.599
+			],
+			"observed": "2024-05-26",
+			"claims": {
+				"name": "Grey Squirrel",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "eb1bac47-25e3-4c52-9cf4-fe226ef61e57",
+			"at": [
+				52.353,
+				-1.575869
+			],
+			"observed": "2024-06-24",
+			"claims": {
+				"name": "Timothy Grassbug",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "af3fd81c-a366-4b93-baea-b81c7271c822",
+			"at": [
+				52.344,
+				-1.599
+			],
+			"observed": "2025-06-08",
+			"claims": {
+				"name": "Roe Deer",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "9e0bad07-66bf-4336-a467-5bb085fe971f",
+			"at": [
+				52.353,
+				-1.575869
+			],
+			"observed": "2022-06-11",
+			"claims": {
+				"name": "Azure Damselfly",
+				"seen": "2022-06"
+			}
+		},
+		{
+			"id": "db6abdd0-8a28-4cec-a1e2-68c8e36a4988",
+			"at": [
+				52.353,
+				-1.575869
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "Morellia",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "a5e03c51-d304-4354-b7c1-842a920d64bd",
+			"at": [
+				52.353,
+				-1.575869
+			],
+			"observed": "2025-05-03",
+			"claims": {
+				"name": "Fannia lustrator",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "8163790a-989e-4757-b6fc-d810dd7207e9",
+			"at": [
+				52.353,
+				-1.575869
+			],
+			"observed": "2024-06-14",
+			"claims": {
+				"name": "Oedemera lurida",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "0585550c-8a1a-42c3-8da1-14063451aadc",
+			"at": [
+				52.353,
+				-1.575869
+			],
+			"observed": "2025-05-07",
+			"claims": {
+				"name": "Macrophya",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "16f32ab9-3928-4790-b374-2283f3373021",
+			"at": [
+				52.343,
+				-1.615
+			],
+			"observed": "2026-06-21",
+			"claims": {
+				"name": "Muntjac",
+				"seen": "2026-06"
+			}
+		},
+		{
+			"id": "12a49c28-b2f6-49fc-bd39-e9e6839aa491",
+			"at": [
+				52.347177,
+				-1.58165
+			],
+			"observed": "2025-06-13",
+			"claims": {
+				"name": "Broad Centurion",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "7e0f7284-a7d9-4be2-9e87-d34d50886b87",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-12-02",
+			"claims": {
+				"name": "Empoasca",
+				"seen": "2023-12"
+			}
+		},
+		{
+			"id": "95232d14-53da-4c15-a8f5-e923b6fa765f",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-07-28",
+			"claims": {
+				"name": "Sciaridae",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "c7504331-447a-46a7-bb47-caedbd7ff320",
+			"at": [
+				52.343,
+				-1.615
+			],
+			"observed": "2025-06-17",
+			"claims": {
+				"name": "Carrion Crow",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "80f8c339-df5a-420a-a716-2f4df3bd3f37",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-07-15",
+			"claims": {
+				"name": "Bumblebee",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "dd3d88cb-16ca-4faf-8df9-0f84a46c6edc",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-08-18",
+			"claims": {
+				"name": "Red-tailed Bumblebee",
+				"seen": "2021-08"
+			}
+		},
+		{
+			"id": "2f061c74-4447-4bb8-9d8c-c4352540f130",
+			"at": [
+				52.349074,
+				-1.584275
+			],
+			"observed": "2023-08-07",
+			"claims": {
+				"name": "Sarcophaga",
+				"seen": "2023-08"
+			}
+		},
+		{
+			"id": "a0a6c803-4c72-46ac-9564-b0e8c2e1a338",
+			"at": [
+				52.363739,
+				-1.574812
+			],
+			"observed": "2016-04-20",
+			"claims": {
+				"name": "Great Tit",
+				"seen": "2016-04"
+			}
+		},
+		{
+			"id": "f3322d9c-9fad-45bc-8e02-7881391ea04f",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-07-10",
+			"claims": {
+				"name": "Greater Bulb-Fly",
+				"seen": "2021-07"
+			}
+		},
+		{
+			"id": "0e6ac3ec-c8e6-4db2-8034-ee2515e337d3",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-05-16",
+			"claims": {
+				"name": "Red-tailed Bumblebee",
+				"seen": "2021-05"
+			}
+		},
+		{
+			"id": "241e5a12-1bd1-430b-ac67-6796a05bcf4c",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-05-30",
+			"claims": {
+				"name": "Platycheirus albimanus",
+				"seen": "2021-05"
+			}
+		},
+		{
+			"id": "fea82c3e-9a02-4e90-a0bb-e65707abf43e",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-08-10",
+			"claims": {
+				"name": "Limnophora tigrina",
+				"seen": "2021-08"
+			}
+		},
+		{
+			"id": "e37e8434-3a82-4a44-b3aa-384d1fc5b071",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-08-10",
+			"claims": {
+				"name": "Hydrophorus bipunctatus",
+				"seen": "2021-08"
+			}
+		},
+		{
+			"id": "66ef293f-e533-4eab-838b-52b6f9d93079",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-08-04",
+			"claims": {
+				"name": "Limonius poneli",
+				"seen": "2021-08"
+			}
+		},
+		{
+			"id": "dd92ee46-e444-413e-ba0d-0a6f1367dcfb",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-07-10",
+			"claims": {
+				"name": "Blunt Tailed Digger Wasp",
+				"seen": "2021-07"
+			}
+		},
+		{
+			"id": "0ef46fd1-53eb-4e65-9727-19b3e9fea4b6",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-07-04",
+			"claims": {
+				"name": "Pales pavida",
+				"seen": "2021-07"
+			}
+		},
+		{
+			"id": "9489dc02-ac63-456b-9d25-abbf3669daa4",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-04-13",
+			"claims": {
+				"name": "Hebecnema umbratica",
+				"seen": "2021-04"
+			}
+		},
+		{
+			"id": "660e43e5-1cb1-4acd-9fc3-bae4f30e2f1b",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-09-18",
+			"claims": {
+				"name": "Syrphus ribesii",
+				"seen": "2021-09"
+			}
+		},
+		{
+			"id": "99803797-52e5-4533-ba32-0a1d430566ce",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-09-18",
+			"claims": {
+				"name": "Awkward Clusterfly",
+				"seen": "2021-09"
+			}
+		},
+		{
+			"id": "90c71570-49a0-4c37-9ff5-b0e6ff89b38d",
+			"at": [
+				52.35209,
+				-1.572941
+			],
+			"observed": "2023-07-21",
+			"claims": {
+				"name": "Plagiognathus (Plagiognathus) arbustorum",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "f43a0030-5edc-4102-8783-5e1c42cfd016",
+			"at": [
+				52.347589,
+				-1.583775
+			],
+			"observed": "2021-07-25",
+			"claims": {
+				"name": "Patchwork Leafcutter Bee",
+				"seen": "2021-07"
+			}
+		},
+		{
+			"id": "9a7600f5-c5c4-43e0-9538-7d8fb118da81",
+			"at": [
+				52.35495,
+				-1.58434
+			],
+			"observed": "2023-04-09",
+			"claims": {
+				"name": "Rook",
+				"seen": "2023-04"
+			}
+		},
+		{
+			"id": "ac96fbf9-fa34-47de-b277-6818d7b89c4d",
+			"at": [
+				52.342,
+				-1.605
+			],
+			"observed": "2024-06-18",
+			"claims": {
+				"name": "Jackdaw",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "90f162df-c929-40e9-9f50-3bd95fe1f669",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-08-28",
+			"claims": {
+				"name": "Eriothrix rufomaculata",
+				"seen": "2023-08"
+			}
+		},
+		{
+			"id": "21adc759-df06-4470-ae63-0aefb3e801f8",
+			"at": [
+				52.347267,
+				-1.581649
+			],
+			"observed": "2024-05-27",
+			"claims": {
+				"name": "Coenosia tigrina",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "d3b0d371-a532-4e1b-b26f-c36057d90bcf",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-07-04",
+			"claims": {
+				"name": "Oedemera",
+				"seen": "2021-07"
+			}
+		},
+		{
+			"id": "eddd0ca5-a528-4a79-a319-823c22d354db",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-05-09",
+			"claims": {
+				"name": "Rhopalus (Rhopalus) subrufus",
+				"seen": "2021-05"
+			}
+		},
+		{
+			"id": "725612f4-1828-4d77-b010-d08788672dff",
+			"at": [
+				52.344,
+				-1.599
+			],
+			"observed": "2025-05-20",
+			"claims": {
+				"name": "Carrion Crow",
+				"seen": "2025-05"
+			}
+		},
+		{
+			"id": "f963b886-3c8a-4749-a29e-749f42082d1b",
+			"at": [
+				52.347177,
+				-1.58165
+			],
+			"observed": "2022-05-26",
+			"claims": {
+				"name": "Cantharis livida",
+				"seen": "2022-05"
+			}
+		},
+		{
+			"id": "7b5c787e-a791-46c1-bc1e-707d3ba9bbb0",
+			"at": [
+				52.346731,
+				-1.595527
+			],
+			"observed": "2015-05-21",
+			"claims": {
+				"name": "Polycentropus flavomaculatus",
+				"seen": "2015-05"
+			}
+		},
+		{
+			"id": "cc5a251e-49f8-4402-8929-0872a42f4bed",
+			"at": [
+				52.347088,
+				-1.581944
+			],
+			"observed": "2024-06-08",
+			"claims": {
+				"name": "Lucilia",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "308ae544-d8ea-4793-94c5-5890e0e1ff70",
+			"at": [
+				52.347177,
+				-1.58165
+			],
+			"observed": "2024-06-01",
+			"claims": {
+				"name": "Phyllobius",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "5d8083d2-4aa0-48dd-848e-7fe5d101925d",
+			"at": [
+				52.346731,
+				-1.595527
+			],
+			"observed": "1995-04-10",
+			"claims": {
+				"name": "Jenkins' Spire Snail",
+				"seen": "1995-04"
+			}
+		},
+		{
+			"id": "3b6e3770-8c95-4629-bfad-359330a28912",
+			"at": [
+				52.346062,
+				-1.571678
+			],
+			"observed": "2023-10-23",
+			"claims": {
+				"name": "Common Bluebottle",
+				"seen": "2023-10"
+			}
+		},
+		{
+			"id": "f5d5574d-2827-4390-b512-f9230cb54916",
+			"at": [
+				52.347539,
+				-1.56908
+			],
+			"observed": "2026-05-07",
+			"claims": {
+				"name": "Raspberry Beetle",
+				"seen": "2026-05"
+			}
+		},
+		{
+			"id": "826bbfe7-3bcd-4d88-b978-a5e1f077021a",
+			"at": [
+				52.346152,
+				-1.571531
+			],
+			"observed": "2024-06-15",
+			"claims": {
+				"name": "Small Garden Bumblebee",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "a66af220-aa9a-4a1e-bd9d-bf3033b78751",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-06-02",
+			"claims": {
+				"name": "Seioptera vibrans",
+				"seen": "2018-06"
+			}
+		},
+		{
+			"id": "dc197919-0243-4a85-9ec8-634d1f08d864",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2017-08-15",
+			"claims": {
+				"name": "Rhingia rostrata",
+				"seen": "2017-08"
+			}
+		},
+		{
+			"id": "bd97c641-bc33-445b-aa4a-58f16e830225",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-07-21",
+			"claims": {
+				"name": "Apolygus spinolae",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "593d4172-e670-4ca6-a6af-e1893ad0b4fe",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2022-06-12",
+			"claims": {
+				"name": "Harmonia",
+				"seen": "2022-06"
+			}
+		},
+		{
+			"id": "d6dfb8eb-cc49-424b-a3dc-7da2c9f70dcf",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-08-01",
+			"claims": {
+				"name": "Black Snipefly",
+				"seen": "2020-08"
+			}
+		},
+		{
+			"id": "56ec60ae-d9ec-4a8b-80c1-1684debd9f63",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2017-05-05",
+			"claims": {
+				"name": "Rhamphomyia",
+				"seen": "2017-05"
+			}
+		},
+		{
+			"id": "a588eab8-9e1c-4df1-97e1-173ac4ad7eb6",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-10-02",
+			"claims": {
+				"name": "Rhopalidae",
+				"seen": "2019-10"
+			}
+		},
+		{
+			"id": "f9447a0c-74f9-479a-8bc2-9e054f9dfc5c",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-06-06",
+			"claims": {
+				"name": "Sapyga quinquepunctata",
+				"seen": "2018-06"
+			}
+		},
+		{
+			"id": "08dfb808-b53f-4aea-8ae6-bc514755f8f0",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2022-11-08",
+			"claims": {
+				"name": "Phasia obesa",
+				"seen": "2022-11"
+			}
+		},
+		{
+			"id": "d274242b-a492-43fb-9bbd-0564567a016b",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-09-12",
+			"claims": {
+				"name": "Hornet",
+				"seen": "2019-09"
+			}
+		},
+		{
+			"id": "6184a824-157d-4793-90cc-135ec3cbd858",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2017-09-27",
+			"claims": {
+				"name": "Eupteryx melissae",
+				"seen": "2017-09"
+			}
+		},
+		{
+			"id": "fc43a6a5-ad5c-47e7-bd69-21f6d8bb4404",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-09-15",
+			"claims": {
+				"name": "Eristalis",
+				"seen": "2018-09"
+			}
+		},
+		{
+			"id": "f3292dd2-ee0b-494f-bef9-f28c6e5699c8",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-08-21",
+			"claims": {
+				"name": "Bee Wolf",
+				"seen": "2019-08"
+			}
+		},
+		{
+			"id": "9ef5a256-46a7-4979-8a35-8f069ddd042a",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-09-07",
+			"claims": {
+				"name": "Aedes",
+				"seen": "2019-09"
+			}
+		},
+		{
+			"id": "b31b14f3-d246-4b8f-83ff-d08359b890d7",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-09-10",
+			"claims": {
+				"name": "Parent Bug",
+				"seen": "2018-09"
+			}
+		},
+		{
+			"id": "6c910ea9-3936-4833-84a7-a757c45f1058",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2017-06-27",
+			"claims": {
+				"name": "Cantharis flavilabris (=nigra auctt.)",
+				"seen": "2017-06"
+			}
+		},
+		{
+			"id": "4340988e-2625-4319-9fe5-e51349a4fe74",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-06-23",
+			"claims": {
+				"name": "Yellow-legged Furrow Bee",
+				"seen": "2018-06"
+			}
+		},
+		{
+			"id": "669d41dc-3316-464f-b767-6615fe949f14",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2023-06-28",
+			"claims": {
+				"name": "Goera pilosa",
+				"seen": "2023-06"
+			}
+		},
+		{
+			"id": "7ad67972-5956-4446-b0bc-d2bf640d892d",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-10-06",
+			"claims": {
+				"name": "Cabbage-stem Flea Beetle",
+				"seen": "2019-10"
+			}
+		},
+		{
+			"id": "a27ab90a-2505-4535-8c8e-5ec2edae624e",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2025-02-25",
+			"claims": {
+				"name": "Goldcrest",
+				"seen": "2025-02"
+			}
+		},
+		{
+			"id": "3aab2034-2a68-4b10-926a-2f533babf532",
+			"at": [
+				52.347177,
+				-1.581797
+			],
+			"observed": "2023-07-11",
+			"claims": {
+				"name": "Early Bumblebee",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "589afa12-be0d-4785-93a7-13abd39a823c",
+			"at": [
+				52.348988,
+				-1.58545
+			],
+			"observed": "2023-05-13",
+			"claims": {
+				"name": "Helina",
+				"seen": "2023-05"
+			}
+		},
+		{
+			"id": "15bbbc0d-a69c-4f0a-960a-310a4d5740bb",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2024-05-23",
+			"claims": {
+				"name": "Emperor Dragonfly",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "3ebca067-7abf-4bde-a2b8-079d1372d714",
+			"at": [
+				52.348752,
+				-1.569597
+			],
+			"observed": "2025-09-13",
+			"claims": {
+				"name": "Buzzard",
+				"seen": "2025-09"
+			}
+		},
+		{
+			"id": "d0f2a92f-229b-4d0c-a0d8-87253b0f27ba",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-05-30",
+			"claims": {
+				"name": "Sheep-strike Greenbottle",
+				"seen": "2021-05"
+			}
+		},
+		{
+			"id": "344b60ab-098d-4939-8b7e-12731035b23b",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-08-12",
+			"claims": {
+				"name": "Marsh Snipefly",
+				"seen": "2021-08"
+			}
+		},
+		{
+			"id": "487bdfbf-9da5-4eab-bfa7-5dea062b85d6",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-06-08",
+			"claims": {
+				"name": "Tricholauxania praeusta",
+				"seen": "2021-06"
+			}
+		},
+		{
+			"id": "c1bcd66c-c339-47fb-8d33-933b9d7de9da",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2021-05-12",
+			"claims": {
+				"name": "Orange-tailed Mining Bee",
+				"seen": "2021-05"
+			}
+		},
+		{
+			"id": "6b6e65b3-b542-4b25-9ef8-e285b4173bf5",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-07-15",
+			"claims": {
+				"name": "White-tailed Bumblebee",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "efa64b5e-40c0-4c61-a831-365a51459b04",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2017-03-15",
+			"claims": {
+				"name": "Birch Catkin Bug",
+				"seen": "2017-03"
+			}
+		},
+		{
+			"id": "10d9d779-1f07-4633-a97b-6b3f177c92ba",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-09-18",
+			"claims": {
+				"name": "Andromeda Lacebug",
+				"seen": "2025-09"
+			}
+		},
+		{
+			"id": "7acf16a3-0758-48da-9db2-8ed18420e800",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-08-14",
+			"claims": {
+				"name": "Phania funesta",
+				"seen": "2020-08"
+			}
+		},
+		{
+			"id": "2f6d9caa-8355-426f-a239-473ae05bde06",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-05-13",
+			"claims": {
+				"name": "Black-horned Gem",
+				"seen": "2018-05"
+			}
+		},
+		{
+			"id": "ff29c94a-34a2-4e96-b807-f04d0f935bd6",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-07-11",
+			"claims": {
+				"name": "Strawberry Seed Beetle",
+				"seen": "2019-07"
+			}
+		},
+		{
+			"id": "40a7ae68-896a-43c9-82dc-7319dbb5def4",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2024-09-18",
+			"claims": {
+				"name": "Bugle Tigress",
+				"seen": "2024-09"
+			}
+		},
+		{
+			"id": "15f53019-404a-451f-8971-12bc1ebb6010",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-08-02",
+			"claims": {
+				"name": "Ornate Tailed Digger Wasp",
+				"seen": "2019-08"
+			}
+		},
+		{
+			"id": "581d3c2c-a972-4ab3-8f4b-8de83e2c352a",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-11-27",
+			"claims": {
+				"name": "Orchesella villosa",
+				"seen": "2025-11"
+			}
+		},
+		{
+			"id": "83a0aa1e-ff87-4fde-b7d5-b183c12a9b0a",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-07-21",
+			"claims": {
+				"name": "Xylota segnis",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "40a04512-9967-4ace-828b-a077c1804d91",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-06-03",
+			"claims": {
+				"name": "Phyto",
+				"seen": "2019-06"
+			}
+		},
+		{
+			"id": "855e2cef-6641-49d3-bbb9-0811370a45d1",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-07-01",
+			"claims": {
+				"name": "Yellow-legged Black",
+				"seen": "2020-07"
+			}
+		},
+		{
+			"id": "6424cb52-c205-4f4c-ab27-408c46901393",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2017-05-12",
+			"claims": {
+				"name": "Rhingia campestris",
+				"seen": "2017-05"
+			}
+		},
+		{
+			"id": "89e88463-584a-402a-be62-e2c302c1fc63",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2020-08-29",
+			"claims": {
+				"name": "Leafhopper",
+				"seen": "2020-08"
+			}
+		},
+		{
+			"id": "d29d8ebf-2975-4538-a142-a5f5a935ec37",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-07-20",
+			"claims": {
+				"name": "Opomyza florum",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "7d20c04b-c716-4a8c-9889-a531281513bf",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-06-08",
+			"claims": {
+				"name": "Stripe-legged Robberfly",
+				"seen": "2019-06"
+			}
+		},
+		{
+			"id": "6e95e1c6-8242-4ae5-96c4-639048a742c5",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2021-05-26",
+			"claims": {
+				"name": "Crowned Fern-sawfly",
+				"seen": "2021-05"
+			}
+		},
+		{
+			"id": "774a3a30-d1bb-4dca-af6c-98a63581fc2f",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-07-22",
+			"claims": {
+				"name": "Cymus melanocephalus",
+				"seen": "2018-07"
+			}
+		},
+		{
+			"id": "13b8341e-152f-4f05-9c19-4886b7f6baef",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-07-26",
+			"claims": {
+				"name": "Harmonia axyridis form spectabilis",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "7197fe1e-8115-49c5-80b6-f8698410466a",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2024-04-30",
+			"claims": {
+				"name": "Bombus hortorum subsp. hortorum",
+				"seen": "2024-04"
+			}
+		},
+		{
+			"id": "33a92f86-69cb-4f8c-9f24-45e6695ce468",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-06-21",
+			"claims": {
+				"name": "Willughby's Leafcutter Bee",
+				"seen": "2019-06"
+			}
+		},
+		{
+			"id": "1253816b-91b8-4ff2-8a7a-5a1beb571764",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2025-10-31",
+			"claims": {
+				"name": "Helina impuncta",
+				"seen": "2025-10"
+			}
+		},
+		{
+			"id": "3f579297-61c0-40b6-971c-43b390dbc785",
+			"at": [
+				52.359774,
+				-1.559945
+			],
+			"observed": "2023-08-24",
+			"claims": {
+				"name": "Harmonia axyridis form spectabilis",
+				"seen": "2023-08"
+			}
+		},
+		{
+			"id": "537698b7-e66d-4954-ab86-a41a1d6828f8",
+			"at": [
+				52.352089,
+				-1.572501
+			],
+			"observed": "2024-09-13",
+			"claims": {
+				"name": "Coenosia tigrina",
+				"seen": "2024-09"
+			}
+		},
+		{
+			"id": "a92d87f8-c6f8-4339-9a4f-0b4dec6b27e6",
+			"at": [
+				52.352089,
+				-1.572501
+			],
+			"observed": "2023-09-03",
+			"claims": {
+				"name": "Euura",
+				"seen": "2023-09"
+			}
+		},
+		{
+			"id": "8d718fe5-fb88-4958-b951-d24fc007c8f3",
+			"at": [
+				52.352089,
+				-1.572501
+			],
+			"observed": "2024-05-13",
+			"claims": {
+				"name": "Prasocuris marginella",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "a151b142-c5b8-40a6-a49e-44032ac14a45",
+			"at": [
+				52.352089,
+				-1.572501
+			],
+			"observed": "2025-08-15",
+			"claims": {
+				"name": "Stictopleurus punctatonervosus",
+				"seen": "2025-08"
+			}
+		},
+		{
+			"id": "b5f19982-e306-4637-b4a0-628644c0c38a",
+			"at": [
+				52.351105,
+				-1.573979
+			],
+			"observed": "2018-06-23",
+			"claims": {
+				"name": "Patchwork Leafcutter Bee",
+				"seen": "2018-06"
+			}
+		},
+		{
+			"id": "dea55141-8755-41bb-a06f-5f18556eac1a",
+			"at": [
+				52.35209,
+				-1.572941
+			],
+			"observed": "2023-07-21",
+			"claims": {
+				"name": "Eupteryx",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "6bcc5cbd-0f23-430c-a9ab-5e922ffa9c27",
+			"at": [
+				52.34533,
+				-1.588872
+			],
+			"observed": "2022-09-17",
+			"claims": {
+				"name": "Green Woodpecker",
+				"seen": "2022-09"
+			}
+		},
+		{
+			"id": "d15043c0-4a9c-4ef2-b5a4-91dadf9b772f",
+			"at": [
+				52.346,
+				-1.601
+			],
+			"observed": "2025-06-02",
+			"claims": {
+				"name": "Magpie",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "63e3c2c6-5841-4ae2-b6c8-74762e7024eb",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2021-04-19",
+			"claims": {
+				"name": "Non-biting midges",
+				"seen": "2021-04"
+			}
+		},
+		{
+			"id": "297d6d14-5d62-4b06-99f5-437abc4f8d9b",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2018-04-14",
+			"claims": {
+				"name": "Common Pollen Beetle",
+				"seen": "2018-04"
+			}
+		},
+		{
+			"id": "8a863fe4-8385-4546-89af-249e476f8890",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2017-09-23",
+			"claims": {
+				"name": "Drymus (Sylvadrymus) sylvaticus",
+				"seen": "2017-09"
+			}
+		},
+		{
+			"id": "6d639cc5-8ab6-4d9e-aa8b-6ca1d175769b",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2019-04-28",
+			"claims": {
+				"name": "Hilara",
+				"seen": "2019-04"
+			}
+		},
+		{
+			"id": "6ef4e8e5-c2f0-4ad6-986c-d0a4d7795e9f",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2021-05-24",
+			"claims": {
+				"name": "Hebecnema",
+				"seen": "2021-05"
+			}
+		},
+		{
+			"id": "143aaaa0-270e-4ef4-98ef-102f4ed0f81b",
+			"at": [
+				52.351111,
+				-1.57574
+			],
+			"observed": "2017-06-24",
+			"claims": {
+				"name": "Cuckoo-Spit Insect",
+				"seen": "2017-06"
+			}
+		},
+		{
+			"id": "a3ed07ea-fa12-4e87-ad46-45fca4567286",
+			"at": [
+				52.366233,
+				-1.580883
+			],
+			"observed": "2016-06-30",
+			"claims": {
+				"name": "White-tailed Bumblebee",
+				"seen": "2016-06"
+			}
+		},
+		{
+			"id": "3d864c7e-2299-4eb5-8257-38e8a3b09171",
+			"at": [
+				52.348752,
+				-1.569597
+			],
+			"observed": "2025-07-26",
+			"claims": {
+				"name": "Sparrowhawk",
+				"seen": "2025-07"
+			}
+		},
+		{
+			"id": "a265309d-36af-4389-a79c-5f11f40e8191",
+			"at": [
+				52.342,
+				-1.605
+			],
+			"observed": "2025-06-21",
+			"claims": {
+				"name": "Robin",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "b0a476c9-ea6f-4c11-b05e-efa9ed989f31",
+			"at": [
+				52.342,
+				-1.605
+			],
+			"observed": "2025-06-11",
+			"claims": {
+				"name": "Wren",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "b2b17181-7049-4662-9ed0-a6da2292e34d",
+			"at": [
+				52.343,
+				-1.616
+			],
+			"observed": "2024-06-15",
+			"claims": {
+				"name": "Muntjac",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "90df1ea2-b920-407e-aadb-5ced2d8baf59",
+			"at": [
+				52.3456,
+				-1.5744
+			],
+			"observed": "2023-03-09",
+			"claims": {
+				"name": "Robin",
+				"seen": "2023-03"
+			}
+		},
+		{
+			"id": "484d4faf-badc-431f-b08f-0940dfef8ebb",
+			"at": [
+				52.343,
+				-1.615
+			],
+			"observed": "2025-06-04",
+			"claims": {
+				"name": "Woodpigeon",
+				"seen": "2025-06"
+			}
+		},
+		{
+			"id": "fd63cb55-65fa-490a-ac88-e601993b5620",
+			"at": [
+				52.343,
+				-1.616
+			],
+			"observed": "2024-05-25",
+			"claims": {
+				"name": "Roe Deer",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "3ec876f4-9273-4f71-895e-0b825013a744",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2017-04-11",
+			"claims": {
+				"name": "Hill Cuckoo Bee",
+				"seen": "2017-04"
+			}
+		},
+		{
+			"id": "86bb5276-4d71-4c03-b9bf-f0e20696eccd",
+			"at": [
+				52.351201,
+				-1.575739
+			],
+			"observed": "2023-10-02",
+			"claims": {
+				"name": "Limoniidae",
+				"seen": "2023-10"
+			}
+		},
+		{
+			"id": "7e041ae4-7c8b-4fa3-924d-590f82976a03",
+			"at": [
+				52.348477,
+				-1.58083
+			],
+			"observed": "1992-08-04",
+			"claims": {
+				"name": "European Eel",
+				"seen": "1992-08"
+			}
+		},
+		{
+			"id": "49425355-89cf-4358-9fd2-117012accd44",
+			"at": [
+				52.351908,
+				-1.572356
+			],
+			"observed": "2023-04-08",
+			"claims": {
+				"name": "Face Fly",
+				"seen": "2023-04"
+			}
+		},
+		{
+			"id": "2f04dc3b-cf4b-4219-8358-b12839a3f2ff",
+			"at": [
+				52.352909,
+				-1.56317
+			],
+			"observed": "2007-06-03",
+			"claims": {
+				"name": "Southern Hawker",
+				"seen": "2007-06"
+			}
+		},
+		{
+			"id": "3675c627-0fc8-4a1c-86dd-0a7b25dca12c",
+			"at": [
+				52.358203,
+				-1.598432
+			],
+			"observed": "2003-07-29",
+			"claims": {
+				"name": "Bullhead",
+				"seen": "2003-07"
+			}
+		},
+		{
+			"id": "e521dfc9-6148-4371-8748-99433bb11503",
+			"at": [
+				52.349339,
+				-1.570546
+			],
+			"observed": "2024-09-08",
+			"claims": {
+				"name": "Hornet Hoverfly",
+				"seen": "2024-09"
+			}
+		},
+		{
+			"id": "72cbbfe8-efca-4e4b-969e-fa85a2bc545b",
+			"at": [
+				52.335992,
+				-1.610301
+			],
+			"observed": "1997-10-23",
+			"claims": {
+				"name": "Brown Trout",
+				"seen": "1997-10"
+			}
+		},
+		{
+			"id": "5aa1b2af-f351-4c6b-97f0-7db5daef5bc3",
+			"at": [
+				52.352089,
+				-1.572648
+			],
+			"observed": "2024-03-22",
+			"claims": {
+				"name": "Hairy-footed Flower Bee",
+				"seen": "2024-03"
+			}
+		},
+		{
+			"id": "04daf2b0-fb93-422f-9081-96bad6b42fb9",
+			"at": [
+				52.34732,
+				-1.58475
+			],
+			"observed": "2022-05-15",
+			"claims": {
+				"name": "Anas platyrhynchos x",
+				"seen": "2022-05"
+			}
+		},
+		{
+			"id": "f420c3f0-40a5-46c7-a2f9-e7b80deee021",
+			"at": [
+				52.345,
+				-1.605
+			],
+			"observed": "2026-05-26",
+			"claims": {
+				"name": "Pheasant",
+				"seen": "2026-05"
+			}
+		},
+		{
+			"id": "fde91745-84f3-4ce9-9bf1-eee27bcf72c7",
+			"at": [
+				52.347267,
+				-1.581796
+			],
+			"observed": "2021-06-12",
+			"claims": {
+				"name": "Vestal Cuckoo Bee",
+				"seen": "2021-06"
+			}
+		},
+		{
+			"id": "ea559bd0-d26c-4642-a26d-62fa67284ddb",
+			"at": [
+				52.353813,
+				-1.564629
+			],
+			"observed": "2020-05-05",
+			"claims": {
+				"name": "Scathophaga",
+				"seen": "2020-05"
+			}
+		},
+		{
+			"id": "d6a23d35-c538-40a8-b12f-723e59e69682",
+			"at": [
+				52.353279,
+				-1.578656
+			],
+			"observed": "2022-05-15",
+			"claims": {
+				"name": "Anthomyiidae",
+				"seen": "2022-05"
+			}
+		},
+		{
+			"id": "788e219c-dc0d-4af7-8127-6cf65d0205a0",
+			"at": [
+				52.346998,
+				-1.582092
+			],
+			"observed": "2023-07-17",
+			"claims": {
+				"name": "Deraeocoris (Deraeocoris) ruber",
+				"seen": "2023-07"
+			}
+		},
+		{
+			"id": "d0155e6f-7676-4a3e-a316-e7a26b19f517",
+			"at": [
+				52.347267,
+				-1.581796
+			],
+			"observed": "2023-06-15",
+			"claims": {
+				"name": "Beautiful Demoiselle",
+				"seen": "2023-06"
+			}
+		},
+		{
+			"id": "70f39b55-f6f0-4abf-95dd-2ed934732d8a",
+			"at": [
+				52.347266,
+				-1.581355
+			],
+			"observed": "2024-06-08",
+			"claims": {
+				"name": "Liocoris tripustulatus",
+				"seen": "2024-06"
+			}
+		},
+		{
+			"id": "1ff50a1a-753c-44a2-bdcb-cd68d24a0fc6",
+			"at": [
+				52.347266,
+				-1.581502
+			],
+			"observed": "2024-05-15",
+			"claims": {
+				"name": "Scathophaga stercoraria",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "1e7d07c6-b89e-499f-9c29-06d7f55346cc",
+			"at": [
+				52.355562,
+				-1.551398
+			],
+			"observed": "1988-11-23",
+			"claims": {
+				"name": "Three-spined Stickleback",
+				"seen": "1988-11"
+			}
+		},
+		{
+			"id": "e6ba479f-d5d6-41b7-9b70-b3291d14e71e",
+			"at": [
+				52.345,
+				-1.606
+			],
+			"observed": "2024-05-27",
+			"claims": {
+				"name": "Brown Rat",
+				"seen": "2024-05"
+			}
+		},
+		{
+			"id": "b40a31e4-614d-4dc3-846a-db4b23f05da5",
+			"at": [
+				52.345,
+				-1.606
+			],
+			"observed": "2026-06-12",
+			"claims": {
+				"name": "Blackbird",
+				"seen": "2026-06"
+			}
+		}
+	],
+	"retrieved": "2026-11-09"
+}

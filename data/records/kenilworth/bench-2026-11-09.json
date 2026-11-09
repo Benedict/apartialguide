@@ -1,0 +1,327 @@
+{
+	"source": "OpenBenches",
+	"prefix": "bench",
+	"records": [
+		{
+			"id": "26917",
+			"at": [
+				52.34483,
+				-1.581522
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "Presented by the People of Kenilworth / to mark the Centenary of the War Memorial / 26th February 2022"
+			}
+		},
+		{
+			"id": "2486",
+			"at": [
+				52.345036,
+				-1.581406
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In Memory of / Dorothy and Ted Knight / Presented By / Their W.R.V.S. Friends"
+			}
+		},
+		{
+			"id": "2487",
+			"at": [
+				52.345638,
+				-1.581711
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "DEDICATED IN LOVING MEMORY OF / BERYL AND BOB HAYWOOD / (1936 ~ 1992) (1933 ~ 1995)"
+			}
+		},
+		{
+			"id": "6158",
+			"at": [
+				52.34528,
+				-1.580873
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In loving memory of my / dearest husband / Charles R. Taylor / Veteran of 2nd World War / Born 1-12-26 Died 31-3-12 / \" NOS DA CARIAD \""
+			}
+		},
+		{
+			"id": "2488",
+			"at": [
+				52.346096,
+				-1.58205
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY OF BEN AND ETHEL KIMBERLY / FOREVER IN THEIR FAMILIES HEARTS"
+			}
+		},
+		{
+			"id": "6157",
+			"at": [
+				52.345558,
+				-1.580679
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN LOVING MEMORY 0F OUR PARENTS / GODFREY AND RHODA"
+			}
+		},
+		{
+			"id": "2489",
+			"at": [
+				52.346275,
+				-1.582189
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF FRANCES HAY / FOUNDER OF DOGS FOR THE DISABLED 1986"
+			}
+		},
+		{
+			"id": "36292",
+			"at": [
+				52.346291,
+				-1.58211
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In Memory of / George Newns / Frances Hay's Father / IN LOVING MEMORY OF / BEN AND ETHEL KIMBERLEY / FOREVER IN THEIR FAMILIES HEARTS"
+			}
+		},
+		{
+			"id": "6156",
+			"at": [
+				52.345699,
+				-1.580615
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "DONATED BY / KENILWORTH EVENING TOWNSWOMENS GUILD / FOR THE YEAR 2000"
+			}
+		},
+		{
+			"id": "26918",
+			"at": [
+				52.343609,
+				-1.581658
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "750th Anniversary of the Siege of Kenilworth 1266"
+			}
+		},
+		{
+			"id": "6182",
+			"at": [
+				52.343575,
+				-1.581613
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "750th Aniversary of the Siege of Kenilworth 1266"
+			}
+		},
+		{
+			"id": "6181",
+			"at": [
+				52.34404,
+				-1.580481
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF / BROTHER ALBERT EDWARD WEED ROH / PASSED AWAY JUNE 1999 / YE OLDE CASTLE LODGE 8259 / ROYAL ANTEDILUVIAN ORDER OF BUFFALOES / GRAND LODGE OF ENGLAND"
+			}
+		},
+		{
+			"id": "2490",
+			"at": [
+				52.346615,
+				-1.582417
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF / GORDON MOON 14.02.02 / MUCH MISSED AND LOVED / BY HIS WIFE AND FAMILY"
+			}
+		},
+		{
+			"id": "6161",
+			"at": [
+				52.345699,
+				-1.585068
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "Sit awhile and remember Elaine / who loved to run this way / Elaine Potts / November 2010"
+			}
+		},
+		{
+			"id": "2498",
+			"at": [
+				52.346668,
+				-1.583817
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF KENNETH PAGE / A MUCH LOVED HUSBAND AND FATHER / 1927 ~ 1999"
+			}
+		},
+		{
+			"id": "6605",
+			"at": [
+				52.34573,
+				-1.579612
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "IN MEMORY OF FRED & EDNA ANDREW / FOUNDERS OF THE / KENILWORTH WEEKLY NEWS"
+			}
+		},
+		{
+			"id": "6155",
+			"at": [
+				52.346539,
+				-1.580223
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "Rest here with the spirit of / Brenda Grierson who walked / these fields as a child"
+			}
+		},
+		{
+			"id": "6185",
+			"at": [
+				52.347149,
+				-1.583877
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In Loving Memory of / David Neale / 1930 - 2004 / Fondly remembered by his friends on / Castle Green"
+			}
+		},
+		{
+			"id": "2497",
+			"at": [
+				52.34734,
+				-1.582208
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "In memory of / Gordon Powell / A Kenilworth man, who with wife / Joan / passed his love of Abbey Fields / down through the generations"
+			}
+		},
+		{
+			"id": "6159",
+			"at": [
+				52.346161,
+				-1.57892
+			],
+			"near": {
+				"key": "amenity",
+				"value": "bench",
+				"within": 15
+			},
+			"claims": {
+				"kind": "bench",
+				"inscription": "MIKE AULTON / GONE ARE THE DAYS WE USED TO SHARE / BUT IN OUR HEARTS YOU'RE ALWAYS THERE / HAPPY MEMORIES WILL REMAIN WITH US FOREVER / FAMILY AND FRIENDS"
+			}
+		}
+	],
+	"retrieved": "2026-11-09"
+}
