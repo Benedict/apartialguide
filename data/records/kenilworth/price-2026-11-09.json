@@ -1,0 +1,1877 @@
+{
+	"source": "HM Land Registry",
+	"prefix": "price",
+	"records": [
+		{
+			"id": "WARWICK ROAD",
+			"street": "WARWICK ROAD",
+			"observed": "2026-02-06",
+			"claims": {
+				"since": "2020",
+				"sales": "35",
+				"low": "175000",
+				"high": "825000"
+			}
+		},
+		{
+			"id": "STONELEIGH ROAD",
+			"street": "STONELEIGH ROAD",
+			"observed": "2025-10-30",
+			"claims": {
+				"since": "2020",
+				"sales": "17",
+				"low": "325000",
+				"high": "1300000"
+			}
+		},
+		{
+			"id": "MALTHOUSE LANE",
+			"street": "MALTHOUSE LANE",
+			"observed": "2026-07-27",
+			"claims": {
+				"since": "2020",
+				"sales": "14",
+				"low": "650000",
+				"high": "1025000"
+			}
+		},
+		{
+			"id": "AMHERST ROAD",
+			"street": "AMHERST ROAD",
+			"observed": "2026-08-28",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "550000",
+				"high": "925000"
+			}
+		},
+		{
+			"id": "BERKELEY ROAD",
+			"street": "BERKELEY ROAD",
+			"observed": "2026-09-01",
+			"claims": {
+				"since": "2020",
+				"sales": "12",
+				"low": "500000",
+				"high": "625000"
+			}
+		},
+		{
+			"id": "CLINTON LANE",
+			"street": "CLINTON LANE",
+			"observed": "2026-07-09",
+			"claims": {
+				"since": "2020",
+				"sales": "30",
+				"low": "275000",
+				"high": "500000"
+			}
+		},
+		{
+			"id": "AVENUE ROAD",
+			"street": "AVENUE ROAD",
+			"observed": "2026-05-29",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "350000",
+				"high": "575000"
+			}
+		},
+		{
+			"id": "WOODCOTE AVENUE",
+			"street": "WOODCOTE AVENUE",
+			"observed": "2025-12-15",
+			"claims": {
+				"since": "2020",
+				"sales": "30",
+				"low": "200000",
+				"high": "450000"
+			}
+		},
+		{
+			"id": "DENTON CLOSE",
+			"street": "DENTON CLOSE",
+			"observed": "2025-05-12",
+			"claims": {
+				"since": "2020",
+				"sales": "17",
+				"low": "175000",
+				"high": "225000"
+			}
+		},
+		{
+			"id": "BRIDGE STREET",
+			"street": "BRIDGE STREET",
+			"observed": "2025-11-25",
+			"claims": {
+				"since": "2020",
+				"sales": "6",
+				"low": "275000",
+				"high": "625000"
+			}
+		},
+		{
+			"id": "PEARS CLOSE",
+			"street": "PEARS CLOSE",
+			"observed": "2025-03-28",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "500000",
+				"high": "850000"
+			}
+		},
+		{
+			"id": "FIELDGATE LANE",
+			"street": "FIELDGATE LANE",
+			"observed": "2026-08-28",
+			"claims": {
+				"since": "2020",
+				"sales": "17",
+				"low": "325000",
+				"high": "1625000"
+			}
+		},
+		{
+			"id": "PRIORSFIELD ROAD",
+			"street": "PRIORSFIELD ROAD",
+			"observed": "2026-08-14",
+			"claims": {
+				"since": "2020",
+				"sales": "30",
+				"low": "375000",
+				"high": "475000"
+			}
+		},
+		{
+			"id": "GRANGE AVENUE",
+			"street": "GRANGE AVENUE",
+			"observed": "2026-09-22",
+			"claims": {
+				"since": "2020",
+				"sales": "11",
+				"low": "375000",
+				"high": "500000"
+			}
+		},
+		{
+			"id": "DE MONTFORT ROAD",
+			"street": "DE MONTFORT ROAD",
+			"observed": "2025-04-29",
+			"claims": {
+				"since": "2020",
+				"sales": "8",
+				"low": "400000",
+				"high": "750000"
+			}
+		},
+		{
+			"id": "WILLOUGHBY AVENUE",
+			"street": "WILLOUGHBY AVENUE",
+			"observed": "2026-01-23",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "350000",
+				"high": "450000"
+			}
+		},
+		{
+			"id": "AVON ROAD",
+			"street": "AVON ROAD",
+			"observed": "2026-02-12",
+			"claims": {
+				"since": "2020",
+				"sales": "8",
+				"low": "350000",
+				"high": "650000"
+			}
+		},
+		{
+			"id": "ARCHER ROAD",
+			"street": "ARCHER ROAD",
+			"observed": "2025-11-28",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "350000",
+				"high": "475000"
+			}
+		},
+		{
+			"id": "CAESAR ROAD",
+			"street": "CAESAR ROAD",
+			"observed": "2026-02-27",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "275000",
+				"high": "500000"
+			}
+		},
+		{
+			"id": "PERCY ROAD",
+			"street": "PERCY ROAD",
+			"observed": "2025-09-19",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "375000",
+				"high": "425000"
+			}
+		},
+		{
+			"id": "LUNN AVENUE",
+			"street": "LUNN AVENUE",
+			"observed": "2026-07-22",
+			"claims": {
+				"since": "2020",
+				"sales": "9",
+				"low": "350000",
+				"high": "425000"
+			}
+		},
+		{
+			"id": "ROUNDS HILL",
+			"street": "ROUNDS HILL",
+			"observed": "2025-09-01",
+			"claims": {
+				"since": "2020",
+				"sales": "19",
+				"low": "400000",
+				"high": "625000"
+			}
+		},
+		{
+			"id": "JOHN O'GAUNT ROAD",
+			"street": "JOHN O'GAUNT ROAD",
+			"observed": "2026-03-19",
+			"claims": {
+				"since": "2020",
+				"sales": "13",
+				"low": "375000",
+				"high": "675000"
+			}
+		},
+		{
+			"id": "THE SQUARE",
+			"street": "THE SQUARE",
+			"observed": "2025-10-30",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "275000",
+				"high": "825000"
+			}
+		},
+		{
+			"id": "BARROW ROAD",
+			"street": "BARROW ROAD",
+			"observed": "2025-05-06",
+			"claims": {
+				"since": "2020",
+				"sales": "13",
+				"low": "300000",
+				"high": "500000"
+			}
+		},
+		{
+			"id": "GREVILLE ROAD",
+			"street": "GREVILLE ROAD",
+			"observed": "2025-07-18",
+			"claims": {
+				"since": "2020",
+				"sales": "6",
+				"low": "400000",
+				"high": "625000"
+			}
+		},
+		{
+			"id": "BARROWFIELD LANE",
+			"street": "BARROWFIELD LANE",
+			"observed": "2025-12-19",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "250000",
+				"high": "1100000"
+			}
+		},
+		{
+			"id": "BROOKSIDE AVENUE",
+			"street": "BROOKSIDE AVENUE",
+			"observed": "2025-01-13",
+			"claims": {
+				"since": "2020",
+				"sales": "15",
+				"low": "475000",
+				"high": "675000"
+			}
+		},
+		{
+			"id": "SIDDELEY AVENUE",
+			"street": "SIDDELEY AVENUE",
+			"observed": "2026-09-11",
+			"claims": {
+				"since": "2020",
+				"sales": "14",
+				"low": "175000",
+				"high": "600000"
+			}
+		},
+		{
+			"id": "FISHPONDS ROAD",
+			"street": "FISHPONDS ROAD",
+			"observed": "2025-07-18",
+			"claims": {
+				"since": "2020",
+				"sales": "14",
+				"low": "375000",
+				"high": "625000"
+			}
+		},
+		{
+			"id": "ROUNCIL LANE",
+			"street": "ROUNCIL LANE",
+			"observed": "2025-03-31",
+			"claims": {
+				"since": "2020",
+				"sales": "21",
+				"low": "400000",
+				"high": "925000"
+			}
+		},
+		{
+			"id": "TOWERS CLOSE",
+			"street": "TOWERS CLOSE",
+			"observed": "2025-06-26",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "375000",
+				"high": "475000"
+			}
+		},
+		{
+			"id": "SUNCLIFFE DRIVE",
+			"street": "SUNCLIFFE DRIVE",
+			"observed": "2026-02-27",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "325000",
+				"high": "725000"
+			}
+		},
+		{
+			"id": "LINDSEY CRESCENT",
+			"street": "LINDSEY CRESCENT",
+			"observed": "2025-10-31",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "375000",
+				"high": "500000"
+			}
+		},
+		{
+			"id": "ST JOHNS STREET",
+			"street": "ST JOHNS STREET",
+			"observed": "2024-09-27",
+			"claims": {
+				"since": "2020",
+				"sales": "8",
+				"low": "225000",
+				"high": "300000"
+			}
+		},
+		{
+			"id": "GUY ROAD",
+			"street": "GUY ROAD",
+			"observed": "2026-04-24",
+			"claims": {
+				"since": "2020",
+				"sales": "9",
+				"low": "275000",
+				"high": "350000"
+			}
+		},
+		{
+			"id": "ROSELAND ROAD",
+			"street": "ROSELAND ROAD",
+			"observed": "2026-06-26",
+			"claims": {
+				"since": "2020",
+				"sales": "12",
+				"low": "250000",
+				"high": "325000"
+			}
+		},
+		{
+			"id": "CHESTNUT AVENUE",
+			"street": "CHESTNUT AVENUE",
+			"observed": "2025-09-16",
+			"claims": {
+				"since": "2020",
+				"sales": "8",
+				"low": "275000",
+				"high": "375000"
+			}
+		},
+		{
+			"id": "OAKS ROAD",
+			"street": "OAKS ROAD",
+			"observed": "2026-06-08",
+			"claims": {
+				"since": "2020",
+				"sales": "16",
+				"low": "250000",
+				"high": "450000"
+			}
+		},
+		{
+			"id": "BEAUCHAMP ROAD",
+			"street": "BEAUCHAMP ROAD",
+			"observed": "2026-01-16",
+			"claims": {
+				"since": "2020",
+				"sales": "8",
+				"low": "275000",
+				"high": "400000"
+			}
+		},
+		{
+			"id": "LANCASTER PLACE",
+			"street": "LANCASTER PLACE",
+			"observed": "2026-06-26",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "250000",
+				"high": "325000"
+			}
+		},
+		{
+			"id": "LATIMER CLOSE",
+			"street": "LATIMER CLOSE",
+			"observed": "2025-07-07",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "300000",
+				"high": "375000"
+			}
+		},
+		{
+			"id": "DUDLEY ROAD",
+			"street": "DUDLEY ROAD",
+			"observed": "2026-07-29",
+			"claims": {
+				"since": "2020",
+				"sales": "21",
+				"low": "275000",
+				"high": "400000"
+			}
+		},
+		{
+			"id": "HEWITT CLOSE",
+			"street": "HEWITT CLOSE",
+			"observed": "2023-12-22",
+			"claims": {
+				"since": "2020",
+				"sales": "11",
+				"low": "200000",
+				"high": "500000"
+			}
+		},
+		{
+			"id": "HARGER COURT",
+			"street": "HARGER COURT",
+			"observed": "2026-03-13",
+			"claims": {
+				"since": "2020",
+				"sales": "13",
+				"low": "350000",
+				"high": "425000"
+			}
+		},
+		{
+			"id": "MOORLANDS AVENUE",
+			"street": "MOORLANDS AVENUE",
+			"observed": "2026-07-20",
+			"claims": {
+				"since": "2020",
+				"sales": "16",
+				"low": "300000",
+				"high": "525000"
+			}
+		},
+		{
+			"id": "HICKMAN WAY",
+			"street": "HICKMAN WAY",
+			"observed": "2026-06-19",
+			"claims": {
+				"since": "2020",
+				"sales": "29",
+				"low": "325000",
+				"high": "625000"
+			}
+		},
+		{
+			"id": "WHITES ROW",
+			"street": "WHITES ROW",
+			"observed": "2025-01-31",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "325000",
+				"high": "450000"
+			}
+		},
+		{
+			"id": "CLARKES AVENUE",
+			"street": "CLARKES AVENUE",
+			"observed": "2025-10-23",
+			"claims": {
+				"since": "2020",
+				"sales": "8",
+				"low": "350000",
+				"high": "600000"
+			}
+		},
+		{
+			"id": "CLARENDON ROAD",
+			"street": "CLARENDON ROAD",
+			"observed": "2026-03-27",
+			"claims": {
+				"since": "2020",
+				"sales": "15",
+				"low": "375000",
+				"high": "625000"
+			}
+		},
+		{
+			"id": "GLEBE CRESCENT",
+			"street": "GLEBE CRESCENT",
+			"observed": "2025-03-27",
+			"claims": {
+				"since": "2020",
+				"sales": "9",
+				"low": "475000",
+				"high": "675000"
+			}
+		},
+		{
+			"id": "STATION ROAD",
+			"street": "STATION ROAD",
+			"observed": "2026-06-12",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "150000",
+				"high": "900000"
+			}
+		},
+		{
+			"id": "REGENCY DRIVE",
+			"street": "REGENCY DRIVE",
+			"observed": "2026-06-22",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "225000",
+				"high": "375000"
+			}
+		},
+		{
+			"id": "WAVERLEY ROAD",
+			"street": "WAVERLEY ROAD",
+			"observed": "2026-07-03",
+			"claims": {
+				"since": "2020",
+				"sales": "9",
+				"low": "575000",
+				"high": "925000"
+			}
+		},
+		{
+			"id": "BERTIE ROAD",
+			"street": "BERTIE ROAD",
+			"observed": "2026-04-24",
+			"claims": {
+				"since": "2020",
+				"sales": "13",
+				"low": "300000",
+				"high": "525000"
+			}
+		},
+		{
+			"id": "QUEENS ROAD",
+			"street": "QUEENS ROAD",
+			"observed": "2025-12-10",
+			"claims": {
+				"since": "2020",
+				"sales": "21",
+				"low": "350000",
+				"high": "550000"
+			}
+		},
+		{
+			"id": "QUEENS CLOSE",
+			"street": "QUEENS CLOSE",
+			"observed": "2025-02-04",
+			"claims": {
+				"since": "2020",
+				"sales": "8",
+				"low": "375000",
+				"high": "525000"
+			}
+		},
+		{
+			"id": "ST NICHOLAS AVENUE",
+			"street": "ST NICHOLAS AVENUE",
+			"observed": "2026-08-26",
+			"claims": {
+				"since": "2020",
+				"sales": "15",
+				"low": "250000",
+				"high": "400000"
+			}
+		},
+		{
+			"id": "RANDALL ROAD",
+			"street": "RANDALL ROAD",
+			"observed": "2026-01-30",
+			"claims": {
+				"since": "2020",
+				"sales": "13",
+				"low": "400000",
+				"high": "575000"
+			}
+		},
+		{
+			"id": "SOUTHBANK ROAD",
+			"street": "SOUTHBANK ROAD",
+			"observed": "2025-08-29",
+			"claims": {
+				"since": "2020",
+				"sales": "9",
+				"low": "600000",
+				"high": "1250000"
+			}
+		},
+		{
+			"id": "PARKYN CLOSE",
+			"street": "PARKYN CLOSE",
+			"observed": "2021-11-30",
+			"claims": {
+				"since": "2020",
+				"sales": "9",
+				"low": "500000",
+				"high": "975000"
+			}
+		},
+		{
+			"id": "PRIORY ROAD",
+			"street": "PRIORY ROAD",
+			"observed": "2026-06-29",
+			"claims": {
+				"since": "2020",
+				"sales": "13",
+				"low": "275000",
+				"high": "875000"
+			}
+		},
+		{
+			"id": "STANLEY DRIVE",
+			"street": "STANLEY DRIVE",
+			"observed": "2025-11-28",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "700000",
+				"high": "1000000"
+			}
+		},
+		{
+			"id": "ABBEY END",
+			"street": "ABBEY END",
+			"observed": "2026-05-01",
+			"claims": {
+				"since": "2020",
+				"sales": "14",
+				"low": "100000",
+				"high": "550000"
+			}
+		},
+		{
+			"id": "HIGH STREET",
+			"street": "HIGH STREET",
+			"observed": "2025-05-01",
+			"claims": {
+				"since": "2020",
+				"sales": "18",
+				"low": "350000",
+				"high": "1100000"
+			}
+		},
+		{
+			"id": "WILKSHIRE ROAD",
+			"street": "WILKSHIRE ROAD",
+			"observed": "2025-08-15",
+			"claims": {
+				"since": "2020",
+				"sales": "21",
+				"low": "350000",
+				"high": "875000"
+			}
+		},
+		{
+			"id": "CASTLE HILL",
+			"street": "CASTLE HILL",
+			"observed": "2026-08-07",
+			"claims": {
+				"since": "2020",
+				"sales": "9",
+				"low": "225000",
+				"high": "825000"
+			}
+		},
+		{
+			"id": "CASTLE ROAD",
+			"street": "CASTLE ROAD",
+			"observed": "2026-01-15",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "400000",
+				"high": "875000"
+			}
+		},
+		{
+			"id": "RED LANE",
+			"street": "RED LANE",
+			"observed": "2025-02-10",
+			"claims": {
+				"since": "2020",
+				"sales": "12",
+				"low": "325000",
+				"high": "800000"
+			}
+		},
+		{
+			"id": "BIRMINGHAM ROAD",
+			"street": "BIRMINGHAM ROAD",
+			"observed": "2024-08-22",
+			"claims": {
+				"since": "2020",
+				"sales": "6",
+				"low": "650000",
+				"high": "1300000"
+			}
+		},
+		{
+			"id": "SWIFT CLOSE",
+			"street": "SWIFT CLOSE",
+			"observed": "2026-07-23",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "425000",
+				"high": "775000"
+			}
+		},
+		{
+			"id": "WALKERS WAY",
+			"street": "WALKERS WAY",
+			"observed": "2025-10-30",
+			"claims": {
+				"since": "2020",
+				"sales": "12",
+				"low": "175000",
+				"high": "325000"
+			}
+		},
+		{
+			"id": "JOHN NASH SQUARE",
+			"street": "JOHN NASH SQUARE",
+			"observed": "2025-03-18",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "375000",
+				"high": "450000"
+			}
+		},
+		{
+			"id": "TALISMAN CLOSE",
+			"street": "TALISMAN CLOSE",
+			"observed": "2026-03-31",
+			"claims": {
+				"since": "2020",
+				"sales": "9",
+				"low": "275000",
+				"high": "375000"
+			}
+		},
+		{
+			"id": "BIRCHES LANE",
+			"street": "BIRCHES LANE",
+			"observed": "2026-02-20",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "500000",
+				"high": "975000"
+			}
+		},
+		{
+			"id": "JORDAN CLOSE",
+			"street": "JORDAN CLOSE",
+			"observed": "2024-09-17",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "600000",
+				"high": "775000"
+			}
+		},
+		{
+			"id": "THICKTHORN CLOSE",
+			"street": "THICKTHORN CLOSE",
+			"observed": "2026-04-15",
+			"claims": {
+				"since": "2020",
+				"sales": "16",
+				"low": "525000",
+				"high": "850000"
+			}
+		},
+		{
+			"id": "GLASSHOUSE LANE",
+			"street": "GLASSHOUSE LANE",
+			"observed": "2026-03-26",
+			"claims": {
+				"since": "2020",
+				"sales": "19",
+				"low": "375000",
+				"high": "4450000"
+			}
+		},
+		{
+			"id": "MOSELEY ROAD",
+			"street": "MOSELEY ROAD",
+			"observed": "2026-02-19",
+			"claims": {
+				"since": "2020",
+				"sales": "14",
+				"low": "350000",
+				"high": "475000"
+			}
+		},
+		{
+			"id": "WINDY ARBOUR",
+			"street": "WINDY ARBOUR",
+			"observed": "2026-09-11",
+			"claims": {
+				"since": "2020",
+				"sales": "33",
+				"low": "425000",
+				"high": "800000"
+			}
+		},
+		{
+			"id": "NEWFIELD AVENUE",
+			"street": "NEWFIELD AVENUE",
+			"observed": "2025-09-11",
+			"claims": {
+				"since": "2020",
+				"sales": "8",
+				"low": "400000",
+				"high": "700000"
+			}
+		},
+		{
+			"id": "KINETON ROAD",
+			"street": "KINETON ROAD",
+			"observed": "2024-10-18",
+			"claims": {
+				"since": "2020",
+				"sales": "6",
+				"low": "425000",
+				"high": "600000"
+			}
+		},
+		{
+			"id": "BROOKE ROAD",
+			"street": "BROOKE ROAD",
+			"observed": "2026-05-20",
+			"claims": {
+				"since": "2020",
+				"sales": "9",
+				"low": "375000",
+				"high": "775000"
+			}
+		},
+		{
+			"id": "ASHFIELD ROAD",
+			"street": "ASHFIELD ROAD",
+			"observed": "2026-08-21",
+			"claims": {
+				"since": "2020",
+				"sales": "8",
+				"low": "450000",
+				"high": "625000"
+			}
+		},
+		{
+			"id": "EDEN CROFT",
+			"street": "EDEN CROFT",
+			"observed": "2025-11-19",
+			"claims": {
+				"since": "2020",
+				"sales": "14",
+				"low": "375000",
+				"high": "500000"
+			}
+		},
+		{
+			"id": "WHITEMOOR ROAD",
+			"street": "WHITEMOOR ROAD",
+			"observed": "2026-08-10",
+			"claims": {
+				"since": "2020",
+				"sales": "33",
+				"low": "225000",
+				"high": "625000"
+			}
+		},
+		{
+			"id": "TULIP TREE AVENUE",
+			"street": "TULIP TREE AVENUE",
+			"observed": "2026-07-27",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "375000",
+				"high": "475000"
+			}
+		},
+		{
+			"id": "ELMDENE ROAD",
+			"street": "ELMDENE ROAD",
+			"observed": "2026-07-23",
+			"claims": {
+				"since": "2020",
+				"sales": "17",
+				"low": "175000",
+				"high": "500000"
+			}
+		},
+		{
+			"id": "SUNNINGDALE AVENUE",
+			"street": "SUNNINGDALE AVENUE",
+			"observed": "2025-03-28",
+			"claims": {
+				"since": "2020",
+				"sales": "11",
+				"low": "525000",
+				"high": "750000"
+			}
+		},
+		{
+			"id": "LEYES LANE",
+			"street": "LEYES LANE",
+			"observed": "2026-06-16",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "325000",
+				"high": "550000"
+			}
+		},
+		{
+			"id": "FARMER WARD ROAD",
+			"street": "FARMER WARD ROAD",
+			"observed": "2026-08-14",
+			"claims": {
+				"since": "2020",
+				"sales": "27",
+				"low": "375000",
+				"high": "525000"
+			}
+		},
+		{
+			"id": "ASH DRIVE",
+			"street": "ASH DRIVE",
+			"observed": "2025-02-14",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "350000",
+				"high": "450000"
+			}
+		},
+		{
+			"id": "BLACKTHORN ROAD",
+			"street": "BLACKTHORN ROAD",
+			"observed": "2026-09-01",
+			"claims": {
+				"since": "2020",
+				"sales": "11",
+				"low": "375000",
+				"high": "550000"
+			}
+		},
+		{
+			"id": "THORNBY AVENUE",
+			"street": "THORNBY AVENUE",
+			"observed": "2025-12-19",
+			"claims": {
+				"since": "2020",
+				"sales": "15",
+				"low": "425000",
+				"high": "500000"
+			}
+		},
+		{
+			"id": "ARDEN ROAD",
+			"street": "ARDEN ROAD",
+			"observed": "2026-08-06",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "400000",
+				"high": "650000"
+			}
+		},
+		{
+			"id": "HERMITAGE WAY",
+			"street": "HERMITAGE WAY",
+			"observed": "2025-12-03",
+			"claims": {
+				"since": "2020",
+				"sales": "9",
+				"low": "350000",
+				"high": "625000"
+			}
+		},
+		{
+			"id": "THE GARDENS",
+			"street": "THE GARDENS",
+			"observed": "2026-04-24",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "450000",
+				"high": "550000"
+			}
+		},
+		{
+			"id": "WEBSTER AVENUE",
+			"street": "WEBSTER AVENUE",
+			"observed": "2025-03-28",
+			"claims": {
+				"since": "2020",
+				"sales": "12",
+				"low": "125000",
+				"high": "325000"
+			}
+		},
+		{
+			"id": "NORTHVALE CLOSE",
+			"street": "NORTHVALE CLOSE",
+			"observed": "2025-01-29",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "375000",
+				"high": "450000"
+			}
+		},
+		{
+			"id": "DALEHOUSE LANE",
+			"street": "DALEHOUSE LANE",
+			"observed": "2026-07-24",
+			"claims": {
+				"since": "2020",
+				"sales": "26",
+				"low": "200000",
+				"high": "625000"
+			}
+		},
+		{
+			"id": "COMMON LANE",
+			"street": "COMMON LANE",
+			"observed": "2026-06-12",
+			"claims": {
+				"since": "2020",
+				"sales": "20",
+				"low": "200000",
+				"high": "600000"
+			}
+		},
+		{
+			"id": "HIGHLAND ROAD",
+			"street": "HIGHLAND ROAD",
+			"observed": "2026-07-17",
+			"claims": {
+				"since": "2020",
+				"sales": "14",
+				"low": "450000",
+				"high": "850000"
+			}
+		},
+		{
+			"id": "INCHBROOK ROAD",
+			"street": "INCHBROOK ROAD",
+			"observed": "2025-12-08",
+			"claims": {
+				"since": "2020",
+				"sales": "19",
+				"low": "425000",
+				"high": "750000"
+			}
+		},
+		{
+			"id": "NEW STREET",
+			"street": "NEW STREET",
+			"observed": "2024-05-02",
+			"claims": {
+				"since": "2020",
+				"sales": "9",
+				"low": "275000",
+				"high": "1175000"
+			}
+		},
+		{
+			"id": "PRINCES DRIVE INDUSTRIAL ESTATE",
+			"street": "PRINCES DRIVE INDUSTRIAL ESTATE",
+			"observed": "2026-04-01",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "275000",
+				"high": "650000"
+			}
+		},
+		{
+			"id": "WOODLAND ROAD",
+			"street": "WOODLAND ROAD",
+			"observed": "2026-02-19",
+			"claims": {
+				"since": "2020",
+				"sales": "12",
+				"low": "300000",
+				"high": "500000"
+			}
+		},
+		{
+			"id": "CONVENT CLOSE",
+			"street": "CONVENT CLOSE",
+			"observed": "2025-07-11",
+			"claims": {
+				"since": "2020",
+				"sales": "6",
+				"low": "425000",
+				"high": "750000"
+			}
+		},
+		{
+			"id": "REEVE DRIVE",
+			"street": "REEVE DRIVE",
+			"observed": "2026-08-07",
+			"claims": {
+				"since": "2020",
+				"sales": "21",
+				"low": "250000",
+				"high": "325000"
+			}
+		},
+		{
+			"id": "PARK ROAD",
+			"street": "PARK ROAD",
+			"observed": "2025-09-25",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "225000",
+				"high": "375000"
+			}
+		},
+		{
+			"id": "LAWRENCE GARDENS",
+			"street": "LAWRENCE GARDENS",
+			"observed": "2025-11-13",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "700000",
+				"high": "800000"
+			}
+		},
+		{
+			"id": "MANOR ROAD",
+			"street": "MANOR ROAD",
+			"observed": "2026-08-24",
+			"claims": {
+				"since": "2020",
+				"sales": "9",
+				"low": "600000",
+				"high": "1050000"
+			}
+		},
+		{
+			"id": "LOWER LADYES HILLS",
+			"street": "LOWER LADYES HILLS",
+			"observed": "2026-03-12",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "400000",
+				"high": "750000"
+			}
+		},
+		{
+			"id": "WINDMILL CLOSE",
+			"street": "WINDMILL CLOSE",
+			"observed": "2025-10-21",
+			"claims": {
+				"since": "2020",
+				"sales": "8",
+				"low": "525000",
+				"high": "675000"
+			}
+		},
+		{
+			"id": "SCHOOL LANE",
+			"street": "SCHOOL LANE",
+			"observed": "2026-08-21",
+			"claims": {
+				"since": "2020",
+				"sales": "18",
+				"low": "275000",
+				"high": "475000"
+			}
+		},
+		{
+			"id": "WHATELEYS DRIVE",
+			"street": "WHATELEYS DRIVE",
+			"observed": "2026-07-17",
+			"claims": {
+				"since": "2020",
+				"sales": "11",
+				"low": "175000",
+				"high": "200000"
+			}
+		},
+		{
+			"id": "SPRING LANE",
+			"street": "SPRING LANE",
+			"observed": "2026-05-12",
+			"claims": {
+				"since": "2020",
+				"sales": "11",
+				"low": "175000",
+				"high": "350000"
+			}
+		},
+		{
+			"id": "ARTHUR STREET",
+			"street": "ARTHUR STREET",
+			"observed": "2026-08-07",
+			"claims": {
+				"since": "2020",
+				"sales": "24",
+				"low": "250000",
+				"high": "400000"
+			}
+		},
+		{
+			"id": "MILL END",
+			"street": "MILL END",
+			"observed": "2026-08-14",
+			"claims": {
+				"since": "2020",
+				"sales": "11",
+				"low": "250000",
+				"high": "400000"
+			}
+		},
+		{
+			"id": "THE DEER LEAP",
+			"street": "THE DEER LEAP",
+			"observed": "2024-07-25",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "325000",
+				"high": "400000"
+			}
+		},
+		{
+			"id": "WATLING ROAD",
+			"street": "WATLING ROAD",
+			"observed": "2026-06-17",
+			"claims": {
+				"since": "2020",
+				"sales": "19",
+				"low": "250000",
+				"high": "350000"
+			}
+		},
+		{
+			"id": "FINHAM ROAD",
+			"street": "FINHAM ROAD",
+			"observed": "2026-03-19",
+			"claims": {
+				"since": "2020",
+				"sales": "11",
+				"low": "250000",
+				"high": "375000"
+			}
+		},
+		{
+			"id": "VILLIERS ROAD",
+			"street": "VILLIERS ROAD",
+			"observed": "2025-06-20",
+			"claims": {
+				"since": "2020",
+				"sales": "14",
+				"low": "350000",
+				"high": "625000"
+			}
+		},
+		{
+			"id": "PARK HILL",
+			"street": "PARK HILL",
+			"observed": "2026-08-14",
+			"claims": {
+				"since": "2020",
+				"sales": "12",
+				"low": "350000",
+				"high": "625000"
+			}
+		},
+		{
+			"id": "PARK CLOSE",
+			"street": "PARK CLOSE",
+			"observed": "2026-06-26",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "300000",
+				"high": "400000"
+			}
+		},
+		{
+			"id": "FIELD CLOSE",
+			"street": "FIELD CLOSE",
+			"observed": "2026-08-06",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "325000",
+				"high": "425000"
+			}
+		},
+		{
+			"id": "KEELING ROAD",
+			"street": "KEELING ROAD",
+			"observed": "2026-02-27",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "375000",
+				"high": "575000"
+			}
+		},
+		{
+			"id": "BEECH DRIVE",
+			"street": "BEECH DRIVE",
+			"observed": "2026-02-26",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "325000",
+				"high": "425000"
+			}
+		},
+		{
+			"id": "HARRIS WAY",
+			"street": "HARRIS WAY",
+			"observed": "2025-08-18",
+			"claims": {
+				"since": "2020",
+				"sales": "24",
+				"low": "300000",
+				"high": "800000"
+			}
+		},
+		{
+			"id": "MARTIN DRIVE",
+			"street": "MARTIN DRIVE",
+			"observed": "2026-08-12",
+			"claims": {
+				"since": "2020",
+				"sales": "40",
+				"low": "300000",
+				"high": "725000"
+			}
+		},
+		{
+			"id": "WALNUT TREE CLOSE",
+			"street": "WALNUT TREE CLOSE",
+			"observed": "2025-11-14",
+			"claims": {
+				"since": "2020",
+				"sales": "6",
+				"low": "425000",
+				"high": "650000"
+			}
+		},
+		{
+			"id": "RAGLAN GROVE",
+			"street": "RAGLAN GROVE",
+			"observed": "2026-03-02",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "325000",
+				"high": "600000"
+			}
+		},
+		{
+			"id": "JACOX CRESCENT",
+			"street": "JACOX CRESCENT",
+			"observed": "2026-02-23",
+			"claims": {
+				"since": "2020",
+				"sales": "9",
+				"low": "300000",
+				"high": "375000"
+			}
+		},
+		{
+			"id": "ARLIDGE CRESCENT",
+			"street": "ARLIDGE CRESCENT",
+			"observed": "2026-06-23",
+			"claims": {
+				"since": "2020",
+				"sales": "11",
+				"low": "150000",
+				"high": "275000"
+			}
+		},
+		{
+			"id": "PENCRAIG CLOSE",
+			"street": "PENCRAIG CLOSE",
+			"observed": "2026-05-21",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "525000",
+				"high": "675000"
+			}
+		},
+		{
+			"id": "ILAM PARK",
+			"street": "ILAM PARK",
+			"observed": "2025-08-22",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "275000",
+				"high": "400000"
+			}
+		},
+		{
+			"id": "RAWNSLEY DRIVE",
+			"street": "RAWNSLEY DRIVE",
+			"observed": "2025-12-11",
+			"claims": {
+				"since": "2020",
+				"sales": "15",
+				"low": "325000",
+				"high": "550000"
+			}
+		},
+		{
+			"id": "HYDE ROAD",
+			"street": "HYDE ROAD",
+			"observed": "2025-12-16",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "275000",
+				"high": "350000"
+			}
+		},
+		{
+			"id": "FERNDALE DRIVE",
+			"street": "FERNDALE DRIVE",
+			"observed": "2025-06-18",
+			"claims": {
+				"since": "2020",
+				"sales": "6",
+				"low": "550000",
+				"high": "775000"
+			}
+		},
+		{
+			"id": "SAVILLE GROVE",
+			"street": "SAVILLE GROVE",
+			"observed": "2025-01-06",
+			"claims": {
+				"since": "2020",
+				"sales": "6",
+				"low": "375000",
+				"high": "450000"
+			}
+		},
+		{
+			"id": "FRAMLINGHAM GROVE",
+			"street": "FRAMLINGHAM GROVE",
+			"observed": "2026-08-12",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "125000",
+				"high": "425000"
+			}
+		},
+		{
+			"id": "THIRLESTANE CLOSE",
+			"street": "THIRLESTANE CLOSE",
+			"observed": "2026-04-29",
+			"claims": {
+				"since": "2020",
+				"sales": "6",
+				"low": "350000",
+				"high": "525000"
+			}
+		},
+		{
+			"id": "MOUNTBATTEN AVENUE",
+			"street": "MOUNTBATTEN AVENUE",
+			"observed": "2026-03-31",
+			"claims": {
+				"since": "2020",
+				"sales": "11",
+				"low": "575000",
+				"high": "800000"
+			}
+		},
+		{
+			"id": "WINCOTE CLOSE",
+			"street": "WINCOTE CLOSE",
+			"observed": "2026-08-28",
+			"claims": {
+				"since": "2020",
+				"sales": "14",
+				"low": "275000",
+				"high": "375000"
+			}
+		},
+		{
+			"id": "BULLIMORE GROVE",
+			"street": "BULLIMORE GROVE",
+			"observed": "2025-08-01",
+			"claims": {
+				"since": "2020",
+				"sales": "17",
+				"low": "675000",
+				"high": "900000"
+			}
+		},
+		{
+			"id": "EBOURNE CLOSE",
+			"street": "EBOURNE CLOSE",
+			"observed": "2026-08-21",
+			"claims": {
+				"since": "2020",
+				"sales": "23",
+				"low": "100000",
+				"high": "175000"
+			}
+		},
+		{
+			"id": "CORNHILL GROVE",
+			"street": "CORNHILL GROVE",
+			"observed": "2026-03-12",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "250000",
+				"high": "300000"
+			}
+		},
+		{
+			"id": "DENCER DRIVE",
+			"street": "DENCER DRIVE",
+			"observed": "2026-05-29",
+			"claims": {
+				"since": "2020",
+				"sales": "6",
+				"low": "175000",
+				"high": "400000"
+			}
+		},
+		{
+			"id": "TAPPINGER GROVE",
+			"street": "TAPPINGER GROVE",
+			"observed": "2026-08-21",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "100000",
+				"high": "275000"
+			}
+		},
+		{
+			"id": "TISDALE RISE",
+			"street": "TISDALE RISE",
+			"observed": "2026-06-26",
+			"claims": {
+				"since": "2020",
+				"sales": "22",
+				"low": "150000",
+				"high": "425000"
+			}
+		},
+		{
+			"id": "STURLEY CLOSE",
+			"street": "STURLEY CLOSE",
+			"observed": "2025-12-19",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "225000",
+				"high": "275000"
+			}
+		},
+		{
+			"id": "COURTHOUSE CROFT",
+			"street": "COURTHOUSE CROFT",
+			"observed": "2026-05-26",
+			"claims": {
+				"since": "2020",
+				"sales": "13",
+				"low": "250000",
+				"high": "375000"
+			}
+		},
+		{
+			"id": "ADCOCK DRIVE",
+			"street": "ADCOCK DRIVE",
+			"observed": "2024-02-22",
+			"claims": {
+				"since": "2020",
+				"sales": "8",
+				"low": "150000",
+				"high": "700000"
+			}
+		},
+		{
+			"id": "DEVIS DRIVE",
+			"street": "DEVIS DRIVE",
+			"observed": "2025-09-30",
+			"claims": {
+				"since": "2020",
+				"sales": "19",
+				"low": "350000",
+				"high": "575000"
+			}
+		},
+		{
+			"id": "FENNYLAND LANE",
+			"street": "FENNYLAND LANE",
+			"observed": "2026-05-18",
+			"claims": {
+				"since": "2020",
+				"sales": "11",
+				"low": "400000",
+				"high": "650000"
+			}
+		},
+		{
+			"id": "TURTON WAY",
+			"street": "TURTON WAY",
+			"observed": "2026-07-01",
+			"claims": {
+				"since": "2020",
+				"sales": "15",
+				"low": "275000",
+				"high": "350000"
+			}
+		},
+		{
+			"id": "ALLITT GROVE",
+			"street": "ALLITT GROVE",
+			"observed": "2025-02-10",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "350000",
+				"high": "600000"
+			}
+		},
+		{
+			"id": "GREENSWARD CLOSE",
+			"street": "GREENSWARD CLOSE",
+			"observed": "2026-01-09",
+			"claims": {
+				"since": "2020",
+				"sales": "5",
+				"low": "300000",
+				"high": "325000"
+			}
+		},
+		{
+			"id": "CASHMORE ROAD",
+			"street": "CASHMORE ROAD",
+			"observed": "2025-10-20",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "375000",
+				"high": "550000"
+			}
+		},
+		{
+			"id": "MAYFIELD DRIVE",
+			"street": "MAYFIELD DRIVE",
+			"observed": "2025-10-31",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "650000",
+				"high": "750000"
+			}
+		},
+		{
+			"id": "FRYTHE CLOSE",
+			"street": "FRYTHE CLOSE",
+			"observed": "2026-06-26",
+			"claims": {
+				"since": "2020",
+				"sales": "13",
+				"low": "150000",
+				"high": "450000"
+			}
+		},
+		{
+			"id": "CHERRY ORCHARD",
+			"street": "CHERRY ORCHARD",
+			"observed": "2025-11-18",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "250000",
+				"high": "300000"
+			}
+		},
+		{
+			"id": "WORDSWORTH DRIVE",
+			"street": "WORDSWORTH DRIVE",
+			"observed": "2025-05-29",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "475000",
+				"high": "650000"
+			}
+		},
+		{
+			"id": "GLOSTER DRIVE",
+			"street": "GLOSTER DRIVE",
+			"observed": "2026-03-31",
+			"claims": {
+				"since": "2020",
+				"sales": "6",
+				"low": "725000",
+				"high": "1050000"
+			}
+		},
+		{
+			"id": "CANNADINE ROAD",
+			"street": "CANNADINE ROAD",
+			"observed": "2026-04-15",
+			"claims": {
+				"since": "2020",
+				"sales": "41",
+				"low": "325000",
+				"high": "700000"
+			}
+		},
+		{
+			"id": "HIGHLEY CLOSE",
+			"street": "HIGHLEY CLOSE",
+			"observed": "2023-10-05",
+			"claims": {
+				"since": "2020",
+				"sales": "6",
+				"low": "250000",
+				"high": "725000"
+			}
+		},
+		{
+			"id": "PATEL CLOSE",
+			"street": "PATEL CLOSE",
+			"observed": "2025-03-20",
+			"claims": {
+				"since": "2020",
+				"sales": "10",
+				"low": "475000",
+				"high": "900000"
+			}
+		},
+		{
+			"id": "WOODHOUSE DRIVE",
+			"street": "WOODHOUSE DRIVE",
+			"observed": "2025-03-26",
+			"claims": {
+				"since": "2020",
+				"sales": "15",
+				"low": "300000",
+				"high": "850000"
+			}
+		},
+		{
+			"id": "THE WARDENS",
+			"street": "THE WARDENS",
+			"observed": "2025-02-26",
+			"claims": {
+				"since": "2020",
+				"sales": "7",
+				"low": "600000",
+				"high": "800000"
+			}
+		},
+		{
+			"id": "MILLBROOK LANE",
+			"street": "MILLBROOK LANE",
+			"observed": "2024-09-30",
+			"claims": {
+				"since": "2020",
+				"sales": "9",
+				"low": "300000",
+				"high": "625000"
+			}
+		},
+		{
+			"id": "LULWORTH PARK",
+			"street": "LULWORTH PARK",
+			"observed": "2026-06-26",
+			"claims": {
+				"since": "2020",
+				"sales": "6",
+				"low": "300000",
+				"high": "450000"
+			}
+		}
+	],
+	"retrieved": "2026-11-09"
+}
