@@ -1008,6 +1008,40 @@ describe('a thing named as a walker would say it', () => {
 		expect(mapWords({ railway: 'tram' })[0]).toBe('A tram.');
 	});
 
+	it('names a stream, a river or a drain as the map does, its name with it', () => {
+		expect(nounPhrase({ waterway: 'stream' })).toBe('a stream');
+		expect(nounPhrase({ waterway: 'drain' })).toBe('a drain');
+		expect(nounPhrase({ waterway: 'river', name: 'Inventa Water' })).toBe(
+			'a river, “Inventa Water”'
+		);
+	});
+
+	it('names a golf course’s parts, an entrance and a ford', () => {
+		const said: [Record<string, string>, string][] = [
+			[{ golf: 'bunker', surface: 'sand' }, 'a bunker'],
+			[{ golf: 'green' }, 'a green'],
+			[{ golf: 'rough' }, 'a stretch of rough'],
+			[{ entrance: 'yes' }, 'an entrance'],
+			[{ entrance: 'main' }, 'a main entrance'],
+			[{ ford: 'yes' }, 'a ford']
+		];
+		for (const [tags, phrase] of said) expect(nounPhrase(tags)).toBe(phrase);
+		expect(plainKind({ golf: 'bunker' }, false)).toBe(
+			'a point the map marks without saying what it is'
+		);
+		expect(plainKind({ entrance: 'main' }, false)).toBe('an entrance');
+	});
+
+	it('keeps a stream as the prompt always had it, so no stored prose loses its key', () => {
+		expect(plainKind({ waterway: 'stream' }, false)).toBe(
+			'a point the map marks without saying what it is'
+		);
+		expect(mapWords({ waterway: 'river', name: 'Inventa Water' })).toEqual([
+			'A point the map marks without saying what it is.',
+			'“Inventa Water”, it says.'
+		]);
+	});
+
 	it('lets what a historic thing is say more than that it is historic', () => {
 		expect(nounPhrase({ historic: 'yes', man_made: 'chimney' })).toBe('a chimney');
 		expect(nounPhrase({ historic: 'industrial', man_made: 'ventilation_shaft' })).toBe(

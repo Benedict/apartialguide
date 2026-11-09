@@ -550,6 +550,12 @@ function noun(tags: Tags, walker = true): string {
 	return address(tags) ? 'address' : 'something';
 }
 
+/**
+ * Keys the template names and the prompt never did: naming them there would move the keys of prose
+ * written ahead of time, so the prompt keeps them as it always had them.
+ */
+const WALKERS_ONLY = ['waterway', 'golf', 'entrance', 'ford'];
+
 /** Mapped things that are neither a use nor a building: land, trees, rails, fences. */
 const KIND_KEYS = [
 	'place',
@@ -561,7 +567,9 @@ const KIND_KEYS = [
 	'public_transport',
 	'man_made',
 	'power',
-	'emergency'
+	'emergency',
+	// Last, so anything else the map says of it comes first; a walker's words only (see `kind`).
+	...WALKERS_ONLY
 ];
 
 /** What a thing the map marks only by its key (`man_made=yes`) is, in a walker's word. */
@@ -583,11 +591,13 @@ const AS_SAID: Record<string, string> = {
 	'power=plant': 'power plant',
 	'man_made=mineshaft': 'mine shaft',
 	'man_made=surveillance': 'surveillance camera',
-	'man_made=reservoir_covered': 'covered reservoir'
+	'man_made=reservoir_covered': 'covered reservoir',
+	'golf=rough': 'stretch of rough'
 };
 
 function kind(tags: Tags, walker = true): string | undefined {
-	const key = KIND_KEYS.find((k) => tags[k]);
+	// The prompt never had a waterway's kind: giving it there would move stored prose's keys.
+	const key = KIND_KEYS.find((k) => tags[k] && (walker || !WALKERS_ONLY.includes(k)));
 	if (!key) return undefined;
 	// Water the map says is a pond is a pond.
 	if (walker && key === 'natural' && tags.natural === 'water' && tags.water)
@@ -597,11 +607,14 @@ function kind(tags: Tags, walker = true): string | undefined {
 		tags[key] === 'yes' ? (ONLY_KEY[key] ?? humanise(key)) : (said ?? humanise(tags[key]));
 	if (key === 'landuse') return `${value} area`;
 	if (key === 'traffic_calming') return tags[key] === 'yes' ? 'speed bump' : `speed ${value}`;
+	// An entrance the map marks main, or a home's, is a main entrance, a home entrance.
+	if (key === 'entrance') return tags[key] === 'yes' ? 'entrance' : `${value} entrance`;
 	return value;
 }
 
 /** Whether the thing's name belongs in the noun phrase, rather than read off it as a sign. */
-const namedInline = (tags: Tags) => !!tags.name && !!(currentUse(tags) ?? kind(tags));
+const namedInline = (tags: Tags, walker = true) =>
+	!!tags.name && !!(currentUse(tags, walker) ?? kind(tags, walker));
 
 /** Streets already given in a room's addresses: after the first, an address is its number alone. */
 export type Said = Set<string>;
@@ -619,7 +632,7 @@ function addressIn(tags: Tags, said?: Said): string | undefined {
 export function nounPhrase(tags: Tags, said?: Said, walker = true): string {
 	const where = addressIn(tags, said);
 	const at = where ? ` at ${where}` : '';
-	const name = namedInline(tags) ? `, “${tags.name}”` : '';
+	const name = namedInline(tags, walker) ? `, “${tags.name}”` : '';
 	return `${article(houseKind(tags, noun(tags, walker)), walker)}${storeys(tags)}${at}${name}`;
 }
 
@@ -975,7 +988,7 @@ const WHEELCHAIR: Record<string, string> = {
 export function mapWords(tags: Tags): string[] {
 	// The prompt's words, as mapped: a walker's words would move every stored piece's key.
 	const sentences = [`${capitalise(plainKind(tags, false))}.`];
-	if (tags.name && !namedInline(tags)) sentences.push(`“${tags.name}”, it says.`);
+	if (tags.name && !namedInline(tags, false)) sentences.push(`“${tags.name}”, it says.`);
 	if (tags.old_name) sentences.push(`Once “${tags.old_name}”.`);
 	const past = pastUse(tags);
 	if (past) sentences.push(`It was ${article(past, false)}.`);
