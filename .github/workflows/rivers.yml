@@ -1,0 +1,61 @@
+name: River count
+
+# Counts the named rivers the map runs under London's ground, borough by borough, from Geofabrik's
+# extract (EXTRACT in data/rivers/request.env), and writes the page to the run's summary. Asks no
+# shared server. Runs when the request changes, or by hand.
+on:
+  push:
+    paths:
+      - data/rivers/request.env
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  # Whether the commit pushed itself edits the request, as with the other fetching workflows.
+  asked:
+    runs-on: ubuntu-latest
+    outputs:
+      edited: ${{ steps.diff.outputs.edited }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - id: diff
+        run: |
+          if [ -n "$(git diff --name-only HEAD~1 HEAD -- data/rivers/request.env 2>/dev/null)" ]; then
+            echo edited=true >> "$GITHUB_OUTPUT"
+          else
+            echo edited=false >> "$GITHUB_OUTPUT"
+          fi
+  count:
+    needs: asked
+    if: github.event_name == 'workflow_dispatch' || needs.asked.outputs.edited == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Count the rivers
+        run: |
+          set -a
+          . data/rivers/request.env
+          set +a
+          sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
+          curl -fsSL -o london.osm.pbf "$EXTRACT"
+          # The waterways as lines, and the boroughs' edges as areas.
+          osmium tags-filter london.osm.pbf w/waterway -o water.osm.pbf
+          osmium export water.osm.pbf --geometry-types=linestring -f geojsonseq -o water.geojsonseq
+          osmium tags-filter london.osm.pbf r/admin_level=8 -o edges.osm.pbf
+          osmium export edges.osm.pbf --geometry-types=polygon -f geojsonseq -o edges.geojsonseq
+          RIVERS_WATER=water.geojsonseq RIVERS_EDGES=edges.geojsonseq npm run --silent rivers > report.md
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+          cat report.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rivers-london
+          path: report.md
