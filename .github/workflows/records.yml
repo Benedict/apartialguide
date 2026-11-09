@@ -66,9 +66,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/records/*.json
+          # A place's own folder (RECORDS_OUT in the request), else data/records.
+          git add "$(. data/records/request.env && echo "${RECORDS_OUT:-data/records}")"/*.json
           git diff --cached --quiet && { echo "Nothing new"; exit 0; }
           git commit -m "Add records: $(. data/records/request.env && echo "$SOURCES")"
           # Another workflow may have pushed data to the branch meanwhile.
-          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"

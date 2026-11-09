@@ -1,0 +1,497 @@
+{
+	"source": "police.uk",
+	"prefix": "crime",
+	"records": [
+		{
+			"id": "Chandler Court|2026-09",
+			"street": "Chandler Court",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "4",
+				"kinds": "anti-social behaviour (1), criminal damage arson (1), public order (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Walnut Tree Close|2026-09",
+			"street": "Walnut Tree Close",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Reeve Drive|2026-09",
+			"street": "Reeve Drive",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "2",
+				"kinds": "anti-social behaviour (2)"
+			}
+		},
+		{
+			"id": "Parking Area|2026-09",
+			"street": "Parking Area",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "13",
+				"kinds": "shoplifting (10), anti-social behaviour (2), robbery (1)"
+			}
+		},
+		{
+			"id": "Villiers Road|2026-09",
+			"street": "Villiers Road",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "3",
+				"kinds": "violent crime (2), anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Trentham Gardens|2026-09",
+			"street": "Trentham Gardens",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Theatre/concert Hall|2026-09",
+			"street": "Theatre/concert Hall",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Princes Drive|2026-09",
+			"street": "Princes Drive",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "5",
+				"kinds": "anti-social behaviour (5)"
+			}
+		},
+		{
+			"id": "Castle Green|2026-09",
+			"street": "Castle Green",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Leagh Close|2026-09",
+			"street": "Leagh Close",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Lancaster Place|2026-09",
+			"street": "Lancaster Place",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "B4115|2026-09",
+			"street": "B4115",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "6",
+				"kinds": "public order (3), anti-social behaviour (1), criminal damage arson (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Whites Row|2026-09",
+			"street": "Whites Row",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), drugs (1)"
+			}
+		},
+		{
+			"id": "Albion Street|2026-09",
+			"street": "Albion Street",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "2",
+				"kinds": "anti-social behaviour (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Adcock Drive|2026-09",
+			"street": "Adcock Drive",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "3",
+				"kinds": "other theft (2), anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Park/open Space|2026-09",
+			"street": "Park/open Space",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "anti-social behaviour (1)"
+			}
+		},
+		{
+			"id": "Arbour Close|2026-09",
+			"street": "Arbour Close",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "burglary (1)"
+			}
+		},
+		{
+			"id": "Hidcote Road|2026-09",
+			"street": "Hidcote Road",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "burglary (1)"
+			}
+		},
+		{
+			"id": "Monmouth Close|2026-09",
+			"street": "Monmouth Close",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "burglary (1)"
+			}
+		},
+		{
+			"id": "Laburnum Avenue|2026-09",
+			"street": "Laburnum Avenue",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "4",
+				"kinds": "public order (2), burglary (1), violent crime (1)"
+			}
+		},
+		{
+			"id": "Beech Drive|2026-09",
+			"street": "Beech Drive",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "criminal damage arson (1)"
+			}
+		},
+		{
+			"id": "Winn Close|2026-09",
+			"street": "Winn Close",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "3",
+				"kinds": "violent crime (2), criminal damage arson (1)"
+			}
+		},
+		{
+			"id": "Berkeley Road|2026-09",
+			"street": "Berkeley Road",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "2",
+				"kinds": "other theft (2)"
+			}
+		},
+		{
+			"id": "Bridge Street|2026-09",
+			"street": "Bridge Street",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "other theft (1)"
+			}
+		},
+		{
+			"id": "Latimer Close|2026-09",
+			"street": "Latimer Close",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "other theft (1)"
+			}
+		},
+		{
+			"id": "Stoneleigh Road|2026-09",
+			"street": "Stoneleigh Road",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "other theft (1)"
+			}
+		},
+		{
+			"id": "Chatsworth Grove|2026-09",
+			"street": "Chatsworth Grove",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "4",
+				"kinds": "violent crime (2), public order (1), robbery (1)"
+			}
+		},
+		{
+			"id": "Clinton Lane|2026-09",
+			"street": "Clinton Lane",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "public order (1)"
+			}
+		},
+		{
+			"id": "Hawkesworth Drive|2026-09",
+			"street": "Hawkesworth Drive",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "robbery (1)"
+			}
+		},
+		{
+			"id": "Supermarket|2026-09",
+			"street": "Supermarket",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "5",
+				"kinds": "shoplifting (4), violent crime (1)"
+			}
+		},
+		{
+			"id": "Warwick Road|2026-09",
+			"street": "Warwick Road",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "2",
+				"kinds": "other crime (1), shoplifting (1)"
+			}
+		},
+		{
+			"id": "Guy Road|2026-09",
+			"street": "Guy Road",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Faircroft|2026-09",
+			"street": "Faircroft",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Abbotsford Mews|2026-09",
+			"street": "Abbotsford Mews",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Hyde Road|2026-09",
+			"street": "Hyde Road",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "3",
+				"kinds": "violent crime (3)"
+			}
+		},
+		{
+			"id": "Bertie Road|2026-09",
+			"street": "Bertie Road",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Whitehead Drive|2026-09",
+			"street": "Whitehead Drive",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Mortimer Road|2026-09",
+			"street": "Mortimer Road",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Station Road|2026-09",
+			"street": "Station Road",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Ash Drive|2026-09",
+			"street": "Ash Drive",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Rye Meadow|2026-09",
+			"street": "Rye Meadow",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Cashmore Road|2026-09",
+			"street": "Cashmore Road",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "The Deer Leap|2026-09",
+			"street": "The Deer Leap",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Willoughby Avenue|2026-09",
+			"street": "Willoughby Avenue",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Woodland Road|2026-09",
+			"street": "Woodland Road",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Glendale Avenue|2026-09",
+			"street": "Glendale Avenue",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "The Square|2026-09",
+			"street": "The Square",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Saville Grove|2026-09",
+			"street": "Saville Grove",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "violent crime (1)"
+			}
+		},
+		{
+			"id": "Herbert's Lane|2026-09",
+			"street": "Herbert's Lane",
+			"observed": "2026-09-01",
+			"claims": {
+				"month": "2026-09",
+				"reports": "1",
+				"kinds": "other crime (1)"
+			}
+		}
+	],
+	"retrieved": "2026-11-09"
+}

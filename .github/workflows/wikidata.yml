@@ -56,9 +56,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/wikidata/*.json
+          # A place's own folder (WIKIDATA_OUT in the request), else data/wikidata.
+          git add "$(. data/wikidata/request.env && echo "${WIKIDATA_OUT:-data/wikidata}")"/*.json
           git diff --cached --quiet && { echo "Nothing new"; exit 0; }
           git commit -m "Add wikidata for the snapshot"
           # Another workflow may have pushed data to the branch meanwhile.
-          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"

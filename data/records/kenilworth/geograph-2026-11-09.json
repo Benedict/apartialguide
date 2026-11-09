@@ -1,0 +1,254 @@
+{
+	"source": "Geograph",
+	"prefix": "geograph",
+	"records": [
+		{
+			"id": "5867419",
+			"at": [
+				52.344705101119125,
+				-1.582186854912675
+			],
+			"observed": "2018-08-08",
+			"claims": {
+				"name": "SP2871 : West along Forrest Road, Kenilworth",
+				"kind": "photograph",
+				"taken": "2018-08"
+			}
+		},
+		{
+			"id": "7728967",
+			"at": [
+				52.34582867135537,
+				-1.5817072892381505
+			],
+			"observed": "2024-03-13",
+			"claims": {
+				"name": "SP2872 : A graceful alder in Abbey Fields",
+				"kind": "photograph",
+				"taken": "2024-03"
+			}
+		},
+		{
+			"id": "2200322",
+			"at": [
+				52.345695745146905,
+				-1.58247104197906
+			],
+			"observed": "2010-12-18",
+			"claims": {
+				"name": "SP2872 : Sledging in Abbey Fields",
+				"kind": "photograph",
+				"taken": "2010-12"
+			}
+		},
+		{
+			"id": "8252172",
+			"at": [
+				52.344974964240635,
+				-1.5815972813414854
+			],
+			"observed": "2026-02-04",
+			"claims": {
+				"name": "SP2871 : Kenilworth War Memorial",
+				"kind": "photograph",
+				"taken": "2026-02"
+			}
+		},
+		{
+			"id": "2201889",
+			"at": [
+				52.34542931977217,
+				-1.583355115856947
+			],
+			"observed": "2010-12-18",
+			"claims": {
+				"name": "SP2872 : Sledging in a snowstorm in Abbey Fields",
+				"kind": "photograph",
+				"taken": "2010-12"
+			}
+		},
+		{
+			"id": "5886564",
+			"at": [
+				52.344711976612665,
+				-1.5838020229371488
+			],
+			"observed": "2018-08-08",
+			"claims": {
+				"name": "SP2871 : Forrest Road, Kenilworth",
+				"kind": "photograph",
+				"taken": "2018-08"
+			}
+		},
+		{
+			"id": "2190284",
+			"at": [
+				52.34605728151563,
+				-1.5824681771900844
+			],
+			"observed": "2010-12-07",
+			"claims": {
+				"name": "SP2872 : Woman walking along frost covered path in Abbey Fields",
+				"kind": "photograph",
+				"taken": "2010-12"
+			}
+		},
+		{
+			"id": "5867482",
+			"at": [
+				52.34461285491411,
+				-1.5808667601526938
+			],
+			"observed": "2018-08-08",
+			"claims": {
+				"name": "SP2871 : Intastruct office in Kenilworth",
+				"kind": "photograph",
+				"taken": "2018-08"
+			}
+		},
+		{
+			"id": "2200321",
+			"at": [
+				52.345149143410346,
+				-1.5805682491414306
+			],
+			"observed": "2010-12-18",
+			"claims": {
+				"name": "SP2871 : Abbey Hill in the snow",
+				"kind": "photograph",
+				"taken": "2010-12"
+			}
+		},
+		{
+			"id": "5874786",
+			"at": [
+				52.34371846779591,
+				-1.5823432723907458
+			],
+			"observed": "2018-08-08",
+			"claims": {
+				"name": "SP2871 : Old School House, Barrowfield Lane, Kenilworth",
+				"kind": "photograph",
+				"taken": "2018-08"
+			}
+		},
+		{
+			"id": "5874765",
+			"at": [
+				52.34389264696563,
+				-1.581314240190691
+			],
+			"observed": "2018-08-08",
+			"claims": {
+				"name": "SP2871 : Holiday Inn Kenilworth",
+				"kind": "photograph",
+				"taken": "2018-08"
+			}
+		},
+		{
+			"id": "5412408",
+			"at": [
+				52.34641251534861,
+				-1.5815841033121973
+			],
+			"observed": "2017-05-26",
+			"claims": {
+				"name": "SP2872 : Abbey Fields Kenilworth",
+				"kind": "photograph",
+				"taken": "2017-05"
+			}
+		},
+		{
+			"id": "8361807",
+			"at": [
+				52.343803838507384,
+				-1.5808742086040306
+			],
+			"observed": "2026-07-12",
+			"claims": {
+				"name": "SP2871 : The Holiday Inn, Kenilworth",
+				"kind": "photograph",
+				"taken": "2026-07"
+			}
+		},
+		{
+			"id": "5886559",
+			"at": [
+				52.34480766056445,
+				-1.5849748675437818
+			],
+			"observed": "2018-08-08",
+			"claims": {
+				"name": "SP2871 : Borrowell Terrace houses, Kenilworth",
+				"kind": "photograph",
+				"taken": "2018-08"
+			}
+		},
+		{
+			"id": "7677702",
+			"at": [
+				52.34469822562558,
+				-1.579838300910434
+			],
+			"observed": "2023-12-27",
+			"claims": {
+				"name": "SP2871 : Senior Citizens Club, Abbey End, Kenilworth",
+				"kind": "photograph",
+				"taken": "2023-12"
+			}
+		},
+		{
+			"id": "5874794",
+			"at": [
+				52.344445551237925,
+				-1.5851249824861058
+			],
+			"observed": "2018-08-08",
+			"claims": {
+				"name": "SP2871 : Brookside Avenue, Kenilworth",
+				"kind": "photograph",
+				"taken": "2018-08"
+			}
+		},
+		{
+			"id": "602058",
+			"at": [
+				52.34604754123311,
+				-1.580119050230048
+			],
+			"observed": "2007-11-02",
+			"claims": {
+				"name": "SP2872 : Abbey Fields, towards Abbey Hill",
+				"kind": "photograph",
+				"taken": "2007-11"
+			}
+		},
+		{
+			"id": "8252170",
+			"at": [
+				52.34550781499009,
+				-1.5796841752635435
+			],
+			"observed": "2026-02-04",
+			"claims": {
+				"name": "SP2872 : Dudley House, Abbey Hill",
+				"kind": "photograph",
+				"taken": "2026-02"
+			}
+		},
+		{
+			"id": "2945939",
+			"at": [
+				52.343978017677095,
+				-1.579991853599529
+			],
+			"observed": "2012-05-13",
+			"claims": {
+				"name": "SP2871 : Kenilworth cars at Supercar Sunday",
+				"kind": "photograph",
+				"taken": "2012-05"
+			}
+		}
+	],
+	"retrieved": "2026-11-09"
+}

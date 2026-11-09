@@ -1,0 +1,3885 @@
+{
+	"source": "Office for National Statistics",
+	"prefix": "postcode",
+	"records": [
+		{
+			"id": "CV8 1QN",
+			"at": [
+				52.346264,
+				-1.585978
+			],
+			"observed": "1996-06-01",
+			"claims": {
+				"name": "CV8 1QN",
+				"kind": "postcode",
+				"began": "1993-01",
+				"ended": "1996-06"
+			}
+		},
+		{
+			"id": "CV8 1QU",
+			"at": [
+				52.349558,
+				-1.584494
+			],
+			"observed": "2020-11-01",
+			"claims": {
+				"name": "CV8 1QU",
+				"kind": "postcode",
+				"began": "2005-10",
+				"ended": "2020-11"
+			}
+		},
+		{
+			"id": "CV8 1QX",
+			"at": [
+				52.34537,
+				-1.587454
+			],
+			"observed": "1996-06-01",
+			"claims": {
+				"name": "CV8 1QX",
+				"kind": "postcode",
+				"began": "1993-01",
+				"ended": "1996-06"
+			}
+		},
+		{
+			"id": "CV8 1QZ",
+			"at": [
+				52.341784,
+				-1.590423
+			],
+			"observed": "1991-12-01",
+			"claims": {
+				"name": "CV8 1QZ",
+				"kind": "postcode",
+				"began": "1984-10",
+				"ended": "1991-12"
+			}
+		},
+		{
+			"id": "CV8 1RE",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2008-06-01",
+			"claims": {
+				"name": "CV8 1RE",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2008-06"
+			}
+		},
+		{
+			"id": "CV8 1RL",
+			"at": [
+				52.349844,
+				-1.58154
+			],
+			"observed": "1991-12-01",
+			"claims": {
+				"name": "CV8 1RL",
+				"kind": "postcode",
+				"began": "1986-04",
+				"ended": "1991-12"
+			}
+		},
+		{
+			"id": "CV8 1RP",
+			"at": [
+				52.342678,
+				-1.588947
+			],
+			"observed": "1996-06-01",
+			"claims": {
+				"name": "CV8 1RP",
+				"kind": "postcode",
+				"began": "1993-01",
+				"ended": "1996-06"
+			}
+		},
+		{
+			"id": "CV8 1EA",
+			"at": [
+				52.342554,
+				-1.579378
+			],
+			"observed": "2024-11-01",
+			"claims": {
+				"name": "CV8 1EA",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2024-11"
+			}
+		},
+		{
+			"id": "CV8 1GT",
+			"at": [
+				52.342301,
+				-1.579028
+			],
+			"observed": "2022-02-01",
+			"claims": {
+				"name": "CV8 1GT",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2022-02"
+			}
+		},
+		{
+			"id": "CV8 1BR",
+			"at": [
+				52.349839,
+				-1.580072
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CV8 1BR",
+				"kind": "postcode",
+				"began": "1992-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CV8 1JG",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2017-12-01",
+			"claims": {
+				"name": "CV8 1JG",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2017-12"
+			}
+		},
+		{
+			"id": "CV8 1ZG",
+			"at": [
+				52.34535,
+				-1.586779
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CV8 1ZG",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CV8 1ZH",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-05-01",
+			"claims": {
+				"name": "CV8 1ZH",
+				"kind": "postcode",
+				"began": "1993-01",
+				"ended": "2005-05"
+			}
+		},
+		{
+			"id": "CV8 1ZJ",
+			"at": [
+				52.342058,
+				-1.57881
+			],
+			"observed": "2017-05-01",
+			"claims": {
+				"name": "CV8 1ZJ",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "2017-05"
+			}
+		},
+		{
+			"id": "CV8 1ZL",
+			"at": [
+				52.34535,
+				-1.586779
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CV8 1ZL",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CV8 1ZN",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2003-11-01",
+			"claims": {
+				"name": "CV8 1ZN",
+				"kind": "postcode",
+				"began": "1995-07",
+				"ended": "2003-11"
+			}
+		},
+		{
+			"id": "CV8 1ZP",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1995-12-01",
+			"claims": {
+				"name": "CV8 1ZP",
+				"kind": "postcode",
+				"began": "1995-01",
+				"ended": "1995-12"
+			}
+		},
+		{
+			"id": "CV8 1ZQ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-04-01",
+			"claims": {
+				"name": "CV8 1ZQ",
+				"kind": "postcode",
+				"began": "2003-07",
+				"ended": "2012-04"
+			}
+		},
+		{
+			"id": "CV8 1ZR",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-02-01",
+			"claims": {
+				"name": "CV8 1ZR",
+				"kind": "postcode",
+				"began": "1995-01",
+				"ended": "2006-02"
+			}
+		},
+		{
+			"id": "CV8 1ZS",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2007-01-01",
+			"claims": {
+				"name": "CV8 1ZS",
+				"kind": "postcode",
+				"began": "2007-01",
+				"ended": "2007-01"
+			}
+		},
+		{
+			"id": "CV8 1ZT",
+			"at": [
+				52.345341,
+				-1.586794
+			],
+			"observed": "1997-12-01",
+			"claims": {
+				"name": "CV8 1ZT",
+				"kind": "postcode",
+				"began": "1994-12",
+				"ended": "1997-12"
+			}
+		},
+		{
+			"id": "CV8 1ZU",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2009-04-01",
+			"claims": {
+				"name": "CV8 1ZU",
+				"kind": "postcode",
+				"began": "2004-01",
+				"ended": "2009-04"
+			}
+		},
+		{
+			"id": "CV8 1ZW",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2003-01-01",
+			"claims": {
+				"name": "CV8 1ZW",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2003-01"
+			}
+		},
+		{
+			"id": "CV8 1ZX",
+			"at": [
+				52.34535,
+				-1.586779
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CV8 1ZX",
+				"kind": "postcode",
+				"began": "1994-12",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CV8 1ZY",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-10-01",
+			"claims": {
+				"name": "CV8 1ZY",
+				"kind": "postcode",
+				"began": "2000-06",
+				"ended": "2005-10"
+			}
+		},
+		{
+			"id": "CV8 1ZZ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-02-01",
+			"claims": {
+				"name": "CV8 1ZZ",
+				"kind": "postcode",
+				"began": "2001-06",
+				"ended": "2006-02"
+			}
+		},
+		{
+			"id": "CV8 1WJ",
+			"at": [
+				52.345359,
+				-1.586984
+			],
+			"observed": "2004-08-01",
+			"claims": {
+				"name": "CV8 1WJ",
+				"kind": "postcode",
+				"began": "2003-06",
+				"ended": "2004-08"
+			}
+		},
+		{
+			"id": "CV8 2QW",
+			"at": [
+				52.346157,
+				-1.556619
+			],
+			"observed": "1990-12-01",
+			"claims": {
+				"name": "CV8 2QW",
+				"kind": "postcode",
+				"began": "1983-07",
+				"ended": "1990-12"
+			}
+		},
+		{
+			"id": "CV8 1WL",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-03-01",
+			"claims": {
+				"name": "CV8 1WL",
+				"kind": "postcode",
+				"began": "2004-11",
+				"ended": "2006-03"
+			}
+		},
+		{
+			"id": "CV8 1WN",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2011-05-01",
+			"claims": {
+				"name": "CV8 1WN",
+				"kind": "postcode",
+				"began": "2004-01",
+				"ended": "2011-05"
+			}
+		},
+		{
+			"id": "CV8 2DA",
+			"at": [
+				52.346098,
+				-1.559894
+			],
+			"observed": "2025-06-01",
+			"claims": {
+				"name": "CV8 2DA",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2025-06"
+			}
+		},
+		{
+			"id": "CV8 1WP",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2007-10-01",
+			"claims": {
+				"name": "CV8 1WP",
+				"kind": "postcode",
+				"began": "2004-11",
+				"ended": "2007-10"
+			}
+		},
+		{
+			"id": "CV8 1RU",
+			"at": [
+				52.349558,
+				-1.584494
+			],
+			"observed": "2020-11-01",
+			"claims": {
+				"name": "CV8 1RU",
+				"kind": "postcode",
+				"began": "2005-10",
+				"ended": "2020-11"
+			}
+		},
+		{
+			"id": "CV8 1WQ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-02-01",
+			"claims": {
+				"name": "CV8 1WQ",
+				"kind": "postcode",
+				"began": "2004-09",
+				"ended": "2006-02"
+			}
+		},
+		{
+			"id": "CV8 1WR",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2002-04-01",
+			"claims": {
+				"name": "CV8 1WR",
+				"kind": "postcode",
+				"began": "2000-06",
+				"ended": "2002-04"
+			}
+		},
+		{
+			"id": "CV8 1WS",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-07-01",
+			"claims": {
+				"name": "CV8 1WS",
+				"kind": "postcode",
+				"began": "2004-02",
+				"ended": "2005-07"
+			}
+		},
+		{
+			"id": "CV8 2DF",
+			"at": [
+				52.347858,
+				-1.554562
+			],
+			"observed": "2021-04-01",
+			"claims": {
+				"name": "CV8 2DF",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2021-04"
+			}
+		},
+		{
+			"id": "CV8 1WT",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2003-02-01",
+			"claims": {
+				"name": "CV8 1WT",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2003-02"
+			}
+		},
+		{
+			"id": "CV8 1WU",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2007-07-01",
+			"claims": {
+				"name": "CV8 1WU",
+				"kind": "postcode",
+				"began": "2007-06",
+				"ended": "2007-07"
+			}
+		},
+		{
+			"id": "CV8 1WW",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2003-11-01",
+			"claims": {
+				"name": "CV8 1WW",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2003-11"
+			}
+		},
+		{
+			"id": "CV8 1SD",
+			"at": [
+				52.34535,
+				-1.586779
+			],
+			"observed": "1999-12-01",
+			"claims": {
+				"name": "CV8 1SD",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "1999-12"
+			}
+		},
+		{
+			"id": "CV8 1WX",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2001-12-01",
+			"claims": {
+				"name": "CV8 1WX",
+				"kind": "postcode",
+				"began": "1997-12",
+				"ended": "2001-12"
+			}
+		},
+		{
+			"id": "CV8 1SE",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1994-05-01",
+			"claims": {
+				"name": "CV8 1SE",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "1994-05"
+			}
+		},
+		{
+			"id": "CV8 1XA",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2007-10-01",
+			"claims": {
+				"name": "CV8 1XA",
+				"kind": "postcode",
+				"began": "2004-02",
+				"ended": "2007-10"
+			}
+		},
+		{
+			"id": "CV8 1XB",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-05-01",
+			"claims": {
+				"name": "CV8 1XB",
+				"kind": "postcode",
+				"began": "2001-12",
+				"ended": "2006-05"
+			}
+		},
+		{
+			"id": "CV8 1XD",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-02-01",
+			"claims": {
+				"name": "CV8 1XD",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2006-02"
+			}
+		},
+		{
+			"id": "CV8 1SG",
+			"at": [
+				52.34535,
+				-1.586779
+			],
+			"observed": "1999-06-01",
+			"claims": {
+				"name": "CV8 1SG",
+				"kind": "postcode",
+				"began": "1990-02",
+				"ended": "1999-06"
+			}
+		},
+		{
+			"id": "CV8 1XL",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2009-08-01",
+			"claims": {
+				"name": "CV8 1XL",
+				"kind": "postcode",
+				"began": "2002-07",
+				"ended": "2009-08"
+			}
+		},
+		{
+			"id": "CV8 1XN",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2004-04-01",
+			"claims": {
+				"name": "CV8 1XN",
+				"kind": "postcode",
+				"began": "2002-05",
+				"ended": "2004-04"
+			}
+		},
+		{
+			"id": "CV8 1SH",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CV8 1SH",
+				"kind": "postcode",
+				"began": "1990-07",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CV8 1SJ",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CV8 1SJ",
+				"kind": "postcode",
+				"began": "1990-07",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CV8 1SL",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1991-12-01",
+			"claims": {
+				"name": "CV8 1SL",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "1991-12"
+			}
+		},
+		{
+			"id": "CV8 1XP",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2003-09-01",
+			"claims": {
+				"name": "CV8 1XP",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2003-09"
+			}
+		},
+		{
+			"id": "CV8 1SN",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1996-06-01",
+			"claims": {
+				"name": "CV8 1SN",
+				"kind": "postcode",
+				"began": "1991-01",
+				"ended": "1996-06"
+			}
+		},
+		{
+			"id": "CV8 1XQ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2007-04-01",
+			"claims": {
+				"name": "CV8 1XQ",
+				"kind": "postcode",
+				"began": "2006-10",
+				"ended": "2007-04"
+			}
+		},
+		{
+			"id": "CV8 1XR",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2009-02-01",
+			"claims": {
+				"name": "CV8 1XR",
+				"kind": "postcode",
+				"began": "2006-02",
+				"ended": "2009-02"
+			}
+		},
+		{
+			"id": "CV8 1SP",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1994-12-01",
+			"claims": {
+				"name": "CV8 1SP",
+				"kind": "postcode",
+				"began": "1993-01",
+				"ended": "1994-12"
+			}
+		},
+		{
+			"id": "CV8 1XS",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2003-09-01",
+			"claims": {
+				"name": "CV8 1XS",
+				"kind": "postcode",
+				"began": "2001-12",
+				"ended": "2003-09"
+			}
+		},
+		{
+			"id": "CV8 1XT",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2003-11-01",
+			"claims": {
+				"name": "CV8 1XT",
+				"kind": "postcode",
+				"began": "2003-05",
+				"ended": "2003-11"
+			}
+		},
+		{
+			"id": "CV8 1SR",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1994-12-01",
+			"claims": {
+				"name": "CV8 1SR",
+				"kind": "postcode",
+				"began": "1992-01",
+				"ended": "1994-12"
+			}
+		},
+		{
+			"id": "CV8 1SS",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CV8 1SS",
+				"kind": "postcode",
+				"began": "1992-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CV8 1XU",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2004-08-01",
+			"claims": {
+				"name": "CV8 1XU",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2004-08"
+			}
+		},
+		{
+			"id": "CV8 1XW",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-02-01",
+			"claims": {
+				"name": "CV8 1XW",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2006-02"
+			}
+		},
+		{
+			"id": "CV8 1ST",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1994-12-01",
+			"claims": {
+				"name": "CV8 1ST",
+				"kind": "postcode",
+				"began": "1992-01",
+				"ended": "1994-12"
+			}
+		},
+		{
+			"id": "CV8 1XY",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2022-09-01",
+			"claims": {
+				"name": "CV8 1XY",
+				"kind": "postcode",
+				"began": "2006-09",
+				"ended": "2022-09"
+			}
+		},
+		{
+			"id": "CV8 1SU",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1992-12-01",
+			"claims": {
+				"name": "CV8 1SU",
+				"kind": "postcode",
+				"began": "1992-01",
+				"ended": "1992-12"
+			}
+		},
+		{
+			"id": "CV8 1XZ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2010-10-01",
+			"claims": {
+				"name": "CV8 1XZ",
+				"kind": "postcode",
+				"began": "2002-05",
+				"ended": "2010-10"
+			}
+		},
+		{
+			"id": "CV8 1SW",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2007-11-01",
+			"claims": {
+				"name": "CV8 1SW",
+				"kind": "postcode",
+				"began": "2005-07",
+				"ended": "2007-11"
+			}
+		},
+		{
+			"id": "CV8 1YA",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2004-08-01",
+			"claims": {
+				"name": "CV8 1YA",
+				"kind": "postcode",
+				"began": "1997-12",
+				"ended": "2004-08"
+			}
+		},
+		{
+			"id": "CV8 1SX",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1994-05-01",
+			"claims": {
+				"name": "CV8 1SX",
+				"kind": "postcode",
+				"began": "1992-08",
+				"ended": "1994-05"
+			}
+		},
+		{
+			"id": "CV8 1YB",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-07-01",
+			"claims": {
+				"name": "CV8 1YB",
+				"kind": "postcode",
+				"began": "2001-12",
+				"ended": "2012-07"
+			}
+		},
+		{
+			"id": "CV8 1SY",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1994-12-01",
+			"claims": {
+				"name": "CV8 1SY",
+				"kind": "postcode",
+				"began": "1992-08",
+				"ended": "1994-12"
+			}
+		},
+		{
+			"id": "CV8 1YD",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2003-10-01",
+			"claims": {
+				"name": "CV8 1YD",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2003-10"
+			}
+		},
+		{
+			"id": "CV8 1SZ",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1994-12-01",
+			"claims": {
+				"name": "CV8 1SZ",
+				"kind": "postcode",
+				"began": "1992-08",
+				"ended": "1994-12"
+			}
+		},
+		{
+			"id": "CV8 2EG",
+			"at": [
+				52.358632,
+				-1.56761
+			],
+			"observed": "2010-12-01",
+			"claims": {
+				"name": "CV8 2EG",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2010-12"
+			}
+		},
+		{
+			"id": "CV8 2EH",
+			"at": [
+				52.354199,
+				-1.560033
+			],
+			"observed": "2002-03-01",
+			"claims": {
+				"name": "CV8 2EH",
+				"kind": "postcode",
+				"began": "1980-01",
+				"ended": "2002-03"
+			}
+		},
+		{
+			"id": "CV8 1TA",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-05-01",
+			"claims": {
+				"name": "CV8 1TA",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "2005-05"
+			}
+		},
+		{
+			"id": "CV8 1YE",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2007-04-01",
+			"claims": {
+				"name": "CV8 1YE",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2007-04"
+			}
+		},
+		{
+			"id": "CV8 1TB",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "CV8 1TB",
+				"kind": "postcode",
+				"began": "1993-08",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "CV8 1YF",
+			"at": [
+				52.345331,
+				-1.586647
+			],
+			"observed": "1999-12-01",
+			"claims": {
+				"name": "CV8 1YF",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "1999-12"
+			}
+		},
+		{
+			"id": "CV8 1TD",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1995-01-01",
+			"claims": {
+				"name": "CV8 1TD",
+				"kind": "postcode",
+				"began": "1994-05",
+				"ended": "1995-01"
+			}
+		},
+		{
+			"id": "CV8 1YG",
+			"at": [
+				52.34535,
+				-1.586779
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CV8 1YG",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CV8 1YH",
+			"at": [
+				52.345331,
+				-1.586647
+			],
+			"observed": "1999-12-01",
+			"claims": {
+				"name": "CV8 1YH",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "1999-12"
+			}
+		},
+		{
+			"id": "CV8 1YJ",
+			"at": [
+				52.34535,
+				-1.586779
+			],
+			"observed": "2000-09-01",
+			"claims": {
+				"name": "CV8 1YJ",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2000-09"
+			}
+		},
+		{
+			"id": "CV8 1YL",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-02-01",
+			"claims": {
+				"name": "CV8 1YL",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2006-02"
+			}
+		},
+		{
+			"id": "CV8 1TG",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "2002-05-01",
+			"claims": {
+				"name": "CV8 1TG",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2002-05"
+			}
+		},
+		{
+			"id": "CV8 1YN",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2003-11-01",
+			"claims": {
+				"name": "CV8 1YN",
+				"kind": "postcode",
+				"began": "1997-12",
+				"ended": "2003-11"
+			}
+		},
+		{
+			"id": "CV8 1YP",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2003-04-01",
+			"claims": {
+				"name": "CV8 1YP",
+				"kind": "postcode",
+				"began": "2003-02",
+				"ended": "2003-04"
+			}
+		},
+		{
+			"id": "CV8 1YQ",
+			"at": [
+				52.34535,
+				-1.586779
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 1YQ",
+				"kind": "postcode",
+				"began": "2003-06",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 1YR",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-10-01",
+			"claims": {
+				"name": "CV8 1YR",
+				"kind": "postcode",
+				"began": "2001-06",
+				"ended": "2005-10"
+			}
+		},
+		{
+			"id": "CV8 1YS",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-02-01",
+			"claims": {
+				"name": "CV8 1YS",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2006-02"
+			}
+		},
+		{
+			"id": "CV8 1YT",
+			"at": [
+				52.34535,
+				-1.586779
+			],
+			"observed": "1998-06-01",
+			"claims": {
+				"name": "CV8 1YT",
+				"kind": "postcode",
+				"began": "1996-12",
+				"ended": "1998-06"
+			}
+		},
+		{
+			"id": "CV8 1YU",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-02-01",
+			"claims": {
+				"name": "CV8 1YU",
+				"kind": "postcode",
+				"began": "1996-12",
+				"ended": "2006-02"
+			}
+		},
+		{
+			"id": "CV8 1YW",
+			"at": [
+				52.345331,
+				-1.586647
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "CV8 1YW",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "CV8 1YX",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-04-01",
+			"claims": {
+				"name": "CV8 1YX",
+				"kind": "postcode",
+				"began": "2003-06",
+				"ended": "2012-04"
+			}
+		},
+		{
+			"id": "CV8 1YY",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2002-10-01",
+			"claims": {
+				"name": "CV8 1YY",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2002-10"
+			}
+		},
+		{
+			"id": "CV8 1YZ",
+			"at": [
+				52.34535,
+				-1.586779
+			],
+			"observed": "1998-12-01",
+			"claims": {
+				"name": "CV8 1YZ",
+				"kind": "postcode",
+				"began": "1996-06",
+				"ended": "1998-12"
+			}
+		},
+		{
+			"id": "CV8 1ZA",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-01-01",
+			"claims": {
+				"name": "CV8 1ZA",
+				"kind": "postcode",
+				"began": "1996-06",
+				"ended": "2006-01"
+			}
+		},
+		{
+			"id": "CV8 1ZB",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "1997-06-01",
+			"claims": {
+				"name": "CV8 1ZB",
+				"kind": "postcode",
+				"began": "1996-06",
+				"ended": "1997-06"
+			}
+		},
+		{
+			"id": "CV8 1WD",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2003-06-01",
+			"claims": {
+				"name": "CV8 1WD",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2003-06"
+			}
+		},
+		{
+			"id": "CV8 1ZE",
+			"at": [
+				52.33097,
+				-1.583185
+			],
+			"observed": "1996-12-01",
+			"claims": {
+				"name": "CV8 1ZE",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "1996-12"
+			}
+		},
+		{
+			"id": "CV8 1ZF",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-02-01",
+			"claims": {
+				"name": "CV8 1ZF",
+				"kind": "postcode",
+				"began": "1995-12",
+				"ended": "2006-02"
+			}
+		},
+		{
+			"id": "CV8 1WF",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-07-01",
+			"claims": {
+				"name": "CV8 1WF",
+				"kind": "postcode",
+				"began": "2004-06",
+				"ended": "2006-07"
+			}
+		},
+		{
+			"id": "CV8 1WH",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-07-01",
+			"claims": {
+				"name": "CV8 1WH",
+				"kind": "postcode",
+				"began": "2003-06",
+				"ended": "2012-07"
+			}
+		},
+		{
+			"id": "CV8 9AB",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2011-05-01",
+			"claims": {
+				"name": "CV8 9AB",
+				"kind": "postcode",
+				"began": "2005-02",
+				"ended": "2011-05"
+			}
+		},
+		{
+			"id": "CV8 2XB",
+			"at": [
+				52.34669,
+				-1.547601
+			],
+			"observed": "2026-05-01",
+			"claims": {
+				"name": "CV8 2XB",
+				"kind": "postcode",
+				"began": "2025-11",
+				"ended": "2026-05"
+			}
+		},
+		{
+			"id": "CV8 9AD",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2007-10-01",
+			"claims": {
+				"name": "CV8 9AD",
+				"kind": "postcode",
+				"began": "2005-02",
+				"ended": "2007-10"
+			}
+		},
+		{
+			"id": "CV8 2ZR",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2ZR",
+				"kind": "postcode",
+				"began": "1995-07",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9AA",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2011-05-01",
+			"claims": {
+				"name": "CV8 9AA",
+				"kind": "postcode",
+				"began": "2005-01",
+				"ended": "2011-05"
+			}
+		},
+		{
+			"id": "CV8 2XE",
+			"at": [
+				52.353014,
+				-1.558283
+			],
+			"observed": "2005-07-01",
+			"claims": {
+				"name": "CV8 2XE",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2005-07"
+			}
+		},
+		{
+			"id": "CV8 2ZS",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2ZS",
+				"kind": "postcode",
+				"began": "1995-07",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9AE",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-05-01",
+			"claims": {
+				"name": "CV8 9AE",
+				"kind": "postcode",
+				"began": "2005-04",
+				"ended": "2006-05"
+			}
+		},
+		{
+			"id": "CV8 2ZT",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2ZT",
+				"kind": "postcode",
+				"began": "2004-04",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 2XF",
+			"at": [
+				52.353014,
+				-1.558283
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2XF",
+				"kind": "postcode",
+				"began": "2003-01",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9AF",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-07-01",
+			"claims": {
+				"name": "CV8 9AF",
+				"kind": "postcode",
+				"began": "2006-06",
+				"ended": "2006-07"
+			}
+		},
+		{
+			"id": "CV8 2ZU",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-04-01",
+			"claims": {
+				"name": "CV8 2ZU",
+				"kind": "postcode",
+				"began": "1994-05",
+				"ended": "2005-04"
+			}
+		},
+		{
+			"id": "CV8 9AG",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-10-01",
+			"claims": {
+				"name": "CV8 9AG",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2006-10"
+			}
+		},
+		{
+			"id": "CV8 2ZW",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2ZW",
+				"kind": "postcode",
+				"began": "2002-10",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 2UJ",
+			"at": [
+				52.344403,
+				-1.55147
+			],
+			"observed": "2026-05-01",
+			"claims": {
+				"name": "CV8 2UJ",
+				"kind": "postcode",
+				"began": "2025-11",
+				"ended": "2026-05"
+			}
+		},
+		{
+			"id": "CV8 2UU",
+			"at": [
+				52.347437,
+				-1.547931
+			],
+			"observed": "2026-05-01",
+			"claims": {
+				"name": "CV8 2UU",
+				"kind": "postcode",
+				"began": "2025-11",
+				"ended": "2026-05"
+			}
+		},
+		{
+			"id": "CV8 2UW",
+			"at": [
+				52.34673,
+				-1.546294
+			],
+			"observed": "2026-05-01",
+			"claims": {
+				"name": "CV8 2UW",
+				"kind": "postcode",
+				"began": "2025-11",
+				"ended": "2026-05"
+			}
+		},
+		{
+			"id": "CV8 2UX",
+			"at": [
+				52.347178,
+				-1.548315
+			],
+			"observed": "2026-05-01",
+			"claims": {
+				"name": "CV8 2UX",
+				"kind": "postcode",
+				"began": "2025-11",
+				"ended": "2026-05"
+			}
+		},
+		{
+			"id": "CV8 2UZ",
+			"at": [
+				52.348648,
+				-1.547067
+			],
+			"observed": "2026-05-01",
+			"claims": {
+				"name": "CV8 2UZ",
+				"kind": "postcode",
+				"began": "2025-11",
+				"ended": "2026-05"
+			}
+		},
+		{
+			"id": "CV8 2WG",
+			"at": [
+				52.348367,
+				-1.546527
+			],
+			"observed": "2026-05-01",
+			"claims": {
+				"name": "CV8 2WG",
+				"kind": "postcode",
+				"began": "2025-11",
+				"ended": "2026-05"
+			}
+		},
+		{
+			"id": "CV8 2WT",
+			"at": [
+				52.349483,
+				-1.546838
+			],
+			"observed": "2026-05-01",
+			"claims": {
+				"name": "CV8 2WT",
+				"kind": "postcode",
+				"began": "2025-11",
+				"ended": "2026-05"
+			}
+		},
+		{
+			"id": "CV8 2WU",
+			"at": [
+				52.349255,
+				-1.548456
+			],
+			"observed": "2026-05-01",
+			"claims": {
+				"name": "CV8 2WU",
+				"kind": "postcode",
+				"began": "2025-11",
+				"ended": "2026-05"
+			}
+		},
+		{
+			"id": "CV8 9AH",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2016-01-01",
+			"claims": {
+				"name": "CV8 9AH",
+				"kind": "postcode",
+				"began": "2006-01",
+				"ended": "2016-01"
+			}
+		},
+		{
+			"id": "CV8 2ZX",
+			"at": [
+				52.346916,
+				-1.564906
+			],
+			"observed": "1997-12-01",
+			"claims": {
+				"name": "CV8 2ZX",
+				"kind": "postcode",
+				"began": "1996-12",
+				"ended": "1997-12"
+			}
+		},
+		{
+			"id": "CV8 2ZY",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2003-11-01",
+			"claims": {
+				"name": "CV8 2ZY",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2003-11"
+			}
+		},
+		{
+			"id": "CV8 9AJ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2011-03-01",
+			"claims": {
+				"name": "CV8 9AJ",
+				"kind": "postcode",
+				"began": "2006-01",
+				"ended": "2011-03"
+			}
+		},
+		{
+			"id": "CV8 2ZZ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2ZZ",
+				"kind": "postcode",
+				"began": "2000-12",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 2XL",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2XL",
+				"kind": "postcode",
+				"began": "2004-03",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9AL",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2010-03-01",
+			"claims": {
+				"name": "CV8 9AL",
+				"kind": "postcode",
+				"began": "2006-01",
+				"ended": "2010-03"
+			}
+		},
+		{
+			"id": "CV8 9AN",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2008-02-01",
+			"claims": {
+				"name": "CV8 9AN",
+				"kind": "postcode",
+				"began": "2006-01",
+				"ended": "2008-02"
+			}
+		},
+		{
+			"id": "CV8 9AP",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2007-03-01",
+			"claims": {
+				"name": "CV8 9AP",
+				"kind": "postcode",
+				"began": "2006-02",
+				"ended": "2007-03"
+			}
+		},
+		{
+			"id": "CV8 9AQ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2007-04-01",
+			"claims": {
+				"name": "CV8 9AQ",
+				"kind": "postcode",
+				"began": "2006-03",
+				"ended": "2007-04"
+			}
+		},
+		{
+			"id": "CV8 9AR",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2007-10-01",
+			"claims": {
+				"name": "CV8 9AR",
+				"kind": "postcode",
+				"began": "2007-09",
+				"ended": "2007-10"
+			}
+		},
+		{
+			"id": "CV8 9AS",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2011-08-01",
+			"claims": {
+				"name": "CV8 9AS",
+				"kind": "postcode",
+				"began": "2006-08",
+				"ended": "2011-08"
+			}
+		},
+		{
+			"id": "CV8 9AT",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-10-01",
+			"claims": {
+				"name": "CV8 9AT",
+				"kind": "postcode",
+				"began": "2006-09",
+				"ended": "2012-10"
+			}
+		},
+		{
+			"id": "CV8 9AU",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2007-10-01",
+			"claims": {
+				"name": "CV8 9AU",
+				"kind": "postcode",
+				"began": "2006-10",
+				"ended": "2007-10"
+			}
+		},
+		{
+			"id": "CV8 2XS",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2016-10-01",
+			"claims": {
+				"name": "CV8 2XS",
+				"kind": "postcode",
+				"began": "2002-10",
+				"ended": "2016-10"
+			}
+		},
+		{
+			"id": "CV8 9AW",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CV8 9AW",
+				"kind": "postcode",
+				"began": "2006-10",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CV8 2XT",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-04-01",
+			"claims": {
+				"name": "CV8 2XT",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2005-04"
+			}
+		},
+		{
+			"id": "CV8 2XU",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-04-01",
+			"claims": {
+				"name": "CV8 2XU",
+				"kind": "postcode",
+				"began": "1999-06",
+				"ended": "2005-04"
+			}
+		},
+		{
+			"id": "CV8 2XW",
+			"at": [
+				52.346925,
+				-1.564891
+			],
+			"observed": "2000-06-01",
+			"claims": {
+				"name": "CV8 2XW",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2000-06"
+			}
+		},
+		{
+			"id": "CV8 9AY",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2009-12-01",
+			"claims": {
+				"name": "CV8 9AY",
+				"kind": "postcode",
+				"began": "2006-11",
+				"ended": "2009-12"
+			}
+		},
+		{
+			"id": "CV8 9AZ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2009-01-01",
+			"claims": {
+				"name": "CV8 9AZ",
+				"kind": "postcode",
+				"began": "2007-01",
+				"ended": "2009-01"
+			}
+		},
+		{
+			"id": "CV8 9BA",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2026-01-01",
+			"claims": {
+				"name": "CV8 9BA",
+				"kind": "postcode",
+				"began": "2007-01",
+				"ended": "2026-01"
+			}
+		},
+		{
+			"id": "CV8 2YA",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2YA",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 2YB",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2YB",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9BB",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2010-05-01",
+			"claims": {
+				"name": "CV8 9BB",
+				"kind": "postcode",
+				"began": "2007-04",
+				"ended": "2010-05"
+			}
+		},
+		{
+			"id": "CV8 2YE",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2YE",
+				"kind": "postcode",
+				"began": "2003-08",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9BD",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2011-05-01",
+			"claims": {
+				"name": "CV8 9BD",
+				"kind": "postcode",
+				"began": "2007-04",
+				"ended": "2011-05"
+			}
+		},
+		{
+			"id": "CV8 2YF",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2YF",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9BE",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2008-07-01",
+			"claims": {
+				"name": "CV8 9BE",
+				"kind": "postcode",
+				"began": "2007-07",
+				"ended": "2008-07"
+			}
+		},
+		{
+			"id": "CV8 2YG",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2004-04-01",
+			"claims": {
+				"name": "CV8 2YG",
+				"kind": "postcode",
+				"began": "2003-03",
+				"ended": "2004-04"
+			}
+		},
+		{
+			"id": "CV8 2YH",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2YH",
+				"kind": "postcode",
+				"began": "2004-06",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 2YJ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2YJ",
+				"kind": "postcode",
+				"began": "1998-12",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9BF",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2008-09-01",
+			"claims": {
+				"name": "CV8 9BF",
+				"kind": "postcode",
+				"began": "2007-08",
+				"ended": "2008-09"
+			}
+		},
+		{
+			"id": "CV8 2YL",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2004-03-01",
+			"claims": {
+				"name": "CV8 2YL",
+				"kind": "postcode",
+				"began": "1998-06",
+				"ended": "2004-03"
+			}
+		},
+		{
+			"id": "CV8 9BG",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-02-01",
+			"claims": {
+				"name": "CV8 9BG",
+				"kind": "postcode",
+				"began": "2007-10",
+				"ended": "2012-02"
+			}
+		},
+		{
+			"id": "CV8 2YN",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-05-01",
+			"claims": {
+				"name": "CV8 2YN",
+				"kind": "postcode",
+				"began": "2004-05",
+				"ended": "2005-05"
+			}
+		},
+		{
+			"id": "CV8 9BH",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2009-11-01",
+			"claims": {
+				"name": "CV8 9BH",
+				"kind": "postcode",
+				"began": "2007-10",
+				"ended": "2009-11"
+			}
+		},
+		{
+			"id": "CV8 9BJ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2008-12-01",
+			"claims": {
+				"name": "CV8 9BJ",
+				"kind": "postcode",
+				"began": "2007-11",
+				"ended": "2008-12"
+			}
+		},
+		{
+			"id": "CV8 9BL",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2009-12-01",
+			"claims": {
+				"name": "CV8 9BL",
+				"kind": "postcode",
+				"began": "2007-11",
+				"ended": "2009-12"
+			}
+		},
+		{
+			"id": "CV8 2YP",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2YP",
+				"kind": "postcode",
+				"began": "2003-07",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9BN",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2013-01-01",
+			"claims": {
+				"name": "CV8 9BN",
+				"kind": "postcode",
+				"began": "2008-02",
+				"ended": "2013-01"
+			}
+		},
+		{
+			"id": "CV8 2YQ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-07-01",
+			"claims": {
+				"name": "CV8 2YQ",
+				"kind": "postcode",
+				"began": "2003-04",
+				"ended": "2005-07"
+			}
+		},
+		{
+			"id": "CV8 9BP",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2009-06-01",
+			"claims": {
+				"name": "CV8 9BP",
+				"kind": "postcode",
+				"began": "2008-06",
+				"ended": "2009-06"
+			}
+		},
+		{
+			"id": "CV8 9BQ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2010-07-01",
+			"claims": {
+				"name": "CV8 9BQ",
+				"kind": "postcode",
+				"began": "2008-06",
+				"ended": "2010-07"
+			}
+		},
+		{
+			"id": "CV8 2YR",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2004-05-01",
+			"claims": {
+				"name": "CV8 2YR",
+				"kind": "postcode",
+				"began": "2001-12",
+				"ended": "2004-05"
+			}
+		},
+		{
+			"id": "CV8 9BR",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-10-01",
+			"claims": {
+				"name": "CV8 9BR",
+				"kind": "postcode",
+				"began": "2008-08",
+				"ended": "2012-10"
+			}
+		},
+		{
+			"id": "CV8 2YS",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2YS",
+				"kind": "postcode",
+				"began": "2004-02",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9BS",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2019-10-01",
+			"claims": {
+				"name": "CV8 9BS",
+				"kind": "postcode",
+				"began": "2011-09",
+				"ended": "2019-10"
+			}
+		},
+		{
+			"id": "CV8 2YT",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2002-04-01",
+			"claims": {
+				"name": "CV8 2YT",
+				"kind": "postcode",
+				"began": "2001-06",
+				"ended": "2002-04"
+			}
+		},
+		{
+			"id": "CV8 2YU",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2004-01-01",
+			"claims": {
+				"name": "CV8 2YU",
+				"kind": "postcode",
+				"began": "2001-06",
+				"ended": "2004-01"
+			}
+		},
+		{
+			"id": "CV8 9BT",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "CV8 9BT",
+				"kind": "postcode",
+				"began": "2016-01",
+				"ended": "2018-01"
+			}
+		},
+		{
+			"id": "CV8 2YW",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-04-01",
+			"claims": {
+				"name": "CV8 2YW",
+				"kind": "postcode",
+				"began": "2003-10",
+				"ended": "2005-04"
+			}
+		},
+		{
+			"id": "CV8 9BU",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2009-08-01",
+			"claims": {
+				"name": "CV8 9BU",
+				"kind": "postcode",
+				"began": "2009-01",
+				"ended": "2009-08"
+			}
+		},
+		{
+			"id": "CV8 2YX",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-04-01",
+			"claims": {
+				"name": "CV8 2YX",
+				"kind": "postcode",
+				"began": "1999-12",
+				"ended": "2005-04"
+			}
+		},
+		{
+			"id": "CV8 9BW",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2010-05-01",
+			"claims": {
+				"name": "CV8 9BW",
+				"kind": "postcode",
+				"began": "2009-03",
+				"ended": "2010-05"
+			}
+		},
+		{
+			"id": "CV8 9BX",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-04-01",
+			"claims": {
+				"name": "CV8 9BX",
+				"kind": "postcode",
+				"began": "2009-03",
+				"ended": "2012-04"
+			}
+		},
+		{
+			"id": "CV8 9BY",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2010-05-01",
+			"claims": {
+				"name": "CV8 9BY",
+				"kind": "postcode",
+				"began": "2009-04",
+				"ended": "2010-05"
+			}
+		},
+		{
+			"id": "CV8 2YY",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2YY",
+				"kind": "postcode",
+				"began": "2001-12",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9BZ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2010-05-01",
+			"claims": {
+				"name": "CV8 9BZ",
+				"kind": "postcode",
+				"began": "2009-04",
+				"ended": "2010-05"
+			}
+		},
+		{
+			"id": "CV8 2YZ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2YZ",
+				"kind": "postcode",
+				"began": "1994-12",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9DA",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2015-12-01",
+			"claims": {
+				"name": "CV8 9DA",
+				"kind": "postcode",
+				"began": "2009-06",
+				"ended": "2015-12"
+			}
+		},
+		{
+			"id": "CV8 2ZB",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2003-02-01",
+			"claims": {
+				"name": "CV8 2ZB",
+				"kind": "postcode",
+				"began": "2002-06",
+				"ended": "2003-02"
+			}
+		},
+		{
+			"id": "CV8 9DB",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2016-11-01",
+			"claims": {
+				"name": "CV8 9DB",
+				"kind": "postcode",
+				"began": "2016-10",
+				"ended": "2016-11"
+			}
+		},
+		{
+			"id": "CV8 2ZD",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2ZD",
+				"kind": "postcode",
+				"began": "2003-07",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 2ZE",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2004-03-01",
+			"claims": {
+				"name": "CV8 2ZE",
+				"kind": "postcode",
+				"began": "2003-02",
+				"ended": "2004-03"
+			}
+		},
+		{
+			"id": "CV8 9DD",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2010-10-01",
+			"claims": {
+				"name": "CV8 9DD",
+				"kind": "postcode",
+				"began": "2009-09",
+				"ended": "2010-10"
+			}
+		},
+		{
+			"id": "CV8 2ZF",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2ZF",
+				"kind": "postcode",
+				"began": "1997-06",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9DE",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2010-12-01",
+			"claims": {
+				"name": "CV8 9DE",
+				"kind": "postcode",
+				"began": "2009-10",
+				"ended": "2010-12"
+			}
+		},
+		{
+			"id": "CV8 2ZG",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2004-01-01",
+			"claims": {
+				"name": "CV8 2ZG",
+				"kind": "postcode",
+				"began": "2002-12",
+				"ended": "2004-01"
+			}
+		},
+		{
+			"id": "CV8 9DF",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2010-12-01",
+			"claims": {
+				"name": "CV8 9DF",
+				"kind": "postcode",
+				"began": "2009-11",
+				"ended": "2010-12"
+			}
+		},
+		{
+			"id": "CV8 2ZH",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2ZH",
+				"kind": "postcode",
+				"began": "2003-10",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9DG",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2011-12-01",
+			"claims": {
+				"name": "CV8 9DG",
+				"kind": "postcode",
+				"began": "2009-12",
+				"ended": "2011-12"
+			}
+		},
+		{
+			"id": "CV8 2ZJ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2004-02-01",
+			"claims": {
+				"name": "CV8 2ZJ",
+				"kind": "postcode",
+				"began": "2002-11",
+				"ended": "2004-02"
+			}
+		},
+		{
+			"id": "CV8 2ZL",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2003-04-01",
+			"claims": {
+				"name": "CV8 2ZL",
+				"kind": "postcode",
+				"began": "1996-12",
+				"ended": "2003-04"
+			}
+		},
+		{
+			"id": "CV8 9DH",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-12-01",
+			"claims": {
+				"name": "CV8 9DH",
+				"kind": "postcode",
+				"began": "2010-01",
+				"ended": "2012-12"
+			}
+		},
+		{
+			"id": "CV8 2ZN",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2ZN",
+				"kind": "postcode",
+				"began": "2002-07",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 9DJ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-02-01",
+			"claims": {
+				"name": "CV8 9DJ",
+				"kind": "postcode",
+				"began": "2010-02",
+				"ended": "2012-02"
+			}
+		},
+		{
+			"id": "CV8 2ZP",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-09-01",
+			"claims": {
+				"name": "CV8 2ZP",
+				"kind": "postcode",
+				"began": "2002-12",
+				"ended": "2005-09"
+			}
+		},
+		{
+			"id": "CV8 2ZQ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2005-04-01",
+			"claims": {
+				"name": "CV8 2ZQ",
+				"kind": "postcode",
+				"began": "1996-12",
+				"ended": "2005-04"
+			}
+		},
+		{
+			"id": "CV8 9DN",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2011-05-01",
+			"claims": {
+				"name": "CV8 9DN",
+				"kind": "postcode",
+				"began": "2010-04",
+				"ended": "2011-05"
+			}
+		},
+		{
+			"id": "CV8 9DQ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-07-01",
+			"claims": {
+				"name": "CV8 9DQ",
+				"kind": "postcode",
+				"began": "2010-06",
+				"ended": "2012-07"
+			}
+		},
+		{
+			"id": "CV8 9UJ",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2020-04-01",
+			"claims": {
+				"name": "CV8 9UJ",
+				"kind": "postcode",
+				"began": "2016-03",
+				"ended": "2020-04"
+			}
+		},
+		{
+			"id": "CV8 9DR",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2011-08-01",
+			"claims": {
+				"name": "CV8 9DR",
+				"kind": "postcode",
+				"began": "2010-08",
+				"ended": "2011-08"
+			}
+		},
+		{
+			"id": "CV8 9DS",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2014-01-01",
+			"claims": {
+				"name": "CV8 9DS",
+				"kind": "postcode",
+				"began": "2010-12",
+				"ended": "2014-01"
+			}
+		},
+		{
+			"id": "CV8 9UY",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-11-01",
+			"claims": {
+				"name": "CV8 9UY",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2006-11"
+			}
+		},
+		{
+			"id": "CV8 9UZ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-04-01",
+			"claims": {
+				"name": "CV8 9UZ",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2006-04"
+			}
+		},
+		{
+			"id": "CV8 9DT",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2014-01-01",
+			"claims": {
+				"name": "CV8 9DT",
+				"kind": "postcode",
+				"began": "2010-12",
+				"ended": "2014-01"
+			}
+		},
+		{
+			"id": "CV8 9WH",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-09-01",
+			"claims": {
+				"name": "CV8 9WH",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2006-09"
+			}
+		},
+		{
+			"id": "CV8 9WJ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2011-09-01",
+			"claims": {
+				"name": "CV8 9WJ",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2011-09"
+			}
+		},
+		{
+			"id": "CV8 9DU",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2013-01-01",
+			"claims": {
+				"name": "CV8 9DU",
+				"kind": "postcode",
+				"began": "2011-01",
+				"ended": "2013-01"
+			}
+		},
+		{
+			"id": "CV8 9WN",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-04-01",
+			"claims": {
+				"name": "CV8 9WN",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2012-04"
+			}
+		},
+		{
+			"id": "CV8 9DX",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-03-01",
+			"claims": {
+				"name": "CV8 9DX",
+				"kind": "postcode",
+				"began": "2011-02",
+				"ended": "2012-03"
+			}
+		},
+		{
+			"id": "CV8 9WP",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2017-06-01",
+			"claims": {
+				"name": "CV8 9WP",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2017-06"
+			}
+		},
+		{
+			"id": "CV8 9DY",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2013-07-01",
+			"claims": {
+				"name": "CV8 9DY",
+				"kind": "postcode",
+				"began": "2011-05",
+				"ended": "2013-07"
+			}
+		},
+		{
+			"id": "CV8 9DZ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-07-01",
+			"claims": {
+				"name": "CV8 9DZ",
+				"kind": "postcode",
+				"began": "2011-06",
+				"ended": "2012-07"
+			}
+		},
+		{
+			"id": "CV8 9WU",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2009-04-01",
+			"claims": {
+				"name": "CV8 9WU",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2009-04"
+			}
+		},
+		{
+			"id": "CV8 9WW",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2008-06-01",
+			"claims": {
+				"name": "CV8 9WW",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2008-06"
+			}
+		},
+		{
+			"id": "CV8 9EB",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2013-04-01",
+			"claims": {
+				"name": "CV8 9EB",
+				"kind": "postcode",
+				"began": "2012-03",
+				"ended": "2013-04"
+			}
+		},
+		{
+			"id": "CV8 9XF",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2014-01-01",
+			"claims": {
+				"name": "CV8 9XF",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2014-01"
+			}
+		},
+		{
+			"id": "CV8 9ED",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2024-04-01",
+			"claims": {
+				"name": "CV8 9ED",
+				"kind": "postcode",
+				"began": "2012-03",
+				"ended": "2024-04"
+			}
+		},
+		{
+			"id": "CV8 9EE",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2013-07-01",
+			"claims": {
+				"name": "CV8 9EE",
+				"kind": "postcode",
+				"began": "2012-05",
+				"ended": "2013-07"
+			}
+		},
+		{
+			"id": "CV8 9XL",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2022-04-01",
+			"claims": {
+				"name": "CV8 9XL",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2022-04"
+			}
+		},
+		{
+			"id": "CV8 9EF",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2013-08-01",
+			"claims": {
+				"name": "CV8 9EF",
+				"kind": "postcode",
+				"began": "2012-07",
+				"ended": "2013-08"
+			}
+		},
+		{
+			"id": "CV8 9EG",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2014-09-01",
+			"claims": {
+				"name": "CV8 9EG",
+				"kind": "postcode",
+				"began": "2012-09",
+				"ended": "2014-09"
+			}
+		},
+		{
+			"id": "CV8 9EH",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2015-02-01",
+			"claims": {
+				"name": "CV8 9EH",
+				"kind": "postcode",
+				"began": "2013-02",
+				"ended": "2015-02"
+			}
+		},
+		{
+			"id": "CV8 9YA",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-07-01",
+			"claims": {
+				"name": "CV8 9YA",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2012-07"
+			}
+		},
+		{
+			"id": "CV8 9YB",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2007-07-01",
+			"claims": {
+				"name": "CV8 9YB",
+				"kind": "postcode",
+				"began": "2007-06",
+				"ended": "2007-07"
+			}
+		},
+		{
+			"id": "CV8 9EL",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2018-07-01",
+			"claims": {
+				"name": "CV8 9EL",
+				"kind": "postcode",
+				"began": "2016-03",
+				"ended": "2018-07"
+			}
+		},
+		{
+			"id": "CV8 9EN",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2016-10-01",
+			"claims": {
+				"name": "CV8 9EN",
+				"kind": "postcode",
+				"began": "2016-03",
+				"ended": "2016-10"
+			}
+		},
+		{
+			"id": "CV8 9YF",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2008-06-01",
+			"claims": {
+				"name": "CV8 9YF",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2008-06"
+			}
+		},
+		{
+			"id": "CV8 9EQ",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2020-04-01",
+			"claims": {
+				"name": "CV8 9EQ",
+				"kind": "postcode",
+				"began": "2019-10",
+				"ended": "2020-04"
+			}
+		},
+		{
+			"id": "CV8 9ER",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2023-11-01",
+			"claims": {
+				"name": "CV8 9ER",
+				"kind": "postcode",
+				"began": "2018-10",
+				"ended": "2023-11"
+			}
+		},
+		{
+			"id": "CV8 9YH",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2018-12-01",
+			"claims": {
+				"name": "CV8 9YH",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2018-12"
+			}
+		},
+		{
+			"id": "CV8 9YJ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-04-01",
+			"claims": {
+				"name": "CV8 9YJ",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2012-04"
+			}
+		},
+		{
+			"id": "CV8 9ES",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2019-06-01",
+			"claims": {
+				"name": "CV8 9ES",
+				"kind": "postcode",
+				"began": "2018-12",
+				"ended": "2019-06"
+			}
+		},
+		{
+			"id": "CV8 9YN",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2011-07-01",
+			"claims": {
+				"name": "CV8 9YN",
+				"kind": "postcode",
+				"began": "2005-05",
+				"ended": "2011-07"
+			}
+		},
+		{
+			"id": "CV8 9ET",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2019-08-01",
+			"claims": {
+				"name": "CV8 9ET",
+				"kind": "postcode",
+				"began": "2019-01",
+				"ended": "2019-08"
+			}
+		},
+		{
+			"id": "CV8 9YS",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-04-01",
+			"claims": {
+				"name": "CV8 9YS",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2006-04"
+			}
+		},
+		{
+			"id": "CV8 9YY",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-05-01",
+			"claims": {
+				"name": "CV8 9YY",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2006-05"
+			}
+		},
+		{
+			"id": "CV8 9EX",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2019-06-01",
+			"claims": {
+				"name": "CV8 9EX",
+				"kind": "postcode",
+				"began": "2019-04",
+				"ended": "2019-06"
+			}
+		},
+		{
+			"id": "CV8 9YZ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-04-01",
+			"claims": {
+				"name": "CV8 9YZ",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2006-04"
+			}
+		},
+		{
+			"id": "CV8 9EY",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2024-06-01",
+			"claims": {
+				"name": "CV8 9EY",
+				"kind": "postcode",
+				"began": "2019-05",
+				"ended": "2024-06"
+			}
+		},
+		{
+			"id": "CV8 9ZD",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2007-07-01",
+			"claims": {
+				"name": "CV8 9ZD",
+				"kind": "postcode",
+				"began": "2007-06",
+				"ended": "2007-07"
+			}
+		},
+		{
+			"id": "CV8 9EZ",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2020-07-01",
+			"claims": {
+				"name": "CV8 9EZ",
+				"kind": "postcode",
+				"began": "2019-06",
+				"ended": "2020-07"
+			}
+		},
+		{
+			"id": "CV8 9ZF",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-05-01",
+			"claims": {
+				"name": "CV8 9ZF",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2006-05"
+			}
+		},
+		{
+			"id": "CV8 9FA",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2024-06-01",
+			"claims": {
+				"name": "CV8 9FA",
+				"kind": "postcode",
+				"began": "2020-05",
+				"ended": "2024-06"
+			}
+		},
+		{
+			"id": "CV8 9ZH",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2008-12-01",
+			"claims": {
+				"name": "CV8 9ZH",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2008-12"
+			}
+		},
+		{
+			"id": "CV8 9ZN",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-04-01",
+			"claims": {
+				"name": "CV8 9ZN",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2006-04"
+			}
+		},
+		{
+			"id": "CV8 9FB",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2023-11-01",
+			"claims": {
+				"name": "CV8 9FB",
+				"kind": "postcode",
+				"began": "2020-10",
+				"ended": "2023-11"
+			}
+		},
+		{
+			"id": "CV8 9ZP",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2012-02-01",
+			"claims": {
+				"name": "CV8 9ZP",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2012-02"
+			}
+		},
+		{
+			"id": "CV8 9FD",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2020-11-01",
+			"claims": {
+				"name": "CV8 9FD",
+				"kind": "postcode",
+				"began": "2020-10",
+				"ended": "2020-11"
+			}
+		},
+		{
+			"id": "CV8 9ZR",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2006-04-01",
+			"claims": {
+				"name": "CV8 9ZR",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2006-04"
+			}
+		},
+		{
+			"id": "CV8 9FE",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2021-11-01",
+			"claims": {
+				"name": "CV8 9FE",
+				"kind": "postcode",
+				"began": "2020-11",
+				"ended": "2021-11"
+			}
+		},
+		{
+			"id": "CV8 9ZS",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2019-01-01",
+			"claims": {
+				"name": "CV8 9ZS",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2019-01"
+			}
+		},
+		{
+			"id": "CV8 9ZT",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2011-05-01",
+			"claims": {
+				"name": "CV8 9ZT",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2011-05"
+			}
+		},
+		{
+			"id": "CV8 9FF",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2022-02-01",
+			"claims": {
+				"name": "CV8 9FF",
+				"kind": "postcode",
+				"began": "2021-09",
+				"ended": "2022-02"
+			}
+		},
+		{
+			"id": "CV8 9FG",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2021-04-01",
+			"claims": {
+				"name": "CV8 9FG",
+				"kind": "postcode",
+				"began": "2020-12",
+				"ended": "2021-04"
+			}
+		},
+		{
+			"id": "CV8 9ZW",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2024-11-01",
+			"claims": {
+				"name": "CV8 9ZW",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2024-11"
+			}
+		},
+		{
+			"id": "CV8 9ZZ",
+			"at": [
+				52.341815,
+				-1.578783
+			],
+			"observed": "2013-11-01",
+			"claims": {
+				"name": "CV8 9ZZ",
+				"kind": "postcode",
+				"began": "2005-09",
+				"ended": "2013-11"
+			}
+		},
+		{
+			"id": "CV8 9FJ",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2022-11-01",
+			"claims": {
+				"name": "CV8 9FJ",
+				"kind": "postcode",
+				"began": "2021-02",
+				"ended": "2022-11"
+			}
+		},
+		{
+			"id": "CV8 9FL",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2025-06-01",
+			"claims": {
+				"name": "CV8 9FL",
+				"kind": "postcode",
+				"began": "2021-05",
+				"ended": "2025-06"
+			}
+		},
+		{
+			"id": "CV8 9FN",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2021-08-01",
+			"claims": {
+				"name": "CV8 9FN",
+				"kind": "postcode",
+				"began": "2021-07",
+				"ended": "2021-08"
+			}
+		},
+		{
+			"id": "CV8 9FQ",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2025-10-01",
+			"claims": {
+				"name": "CV8 9FQ",
+				"kind": "postcode",
+				"began": "2021-09",
+				"ended": "2025-10"
+			}
+		},
+		{
+			"id": "CV8 9FR",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2024-11-01",
+			"claims": {
+				"name": "CV8 9FR",
+				"kind": "postcode",
+				"began": "2021-11",
+				"ended": "2024-11"
+			}
+		},
+		{
+			"id": "CV8 9FS",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2023-07-01",
+			"claims": {
+				"name": "CV8 9FS",
+				"kind": "postcode",
+				"began": "2022-02",
+				"ended": "2023-07"
+			}
+		},
+		{
+			"id": "CV8 9FT",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2023-03-01",
+			"claims": {
+				"name": "CV8 9FT",
+				"kind": "postcode",
+				"began": "2022-03",
+				"ended": "2023-03"
+			}
+		},
+		{
+			"id": "CV8 9FU",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2024-05-01",
+			"claims": {
+				"name": "CV8 9FU",
+				"kind": "postcode",
+				"began": "2023-02",
+				"ended": "2024-05"
+			}
+		},
+		{
+			"id": "CV8 9FW",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2025-04-01",
+			"claims": {
+				"name": "CV8 9FW",
+				"kind": "postcode",
+				"began": "2024-04",
+				"ended": "2025-04"
+			}
+		},
+		{
+			"id": "CV8 9FY",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2025-10-01",
+			"claims": {
+				"name": "CV8 9FY",
+				"kind": "postcode",
+				"began": "2025-07",
+				"ended": "2025-10"
+			}
+		},
+		{
+			"id": "CV8 9FZ",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2026-02-01",
+			"claims": {
+				"name": "CV8 9FZ",
+				"kind": "postcode",
+				"began": "2025-10",
+				"ended": "2026-02"
+			}
+		},
+		{
+			"id": "CV8 9GB",
+			"at": [
+				52.341815,
+				-1.578724
+			],
+			"observed": "2026-05-01",
+			"claims": {
+				"name": "CV8 9GB",
+				"kind": "postcode",
+				"began": "2026-01",
+				"ended": "2026-05"
+			}
+		}
+	],
+	"retrieved": "2026-11-09"
+}
