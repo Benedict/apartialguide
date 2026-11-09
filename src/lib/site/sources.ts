@@ -129,7 +129,8 @@ export const SOURCES: Source[] = [
 	{
 		name: 'planning.data.gov.uk',
 		href: 'https://www.planning.data.gov.uk/',
-		gives: 'listed buildings',
+		gives:
+			'listed buildings, conservation areas, scheduled monuments and registered parks and gardens',
 		terms: OGL
 	},
 	{

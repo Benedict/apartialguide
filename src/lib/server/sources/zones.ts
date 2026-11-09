@@ -1,6 +1,7 @@
 import type { AreaRecord } from '../../core/areas';
 import type { LatLon } from '../../core/geo';
 import { monthYear } from '../../core/render/words';
+import { said } from './box';
 
 type Ring = number[][];
 export interface ZoneFeature {
@@ -32,13 +33,73 @@ function outerRings(geometry: ZoneFeature['geometry']): LatLon[][] {
 export function zoneAreas(
 	features: ZoneFeature[],
 	kind: string,
-	nameOf: (props: Record<string, unknown>) => string | undefined
+	nameOf: (props: Record<string, unknown>) => string | undefined,
+	idOf: (f: ZoneFeature, i: number) => string = (f, i) => String(f.id ?? i),
+	claimsOf: (props: Record<string, unknown>) => Record<string, string> = () => ({})
 ): AreaRecord[] {
 	return features.flatMap((f, i) => {
 		const name = nameOf(f.properties ?? {});
 		const rings = outerRings(f.geometry);
 		if (!name || !rings.length) return [];
-		return [{ id: String(f.id ?? i), name, kind, rings }];
+		const claims = claimsOf(f.properties ?? {});
+		return [
+			{ id: idOf(f, i), name, kind, rings, ...(Object.keys(claims).length ? { claims } : {}) }
+		];
+	});
+}
+
+/** The kind of area each of planning.data.gov.uk's heritage datasets draws. */
+export const HERITAGE: Record<string, string> = {
+	'conservation-area': 'conservation area',
+	'scheduled-monument': 'scheduled monument',
+	'park-and-garden': 'registered park and garden'
+};
+
+/**
+ * A heritage dataset's areas, each by its name as found: a conservation area, a scheduled monument,
+ * a registered park and garden with its grade. One the register has ended is left out.
+ */
+export function heritageAreas(features: ZoneFeature[], dataset: string): AreaRecord[] {
+	const live = features.filter((f) => !f.properties?.['end-date']);
+	return zoneAreas(
+		live,
+		HERITAGE[dataset] ?? dataset,
+		(p) => (p.name ? String(p.name) : undefined),
+		(f, i) => String(f.properties?.entity ?? f.id ?? i),
+		(p) => said({ grade: p['park-and-garden-grade'] })
+	);
+}
+
+/** Every coordinate in a geometry, however deeply its rings nest. */
+function coordinatesOf(value: unknown): number[][] {
+	if (!Array.isArray(value)) return [];
+	if (typeof value[0] === 'number') return [value as number[]];
+	return value.flatMap(coordinatesOf);
+}
+
+/** The features whose extent reaches into a box given as minLon,minLat,maxLon,maxLat. */
+export function featuresInBox(features: ZoneFeature[], bbox: string): ZoneFeature[] {
+	const [w, s, e, n] = bbox.split(',').map(Number);
+	return features.filter((f) => {
+		const points = coordinatesOf((f.geometry as { coordinates?: unknown } | null)?.coordinates);
+		if (!points.length) return false;
+		const lons = points.map((c) => c[0]);
+		const lats = points.map((c) => c[1]);
+		return (
+			Math.min(...lons) <= e &&
+			Math.max(...lons) >= w &&
+			Math.min(...lats) <= n &&
+			Math.max(...lats) >= s
+		);
+	});
+}
+
+/** A file's point features as the entities planning.data.gov.uk's search gives: its properties and its point. */
+export function entitiesOf(features: ZoneFeature[]): Record<string, unknown>[] {
+	return features.flatMap((f) => {
+		if (f.geometry?.type !== 'Point') return [];
+		const [lon, lat] = f.geometry.coordinates as number[];
+		return [{ ...(f.properties ?? {}), point: `POINT (${lon} ${lat})` }];
 	});
 }
 
