@@ -86,6 +86,46 @@ export function goalsFor(index: RouteIndex, target: string): Map<StopId, string>
 	return goals;
 }
 
+/** A binary heap of places by metres, then by the order they were first reached. */
+class Heap {
+	private readonly items: [number, number, StopId][] = [];
+	get size(): number {
+		return this.items.length;
+	}
+	private less(i: number, j: number): boolean {
+		const [a, b] = [this.items[i], this.items[j]];
+		return a[0] < b[0] || (a[0] === b[0] && a[1] < b[1]);
+	}
+	private swap(i: number, j: number): void {
+		[this.items[i], this.items[j]] = [this.items[j], this.items[i]];
+	}
+	push(metres: number, order: number, id: StopId): void {
+		this.items.push([metres, order, id]);
+		for (let i = this.items.length - 1; i > 0;) {
+			const parent = (i - 1) >> 1;
+			if (!this.less(i, parent)) break;
+			this.swap(i, parent);
+			i = parent;
+		}
+	}
+	pop(): [number, number, StopId] | undefined {
+		const top = this.items[0];
+		const last = this.items.pop();
+		if (!this.items.length || !last) return top;
+		this.items[0] = last;
+		for (let i = 0; ;) {
+			const [l, r] = [2 * i + 1, 2 * i + 2];
+			let least = i;
+			if (l < this.items.length && this.less(l, least)) least = l;
+			if (r < this.items.length && this.less(r, least)) least = r;
+			if (least === i) break;
+			this.swap(i, least);
+			i = least;
+		}
+		return top;
+	}
+}
+
 /** The shortest way along the streets from `from` to the nearest place of that name. */
 export function planRoute(
 	index: RouteIndex,
@@ -102,10 +142,20 @@ export function planRoute(
 		const [p, q] = [index.stops[a]?.at, index.stops[b]?.at];
 		return p && q ? distance(p, q) : 0;
 	};
+	// The nearest place not yet done, taken from a heap. A tie goes to the place reached first, as
+	// it did when every place reached was scanned in turn, so the way found is the same.
+	const order = new Map<StopId, number>([[from, 0]]);
+	const queue = new Heap();
+	queue.push(0, 0, from);
 	for (;;) {
 		let here: StopId | undefined;
-		for (const [id, m] of metres)
-			if (!done.has(id) && (here === undefined || m < metres.get(here)!)) here = id;
+		while (queue.size) {
+			const [m, , id] = queue.pop()!;
+			if (!done.has(id) && m === metres.get(id)) {
+				here = id;
+				break;
+			}
+		}
 		if (here === undefined) return { kind: 'unreachable', to: [...goals.values()][0] };
 		if (goals.has(here)) {
 			const path = [here];
@@ -124,6 +174,8 @@ export function planRoute(
 			if (!done.has(to) && m < (metres.get(to) ?? Infinity)) {
 				metres.set(to, m);
 				came.set(to, here);
+				if (!order.has(to)) order.set(to, order.size);
+				queue.push(m, order.get(to)!, to);
 			}
 		}
 	}
