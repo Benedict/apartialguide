@@ -1,0 +1,973 @@
+{
+	"source": "Past maps",
+	"prefix": "pub",
+	"records": [
+		{
+			"id": "node/17785545",
+			"at": [
+				51.3834915,
+				0.0023913
+			],
+			"observed": "2015-01-01",
+			"claims": {
+				"name": "The Pickhurst",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2015"
+			}
+		},
+		{
+			"id": "node/26461817",
+			"at": [
+				51.3890417,
+				-0.1590039
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "The Goat",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2018"
+			}
+		},
+		{
+			"id": "node/26545063",
+			"at": [
+				51.4017392,
+				-0.1608521
+			],
+			"observed": "2025-01-01",
+			"claims": {
+				"name": "The Windmill",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2025"
+			}
+		},
+		{
+			"id": "node/31356054",
+			"at": [
+				51.3659544,
+				-0.1592529
+			],
+			"observed": "2017-01-01",
+			"claims": {
+				"name": "Fox & Hounds",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2017"
+			}
+		},
+		{
+			"id": "node/33665780",
+			"at": [
+				51.3667922,
+				-0.1537319
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "The Duke's Head",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2018"
+			}
+		},
+		{
+			"id": "node/33717257",
+			"at": [
+				51.3612908,
+				-0.1501366
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "O'Neill's",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2018"
+			}
+		},
+		{
+			"id": "node/36138570",
+			"at": [
+				51.3720919,
+				-0.150933
+			],
+			"observed": "2025-01-01",
+			"claims": {
+				"name": "The Grange",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2025"
+			}
+		},
+		{
+			"id": "node/147860140",
+			"at": [
+				51.3989325,
+				-0.0731483
+			],
+			"observed": "2016-01-01",
+			"claims": {
+				"name": "The Portmanor",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2016"
+			}
+		},
+		{
+			"id": "node/178447932",
+			"at": [
+				51.4193889,
+				-0.0555049
+			],
+			"observed": "2016-01-01",
+			"claims": {
+				"name": "Hollywood East",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2016"
+			}
+		},
+		{
+			"id": "node/248228790",
+			"at": [
+				51.3583162,
+				-0.1451154
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "The Windmill",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2018"
+			}
+		},
+		{
+			"id": "node/269235397",
+			"at": [
+				51.3982211,
+				-0.076522
+			],
+			"observed": "2016-01-01",
+			"claims": {
+				"name": "The Alliance",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2016"
+			}
+		},
+		{
+			"id": "node/269235458",
+			"at": [
+				51.3985503,
+				-0.0761693
+			],
+			"observed": "2026-01-01",
+			"claims": {
+				"name": "The Shelverdine Goathouse",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2026"
+			}
+		},
+		{
+			"id": "node/270371207",
+			"at": [
+				51.4216039,
+				-0.1291675
+			],
+			"observed": "2016-01-01",
+			"claims": {
+				"name": "The Waterfront",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2016"
+			}
+		},
+		{
+			"id": "node/270371225",
+			"at": [
+				51.4217476,
+				-0.1296754
+			],
+			"observed": "2016-01-01",
+			"claims": {
+				"name": "The Greyhound",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2016"
+			}
+		},
+		{
+			"id": "node/288991925",
+			"at": [
+				51.4194298,
+				-0.1282304
+			],
+			"observed": "2026-01-01",
+			"claims": {
+				"name": "The Pied Bull",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2026"
+			}
+		},
+		{
+			"id": "node/290865158",
+			"at": [
+				51.4117684,
+				-0.0587124
+			],
+			"observed": "2023-01-01",
+			"claims": {
+				"name": "The Golden Lion",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2023"
+			}
+		},
+		{
+			"id": "node/290974901",
+			"at": [
+				51.4202725,
+				-0.1616227
+			],
+			"observed": "2021-01-01",
+			"claims": {
+				"name": "The Railway Bell",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2021"
+			}
+		},
+		{
+			"id": "node/291658723",
+			"at": [
+				51.374794,
+				-0.1047869
+			],
+			"observed": "2013-01-01",
+			"claims": {
+				"name": "The Tamworth Arms",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2013"
+			}
+		},
+		{
+			"id": "node/291658748",
+			"at": [
+				51.3675142,
+				-0.0988272
+			],
+			"observed": "2013-01-01",
+			"claims": {
+				"name": "The Edge",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2013"
+			}
+		},
+		{
+			"id": "node/291666435",
+			"at": [
+				51.387036,
+				-0.070647
+			],
+			"observed": "2021-01-01",
+			"claims": {
+				"name": "The Beehive",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2021"
+			}
+		},
+		{
+			"id": "node/291675788",
+			"at": [
+				51.3856659,
+				-0.1179045
+			],
+			"observed": "2025-01-01",
+			"claims": {
+				"name": "The George",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2025"
+			}
+		},
+		{
+			"id": "node/291676978",
+			"at": [
+				51.3772234,
+				-0.107399
+			],
+			"observed": "2024-01-01",
+			"claims": {
+				"name": "G's Bar",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2024"
+			}
+		},
+		{
+			"id": "node/291720012",
+			"at": [
+				51.3722232,
+				-0.1001382
+			],
+			"observed": "2013-01-01",
+			"claims": {
+				"name": "The Spread Eagle",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2013"
+			}
+		},
+		{
+			"id": "node/300613224",
+			"at": [
+				51.4082614,
+				-0.0253277
+			],
+			"observed": "2019-01-01",
+			"claims": {
+				"name": "Friends Of Mine",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2019"
+			}
+		},
+		{
+			"id": "node/302432877",
+			"at": [
+				51.4133197,
+				-0.0519505
+			],
+			"observed": "2022-01-01",
+			"claims": {
+				"name": "The Goldsmiths",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2022"
+			}
+		},
+		{
+			"id": "node/304927470",
+			"at": [
+				51.4127038,
+				-0.0509504
+			],
+			"observed": "2019-01-01",
+			"claims": {
+				"name": "The Moon And Stars",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2019"
+			}
+		},
+		{
+			"id": "node/304927474",
+			"at": [
+				51.4076276,
+				-0.0276164
+			],
+			"observed": "2023-01-01",
+			"claims": {
+				"name": "The Slug And Lettuce",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2023"
+			}
+		},
+		{
+			"id": "node/308053696",
+			"at": [
+				51.3987982,
+				-0.040892
+			],
+			"observed": "2013-01-01",
+			"claims": {
+				"name": "Elmer Lodge",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2013"
+			}
+		},
+		{
+			"id": "node/367075877",
+			"at": [
+				51.4078676,
+				-0.1009508
+			],
+			"observed": "2023-01-01",
+			"claims": {
+				"name": "The Reform",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2023"
+			}
+		},
+		{
+			"id": "node/600759169",
+			"at": [
+				51.3785059,
+				-0.0902016
+			],
+			"observed": "2017-01-01",
+			"claims": {
+				"name": "The Glamorgan",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2017"
+			}
+		},
+		{
+			"id": "node/603263778",
+			"at": [
+				51.3684185,
+				-0.0994676
+			],
+			"observed": "2013-01-01",
+			"claims": {
+				"name": "Half and Half",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2013"
+			}
+		},
+		{
+			"id": "node/603263781",
+			"at": [
+				51.3787975,
+				-0.0950731
+			],
+			"observed": "2015-01-01",
+			"claims": {
+				"name": "The Bedford Tavern",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2015"
+			}
+		},
+		{
+			"id": "node/603263783",
+			"at": [
+				51.3843964,
+				-0.0928793
+			],
+			"observed": "2017-01-01",
+			"claims": {
+				"name": "The Duke of Gloucester",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2017"
+			}
+		},
+		{
+			"id": "node/603263786",
+			"at": [
+				51.384871,
+				-0.093063
+			],
+			"observed": "2017-01-01",
+			"claims": {
+				"name": "Bird in Hand",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2017"
+			}
+		},
+		{
+			"id": "node/638803599",
+			"at": [
+				51.3987417,
+				-0.0451005
+			],
+			"observed": "2023-01-01",
+			"claims": {
+				"name": "The Elm Tree Pub",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2023"
+			}
+		},
+		{
+			"id": "node/763634719",
+			"at": [
+				51.3915624,
+				-0.0381989
+			],
+			"observed": "2019-01-01",
+			"claims": {
+				"name": "The Rising Sun",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2019"
+			}
+		},
+		{
+			"id": "node/766153993",
+			"at": [
+				51.3899601,
+				-0.0271826
+			],
+			"observed": "2021-01-01",
+			"claims": {
+				"name": "Toby Carvery - Eden Park",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2021"
+			}
+		},
+		{
+			"id": "node/1102388172",
+			"at": [
+				51.3863756,
+				-0.158713
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "The Queen's Head",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2018"
+			}
+		},
+		{
+			"id": "node/1132744186",
+			"at": [
+				51.3600745,
+				-0.1501693
+			],
+			"observed": "2021-01-01",
+			"claims": {
+				"name": "Wallington Arms",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2021"
+			}
+		},
+		{
+			"id": "node/1412635461",
+			"at": [
+				51.2909973,
+				-0.1025361
+			],
+			"observed": "2019-01-01",
+			"claims": {
+				"name": "The Fleeting Brook",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2019"
+			}
+		},
+		{
+			"id": "node/1507944488",
+			"at": [
+				51.3530174,
+				-0.0978043
+			],
+			"observed": "2014-01-01",
+			"claims": {
+				"name": "Red Deer",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2014"
+			}
+		},
+		{
+			"id": "node/1518938662",
+			"at": [
+				51.3381947,
+				-0.116375
+			],
+			"observed": "2015-01-01",
+			"claims": {
+				"name": "Jolly Farmer",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2015"
+			}
+		},
+		{
+			"id": "node/1538769549",
+			"at": [
+				51.3069666,
+				-0.0417219
+			],
+			"observed": "2020-01-01",
+			"claims": {
+				"name": "The Hare & Hounds",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2020"
+			}
+		},
+		{
+			"id": "node/1734228316",
+			"at": [
+				51.3949046,
+				-0.1453345
+			],
+			"observed": "2017-01-01",
+			"claims": {
+				"name": "Mill House",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2017"
+			}
+		},
+		{
+			"id": "node/1793666043",
+			"at": [
+				51.3737877,
+				-0.1020653
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "Rileys",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2018"
+			}
+		},
+		{
+			"id": "node/1799210589",
+			"at": [
+				51.3785169,
+				-0.1033496
+			],
+			"observed": "2013-01-01",
+			"claims": {
+				"name": "The Ship Of Fools",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2013"
+			}
+		},
+		{
+			"id": "way/171820122",
+			"at": [
+				51.3577394,
+				-0.0329407
+			],
+			"observed": "2020-01-01",
+			"claims": {
+				"name": "Cricketers' Inn",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2020"
+			}
+		},
+		{
+			"id": "way/178296180",
+			"at": [
+				51.4176912,
+				-0.074097
+			],
+			"observed": "2013-01-01",
+			"claims": {
+				"name": "The Paxton Arms Hotel",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2013"
+			}
+		},
+		{
+			"id": "way/180779508",
+			"at": [
+				51.3564312,
+				-0.1134819
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "Gipsy Moth",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2018"
+			}
+		},
+		{
+			"id": "way/183746395",
+			"at": [
+				51.4196637,
+				-0.0781139
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "The Grape & Grain",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2018"
+			}
+		},
+		{
+			"id": "way/189046131",
+			"at": [
+				51.4196136,
+				-0.0793403
+			],
+			"observed": "2014-01-01",
+			"claims": {
+				"name": "Patrick's",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2014"
+			}
+		},
+		{
+			"id": "way/189209061",
+			"at": [
+				51.4184213,
+				-0.0821279
+			],
+			"observed": "2022-01-01",
+			"claims": {
+				"name": "The Postal Order",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2022"
+			}
+		},
+		{
+			"id": "way/196385664",
+			"at": [
+				51.3781273,
+				-0.1018832
+			],
+			"observed": "2022-01-01",
+			"claims": {
+				"name": "The Phoenix",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2022"
+			}
+		},
+		{
+			"id": "way/196701353",
+			"at": [
+				51.3776352,
+				-0.1026546
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "Babylon Inn",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2018"
+			}
+		},
+		{
+			"id": "way/198678842",
+			"at": [
+				51.3733534,
+				-0.0999463
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "Yates",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2018"
+			}
+		},
+		{
+			"id": "node/2097232184",
+			"at": [
+				51.3733021,
+				-0.0987989
+			],
+			"observed": "2019-01-01",
+			"claims": {
+				"name": "The Odd Shoe",
+				"kind": "pub",
+				"first": "2014",
+				"last": "2019"
+			}
+		},
+		{
+			"id": "node/2524809386",
+			"at": [
+				51.3936358,
+				-0.1148896
+			],
+			"observed": "2023-01-01",
+			"claims": {
+				"name": "The Horseshoe",
+				"kind": "pub",
+				"first": "2014",
+				"last": "2023"
+			}
+		},
+		{
+			"id": "node/2524809391",
+			"at": [
+				51.3941252,
+				-0.115197
+			],
+			"observed": "2023-01-01",
+			"claims": {
+				"name": "The Wheatsheaf",
+				"kind": "pub",
+				"first": "2014",
+				"last": "2023"
+			}
+		},
+		{
+			"id": "way/202210266",
+			"at": [
+				51.3749517,
+				-0.104668
+			],
+			"observed": "2023-01-01",
+			"claims": {
+				"name": "The Tamworth Arms",
+				"kind": "pub",
+				"first": "2014",
+				"last": "2023"
+			}
+		},
+		{
+			"id": "way/204323390",
+			"at": [
+				51.3683788,
+				-0.0995999
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "Half and Half",
+				"kind": "pub",
+				"first": "2014",
+				"last": "2018"
+			}
+		},
+		{
+			"id": "way/205406235",
+			"at": [
+				51.36617,
+				-0.0993842
+			],
+			"observed": "2023-01-01",
+			"claims": {
+				"name": "The Skylark",
+				"kind": "pub",
+				"first": "2014",
+				"last": "2023"
+			}
+		},
+		{
+			"id": "way/213915805",
+			"at": [
+				51.3623265,
+				-0.0966116
+			],
+			"observed": "2018-01-01",
+			"claims": {
+				"name": "Stag & Hounds",
+				"kind": "pub",
+				"first": "2014",
+				"last": "2018"
+			}
+		},
+		{
+			"id": "node/3217231361",
+			"at": [
+				51.3689004,
+				-0.0988542
+			],
+			"observed": "2015-01-01",
+			"claims": {
+				"name": "crown and pepper",
+				"kind": "pub",
+				"first": "2015",
+				"last": "2015"
+			}
+		},
+		{
+			"id": "way/349289209",
+			"at": [
+				51.3834376,
+				0.0023923
+			],
+			"observed": "2019-01-01",
+			"claims": {
+				"name": "The Pickhurst",
+				"kind": "pub",
+				"first": "2016",
+				"last": "2019"
+			}
+		},
+		{
+			"id": "way/410303606",
+			"at": [
+				51.4215711,
+				-0.1292114
+			],
+			"observed": "2025-01-01",
+			"claims": {
+				"name": "The Mere Scribbler",
+				"kind": "pub",
+				"first": "2017",
+				"last": "2025"
+			}
+		},
+		{
+			"id": "node/4625394641",
+			"at": [
+				51.4044799,
+				-0.0999662
+			],
+			"observed": "2023-01-01",
+			"claims": {
+				"name": "Lord Napier",
+				"kind": "pub",
+				"first": "2018",
+				"last": "2023"
+			}
+		},
+		{
+			"id": "node/5745601150",
+			"at": [
+				51.3716304,
+				-0.1171724
+			],
+			"observed": "2019-01-01",
+			"claims": {
+				"name": "The Hare and Hound",
+				"kind": "pub",
+				"first": "2019",
+				"last": "2019"
+			}
+		},
+		{
+			"id": "node/5966233133",
+			"at": [
+				51.3858533,
+				-0.0401536
+			],
+			"observed": "2026-01-01",
+			"claims": {
+				"name": "The Orchard",
+				"kind": "pub",
+				"first": "2019",
+				"last": "2026"
+			}
+		},
+		{
+			"id": "node/12979925719",
+			"at": [
+				51.4216049,
+				-0.1291775
+			],
+			"observed": "2026-01-01",
+			"claims": {
+				"name": "The Mere Scribbler",
+				"kind": "pub",
+				"first": "2026",
+				"last": "2026"
+			}
+		}
+	],
+	"retrieved": "2026-11-10"
+}
