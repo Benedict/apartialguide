@@ -206,3 +206,14 @@ describe('recordSentences, the traffic on a road', () => {
 		]);
 	});
 });
+
+describe('recordSentences, a pub the map no longer has', () => {
+	it('says, in a room, the years the map had it', () => {
+		expect(
+			recordSentences({ 'pub:kind': 'pub', 'pub:first': '2013', 'pub:last': '2019' }, 'room')
+		).toEqual(['The map had a pub here from 2013 until 2019.']);
+		expect(
+			recordSentences({ 'pub:kind': 'pub', 'pub:first': '2019', 'pub:last': '2019' }, 'room')
+		).toEqual(['The map had a pub here in 2019.']);
+	});
+});
