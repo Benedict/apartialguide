@@ -1,0 +1,63 @@
+{
+	"source": "Past maps",
+	"prefix": "pub",
+	"records": [
+		{
+			"id": "node/977367713",
+			"at": [
+				52.3406101,
+				-1.5772743
+			],
+			"observed": "2014-01-01",
+			"claims": {
+				"name": "Bear And Ragged Staff",
+				"kind": "pub",
+				"first": "2013",
+				"last": "2014"
+			}
+		},
+		{
+			"id": "way/152674033",
+			"at": [
+				52.3486955,
+				-1.5731911
+			],
+			"observed": "2017-01-01",
+			"claims": {
+				"name": "Albion Tavern",
+				"kind": "pub",
+				"first": "2016",
+				"last": "2017"
+			}
+		},
+		{
+			"id": "way/277683532",
+			"at": [
+				52.3389722,
+				-1.5749199
+			],
+			"observed": "2019-01-01",
+			"claims": {
+				"name": "The Earl Clarendon",
+				"kind": "pub",
+				"first": "2015",
+				"last": "2019"
+			}
+		},
+		{
+			"id": "way/274703261",
+			"at": [
+				52.3437342,
+				-1.5793777
+			],
+			"observed": "2026-01-01",
+			"claims": {
+				"name": "Li'l Green's",
+				"kind": "pub",
+				"first": "2019",
+				"last": "2026"
+			}
+		}
+	],
+	"retrieved": "2026-11-10"
+}
