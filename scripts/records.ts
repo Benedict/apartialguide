@@ -73,6 +73,7 @@ async function getJson(url: string, extra: Record<string, string> = {}) {
 }
 
 const name = process.env.SNAPSHOT_NAME ?? 'addiscombe';
+const overpass = process.env.OVERPASS_API ?? 'https://overpass-api.de/api/interpreter';
 const snapshots = 'data/snapshots';
 const newest = readdirSync(snapshots)
 	.filter((f) => f.startsWith(name) && /\.json(\.gz)?$/.test(f))
@@ -457,16 +458,22 @@ SELECT ?paon ?street ?amount ?date WHERE {
 			let answer: { elements?: PastMap['elements'] } | undefined;
 			for (const wait of [0, 30, 60, 120, 240]) {
 				if (wait) await new Promise((r) => setTimeout(r, wait * 1000));
-				const res = await fetch('https://overpass-api.de/api/interpreter', {
-					method: 'POST',
-					headers: { ...headers, 'Content-Type': 'application/x-www-form-urlencoded' },
-					body: new URLSearchParams({ data: query })
-				});
-				if (res.ok) {
-					answer = await res.json();
-					break;
+				// A slow answer or a dropped connection is asked again, as a refusal is.
+				try {
+					const res = await fetch(overpass, {
+						method: 'POST',
+						headers: { ...headers, 'Content-Type': 'application/x-www-form-urlencoded' },
+						body: new URLSearchParams({ data: query }),
+						signal: AbortSignal.timeout(240_000)
+					});
+					if (res.ok) {
+						answer = await res.json();
+						break;
+					}
+					console.log(`pubs: Overpass answered ${res.status} for ${asOf}`);
+				} catch (err) {
+					console.log(`pubs: no answer for ${asOf} (${(err as Error).message})`);
 				}
-				console.log(`pubs: Overpass answered ${res.status} for ${asOf}`);
 			}
 			if (!answer) throw new Error(`Overpass gave no answer for the pubs of ${asOf}`);
 			console.log(`pubs: ${answer.elements?.length ?? 0} on the map of ${asOf}`);
