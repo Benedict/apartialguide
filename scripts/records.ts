@@ -41,6 +41,8 @@ import { epcFromSearch, epcRecords } from '../src/lib/server/sources/epc';
 import { britanniaBeyond, BRITANNIA_TABLES } from '../src/lib/server/sources/britannia';
 import { readGpkgLayer } from '../src/lib/server/gpkg';
 import { geographRecords } from '../src/lib/server/sources/geograph';
+import { trafficRecords } from '../src/lib/server/sources/traffic';
+import { inBox, point } from '../src/lib/server/sources/box';
 import {
 	floodZoneName,
 	HERITAGE,
@@ -440,6 +442,39 @@ SELECT ?paon ?street ?amount ?date WHERE {
 		const records = companyRecords(rows, wanted);
 		console.log(`companies: ${rows.length} rows near, ${records.length} addresses`);
 		return { source: 'Companies House', prefix: 'company', records };
+	},
+	/**
+	 * The Department for Transport's counts of traffic on the roads in the box: each count point's
+	 * average day in its latest year, from the national file of every year's average annual daily flow.
+	 */
+	traffic: async () => {
+		const zip = '/tmp/traffic.zip';
+		const url =
+			'https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/dft_traffic_counts_aadf.zip';
+		const res = await fetch(url, { headers });
+		if (!res.ok || !res.body) throw new Error(`${url} answered ${res.status}`);
+		await pipeline(Readable.fromWeb(res.body as WebStream), createWriteStream(zip));
+		const unzip = spawn('unzip', ['-p', zip]);
+		const rows: Record<string, string>[] = [];
+		let header = '';
+		let lines = 0;
+		for await (const line of createInterface({ input: unzip.stdout })) {
+			if (!header) {
+				header = line;
+				continue;
+			}
+			lines++;
+			const [row] = parseCsv(`${header}\n${line}`);
+			if (row) {
+				const at = point(row.latitude, row.longitude);
+				if (at && inBox(at, bbox)) rows.push(row);
+			}
+		}
+		const records = trafficRecords(rows, bbox);
+		console.log(
+			`traffic: ${lines} rows in the file, ${rows.length} in the box, ${records.length} count points`
+		);
+		return { source: 'Department for Transport', prefix: 'traffic', records, standalone: false };
 	},
 	/**
 	 * Energy performance certificates at the snapshot's postcodes, asked of the register's search one

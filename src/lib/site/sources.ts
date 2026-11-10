@@ -134,6 +134,12 @@ export const SOURCES: Source[] = [
 		terms: OGL
 	},
 	{
+		name: 'Department for Transport',
+		href: 'https://roadtraffic.dft.gov.uk/',
+		gives: 'road traffic counts',
+		terms: OGL
+	},
+	{
 		name: 'London Planning Datahub',
 		href: 'https://planningdata.london.gov.uk/',
 		gives: 'planning applications',

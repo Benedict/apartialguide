@@ -234,6 +234,50 @@ describe('RecordsAdapter', () => {
 	});
 });
 
+describe('a record on the road the map has where it lies', () => {
+	// An invented A-road and a footway beside it, with an invented side street. No real place.
+	const road: OsmElement = {
+		type: 'way',
+		id: 20,
+		nodes: [21, 22],
+		tags: { highway: 'primary', ref: 'A999', name: 'Invented Road' }
+	};
+	const footway: OsmElement = {
+		type: 'way',
+		id: 30,
+		nodes: [31, 32],
+		tags: { highway: 'footway' }
+	};
+	const nodes: OsmElement[] = [
+		{ type: 'node', id: 21, lat: 51.38, lon: -0.08 },
+		{ type: 'node', id: 22, lat: 51.38, lon: -0.07 },
+		{ type: 'node', id: 31, lat: 51.38004, lon: -0.08 },
+		{ type: 'node', id: 32, lat: 51.38004, lon: -0.07 }
+	];
+	const map = new OsmIndex({ elements: [...nodes, road, footway] });
+	const counts = (near: NonNullable<RecordStore['records'][number]['near']>) =>
+		new RecordsAdapter(
+			map,
+			store([{ id: '1', at: [51.38003, -0.075], near, claims: { vehicles: '100' } }], {
+				source: 'DfT',
+				prefix: 'traffic',
+				standalone: false
+			})
+		).facts();
+
+	it('measures to the nearest point along a way, not to its first node, and takes one of several values', () => {
+		expect(counts({ key: 'ref', value: 'A999', within: 20 }).map((f) => f.subject)).toEqual([
+			'way/20'
+		]);
+		expect(
+			counts({ key: 'highway', value: ['primary', 'residential'], within: 20 }).map(
+				(f) => f.subject
+			)
+		).toEqual(['way/20']);
+		expect(counts({ key: 'highway', value: ['residential'], within: 20 })).toEqual([]);
+	});
+});
+
 describe('what concerns a person is left out', () => {
 	// An invented house and an invented shop on the same invented street. No real place.
 	const house: OsmElement = {

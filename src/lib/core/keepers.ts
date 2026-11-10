@@ -17,6 +17,7 @@ const DOINGS: Record<string, string> = {
 	'NBN Atlas': 'those who note what lives here',
 	'Companies House': 'those who register companies',
 	'Environment Agency': 'those who map where the water goes',
+	'Department for Transport': 'those who count the traffic',
 	'Energy Performance of Buildings Register': 'those who rate houses for the heat they lose',
 	Geograph: 'those who photograph every square of the country',
 	'Roman Roads Research Association': 'those who trace the Roman roads',
@@ -41,5 +42,9 @@ export function alludedTo(names: readonly string[]): string {
  * energy certificate) or asks, so that fetching them changes no place's prose, nor which places have
  * prose. Their records still reach the template, which tells them on examining.
  */
-const OUT_OF_PROSE = new Set(['Energy Performance of Buildings Register', 'Geograph']);
+const OUT_OF_PROSE = new Set([
+	'Energy Performance of Buildings Register',
+	'Geograph',
+	'Department for Transport'
+]);
 export const keptOutOfProse = (source: string): boolean => OUT_OF_PROSE.has(keeper(source));

@@ -1,0 +1,497 @@
+{
+	"source": "Department for Transport",
+	"prefix": "traffic",
+	"records": [
+		{
+			"id": "7170",
+			"at": [
+				52.35607823,
+				-1.590291252
+			],
+			"observed": "2025-12-31",
+			"near": {
+				"key": "ref",
+				"value": "A452",
+				"within": 40
+			},
+			"claims": {
+				"year": "2025",
+				"vehicles": "4552",
+				"cycles": "43",
+				"method": "Estimated"
+			}
+		},
+		{
+			"id": "16468",
+			"at": [
+				52.34521386,
+				-1.544885603
+			],
+			"observed": "2025-12-31",
+			"near": {
+				"key": "ref",
+				"value": "A46",
+				"within": 40
+			},
+			"claims": {
+				"year": "2025",
+				"vehicles": "74365",
+				"cycles": "0",
+				"method": "Estimated"
+			}
+		},
+		{
+			"id": "17083",
+			"at": [
+				52.36145682,
+				-1.560871924
+			],
+			"observed": "2025-12-31",
+			"near": {
+				"key": "ref",
+				"value": "A429",
+				"within": 40
+			},
+			"claims": {
+				"year": "2025",
+				"vehicles": "5836",
+				"cycles": "191",
+				"method": "Estimated"
+			}
+		},
+		{
+			"id": "17131",
+			"at": [
+				52.33397427,
+				-1.56848153
+			],
+			"observed": "2025-12-31",
+			"near": {
+				"key": "ref",
+				"value": "A452",
+				"within": 40
+			},
+			"claims": {
+				"year": "2025",
+				"vehicles": "18881",
+				"cycles": "45",
+				"method": "Estimated"
+			}
+		},
+		{
+			"id": "46505",
+			"at": [
+				52.32731086,
+				-1.565611706
+			],
+			"observed": "2025-12-31",
+			"near": {
+				"key": "ref",
+				"value": "A46",
+				"within": 40
+			},
+			"claims": {
+				"year": "2025",
+				"vehicles": "79848",
+				"cycles": "4",
+				"method": "Counted"
+			}
+		},
+		{
+			"id": "47205",
+			"at": [
+				52.32375553,
+				-1.552441714
+			],
+			"observed": "2017-12-31",
+			"near": {
+				"key": "ref",
+				"value": "A452",
+				"within": 40
+			},
+			"claims": {
+				"year": "2017",
+				"vehicles": "22421",
+				"cycles": "43",
+				"method": "Estimated"
+			}
+		},
+		{
+			"id": "57059",
+			"at": [
+				52.3453299,
+				-1.576151071
+			],
+			"observed": "2025-12-31",
+			"near": {
+				"key": "ref",
+				"value": "A452",
+				"within": 40
+			},
+			"claims": {
+				"year": "2025",
+				"vehicles": "4019",
+				"cycles": "79",
+				"method": "Estimated"
+			}
+		},
+		{
+			"id": "57494",
+			"at": [
+				52.32912582,
+				-1.560443453
+			],
+			"observed": "2025-12-31",
+			"near": {
+				"key": "ref",
+				"value": "A452",
+				"within": 40
+			},
+			"claims": {
+				"year": "2025",
+				"vehicles": "26353",
+				"cycles": "36",
+				"method": "Estimated"
+			}
+		},
+		{
+			"id": "77294",
+			"at": [
+				52.36718292,
+				-1.553472151
+			],
+			"observed": "2025-12-31",
+			"near": {
+				"key": "ref",
+				"value": "A429",
+				"within": 40
+			},
+			"claims": {
+				"year": "2025",
+				"vehicles": "5836",
+				"cycles": "191",
+				"method": "Estimated"
+			}
+		},
+		{
+			"id": "77344",
+			"at": [
+				52.33804107,
+				-1.57431265
+			],
+			"observed": "2025-12-31",
+			"near": {
+				"key": "ref",
+				"value": "A452",
+				"within": 40
+			},
+			"claims": {
+				"year": "2025",
+				"vehicles": "20958",
+				"cycles": "50",
+				"method": "Estimated"
+			}
+		},
+		{
+			"id": "77345",
+			"at": [
+				52.35431418,
+				-1.574450279
+			],
+			"observed": "2025-12-31",
+			"near": {
+				"key": "ref",
+				"value": "A429",
+				"within": 40
+			},
+			"claims": {
+				"year": "2025",
+				"vehicles": "9286",
+				"cycles": "63",
+				"method": "Estimated"
+			}
+		},
+		{
+			"id": "77346",
+			"at": [
+				52.36578532,
+				-1.616446345
+			],
+			"observed": "2025-12-31",
+			"near": {
+				"key": "ref",
+				"value": "A452",
+				"within": 40
+			},
+			"claims": {
+				"year": "2025",
+				"vehicles": "8898",
+				"cycles": "4",
+				"method": "Estimated"
+			}
+		},
+		{
+			"id": "800308",
+			"at": [
+				52.3443759,
+				-1.583455796
+			],
+			"observed": "2025-12-31",
+			"near": {
+				"key": "ref",
+				"value": "B4103",
+				"within": 40
+			},
+			"claims": {
+				"year": "2025",
+				"vehicles": "8630",
+				"cycles": "19",
+				"method": "Counted"
+			}
+		},
+		{
+			"id": "804494",
+			"at": [
+				52.35168086,
+				-1.557518496
+			],
+			"observed": "2024-12-31",
+			"near": {
+				"key": "highway",
+				"value": [
+					"motorway",
+					"trunk",
+					"primary",
+					"secondary",
+					"tertiary",
+					"unclassified",
+					"residential",
+					"living_street",
+					"service",
+					"motorway_link",
+					"trunk_link",
+					"primary_link",
+					"secondary_link",
+					"tertiary_link"
+				],
+				"within": 25
+			},
+			"claims": {
+				"year": "2024",
+				"vehicles": "3614",
+				"cycles": "70",
+				"method": "Estimated"
+			}
+		},
+		{
+			"id": "919243",
+			"at": [
+				52.34318724,
+				-1.541574392
+			],
+			"observed": "2009-12-31",
+			"near": {
+				"key": "ref",
+				"value": "B4115",
+				"within": 40
+			},
+			"claims": {
+				"year": "2009",
+				"vehicles": "734",
+				"cycles": "42",
+				"method": "Estimated"
+			}
+		},
+		{
+			"id": "930399",
+			"at": [
+				52.35582493,
+				-1.545510799
+			],
+			"observed": "2009-12-31",
+			"near": {
+				"key": "highway",
+				"value": [
+					"motorway",
+					"trunk",
+					"primary",
+					"secondary",
+					"tertiary",
+					"unclassified",
+					"residential",
+					"living_street",
+					"service",
+					"motorway_link",
+					"trunk_link",
+					"primary_link",
+					"secondary_link",
+					"tertiary_link"
+				],
+				"within": 25
+			},
+			"claims": {
+				"year": "2009",
+				"vehicles": "5849",
+				"cycles": "15",
+				"method": "Counted"
+			}
+		},
+		{
+			"id": "930400",
+			"at": [
+				52.34471661,
+				-1.563254074
+			],
+			"observed": "2009-12-31",
+			"near": {
+				"key": "highway",
+				"value": [
+					"motorway",
+					"trunk",
+					"primary",
+					"secondary",
+					"tertiary",
+					"unclassified",
+					"residential",
+					"living_street",
+					"service",
+					"motorway_link",
+					"trunk_link",
+					"primary_link",
+					"secondary_link",
+					"tertiary_link"
+				],
+				"within": 25
+			},
+			"claims": {
+				"year": "2009",
+				"vehicles": "3985",
+				"cycles": "44",
+				"method": "Counted"
+			}
+		},
+		{
+			"id": "948608",
+			"at": [
+				52.32964451,
+				-1.55489156
+			],
+			"observed": "2008-12-31",
+			"near": {
+				"key": "ref",
+				"value": "B4115",
+				"within": 40
+			},
+			"claims": {
+				"year": "2008",
+				"vehicles": "889",
+				"cycles": "43",
+				"method": "Counted"
+			}
+		},
+		{
+			"id": "948678",
+			"at": [
+				52.32263092,
+				-1.586828702
+			],
+			"observed": "2008-12-31",
+			"near": {
+				"key": "highway",
+				"value": [
+					"motorway",
+					"trunk",
+					"primary",
+					"secondary",
+					"tertiary",
+					"unclassified",
+					"residential",
+					"living_street",
+					"service",
+					"motorway_link",
+					"trunk_link",
+					"primary_link",
+					"secondary_link",
+					"tertiary_link"
+				],
+				"within": 25
+			},
+			"claims": {
+				"year": "2008",
+				"vehicles": "1550",
+				"cycles": "106",
+				"method": "Counted"
+			}
+		},
+		{
+			"id": "948724",
+			"at": [
+				52.35376625,
+				-1.587273305
+			],
+			"observed": "2019-12-31",
+			"near": {
+				"key": "highway",
+				"value": [
+					"motorway",
+					"trunk",
+					"primary",
+					"secondary",
+					"tertiary",
+					"unclassified",
+					"residential",
+					"living_street",
+					"service",
+					"motorway_link",
+					"trunk_link",
+					"primary_link",
+					"secondary_link",
+					"tertiary_link"
+				],
+				"within": 25
+			},
+			"claims": {
+				"year": "2019",
+				"vehicles": "153",
+				"cycles": "6",
+				"method": "Counted"
+			}
+		},
+		{
+			"id": "996984",
+			"at": [
+				52.33340179,
+				-1.579273446
+			],
+			"observed": "2009-12-31",
+			"near": {
+				"key": "highway",
+				"value": [
+					"motorway",
+					"trunk",
+					"primary",
+					"secondary",
+					"tertiary",
+					"unclassified",
+					"residential",
+					"living_street",
+					"service",
+					"motorway_link",
+					"trunk_link",
+					"primary_link",
+					"secondary_link",
+					"tertiary_link"
+				],
+				"within": 25
+			},
+			"claims": {
+				"year": "2009",
+				"vehicles": "1686",
+				"cycles": "64",
+				"method": "Counted"
+			}
+		}
+	],
+	"standalone": false,
+	"retrieved": "2026-11-09"
+}

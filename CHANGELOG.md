@@ -8,6 +8,7 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### For walkers
 
+- Examine a road to hear how much passes along it on an average day, by the year's count or estimate: “On an average day of 2025, by the count, 13,643 motor vehicles passed along it, and 249 bicycles.” Croydon's box has 294 counted places on its roads.
 - The walk says when you come into a conservation area, the ground of a scheduled monument or a registered park and garden, by its name and its grade, and when you come out of it: Croydon has 57 conservation areas, 17 monuments and 5 parks in and around it.
 - Asking the way, following a river or setting a glass down answers at once however far: a way across 40,000 places took 41 seconds and now takes a third of one.
 - Follow a river: type follow, then its name (“follow Norbury Brook”), and the walk takes you along its course as the map draws it, saying at each place whether it shows or runs hidden, and at the end where it showed and where it hid. River off lets it go.
@@ -16,6 +17,7 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### Under the hood
 
+- `SOURCES=traffic npm run records`: the Department for Transport's average annual daily flow (`server/sources/traffic.ts`, `trafficRecords`), each count point's latest year, from the national file. A count goes with the road the map numbers as it does (`ref=A23`, within 40 m), or on a minor road, which the count names only by its class, the road the map has where it lies (within 25 m, never a footway); never standing alone. A record's `near` now takes several values and measures to the nearest point of a way, not its first node. Kept out of prose written ahead of time (`keptOutOfProse`), so no stored prose changes.
 - `SOURCES=heritage npm run records`: conservation areas, scheduled monuments and registered parks and gardens over the box, from planning.data.gov.uk's dataset files (`heritageAreas`, `featuresInBox` in `server/sources/zones.ts`), as overlay areas told on coming in and out (`render/zones.ts`, a name the register sets all in capitals said as written). Listed buildings and protected trees fall back to the same files when the site's search does not answer (`entitiesOf`): it has been down since 6 November. Kenilworth's 162 listed buildings and 11 heritage areas, and Croydon's 79 heritage areas, fetched so.
 - A place other than Croydon keeps its records and its Wikidata in its own folders (`RECORDS_OUT`, `WIKIDATA_OUT` in their requests), which Croydon's build never reads; the Wikidata script finds gzipped snapshots; both workflows set other changes aside before rebasing their commit (`--autostash`). Kenilworth's records and Wikidata, for a private preview.
 - The River count workflow (`rivers.yml`, by hand or by editing `data/rivers/request.env`): downloads London's extract, keeps the waterways and the boroughs' edges with osmium, and counts each named river the map runs under the ground, borough by borough (`server/rivers.ts`, `npm run rivers`), into the run's summary; the measure for a lost-rivers walk across London.

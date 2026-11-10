@@ -148,6 +148,24 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 	],
 	[
 		false,
+		(t) => {
+			// An average day's traffic on a road, as counted or estimated for a year (`trafficRecords`).
+			const vehicles = Number(t['traffic:vehicles']);
+			if (!t['traffic:year'] || !t['traffic:vehicles'] || !Number.isFinite(vehicles))
+				return undefined;
+			const how = /^estimated$/i.test(t['traffic:method'] ?? '')
+				? 'by an estimate'
+				: 'by the count';
+			const cycles = Number(t['traffic:cycles']);
+			const bicycles =
+				cycles > 0
+					? `, and ${cycles.toLocaleString('en-GB')} bicycle${cycles === 1 ? '' : 's'}`
+					: '';
+			return `On an average day of ${t['traffic:year']}, ${how}, ${vehicles.toLocaleString('en-GB')} motor vehicles passed along it${bicycles}.`;
+		}
+	],
+	[
+		false,
 		(t) =>
 			t['trees:count']
 				? ((along) => `${along}, ${aside(along)}: ${t['trees:kinds']}.`)(
