@@ -42,6 +42,7 @@ import { britanniaBeyond, BRITANNIA_TABLES } from '../src/lib/server/sources/bri
 import { readGpkgLayer } from '../src/lib/server/gpkg';
 import { geographRecords } from '../src/lib/server/sources/geograph';
 import { trafficRecords } from '../src/lib/server/sources/traffic';
+import { lostPubs, type PastMap } from '../src/lib/server/sources/pubs';
 import { inBox, point } from '../src/lib/server/sources/box';
 import {
 	floodZoneName,
@@ -72,6 +73,7 @@ async function getJson(url: string, extra: Record<string, string> = {}) {
 }
 
 const name = process.env.SNAPSHOT_NAME ?? 'addiscombe';
+const overpass = process.env.OVERPASS_API ?? 'https://overpass-api.de/api/interpreter';
 const snapshots = 'data/snapshots';
 const newest = readdirSync(snapshots)
 	.filter((f) => f.startsWith(name) && /\.json(\.gz)?$/.test(f))
@@ -442,6 +444,44 @@ SELECT ?paon ?street ?amount ?date WHERE {
 		const records = companyRecords(rows, wanted);
 		console.log(`companies: ${rows.length} rows near, ${records.length} addresses`);
 		return { source: 'Companies House', prefix: 'company', records };
+	},
+	/**
+	 * Pubs the map had on 1 January of each year since 2013 (the first the map's history keeps whole)
+	 * and has no longer, asked of Overpass by hand, never from the app: one small question a year.
+	 */
+	pubs: async () => {
+		const pasts: PastMap[] = [];
+		const thisYear = new Date().getUTCFullYear();
+		for (let year = 2013; year <= thisYear; year++) {
+			const asOf = `${year}-01-01`;
+			const query = `[out:json][timeout:120][date:"${asOf}T00:00:00Z"];nwr[amenity=pub](${s},${w},${n},${e});out center tags;`;
+			let answer: { elements?: PastMap['elements'] } | undefined;
+			for (const wait of [0, 30, 60, 120, 240]) {
+				if (wait) await new Promise((r) => setTimeout(r, wait * 1000));
+				// A slow answer or a dropped connection is asked again, as a refusal is.
+				try {
+					const res = await fetch(overpass, {
+						method: 'POST',
+						headers: { ...headers, 'Content-Type': 'application/x-www-form-urlencoded' },
+						body: new URLSearchParams({ data: query }),
+						signal: AbortSignal.timeout(240_000)
+					});
+					if (res.ok) {
+						answer = await res.json();
+						break;
+					}
+					console.log(`pubs: Overpass answered ${res.status} for ${asOf}`);
+				} catch (err) {
+					console.log(`pubs: no answer for ${asOf} (${(err as Error).message})`);
+				}
+			}
+			if (!answer) throw new Error(`Overpass gave no answer for the pubs of ${asOf}`);
+			console.log(`pubs: ${answer.elements?.length ?? 0} on the map of ${asOf}`);
+			pasts.push({ asOf, elements: answer.elements ?? [] });
+		}
+		const records = lostPubs(pasts, snapshot.elements, bbox);
+		console.log(`pubs: ${records.length} the map has no longer`);
+		return { source: 'Past maps', prefix: 'pub', records };
 	},
 	/**
 	 * The Department for Transport's counts of traffic on the roads in the box: each count point's

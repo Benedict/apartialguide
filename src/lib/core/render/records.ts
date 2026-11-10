@@ -95,6 +95,17 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 	],
 	[
 		true,
+		(t) => {
+			// A pub the past maps had and the map has no longer (`lostPubs`).
+			if (t['pub:kind'] !== 'pub' || !t['pub:last']) return undefined;
+			const first = t['pub:first'];
+			return first && first !== t['pub:last']
+				? `The map had a pub here from ${first} until ${t['pub:last']}.`
+				: `The map had a pub here in ${t['pub:last']}.`;
+		}
+	],
+	[
+		true,
 		(t) =>
 			t['wildlife:seen'] ? `Seen here in ${monthYear(`${t['wildlife:seen']}-01`)}.` : undefined
 	],

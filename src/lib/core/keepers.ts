@@ -18,6 +18,7 @@ const DOINGS: Record<string, string> = {
 	'Companies House': 'those who register companies',
 	'Environment Agency': 'those who map where the water goes',
 	'Department for Transport': 'those who count the traffic',
+	'Past maps': 'those who drew the map before',
 	'Energy Performance of Buildings Register': 'those who rate houses for the heat they lose',
 	Geograph: 'those who photograph every square of the country',
 	'Roman Roads Research Association': 'those who trace the Roman roads',
@@ -45,6 +46,7 @@ export function alludedTo(names: readonly string[]): string {
 const OUT_OF_PROSE = new Set([
 	'Energy Performance of Buildings Register',
 	'Geograph',
-	'Department for Transport'
+	'Department for Transport',
+	'Past maps'
 ]);
 export const keptOutOfProse = (source: string): boolean => OUT_OF_PROSE.has(keeper(source));
