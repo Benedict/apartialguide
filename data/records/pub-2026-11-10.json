@@ -3,20 +3,6 @@
 	"prefix": "pub",
 	"records": [
 		{
-			"id": "node/17785545",
-			"at": [
-				51.3834915,
-				0.0023913
-			],
-			"observed": "2015-01-01",
-			"claims": {
-				"name": "The Pickhurst",
-				"kind": "pub",
-				"first": "2013",
-				"last": "2015"
-			}
-		},
-		{
 			"id": "node/26461817",
 			"at": [
 				51.3890417,
@@ -241,20 +227,6 @@
 			}
 		},
 		{
-			"id": "node/291658723",
-			"at": [
-				51.374794,
-				-0.1047869
-			],
-			"observed": "2013-01-01",
-			"claims": {
-				"name": "The Tamworth Arms",
-				"kind": "pub",
-				"first": "2013",
-				"last": "2013"
-			}
-		},
-		{
 			"id": "node/291658748",
 			"at": [
 				51.3675142,
@@ -420,20 +392,6 @@
 				"kind": "pub",
 				"first": "2013",
 				"last": "2017"
-			}
-		},
-		{
-			"id": "node/603263778",
-			"at": [
-				51.3684185,
-				-0.0994676
-			],
-			"observed": "2013-01-01",
-			"claims": {
-				"name": "Half and Half",
-				"kind": "pub",
-				"first": "2013",
-				"last": "2013"
 			}
 		},
 		{
@@ -824,7 +782,7 @@
 			"claims": {
 				"name": "The Tamworth Arms",
 				"kind": "pub",
-				"first": "2014",
+				"first": "2013",
 				"last": "2023"
 			}
 		},
@@ -838,7 +796,7 @@
 			"claims": {
 				"name": "Half and Half",
 				"kind": "pub",
-				"first": "2014",
+				"first": "2013",
 				"last": "2018"
 			}
 		},
@@ -894,22 +852,8 @@
 			"claims": {
 				"name": "The Pickhurst",
 				"kind": "pub",
-				"first": "2016",
+				"first": "2013",
 				"last": "2019"
-			}
-		},
-		{
-			"id": "way/410303606",
-			"at": [
-				51.4215711,
-				-0.1292114
-			],
-			"observed": "2025-01-01",
-			"claims": {
-				"name": "The Mere Scribbler",
-				"kind": "pub",
-				"first": "2017",
-				"last": "2025"
 			}
 		},
 		{
@@ -964,7 +908,7 @@
 			"claims": {
 				"name": "The Mere Scribbler",
 				"kind": "pub",
-				"first": "2026",
+				"first": "2017",
 				"last": "2026"
 			}
 		}

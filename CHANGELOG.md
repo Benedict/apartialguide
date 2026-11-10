@@ -8,7 +8,7 @@ Add to it with each change worth telling: a line for walkers where a walker woul
 
 ### For walkers
 
-- Pubs the map has lost: where the map had a pub on any 1 January since 2013 and has it no longer, the walk keeps its name, and examining it says the years the map had it: “The map had a pub here from 2013 until 2019.”
+- Pubs the map has lost: where the map had a pub on any 1 January since 2013 and has it no longer, the walk keeps its name, and examining it says the years the map had it: “The map had a pub here from 2013 until 2019.” Croydon and its edges have 65, among them The Goat, The Railway Bell and The Golden Lion.
 - Examine a road to hear how much passes along it on an average day, by the year's count or estimate: “On an average day of 2025, by the count, 13,643 motor vehicles passed along it, and 249 bicycles.” Croydon's box has 294 counted places on its roads.
 - The walk says when you come into a conservation area, the ground of a scheduled monument or a registered park and garden, by its name and its grade, and when you come out of it: Croydon has 57 conservation areas, 17 monuments and 5 parks in and around it.
 - Asking the way, following a river or setting a glass down answers at once however far: a way across 40,000 places took 41 seconds and now takes a third of one.

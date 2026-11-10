@@ -78,4 +78,25 @@ describe('lostPubs', () => {
 		);
 		expect(records.map((r) => [r.id, r.at])).toEqual([['way/5', [51.39, -0.09]]]);
 	});
+
+	it('takes one pub drawn again as another element, by its name and place, as one, its years joined', () => {
+		const way = {
+			type: 'way',
+			id: 5,
+			center: { lat: 51.38001, lon: -0.08 },
+			tags: { amenity: 'pub', name: 'The Invented Arms' }
+		};
+		const records = lostPubs(
+			[
+				past('2013-01-01', [pub(1, 'The Invented Arms', 51.38, -0.08)]),
+				past('2014-01-01', [way]),
+				past('2015-01-01', [way])
+			],
+			[],
+			'-0.1,51.3,0,51.4'
+		);
+		expect(records.map((r) => [r.id, r.claims.first, r.claims.last])).toEqual([
+			['way/5', '2013', '2015']
+		]);
+	});
 });

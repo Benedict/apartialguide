@@ -65,9 +65,16 @@ export function lostPubs(
 			if (e.tags?.amenity !== 'pub' || !name) continue;
 			const at = placeOf(e, new Map());
 			if (!at || !inBox(at, bbox)) continue;
+			// The same pub drawn again as another element keeps its years under the newest drawing.
 			const id = `${e.type}/${e.id}`;
-			const was = seen.get(id);
-			seen.set(id, { name, at, first: was?.first ?? past.asOf, last: past.asOf });
+			const before = [...seen.entries()].filter(
+				([other, p]) =>
+					other === id ||
+					(p.name.toLowerCase() === name.toLowerCase() && distance(p.at, at) <= SAME_PUB_WITHIN)
+			);
+			for (const [other] of before) seen.delete(other);
+			const first = before.map(([, p]) => p.first).sort()[0] ?? past.asOf;
+			seen.set(id, { name, at, first, last: past.asOf });
 		}
 	}
 	return [...seen.entries()]
