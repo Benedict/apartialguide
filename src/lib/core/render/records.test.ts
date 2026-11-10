@@ -183,3 +183,26 @@ describe('recordSentences, quoting', () => {
 		]);
 	});
 });
+
+describe('recordSentences, the traffic on a road', () => {
+	it('tells an average day’s traffic on a closer look, counted or estimated, with its year', () => {
+		const counted = {
+			'traffic:year': '2025',
+			'traffic:vehicles': '34231',
+			'traffic:cycles': '194',
+			'traffic:method': 'Counted'
+		};
+		expect(recordSentences(counted, 'room')).toEqual([]);
+		expect(recordSentences(counted)).toEqual([
+			'On an average day of 2025, by the count, 34,231 motor vehicles passed along it, and 194 bicycles.'
+		]);
+		expect(
+			recordSentences({ ...counted, 'traffic:method': 'Estimated', 'traffic:cycles': '1' })
+		).toEqual([
+			'On an average day of 2025, by an estimate, 34,231 motor vehicles passed along it, and 1 bicycle.'
+		]);
+		expect(recordSentences({ ...counted, 'traffic:cycles': '0' })).toEqual([
+			'On an average day of 2025, by the count, 34,231 motor vehicles passed along it.'
+		]);
+	});
+});

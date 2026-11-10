@@ -1,6 +1,6 @@
 import type { Fact, SourceAdapter } from '../facts';
 import type { AreaRecord } from '../areas';
-import { distance, type LatLon } from '../geo';
+import { distance, nearestOnPolyline, type LatLon } from '../geo';
 import { elementRef, type OsmElement, type OsmIndex } from '../osm';
 import { allowedClaims, concernsAPerson } from './personal';
 
@@ -13,8 +13,12 @@ export interface SourceRecord {
 	address?: { number: string; street: string };
 	/** Where the source places it. */
 	at?: LatLon;
-	/** A thing carrying this tag within so many metres is the one the record means: a bench for a bench. */
-	near?: { key: string; value: string; within: number };
+	/**
+	 * A thing carrying this tag within so many metres is the one the record means: a bench for a
+	 * bench, a road for a count of its traffic. Any of several values will do, and a way is measured
+	 * to its nearest point.
+	 */
+	near?: { key: string; value: string | readonly string[]; within: number };
 	/** A street the record is about, by name: it goes with every stretch of that street. */
 	street?: string;
 	/**
@@ -149,12 +153,14 @@ export class RecordsAdapter implements SourceAdapter {
 	private nearest(r: SourceRecord): OsmElement | undefined {
 		const near = r.near;
 		if (!near || !r.at) return undefined;
+		const values = typeof near.value === 'string' ? [near.value] : near.value;
 		let best: { e: OsmElement; d: number } | undefined;
 		for (const e of this.osm.data.elements) {
-			if (e.tags?.[near.key] !== near.value) continue;
+			const value = e.tags?.[near.key];
+			if (value === undefined || !values.includes(value)) continue;
 			const g = this.geometry(e);
 			if (!g.length) continue;
-			const d = distance(r.at, g[0]);
+			const d = nearestOnPolyline(r.at, g).metres;
 			if (d <= near.within && (!best || d < best.d)) best = { e, d };
 		}
 		return best?.e;
