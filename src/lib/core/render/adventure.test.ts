@@ -1155,3 +1155,52 @@ describe('the street lighting, marked for the hour', () => {
 		});
 	});
 });
+
+describe('street furniture, in a walker’s words', () => {
+	const said = (tags: Record<string, string>) => nounPhrase(tags);
+	it('names what carries power and wires for what it is', () => {
+		expect(said({ power: 'tower' })).toBe('an electricity pylon');
+		expect(said({ power: 'pole' })).toBe('an electricity pole');
+		expect(said({ man_made: 'utility_pole', utility: 'telecom' })).toBe('a telegraph pole');
+		expect(said({ man_made: 'utility_pole', utility: 'power' })).toBe('an electricity pole');
+		expect(said({ man_made: 'utility_pole' })).toBe('a utility pole');
+		expect(said({ power: 'generator', 'generator:source': 'solar' })).toBe('a solar panel');
+		expect(said({ power: 'generator', 'generator:source': 'wind' })).toBe('a wind turbine');
+		expect(said({ power: 'line', voltage: '275000' })).toBe('a power line carrying 275,000 volts');
+		expect(said({ power: 'line', voltage: '275000;132000' })).toBe('a power line');
+		expect(said({ man_made: 'street_cabinet', street_cabinet: 'telecom' })).toBe(
+			'a telecoms cabinet'
+		);
+		expect(said({ man_made: 'street_cabinet', street_cabinet: 'power' })).toBe(
+			'an electricity cabinet'
+		);
+	});
+
+	it('names the furniture of the street as a walker would', () => {
+		expect(said({ highway: 'traffic_signals' })).toBe('a traffic light');
+		expect(said({ highway: 'give_way' })).toBe('a give way sign');
+		expect(said({ highway: 'stop' })).toBe('a stop sign');
+		expect(said({ amenity: 'toilets' })).toBe('a public toilet');
+		expect(said({ amenity: 'atm' })).toBe('a cash machine');
+		expect(said({ amenity: 'waste_basket' })).toBe('a litter bin');
+		expect(said({ amenity: 'recycling' })).toBe('a recycling point');
+		expect(said({ man_made: 'manhole' })).toBe('a manhole cover');
+		expect(said({ amenity: 'telephone', covered: 'booth' })).toBe('a telephone box');
+		expect(said({ emergency: 'phone' })).toBe('an emergency phone');
+		expect(said({ barrier: 'kerb', kerb: 'lowered' })).toBe('a dropped kerb');
+		expect(said({ barrier: 'lift_gate' })).toBe('a lift barrier');
+		expect(said({ traffic_sign: 'low_emission_zone' })).toBe('a traffic sign');
+		expect(said({ advertising: 'board' })).toBe('an advertising board');
+		expect(said({ advertising: 'billboard' })).toBe('a billboard');
+		expect(said({ playground: 'seesaw' })).toBe('a seesaw');
+		expect(said({ playground: 'climbingframe' })).toBe('a climbing frame');
+		expect(said({ playground: 'invented_thing' })).toBe('a piece of play equipment');
+		expect(said({ man_made: 'mast', 'tower:type': 'communication' })).toBe('a communications mast');
+	});
+
+	it('keeps the prompt’s words as mapped, so stored prose keeps its keys', () => {
+		expect(nounPhrase({ power: 'tower' }, undefined, false)).toBe('a tower');
+		expect(nounPhrase({ highway: 'traffic_signals' }, undefined, false)).toBe('a traffic signals');
+		expect(nounPhrase({ playground: 'seesaw' }, undefined, false)).toBe('something');
+	});
+});
