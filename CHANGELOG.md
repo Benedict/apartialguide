@@ -4,6 +4,16 @@ What has changed in A Partial Guide, newest first. Each day has lines **for walk
 
 Add to it with each change worth telling: a line for walkers where a walker would notice, a line under the hood where only the code changed. The front page shows the latest three days that have lines for walkers.
 
+## 2026-11-13
+
+### For walkers
+
+- Street furniture is called what a walker would call it: an electricity pylon, not “a tower”; an electricity or telegraph pole; solar panels and wind turbines, not “a generator”; a power line with the volts it carries; traffic lights, give way and stop signs, litter bins, cash machines, public toilets, dropped kerbs, manhole covers, telephone boxes, telecoms and electricity cabinets; and the seesaws, swings and advertising boards that were only “something”.
+
+### Under the hood
+
+- `furniture` in `render/adventure.ts`: the walker's nouns for street furniture, the template's alone (the prompt keeps the map's words; stored prose found for Croydon is 2,553 before and after). `counted` counts a phrase by its head (“two power lines carrying 275,000 volts”, “three pieces of play equipment”), and a word that sounds “you” takes “a” (“a utility pole”), in a walker's words only.
+
 ## 2026-11-09
 
 ### For walkers

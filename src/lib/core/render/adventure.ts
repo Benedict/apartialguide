@@ -537,7 +537,82 @@ const BUILDING_NOUNS = new Set([
 ]);
 
 /** What a thing is now, or failing that what it is built as. */
+/** Play equipment, by the map's value, in the words on a playground. */
+const PLAY: Record<string, string> = {
+	swing: 'swing',
+	basketswing: 'basket swing',
+	slide: 'slide',
+	seesaw: 'seesaw',
+	roundabout: 'roundabout',
+	sandpit: 'sandpit',
+	climbingframe: 'climbing frame',
+	springy: 'spring rider',
+	zipwire: 'zip wire',
+	structure: 'play structure'
+};
+
+/** Advertising, by the map's value, as a walker would call it. */
+const ADVERTS: Record<string, string> = {
+	board: 'advertising board',
+	column: 'advertising column',
+	billboard: 'billboard',
+	poster_box: 'poster case'
+};
+
+/**
+ * The street's furniture in a walker's words: a pylon is an electricity pylon, not "a tower"; a pole
+ * carrying telephone wires is a telegraph pole. Only the template's: the prompt keeps the map's
+ * words, so stored prose keeps its keys.
+ */
+function furniture(tags: Tags): string | undefined {
+	const cabinet = (of: string | undefined) =>
+		of === 'telecom'
+			? 'telecoms cabinet'
+			: of === 'power'
+				? 'electricity cabinet'
+				: 'street cabinet';
+	const wires = (utility: string | undefined) =>
+		/telecom/.test(utility ?? '')
+			? 'telegraph pole'
+			: /power/.test(utility ?? '')
+				? 'electricity pole'
+				: undefined;
+	if (tags.power === 'tower') return 'electricity pylon';
+	if (tags.power === 'pole') return wires(tags.utility) ?? 'electricity pole';
+	if (tags.man_made === 'utility_pole') return wires(tags.utility) ?? 'utility pole';
+	if (tags.power === 'generator' && tags['generator:source'] === 'solar') return 'solar panel';
+	if (tags.power === 'generator' && tags['generator:source'] === 'wind') return 'wind turbine';
+	if (tags.power === 'line' && /^\d+$/.test(tags.voltage ?? ''))
+		return `power line carrying ${Number(tags.voltage).toLocaleString('en-GB')} volts`;
+	if (tags.man_made === 'street_cabinet') return cabinet(tags.street_cabinet);
+	if (tags.highway === 'traffic_signals') return 'traffic light';
+	if (tags.highway === 'give_way') return 'give way sign';
+	if (tags.highway === 'stop') return 'stop sign';
+	if (tags.amenity === 'toilets') return 'public toilet';
+	if (tags.amenity === 'atm') return 'cash machine';
+	if (tags.amenity === 'waste_basket') return 'litter bin';
+	if (tags.amenity === 'recycling') return 'recycling point';
+	if (tags.amenity === 'telephone' && (tags.covered === 'booth' || tags.booth))
+		return 'telephone box';
+	if (tags.man_made === 'manhole') return 'manhole cover';
+	if (tags.emergency === 'phone') return 'emergency phone';
+	if (tags.barrier === 'kerb' && tags.kerb === 'lowered') return 'dropped kerb';
+	if (tags.barrier === 'kerb' && tags.kerb === 'raised') return 'raised kerb';
+	if (tags.barrier === 'lift_gate') return 'lift barrier';
+	if (tags.man_made === 'mast' && tags['tower:type'] === 'communication')
+		return 'communications mast';
+	// Keys the map gives alone, which the template had no word for.
+	const alone = !currentUse(tags) && !kind(tags) && !tags.building;
+	if (alone && tags.street_cabinet) return cabinet(tags.street_cabinet);
+	if (alone && tags.traffic_sign) return 'traffic sign';
+	if (alone && tags.advertising) return ADVERTS[tags.advertising] ?? 'advertisement';
+	if (alone && tags.playground) return PLAY[tags.playground] ?? 'piece of play equipment';
+	return undefined;
+}
+
 function noun(tags: Tags, walker = true): string {
+	const fitted = walker ? furniture(tags) : undefined;
+	if (fitted) return fitted;
 	const use = currentUse(tags, walker) ?? kind(tags, walker);
 	if (use) return use;
 	const built = tags.building;

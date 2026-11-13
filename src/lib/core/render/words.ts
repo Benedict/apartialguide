@@ -123,10 +123,12 @@ const UNCOUNTABLE_TO_WALKERS = new Set([
 	'mud',
 	'outdoor seating'
 ]);
+/** Words that begin with a vowel but sound "you" or "won": a utility pole, a one-way street. */
+const SOUNDS_YOU = /^(uni|use|usu|uti|eu|one\b)/i;
 export const article = (noun: string, walker = true) =>
 	UNCOUNTABLE.has(noun) || (walker && UNCOUNTABLE_TO_WALKERS.has(noun))
 		? noun
-		: `${/^[aeiou]/i.test(noun) ? 'an' : 'a'} ${noun}`;
+		: `${/^[aeiou]/i.test(noun) && !(walker && SOUNDS_YOU.test(noun)) ? 'an' : 'a'} ${noun}`;
 export const list = (items: string[]) =>
 	items.length < 2 ? items.join('') : `${items.slice(0, -1).join(', ')} and ${items.at(-1)}`;
 
@@ -179,12 +181,14 @@ export function counted(n: number, noun: string): string {
 	if (n === 1) return article(noun);
 	const number = NUMBERS[n] ?? String(n);
 	if (UNCOUNTABLE.has(noun)) return `${number} lots of ${noun}`;
-	const plural = /(s|sh|ch|x)$/.test(noun)
-		? `${noun}es`
-		: /[^aeiou]y$/.test(noun)
-			? `${noun.slice(0, -1)}ies`
-			: `${noun}s`;
-	return `${number} ${plural}`;
+	// A phrase is counted by its head: power lines carrying 275,000 volts, pieces of play equipment.
+	const [, head, tail] = /^(.+?)((?: carrying | of ).+)?$/.exec(noun)!;
+	const plural = /(s|sh|ch|x)$/.test(head)
+		? `${head}es`
+		: /[^aeiou]y$/.test(head)
+			? `${head.slice(0, -1)}ies`
+			: `${head}s`;
+	return `${number} ${plural}${tail ?? ''}`;
 }
 
 /** A distance as said aloud: "40 metres", "1.2 km". */
