@@ -360,7 +360,7 @@ Then('it says {string}', function (this: NarratorWorld, words: string) {
 	assert.ok(text.includes(words), text);
 });
 
-const SAID = /(They say|It is said that|Someone wrote down that|Word is) /;
+const SAID = /They say /;
 
 Then('it says, as hearsay, {string}', function (this: NarratorWorld, words: string) {
 	const text = replyText(state(this).reply);
@@ -370,10 +370,9 @@ Then('it says, as hearsay, {string}', function (this: NarratorWorld, words: stri
 	);
 });
 
-Then('it gives it as hearsay, never as another account', function (this: NarratorWorld) {
+Then('it never calls it another account, nor hearsay', function (this: NarratorWorld) {
 	const text = replyText(state(this).reply);
-	assert.match(text, /they say|it is said|someone wrote down|word is/i);
-	assert.doesNotMatch(text, /another account/i);
+	assert.doesNotMatch(text, /another account|it is said|someone wrote down|word is/i);
 });
 
 Then('it does not say {string}', function (this: NarratorWorld, words: string) {

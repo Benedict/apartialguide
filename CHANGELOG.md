@@ -4,6 +4,16 @@ What has changed in A Partial Guide, newest first. Each day has lines **for walk
 
 Add to it with each change worth telling: a line for walkers where a walker would notice, a line under the hood where only the code changed. The front page shows the latest three days that have lines for walkers.
 
+## 2026-11-14
+
+### For walkers
+
+- Guide says plainly what others have recorded, without “they say” or “someone wrote down”: “You come into the Kenilworth conservation area”, “A company is registered here”, “On the road here: lane closed”. Only what lies beyond the map is still hearsay.
+
+### Under the hood
+
+- The template drops the hearsay leads for every record but `look beyond` (`render/hearsay.ts`); wards, zones, road works, news, energy ratings, companies, street trees, encyclopaedia descriptions and things only another record has are told plainly. The prompt keeps the old leads word for word (`keptHearsay`, `keptAside`, `otherWords(tags, false)`), as its key is all it says: stored prose found for Croydon is unchanged, and drops them at the next full prose round, with the prompt.
+
 ## 2026-11-13
 
 ### For walkers

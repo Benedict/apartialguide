@@ -19,14 +19,14 @@ const disruption = (id: string, metres: number, comments: string, end = '2026-11
 ];
 
 describe('disruptionLines', () => {
-	it('tells the nearest two as hearsay, the words as found, with the day they end', () => {
+	it('tells the nearest two plainly, the words as found, with the day they end', () => {
 		const lines = disruptionLines([
 			...disruption('a', 150, '[A999] Invented Road - Lane closed. '),
 			...disruption('b', 20, 'Invented Lane - Road closed.'),
 			...disruption('c', 90, 'Inventa Way - Temporary lights.')
 		]);
 		expect(lines).toEqual([
-			'They say of the road here: “Invented Lane - Road closed.”, until 3 November.',
+			'On the road here: “Invented Lane - Road closed.”, until 3 November.',
 			'And: “Inventa Way - Temporary lights.”, until 3 November.'
 		]);
 		expect(lines.join(' ')).not.toContain('TfL');

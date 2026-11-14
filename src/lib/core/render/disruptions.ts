@@ -20,6 +20,6 @@ export function disruptionLines(facts: readonly Fact[]): string[] {
 	return disruptions.map((d, i) => {
 		const until = d.end ? `, until ${dayMonth(d.end)}` : '';
 		const words = `“${d.comments.trim()}”${until}.`;
-		return i === 0 ? `They say of the road here: ${words}` : `And: ${words}`;
+		return i === 0 ? `On the road here: ${words}` : `And: ${words}`;
 	});
 }

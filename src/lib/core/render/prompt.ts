@@ -101,7 +101,7 @@ export function brokenNames(beat: Beat): string[] {
 function beatLine(scene: Scene, beat: Beat, n: number): string {
 	const tags = tagsFor(beat);
 	const words = (facts: readonly Fact[]) => mapWords(tagsOf(facts)).join(' ');
-	const others = (facts: readonly Fact[]) => otherWords(tagsOf(facts)).join(' ');
+	const others = (facts: readonly Fact[]) => otherWords(tagsOf(facts), false).join(' ');
 	const gone = (facts: readonly Fact[]) =>
 		nounPhrase(
 			Object.fromEntries(facts.map((f) => [f.claim.key.replace(/^was:/, ''), f.claim.value])),

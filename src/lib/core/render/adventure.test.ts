@@ -4,7 +4,6 @@ import type { Scene } from '../scene';
 import { facts } from '../testing/facts';
 import { SyntheticMap } from '../testing/synthetic';
 import { AdventureRenderer, mapWords, nounPhrase, plainKind } from './adventure';
-import { aside } from './hearsay';
 
 const O = SyntheticMap.ORIGIN;
 const renderer = new AdventureRenderer();
@@ -247,9 +246,9 @@ describe('AdventureRenderer', () => {
 				text(
 					scene({ beats: [beat('node/9', { amenity: 'pub', 'wikidata:inception': inception })] })
 				);
-			expect(begun('1868')).toContain('Elsewhere it is said to have begun in 1868.');
-			expect(begun('1868-05')).toContain('begun in May 1868.');
-			expect(begun('1868-05-01')).toContain('begun on 1 May 1868.');
+			expect(begun('1868')).toContain('Begun in 1868.');
+			expect(begun('1868-05')).toContain('Begun in May 1868.');
+			expect(begun('1868-05-01')).toContain('Begun on 1 May 1868.');
 		});
 
 		it('speaks by another account only of Wikidata’s own items, never of half a thing', () => {
@@ -278,9 +277,7 @@ describe('AdventureRenderer', () => {
 				effects: []
 			};
 			const room = renderer.render(scene({ hidden: [works] }));
-			expect(room.hidden?.lines[0]).toContain(
-				`“The Old Invented Works”, ${aside('“The Old Invented Works”')}`
-			);
+			expect(room.hidden?.lines[0]).toContain('“The Old Invented Works”');
 		});
 
 		it('speaks a broken name as found without remarking on it', () => {
@@ -566,9 +563,7 @@ describe('AdventureRenderer', () => {
 				effects: []
 			};
 			const t = text(scene({ beats: [chapel] }));
-			expect(t).toContain(
-				`, ${aside('“Invented Chapel”, “listed building”')}, is “Invented Chapel”, “listed building”. Listed, grade II.`
-			);
+			expect(t).toContain(' is “Invented Chapel”, “listed building”. Listed, grade II.');
 		});
 
 		it('reads a plaque only another account has, as a plaque, not as hearsay', () => {
@@ -643,7 +638,7 @@ describe('AdventureRenderer', () => {
 				effects: []
 			};
 			expect(text(scene({ beats: [postcode] }))).toContain(
-				`, ${aside('“CR0 9ZZ”, a postcode')}, is “CR0 9ZZ”, a postcode. In use from January 1980 to June 1998.`
+				' is “CR0 9ZZ”, a postcode. In use from January 1980 to June 1998.'
 			);
 		});
 
@@ -763,7 +758,8 @@ describe('AdventureRenderer', () => {
 					})
 				).hidden?.lines[0];
 				expect(found).toContain('a bench with “For Ada” on it');
-				expect(found).toContain(`“Invented Chapel”, ${aside('“Invented Chapel”')}`);
+				expect(found).toContain('“Invented Chapel”');
+				expect(found).not.toMatch(/they say|it is said|someone wrote down/i);
 				expect(found).not.toContain('undefined');
 			});
 

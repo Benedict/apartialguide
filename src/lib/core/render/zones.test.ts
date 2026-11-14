@@ -1,7 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { hearsay } from './hearsay';
 import { zoneLines, type Zone } from './zones';
-import { HEARSAY } from './hearsay';
 
 // Invented mines and rocks: no real place.
 const plans = (name: string, claims: Record<string, string> = {}): Zone => ({
@@ -89,13 +87,18 @@ describe('zoneLines', () => {
 	it('says nothing of coming off a mine’s ground or a rock, and still says leaving a flood zone', () => {
 		const rock: Zone = { name: 'INVENTED GROUP', kind: 'bedrock', claims: { rock: 'SANDSTONE' } };
 		expect(zoneLines([], [plans('INVENTED GILL'), rock, flood])).toEqual([
-			hearsay('you have come out of Invented Zone 3')
+			'You come out of Invented Zone 3, a flood zone.'
 		]);
 	});
 
-	it('keeps the old telling for any other zone', () => {
-		expect(zoneLines([flood], [])).toEqual([
-			hearsay('you are within Invented Zone 3, a flood zone')
+	it('tells any other zone plainly, by its name and kind', () => {
+		expect(zoneLines([flood], [])).toEqual(['You come into Invented Zone 3, a flood zone.']);
+		const fallen = { name: 'the flood of March 1901', kind: 'recorded flood' };
+		expect(zoneLines([fallen], [])).toEqual([
+			'You come onto ground the flood of March 1901 covered.'
+		]);
+		expect(zoneLines([], [fallen])).toEqual([
+			'You come off ground the flood of March 1901 covered.'
 		]);
 	});
 
@@ -135,8 +138,7 @@ describe('zoneLines', () => {
 
 describe('heritage zones', () => {
 	// Invented places: no real conservation area, monument or park.
-	// What is said, without the lead that varies with the words.
-	const said = (line: string) => line.replace(HEARSAY, '');
+	const said = (line: string) => line;
 	const zone = (name: string, kind: string, claims?: Record<string, string>): Zone => ({
 		name,
 		kind,
@@ -145,13 +147,13 @@ describe('heritage zones', () => {
 
 	it('tells coming into and out of a conservation area, a monument and a park, by name and kind', () => {
 		expect(zoneLines([zone('Inventon Green', 'conservation area')], []).map(said)).toEqual([
-			'you are within “Inventon Green”, a conservation area.'
+			'You come into “Inventon Green”, a conservation area.'
 		]);
 		expect(zoneLines([], [zone('Inventon Green', 'conservation area')]).map(said)).toEqual([
-			'you have come out of “Inventon Green”, a conservation area.'
+			'You come out of “Inventon Green”, a conservation area.'
 		]);
 		expect(zoneLines([zone('Inventon Mound', 'scheduled monument')], []).map(said)).toEqual([
-			'you are within “Inventon Mound”, a scheduled monument.'
+			'You come into “Inventon Mound”, a scheduled monument.'
 		]);
 	});
 
@@ -160,12 +162,12 @@ describe('heritage zones', () => {
 			zoneLines([zone('INVENTON HALL', 'registered park and garden', { grade: 'II*' })], []).map(
 				said
 			)
-		).toEqual(['you are within “Inventon Hall”, a registered park and garden, grade II*.']);
+		).toEqual(['You come into “Inventon Hall”, a registered park and garden, grade II*.']);
 	});
 
 	it('does not say the kind twice where the name already says it', () => {
 		expect(
 			zoneLines([zone('Inventon Road Conservation Area', 'conservation area')], []).map(said)
-		).toEqual(['you are within “Inventon Road Conservation Area”.']);
+		).toEqual(['You come into “Inventon Road Conservation Area”.']);
 	});
 });

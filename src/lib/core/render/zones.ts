@@ -1,4 +1,3 @@
-import { hearsay } from './hearsay';
 import { laidDown, rockName, rockWords } from './rocks';
 import { article, numberWord } from './words';
 
@@ -11,8 +10,6 @@ export interface Zone {
 
 /** Kinds told only on coming onto them: a mine's ground, its returns, the rock beneath. */
 const ONTO = new Set(['mine plans', 'mine returns', 'bedrock', 'superficial deposits']);
-/** Areas a register protects, told by name and kind on coming in and on coming out. */
-const HERITAGE = new Set(['conservation area', 'scheduled monument', 'registered park and garden']);
 /** The most mines told in one step; the rest are counted. */
 const MOST_MINES = 3;
 
@@ -105,6 +102,18 @@ function rockOf(z: Zone): string {
  * ground, its returns and the rock beneath are told only on coming onto them, three mines at most a
  * step; any other zone, such as a flood zone, on coming in and on coming out.
  */
+/** Areas a register protects, by the names it gives them, in quotation marks. */
+const HERITAGE = new Set(['conservation area', 'scheduled monument', 'registered park and garden']);
+
+/** Coming into or out of a zone, plainly: a register's area by its name as found, a flood zone as named. */
+function onto(z: Zone, coming: boolean): string {
+	if (z.kind === 'recorded flood')
+		return `You come ${coming ? 'onto' : 'off'} ground ${z.name} covered.`;
+	const kind = z.name.toLowerCase().includes(z.kind) ? '' : `, ${article(z.kind)}`;
+	const called = HERITAGE.has(z.kind) ? heritageOf(z) : `${z.name}${kind}`;
+	return `You come ${coming ? 'into' : 'out of'} ${called}.`;
+}
+
 /** A heritage area by its name, its kind where the name does not say it, and its grade. */
 function heritageOf(z: Zone): string {
 	const name = asWritten(z.name);
@@ -120,11 +129,8 @@ export function zoneLines(entered: readonly Zone[], left: readonly Zone[]): stri
 	for (const z of entered) {
 		if (z.kind === 'mine returns') lines.push(...returnsOf(z));
 		else if (z.kind === 'bedrock' || z.kind === 'superficial deposits') lines.push(rockOf(z));
-		else if (HERITAGE.has(z.kind)) lines.push(hearsay(`you are within ${heritageOf(z)}`));
-		else if (!ONTO.has(z.kind)) lines.push(hearsay(`you are within ${z.name}, ${article(z.kind)}`));
+		else if (!ONTO.has(z.kind)) lines.push(onto(z, true));
 	}
-	for (const z of left)
-		if (HERITAGE.has(z.kind)) lines.push(hearsay(`you have come out of ${heritageOf(z)}`));
-		else if (!ONTO.has(z.kind)) lines.push(hearsay(`you have come out of ${z.name}`));
+	for (const z of left) if (!ONTO.has(z.kind)) lines.push(onto(z, false));
 	return lines;
 }
