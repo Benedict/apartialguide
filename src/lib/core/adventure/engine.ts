@@ -1,7 +1,6 @@
 import { zoneLines } from '../render/zones';
 import { COLOURS, isColour, type Colour } from './colours';
 import type { Fact } from '../facts';
-import { hearsay } from '../render/hearsay';
 import { skyLine } from '../render/sky';
 import { weatherNow } from '../render/weather';
 import { airNow } from '../render/air';
@@ -199,7 +198,7 @@ function ledgerLines(asOf: string, about: Ledger): string[] {
 	const areas = about.areas;
 	if (areas && areas.count > 1)
 		lines.push(
-			`${hearsay(`the map runs into ${n(areas.count)} ${areas.kind}s${areas.most.length ? `, most of it in ${listed(areas.most)}` : ''}`)} I will say when we cross from one to another.`
+			`The map runs into ${n(areas.count)} ${areas.kind}s${areas.most.length ? `, most of it in ${listed(areas.most)}` : ''}. I will say when we cross from one to another.`
 		);
 	return lines;
 }
@@ -1436,10 +1435,11 @@ export class Adventure {
 			this.walk.previous === undefined ? undefined : this.world.stops[this.walk.previous].area;
 		const to = this.world.stops[this.walk.here].area;
 		if (from?.name === to?.name) return undefined;
-		if (!from) return hearsay(`you are in ${to!.name}, a ${to!.kind}`);
-		return to
-			? hearsay(`you have left ${from.name} for ${to.name}`)
-			: hearsay(`you have left ${from.name}`);
+		// Said plainly, as a record: a ward is no thing the map shows, so its name carries its kind.
+		const called = (a: { name: string; kind: string }) =>
+			a.name.toLowerCase().endsWith(a.kind.toLowerCase()) ? a.name : `${a.name} ${a.kind}`;
+		if (!from) return `You are in ${called(to!)}.`;
+		return to ? `You leave ${called(from)} for ${called(to)}.` : `You leave ${called(from)}.`;
 	}
 
 	/** Where the map puts this place, for what is asked of it: never where the reader is. */
@@ -1511,7 +1511,7 @@ export class Adventure {
 		if (!answer?.place || !titles.length) return { lines: ['No news reaches me.'] };
 		return {
 			lines: titles.map((t, i) =>
-				i === 0 ? `It is said today, of ${answer.place}: “${t}”.` : `And: “${t}”.`
+				i === 0 ? `In today's news of ${answer.place}: “${t}”.` : `And: “${t}”.`
 			)
 		};
 	}

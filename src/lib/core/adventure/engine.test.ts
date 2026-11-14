@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 import { Adventure, MINES_CAUTION, OFFER, introduction } from './engine';
-import { hearsay } from '../render/hearsay';
 import type { AdventureWorld } from './world';
 import { MemorySaves } from './saves';
 import { currentWeatherFacts } from '../adapters/weather';
@@ -85,7 +84,7 @@ describe('Adventure', () => {
 				'You are carrying nothing. Names, perhaps, if you take them.',
 				'I carry a map dated 24 October 2026: 412 named streets and 5,688 places to stand, the oldest of them last recorded in March 2009. Beyond it there may be more. I could not say what.',
 				'The map is not the only account. Others have been kept: by those who inspect kitchens, those who write down what houses sell for and those who keep an encyclopaedia of everything. Where they disagree with the map, I leave them disagreeing.',
-				`${hearsay('the map runs into 9 wards, most of it in Inventa East and Inventa West')} I will say when we cross from one to another.`
+				'The map runs into 9 wards, most of it in Inventa East and Inventa West. I will say when we cross from one to another.'
 			]);
 		});
 
@@ -765,7 +764,7 @@ describe('Departures', () => {
 		expect(game.departures(stop, undefined)).toBeUndefined();
 	});
 
-	describe('wards, as hearsay', () => {
+	describe('wards, told plainly', () => {
 		const ward = (name: string) => ({ name, kind: 'ward' });
 		const wardWorld: AdventureWorld = {
 			start: 'a',
@@ -789,29 +788,29 @@ describe('Departures', () => {
 		};
 
 		it('says which ward the tour begins in', () => {
-			expect(touring().first.lines[0]).toBe(hearsay('you are in Inventa West, a ward'));
+			expect(touring().first.lines[0]).toBe('You are in Inventa West ward.');
 		});
 
 		it('says nothing of wards on a step within one', () => {
 			const { game } = touring();
-			expect(game.respond('east').lines.join(' ')).not.toMatch(/you (are in|have left) Inventa/);
+			expect(game.respond('east').lines.join(' ')).not.toMatch(/You (are in|leave) Inventa/);
 		});
 
 		it('tells a step from one ward into another, first', () => {
 			const { game } = touring();
 			game.respond('east');
 			expect(game.respond('east').lines[0]).toBe(
-				hearsay('you have left Inventa West for Inventa East')
+				'You leave Inventa West ward for Inventa East ward.'
 			);
 			expect(game.respond('west').lines[0]).toBe(
-				hearsay('you have left Inventa East for Inventa West')
+				'You leave Inventa East ward for Inventa West ward.'
 			);
 		});
 
 		it('tells a step out of every ward it knows', () => {
 			const { game } = touring();
 			game.respond('east');
-			expect(game.respond('north').lines[0]).toBe(hearsay('you have left Inventa West'));
+			expect(game.respond('north').lines[0]).toBe('You leave Inventa West ward.');
 		});
 	});
 
@@ -914,7 +913,7 @@ describe('Departures', () => {
 		});
 	});
 
-	describe('zones, as hearsay', () => {
+	describe('zones, told plainly', () => {
 		const zone = (name: string, kind: string) => ({ name, kind });
 		const zoned: AdventureWorld = {
 			start: 'a',
@@ -945,8 +944,8 @@ describe('Departures', () => {
 
 		it('tells a step into zones, each once', () => {
 			expect(touring().respond('east').lines.slice(0, 2)).toEqual([
-				hearsay('you are within Flood Zone 3, a flood zone'),
-				hearsay('you are within the flood of September 1968, a recorded flood')
+				'You come into Flood Zone 3.',
+				'You come onto ground the flood of September 1968 covered.'
 			]);
 		});
 
@@ -954,7 +953,7 @@ describe('Departures', () => {
 			const game = touring();
 			game.respond('east');
 			const lines = game.respond('east').lines;
-			expect(lines[0]).toBe(hearsay('you have come out of the flood of September 1968'));
+			expect(lines[0]).toBe('You come off ground the flood of September 1968 covered.');
 			expect(lines.join(' ')).not.toContain('Flood Zone 3');
 		});
 	});
@@ -981,13 +980,13 @@ describe('Departures', () => {
 			game.begin();
 			game.respond('take the tour');
 			expect(game.disruptions(works)?.lines).toEqual([
-				'They say of the road here: “Invented Road - Lane closed.”, until 3 November.'
+				'On the road here: “Invented Road - Lane closed.”, until 3 November.'
 			]);
 			expect(game.disruptions(works)).toBeUndefined();
 			expect(game.disruptions(undefined)).toBeUndefined();
 		});
 
-		it('asks the page for the news, and tells up to three headlines as hearsay of the place', () => {
+		it('asks the page for the news, and tells up to three headlines of the place', () => {
 			const game = new Adventure(world);
 			game.begin();
 			game.respond('take the tour');
@@ -997,7 +996,7 @@ describe('Departures', () => {
 				seen: '2026-10-31'
 			}));
 			expect(game.news({ place: 'Inventon', articles: titles }).lines).toEqual([
-				'It is said today, of Inventon: “One invented headline”.',
+				"In today's news of Inventon: “One invented headline”.",
 				'And: “Two”.',
 				'And: “Three”.'
 			]);

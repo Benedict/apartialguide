@@ -1,6 +1,8 @@
 import { returnsSaid } from './zones';
 import type { Tags } from '../osm';
-import { aside, hearsay } from './hearsay';
+import { keptAside, keptHearsay } from './hearsay';
+
+const capitalised = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 import { list as listOf, monthYear, numberWord } from './words';
 
 /** What Guide says of each other source's facts about a thing. Nouns, numbers and dates are the source's. */
@@ -19,7 +21,11 @@ const codeWords = (code: string) =>
 		.trim();
 
 /** Each saying, and whether it is short enough to tell in a room rather than on a closer look. */
-const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
+/**
+ * Each saying, told plainly to the walker; `plain` false gives the prompt the old hearsay, word for
+ * word, so stored prose keeps its keys (`keptHearsay`).
+ */
+const SAYINGS: [boolean, (t: Tags, plain: boolean) => string | undefined][] = [
 	[
 		true,
 		(t) => {
@@ -58,12 +64,15 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 	[true, (t) => (t['bench:inscription'] ? `On it: ${quoted(t['bench:inscription'])}` : undefined)],
 	[
 		false,
-		(t) => {
+		(t, plain) => {
 			const when = t['epc:lodged'] ? ` in ${monthYear(t['epc:lodged'])}` : '';
 			const rated = t['epc:rating'] ? `rated ${t['epc:rating']} for energy${when}` : '';
 			if (t['epc:built'])
-				return hearsay(`it was built ${t['epc:built']}${rated ? `, and ${rated}` : ''}`);
-			return rated ? hearsay(`it was ${rated}`) : undefined;
+				return plain
+					? `Built ${t['epc:built']}${rated ? `, and ${rated}` : ''}.`
+					: keptHearsay(`it was built ${t['epc:built']}${rated ? `, and ${rated}` : ''}`);
+			if (!rated) return undefined;
+			return plain ? `Rated ${rated.slice('rated '.length)}.` : keptHearsay(`it was ${rated}`);
 		}
 	],
 	[
@@ -118,7 +127,8 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 	],
 	[
 		false,
-		(t) => {
+		(t, plain) => {
+			const said = (clause: string) => (plain ? `${capitalised(clause)}.` : keptHearsay(clause));
 			const count = Number(t['company:count']);
 			if (!count) return undefined;
 			const names = (t['company:names'] ?? '')
@@ -127,11 +137,9 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 				.map((n) => `“${n}”`);
 			const since = t['company:since'] ? monthYear(t['company:since']) : undefined;
 			if (count === 1)
-				return hearsay(
-					`a company is registered here: ${names[0]}${since ? `, since ${since}` : ''}`
-				);
+				return said(`a company is registered here: ${names[0]}${since ? `, since ${since}` : ''}`);
 			const shown = names.length < count ? `${names.join(', ')} and others` : listOf(names);
-			return hearsay(
+			return said(
 				`${numberWord(count)} companies are registered here${since ? `, the first since ${since}` : ''}: ${shown}`
 			);
 		}
@@ -177,9 +185,12 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 	],
 	[
 		false,
-		(t) =>
+		(t, plain) =>
 			t['trees:count']
-				? ((along) => `${along}, ${aside(along)}: ${t['trees:kinds']}.`)(
+				? ((along) =>
+						plain
+							? `${along}: ${t['trees:kinds']}.`
+							: `${along}, ${keptAside(along)}: ${t['trees:kinds']}.`)(
 						`${t['trees:count']} tree${t['trees:count'] === '1' ? '' : 's'} along it`
 					)
 				: undefined
@@ -187,7 +198,11 @@ const SAYINGS: [boolean, (t: Tags) => string | undefined][] = [
 ];
 
 /** The sentences other accounts give a thing, in a fixed order: in a room, only the short ones. */
-export const recordSentences = (tags: Tags, where: 'room' | 'closer' = 'closer'): string[] =>
+export const recordSentences = (
+	tags: Tags,
+	where: 'room' | 'closer' = 'closer',
+	plain = true
+): string[] =>
 	SAYINGS.filter(([short]) => short || where === 'closer')
-		.map(([, say]) => say(tags))
+		.map(([, say]) => say(tags, plain))
 		.filter((s): s is string => !!s);

@@ -17,16 +17,16 @@ Feature: Another account, from Wikidata
   Scenario: A thing the map links to is described elsewhere
     Given Wikidata describes The Sextant as "invented public house"
     When the game begins
-    Then it says "Elsewhere it is listed as “invented public house”."
+    Then it says "Described as “invented public house”."
 
   Scenario: Something Wikidata places here that the map does not have
     Given Wikidata places "The Old Invented Works", "former invented factory", right beside the reader
     When the game begins
-    Then it gives it as hearsay, never as another account
+    Then it never calls it another account, nor hearsay
     And it says "“The Old Invented Works”"
 
   Scenario: Wikidata's facts keep their source when examined
     Given Wikidata describes The Sextant as "invented public house"
     When the reader types "x sextant"
-    Then it says "Elsewhere it is listed as “invented public house”."
+    Then it says "Described as “invented public house”."
     And it does not say "="

@@ -14,7 +14,6 @@ import type { Tags } from '../osm';
 import type { Scene, SceneExit } from '../scene';
 import { isBackground, type Beat } from '../slippage';
 import { isElsewhere, isHistory } from '../tensions';
-import { aside } from './hearsay';
 import type { Part, Renderer, Room, Thing } from './renderer';
 import { quoted, recordSentences } from './records';
 import {
@@ -434,7 +433,7 @@ function brief(beat: Beat): { phrase: string; noun?: string } {
 			return { phrase: `a bench with “${tags['bench:inscription']}” on it` };
 		const { label, what, kind } = otherAccount(tags);
 		const called = label ? `“${label}”` : kind ? article(kind) : what ? `“${what}”` : 'a thing';
-		return { phrase: `${called}, ${aside(called)}` };
+		return { phrase: called };
 	}
 	const what = noun(tags);
 	if (tags.name) {
@@ -762,10 +761,9 @@ function describeBeat(
 			].join(' ');
 		if (tags['bench:inscription'])
 			return [`${lead(place)} is a bench.`, ...recordSentences(tags, 'room')].join(' ');
-		return [
-			`${place}, ${aside(calledElsewhere(tags))}, is ${calledElsewhere(tags)}.`,
-			...recordSentences(tags, 'room')
-		].join(' ');
+		return [`${lead(place)} is ${calledElsewhere(tags)}.`, ...recordSentences(tags, 'room')].join(
+			' '
+		);
 	}
 	if (beat.effects.includes('remembered')) {
 		const asOf = beat.facts.find((f) => f.observed)?.observed;
@@ -856,16 +854,20 @@ function calledElsewhere(tags: Tags): string {
 }
 
 /** What another account says of a thing the map has. */
-function elsewhere(tags: Tags, where: 'room' | 'closer' = 'closer'): string[] {
-	return [...wikidataSays(tags), ...recordSentences(tags, where)];
+function elsewhere(tags: Tags, where: 'room' | 'closer' = 'closer', plain = true): string[] {
+	return [...wikidataSays(tags, plain), ...recordSentences(tags, where, plain)];
 }
 
-function wikidataSays(tags: Tags): string[] {
+/** An encyclopaedia's words, plainly; `plain` false gives the prompt its old words, for its key. */
+function wikidataSays(tags: Tags, plain = true): string[] {
 	const listed = tags['wikidata:description'];
 	const begun = tags['wikidata:inception'];
 	if (listed)
-		return [`Elsewhere it is listed as “${listed}”${begun ? `, begun ${when(begun)}` : ''}.`];
-	return begun ? [`Elsewhere it is said to have begun ${when(begun)}.`] : [];
+		return [
+			`${plain ? 'Described as' : 'Elsewhere it is listed as'} “${listed}”${begun ? `, begun ${when(begun)}` : ''}.`
+		];
+	if (!begun) return [];
+	return [plain ? `Begun ${when(begun)}.` : `Elsewhere it is said to have begun ${when(begun)}.`];
 }
 
 /** What the map says of a thing beyond what it is, in words: never its raw record. */
@@ -1080,9 +1082,9 @@ export function mapWords(tags: Tags): string[] {
 	return sentences;
 }
 
-/** What another account says of a thing, in words. */
-export function otherWords(tags: Tags): string[] {
-	const said = elsewhere(tags, 'closer');
+/** What another account says of a thing, in words: plainly, or (`plain` false) as the prompt has it. */
+export function otherWords(tags: Tags, plain = true): string[] {
+	const said = elsewhere(tags, 'closer', plain);
 	const namesake = tags['etymology:label'];
 	if (namesake)
 		said.push(
